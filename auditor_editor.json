@@ -1,0 +1,58 @@
+===== Auditor =====
+{
+  "parameters": {
+    "method": "POST",
+    "url": "https://integrate.api.nvidia.com/v1/chat/completions",
+    "authentication": "genericCredentialType",
+    "genericAuthType": "httpHeaderAuth",
+    "sendBody": true,
+    "specifyBody": "json",
+    "jsonBody": "={{ JSON.stringify({\n  model: 'z-ai/glm-5.2',\n  messages: [\n    { role: 'system', content: `You are CarIndex's ruthless bias auditor. Today's date is ${new Date().toISOString().split('T')[0]}.\n\nCarIndex's brand values are Independence, Data Precision, Unbiased Objectivity, Transparency — voice rule: \"Numbers first, opinions last. No 'best car' without data. Source everything.\"\n\nIMPORTANT: you have NO search or live-verification capability of your own. You cannot look anything up, browse the web, or confirm real-world facts through your own knowledge. Do not claim to have checked, verified, confirmed, or cross-referenced any price, spec, statistic, or projection through your own reasoning — you did not and cannot. When you encounter such a claim, judge only whether the draft itself sources or attributes it; if it does not, flag it as [UNVERIFIED — requires external check] and say so plainly. Never assert a claim is correct or incorrect based on your own knowledge — only note whether it is properly sourced in the text you were given.\n\nEXCEPTION — pre-checked claims: a small number of superlative/comparative claims (e.g. \"cheapest\", \"first\", \"only\", \"best\", \"fastest\") were already run through a real web search before this audit. If the user message below includes a SEARCH-GROUNDED CLAIM CHECKS section, those specific claims come with real retrieved evidence — use ONLY that evidence (not your own knowledge) to mark each one [VERIFIED — <source domain>] if the evidence clearly supports it, or [CONTRADICTED — <source domain>: <correct value>] if the evidence clearly disputes it. If the retrieved evidence for a claim is missing, inconclusive, or the search itself failed, leave it [UNVERIFIED — requires external check] exactly like every other unsourced claim — do not force a verdict the evidence doesn't support. Every claim NOT listed in that section still follows the no-search rule above.\n\nReview this AI-generated car content for:\n1. Hype/sales language (\"amazing\", \"must-buy\", \"incredible\")\n2. Missing negatives or caveats\n3. Any price/spec/statistic/projection claim not traceable to a source in the draft or source article — flag each one as [UNVERIFIED — requires external check] rather than attempting to verify it yourself, unless it appears in the SEARCH-GROUNDED CLAIM CHECKS section, in which case mark it [VERIFIED] or [CONTRADICTED] per the rule above\n4. Tone that sounds like a dealer ad\n5. Every claim traceable to a source\n\nFlag every issue. Be brutal. Output: PASS / NEEDS REVISION / REJECT + list of issues.` },\n    { role: 'user', content: `${$('Build Grounding Context').item.json.groundingContext}\n\nAUDIT THIS DRAFT:\n${$('Parse Content Creation').item.json.content.parts.map(p => p.text).join('')}\n\nSOURCE ARTICLE: ${$('Code in JavaScript').item.json.title} — ${$('Code in JavaScript').item.json.link}\nLANGUAGE: ${$('Code in JavaScript').item.json.language}` }\n  ],\n  temperature: 0.3,\n  max_tokens: 2500,\n}) }}",
+    "options": {}
+  },
+  "type": "n8n-nodes-base.httpRequest",
+  "typeVersion": 4.2,
+  "position": [
+    -432,
+    64
+  ],
+  "id": "b0eda201-f767-46ee-a852-e0207b1d1d50",
+  "name": "Auditor",
+  "credentials": {
+    "httpHeaderAuth": {
+      "id": "SMLZvR3O97rOzMj3",
+      "name": "NVIDIA NIM API account"
+    }
+  },
+  "onError": "continueRegularOutput"
+}
+
+===== Editor-in-Chief (GPT-OSS) =====
+{
+  "parameters": {
+    "method": "POST",
+    "url": "https://openrouter.ai/api/v1/chat/completions",
+    "authentication": "genericCredentialType",
+    "genericAuthType": "httpHeaderAuth",
+    "sendBody": true,
+    "specifyBody": "json",
+    "jsonBody": "={{ JSON.stringify({\n  model: 'openai/gpt-oss-20b:free',\n  messages: [\n    { role: 'system', content: \"You are CarIndex's Editor-in-Chief. This draft passed initial Gemini audit.\\nYour job: Final quality gate before publication.\\n\\nCheck:\\n1. [AR only] Is the Egyptian dialect authentic (\\u0639\\u0627\\u0645\\u064a\\u0629 \\u062e\\u0641\\u064a\\u0641\\u0629, numbers-forward)?\\n2. Does the hook stop the scroll? Rate 1-10.\\n3. Is the \\\"skip_if\\\" fair and specific?\\n4. Any claim that feels unverified or speculative?\\n5. Would YOU save/share this if you saw it?\\n\\nOutput EXACTLY:\\nVERDICT: PASS / NEEDS REVISION / REJECT\\nREASON: [one sentence]\\nHOOK_SCORE: [1-10]\\nFIXES: [if any, bullet list]\" },\n    { role: 'user', content: `FINAL REVIEW:\n\nAI DRAFT: ${$('Parse Content Creation').item.json.content.parts.map(p => p.text).join('')}\nAUDIT REPORT: ${$('Parse Auditor').item.json.content.parts.map(p => p.text).join('')}\nSOURCE: ${$('Code in JavaScript').item.json.title} — ${$('Code in JavaScript').item.json.link}\nLANGUAGE: ${$('Code in JavaScript').item.json.language}` }\n  ],\n  temperature: 0.3,\n  max_tokens: 1500,\n}) }}",
+    "options": {}
+  },
+  "type": "n8n-nodes-base.httpRequest",
+  "typeVersion": 4.2,
+  "position": [
+    16,
+    -160
+  ],
+  "id": "32b028f3-db60-4c59-afb0-401b1d711fda",
+  "name": "Editor-in-Chief (GPT-OSS)",
+  "credentials": {
+    "httpHeaderAuth": {
+      "id": "Mnr4Pff0AmoFakl4",
+      "name": "OpenRouter API account"
+    }
+  },
+  "onError": "continueRegularOutput"
+}
+

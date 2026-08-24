@@ -1,0 +1,39 @@
+{
+  "parameters": {
+    "modelId": {
+      "__rl": true,
+      "value": "claude-opus-4-5-20251101",
+      "mode": "list",
+      "cachedResultName": "claude-opus-4-5-20251101"
+    },
+    "messages": {
+      "values": [
+        {
+          "content": "You are CarIndex's Editor-in-Chief. This draft passed initial Gemini audit.\nYour job: Final quality gate before publication.\n\nCheck:\n1. [AR only] Is the Egyptian dialect authentic (عامية خفيفة, numbers-forward)?\n2. Does the hook stop the scroll? Rate 1-10.\n3. Is the \"skip_if\" fair and specific?\n4. Any claim that feels unverified or speculative?\n5. Would YOU save/share this if you saw it?\n\nOutput EXACTLY:\nVERDICT: PASS / NEEDS REVISION / REJECT\nREASON: [one sentence]\nHOOK_SCORE: [1-10]\nFIXES: [if any, bullet list]",
+          "role": "system"
+        },
+        {
+          "content": "=FINAL REVIEW:\n\nAI DRAFT: {{ $('Parse Content Creation').item.json.content.parts.map(p => p.text).join('') }}\nAUDIT REPORT: {{ $('Parse Auditor').item.json.content.parts.map(p => p.text).join('') }}\nSOURCE: {{ $('Code in JavaScript').item.json.title }} — {{ $('Code in JavaScript').item.json.link }}\nLANGUAGE: {{ $('Code in JavaScript').item.json.language }}"
+        }
+      ]
+    },
+    "options": {
+      "includeMergedResponse": true
+    }
+  },
+  "type": "@n8n/n8n-nodes-langchain.anthropic",
+  "typeVersion": 1,
+  "position": [
+    336,
+    288
+  ],
+  "id": "2d10ccf6-0ef7-4c88-9f1e-15a16c3879c3",
+  "name": "Editor-in-Chief Fallback (Claude)",
+  "credentials": {
+    "anthropicApi": {
+      "id": "f2Ke5KQ9dSMQ5IWE",
+      "name": "Anthropic account"
+    }
+  },
+  "onError": "continueRegularOutput"
+}

@@ -1,0 +1,98 @@
+===== Check Duplicate History =====
+{
+  "parameters": {
+    "authentication": "serviceAccount",
+    "documentId": {
+      "__rl": true,
+      "value": "https://docs.google.com/spreadsheets/d/1swTksdY6SzMb-510gzr2XclM7I4e92zFHgApKwdrLDI/edit?gid=0#gid=0",
+      "mode": "url"
+    },
+    "sheetName": {
+      "__rl": true,
+      "value": "Sheet1",
+      "mode": "name"
+    },
+    "options": {}
+  },
+  "type": "n8n-nodes-base.googleSheets",
+  "position": [
+    -688,
+    1408
+  ],
+  "id": "9a4f4804-f043-4645-a17b-7dd6925290f3",
+  "name": "Check Duplicate History",
+  "alwaysOutputData": true,
+  "typeVersion": 4.7,
+  "credentials": {
+    "googleApi": {
+      "id": "uFKZInJrFdzm21AL",
+      "name": "Google Sheets account 2"
+    }
+  }
+}
+
+===== Is Duplicate =====
+{
+  "parameters": {
+    "jsCode": "const key = $('Code in JavaScript').item.json.normalizedKey;\nconst existingKeys = $input.all()\n  .map(i => (i.json && i.json.NormalizedKey) ? String(i.json.NormalizedKey) : '')\n  .filter(Boolean);\nreturn [{\n  json: {\n    ...$('Code in JavaScript').item.json,\n    isDuplicate: key ? existingKeys.includes(key) : false,\n  },\n}];"
+  },
+  "type": "n8n-nodes-base.code",
+  "position": [
+    -496,
+    1408
+  ],
+  "id": "2da51128-3245-4055-a63a-c4a51fff0933",
+  "name": "Is Duplicate",
+  "typeVersion": 2
+}
+
+===== IF Not Duplicate =====
+{
+  "parameters": {
+    "conditions": {
+      "options": {
+        "caseSensitive": true,
+        "leftValue": "",
+        "typeValidation": "strict",
+        "version": 2
+      },
+      "conditions": [
+        {
+          "id": "6fd8f864-8f62-4426-b2e0-a919bc451c21",
+          "leftValue": "={{ $json.isDuplicate }}",
+          "rightValue": false,
+          "operator": {
+            "type": "boolean",
+            "operation": "equals"
+          }
+        }
+      ],
+      "combinator": "and"
+    },
+    "options": {}
+  },
+  "type": "n8n-nodes-base.if",
+  "position": [
+    -320,
+    1408
+  ],
+  "id": "3e4e9bce-a6fb-4ede-94b7-7491db5d1faf",
+  "name": "IF Not Duplicate",
+  "typeVersion": 2.2
+}
+
+===== Merge Verdict =====
+{
+  "parameters": {
+    "jsCode": "function extractGeminiText(item) {\n  const j = item.json || {};\n  if (j.content && Array.isArray(j.content.parts)) {\n    return j.content.parts.map(p => p.text || '').join('');\n  }\n  if (typeof j.content === 'string') return j.content;\n  return '';\n}\nfunction extractAnthropicText(item) {\n  const j = item.json || {};\n  if (typeof j.merged_response === 'string' && j.merged_response) return j.merged_response;\n  if (Array.isArray(j.content)) {\n    return j.content.filter(c => c.type === 'text').map(c => c.text).join('');\n  }\n  if (typeof j.content === 'string') return j.content;\n  return '';\n}\nfunction extractOpenRouterText(item) {\n  const j = item.json || {};\n  if (j.choices && Array.isArray(j.choices) && j.choices[0] && j.choices[0].message) {\n    return j.choices[0].message.content || '';\n  }\n  return '';\n}\nlet verdictText = '';\nlet editorSource = 'gpt_oss_openrouter';\ntry {\n  const gptOssItem = $('Editor-in-Chief (GPT-OSS)').item;\n  const gptOssText = extractOpenRouterText(gptOssItem);\n  if (gptOssText) verdictText = gptOssText;\n} catch (e) { /* GPT-OSS branch didn't run in this execution path */ }\nif (!verdictText) {\n  try {\n    verdictText = extractGeminiText($('Editor-in-Chief Fallback (Gemini)').item);\n    editorSource = 'gemini_fallback';\n  } catch (e) { /* Gemini branch didn't run */ }\n}\nif (!verdictText) {\n  try {\n    verdictText = extractAnthropicText($('Editor-in-Chief Fallback (Claude)').item);\n    editorSource = 'claude_fallback';\n  } catch (e) { /* Claude branch didn't run, or all three tiers failed */ }\n}\nconst verdictMatch = verdictText.match(/VERDICT:\\s*(PASS|NEEDS REVISION|REJECT)/i);\nconst hookMatch = verdictText.match(/HOOK_SCORE:\\s*(\\d+)/i);\nconst reasonMatch = verdictText.match(/REASON:\\s*(.+)/i);\nreturn [{\n  json: {\n    ...$('Code in JavaScript').item.json,\n    relevanceScore: $('Parse Triage').item.json.relevanceScore,\n    format: $('Parse Triage').item.json.format,\n    contentPillar: $('Parse Triage').item.json.contentPillar,\n    objectiveTag: $('Parse Triage').item.json.objectiveTag,\n    aiDraft: extractGeminiText($('Parse Content Creation').item),\n    verdict: verdictMatch ? verdictMatch[1].toUpperCase() : 'NEEDS REVISION',\n    hookScore: hookMatch ? parseInt(hookMatch[1], 10) : null,\n    verdictReason: reasonMatch ? reasonMatch[1].trim() : '',\n    editorSource,\n    contentCreationSource: $('Parse Content Creation').item.json.contentCreationSource,\n    auditorSource: $('Parse Auditor').item.json.auditorSource,\n  },\n}];"
+  },
+  "type": "n8n-nodes-base.code",
+  "position": [
+    224,
+    160
+  ],
+  "id": "1a139738-056c-4e75-985f-651e16d45e2a",
+  "name": "Merge Verdict",
+  "typeVersion": 2
+}
+
