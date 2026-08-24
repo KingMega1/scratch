@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Toyota Egypt Newsroom",
+    "tier": "egypt",
+    "base_url": "https://toyota.com.eg",
+    "listing_url_template": "https://toyota.com.eg/en/newsroom/archive",
+    "image_selector": "img",
+    "image_attr": "src"
+  },
+  {
+    "name": "Hyundai Global Media",
+    "tier": "hq",
+    "base_url": "https://www.hyundai.com",
+    "listing_url_template": "https://www.hyundai.com/worldwide/en/newsroom",
+    "image_selector": "img",
+    "image_attr": "src"
+  }
+]
