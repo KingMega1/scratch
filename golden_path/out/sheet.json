@@ -15,10 +15,12 @@
       "CI-20260924-01_05_caveat.png",
       "CI-20260924-01_06_cta_source.png"
     ],
-    "Image": "chery_tiggo_7_pro__chery_my_web_002.webp",
+    "Image": "fixtures/images/chery_tiggo_7_pro__chery_my_web_002.webp",
     "Status": "Approved",
     "TelegramMessageId": 900000,
-    "QAWarnings": [],
+    "QAWarnings": [
+      "[image] usage rights unknown - confirm before posting"
+    ],
     "RejectReason": "",
     "ReplyText": "YES"
   },
@@ -38,11 +40,12 @@
       "CI-20260924-02_05_caveat.png",
       "CI-20260924-02_06_cta_source.png"
     ],
-    "Image": "seat_leon__drive_library.png",
+    "Image": "fixtures/images/seat_leon__drive_library.png",
     "Status": "Rejected",
     "TelegramMessageId": 900001,
     "QAWarnings": [
       "[source] headline figure comes from Masrawy (2026-08-23), 32 days old - re-check it is still current",
+      "[image] usage rights unknown - confirm before posting",
       "[image] image width 698px, will be upscaled on the cover",
       "[image] image original source not recorded - confirm usage rights before posting"
     ],
@@ -65,15 +68,16 @@
       "CI-20260924-03_05_caveat.png",
       "CI-20260924-03_06_cta_source.png"
     ],
-    "Image": "geely_monjaro__drive_library.png",
+    "Image": "",
     "Status": "QA-Failed",
     "QAFailures": [
-      "[image] image shows \"Geely Monjaro\", post is about \"geely monjaro em-i\" (missing: em-i)"
+      "[image] no image",
+      "[image] image has no provenance (source_url or library_ref)",
+      "[image] image registry status is \"none\", must be \"approved\" (no registry row for geely-monjaro-em-i)",
+      "[image] image vehicle not recorded - cannot confirm it shows this car"
     ],
     "QAWarnings": [
-      "[source] headline figure comes from Masrawy (2026-09-02), 22 days old - re-check it is still current",
-      "[image] image width 698px, will be upscaled on the cover",
-      "[image] image original source not recorded - confirm usage rights before posting"
+      "[source] headline figure comes from Masrawy (2026-09-02), 22 days old - re-check it is still current"
     ]
   },
   {
@@ -92,14 +96,16 @@
       "CI-20260924-04_05_caveat.png",
       "CI-20260924-04_06_cta_source.png"
     ],
-    "Image": "baic_u5_plus__drive_library.png",
+    "Image": "",
     "Status": "QA-Failed",
     "QAFailures": [
-      "[image] image registry status is \"rejected\", must be \"approved\""
+      "[image] no image",
+      "[image] image has no provenance (source_url or library_ref)",
+      "[image] image registry status is \"none\", must be \"approved\" (source_type third_party_listing not allowed; rights_status not_allowed)",
+      "[image] image vehicle not recorded - cannot confirm it shows this car"
     ],
     "QAWarnings": [
-      "[source] headline figure comes from Masrawy (2026-08-31), 24 days old - re-check it is still current",
-      "[image] image original source not recorded - confirm usage rights before posting"
+      "[source] headline figure comes from Masrawy (2026-08-31), 24 days old - re-check it is still current"
     ]
   },
   {
@@ -118,13 +124,14 @@
       "CI-20260924-05_05_caveat.png",
       "CI-20260924-05_06_cta_source.png"
     ],
-    "Image": "mg_zs__drive_library.png",
+    "Image": "",
     "Status": "QA-Failed",
     "QAFailures": [
-      "[image] image registry status is \"rejected\", must be \"approved\""
+      "[image] no image",
+      "[image] image has no provenance (source_url or library_ref)",
+      "[image] image registry status is \"none\", must be \"approved\" (source_type third_party_listing not allowed; rights_status not_allowed)",
+      "[image] image vehicle not recorded - cannot confirm it shows this car"
     ],
-    "QAWarnings": [
-      "[image] image original source not recorded - confirm usage rights before posting"
-    ]
+    "QAWarnings": []
   }
 ]

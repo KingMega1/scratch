@@ -47,4 +47,21 @@ t('reply NO without reason still rejects', () => assert.strictEqual(tgParseReply
 t('ambiguous reply changes nothing', () => assert.strictEqual(tgParseReply('yes but fix slide 3').decision, null));
 t('unrelated reply changes nothing', () => assert.strictEqual(tgParseReply('nice').decision, null));
 
+const { irResolve, irValidate, irSlug } = require('./src/image_registry');
+const rows = JSON.parse(fs.readFileSync(path.join(__dirname, 'image_registry.json'), 'utf8')).rows;
+const T = '2026-09-24';
+t('registry: slug', () => assert.strictEqual(irSlug('Geely', 'Monjaro EM-i'), 'geely-monjaro-em-i'));
+t('registry: every seeded row has a valid vehicle_id and required fields', () => rows.forEach(r => assert.ok(!irValidate(r, T).reasons.some(x => /missing|does not match/.test(x)), r.vehicle_id)));
+t('registry: Tiggo 7 Pro resolves (any variant)', () => assert.strictEqual(irResolve(rows, { make: 'Chery', model: 'Tiggo 7 Pro', variant: 'Comfort' }, T).entry.vehicle_id, 'chery-tiggo-7-pro'));
+t('registry: Monjaro EM-i does not fall back to ICE Monjaro', () => assert.strictEqual(irResolve(rows, { make: 'Geely', model: 'Monjaro EM-i' }, T).entry, null));
+t('registry: third-party listing screenshot blocked', () => assert.strictEqual(irResolve(rows, { make: 'MG', model: 'ZS' }, T).entry, null));
+t('registry: unverified vehicle match blocked', () => assert.ok(!irValidate({ ...rows[0], vehicle_match: 'unverified' }, T).usable));
+t('registry: AI image blocked', () => assert.ok(!irValidate({ ...rows[0], source_type: 'ai_generated' }, T).usable));
+t('registry: stale verification blocked', () => assert.ok(!irValidate({ ...rows[0], verified_date: '2025-01-01' }, T).usable));
+t('registry: unknown rights usable with warning', () => { const v = irValidate(rows[1], T); assert.ok(v.usable && v.warnings.length); });
+t('registry: exact variant row preferred over model row', () => {
+  const extra = [{ ...rows[0], vehicle_id: 'chery-tiggo-7-pro-luxury', variant: 'Luxury', image_location: 'x.webp' }, rows[0]];
+  assert.strictEqual(irResolve(extra, { make: 'Chery', model: 'Tiggo 7 Pro', variant: 'Luxury' }, T).entry.image_location, 'x.webp');
+});
+
 console.log(`\n${n} tests passed`);

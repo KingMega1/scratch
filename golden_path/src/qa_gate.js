@@ -173,7 +173,8 @@ function runQaGate(content, image, rendered, opts) {
   if (!img.url && !img.path) fail('image', 'no image');
   if (img.ai_generated) fail('image', 'image is AI-generated - real image required');
   if (!img.source_url && !img.library_ref) fail('image', 'image has no provenance (source_url or library_ref)');
-  if (img.registry_status !== 'approved') fail('image', `image registry status is ${JSON.stringify(img.registry_status || 'unknown')}, must be "approved"`);
+  if (img.registry_status !== 'approved') fail('image', `image registry status is ${JSON.stringify(img.registry_status || 'unknown')}, must be "approved"${(img.registry_reasons || []).length ? ' (' + img.registry_reasons.join('; ') + ')' : ''}`);
+  for (const w of img.registry_warnings || []) if (!/original source/.test(w)) warn('image', w);
   if (img.width && img.width < 600) fail('image', `image width ${img.width}px < 600px`);
   else if (img.width && img.width < 1000) warn('image', `image width ${img.width}px, will be upscaled on the cover`);
   if (!img.source_url && img.library_ref) warn('image', 'image original source not recorded - confirm usage rights before posting');

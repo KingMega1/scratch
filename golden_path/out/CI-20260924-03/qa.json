@@ -1,12 +1,13 @@
 {
   "passed": false,
   "failures": [
-    "[image] image shows \"Geely Monjaro\", post is about \"geely monjaro em-i\" (missing: em-i)"
+    "[image] no image",
+    "[image] image has no provenance (source_url or library_ref)",
+    "[image] image registry status is \"none\", must be \"approved\" (no registry row for geely-monjaro-em-i)",
+    "[image] image vehicle not recorded - cannot confirm it shows this car"
   ],
   "warnings": [
-    "[source] headline figure comes from Masrawy (2026-09-02), 22 days old - re-check it is still current",
-    "[image] image width 698px, will be upscaled on the cover",
-    "[image] image original source not recorded - confirm usage rights before posting"
+    "[source] headline figure comes from Masrawy (2026-09-02), 22 days old - re-check it is still current"
   ],
-  "checkedAt": "2026-09-24T11:25:41.737Z"
+  "checkedAt": "2026-09-24T11:56:27.798Z"
 }

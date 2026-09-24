@@ -33,9 +33,19 @@ PROMPT = open(os.path.join(GP, 'prompts', 'buyer_check_content.md'), encoding='u
 assert '{{' not in PROMPT and '}}' not in PROMPT and '`' not in PROMPT
 
 wf = json.load(open(SRC_WF, encoding='utf-8'))
+
+import sys
+sys.path.insert(0, HERE)
+from scrub_secrets import scrub, scan  # noqa: E402
+changes = []
+scrubbed = scrub(wf)  # a fresh live export may still carry hardcoded secrets
+for _n in wf['nodes']:
+    if _n.get('credentials', {}).get('httpHeaderAuth', {}).get('name') == 'CarIndex Media Render API':
+        changes.append(f'| security | {_n["name"]} | media-render key via n8n credential "CarIndex Media Render API" (was hardcoded X-Api-Key header) |')
+    if '$env.TELEGRAM_BOT_TOKEN' in str(_n.get('parameters', {}).get('url', '')):
+        changes.append(f'| security | {_n["name"]} | bot token via env var TELEGRAM_BOT_TOKEN (was hardcoded in URL) |')
 nodes = {n['name']: n for n in wf['nodes']}
 conn = wf['connections']
-changes = []
 
 
 def log(kind, name, what):
@@ -356,7 +366,12 @@ for dead in ('Aggregate Rendered Slides', 'Download Slide for Telegram', 'Merge 
     conn.pop(dead, None)
 
 wf['name'] = wf['name'] + ' - golden path'
-json.dump(wf, open(OUT_WF, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
+wf.pop('activeVersion', None)  # read-only snapshot of the published version; not part of an import
+out_text = json.dumps(wf, ensure_ascii=False, indent=2)
+assert not scan(out_text), f'secret pattern left in output: {scan(out_text)}'
+open(OUT_WF, 'w', encoding='utf-8').write(out_text + '\n')
+for c in scrubbed:
+    changes.append(f'| security | {c.split(":")[0]} | {c.split(": ", 1)[1]} |')
 
 with open(OUT_MD, 'w', encoding='utf-8') as f:
     f.write('# n8n changes applied by patch_workflow.py\n\n')

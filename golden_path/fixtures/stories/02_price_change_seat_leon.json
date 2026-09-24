@@ -10,48 +10,184 @@
   },
   "curation": "Official distributor price cut, one vehicle (Leon 2026 Advance). Passes pre-filter (brand 'seat' + price keyword).",
   "fact_check": [
-    {"fact": "Leon 2026 Advance 1,599,000 -> 1,499,000 (cut 100,000)", "result": "confirmed", "how": "web search 2026-09-24: Masrawy 2026-08-23, Egypt Telegraph, Egypt Automotive, Misr Cars report the same figures"},
-    {"fact": "Leon engine / power figures", "result": "missing", "how": "not in the verified sources; left as missing"},
-    {"fact": "Current price as of 2026-09-24", "result": "not re-confirmed", "how": "story is 32 days old; no newer SEAT list found in search"}
+    {
+      "fact": "Leon 2026 Advance 1,599,000 -> 1,499,000 (cut 100,000)",
+      "result": "confirmed",
+      "how": "web search 2026-09-24: Masrawy 2026-08-23, Egypt Telegraph, Egypt Automotive, Misr Cars report the same figures"
+    },
+    {
+      "fact": "Leon engine / power figures",
+      "result": "missing",
+      "how": "not in the verified sources; left as missing"
+    },
+    {
+      "fact": "Current price as of 2026-09-24",
+      "result": "not re-confirmed",
+      "how": "story is 32 days old; no newer SEAT list found in search"
+    }
   ],
-  "image_file": "seat_leon__drive_library.png",
   "content": {
     "language": "ar-en",
     "format": "buyer_check",
     "story_type": "price_change",
     "objective": "save",
-    "car": {"make": "SEAT", "model": "Leon", "variant": "Advance", "model_year": "2026", "market": "EG"},
-    "hook": {"ar": "سيات ليون نزلت 100,000 جنيه", "en": "SEAT Leon is EGP 100,000 cheaper than before"},
+    "car": {
+      "make": "SEAT",
+      "model": "Leon",
+      "variant": "Advance",
+      "model_year": "2026",
+      "market": "EG"
+    },
+    "hook": {
+      "ar": "سيات ليون نزلت 100,000 جنيه",
+      "en": "SEAT Leon is EGP 100,000 cheaper than before"
+    },
     "key_data": [
-      {"id": "k1", "label_ar": "السعر الجديد (Advance)", "label_en": "New price (Advance)", "value": "1,499,000", "unit": "EGP", "status": "verified", "source_id": "s1", "note": "Kayan Egypt list, Aug 2026"},
-      {"id": "k2", "label_ar": "السعر قبل التخفيض", "label_en": "Price before the cut", "value": "1,599,000", "unit": "EGP", "status": "verified", "source_id": "s1", "note": ""},
-      {"id": "k3", "label_ar": "قيمة التخفيض", "label_en": "Cut", "value": "100,000", "unit": "EGP", "status": "verified", "source_id": null, "derived": {"op": "diff", "of": ["k2", "k1"]}, "note": ""},
-      {"id": "k4", "label_ar": "القوة", "label_en": "Power", "value": null, "unit": "hp", "status": "missing", "source_id": null, "note": "not in sources"}
+      {
+        "id": "k1",
+        "label_ar": "السعر الجديد (Advance)",
+        "label_en": "New price (Advance)",
+        "value": "1,499,000",
+        "unit": "EGP",
+        "status": "verified",
+        "source_id": "s1",
+        "note": "Kayan Egypt list, Aug 2026"
+      },
+      {
+        "id": "k2",
+        "label_ar": "السعر قبل التخفيض",
+        "label_en": "Price before the cut",
+        "value": "1,599,000",
+        "unit": "EGP",
+        "status": "verified",
+        "source_id": "s1",
+        "note": ""
+      },
+      {
+        "id": "k3",
+        "label_ar": "قيمة التخفيض",
+        "label_en": "Cut",
+        "value": "100,000",
+        "unit": "EGP",
+        "status": "verified",
+        "source_id": null,
+        "derived": {
+          "op": "diff",
+          "of": [
+            "k2",
+            "k1"
+          ]
+        },
+        "note": ""
+      },
+      {
+        "id": "k4",
+        "label_ar": "القوة",
+        "label_en": "Power",
+        "value": null,
+        "unit": "hp",
+        "status": "missing",
+        "source_id": null,
+        "note": "not in sources"
+      }
     ],
     "slides": [
-      {"n": 1, "role": "cover", "title_ar": "سيات ليون", "title_en": "SEAT Leon", "fact_ids": ["k3"]},
-      {"n": 2, "role": "key_fact", "title_ar": "سعر ليون Advance بعد التخفيض", "title_en": "Leon Advance price after the cut",
-       "body_ar": "كيان إيجيبت، وكيل سيات في مصر، نزّلت السعر من 1,599,000 جنيه.", "body_en": "Kayan Egypt, SEAT's Egypt distributor, cut it from EGP 1,599,000.", "fact_ids": ["k1", "k2"]},
-      {"n": 3, "role": "why_it_matters", "title_ar": "تخفيض في سوق أغلبه زيادات", "title_en": "A cut, not an increase",
-       "body_ar": "الفرق 100,000 جنيه على نفس الفئة ونفس الموديل 2026.", "body_en": "The gap is EGP 100,000 on the same trim and the same 2026 model.", "fact_ids": ["k3", "k2", "k1"]},
-      {"n": 4, "role": "strengths", "title_ar": "نقاط القوة", "title_en": "Strengths", "fact_ids": [],
-       "points": [
-         {"ar": "سعر رسمي من الوكيل، مش عرض معرض", "en": "Official distributor list price, not a showroom offer", "fact_ids": []},
-         {"ar": "التخفيض على فئة Advance موديل 2026", "en": "The cut applies to the 2026 Advance trim", "fact_ids": []}
-       ]},
-      {"n": 5, "role": "caveat", "title_ar": "قبل ما تقرر", "title_en": "Before you decide",
-       "body_ar": "الخبر من أغسطس، ومفيش مواصفات القوة في المصادر. اتأكد من السعر الحالي عند كيان إيجيبت.",
-       "body_en": "The news is from August and the sources do not list power figures. Confirm the current price with Kayan Egypt.", "fact_ids": ["k4"],
-       "skip_if": [
-         {"ar": "لو عايز SUV مش هاتشباك", "en": "If you want an SUV, not a hatchback"}
-       ]},
-      {"n": 6, "role": "cta_source", "title_ar": "احفظها لو بتقارن هاتشباك", "title_en": "Save it if you are comparing hatchbacks", "fact_ids": []}
+      {
+        "n": 1,
+        "role": "cover",
+        "title_ar": "سيات ليون",
+        "title_en": "SEAT Leon",
+        "fact_ids": [
+          "k3"
+        ]
+      },
+      {
+        "n": 2,
+        "role": "key_fact",
+        "title_ar": "سعر ليون Advance بعد التخفيض",
+        "title_en": "Leon Advance price after the cut",
+        "body_ar": "كيان إيجيبت، وكيل سيات في مصر، نزّلت السعر من 1,599,000 جنيه.",
+        "body_en": "Kayan Egypt, SEAT's Egypt distributor, cut it from EGP 1,599,000.",
+        "fact_ids": [
+          "k1",
+          "k2"
+        ]
+      },
+      {
+        "n": 3,
+        "role": "why_it_matters",
+        "title_ar": "تخفيض في سوق أغلبه زيادات",
+        "title_en": "A cut, not an increase",
+        "body_ar": "الفرق 100,000 جنيه على نفس الفئة ونفس الموديل 2026.",
+        "body_en": "The gap is EGP 100,000 on the same trim and the same 2026 model.",
+        "fact_ids": [
+          "k3",
+          "k2",
+          "k1"
+        ]
+      },
+      {
+        "n": 4,
+        "role": "strengths",
+        "title_ar": "نقاط القوة",
+        "title_en": "Strengths",
+        "fact_ids": [],
+        "points": [
+          {
+            "ar": "سعر رسمي من الوكيل، مش عرض معرض",
+            "en": "Official distributor list price, not a showroom offer",
+            "fact_ids": []
+          },
+          {
+            "ar": "التخفيض على فئة Advance موديل 2026",
+            "en": "The cut applies to the 2026 Advance trim",
+            "fact_ids": []
+          }
+        ]
+      },
+      {
+        "n": 5,
+        "role": "caveat",
+        "title_ar": "قبل ما تقرر",
+        "title_en": "Before you decide",
+        "body_ar": "الخبر من أغسطس، ومفيش مواصفات القوة في المصادر. اتأكد من السعر الحالي عند كيان إيجيبت.",
+        "body_en": "The news is from August and the sources do not list power figures. Confirm the current price with Kayan Egypt.",
+        "fact_ids": [
+          "k4"
+        ],
+        "skip_if": [
+          {
+            "ar": "لو عايز SUV مش هاتشباك",
+            "en": "If you want an SUV, not a hatchback"
+          }
+        ]
+      },
+      {
+        "n": 6,
+        "role": "cta_source",
+        "title_ar": "احفظها لو بتقارن هاتشباك",
+        "title_en": "Save it if you are comparing hatchbacks",
+        "fact_ids": []
+      }
     ],
-    "caveat": {"ar": "الخبر من أغسطس والسعر محتاج تأكيد من الوكيل.", "en": "August news; confirm the current price with the dealer."},
+    "caveat": {
+      "ar": "الخبر من أغسطس والسعر محتاج تأكيد من الوكيل.",
+      "en": "August news; confirm the current price with the dealer."
+    },
     "sources": [
-      {"id": "s1", "outlet": "Masrawy", "url": "https://www.masrawy.com/autos/autos_news/details/2026/8/23/3037084/%D8%B3%D9%8A%D8%A7%D8%AA-%D8%AA%D9%81%D8%A7%D8%AC%D8%A6-%D8%A7%D9%84%D8%B3%D9%88%D9%82-%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A-%D8%A8%D8%AA%D8%AE%D9%81%D9%8A%D8%B6%D8%A7%D8%AA-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D8%B9%D9%84%D9%89-%D8%B7%D8%B1%D8%A7%D8%B2%D8%A7%D8%AA%D9%87%D8%A7-%D8%AA%D8%B5%D9%84-%D9%84%D9%80100-%D8%A3%D9%84%D9%81-%D8%AC%D9%86%D9%8A%D9%87", "published": "2026-08-23", "what": "SEAT Egypt price cuts: Leon 1,599,000 -> 1,499,000"}
+      {
+        "id": "s1",
+        "outlet": "Masrawy",
+        "url": "https://www.masrawy.com/autos/autos_news/details/2026/8/23/3037084/%D8%B3%D9%8A%D8%A7%D8%AA-%D8%AA%D9%81%D8%A7%D8%AC%D8%A6-%D8%A7%D9%84%D8%B3%D9%88%D9%82-%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A-%D8%A8%D8%AA%D8%AE%D9%81%D9%8A%D8%B6%D8%A7%D8%AA-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D8%B9%D9%84%D9%89-%D8%B7%D8%B1%D8%A7%D8%B2%D8%A7%D8%AA%D9%87%D8%A7-%D8%AA%D8%B5%D9%84-%D9%84%D9%80100-%D8%A3%D9%84%D9%81-%D8%AC%D9%86%D9%8A%D9%87",
+        "published": "2026-08-23",
+        "what": "SEAT Egypt price cuts: Leon 1,599,000 -> 1,499,000"
+      }
     ],
-    "visual_direction": {"subject": "SEAT Leon hatchback exterior", "angle": "front three-quarter", "notes": ""}
+    "visual_direction": {
+      "subject": "SEAT Leon hatchback exterior",
+      "angle": "front three-quarter",
+      "notes": ""
+    }
   },
   "telegram_reply": "NO price is from August, recheck Kayan list first"
 }

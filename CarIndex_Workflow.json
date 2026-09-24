@@ -2229,19 +2229,13 @@
       "parameters": {
         "method": "POST",
         "url": "http://carindex-media-render:8080/store?ext=png",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "X-Api-Key",
-              "value": "fe6f6cf21e149c0d06efeff792b5d24bb5314b0cfd531aef"
-            }
-          ]
-        },
+        "sendHeaders": false,
         "sendBody": true,
         "contentType": "binaryData",
         "inputDataFieldName": "data",
-        "options": {}
+        "options": {},
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth"
       },
       "type": "n8n-nodes-base.httpRequest",
       "position": [
@@ -2250,7 +2244,13 @@
       ],
       "id": "3cfebc23-4353-4d04-8453-d84877b88353",
       "name": "Upload Generated Image",
-      "typeVersion": 4.2
+      "typeVersion": 4.2,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "SET_AFTER_CREATING_CREDENTIAL",
+          "name": "CarIndex Media Render API"
+        }
+      }
     },
     {
       "parameters": {
@@ -2269,19 +2269,13 @@
       "parameters": {
         "method": "POST",
         "url": "http://carindex-media-render:8080/render-slide",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "X-Api-Key",
-              "value": "fe6f6cf21e149c0d06efeff792b5d24bb5314b0cfd531aef"
-            }
-          ]
-        },
+        "sendHeaders": false,
         "sendBody": true,
         "specifyBody": "json",
         "jsonBody": "={{ JSON.stringify({ html: $json.html, width: 1080, height: 1350 }) }}",
-        "options": {}
+        "options": {},
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth"
       },
       "type": "n8n-nodes-base.httpRequest",
       "position": [
@@ -2291,7 +2285,13 @@
       "id": "967bbae5-a933-42ee-8bd8-c428e39e183f",
       "name": "Render Slide to PNG",
       "typeVersion": 4.2,
-      "onError": "continueRegularOutput"
+      "onError": "continueRegularOutput",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "SET_AFTER_CREATING_CREDENTIAL",
+          "name": "CarIndex Media Render API"
+        }
+      }
     },
     {
       "parameters": {
@@ -2662,7 +2662,7 @@
     },
     {
       "parameters": {
-        "url": "=https://api.telegram.org/bot8410402462:AAGUXzC_Ub0VTmF6vr1Ls_U_wtSXQqhMR6k/getUpdates?offset={{ $json.offset }}&timeout=0",
+        "url": "=https://api.telegram.org/bot{{ $env.TELEGRAM_BOT_TOKEN }}/getUpdates?offset={{ $json.offset }}&timeout=0",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -4155,19 +4155,13 @@
       "parameters": {
         "method": "POST",
         "url": "http://carindex-media-render:8080/render",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "X-Api-Key",
-              "value": "fe6f6cf21e149c0d06efeff792b5d24bb5314b0cfd531aef"
-            }
-          ]
-        },
+        "sendHeaders": false,
         "sendBody": true,
         "specifyBody": "json",
         "jsonBody": "={{ JSON.stringify({ scenes: $json.videoScenes, voiceover_url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3' }) }",
-        "options": {}
+        "options": {},
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth"
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
@@ -4177,7 +4171,13 @@
       ],
       "id": "a1b2c3d4-2222-4a2b-9c3d-4e5f6a7b8c02",
       "name": "Call Media Render Video",
-      "onError": "continueRegularOutput"
+      "onError": "continueRegularOutput",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "SET_AFTER_CREATING_CREDENTIAL",
+          "name": "CarIndex Media Render API"
+        }
+      }
     },
     {
       "parameters": {
@@ -10307,19 +10307,13 @@
         "parameters": {
           "method": "POST",
           "url": "http://carindex-media-render:8080/store?ext=png",
-          "sendHeaders": true,
-          "headerParameters": {
-            "parameters": [
-              {
-                "name": "X-Api-Key",
-                "value": "fe6f6cf21e149c0d06efeff792b5d24bb5314b0cfd531aef"
-              }
-            ]
-          },
+          "sendHeaders": false,
           "sendBody": true,
           "contentType": "binaryData",
           "inputDataFieldName": "data",
-          "options": {}
+          "options": {},
+          "authentication": "genericCredentialType",
+          "genericAuthType": "httpHeaderAuth"
         },
         "type": "n8n-nodes-base.httpRequest",
         "position": [
@@ -10328,7 +10322,13 @@
         ],
         "id": "3cfebc23-4353-4d04-8453-d84877b88353",
         "name": "Upload Generated Image",
-        "typeVersion": 4.2
+        "typeVersion": 4.2,
+        "credentials": {
+          "httpHeaderAuth": {
+            "id": "SET_AFTER_CREATING_CREDENTIAL",
+            "name": "CarIndex Media Render API"
+          }
+        }
       },
       {
         "parameters": {
@@ -10347,19 +10347,13 @@
         "parameters": {
           "method": "POST",
           "url": "http://carindex-media-render:8080/render-slide",
-          "sendHeaders": true,
-          "headerParameters": {
-            "parameters": [
-              {
-                "name": "X-Api-Key",
-                "value": "fe6f6cf21e149c0d06efeff792b5d24bb5314b0cfd531aef"
-              }
-            ]
-          },
+          "sendHeaders": false,
           "sendBody": true,
           "specifyBody": "json",
           "jsonBody": "={{ JSON.stringify({ html: $json.html, width: 1080, height: 1350 }) }}",
-          "options": {}
+          "options": {},
+          "authentication": "genericCredentialType",
+          "genericAuthType": "httpHeaderAuth"
         },
         "type": "n8n-nodes-base.httpRequest",
         "position": [
@@ -10369,7 +10363,13 @@
         "id": "967bbae5-a933-42ee-8bd8-c428e39e183f",
         "name": "Render Slide to PNG",
         "typeVersion": 4.2,
-        "onError": "continueRegularOutput"
+        "onError": "continueRegularOutput",
+        "credentials": {
+          "httpHeaderAuth": {
+            "id": "SET_AFTER_CREATING_CREDENTIAL",
+            "name": "CarIndex Media Render API"
+          }
+        }
       },
       {
         "parameters": {
@@ -10740,7 +10740,7 @@
       },
       {
         "parameters": {
-          "url": "=https://api.telegram.org/bot8410402462:AAGUXzC_Ub0VTmF6vr1Ls_U_wtSXQqhMR6k/getUpdates?offset={{ $json.offset }}&timeout=0",
+          "url": "=https://api.telegram.org/bot{{ $env.TELEGRAM_BOT_TOKEN }}/getUpdates?offset={{ $json.offset }}&timeout=0",
           "options": {}
         },
         "type": "n8n-nodes-base.httpRequest",
@@ -12233,19 +12233,13 @@
         "parameters": {
           "method": "POST",
           "url": "http://carindex-media-render:8080/render",
-          "sendHeaders": true,
-          "headerParameters": {
-            "parameters": [
-              {
-                "name": "X-Api-Key",
-                "value": "fe6f6cf21e149c0d06efeff792b5d24bb5314b0cfd531aef"
-              }
-            ]
-          },
+          "sendHeaders": false,
           "sendBody": true,
           "specifyBody": "json",
           "jsonBody": "={{ JSON.stringify({ scenes: $json.videoScenes, voiceover_url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3' }) }",
-          "options": {}
+          "options": {},
+          "authentication": "genericCredentialType",
+          "genericAuthType": "httpHeaderAuth"
         },
         "type": "n8n-nodes-base.httpRequest",
         "typeVersion": 4.2,
@@ -12255,7 +12249,13 @@
         ],
         "id": "a1b2c3d4-2222-4a2b-9c3d-4e5f6a7b8c02",
         "name": "Call Media Render Video",
-        "onError": "continueRegularOutput"
+        "onError": "continueRegularOutput",
+        "credentials": {
+          "httpHeaderAuth": {
+            "id": "SET_AFTER_CREATING_CREDENTIAL",
+            "name": "CarIndex Media Render API"
+          }
+        }
       },
       {
         "parameters": {

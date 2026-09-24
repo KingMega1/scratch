@@ -11,12 +11,13 @@ const { chromium } = require('playwright');
 const { buildBuyerCheckSlides } = require('./src/buyer_check_render');
 const { runQaGate } = require('./src/qa_gate');
 const { tgApprovalText, tgParseReply } = require('./src/telegram_approval');
+const { irResolve, irToImageRecord } = require('./src/image_registry');
 
 const ROOT = __dirname;
 const TODAY = '2026-09-24';
 const OUT = path.join(ROOT, 'out');
 const SHEET = path.join(OUT, 'sheet.json');
-const registry = JSON.parse(fs.readFileSync(path.join(ROOT, 'image_registry.json'), 'utf8')).images;
+const registry = JSON.parse(fs.readFileSync(path.join(ROOT, 'image_registry.json'), 'utf8')).rows;
 const fileUrl = p => 'file://' + path.resolve(p);
 
 function pngSize(file) {
@@ -48,20 +49,14 @@ async function runStory(browser, storyFile, idx) {
   fs.writeFileSync(path.join(dir, 'content.json'), JSON.stringify(story.content, null, 2));
 
   // REAL IMAGE
-  const reg = registry[story.image_file] || {};
-  const imagePath = path.join(ROOT, 'fixtures', 'images', story.image_file);
-  const image = {
-    path: fs.existsSync(imagePath) ? imagePath : null,
-    url: fs.existsSync(imagePath) ? fileUrl(imagePath) : null,
-    source_url: reg.source_url || null,
-    library_ref: reg.library_ref || null,
-    credit: reg.credit || 'unknown',
-    ai_generated: false,
-    registry_status: reg.status || 'unlisted',
-    vehicle: reg.vehicle || null,
-    width: reg.width, height: reg.height,
-  };
-  step('REAL IMAGE', { file: story.image_file, status: image.registry_status, vehicle: image.vehicle, credit: image.credit });
+  // resolved by vehicle (brand/model/variant), not by file name
+  const res = irResolve(registry, story.content.car, TODAY);
+  const image = irToImageRecord(res, loc => {
+    const p = path.join(ROOT, loc);
+    return fs.existsSync(p) ? fileUrl(p) : '';
+  });
+  image.path = image.url ? image.url.replace('file://', '') : null;
+  step('REAL IMAGE', { vehicle_id: res.entry ? res.entry.vehicle_id : null, status: image.registry_status, reasons: image.registry_reasons || [], vehicle: image.vehicle, credit: image.credit });
 
   // TEMPLATE
   const slides = buildBuyerCheckSlides(story.content, {
@@ -101,7 +96,7 @@ async function runStory(browser, storyFile, idx) {
   const base = {
     PostId: postId, Date: TODAY, Title: story.storyTitle, URL: story.source_article.url,
     Source: story.source_article.outlet, Format: 'Buyer Check', StoryType: story.content.story_type,
-    SlideFiles: rendered.map(r => r.filename), Image: story.image_file,
+    SlideFiles: rendered.map(r => r.filename), Image: res.entry ? res.entry.image_location : '',
   };
 
   if (!qa.passed) {
@@ -141,7 +136,7 @@ async function runStory(browser, storyFile, idx) {
     for (const r of rendered) fs.copyFileSync(r.path, path.join(fin, r.filename));
     fs.writeFileSync(path.join(fin, 'manifest.json'), JSON.stringify({
       postId, status: 'APPROVED', approvedAt: TODAY, story: story.storyTitle,
-      files: rendered.map(r => r.filename), sources: story.content.sources, image: { file: story.image_file, credit: image.credit, source_url: image.source_url },
+      files: rendered.map(r => r.filename), sources: story.content.sources, image: { vehicle_id: res.entry.vehicle_id, location: res.entry.image_location, credit: image.credit, source_url: image.source_url, rights_status: res.entry.rights_status },
       published: false,
     }, null, 2));
     step('FINAL APPROVED ASSET', path.relative(ROOT, fin));

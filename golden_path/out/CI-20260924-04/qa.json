@@ -1,11 +1,13 @@
 {
   "passed": false,
   "failures": [
-    "[image] image registry status is \"rejected\", must be \"approved\""
+    "[image] no image",
+    "[image] image has no provenance (source_url or library_ref)",
+    "[image] image registry status is \"none\", must be \"approved\" (source_type third_party_listing not allowed; rights_status not_allowed)",
+    "[image] image vehicle not recorded - cannot confirm it shows this car"
   ],
   "warnings": [
-    "[source] headline figure comes from Masrawy (2026-08-31), 24 days old - re-check it is still current",
-    "[image] image original source not recorded - confirm usage rights before posting"
+    "[source] headline figure comes from Masrawy (2026-08-31), 24 days old - re-check it is still current"
   ],
-  "checkedAt": "2026-09-24T11:25:47.595Z"
+  "checkedAt": "2026-09-24T11:56:33.191Z"
 }

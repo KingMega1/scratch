@@ -53,7 +53,18 @@ Failures found and fixes:
 5. Drive photo library: BAIC U5 Plus and MG ZS files are ContactCars gallery screenshots (arrows, watermark) → `image_registry.json` marks them rejected; QA requires `approved`.
 6. Template: underfilled slides 4–6, LTR icon rows, serif fallback → fixed in `src/buyer_check_render.js`.
 
-## Deploy (not done — n8n host not reachable from this environment)
-1. Pull the live workflow, diff against `../CarIndex_Workflow.json` (Drive export 2026-08-29); re-run `patch_workflow.py` on the live export if it changed.
-2. Import `n8n/CarIndex_Workflow.golden.json` as a copy, run once via Manual Test Trigger.
-3. Add Sheet headers: `SlideFiles`, `QA`, `RejectReason`.
+## Security
+`n8n/scrub_secrets.py` removes hardcoded secrets from any export (also inside the embedded `activeVersion`) and fails if a known key pattern remains. Both workflow JSONs in this repo are scrubbed. Git history still contains the old values (repo is public).
+- media-render key → n8n credential **Header Auth** named `CarIndex Media Render API` (header `X-Api-Key`) on Render Slide to PNG, Upload Generated Image, Call Media Render Video.
+- Telegram bot token → `{{ $env.TELEGRAM_BOT_TOKEN }}` in Poll Telegram Updates (needs the env var on the n8n container and `N8N_BLOCK_ENV_ACCESS_IN_NODE=false`).
+
+## Image registry
+Schema + rules: `src/image_registry.js` (header). Seed data: `image_registry.json` (6 rows, same columns as a Sheet tab `ImageRegistry`). Resolved by brand/model/variant; exact variant first, then model-wide; no fallback across model names (Monjaro ≠ Monjaro EM-i). Blocked: `third_party_listing`, `ai_generated`, `rights_status=not_allowed`, `vehicle_match≠verified`, verification older than 365 days. Rights `unknown` passes with a QA warning. Tested in `test_qa.js`.
+
+## Live deploy runbook (blocked: n8n host not reachable from this environment)
+1. `curl -H "X-N8N-API-KEY: …" http://<host>:5678/api/v1/workflows/smn2kQ7BP9H926pV > live.json`
+2. `python3 n8n/reconcile.py <base: git show 70b0695:CarIndex_Workflow.json> live.json n8n/CarIndex_Workflow.golden.json`
+3. If `conflicting` / `requires decision` are empty: copy live.json over `../CarIndex_Workflow.json`, run `python3 n8n/patch_workflow.py`, import the output as a **new, inactive** workflow. Otherwise resolve those nodes first.
+4. Create credential `CarIndex Media Render API`; set `TELEGRAM_BOT_TOKEN`.
+5. Sheet1: append headers `SlideFiles`, `QA`, `RejectReason` after the last existing column (no existing column moved).
+6. Run Manual Test Trigger once; reply YES, then run a second story and reply `NO <reason>`.

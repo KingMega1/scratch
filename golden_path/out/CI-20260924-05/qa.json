@@ -1,10 +1,11 @@
 {
   "passed": false,
   "failures": [
-    "[image] image registry status is \"rejected\", must be \"approved\""
+    "[image] no image",
+    "[image] image has no provenance (source_url or library_ref)",
+    "[image] image registry status is \"none\", must be \"approved\" (source_type third_party_listing not allowed; rights_status not_allowed)",
+    "[image] image vehicle not recorded - cannot confirm it shows this car"
   ],
-  "warnings": [
-    "[image] image original source not recorded - confirm usage rights before posting"
-  ],
-  "checkedAt": "2026-09-24T11:25:53.467Z"
+  "warnings": [],
+  "checkedAt": "2026-09-24T11:56:38.215Z"
 }

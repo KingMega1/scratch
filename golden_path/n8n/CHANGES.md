@@ -4,6 +4,10 @@ Source: `CarIndex_Workflow.json` (Drive export, updatedAt 2026-08-29). Output: `
 
 | Type | Node | Change |
 |---|---|---|
+| security | Upload Generated Image | media-render key via n8n credential "CarIndex Media Render API" (was hardcoded X-Api-Key header) |
+| security | Render Slide to PNG | media-render key via n8n credential "CarIndex Media Render API" (was hardcoded X-Api-Key header) |
+| security | Poll Telegram Updates | bot token via env var TELEGRAM_BOT_TOKEN (was hardcoded in URL) |
+| security | Call Media Render Video | media-render key via n8n credential "CarIndex Media Render API" (was hardcoded X-Api-Key header) |
 | prompt | Content Creation | System prompt replaced with golden_path/prompts/buyer_check_content.md: structured Buyer Check JSON, 6 fixed slides, every number must be a sourced key_data entry, missing = null. Removed: carousel design fields, spec_facts "use general market knowledge" and competitor "best estimate" instructions, platform captions. temperature 0.7 -> 0.2. |
 | prompt | Content Creation Fallback (Gemini) | Same prompt as primary (was a known-stale older prompt). |
 | code | Build Image Candidates | Keeps only high-confidence OEM matches (model name in URL). |
