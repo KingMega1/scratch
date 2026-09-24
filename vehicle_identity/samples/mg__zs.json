@@ -1,0 +1,273 @@
+{
+  "model_id": "mg/zs",
+  "brand_id": "mg",
+  "display": "ZS",
+  "brand_display": "MG",
+  "aliases": [
+    [
+      "ContactCars",
+      "MG",
+      "ZS"
+    ],
+    [
+      "EgyCar",
+      "MG",
+      "ZS"
+    ],
+    [
+      "Hatla2ee(summary)",
+      "MG",
+      "ZS"
+    ],
+    [
+      "vehicle_candidates.csv",
+      "MG",
+      "ZS"
+    ]
+  ],
+  "price_range_egp": {
+    "verified": [
+      1075000,
+      1075000
+    ],
+    "verified_basis": "trims whose official price is agreed by >=2 publishers or given by an official source",
+    "observed_all": [
+      1075000,
+      1150000
+    ],
+    "observed_by_model_year": {
+      "2026": [
+        1075000,
+        1150000
+      ],
+      "2027": [
+        1075000,
+        1150000
+      ]
+    },
+    "summary_rows": [
+      {
+        "source": "Hatla2ee(summary)",
+        "label": "(1 class)",
+        "model_year": "2026",
+        "range": [
+          1075000,
+          1075000
+        ],
+        "raw": "1,075,000"
+      },
+      {
+        "source": "Hatla2ee(summary)",
+        "label": "Facelift (1 class)",
+        "model_year": "2027",
+        "range": [
+          1150000,
+          1150000
+        ],
+        "raw": "1,150,000"
+      }
+    ],
+    "trims_verified": 1,
+    "trims_priced": 3,
+    "trims_total": 3,
+    "corroborated_by_summary": [],
+    "range_status": "verified_trims"
+  },
+  "powertrains": {
+    "state": "uniform",
+    "value": "petrol",
+    "trims_reporting": 2,
+    "trims_unknown": 1
+  },
+  "transmissions": {
+    "state": "uniform",
+    "value": "cvt",
+    "trims_reporting": 2,
+    "trims_unknown": 1
+  },
+  "engine_cc": {
+    "state": "uniform",
+    "value": 1500,
+    "trims_reporting": 2,
+    "trims_unknown": 1
+  },
+  "power_hp": {
+    "state": "varies_by_variant",
+    "values": {
+      "119.0": 1,
+      "120.0": 1
+    },
+    "trims_unknown": 1
+  },
+  "seats": {
+    "state": "unknown"
+  },
+  "body_type": {
+    "state": "uniform",
+    "value": "suv",
+    "trims_reporting": 3,
+    "trims_unknown": 0
+  },
+  "model_years_observed": {
+    "2026": [
+      "ContactCars",
+      "Hatla2ee(summary)"
+    ],
+    "2027": [
+      "EgyCar",
+      "Hatla2ee(summary)"
+    ]
+  },
+  "variants": [
+    {
+      "trim_key": "comfort",
+      "labels_by_source": {
+        "ContactCars": [
+          "Comfort"
+        ],
+        "EgyCar": [
+          "Comfort"
+        ]
+      },
+      "model_years": [
+        "2026",
+        "2027"
+      ],
+      "official_price_status": "agreed",
+      "official_prices": [
+        {
+          "value": 1075000,
+          "source": "ContactCars",
+          "date": "2026-09-10",
+          "model_year": "2026"
+        },
+        {
+          "value": 1075000,
+          "source": "EgyCar",
+          "date": "2026-08-05",
+          "model_year": "2027"
+        }
+      ],
+      "market_prices": [
+        {
+          "value": 1080000,
+          "source": "ContactCars",
+          "date": "2026-09-10"
+        }
+      ],
+      "fuel_types": [
+        "petrol"
+      ],
+      "transmissions": [
+        "cvt"
+      ],
+      "engine_cc": [
+        1500
+      ],
+      "power_hp": [
+        119.0
+      ],
+      "seats": []
+    },
+    {
+      "trim_key": "luxuryfaceliftmce",
+      "labels_by_source": {
+        "ContactCars": [
+          "Luxury Facelift MCE"
+        ]
+      },
+      "model_years": [
+        "2026"
+      ],
+      "official_price_status": "single_source",
+      "official_prices": [
+        {
+          "value": 1150000,
+          "source": "ContactCars",
+          "date": "2026-09-10",
+          "model_year": "2026"
+        }
+      ],
+      "market_prices": [
+        {
+          "value": 1150000,
+          "source": "ContactCars",
+          "date": "2026-09-10"
+        }
+      ],
+      "fuel_types": [
+        "petrol"
+      ],
+      "transmissions": [
+        "cvt"
+      ],
+      "engine_cc": [],
+      "power_hp": [
+        120.0
+      ],
+      "seats": []
+    },
+    {
+      "trim_key": "plus",
+      "labels_by_source": {
+        "EgyCar": [
+          "Plus"
+        ]
+      },
+      "model_years": [
+        "2027"
+      ],
+      "official_price_status": "single_source",
+      "official_prices": [
+        {
+          "value": 1150000,
+          "source": "EgyCar",
+          "date": "2026-08-05",
+          "model_year": "2027"
+        }
+      ],
+      "market_prices": [],
+      "fuel_types": [],
+      "transmissions": [],
+      "engine_cc": [
+        1500
+      ],
+      "power_hp": [],
+      "seats": []
+    }
+  ],
+  "conflicts": [
+    {
+      "type": "model_year_disagreement",
+      "trim_key": "comfort",
+      "values": [
+        "2026",
+        "2027"
+      ]
+    }
+  ],
+  "source_coverage": {
+    "publishers": [
+      "ContactCars",
+      "EgyCar",
+      "Hatla2ee"
+    ],
+    "rows_by_source": {
+      "ContactCars": 2,
+      "EgyCar": 2,
+      "Hatla2ee(summary)": 2
+    },
+    "candidate_rows": 1
+  },
+  "identity_confidence": "high",
+  "price_confidence": "high",
+  "freshness": {
+    "collection_date": "2026-09-10",
+    "latest_price_date": "2026-08-05",
+    "age_days_at_2026-09-24": 14
+  },
+  "candidate_status_raw": [
+    "VARIANT_DISCOVERY + MODEL_YEAR_CONFLICT"
+  ],
+  "classified_observations": []
+}

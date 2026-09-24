@@ -1,0 +1,169 @@
+{
+  "_rules": "Human decisions only. display_overrides must pick a spelling that was actually observed. model_aliases merge a match_key into an existing model_id. cohort_exceptions create model_id~cohort. Every entry needs decided_by + date + status. Status proposed = not yet confirmed by the owner; IDs are not frozen until confirmed.",
+  "display_overrides": {
+    "model:baic/x55": "X55",
+    "model:chery/arrizo6gt": "Arrizo 6 GT",
+    "model:chery/eq7": "eQ7",
+    "model:chery/tiggo4pro": "Tiggo 4 Pro",
+    "model:chery/tiggo7pro": "Tiggo 7 Pro",
+    "model:chery/tiggo7promax": "Tiggo 7 Pro Max",
+    "model:chery/tiggo8pro": "Tiggo 8 Pro",
+    "model:citroen/c4x": "C4 X",
+    "model:gac/gs4max": "GS4 Max",
+    "model:honda/crv": "CR-V",
+    "model:honda/zrv": "ZR-V",
+    "model:hyundai/i30": "i30",
+    "model:mazda/cx3": "CX-3",
+    "model:opel/grandland": "Grandland",
+    "model:vgv/u70pplus": "U70P Plus",
+    "model:volvo/es90": "ES90",
+    "model:volvo/xc60": "XC60",
+    "model:volvo/xc90": "XC90",
+    "brand:jac": "JAC",
+    "brand:xpeng": "XPENG"
+  },
+  "display_override_log": [
+    {
+      "key": "model:baic/x55",
+      "value": "X55",
+      "decided_by": "claude (proposed: manufacturer styling, chosen from observed spellings)",
+      "date": "2026-09-24",
+      "status": "proposed"
+    },
+    {
+      "key": "model:chery/arrizo6gt",
+      "value": "Arrizo 6 GT",
+      "decided_by": "claude (proposed: manufacturer styling, chosen from observed spellings)",
+      "date": "2026-09-24",
+      "status": "proposed"
+    },
+    {
+      "key": "model:chery/eq7",
+      "value": "eQ7",
+      "decided_by": "claude (proposed: manufacturer styling, chosen from observed spellings)",
+      "date": "2026-09-24",
+      "status": "proposed"
+    },
+    {
+      "key": "model:chery/tiggo4pro",
+      "value": "Tiggo 4 Pro",
+      "decided_by": "claude (proposed: manufacturer styling, chosen from observed spellings)",
+      "date": "2026-09-24",
+      "status": "proposed"
+    },
+    {
+      "key": "model:chery/tiggo7pro",
+      "value": "Tiggo 7 Pro",
+      "decided_by": "claude (proposed: manufacturer styling, chosen from observed spellings)",
+      "date": "2026-09-24",
+      "status": "proposed"
+    },
+    {
+      "key": "model:chery/tiggo7promax",
+      "value": "Tiggo 7 Pro Max",
+      "decided_by": "claude (proposed: manufacturer styling, chosen from observed spellings)",
+      "date": "2026-09-24",
+      "status": "proposed"
+    },
+    {
+      "key": "model:chery/tiggo8pro",
+      "value": "Tiggo 8 Pro",
+      "decided_by": "claude (proposed: manufacturer styling, chosen from observed spellings)",
+      "date": "2026-09-24",
+      "status": "proposed"
+    },
+    {
+      "key": "model:citroen/c4x",
+      "value": "C4 X",
+      "decided_by": "claude (proposed: manufacturer styling, chosen from observed spellings)",
+      "date": "2026-09-24",
+      "status": "proposed"
+    },
+    {
+      "key": "model:gac/gs4max",
+      "value": "GS4 Max",
+      "decided_by": "claude (proposed: manufacturer styling, chosen from observed spellings)",
+      "date": "2026-09-24",
+      "status": "proposed"
+    },
+    {
+      "key": "model:honda/crv",
+      "value": "CR-V",
+      "decided_by": "claude (proposed: manufacturer styling, chosen from observed spellings)",
+      "date": "2026-09-24",
+      "status": "proposed"
+    },
+    {
+      "key": "model:honda/zrv",
+      "value": "ZR-V",
+      "decided_by": "claude (proposed: manufacturer styling, chosen from observed spellings)",
+      "date": "2026-09-24",
+      "status": "proposed"
+    },
+    {
+      "key": "model:hyundai/i30",
+      "value": "i30",
+      "decided_by": "claude (proposed: manufacturer styling, chosen from observed spellings)",
+      "date": "2026-09-24",
+      "status": "proposed"
+    },
+    {
+      "key": "model:mazda/cx3",
+      "value": "CX-3",
+      "decided_by": "claude (proposed: manufacturer styling, chosen from observed spellings)",
+      "date": "2026-09-24",
+      "status": "proposed"
+    },
+    {
+      "key": "model:opel/grandland",
+      "value": "Grandland",
+      "decided_by": "claude (proposed: manufacturer styling, chosen from observed spellings)",
+      "date": "2026-09-24",
+      "status": "proposed"
+    },
+    {
+      "key": "model:vgv/u70pplus",
+      "value": "U70P Plus",
+      "decided_by": "claude (proposed: manufacturer styling, chosen from observed spellings)",
+      "date": "2026-09-24",
+      "status": "proposed"
+    },
+    {
+      "key": "model:volvo/es90",
+      "value": "ES90",
+      "decided_by": "claude (proposed: manufacturer styling, chosen from observed spellings)",
+      "date": "2026-09-24",
+      "status": "proposed"
+    },
+    {
+      "key": "model:volvo/xc60",
+      "value": "XC60",
+      "decided_by": "claude (proposed: manufacturer styling, chosen from observed spellings)",
+      "date": "2026-09-24",
+      "status": "proposed"
+    },
+    {
+      "key": "model:volvo/xc90",
+      "value": "XC90",
+      "decided_by": "claude (proposed: manufacturer styling, chosen from observed spellings)",
+      "date": "2026-09-24",
+      "status": "proposed"
+    },
+    {
+      "key": "brand:jac",
+      "value": "JAC",
+      "decided_by": "claude (proposed: manufacturer styling, chosen from observed spellings)",
+      "date": "2026-09-24",
+      "status": "proposed"
+    },
+    {
+      "key": "brand:xpeng",
+      "value": "XPENG",
+      "decided_by": "claude (proposed: manufacturer styling, chosen from observed spellings)",
+      "date": "2026-09-24",
+      "status": "proposed"
+    }
+  ],
+  "model_aliases": [],
+  "cohort_exceptions": []
+}

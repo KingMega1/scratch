@@ -1,0 +1,7823 @@
+{
+  "models": {
+    "aito/m9": {
+      "model_id": "aito/m9",
+      "brand_id": "aito",
+      "display": "M9",
+      "match_keys": [
+        "m9"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "M9": 1
+      }
+    },
+    "alfa-romeo/giulia": {
+      "model_id": "alfa-romeo/giulia",
+      "brand_id": "alfa-romeo",
+      "display": "Giulia",
+      "match_keys": [
+        "giulia"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Giulia": 4
+      }
+    },
+    "alfa-romeo/stelvio": {
+      "model_id": "alfa-romeo/stelvio",
+      "brand_id": "alfa-romeo",
+      "display": "Stelvio",
+      "match_keys": [
+        "stelvio"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Stelvio": 6
+      }
+    },
+    "alfa-romeo/tonale": {
+      "model_id": "alfa-romeo/tonale",
+      "brand_id": "alfa-romeo",
+      "display": "Tonale",
+      "match_keys": [
+        "tonale"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Tonale": 5
+      }
+    },
+    "arcfox/alpha-s5": {
+      "model_id": "arcfox/alpha-s5",
+      "brand_id": "arcfox",
+      "display": "Alpha S5",
+      "match_keys": [
+        "alphas5"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Alpha S5": 4
+      }
+    },
+    "arcfox/alpha-t5": {
+      "model_id": "arcfox/alpha-t5",
+      "brand_id": "arcfox",
+      "display": "Alpha T5",
+      "match_keys": [
+        "alphat5"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Alpha T5": 4
+      }
+    },
+    "arcfox/kaola-s": {
+      "model_id": "arcfox/kaola-s",
+      "brand_id": "arcfox",
+      "display": "Kaola S",
+      "match_keys": [
+        "kaolas"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Kaola S": 2
+      }
+    },
+    "arcfox/koala-s": {
+      "model_id": "arcfox/koala-s",
+      "brand_id": "arcfox",
+      "display": "KOALA S",
+      "match_keys": [
+        "koalas"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "KOALA S": 2
+      }
+    },
+    "arcfox/t1": {
+      "model_id": "arcfox/t1",
+      "brand_id": "arcfox",
+      "display": "T1",
+      "match_keys": [
+        "t1"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "T1": 4
+      }
+    },
+    "audi/a3": {
+      "model_id": "audi/a3",
+      "brand_id": "audi",
+      "display": "A3",
+      "match_keys": [
+        "a3"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "A3": 6
+      }
+    },
+    "audi/a4": {
+      "model_id": "audi/a4",
+      "brand_id": "audi",
+      "display": "A4",
+      "match_keys": [
+        "a4"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "A4": 2
+      }
+    },
+    "audi/a5": {
+      "model_id": "audi/a5",
+      "brand_id": "audi",
+      "display": "A5",
+      "match_keys": [
+        "a5"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "A5": 6
+      }
+    },
+    "audi/a6": {
+      "model_id": "audi/a6",
+      "brand_id": "audi",
+      "display": "A6",
+      "match_keys": [
+        "a6"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "A6": 3
+      }
+    },
+    "audi/a8": {
+      "model_id": "audi/a8",
+      "brand_id": "audi",
+      "display": "A8",
+      "match_keys": [
+        "a8"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "A8": 2
+      }
+    },
+    "audi/e-tron": {
+      "model_id": "audi/e-tron",
+      "brand_id": "audi",
+      "display": "E Tron",
+      "match_keys": [
+        "etron"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "E Tron": 1
+      }
+    },
+    "audi/q2": {
+      "model_id": "audi/q2",
+      "brand_id": "audi",
+      "display": "Q2",
+      "match_keys": [
+        "q2"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Q2": 3
+      }
+    },
+    "audi/q3": {
+      "model_id": "audi/q3",
+      "brand_id": "audi",
+      "display": "Q3",
+      "match_keys": [
+        "q3"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Q3": 16
+      }
+    },
+    "audi/q4-e-tron": {
+      "model_id": "audi/q4-e-tron",
+      "brand_id": "audi",
+      "display": "Q4 e-Tron",
+      "match_keys": [
+        "q4etron"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Q4 e-Tron": 1
+      }
+    },
+    "audi/q5": {
+      "model_id": "audi/q5",
+      "brand_id": "audi",
+      "display": "Q5",
+      "match_keys": [
+        "q5"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Q5": 1
+      }
+    },
+    "audi/q7": {
+      "model_id": "audi/q7",
+      "brand_id": "audi",
+      "display": "Q7",
+      "match_keys": [
+        "q7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Q7": 9
+      }
+    },
+    "audi/q8": {
+      "model_id": "audi/q8",
+      "brand_id": "audi",
+      "display": "Q8",
+      "match_keys": [
+        "q8"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Q8": 6
+      }
+    },
+    "audi/q8-e-tron": {
+      "model_id": "audi/q8-e-tron",
+      "brand_id": "audi",
+      "display": "Q8 E-tron",
+      "match_keys": [
+        "q8etron"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Q8 E-tron": 8
+      }
+    },
+    "audi/rs5-coupe": {
+      "model_id": "audi/rs5-coupe",
+      "brand_id": "audi",
+      "display": "RS5 Coupe",
+      "match_keys": [
+        "rs5coupe"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "RS5 Coupe": 1
+      }
+    },
+    "audi/rs-e-tron": {
+      "model_id": "audi/rs-e-tron",
+      "brand_id": "audi",
+      "display": "RS e-Tron",
+      "match_keys": [
+        "rsetron"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "RS e-Tron": 2
+      }
+    },
+    "audi/rs-e-tron-gt": {
+      "model_id": "audi/rs-e-tron-gt",
+      "brand_id": "audi",
+      "display": "RS e-tron GT",
+      "match_keys": [
+        "rsetrongt"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "RS e-tron GT": 1
+      }
+    },
+    "audi/rs-q8": {
+      "model_id": "audi/rs-q8",
+      "brand_id": "audi",
+      "display": "RS Q8",
+      "match_keys": [
+        "rsq8"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "RS Q8": 1
+      }
+    },
+    "audi/sq7": {
+      "model_id": "audi/sq7",
+      "brand_id": "audi",
+      "display": "SQ7",
+      "match_keys": [
+        "sq7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "SQ7": 1
+      }
+    },
+    "avatr/06": {
+      "model_id": "avatr/06",
+      "brand_id": "avatr",
+      "display": "06",
+      "match_keys": [
+        "06"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "06": 1
+      }
+    },
+    "avatr/07": {
+      "model_id": "avatr/07",
+      "brand_id": "avatr",
+      "display": "07",
+      "match_keys": [
+        "07"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "07": 4
+      }
+    },
+    "avatr/11": {
+      "model_id": "avatr/11",
+      "brand_id": "avatr",
+      "display": "11",
+      "match_keys": [
+        "11"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "11": 6
+      }
+    },
+    "avatr/12": {
+      "model_id": "avatr/12",
+      "brand_id": "avatr",
+      "display": "12",
+      "match_keys": [
+        "12"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "12": 5
+      }
+    },
+    "baic/bj30": {
+      "model_id": "baic/bj30",
+      "brand_id": "baic",
+      "display": "BJ30",
+      "match_keys": [
+        "bj30"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "BJ30": 4
+      }
+    },
+    "baic/u5-plus": {
+      "model_id": "baic/u5-plus",
+      "brand_id": "baic",
+      "display": "U5 Plus",
+      "match_keys": [
+        "u5plus"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "U5 Plus": 4
+      }
+    },
+    "baic/x3": {
+      "model_id": "baic/x3",
+      "brand_id": "baic",
+      "display": "X3",
+      "match_keys": [
+        "x3"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "X3": 1
+      }
+    },
+    "baic/x35": {
+      "model_id": "baic/x35",
+      "brand_id": "baic",
+      "display": "X35",
+      "match_keys": [
+        "x35"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "X35": 1
+      }
+    },
+    "baic/x55": {
+      "model_id": "baic/x55",
+      "brand_id": "baic",
+      "display": "X55",
+      "match_keys": [
+        "x55"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "X 55": 3,
+        "X55": 1
+      }
+    },
+    "baic/x7": {
+      "model_id": "baic/x7",
+      "brand_id": "baic",
+      "display": "X7",
+      "match_keys": [
+        "x7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "X7": 4
+      }
+    },
+    "bak/golf-cart": {
+      "model_id": "bak/golf-cart",
+      "brand_id": "bak",
+      "display": "Golf Cart",
+      "match_keys": [
+        "golfcart"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Golf Cart": 1
+      }
+    },
+    "baw/212-t01": {
+      "model_id": "baw/212-t01",
+      "brand_id": "baw",
+      "display": "212 T01",
+      "match_keys": [
+        "212t01"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "212 T01": 1
+      }
+    },
+    "baw/m7": {
+      "model_id": "baw/m7",
+      "brand_id": "baw",
+      "display": "M7",
+      "match_keys": [
+        "m7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "M7": 2
+      }
+    },
+    "bestune/b70": {
+      "model_id": "bestune/b70",
+      "brand_id": "bestune",
+      "display": "B70",
+      "match_keys": [
+        "b70"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "B70": 1
+      }
+    },
+    "bestune/b70s": {
+      "model_id": "bestune/b70s",
+      "brand_id": "bestune",
+      "display": "B70S",
+      "match_keys": [
+        "b70s"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "B70S": 1
+      }
+    },
+    "bestune/t55": {
+      "model_id": "bestune/t55",
+      "brand_id": "bestune",
+      "display": "T55",
+      "match_keys": [
+        "t55"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "T55": 1
+      }
+    },
+    "bestune/t77-pro": {
+      "model_id": "bestune/t77-pro",
+      "brand_id": "bestune",
+      "display": "T77 Pro",
+      "match_keys": [
+        "t77pro"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "T77 Pro": 1
+      }
+    },
+    "bmw/118i": {
+      "model_id": "bmw/118i",
+      "brand_id": "bmw",
+      "display": "118i",
+      "match_keys": [
+        "118i"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "118i": 2
+      }
+    },
+    "bmw/218i": {
+      "model_id": "bmw/218i",
+      "brand_id": "bmw",
+      "display": "218i",
+      "match_keys": [
+        "218i"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "218i": 2
+      }
+    },
+    "bmw/320i": {
+      "model_id": "bmw/320i",
+      "brand_id": "bmw",
+      "display": "320i",
+      "match_keys": [
+        "320i"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "320i": 4
+      }
+    },
+    "bmw/330i": {
+      "model_id": "bmw/330i",
+      "brand_id": "bmw",
+      "display": "330i",
+      "match_keys": [
+        "330i"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "330i": 1
+      }
+    },
+    "bmw/340i": {
+      "model_id": "bmw/340i",
+      "brand_id": "bmw",
+      "display": "340i",
+      "match_keys": [
+        "340i"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "340i": 1
+      }
+    },
+    "bmw/420i-convertible": {
+      "model_id": "bmw/420i-convertible",
+      "brand_id": "bmw",
+      "display": "420i Convertible",
+      "match_keys": [
+        "420iconvertible"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "420i Convertible": 2
+      }
+    },
+    "bmw/420i-coupe": {
+      "model_id": "bmw/420i-coupe",
+      "brand_id": "bmw",
+      "display": "420i Coupe",
+      "match_keys": [
+        "420icoupe"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "420i Coupe": 1
+      }
+    },
+    "bmw/420i-gran-coupe": {
+      "model_id": "bmw/420i-gran-coupe",
+      "brand_id": "bmw",
+      "display": "420i Gran Coupe",
+      "match_keys": [
+        "420igrancoupe"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "420i Gran Coupe": 1
+      }
+    },
+    "bmw/440i-coupe": {
+      "model_id": "bmw/440i-coupe",
+      "brand_id": "bmw",
+      "display": "440i Coupe",
+      "match_keys": [
+        "440icoupe"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "440i Coupe": 2
+      }
+    },
+    "bmw/520i": {
+      "model_id": "bmw/520i",
+      "brand_id": "bmw",
+      "display": "520i",
+      "match_keys": [
+        "520i"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "520i": 5
+      }
+    },
+    "bmw/530i": {
+      "model_id": "bmw/530i",
+      "brand_id": "bmw",
+      "display": "530i",
+      "match_keys": [
+        "530i"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "530i": 1
+      }
+    },
+    "bmw/740i": {
+      "model_id": "bmw/740i",
+      "brand_id": "bmw",
+      "display": "740i",
+      "match_keys": [
+        "740i"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "740i": 2
+      }
+    },
+    "bmw/750li": {
+      "model_id": "bmw/750li",
+      "brand_id": "bmw",
+      "display": "750Li",
+      "match_keys": [
+        "750li"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "750Li": 1
+      }
+    },
+    "bmw/760i": {
+      "model_id": "bmw/760i",
+      "brand_id": "bmw",
+      "display": "760i",
+      "match_keys": [
+        "760i"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "760i": 2
+      }
+    },
+    "bmw/i3": {
+      "model_id": "bmw/i3",
+      "brand_id": "bmw",
+      "display": "i3",
+      "match_keys": [
+        "i3"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "i3": 1
+      }
+    },
+    "bmw/i4": {
+      "model_id": "bmw/i4",
+      "brand_id": "bmw",
+      "display": "i4",
+      "match_keys": [
+        "i4"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "i4": 1
+      }
+    },
+    "bmw/i5": {
+      "model_id": "bmw/i5",
+      "brand_id": "bmw",
+      "display": "i5",
+      "match_keys": [
+        "i5"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "i5": 3
+      }
+    },
+    "bmw/i7": {
+      "model_id": "bmw/i7",
+      "brand_id": "bmw",
+      "display": "i7",
+      "match_keys": [
+        "i7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "i7": 3
+      }
+    },
+    "bmw/ix": {
+      "model_id": "bmw/ix",
+      "brand_id": "bmw",
+      "display": "iX",
+      "match_keys": [
+        "ix"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "iX": 4
+      }
+    },
+    "bmw/ix1": {
+      "model_id": "bmw/ix1",
+      "brand_id": "bmw",
+      "display": "iX1",
+      "match_keys": [
+        "ix1"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "iX1": 2
+      }
+    },
+    "bmw/ix2": {
+      "model_id": "bmw/ix2",
+      "brand_id": "bmw",
+      "display": "iX2",
+      "match_keys": [
+        "ix2"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "iX2": 1
+      }
+    },
+    "bmw/ix3": {
+      "model_id": "bmw/ix3",
+      "brand_id": "bmw",
+      "display": "iX3",
+      "match_keys": [
+        "ix3"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "iX3": 1
+      }
+    },
+    "bmw/ix3-neue-klasse": {
+      "model_id": "bmw/ix3-neue-klasse",
+      "brand_id": "bmw",
+      "display": "iX3 Neue Klasse",
+      "match_keys": [
+        "ix3neueklasse"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "iX3 Neue Klasse": 2
+      }
+    },
+    "bmw/m3": {
+      "model_id": "bmw/m3",
+      "brand_id": "bmw",
+      "display": "M3",
+      "match_keys": [
+        "m3"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "M3": 3
+      }
+    },
+    "bmw/m4": {
+      "model_id": "bmw/m4",
+      "brand_id": "bmw",
+      "display": "M4",
+      "match_keys": [
+        "m4"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "M4": 3
+      }
+    },
+    "bmw/m5": {
+      "model_id": "bmw/m5",
+      "brand_id": "bmw",
+      "display": "M5",
+      "match_keys": [
+        "m5"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "M5": 1
+      }
+    },
+    "bmw/m8": {
+      "model_id": "bmw/m8",
+      "brand_id": "bmw",
+      "display": "M8",
+      "match_keys": [
+        "m8"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "M8": 1
+      }
+    },
+    "bmw/m850i": {
+      "model_id": "bmw/m850i",
+      "brand_id": "bmw",
+      "display": "M850i",
+      "match_keys": [
+        "m850i"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "M850i": 2
+      }
+    },
+    "bmw/x1": {
+      "model_id": "bmw/x1",
+      "brand_id": "bmw",
+      "display": "X1",
+      "match_keys": [
+        "x1"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "X1": 3
+      }
+    },
+    "bmw/x2": {
+      "model_id": "bmw/x2",
+      "brand_id": "bmw",
+      "display": "X2",
+      "match_keys": [
+        "x2"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "X2": 2
+      }
+    },
+    "bmw/x3": {
+      "model_id": "bmw/x3",
+      "brand_id": "bmw",
+      "display": "X3",
+      "match_keys": [
+        "x3"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "X3": 2
+      }
+    },
+    "bmw/x4": {
+      "model_id": "bmw/x4",
+      "brand_id": "bmw",
+      "display": "X4",
+      "match_keys": [
+        "x4"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "X4": 1
+      }
+    },
+    "bmw/x5": {
+      "model_id": "bmw/x5",
+      "brand_id": "bmw",
+      "display": "X5",
+      "match_keys": [
+        "x5"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "X5": 3
+      }
+    },
+    "bmw/x6": {
+      "model_id": "bmw/x6",
+      "brand_id": "bmw",
+      "display": "X6",
+      "match_keys": [
+        "x6"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "X6": 2
+      }
+    },
+    "bmw/x7": {
+      "model_id": "bmw/x7",
+      "brand_id": "bmw",
+      "display": "X7",
+      "match_keys": [
+        "x7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "X7": 1
+      }
+    },
+    "bmw/z4": {
+      "model_id": "bmw/z4",
+      "brand_id": "bmw",
+      "display": "Z4",
+      "match_keys": [
+        "z4"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Z4": 1
+      }
+    },
+    "byd/atto-8": {
+      "model_id": "byd/atto-8",
+      "brand_id": "byd",
+      "display": "Atto 8",
+      "match_keys": [
+        "atto8"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Atto 8": 3
+      }
+    },
+    "byd/destroyer-05": {
+      "model_id": "byd/destroyer-05",
+      "brand_id": "byd",
+      "display": "Destroyer 05",
+      "match_keys": [
+        "destroyer05"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Destroyer 05": 1
+      }
+    },
+    "byd/dolphin-surf": {
+      "model_id": "byd/dolphin-surf",
+      "brand_id": "byd",
+      "display": "Dolphin Surf",
+      "match_keys": [
+        "dolphinsurf"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Dolphin Surf": 2
+      }
+    },
+    "byd/f3": {
+      "model_id": "byd/f3",
+      "brand_id": "byd",
+      "display": "F3",
+      "match_keys": [
+        "f3"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "F3": 2
+      }
+    },
+    "byd/leopard-8": {
+      "model_id": "byd/leopard-8",
+      "brand_id": "byd",
+      "display": "Leopard 8",
+      "match_keys": [
+        "leopard8"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Leopard 8": 1
+      }
+    },
+    "byd/m9": {
+      "model_id": "byd/m9",
+      "brand_id": "byd",
+      "display": "M9",
+      "match_keys": [
+        "m9"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "M9": 2
+      }
+    },
+    "byd/qin": {
+      "model_id": "byd/qin",
+      "brand_id": "byd",
+      "display": "Qin",
+      "match_keys": [
+        "qin"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Qin": 1
+      }
+    },
+    "byd/seagull": {
+      "model_id": "byd/seagull",
+      "brand_id": "byd",
+      "display": "Seagull",
+      "match_keys": [
+        "seagull"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Seagull": 1
+      }
+    },
+    "byd/seal": {
+      "model_id": "byd/seal",
+      "brand_id": "byd",
+      "display": "Seal",
+      "match_keys": [
+        "seal"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Seal": 2
+      }
+    },
+    "byd/sealion-5": {
+      "model_id": "byd/sealion-5",
+      "brand_id": "byd",
+      "display": "Sealion 5",
+      "match_keys": [
+        "sealion5"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Sealion 5": 4
+      }
+    },
+    "byd/sealion-6": {
+      "model_id": "byd/sealion-6",
+      "brand_id": "byd",
+      "display": "Sealion 6",
+      "match_keys": [
+        "sealion6"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Sealion 6": 5
+      }
+    },
+    "byd/shark-6-dmo": {
+      "model_id": "byd/shark-6-dmo",
+      "brand_id": "byd",
+      "display": "Shark 6 DMO",
+      "match_keys": [
+        "shark6dmo"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Shark 6 DMO": 1
+      }
+    },
+    "byd/song-l": {
+      "model_id": "byd/song-l",
+      "brand_id": "byd",
+      "display": "Song L",
+      "match_keys": [
+        "songl"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Song L": 1
+      }
+    },
+    "byd/song-l-dm-i": {
+      "model_id": "byd/song-l-dm-i",
+      "brand_id": "byd",
+      "display": "Song L DM-i",
+      "match_keys": [
+        "songldmi"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Song L DM-i": 1
+      }
+    },
+    "byd/song-plus": {
+      "model_id": "byd/song-plus",
+      "brand_id": "byd",
+      "display": "Song Plus",
+      "match_keys": [
+        "songplus"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Song Plus": 1
+      }
+    },
+    "byd/ti-7": {
+      "model_id": "byd/ti-7",
+      "brand_id": "byd",
+      "display": "TI 7",
+      "match_keys": [
+        "ti7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "TI 7": 2
+      }
+    },
+    "cadillac/escalade": {
+      "model_id": "cadillac/escalade",
+      "brand_id": "cadillac",
+      "display": "Escalade",
+      "match_keys": [
+        "escalade"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Escalade": 2
+      }
+    },
+    "cadillac/escalade-iq": {
+      "model_id": "cadillac/escalade-iq",
+      "brand_id": "cadillac",
+      "display": "Escalade IQ",
+      "match_keys": [
+        "escaladeiq"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Escalade IQ": 1
+      }
+    },
+    "cadillac/escalade-iql": {
+      "model_id": "cadillac/escalade-iql",
+      "brand_id": "cadillac",
+      "display": "Escalade IQL",
+      "match_keys": [
+        "escaladeiql"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Escalade IQL": 1
+      }
+    },
+    "cadillac/lyriq": {
+      "model_id": "cadillac/lyriq",
+      "brand_id": "cadillac",
+      "display": "Lyriq",
+      "match_keys": [
+        "lyriq"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Lyriq": 1
+      }
+    },
+    "cadillac/optiq": {
+      "model_id": "cadillac/optiq",
+      "brand_id": "cadillac",
+      "display": "Optiq",
+      "match_keys": [
+        "optiq"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Optiq": 1
+      }
+    },
+    "cadillac/vistiq": {
+      "model_id": "cadillac/vistiq",
+      "brand_id": "cadillac",
+      "display": "Vistiq",
+      "match_keys": [
+        "vistiq"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Vistiq": 1
+      }
+    },
+    "changan/cs35-plus": {
+      "model_id": "changan/cs35-plus",
+      "brand_id": "changan",
+      "display": "CS35 PLUS",
+      "match_keys": [
+        "cs35plus"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "CS35 PLUS": 3
+      }
+    },
+    "changan/cs55": {
+      "model_id": "changan/cs55",
+      "brand_id": "changan",
+      "display": "CS55",
+      "match_keys": [
+        "cs55"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "CS55": 1
+      }
+    },
+    "changan/cs55-plus": {
+      "model_id": "changan/cs55-plus",
+      "brand_id": "changan",
+      "display": "CS55-Plus",
+      "match_keys": [
+        "cs55plus"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "CS55-Plus": 5
+      }
+    },
+    "changan/cs75-plus": {
+      "model_id": "changan/cs75-plus",
+      "brand_id": "changan",
+      "display": "CS75 Plus",
+      "match_keys": [
+        "cs75plus"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "CS75 Plus": 2
+      }
+    },
+    "changan/eado": {
+      "model_id": "changan/eado",
+      "brand_id": "changan",
+      "display": "EADO",
+      "match_keys": [
+        "eado"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "EADO": 2
+      }
+    },
+    "changan/eado-plus": {
+      "model_id": "changan/eado-plus",
+      "brand_id": "changan",
+      "display": "Eado Plus",
+      "match_keys": [
+        "eadoplus"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Eado Plus": 3
+      }
+    },
+    "changan/uni-t": {
+      "model_id": "changan/uni-t",
+      "brand_id": "changan",
+      "display": "UNI-T",
+      "match_keys": [
+        "unit"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "UNI-T": 2
+      }
+    },
+    "changan/uni-v": {
+      "model_id": "changan/uni-v",
+      "brand_id": "changan",
+      "display": "UNI-V",
+      "match_keys": [
+        "univ"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "UNI-V": 1
+      }
+    },
+    "chery/arrizo-5": {
+      "model_id": "chery/arrizo-5",
+      "brand_id": "chery",
+      "display": "Arrizo 5",
+      "match_keys": [
+        "arrizo5"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Arrizo 5": 10
+      }
+    },
+    "chery/arrizo-6-gt": {
+      "model_id": "chery/arrizo-6-gt",
+      "brand_id": "chery",
+      "display": "Arrizo 6 GT",
+      "match_keys": [
+        "arrizo6gt"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Arrizo 6 GT": 2,
+        "Arrizo 6 gt": 1
+      }
+    },
+    "chery/arrizo-8": {
+      "model_id": "chery/arrizo-8",
+      "brand_id": "chery",
+      "display": "Arrizo 8",
+      "match_keys": [
+        "arrizo8"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Arrizo 8": 3
+      }
+    },
+    "chery/eq7": {
+      "model_id": "chery/eq7",
+      "brand_id": "chery",
+      "display": "eQ7",
+      "match_keys": [
+        "eq7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "eQ7": 1,
+        "EQ7": 1
+      }
+    },
+    "chery/qq": {
+      "model_id": "chery/qq",
+      "brand_id": "chery",
+      "display": "QQ",
+      "match_keys": [
+        "qq"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "QQ": 1
+      }
+    },
+    "chery/tiggo-3": {
+      "model_id": "chery/tiggo-3",
+      "brand_id": "chery",
+      "display": "Tiggo 3",
+      "match_keys": [
+        "tiggo3"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Tiggo 3": 1
+      }
+    },
+    "chery/tiggo-4-pro": {
+      "model_id": "chery/tiggo-4-pro",
+      "brand_id": "chery",
+      "display": "Tiggo 4 Pro",
+      "match_keys": [
+        "tiggo4pro"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Tiggo 4 PRO": 3,
+        "Tiggo 4 Pro": 1
+      }
+    },
+    "chery/tiggo-7": {
+      "model_id": "chery/tiggo-7",
+      "brand_id": "chery",
+      "display": "Tiggo 7",
+      "match_keys": [
+        "tiggo7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Tiggo 7": 3
+      }
+    },
+    "chery/tiggo-7-pro": {
+      "model_id": "chery/tiggo-7-pro",
+      "brand_id": "chery",
+      "display": "Tiggo 7 Pro",
+      "match_keys": [
+        "tiggo7pro"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Tiggo 7 Pro": 2,
+        "Tiggo 7 pro": 2
+      }
+    },
+    "chery/tiggo-7-pro-max": {
+      "model_id": "chery/tiggo-7-pro-max",
+      "brand_id": "chery",
+      "display": "Tiggo 7 Pro Max",
+      "match_keys": [
+        "tiggo7promax"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Tiggo 7 Pro Max": 2,
+        "Tiggo 7 pro max": 1
+      }
+    },
+    "chery/tiggo-8": {
+      "model_id": "chery/tiggo-8",
+      "brand_id": "chery",
+      "display": "Tiggo 8",
+      "match_keys": [
+        "tiggo8"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Tiggo 8": 4
+      }
+    },
+    "chery/tiggo-8-pro": {
+      "model_id": "chery/tiggo-8-pro",
+      "brand_id": "chery",
+      "display": "Tiggo 8 Pro",
+      "match_keys": [
+        "tiggo8pro"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Tiggo 8 PRO": 2,
+        "Tiggo 8 Pro": 1
+      }
+    },
+    "chery/tiggo-8-pro-max": {
+      "model_id": "chery/tiggo-8-pro-max",
+      "brand_id": "chery",
+      "display": "Tiggo 8 Pro Max",
+      "match_keys": [
+        "tiggo8promax"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Tiggo 8 Pro Max": 3
+      }
+    },
+    "chery/tiggo-9": {
+      "model_id": "chery/tiggo-9",
+      "brand_id": "chery",
+      "display": "Tiggo 9",
+      "match_keys": [
+        "tiggo9"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Tiggo 9": 2
+      }
+    },
+    "chevrolet/camaro": {
+      "model_id": "chevrolet/camaro",
+      "brand_id": "chevrolet",
+      "display": "Camaro",
+      "match_keys": [
+        "camaro"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Camaro": 1
+      }
+    },
+    "chevrolet/captiva": {
+      "model_id": "chevrolet/captiva",
+      "brand_id": "chevrolet",
+      "display": "Captiva",
+      "match_keys": [
+        "captiva"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Captiva": 4
+      }
+    },
+    "chevrolet/captiva-ev": {
+      "model_id": "chevrolet/captiva-ev",
+      "brand_id": "chevrolet",
+      "display": "Captiva EV",
+      "match_keys": [
+        "captivaev"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Captiva EV": 2
+      }
+    },
+    "chevrolet/jumbo-npr": {
+      "model_id": "chevrolet/jumbo-npr",
+      "brand_id": "chevrolet",
+      "display": "Jumbo NPR",
+      "match_keys": [
+        "jumbonpr"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Jumbo NPR": 1
+      }
+    },
+    "chevrolet/malibu": {
+      "model_id": "chevrolet/malibu",
+      "brand_id": "chevrolet",
+      "display": "Malibu",
+      "match_keys": [
+        "malibu"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Malibu": 1
+      }
+    },
+    "chevrolet/n300": {
+      "model_id": "chevrolet/n300",
+      "brand_id": "chevrolet",
+      "display": "N300",
+      "match_keys": [
+        "n300"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "N300": 1
+      }
+    },
+    "chevrolet/nqr": {
+      "model_id": "chevrolet/nqr",
+      "brand_id": "chevrolet",
+      "display": "NQR",
+      "match_keys": [
+        "nqr"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "NQR": 1
+      }
+    },
+    "chevrolet/optra": {
+      "model_id": "chevrolet/optra",
+      "brand_id": "chevrolet",
+      "display": "Optra",
+      "match_keys": [
+        "optra"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Optra": 8
+      }
+    },
+    "chevrolet/s10-max": {
+      "model_id": "chevrolet/s10-max",
+      "brand_id": "chevrolet",
+      "display": "S10 Max",
+      "match_keys": [
+        "s10max"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "S10 Max": 1
+      }
+    },
+    "chevrolet/spark-euv": {
+      "model_id": "chevrolet/spark-euv",
+      "brand_id": "chevrolet",
+      "display": "Spark EUV",
+      "match_keys": [
+        "sparkeuv"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Spark EUV": 1
+      }
+    },
+    "chevrolet/spark-ev": {
+      "model_id": "chevrolet/spark-ev",
+      "brand_id": "chevrolet",
+      "display": "Spark EV",
+      "match_keys": [
+        "sparkev"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Spark EV": 1
+      }
+    },
+    "chevrolet/tfr": {
+      "model_id": "chevrolet/tfr",
+      "brand_id": "chevrolet",
+      "display": "TFR",
+      "match_keys": [
+        "tfr"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "TFR": 1
+      }
+    },
+    "citroen/c3": {
+      "model_id": "citroen/c3",
+      "brand_id": "citroen",
+      "display": "C3",
+      "match_keys": [
+        "c3"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "C3": 1
+      }
+    },
+    "citroen/c3-aircross": {
+      "model_id": "citroen/c3-aircross",
+      "brand_id": "citroen",
+      "display": "C3 Aircross",
+      "match_keys": [
+        "c3aircross"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "C3 Aircross": 1
+      }
+    },
+    "citroen/c4": {
+      "model_id": "citroen/c4",
+      "brand_id": "citroen",
+      "display": "C4",
+      "match_keys": [
+        "c4"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "C4": 2
+      }
+    },
+    "citroen/c4-facelift": {
+      "model_id": "citroen/c4-facelift",
+      "brand_id": "citroen",
+      "display": "C4 Facelift",
+      "match_keys": [
+        "c4facelift"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "C4 Facelift": 1
+      }
+    },
+    "citroen/c4-x": {
+      "model_id": "citroen/c4-x",
+      "brand_id": "citroen",
+      "display": "C4 X",
+      "match_keys": [
+        "c4x"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "C4X": 2,
+        "C4 X": 3
+      }
+    },
+    "citroen/c5": {
+      "model_id": "citroen/c5",
+      "brand_id": "citroen",
+      "display": "C5",
+      "match_keys": [
+        "c5"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "C5": 1
+      }
+    },
+    "citroen/c5-aircross": {
+      "model_id": "citroen/c5-aircross",
+      "brand_id": "citroen",
+      "display": "C5 Aircross",
+      "match_keys": [
+        "c5aircross"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "C5 Aircross": 7
+      }
+    },
+    "cupra/formentor": {
+      "model_id": "cupra/formentor",
+      "brand_id": "cupra",
+      "display": "Formentor",
+      "match_keys": [
+        "formentor"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Formentor": 2
+      }
+    },
+    "cupra/leon": {
+      "model_id": "cupra/leon",
+      "brand_id": "cupra",
+      "display": "Leon",
+      "match_keys": [
+        "leon"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Leon": 1
+      }
+    },
+    "cupra/terramar": {
+      "model_id": "cupra/terramar",
+      "brand_id": "cupra",
+      "display": "Terramar",
+      "match_keys": [
+        "terramar"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Terramar": 4
+      }
+    },
+    "deepal/g318": {
+      "model_id": "deepal/g318",
+      "brand_id": "deepal",
+      "display": "G318",
+      "match_keys": [
+        "g318"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "G318": 2
+      }
+    },
+    "deepal/s-05": {
+      "model_id": "deepal/s-05",
+      "brand_id": "deepal",
+      "display": "S 05",
+      "match_keys": [
+        "s05"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "S 05": 2
+      }
+    },
+    "deepal/s-07": {
+      "model_id": "deepal/s-07",
+      "brand_id": "deepal",
+      "display": "S 07",
+      "match_keys": [
+        "s07"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "S 07": 2
+      }
+    },
+    "dfsk/600": {
+      "model_id": "dfsk/600",
+      "brand_id": "dfsk",
+      "display": "600",
+      "match_keys": [
+        "600"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "600": 3
+      }
+    },
+    "dfsk/e5": {
+      "model_id": "dfsk/e5",
+      "brand_id": "dfsk",
+      "display": "E5",
+      "match_keys": [
+        "e5"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "E5": 3
+      }
+    },
+    "dfsk/e5-plus": {
+      "model_id": "dfsk/e5-plus",
+      "brand_id": "dfsk",
+      "display": "E5 Plus",
+      "match_keys": [
+        "e5plus"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "E5 Plus": 3
+      }
+    },
+    "dodge/charger": {
+      "model_id": "dodge/charger",
+      "brand_id": "dodge",
+      "display": "Charger",
+      "match_keys": [
+        "charger"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Charger": 1
+      }
+    },
+    "dongfeng/007": {
+      "model_id": "dongfeng/007",
+      "brand_id": "dongfeng",
+      "display": "007",
+      "match_keys": [
+        "007"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "007": 1
+      }
+    },
+    "dongfeng/008": {
+      "model_id": "dongfeng/008",
+      "brand_id": "dongfeng",
+      "display": "008",
+      "match_keys": [
+        "008"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "008": 1
+      }
+    },
+    "dongfeng/aeolus-a30": {
+      "model_id": "dongfeng/aeolus-a30",
+      "brand_id": "dongfeng",
+      "display": "Aeolus A30",
+      "match_keys": [
+        "aeolusa30"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Aeolus A30": 1
+      }
+    },
+    "dongfeng/aeolus-e70-pro": {
+      "model_id": "dongfeng/aeolus-e70-pro",
+      "brand_id": "dongfeng",
+      "display": "Aeolus e70 pro",
+      "match_keys": [
+        "aeoluse70pro"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Aeolus e70 pro": 1
+      }
+    },
+    "dongfeng/box": {
+      "model_id": "dongfeng/box",
+      "brand_id": "dongfeng",
+      "display": "Box",
+      "match_keys": [
+        "box"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Box": 2
+      }
+    },
+    "dongfeng/huge-hybrid": {
+      "model_id": "dongfeng/huge-hybrid",
+      "brand_id": "dongfeng",
+      "display": "HUGE-Hybrid",
+      "match_keys": [
+        "hugehybrid"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "HUGE-Hybrid": 2
+      }
+    },
+    "dongfeng/mage": {
+      "model_id": "dongfeng/mage",
+      "brand_id": "dongfeng",
+      "display": "Mage",
+      "match_keys": [
+        "mage"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Mage": 2
+      }
+    },
+    "dongfeng/shine": {
+      "model_id": "dongfeng/shine",
+      "brand_id": "dongfeng",
+      "display": "Shine",
+      "match_keys": [
+        "shine"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Shine": 2
+      }
+    },
+    "dongfeng-aeolus/huge-hybrid": {
+      "model_id": "dongfeng-aeolus/huge-hybrid",
+      "brand_id": "dongfeng-aeolus",
+      "display": "Huge Hybrid",
+      "match_keys": [
+        "hugehybrid"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Huge Hybrid": 3
+      }
+    },
+    "ds/ds4": {
+      "model_id": "ds/ds4",
+      "brand_id": "ds",
+      "display": "Ds4",
+      "match_keys": [
+        "ds4"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Ds4": 2
+      }
+    },
+    "ds/ds7": {
+      "model_id": "ds/ds7",
+      "brand_id": "ds",
+      "display": "DS7",
+      "match_keys": [
+        "ds7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "DS7": 2
+      }
+    },
+    "exeed/es": {
+      "model_id": "exeed/es",
+      "brand_id": "exeed",
+      "display": "ES",
+      "match_keys": [
+        "es"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "ES": 4
+      }
+    },
+    "exeed/et": {
+      "model_id": "exeed/et",
+      "brand_id": "exeed",
+      "display": "ET",
+      "match_keys": [
+        "et"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "ET": 4
+      }
+    },
+    "exeed/lx": {
+      "model_id": "exeed/lx",
+      "brand_id": "exeed",
+      "display": "LX",
+      "match_keys": [
+        "lx"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "LX": 3
+      }
+    },
+    "exeed/rx": {
+      "model_id": "exeed/rx",
+      "brand_id": "exeed",
+      "display": "RX",
+      "match_keys": [
+        "rx"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "RX": 6
+      }
+    },
+    "exeed/vx": {
+      "model_id": "exeed/vx",
+      "brand_id": "exeed",
+      "display": "VX",
+      "match_keys": [
+        "vx"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "VX": 4
+      }
+    },
+    "fiat/500": {
+      "model_id": "fiat/500",
+      "brand_id": "fiat",
+      "display": "500",
+      "match_keys": [
+        "500"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "500": 1
+      }
+    },
+    "fiat/500x": {
+      "model_id": "fiat/500x",
+      "brand_id": "fiat",
+      "display": "500X",
+      "match_keys": [
+        "500x"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "500X": 2
+      }
+    },
+    "fiat/e-ulysee": {
+      "model_id": "fiat/e-ulysee",
+      "brand_id": "fiat",
+      "display": "E-Ulysee",
+      "match_keys": [
+        "eulysee"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "E-Ulysee": 1
+      }
+    },
+    "fiat/tipo": {
+      "model_id": "fiat/tipo",
+      "brand_id": "fiat",
+      "display": "Tipo",
+      "match_keys": [
+        "tipo"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Tipo": 2
+      }
+    },
+    "ford/mustang": {
+      "model_id": "ford/mustang",
+      "brand_id": "ford",
+      "display": "Mustang",
+      "match_keys": [
+        "mustang"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Mustang": 1
+      }
+    },
+    "forthing/s7": {
+      "model_id": "forthing/s7",
+      "brand_id": "forthing",
+      "display": "S7",
+      "match_keys": [
+        "s7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "S7": 2
+      }
+    },
+    "forthing/t5": {
+      "model_id": "forthing/t5",
+      "brand_id": "forthing",
+      "display": "T5",
+      "match_keys": [
+        "t5"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "T5": 3
+      }
+    },
+    "forthing/t5-evo": {
+      "model_id": "forthing/t5-evo",
+      "brand_id": "forthing",
+      "display": "T5 Evo",
+      "match_keys": [
+        "t5evo"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "T5 Evo": 1
+      }
+    },
+    "forthing/t5-friday": {
+      "model_id": "forthing/t5-friday",
+      "brand_id": "forthing",
+      "display": "T5 Friday",
+      "match_keys": [
+        "t5friday"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "T5 Friday": 1
+      }
+    },
+    "forthing/u-tour": {
+      "model_id": "forthing/u-tour",
+      "brand_id": "forthing",
+      "display": "U-Tour",
+      "match_keys": [
+        "utour"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "U-Tour": 1
+      }
+    },
+    "forthing/v9": {
+      "model_id": "forthing/v9",
+      "brand_id": "forthing",
+      "display": "V9",
+      "match_keys": [
+        "v9"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "V9": 1
+      }
+    },
+    "gac/aion-lx": {
+      "model_id": "gac/aion-lx",
+      "brand_id": "gac",
+      "display": "Aion LX",
+      "match_keys": [
+        "aionlx"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Aion LX": 1
+      }
+    },
+    "gac/aion-y": {
+      "model_id": "gac/aion-y",
+      "brand_id": "gac",
+      "display": "Aion Y",
+      "match_keys": [
+        "aiony"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Aion Y": 1
+      }
+    },
+    "gac/emkoo": {
+      "model_id": "gac/emkoo",
+      "brand_id": "gac",
+      "display": "Emkoo",
+      "match_keys": [
+        "emkoo"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Emkoo": 3
+      }
+    },
+    "gac/empow": {
+      "model_id": "gac/empow",
+      "brand_id": "gac",
+      "display": "Empow",
+      "match_keys": [
+        "empow"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Empow": 10
+      }
+    },
+    "gac/emzoom": {
+      "model_id": "gac/emzoom",
+      "brand_id": "gac",
+      "display": "EMZOOM",
+      "match_keys": [
+        "emzoom"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "EMZOOM": 5
+      }
+    },
+    "gac/gs3-emzoom": {
+      "model_id": "gac/gs3-emzoom",
+      "brand_id": "gac",
+      "display": "GS3 Emzoom",
+      "match_keys": [
+        "gs3emzoom"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "GS3 Emzoom": 4
+      }
+    },
+    "gac/gs4": {
+      "model_id": "gac/gs4",
+      "brand_id": "gac",
+      "display": "GS4",
+      "match_keys": [
+        "gs4"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "GS4": 3
+      }
+    },
+    "gac/gs4-max": {
+      "model_id": "gac/gs4-max",
+      "brand_id": "gac",
+      "display": "GS4 Max",
+      "match_keys": [
+        "gs4max"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "GS4 max": 1,
+        "GS4 Max": 3
+      }
+    },
+    "geely/city-ray": {
+      "model_id": "geely/city-ray",
+      "brand_id": "geely",
+      "display": "City Ray",
+      "match_keys": [
+        "cityray"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "City Ray": 3
+      }
+    },
+    "geely/cool-ray": {
+      "model_id": "geely/cool-ray",
+      "brand_id": "geely",
+      "display": "Cool Ray",
+      "match_keys": [
+        "coolray"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Cool Ray": 8
+      }
+    },
+    "geely/emgrand": {
+      "model_id": "geely/emgrand",
+      "brand_id": "geely",
+      "display": "Emgrand",
+      "match_keys": [
+        "emgrand"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Emgrand": 4
+      }
+    },
+    "geely/emgrand-7": {
+      "model_id": "geely/emgrand-7",
+      "brand_id": "geely",
+      "display": "Emgrand 7",
+      "match_keys": [
+        "emgrand7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Emgrand 7": 1
+      }
+    },
+    "geely/ex2": {
+      "model_id": "geely/ex2",
+      "brand_id": "geely",
+      "display": "EX2",
+      "match_keys": [
+        "ex2"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "EX2": 2
+      }
+    },
+    "geely/ex5": {
+      "model_id": "geely/ex5",
+      "brand_id": "geely",
+      "display": "EX5",
+      "match_keys": [
+        "ex5"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "EX5": 3
+      }
+    },
+    "geely/ex5-em-i": {
+      "model_id": "geely/ex5-em-i",
+      "brand_id": "geely",
+      "display": "EX5 EM-i",
+      "match_keys": [
+        "ex5emi"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "EX5 EM-i": 2
+      }
+    },
+    "geely/gx3-pro": {
+      "model_id": "geely/gx3-pro",
+      "brand_id": "geely",
+      "display": "GX3 Pro",
+      "match_keys": [
+        "gx3pro"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "GX3 Pro": 2
+      }
+    },
+    "geely/monjaro": {
+      "model_id": "geely/monjaro",
+      "brand_id": "geely",
+      "display": "Monjaro",
+      "match_keys": [
+        "monjaro"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Monjaro": 4
+      }
+    },
+    "geely/okavango": {
+      "model_id": "geely/okavango",
+      "brand_id": "geely",
+      "display": "Okavango",
+      "match_keys": [
+        "okavango"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Okavango": 2
+      }
+    },
+    "geely/starray": {
+      "model_id": "geely/starray",
+      "brand_id": "geely",
+      "display": "Starray",
+      "match_keys": [
+        "starray"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Starray": 8
+      }
+    },
+    "genesis/electrified-g80": {
+      "model_id": "genesis/electrified-g80",
+      "brand_id": "genesis",
+      "display": "Electrified G80",
+      "match_keys": [
+        "electrifiedg80"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Electrified G80": 3
+      }
+    },
+    "genesis/g80": {
+      "model_id": "genesis/g80",
+      "brand_id": "genesis",
+      "display": "G80",
+      "match_keys": [
+        "g80"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "G80": 3
+      }
+    },
+    "genesis/gv60": {
+      "model_id": "genesis/gv60",
+      "brand_id": "genesis",
+      "display": "GV60",
+      "match_keys": [
+        "gv60"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "GV60": 6
+      }
+    },
+    "genesis/gv70": {
+      "model_id": "genesis/gv70",
+      "brand_id": "genesis",
+      "display": "GV70",
+      "match_keys": [
+        "gv70"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "GV70": 5
+      }
+    },
+    "gmc/sierra": {
+      "model_id": "gmc/sierra",
+      "brand_id": "gmc",
+      "display": "Sierra",
+      "match_keys": [
+        "sierra"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Sierra": 1
+      }
+    },
+    "gmc/terrain": {
+      "model_id": "gmc/terrain",
+      "brand_id": "gmc",
+      "display": "Terrain",
+      "match_keys": [
+        "terrain"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Terrain": 1
+      }
+    },
+    "gmc/yukon": {
+      "model_id": "gmc/yukon",
+      "brand_id": "gmc",
+      "display": "Yukon",
+      "match_keys": [
+        "yukon"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Yukon": 1
+      }
+    },
+    "golf-car/club-car": {
+      "model_id": "golf-car/club-car",
+      "brand_id": "golf-car",
+      "display": "Club Car",
+      "match_keys": [
+        "clubcar"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Club Car": 1
+      }
+    },
+    "haval/h6": {
+      "model_id": "haval/h6",
+      "brand_id": "haval",
+      "display": "H6",
+      "match_keys": [
+        "h6"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "H6": 2
+      }
+    },
+    "haval/h6-hev": {
+      "model_id": "haval/h6-hev",
+      "brand_id": "haval",
+      "display": "H6 HEV",
+      "match_keys": [
+        "h6hev"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "H6 HEV": 1
+      }
+    },
+    "haval/h7": {
+      "model_id": "haval/h7",
+      "brand_id": "haval",
+      "display": "H7",
+      "match_keys": [
+        "h7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "H7": 1
+      }
+    },
+    "haval/jolion": {
+      "model_id": "haval/jolion",
+      "brand_id": "haval",
+      "display": "Jolion",
+      "match_keys": [
+        "jolion"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Jolion": 3
+      }
+    },
+    "haval/jolion-ckd": {
+      "model_id": "haval/jolion-ckd",
+      "brand_id": "haval",
+      "display": "Jolion CKD",
+      "match_keys": [
+        "jolionckd"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Jolion CKD": 1
+      }
+    },
+    "haval/jolion-pro": {
+      "model_id": "haval/jolion-pro",
+      "brand_id": "haval",
+      "display": "Jolion Pro",
+      "match_keys": [
+        "jolionpro"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Jolion Pro": 1
+      }
+    },
+    "haval/v7": {
+      "model_id": "haval/v7",
+      "brand_id": "haval",
+      "display": "V7",
+      "match_keys": [
+        "v7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "V7": 2
+      }
+    },
+    "honda/accord": {
+      "model_id": "honda/accord",
+      "brand_id": "honda",
+      "display": "Accord",
+      "match_keys": [
+        "accord"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Accord": 3
+      }
+    },
+    "honda/cr-v": {
+      "model_id": "honda/cr-v",
+      "brand_id": "honda",
+      "display": "CR-V",
+      "match_keys": [
+        "crv"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "CRV": 2,
+        "CR-V": 1
+      }
+    },
+    "honda/e-np2": {
+      "model_id": "honda/e-np2",
+      "brand_id": "honda",
+      "display": "e:NP2",
+      "match_keys": [
+        "enp2"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "e:NP2": 2
+      }
+    },
+    "honda/hr-v": {
+      "model_id": "honda/hr-v",
+      "brand_id": "honda",
+      "display": "HR-V",
+      "match_keys": [
+        "hrv"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "HR-V": 1
+      }
+    },
+    "honda/zr-v": {
+      "model_id": "honda/zr-v",
+      "brand_id": "honda",
+      "display": "ZR-V",
+      "match_keys": [
+        "zrv"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "ZRV": 2,
+        "ZR-V": 1
+      }
+    },
+    "hongqi/eh7": {
+      "model_id": "hongqi/eh7",
+      "brand_id": "hongqi",
+      "display": "EH7",
+      "match_keys": [
+        "eh7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "EH7": 1
+      }
+    },
+    "hongqi/ehs7": {
+      "model_id": "hongqi/ehs7",
+      "brand_id": "hongqi",
+      "display": "EHS7",
+      "match_keys": [
+        "ehs7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "EHS7": 1
+      }
+    },
+    "hongqi/e-hs9": {
+      "model_id": "hongqi/e-hs9",
+      "brand_id": "hongqi",
+      "display": "E-HS9",
+      "match_keys": [
+        "ehs9"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "E-HS9": 2
+      }
+    },
+    "hongqi/h9": {
+      "model_id": "hongqi/h9",
+      "brand_id": "hongqi",
+      "display": "H9",
+      "match_keys": [
+        "h9"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "H9": 1
+      }
+    },
+    "hongqi/hs3": {
+      "model_id": "hongqi/hs3",
+      "brand_id": "hongqi",
+      "display": "HS3",
+      "match_keys": [
+        "hs3"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "HS3": 2
+      }
+    },
+    "hongqi/ousado": {
+      "model_id": "hongqi/ousado",
+      "brand_id": "hongqi",
+      "display": "Ousado",
+      "match_keys": [
+        "ousado"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Ousado": 3
+      }
+    },
+    "hummer/hummer-ev-suv": {
+      "model_id": "hummer/hummer-ev-suv",
+      "brand_id": "hummer",
+      "display": "Hummer EV SUV",
+      "match_keys": [
+        "hummerevsuv"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Hummer EV SUV": 1
+      }
+    },
+    "hyundai/accent-rb": {
+      "model_id": "hyundai/accent-rb",
+      "brand_id": "hyundai",
+      "display": "Accent RB",
+      "match_keys": [
+        "accentrb"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Accent RB": 5
+      }
+    },
+    "hyundai/avante": {
+      "model_id": "hyundai/avante",
+      "brand_id": "hyundai",
+      "display": "Avante",
+      "match_keys": [
+        "avante"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Avante": 1
+      }
+    },
+    "hyundai/elantra": {
+      "model_id": "hyundai/elantra",
+      "brand_id": "hyundai",
+      "display": "Elantra",
+      "match_keys": [
+        "elantra"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Elantra": 1
+      }
+    },
+    "hyundai/elantra-ad": {
+      "model_id": "hyundai/elantra-ad",
+      "brand_id": "hyundai",
+      "display": "Elantra AD",
+      "match_keys": [
+        "elantraad"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Elantra AD": 16
+      }
+    },
+    "hyundai/elantra-cn7": {
+      "model_id": "hyundai/elantra-cn7",
+      "brand_id": "hyundai",
+      "display": "Elantra CN7",
+      "match_keys": [
+        "elantracn7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Elantra CN7": 5
+      }
+    },
+    "hyundai/i30": {
+      "model_id": "hyundai/i30",
+      "brand_id": "hyundai",
+      "display": "i30",
+      "match_keys": [
+        "i30"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "i 30": 9,
+        "i30": 6
+      }
+    },
+    "hyundai/ioniq": {
+      "model_id": "hyundai/ioniq",
+      "brand_id": "hyundai",
+      "display": "Ioniq",
+      "match_keys": [
+        "ioniq"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Ioniq": 1
+      }
+    },
+    "hyundai/ioniq-5": {
+      "model_id": "hyundai/ioniq-5",
+      "brand_id": "hyundai",
+      "display": "IONIQ 5",
+      "match_keys": [
+        "ioniq5"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "IONIQ 5": 5
+      }
+    },
+    "hyundai/ioniq-6": {
+      "model_id": "hyundai/ioniq-6",
+      "brand_id": "hyundai",
+      "display": "IONIQ 6",
+      "match_keys": [
+        "ioniq6"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "IONIQ 6": 4
+      }
+    },
+    "hyundai/ioniq-9": {
+      "model_id": "hyundai/ioniq-9",
+      "brand_id": "hyundai",
+      "display": "IONIQ 9",
+      "match_keys": [
+        "ioniq9"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "IONIQ 9": 4
+      }
+    },
+    "hyundai/santa-fe": {
+      "model_id": "hyundai/santa-fe",
+      "brand_id": "hyundai",
+      "display": "Santa Fe",
+      "match_keys": [
+        "santafe"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Santa Fe": 3
+      }
+    },
+    "hyundai/staria": {
+      "model_id": "hyundai/staria",
+      "brand_id": "hyundai",
+      "display": "Staria",
+      "match_keys": [
+        "staria"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Staria": 2
+      }
+    },
+    "hyundai/tucson": {
+      "model_id": "hyundai/tucson",
+      "brand_id": "hyundai",
+      "display": "Tucson",
+      "match_keys": [
+        "tucson"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Tucson": 34
+      }
+    },
+    "hyundai/tucson-nx4e": {
+      "model_id": "hyundai/tucson-nx4e",
+      "brand_id": "hyundai",
+      "display": "Tucson NX4e",
+      "match_keys": [
+        "tucsonnx4e"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Tucson NX4e": 1
+      }
+    },
+    "hyundai/venue": {
+      "model_id": "hyundai/venue",
+      "brand_id": "hyundai",
+      "display": "Venue",
+      "match_keys": [
+        "venue"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Venue": 3
+      }
+    },
+    "icaur/v27": {
+      "model_id": "icaur/v27",
+      "brand_id": "icaur",
+      "display": "V27",
+      "match_keys": [
+        "v27"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "V27": 4
+      }
+    },
+    "im/im-5": {
+      "model_id": "im/im-5",
+      "brand_id": "im",
+      "display": "IM 5",
+      "match_keys": [
+        "im5"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "IM 5": 3
+      }
+    },
+    "im/im-6": {
+      "model_id": "im/im-6",
+      "brand_id": "im",
+      "display": "IM 6",
+      "match_keys": [
+        "im6"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "IM 6": 2
+      }
+    },
+    "im/ls7": {
+      "model_id": "im/ls7",
+      "brand_id": "im",
+      "display": "LS7",
+      "match_keys": [
+        "ls7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "LS7": 1
+      }
+    },
+    "im/ls9": {
+      "model_id": "im/ls9",
+      "brand_id": "im",
+      "display": "LS9",
+      "match_keys": [
+        "ls9"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "LS9": 2
+      }
+    },
+    "isuzu/dmax": {
+      "model_id": "isuzu/dmax",
+      "brand_id": "isuzu",
+      "display": "Dmax",
+      "match_keys": [
+        "dmax"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Dmax": 1
+      }
+    },
+    "jac/j7": {
+      "model_id": "jac/j7",
+      "brand_id": "jac",
+      "display": "J7",
+      "match_keys": [
+        "j7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "J7": 1
+      }
+    },
+    "jac/js2": {
+      "model_id": "jac/js2",
+      "brand_id": "jac",
+      "display": "JS2",
+      "match_keys": [
+        "js2"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "JS2": 1
+      }
+    },
+    "jac/js4": {
+      "model_id": "jac/js4",
+      "brand_id": "jac",
+      "display": "JS4",
+      "match_keys": [
+        "js4"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "JS4": 1
+      }
+    },
+    "jac/js6": {
+      "model_id": "jac/js6",
+      "brand_id": "jac",
+      "display": "JS6",
+      "match_keys": [
+        "js6"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "JS6": 2
+      }
+    },
+    "jac/js8-pro": {
+      "model_id": "jac/js8-pro",
+      "brand_id": "jac",
+      "display": "JS8 PRO",
+      "match_keys": [
+        "js8pro"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "JS8 PRO": 2
+      }
+    },
+    "jac/s2": {
+      "model_id": "jac/s2",
+      "brand_id": "jac",
+      "display": "S2",
+      "match_keys": [
+        "s2"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "S2": 1
+      }
+    },
+    "jaecoo/j7": {
+      "model_id": "jaecoo/j7",
+      "brand_id": "jaecoo",
+      "display": "J7",
+      "match_keys": [
+        "j7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "J7": 1
+      }
+    },
+    "jaguar/f-pace": {
+      "model_id": "jaguar/f-pace",
+      "brand_id": "jaguar",
+      "display": "F-Pace",
+      "match_keys": [
+        "fpace"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "F-Pace": 2
+      }
+    },
+    "jaguar/f-type": {
+      "model_id": "jaguar/f-type",
+      "brand_id": "jaguar",
+      "display": "F-Type",
+      "match_keys": [
+        "ftype"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "F-Type": 1
+      }
+    },
+    "jaguar/xe": {
+      "model_id": "jaguar/xe",
+      "brand_id": "jaguar",
+      "display": "XE",
+      "match_keys": [
+        "xe"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "XE": 1
+      }
+    },
+    "jaguar/xf": {
+      "model_id": "jaguar/xf",
+      "brand_id": "jaguar",
+      "display": "XF",
+      "match_keys": [
+        "xf"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "XF": 1
+      }
+    },
+    "jeep/grand-cherokee": {
+      "model_id": "jeep/grand-cherokee",
+      "brand_id": "jeep",
+      "display": "Grand Cherokee",
+      "match_keys": [
+        "grandcherokee"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Grand Cherokee": 2
+      }
+    },
+    "jeep/grand-cherokee-l": {
+      "model_id": "jeep/grand-cherokee-l",
+      "brand_id": "jeep",
+      "display": "Grand Cherokee L",
+      "match_keys": [
+        "grandcherokeel"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Grand Cherokee L": 1
+      }
+    },
+    "jetour/dashing": {
+      "model_id": "jetour/dashing",
+      "brand_id": "jetour",
+      "display": "Dashing",
+      "match_keys": [
+        "dashing"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Dashing": 5
+      }
+    },
+    "jetour/t1": {
+      "model_id": "jetour/t1",
+      "brand_id": "jetour",
+      "display": "T1",
+      "match_keys": [
+        "t1"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "T1": 2
+      }
+    },
+    "jetour/t2": {
+      "model_id": "jetour/t2",
+      "brand_id": "jetour",
+      "display": "T2",
+      "match_keys": [
+        "t2"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "T2": 3
+      }
+    },
+    "jetour/x70": {
+      "model_id": "jetour/x70",
+      "brand_id": "jetour",
+      "display": "X70",
+      "match_keys": [
+        "x70"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "X70": 1
+      }
+    },
+    "jetour/x70-facelift": {
+      "model_id": "jetour/x70-facelift",
+      "brand_id": "jetour",
+      "display": "X70 - facelift",
+      "match_keys": [
+        "x70facelift"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "X70 - facelift": 3
+      }
+    },
+    "jetour/x70-plus-ckd": {
+      "model_id": "jetour/x70-plus-ckd",
+      "brand_id": "jetour",
+      "display": "X70 Plus CKD",
+      "match_keys": [
+        "x70plusckd"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "X70 Plus CKD": 1
+      }
+    },
+    "jetour/x90-plus": {
+      "model_id": "jetour/x90-plus",
+      "brand_id": "jetour",
+      "display": "X90 Plus",
+      "match_keys": [
+        "x90plus"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "X90 Plus": 1
+      }
+    },
+    "jmc/boarding": {
+      "model_id": "jmc/boarding",
+      "brand_id": "jmc",
+      "display": "Boarding",
+      "match_keys": [
+        "boarding"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Boarding": 1
+      }
+    },
+    "kaiyi/e5": {
+      "model_id": "kaiyi/e5",
+      "brand_id": "kaiyi",
+      "display": "E5",
+      "match_keys": [
+        "e5"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "E5": 3
+      }
+    },
+    "kaiyi/x3": {
+      "model_id": "kaiyi/x3",
+      "brand_id": "kaiyi",
+      "display": "X3",
+      "match_keys": [
+        "x3"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "X3": 1
+      }
+    },
+    "kaiyi/x3-pro": {
+      "model_id": "kaiyi/x3-pro",
+      "brand_id": "kaiyi",
+      "display": "X3 Pro",
+      "match_keys": [
+        "x3pro"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "X3 Pro": 2
+      }
+    },
+    "kaiyi/x7": {
+      "model_id": "kaiyi/x7",
+      "brand_id": "kaiyi",
+      "display": "X7",
+      "match_keys": [
+        "x7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "X7": 2
+      }
+    },
+    "kgm/actyon": {
+      "model_id": "kgm/actyon",
+      "brand_id": "kgm",
+      "display": "Actyon",
+      "match_keys": [
+        "actyon"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Actyon": 2
+      }
+    },
+    "kgm/torres": {
+      "model_id": "kgm/torres",
+      "brand_id": "kgm",
+      "display": "Torres",
+      "match_keys": [
+        "torres"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Torres": 5
+      }
+    },
+    "kia/carens": {
+      "model_id": "kia/carens",
+      "brand_id": "kia",
+      "display": "Carens",
+      "match_keys": [
+        "carens"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Carens": 1
+      }
+    },
+    "kia/carnival": {
+      "model_id": "kia/carnival",
+      "brand_id": "kia",
+      "display": "Carnival",
+      "match_keys": [
+        "carnival"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Carnival": 2
+      }
+    },
+    "kia/ev3": {
+      "model_id": "kia/ev3",
+      "brand_id": "kia",
+      "display": "EV3",
+      "match_keys": [
+        "ev3"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "EV3": 4
+      }
+    },
+    "kia/ev5": {
+      "model_id": "kia/ev5",
+      "brand_id": "kia",
+      "display": "EV5",
+      "match_keys": [
+        "ev5"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "EV5": 3
+      }
+    },
+    "kia/ev6": {
+      "model_id": "kia/ev6",
+      "brand_id": "kia",
+      "display": "EV6",
+      "match_keys": [
+        "ev6"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "EV6": 4
+      }
+    },
+    "kia/ev9": {
+      "model_id": "kia/ev9",
+      "brand_id": "kia",
+      "display": "EV9",
+      "match_keys": [
+        "ev9"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "EV9": 3
+      }
+    },
+    "kia/grand-cerato": {
+      "model_id": "kia/grand-cerato",
+      "brand_id": "kia",
+      "display": "Grand Cerato",
+      "match_keys": [
+        "grandcerato"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Grand Cerato": 5
+      }
+    },
+    "kia/k3": {
+      "model_id": "kia/k3",
+      "brand_id": "kia",
+      "display": "K3",
+      "match_keys": [
+        "k3"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "K3": 1
+      }
+    },
+    "kia/k4": {
+      "model_id": "kia/k4",
+      "brand_id": "kia",
+      "display": "K4",
+      "match_keys": [
+        "k4"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "K4": 6
+      }
+    },
+    "kia/seltos": {
+      "model_id": "kia/seltos",
+      "brand_id": "kia",
+      "display": "Seltos",
+      "match_keys": [
+        "seltos"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Seltos": 6
+      }
+    },
+    "kia/sorento": {
+      "model_id": "kia/sorento",
+      "brand_id": "kia",
+      "display": "Sorento",
+      "match_keys": [
+        "sorento"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Sorento": 2
+      }
+    },
+    "kia/sportage": {
+      "model_id": "kia/sportage",
+      "brand_id": "kia",
+      "display": "Sportage",
+      "match_keys": [
+        "sportage"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Sportage": 25
+      }
+    },
+    "kyc/v3": {
+      "model_id": "kyc/v3",
+      "brand_id": "kyc",
+      "display": "V3",
+      "match_keys": [
+        "v3"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "V3": 1
+      }
+    },
+    "land-rover/defender": {
+      "model_id": "land-rover/defender",
+      "brand_id": "land-rover",
+      "display": "Defender",
+      "match_keys": [
+        "defender"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Defender": 2
+      }
+    },
+    "land-rover/discovery": {
+      "model_id": "land-rover/discovery",
+      "brand_id": "land-rover",
+      "display": "Discovery",
+      "match_keys": [
+        "discovery"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Discovery": 1
+      }
+    },
+    "land-rover/discovery-sport": {
+      "model_id": "land-rover/discovery-sport",
+      "brand_id": "land-rover",
+      "display": "Discovery Sport",
+      "match_keys": [
+        "discoverysport"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Discovery Sport": 1
+      }
+    },
+    "land-rover/new-range-rover": {
+      "model_id": "land-rover/new-range-rover",
+      "brand_id": "land-rover",
+      "display": "New Range Rover",
+      "match_keys": [
+        "newrangerover"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "New Range Rover": 1
+      }
+    },
+    "land-rover/range-rover": {
+      "model_id": "land-rover/range-rover",
+      "brand_id": "land-rover",
+      "display": "Range Rover",
+      "match_keys": [
+        "rangerover"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Range Rover": 2
+      }
+    },
+    "land-rover/range-rover-evoque": {
+      "model_id": "land-rover/range-rover-evoque",
+      "brand_id": "land-rover",
+      "display": "Range Rover Evoque",
+      "match_keys": [
+        "rangeroverevoque"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Range Rover Evoque": 1
+      }
+    },
+    "land-rover/range-rover-sport": {
+      "model_id": "land-rover/range-rover-sport",
+      "brand_id": "land-rover",
+      "display": "Range Rover Sport",
+      "match_keys": [
+        "rangeroversport"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Range Rover Sport": 1
+      }
+    },
+    "land-rover/range-rover-vogue": {
+      "model_id": "land-rover/range-rover-vogue",
+      "brand_id": "land-rover",
+      "display": "Range Rover Vogue",
+      "match_keys": [
+        "rangerovervogue"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Range Rover Vogue": 1
+      }
+    },
+    "land-rover/velar": {
+      "model_id": "land-rover/velar",
+      "brand_id": "land-rover",
+      "display": "Velar",
+      "match_keys": [
+        "velar"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Velar": 1
+      }
+    },
+    "lexus/lx600": {
+      "model_id": "lexus/lx600",
+      "brand_id": "lexus",
+      "display": "LX600",
+      "match_keys": [
+        "lx600"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "LX600": 1
+      }
+    },
+    "lexus/rz": {
+      "model_id": "lexus/rz",
+      "brand_id": "lexus",
+      "display": "RZ",
+      "match_keys": [
+        "rz"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "RZ": 2
+      }
+    },
+    "li-auto/l6": {
+      "model_id": "li-auto/l6",
+      "brand_id": "li-auto",
+      "display": "L6",
+      "match_keys": [
+        "l6"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "L6": 1
+      }
+    },
+    "li-auto/l7": {
+      "model_id": "li-auto/l7",
+      "brand_id": "li-auto",
+      "display": "L7",
+      "match_keys": [
+        "l7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "L7": 1
+      }
+    },
+    "li-auto/l9": {
+      "model_id": "li-auto/l9",
+      "brand_id": "li-auto",
+      "display": "L9",
+      "match_keys": [
+        "l9"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "L9": 1
+      }
+    },
+    "lotus/eletre": {
+      "model_id": "lotus/eletre",
+      "brand_id": "lotus",
+      "display": "Eletre",
+      "match_keys": [
+        "eletre"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Eletre": 2
+      }
+    },
+    "lotus/emeya": {
+      "model_id": "lotus/emeya",
+      "brand_id": "lotus",
+      "display": "Emeya",
+      "match_keys": [
+        "emeya"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Emeya": 2
+      }
+    },
+    "lynk-co/02": {
+      "model_id": "lynk-co/02",
+      "brand_id": "lynk-co",
+      "display": "02",
+      "match_keys": [
+        "02"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "02": 1
+      }
+    },
+    "lynk-co/03": {
+      "model_id": "lynk-co/03",
+      "brand_id": "lynk-co",
+      "display": "03",
+      "match_keys": [
+        "03"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "03": 2
+      }
+    },
+    "lynk-co/06": {
+      "model_id": "lynk-co/06",
+      "brand_id": "lynk-co",
+      "display": "06",
+      "match_keys": [
+        "06"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "06": 3
+      }
+    },
+    "lynk-co/08": {
+      "model_id": "lynk-co/08",
+      "brand_id": "lynk-co",
+      "display": "08",
+      "match_keys": [
+        "08"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "08": 2
+      }
+    },
+    "lynk-co/900": {
+      "model_id": "lynk-co/900",
+      "brand_id": "lynk-co",
+      "display": "900",
+      "match_keys": [
+        "900"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "900": 1
+      }
+    },
+    "maserati/ghibli": {
+      "model_id": "maserati/ghibli",
+      "brand_id": "maserati",
+      "display": "Ghibli",
+      "match_keys": [
+        "ghibli"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Ghibli": 1
+      }
+    },
+    "maserati/granturismo": {
+      "model_id": "maserati/granturismo",
+      "brand_id": "maserati",
+      "display": "GranTurismo",
+      "match_keys": [
+        "granturismo"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "GranTurismo": 3
+      }
+    },
+    "maserati/grecale": {
+      "model_id": "maserati/grecale",
+      "brand_id": "maserati",
+      "display": "Grecale",
+      "match_keys": [
+        "grecale"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Grecale": 2
+      }
+    },
+    "maserati/levante": {
+      "model_id": "maserati/levante",
+      "brand_id": "maserati",
+      "display": "Levante",
+      "match_keys": [
+        "levante"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Levante": 1
+      }
+    },
+    "mazda/3": {
+      "model_id": "mazda/3",
+      "brand_id": "mazda",
+      "display": "3",
+      "match_keys": [
+        "3"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "3": 6
+      }
+    },
+    "mazda/cx-3": {
+      "model_id": "mazda/cx-3",
+      "brand_id": "mazda",
+      "display": "CX-3",
+      "match_keys": [
+        "cx3"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "CX-3": 1,
+        "Cx 3": 1,
+        "CX 3": 1
+      }
+    },
+    "mercedes/a180": {
+      "model_id": "mercedes/a180",
+      "brand_id": "mercedes",
+      "display": "A180",
+      "match_keys": [
+        "a180"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "A180": 1
+      }
+    },
+    "mercedes/a200": {
+      "model_id": "mercedes/a200",
+      "brand_id": "mercedes",
+      "display": "A200",
+      "match_keys": [
+        "a200"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "A200": 1
+      }
+    },
+    "mercedes/a-250e": {
+      "model_id": "mercedes/a-250e",
+      "brand_id": "mercedes",
+      "display": "A 250e",
+      "match_keys": [
+        "a250e"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "A 250e": 1
+      }
+    },
+    "mercedes/amg-gt": {
+      "model_id": "mercedes/amg-gt",
+      "brand_id": "mercedes",
+      "display": "AMG GT",
+      "match_keys": [
+        "amggt"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "AMG GT": 1
+      }
+    },
+    "mercedes/b-200": {
+      "model_id": "mercedes/b-200",
+      "brand_id": "mercedes",
+      "display": "B 200",
+      "match_keys": [
+        "b200"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "B 200": 1
+      }
+    },
+    "mercedes/c180": {
+      "model_id": "mercedes/c180",
+      "brand_id": "mercedes",
+      "display": "C180",
+      "match_keys": [
+        "c180"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "C180": 2
+      }
+    },
+    "mercedes/c200": {
+      "model_id": "mercedes/c200",
+      "brand_id": "mercedes",
+      "display": "C200",
+      "match_keys": [
+        "c200"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "C200": 1
+      }
+    },
+    "mercedes/c400": {
+      "model_id": "mercedes/c400",
+      "brand_id": "mercedes",
+      "display": "C400",
+      "match_keys": [
+        "c400"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "C400": 1
+      }
+    },
+    "mercedes/c-43-amg": {
+      "model_id": "mercedes/c-43-amg",
+      "brand_id": "mercedes",
+      "display": "C 43 AMG",
+      "match_keys": [
+        "c43amg"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "C 43 AMG": 1
+      }
+    },
+    "mercedes/cla-180": {
+      "model_id": "mercedes/cla-180",
+      "brand_id": "mercedes",
+      "display": "CLA 180",
+      "match_keys": [
+        "cla180"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "CLA 180": 1
+      }
+    },
+    "mercedes/cla-200": {
+      "model_id": "mercedes/cla-200",
+      "brand_id": "mercedes",
+      "display": "CLA 200",
+      "match_keys": [
+        "cla200"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "CLA 200": 1
+      }
+    },
+    "mercedes/cla250": {
+      "model_id": "mercedes/cla250",
+      "brand_id": "mercedes",
+      "display": "CLA250+",
+      "match_keys": [
+        "cla250"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "CLA250+": 1
+      }
+    },
+    "mercedes/cla-300": {
+      "model_id": "mercedes/cla-300",
+      "brand_id": "mercedes",
+      "display": "CLA 300",
+      "match_keys": [
+        "cla300"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "CLA 300": 1
+      }
+    },
+    "mercedes/cle-200": {
+      "model_id": "mercedes/cle-200",
+      "brand_id": "mercedes",
+      "display": "CLE 200",
+      "match_keys": [
+        "cle200"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "CLE 200": 2
+      }
+    },
+    "mercedes/cle-300": {
+      "model_id": "mercedes/cle-300",
+      "brand_id": "mercedes",
+      "display": "CLE 300",
+      "match_keys": [
+        "cle300"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "CLE 300": 1
+      }
+    },
+    "mercedes/e200": {
+      "model_id": "mercedes/e200",
+      "brand_id": "mercedes",
+      "display": "E200",
+      "match_keys": [
+        "e200"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "E200": 3
+      }
+    },
+    "mercedes/e300": {
+      "model_id": "mercedes/e300",
+      "brand_id": "mercedes",
+      "display": "E300",
+      "match_keys": [
+        "e300"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "E300": 1
+      }
+    },
+    "mercedes/e350": {
+      "model_id": "mercedes/e350",
+      "brand_id": "mercedes",
+      "display": "E350",
+      "match_keys": [
+        "e350"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "E350": 1
+      }
+    },
+    "mercedes/e-cabriolet": {
+      "model_id": "mercedes/e-cabriolet",
+      "brand_id": "mercedes",
+      "display": "E Cabriolet",
+      "match_keys": [
+        "ecabriolet"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "E Cabriolet": 1
+      }
+    },
+    "mercedes/eqa250": {
+      "model_id": "mercedes/eqa250",
+      "brand_id": "mercedes",
+      "display": "EQA250+",
+      "match_keys": [
+        "eqa250"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "EQA250+": 1
+      }
+    },
+    "mercedes/eqa-260": {
+      "model_id": "mercedes/eqa-260",
+      "brand_id": "mercedes",
+      "display": "EQA 260",
+      "match_keys": [
+        "eqa260"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "EQA 260": 1
+      }
+    },
+    "mercedes/eqb250": {
+      "model_id": "mercedes/eqb250",
+      "brand_id": "mercedes",
+      "display": "EQB250+",
+      "match_keys": [
+        "eqb250"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "EQB250+": 1
+      }
+    },
+    "mercedes/eqe-500": {
+      "model_id": "mercedes/eqe-500",
+      "brand_id": "mercedes",
+      "display": "EQE 500",
+      "match_keys": [
+        "eqe500"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "EQE 500": 1
+      }
+    },
+    "mercedes/eqe-suv": {
+      "model_id": "mercedes/eqe-suv",
+      "brand_id": "mercedes",
+      "display": "EQE SUV",
+      "match_keys": [
+        "eqesuv"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "EQE SUV": 1
+      }
+    },
+    "mercedes/eqs-suv": {
+      "model_id": "mercedes/eqs-suv",
+      "brand_id": "mercedes",
+      "display": "EQS SUV",
+      "match_keys": [
+        "eqssuv"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "EQS SUV": 3
+      }
+    },
+    "mercedes/g-500": {
+      "model_id": "mercedes/g-500",
+      "brand_id": "mercedes",
+      "display": "G 500",
+      "match_keys": [
+        "g500"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "G 500": 1
+      }
+    },
+    "mercedes/g580-with-eq-technology": {
+      "model_id": "mercedes/g580-with-eq-technology",
+      "brand_id": "mercedes",
+      "display": "G580 with EQ Technology",
+      "match_keys": [
+        "g580witheqtechnology"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "G580 with EQ Technology": 1
+      }
+    },
+    "mercedes/g-63": {
+      "model_id": "mercedes/g-63",
+      "brand_id": "mercedes",
+      "display": "G 63",
+      "match_keys": [
+        "g63"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "G 63": 1
+      }
+    },
+    "mercedes/gla-180": {
+      "model_id": "mercedes/gla-180",
+      "brand_id": "mercedes",
+      "display": "GLA 180",
+      "match_keys": [
+        "gla180"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "GLA 180": 1
+      }
+    },
+    "mercedes/gla-200": {
+      "model_id": "mercedes/gla-200",
+      "brand_id": "mercedes",
+      "display": "GLA 200",
+      "match_keys": [
+        "gla200"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "GLA 200": 1
+      }
+    },
+    "mercedes/glb-200": {
+      "model_id": "mercedes/glb-200",
+      "brand_id": "mercedes",
+      "display": "GLB 200",
+      "match_keys": [
+        "glb200"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "GLB 200": 1
+      }
+    },
+    "mercedes/glc-200": {
+      "model_id": "mercedes/glc-200",
+      "brand_id": "mercedes",
+      "display": "GLC 200",
+      "match_keys": [
+        "glc200"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "GLC 200": 2
+      }
+    },
+    "mercedes/glc-300": {
+      "model_id": "mercedes/glc-300",
+      "brand_id": "mercedes",
+      "display": "GLC 300",
+      "match_keys": [
+        "glc300"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "GLC 300": 1
+      }
+    },
+    "mercedes/glc-300-coupe": {
+      "model_id": "mercedes/glc-300-coupe",
+      "brand_id": "mercedes",
+      "display": "GLC 300 Coupe",
+      "match_keys": [
+        "glc300coupe"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "GLC 300 Coupe": 1
+      }
+    },
+    "mercedes/glc-400": {
+      "model_id": "mercedes/glc-400",
+      "brand_id": "mercedes",
+      "display": "GLC 400",
+      "match_keys": [
+        "glc400"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "GLC 400": 1
+      }
+    },
+    "mercedes/glc-43": {
+      "model_id": "mercedes/glc-43",
+      "brand_id": "mercedes",
+      "display": "GLC 43",
+      "match_keys": [
+        "glc43"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "GLC 43": 1
+      }
+    },
+    "mercedes/gle-450": {
+      "model_id": "mercedes/gle-450",
+      "brand_id": "mercedes",
+      "display": "GLE 450",
+      "match_keys": [
+        "gle450"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "GLE 450": 1
+      }
+    },
+    "mercedes/gle-53": {
+      "model_id": "mercedes/gle-53",
+      "brand_id": "mercedes",
+      "display": "GLE 53",
+      "match_keys": [
+        "gle53"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "GLE 53": 1
+      }
+    },
+    "mercedes/gls-580": {
+      "model_id": "mercedes/gls-580",
+      "brand_id": "mercedes",
+      "display": "GLS 580",
+      "match_keys": [
+        "gls580"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "GLS 580": 1
+      }
+    },
+    "mercedes/gt53": {
+      "model_id": "mercedes/gt53",
+      "brand_id": "mercedes",
+      "display": "GT53",
+      "match_keys": [
+        "gt53"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "GT53": 1
+      }
+    },
+    "mercedes/maybach-s-580": {
+      "model_id": "mercedes/maybach-s-580",
+      "brand_id": "mercedes",
+      "display": "Maybach S 580",
+      "match_keys": [
+        "maybachs580"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Maybach S 580": 1
+      }
+    },
+    "mercedes/s450": {
+      "model_id": "mercedes/s450",
+      "brand_id": "mercedes",
+      "display": "S450",
+      "match_keys": [
+        "s450"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "S450": 1
+      }
+    },
+    "mercedes/s500": {
+      "model_id": "mercedes/s500",
+      "brand_id": "mercedes",
+      "display": "S500",
+      "match_keys": [
+        "s500"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "S500": 1
+      }
+    },
+    "mercedes/s580": {
+      "model_id": "mercedes/s580",
+      "brand_id": "mercedes",
+      "display": "S580",
+      "match_keys": [
+        "s580"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "S580": 1
+      }
+    },
+    "mercedes/s63": {
+      "model_id": "mercedes/s63",
+      "brand_id": "mercedes",
+      "display": "S63",
+      "match_keys": [
+        "s63"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "S63": 1
+      }
+    },
+    "mercedes/sl55-amg": {
+      "model_id": "mercedes/sl55-amg",
+      "brand_id": "mercedes",
+      "display": "SL55 AMG",
+      "match_keys": [
+        "sl55amg"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "SL55 AMG": 1
+      }
+    },
+    "mercedes/v300": {
+      "model_id": "mercedes/v300",
+      "brand_id": "mercedes",
+      "display": "V300",
+      "match_keys": [
+        "v300"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "V300": 1
+      }
+    },
+    "mg/4": {
+      "model_id": "mg/4",
+      "brand_id": "mg",
+      "display": "4",
+      "match_keys": [
+        "4"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "4": 3
+      }
+    },
+    "mg/5": {
+      "model_id": "mg/5",
+      "brand_id": "mg",
+      "display": "5",
+      "match_keys": [
+        "5"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "5": 5
+      }
+    },
+    "mg/6": {
+      "model_id": "mg/6",
+      "brand_id": "mg",
+      "display": "6",
+      "match_keys": [
+        "6"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "6": 2
+      }
+    },
+    "mg/7": {
+      "model_id": "mg/7",
+      "brand_id": "mg",
+      "display": "7",
+      "match_keys": [
+        "7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "7": 5
+      }
+    },
+    "mg/cyberster": {
+      "model_id": "mg/cyberster",
+      "brand_id": "mg",
+      "display": "Cyberster",
+      "match_keys": [
+        "cyberster"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Cyberster": 3
+      }
+    },
+    "mg/g50-plus": {
+      "model_id": "mg/g50-plus",
+      "brand_id": "mg",
+      "display": "G50 Plus",
+      "match_keys": [
+        "g50plus"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "G50 Plus": 3
+      }
+    },
+    "mg/gt": {
+      "model_id": "mg/gt",
+      "brand_id": "mg",
+      "display": "GT",
+      "match_keys": [
+        "gt"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "GT": 5
+      }
+    },
+    "mg/hs": {
+      "model_id": "mg/hs",
+      "brand_id": "mg",
+      "display": "HS",
+      "match_keys": [
+        "hs"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "HS": 6
+      }
+    },
+    "mg/one": {
+      "model_id": "mg/one",
+      "brand_id": "mg",
+      "display": "One",
+      "match_keys": [
+        "one"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "One": 3
+      }
+    },
+    "mg/rx5": {
+      "model_id": "mg/rx5",
+      "brand_id": "mg",
+      "display": "RX5",
+      "match_keys": [
+        "rx5"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "RX5": 1
+      }
+    },
+    "mg/rx5-plus": {
+      "model_id": "mg/rx5-plus",
+      "brand_id": "mg",
+      "display": "RX5 Plus",
+      "match_keys": [
+        "rx5plus"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "RX5 Plus": 2
+      }
+    },
+    "mg/rx9": {
+      "model_id": "mg/rx9",
+      "brand_id": "mg",
+      "display": "RX9",
+      "match_keys": [
+        "rx9"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "RX9": 3
+      }
+    },
+    "mg/zs": {
+      "model_id": "mg/zs",
+      "brand_id": "mg",
+      "display": "ZS",
+      "match_keys": [
+        "zs"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "ZS": 6
+      }
+    },
+    "mhero/1": {
+      "model_id": "mhero/1",
+      "brand_id": "mhero",
+      "display": "1",
+      "match_keys": [
+        "1"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "1": 1
+      }
+    },
+    "mini/cooper": {
+      "model_id": "mini/cooper",
+      "brand_id": "mini",
+      "display": "Cooper",
+      "match_keys": [
+        "cooper"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Cooper": 12
+      }
+    },
+    "mini/countryman": {
+      "model_id": "mini/countryman",
+      "brand_id": "mini",
+      "display": "Countryman",
+      "match_keys": [
+        "countryman"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Countryman": 12
+      }
+    },
+    "mitsubishi/attrage": {
+      "model_id": "mitsubishi/attrage",
+      "brand_id": "mitsubishi",
+      "display": "Attrage",
+      "match_keys": [
+        "attrage"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Attrage": 1
+      }
+    },
+    "mitsubishi/destinator": {
+      "model_id": "mitsubishi/destinator",
+      "brand_id": "mitsubishi",
+      "display": "Destinator",
+      "match_keys": [
+        "destinator"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Destinator": 3
+      }
+    },
+    "mitsubishi/eclipse-cross": {
+      "model_id": "mitsubishi/eclipse-cross",
+      "brand_id": "mitsubishi",
+      "display": "Eclipse Cross",
+      "match_keys": [
+        "eclipsecross"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Eclipse Cross": 5
+      }
+    },
+    "mitsubishi/l200": {
+      "model_id": "mitsubishi/l200",
+      "brand_id": "mitsubishi",
+      "display": "L200",
+      "match_keys": [
+        "l200"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "L200": 1
+      }
+    },
+    "mitsubishi/mirage": {
+      "model_id": "mitsubishi/mirage",
+      "brand_id": "mitsubishi",
+      "display": "Mirage",
+      "match_keys": [
+        "mirage"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Mirage": 1
+      }
+    },
+    "mitsubishi/outlander": {
+      "model_id": "mitsubishi/outlander",
+      "brand_id": "mitsubishi",
+      "display": "Outlander",
+      "match_keys": [
+        "outlander"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Outlander": 1
+      }
+    },
+    "mitsubishi/outlander-sport": {
+      "model_id": "mitsubishi/outlander-sport",
+      "brand_id": "mitsubishi",
+      "display": "Outlander Sport",
+      "match_keys": [
+        "outlandersport"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Outlander Sport": 5
+      }
+    },
+    "mitsubishi/pajero-sport": {
+      "model_id": "mitsubishi/pajero-sport",
+      "brand_id": "mitsubishi",
+      "display": "Pajero Sport",
+      "match_keys": [
+        "pajerosport"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Pajero Sport": 1
+      }
+    },
+    "mitsubishi/xpander": {
+      "model_id": "mitsubishi/xpander",
+      "brand_id": "mitsubishi",
+      "display": "Xpander",
+      "match_keys": [
+        "xpander"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Xpander": 5
+      }
+    },
+    "nissan/armada": {
+      "model_id": "nissan/armada",
+      "brand_id": "nissan",
+      "display": "Armada",
+      "match_keys": [
+        "armada"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Armada": 1
+      }
+    },
+    "nissan/juke": {
+      "model_id": "nissan/juke",
+      "brand_id": "nissan",
+      "display": "Juke",
+      "match_keys": [
+        "juke"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Juke": 10
+      }
+    },
+    "nissan/magnite": {
+      "model_id": "nissan/magnite",
+      "brand_id": "nissan",
+      "display": "Magnite",
+      "match_keys": [
+        "magnite"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Magnite": 9
+      }
+    },
+    "nissan/n7": {
+      "model_id": "nissan/n7",
+      "brand_id": "nissan",
+      "display": "N7",
+      "match_keys": [
+        "n7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "N7": 1
+      }
+    },
+    "nissan/navara": {
+      "model_id": "nissan/navara",
+      "brand_id": "nissan",
+      "display": "Navara",
+      "match_keys": [
+        "navara"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Navara": 5
+      }
+    },
+    "nissan/patrol": {
+      "model_id": "nissan/patrol",
+      "brand_id": "nissan",
+      "display": "Patrol",
+      "match_keys": [
+        "patrol"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Patrol": 9
+      }
+    },
+    "nissan/qashqai": {
+      "model_id": "nissan/qashqai",
+      "brand_id": "nissan",
+      "display": "Qashqai",
+      "match_keys": [
+        "qashqai"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Qashqai": 12
+      }
+    },
+    "nissan/sentra": {
+      "model_id": "nissan/sentra",
+      "brand_id": "nissan",
+      "display": "Sentra",
+      "match_keys": [
+        "sentra"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Sentra": 3
+      }
+    },
+    "nissan/sunny": {
+      "model_id": "nissan/sunny",
+      "brand_id": "nissan",
+      "display": "Sunny",
+      "match_keys": [
+        "sunny"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Sunny": 10
+      }
+    },
+    "nissan/x-trail": {
+      "model_id": "nissan/x-trail",
+      "brand_id": "nissan",
+      "display": "X-Trail",
+      "match_keys": [
+        "xtrail"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "X-Trail": 7
+      }
+    },
+    "omoda/c5": {
+      "model_id": "omoda/c5",
+      "brand_id": "omoda",
+      "display": "C5",
+      "match_keys": [
+        "c5"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "C5": 1
+      }
+    },
+    "opel/corsa": {
+      "model_id": "opel/corsa",
+      "brand_id": "opel",
+      "display": "Corsa",
+      "match_keys": [
+        "corsa"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Corsa": 1
+      }
+    },
+    "opel/crossland": {
+      "model_id": "opel/crossland",
+      "brand_id": "opel",
+      "display": "Crossland",
+      "match_keys": [
+        "crossland"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Crossland": 1
+      }
+    },
+    "opel/frontera": {
+      "model_id": "opel/frontera",
+      "brand_id": "opel",
+      "display": "Frontera",
+      "match_keys": [
+        "frontera"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Frontera": 1
+      }
+    },
+    "opel/grandland": {
+      "model_id": "opel/grandland",
+      "brand_id": "opel",
+      "display": "Grandland",
+      "match_keys": [
+        "grandland"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Grand Land": 11,
+        "Grandland": 3
+      }
+    },
+    "opel/mokka": {
+      "model_id": "opel/mokka",
+      "brand_id": "opel",
+      "display": "Mokka",
+      "match_keys": [
+        "mokka"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Mokka": 1
+      }
+    },
+    "opel/vectra": {
+      "model_id": "opel/vectra",
+      "brand_id": "opel",
+      "display": "Vectra",
+      "match_keys": [
+        "vectra"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Vectra": 1
+      }
+    },
+    "peugeot/2008": {
+      "model_id": "peugeot/2008",
+      "brand_id": "peugeot",
+      "display": "2008",
+      "match_keys": [
+        "2008"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "2008": 2
+      }
+    },
+    "peugeot/3008": {
+      "model_id": "peugeot/3008",
+      "brand_id": "peugeot",
+      "display": "3008",
+      "match_keys": [
+        "3008"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "3008": 2
+      }
+    },
+    "peugeot/408": {
+      "model_id": "peugeot/408",
+      "brand_id": "peugeot",
+      "display": "408",
+      "match_keys": [
+        "408"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "408": 4
+      }
+    },
+    "peugeot/5008": {
+      "model_id": "peugeot/5008",
+      "brand_id": "peugeot",
+      "display": "5008",
+      "match_keys": [
+        "5008"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "5008": 2
+      }
+    },
+    "porsche/718": {
+      "model_id": "porsche/718",
+      "brand_id": "porsche",
+      "display": "718",
+      "match_keys": [
+        "718"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "718": 18
+      }
+    },
+    "porsche/718-cayman-gts": {
+      "model_id": "porsche/718-cayman-gts",
+      "brand_id": "porsche",
+      "display": "718 Cayman GTS",
+      "match_keys": [
+        "718caymangts"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "718 Cayman GTS": 1
+      }
+    },
+    "porsche/911": {
+      "model_id": "porsche/911",
+      "brand_id": "porsche",
+      "display": "911",
+      "match_keys": [
+        "911"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "911": 8
+      }
+    },
+    "porsche/911-carrera": {
+      "model_id": "porsche/911-carrera",
+      "brand_id": "porsche",
+      "display": "911 Carrera",
+      "match_keys": [
+        "911carrera"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "911 Carrera": 8
+      }
+    },
+    "porsche/911-gt3": {
+      "model_id": "porsche/911-gt3",
+      "brand_id": "porsche",
+      "display": "911 GT3",
+      "match_keys": [
+        "911gt3"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "911 GT3": 3
+      }
+    },
+    "porsche/911-turbo": {
+      "model_id": "porsche/911-turbo",
+      "brand_id": "porsche",
+      "display": "911 Turbo",
+      "match_keys": [
+        "911turbo"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "911 Turbo": 4
+      }
+    },
+    "porsche/cayenne": {
+      "model_id": "porsche/cayenne",
+      "brand_id": "porsche",
+      "display": "Cayenne",
+      "match_keys": [
+        "cayenne"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Cayenne": 11
+      }
+    },
+    "porsche/cayenne-coupe": {
+      "model_id": "porsche/cayenne-coupe",
+      "brand_id": "porsche",
+      "display": "Cayenne Coupe",
+      "match_keys": [
+        "cayennecoupe"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Cayenne Coupe": 5
+      }
+    },
+    "porsche/macan": {
+      "model_id": "porsche/macan",
+      "brand_id": "porsche",
+      "display": "Macan",
+      "match_keys": [
+        "macan"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Macan": 7
+      }
+    },
+    "porsche/macan-electric": {
+      "model_id": "porsche/macan-electric",
+      "brand_id": "porsche",
+      "display": "Macan Electric",
+      "match_keys": [
+        "macanelectric"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Macan Electric": 4
+      }
+    },
+    "porsche/panamera": {
+      "model_id": "porsche/panamera",
+      "brand_id": "porsche",
+      "display": "Panamera",
+      "match_keys": [
+        "panamera"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Panamera": 14
+      }
+    },
+    "porsche/targa": {
+      "model_id": "porsche/targa",
+      "brand_id": "porsche",
+      "display": "Targa",
+      "match_keys": [
+        "targa"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Targa": 2
+      }
+    },
+    "porsche/taycan": {
+      "model_id": "porsche/taycan",
+      "brand_id": "porsche",
+      "display": "Taycan",
+      "match_keys": [
+        "taycan"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Taycan": 17
+      }
+    },
+    "proton/saga": {
+      "model_id": "proton/saga",
+      "brand_id": "proton",
+      "display": "Saga",
+      "match_keys": [
+        "saga"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Saga": 2
+      }
+    },
+    "range-rover/evoque": {
+      "model_id": "range-rover/evoque",
+      "brand_id": "range-rover",
+      "display": "Evoque",
+      "match_keys": [
+        "evoque"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Evoque": 1
+      }
+    },
+    "rehigh/rh6": {
+      "model_id": "rehigh/rh6",
+      "brand_id": "rehigh",
+      "display": "RH6",
+      "match_keys": [
+        "rh6"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "RH6": 2
+      }
+    },
+    "rely/r8": {
+      "model_id": "rely/r8",
+      "brand_id": "rely",
+      "display": "R8",
+      "match_keys": [
+        "r8"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "R8": 2
+      }
+    },
+    "renault/austral": {
+      "model_id": "renault/austral",
+      "brand_id": "renault",
+      "display": "Austral",
+      "match_keys": [
+        "austral"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Austral": 9
+      }
+    },
+    "renault/duster": {
+      "model_id": "renault/duster",
+      "brand_id": "renault",
+      "display": "Duster",
+      "match_keys": [
+        "duster"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Duster": 6
+      }
+    },
+    "renault/kardian": {
+      "model_id": "renault/kardian",
+      "brand_id": "renault",
+      "display": "Kardian",
+      "match_keys": [
+        "kardian"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Kardian": 6
+      }
+    },
+    "renault/megane": {
+      "model_id": "renault/megane",
+      "brand_id": "renault",
+      "display": "Megane",
+      "match_keys": [
+        "megane"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Megane": 6
+      }
+    },
+    "renault/sandero": {
+      "model_id": "renault/sandero",
+      "brand_id": "renault",
+      "display": "Sandero",
+      "match_keys": [
+        "sandero"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Sandero": 1
+      }
+    },
+    "renault/sandero-stepway": {
+      "model_id": "renault/sandero-stepway",
+      "brand_id": "renault",
+      "display": "Sandero Stepway",
+      "match_keys": [
+        "sanderostepway"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Sandero Stepway": 1
+      }
+    },
+    "renault/taliant": {
+      "model_id": "renault/taliant",
+      "brand_id": "renault",
+      "display": "Taliant",
+      "match_keys": [
+        "taliant"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Taliant": 4
+      }
+    },
+    "rolls-royce/cullinan": {
+      "model_id": "rolls-royce/cullinan",
+      "brand_id": "rolls-royce",
+      "display": "Cullinan",
+      "match_keys": [
+        "cullinan"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Cullinan": 1
+      }
+    },
+    "rolls-royce/spectre": {
+      "model_id": "rolls-royce/spectre",
+      "brand_id": "rolls-royce",
+      "display": "Spectre",
+      "match_keys": [
+        "spectre"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Spectre": 1
+      }
+    },
+    "rox/01": {
+      "model_id": "rox/01",
+      "brand_id": "rox",
+      "display": "01",
+      "match_keys": [
+        "01"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "01": 6
+      }
+    },
+    "rox/adamas": {
+      "model_id": "rox/adamas",
+      "brand_id": "rox",
+      "display": "Adamas",
+      "match_keys": [
+        "adamas"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Adamas": 3
+      }
+    },
+    "sandstorm/s24": {
+      "model_id": "sandstorm/s24",
+      "brand_id": "sandstorm",
+      "display": "S24",
+      "match_keys": [
+        "s24"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "S24": 1
+      }
+    },
+    "seat/arona": {
+      "model_id": "seat/arona",
+      "brand_id": "seat",
+      "display": "Arona",
+      "match_keys": [
+        "arona"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Arona": 2
+      }
+    },
+    "seat/ateca": {
+      "model_id": "seat/ateca",
+      "brand_id": "seat",
+      "display": "Ateca",
+      "match_keys": [
+        "ateca"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Ateca": 1
+      }
+    },
+    "seat/ibiza": {
+      "model_id": "seat/ibiza",
+      "brand_id": "seat",
+      "display": "Ibiza",
+      "match_keys": [
+        "ibiza"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Ibiza": 5
+      }
+    },
+    "seat/leon": {
+      "model_id": "seat/leon",
+      "brand_id": "seat",
+      "display": "Leon",
+      "match_keys": [
+        "leon"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Leon": 1
+      }
+    },
+    "shineray/x30": {
+      "model_id": "shineray/x30",
+      "brand_id": "shineray",
+      "display": "X30",
+      "match_keys": [
+        "x30"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "X30": 1
+      }
+    },
+    "skoda/karoq": {
+      "model_id": "skoda/karoq",
+      "brand_id": "skoda",
+      "display": "KAROQ",
+      "match_keys": [
+        "karoq"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "KAROQ": 2
+      }
+    },
+    "skoda/kodiaq": {
+      "model_id": "skoda/kodiaq",
+      "brand_id": "skoda",
+      "display": "KODIAQ",
+      "match_keys": [
+        "kodiaq"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "KODIAQ": 10
+      }
+    },
+    "skoda/octavia": {
+      "model_id": "skoda/octavia",
+      "brand_id": "skoda",
+      "display": "Octavia",
+      "match_keys": [
+        "octavia"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Octavia": 6
+      }
+    },
+    "skoda/octavia-a8": {
+      "model_id": "skoda/octavia-a8",
+      "brand_id": "skoda",
+      "display": "Octavia A8",
+      "match_keys": [
+        "octaviaa8"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Octavia A8": 1
+      }
+    },
+    "skoda/superb": {
+      "model_id": "skoda/superb",
+      "brand_id": "skoda",
+      "display": "Superb",
+      "match_keys": [
+        "superb"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Superb": 6
+      }
+    },
+    "smart/1": {
+      "model_id": "smart/1",
+      "brand_id": "smart",
+      "display": "1",
+      "match_keys": [
+        "1"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "1": 4
+      }
+    },
+    "smart/3": {
+      "model_id": "smart/3",
+      "brand_id": "smart",
+      "display": "3",
+      "match_keys": [
+        "3"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "3": 3
+      }
+    },
+    "smart/5": {
+      "model_id": "smart/5",
+      "brand_id": "smart",
+      "display": "5",
+      "match_keys": [
+        "5"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "5": 3
+      }
+    },
+    "smart/hashtag-1": {
+      "model_id": "smart/hashtag-1",
+      "brand_id": "smart",
+      "display": "Hashtag 1",
+      "match_keys": [
+        "hashtag1"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Hashtag 1": 4
+      }
+    },
+    "smart/hashtag-3": {
+      "model_id": "smart/hashtag-3",
+      "brand_id": "smart",
+      "display": "Hashtag 3",
+      "match_keys": [
+        "hashtag3"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Hashtag 3": 3
+      }
+    },
+    "soueast/s-05": {
+      "model_id": "soueast/s-05",
+      "brand_id": "soueast",
+      "display": "S 05",
+      "match_keys": [
+        "s05"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "S 05": 3
+      }
+    },
+    "soueast/s-06": {
+      "model_id": "soueast/s-06",
+      "brand_id": "soueast",
+      "display": "S 06",
+      "match_keys": [
+        "s06"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "S 06": 7
+      }
+    },
+    "soueast/s-07": {
+      "model_id": "soueast/s-07",
+      "brand_id": "soueast",
+      "display": "S 07",
+      "match_keys": [
+        "s07"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "S 07": 5
+      }
+    },
+    "soueast/s08": {
+      "model_id": "soueast/s08",
+      "brand_id": "soueast",
+      "display": "S08",
+      "match_keys": [
+        "s08"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "S08": 2
+      }
+    },
+    "soueast/s-08-dm": {
+      "model_id": "soueast/s-08-dm",
+      "brand_id": "soueast",
+      "display": "S 08 DM",
+      "match_keys": [
+        "s08dm"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "S 08 DM": 1
+      }
+    },
+    "soueast/s-09": {
+      "model_id": "soueast/s-09",
+      "brand_id": "soueast",
+      "display": "S 09",
+      "match_keys": [
+        "s09"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "S 09": 3
+      }
+    },
+    "speranza/tiggo": {
+      "model_id": "speranza/tiggo",
+      "brand_id": "speranza",
+      "display": "Tiggo",
+      "match_keys": [
+        "tiggo"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Tiggo": 1
+      }
+    },
+    "subaru/crosstrek": {
+      "model_id": "subaru/crosstrek",
+      "brand_id": "subaru",
+      "display": "Crosstrek",
+      "match_keys": [
+        "crosstrek"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Crosstrek": 1
+      }
+    },
+    "subaru/forester": {
+      "model_id": "subaru/forester",
+      "brand_id": "subaru",
+      "display": "Forester",
+      "match_keys": [
+        "forester"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Forester": 1
+      }
+    },
+    "subaru/xv-crosstrek": {
+      "model_id": "subaru/xv-crosstrek",
+      "brand_id": "subaru",
+      "display": "XV Crosstrek",
+      "match_keys": [
+        "xvcrosstrek"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "XV Crosstrek": 1
+      }
+    },
+    "suzuki/alto": {
+      "model_id": "suzuki/alto",
+      "brand_id": "suzuki",
+      "display": "Alto",
+      "match_keys": [
+        "alto"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Alto": 1
+      }
+    },
+    "suzuki/baleno": {
+      "model_id": "suzuki/baleno",
+      "brand_id": "suzuki",
+      "display": "Baleno",
+      "match_keys": [
+        "baleno"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Baleno": 1
+      }
+    },
+    "suzuki/celerio": {
+      "model_id": "suzuki/celerio",
+      "brand_id": "suzuki",
+      "display": "Celerio",
+      "match_keys": [
+        "celerio"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Celerio": 1
+      }
+    },
+    "suzuki/ciaz": {
+      "model_id": "suzuki/ciaz",
+      "brand_id": "suzuki",
+      "display": "Ciaz",
+      "match_keys": [
+        "ciaz"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Ciaz": 1
+      }
+    },
+    "suzuki/ertiga": {
+      "model_id": "suzuki/ertiga",
+      "brand_id": "suzuki",
+      "display": "Ertiga",
+      "match_keys": [
+        "ertiga"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Ertiga": 1
+      }
+    },
+    "suzuki/fronx": {
+      "model_id": "suzuki/fronx",
+      "brand_id": "suzuki",
+      "display": "Fronx",
+      "match_keys": [
+        "fronx"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Fronx": 1
+      }
+    },
+    "suzuki/jimny": {
+      "model_id": "suzuki/jimny",
+      "brand_id": "suzuki",
+      "display": "Jimny",
+      "match_keys": [
+        "jimny"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Jimny": 1
+      }
+    },
+    "suzuki/s-presso": {
+      "model_id": "suzuki/s-presso",
+      "brand_id": "suzuki",
+      "display": "S-Presso",
+      "match_keys": [
+        "spresso"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "S-Presso": 1
+      }
+    },
+    "suzuki/swift": {
+      "model_id": "suzuki/swift",
+      "brand_id": "suzuki",
+      "display": "Swift",
+      "match_keys": [
+        "swift"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Swift": 2
+      }
+    },
+    "suzuki/swift-dzire": {
+      "model_id": "suzuki/swift-dzire",
+      "brand_id": "suzuki",
+      "display": "Swift Dzire",
+      "match_keys": [
+        "swiftdzire"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Swift Dzire": 1
+      }
+    },
+    "tesla/cybertruck": {
+      "model_id": "tesla/cybertruck",
+      "brand_id": "tesla",
+      "display": "Cybertruck",
+      "match_keys": [
+        "cybertruck"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Cybertruck": 1
+      }
+    },
+    "tesla/model-y": {
+      "model_id": "tesla/model-y",
+      "brand_id": "tesla",
+      "display": "Model Y",
+      "match_keys": [
+        "modely"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Model Y": 1
+      }
+    },
+    "toyota/bz4x": {
+      "model_id": "toyota/bz4x",
+      "brand_id": "toyota",
+      "display": "bZ4X",
+      "match_keys": [
+        "bz4x"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "bZ4X": 6
+      }
+    },
+    "toyota/corolla": {
+      "model_id": "toyota/corolla",
+      "brand_id": "toyota",
+      "display": "Corolla",
+      "match_keys": [
+        "corolla"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Corolla": 30
+      }
+    },
+    "toyota/fortuner": {
+      "model_id": "toyota/fortuner",
+      "brand_id": "toyota",
+      "display": "Fortuner",
+      "match_keys": [
+        "fortuner"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Fortuner": 3
+      }
+    },
+    "toyota/hiace": {
+      "model_id": "toyota/hiace",
+      "brand_id": "toyota",
+      "display": "Hiace",
+      "match_keys": [
+        "hiace"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Hiace": 1
+      }
+    },
+    "toyota/hilux": {
+      "model_id": "toyota/hilux",
+      "brand_id": "toyota",
+      "display": "Hilux",
+      "match_keys": [
+        "hilux"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Hilux": 2
+      }
+    },
+    "toyota/land-cruiser": {
+      "model_id": "toyota/land-cruiser",
+      "brand_id": "toyota",
+      "display": "Land Cruiser",
+      "match_keys": [
+        "landcruiser"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Land Cruiser": 1
+      }
+    },
+    "toyota/tamaraw": {
+      "model_id": "toyota/tamaraw",
+      "brand_id": "toyota",
+      "display": "Tamaraw",
+      "match_keys": [
+        "tamaraw"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Tamaraw": 1
+      }
+    },
+    "toyota/urban-cruiser": {
+      "model_id": "toyota/urban-cruiser",
+      "brand_id": "toyota",
+      "display": "Urban Cruiser",
+      "match_keys": [
+        "urbancruiser"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Urban Cruiser": 4
+      }
+    },
+    "vgv/u70p-plus": {
+      "model_id": "vgv/u70p-plus",
+      "brand_id": "vgv",
+      "display": "U70P Plus",
+      "match_keys": [
+        "u70pplus"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "U70P Plus": 1,
+        "U70 P plus": 1
+      }
+    },
+    "vgv/u70-pro": {
+      "model_id": "vgv/u70-pro",
+      "brand_id": "vgv",
+      "display": "U70 Pro",
+      "match_keys": [
+        "u70pro"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "U70 Pro": 2
+      }
+    },
+    "vgv/u70pro-plus": {
+      "model_id": "vgv/u70pro-plus",
+      "brand_id": "vgv",
+      "display": "U70Pro Plus",
+      "match_keys": [
+        "u70proplus"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "U70Pro Plus": 2
+      }
+    },
+    "volkswagen/golf": {
+      "model_id": "volkswagen/golf",
+      "brand_id": "volkswagen",
+      "display": "Golf",
+      "match_keys": [
+        "golf"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Golf": 2
+      }
+    },
+    "volkswagen/id-4": {
+      "model_id": "volkswagen/id-4",
+      "brand_id": "volkswagen",
+      "display": "ID.4",
+      "match_keys": [
+        "id4"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "ID.4": 1
+      }
+    },
+    "volkswagen/id-4-crozz": {
+      "model_id": "volkswagen/id-4-crozz",
+      "brand_id": "volkswagen",
+      "display": "ID.4 Crozz",
+      "match_keys": [
+        "id4crozz"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "ID.4 Crozz": 1
+      }
+    },
+    "volkswagen/id-6-crozz": {
+      "model_id": "volkswagen/id-6-crozz",
+      "brand_id": "volkswagen",
+      "display": "ID.6 Crozz",
+      "match_keys": [
+        "id6crozz"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "ID.6 Crozz": 1
+      }
+    },
+    "volkswagen/id7": {
+      "model_id": "volkswagen/id7",
+      "brand_id": "volkswagen",
+      "display": "id7",
+      "match_keys": [
+        "id7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "id7": 1
+      }
+    },
+    "volkswagen/id-era-9x": {
+      "model_id": "volkswagen/id-era-9x",
+      "brand_id": "volkswagen",
+      "display": "ID-ERA 9X",
+      "match_keys": [
+        "idera9x"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "ID-ERA 9X": 1
+      }
+    },
+    "volkswagen/passat": {
+      "model_id": "volkswagen/passat",
+      "brand_id": "volkswagen",
+      "display": "Passat",
+      "match_keys": [
+        "passat"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Passat": 1
+      }
+    },
+    "volkswagen/tayron": {
+      "model_id": "volkswagen/tayron",
+      "brand_id": "volkswagen",
+      "display": "Tayron",
+      "match_keys": [
+        "tayron"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Tayron": 2
+      }
+    },
+    "volkswagen/tiguan": {
+      "model_id": "volkswagen/tiguan",
+      "brand_id": "volkswagen",
+      "display": "Tiguan",
+      "match_keys": [
+        "tiguan"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Tiguan": 3
+      }
+    },
+    "volkswagen/touareg": {
+      "model_id": "volkswagen/touareg",
+      "brand_id": "volkswagen",
+      "display": "Touareg",
+      "match_keys": [
+        "touareg"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Touareg": 2
+      }
+    },
+    "volkswagen/t-roc": {
+      "model_id": "volkswagen/t-roc",
+      "brand_id": "volkswagen",
+      "display": "T-Roc",
+      "match_keys": [
+        "troc"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "T-Roc": 2
+      }
+    },
+    "volvo/es90": {
+      "model_id": "volvo/es90",
+      "brand_id": "volvo",
+      "display": "ES90",
+      "match_keys": [
+        "es90"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "ES 90": 1,
+        "ES90": 1
+      }
+    },
+    "volvo/ex30": {
+      "model_id": "volvo/ex30",
+      "brand_id": "volvo",
+      "display": "EX30",
+      "match_keys": [
+        "ex30"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "EX30": 6
+      }
+    },
+    "volvo/ex90": {
+      "model_id": "volvo/ex90",
+      "brand_id": "volvo",
+      "display": "EX90",
+      "match_keys": [
+        "ex90"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "EX90": 2
+      }
+    },
+    "volvo/xc-40": {
+      "model_id": "volvo/xc-40",
+      "brand_id": "volvo",
+      "display": "XC 40",
+      "match_keys": [
+        "xc40"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "XC 40": 4
+      }
+    },
+    "volvo/xc60": {
+      "model_id": "volvo/xc60",
+      "brand_id": "volvo",
+      "display": "XC60",
+      "match_keys": [
+        "xc60"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "XC60": 3,
+        "XC 60": 3
+      }
+    },
+    "volvo/xc90": {
+      "model_id": "volvo/xc90",
+      "brand_id": "volvo",
+      "display": "XC90",
+      "match_keys": [
+        "xc90"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "XC90": 1,
+        "XC 90": 1
+      }
+    },
+    "voyah/dream": {
+      "model_id": "voyah/dream",
+      "brand_id": "voyah",
+      "display": "Dream",
+      "match_keys": [
+        "dream"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Dream": 2
+      }
+    },
+    "voyah/free": {
+      "model_id": "voyah/free",
+      "brand_id": "voyah",
+      "display": "Free",
+      "match_keys": [
+        "free"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Free": 2
+      }
+    },
+    "voyah/passion": {
+      "model_id": "voyah/passion",
+      "brand_id": "voyah",
+      "display": "Passion",
+      "match_keys": [
+        "passion"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Passion": 1
+      }
+    },
+    "wingamm/oasi-540": {
+      "model_id": "wingamm/oasi-540",
+      "brand_id": "wingamm",
+      "display": "Oasi 540",
+      "match_keys": [
+        "oasi540"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Oasi 540": 1
+      }
+    },
+    "xiaomi/su7": {
+      "model_id": "xiaomi/su7",
+      "brand_id": "xiaomi",
+      "display": "SU7",
+      "match_keys": [
+        "su7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "SU7": 1
+      }
+    },
+    "xiaomi/yu7": {
+      "model_id": "xiaomi/yu7",
+      "brand_id": "xiaomi",
+      "display": "YU7",
+      "match_keys": [
+        "yu7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "YU7": 1
+      }
+    },
+    "xpeng/g6": {
+      "model_id": "xpeng/g6",
+      "brand_id": "xpeng",
+      "display": "G6",
+      "match_keys": [
+        "g6"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "G6": 1
+      }
+    },
+    "xpeng/g7": {
+      "model_id": "xpeng/g7",
+      "brand_id": "xpeng",
+      "display": "G7",
+      "match_keys": [
+        "g7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "G7": 1
+      }
+    },
+    "xpeng/g9": {
+      "model_id": "xpeng/g9",
+      "brand_id": "xpeng",
+      "display": "G9",
+      "match_keys": [
+        "g9"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "G9": 3
+      }
+    },
+    "xpeng/gx": {
+      "model_id": "xpeng/gx",
+      "brand_id": "xpeng",
+      "display": "GX",
+      "match_keys": [
+        "gx"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "GX": 1
+      }
+    },
+    "xpeng/m03": {
+      "model_id": "xpeng/m03",
+      "brand_id": "xpeng",
+      "display": "M03",
+      "match_keys": [
+        "m03"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "M03": 2
+      }
+    },
+    "xpeng/mona-l03": {
+      "model_id": "xpeng/mona-l03",
+      "brand_id": "xpeng",
+      "display": "Mona L03",
+      "match_keys": [
+        "monal03"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "Mona L03": 1
+      }
+    },
+    "xpeng/p7": {
+      "model_id": "xpeng/p7",
+      "brand_id": "xpeng",
+      "display": "P7",
+      "match_keys": [
+        "p7"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "P7": 1
+      }
+    },
+    "xpeng/x9": {
+      "model_id": "xpeng/x9",
+      "brand_id": "xpeng",
+      "display": "X9",
+      "match_keys": [
+        "x9"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "X9": 1
+      }
+    },
+    "zeekr/001": {
+      "model_id": "zeekr/001",
+      "brand_id": "zeekr",
+      "display": "001",
+      "match_keys": [
+        "001"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "001": 3
+      }
+    },
+    "zeekr/007": {
+      "model_id": "zeekr/007",
+      "brand_id": "zeekr",
+      "display": "007",
+      "match_keys": [
+        "007"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "007": 1
+      }
+    },
+    "zeekr/7x": {
+      "model_id": "zeekr/7x",
+      "brand_id": "zeekr",
+      "display": "7X",
+      "match_keys": [
+        "7x"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "7X": 3
+      }
+    },
+    "zeekr/9x": {
+      "model_id": "zeekr/9x",
+      "brand_id": "zeekr",
+      "display": "9X",
+      "match_keys": [
+        "9x"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "9X": 1
+      }
+    },
+    "zeekr/x": {
+      "model_id": "zeekr/x",
+      "brand_id": "zeekr",
+      "display": "X",
+      "match_keys": [
+        "x"
+      ],
+      "created": "2026-09-24",
+      "origin": "carindex_master.csv",
+      "status": "active",
+      "merged_into": null,
+      "spellings": {
+        "X": 2
+      }
+    }
+  }
+}

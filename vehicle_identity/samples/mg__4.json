@@ -1,0 +1,195 @@
+{
+  "model_id": "mg/4",
+  "brand_id": "mg",
+  "display": "4",
+  "brand_display": "MG",
+  "aliases": [
+    [
+      "ContactCars",
+      "MG",
+      "4"
+    ],
+    [
+      "Hatla2ee(summary)",
+      "MG",
+      "4"
+    ],
+    [
+      "vehicle_candidates.csv",
+      "MG",
+      "4"
+    ]
+  ],
+  "price_range_egp": {
+    "verified": null,
+    "verified_basis": "trims whose official price is agreed by >=2 publishers or given by an official source",
+    "observed_all": [
+      1200000,
+      1400000
+    ],
+    "observed_by_model_year": {
+      "2026": [
+        1200000,
+        1400000
+      ]
+    },
+    "summary_rows": [
+      {
+        "source": "Hatla2ee(summary)",
+        "label": "(range, 2 classes)",
+        "model_year": "2026",
+        "range": [
+          1200000,
+          1400000
+        ],
+        "raw": "1,200,000-1,400,000"
+      }
+    ],
+    "trims_verified": 0,
+    "trims_priced": 2,
+    "trims_total": 2,
+    "corroborated_by_summary": [
+      "Hatla2ee(summary) (range, 2 classes)"
+    ],
+    "range_status": "corroborated_by_independent_summary"
+  },
+  "powertrains": {
+    "state": "uniform",
+    "value": "bev",
+    "trims_reporting": 2,
+    "trims_unknown": 0
+  },
+  "transmissions": {
+    "state": "uniform",
+    "value": "automatic",
+    "trims_reporting": 2,
+    "trims_unknown": 0
+  },
+  "engine_cc": {
+    "state": "unknown"
+  },
+  "power_hp": {
+    "state": "varies_by_variant",
+    "values": {
+      "168.0": 1,
+      "200.0": 1
+    },
+    "trims_unknown": 0
+  },
+  "seats": {
+    "state": "unknown"
+  },
+  "body_type": {
+    "state": "uniform",
+    "value": "suv",
+    "trims_reporting": 2,
+    "trims_unknown": 0
+  },
+  "model_years_observed": {
+    "2026": [
+      "ContactCars",
+      "Hatla2ee(summary)"
+    ]
+  },
+  "variants": [
+    {
+      "trim_key": "luxury",
+      "labels_by_source": {
+        "ContactCars": [
+          "Luxury"
+        ]
+      },
+      "model_years": [
+        "2026"
+      ],
+      "official_price_status": "single_source",
+      "official_prices": [
+        {
+          "value": 1400000,
+          "source": "ContactCars",
+          "date": "2026-09-10",
+          "model_year": "2026"
+        }
+      ],
+      "market_prices": [
+        {
+          "value": 1600000,
+          "source": "ContactCars",
+          "date": "2026-09-10"
+        }
+      ],
+      "fuel_types": [
+        "bev"
+      ],
+      "transmissions": [
+        "automatic"
+      ],
+      "engine_cc": [],
+      "power_hp": [
+        200.0
+      ],
+      "seats": []
+    },
+    {
+      "trim_key": "standard",
+      "labels_by_source": {
+        "ContactCars": [
+          "Standard"
+        ]
+      },
+      "model_years": [
+        "2026"
+      ],
+      "official_price_status": "single_source",
+      "official_prices": [
+        {
+          "value": 1200000,
+          "source": "ContactCars",
+          "date": "2026-09-10",
+          "model_year": "2026"
+        }
+      ],
+      "market_prices": [
+        {
+          "value": 1200000,
+          "source": "ContactCars",
+          "date": "2026-09-10"
+        }
+      ],
+      "fuel_types": [
+        "bev"
+      ],
+      "transmissions": [
+        "automatic"
+      ],
+      "engine_cc": [],
+      "power_hp": [
+        168.0
+      ],
+      "seats": []
+    }
+  ],
+  "conflicts": [],
+  "source_coverage": {
+    "publishers": [
+      "ContactCars",
+      "Hatla2ee"
+    ],
+    "rows_by_source": {
+      "ContactCars": 2,
+      "Hatla2ee(summary)": 1
+    },
+    "candidate_rows": 1
+  },
+  "identity_confidence": "high",
+  "price_confidence": "medium",
+  "freshness": {
+    "collection_date": "2026-09-10",
+    "latest_price_date": null,
+    "age_days_at_2026-09-24": 14
+  },
+  "candidate_status_raw": [
+    "CONFIRMED_MATCH (Hatla2ee range only, no trim split)"
+  ],
+  "classified_observations": []
+}

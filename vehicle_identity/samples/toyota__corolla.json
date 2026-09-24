@@ -1,0 +1,606 @@
+{
+  "model_id": "toyota/corolla",
+  "brand_id": "toyota",
+  "display": "Corolla",
+  "brand_display": "Toyota",
+  "aliases": [
+    [
+      "ContactCars",
+      "Toyota",
+      "Corolla"
+    ],
+    [
+      "EgyCar",
+      "Toyota",
+      "Corolla"
+    ],
+    [
+      "Hatla2ee",
+      "Toyota",
+      "Corolla"
+    ],
+    [
+      "Official-ToyotaEgypt",
+      "Toyota",
+      "Corolla"
+    ],
+    [
+      "YallaMotor",
+      "Toyota",
+      "Corolla"
+    ],
+    [
+      "YallaMotor(classified)",
+      "Toyota",
+      "Corolla"
+    ],
+    [
+      "vehicle_candidates.csv",
+      "Toyota",
+      "Corolla"
+    ]
+  ],
+  "price_range_egp": {
+    "verified": [
+      1280000,
+      1630000
+    ],
+    "verified_basis": "trims whose official price is agreed by >=2 publishers or given by an official source",
+    "observed_all": [
+      1280000,
+      2000000
+    ],
+    "observed_by_model_year": {
+      "2026": [
+        1280000,
+        2000000
+      ]
+    },
+    "summary_rows": [],
+    "trims_verified": 5,
+    "trims_priced": 6,
+    "trims_total": 8,
+    "corroborated_by_summary": [],
+    "range_status": "verified_trims"
+  },
+  "powertrains": {
+    "state": "varies_by_variant",
+    "values": {
+      "petrol": 5,
+      "hev": 1
+    },
+    "trims_unknown": 2
+  },
+  "transmissions": {
+    "state": "uniform",
+    "value": "cvt",
+    "trims_reporting": 6,
+    "trims_unknown": 2
+  },
+  "engine_cc": {
+    "state": "uniform",
+    "value": 1600,
+    "trims_reporting": 6,
+    "trims_unknown": 2
+  },
+  "power_hp": {
+    "state": "uniform",
+    "value": 120.0,
+    "trims_reporting": 6,
+    "trims_unknown": 2
+  },
+  "seats": {
+    "state": "uniform",
+    "value": 5,
+    "trims_reporting": 6,
+    "trims_unknown": 2
+  },
+  "body_type": {
+    "state": "uniform",
+    "value": "sedan",
+    "trims_reporting": 8,
+    "trims_unknown": 0
+  },
+  "model_years_observed": {
+    "2026": [
+      "ContactCars",
+      "EgyCar",
+      "Hatla2ee",
+      "Official-ToyotaEgypt",
+      "YallaMotor",
+      "YallaMotor(classified)"
+    ]
+  },
+  "variants": [
+    {
+      "trim_key": "active",
+      "labels_by_source": {
+        "ContactCars": [
+          "Active"
+        ],
+        "EgyCar": [
+          "Active"
+        ],
+        "Hatla2ee": [
+          "Active"
+        ],
+        "Official-ToyotaEgypt": [
+          "Active"
+        ],
+        "YallaMotor": [
+          "Active"
+        ]
+      },
+      "model_years": [
+        "2026"
+      ],
+      "official_price_status": "official_source",
+      "official_prices": [
+        {
+          "value": 1280000,
+          "source": "ContactCars",
+          "date": "2026-09-10",
+          "model_year": "2026"
+        },
+        {
+          "value": 1280000,
+          "source": "EgyCar",
+          "date": "2026-04-06",
+          "model_year": "2026"
+        },
+        {
+          "value": 1280000,
+          "source": "Hatla2ee",
+          "date": "2026-09-10",
+          "model_year": "2026"
+        },
+        {
+          "value": 1280000,
+          "source": "Official-ToyotaEgypt",
+          "date": "2026-09-10",
+          "model_year": "2026"
+        }
+      ],
+      "market_prices": [
+        {
+          "value": 1400000,
+          "source": "ContactCars",
+          "date": "2026-09-10"
+        }
+      ],
+      "fuel_types": [
+        "petrol"
+      ],
+      "transmissions": [
+        "automatic",
+        "cvt"
+      ],
+      "engine_cc": [
+        1600
+      ],
+      "power_hp": [
+        120.0
+      ],
+      "seats": [
+        5
+      ]
+    },
+    {
+      "trim_key": "activemt",
+      "labels_by_source": {
+        "YallaMotor": [
+          "Active M/T"
+        ]
+      },
+      "model_years": [
+        "2026"
+      ],
+      "official_price_status": "none",
+      "official_prices": [],
+      "market_prices": [],
+      "fuel_types": [],
+      "transmissions": [],
+      "engine_cc": [],
+      "power_hp": [],
+      "seats": []
+    },
+    {
+      "trim_key": "comfort",
+      "labels_by_source": {
+        "ContactCars": [
+          "Comfort"
+        ],
+        "EgyCar": [
+          "Comfort"
+        ],
+        "Hatla2ee": [
+          "Comfort"
+        ],
+        "Official-ToyotaEgypt": [
+          "Comfort"
+        ],
+        "YallaMotor": [
+          "Comfort"
+        ]
+      },
+      "model_years": [
+        "2026"
+      ],
+      "official_price_status": "official_source",
+      "official_prices": [
+        {
+          "value": 1380000,
+          "source": "ContactCars",
+          "date": "2026-09-10",
+          "model_year": "2026"
+        },
+        {
+          "value": 1380000,
+          "source": "EgyCar",
+          "date": "2026-04-06",
+          "model_year": "2026"
+        },
+        {
+          "value": 1380000,
+          "source": "Hatla2ee",
+          "date": "2026-09-10",
+          "model_year": "2026"
+        },
+        {
+          "value": 1380000,
+          "source": "Official-ToyotaEgypt",
+          "date": "2026-09-10",
+          "model_year": "2026"
+        }
+      ],
+      "market_prices": [
+        {
+          "value": 1460000,
+          "source": "ContactCars",
+          "date": "2026-09-10"
+        }
+      ],
+      "fuel_types": [
+        "petrol"
+      ],
+      "transmissions": [
+        "automatic",
+        "cvt"
+      ],
+      "engine_cc": [
+        1600
+      ],
+      "power_hp": [
+        120.0
+      ],
+      "seats": [
+        5
+      ]
+    },
+    {
+      "trim_key": "elegance",
+      "labels_by_source": {
+        "ContactCars": [
+          "Elegance"
+        ],
+        "EgyCar": [
+          "Elegance"
+        ],
+        "Hatla2ee": [
+          "Elegance"
+        ],
+        "Official-ToyotaEgypt": [
+          "Elegance"
+        ],
+        "YallaMotor": [
+          "Elegance"
+        ]
+      },
+      "model_years": [
+        "2026"
+      ],
+      "official_price_status": "official_source",
+      "official_prices": [
+        {
+          "value": 1630000,
+          "source": "ContactCars",
+          "date": "2026-09-10",
+          "model_year": "2026"
+        },
+        {
+          "value": 1630000,
+          "source": "EgyCar",
+          "date": "2026-04-06",
+          "model_year": "2026"
+        },
+        {
+          "value": 1630000,
+          "source": "Hatla2ee",
+          "date": "2026-09-10",
+          "model_year": "2026"
+        },
+        {
+          "value": 1630000,
+          "source": "Official-ToyotaEgypt",
+          "date": "2026-09-10",
+          "model_year": "2026"
+        }
+      ],
+      "market_prices": [
+        {
+          "value": 1700000,
+          "source": "ContactCars",
+          "date": "2026-09-10"
+        }
+      ],
+      "fuel_types": [
+        "petrol"
+      ],
+      "transmissions": [
+        "automatic",
+        "cvt"
+      ],
+      "engine_cc": [
+        1600
+      ],
+      "power_hp": [
+        120.0
+      ],
+      "seats": [
+        5
+      ]
+    },
+    {
+      "trim_key": "gr",
+      "labels_by_source": {
+        "YallaMotor": [
+          "GR"
+        ]
+      },
+      "model_years": [
+        "2026"
+      ],
+      "official_price_status": "none",
+      "official_prices": [],
+      "market_prices": [],
+      "fuel_types": [],
+      "transmissions": [],
+      "engine_cc": [],
+      "power_hp": [],
+      "seats": []
+    },
+    {
+      "trim_key": "hybrid",
+      "labels_by_source": {
+        "ContactCars": [
+          "Hybrid"
+        ]
+      },
+      "model_years": [
+        "2026"
+      ],
+      "official_price_status": "single_source",
+      "official_prices": [
+        {
+          "value": 2000000,
+          "source": "ContactCars",
+          "date": "2026-09-10",
+          "model_year": "2026"
+        }
+      ],
+      "market_prices": [
+        {
+          "value": 2200000,
+          "source": "ContactCars",
+          "date": "2026-09-10"
+        }
+      ],
+      "fuel_types": [
+        "hev"
+      ],
+      "transmissions": [
+        "cvt"
+      ],
+      "engine_cc": [
+        1600
+      ],
+      "power_hp": [
+        120.0
+      ],
+      "seats": [
+        5
+      ]
+    },
+    {
+      "trim_key": "smart",
+      "labels_by_source": {
+        "ContactCars": [
+          "Smart"
+        ],
+        "EgyCar": [
+          "Smart"
+        ],
+        "Hatla2ee": [
+          "SMART"
+        ],
+        "Official-ToyotaEgypt": [
+          "Smart"
+        ],
+        "YallaMotor": [
+          "Smart"
+        ]
+      },
+      "model_years": [
+        "2026"
+      ],
+      "official_price_status": "official_source",
+      "official_prices": [
+        {
+          "value": 1480000,
+          "source": "ContactCars",
+          "date": "2026-09-10",
+          "model_year": "2026"
+        },
+        {
+          "value": 1480000,
+          "source": "EgyCar",
+          "date": "2026-04-06",
+          "model_year": "2026"
+        },
+        {
+          "value": 1480000,
+          "source": "Hatla2ee",
+          "date": "2026-09-10",
+          "model_year": "2026"
+        },
+        {
+          "value": 1480000,
+          "source": "Official-ToyotaEgypt",
+          "date": "2026-09-10",
+          "model_year": "2026"
+        }
+      ],
+      "market_prices": [
+        {
+          "value": 1600000,
+          "source": "ContactCars",
+          "date": "2026-09-10"
+        }
+      ],
+      "fuel_types": [
+        "petrol"
+      ],
+      "transmissions": [
+        "automatic",
+        "cvt"
+      ],
+      "engine_cc": [
+        1600
+      ],
+      "power_hp": [
+        120.0
+      ],
+      "seats": [
+        5
+      ]
+    },
+    {
+      "trim_key": "smartsunroof",
+      "labels_by_source": {
+        "ContactCars": [
+          "Smart with Sunroof"
+        ],
+        "EgyCar": [
+          "Smart + Sunroof"
+        ],
+        "Hatla2ee": [
+          "SMART / Sun Roof"
+        ],
+        "Official-ToyotaEgypt": [
+          "Smart with Sunroof"
+        ],
+        "YallaMotor": [
+          "Smart w/ Sunroof"
+        ]
+      },
+      "model_years": [
+        "2026"
+      ],
+      "official_price_status": "official_source",
+      "official_prices": [
+        {
+          "value": 1580000,
+          "source": "ContactCars",
+          "date": "2026-09-10",
+          "model_year": "2026"
+        },
+        {
+          "value": 1580000,
+          "source": "EgyCar",
+          "date": "2026-04-06",
+          "model_year": "2026"
+        },
+        {
+          "value": 1580000,
+          "source": "Hatla2ee",
+          "date": "2026-09-10",
+          "model_year": "2026"
+        },
+        {
+          "value": 1580000,
+          "source": "Official-ToyotaEgypt",
+          "date": "2026-09-10",
+          "model_year": "2026"
+        }
+      ],
+      "market_prices": [
+        {
+          "value": 1640000,
+          "source": "ContactCars",
+          "date": "2026-09-10"
+        }
+      ],
+      "fuel_types": [
+        "petrol"
+      ],
+      "transmissions": [
+        "automatic",
+        "cvt"
+      ],
+      "engine_cc": [
+        1600
+      ],
+      "power_hp": [
+        120.0
+      ],
+      "seats": [
+        5
+      ]
+    }
+  ],
+  "conflicts": [],
+  "source_coverage": {
+    "publishers": [
+      "ContactCars",
+      "EgyCar",
+      "Hatla2ee",
+      "Official-ToyotaEgypt",
+      "YallaMotor"
+    ],
+    "rows_by_source": {
+      "ContactCars": 6,
+      "EgyCar": 5,
+      "Hatla2ee": 5,
+      "Official-ToyotaEgypt": 5,
+      "YallaMotor": 7,
+      "YallaMotor(classified)": 2
+    },
+    "candidate_rows": 7
+  },
+  "identity_confidence": "high",
+  "price_confidence": "high",
+  "freshness": {
+    "collection_date": "2026-09-10",
+    "latest_price_date": "2026-04-06",
+    "age_days_at_2026-09-24": 14
+  },
+  "candidate_status_raw": [
+    "MATCH",
+    "SINGLE_SOURCE / MODEL_DISCOVERY",
+    "SINGLE_SOURCE / UNVERIFIED"
+  ],
+  "classified_observations": [
+    {
+      "source": "YallaMotor(classified)",
+      "label": "1.6L (various)",
+      "market_price": 1760000,
+      "fuel": null
+    },
+    {
+      "source": "YallaMotor(classified)",
+      "label": "1.8L Elegance (Hybrid)",
+      "market_price": 1760000,
+      "fuel": "hev"
+    }
+  ]
+}

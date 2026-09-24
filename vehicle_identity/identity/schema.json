@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "carindex/vehicle_identity/1.0.0-draft",
+  "title": "CarIndex Vehicle Identity v1 — BRAND -> MODEL",
+  "$defs": {
+    "brand": {
+      "type": "object",
+      "required": ["brand_id", "display", "match_keys", "created", "status"],
+      "properties": {
+        "brand_id": {"type": "string", "pattern": "^[a-z0-9-]+$", "description": "slug of the display name at creation; never regenerated"},
+        "display": {"type": "string"},
+        "match_keys": {"type": "array", "items": {"type": "string", "pattern": "^[a-z0-9]+$"}, "description": "fold(): accents removed, lowercase, a-z0-9 only"},
+        "spellings": {"type": "object", "additionalProperties": {"type": "integer"}, "description": "every observed spelling -> occurrences"},
+        "created": {"type": "string", "format": "date"},
+        "status": {"enum": ["active", "merged", "retired"]},
+        "merged_into": {"type": ["string", "null"]}
+      }
+    },
+    "model": {
+      "type": "object",
+      "required": ["model_id", "brand_id", "display", "match_keys", "created", "origin", "status"],
+      "properties": {
+        "model_id": {"type": "string", "pattern": "^[a-z0-9-]+/[a-z0-9-]+$", "description": "brand_id/model_slug. Never contains model year, price, trim, powertrain unless that word is part of the model's own name (e.g. peugeot/2008)."},
+        "brand_id": {"type": "string"},
+        "display": {"type": "string"},
+        "match_keys": {"type": "array", "items": {"type": "string"}, "description": ">1 key only via a recorded model_aliases decision"},
+        "spellings": {"type": "object"},
+        "created": {"type": "string", "format": "date"},
+        "origin": {"type": "string"},
+        "status": {"enum": ["active", "merged", "retired"]},
+        "merged_into": {"type": ["string", "null"], "description": "set when a human merges this model into another; the old ID keeps resolving"},
+        "cohorts": {"type": "array", "description": "documented exceptions only (see decisions.cohort_exceptions): cohort_id = model_id~cohort_slug", "items": {"type": "object", "required": ["cohort_id", "reason", "decided_by", "date"], "properties": {"cohort_id": {"type": "string", "pattern": "^[a-z0-9-]+/[a-z0-9-]+~[a-z0-9-]+$"}, "reason": {"enum": ["different_generation", "different_architecture", "different_body_platform"]}, "evidence": {"type": "array"}, "decided_by": {"type": "string"}, "date": {"type": "string"}}}}
+      }
+    },
+    "model_view": {
+      "type": "object",
+      "description": "Aggregated, read-only view per model_id, rebuilt from observations. Nothing averaged; differences between trims stay visible.",
+      "required": ["model_id", "price_range_egp", "powertrains", "transmissions", "body_type", "variants", "conflicts", "source_coverage", "identity_confidence", "price_confidence", "freshness"],
+      "properties": {
+        "price_range_egp": {"type": "object", "properties": {
+          "verified": {"description": "[min,max] over trims whose price is agreed by >=2 publishers or given by an official source; null if none"},
+          "observed_all": {"description": "[min,max] over every numeric official trim price"},
+          "observed_by_model_year": {"type": "object"},
+          "summary_rows": {"type": "array", "description": "aggregator min-max rows, kept separately, never treated as a trim"},
+          "corroborated_by_summary": {"type": "array"},
+          "range_status": {"enum": ["verified_trims", "corroborated_by_independent_summary", "single_source", "unknown"]}}},
+        "powertrains": {"$ref": "#/$defs/modelFact"}, "transmissions": {"$ref": "#/$defs/modelFact"}, "engine_cc": {"$ref": "#/$defs/modelFact"},
+        "power_hp": {"$ref": "#/$defs/modelFact"}, "seats": {"$ref": "#/$defs/modelFact"}, "body_type": {"$ref": "#/$defs/modelFact"},
+        "variants": {"type": "array", "description": "trim observations (supporting evidence), grouped by trim_key within this model only"},
+        "classified_observations": {"type": "array"},
+        "conflicts": {"type": "array", "items": {"type": "object", "properties": {"type": {"enum": ["trim_price_conflict", "trim_price_differs_by_model_year", "model_year_disagreement", "body_type_conflict"]}}}},
+        "identity_confidence": {"enum": ["high", "medium", "low"]},
+        "price_confidence": {"enum": ["high", "medium", "low", "unknown"]}
+      }
+    },
+    "modelFact": {
+      "type": "object",
+      "required": ["state"],
+      "properties": {
+        "state": {"enum": ["uniform", "varies_by_variant", "unknown"]},
+        "value": {}, "values": {"type": "object", "description": "value -> number of trims"},
+        "trims_reporting": {"type": "integer"}, "trims_unknown": {"type": "integer"},
+        "conflict_within_trim": {"type": "boolean"}
+      }
+    }
+  }
+}

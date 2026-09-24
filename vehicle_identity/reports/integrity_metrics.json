@@ -1,0 +1,39 @@
+{
+  "as_of": "2026-09-24",
+  "before": {
+    "master_rows": 1444,
+    "candidate_rows": 528,
+    "distinct_brand_strings (master+candidates)": 95,
+    "distinct_brand+model_strings (master+candidates)": 553,
+    "master rows where model_normalized differs from model_raw": 0,
+    "candidates linkable to master by exact brand+model+year strings": 464,
+    "candidates linkable to master by exact brand+model+year+trim strings": 167,
+    "duplicate candidate keys (brand, model, year, trim)": 5,
+    "stable vehicle ID on any row": 0
+  },
+  "after": {
+    "canonical_brands": 93,
+    "canonical_models": 520,
+    "models_with_master_rows": 520,
+    "candidate_only_models": 0,
+    "master_rows_mapped_to_model_id": "1444/1444",
+    "candidates_mapped_to_one_model_id": 520,
+    "candidates_unresolved (queued)": 8,
+    "models_with_verified_price_range": 19,
+    "models_with_any_official_price": 450,
+    "models_with_trim_price_conflict": 8,
+    "trims_with_price_conflict": 16,
+    "trims_with_price_differing_by_model_year": 51,
+    "models_with_body_type_conflict_within_trim": 0,
+    "models_with_body_type_varying_by_trim": 5,
+    "models_price_range_status": {
+      "single_source": 407,
+      "corroborated_by_independent_summary": 24,
+      "unknown": 70,
+      "verified_trims": 19
+    },
+    "review_items_open": 123,
+    "review_items_blocking": 9,
+    "ids_encoding_a_model_year_or_price_not_in_the_model_name": 0
+  }
+}

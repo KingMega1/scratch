@@ -1,0 +1,1020 @@
+{
+  "1_candidate_master_price_discrepancies": {
+    "count": 32,
+    "by_classification": {
+      "rounding (<= max(1,000 EGP, 0.1%))": 6,
+      "mixed / unexplained": 6,
+      "all candidate prices lower than nearest master price": 7,
+      "all candidate prices higher than nearest master price": 13
+    },
+    "by_brand": {
+      "soueast": 1,
+      "chery": 10,
+      "hyundai": 1,
+      "audi": 1,
+      "porsche": 2,
+      "smart": 2,
+      "genesis": 1,
+      "arcfox": 1,
+      "citroen": 1,
+      "jac": 3,
+      "cadillac": 2,
+      "bestune": 2,
+      "ds": 1,
+      "jaguar": 1,
+      "honda": 1,
+      "maserati": 1,
+      "dongfeng-aeolus": 1
+    },
+    "cases": [
+      {
+        "model_id": "soueast/s-08-dm",
+        "candidate_line": 58,
+        "delta": [
+          -1000
+        ],
+        "classification": "rounding (<= max(1,000 EGP, 0.1%))",
+        "candidate_status_raw": "PRICE_CONFLICT (trivial, 1,000 EGP) + NAMING_DIFFERENCE"
+      },
+      {
+        "model_id": "chery/arrizo-5",
+        "candidate_line": 82,
+        "delta": [
+          1999,
+          -3001,
+          1999,
+          -3001,
+          5000
+        ],
+        "classification": "mixed / unexplained",
+        "candidate_status_raw": "PRICE_CONFLICT + MODEL_YEAR_CONFLICT"
+      },
+      {
+        "model_id": "chery/arrizo-8",
+        "candidate_line": 84,
+        "delta": [
+          -101000,
+          -31000
+        ],
+        "classification": "all candidate prices lower than nearest master price",
+        "candidate_status_raw": "MODEL_YEAR_CONFLICT_ONLY"
+      },
+      {
+        "model_id": "chery/tiggo-7",
+        "candidate_line": 88,
+        "delta": [
+          -30000,
+          50000
+        ],
+        "classification": "mixed / unexplained",
+        "candidate_status_raw": "MODEL_YEAR_CONFLICT_ONLY"
+      },
+      {
+        "model_id": "chery/tiggo-7-pro",
+        "candidate_line": 89,
+        "delta": [
+          -10000,
+          20000
+        ],
+        "classification": "mixed / unexplained",
+        "candidate_status_raw": "CONFIRMED_MATCH_ALL_SOURCES (2027) + MODEL_DISCOVERY (2026 cohort)"
+      },
+      {
+        "model_id": "chery/tiggo-7-pro-max",
+        "candidate_line": 90,
+        "delta": [
+          -70000,
+          30000
+        ],
+        "classification": "mixed / unexplained",
+        "candidate_status_raw": "MODEL_YEAR_CONFLICT_ONLY"
+      },
+      {
+        "model_id": "chery/tiggo-8",
+        "candidate_line": 91,
+        "delta": [
+          50000,
+          250000
+        ],
+        "classification": "all candidate prices higher than nearest master price",
+        "candidate_status_raw": "MODEL_YEAR_CONFLICT_ONLY"
+      },
+      {
+        "model_id": "chery/tiggo-8-pro",
+        "candidate_line": 92,
+        "delta": [
+          40000,
+          190000
+        ],
+        "classification": "all candidate prices higher than nearest master price",
+        "candidate_status_raw": "MODEL_YEAR_CONFLICT_ONLY"
+      },
+      {
+        "model_id": "chery/tiggo-8-pro-max",
+        "candidate_line": 93,
+        "delta": [
+          180000,
+          330000
+        ],
+        "classification": "all candidate prices higher than nearest master price",
+        "candidate_status_raw": "MODEL_YEAR_CONFLICT_ONLY"
+      },
+      {
+        "model_id": "chery/tiggo-9",
+        "candidate_line": 94,
+        "delta": [
+          200000
+        ],
+        "classification": "all candidate prices higher than nearest master price",
+        "candidate_status_raw": "CONFIRMED_MATCH_ALL_SOURCES"
+      },
+      {
+        "model_id": "chery/eq7",
+        "candidate_line": 95,
+        "delta": [
+          350000
+        ],
+        "classification": "all candidate prices higher than nearest master price",
+        "candidate_status_raw": "CONFIRMED_MATCH_ALL_SOURCES"
+      },
+      {
+        "model_id": "hyundai/accent-rb",
+        "candidate_line": 96,
+        "delta": [
+          -5000
+        ],
+        "classification": "all candidate prices lower than nearest master price",
+        "candidate_status_raw": "MODEL_DISCOVERY"
+      },
+      {
+        "model_id": "audi/rs-e-tron-gt",
+        "candidate_line": 223,
+        "delta": [
+          1500000
+        ],
+        "classification": "all candidate prices higher than nearest master price",
+        "candidate_status_raw": "DATA_QUALITY_FLAG/MODEL_YEAR_CONFLICT"
+      },
+      {
+        "model_id": "porsche/cayenne",
+        "candidate_line": 234,
+        "delta": [
+          -104300
+        ],
+        "classification": "all candidate prices lower than nearest master price",
+        "candidate_status_raw": "MODEL_YEAR_CONFLICT"
+      },
+      {
+        "model_id": "porsche/911",
+        "candidate_line": 236,
+        "delta": [
+          -6264300,
+          20700
+        ],
+        "classification": "mixed / unexplained",
+        "candidate_status_raw": "MODEL_YEAR_CONFLICT"
+      },
+      {
+        "model_id": "smart/1",
+        "candidate_line": 238,
+        "delta": [
+          50000,
+          300000
+        ],
+        "classification": "all candidate prices higher than nearest master price",
+        "candidate_status_raw": "PRICE_CONFLICT/NAMING_DIFFERENCE"
+      },
+      {
+        "model_id": "smart/3",
+        "candidate_line": 239,
+        "delta": [
+          100000,
+          300000
+        ],
+        "classification": "all candidate prices higher than nearest master price",
+        "candidate_status_raw": "PRICE_CONFLICT/CONFIRMED_STALE_SOURCE"
+      },
+      {
+        "model_id": "genesis/g80",
+        "candidate_line": 252,
+        "delta": [
+          500000,
+          1200000
+        ],
+        "classification": "all candidate prices higher than nearest master price",
+        "candidate_status_raw": "MODEL_DISCOVERY/NAMING_DIFFERENCE"
+      },
+      {
+        "model_id": "arcfox/kaola-s",
+        "candidate_line": 263,
+        "delta": [
+          -50000,
+          25000
+        ],
+        "classification": "mixed / unexplained",
+        "candidate_status_raw": "PRICE_CONFLICT/NAMING_DIFFERENCE"
+      },
+      {
+        "model_id": "citroen/c4",
+        "candidate_line": 271,
+        "delta": [
+          -135000
+        ],
+        "classification": "all candidate prices lower than nearest master price",
+        "candidate_status_raw": "PRICE_CONFLICT/MODEL_YEAR_CONFLICT/MODEL_DISCOVERY/NAMING_DIFFERENCE"
+      },
+      {
+        "model_id": "jac/s2",
+        "candidate_line": 301,
+        "delta": [
+          -100
+        ],
+        "classification": "rounding (<= max(1,000 EGP, 0.1%))",
+        "candidate_status_raw": "PRICE_CONFLICT/NAMING_DIFFERENCE"
+      },
+      {
+        "model_id": "jac/j7",
+        "candidate_line": 302,
+        "delta": [
+          -900
+        ],
+        "classification": "rounding (<= max(1,000 EGP, 0.1%))",
+        "candidate_status_raw": "PRICE_CONFLICT/MODEL_YEAR_CONFLICT"
+      },
+      {
+        "model_id": "jac/js4",
+        "candidate_line": 303,
+        "delta": [
+          -900
+        ],
+        "classification": "rounding (<= max(1,000 EGP, 0.1%))",
+        "candidate_status_raw": "PRICE_CONFLICT/MODEL_YEAR_CONFLICT"
+      },
+      {
+        "model_id": "cadillac/optiq",
+        "candidate_line": 330,
+        "delta": [
+          -100
+        ],
+        "classification": "rounding (<= max(1,000 EGP, 0.1%))",
+        "candidate_status_raw": "PRICE_CONFLICT"
+      },
+      {
+        "model_id": "cadillac/lyriq",
+        "candidate_line": 331,
+        "delta": [
+          -100
+        ],
+        "classification": "rounding (<= max(1,000 EGP, 0.1%))",
+        "candidate_status_raw": "PRICE_CONFLICT"
+      },
+      {
+        "model_id": "bestune/t77-pro",
+        "candidate_line": 335,
+        "delta": [
+          125000
+        ],
+        "classification": "all candidate prices higher than nearest master price",
+        "candidate_status_raw": "PRICE_CONFLICT/NAMING_DIFFERENCE"
+      },
+      {
+        "model_id": "bestune/b70",
+        "candidate_line": 337,
+        "delta": [
+          80000,
+          100000
+        ],
+        "classification": "all candidate prices higher than nearest master price",
+        "candidate_status_raw": "PRICE_CONFLICT"
+      },
+      {
+        "model_id": "ds/ds4",
+        "candidate_line": 338,
+        "delta": [
+          60000
+        ],
+        "classification": "all candidate prices higher than nearest master price",
+        "candidate_status_raw": "PRICE_CONFLICT/CONFIRMED_STALE_SOURCE"
+      },
+      {
+        "model_id": "jaguar/f-pace",
+        "candidate_line": 341,
+        "delta": [
+          3805000
+        ],
+        "classification": "all candidate prices higher than nearest master price",
+        "candidate_status_raw": "DATA_QUALITY_FLAG"
+      },
+      {
+        "model_id": "honda/cr-v",
+        "candidate_line": 362,
+        "delta": [
+          -595000
+        ],
+        "classification": "all candidate prices lower than nearest master price",
+        "candidate_status_raw": "DATA_QUALITY_FLAG / SINGLE_SOURCE"
+      },
+      {
+        "model_id": "maserati/grecale",
+        "candidate_line": 375,
+        "delta": [
+          -550000,
+          -50000
+        ],
+        "classification": "all candidate prices lower than nearest master price",
+        "candidate_status_raw": "DATA_QUALITY_FLAG / MODEL_YEAR_CONFLICT"
+      },
+      {
+        "model_id": "dongfeng-aeolus/huge-hybrid",
+        "candidate_line": 468,
+        "delta": [
+          -200000,
+          -150000
+        ],
+        "classification": "all candidate prices lower than nearest master price",
+        "candidate_status_raw": "PRICE_CONFLICT / MODEL_YEAR_CONFLICT"
+      }
+    ]
+  },
+  "2_mg4_body_type": {
+    "model_id": "mg/4",
+    "body_type": {
+      "state": "uniform",
+      "value": "suv",
+      "trims_reporting": 2,
+      "trims_unknown": 0
+    },
+    "rows": [
+      [
+        "ContactCars",
+        "Standard",
+        "SUV",
+        "SUV"
+      ],
+      [
+        "ContactCars",
+        "Luxury",
+        "SUV",
+        "SUV"
+      ],
+      [
+        "Hatla2ee(summary)",
+        "(range, 2 classes)",
+        "N/A",
+        "NOT_AVAILABLE"
+      ]
+    ],
+    "finding": "Only ContactCars gives a body type (SUV); the Hatla2ee summary row has NOT_AVAILABLE. No second source to confirm or contradict. Kept as sourced; queued for a human check against the distributor."
+  },
+  "3_normalization": {
+    "brand_multi_spelling": {
+      "jac": {
+        "Jac": 12,
+        "JAC": 2
+      },
+      "xpeng": {
+        "Xpeng": 11,
+        "XPENG": 8
+      }
+    },
+    "model_multi_spelling_count": 18,
+    "model_multi_spelling_examples": [
+      {
+        "X 55": 3,
+        "X55": 1
+      },
+      {
+        "Arrizo 6 GT": 2,
+        "Arrizo 6 gt": 1
+      },
+      {
+        "eQ7": 1,
+        "EQ7": 1
+      },
+      {
+        "Tiggo 4 PRO": 3,
+        "Tiggo 4 Pro": 1
+      },
+      {
+        "Tiggo 7 Pro": 2,
+        "Tiggo 7 pro": 2
+      },
+      {
+        "Tiggo 7 Pro Max": 2,
+        "Tiggo 7 pro max": 1
+      },
+      {
+        "Tiggo 8 PRO": 2,
+        "Tiggo 8 Pro": 1
+      },
+      {
+        "C4X": 2,
+        "C4 X": 3
+      },
+      {
+        "GS4 max": 1,
+        "GS4 Max": 3
+      },
+      {
+        "CRV": 2,
+        "CR-V": 1
+      },
+      {
+        "ZRV": 2,
+        "ZR-V": 1
+      },
+      {
+        "i 30": 9,
+        "i30": 6
+      },
+      {
+        "CX-3": 1,
+        "Cx 3": 1,
+        "CX 3": 1
+      },
+      {
+        "Grand Land": 11,
+        "Grandland": 3
+      },
+      {
+        "U70P Plus": 1,
+        "U70 P plus": 1
+      },
+      {
+        "ES 90": 1,
+        "ES90": 1
+      },
+      {
+        "XC60": 3,
+        "XC 60": 3
+      },
+      {
+        "XC90": 1,
+        "XC 90": 1
+      }
+    ],
+    "model_raw_equals_model_normalized_on_all_master_rows": true,
+    "body_type_not_available_rows": 77,
+    "candidate_rows_naming_several_models": 8
+  },
+  "4_model_year_conflicts": {
+    "trims_with_year_disagreement": 77,
+    "models_affected": 38,
+    "examples": [
+      {
+        "model_id": "alfa-romeo/stelvio",
+        "type": "model_year_disagreement",
+        "trim_key": "atsprint",
+        "values": [
+          "2025",
+          "2026"
+        ]
+      },
+      {
+        "model_id": "alfa-romeo/stelvio",
+        "type": "model_year_disagreement",
+        "trim_key": "atveloce",
+        "values": [
+          "2025",
+          "2026"
+        ]
+      },
+      {
+        "model_id": "audi/a3",
+        "type": "model_year_disagreement",
+        "trim_key": "atsline",
+        "values": [
+          "2025",
+          "2026"
+        ]
+      },
+      {
+        "model_id": "audi/a3",
+        "type": "model_year_disagreement",
+        "trim_key": "atsportback",
+        "values": [
+          "2025",
+          "2026"
+        ]
+      },
+      {
+        "model_id": "audi/a5",
+        "type": "model_year_disagreement",
+        "trim_key": "atadvanced",
+        "values": [
+          "2025",
+          "2026"
+        ]
+      },
+      {
+        "model_id": "audi/a5",
+        "type": "model_year_disagreement",
+        "trim_key": "sportbacksline",
+        "values": [
+          "2023",
+          "2024"
+        ]
+      },
+      {
+        "model_id": "audi/q2",
+        "type": "model_year_disagreement",
+        "trim_key": "atsline",
+        "values": [
+          "2025",
+          "2026"
+        ]
+      },
+      {
+        "model_id": "audi/q3",
+        "type": "model_year_disagreement",
+        "trim_key": "14atadvanced",
+        "values": [
+          "2022",
+          "2023"
+        ]
+      },
+      {
+        "model_id": "audi/q3",
+        "type": "model_year_disagreement",
+        "trim_key": "atadvanced",
+        "values": [
+          "2025",
+          "2026"
+        ]
+      },
+      {
+        "model_id": "audi/q3",
+        "type": "model_year_disagreement",
+        "trim_key": "atsline",
+        "values": [
+          "2025",
+          "2026"
+        ]
+      },
+      {
+        "model_id": "audi/q3",
+        "type": "model_year_disagreement",
+        "trim_key": "atsportback",
+        "values": [
+          "2025",
+          "2026"
+        ]
+      },
+      {
+        "model_id": "audi/q3",
+        "type": "model_year_disagreement",
+        "trim_key": "atsportbackbl",
+        "values": [
+          "2025",
+          "2026"
+        ]
+      },
+      {
+        "model_id": "audi/q7",
+        "type": "model_year_disagreement",
+        "trim_key": "atsline",
+        "values": [
+          "2025",
+          "2026"
+        ]
+      },
+      {
+        "model_id": "audi/q7",
+        "type": "model_year_disagreement",
+        "trim_key": "atslineplus",
+        "values": [
+          "2025",
+          "2026"
+        ]
+      },
+      {
+        "model_id": "audi/q8",
+        "type": "model_year_disagreement",
+        "trim_key": "atsline",
+        "values": [
+          "2025",
+          "2026"
+        ]
+      }
+    ],
+    "candidate_rows_with_multi_year_label": 53,
+    "rule": "model year is an attribute; disagreement is reported, not used to split the model"
+  },
+  "5_duplicates_and_aliases": {
+    "duplicate_candidate_keys": [
+      {
+        "key": [
+          "Soueast",
+          "S 05",
+          "2027",
+          "Highline (1 trim)"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "Soueast",
+          "S 07",
+          "2027",
+          "Highline/Premium (2 trims)"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "Soueast",
+          "S 09",
+          "2027",
+          "Premium (1 trim)"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "Volkswagen",
+          "Golf",
+          "2025",
+          "Life (1 trim)"
+        ],
+        "count": 2
+      },
+      {
+        "key": [
+          "Volkswagen",
+          "Tiguan",
+          "2026",
+          "R-Line (1 trim)"
+        ],
+        "count": 2
+      }
+    ],
+    "spelling_groups_merged_by_normalization": 18,
+    "extension_pairs_queued": 16,
+    "extension_pairs_by_class": {
+      "powertrain_suffix": 8,
+      "generation_or_assembly_suffix": 8
+    },
+    "candidate_rows_unmapped": 8
+  },
+  "6_variants_changing_model_facts": {
+    "count": 42,
+    "by_fact": {
+      "engine_cc": 20,
+      "powertrains": 14,
+      "body_type": 5,
+      "seats": 3
+    },
+    "cases": [
+      {
+        "model_id": "audi/q3",
+        "fact": "engine_cc",
+        "values": {
+          "1400": 4,
+          "2000": 1
+        }
+      },
+      {
+        "model_id": "audi/q7",
+        "fact": "engine_cc",
+        "values": {
+          "2000": 2,
+          "3000": 1
+        }
+      },
+      {
+        "model_id": "baic/bj30",
+        "fact": "powertrains",
+        "values": {
+          "petrol": 1,
+          "hev": 2
+        }
+      },
+      {
+        "model_id": "baw/m7",
+        "fact": "engine_cc",
+        "values": {
+          "1500": 1,
+          "1600": 1
+        }
+      },
+      {
+        "model_id": "bmw/m850i",
+        "fact": "body_type",
+        "values": {
+          "coupe": 1,
+          "convertible": 1
+        }
+      },
+      {
+        "model_id": "byd/sealion-6",
+        "fact": "powertrains",
+        "values": {
+          "bev": 2,
+          "phev": 2
+        }
+      },
+      {
+        "model_id": "changan/cs55-plus",
+        "fact": "powertrains",
+        "values": {
+          "petrol": 3,
+          "diesel": 2
+        }
+      },
+      {
+        "model_id": "chery/tiggo-8",
+        "fact": "seats",
+        "values": {
+          "7": 2,
+          "5": 1
+        }
+      },
+      {
+        "model_id": "cupra/formentor",
+        "fact": "engine_cc",
+        "values": {
+          "1500": 1,
+          "2000": 1
+        }
+      },
+      {
+        "model_id": "deepal/s-05",
+        "fact": "powertrains",
+        "values": {
+          "phev": 1,
+          "bev": 1
+        }
+      },
+      {
+        "model_id": "deepal/s-07",
+        "fact": "powertrains",
+        "values": {
+          "phev": 1,
+          "bev": 1
+        }
+      },
+      {
+        "model_id": "forthing/s7",
+        "fact": "powertrains",
+        "values": {
+          "bev": 1,
+          "phev": 1
+        }
+      },
+      {
+        "model_id": "forthing/t5",
+        "fact": "powertrains",
+        "values": {
+          "petrol": 1,
+          "bev": 1,
+          "phev": 1
+        }
+      },
+      {
+        "model_id": "haval/v7",
+        "fact": "powertrains",
+        "values": {
+          "hev": 1,
+          "phev": 1
+        }
+      },
+      {
+        "model_id": "hyundai/santa-fe",
+        "fact": "seats",
+        "values": {
+          "7": 1,
+          "6": 1
+        }
+      },
+      {
+        "model_id": "jetour/dashing",
+        "fact": "engine_cc",
+        "values": {
+          "1500": 3,
+          "1600": 2
+        }
+      },
+      {
+        "model_id": "kaiyi/x7",
+        "fact": "powertrains",
+        "values": {
+          "petrol": 1,
+          "phev": 1
+        }
+      },
+      {
+        "model_id": "kaiyi/x7",
+        "fact": "engine_cc",
+        "values": {
+          "1600": 1,
+          "1500": 1
+        }
+      },
+      {
+        "model_id": "kia/carnival",
+        "fact": "body_type",
+        "values": {
+          "van": 1,
+          "suv": 1
+        }
+      },
+      {
+        "model_id": "kia/ev6",
+        "fact": "body_type",
+        "values": {
+          "hatchback": 2,
+          "suv": 2
+        }
+      },
+      {
+        "model_id": "mazda/3",
+        "fact": "body_type",
+        "values": {
+          "sedan": 2,
+          "hatchback": 3
+        }
+      },
+      {
+        "model_id": "mg/hs",
+        "fact": "powertrains",
+        "values": {
+          "petrol": 1,
+          "hev": 1
+        }
+      },
+      {
+        "model_id": "mini/cooper",
+        "fact": "engine_cc",
+        "values": {
+          "1500": 1,
+          "2000": 3
+        }
+      },
+      {
+        "model_id": "mini/cooper",
+        "fact": "body_type",
+        "values": {
+          "hatchback": 8,
+          "convertible": 1
+        }
+      },
+      {
+        "model_id": "mini/countryman",
+        "fact": "engine_cc",
+        "values": {
+          "1500": 1,
+          "2000": 3
+        }
+      },
+      {
+        "model_id": "nissan/qashqai",
+        "fact": "powertrains",
+        "values": {
+          "petrol": 5,
+          "hev": 2
+        }
+      },
+      {
+        "model_id": "nissan/x-trail",
+        "fact": "powertrains",
+        "values": {
+          "petrol": 3,
+          "hev": 1
+        }
+      },
+      {
+        "model_id": "porsche/718",
+        "fact": "engine_cc",
+        "values": {
+          "2000": 4,
+          "2500": 2,
+          "4000": 4,
+          "2": 4,
+          "4": 4
+        }
+      },
+      {
+        "model_id": "porsche/911",
+        "fact": "engine_cc",
+        "values": {
+          "3000": 4,
+          "3600": 4
+        }
+      },
+      {
+        "model_id": "porsche/cayenne",
+        "fact": "engine_cc",
+        "values": {
+          "3000": 2,
+          "4000": 5,
+          "3": 1,
+          "2": 1,
+          "4": 2
+        }
+      },
+      {
+        "model_id": "porsche/cayenne-coupe",
+        "fact": "engine_cc",
+        "values": {
+          "3": 1,
+          "2": 1,
+          "4": 3
+        }
+      },
+      {
+        "model_id": "porsche/macan",
+        "fact": "engine_cc",
+        "values": {
+          "2000": 2,
+          "2900": 2,
+          "2": 2,
+          "3": 1
+        }
+      },
+      {
+        "model_id": "porsche/panamera",
+        "fact": "engine_cc",
+        "values": {
+          "2900": 5,
+          "4000": 3,
+          "2": 4,
+          "4": 2
+        }
+      },
+      {
+        "model_id": "renault/megane",
+        "fact": "engine_cc",
+        "values": {
+          "1600": 2,
+          "1300": 1
+        }
+      },
+      {
+        "model_id": "rox/01",
+        "fact": "seats",
+        "values": {
+          "7": 2,
+          "6": 2
+        }
+      },
+      {
+        "model_id": "seat/arona",
+        "fact": "engine_cc",
+        "values": {
+          "1600": 1,
+          "1000": 1
+        }
+      },
+      {
+        "model_id": "seat/ibiza",
+        "fact": "engine_cc",
+        "values": {
+          "1600": 2,
+          "1000": 3
+        }
+      },
+      {
+        "model_id": "skoda/superb",
+        "fact": "engine_cc",
+        "values": {
+          "1500": 3,
+          "2000": 1
+        }
+      },
+      {
+        "model_id": "soueast/s-06",
+        "fact": "powertrains",
+        "values": {
+          "petrol": 2,
+          "phev": 1,
+          "hev": 3
+        }
+      },
+      {
+        "model_id": "soueast/s-06",
+        "fact": "engine_cc",
+        "values": {
+          "1500": 2,
+          "1600": 1
+        }
+      },
+      {
+        "model_id": "soueast/s-07",
+        "fact": "engine_cc",
+        "values": {
+          "1500": 1,
+          "1600": 1
+        }
+      },
+      {
+        "model_id": "toyota/corolla",
+        "fact": "powertrains",
+        "values": {
+          "petrol": 5,
+          "hev": 1
+        }
+      }
+    ],
+    "rule": "shown as varies_by_variant at model level; a cohort exception is created only by a recorded human decision"
+  }
+}

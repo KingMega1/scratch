@@ -1,5 +1,7 @@
 # CarIndex Vehicle Intelligence — Data Contract v1 (draft)
 
+> **Superseded entity level (2026-09-24):** records move from trim level to MODEL level (`model_id` from `vehicle_identity/`). See `vehicle_identity/README.md` §12. The trim-keyed examples below remain as v1 test evidence.
+
 The layer between the normalized vehicle database and future Car Detail, Compare and Find My Car.
 Design + contract + 5 test records only. No scoring engine, no full enrichment, nothing in n8n/social/website/production data changed.
 

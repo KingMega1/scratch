@@ -1,0 +1,219 @@
+{
+  "model_id": "baic/u5-plus",
+  "brand_id": "baic",
+  "display": "U5 Plus",
+  "brand_display": "Baic",
+  "aliases": [
+    [
+      "ContactCars",
+      "Baic",
+      "U5 Plus"
+    ],
+    [
+      "Hatla2ee(summary)",
+      "Baic",
+      "U5 Plus"
+    ],
+    [
+      "vehicle_candidates.csv",
+      "Baic",
+      "U5 Plus"
+    ]
+  ],
+  "price_range_egp": {
+    "verified": null,
+    "verified_basis": "trims whose official price is agreed by >=2 publishers or given by an official source",
+    "observed_all": [
+      695000,
+      975000
+    ],
+    "observed_by_model_year": {
+      "2026": [
+        695000,
+        975000
+      ]
+    },
+    "summary_rows": [
+      {
+        "source": "Hatla2ee(summary)",
+        "label": "(range, 3 classes)",
+        "model_year": "2026",
+        "range": [
+          695000,
+          974900
+        ],
+        "raw": "695,000-974,900"
+      }
+    ],
+    "trims_verified": 0,
+    "trims_priced": 3,
+    "trims_total": 3,
+    "corroborated_by_summary": [
+      "Hatla2ee(summary) (range, 3 classes)"
+    ],
+    "range_status": "corroborated_by_independent_summary"
+  },
+  "powertrains": {
+    "state": "uniform",
+    "value": "petrol",
+    "trims_reporting": 3,
+    "trims_unknown": 0
+  },
+  "transmissions": {
+    "state": "uniform",
+    "value": "cvt",
+    "trims_reporting": 3,
+    "trims_unknown": 0
+  },
+  "engine_cc": {
+    "state": "unknown"
+  },
+  "power_hp": {
+    "state": "unknown"
+  },
+  "seats": {
+    "state": "uniform",
+    "value": 5,
+    "trims_reporting": 3,
+    "trims_unknown": 0
+  },
+  "body_type": {
+    "state": "uniform",
+    "value": "sedan",
+    "trims_reporting": 3,
+    "trims_unknown": 0
+  },
+  "model_years_observed": {
+    "2026": [
+      "ContactCars",
+      "Hatla2ee(summary)"
+    ]
+  },
+  "variants": [
+    {
+      "trim_key": "comfort",
+      "labels_by_source": {
+        "ContactCars": [
+          "Comfort"
+        ]
+      },
+      "model_years": [
+        "2026"
+      ],
+      "official_price_status": "single_source",
+      "official_prices": [
+        {
+          "value": 850000,
+          "source": "ContactCars",
+          "date": "2026-09-10",
+          "model_year": "2026"
+        }
+      ],
+      "market_prices": [
+        {
+          "value": 860000,
+          "source": "ContactCars",
+          "date": "2026-09-10"
+        }
+      ],
+      "fuel_types": [
+        "petrol"
+      ],
+      "transmissions": [
+        "cvt"
+      ],
+      "engine_cc": [],
+      "power_hp": [],
+      "seats": [
+        5
+      ]
+    },
+    {
+      "trim_key": "manual",
+      "labels_by_source": {
+        "ContactCars": [
+          "Manual"
+        ]
+      },
+      "model_years": [
+        "2026"
+      ],
+      "official_price_status": "single_source",
+      "official_prices": [
+        {
+          "value": 695000,
+          "source": "ContactCars",
+          "date": "2026-09-10",
+          "model_year": "2026"
+        }
+      ],
+      "market_prices": [],
+      "fuel_types": [
+        "petrol"
+      ],
+      "transmissions": [
+        "cvt"
+      ],
+      "engine_cc": [],
+      "power_hp": [],
+      "seats": [
+        5
+      ]
+    },
+    {
+      "trim_key": "topline",
+      "labels_by_source": {
+        "ContactCars": [
+          "Top Line"
+        ]
+      },
+      "model_years": [
+        "2026"
+      ],
+      "official_price_status": "single_source",
+      "official_prices": [
+        {
+          "value": 975000,
+          "source": "ContactCars",
+          "date": "2026-09-10",
+          "model_year": "2026"
+        }
+      ],
+      "market_prices": [],
+      "fuel_types": [
+        "petrol"
+      ],
+      "transmissions": [
+        "cvt"
+      ],
+      "engine_cc": [],
+      "power_hp": [],
+      "seats": [
+        5
+      ]
+    }
+  ],
+  "conflicts": [],
+  "source_coverage": {
+    "publishers": [
+      "ContactCars",
+      "Hatla2ee"
+    ],
+    "rows_by_source": {
+      "ContactCars": 3,
+      "Hatla2ee(summary)": 1
+    },
+    "candidate_rows": 1
+  },
+  "identity_confidence": "high",
+  "price_confidence": "medium",
+  "freshness": {
+    "collection_date": "2026-09-10",
+    "latest_price_date": null,
+    "age_days_at_2026-09-24": 14
+  },
+  "candidate_status_raw": [
+    "CONFIRMED_MATCH_ALL_SOURCES"
+  ],
+  "classified_observations": []
+}

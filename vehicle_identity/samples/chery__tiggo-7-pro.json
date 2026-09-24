@@ -1,0 +1,199 @@
+{
+  "model_id": "chery/tiggo-7-pro",
+  "brand_id": "chery",
+  "display": "Tiggo 7 Pro",
+  "brand_display": "Chery",
+  "aliases": [
+    [
+      "ContactCars",
+      "Chery",
+      "Tiggo 7 Pro"
+    ],
+    [
+      "Hatla2ee(summary)",
+      "Chery",
+      "Tiggo 7 pro"
+    ],
+    [
+      "vehicle_candidates.csv",
+      "Chery",
+      "Tiggo 7 Pro"
+    ]
+  ],
+  "price_range_egp": {
+    "verified": null,
+    "verified_basis": "trims whose official price is agreed by >=2 publishers or given by an official source",
+    "observed_all": [
+      1075000,
+      1175000
+    ],
+    "observed_by_model_year": {
+      "2027": [
+        1075000,
+        1175000
+      ]
+    },
+    "summary_rows": [
+      {
+        "source": "Hatla2ee(summary)",
+        "label": "(range, 2 classes)",
+        "model_year": "2027",
+        "range": [
+          1075000,
+          1175000
+        ],
+        "raw": "1,075,000-1,175,000"
+      },
+      {
+        "source": "Hatla2ee(summary)",
+        "label": "(range, 2 classes) - second cohort",
+        "model_year": "2026",
+        "range": [
+          1130000,
+          1230000
+        ],
+        "raw": "1,130,000-1,230,000"
+      }
+    ],
+    "trims_verified": 0,
+    "trims_priced": 2,
+    "trims_total": 2,
+    "corroborated_by_summary": [
+      "Hatla2ee(summary) (range, 2 classes)"
+    ],
+    "range_status": "corroborated_by_independent_summary"
+  },
+  "powertrains": {
+    "state": "uniform",
+    "value": "petrol",
+    "trims_reporting": 2,
+    "trims_unknown": 0
+  },
+  "transmissions": {
+    "state": "uniform",
+    "value": "cvt",
+    "trims_reporting": 2,
+    "trims_unknown": 0
+  },
+  "engine_cc": {
+    "state": "unknown"
+  },
+  "power_hp": {
+    "state": "unknown"
+  },
+  "seats": {
+    "state": "unknown"
+  },
+  "body_type": {
+    "state": "uniform",
+    "value": "suv",
+    "trims_reporting": 2,
+    "trims_unknown": 0
+  },
+  "model_years_observed": {
+    "2026": [
+      "Hatla2ee(summary)"
+    ],
+    "2027": [
+      "ContactCars",
+      "Hatla2ee(summary)"
+    ]
+  },
+  "variants": [
+    {
+      "trim_key": "ckdcomfort",
+      "labels_by_source": {
+        "ContactCars": [
+          "CKD Comfort"
+        ]
+      },
+      "model_years": [
+        "2027"
+      ],
+      "official_price_status": "single_source",
+      "official_prices": [
+        {
+          "value": 1075000,
+          "source": "ContactCars",
+          "date": "2026-09-10",
+          "model_year": "2027"
+        }
+      ],
+      "market_prices": [
+        {
+          "value": 1160000,
+          "source": "ContactCars",
+          "date": "2026-09-10"
+        }
+      ],
+      "fuel_types": [
+        "petrol"
+      ],
+      "transmissions": [
+        "cvt"
+      ],
+      "engine_cc": [],
+      "power_hp": [],
+      "seats": []
+    },
+    {
+      "trim_key": "ckdluxury",
+      "labels_by_source": {
+        "ContactCars": [
+          "CKD Luxury"
+        ]
+      },
+      "model_years": [
+        "2027"
+      ],
+      "official_price_status": "single_source",
+      "official_prices": [
+        {
+          "value": 1175000,
+          "source": "ContactCars",
+          "date": "2026-09-10",
+          "model_year": "2027"
+        }
+      ],
+      "market_prices": [
+        {
+          "value": 1180000,
+          "source": "ContactCars",
+          "date": "2026-09-10"
+        }
+      ],
+      "fuel_types": [
+        "petrol"
+      ],
+      "transmissions": [
+        "cvt"
+      ],
+      "engine_cc": [],
+      "power_hp": [],
+      "seats": []
+    }
+  ],
+  "conflicts": [],
+  "source_coverage": {
+    "publishers": [
+      "ContactCars",
+      "Hatla2ee"
+    ],
+    "rows_by_source": {
+      "ContactCars": 2,
+      "Hatla2ee(summary)": 2
+    },
+    "candidate_rows": 1
+  },
+  "identity_confidence": "high",
+  "price_confidence": "medium",
+  "freshness": {
+    "collection_date": "2026-09-10",
+    "latest_price_date": null,
+    "age_days_at_2026-09-24": 14
+  },
+  "candidate_status_raw": [
+    "CONFIRMED_MATCH_ALL_SOURCES (2027) + MODEL_DISCOVERY (2026 cohort)"
+  ],
+  "classified_observations": []
+}
