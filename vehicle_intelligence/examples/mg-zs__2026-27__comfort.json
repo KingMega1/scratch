@@ -1,0 +1,1285 @@
+{
+  "contract_version": "1.0.0-draft",
+  "generated_at": "2026-09-24T00:00:00Z",
+  "snapshot": {
+    "dataset": "carindex_master.csv + vehicle_candidates.csv (Drive, 2026-09-17)",
+    "collection_date": "2026-09-10"
+  },
+  "entity": {
+    "model_id": "mg-zs",
+    "cohort_id": "mg-zs@2026-27",
+    "variant_id": "mg-zs@2026-27/comfort",
+    "brand": "MG",
+    "model": "ZS",
+    "trim": "Comfort",
+    "trim_aliases": [
+      {
+        "source_id": "contactcars",
+        "raw": "Comfort"
+      },
+      {
+        "source_id": "egycar",
+        "raw": "Comfort"
+      }
+    ],
+    "selection_reason": "model-year conflict between sources (2026 vs 2027) with identical price",
+    "candidate_layer": {
+      "brand": "MG",
+      "model": "ZS",
+      "model_year": "2026/2027",
+      "variant_normalized": "Comfort/Luxury(Plus)/Facelift MCE (2-3 trims across sources)",
+      "sources": "ContactCars (2026, 2 trims), EgyCar (2027, 2 trims), Hatla2ee (2026 1-class + separate 2027 Facelift 1-class)",
+      "prices": "1,075,000 / 1,150,000",
+      "status": "VARIANT_DISCOVERY + MODEL_YEAR_CONFLICT",
+      "notes": "Hatla2ee splits ZS into two separate model-year listings (2026 base @1,075,000 and 2027 Facelift @1,150,000) where ContactCars/EgyCar show them as two trims of a single 2026/2027 cohort respectively. Prices agree across all sources despite the structural difference."
+    }
+  },
+  "sources": {
+    "contactcars": {
+      "name": "ContactCars",
+      "publisher": "ContactCars",
+      "type": "aggregator_listing",
+      "tier": "C",
+      "url": "https://www.contactcars.com/en/new-cars/mg-zs/year-2026"
+    },
+    "egycar": {
+      "name": "EgyCar",
+      "publisher": "EgyCar",
+      "type": "aggregator_listing",
+      "tier": "C",
+      "url": "https://www.egy-car.com/mg-zs"
+    }
+  },
+  "observations": [
+    {
+      "obs_id": "o001",
+      "entity_ref": "mg-zs@2026-27/comfort",
+      "attribute": "model_year",
+      "raw_value": "2026",
+      "source_id": "contactcars",
+      "source_url": "https://www.contactcars.com/en/new-cars/mg-zs/year-2026",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:374:model_year"
+    },
+    {
+      "obs_id": "o002",
+      "entity_ref": "mg-zs",
+      "attribute": "body_type",
+      "raw_value": "SUV",
+      "source_id": "contactcars",
+      "source_url": "https://www.contactcars.com/en/new-cars/mg-zs/year-2026",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:374:body_type_normalized"
+    },
+    {
+      "obs_id": "o003",
+      "entity_ref": "mg-zs@2026-27/comfort",
+      "attribute": "official_price_egp",
+      "raw_value": "1,075,000",
+      "source_id": "contactcars",
+      "source_url": "https://www.contactcars.com/en/new-cars/mg-zs/year-2026",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:374:official_price"
+    },
+    {
+      "obs_id": "o004",
+      "entity_ref": "mg-zs@2026-27/comfort",
+      "attribute": "market_price_egp",
+      "raw_value": "1,080,000",
+      "source_id": "contactcars",
+      "source_url": "https://www.contactcars.com/en/new-cars/mg-zs/year-2026",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:374:market_price"
+    },
+    {
+      "obs_id": "o005",
+      "entity_ref": "mg-zs@2026-27/comfort",
+      "attribute": "fuel_type",
+      "raw_value": "Gas",
+      "source_id": "contactcars",
+      "source_url": "https://www.contactcars.com/en/new-cars/mg-zs/year-2026",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:374:fuel_type_raw"
+    },
+    {
+      "obs_id": "o006",
+      "entity_ref": "mg-zs@2026-27/comfort",
+      "attribute": "power_hp",
+      "raw_value": "119",
+      "source_id": "contactcars",
+      "source_url": "https://www.contactcars.com/en/new-cars/mg-zs/year-2026",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:374:horsepower"
+    },
+    {
+      "obs_id": "o007",
+      "entity_ref": "mg-zs@2026-27/comfort",
+      "attribute": "transmission",
+      "raw_value": "CVT",
+      "source_id": "contactcars",
+      "source_url": "https://www.contactcars.com/en/new-cars/mg-zs/year-2026",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:374:transmission"
+    },
+    {
+      "obs_id": "o008",
+      "entity_ref": "mg-zs@2026-27/comfort",
+      "attribute": "torque_nm",
+      "raw_value": "150",
+      "source_id": "contactcars",
+      "source_url": "https://www.contactcars.com/en/new-cars/mg-zs/year-2026",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:374:torque"
+    },
+    {
+      "obs_id": "o009",
+      "entity_ref": "mg-zs@2026-27/comfort",
+      "attribute": "equipment",
+      "raw_value": "17in wheels, roof rack, 8in infotainment",
+      "source_id": "contactcars",
+      "source_url": "https://www.contactcars.com/en/new-cars/mg-zs/year-2026",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:374:notes"
+    },
+    {
+      "obs_id": "o010",
+      "entity_ref": "mg-zs@2026-27/comfort",
+      "attribute": "model_year",
+      "raw_value": "2027",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/mg-zs",
+      "observed_at": "2026-08-05",
+      "record_ref": "carindex_master.csv:376:model_year"
+    },
+    {
+      "obs_id": "o011",
+      "entity_ref": "mg-zs",
+      "attribute": "body_type",
+      "raw_value": "SUV",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/mg-zs",
+      "observed_at": "2026-08-05",
+      "record_ref": "carindex_master.csv:376:body_type_normalized"
+    },
+    {
+      "obs_id": "o012",
+      "entity_ref": "mg-zs@2026-27/comfort",
+      "attribute": "official_price_egp",
+      "raw_value": "1,075,000",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/mg-zs",
+      "observed_at": "2026-08-05",
+      "record_ref": "carindex_master.csv:376:official_price"
+    },
+    {
+      "obs_id": "o013",
+      "entity_ref": "mg-zs@2026-27/comfort",
+      "attribute": "engine_displacement_cc",
+      "raw_value": "1500cc",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/mg-zs",
+      "observed_at": "2026-08-05",
+      "record_ref": "carindex_master.csv:376:engine_capacity"
+    },
+    {
+      "obs_id": "o014",
+      "entity_ref": "mg-zs@2026-27/comfort",
+      "attribute": "power_hp",
+      "raw_value": "119",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/mg-zs",
+      "observed_at": "2026-08-05",
+      "record_ref": "carindex_master.csv:376:horsepower"
+    },
+    {
+      "obs_id": "o015",
+      "entity_ref": "mg-zs@2026-27/comfort",
+      "attribute": "transmission",
+      "raw_value": "Automatic/CVT",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/mg-zs",
+      "observed_at": "2026-08-05",
+      "record_ref": "carindex_master.csv:376:transmission"
+    },
+    {
+      "obs_id": "o016",
+      "entity_ref": "mg-zs@2026-27/comfort",
+      "attribute": "drivetrain",
+      "raw_value": "FWD",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/mg-zs",
+      "observed_at": "2026-08-05",
+      "record_ref": "carindex_master.csv:376:drive_type"
+    },
+    {
+      "obs_id": "o017",
+      "entity_ref": "mg-zs@2026-27",
+      "attribute": "length_mm",
+      "raw_value": "432.3cm",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/mg-zs",
+      "observed_at": "2026-08-05",
+      "record_ref": "carindex_master.csv:376:length"
+    },
+    {
+      "obs_id": "o018",
+      "entity_ref": "mg-zs@2026-27",
+      "attribute": "width_mm",
+      "raw_value": "180.9cm",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/mg-zs",
+      "observed_at": "2026-08-05",
+      "record_ref": "carindex_master.csv:376:width"
+    },
+    {
+      "obs_id": "o019",
+      "entity_ref": "mg-zs@2026-27",
+      "attribute": "height_mm",
+      "raw_value": "165.3cm",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/mg-zs",
+      "observed_at": "2026-08-05",
+      "record_ref": "carindex_master.csv:376:height"
+    },
+    {
+      "obs_id": "o020",
+      "entity_ref": "mg-zs@2026-27",
+      "attribute": "wheelbase_mm",
+      "raw_value": "258.5cm",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/mg-zs",
+      "observed_at": "2026-08-05",
+      "record_ref": "carindex_master.csv:376:wheelbase"
+    },
+    {
+      "obs_id": "o021",
+      "entity_ref": "mg-zs@2026-27",
+      "attribute": "trunk_l",
+      "raw_value": "495L",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/mg-zs",
+      "observed_at": "2026-08-05",
+      "record_ref": "carindex_master.csv:376:trunk_capacity"
+    },
+    {
+      "obs_id": "o022",
+      "entity_ref": "mg-zs@2026-27/comfort",
+      "attribute": "fuel_consumption_l_100km",
+      "raw_value": "5.8L/100km",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/mg-zs",
+      "observed_at": "2026-08-05",
+      "record_ref": "carindex_master.csv:376:fuel_consumption"
+    },
+    {
+      "obs_id": "o023",
+      "entity_ref": "mg-zs@2026-27/comfort",
+      "attribute": "torque_nm",
+      "raw_value": "150",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/mg-zs",
+      "observed_at": "2026-08-05",
+      "record_ref": "carindex_master.csv:376:torque"
+    },
+    {
+      "obs_id": "o024",
+      "entity_ref": "mg-zs@2026-27/comfort",
+      "attribute": "equipment",
+      "raw_value": "MODEL_YEAR_CONFLICT: labeled 2027 here vs ContactCars 2026; price matches exactly",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/mg-zs",
+      "observed_at": "2026-08-05",
+      "record_ref": "carindex_master.csv:376:notes"
+    }
+  ],
+  "facts": {
+    "model_year": {
+      "unit": null,
+      "level": "variant",
+      "observation_ids": [
+        "o001",
+        "o010"
+      ],
+      "value": null,
+      "status": "conflict",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "candidates": [
+        {
+          "value": 2026,
+          "observation_ids": [
+            "o001"
+          ]
+        },
+        {
+          "value": 2027,
+          "observation_ids": [
+            "o010"
+          ]
+        }
+      ],
+      "unknown_reason": "unresolved_conflict",
+      "resolution": {
+        "rule": "R4 no automatic winner: sources of equal standing disagree; needs CarIndex check",
+        "decided_by": "rule"
+      }
+    },
+    "trim_name": {
+      "unit": null,
+      "level": "variant",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "body_type": {
+      "unit": null,
+      "level": "model",
+      "observation_ids": [
+        "o002",
+        "o011"
+      ],
+      "value": "suv",
+      "qualifiers": {},
+      "status": "agreed",
+      "confidence": "high",
+      "valid_as_of": "2026-09-10"
+    },
+    "official_price_egp": {
+      "unit": "EGP",
+      "level": "variant",
+      "observation_ids": [
+        "o003",
+        "o012"
+      ],
+      "value": 1075000,
+      "qualifiers": {},
+      "status": "agreed",
+      "confidence": "high",
+      "valid_as_of": "2026-09-10"
+    },
+    "market_price_egp": {
+      "unit": "EGP",
+      "level": "variant",
+      "observation_ids": [
+        "o004"
+      ],
+      "value": 1080000,
+      "qualifiers": {},
+      "status": "single_source",
+      "confidence": "medium",
+      "valid_as_of": "2026-09-10"
+    },
+    "price_range_egp": {
+      "unit": "EGP",
+      "level": "cohort",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "fuel_type": {
+      "unit": null,
+      "level": "variant",
+      "observation_ids": [
+        "o005"
+      ],
+      "value": "petrol",
+      "qualifiers": {},
+      "status": "single_source",
+      "confidence": "medium",
+      "valid_as_of": "2026-09-10"
+    },
+    "engine_displacement_cc": {
+      "unit": "cc",
+      "level": "variant",
+      "observation_ids": [
+        "o013"
+      ],
+      "value": 1500,
+      "qualifiers": {},
+      "status": "single_source",
+      "confidence": "medium",
+      "valid_as_of": "2026-08-05"
+    },
+    "power_hp": {
+      "unit": "hp",
+      "level": "variant",
+      "observation_ids": [
+        "o006",
+        "o014"
+      ],
+      "value": 119.0,
+      "qualifiers": {},
+      "status": "agreed",
+      "confidence": "high",
+      "valid_as_of": "2026-09-10"
+    },
+    "torque_nm": {
+      "unit": "Nm",
+      "level": "variant",
+      "observation_ids": [
+        "o008",
+        "o023"
+      ],
+      "value": 150.0,
+      "qualifiers": {},
+      "status": "agreed",
+      "confidence": "high",
+      "valid_as_of": "2026-09-10"
+    },
+    "transmission": {
+      "unit": null,
+      "level": "variant",
+      "observation_ids": [
+        "o007",
+        "o015"
+      ],
+      "value": "cvt",
+      "qualifiers": {},
+      "status": "agreed",
+      "confidence": "high",
+      "valid_as_of": "2026-09-10"
+    },
+    "drivetrain": {
+      "unit": null,
+      "level": "variant",
+      "observation_ids": [
+        "o016"
+      ],
+      "value": "fwd",
+      "qualifiers": {},
+      "status": "single_source",
+      "confidence": "medium",
+      "valid_as_of": "2026-08-05"
+    },
+    "battery_kwh": {
+      "unit": "kWh",
+      "level": "variant",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "electric_range_km": {
+      "unit": "km",
+      "level": "variant",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "fuel_consumption_l_100km": {
+      "unit": "L/100km",
+      "level": "variant",
+      "observation_ids": [
+        "o022"
+      ],
+      "value": 5.8,
+      "qualifiers": {},
+      "status": "single_source",
+      "confidence": "medium",
+      "valid_as_of": "2026-08-05"
+    },
+    "energy_consumption_kwh_100km": {
+      "unit": "kWh/100km",
+      "level": "variant",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "seats": {
+      "unit": null,
+      "level": "variant",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "length_mm": {
+      "unit": "mm",
+      "level": "cohort",
+      "observation_ids": [
+        "o017"
+      ],
+      "value": 4323,
+      "qualifiers": {},
+      "status": "single_source",
+      "confidence": "medium",
+      "valid_as_of": "2026-08-05"
+    },
+    "width_mm": {
+      "unit": "mm",
+      "level": "cohort",
+      "observation_ids": [
+        "o018"
+      ],
+      "value": 1809,
+      "qualifiers": {},
+      "status": "single_source",
+      "confidence": "medium",
+      "valid_as_of": "2026-08-05"
+    },
+    "height_mm": {
+      "unit": "mm",
+      "level": "cohort",
+      "observation_ids": [
+        "o019"
+      ],
+      "value": 1653,
+      "qualifiers": {},
+      "status": "single_source",
+      "confidence": "medium",
+      "valid_as_of": "2026-08-05"
+    },
+    "wheelbase_mm": {
+      "unit": "mm",
+      "level": "cohort",
+      "observation_ids": [
+        "o020"
+      ],
+      "value": 2585,
+      "qualifiers": {},
+      "status": "single_source",
+      "confidence": "medium",
+      "valid_as_of": "2026-08-05"
+    },
+    "trunk_l": {
+      "unit": "L",
+      "level": "cohort",
+      "observation_ids": [
+        "o021"
+      ],
+      "value": 495,
+      "qualifiers": {},
+      "status": "single_source",
+      "confidence": "medium",
+      "valid_as_of": "2026-08-05"
+    },
+    "curb_weight_kg": {
+      "unit": "kg",
+      "level": "variant",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "ground_clearance_mm": {
+      "unit": "mm",
+      "level": "cohort",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "turning_circle_m": {
+      "unit": "m",
+      "level": "cohort",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "warranty_years": {
+      "unit": "years",
+      "level": "variant",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "warranty_km": {
+      "unit": "km",
+      "level": "variant",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "battery_warranty_years": {
+      "unit": "years",
+      "level": "variant",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "assembly_country": {
+      "unit": null,
+      "level": "cohort",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "distributor": {
+      "unit": null,
+      "level": "model",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "equipment": {
+      "unit": null,
+      "level": "variant",
+      "observation_ids": [
+        "o009",
+        "o024"
+      ],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "unparseable",
+      "note": "free-text notes kept as raw observations; structured extraction not done yet"
+    },
+    "safety_rating": {
+      "unit": null,
+      "level": "cohort",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "registrations_units": {
+      "unit": "units/month",
+      "level": "model",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "used_listing_count": {
+      "unit": null,
+      "level": "model",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "used_price_retention_pct": {
+      "unit": null,
+      "level": "cohort",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "recall_count": {
+      "unit": null,
+      "level": "cohort",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "service_interval_km": {
+      "unit": null,
+      "level": "cohort",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "service_centers_count": {
+      "unit": null,
+      "level": "model",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "brand_years_in_egypt": {
+      "unit": null,
+      "level": "model",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    }
+  },
+  "derived": {
+    "price_percentile_in_body_type": {
+      "value": 5.9,
+      "formula": "D-PRICE-PCTL-BODY@1",
+      "inputs": {
+        "price": "facts.official_price_egp",
+        "body": "facts.body_type"
+      },
+      "peer_set": {
+        "id": "body:suv@2026-09-10",
+        "size": 704,
+        "definition": "one official price per brand/model/year/trim in carindex_master.csv, same body type"
+      },
+      "confidence": "high",
+      "explanation": {
+        "key": "derived.price_percentile",
+        "params": {
+          "pct": 5.9,
+          "body": "suv",
+          "n": 704
+        }
+      }
+    },
+    "price_band_in_body_type": {
+      "value": "entry",
+      "formula": "D-PRICE-BAND@1",
+      "inputs": {
+        "pct": "derived.price_percentile_in_body_type"
+      },
+      "confidence": "high",
+      "explanation": {
+        "key": "derived.price_band",
+        "params": {
+          "band": "entry",
+          "body": "suv"
+        }
+      }
+    },
+    "trim_position_in_model": {
+      "value": "entry",
+      "formula": "D-TRIM-POSITION@1",
+      "inputs": {
+        "trim_prices": "ContactCars official prices, 2 trims, 2026-09-10"
+      },
+      "confidence": "medium",
+      "explanation": {
+        "key": "derived.trim_position",
+        "params": {
+          "pos": "entry",
+          "n": 2
+        }
+      }
+    },
+    "market_premium_pct": {
+      "value": 0.5,
+      "formula": "D-MARKET-PREMIUM@1",
+      "inputs": {
+        "official": "contactcars 1075000 @ 2026-09-10",
+        "market": "o004 1080000"
+      },
+      "confidence": "medium",
+      "explanation": {
+        "key": "derived.market_premium",
+        "params": {
+          "pct": 0.5,
+          "date": "2026-09-10"
+        }
+      }
+    },
+    "price_source_agreement": {
+      "value": 2,
+      "formula": "D-SOURCE-AGREEMENT@1",
+      "inputs": {
+        "publishers": [
+          "ContactCars",
+          "EgyCar"
+        ]
+      },
+      "confidence": "high"
+    },
+    "length_class": {
+      "value": "4200_4499",
+      "formula": "D-LENGTH-CLASS@1",
+      "inputs": {
+        "length": "facts.length_mm"
+      },
+      "confidence": "medium"
+    },
+    "footprint_m2": {
+      "value": 7.82,
+      "formula": "D-FOOTPRINT@1",
+      "inputs": {
+        "length": "facts.length_mm",
+        "width": "facts.width_mm"
+      },
+      "confidence": "medium"
+    },
+    "third_row": {
+      "value": null,
+      "formula": "D-THIRD-ROW@1",
+      "inputs": {},
+      "confidence": "unknown",
+      "unknown_reason": "missing seats"
+    },
+    "warranty_years_percentile": {
+      "value": null,
+      "formula": "D-WARRANTY-PCTL@1",
+      "inputs": {},
+      "confidence": "unknown",
+      "unknown_reason": "missing warranty_years"
+    },
+    "power_to_weight_hp_per_t": {
+      "value": null,
+      "formula": "D-POWER-WEIGHT@1",
+      "inputs": {},
+      "confidence": "unknown",
+      "unknown_reason": "missing power_hp, curb_weight_kg"
+    },
+    "fuel_cost_egp_per_100km": {
+      "value": null,
+      "formula": "D-FUEL-COST@1",
+      "inputs": {},
+      "confidence": "unknown",
+      "unknown_reason": "missing fuel_consumption_l_100km, fuel_price_egp_per_l"
+    },
+    "energy_cost_egp_per_100km": {
+      "value": null,
+      "formula": "D-ENERGY-COST@1",
+      "inputs": {},
+      "confidence": "unknown",
+      "unknown_reason": "missing energy_consumption_kwh_100km, electricity_tariff_egp_per_kwh"
+    },
+    "ev_range_percentile_in_bev": {
+      "value": null,
+      "formula": "D-EV-RANGE-PCTL@1",
+      "inputs": {},
+      "confidence": "unknown",
+      "unknown_reason": "missing electric_range_km (same test_cycle), fuel_type=bev"
+    },
+    "registrations_trend": {
+      "value": null,
+      "formula": "D-REG-TREND@1",
+      "inputs": {},
+      "confidence": "unknown",
+      "unknown_reason": "missing registrations_units (>= 6 months)"
+    },
+    "price_trend": {
+      "value": null,
+      "formula": "D-PRICE-TREND@1",
+      "inputs": {},
+      "confidence": "unknown",
+      "unknown_reason": "missing official_price_egp history (>= 2 dated observations)"
+    }
+  },
+  "editorial": [],
+  "signals": {
+    "price_position": {
+      "state": "known",
+      "value": "entry",
+      "rule": {
+        "id": "S-PRICE_POSITION@1",
+        "status": "proposed"
+      },
+      "inputs_used": [
+        "price_band_in_body_type",
+        "trim_position_in_model",
+        "market_premium_pct"
+      ],
+      "inputs_missing": [],
+      "evidence_coverage": 1.0,
+      "confidence": "high",
+      "scale": "entry|lower|middle|upper|top (price quintile within body type; says nothing about value for money)",
+      "explanation": {
+        "key": "signal.price_position",
+        "params": {
+          "band": "entry",
+          "body": "suv",
+          "pct": 5.9
+        }
+      }
+    },
+    "city_suitability": {
+      "state": "partial",
+      "value": null,
+      "rule": {
+        "id": "S-CITY_SUITABILITY@1",
+        "status": "proposed"
+      },
+      "inputs_used": [
+        "length_class",
+        "transmission"
+      ],
+      "inputs_missing": [
+        "turning_circle_m",
+        "equipment.parking_sensors_rear",
+        "equipment.rear_camera",
+        "equipment.camera_360",
+        "editorial:city_suitability (approved)"
+      ],
+      "evidence_coverage": 0.29,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.partial_no_value",
+        "params": {
+          "missing": 5
+        }
+      }
+    },
+    "highway_suitability": {
+      "state": "partial",
+      "value": null,
+      "rule": {
+        "id": "S-HIGHWAY_SUITABILITY@1",
+        "status": "proposed"
+      },
+      "inputs_used": [
+        "fuel_consumption_l_100km"
+      ],
+      "inputs_missing": [
+        "power_to_weight_hp_per_t",
+        "equipment.adaptive_cruise",
+        "equipment.lane_keep",
+        "editorial:highway_suitability (approved)"
+      ],
+      "evidence_coverage": 0.2,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.partial_no_value",
+        "params": {
+          "missing": 4
+        }
+      }
+    },
+    "family_practicality": {
+      "state": "partial",
+      "value": null,
+      "rule": {
+        "id": "S-FAMILY_PRACTICALITY@1",
+        "status": "proposed"
+      },
+      "inputs_used": [
+        "trunk_l",
+        "wheelbase_mm"
+      ],
+      "inputs_missing": [
+        "seats",
+        "third_row",
+        "equipment.rear_ac_vents"
+      ],
+      "evidence_coverage": 0.4,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.partial_no_value",
+        "params": {
+          "missing": 3
+        }
+      }
+    },
+    "running_cost_profile": {
+      "state": "unknown",
+      "value": null,
+      "rule": {
+        "id": "S-RUNNING_COST_PROFILE@1",
+        "status": "proposed"
+      },
+      "inputs_used": [],
+      "inputs_missing": [
+        "fuel_cost_egp_per_100km|energy_cost_egp_per_100km",
+        "service_interval_km",
+        "warranty_years"
+      ],
+      "evidence_coverage": 0.0,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.unknown",
+        "params": {}
+      }
+    },
+    "energy_efficiency": {
+      "state": "partial",
+      "value": null,
+      "rule": {
+        "id": "S-ENERGY_EFFICIENCY@1",
+        "status": "proposed"
+      },
+      "inputs_used": [
+        "fuel_consumption_l_100km|energy_consumption_kwh_100km",
+        "fuel_type"
+      ],
+      "inputs_missing": [],
+      "evidence_coverage": 1.0,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.partial_no_value",
+        "params": {
+          "missing": 0
+        }
+      }
+    },
+    "reliability_evidence": {
+      "state": "unknown",
+      "value": null,
+      "rule": {
+        "id": "S-RELIABILITY_EVIDENCE@1",
+        "status": "proposed"
+      },
+      "inputs_used": [],
+      "inputs_missing": [
+        "recall_count|owner_survey",
+        "brand_years_in_egypt",
+        "registrations_units",
+        "editorial:reliability_evidence (approved)"
+      ],
+      "evidence_coverage": 0.0,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.unknown",
+        "params": {}
+      }
+    },
+    "resale_liquidity": {
+      "state": "unknown",
+      "value": null,
+      "rule": {
+        "id": "S-RESALE_LIQUIDITY@1",
+        "status": "proposed"
+      },
+      "inputs_used": [],
+      "inputs_missing": [
+        "used_price_retention_pct|used_listing_count",
+        "registrations_trend"
+      ],
+      "evidence_coverage": 0.0,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.unknown",
+        "params": {}
+      }
+    },
+    "safety_evidence": {
+      "state": "unknown",
+      "value": null,
+      "rule": {
+        "id": "S-SAFETY_EVIDENCE@1",
+        "status": "proposed"
+      },
+      "inputs_used": [],
+      "inputs_missing": [
+        "safety_rating",
+        "equipment.airbags_count",
+        "equipment.aeb",
+        "equipment.blind_spot"
+      ],
+      "evidence_coverage": 0.0,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.unknown",
+        "params": {}
+      }
+    },
+    "performance_character": {
+      "state": "partial",
+      "value": null,
+      "rule": {
+        "id": "S-PERFORMANCE_CHARACTER@1",
+        "status": "proposed"
+      },
+      "inputs_used": [
+        "power_hp",
+        "torque_nm",
+        "transmission",
+        "drivetrain"
+      ],
+      "inputs_missing": [
+        "power_to_weight_hp_per_t",
+        "editorial:performance_character (approved)"
+      ],
+      "evidence_coverage": 0.67,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.partial_no_value",
+        "params": {
+          "missing": 2
+        }
+      }
+    },
+    "comfort": {
+      "state": "partial",
+      "value": null,
+      "rule": {
+        "id": "S-COMFORT@1",
+        "status": "proposed"
+      },
+      "inputs_used": [
+        "wheelbase_mm"
+      ],
+      "inputs_missing": [
+        "editorial:comfort",
+        "equipment.power_seats",
+        "editorial:comfort (approved)"
+      ],
+      "evidence_coverage": 0.25,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.partial_no_value",
+        "params": {
+          "missing": 3
+        }
+      }
+    },
+    "powertrain_suitability": {
+      "state": "partial",
+      "value": null,
+      "rule": {
+        "id": "S-POWERTRAIN_SUITABILITY@1",
+        "status": "proposed"
+      },
+      "inputs_used": [
+        "fuel_type",
+        "transmission"
+      ],
+      "inputs_missing": [
+        "electric_range_km",
+        "battery_kwh",
+        "editorial:powertrain_suitability (approved)"
+      ],
+      "evidence_coverage": 0.4,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.partial_no_value",
+        "params": {
+          "missing": 3
+        }
+      }
+    },
+    "ownership_considerations": {
+      "state": "unknown",
+      "value": null,
+      "rule": {
+        "id": "S-OWNERSHIP_CONSIDERATIONS@1",
+        "status": "proposed"
+      },
+      "inputs_used": [],
+      "inputs_missing": [
+        "distributor",
+        "assembly_country",
+        "service_centers_count",
+        "brand_years_in_egypt",
+        "editorial:ownership_considerations (approved)"
+      ],
+      "evidence_coverage": 0.0,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.unknown",
+        "params": {}
+      }
+    },
+    "service_warranty": {
+      "state": "unknown",
+      "value": null,
+      "rule": {
+        "id": "S-SERVICE_WARRANTY@1",
+        "status": "proposed"
+      },
+      "inputs_used": [],
+      "inputs_missing": [
+        "warranty_years",
+        "warranty_km",
+        "service_centers_count",
+        "service_interval_km",
+        "battery_warranty_years"
+      ],
+      "evidence_coverage": 0.0,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.unknown",
+        "params": {}
+      }
+    },
+    "strengths": {
+      "state": "unknown",
+      "value": null,
+      "rule": {
+        "id": "S-STRENGTHS@1",
+        "status": "proposed"
+      },
+      "inputs_used": [],
+      "inputs_missing": [
+        "editorial:strength",
+        "editorial:strengths (approved)"
+      ],
+      "evidence_coverage": 0.0,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.unknown",
+        "params": {}
+      }
+    },
+    "compromises": {
+      "state": "unknown",
+      "value": null,
+      "rule": {
+        "id": "S-COMPROMISES@1",
+        "status": "proposed"
+      },
+      "inputs_used": [],
+      "inputs_missing": [
+        "editorial:compromise",
+        "editorial:compromises (approved)"
+      ],
+      "evidence_coverage": 0.0,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.unknown",
+        "params": {}
+      }
+    },
+    "buyer_fit": {
+      "state": "unknown",
+      "value": null,
+      "rule": {
+        "id": "S-BUYER_FIT@1",
+        "status": "proposed"
+      },
+      "inputs_used": [],
+      "inputs_missing": [
+        "the other signals",
+        "editorial:buyer_fit (approved)"
+      ],
+      "evidence_coverage": 0.0,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.unknown",
+        "params": {}
+      }
+    }
+  },
+  "buyer_fit": []
+}

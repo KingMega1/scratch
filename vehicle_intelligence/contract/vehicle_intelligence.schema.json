@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "carindex/vehicle_intelligence/1.0.0-draft",
+  "title": "CarIndex Vehicle Intelligence record v1",
+  "description": "One record per vehicle variant (trim). Five layers, each referencing the layer below: observations (RAW FACT) -> facts (NORMALIZED FACT) -> derived (DERIVED ATTRIBUTE) -> editorial (EDITORIAL INTERPRETATION) -> signals (RECOMMENDATION SIGNAL). No text is stored per language: user-facing strings are message keys + params rendered through i18n/labels.json.",
+  "type": "object",
+  "required": ["contract_version", "entity", "snapshot", "sources", "observations", "facts", "derived", "editorial", "signals"],
+  "additionalProperties": false,
+  "properties": {
+    "contract_version": {"const": "1.0.0-draft"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "snapshot": {
+      "type": "object",
+      "required": ["dataset", "collection_date"],
+      "properties": {
+        "dataset": {"type": "string", "description": "e.g. carindex_master.csv@2026-09-17"},
+        "collection_date": {"type": "string", "format": "date"}
+      }
+    },
+
+    "entity": {
+      "type": "object",
+      "required": ["model_id", "cohort_id", "variant_id", "brand", "model", "trim"],
+      "description": "Identity is three levels. A fact is stored at the level it is true for (registry 'level'). model_year is NOT part of identity when sources disagree on it; it is then a fact with status 'conflict'.",
+      "properties": {
+        "model_id":   {"type": "string", "pattern": "^[a-z0-9-]+$", "description": "brand-model slug, e.g. chery-tiggo-7-pro"},
+        "cohort_id":  {"type": "string", "description": "model_id + CarIndex cohort label (generation / model-year group), e.g. chery-tiggo-7-pro@2027-ckd"},
+        "variant_id": {"type": "string", "description": "cohort_id + trim slug, e.g. chery-tiggo-7-pro@2027-ckd/comfort"},
+        "brand": {"type": "string"}, "model": {"type": "string"}, "trim": {"type": "string"},
+        "trim_aliases": {"type": "array", "items": {"$ref": "#/$defs/trimAlias"}, "description": "every raw trim spelling mapped to this variant, per source"},
+        "candidate_layer": {"type": "object", "description": "the vehicle_candidates.csv row this record was reconciled against, kept verbatim for audit", "additionalProperties": {"type": "string"}}
+      }
+    },
+
+    "sources": {
+      "type": "object",
+      "description": "source_id -> source. publisher groups sub-feeds of the same site (ContactCars, ContactCars(Lineup)...) so they are not counted as independent.",
+      "additionalProperties": {"$ref": "#/$defs/source"}
+    },
+
+    "observations": {
+      "type": "array",
+      "description": "RAW FACT. Immutable. One entry per (source row, column). raw_value is exactly what the source said, including placeholders like 'Data Not Available'.",
+      "items": {"$ref": "#/$defs/observation"}
+    },
+
+    "facts": {
+      "type": "object",
+      "description": "NORMALIZED FACT. attribute (registry key) -> fact. Every registry fact the record could carry is present; missing ones have status 'unknown' and value null.",
+      "additionalProperties": {"$ref": "#/$defs/fact"}
+    },
+
+    "derived": {
+      "type": "object",
+      "description": "DERIVED ATTRIBUTE. Deterministic, versioned formulas over facts. Missing input -> value null + unknown_reason; never a default.",
+      "additionalProperties": {"$ref": "#/$defs/derived"}
+    },
+
+    "editorial": {
+      "type": "array",
+      "description": "EDITORIAL INTERPRETATION. CarIndex judgment, human-approved. An LLM may draft (status 'draft'); only 'approved' entries may feed signals or be shown.",
+      "items": {"$ref": "#/$defs/editorial"}
+    },
+
+    "signals": {
+      "type": "object",
+      "description": "RECOMMENDATION SIGNAL. dimension -> signal. Inputs for a later deterministic scorer. unknown is a state, never a low score.",
+      "additionalProperties": {"$ref": "#/$defs/signal"}
+    },
+
+    "buyer_fit": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["tag", "rule", "state"],
+        "properties": {
+          "tag": {"type": "string", "description": "e.g. city_commuter, large_family, long_highway_commute, first_car, budget_under_1m"},
+          "rule": {"$ref": "#/$defs/ruleRef"},
+          "state": {"enum": ["fits", "does_not_fit", "unknown"]},
+          "because": {"type": "array", "items": {"type": "string", "description": "signal keys used"}}
+        }
+      }
+    }
+  },
+
+  "$defs": {
+    "confidence": {"enum": ["high", "medium", "low", "unknown"]},
+    "ruleRef": {
+      "type": "object", "required": ["id", "status"],
+      "properties": {"id": {"type": "string"}, "status": {"enum": ["approved", "proposed", "retired"]}}
+    },
+    "message": {
+      "type": "object", "required": ["key"],
+      "description": "Presentation reference. Rendered with i18n/labels.json in ar or en; numbers stay Latin digits.",
+      "properties": {"key": {"type": "string"}, "params": {"type": "object"}}
+    },
+    "trimAlias": {
+      "type": "object", "required": ["source_id", "raw"],
+      "properties": {"source_id": {"type": "string"}, "raw": {"type": "string"}}
+    },
+    "source": {
+      "type": "object",
+      "required": ["name", "publisher", "tier", "type"],
+      "properties": {
+        "name": {"type": "string"},
+        "publisher": {"type": "string"},
+        "type": {"enum": ["official_distributor", "oem", "press_reporting_official", "aggregator_listing", "aggregator_summary", "aggregator_classified", "test_body", "registration_data", "carindex_internal", "carindex_research"]},
+        "tier": {"enum": ["A", "B", "C", "D"], "description": "A official/OEM/test body, B press reporting an official announcement, C aggregator new-car listing, D summary/classified/internal"},
+        "url": {"type": "string"}
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["obs_id", "entity_ref", "attribute", "raw_value", "source_id", "observed_at", "record_ref"],
+      "properties": {
+        "obs_id": {"type": "string"},
+        "entity_ref": {"type": "string", "description": "model_id, cohort_id or variant_id the observation is about"},
+        "attribute": {"type": "string", "description": "registry fact key this column maps to"},
+        "raw_value": {"type": "string"},
+        "source_id": {"type": "string"},
+        "source_url": {"type": "string"},
+        "observed_at": {"type": "string", "format": "date", "description": "source price_date if given, else collection_date"},
+        "record_ref": {"type": "string", "description": "file:row:column, e.g. carindex_master.csv:1203:official_price"}
+      }
+    },
+    "fact": {
+      "type": "object",
+      "required": ["status", "value", "confidence", "observation_ids"],
+      "properties": {
+        "value": {"description": "typed value, or null when status is unknown or unresolved conflict"},
+        "unit": {"type": ["string", "null"]},
+        "qualifiers": {"type": "object", "description": "e.g. {rpm_from:1750, rpm_to:4000}, {test_cycle:'NEDC'}"},
+        "level": {"enum": ["model", "cohort", "variant", "market"]},
+        "status": {"enum": ["agreed", "single_source", "resolved", "conflict", "unknown"]},
+        "confidence": {"$ref": "#/$defs/confidence"},
+        "valid_as_of": {"type": ["string", "null"], "format": "date"},
+        "observation_ids": {"type": "array", "items": {"type": "string"}},
+        "candidates": {"type": "array", "description": "conflict/resolved: every distinct normalized value with its observations", "items": {"type": "object", "properties": {"value": {}, "observation_ids": {"type": "array"}}}},
+        "resolution": {"type": "object", "properties": {"rule": {"type": "string"}, "decided_by": {"type": "string"}, "note": {"type": "string"}}},
+        "unknown_reason": {"enum": ["no_observation", "placeholder_only", "unparseable", "unresolved_conflict", "not_applicable", "stale"]}
+      }
+    },
+    "derived": {
+      "type": "object",
+      "required": ["value", "formula", "inputs", "confidence"],
+      "properties": {
+        "value": {},
+        "formula": {"type": "string", "description": "id@version from field_registry.derived"},
+        "inputs": {"type": "object", "description": "input name -> 'facts.x' / 'derived.y' / 'market:fuel_price_egp_per_l@date'"},
+        "peer_set": {"type": "object", "properties": {"id": {"type": "string"}, "size": {"type": "integer"}, "definition": {"type": "string"}}},
+        "confidence": {"$ref": "#/$defs/confidence"},
+        "explanation": {"$ref": "#/$defs/message"},
+        "unknown_reason": {"type": "string"}
+      }
+    },
+    "editorial": {
+      "type": "object",
+      "required": ["editorial_id", "topic", "stance", "claim", "cites", "status", "author"],
+      "properties": {
+        "editorial_id": {"type": "string"},
+        "topic": {"type": "string", "description": "a signal dimension, e.g. city_suitability"},
+        "stance": {"enum": ["strength", "compromise", "context", "not_assessable"]},
+        "claim": {"$ref": "#/$defs/message"},
+        "cites": {"type": "array", "minItems": 1, "items": {"type": "string", "description": "facts.x / derived.y / observation id - an editorial claim must cite evidence"}},
+        "author": {"type": "string"},
+        "drafted_by": {"enum": ["human", "llm"]},
+        "status": {"enum": ["draft", "approved", "retired"]},
+        "approved_by": {"type": "string"},
+        "approved_at": {"type": "string", "format": "date"},
+        "review_due": {"type": "string", "format": "date"},
+        "confidence": {"$ref": "#/$defs/confidence"}
+      }
+    },
+    "signal": {
+      "type": "object",
+      "required": ["state", "value", "rule", "inputs_used", "inputs_missing", "confidence"],
+      "properties": {
+        "state": {"enum": ["known", "partial", "unknown"]},
+        "value": {"description": "ordinal 1-5 or enum from the dimension's scale; null when state is unknown"},
+        "scale": {"type": "string", "description": "e.g. price_band: entry|lower|middle|upper|top"},
+        "rule": {"$ref": "#/$defs/ruleRef"},
+        "inputs_used": {"type": "array", "items": {"type": "string"}},
+        "inputs_missing": {"type": "array", "items": {"type": "string"}},
+        "evidence_coverage": {"type": "number", "minimum": 0, "maximum": 1},
+        "confidence": {"$ref": "#/$defs/confidence"},
+        "explanation": {"$ref": "#/$defs/message"}
+      }
+    }
+  }
+}
