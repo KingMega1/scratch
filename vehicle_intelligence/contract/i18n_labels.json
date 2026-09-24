@@ -1,0 +1,39 @@
+{
+  "_note": "Presentation only. Intelligence records store keys + params; this file renders them. Numbers are formatted at render time with Latin digits in both languages.",
+  "messages": {
+    "derived.price_percentile": {"en": "Priced above {pct}% of {n} {body} variants listed in Egypt", "ar": "سعرها أعلى من {pct}% من {n} فئة {body} معروضة في مصر"},
+    "derived.price_band": {"en": "{band} price band among {body}s", "ar": "شريحة سعر {band} بين الـ{body}"},
+    "derived.trim_position": {"en": "{pos} trim of {n}", "ar": "فئة {pos} من {n}"},
+    "derived.market_premium": {"en": "Market price {pct}% above official list ({date})", "ar": "سعر السوق أعلى من السعر الرسمي بـ{pct}% ({date})"},
+    "signal.price_position": {"en": "Price position: {band} ({pct} percentile among {body}s)", "ar": "موقع السعر: {band} (المئين {pct} بين الـ{body})"},
+    "signal.warranty": {"en": "Warranty {years} years / {km} km", "ar": "ضمان {years} سنين / {km} كم"},
+    "signal.partial_no_value": {"en": "Some evidence exists; not enough to rate ({missing} inputs missing)", "ar": "في بيانات جزئية، مش كفاية للتقييم ({missing} عناصر ناقصة)"},
+    "signal.unknown": {"en": "Not enough evidence yet", "ar": "مفيش بيانات كفاية لسه"}
+  },
+  "enums": {
+    "body": {"suv": {"en": "SUV", "ar": "SUV"}, "sedan": {"en": "sedan", "ar": "سيدان"}, "hatchback": {"en": "hatchback", "ar": "هاتشباك"}, "coupe": {"en": "coupe", "ar": "كوبيه"}, "convertible": {"en": "convertible", "ar": "مكشوفة"}, "pickup": {"en": "pickup", "ar": "بيك أب"}, "mpv": {"en": "MPV", "ar": "MPV"}, "van": {"en": "van", "ar": "فان"}, "wagon": {"en": "wagon", "ar": "ستيشن"}, "other": {"en": "other", "ar": "أخرى"}},
+    "band": {"entry": {"en": "entry", "ar": "دخول"}, "lower": {"en": "lower", "ar": "أقل من المتوسط"}, "middle": {"en": "middle", "ar": "متوسطة"}, "upper": {"en": "upper", "ar": "أعلى من المتوسط"}, "top": {"en": "top", "ar": "عليا"}},
+    "pos": {"only_trim": {"en": "only", "ar": "وحيدة"}, "entry": {"en": "entry", "ar": "أولى"}, "middle": {"en": "middle", "ar": "متوسطة"}, "top": {"en": "top", "ar": "أعلى"}},
+    "confidence": {"high": {"en": "high", "ar": "عالية"}, "medium": {"en": "medium", "ar": "متوسطة"}, "low": {"en": "low", "ar": "منخفضة"}, "unknown": {"en": "unknown", "ar": "غير معروفة"}},
+    "fact_status": {"agreed": {"en": "sources agree", "ar": "المصادر متفقة"}, "single_source": {"en": "one source", "ar": "مصدر واحد"}, "resolved": {"en": "conflict resolved by rule", "ar": "تعارض اتحل بقاعدة"}, "conflict": {"en": "sources conflict", "ar": "المصادر متعارضة"}, "unknown": {"en": "not available", "ar": "غير متاح"}},
+    "dimension": {
+      "price_position": {"en": "Price position", "ar": "موقع السعر"},
+      "city_suitability": {"en": "City use", "ar": "المدينة"},
+      "highway_suitability": {"en": "Highway use", "ar": "الطريق السريع"},
+      "family_practicality": {"en": "Family & practicality", "ar": "العيلة والعملية"},
+      "running_cost_profile": {"en": "Running cost", "ar": "تكلفة التشغيل"},
+      "energy_efficiency": {"en": "Fuel / energy efficiency", "ar": "استهلاك الوقود / الطاقة"},
+      "reliability_evidence": {"en": "Reliability evidence", "ar": "أدلة الاعتمادية"},
+      "resale_liquidity": {"en": "Resale & liquidity", "ar": "إعادة البيع"},
+      "safety_evidence": {"en": "Safety evidence", "ar": "أدلة الأمان"},
+      "performance_character": {"en": "Performance", "ar": "الأداء"},
+      "comfort": {"en": "Comfort", "ar": "الراحة"},
+      "powertrain_suitability": {"en": "Powertrain fit", "ar": "ملاءمة المحرك"},
+      "ownership_considerations": {"en": "Ownership", "ar": "الملكية"},
+      "service_warranty": {"en": "Service & warranty", "ar": "الصيانة والضمان"},
+      "strengths": {"en": "Strengths", "ar": "نقاط القوة"},
+      "compromises": {"en": "Compromises", "ar": "التنازلات"},
+      "buyer_fit": {"en": "Who it fits", "ar": "تناسب مين"}
+    }
+  }
+}

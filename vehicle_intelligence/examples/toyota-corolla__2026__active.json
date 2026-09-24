@@ -1,0 +1,1583 @@
+{
+  "contract_version": "1.0.0-draft",
+  "generated_at": "2026-09-24T00:00:00Z",
+  "snapshot": {
+    "dataset": "carindex_master.csv + vehicle_candidates.csv (Drive, 2026-09-17)",
+    "collection_date": "2026-09-10"
+  },
+  "entity": {
+    "model_id": "toyota-corolla",
+    "cohort_id": "toyota-corolla@2026",
+    "variant_id": "toyota-corolla@2026/active",
+    "brand": "Toyota",
+    "model": "Corolla",
+    "trim": "Active",
+    "trim_aliases": [
+      {
+        "source_id": "contactcars",
+        "raw": "Active"
+      },
+      {
+        "source_id": "egycar",
+        "raw": "Active"
+      },
+      {
+        "source_id": "hatla2ee",
+        "raw": "Active"
+      },
+      {
+        "source_id": "official_toyotaegypt",
+        "raw": "Active"
+      },
+      {
+        "source_id": "yallamotor",
+        "raw": "Active"
+      }
+    ],
+    "selection_reason": "best-covered car: 4 sources agree on price, full EgyCar spec sheet",
+    "candidate_layer": {
+      "brand": "Toyota",
+      "model": "Corolla",
+      "model_year": "2026",
+      "variant_normalized": "Active",
+      "sources": "ContactCars, EgyCar, Hatla2ee, Official-ToyotaEgypt",
+      "prices": "1,280,000 (all 4 sources agree)",
+      "status": "MATCH",
+      "notes": "Full 4-source agreement"
+    }
+  },
+  "sources": {
+    "contactcars": {
+      "name": "ContactCars",
+      "publisher": "ContactCars",
+      "type": "aggregator_listing",
+      "tier": "C",
+      "url": "https://www.contactcars.com/en/new-cars/toyota-corolla/year-2026"
+    },
+    "egycar": {
+      "name": "EgyCar",
+      "publisher": "EgyCar",
+      "type": "aggregator_listing",
+      "tier": "C",
+      "url": "https://www.egy-car.com/toyota-corolla"
+    },
+    "hatla2ee": {
+      "name": "Hatla2ee",
+      "publisher": "Hatla2ee",
+      "type": "aggregator_listing",
+      "tier": "C",
+      "url": "https://eg.hatla2ee.com/en/new-car/toyota/corolla"
+    },
+    "official_toyotaegypt": {
+      "name": "Official-ToyotaEgypt",
+      "publisher": "Official-ToyotaEgypt",
+      "type": "official_distributor",
+      "tier": "A",
+      "url": "https://toyota.com.eg/en/models/corolla"
+    },
+    "yallamotor": {
+      "name": "YallaMotor",
+      "publisher": "YallaMotor",
+      "type": "aggregator_listing",
+      "tier": "C",
+      "url": "https://egypt.yallamotor.com/new-cars/toyota/corolla"
+    }
+  },
+  "observations": [
+    {
+      "obs_id": "o001",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "model_year",
+      "raw_value": "2026",
+      "source_id": "contactcars",
+      "source_url": "https://www.contactcars.com/en/new-cars/toyota-corolla/year-2026",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:2:model_year"
+    },
+    {
+      "obs_id": "o002",
+      "entity_ref": "toyota-corolla",
+      "attribute": "body_type",
+      "raw_value": "Sedan",
+      "source_id": "contactcars",
+      "source_url": "https://www.contactcars.com/en/new-cars/toyota-corolla/year-2026",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:2:body_type_normalized"
+    },
+    {
+      "obs_id": "o003",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "official_price_egp",
+      "raw_value": "1,280,000",
+      "source_id": "contactcars",
+      "source_url": "https://www.contactcars.com/en/new-cars/toyota-corolla/year-2026",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:2:official_price"
+    },
+    {
+      "obs_id": "o004",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "market_price_egp",
+      "raw_value": "1,400,000",
+      "source_id": "contactcars",
+      "source_url": "https://www.contactcars.com/en/new-cars/toyota-corolla/year-2026",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:2:market_price"
+    },
+    {
+      "obs_id": "o005",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "fuel_type",
+      "raw_value": "Gas",
+      "source_id": "contactcars",
+      "source_url": "https://www.contactcars.com/en/new-cars/toyota-corolla/year-2026",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:2:fuel_type_raw"
+    },
+    {
+      "obs_id": "o006",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "engine_displacement_cc",
+      "raw_value": "1600cc",
+      "source_id": "contactcars",
+      "source_url": "https://www.contactcars.com/en/new-cars/toyota-corolla/year-2026",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:2:engine_capacity"
+    },
+    {
+      "obs_id": "o007",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "power_hp",
+      "raw_value": "120",
+      "source_id": "contactcars",
+      "source_url": "https://www.contactcars.com/en/new-cars/toyota-corolla/year-2026",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:2:horsepower"
+    },
+    {
+      "obs_id": "o008",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "transmission",
+      "raw_value": "CVT",
+      "source_id": "contactcars",
+      "source_url": "https://www.contactcars.com/en/new-cars/toyota-corolla/year-2026",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:2:transmission"
+    },
+    {
+      "obs_id": "o009",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "seats",
+      "raw_value": "5",
+      "source_id": "contactcars",
+      "source_url": "https://www.contactcars.com/en/new-cars/toyota-corolla/year-2026",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:2:seats"
+    },
+    {
+      "obs_id": "o010",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "torque_nm",
+      "raw_value": "154/5200",
+      "source_id": "contactcars",
+      "source_url": "https://www.contactcars.com/en/new-cars/toyota-corolla/year-2026",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:2:torque"
+    },
+    {
+      "obs_id": "o011",
+      "entity_ref": "toyota-corolla@2026",
+      "attribute": "assembly_country",
+      "raw_value": "Origin Japan, assembled Turkey. Hybrid trim NOT corroborated by official Toyota Egypt site (see official/EgyCar/Hatla2ee records) - flag POSSIBLY_DISCONTINUED_OR_UNOFFICIAL",
+      "source_id": "contactcars",
+      "source_url": "https://www.contactcars.com/en/new-cars/toyota-corolla/year-2026",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:2:notes"
+    },
+    {
+      "obs_id": "o012",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "equipment",
+      "raw_value": "Origin Japan, assembled Turkey. Hybrid trim NOT corroborated by official Toyota Egypt site (see official/EgyCar/Hatla2ee records) - flag POSSIBLY_DISCONTINUED_OR_UNOFFICIAL",
+      "source_id": "contactcars",
+      "source_url": "https://www.contactcars.com/en/new-cars/toyota-corolla/year-2026",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:2:notes"
+    },
+    {
+      "obs_id": "o013",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "model_year",
+      "raw_value": "2026",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/toyota-corolla",
+      "observed_at": "2026-04-06",
+      "record_ref": "carindex_master.csv:8:model_year"
+    },
+    {
+      "obs_id": "o014",
+      "entity_ref": "toyota-corolla",
+      "attribute": "body_type",
+      "raw_value": "Sedan",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/toyota-corolla",
+      "observed_at": "2026-04-06",
+      "record_ref": "carindex_master.csv:8:body_type_normalized"
+    },
+    {
+      "obs_id": "o015",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "official_price_egp",
+      "raw_value": "1,280,000",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/toyota-corolla",
+      "observed_at": "2026-04-06",
+      "record_ref": "carindex_master.csv:8:official_price"
+    },
+    {
+      "obs_id": "o016",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "fuel_type",
+      "raw_value": "Gas",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/toyota-corolla",
+      "observed_at": "2026-04-06",
+      "record_ref": "carindex_master.csv:8:fuel_type_raw"
+    },
+    {
+      "obs_id": "o017",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "engine_displacement_cc",
+      "raw_value": "1600cc",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/toyota-corolla",
+      "observed_at": "2026-04-06",
+      "record_ref": "carindex_master.csv:8:engine_capacity"
+    },
+    {
+      "obs_id": "o018",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "power_hp",
+      "raw_value": "120",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/toyota-corolla",
+      "observed_at": "2026-04-06",
+      "record_ref": "carindex_master.csv:8:horsepower"
+    },
+    {
+      "obs_id": "o019",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "transmission",
+      "raw_value": "CVT",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/toyota-corolla",
+      "observed_at": "2026-04-06",
+      "record_ref": "carindex_master.csv:8:transmission"
+    },
+    {
+      "obs_id": "o020",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "drivetrain",
+      "raw_value": "FWD",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/toyota-corolla",
+      "observed_at": "2026-04-06",
+      "record_ref": "carindex_master.csv:8:drive_type"
+    },
+    {
+      "obs_id": "o021",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "seats",
+      "raw_value": "5",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/toyota-corolla",
+      "observed_at": "2026-04-06",
+      "record_ref": "carindex_master.csv:8:seats"
+    },
+    {
+      "obs_id": "o022",
+      "entity_ref": "toyota-corolla@2026",
+      "attribute": "length_mm",
+      "raw_value": "463.0cm",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/toyota-corolla",
+      "observed_at": "2026-04-06",
+      "record_ref": "carindex_master.csv:8:length"
+    },
+    {
+      "obs_id": "o023",
+      "entity_ref": "toyota-corolla@2026",
+      "attribute": "width_mm",
+      "raw_value": "178cm",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/toyota-corolla",
+      "observed_at": "2026-04-06",
+      "record_ref": "carindex_master.csv:8:width"
+    },
+    {
+      "obs_id": "o024",
+      "entity_ref": "toyota-corolla@2026",
+      "attribute": "height_mm",
+      "raw_value": "143.5cm",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/toyota-corolla",
+      "observed_at": "2026-04-06",
+      "record_ref": "carindex_master.csv:8:height"
+    },
+    {
+      "obs_id": "o025",
+      "entity_ref": "toyota-corolla@2026",
+      "attribute": "wheelbase_mm",
+      "raw_value": "270cm",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/toyota-corolla",
+      "observed_at": "2026-04-06",
+      "record_ref": "carindex_master.csv:8:wheelbase"
+    },
+    {
+      "obs_id": "o026",
+      "entity_ref": "toyota-corolla@2026",
+      "attribute": "trunk_l",
+      "raw_value": "470L",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/toyota-corolla",
+      "observed_at": "2026-04-06",
+      "record_ref": "carindex_master.csv:8:trunk_capacity"
+    },
+    {
+      "obs_id": "o027",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "fuel_consumption_l_100km",
+      "raw_value": "5.5L/100km",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/toyota-corolla",
+      "observed_at": "2026-04-06",
+      "record_ref": "carindex_master.csv:8:fuel_consumption"
+    },
+    {
+      "obs_id": "o028",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "torque_nm",
+      "raw_value": "154/5200",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/toyota-corolla",
+      "observed_at": "2026-04-06",
+      "record_ref": "carindex_master.csv:8:torque"
+    },
+    {
+      "obs_id": "o029",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "equipment",
+      "raw_value": "6 airbags, blind spot monitor, lane keep assist, 17in wheels, 8in screen",
+      "source_id": "egycar",
+      "source_url": "https://www.egy-car.com/toyota-corolla",
+      "observed_at": "2026-04-06",
+      "record_ref": "carindex_master.csv:8:notes"
+    },
+    {
+      "obs_id": "o030",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "model_year",
+      "raw_value": "2026",
+      "source_id": "hatla2ee",
+      "source_url": "https://eg.hatla2ee.com/en/new-car/toyota/corolla",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:13:model_year"
+    },
+    {
+      "obs_id": "o031",
+      "entity_ref": "toyota-corolla",
+      "attribute": "body_type",
+      "raw_value": "Sedan",
+      "source_id": "hatla2ee",
+      "source_url": "https://eg.hatla2ee.com/en/new-car/toyota/corolla",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:13:body_type_normalized"
+    },
+    {
+      "obs_id": "o032",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "official_price_egp",
+      "raw_value": "1,280,000",
+      "source_id": "hatla2ee",
+      "source_url": "https://eg.hatla2ee.com/en/new-car/toyota/corolla",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:13:official_price"
+    },
+    {
+      "obs_id": "o033",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "market_price_egp",
+      "raw_value": "Data Not Available",
+      "source_id": "hatla2ee",
+      "source_url": "https://eg.hatla2ee.com/en/new-car/toyota/corolla",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:13:market_price"
+    },
+    {
+      "obs_id": "o034",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "engine_displacement_cc",
+      "raw_value": "1600cc",
+      "source_id": "hatla2ee",
+      "source_url": "https://eg.hatla2ee.com/en/new-car/toyota/corolla",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:13:engine_capacity"
+    },
+    {
+      "obs_id": "o035",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "transmission",
+      "raw_value": "Automatic",
+      "source_id": "hatla2ee",
+      "source_url": "https://eg.hatla2ee.com/en/new-car/toyota/corolla",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:13:transmission"
+    },
+    {
+      "obs_id": "o036",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "warranty_years",
+      "raw_value": "150,000km/5yr",
+      "source_id": "hatla2ee",
+      "source_url": "https://eg.hatla2ee.com/en/new-car/toyota/corolla",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:13:warranty"
+    },
+    {
+      "obs_id": "o037",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "warranty_km",
+      "raw_value": "150,000km/5yr",
+      "source_id": "hatla2ee",
+      "source_url": "https://eg.hatla2ee.com/en/new-car/toyota/corolla",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:13:warranty"
+    },
+    {
+      "obs_id": "o038",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "model_year",
+      "raw_value": "2026",
+      "source_id": "official_toyotaegypt",
+      "source_url": "https://toyota.com.eg/en/models/corolla",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:18:model_year"
+    },
+    {
+      "obs_id": "o039",
+      "entity_ref": "toyota-corolla",
+      "attribute": "body_type",
+      "raw_value": "Sedan",
+      "source_id": "official_toyotaegypt",
+      "source_url": "https://toyota.com.eg/en/models/corolla",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:18:body_type_normalized"
+    },
+    {
+      "obs_id": "o040",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "official_price_egp",
+      "raw_value": "1,280,000",
+      "source_id": "official_toyotaegypt",
+      "source_url": "https://toyota.com.eg/en/models/corolla",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:18:official_price"
+    },
+    {
+      "obs_id": "o041",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "equipment",
+      "raw_value": "Official manufacturer price list - verified complete (5 trims, no Hybrid)",
+      "source_id": "official_toyotaegypt",
+      "source_url": "https://toyota.com.eg/en/models/corolla",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:18:notes"
+    },
+    {
+      "obs_id": "o042",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "model_year",
+      "raw_value": "2026",
+      "source_id": "yallamotor",
+      "source_url": "https://egypt.yallamotor.com/new-cars/toyota/corolla",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:24:model_year"
+    },
+    {
+      "obs_id": "o043",
+      "entity_ref": "toyota-corolla",
+      "attribute": "body_type",
+      "raw_value": "Sedan",
+      "source_id": "yallamotor",
+      "source_url": "https://egypt.yallamotor.com/new-cars/toyota/corolla",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:24:body_type_normalized"
+    },
+    {
+      "obs_id": "o044",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "official_price_egp",
+      "raw_value": "Price Coming Soon",
+      "source_id": "yallamotor",
+      "source_url": "https://egypt.yallamotor.com/new-cars/toyota/corolla",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:24:official_price"
+    },
+    {
+      "obs_id": "o045",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "fuel_type",
+      "raw_value": "Petrol, Hybrid",
+      "source_id": "yallamotor",
+      "source_url": "https://egypt.yallamotor.com/new-cars/toyota/corolla",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:24:fuel_type_raw"
+    },
+    {
+      "obs_id": "o046",
+      "entity_ref": "toyota-corolla@2026/active",
+      "attribute": "power_hp",
+      "raw_value": "116-168 (range)",
+      "source_id": "yallamotor",
+      "source_url": "https://egypt.yallamotor.com/new-cars/toyota/corolla",
+      "observed_at": "2026-09-10",
+      "record_ref": "carindex_master.csv:24:horsepower"
+    }
+  ],
+  "facts": {
+    "model_year": {
+      "unit": null,
+      "level": "variant",
+      "observation_ids": [
+        "o001",
+        "o013",
+        "o030",
+        "o038",
+        "o042"
+      ],
+      "value": 2026,
+      "qualifiers": {},
+      "status": "agreed",
+      "confidence": "high",
+      "valid_as_of": "2026-09-10"
+    },
+    "trim_name": {
+      "unit": null,
+      "level": "variant",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "body_type": {
+      "unit": null,
+      "level": "model",
+      "observation_ids": [
+        "o002",
+        "o014",
+        "o031",
+        "o039",
+        "o043"
+      ],
+      "value": "sedan",
+      "qualifiers": {},
+      "status": "agreed",
+      "confidence": "high",
+      "valid_as_of": "2026-09-10"
+    },
+    "official_price_egp": {
+      "unit": "EGP",
+      "level": "variant",
+      "observation_ids": [
+        "o003",
+        "o015",
+        "o032",
+        "o040",
+        "o044"
+      ],
+      "value": 1280000,
+      "qualifiers": {},
+      "status": "agreed",
+      "confidence": "high",
+      "valid_as_of": "2026-09-10"
+    },
+    "market_price_egp": {
+      "unit": "EGP",
+      "level": "variant",
+      "observation_ids": [
+        "o004",
+        "o033"
+      ],
+      "value": 1400000,
+      "qualifiers": {},
+      "status": "single_source",
+      "confidence": "medium",
+      "valid_as_of": "2026-09-10"
+    },
+    "price_range_egp": {
+      "unit": "EGP",
+      "level": "cohort",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "fuel_type": {
+      "unit": null,
+      "level": "variant",
+      "observation_ids": [
+        "o005",
+        "o016",
+        "o045"
+      ],
+      "value": "petrol",
+      "qualifiers": {},
+      "status": "agreed",
+      "confidence": "high",
+      "valid_as_of": "2026-09-10"
+    },
+    "engine_displacement_cc": {
+      "unit": "cc",
+      "level": "variant",
+      "observation_ids": [
+        "o006",
+        "o017",
+        "o034"
+      ],
+      "value": 1600,
+      "qualifiers": {},
+      "status": "agreed",
+      "confidence": "high",
+      "valid_as_of": "2026-09-10"
+    },
+    "power_hp": {
+      "unit": "hp",
+      "level": "variant",
+      "observation_ids": [
+        "o007",
+        "o018",
+        "o046"
+      ],
+      "value": 120.0,
+      "qualifiers": {},
+      "status": "agreed",
+      "confidence": "high",
+      "valid_as_of": "2026-09-10"
+    },
+    "torque_nm": {
+      "unit": "Nm",
+      "level": "variant",
+      "observation_ids": [
+        "o010",
+        "o028"
+      ],
+      "value": 154.0,
+      "qualifiers": {
+        "rpm_from": 5200,
+        "rpm_to": 5200
+      },
+      "status": "agreed",
+      "confidence": "high",
+      "valid_as_of": "2026-09-10"
+    },
+    "transmission": {
+      "unit": null,
+      "level": "variant",
+      "observation_ids": [
+        "o008",
+        "o019",
+        "o035"
+      ],
+      "value": "cvt",
+      "qualifiers": {},
+      "status": "agreed",
+      "confidence": "high",
+      "valid_as_of": "2026-09-10",
+      "candidates": [
+        {
+          "value": "cvt",
+          "observation_ids": [
+            "o008",
+            "o019",
+            "o035"
+          ]
+        }
+      ],
+      "resolution": {
+        "rule": "R1 specificity: \"automatic\" observations counted as support for cvt",
+        "decided_by": "rule"
+      }
+    },
+    "drivetrain": {
+      "unit": null,
+      "level": "variant",
+      "observation_ids": [
+        "o020"
+      ],
+      "value": "fwd",
+      "qualifiers": {},
+      "status": "single_source",
+      "confidence": "medium",
+      "valid_as_of": "2026-04-06"
+    },
+    "battery_kwh": {
+      "unit": "kWh",
+      "level": "variant",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "electric_range_km": {
+      "unit": "km",
+      "level": "variant",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "fuel_consumption_l_100km": {
+      "unit": "L/100km",
+      "level": "variant",
+      "observation_ids": [
+        "o027"
+      ],
+      "value": 5.5,
+      "qualifiers": {},
+      "status": "single_source",
+      "confidence": "medium",
+      "valid_as_of": "2026-04-06"
+    },
+    "energy_consumption_kwh_100km": {
+      "unit": "kWh/100km",
+      "level": "variant",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "seats": {
+      "unit": null,
+      "level": "variant",
+      "observation_ids": [
+        "o009",
+        "o021"
+      ],
+      "value": 5,
+      "qualifiers": {},
+      "status": "agreed",
+      "confidence": "high",
+      "valid_as_of": "2026-09-10"
+    },
+    "length_mm": {
+      "unit": "mm",
+      "level": "cohort",
+      "observation_ids": [
+        "o022"
+      ],
+      "value": 4630,
+      "qualifiers": {},
+      "status": "single_source",
+      "confidence": "medium",
+      "valid_as_of": "2026-04-06"
+    },
+    "width_mm": {
+      "unit": "mm",
+      "level": "cohort",
+      "observation_ids": [
+        "o023"
+      ],
+      "value": 1780,
+      "qualifiers": {},
+      "status": "single_source",
+      "confidence": "medium",
+      "valid_as_of": "2026-04-06"
+    },
+    "height_mm": {
+      "unit": "mm",
+      "level": "cohort",
+      "observation_ids": [
+        "o024"
+      ],
+      "value": 1435,
+      "qualifiers": {},
+      "status": "single_source",
+      "confidence": "medium",
+      "valid_as_of": "2026-04-06"
+    },
+    "wheelbase_mm": {
+      "unit": "mm",
+      "level": "cohort",
+      "observation_ids": [
+        "o025"
+      ],
+      "value": 2700,
+      "qualifiers": {},
+      "status": "single_source",
+      "confidence": "medium",
+      "valid_as_of": "2026-04-06"
+    },
+    "trunk_l": {
+      "unit": "L",
+      "level": "cohort",
+      "observation_ids": [
+        "o026"
+      ],
+      "value": 470,
+      "qualifiers": {},
+      "status": "single_source",
+      "confidence": "medium",
+      "valid_as_of": "2026-04-06"
+    },
+    "curb_weight_kg": {
+      "unit": "kg",
+      "level": "variant",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "ground_clearance_mm": {
+      "unit": "mm",
+      "level": "cohort",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "turning_circle_m": {
+      "unit": "m",
+      "level": "cohort",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "warranty_years": {
+      "unit": "years",
+      "level": "variant",
+      "observation_ids": [
+        "o036"
+      ],
+      "value": 5.0,
+      "qualifiers": {},
+      "status": "single_source",
+      "confidence": "medium",
+      "valid_as_of": "2026-09-10"
+    },
+    "warranty_km": {
+      "unit": "km",
+      "level": "variant",
+      "observation_ids": [
+        "o037"
+      ],
+      "value": 150000,
+      "qualifiers": {},
+      "status": "single_source",
+      "confidence": "medium",
+      "valid_as_of": "2026-09-10"
+    },
+    "battery_warranty_years": {
+      "unit": "years",
+      "level": "variant",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "assembly_country": {
+      "unit": null,
+      "level": "cohort",
+      "observation_ids": [
+        "o011"
+      ],
+      "value": "Turkey",
+      "qualifiers": {},
+      "status": "single_source",
+      "confidence": "low",
+      "valid_as_of": "2026-09-10"
+    },
+    "distributor": {
+      "unit": null,
+      "level": "model",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "equipment": {
+      "unit": null,
+      "level": "variant",
+      "observation_ids": [
+        "o012",
+        "o029",
+        "o041"
+      ],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "unparseable",
+      "note": "free-text notes kept as raw observations; structured extraction not done yet"
+    },
+    "safety_rating": {
+      "unit": null,
+      "level": "cohort",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "registrations_units": {
+      "unit": "units/month",
+      "level": "model",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "used_listing_count": {
+      "unit": null,
+      "level": "model",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "used_price_retention_pct": {
+      "unit": null,
+      "level": "cohort",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "recall_count": {
+      "unit": null,
+      "level": "cohort",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "service_interval_km": {
+      "unit": null,
+      "level": "cohort",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "service_centers_count": {
+      "unit": null,
+      "level": "model",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    },
+    "brand_years_in_egypt": {
+      "unit": null,
+      "level": "model",
+      "observation_ids": [],
+      "value": null,
+      "status": "unknown",
+      "confidence": "unknown",
+      "valid_as_of": null,
+      "unknown_reason": "no_observation"
+    }
+  },
+  "derived": {
+    "price_percentile_in_body_type": {
+      "value": 33.0,
+      "formula": "D-PRICE-PCTL-BODY@1",
+      "inputs": {
+        "price": "facts.official_price_egp",
+        "body": "facts.body_type"
+      },
+      "peer_set": {
+        "id": "body:sedan@2026-09-10",
+        "size": 303,
+        "definition": "one official price per brand/model/year/trim in carindex_master.csv, same body type"
+      },
+      "confidence": "high",
+      "explanation": {
+        "key": "derived.price_percentile",
+        "params": {
+          "pct": 33.0,
+          "body": "sedan",
+          "n": 303
+        }
+      }
+    },
+    "price_band_in_body_type": {
+      "value": "lower",
+      "formula": "D-PRICE-BAND@1",
+      "inputs": {
+        "pct": "derived.price_percentile_in_body_type"
+      },
+      "confidence": "high",
+      "explanation": {
+        "key": "derived.price_band",
+        "params": {
+          "band": "lower",
+          "body": "sedan"
+        }
+      }
+    },
+    "trim_position_in_model": {
+      "value": "entry",
+      "formula": "D-TRIM-POSITION@1",
+      "inputs": {
+        "trim_prices": "ContactCars official prices, 6 trims, 2026-09-10"
+      },
+      "confidence": "medium",
+      "explanation": {
+        "key": "derived.trim_position",
+        "params": {
+          "pos": "entry",
+          "n": 6
+        }
+      }
+    },
+    "market_premium_pct": {
+      "value": 9.4,
+      "formula": "D-MARKET-PREMIUM@1",
+      "inputs": {
+        "official": "contactcars 1280000 @ 2026-09-10",
+        "market": "o004 1400000"
+      },
+      "confidence": "medium",
+      "explanation": {
+        "key": "derived.market_premium",
+        "params": {
+          "pct": 9.4,
+          "date": "2026-09-10"
+        }
+      }
+    },
+    "price_source_agreement": {
+      "value": 4,
+      "formula": "D-SOURCE-AGREEMENT@1",
+      "inputs": {
+        "publishers": [
+          "ContactCars",
+          "EgyCar",
+          "Hatla2ee",
+          "Official-ToyotaEgypt"
+        ]
+      },
+      "confidence": "high"
+    },
+    "length_class": {
+      "value": "4500_4799",
+      "formula": "D-LENGTH-CLASS@1",
+      "inputs": {
+        "length": "facts.length_mm"
+      },
+      "confidence": "medium"
+    },
+    "footprint_m2": {
+      "value": 8.24,
+      "formula": "D-FOOTPRINT@1",
+      "inputs": {
+        "length": "facts.length_mm",
+        "width": "facts.width_mm"
+      },
+      "confidence": "medium"
+    },
+    "third_row": {
+      "value": false,
+      "formula": "D-THIRD-ROW@1",
+      "inputs": {
+        "seats": "facts.seats"
+      },
+      "confidence": "high"
+    },
+    "warranty_years_percentile": {
+      "value": 54.6,
+      "formula": "D-WARRANTY-PCTL@1",
+      "inputs": {
+        "years": "facts.warranty_years"
+      },
+      "peer_set": {
+        "id": "warranty_years@2026-09-10",
+        "size": 483,
+        "definition": "variants with a parseable warranty in carindex_master.csv"
+      },
+      "confidence": "medium"
+    },
+    "power_to_weight_hp_per_t": {
+      "value": null,
+      "formula": "D-POWER-WEIGHT@1",
+      "inputs": {},
+      "confidence": "unknown",
+      "unknown_reason": "missing power_hp, curb_weight_kg"
+    },
+    "fuel_cost_egp_per_100km": {
+      "value": null,
+      "formula": "D-FUEL-COST@1",
+      "inputs": {},
+      "confidence": "unknown",
+      "unknown_reason": "missing fuel_consumption_l_100km, fuel_price_egp_per_l"
+    },
+    "energy_cost_egp_per_100km": {
+      "value": null,
+      "formula": "D-ENERGY-COST@1",
+      "inputs": {},
+      "confidence": "unknown",
+      "unknown_reason": "missing energy_consumption_kwh_100km, electricity_tariff_egp_per_kwh"
+    },
+    "ev_range_percentile_in_bev": {
+      "value": null,
+      "formula": "D-EV-RANGE-PCTL@1",
+      "inputs": {},
+      "confidence": "unknown",
+      "unknown_reason": "missing electric_range_km (same test_cycle), fuel_type=bev"
+    },
+    "registrations_trend": {
+      "value": null,
+      "formula": "D-REG-TREND@1",
+      "inputs": {},
+      "confidence": "unknown",
+      "unknown_reason": "missing registrations_units (>= 6 months)"
+    },
+    "price_trend": {
+      "value": null,
+      "formula": "D-PRICE-TREND@1",
+      "inputs": {},
+      "confidence": "unknown",
+      "unknown_reason": "missing official_price_egp history (>= 2 dated observations)"
+    }
+  },
+  "editorial": [],
+  "signals": {
+    "price_position": {
+      "state": "known",
+      "value": "lower",
+      "rule": {
+        "id": "S-PRICE_POSITION@1",
+        "status": "proposed"
+      },
+      "inputs_used": [
+        "price_band_in_body_type",
+        "trim_position_in_model",
+        "market_premium_pct"
+      ],
+      "inputs_missing": [],
+      "evidence_coverage": 1.0,
+      "confidence": "high",
+      "scale": "entry|lower|middle|upper|top (price quintile within body type; says nothing about value for money)",
+      "explanation": {
+        "key": "signal.price_position",
+        "params": {
+          "band": "lower",
+          "body": "sedan",
+          "pct": 33.0
+        }
+      }
+    },
+    "city_suitability": {
+      "state": "partial",
+      "value": null,
+      "rule": {
+        "id": "S-CITY_SUITABILITY@1",
+        "status": "proposed"
+      },
+      "inputs_used": [
+        "length_class",
+        "transmission"
+      ],
+      "inputs_missing": [
+        "turning_circle_m",
+        "equipment.parking_sensors_rear",
+        "equipment.rear_camera",
+        "equipment.camera_360",
+        "editorial:city_suitability (approved)"
+      ],
+      "evidence_coverage": 0.29,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.partial_no_value",
+        "params": {
+          "missing": 5
+        }
+      }
+    },
+    "highway_suitability": {
+      "state": "partial",
+      "value": null,
+      "rule": {
+        "id": "S-HIGHWAY_SUITABILITY@1",
+        "status": "proposed"
+      },
+      "inputs_used": [
+        "fuel_consumption_l_100km"
+      ],
+      "inputs_missing": [
+        "power_to_weight_hp_per_t",
+        "equipment.adaptive_cruise",
+        "equipment.lane_keep",
+        "editorial:highway_suitability (approved)"
+      ],
+      "evidence_coverage": 0.2,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.partial_no_value",
+        "params": {
+          "missing": 4
+        }
+      }
+    },
+    "family_practicality": {
+      "state": "partial",
+      "value": null,
+      "rule": {
+        "id": "S-FAMILY_PRACTICALITY@1",
+        "status": "proposed"
+      },
+      "inputs_used": [
+        "seats",
+        "trunk_l",
+        "third_row",
+        "wheelbase_mm"
+      ],
+      "inputs_missing": [
+        "equipment.rear_ac_vents"
+      ],
+      "evidence_coverage": 0.8,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.partial_no_value",
+        "params": {
+          "missing": 1
+        }
+      }
+    },
+    "running_cost_profile": {
+      "state": "partial",
+      "value": null,
+      "rule": {
+        "id": "S-RUNNING_COST_PROFILE@1",
+        "status": "proposed"
+      },
+      "inputs_used": [
+        "warranty_years"
+      ],
+      "inputs_missing": [
+        "fuel_cost_egp_per_100km|energy_cost_egp_per_100km",
+        "service_interval_km"
+      ],
+      "evidence_coverage": 0.33,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.partial_no_value",
+        "params": {
+          "missing": 2
+        }
+      }
+    },
+    "energy_efficiency": {
+      "state": "partial",
+      "value": null,
+      "rule": {
+        "id": "S-ENERGY_EFFICIENCY@1",
+        "status": "proposed"
+      },
+      "inputs_used": [
+        "fuel_consumption_l_100km|energy_consumption_kwh_100km",
+        "fuel_type"
+      ],
+      "inputs_missing": [],
+      "evidence_coverage": 1.0,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.partial_no_value",
+        "params": {
+          "missing": 0
+        }
+      }
+    },
+    "reliability_evidence": {
+      "state": "unknown",
+      "value": null,
+      "rule": {
+        "id": "S-RELIABILITY_EVIDENCE@1",
+        "status": "proposed"
+      },
+      "inputs_used": [],
+      "inputs_missing": [
+        "recall_count|owner_survey",
+        "brand_years_in_egypt",
+        "registrations_units",
+        "editorial:reliability_evidence (approved)"
+      ],
+      "evidence_coverage": 0.0,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.unknown",
+        "params": {}
+      }
+    },
+    "resale_liquidity": {
+      "state": "unknown",
+      "value": null,
+      "rule": {
+        "id": "S-RESALE_LIQUIDITY@1",
+        "status": "proposed"
+      },
+      "inputs_used": [],
+      "inputs_missing": [
+        "used_price_retention_pct|used_listing_count",
+        "registrations_trend"
+      ],
+      "evidence_coverage": 0.0,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.unknown",
+        "params": {}
+      }
+    },
+    "safety_evidence": {
+      "state": "unknown",
+      "value": null,
+      "rule": {
+        "id": "S-SAFETY_EVIDENCE@1",
+        "status": "proposed"
+      },
+      "inputs_used": [],
+      "inputs_missing": [
+        "safety_rating",
+        "equipment.airbags_count",
+        "equipment.aeb",
+        "equipment.blind_spot"
+      ],
+      "evidence_coverage": 0.0,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.unknown",
+        "params": {}
+      }
+    },
+    "performance_character": {
+      "state": "partial",
+      "value": null,
+      "rule": {
+        "id": "S-PERFORMANCE_CHARACTER@1",
+        "status": "proposed"
+      },
+      "inputs_used": [
+        "power_hp",
+        "torque_nm",
+        "transmission",
+        "drivetrain"
+      ],
+      "inputs_missing": [
+        "power_to_weight_hp_per_t",
+        "editorial:performance_character (approved)"
+      ],
+      "evidence_coverage": 0.67,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.partial_no_value",
+        "params": {
+          "missing": 2
+        }
+      }
+    },
+    "comfort": {
+      "state": "partial",
+      "value": null,
+      "rule": {
+        "id": "S-COMFORT@1",
+        "status": "proposed"
+      },
+      "inputs_used": [
+        "wheelbase_mm"
+      ],
+      "inputs_missing": [
+        "editorial:comfort",
+        "equipment.power_seats",
+        "editorial:comfort (approved)"
+      ],
+      "evidence_coverage": 0.25,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.partial_no_value",
+        "params": {
+          "missing": 3
+        }
+      }
+    },
+    "powertrain_suitability": {
+      "state": "partial",
+      "value": null,
+      "rule": {
+        "id": "S-POWERTRAIN_SUITABILITY@1",
+        "status": "proposed"
+      },
+      "inputs_used": [
+        "fuel_type",
+        "transmission"
+      ],
+      "inputs_missing": [
+        "electric_range_km",
+        "battery_kwh",
+        "editorial:powertrain_suitability (approved)"
+      ],
+      "evidence_coverage": 0.4,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.partial_no_value",
+        "params": {
+          "missing": 3
+        }
+      }
+    },
+    "ownership_considerations": {
+      "state": "partial",
+      "value": null,
+      "rule": {
+        "id": "S-OWNERSHIP_CONSIDERATIONS@1",
+        "status": "proposed"
+      },
+      "inputs_used": [
+        "assembly_country"
+      ],
+      "inputs_missing": [
+        "distributor",
+        "service_centers_count",
+        "brand_years_in_egypt",
+        "editorial:ownership_considerations (approved)"
+      ],
+      "evidence_coverage": 0.2,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.partial_no_value",
+        "params": {
+          "missing": 4
+        }
+      }
+    },
+    "service_warranty": {
+      "state": "partial",
+      "value": "middle",
+      "rule": {
+        "id": "S-SERVICE_WARRANTY@1",
+        "status": "proposed"
+      },
+      "inputs_used": [
+        "warranty_years",
+        "warranty_km"
+      ],
+      "inputs_missing": [
+        "service_centers_count",
+        "service_interval_km",
+        "battery_warranty_years"
+      ],
+      "evidence_coverage": 0.4,
+      "confidence": "medium",
+      "scale": "entry|lower|middle|upper|top (warranty length quintile; service network unknown)",
+      "explanation": {
+        "key": "signal.warranty",
+        "params": {
+          "years": 5.0,
+          "km": 150000
+        }
+      }
+    },
+    "strengths": {
+      "state": "unknown",
+      "value": null,
+      "rule": {
+        "id": "S-STRENGTHS@1",
+        "status": "proposed"
+      },
+      "inputs_used": [],
+      "inputs_missing": [
+        "editorial:strength",
+        "editorial:strengths (approved)"
+      ],
+      "evidence_coverage": 0.0,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.unknown",
+        "params": {}
+      }
+    },
+    "compromises": {
+      "state": "unknown",
+      "value": null,
+      "rule": {
+        "id": "S-COMPROMISES@1",
+        "status": "proposed"
+      },
+      "inputs_used": [],
+      "inputs_missing": [
+        "editorial:compromise",
+        "editorial:compromises (approved)"
+      ],
+      "evidence_coverage": 0.0,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.unknown",
+        "params": {}
+      }
+    },
+    "buyer_fit": {
+      "state": "unknown",
+      "value": null,
+      "rule": {
+        "id": "S-BUYER_FIT@1",
+        "status": "proposed"
+      },
+      "inputs_used": [],
+      "inputs_missing": [
+        "the other signals",
+        "editorial:buyer_fit (approved)"
+      ],
+      "evidence_coverage": 0.0,
+      "confidence": "unknown",
+      "explanation": {
+        "key": "signal.unknown",
+        "params": {}
+      }
+    }
+  },
+  "buyer_fit": []
+}

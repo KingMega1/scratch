@@ -1,0 +1,13 @@
+{
+  "distinct_variants_in_master (brand/model/year/trim)": 1379,
+  "price_position (official price + body type)": 0.871,
+  "market_premium (official + market price, same row)": 0.328,
+  "service_warranty (warranty years parsed)": 0.35,
+  "powertrain facts (fuel type + transmission)": 0.37,
+  "family_practicality inputs (seats + trunk)": 0.009,
+  "city size input (length)": 0.034,
+  "performance input (power)": 0.06,
+  "energy_efficiency input (fuel consumption)": 0.018,
+  "EV range": 0.009,
+  "reliability / resale / safety / running cost / comfort inputs": 0.0
+}
