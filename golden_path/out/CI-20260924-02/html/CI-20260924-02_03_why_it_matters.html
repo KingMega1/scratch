@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+  body { margin:0; }
+  .slide { width:1080px; height:1350px; position:relative; overflow:hidden; background:#F5F1EA; color:#0B0E1A; font-family:'Poppins',sans-serif; display:flex; flex-direction:column; box-sizing:border-box; }
+  .top { display:flex; justify-content:space-between; align-items:center; padding:36px 48px 0; position:relative; z-index:2; }
+  .top img { height:32px; width:auto; }
+  .count { font-family:'JetBrains Mono',monospace; font-weight:700; font-size:18px; color:#6B7280; }
+  .main { flex:1; display:flex; flex-direction:column; justify-content:center; padding:0 48px; gap:28px; position:relative; z-index:2; }
+  .ar { direction:rtl; font-family:'Cairo',sans-serif; }
+  .en { font-family:'Poppins',sans-serif; color:#6B7280; }
+  .kicker { font-family:'JetBrains Mono',monospace; font-size:16px; letter-spacing:0.16em; text-transform:uppercase; color:#1D6FE0; }
+  .num { font-family:'JetBrains Mono',monospace; font-weight:700; }
+  .unit { font-family:'JetBrains Mono',monospace; font-weight:500; opacity:0.7; }
+  .na { font-family:'Cairo',sans-serif; font-weight:700; color:#B7791F; background:rgba(255,176,32,0.14); padding:2px 10px; }
+  .na-big { font-size:44px; }
+  .foot { padding:0 48px 34px; font-family:'JetBrains Mono',monospace; font-size:15px; color:#6B7280; display:flex; justify-content:space-between; gap:24px; position:relative; z-index:2; }
+  .clip { overflow:hidden; }
+</style>
+</head>
+<body>
+<div class="slide" data-slide="3">
+  <div class="top"><img src="file:///home/user/scratch/golden_path/assets/carindex-logo.png" alt="CARINDEX"><div class="count">3/6</div></div>
+  
+  <div class="main" style="gap:22px;">
+    <div class="kicker">Why it matters</div>
+    <div class="ar clip" style="font-weight:800; font-size:48px; line-height:1.2; max-height:120px;">تخفيض في سوق أغلبه زيادات</div>
+    <div class="en" style="font-weight:600; font-size:20px;">A cut, not an increase</div>
+    <img src="file:///home/user/scratch/golden_path/fixtures/images/seat_leon__drive_library.png" alt="" style="width:984px; height:300px; object-fit:cover;">
+    <div class="ar clip" style="font-weight:600; font-size:27px; line-height:1.55; max-height:170px;">الفرق 100,000 جنيه على نفس الفئة ونفس الموديل 2026.</div>
+    <div class="en clip" style="font-size:20px; line-height:1.5; max-height:92px;">The gap is EGP 100,000 on the same trim and the same 2026 model.</div>
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      <div style="display:flex; justify-content:space-between; align-items:baseline; gap:20px; background:#FFFFFF; padding:18px 24px;">
+        <div style="display:flex; flex-direction:column; gap:2px;">
+          <div class="ar" style="font-weight:700; font-size:22px;">قيمة التخفيض</div>
+          <div class="en" style="font-size:15px;">Cut</div>
+        </div>
+        <div style="font-size:34px; white-space:nowrap;"><span class="num">100,000</span> <span class="unit">EGP</span></div>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:baseline; gap:20px; background:#FFFFFF; padding:18px 24px;">
+        <div style="display:flex; flex-direction:column; gap:2px;">
+          <div class="ar" style="font-weight:700; font-size:22px;">السعر قبل التخفيض</div>
+          <div class="en" style="font-size:15px;">Price before the cut · Masrawy · 2026-08-23</div>
+        </div>
+        <div style="font-size:34px; white-space:nowrap;"><span class="num">1,599,000</span> <span class="unit">EGP</span></div>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:baseline; gap:20px; background:#FFFFFF; padding:18px 24px;">
+        <div style="display:flex; flex-direction:column; gap:2px;">
+          <div class="ar" style="font-weight:700; font-size:22px;">السعر الجديد (Advance)</div>
+          <div class="en" style="font-size:15px;">New price (Advance) · Masrawy · 2026-08-23</div>
+        </div>
+        <div style="font-size:34px; white-space:nowrap;"><span class="num">1,499,000</span> <span class="unit">EGP</span></div>
+      </div></div>
+  </div>
+  <div class="foot"><span></span><span>BUYER CHECK</span></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,528 @@
+[
+  {
+    "postId": "CI-20260924-01",
+    "story": "Chery Tiggo 7 Pro (local assembly) - price after the September increase",
+    "type": "Buyer Check",
+    "qa": {
+      "passed": true,
+      "failures": [],
+      "warnings": [],
+      "checkedAt": "2026-09-24T11:25:30.303Z"
+    },
+    "status": "Approved",
+    "log": [
+      {
+        "step": "SOURCE",
+        "detail": "Masrawy 2026-09-20 https://www.masrawy.com/autos/autos_news/details/2026/9/20/3051042/%D8%A7%D8%B1%D8%AA%D9%81%D8%A7%D8%B9-%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D8%B4%D9%8A%D8%B1%D9%8A-%D8%AA%D9%8A%D8%AC%D9%88-7-%D8%A8%D8%B1%D9%88-%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D9%81%D9%8A-%D9%85%D8%B5%D8%B1-%D8%A8%D8%B9%D8%AF-%D8%A3%D8%B3%D8%A7%D8%A8%D9%8A%D8%B9-%D9%85%D9%86-%D8%AA%D9%82%D8%AF%D9%8A%D9%85-%D8%A7%D9%84%D9%86%D8%B3%D8%AE%D8%A9-%D8%A7%D9%84%D9%85%D8%AD%D9%84%D9%8A%D8%A9"
+      },
+      {
+        "step": "CURATE",
+        "detail": "Real Egypt price move on a locally assembled SUV, one identifiable vehicle, sourced prices. Passes Relevance Pre-Filter (brand 'chery' + price keyword)."
+      },
+      {
+        "step": "FACT CHECK",
+        "detail": [
+          {
+            "fact": "Comfort 1,080,000 / Luxury 1,180,000 EGP, +5,000 in September",
+            "result": "confirmed",
+            "how": "web search 2026-09-24: Masrawy 2026-09-20, Auto Express EG 2026-09-23, SayaratElyoum, Egypt Telegraph all report +5,000 to 1,080,000 / 1,180,000"
+          },
+          {
+            "fact": "Launch price 1,075,000 (owner package, Aug 28)",
+            "result": "STALE - superseded",
+            "how": "the owner's Drive package uses 1,075,000; it was raised on 2026-09-20. Old figure not used."
+          },
+          {
+            "fact": "Imported Comfort 1,130,000 before local assembly",
+            "result": "confirmed",
+            "how": "web search 2026-09-24: Masrawy 2026-08-21 'ما أسعار شيري تيجو 7 برو المستوردة في مصر؟'"
+          },
+          {
+            "fact": "1.5L turbo, 145 hp, 210 Nm, CVT, FWD (local car)",
+            "result": "confirmed",
+            "how": "web search 2026-09-24 (Auto Express EG / Misr Cars launch coverage 2026-08-24) + owner package (official brochure)"
+          },
+          {
+            "fact": "Imported car 154 hp (search summary of Masrawy 2026-08-21)",
+            "result": "not used",
+            "how": "differs from local car's 145 hp; not needed for this post"
+          },
+          {
+            "fact": "Sales of the local-assembly car",
+            "result": "missing",
+            "how": "owner package: registration data ends May 2026, before the Aug 24 launch"
+          }
+        ]
+      },
+      {
+        "step": "EDITORIAL ANGLE",
+        "detail": {
+          "ar": "تيجو 7 برو المحلية بقت بـ1,080,000 جنيه",
+          "en": "Locally built Tiggo 7 Pro now starts at EGP 1,080,000"
+        }
+      },
+      {
+        "step": "CONTENT",
+        "detail": "structured Buyer Check JSON (see content.json)"
+      },
+      {
+        "step": "REAL IMAGE",
+        "detail": {
+          "file": "chery_tiggo_7_pro__chery_my_web_002.webp",
+          "status": "approved",
+          "vehicle": "Chery Tiggo 7 Pro",
+          "credit": "Chery Malaysia official site (chery.my)"
+        }
+      },
+      {
+        "step": "TEMPLATE",
+        "detail": [
+          "CI-20260924-01_01_cover.png",
+          "CI-20260924-01_02_key_fact.png",
+          "CI-20260924-01_03_why_it_matters.png",
+          "CI-20260924-01_04_strengths.png",
+          "CI-20260924-01_05_caveat.png",
+          "CI-20260924-01_06_cta_source.png"
+        ]
+      },
+      {
+        "step": "RENDER",
+        "detail": [
+          "CI-20260924-01_01_cover.png 1080x1350 1404607B",
+          "CI-20260924-01_02_key_fact.png 1080x1350 79748B",
+          "CI-20260924-01_03_why_it_matters.png 1080x1350 617172B",
+          "CI-20260924-01_04_strengths.png 1080x1350 660949B",
+          "CI-20260924-01_05_caveat.png 1080x1350 85742B",
+          "CI-20260924-01_06_cta_source.png 1080x1350 538366B"
+        ]
+      },
+      {
+        "step": "QA",
+        "detail": "PASSED, 0 warnings"
+      },
+      {
+        "step": "TELEGRAM",
+        "detail": "approval message built (2201 chars), 6 previews, message id 900000"
+      },
+      {
+        "step": "APPROVAL",
+        "detail": "reply \"YES\" -> Approved"
+      },
+      {
+        "step": "FINAL APPROVED ASSET",
+        "detail": "out/CI-20260924-01/FINAL"
+      }
+    ]
+  },
+  {
+    "postId": "CI-20260924-02",
+    "story": "SEAT Leon drops EGP 100,000 (Kayan Egypt price list)",
+    "type": "Price change",
+    "qa": {
+      "passed": true,
+      "failures": [],
+      "warnings": [
+        "[source] headline figure comes from Masrawy (2026-08-23), 32 days old - re-check it is still current",
+        "[image] image width 698px, will be upscaled on the cover",
+        "[image] image original source not recorded - confirm usage rights before posting"
+      ],
+      "checkedAt": "2026-09-24T11:25:36.101Z"
+    },
+    "status": "Rejected",
+    "log": [
+      {
+        "step": "SOURCE",
+        "detail": "Masrawy 2026-08-23 https://www.masrawy.com/autos/autos_news/details/2026/8/23/3037084/%D8%B3%D9%8A%D8%A7%D8%AA-%D8%AA%D9%81%D8%A7%D8%AC%D8%A6-%D8%A7%D9%84%D8%B3%D9%88%D9%82-%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A-%D8%A8%D8%AA%D8%AE%D9%81%D9%8A%D8%B6%D8%A7%D8%AA-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D8%B9%D9%84%D9%89-%D8%B7%D8%B1%D8%A7%D8%B2%D8%A7%D8%AA%D9%87%D8%A7-%D8%AA%D8%B5%D9%84-%D9%84%D9%80100-%D8%A3%D9%84%D9%81-%D8%AC%D9%86%D9%8A%D9%87"
+      },
+      {
+        "step": "CURATE",
+        "detail": "Official distributor price cut, one vehicle (Leon 2026 Advance). Passes pre-filter (brand 'seat' + price keyword)."
+      },
+      {
+        "step": "FACT CHECK",
+        "detail": [
+          {
+            "fact": "Leon 2026 Advance 1,599,000 -> 1,499,000 (cut 100,000)",
+            "result": "confirmed",
+            "how": "web search 2026-09-24: Masrawy 2026-08-23, Egypt Telegraph, Egypt Automotive, Misr Cars report the same figures"
+          },
+          {
+            "fact": "Leon engine / power figures",
+            "result": "missing",
+            "how": "not in the verified sources; left as missing"
+          },
+          {
+            "fact": "Current price as of 2026-09-24",
+            "result": "not re-confirmed",
+            "how": "story is 32 days old; no newer SEAT list found in search"
+          }
+        ]
+      },
+      {
+        "step": "EDITORIAL ANGLE",
+        "detail": {
+          "ar": "سيات ليون نزلت 100,000 جنيه",
+          "en": "SEAT Leon is EGP 100,000 cheaper than before"
+        }
+      },
+      {
+        "step": "CONTENT",
+        "detail": "structured Buyer Check JSON (see content.json)"
+      },
+      {
+        "step": "REAL IMAGE",
+        "detail": {
+          "file": "seat_leon__drive_library.png",
+          "status": "approved",
+          "vehicle": "SEAT Leon",
+          "credit": "CarIndex photo library (original source not recorded)"
+        }
+      },
+      {
+        "step": "TEMPLATE",
+        "detail": [
+          "CI-20260924-02_01_cover.png",
+          "CI-20260924-02_02_key_fact.png",
+          "CI-20260924-02_03_why_it_matters.png",
+          "CI-20260924-02_04_strengths.png",
+          "CI-20260924-02_05_caveat.png",
+          "CI-20260924-02_06_cta_source.png"
+        ]
+      },
+      {
+        "step": "RENDER",
+        "detail": [
+          "CI-20260924-02_01_cover.png 1080x1350 539383B",
+          "CI-20260924-02_02_key_fact.png 1080x1350 77958B",
+          "CI-20260924-02_03_why_it_matters.png 1080x1350 306101B",
+          "CI-20260924-02_04_strengths.png 1080x1350 305178B",
+          "CI-20260924-02_05_caveat.png 1080x1350 77865B",
+          "CI-20260924-02_06_cta_source.png 1080x1350 259579B"
+        ]
+      },
+      {
+        "step": "QA",
+        "detail": "PASSED, 3 warnings"
+      },
+      {
+        "step": "TELEGRAM",
+        "detail": "approval message built (1386 chars), 6 previews, message id 900001"
+      },
+      {
+        "step": "APPROVAL",
+        "detail": "reply \"NO price is from August, recheck Kayan list first\" -> Rejected (price is from August, recheck Kayan list first)"
+      }
+    ]
+  },
+  {
+    "postId": "CI-20260924-03",
+    "story": "Geely Monjaro EM-i vs MG RX9 PHEV - two plug-in hybrid SUVs, EGP 200,990 apart",
+    "type": "Comparison",
+    "qa": {
+      "passed": false,
+      "failures": [
+        "[image] image shows \"Geely Monjaro\", post is about \"geely monjaro em-i\" (missing: em-i)"
+      ],
+      "warnings": [
+        "[source] headline figure comes from Masrawy (2026-09-02), 22 days old - re-check it is still current",
+        "[image] image width 698px, will be upscaled on the cover",
+        "[image] image original source not recorded - confirm usage rights before posting"
+      ],
+      "checkedAt": "2026-09-24T11:25:41.737Z"
+    },
+    "status": "QA-Failed",
+    "log": [
+      {
+        "step": "SOURCE",
+        "detail": "Masrawy 2026-09-02 https://www.masrawy.com/autos/autos_news/details/2026/9/2/3042059/%D8%B1%D8%B3%D9%85%D9%8A-%D8%A7-%D9%81%D9%8A-%D9%85%D8%B5%D8%B1-%D8%AC%D9%8A%D9%84%D9%8A-monjaro-em-i-%D8%A7%D9%84%D9%87%D8%AC%D9%8A%D9%86%D8%A9-%D8%AA%D8%A8%D8%AF%D8%A3-%D9%85%D9%86-1-699-%D9%85%D9%84%D9%8A%D9%88%D9%86-%D8%AC%D9%86%D9%8A%D9%87"
+      },
+      {
+        "step": "CURATE",
+        "detail": "Two PHEV SUVs from official distributors in the same band. Pre-filter passes (brand 'geely' + price)."
+      },
+      {
+        "step": "FACT CHECK",
+        "detail": [
+          {
+            "fact": "Monjaro EM-i Pro 1,699,000",
+            "result": "confirmed",
+            "how": "web search 2026-09-24: Masrawy 2026-09-02 and 2026-09-13, algomhor, SayaratElyoum"
+          },
+          {
+            "fact": "Monjaro EM-i Max / Ultra AWD prices",
+            "result": "CONFLICT",
+            "how": "owner package: 1,790,000 / 1,949,900; search summary of Masrawy lists 1,799,000 / 1,969,000 and also 1,790,000 in the same answer. Not used."
+          },
+          {
+            "fact": "MG RX9 PHEV 1,899,990, single trim, 7 seats, 295 hp / 390 Nm, 100 km EV range (NEDC)",
+            "result": "confirmed",
+            "how": "web search 2026-09-24: Masrawy 2026-08-04, Egypt Automotive, SayaratElyoum"
+          },
+          {
+            "fact": "Monjaro EM-i 5 seats",
+            "result": "owner package only",
+            "how": "owner package cites SayaratElyoum; not re-confirmed in this session"
+          }
+        ]
+      },
+      {
+        "step": "EDITORIAL ANGLE",
+        "detail": {
+          "ar": "مونجارو EM-i ولا MG RX9؟ الفرق 200,990 جنيه",
+          "en": "Monjaro EM-i or MG RX9? EGP 200,990 apart"
+        }
+      },
+      {
+        "step": "CONTENT",
+        "detail": "structured Buyer Check JSON (see content.json)"
+      },
+      {
+        "step": "REAL IMAGE",
+        "detail": {
+          "file": "geely_monjaro__drive_library.png",
+          "status": "approved",
+          "vehicle": "Geely Monjaro",
+          "credit": "CarIndex photo library (original source not recorded)"
+        }
+      },
+      {
+        "step": "TEMPLATE",
+        "detail": [
+          "CI-20260924-03_01_cover.png",
+          "CI-20260924-03_02_key_fact.png",
+          "CI-20260924-03_03_why_it_matters.png",
+          "CI-20260924-03_04_strengths.png",
+          "CI-20260924-03_05_caveat.png",
+          "CI-20260924-03_06_cta_source.png"
+        ]
+      },
+      {
+        "step": "RENDER",
+        "detail": [
+          "CI-20260924-03_01_cover.png 1080x1350 442616B",
+          "CI-20260924-03_02_key_fact.png 1080x1350 73808B",
+          "CI-20260924-03_03_why_it_matters.png 1080x1350 248374B",
+          "CI-20260924-03_04_strengths.png 1080x1350 231416B",
+          "CI-20260924-03_05_caveat.png 1080x1350 74066B",
+          "CI-20260924-03_06_cta_source.png 1080x1350 207850B"
+        ]
+      },
+      {
+        "step": "QA",
+        "detail": "FAILED: 1 failures"
+      },
+      {
+        "step": "TELEGRAM",
+        "detail": "not sent for approval (QA failed); QA-fail alert written"
+      }
+    ]
+  },
+  {
+    "postId": "CI-20260924-04",
+    "story": "BAIC U5 Plus gets a manual trim in Egypt at EGP 695,000",
+    "type": "New model / trim",
+    "qa": {
+      "passed": false,
+      "failures": [
+        "[image] image registry status is \"rejected\", must be \"approved\""
+      ],
+      "warnings": [
+        "[source] headline figure comes from Masrawy (2026-08-31), 24 days old - re-check it is still current",
+        "[image] image original source not recorded - confirm usage rights before posting"
+      ],
+      "checkedAt": "2026-09-24T11:25:47.595Z"
+    },
+    "status": "QA-Failed",
+    "log": [
+      {
+        "step": "SOURCE",
+        "detail": "Masrawy 2026-08-31 https://www.masrawy.com/autos/autos_news/details/2026/8/31/3041141/%D9%84%D8%A3%D9%88%D9%84-%D9%85%D8%B1%D8%A9-%D9%81%D9%8A-%D9%85%D8%B5%D8%B1-%D8%A3%D9%84%D9%83%D8%A7%D9%86-%D8%A3%D9%88%D8%AA%D9%88-%D8%AA%D8%B7%D8%B1%D8%AD-%D8%A8%D8%A7%D9%8A%D9%83-u5-plus-%D9%85%D8%A7%D9%86%D9%8A%D9%88%D8%A7%D9%84-%D8%A8%D9%80695-%D8%A3%D9%84%D9%81-%D8%AC%D9%86%D9%8A%D9%87"
+      },
+      {
+        "step": "CURATE",
+        "detail": "New trim from the official distributor (Alkan Auto). Pre-filter passes (brand 'baic' + price)."
+      },
+      {
+        "step": "FACT CHECK",
+        "detail": [
+          {
+            "fact": "Manual trim 695,000, first manual U5 Plus in Egypt",
+            "result": "confirmed",
+            "how": "web search 2026-09-24: Masrawy 2026-08-31 headline 'لأول مرة في مصر', Al Mal, Auto Express EG, Egypt Automotive"
+          },
+          {
+            "fact": "1.5L, 111 hp, 142 Nm",
+            "result": "confirmed (search summary)",
+            "how": "web search 2026-09-24 summary of the Masrawy/Al Mal coverage"
+          },
+          {
+            "fact": "Chery Arrizo 5 manual 680,000 as nearest rival",
+            "result": "confirmed (search summary)",
+            "how": "Masrawy 2026-09-02 competitor article - U5 Plus manual is NOT the cheapest manual sedan"
+          },
+          {
+            "fact": "Comfort 849,900 / Topline 974,900; 7 yr / 200,000 km warranty",
+            "result": "owner package only",
+            "how": "not re-confirmed in this session; not used"
+          }
+        ]
+      },
+      {
+        "step": "EDITORIAL ANGLE",
+        "detail": {
+          "ar": "بايك U5 Plus بقت مانيوال بـ695,000 جنيه",
+          "en": "BAIC U5 Plus now has a manual trim at EGP 695,000"
+        }
+      },
+      {
+        "step": "CONTENT",
+        "detail": "structured Buyer Check JSON (see content.json)"
+      },
+      {
+        "step": "REAL IMAGE",
+        "detail": {
+          "file": "baic_u5_plus__drive_library.png",
+          "status": "rejected",
+          "vehicle": "BAIC U5 Plus",
+          "credit": "CarIndex photo library"
+        }
+      },
+      {
+        "step": "TEMPLATE",
+        "detail": [
+          "CI-20260924-04_01_cover.png",
+          "CI-20260924-04_02_key_fact.png",
+          "CI-20260924-04_03_why_it_matters.png",
+          "CI-20260924-04_04_strengths.png",
+          "CI-20260924-04_05_caveat.png",
+          "CI-20260924-04_06_cta_source.png"
+        ]
+      },
+      {
+        "step": "RENDER",
+        "detail": [
+          "CI-20260924-04_01_cover.png 1080x1350 564509B",
+          "CI-20260924-04_02_key_fact.png 1080x1350 65170B",
+          "CI-20260924-04_03_why_it_matters.png 1080x1350 319263B",
+          "CI-20260924-04_04_strengths.png 1080x1350 311492B",
+          "CI-20260924-04_05_caveat.png 1080x1350 74164B",
+          "CI-20260924-04_06_cta_source.png 1080x1350 272661B"
+        ]
+      },
+      {
+        "step": "QA",
+        "detail": "FAILED: 1 failures"
+      },
+      {
+        "step": "TELEGRAM",
+        "detail": "not sent for approval (QA failed); QA-fail alert written"
+      }
+    ]
+  },
+  {
+    "postId": "CI-20260924-05",
+    "story": "August 2026 licensing: MG ZS is the top passenger model with 647 units",
+    "type": "Market / data",
+    "qa": {
+      "passed": false,
+      "failures": [
+        "[image] image registry status is \"rejected\", must be \"approved\""
+      ],
+      "warnings": [
+        "[image] image original source not recorded - confirm usage rights before posting"
+      ],
+      "checkedAt": "2026-09-24T11:25:53.467Z"
+    },
+    "status": "QA-Failed",
+    "log": [
+      {
+        "step": "SOURCE",
+        "detail": "Egypt Automotive 2026-09-19 https://www.egyptautomotive.com/archives/1230408"
+      },
+      {
+        "step": "CURATE",
+        "detail": "Monthly licensing data (AMIC/Al-Ahram). Pre-filter passes (brand 'mg', 'مبيعات' keyword absent but brand hit). Format mismatch expected: Buyer Check needs one car."
+      },
+      {
+        "step": "FACT CHECK",
+        "detail": [
+          {
+            "fact": "MG 2,326 passenger licenses in Aug 2026, #1 for 2nd month",
+            "result": "confirmed",
+            "how": "web search 2026-09-24: Al Mal, Egypt Automotive, Egypt Telegraph, Misr Cars, economy-trend"
+          },
+          {
+            "fact": "MG ZS 647 units, MG GT 452",
+            "result": "confirmed (search summary)",
+            "how": "web search 2026-09-24 summary"
+          },
+          {
+            "fact": "Published date of Egypt Automotive article",
+            "result": "approximate",
+            "how": "akhbaralsyrat mirror dated 2026-09-19; exact Egypt Automotive date not confirmed"
+          },
+          {
+            "fact": "MG ZS price",
+            "result": "missing",
+            "how": "not in a licensing story"
+          },
+          {
+            "fact": "Licenses vs sales",
+            "result": "rule",
+            "how": "licenses are registrations, not manufacturer sales (owner house rule)"
+          }
+        ]
+      },
+      {
+        "step": "EDITORIAL ANGLE",
+        "detail": {
+          "ar": "MG ZS أكتر موديل ملاكي اترخص في أغسطس: 647 عربية",
+          "en": "MG ZS was August's most-licensed passenger model: 647 units"
+        }
+      },
+      {
+        "step": "CONTENT",
+        "detail": "structured Buyer Check JSON (see content.json)"
+      },
+      {
+        "step": "REAL IMAGE",
+        "detail": {
+          "file": "mg_zs__drive_library.png",
+          "status": "rejected",
+          "vehicle": "MG ZS",
+          "credit": "CarIndex photo library"
+        }
+      },
+      {
+        "step": "TEMPLATE",
+        "detail": [
+          "CI-20260924-05_01_cover.png",
+          "CI-20260924-05_02_key_fact.png",
+          "CI-20260924-05_03_why_it_matters.png",
+          "CI-20260924-05_04_strengths.png",
+          "CI-20260924-05_05_caveat.png",
+          "CI-20260924-05_06_cta_source.png"
+        ]
+      },
+      {
+        "step": "RENDER",
+        "detail": [
+          "CI-20260924-05_01_cover.png 1080x1350 722042B",
+          "CI-20260924-05_02_key_fact.png 1080x1350 69970B",
+          "CI-20260924-05_03_why_it_matters.png 1080x1350 370281B",
+          "CI-20260924-05_04_strengths.png 1080x1350 398787B",
+          "CI-20260924-05_05_caveat.png 1080x1350 79086B",
+          "CI-20260924-05_06_cta_source.png 1080x1350 339348B"
+        ]
+      },
+      {
+        "step": "QA",
+        "detail": "FAILED: 1 failures"
+      },
+      {
+        "step": "TELEGRAM",
+        "detail": "not sent for approval (QA failed); QA-fail alert written"
+      }
+    ]
+  }
+]

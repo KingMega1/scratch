@@ -1,0 +1,73 @@
+[
+  {
+    "postId": "CI-20260924-01",
+    "type": "Buyer Check",
+    "story": "Chery Tiggo 7 Pro (local assembly) - price after the September increase",
+    "status": "Approved",
+    "failures": [],
+    "warnings": []
+  },
+  {
+    "postId": "CI-20260924-02",
+    "type": "Price change",
+    "story": "SEAT Leon drops EGP 100,000 (Kayan Egypt price list)",
+    "status": "Rejected",
+    "failures": [],
+    "warnings": [
+      "[source] headline figure comes from Masrawy (2026-08-23), 32 days old - re-check it is still current",
+      "[image] image width 698px, will be upscaled on the cover",
+      "[image] image original source not recorded - confirm usage rights before posting"
+    ]
+  },
+  {
+    "postId": "CI-20260924-03",
+    "type": "Comparison",
+    "story": "Geely Monjaro EM-i vs MG RX9 PHEV - two plug-in hybrid SUVs, EGP 200,990 apart",
+    "status": "QA-Failed",
+    "failures": [
+      "[claims] caveat (ar) has superlative /الأعلى/ without a sourced claim fact on that slide",
+      "[claims] slide 5 body (ar) has superlative /الأعلى/ without a sourced claim fact on that slide",
+      "[claims] slide 5 body (en) has superlative /\\bonly\\b/i without a sourced claim fact on that slide",
+      "[claims] slide 5 skip_if 1 (en) has superlative /\\bfirst\\b/i without a sourced claim fact on that slide",
+      "[image] image shows \"Geely Monjaro\", post is about \"geely monjaro em-i\" (missing: em-i)"
+    ],
+    "warnings": [
+      "[source] headline figure comes from Masrawy (2026-09-02), 22 days old - re-check it is still current",
+      "[image] image width 698px, will be upscaled on the cover",
+      "[image] image original source not recorded - confirm usage rights before posting"
+    ]
+  },
+  {
+    "postId": "CI-20260924-04",
+    "type": "New model / trim",
+    "story": "BAIC U5 Plus gets a manual trim in Egypt at EGP 695,000",
+    "status": "QA-Failed",
+    "failures": [
+      "[claims] caveat (ar) has superlative /أرخص/ without a sourced claim fact on that slide",
+      "[claims] slide 4 point 1 (ar) states \"1.5\" which is not a verified key_data value",
+      "[claims] slide 4 point 1 (en) states \"1.5\" which is not a verified key_data value",
+      "[claims] slide 5 body (ar) has superlative /أرخص/ without a sourced claim fact on that slide",
+      "[claims] slide 6 title (ar) states \"700\" which is not a verified key_data value",
+      "[claims] slide 6 title (en) states \"700\" which is not a verified key_data value",
+      "[image] image registry status is \"rejected\", must be \"approved\""
+    ],
+    "warnings": [
+      "[source] headline figure comes from Masrawy (2026-08-31), 24 days old - re-check it is still current",
+      "[image] image original source not recorded - confirm usage rights before posting"
+    ]
+  },
+  {
+    "postId": "CI-20260924-05",
+    "type": "Market / data",
+    "story": "August 2026 licensing: MG ZS is the top passenger model with 647 units",
+    "status": "QA-Failed",
+    "failures": [
+      "[claims] hook (en) has superlative /\\bmost\\b/i without a sourced claim fact on that slide",
+      "[claims] slide 5 skip_if 1 (en) has superlative /\\bonly\\b/i without a sourced claim fact on that slide",
+      "[image] image registry status is \"rejected\", must be \"approved\""
+    ],
+    "warnings": [
+      "[image] image original source not recorded - confirm usage rights before posting"
+    ]
+  }
+]

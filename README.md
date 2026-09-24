@@ -1,5 +1,9 @@
 # scratch
 
+## CarIndex golden path (branch: claude/carindex-golden-path-rptil6)
+
+See `golden_path/README.md`. `CarIndex_Workflow.json` is now the newer Drive export (updatedAt 2026-08-29, 132 nodes); the section below refers to the older 2026-08-19 export.
+
 ## CarIndex n8n pipeline fixes (branch: claude/carousel-designer-rules-nhvkom)
 
 `CarIndex_Workflow.json` is the full n8n export for workflow `smn2kQ7BP9H926pV`

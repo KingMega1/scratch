@@ -2,7 +2,7 @@
   "updatedAt": "2026-08-29T19:12:14.938Z",
   "createdAt": "2026-08-05T10:59:54.325Z",
   "id": "smn2kQ7BP9H926pV",
-  "name": "CarIndex Content Pipeline v3 (draft)",
+  "name": "CarIndex Content Pipeline v3 (draft) - golden path",
   "description": null,
   "active": true,
   "isArchived": false,
@@ -30,20 +30,20 @@
             "Source": "={{ $json.source }}",
             "Summary": "={{ $json.contentSnippet }}",
             "Language": "={{ $json.language }}",
-            "Image": "={{ $json.imageUrl }}",
+            "Image": "={{ $json.imageRecord.url }}",
             "Categories": "={{ $json.categories }}",
-            "AI Draft": "={{ $json.aiDraft }}",
+            "AI Draft": "={{ JSON.stringify($json.buyerCheck) }}",
             "PostId": "={{ $json.postId }}",
             "NormalizedKey": "={{ $json.normalizedKey }}",
             "Status": "Pending",
-            "Format": "={{ $json.format }}",
+            "Format": "Buyer Check",
             "ContentPillar": "={{ $json.contentPillar }}",
             "ObjectiveTag": "={{ $json.objectiveTag }}",
             "RelevanceScore": "={{ $json.relevanceScore }}",
             "HookScore": "={{ $json.hookScore }}",
             "ImageURLs": "={{ JSON.stringify($json.renderedImageUrls) }}",
-            "VideoURL": "={{ $json.videoUrl }}",
-            "PlatformCaptions": "={{ JSON.stringify($json.draftPlatformCaptions || {}) }}"
+            "SlideFiles": "={{ JSON.stringify($json.slideFiles) }}",
+            "QA": "={{ $json.qaSummary }}"
           },
           "matchingColumns": [],
           "schema": [
@@ -437,17 +437,16 @@
     },
     {
       "parameters": {
-        "operation": "sendPhoto",
         "chatId": "1020351066",
-        "binaryData": true,
+        "text": "={{ $json.approvalText }}",
         "additionalFields": {
-          "caption": "=🚗 CarIndex: New Content Draft\n\nTitle: {{ $('Merge Slides Into Item').item.json.draftHeadline }}\nSource: {{ $('Merge Slides Into Item').item.json.source }}\nLanguage: {{ $('Merge Slides Into Item').item.json.language }}\nFormat: {{ $('Merge Slides Into Item').item.json.format }} | Pillar: {{ $('Merge Slides Into Item').item.json.contentPillar }}\nEditor Hook Score: {{ $('Merge Slides Into Item').item.json.hookScore }}/10 ({{ $('Merge Slides Into Item').item.json.editorSource }})\n\n⬇️ SWIPE/LONG-PRESS THIS MESSAGE TO REPLY ⬇️\nReply YES to approve | NO to reject\n(a plain new message won't be picked up — it must be a reply to this one)"
+          "appendAttribution": false
         }
       },
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        736,
+        4240,
         80
       ],
       "id": "a82a7d48-d833-42cb-9eda-03be59c512e6",
@@ -472,7 +471,7 @@
           "values": [
             {
               "content": "You are CarIndex's Editor-in-Chief. This draft passed initial Gemini audit.\nYour job: Final quality gate before publication.\n\nCheck:\n1. [AR only] Is the Egyptian dialect authentic (عامية خفيفة, numbers-forward)?\n2. Does the hook stop the scroll? Rate 1-10.\n3. Is the \"skip_if\" fair and specific?\n4. Any claim that feels unverified or speculative?\n5. Would YOU save/share this if you saw it?\n\nOutput EXACTLY:\nVERDICT: PASS / NEEDS REVISION / REJECT\nREASON: [one sentence]\nHOOK_SCORE: [1-10]\nFIXES: [if any, bullet list]",
-              "role": "assistant"
+              "role": "system"
             },
             {
               "content": "=FINAL REVIEW:\n\nAI DRAFT: {{ $('Parse Content Creation').item.json.content.parts.map(p => p.text).join('') }}\nAUDIT REPORT: {{ $('Parse Auditor').item.json.content.parts.map(p => p.text).join('') }}\nSOURCE: {{ $('Code in JavaScript').item.json.title }} — {{ $('Code in JavaScript').item.json.link }}\nLANGUAGE: {{ $('Code in JavaScript').item.json.language }}"
@@ -552,11 +551,11 @@
         "messages": {
           "values": [
             {
-              "content": "You are CarIndex's lead content strategist and writer. You create skeptical, data-first car content for Egyptian buyers, published bilingually (Arabic + English on every slide) across Instagram, Facebook, X, Threads, TikTok, and YouTube.\n\nOutput format: Strict JSON with these keys:\n- reel_script: {hook_ar, hook_en, body_ar, body_en, cta_ar, cta_en, duration_seconds}\n- carousel_slides: Array of 6 objects, each with {slide_number, headline_ar, headline_en, body_ar, body_en, data_point, visual_note}. data_point is written once, Latin numerals, understandable regardless of language (e.g. \"3,450,000 EGP\", \"1.6L Turbo\").\n- headline_ar, headline_en: attention-grabbing but honest\n- skip_if_ar, skip_if_en: who should NOT buy this car\n- source_citations: Array of strings\n- hashtags_ar, hashtags_en: Array of strings, each language's own hashtag conventions\n- tone_check: String, self-assessment of tone\n- platform_captions: Object with this exact shape:\n  {\n    \"instagram\": {\"caption_ar\": \"...\", \"caption_en\": \"...\"},\n    \"facebook\": {\"caption_ar\": \"...\", \"caption_en\": \"...\"},\n    \"x\": {\"caption_ar\": \"...\", \"caption_en\": \"...\"},\n    \"threads\": {\"caption_ar\": \"...\", \"caption_en\": \"...\"},\n    \"tiktok\": {\"caption_ar\": \"...\", \"caption_en\": \"...\"},\n    \"youtube\": {\"title_ar\": \"...\", \"title_en\": \"...\", \"description_ar\": \"...\", \"description_en\": \"...\"}\n  }\n\nRules:\n- Arabic fields: Egyptian Arabic (عامية مصرية), Arabic script, street-smart and numbers-forward — never Modern Standard Arabic, never a stiff translation of the English\n- English fields: Bloomberg-tight, no fluff — write it as its own original copy, not a translation of the Arabic either\n- Include price context if mentioned in source\n- Flag any unverified claims with [UNVERIFIED] (in both languages)\n- Never use hype language: no \"amazing,\" \"incredible,\" \"must-buy\" (or Arabic equivalents)\n- Every skip_if must be specific and fair, in both languages\n\nPLATFORM CAPTION RULES — each platform_captions entry must be genuinely distinct copy written for that platform's format and reading behavior. Never reuse headline_ar/en or skip_if_ar/en verbatim, and never just shorten/lengthen one platform's caption to make another — same underlying facts and citations, independently written each time:\n- instagram: hook line, then a short body (1-3 lines expanding the number/claim), then a CTA line (save/share/follow prompt). End with a hashtag block on its own line(s) — use 15-20 tags mixing broad category tags (e.g. #CarsEgypt, #SUV, #SedanEgypt) with specific niche ones (model, brand, price-point, city), consistent with hashtags_ar / hashtags_en plus platform extras. Use real line breaks (\\n) between hook / body / CTA / hashtags.\n- facebook: conversational, 3-5 short sentences, minimal-to-no hashtags (0-2 max). Write like a knowledgeable friend explaining the story, not an ad. Still numbers-first, no hype.\n- x: hard cap under 280 characters INCLUDING spaces, per language version. Lead with the number or claim. 0-2 hashtags max, only if they fit without crowding the point.\n- threads: casual hybrid of Instagram's directness and X's brevity, under 500 characters per language. Light hashtag use (0-2).\n- tiktok: hook-first — the first line must work standalone as the on-screen caption a viewer sees before tapping \"more.\" Under ~150 characters per language. Casual, punchy. 3-5 hashtags max.\n- youtube: NOT a caption. title_ar / title_en: SEO-keyword-rich, honest, no clickbait, under 70 characters each. description_ar / description_en: long-form, 2-4 short paragraphs, keyword-rich, restate the key data points, include a source citation line, end with a hashtag block (5-8 tags). No hard cap but keep each description under ~1500 characters.\n- All the same brand voice rules apply across every platform: numbers first, no hype words, every claim sourced, Egyptian colloquial Arabic for _ar fields, Bloomberg-tight English for _en fields.",
+              "content": "You are CarIndex's content editor. CarIndex is an independent automotive data brand for Egyptian car buyers. Voice: numbers first, opinions last. You write STRUCTURED CONTENT ONLY. You do not design anything: no HTML, no colors, no fonts, no layout. A fixed renderer owns layout.\n\nFORMAT IS FIXED: \"buyer_check\", exactly 6 slides, in this order and with these roles:\n1 cover, 2 key_fact, 3 why_it_matters, 4 strengths, 5 caveat, 6 cta_source.\n\nFACT RULES (hard rules, the draft is rejected automatically if broken):\n- Use ONLY facts present in the SOURCE ARTICLE and the VERIFIED FACTS block you are given. No general knowledge, no estimates, no \"typical\" figures.\n- Every number you write (price, hp, Nm, cc, km, %, units, dates) must exist as a key_data entry with a source_id that points to an entry in sources[]. Numbers in slide text must be written exactly as in key_data.value (Latin digits, thousands separators allowed: 1,080,000).\n- If a fact the format would normally show is not in the sources, add it to key_data with \"value\": null, \"status\": \"missing\". Never fill it. Never invent a competitor, a price, a spec or a claim.\n- If two sources disagree on a number, use \"status\": \"conflict\", \"value\": null, and put both figures in \"note\". Do not pick one.\n- No superlatives (cheapest, best, first, only, most, largest, أرخص, أفضل, أول, الوحيد) unless the exact claim is in a source; if used, it must be a key_data entry with status \"verified\".\n- Forbidden hype words (both languages): amazing, incredible, must-buy, unbeatable, game-changer, revolutionary, insane, don't miss, رهيب, خرافي, أسطوري, متفوتش, لا تفوت, صفقة العمر, جبار, وحش.\n- Arabic fields: Egyptian Arabic in Arabic script, Latin digits only (never ١٢٣). English fields: plain, tight, no Arabic characters.\n\nOUTPUT: strict JSON only, no markdown fences, this exact shape:\n{\n  \"language\": \"ar-en\",\n  \"format\": \"buyer_check\",\n  \"story_type\": \"buyer_check | price_change | comparison | new_model | market_data\",\n  \"objective\": \"save | share | reach\",\n  \"car\": {\"make\": \"\", \"model\": \"\", \"variant\": \"\", \"model_year\": \"\", \"market\": \"EG\"},\n  \"hook\": {\"ar\": \"\", \"en\": \"\"},\n  \"key_data\": [\n    {\"id\": \"k1\", \"label_ar\": \"\", \"label_en\": \"\", \"value\": \"1,080,000\" or null, \"unit\": \"EGP | hp | Nm | cc | km | % | units | ''\",\n     \"status\": \"verified | missing | conflict\", \"source_id\": \"s1\" or null, \"note\": \"\"}\n  ],\n  \"slides\": [\n    {\"n\": 1, \"role\": \"cover\",          \"title_ar\": \"\", \"title_en\": \"\", \"fact_ids\": [\"k1\"]},\n    {\"n\": 2, \"role\": \"key_fact\",       \"title_ar\": \"\", \"title_en\": \"\", \"body_ar\": \"\", \"body_en\": \"\", \"fact_ids\": [\"k1\"]},\n    {\"n\": 3, \"role\": \"why_it_matters\", \"title_ar\": \"\", \"title_en\": \"\", \"body_ar\": \"\", \"body_en\": \"\", \"fact_ids\": []},\n    {\"n\": 4, \"role\": \"strengths\",      \"title_ar\": \"\", \"title_en\": \"\", \"points\": [{\"ar\": \"\", \"en\": \"\", \"fact_ids\": []}], \"fact_ids\": []},\n    {\"n\": 5, \"role\": \"caveat\",         \"title_ar\": \"\", \"title_en\": \"\", \"body_ar\": \"\", \"body_en\": \"\", \"skip_if\": [{\"ar\": \"\", \"en\": \"\"}], \"fact_ids\": []},\n    {\"n\": 6, \"role\": \"cta_source\",     \"title_ar\": \"\", \"title_en\": \"\", \"fact_ids\": []}\n  ],\n  \"caveat\": {\"ar\": \"\", \"en\": \"\"},\n  \"sources\": [{\"id\": \"s1\", \"outlet\": \"\", \"url\": \"\", \"published\": \"YYYY-MM-DD\", \"what\": \"\"}],\n  \"visual_direction\": {\"subject\": \"exterior, the exact make/model/variant\", \"angle\": \"front three-quarter preferred\", \"notes\": \"\"}\n}\n\nLENGTH LIMITS (fixed layout): hook.ar <= 70 chars, hook.en <= 80, titles <= 60, body_ar/body_en <= 220, each point <= 120, 2-3 strengths points, 1-2 skip_if items.\nkey_fact slide: fact_ids[0] is the one number the post is about.\ncaveat: must be a real, specific downside or open question taken from the sources or from a missing/conflicting fact. If the sources give none, say what is not yet known (e.g. \"no post-launch sales data yet\").",
               "role": "model"
             },
             {
-              "content": "=Write bilingual content based on this scraped article:\n\nTITLE: {{ $json.title }}\nSOURCE: {{ $json.source }}\nSUMMARY: {{ $json.contentSnippet }}\nURL: {{ $json.link }}\nORIGINAL LANGUAGE: {{ $json.language }}\n\nRequirements:\n- Platform: Instagram (Reel + Carousel), every field bilingual per the schema above\n- Also produce platform_captions: genuinely distinct bilingual copy for Instagram, Facebook, X, Threads, TikTok (captions) and YouTube (title + description) per the platform caption rules in your instructions — not reused headline/skip_if text, not a resized version of another platform's caption\n- Include price context if mentioned\n- Flag any unverified claims"
+              "content": "=Write a Buyer Check post from this article. Use only facts in it.\n\nTITLE: {{ $('Code in JavaScript').item.json.title }}\nSOURCE OUTLET: {{ $('Code in JavaScript').item.json.source }}\nURL: {{ $('Code in JavaScript').item.json.link }}\nPUBLISHED: {{ $('Code in JavaScript').item.json.isoDate || '' }}\nSUMMARY: {{ $('Code in JavaScript').item.json.contentSnippet }}\nLANGUAGE: {{ $('Code in JavaScript').item.json.language }}\n\nVERIFIED FACTS: none beyond the article above. Anything not in it is missing."
             }
           ]
         },
@@ -1183,7 +1182,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const TEMPLATES = {\n  cover: `<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap\">\n<style>\nbody { margin: 0; }\n</style>\n</head>\n<body>\n<div data-screen-label=\"01\" style=\"width:1080px; height:1350px; position:relative; overflow:hidden; background:#0B0E1A; font-family:'Poppins',sans-serif;\">\n  <img src=\"{{IMAGE_URL}}\" alt=\"{{MODEL}} frontal hero shot\" style=\"position:absolute; inset:0; width:100%; height:100%; object-fit:cover;\">\n  <div style=\"position:absolute; inset:0; pointer-events:none;\">\n    <div style=\"position:absolute; top:0; left:0; right:0; height:220px; background:linear-gradient(180deg, rgba(11,14,26,0.72) 0%, rgba(11,14,26,0) 100%);\"></div>\n    <div style=\"position:absolute; bottom:0; left:0; right:0; height:640px; background:linear-gradient(0deg, rgba(11,14,26,0.96) 42%, rgba(11,14,26,0) 100%);\"></div>\n\n    <div style=\"position:absolute; top:36px; left:44px;\"><img src=\"http://207.127.99.206:8080/static/carindex-logo-white.png\" alt=\"CARINDEX\" style=\"height:34px; width:auto;\"></div>\n    <div style=\"position:absolute; top:40px; right:44px; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:16px; color:#FFFFFF;\">1/9</div>\n\n    <div style=\"position:absolute; bottom:44px; left:44px; right:44px; display:flex; flex-direction:column; gap:26px;\">\n      <div style=\"display:flex; align-items:center; gap:12px;\">\n        <div style=\"width:44px; height:3px; background:#1D6FE0;\"></div>\n        <div style=\"font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; color:#7FB0F0;\">{{SEGMENT_EN}} · Egypt</div>\n      </div>\n      <div style=\"display:flex; flex-direction:column; gap:10px;\">\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:800; font-size:64px; line-height:1.18; color:#FFFFFF; text-wrap:pretty;\">{{MODEL}} بـ {{PRICE_EGP}} جنيه</div>\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:600; font-size:26px; line-height:1.5; color:rgba(255,255,255,0.72); text-wrap:pretty;\">{{SEGMENT_AR}} {{ASSEMBLY_AR}} — الأرقام الأول، الرأي بعدين</div>\n      </div>\n      <div style=\"display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;\">\n        <div style=\"background:rgba(255,255,255,0.08); border-top:2px solid #1D6FE0; padding:18px 20px; display:flex; flex-direction:column; gap:4px;\">\n          <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:30px; color:#FFFFFF;\">{{DISPLACEMENT}} <span style=\"font-size:15px; color:rgba(255,255,255,0.55);\">cc</span></div>\n          <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:600; font-size:16px; color:rgba(255,255,255,0.6);\">سعة المحرك</div>\n        </div>\n        <div style=\"background:rgba(255,255,255,0.08); border-top:2px solid #1D6FE0; padding:18px 20px; display:flex; flex-direction:column; gap:4px;\">\n          <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:30px; color:#FFFFFF;\">{{POWER}} <span style=\"font-size:15px; color:rgba(255,255,255,0.55);\">hp</span></div>\n          <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:600; font-size:16px; color:rgba(255,255,255,0.6);\">القوة</div>\n        </div>\n        <div style=\"background:rgba(255,255,255,0.08); border-top:2px solid #1D6FE0; padding:18px 20px; display:flex; flex-direction:column; gap:4px;\">\n          <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:30px; color:#FFFFFF;\">{{TORQUE}} <span style=\"font-size:15px; color:rgba(255,255,255,0.55);\">N·m</span></div>\n          <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:600; font-size:16px; color:rgba(255,255,255,0.6);\">عزم الدوران</div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n</body>\n</html>\n`,\n  hero_stat: `<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap\">\n<style>\nbody { margin: 0; }\n</style>\n</head>\n<body>\n<div data-screen-label=\"02\" style=\"width:1080px; height:1350px; position:relative; overflow:hidden; background:#1D6FE0; display:flex; flex-direction:column; font-family:'Poppins',sans-serif;\">\n  <div style=\"width:100%; box-sizing:border-box; padding:36px 44px 0; display:flex; justify-content:space-between; align-items:center;\">\n    <img src=\"http://207.127.99.206:8080/static/carindex-logo-white.png\" alt=\"CARINDEX\" style=\"height:30px; width:auto;\">\n    <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:16px; color:rgba(255,255,255,0.75);\">2/9</div>\n  </div>\n\n  <div style=\"flex:1; display:flex; flex-direction:column; justify-content:center; padding:0 44px 48px; gap:34px;\">\n    <div style=\"display:flex; flex-direction:column; gap:14px;\">\n      <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:700; font-size:30px; color:rgba(255,255,255,0.8);\">سعر الفئة الوحيدة في مصر</div>\n      <div style=\"display:flex; align-items:baseline; gap:16px;\">\n        <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:150px; line-height:0.92; letter-spacing:-0.03em; color:#FFFFFF;\">{{PRICE_EGP}}</div>\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:700; font-size:38px; color:rgba(255,255,255,0.85);\">جنيه</div>\n      </div>\n      <div style=\"font-family:'Poppins',sans-serif; font-weight:600; font-size:20px; letter-spacing:0.02em; color:rgba(255,255,255,0.65);\">EGP {{PRICE_EGP}} · on-road, {{DATE}}</div>\n    </div>\n\n    <div style=\"height:2px; background:rgba(255,255,255,0.25);\"></div>\n\n    <div style=\"display:grid; grid-template-columns:1fr 1fr; gap:14px;\">\n      <div style=\"background:#0B0E1A; padding:26px 28px; display:flex; flex-direction:column; gap:8px;\">\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:600; font-size:19px; color:rgba(255,255,255,0.55);\">التجميع</div>\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:800; font-size:30px; color:#FFFFFF;\">{{ASSEMBLY_AR}}</div>\n        <div style=\"font-family:'Poppins',sans-serif; font-weight:500; font-size:16px; color:rgba(255,255,255,0.45);\">{{ASSEMBLY_EN}}</div>\n      </div>\n      <div style=\"background:#FFFFFF; padding:26px 28px; display:flex; flex-direction:column; gap:8px;\">\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:600; font-size:19px; color:#6B7280;\">الفئة</div>\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:800; font-size:30px; color:#0B0E1A;\">{{SEGMENT_AR}}</div>\n        <div style=\"font-family:'Poppins',sans-serif; font-weight:500; font-size:16px; color:#9A9A94;\">{{SEGMENT_EN}}</div>\n      </div>\n    </div>\n\n    <div style=\"direction:rtl; background:rgba(11,14,26,0.22); border-right:4px solid #FFFFFF; padding:22px 26px; font-family:'Cairo',sans-serif; font-weight:600; font-size:24px; line-height:1.55; color:#FFFFFF; text-wrap:pretty;\">{{HERO_STAT_QUOTE_AR}}</div>\n  </div>\n\n</div>\n</body>\n</html>\n`,\n  spec: `<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap\">\n<style>\nbody { margin: 0; }\n</style>\n</head>\n<body>\n<div data-screen-label=\"03\" style=\"width:1080px; height:1350px; position:relative; overflow:hidden; background:#F5F1EA; display:flex; flex-direction:column; font-family:'Poppins',sans-serif;\">\n  <div style=\"width:100%; box-sizing:border-box; padding:36px 44px 0; display:flex; justify-content:space-between; align-items:center;\">\n    <img src=\"http://207.127.99.206:8080/static/carindex-logo.png\" alt=\"CARINDEX\" style=\"height:30px; width:auto;\">\n    <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:16px; color:#6B7280;\">3/9</div>\n  </div>\n\n  <div style=\"flex:1; display:flex; flex-direction:column; justify-content:center; padding:0 44px 48px; gap:24px;\">\n    <div style=\"display:flex; flex-direction:column; gap:6px;\">\n      <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:800; font-size:46px; color:#0B0E1A;\">المواصفات الأساسية</div>\n      <div style=\"font-family:'Poppins',sans-serif; font-weight:500; font-size:19px; color:#6B7280;\">Key specifications — {{MODEL}}</div>\n    </div>\n\n    <img src=\"{{IMAGE_URL}}\" alt=\"{{MODEL}} three-quarter or engine bay shot\" style=\"width:992px; height:250px; object-fit:cover;\">\n\n    <div style=\"display:grid; grid-template-columns:1fr 1fr; gap:14px;\">\n      <div style=\"background:#0B0E1A; padding:24px 26px; display:flex; flex-direction:column; gap:6px;\">\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:600; font-size:18px; color:rgba(255,255,255,0.6);\">سعة المحرك</div>\n        <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:46px; color:#FFFFFF;\">{{DISPLACEMENT}} <span style=\"font-size:20px; color:rgba(255,255,255,0.5);\">cc</span></div>\n      </div>\n      <div style=\"background:#1D6FE0; padding:24px 26px; display:flex; flex-direction:column; gap:6px;\">\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:600; font-size:18px; color:rgba(255,255,255,0.78);\">القوة</div>\n        <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:46px; color:#FFFFFF;\">{{POWER}} <span style=\"font-size:20px; color:rgba(255,255,255,0.7);\">hp</span></div>\n      </div>\n      <div style=\"background:#FFFFFF; padding:24px 26px; display:flex; flex-direction:column; gap:6px;\">\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:600; font-size:18px; color:#6B7280;\">عزم الدوران</div>\n        <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:46px; color:#0B0E1A;\">{{TORQUE}} <span style=\"font-size:20px; color:#9A9A94;\">N·m</span></div>\n      </div>\n      <div style=\"background:#FFFFFF; padding:24px 26px; display:flex; flex-direction:column; gap:6px;\">\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:600; font-size:18px; color:#6B7280;\">السعر</div>\n        <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:46px; color:#0B0E1A;\">{{PRICE_EGP}} <span style=\"font-size:20px; color:#9A9A94;\">EGP</span></div>\n      </div>\n    </div>\n\n    <div style=\"display:flex; gap:14px;\">\n      <div style=\"flex:1; background:#FFFFFF; border-top:3px solid #1D6FE0; padding:20px 24px; display:flex; flex-direction:column; gap:4px;\">\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:700; font-size:22px; color:#0B0E1A;\">{{ASSEMBLY_AR}}</div>\n        <div style=\"font-family:'Poppins',sans-serif; font-size:15px; color:#6B7280;\">{{ASSEMBLY_EN}}</div>\n      </div>\n      <div style=\"flex:1; background:#FFFFFF; border-top:3px solid #1D6FE0; padding:20px 24px; display:flex; flex-direction:column; gap:4px;\">\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:700; font-size:22px; color:#0B0E1A;\">محرك بنزين</div>\n        <div style=\"font-family:'Poppins',sans-serif; font-size:15px; color:#6B7280;\">Naturally aspirated petrol</div>\n      </div>\n      <div style=\"flex:1; background:#FFFFFF; border-top:3px solid #1D6FE0; padding:20px 24px; display:flex; flex-direction:column; gap:4px;\">\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:700; font-size:22px; color:#0B0E1A;\">5 مقاعد</div>\n        <div style=\"font-family:'Poppins',sans-serif; font-size:15px; color:#6B7280;\">Five seats</div>\n      </div>\n    </div>\n  </div>\n\n</div>\n</body>\n</html>\n`,\n  pro: `<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap\">\n<style>\nbody { margin: 0; }\n</style>\n</head>\n<body>\n<div data-screen-label=\"04\" style=\"width:1080px; height:1350px; position:relative; overflow:hidden; background:#E4F2E8; display:flex; flex-direction:column; font-family:'Poppins',sans-serif;\">\n  <div style=\"width:100%; box-sizing:border-box; padding:36px 44px 0; display:flex; justify-content:space-between; align-items:center;\">\n    <img src=\"http://207.127.99.206:8080/static/carindex-logo.png\" alt=\"CARINDEX\" style=\"height:30px; width:auto;\">\n    <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:16px; color:#4C7A5A;\">4/9</div>\n  </div>\n\n  <div style=\"flex:1; display:flex; flex-direction:column; justify-content:center; padding:0 44px 48px; gap:30px;\">\n    <div style=\"display:flex; align-items:center; gap:18px;\">\n      <svg width=\"56\" height=\"56\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#1F8A44\" stroke-width=\"2.2\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M7.5 12.5l3 3 6-6.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>\n      <div style=\"display:flex; flex-direction:column; gap:2px;\">\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:800; font-size:50px; line-height:1.1; color:#1F8A44;\">نقاط القوة</div>\n        <div style=\"font-family:'Poppins',sans-serif; font-weight:600; font-size:19px; color:#4C7A5A;\">Strengths</div>\n      </div>\n    </div>\n\n    <div style=\"display:flex; flex-direction:column; gap:16px;\">\n      <div style=\"direction:rtl; display:flex; align-items:flex-start; gap:18px; background:#FFFFFF; padding:26px 28px;\">\n        <div style=\"flex-shrink:0; width:44px; height:44px; border-radius:50%; background:#1F8A44; display:flex; align-items:center; justify-content:center;\"><span style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:19px; color:#FFFFFF;\">01</span></div>\n        <div style=\"display:flex; flex-direction:column; gap:6px;\">\n          <div style=\"font-family:'Cairo',sans-serif; font-weight:800; font-size:28px; color:#0B0E1A;\">{{PRO_1_TITLE_AR}}</div>\n          <div style=\"font-family:'Cairo',sans-serif; font-weight:600; font-size:22px; line-height:1.5; color:#4B5563; text-wrap:pretty;\">{{PRO_1_DESC_AR}}</div>\n        </div>\n      </div>\n      <div style=\"direction:rtl; display:flex; align-items:flex-start; gap:18px; background:#FFFFFF; padding:26px 28px;\">\n        <div style=\"flex-shrink:0; width:44px; height:44px; border-radius:50%; background:#1F8A44; display:flex; align-items:center; justify-content:center;\"><span style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:19px; color:#FFFFFF;\">02</span></div>\n        <div style=\"display:flex; flex-direction:column; gap:6px;\">\n          <div style=\"font-family:'Cairo',sans-serif; font-weight:800; font-size:28px; color:#0B0E1A;\">{{PRO_2_TITLE_AR}}</div>\n          <div style=\"font-family:'Cairo',sans-serif; font-weight:600; font-size:22px; line-height:1.5; color:#4B5563; text-wrap:pretty;\">{{PRO_2_DESC_AR}}</div>\n        </div>\n      </div>\n      <div style=\"direction:rtl; display:flex; align-items:flex-start; gap:18px; background:#FFFFFF; padding:26px 28px;\">\n        <div style=\"flex-shrink:0; width:44px; height:44px; border-radius:50%; background:#1F8A44; display:flex; align-items:center; justify-content:center;\"><span style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:19px; color:#FFFFFF;\">03</span></div>\n        <div style=\"display:flex; flex-direction:column; gap:6px;\">\n          <div style=\"font-family:'Cairo',sans-serif; font-weight:800; font-size:28px; color:#0B0E1A;\">{{PRO_3_TITLE_AR}}</div>\n          <div style=\"font-family:'Cairo',sans-serif; font-weight:600; font-size:22px; line-height:1.5; color:#4B5563; text-wrap:pretty;\">{{PRO_3_DESC_AR}}</div>\n        </div>\n      </div>\n    </div>\n\n    <div style=\"display:flex; gap:14px;\">\n      <div style=\"flex:1; background:#1F8A44; padding:20px 24px; display:flex; align-items:baseline; gap:10px;\">\n        <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:34px; color:#FFFFFF;\">{{PRICE_EGP}}</div>\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:600; font-size:18px; color:rgba(255,255,255,0.8);\">جنيه</div>\n      </div>\n      <div style=\"flex:1; background:#FFFFFF; padding:20px 24px; display:flex; align-items:baseline; gap:10px;\">\n        <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:34px; color:#0B0E1A;\">{{DISPLACEMENT}}</div>\n        <div style=\"font-family:'Poppins',sans-serif; font-weight:600; font-size:18px; color:#6B7280;\">cc</div>\n      </div>\n      <div style=\"flex:1; background:#FFFFFF; padding:20px 24px; display:flex; align-items:baseline; gap:10px;\">\n        <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:34px; color:#0B0E1A;\">{{POWER}}</div>\n        <div style=\"font-family:'Poppins',sans-serif; font-weight:600; font-size:18px; color:#6B7280;\">hp</div>\n      </div>\n    </div>\n  </div>\n\n</div>\n</body>\n</html>\n`,\n  con: `<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap\">\n<style>\nbody { margin: 0; }\n</style>\n</head>\n<body>\n<div data-screen-label=\"05\" style=\"width:1080px; height:1350px; position:relative; overflow:hidden; background:#F7E4E1; display:flex; flex-direction:column; font-family:'Poppins',sans-serif;\">\n  <div style=\"width:100%; box-sizing:border-box; padding:36px 44px 0; display:flex; justify-content:space-between; align-items:center;\">\n    <img src=\"http://207.127.99.206:8080/static/carindex-logo.png\" alt=\"CARINDEX\" style=\"height:30px; width:auto;\">\n    <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:16px; color:#9C5A52;\">5/9</div>\n  </div>\n\n  <div style=\"flex:1; display:flex; flex-direction:column; justify-content:center; padding:0 44px 48px; gap:30px;\">\n    <div style=\"display:flex; align-items:center; gap:18px;\">\n      <svg width=\"56\" height=\"56\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#C0392B\" stroke-width=\"2.4\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M8.5 8.5l7 7M15.5 8.5l-7 7\" stroke-linecap=\"round\"></path></svg>\n      <div style=\"display:flex; flex-direction:column; gap:2px;\">\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:800; font-size:50px; line-height:1.1; color:#C0392B;\">نقاط الضعف</div>\n        <div style=\"font-family:'Poppins',sans-serif; font-weight:600; font-size:19px; color:#9C5A52;\">Weak points</div>\n      </div>\n    </div>\n\n    <div style=\"display:flex; flex-direction:column; gap:16px;\">\n      <div style=\"direction:rtl; display:flex; align-items:flex-start; gap:18px; background:#FFFFFF; padding:26px 28px;\">\n        <div style=\"flex-shrink:0; width:44px; height:44px; border-radius:50%; background:#C0392B; display:flex; align-items:center; justify-content:center;\"><span style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:19px; color:#FFFFFF;\">01</span></div>\n        <div style=\"display:flex; flex-direction:column; gap:6px;\">\n          <div style=\"font-family:'Cairo',sans-serif; font-weight:800; font-size:28px; color:#0B0E1A;\">{{POWER}} حصان مش كتير</div>\n          <div style=\"font-family:'Cairo',sans-serif; font-weight:600; font-size:22px; line-height:1.5; color:#4B5563; text-wrap:pretty;\">{{TORQUE}} نيوتن.متر تكفي في المدينة، بس التخطي على الطريق السريع محتاج تخطيط.</div>\n        </div>\n      </div>\n      <div style=\"direction:rtl; display:flex; align-items:flex-start; gap:18px; background:#FFFFFF; padding:26px 28px;\">\n        <div style=\"flex-shrink:0; width:44px; height:44px; border-radius:50%; background:#C0392B; display:flex; align-items:center; justify-content:center;\"><span style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:19px; color:#FFFFFF;\">02</span></div>\n        <div style=\"display:flex; flex-direction:column; gap:6px;\">\n          <div style=\"font-family:'Cairo',sans-serif; font-weight:800; font-size:28px; color:#0B0E1A;\">{{CONS_2_TITLE_AR}}</div>\n          <div style=\"font-family:'Cairo',sans-serif; font-weight:600; font-size:22px; line-height:1.5; color:#4B5563; text-wrap:pretty;\">{{CONS_2_DESC_AR}}</div>\n        </div>\n      </div>\n      <div style=\"direction:rtl; display:flex; align-items:flex-start; gap:18px; background:#FFFFFF; padding:26px 28px;\">\n        <div style=\"flex-shrink:0; width:44px; height:44px; border-radius:50%; background:#C0392B; display:flex; align-items:center; justify-content:center;\"><span style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:19px; color:#FFFFFF;\">03</span></div>\n        <div style=\"display:flex; flex-direction:column; gap:6px;\">\n          <div style=\"font-family:'Cairo',sans-serif; font-weight:800; font-size:28px; color:#0B0E1A;\">{{CONS_3_TITLE_AR}}</div>\n          <div style=\"font-family:'Cairo',sans-serif; font-weight:600; font-size:22px; line-height:1.5; color:#4B5563; text-wrap:pretty;\">{{CONS_3_DESC_AR}}</div>\n        </div>\n      </div>\n    </div>\n\n    <div style=\"direction:rtl; background:#0B0E1A; border-right:4px solid #C0392B; padding:24px 28px; font-family:'Cairo',sans-serif; font-weight:600; font-size:23px; line-height:1.55; color:#FFFFFF; text-wrap:pretty;\">دي مش عيوب تمنع الشراء، دي تكلفة الوصول لسعر {{PRICE_EGP}} جنيه.</div>\n  </div>\n\n</div>\n</body>\n</html>\n`,\n  comparison: `<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap\">\n<style>\nbody { margin: 0; }\n</style>\n</head>\n<body>\n<div data-screen-label=\"06\" style=\"width:1080px; height:1350px; position:relative; overflow:hidden; background:#F5F1EA; display:flex; flex-direction:column; font-family:'Poppins',sans-serif;\">\n  <div style=\"width:100%; box-sizing:border-box; padding:36px 44px 0; display:flex; justify-content:space-between; align-items:center;\">\n    <img src=\"http://207.127.99.206:8080/static/carindex-logo.png\" alt=\"CARINDEX\" style=\"height:30px; width:auto;\">\n    <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:16px; color:#6B7280;\">6/9</div>\n  </div>\n\n  <div style=\"flex:1; display:flex; flex-direction:column; justify-content:center; padding:0 44px 48px; gap:22px;\">\n    <div style=\"display:flex; flex-direction:column; gap:6px;\">\n      <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:800; font-size:46px; color:#0B0E1A;\">المنافسة الحقيقية</div>\n      <div style=\"font-family:'Poppins',sans-serif; font-weight:500; font-size:19px; color:#6B7280;\">The real competition — same price band</div>\n    </div>\n\n    <div style=\"display:flex; flex-direction:column;\">\n      <div style=\"display:grid; grid-template-columns:1.1fr 1fr 1fr;\">\n        <img src=\"{{IMAGE_URL}}\" alt=\"{{MODEL}}\" style=\"width:100%; height:132px; object-fit:cover;\">\n        <img src=\"{{COMP1_IMAGE_URL}}\" alt=\"{{COMPETITOR_1}}\" style=\"width:100%; height:132px; object-fit:cover;\">\n        <img src=\"{{COMP2_IMAGE_URL}}\" alt=\"{{COMPETITOR_2}}\" style=\"width:100%; height:132px; object-fit:cover;\">\n      </div>\n\n      <div style=\"display:grid; grid-template-columns:1.1fr 1fr 1fr;\">\n        <div style=\"background:#1D6FE0; padding:16px 18px; display:flex; flex-direction:column; gap:3px;\">\n          <div style=\"font-family:'Poppins',sans-serif; font-weight:800; font-size:22px; color:#FFFFFF;\">{{MODEL}}</div>\n          <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:600; font-size:15px; color:rgba(255,255,255,0.78);\">{{ASSEMBLY_LABEL_AR}}</div>\n        </div>\n        <div style=\"background:#0B0E1A; padding:16px 18px; display:flex; flex-direction:column; gap:3px;\">\n          <div style=\"font-family:'Poppins',sans-serif; font-weight:800; font-size:22px; color:#FFFFFF;\">{{COMPETITOR_1}}</div>\n          <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:600; font-size:15px; color:rgba(255,255,255,0.6);\">مستوردة</div>\n        </div>\n        <div style=\"background:#0B0E1A; padding:16px 18px; display:flex; flex-direction:column; gap:3px;\">\n          <div style=\"font-family:'Poppins',sans-serif; font-weight:800; font-size:22px; color:#FFFFFF;\">{{COMPETITOR_2}}</div>\n          <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:600; font-size:15px; color:rgba(255,255,255,0.6);\">مستوردة</div>\n        </div>\n      </div>\n\n      <div style=\"display:grid; grid-template-columns:1.1fr 1fr 1fr; background:#FFFFFF;\">\n        <div style=\"padding:18px; background:#CBE0FA;\"><div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:26px; color:#0B0E1A;\">{{PRICE_EGP}}</div></div>\n        <div style=\"padding:18px;\"><div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:26px; color:#0B0E1A;\">{{COMP1_PRICE}}</div></div>\n        <div style=\"padding:18px;\"><div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:26px; color:#0B0E1A;\">{{COMP2_PRICE}}</div></div>\n      </div>\n      <div style=\"direction:rtl; padding:6px 18px 12px; background:#FBFAF7; font-family:'Cairo',sans-serif; font-weight:600; font-size:17px; color:#6B7280;\">السعر (جنيه)</div>\n\n      <div style=\"display:grid; grid-template-columns:1.1fr 1fr 1fr; background:#FFFFFF; border-top:1px solid #E2DFD6;\">\n        <div style=\"padding:18px; background:#CBE0FA;\"><div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:26px; color:#0B0E1A;\">{{DISPLACEMENT}}</div></div>\n        <div style=\"padding:18px;\"><div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:26px; color:#0B0E1A;\">{{COMP1_DISPLACEMENT}}</div></div>\n        <div style=\"padding:18px;\"><div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:26px; color:#0B0E1A;\">{{COMP2_DISPLACEMENT}}</div></div>\n      </div>\n      <div style=\"direction:rtl; padding:6px 18px 12px; background:#FBFAF7; font-family:'Cairo',sans-serif; font-weight:600; font-size:17px; color:#6B7280;\">سعة المحرك (cc)</div>\n\n      <div style=\"display:grid; grid-template-columns:1.1fr 1fr 1fr; background:#FFFFFF; border-top:1px solid #E2DFD6;\">\n        <div style=\"padding:18px; background:#CBE0FA;\"><div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:26px; color:#0B0E1A;\">{{POWER}}</div></div>\n        <div style=\"padding:18px;\"><div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:26px; color:#0B0E1A;\">{{COMP1_POWER}}</div></div>\n        <div style=\"padding:18px;\"><div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:26px; color:#0B0E1A;\">{{COMP2_POWER}}</div></div>\n      </div>\n      <div style=\"direction:rtl; padding:6px 18px 12px; background:#FBFAF7; font-family:'Cairo',sans-serif; font-weight:600; font-size:17px; color:#6B7280;\">القوة (hp)</div>\n\n      <div style=\"display:grid; grid-template-columns:1.1fr 1fr 1fr; background:#FFFFFF; border-top:1px solid #E2DFD6;\">\n        <div style=\"padding:18px; background:#CBE0FA;\"><div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:700; font-size:22px; color:#0B0E1A;\">{{ASSEMBLY_LABEL_AR}}</div></div>\n        <div style=\"padding:18px;\"><div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:700; font-size:22px; color:#0B0E1A;\">مستورد</div></div>\n        <div style=\"padding:18px;\"><div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:700; font-size:22px; color:#0B0E1A;\">مستورد</div></div>\n      </div>\n      <div style=\"direction:rtl; padding:6px 18px 12px; background:#FBFAF7; font-family:'Cairo',sans-serif; font-weight:600; font-size:17px; color:#6B7280;\">التجميع</div>\n    </div>\n\n    <div style=\"direction:rtl; background:#0B0E1A; padding:22px 26px; font-family:'Cairo',sans-serif; font-weight:600; font-size:23px; line-height:1.5; color:#FFFFFF; text-wrap:pretty;\">{{COMPARISON_DELTA_AR}}</div>\n  </div>\n\n</div>\n</body>\n</html>\n`,\n  decision: `<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap\">\n<style>\nbody { margin: 0; }\n</style>\n</head>\n<body>\n<div data-screen-label=\"07\" style=\"width:1080px; height:1350px; position:relative; overflow:hidden; background:#0B0E1A; display:flex; flex-direction:column; font-family:'Poppins',sans-serif;\">\n  <div style=\"width:100%; box-sizing:border-box; padding:36px 44px 0; display:flex; justify-content:space-between; align-items:center;\">\n    <img src=\"http://207.127.99.206:8080/static/carindex-logo-white.png\" alt=\"CARINDEX\" style=\"height:30px; width:auto;\">\n    <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:16px; color:rgba(255,255,255,0.45);\">7/9</div>\n  </div>\n\n  <div style=\"flex:1; display:flex; flex-direction:column; justify-content:center; padding:0 44px; gap:30px;\">\n    <div style=\"display:flex; flex-direction:column; gap:8px;\">\n      <div style=\"font-family:'JetBrains Mono',monospace; font-size:14px; letter-spacing:0.18em; text-transform:uppercase; color:#7FB0F0;\">The verdict</div>\n      <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:800; font-size:56px; line-height:1.15; color:#FFFFFF;\">الحكم النهائي</div>\n      <div style=\"width:80px; height:3px; background:#1D6FE0;\"></div>\n    </div>\n\n    <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:600; font-size:30px; line-height:1.55; color:rgba(255,255,255,0.9); text-wrap:pretty;\">{{DECISION_VERDICT_AR}}</div>\n\n    <div style=\"display:grid; grid-template-columns:1fr 1fr; gap:14px;\">\n      <div style=\"background:rgba(31,138,68,0.16); border-top:3px solid #3FBF6E; padding:26px 28px; display:flex; flex-direction:column; gap:14px;\">\n        <div style=\"direction:rtl; display:flex; align-items:center; gap:12px;\">\n          <svg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#3FBF6E\" stroke-width=\"2.6\"><path d=\"M5 12.5l4.5 4.5L19 7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>\n          <div style=\"font-family:'Cairo',sans-serif; font-weight:800; font-size:28px; color:#3FBF6E;\">اشترِ إذا</div>\n        </div>\n        <div style=\"direction:rtl; display:flex; flex-direction:column; gap:10px;\">\n          <div style=\"font-family:'Cairo',sans-serif; font-weight:600; font-size:21px; line-height:1.5; color:rgba(255,255,255,0.85); text-wrap:pretty;\">{{BUY_IF_1_AR}}</div>\n          <div style=\"font-family:'Cairo',sans-serif; font-weight:600; font-size:21px; line-height:1.5; color:rgba(255,255,255,0.85); text-wrap:pretty;\">{{BUY_IF_2_AR}}</div>\n        </div>\n      </div>\n      <div style=\"background:rgba(192,57,43,0.16); border-top:3px solid #E05B4B; padding:26px 28px; display:flex; flex-direction:column; gap:14px;\">\n        <div style=\"direction:rtl; display:flex; align-items:center; gap:12px;\">\n          <svg width=\"30\" height=\"30\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#E05B4B\" stroke-width=\"2.6\"><path d=\"M7 7l10 10M17 7l-10 10\" stroke-linecap=\"round\"></path></svg>\n          <div style=\"font-family:'Cairo',sans-serif; font-weight:800; font-size:28px; color:#E05B4B;\">تجاهل إذا</div>\n        </div>\n        <div style=\"direction:rtl; display:flex; flex-direction:column; gap:10px;\">\n          <div style=\"font-family:'Cairo',sans-serif; font-weight:600; font-size:21px; line-height:1.5; color:rgba(255,255,255,0.85); text-wrap:pretty;\">{{SKIP_IF_1_AR}}</div>\n          <div style=\"font-family:'Cairo',sans-serif; font-weight:600; font-size:21px; line-height:1.5; color:rgba(255,255,255,0.85); text-wrap:pretty;\">{{SKIP_IF_2_AR}}</div>\n        </div>\n      </div>\n    </div>\n\n    <div style=\"display:flex; align-items:stretch; border-top:1px solid rgba(255,255,255,0.14); padding-top:22px;\">\n      <div style=\"flex:1; display:flex; flex-direction:column; gap:4px;\">\n        <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:36px; color:#FFFFFF;\">{{PRICE_EGP}}</div>\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:600; font-size:17px; color:rgba(255,255,255,0.5);\">السعر (جنيه)</div>\n      </div>\n      <div style=\"flex:1; display:flex; flex-direction:column; gap:4px;\">\n        <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:36px; color:#FFFFFF;\">{{POWER}} <span style=\"font-size:18px; color:rgba(255,255,255,0.5);\">hp</span></div>\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:600; font-size:17px; color:rgba(255,255,255,0.5);\">القوة</div>\n      </div>\n      <div style=\"flex:1; display:flex; flex-direction:column; gap:4px;\">\n        <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:36px; color:#FFFFFF;\">{{TORQUE}} <span style=\"font-size:18px; color:rgba(255,255,255,0.5);\">N·m</span></div>\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:600; font-size:17px; color:rgba(255,255,255,0.5);\">العزم</div>\n      </div>\n    </div>\n  </div>\n\n  <div style=\"padding:0 44px 34px; font-family:'Poppins',sans-serif; font-size:15px; color:rgba(255,255,255,0.45);\">CarIndex verdict · numbers first, opinions last</div>\n</div>\n</body>\n</html>\n`,\n  citation: `<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap\">\n<style>\nbody { margin: 0; }\n</style>\n</head>\n<body>\n<div data-screen-label=\"08\" style=\"width:1080px; height:1350px; position:relative; overflow:hidden; background:#F5F1EA; display:flex; flex-direction:column; font-family:'Poppins',sans-serif;\">\n  <div style=\"width:100%; box-sizing:border-box; padding:36px 44px 0; display:flex; justify-content:space-between; align-items:center;\">\n    <img src=\"http://207.127.99.206:8080/static/carindex-logo.png\" alt=\"CARINDEX\" style=\"height:30px; width:auto;\">\n    <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:16px; color:#6B7280;\">8/9</div>\n  </div>\n\n  <div style=\"flex:1; display:flex; flex-direction:column; justify-content:center; padding:0 44px; gap:26px;\">\n    <div style=\"display:flex; flex-direction:column; gap:6px;\">\n      <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:800; font-size:46px; color:#0B0E1A;\">المصادر</div>\n      <div style=\"font-family:'Poppins',sans-serif; font-weight:500; font-size:19px; color:#6B7280;\">Sources &amp; method</div>\n    </div>\n\n    <div style=\"display:flex; flex-direction:column; gap:2px; background:#E2DFD6;\">\n      <div style=\"direction:rtl; display:flex; align-items:center; gap:20px; background:#FFFFFF; padding:22px 26px;\">\n        <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:20px; color:#1D6FE0; min-width:34px;\">01</div>\n        <div style=\"display:flex; flex-direction:column; gap:3px;\">\n          <div style=\"font-family:'Cairo',sans-serif; font-weight:700; font-size:23px; color:#0B0E1A;\">قائمة أسعار الوكيل الرسمي</div>\n          <div style=\"direction:ltr; font-family:'Poppins',sans-serif; font-size:16px; color:#6B7280;\">Official dealer price list — August 2026</div>\n        </div>\n      </div>\n      <div style=\"direction:rtl; display:flex; align-items:center; gap:20px; background:#FFFFFF; padding:22px 26px;\">\n        <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:20px; color:#1D6FE0; min-width:34px;\">02</div>\n        <div style=\"display:flex; flex-direction:column; gap:3px;\">\n          <div style=\"font-family:'Cairo',sans-serif; font-weight:700; font-size:23px; color:#0B0E1A;\">كتالوج المواصفات من الشركة المصنّعة</div>\n          <div style=\"direction:ltr; font-family:'Poppins',sans-serif; font-size:16px; color:#6B7280;\">Manufacturer specification sheet — Egypt market</div>\n        </div>\n      </div>\n      <div style=\"direction:rtl; display:flex; align-items:center; gap:20px; background:#FFFFFF; padding:22px 26px;\">\n        <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:20px; color:#1D6FE0; min-width:34px;\">03</div>\n        <div style=\"display:flex; flex-direction:column; gap:3px;\">\n          <div style=\"font-family:'Cairo',sans-serif; font-weight:700; font-size:23px; color:#0B0E1A;\">بيانات التسجيل والمبيعات</div>\n          <div style=\"direction:ltr; font-family:'Poppins',sans-serif; font-size:16px; color:#6B7280;\">Registration data through July 2026 · MarkLines</div>\n        </div>\n      </div>\n      <div style=\"direction:rtl; display:flex; align-items:center; gap:20px; background:#FFFFFF; padding:22px 26px;\">\n        <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:20px; color:#1D6FE0; min-width:34px;\">04</div>\n        <div style=\"display:flex; flex-direction:column; gap:3px;\">\n          <div style=\"font-family:'Cairo',sans-serif; font-weight:700; font-size:23px; color:#0B0E1A;\">أسعار المنافسين من معارض معتمدة</div>\n          <div style=\"direction:ltr; font-family:'Poppins',sans-serif; font-size:16px; color:#6B7280;\">contactcars.com · Egypt Automotive · Shift-Eg</div>\n        </div>\n      </div>\n    </div>\n\n    <div style=\"display:grid; grid-template-columns:1fr 1fr; gap:14px;\">\n      <div style=\"background:#0B0E1A; padding:24px 26px; display:flex; flex-direction:column; gap:8px;\">\n        <div style=\"font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:0.16em; text-transform:uppercase; color:#7FB0F0;\">Method</div>\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:600; font-size:20px; line-height:1.5; color:#FFFFFF; text-wrap:pretty;\">كل رقم منشور مرتبط بمصدر أولي. مفيش تقديرات من غير توضيح.</div>\n      </div>\n      <div style=\"background:#1D6FE0; padding:24px 26px; display:flex; flex-direction:column; gap:8px;\">\n        <div style=\"font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.75);\">Last updated</div>\n        <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:30px; color:#FFFFFF;\">{{DATE}}</div>\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:600; font-size:18px; color:rgba(255,255,255,0.8);\">الأسعار تتغير — راجع الوكيل</div>\n      </div>\n    </div>\n  </div>\n\n  <div style=\"padding:0 44px 34px; font-family:'Poppins',sans-serif; font-size:15px; color:#8A8A85;\">CarIndex — every car, indexed.</div>\n</div>\n</body>\n</html>\n`,\n  cta: `<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap\">\n<style>\nbody { margin: 0; }\n</style>\n</head>\n<body>\n<div data-screen-label=\"09\" style=\"width:1080px; height:1350px; position:relative; overflow:hidden; background:#0B0E1A; display:flex; flex-direction:column; font-family:'Poppins',sans-serif;\">\n  <div style=\"position:absolute; top:0; left:0; right:0; height:6px; background:#1D6FE0;\"></div>\n\n  <div style=\"width:100%; box-sizing:border-box; padding:42px 44px 0; display:flex; justify-content:flex-end; align-items:center;\">\n    <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:16px; color:rgba(255,255,255,0.4);\">9/9</div>\n  </div>\n\n  <div style=\"flex:1; display:flex; flex-direction:column; justify-content:center; padding:0 44px; gap:44px;\">\n    <div style=\"display:flex; flex-direction:column; gap:18px;\">\n      <img src=\"http://207.127.99.206:8080/static/carindex-logo-white.png\" alt=\"CARINDEX\" style=\"height:62px; width:auto; align-self:flex-start;\">\n      <div style=\"font-family:'Poppins',sans-serif; font-weight:600; font-size:26px; letter-spacing:0.01em; color:rgba(255,255,255,0.72);\">Every car, indexed.</div>\n    </div>\n\n    <div style=\"height:1px; background:rgba(255,255,255,0.16);\"></div>\n\n    <div style=\"display:flex; flex-direction:column; gap:14px;\">\n      <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:800; font-size:44px; line-height:1.25; color:#FFFFFF; text-wrap:pretty;\">عايز مراجعة زي دي لكل عربية في السوق المصري؟</div>\n      <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:600; font-size:26px; line-height:1.5; color:rgba(255,255,255,0.65); text-wrap:pretty;\">أرقام من مصادر رسمية، مقارنات في نفس الفئة، وحكم واضح. من غير إعلانات مدفوعة.</div>\n    </div>\n\n    <div style=\"display:flex; gap:14px;\">\n      <div style=\"flex:1; background:#1D6FE0; padding:26px 28px; display:flex; flex-direction:column; gap:6px;\">\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:800; font-size:30px; color:#FFFFFF;\">تابع CarIndex</div>\n        <div style=\"font-family:'Poppins',sans-serif; font-weight:600; font-size:18px; color:rgba(255,255,255,0.8);\">Follow for the full index</div>\n      </div>\n      <div style=\"flex:1; background:rgba(255,255,255,0.08); padding:26px 28px; display:flex; flex-direction:column; gap:6px;\">\n        <div style=\"direction:rtl; font-family:'Cairo',sans-serif; font-weight:800; font-size:30px; color:#FFFFFF;\">احفظ البوست</div>\n        <div style=\"font-family:'Poppins',sans-serif; font-weight:600; font-size:18px; color:rgba(255,255,255,0.55);\">Save for your shortlist</div>\n      </div>\n    </div>\n\n    <div style=\"display:flex; align-items:baseline; gap:26px;\">\n      <div style=\"font-family:'JetBrains Mono',monospace; font-weight:700; font-size:22px; letter-spacing:0.06em; color:#7FB0F0;\">{{HANDLE}}</div>\n      <div style=\"font-family:'JetBrains Mono',monospace; font-size:18px; letter-spacing:0.06em; color:rgba(255,255,255,0.4);\">{{SITE}}</div>\n    </div>\n  </div>\n\n  <div style=\"padding:0 44px 40px; font-family:'Poppins',sans-serif; font-size:15px; color:rgba(255,255,255,0.4);\">Numbers first, opinions last.</div>\n</div>\n</body>\n</html>\n`,\n};\n\nconst SLIDE_ORDER = ['cover', 'hero_stat', 'spec', 'pro', 'con', 'comparison', 'decision', 'citation', 'cta'];function escapeHtml(value) {\n  return (value === undefined || value === null ? '' : value.toString())\n    .replace(/&/g, '&amp;')\n    .replace(/</g, '&lt;')\n    .replace(/>/g, '&gt;')\n    .replace(/\"/g, '&quot;');\n}\n\n// Numeric mechanical fields render as plain digits in the templates' JetBrains Mono cells -\n// strip anything that isn't a digit/decimal point (Content Creation is instructed to send\n// digits-only, but never trust an LLM field at face value for something that lands directly\n// in markup).\nfunction cleanNumber(value) {\n  const s = (value === undefined || value === null ? '' : value.toString()).trim();\n  const digitsOnly = s.replace(/[^\\d.]/g, '');\n  return digitsOnly || 'N/A';\n}\n\nconst specFacts = ($json.draftSpecFacts && typeof $json.draftSpecFacts === 'object') ? $json.draftSpecFacts : {};\nconst skipIfBullets = Array.isArray($json.draftSkipIfBullets) ? $json.draftSkipIfBullets : ['', ''];\nconst buyIfBullets = Array.isArray($json.draftBuyIfBullets) ? $json.draftBuyIfBullets : ['', ''];\n\n// HANDLE/SITE: CarIndex has not yet publicly launched (Phase 1, per CLAUDE.md - no confirmed\n// registered @handle or live domain as of this build) - these are placeholders, deliberately\n// isolated to one spot so they're a one-line edit once real values exist.\nconst HANDLE = '@CarIndexEG';\nconst SITE = 'carindex.eg';\n\nconst now = new Date();\nconst DATE = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });\n\nconst TOKENS = {\n  MODEL: specFacts.model || $json.draftHeadline || '',\n  PRICE_EGP: cleanNumber(specFacts.price_egp),\n  DISPLACEMENT: cleanNumber(specFacts.displacement_cc),\n  POWER: cleanNumber(specFacts.power_hp),\n  TORQUE: cleanNumber(specFacts.torque_nm),\n  ASSEMBLY_AR: specFacts.assembly_ar || '',\n  ASSEMBLY_EN: specFacts.assembly_en || '',\n  ASSEMBLY_LABEL_AR: specFacts.assembly_label_ar || '',\n  SEGMENT_AR: specFacts.segment_ar || '',\n  SEGMENT_EN: specFacts.segment_en || '',\n  COMPETITOR_1: specFacts.competitor_1_name || '',\n  COMPETITOR_2: specFacts.competitor_2_name || '',\n  COMP1_PRICE: cleanNumber(specFacts.competitor_1_price_egp),\n  COMP2_PRICE: cleanNumber(specFacts.competitor_2_price_egp),\n  COMP1_POWER: cleanNumber(specFacts.competitor_1_power_hp),\n  COMP2_POWER: cleanNumber(specFacts.competitor_2_power_hp),\n  COMP1_DISPLACEMENT: cleanNumber(specFacts.competitor_1_displacement_cc),\n  COMP2_DISPLACEMENT: cleanNumber(specFacts.competitor_2_displacement_cc),\n  DATE,\n  HANDLE,\n  SITE,\n  IMAGE_URL: $json.imageUrl || '',\n  COMP1_IMAGE_URL: $json.comp1ImageUrl || $json.imageUrl || '',\n  COMP2_IMAGE_URL: $json.comp2ImageUrl || $json.imageUrl || '',\n  HERO_STAT_QUOTE_AR: $json.draftHeroStatQuoteAr || '',\n  DECISION_VERDICT_AR: $json.draftDecisionVerdictAr || '',\n  BUY_IF_1_AR: buyIfBullets[0] || '',\n  BUY_IF_2_AR: buyIfBullets[1] || '',\n  SKIP_IF_1_AR: skipIfBullets[0] || '',\n  SKIP_IF_2_AR: skipIfBullets[1] || '',\n  COMPARISON_DELTA_AR: $json.draftComparisonDeltaAr || '',\n  PRO_1_DESC_AR: $json.draftPro1DescAr || '',\n  PRO_2_DESC_AR: $json.draftPro2DescAr || '',\n  PRO_3_DESC_AR: $json.draftPro3DescAr || '',\n  CONS_2_DESC_AR: $json.draftCons2DescAr || '',\n  CONS_3_DESC_AR: $json.draftCons3DescAr || '',\n  PRO_1_TITLE_AR: $json.draftPro1TitleAr || 'السعر مقابل المقاس',\n  PRO_2_TITLE_AR: $json.draftPro2TitleAr || 'التجميع المحلي',\n  PRO_3_TITLE_AR: $json.draftPro3TitleAr || 'محرك بسيط وطبيعي التنفس',\n  CONS_2_TITLE_AR: $json.draftCons2TitleAr || 'القيمة الاستبدالية',\n  CONS_3_TITLE_AR: $json.draftCons3TitleAr || 'شبكة الخدمة',\n};\n\nfunction substitute(template) {\n  let html = template;\n  for (const [key, value] of Object.entries(TOKENS)) {\n    const isUrl = key.endsWith('_URL');\n    const safeValue = isUrl ? (value || '').toString().replace(/&/g, '&amp;') : escapeHtml(value);\n    html = html.split(`{{${key}}}`).join(safeValue);\n  }\n  return html;\n}\n\nreturn SLIDE_ORDER.map((role, i) => ({\n  json: {\n    slideNumber: i + 1,\n    totalSlides: SLIDE_ORDER.length,\n    role,\n    html: substitute(TEMPLATES[role]),\n  },\n}));\n"
+        "jsCode": "// CarIndex Buyer Check renderer: structured content JSON -> 6 fixed HTML slides (1080x1350).\n// Layout lives here, never in the LLM. Every number printed comes from content.key_data;\n// missing/conflicting facts render as an explicit \"not available\" label, never a guess.\n// Used verbatim inside the n8n \"Carousel Designer\" Code node (see n8n/patch_workflow.py)\n// and by run_golden_path.js locally.\n\nconst BC_ROLES = ['cover', 'key_fact', 'why_it_matters', 'strengths', 'caveat', 'cta_source'];\n\nconst BC_FONTS = '<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Cairo:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap\">';\n\nfunction bcEsc(v) {\n  return (v === undefined || v === null ? '' : String(v))\n    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\"/g, '&quot;');\n}\n\nfunction bcFact(content, id) {\n  return (content.key_data || []).find(k => k.id === id) || null;\n}\n\nfunction bcFactValueHtml(f, big) {\n  if (!f || f.status !== 'verified' || f.value === null || f.value === undefined || f.value === '') {\n    const why = f && f.status === 'conflict' ? 'أرقام متضاربة · Sources conflict' : 'غير متاح · Not in source';\n    return `<span class=\"na${big ? ' na-big' : ''}\">${why}</span>`;\n  }\n  return `<span class=\"num\">${bcEsc(f.value)}</span>${f.unit ? ` <span class=\"unit\">${bcEsc(f.unit)}</span>` : ''}`;\n}\n\nfunction bcSourceLabel(content, sourceId) {\n  const s = (content.sources || []).find(x => x.id === sourceId);\n  return s ? `${bcEsc(s.outlet)} · ${bcEsc(s.published)}` : '';\n}\n\nfunction bcFilename(postId, n, role) {\n  return `${postId}_${String(n).padStart(2, '0')}_${role}.png`;\n}\n\nfunction bcShell(opts, n, bg, dark, inner, footer) {\n  const logo = dark ? opts.logoWhiteUrl : opts.logoUrl;\n  const fg = dark ? '#FFFFFF' : '#0B0E1A';\n  const muted = dark ? 'rgba(255,255,255,0.55)' : '#6B7280';\n  return `<!DOCTYPE html>\n<html lang=\"ar\">\n<head>\n<meta charset=\"utf-8\">\n${BC_FONTS}\n<style>\n  body { margin:0; }\n  .slide { width:1080px; height:1350px; position:relative; overflow:hidden; background:${bg}; color:${fg}; font-family:'Poppins',sans-serif; display:flex; flex-direction:column; box-sizing:border-box; }\n  .top { display:flex; justify-content:space-between; align-items:center; padding:36px 48px 0; position:relative; z-index:2; }\n  .top img { height:32px; width:auto; }\n  .count { font-family:'JetBrains Mono',monospace; font-weight:700; font-size:18px; color:${muted}; }\n  .main { flex:1; display:flex; flex-direction:column; justify-content:center; padding:0 48px; gap:28px; position:relative; z-index:2; }\n  .ar { direction:rtl; font-family:'Cairo',sans-serif; }\n  .en { font-family:'Poppins',sans-serif; color:${muted}; }\n  .kicker { font-family:'JetBrains Mono',monospace; font-size:16px; letter-spacing:0.16em; text-transform:uppercase; color:#1D6FE0; }\n  .num { font-family:'JetBrains Mono',monospace; font-weight:700; }\n  .unit { font-family:'JetBrains Mono',monospace; font-weight:500; opacity:0.7; }\n  .na { font-family:'Cairo',sans-serif; font-weight:700; color:#B7791F; background:rgba(255,176,32,0.14); padding:2px 10px; }\n  .na-big { font-size:44px; }\n  .foot { padding:0 48px 34px; font-family:'JetBrains Mono',monospace; font-size:15px; color:${muted}; display:flex; justify-content:space-between; gap:24px; position:relative; z-index:2; }\n  .clip { overflow:hidden; }\n</style>\n</head>\n<body>\n<div class=\"slide\" data-slide=\"${n}\">\n  <div class=\"top\"><img src=\"${bcEsc(logo)}\" alt=\"CARINDEX\"><div class=\"count\">${n}/6</div></div>\n  ${inner}\n  <div class=\"foot\"><span>${footer || ''}</span><span>BUYER CHECK</span></div>\n</div>\n</body>\n</html>`;\n}\n\nfunction bcCarName(c) {\n  const car = c.car || {};\n  return [car.make, car.model, car.variant].filter(Boolean).join(' ');\n}\n\nfunction bcCover(c, s, opts) {\n  const f = bcFact(c, (s.fact_ids || [])[0]);\n  const inner = `\n  <div style=\"position:absolute; inset:0; z-index:1;\">\n    <img src=\"${bcEsc(opts.imageUrl)}\" alt=\"${bcEsc(bcCarName(c))}\" style=\"position:absolute; top:0; left:0; width:1080px; height:860px; object-fit:cover;\">\n    <div style=\"position:absolute; top:0; left:0; right:0; height:200px; background:linear-gradient(180deg, rgba(11,14,26,0.65), rgba(11,14,26,0));\"></div>\n    <div style=\"position:absolute; top:560px; left:0; right:0; bottom:0; background:linear-gradient(180deg, rgba(11,14,26,0) 0%, #0B0E1A 44%);\"></div>\n  </div>\n  <div class=\"main\" style=\"justify-content:flex-end; padding-bottom:26px; gap:18px;\">\n    <div class=\"kicker\" style=\"color:#7FB0F0;\">Buyer Check · ${bcEsc(bcCarName(c))}</div>\n    <div class=\"ar clip\" style=\"font-weight:800; font-size:64px; line-height:1.2; max-height:236px;\">${bcEsc(c.hook.ar)}</div>\n    <div class=\"en clip\" style=\"font-weight:600; font-size:28px; line-height:1.35; color:rgba(255,255,255,0.72); max-height:80px;\">${bcEsc(c.hook.en)}</div>\n    ${f ? `<div style=\"display:flex; align-items:baseline; gap:14px; border-top:2px solid #1D6FE0; padding-top:18px; font-size:44px;\">${bcFactValueHtml(f)}<span class=\"ar\" style=\"font-size:22px; color:rgba(255,255,255,0.6);\">${bcEsc(f.label_ar)}</span></div>` : ''}\n  </div>`;\n  return bcShell(opts, 1, '#0B0E1A', true, inner, `Image: ${bcEsc(opts.imageCredit)}`);\n}\n\nfunction bcKeyFact(c, s, opts) {\n  const f = bcFact(c, (s.fact_ids || [])[0]);\n  const inner = `\n  <div class=\"main\">\n    <div class=\"kicker\" style=\"color:rgba(255,255,255,0.8);\">${bcEsc(s.title_en)}</div>\n    <div class=\"ar\" style=\"font-weight:700; font-size:36px; color:rgba(255,255,255,0.9);\">${bcEsc(s.title_ar)}</div>\n    <div style=\"font-size:150px; line-height:0.95; letter-spacing:-0.03em; color:#FFFFFF;\">${bcFactValueHtml(f, true)}</div>\n    <div class=\"ar\" style=\"font-weight:600; font-size:24px; color:rgba(255,255,255,0.75);\">${bcEsc(f ? f.label_ar : '')} <span style=\"font-family:'Poppins',sans-serif; font-size:18px;\">· ${bcEsc(f ? f.label_en : '')}</span></div>\n    <div style=\"height:2px; background:rgba(255,255,255,0.25);\"></div>\n    <div class=\"ar clip\" style=\"font-weight:600; font-size:30px; line-height:1.55; max-height:190px;\">${bcEsc(s.body_ar)}</div>\n    <div class=\"en clip\" style=\"font-size:22px; line-height:1.5; color:rgba(255,255,255,0.7); max-height:100px;\">${bcEsc(s.body_en)}</div>\n  </div>`;\n  return bcShell(opts, 2, '#1D6FE0', true, inner, f ? `Source: ${bcSourceLabel(c, f.source_id)}` : '');\n}\n\nfunction bcRows(c, ids) {\n  return (ids || []).map(id => bcFact(c, id)).filter(Boolean).map(f => `\n      <div style=\"display:flex; justify-content:space-between; align-items:baseline; gap:20px; background:#FFFFFF; padding:18px 24px;\">\n        <div style=\"display:flex; flex-direction:column; gap:2px;\">\n          <div class=\"ar\" style=\"font-weight:700; font-size:22px;\">${bcEsc(f.label_ar)}</div>\n          <div class=\"en\" style=\"font-size:15px;\">${bcEsc(f.label_en)}${f.source_id ? ' · ' + bcSourceLabel(c, f.source_id) : ''}</div>\n        </div>\n        <div style=\"font-size:34px; white-space:nowrap;\">${bcFactValueHtml(f)}</div>\n      </div>`).join('');\n}\n\nfunction bcWhy(c, s, opts) {\n  const inner = `\n  <div class=\"main\" style=\"gap:22px;\">\n    <div class=\"kicker\">Why it matters</div>\n    <div class=\"ar clip\" style=\"font-weight:800; font-size:48px; line-height:1.2; max-height:120px;\">${bcEsc(s.title_ar)}</div>\n    <div class=\"en\" style=\"font-weight:600; font-size:20px;\">${bcEsc(s.title_en)}</div>\n    <img src=\"${bcEsc(opts.imageUrl)}\" alt=\"\" style=\"width:984px; height:300px; object-fit:cover;\">\n    <div class=\"ar clip\" style=\"font-weight:600; font-size:27px; line-height:1.55; max-height:170px;\">${bcEsc(s.body_ar)}</div>\n    <div class=\"en clip\" style=\"font-size:20px; line-height:1.5; max-height:92px;\">${bcEsc(s.body_en)}</div>\n    <div style=\"display:flex; flex-direction:column; gap:8px;\">${bcRows(c, (s.fact_ids || []).slice(0, 3))}</div>\n  </div>`;\n  return bcShell(opts, 3, '#F5F1EA', false, inner, '');\n}\n\nfunction bcPoints(points, color) {\n  return (points || []).slice(0, 3).map((p, i) => `\n      <div style=\"direction:rtl; display:flex; align-items:flex-start; gap:18px; background:#FFFFFF; padding:24px 26px;\">\n        <div style=\"flex-shrink:0; width:44px; height:44px; border-radius:50%; background:${color}; display:flex; align-items:center; justify-content:center;\"><span class=\"num\" style=\"font-size:18px; color:#FFFFFF;\">0${i + 1}</span></div>\n        <div style=\"display:flex; flex-direction:column; gap:6px;\">\n          <div class=\"ar clip\" style=\"font-weight:700; font-size:30px; line-height:1.5; max-height:135px;\">${bcEsc(p.ar)}</div>\n          <div class=\"clip\" style=\"direction:ltr; font-family:'Poppins',sans-serif; font-size:20px; line-height:1.45; color:#6B7280; max-height:60px;\">${bcEsc(p.en)}</div>\n        </div>\n      </div>`).join('');\n}\n\nfunction bcStrengths(c, s, opts) {\n  const inner = `\n  <div class=\"main\" style=\"gap:24px;\">\n    <img src=\"${bcEsc(opts.imageUrl)}\" alt=\"\" style=\"width:984px; height:340px; object-fit:cover;\">\n    <div style=\"direction:rtl; display:flex; align-items:center; gap:18px;\">\n      <svg width=\"56\" height=\"56\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#1F8A44\" stroke-width=\"2.2\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M7.5 12.5l3 3 6-6.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>\n      <div><div class=\"ar\" style=\"font-weight:800; font-size:48px; line-height:1.15; color:#1F8A44;\">${bcEsc(s.title_ar)}</div>\n      <div class=\"en\" style=\"font-weight:600; font-size:19px; color:#4C7A5A;\">${bcEsc(s.title_en)}</div></div>\n    </div>\n    <div style=\"display:flex; flex-direction:column; gap:14px;\">${bcPoints(s.points, '#1F8A44')}</div>\n  </div>`;\n  return bcShell(opts, 4, '#E4F2E8', false, inner, '');\n}\n\nfunction bcCaveat(c, s, opts) {\n  const skip = (s.skip_if || []).slice(0, 2).map(x => `\n        <div style=\"direction:rtl; display:flex; gap:14px; align-items:flex-start;\">\n          <svg width=\"26\" height=\"26\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#E05B4B\" stroke-width=\"2.6\" style=\"flex-shrink:0; margin-top:8px;\"><path d=\"M7 7l10 10M17 7l-10 10\" stroke-linecap=\"round\"></path></svg>\n          <div><div class=\"ar clip\" style=\"font-weight:700; font-size:30px; line-height:1.5; color:#FFFFFF; max-height:140px;\">${bcEsc(x.ar)}</div>\n          <div class=\"clip\" style=\"direction:ltr; font-size:20px; line-height:1.4; color:rgba(255,255,255,0.55); max-height:58px;\">${bcEsc(x.en)}</div></div>\n        </div>`).join('');\n  const inner = `\n  <div class=\"main\" style=\"gap:30px;\">\n    <div style=\"direction:rtl; display:flex; align-items:center; gap:18px;\">\n      <svg width=\"64\" height=\"64\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#C0392B\" stroke-width=\"2.4\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M12 7v6M12 16.5v.5\" stroke-linecap=\"round\"></path></svg>\n      <div><div class=\"ar\" style=\"font-weight:800; font-size:48px; line-height:1.15; color:#C0392B;\">${bcEsc(s.title_ar)}</div>\n      <div class=\"en\" style=\"font-weight:600; font-size:19px; color:#9C5A52;\">${bcEsc(s.title_en)}</div></div>\n    </div>\n    <div style=\"background:#FFFFFF; padding:36px 36px; display:flex; flex-direction:column; gap:14px;\">\n      <div class=\"ar clip\" style=\"font-weight:700; font-size:38px; line-height:1.55; max-height:300px;\">${bcEsc(s.body_ar)}</div>\n      <div class=\"clip\" style=\"font-size:24px; line-height:1.5; color:#6B7280; max-height:92px;\">${bcEsc(s.body_en)}</div>\n    </div>\n    <div style=\"background:#0B0E1A; border-right:5px solid #C0392B; padding:32px 32px; display:flex; flex-direction:column; gap:18px;\">\n      <div class=\"ar\" style=\"font-weight:800; font-size:32px; color:#E05B4B;\">تجاهلها لو · <span style=\"font-family:'Poppins',sans-serif; font-size:18px;\">Skip it if</span></div>\n      ${skip}\n    </div>\n  </div>`;\n  return bcShell(opts, 5, '#F7E4E1', false, inner, '');\n}\n\nfunction bcCta(c, s, opts) {\n  const used = new Set((c.key_data || []).map(k => k.source_id).filter(Boolean));\n  const srcs = (c.sources || []).filter(x => used.has(x.id)).slice(0, 4).map((x, i) => `\n      <div style=\"display:flex; gap:18px; align-items:flex-start; background:rgba(255,255,255,0.06); padding:16px 20px;\">\n        <div class=\"num\" style=\"color:#7FB0F0; font-size:18px;\">0${i + 1}</div>\n        <div style=\"display:flex; flex-direction:column; gap:2px; min-width:0;\">\n          <div style=\"font-weight:600; font-size:20px; color:#FFFFFF;\">${bcEsc(x.outlet)} · <span class=\"num\" style=\"font-weight:500; font-size:17px;\">${bcEsc(x.published)}</span></div>\n          <div class=\"clip\" style=\"font-size:15px; color:rgba(255,255,255,0.55); white-space:nowrap; text-overflow:ellipsis; max-width:900px;\">${bcEsc(x.what)}</div>\n        </div>\n      </div>`).join('');\n  const missing = (c.key_data || []).filter(k => k.status !== 'verified');\n  const missingLine = missing.length\n    ? `<div class=\"ar\" style=\"font-weight:600; font-size:20px; color:#FFB020;\">غير متاح في المصادر: ${missing.map(k => bcEsc(k.label_ar)).join('، ')}</div>`\n    : '';\n  const inner = `\n  <div class=\"main\" style=\"gap:22px;\">\n    <img src=\"${bcEsc(opts.imageUrl)}\" alt=\"\" style=\"width:984px; height:260px; object-fit:cover; opacity:0.85;\">\n    <div class=\"ar clip\" style=\"font-weight:800; font-size:46px; line-height:1.25; max-height:120px;\">${bcEsc(s.title_ar)}</div>\n    <div class=\"en\" style=\"font-weight:600; font-size:22px; color:rgba(255,255,255,0.7);\">${bcEsc(s.title_en)}</div>\n    <div style=\"display:flex; gap:14px;\">\n      <div style=\"flex:1; background:#1D6FE0; padding:22px 26px;\"><div class=\"ar\" style=\"font-weight:800; font-size:28px;\">احفظ البوست</div><div style=\"font-size:17px; color:rgba(255,255,255,0.8);\">Save for your shortlist</div></div>\n      <div style=\"flex:1; background:rgba(255,255,255,0.08); padding:22px 26px;\"><div class=\"ar\" style=\"font-weight:800; font-size:28px;\">تابع CarIndex</div><div style=\"font-size:17px; color:rgba(255,255,255,0.6);\">Numbers first, opinions last</div></div>\n    </div>\n    <div class=\"kicker\" style=\"color:#7FB0F0;\">Sources</div>\n    <div style=\"display:flex; flex-direction:column; gap:8px;\">${srcs}</div>\n    ${missingLine}\n    <div style=\"font-size:15px; color:rgba(255,255,255,0.45);\">Image: ${bcEsc(opts.imageCredit)} · Prices change, confirm with the official dealer.</div>\n  </div>`;\n  return bcShell(opts, 6, '#0B0E1A', true, inner, '');\n}\n\nconst BC_BUILDERS = { cover: bcCover, key_fact: bcKeyFact, why_it_matters: bcWhy, strengths: bcStrengths, caveat: bcCaveat, cta_source: bcCta };\n\n// content: parsed Buyer Check JSON. opts: {postId, imageUrl, imageCredit, logoUrl, logoWhiteUrl}\nfunction buildBuyerCheckSlides(content, opts) {\n  const slides = Array.isArray(content.slides) ? content.slides : [];\n  return BC_ROLES.map((role, i) => {\n    const s = slides.find(x => x && x.role === role) || { role, n: i + 1 };\n    return {\n      slideNumber: i + 1,\n      totalSlides: BC_ROLES.length,\n      role,\n      filename: bcFilename(opts.postId, i + 1, role),\n      html: BC_BUILDERS[role](content, s, opts),\n    };\n  });\n}\n\n// ---- n8n entry point\nconst d = $json;\nreturn buildBuyerCheckSlides(d.buyerCheck || {}, {\n  postId: d.postId,\n  imageUrl: (d.imageRecord && d.imageRecord.url) || '',\n  imageCredit: (d.imageRecord && d.imageRecord.credit) || '',\n  logoUrl: 'http://207.127.99.206:8080/static/carindex-logo.png',\n  logoWhiteUrl: 'http://207.127.99.206:8080/static/carindex-logo-white.png',\n}).map(s => ({ json: s }));\n"
       },
       "id": "16c6fdaa-117a-4475-a0c9-b521906df16b",
       "name": "Carousel Designer",
@@ -2254,7 +2253,7 @@
     },
     {
       "parameters": {
-        "jsCode": "function parseJsonLoose(text) {\n  const cleaned = (text || '').replace(/```json\\s*/gi, '').replace(/```/g, '').trim();\n  try { return JSON.parse(cleaned); } catch (e) { return null; }\n}\nconst draft = parseJsonLoose($json.aiDraft) || {};\n\n// Deterministic brand-name safety net, added 2026-08-27 after a live re-test proved the\n// Content Creation prompt's LOCKED BRAND-NAME GLOSSARY instruction alone is NOT reliable:\n// the model still mistransliterated \"شيري\" (Chery) as \"Shari\" on the original 2026-08-27\n// review, then as \"Sherry\" on the very next re-test after the glossary rule was added -\n// two different wrong spellings from the same instruction, confirming this needs a real\n// find/replace safety net, not just a stronger prompt. Walks every string field in the parsed\n// draft (headline, carousel_slides, platform_captions, hashtags, reel_script, everything) and\n// force-corrects any of the known wrong Latin-script spellings, same \"prompt alone isn't\n// reliable enough, add a deterministic pass\" precedent as Carousel Designer's logo-injection\n// safety net. Two-pass regex: the first pass fixes standalone-word mentions (\"Sherry Tiggo\"),\n// the second (no /i flag - relies on an explicit case list instead, since a case-insensitive\n// lookahead would also treat an uppercase continuation as lowercase and never match) fixes a\n// compound hashtag where the brand name runs directly into the next capitalized word with no\n// separator (e.g. \"#SherryTiggo7\"). Arabic text is untouched - \"شيري\" is already correct, the\n// bug only ever affects the Latin-script spelling.\nconst WRONG_BRAND_SPELLINGS = ['Sherry', 'Shari', 'Cherry', 'SHERRY', 'SHARI', 'CHERRY', 'sherry', 'shari', 'cherry'];\nfunction fixBrandName(text) {\n  if (typeof text !== 'string' || !text) return text;\n  const alternation = WRONG_BRAND_SPELLINGS.join('|');\n  return text\n    .replace(new RegExp(`\\\\b(?:${alternation})\\\\b`, 'g'), 'Chery')\n    .replace(new RegExp(`\\\\b(?:${alternation})(?=[A-Z])`, 'g'), 'Chery');\n}\nfunction fixBrandNamesDeep(value) {\n  if (typeof value === 'string') return fixBrandName(value);\n  if (Array.isArray(value)) return value.map(fixBrandNamesDeep);\n  if (value && typeof value === 'object') {\n    const out = {};\n    for (const [k, v] of Object.entries(value)) out[k] = fixBrandNamesDeep(v);\n    return out;\n  }\n  return value;\n}\nfor (const key of Object.keys(draft)) {\n  draft[key] = fixBrandNamesDeep(draft[key]);\n}\n\n// Image candidates were built well before Content Creation ran (OEM scrape or Nano Banana\n// fallback - see \"Identify Vehicle\"/\"Build Image Candidates\"/\"Build AI Image Candidate\") and\n// are long gone from $json by this point (Parse Content Creation / Merge Verdict reconstruct\n// their own objects and don't carry it forward) - reach back by node name for whichever of the\n// two mutually exclusive branches actually ran, same established try/catch convention used\n// throughout this workflow's other fallback chains.\nlet imageCandidates = [];\nlet imageSourceType = 'none';\ntry {\n  const n = $('Build Image Candidates').first().json;\n  if (n && Array.isArray(n.imageCandidates) && n.imageCandidates.length) {\n    imageCandidates = n.imageCandidates;\n    imageSourceType = n.imageSourceType;\n  }\n} catch (e) { /* OEM branch didn't run this execution */ }\nif (!imageCandidates.length) {\n  try {\n    const n = $('Build AI Image Candidate').first().json;\n    if (n && Array.isArray(n.imageCandidates) && n.imageCandidates.length) {\n      imageCandidates = n.imageCandidates;\n      imageSourceType = n.imageSourceType;\n    }\n  } catch (e) { /* AI-generated branch didn't run this execution */ }\n}\nconst selectedImageIndexRaw = draft.selected_image_index;\nconst selectedImageIndex = (Number.isInteger(selectedImageIndexRaw) && imageCandidates[selectedImageIndexRaw])\n  ? selectedImageIndexRaw\n  : 0;\nconst selectedCandidate = imageCandidates[selectedImageIndex] || null;\nconst imageUrl = selectedCandidate ? selectedCandidate.url : '';\nconst selectedImageReason = (draft.selected_image_reason || '').toString();\n\n// Decision slide needs exactly 2 buy-if / 2 skip-if bullets. Content Creation is instructed to\n// emit arrays of exactly 2, but normalize defensively here in case the model returns a bare\n// string (older prompt shape) or an array with the wrong length - never let a template\n// substitution downstream silently render \"undefined\" or drop a bullet.\nfunction normalizeBulletPair(value, fallback) {\n  let arr;\n  if (Array.isArray(value)) arr = value.map(v => (v || '').toString().trim()).filter(Boolean);\n  else if (typeof value === 'string' && value.trim()) arr = [value.trim()];\n  else arr = [];\n  while (arr.length < 2) arr.push(fallback);\n  return arr.slice(0, 2);\n}\nconst skipIfBullets = normalizeBulletPair(draft.skip_if_ar, '');\nconst buyIfBullets = normalizeBulletPair(draft.buy_if_ar, '');\n\nconst specFacts = (draft.spec_facts && typeof draft.spec_facts === 'object') ? draft.spec_facts : {};\n\nreturn [{\n  json: {\n    ...$json,\n    imageUrl,\n    imageSourceType,\n    selectedImageIndex,\n    selectedImageReason,\n    imageCandidateCount: imageCandidates.length,\n    draftHeadline: draft.post_headline_ar || draft.post_headline_en || draft.headline_ar || draft.headline_en || draft.headline || $json.title,\n    draftHeadlineEn: draft.post_headline_en || draft.post_headline_ar || draft.headline_en || draft.headline_ar || draft.headline || $json.title,\n    draftSkipIf: skipIfBullets.join(' / '),\n    draftSkipIfBullets: skipIfBullets,\n    draftBuyIfBullets: buyIfBullets,\n    draftCarouselSlides: draft.carousel_slides || [],\n    draftReelScript: draft.reel_script || {},\n    draftCaptionAr: draft.caption_ar || '',\n    draftCaptionEn: draft.caption_en || '',\n    draftHashtagsAr: draft.hashtags_ar || [],\n    draftHashtagsEn: draft.hashtags_en || [],\n    draftSourceCitations: draft.source_citations || [],\n    draftPlatformCaptions: draft.platform_captions || {},\n    draftSpecFacts: specFacts,\n    draftDecisionVerdictAr: (draft.decision_verdict_ar || '').toString(),\n    draftHeroStatQuoteAr: (draft.hero_stat_quote_ar || '').toString(),\n    draftComparisonDeltaAr: (draft.comparison_delta_ar || '').toString(),\n    draftPro1DescAr: (draft.pro_1_desc_ar || '').toString(),\n    draftPro2DescAr: (draft.pro_2_desc_ar || '').toString(),\n    draftPro3DescAr: (draft.pro_3_desc_ar || '').toString(),\n    draftCons2DescAr: (draft.cons_2_desc_ar || '').toString(),\n    draftCons3DescAr: (draft.cons_3_desc_ar || '').toString(),\n    draftPro1TitleAr: (draft.pro_1_title_ar || '').toString(),\n    draftPro2TitleAr: (draft.pro_2_title_ar || '').toString(),\n    draftPro3TitleAr: (draft.pro_3_title_ar || '').toString(),\n    draftCons2TitleAr: (draft.cons_2_title_ar || '').toString(),\n    draftCons3TitleAr: (draft.cons_3_title_ar || '').toString(),\n  },\n}];\n"
+        "jsCode": "// Golden path: parse the structured Buyer Check JSON + attach the real image record.\nfunction parseJsonLoose(text) {\n  const cleaned = (text || '').replace(/```json\\s*/gi, '').replace(/```/g, '').trim();\n  try { return JSON.parse(cleaned); } catch (e) {\n    const m = cleaned.match(/\\{[\\s\\S]*\\}/);\n    if (m) { try { return JSON.parse(m[0]); } catch (e2) {} }\n    return null;\n  }\n}\n// Brand-name safety net kept from the previous version (Chery was mistransliterated live).\nconst WRONG = ['Sherry', 'Shari', 'Cherry', 'SHERRY', 'SHARI', 'CHERRY', 'sherry', 'shari', 'cherry'];\nfunction fixDeep(v) {\n  if (typeof v === 'string') return v.replace(new RegExp(`\\\\b(?:${WRONG.join('|')})\\\\b`, 'g'), 'Chery');\n  if (Array.isArray(v)) return v.map(fixDeep);\n  if (v && typeof v === 'object') { const o = {}; for (const [k, x] of Object.entries(v)) o[k] = fixDeep(x); return o; }\n  return v;\n}\nconst buyerCheck = fixDeep(parseJsonLoose($json.aiDraft) || {});\n\nlet cands = [];\ntry { cands = $('Build Image Candidates').first().json.imageCandidates || []; } catch (e) { /* branch did not run */ }\nconst vid = $('Parse Vehicle ID').first().json;\nconst best = cands[0] || null;\nlet host = '';\ntry { host = best ? new URL(best.pageUrl || best.url).hostname : ''; } catch (e) {}\nconst imageRecord = best ? {\n  url: best.url, source_url: best.url, source_page: best.pageUrl || '',\n  credit: host, ai_generated: false,\n  registry_status: best.modelMatchConfidence === 'high' ? 'approved' : 'unreviewed',\n  vehicle: `${vid.vehicleMake} ${vid.vehicleModel}`.trim(),\n  width: best.width || 0, height: best.height || 0,\n} : { url: '', source_url: null, library_ref: null, credit: '', ai_generated: false, registry_status: 'none', vehicle: null };\n\nconst car = buyerCheck.car || {};\nreturn [{ json: {\n  ...$json,\n  buyerCheck,\n  buyerCheckParsed: !!buyerCheck.format,\n  imageRecord,\n  imageUrl: imageRecord.url,\n  format: 'Buyer Check',\n  draftHeadline: (buyerCheck.hook && buyerCheck.hook.ar) || $json.title,\n  draftHeadlineEn: (buyerCheck.hook && buyerCheck.hook.en) || $json.title,\n  carName: [car.make, car.model, car.variant].filter(Boolean).join(' '),\n  draftPlatformCaptions: {},\n} }];\n"
       },
       "type": "n8n-nodes-base.code",
       "position": [
@@ -2317,7 +2316,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Slide generation is now deterministic template substitution (see \"Carousel Designer\"),\n// which can't fail the way per-slide LLM generation used to - the only remaining failure mode\n// is the render call itself (network error to media-render, or media-render/Gotenberg erroring).\n// \"Render Slide to PNG\" runs once per item in standard n8n per-item HTTP node order (9 in, 9\n// out, order preserved), so zip it against \"Carousel Designer\"'s own items by index to recover\n// each render's slideNumber and success/failure - this is a genuine improvement over the old\n// design, which only ever tracked LLM-generation failures and had no visibility into a render\n// call failing outright.\nconst plannedSlides = $('Carousel Designer').all();\nconst renderResults = $('Render Slide to PNG').all();\nconst renderedImageUrls = [];\nconst failedSlideNumbers = [];\nfor (let i = 0; i < plannedSlides.length; i++) {\n  const slideNumber = plannedSlides[i].json.slideNumber;\n  const rendered = renderResults[i] ? renderResults[i].json : {};\n  if (rendered.url) {\n    renderedImageUrls.push(rendered.url);\n  } else {\n    failedSlideNumbers.push(slideNumber);\n  }\n}\nreturn [{\n  json: {\n    ...$('Merge Carousel Inputs').item.json,\n    renderedImageUrls,\n    failedSlideNumbers,\n    totalSlides: plannedSlides.length,\n  },\n}];\n"
+        "jsCode": "// Zip planned slides, render responses and downloaded files (same order, 6 items).\nconst planned = $('Carousel Designer').all();\nconst renders = $('Render Slide to PNG').all();\nconst items = $input.all();\nconst rendered = [];\nfor (let i = 0; i < planned.length; i++) {\n  const p = planned[i].json;\n  const r = renders[i] ? renders[i].json : {};\n  let bytes = 0, width = 0, height = 0, exists = false;\n  if (r.url && items[i] && items[i].binary && items[i].binary.data) {\n    try {\n      const buf = await this.helpers.getBinaryDataBuffer(i, 'data');\n      bytes = buf.length;\n      if (buf.length > 24 && buf.readUInt32BE(12) === 0x49484452) { width = buf.readUInt32BE(16); height = buf.readUInt32BE(20); }\n      exists = bytes > 0;\n    } catch (e) { /* treated as missing */ }\n  }\n  rendered.push({ slideNumber: p.slideNumber, role: p.role, filename: p.filename, url: r.url || '', exists, bytes, width, height });\n}\nreturn [{ json: {\n  ...$('Parse AI Draft').first().json,\n  rendered,\n  renderedImageUrls: rendered.map(x => x.url).filter(Boolean),\n  slideFiles: rendered.map(x => x.filename),\n  failedSlideNumbers: rendered.filter(x => !x.exists).map(x => x.slideNumber),\n  totalSlides: planned.length,\n} }];\n"
       },
       "type": "n8n-nodes-base.code",
       "position": [
@@ -2365,7 +2364,7 @@
         "columns": {
           "mappingMode": "defineBelow",
           "value": {
-            "PostId": "={{ $('Merge Slides Into Item').item.json.postId }}",
+            "PostId": "={{ $('QA Gate').first().json.postId }}",
             "TelegramMessageId": "={{ $json.result.message_id }}"
           },
           "matchingColumns": [
@@ -2578,7 +2577,7 @@
       },
       "type": "n8n-nodes-base.googleSheets",
       "position": [
-        1104,
+        4440,
         80
       ],
       "id": "64662d5a-2e34-41e5-b83d-e6a137fda949",
@@ -2676,7 +2675,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const staticData = $getWorkflowStaticData('global');\nconst updates = $json.result || [];\nlet maxUpdateId = staticData.telegramUpdateOffset ? staticData.telegramUpdateOffset - 1 : -1;\nconst replies = [];\nfor (const update of updates) {\n  if (update.update_id > maxUpdateId) maxUpdateId = update.update_id;\n  const msg = update.message;\n  if (!msg || !msg.reply_to_message) continue;\n  replies.push({\n    json: {\n      replyToMessageId: msg.reply_to_message.message_id,\n      replyText: (msg.text || '').trim().toUpperCase(),\n    },\n  });\n}\nstaticData.telegramUpdateOffset = maxUpdateId + 1;\nreturn replies;"
+        "jsCode": "// Telegram approval: message builder + reply parser. No auto-publishing anywhere.\n// Used by the n8n \"Build Telegram Approval\" and \"Extract Reply\" Code nodes and locally.\n\nfunction tgApprovalText(post, qa) {\n  const c = post.content;\n  const car = [c.car.make, c.car.model, c.car.variant].filter(Boolean).join(' ');\n  const srcs = (c.sources || []).map(s => `• ${s.outlet} (${s.published}) ${s.url}`).join('\\n');\n  const warn = (qa.warnings || []).length ? `\\nQA warnings:\\n${qa.warnings.map(w => '• ' + w).join('\\n')}\\n` : '';\n  const missing = (c.key_data || []).filter(k => k.status !== 'verified').map(k => `${k.label_en} (${k.status})`);\n  return [\n    'CarIndex - approval needed',\n    '',\n    `Story: ${post.storyTitle}`,\n    `Car: ${car}`,\n    `Format: Buyer Check (6 slides) | Type: ${c.story_type}`,\n    `Hook: ${c.hook.en}`,\n    `Files: ${post.files.map(f => f.filename).join(', ')}`,\n    `Image: ${post.image.credit}`,\n    missing.length ? `Marked missing: ${missing.join(', ')}` : 'Marked missing: none',\n    '',\n    'Sources:',\n    srcs,\n    `QA: PASSED (${(qa.failures || []).length} failures)`,\n    warn,\n    `PostId: ${post.postId}`,\n    '',\n    'REPLY to this message:',\n    'YES  -> approve',\n    'NO <reason>  -> reject (reason is recorded)',\n    'Nothing is published automatically.',\n  ].join('\\n');\n}\n\n// Returns {decision: 'APPROVED'|'REJECTED'|null, reason}\nfunction tgParseReply(text) {\n  const t = String(text || '').trim();\n  // (?=...) instead of \\b: JS \\b does not work next to Arabic letters.\n  const END = '(?=$|[\\\\s:,.!\\\\-–—])';\n  if (new RegExp(`^(yes|y|approve|approved|نعم|موافق|أيوه|ايوه)${END}[\\\\s.!]*$`, 'i').test(t)) {\n    return { decision: 'APPROVED', reason: '' };\n  }\n  const m = t.match(new RegExp(`^(no|n|reject|rejected|لا|رفض)${END}[\\\\s:,.\\\\-–—]*([\\\\s\\\\S]*)$`, 'i'));\n  if (m) return { decision: 'REJECTED', reason: m[2].trim() || '(no reason given)' };\n  return { decision: null, reason: '' };\n}\n\n// ---- n8n entry point\nconst staticData = $getWorkflowStaticData('global');\nconst updates = $json.result || [];\nlet maxUpdateId = staticData.telegramUpdateOffset ? staticData.telegramUpdateOffset - 1 : -1;\nconst replies = [];\nfor (const update of updates) {\n  if (update.update_id > maxUpdateId) maxUpdateId = update.update_id;\n  const msg = update.message;\n  if (!msg || !msg.reply_to_message) continue;\n  const parsed = tgParseReply(msg.text || '');\n  if (!parsed.decision) continue; // ambiguous replies change nothing\n  replies.push({ json: { replyToMessageId: msg.reply_to_message.message_id, replyText: (msg.text || '').trim(), decision: parsed.decision, reason: parsed.reason } });\n}\nstaticData.telegramUpdateOffset = maxUpdateId + 1;\nreturn replies;\n"
       },
       "type": "n8n-nodes-base.code",
       "position": [
@@ -2739,8 +2738,8 @@
           "conditions": [
             {
               "id": "200b791e-eed1-4d3a-ae25-85bfeb2590f8",
-              "leftValue": "={{ $('Extract Reply').item.json.replyText }}",
-              "rightValue": "YES",
+              "leftValue": "={{ $('Extract Reply').item.json.decision }}",
+              "rightValue": "APPROVED",
               "operator": {
                 "type": "string",
                 "operation": "equals"
@@ -3006,7 +3005,7 @@
     {
       "parameters": {
         "chatId": "1020351066",
-        "text": "=✅ Approved: {{ $json.Title }}\nStatus set to Approved — ready to post. (Auto-publish via Postiz not yet connected; post manually for now using the rendered images in the Sheet's ImageURLs column.)",
+        "text": "=Approved: {{ $json.Title }}\nStatus = Approved. Final files are in the Sheet (SlideFiles / ImageURLs). Nothing was published.",
         "additionalFields": {
           "appendAttribution": false
         }
@@ -3044,7 +3043,8 @@
           "mappingMode": "defineBelow",
           "value": {
             "PostId": "={{ $json.PostId }}",
-            "Status": "Rejected"
+            "Status": "Rejected",
+            "RejectReason": "={{ $('Extract Reply').item.json.reason }}"
           },
           "matchingColumns": [
             "PostId"
@@ -3272,7 +3272,7 @@
     {
       "parameters": {
         "chatId": "1020351066",
-        "text": "=❌ Rejected: {{ $json.Title }}\nStatus set to Rejected.",
+        "text": "=Rejected: {{ $json.Title }}\nReason recorded: {{ $('Extract Reply').item.json.reason }}",
         "additionalFields": {
           "appendAttribution": false
         }
@@ -4325,7 +4325,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({\n  model: 'openai/gpt-oss-20b',\n  messages: [\n    { role: 'system', content: \"You are CarIndex's lead content strategist and writer. You create skeptical, data-first car content for Egyptian buyers, published bilingually (Arabic + English on every slide) across Instagram, Facebook, X, Threads, TikTok, and YouTube.\\n\\nOutput format: Strict JSON with these keys:\\n- reel_script: {hook_ar, hook_en, body_ar, body_en, cta_ar, cta_en, duration_seconds}\\n- carousel_slides: Array of content beats for an Instagram carousel — NOT a fixed count. Produce one object per genuine, distinct fact/comparison/pro/con this article actually supports (typically 3-8) — never pad with filler to hit a round number, and never omit real supported content just to keep the array short. Each object: {slide_role, headline_ar, headline_en, body_ar, body_en, data_point, visual_note}. slide_role is one of: \\\"hero_stat\\\" (the single most important number/stat), \\\"spec\\\" (a supporting data point), \\\"pro\\\" (something genuinely good, in both languages), \\\"con\\\" (a fair, specific caveat — content-driven, not a copy of skip_if), \\\"comparison\\\" (a rival car / before-after / year-over-year comparison beat). Include at least one hero_stat, and a comparison when the article genuinely supports one — never invent a comparison if the source has no real basis for one. data_point is written once, Latin numerals, understandable regardless of language (e.g. \\\"3,450,000 EGP\\\", \\\"1.6L Turbo\\\").\\n- post_headline_ar, post_headline_en: the headline for the POST AS A WHOLE (this is a DIFFERENT field from each carousel_slides item's own headline_ar/headline_en, which is per-slide only — do not skip this top-level field just because you already wrote per-slide headlines). MUST lead with a specific, sourced number, price, or direct comparison drawn from the article — never a generic superlative or vague claim with no number attached. \\\"Cheapest crossover in Egypt\\\" is not a headline on its own; \\\"710,000 EGP after cashback — the cheapest crossover in Egypt right now\\\" is. If the source genuinely gives you no number or comparison to lead with, lead with the single most concrete, specific fact it does contain rather than a vague hook — never fall back to generic phrasing just because a number wasn't available.\\n- spec_facts: Object of clean, structured mechanical facts pulled from the article (and, only where the article is silent, your own accurate general market knowledge of the car and its real-world competitors — this section always needs concrete values because it drives a fixed carousel template that always renders a spec/comparison slide, unlike the free-text fields above which can vary in count). Every numeric value MUST be a plain string of digits/decimal point only, no currency symbols, no thousands separators, no unit text (e.g. \\\"1350000\\\" not \\\"1,350,000 EGP\\\" or \\\"1.35M\\\"). Shape:\\n  {\\n    \\\"model\\\": \\\"...\\\",                        // e.g. \\\"JAC JS2\\\" — brand + model, no trim/year\\n    \\\"price_egp\\\": \\\"...\\\",                    // this car's price in EGP, digits only\\n    \\\"displacement_cc\\\": \\\"...\\\",              // digits only\\n    \\\"power_hp\\\": \\\"...\\\",                     // digits only\\n    \\\"torque_nm\\\": \\\"...\\\",                    // digits only\\n    \\\"assembly_ar\\\": \\\"...\\\", \\\"assembly_en\\\": \\\"...\\\",  // e.g. \\\"تجميع محلي\\\" / \\\"Locally assembled\\\" (or \\\"مستوردة\\\" / \\\"Imported\\\")\\n    \\\"assembly_label_ar\\\": \\\"...\\\",            // SHORT single-word label only, always exactly \\\"محلي\\\" or \\\"مستورد\\\" (never \\\"تجميع محلي\\\" or any other phrasing) - this is a separate, terser field from assembly_ar above because it renders in a table cell next to single-word competitor labels, where the fuller assembly_ar phrase would look inconsistent\\n    \\\"segment_ar\\\": \\\"...\\\", \\\"segment_en\\\": \\\"...\\\",    // this car's real segment, e.g. \\\"كروس أوفر\\\" / \\\"Crossover\\\", \\\"سيدان\\\" / \\\"Sedan\\\" — must match the actual vehicle, never assume crossover\\n    \\\"competitor_1_name\\\": \\\"...\\\", \\\"competitor_1_price_egp\\\": \\\"...\\\", \\\"competitor_1_power_hp\\\": \\\"...\\\", \\\"competitor_1_displacement_cc\\\": \\\"...\\\",\\n    \\\"competitor_2_name\\\": \\\"...\\\", \\\"competitor_2_price_egp\\\": \\\"...\\\", \\\"competitor_2_power_hp\\\": \\\"...\\\", \\\"competitor_2_displacement_cc\\\": \\\"...\\\"\\n  }\\n  For competitor_1/competitor_2: prefer real rivals the article itself names or clearly implies (same segment, similar price band). If the article names none, choose two real, well-known models actually sold in Egypt that genuinely compete with this car on segment and price — this is the one section of the schema where accurate general market knowledge is expected and required, not a SOURCING RULE violation, since the comparison slide always needs two real numbers to show. Still never invent a nonexistent trim or a number you have no basis for — if you are not confident in a competitor's exact price/spec, use your best real-world estimate rather than leaving it blank, since an approximate real competitor is more useful here than an empty comparison.\\n- skip_if_ar, skip_if_en: Array of exactly 2 strings each — two DIFFERENT, specific reasons/buyer-types who should NOT buy this car (e.g. [\\\"أي حد بيعمل رحلات طويلة على الطريق السريع يوميًا\\\", \\\"لو القيمة الاستبدالية بعد 3 سنين أهم عندك من سعر الشراء\\\"]). Never generic or interchangeable with any other car's skip_if, never two phrasings of the same point. If the source article gives no explicit downside, infer two fair, defensible ones from the car's actual specs, price bracket, or category — do not omit or thin these out because the source didn't spell them out.\\n- buy_if_ar, buy_if_en: Array of exactly 2 strings each — the mirror of skip_if, two DIFFERENT specific buyer profiles this car genuinely fits (e.g. [\\\"ميزانيتك حوالين المليون جنيه وعايز عربية جديدة بضمان وكيل\\\", \\\"استخدامك مدينة وطرق يومية، مش رحلات سريعة طويلة\\\"]). Required whenever skip_if is populated: CarIndex's Instagram carousel renders skip_if and buy_if together as a locked \\\"Buy If / Skip If\\\" decision-framework slide, so both sides must be real and equally specific — never a full sentence on one side and a throwaway phrase on the other.\\n- decision_verdict_ar: String, 1-2 sentences, the overall verdict for this car in the same register as this example (JAC JS2 sample, match this voice and length — roughly 160-220 Arabic characters, do not run long): \\\"JS2 مش أسرع ولا أفخم حاجة في الفئة. هي أرخص طريقة للوصول لكروس أوفر جديدة بضمان وكيل في مصر، والتجميع المحلي هو الميزة الأساسية.\\\" If the source article itself cites two different figures for the same headline fact (see SOURCED CONFLICT RESOLUTION below), fold a short, plain mention of that into this verdict rather than silently picking one number.\\n- hero_stat_quote_ar: String, one short punchy sentence (roughly 60-110 Arabic characters) that frames why the single most important number/stat matters — not a repeat of the number itself, the \\\"so what.\\\" Match this voice/length (JAC JS2 sample): \\\"التجميع المحلي هو السبب الأساسي إن السعر ده أقل من المستورد المنافس في نفس المقاس.\\\"\\n- comparison_delta_ar: String, one short sentence (roughly 60-100 Arabic characters) stating the real, concrete gap between this car and its two named competitors from spec_facts — a number or a clear qualitative difference, not vague praise. Match this voice/length (JAC JS2 sample): \\\"نفس سعة المحرك تقريبًا وقوة متقاربة — الفرق الحقيقي 85,000 إلى 150,000 جنيه في السعر.\\\"\\n- pro_1_title_ar, pro_2_title_ar, pro_3_title_ar: Three DIFFERENT short category labels (2-4 Arabic words each, e.g. \\\"\\u0627\\u0644\\u062a\\u062c\\u0645\\u064a\\u0639 \\u0627\\u0644\\u0645\\u062d\\u0644\\u064a\\\", \\\"\\u0645\\u062d\\u0631\\u0643 \\u0628\\u0633\\u064a\\u0637 \\u0648\\u0637\\u0628\\u064a\\u0639\\u064a \\u0627\\u0644\\u062a\\u0646\\u0641\\u0633\\\") that name what each pro_N_desc_ar point is actually about \\u2014 pro_1_title_ar names the topic of pro_1_desc_ar, pro_2_title_ar names pro_2_desc_ar's topic, and so on. These render as the bold headline directly above each point's description on the slide, so a mismatched title (e.g. a label about local assembly over a description about engine simplicity) is a visible defect, not a cosmetic one. Never reuse the same title for two different points. pro_1_desc_ar, pro_2_desc_ar, pro_3_desc_ar: Three DIFFERENT strings, each one specific, genuinely good point about this car (roughly 70-120 Arabic characters each) — not three phrasings of the same idea. Match this voice/length (JAC JS2 sample): \\\"150000 جنيه لكروس أوفر بخمس مقاعد — من أقل نقاط الدخول في الفئة دي حاليًا.\\\", \\\"قطع الغيار والصيانة أسهل، والسعر أقل تأثرًا بتقلبات الاستيراد.\\\", \\\"1500cc من غير تيربو — أقل تعقيد وأقل تكلفة صيانة على المدى الطويل.\\\" These render on a fixed-layout slide — do not exceed roughly 130 Arabic characters or the layout will overflow.\\n- cons_2_title_ar, cons_3_title_ar: Two DIFFERENT short category labels (2-4 Arabic words each, e.g. \\\"\\u0627\\u0644\\u0642\\u064a\\u0645\\u0629 \\u0627\\u0644\\u0627\\u0633\\u062a\\u0628\\u062f\\u0627\\u0644\\u064a\\u0629\\\", \\\"\\u0634\\u0628\\u0643\\u0629 \\u0627\\u0644\\u062e\\u062f\\u0645\\u0629\\\") that name what each cons_N_desc_ar point is actually about, same title-must-match-description rule as the pro titles above \\u2014 the first, mechanical power/torque caveat's title is generated by the template itself, not by you. cons_2_desc_ar, cons_3_desc_ar: Two DIFFERENT strings, each a fair, specific caveat (roughly 70-120 Arabic characters each) — a first, more mechanical caveat about power/torque is handled separately by the template itself, so these two must be genuinely different concerns (e.g. resale value, service network, feature gaps, warranty terms) — not a repeat of the power/torque point. Match this voice/length (JAC JS2 sample): \\\"العلامات الصينية الأحدث في السوق المصري لسه بتبني تاريخ إعادة بيع.\\\", \\\"أقل من العلامات اليابانية والكورية المستقرة — اسأل عن أقرب مركز صيانة قبل الشراء.\\\" These render on a fixed-layout slide — do not exceed roughly 130 Arabic characters or the layout will overflow.\\n- selected_image_index: Integer (0-based). The IMAGE CANDIDATES list given to you in the user message is text metadata only (title, market, source URL) - you cannot see the actual images. Pick the index whose title/market/source text most plausibly matches any trim, color, or angle the article specifically mentions. If nothing in the article distinguishes the candidates, or there is only one candidate, use 0.\\n- selected_image_reason: String, one short sentence explaining the pick (or noting no distinguishing detail was available and 0 was used by default).\\n- source_citations: Array of strings, one per real source actually used (outlet name + what it sourced, e.g. \\\"Masrawy Autos — official launch price\\\"). This list renders as its own standing, locked slide at the end of every carousel, so only include sources genuinely behind a claim in this draft — never pad it, and never leave it empty if the source article itself is the citation (cite the source article by name at minimum).\\n- hashtags_ar, hashtags_en: Array of strings, each language's own hashtag conventions\\n- tone_check: String, self-assessment of tone\\n- platform_captions: Object with this exact shape:\\n  {\\n    \\\"instagram\\\": {\\\"caption_ar\\\": \\\"...\\\", \\\"caption_en\\\": \\\"...\\\"},\\n    \\\"facebook\\\": {\\\"caption_ar\\\": \\\"...\\\", \\\"caption_en\\\": \\\"...\\\"},\\n    \\\"x\\\": {\\\"caption_ar\\\": \\\"...\\\", \\\"caption_en\\\": \\\"...\\\"},\\n    \\\"threads\\\": {\\\"caption_ar\\\": \\\"...\\\", \\\"caption_en\\\": \\\"...\\\"},\\n    \\\"tiktok\\\": {\\\"caption_ar\\\": \\\"...\\\", \\\"caption_en\\\": \\\"...\\\"},\\n    \\\"youtube\\\": {\\\"title_ar\\\": \\\"...\\\", \\\"title_en\\\": \\\"...\\\", \\\"description_ar\\\": \\\"...\\\", \\\"description_en\\\": \\\"...\\\"}\\n  }\\n\\nNO REPEATED BOILERPLATE ACROSS PLATFORMS: each of the six platform_captions entries must be genuinely distinct copy for that platform's audience and format, not the same generic line reused with different formatting. This means the hook (opening line) and the closing CTA/tagline must differ, in substance, across all six entries \\u2014 never reuse the exact same sentence (e.g. a rhetorical question like \\\"Need 4WD?\\\") verbatim in two or more of instagram/facebook/x/threads/tiktok/youtube's caption or description fields. A shared fact (the price, the spec) can appear in all six \\u2014 that's expected \\u2014 but the framing, hook, and call-to-action sentence around that fact must be written fresh per platform, matching each platform's own tone already described above (Instagram hook+body+CTA, Facebook conversational, X terse, Threads longer-form, TikTok hook-first, YouTube SEO-descriptive).\\n\\nSOURCING RULE — the single most important rule in this prompt, apply it to every quantitative or comparative claim you write (a price, a spec number, a superlative like \\\"cheapest/best/first/most/highest/lowest\\\", a comparison to another car, trim, or year):\\n- Before stating it as fact, check: does the SUMMARY/source text actually contain this claim, or something close enough to support it directly?\\n- If yes: state it plainly. You do not need to cite inline for every sentence, but the claim must be traceable to something actually in the source material you were given.\\n- If no — the claim is your own inference, general knowledge, or an estimate not present in the source: either drop it, or explicitly mark it [UNVERIFIED] (in both languages) rather than stating it as bare fact. A superlative with no number or source behind it (\\\"the best in its class\\\") is exactly the kind of claim that needs [UNVERIFIED] or needs to be cut — never state a bare superlative with nothing under it.\\n- This applies everywhere a claim appears — headline, hook, body, data_point, platform_captions — not just once.\\n- The one deliberate exception is spec_facts.competitor_1/competitor_2 when the article names no real rival (see spec_facts above) — general market knowledge is expected there specifically, because the comparison slide is a fixed template element that always needs two real numbers.\\n\\nRules:\\n- Arabic fields: Egyptian Arabic (عامية مصرية), Arabic script, street-smart and numbers-forward — never Modern Standard Arabic, never a stiff translation of the English. Genuine colloquial register sounds like \\\"هتحس بيها\\\", \\\"بس\\\", \\\"اللي\\\", \\\"هيكون\\\" — not textbook MSA phrasing.\\n- English fields: Bloomberg-tight, no fluff — write it as its own original copy, not a translation of the Arabic either\\n- Include price context if mentioned in source\\n- Flag any unverified claims with [UNVERIFIED] (in both languages) — see SOURCING RULE above\\n- Never use hype or dealer-ad language: no \\\"amazing,\\\" \\\"incredible,\\\" \\\"must-buy,\\\" \\\"don't miss out,\\\" \\\"limited time,\\\" exclamation-heavy copy, or Arabic equivalents (e.g. \\\"لا تفوت الفرصة\\\", \\\"عرض لفترة محدودة\\\"). Write like a numbers-first analyst, never like a sales pitch.\\n- LOCKED BRAND-NAME GLOSSARY: never transliterate, paraphrase, or phonetically respell a car brand name in Latin script \\u2014 use the exact spelling below, verbatim, every time it appears in English text or as an inline-English term in Arabic text (headline, captions, hashtags, slide copy). Confirmed real defect: \\\"\\u0634\\u064a\\u0631\\u064a\\\" (Chery) has been rendered as \\\"Shari\\\" in past output \\u2014 this must never happen again. Locked spellings: Chery, Geely, Jetour, Changan, GAC, BYD, MG, Great Wall Motors (GWM), Haval, Exeed, Deepal, Jaecoo, Omoda, Skywell, Voyah, Zeekr, JAC, SWM, Baic, Dongfeng. For any brand not on this list, copy its Latin-script spelling exactly as it appears in the source article \\u2014 never guess a phonetic transliteration from the Arabic name.\\n- SOURCED CONFLICT RESOLUTION: if the source article itself cites two different figures for the same fact (e.g. a pre-cashback vs. post-cashback price, or two outlets quoted with different numbers), do not silently pick one and present it as the figure. Say so directly, in both languages, in the tone of digging further rather than guessing — the house pattern for this is \\\"لما مصدرين يختلفوا... بندور تاني\\\" / \\\"when sources disagree, we dig further, not guess\\\" — then give both figures with what each represents, and list both in source_citations. This is more honest than averaging or arbitrarily choosing one.\\n- Every skip_if must be specific and fair, in both languages — see skip_if_ar/en above. Every buy_if must be equally specific — see buy_if_ar/en above; a car with a real skip_if always has a real buy_if too.\\n\\nPLATFORM CAPTION RULES — each platform_captions entry must be genuinely distinct copy written for that platform's format and reading behavior. Never reuse headline_ar/en or skip_if_ar/en verbatim, and never just shorten/lengthen one platform's caption to make another — same underlying facts and citations, independently written each time:\\n- instagram: hook line, then a short body (1-3 lines expanding the number/claim), then a CTA line (save/share/follow prompt). End with a hashtag block on its own line(s) — use 15-20 tags mixing broad category tags (e.g. #CarsEgypt, #SUV, #SedanEgypt) with specific niche ones (model, brand, price-point, city), consistent with hashtags_ar / hashtags_en plus platform extras. Use real line breaks (\\\\n) between hook / body / CTA / hashtags.\\n- facebook: conversational, 3-5 short sentences, minimal-to-no hashtags (0-2 max). Write like a knowledgeable friend explaining the story, not an ad. Still numbers-first, no hype.\\n- x: hard cap under 280 characters INCLUDING spaces, per language version. Lead with the number or claim. 0-2 hashtags max, only if they fit without crowding the point.\\n- threads: casual hybrid of Instagram's directness and X's brevity, under 500 characters per language. Light hashtag use (0-2).\\n- tiktok: hook-first — the first line must work standalone as the on-screen caption a viewer sees before tapping \\\"more.\\\" Under ~150 characters per language. Casual, punchy. 3-5 hashtags max.\\n- youtube: NOT a caption. title_ar / title_en: SEO-keyword-rich, honest, no clickbait, under 70 characters each. description_ar / description_en: long-form, 2-4 short paragraphs, keyword-rich, restate the key data points, include a source citation line, end with a hashtag block (5-8 tags). No hard cap but keep each description under ~1500 characters.\\n- All the same brand voice rules apply across every platform: numbers first, no hype words, every claim sourced, Egyptian colloquial Arabic for _ar fields, Bloomberg-tight English for _en fields.\" },\n    { role: 'user', content: `Write bilingual content based on this scraped article:\n\nTITLE: ${$('Code in JavaScript').item.json.title}\nSOURCE: ${$('Code in JavaScript').item.json.source}\nSUMMARY: ${$('Code in JavaScript').item.json.contentSnippet}\nURL: ${$('Code in JavaScript').item.json.link}\nORIGINAL LANGUAGE: ${$('Code in JavaScript').item.json.language}\n\nIMAGE CANDIDATES (text metadata only - you cannot see these images, judge only from the text given; pick the one whose title/market/source most plausibly matches any trim, color, or angle the article mentions):\n${(Array.isArray($json.imageCandidates) ? $json.imageCandidates : []).map(c => `[${c.index}] market=${c.market} title=\"${c.title || 'untitled'}\" source=${(c.pageUrl || '').slice(0, 90)}`).join('\\n')}\n\nRequirements:\n- Platform: Instagram (Reel + Carousel), every field bilingual per the schema above\n- Also produce platform_captions: genuinely distinct bilingual copy for Instagram, Facebook, X, Threads, TikTok (captions) and YouTube (title + description) per the platform caption rules in your instructions — not reused headline/skip_if text, not a resized version of another platform's caption\n- Also produce spec_facts (structured mechanical numbers — model, price, displacement, power, torque, assembly, segment, and two real named competitors with their own price/power/displacement) and the fixed-layout fields (decision_verdict_ar, hero_stat_quote_ar, comparison_delta_ar, pro_1/2/3_desc_ar, cons_2/3_desc_ar) per the schema above — these feed a fixed carousel template, so match the JAC JS2 sample voice and length given in each field's instructions rather than writing at whatever length feels natural\n- Include price context if mentioned\n- Flag any unverified claims\n- Pick selected_image_index from the IMAGE CANDIDATES list above per the schema instructions, and give a one-sentence selected_image_reason` }\n  ],\n  temperature: 0.7,\n  max_tokens: 10000,\n}) }}",
+        "jsonBody": "={{ JSON.stringify({\n  model: 'openai/gpt-oss-20b',\n  messages: [\n    { role: 'system', content: \"You are CarIndex's content editor. CarIndex is an independent automotive data brand for Egyptian car buyers. Voice: numbers first, opinions last. You write STRUCTURED CONTENT ONLY. You do not design anything: no HTML, no colors, no fonts, no layout. A fixed renderer owns layout.\\n\\nFORMAT IS FIXED: \\\"buyer_check\\\", exactly 6 slides, in this order and with these roles:\\n1 cover, 2 key_fact, 3 why_it_matters, 4 strengths, 5 caveat, 6 cta_source.\\n\\nFACT RULES (hard rules, the draft is rejected automatically if broken):\\n- Use ONLY facts present in the SOURCE ARTICLE and the VERIFIED FACTS block you are given. No general knowledge, no estimates, no \\\"typical\\\" figures.\\n- Every number you write (price, hp, Nm, cc, km, %, units, dates) must exist as a key_data entry with a source_id that points to an entry in sources[]. Numbers in slide text must be written exactly as in key_data.value (Latin digits, thousands separators allowed: 1,080,000).\\n- If a fact the format would normally show is not in the sources, add it to key_data with \\\"value\\\": null, \\\"status\\\": \\\"missing\\\". Never fill it. Never invent a competitor, a price, a spec or a claim.\\n- If two sources disagree on a number, use \\\"status\\\": \\\"conflict\\\", \\\"value\\\": null, and put both figures in \\\"note\\\". Do not pick one.\\n- No superlatives (cheapest, best, first, only, most, largest, أرخص, أفضل, أول, الوحيد) unless the exact claim is in a source; if used, it must be a key_data entry with status \\\"verified\\\".\\n- Forbidden hype words (both languages): amazing, incredible, must-buy, unbeatable, game-changer, revolutionary, insane, don't miss, رهيب, خرافي, أسطوري, متفوتش, لا تفوت, صفقة العمر, جبار, وحش.\\n- Arabic fields: Egyptian Arabic in Arabic script, Latin digits only (never ١٢٣). English fields: plain, tight, no Arabic characters.\\n\\nOUTPUT: strict JSON only, no markdown fences, this exact shape:\\n{\\n  \\\"language\\\": \\\"ar-en\\\",\\n  \\\"format\\\": \\\"buyer_check\\\",\\n  \\\"story_type\\\": \\\"buyer_check | price_change | comparison | new_model | market_data\\\",\\n  \\\"objective\\\": \\\"save | share | reach\\\",\\n  \\\"car\\\": {\\\"make\\\": \\\"\\\", \\\"model\\\": \\\"\\\", \\\"variant\\\": \\\"\\\", \\\"model_year\\\": \\\"\\\", \\\"market\\\": \\\"EG\\\"},\\n  \\\"hook\\\": {\\\"ar\\\": \\\"\\\", \\\"en\\\": \\\"\\\"},\\n  \\\"key_data\\\": [\\n    {\\\"id\\\": \\\"k1\\\", \\\"label_ar\\\": \\\"\\\", \\\"label_en\\\": \\\"\\\", \\\"value\\\": \\\"1,080,000\\\" or null, \\\"unit\\\": \\\"EGP | hp | Nm | cc | km | % | units | ''\\\",\\n     \\\"status\\\": \\\"verified | missing | conflict\\\", \\\"source_id\\\": \\\"s1\\\" or null, \\\"note\\\": \\\"\\\"}\\n  ],\\n  \\\"slides\\\": [\\n    {\\\"n\\\": 1, \\\"role\\\": \\\"cover\\\",          \\\"title_ar\\\": \\\"\\\", \\\"title_en\\\": \\\"\\\", \\\"fact_ids\\\": [\\\"k1\\\"]},\\n    {\\\"n\\\": 2, \\\"role\\\": \\\"key_fact\\\",       \\\"title_ar\\\": \\\"\\\", \\\"title_en\\\": \\\"\\\", \\\"body_ar\\\": \\\"\\\", \\\"body_en\\\": \\\"\\\", \\\"fact_ids\\\": [\\\"k1\\\"]},\\n    {\\\"n\\\": 3, \\\"role\\\": \\\"why_it_matters\\\", \\\"title_ar\\\": \\\"\\\", \\\"title_en\\\": \\\"\\\", \\\"body_ar\\\": \\\"\\\", \\\"body_en\\\": \\\"\\\", \\\"fact_ids\\\": []},\\n    {\\\"n\\\": 4, \\\"role\\\": \\\"strengths\\\",      \\\"title_ar\\\": \\\"\\\", \\\"title_en\\\": \\\"\\\", \\\"points\\\": [{\\\"ar\\\": \\\"\\\", \\\"en\\\": \\\"\\\", \\\"fact_ids\\\": []}], \\\"fact_ids\\\": []},\\n    {\\\"n\\\": 5, \\\"role\\\": \\\"caveat\\\",         \\\"title_ar\\\": \\\"\\\", \\\"title_en\\\": \\\"\\\", \\\"body_ar\\\": \\\"\\\", \\\"body_en\\\": \\\"\\\", \\\"skip_if\\\": [{\\\"ar\\\": \\\"\\\", \\\"en\\\": \\\"\\\"}], \\\"fact_ids\\\": []},\\n    {\\\"n\\\": 6, \\\"role\\\": \\\"cta_source\\\",     \\\"title_ar\\\": \\\"\\\", \\\"title_en\\\": \\\"\\\", \\\"fact_ids\\\": []}\\n  ],\\n  \\\"caveat\\\": {\\\"ar\\\": \\\"\\\", \\\"en\\\": \\\"\\\"},\\n  \\\"sources\\\": [{\\\"id\\\": \\\"s1\\\", \\\"outlet\\\": \\\"\\\", \\\"url\\\": \\\"\\\", \\\"published\\\": \\\"YYYY-MM-DD\\\", \\\"what\\\": \\\"\\\"}],\\n  \\\"visual_direction\\\": {\\\"subject\\\": \\\"exterior, the exact make/model/variant\\\", \\\"angle\\\": \\\"front three-quarter preferred\\\", \\\"notes\\\": \\\"\\\"}\\n}\\n\\nLENGTH LIMITS (fixed layout): hook.ar <= 70 chars, hook.en <= 80, titles <= 60, body_ar/body_en <= 220, each point <= 120, 2-3 strengths points, 1-2 skip_if items.\\nkey_fact slide: fact_ids[0] is the one number the post is about.\\ncaveat: must be a real, specific downside or open question taken from the sources or from a missing/conflicting fact. If the sources give none, say what is not yet known (e.g. \\\"no post-launch sales data yet\\\").\" },\n    { role: 'user', content: `Write a Buyer Check post from this article. Use only facts in it.\\n\\nTITLE: ${$('Code in JavaScript').item.json.title}\\nSOURCE OUTLET: ${$('Code in JavaScript').item.json.source}\\nURL: ${$('Code in JavaScript').item.json.link}\\nPUBLISHED: ${$('Code in JavaScript').item.json.isoDate || ''}\\nSUMMARY: ${$('Code in JavaScript').item.json.contentSnippet}\\nLANGUAGE: ${$('Code in JavaScript').item.json.language}\\n\\nVERIFIED FACTS: none beyond the article above. Anything not in it is missing.` }\n  ],\n  temperature: 0.2,\n  max_tokens: 6000,\n}) }}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -5979,7 +5979,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const raw = (($json.oemCandidates || []).filter(c => c.url));\n// High-confidence (model name actually found in the page/image URL) first, then the rest -\n// see CLAUDE.md for why this matters: a bare site: query alone returned other models' pages\n// mixed in for JAC's Egypt site (JS4/S7 pages showed up in a \"JAC JS2\" query).\nraw.sort((a, b) => (b.modelMatchConfidence === 'high' ? 1 : 0) - (a.modelMatchConfidence === 'high' ? 1 : 0));\nconst capped = raw.slice(0, 6);\nconst imageCandidates = capped.map((c, i) => ({\n  index: i,\n  url: c.url,\n  title: c.title || '',\n  market: c.market,\n  pageUrl: c.pageUrl,\n  modelMatchConfidence: c.modelMatchConfidence,\n}));\nreturn [{\n  json: {\n    ...$('Parse Vehicle ID').first().json,\n    imageCandidates,\n    imageSourceType: 'oem',\n  },\n}];"
+        "jsCode": "// Golden path: only images whose page/image URL contains the model name (modelMatchConfidence\n// 'high'). Low-confidence DDG hits (other models on the same OEM site) are dropped.\nconst raw = (($json.oemCandidates || []).filter(c => c.url && c.modelMatchConfidence === 'high'));\nconst imageCandidates = raw.slice(0, 6).map((c, i) => ({\n  index: i, url: c.url, title: c.title || '', market: c.market, pageUrl: c.pageUrl,\n  width: c.width || 0, height: c.height || 0, modelMatchConfidence: c.modelMatchConfidence,\n}));\nreturn [{ json: { ...$('Parse Vehicle ID').first().json, imageCandidates, imageSourceType: imageCandidates.length ? 'oem' : 'none' } }];\n"
       },
       "id": "id-vehicle-11",
       "name": "Build Image Candidates",
@@ -6484,6 +6484,408 @@
           "name": "Telegram account"
         }
       }
+    },
+    {
+      "parameters": {
+        "jsCode": "// No real image found. The post continues so the draft is still logged, but QA will stop it.\n// Replaces the Nano Banana AI-image fallback on the golden path.\nreturn [{ json: { ...$('Parse Vehicle ID').first().json, imageCandidates: [], imageSourceType: 'none' } }];\n"
+      },
+      "name": "Set No Image",
+      "id": "2f475e5a-5b1d-5106-be70-11fae6f4d019",
+      "position": [
+        -900,
+        520
+      ],
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        2860,
+        160
+      ],
+      "id": "4cbb00be-3249-5a13-9c14-c7e0f597bfc3",
+      "name": "Download Rendered Slide",
+      "typeVersion": 4.2,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// CarIndex Buyer Check QA gate. Deterministic, no LLM. Runs after render, before Telegram.\n// Any failure => the post stops (logged + Telegram alert), it never reaches approval.\n// Used verbatim inside the n8n \"QA Gate\" Code node and by run_golden_path.js.\n\nconst QA_ROLES = ['cover', 'key_fact', 'why_it_matters', 'strengths', 'caveat', 'cta_source'];\nconst QA_HYPE = [\n  /\\bamazing\\b/i, /\\bincredible\\b/i, /\\bmust[- ]buy\\b/i, /\\bunbeatable\\b/i, /\\bgame[- ]changer\\b/i,\n  /\\brevolutionary\\b/i, /\\binsane\\b/i, /\\bdon'?t miss\\b/i, /\\bdeal of the (year|century)\\b/i,\n  /رهيب/, /خرافي/, /أسطوري/, /اسطوري/, /متفوتش/, /لا تفوت/, /صفقة العمر/, /جبار/, /\\bوحش\\b/,\n];\n// Superlative CLAIMS only. Adverbs (\"compare the Pro only\", \"confirm first\") and comparatives\n// with an explicit sourced amount (\"أرخص بـ15,000\") are not superlatives (false positives seen in test run 1).\nconst QA_SUPERLATIVE = [\n  /\\bcheapest\\b/i, /\\bbest\\b(?!-selling)/i, /\\bthe first\\b/i, /\\bfirst[- ]ever\\b/i, /\\bfor the first time\\b/i,\n  /\\bthe only\\b/i, /\\bonly (one|car|model|suv|sedan|hybrid|ev)\\b/i, /\\bmost[- ](?!of\\b)\\w+/i, /\\blargest\\b/i, /\\bfastest\\b/i, /\\blowest\\b/i, /\\bhighest\\b/i,\n  /الأرخص/, /أرخص (عربية|سيارة|فئة|كروس|SUV|سيدان|حاجة|طريقة)/, /الأفضل/, /أفضل (عربية|سيارة|اختيار)/,\n  /لأول مرة/, /الأول(ى)? (في|على)/, /الوحيد/, /الأكبر/, /الأسرع/, /الأكثر/, /أكتر (موديل|عربية|سيارة|علامة)/,\n];\nconst QA_LIMITS = { hook_ar: 70, hook_en: 80, title: 60, body: 220, point: 120 };\nconst AR_LETTER = /[؀-ۿ]/;\nconst AR_INDIC_DIGIT = /[٠-٩۰-۹]/;\n\nfunction qaNumbers(text) {\n  // Latin numbers like 1,080,000 / 6.92 / 145 -> normalized strings without separators.\n  // Digits glued to a preceding Latin letter are model names (S05, U5, RX9), not claims.\n  const out = [];\n  const re = /(?<![A-Za-z\\d.,])\\d[\\d,]*(?:\\.\\d+)?/g;\n  let m;\n  while ((m = re.exec(String(text || ''))) !== null) out.push(m[0].replace(/,/g, '').replace(/\\.0+$/, ''));\n  return out;\n}\n\nfunction qaNorm(v) {\n  return v === null || v === undefined ? null : String(v).replace(/,/g, '').replace(/\\.0+$/, '').trim();\n}\n\n// Text pairs (ar/en) that end up on slides or captions.\nfunction qaTextPairs(c) {\n  const pairs = [];\n  // hook is printed on the cover, top-level caveat mirrors the caveat slide: inherit their facts.\n  const factsOf = role => ((c.slides || []).find(s => s && s.role === role) || {}).fact_ids || [];\n  if (c.hook) pairs.push({ where: 'hook', ar: c.hook.ar, en: c.hook.en, limitAr: QA_LIMITS.hook_ar, limitEn: QA_LIMITS.hook_en, facts: factsOf('cover') });\n  if (c.caveat) pairs.push({ where: 'caveat', ar: c.caveat.ar, en: c.caveat.en, limitAr: QA_LIMITS.body, limitEn: QA_LIMITS.body, facts: factsOf('caveat') });\n  for (const s of c.slides || []) {\n    const facts = s.fact_ids || [];\n    pairs.push({ where: `slide ${s.n} title`, ar: s.title_ar, en: s.title_en, limitAr: QA_LIMITS.title, limitEn: QA_LIMITS.title, facts });\n    if (s.body_ar !== undefined || s.body_en !== undefined) {\n      pairs.push({ where: `slide ${s.n} body`, ar: s.body_ar, en: s.body_en, limitAr: QA_LIMITS.body, limitEn: QA_LIMITS.body, facts });\n    }\n    (s.points || []).forEach((p, i) => pairs.push({ where: `slide ${s.n} point ${i + 1}`, ar: p.ar, en: p.en, limitAr: QA_LIMITS.point, limitEn: QA_LIMITS.point, facts: facts.concat(p.fact_ids || []) }));\n    (s.skip_if || []).forEach((p, i) => pairs.push({ where: `slide ${s.n} skip_if ${i + 1}`, ar: p.ar, en: p.en, limitAr: QA_LIMITS.point, limitEn: QA_LIMITS.point, facts }));\n  }\n  return pairs;\n}\n\nfunction qaDerivedOk(k, byId) {\n  // derived: {\"op\": \"diff\"|\"sum\"|\"pct_change\", \"of\": [\"kA\",\"kB\"]}  (diff = A - B)\n  const d = k.derived;\n  if (!d || !Array.isArray(d.of) || d.of.length !== 2) return false;\n  const [a, b] = d.of.map(id => byId[id]);\n  if (!a || !b || a.status !== 'verified' || b.status !== 'verified') return false;\n  const x = Number(qaNorm(a.value)), y = Number(qaNorm(b.value)), v = Number(qaNorm(k.value));\n  if (!isFinite(x) || !isFinite(y) || !isFinite(v)) return false;\n  let expect;\n  if (d.op === 'diff') expect = x - y;\n  else if (d.op === 'sum') expect = x + y;\n  else if (d.op === 'pct_change') expect = Math.round(((x - y) / y) * 10000) / 100;\n  else return false;\n  return Math.abs(Math.abs(expect) - Math.abs(v)) < 0.01;\n}\n\n// content: parsed Buyer Check JSON\n// image: {url|path, source_url|library_ref, credit, ai_generated, registry_status, vehicle, width, height}\n// rendered: [{filename, url|path, width, height, bytes}] in slide order\n// opts: {postId, today: 'YYYY-MM-DD'}\nfunction runQaGate(content, image, rendered, opts) {\n  const failures = [];\n  const warnings = [];\n  const fail = (check, msg) => failures.push(`[${check}] ${msg}`);\n  const warn = (check, msg) => warnings.push(`[${check}] ${msg}`);\n  const c = content || {};\n\n  // 1. Required fields\n  if (c.format !== 'buyer_check') fail('fields', `format must be \"buyer_check\" (got ${JSON.stringify(c.format)})`);\n  for (const f of ['language', 'story_type', 'objective']) if (!c[f]) fail('fields', `missing ${f}`);\n  if (!c.car || !c.car.make || !c.car.model) fail('fields', 'missing car.make / car.model');\n  if (!c.hook || !c.hook.ar || !c.hook.en) fail('fields', 'missing hook.ar / hook.en');\n  if (!c.caveat || !c.caveat.ar || !c.caveat.en) fail('fields', 'missing caveat.ar / caveat.en');\n  if (!c.visual_direction) fail('fields', 'missing visual_direction');\n  if (!Array.isArray(c.key_data) || !c.key_data.length) fail('fields', 'key_data is empty');\n\n  // 2. Slide count / order\n  const slides = Array.isArray(c.slides) ? c.slides : [];\n  if (slides.length !== 6) fail('slides', `expected 6 slides, got ${slides.length}`);\n  QA_ROLES.forEach((role, i) => {\n    if (!slides[i] || slides[i].role !== role || slides[i].n !== i + 1) fail('slides', `slide ${i + 1} must be role \"${role}\"`);\n  });\n  const st = slides.find(s => s && s.role === 'strengths');\n  if (st && (!Array.isArray(st.points) || st.points.length < 2 || st.points.length > 3)) fail('slides', 'strengths needs 2-3 points');\n  const cv = slides.find(s => s && s.role === 'caveat');\n  if (cv && (!Array.isArray(cv.skip_if) || cv.skip_if.length < 1 || cv.skip_if.length > 2)) fail('slides', 'caveat needs 1-2 skip_if items');\n\n  // 3. Sources\n  const sources = Array.isArray(c.sources) ? c.sources : [];\n  if (!sources.length) fail('source', 'no sources');\n  const srcById = {};\n  for (const s of sources) {\n    srcById[s.id] = s;\n    if (!s.outlet || !/^https?:\\/\\//.test(s.url || '') || !/^\\d{4}-\\d{2}-\\d{2}$/.test(s.published || '')) {\n      fail('source', `source ${s.id} needs outlet, http(s) url and published YYYY-MM-DD`);\n    }\n  }\n\n  // 4. key_data integrity\n  const byId = {};\n  for (const k of c.key_data || []) byId[k.id] = k;\n  for (const k of c.key_data || []) {\n    if (k.status === 'verified') {\n      if (qaNorm(k.value) === null || qaNorm(k.value) === '') fail('facts', `${k.id} verified but has no value`);\n      if (k.derived) {\n        if (!qaDerivedOk(k, byId)) fail('facts', `${k.id} derived value ${k.value} does not match ${k.derived.op} of ${(k.derived.of || []).join(',')}`);\n      } else if (!k.source_id || !srcById[k.source_id]) {\n        fail('facts', `${k.id} (${k.label_en}) has no valid source_id`);\n      }\n    } else if (k.status === 'missing' || k.status === 'conflict') {\n      if (k.value !== null && k.value !== undefined && k.value !== '') fail('facts', `${k.id} is ${k.status} but carries a value`);\n    } else {\n      fail('facts', `${k.id} has invalid status ${JSON.stringify(k.status)}`);\n    }\n  }\n  const kf = slides.find(s => s && s.role === 'key_fact');\n  const headline = kf && byId[(kf.fact_ids || [])[0]];\n  if (!headline) fail('facts', 'key_fact slide has no fact');\n  else if (headline.status !== 'verified') fail('facts', `key_fact ${headline.id} is ${headline.status} - the post's main number must be verified`);\n  else if (opts && opts.today && srcById[headline.source_id]) {\n    const hs = srcById[headline.source_id];\n    const ageDays = (Date.parse(opts.today) - Date.parse(hs.published)) / 86400000;\n    if (ageDays > 14) warn('source', `headline figure comes from ${hs.outlet} (${hs.published}), ${Math.round(ageDays)} days old - re-check it is still current`);\n  }\n  for (const s of slides) for (const id of (s && s.fact_ids) || []) if (!byId[id]) fail('facts', `slide ${s.n} references unknown fact ${id}`);\n\n  // 5. Every number in text must be a verified key_data value\n  const verifiedNums = new Set((c.key_data || []).filter(k => k.status === 'verified').map(k => qaNorm(k.value)));\n  const allowed = n => verifiedNums.has(n) || (/^\\d$/.test(n)) || (/^20[2-3]\\d$/.test(n));\n  const pairs = qaTextPairs(c);\n  const claimFacts = (c.key_data || []).filter(k => k.status === 'verified' && k.claim);\n  for (const p of pairs) {\n    for (const lang of ['ar', 'en']) {\n      const t = p[lang] || '';\n      for (const n of qaNumbers(t)) if (!allowed(n)) fail('claims', `${p.where} (${lang}) states \"${n}\" which is not a verified key_data value`);\n      for (const re of QA_HYPE) if (re.test(t)) fail('hype', `${p.where} (${lang}) uses forbidden word ${re}`);\n      for (const re of QA_SUPERLATIVE) {\n        if (re.test(t)) {\n          const covered = claimFacts.some(k => p.facts.includes(k.id));\n          if (!covered) fail('claims', `${p.where} (${lang}) has superlative ${re} without a sourced claim fact on that slide`);\n        }\n      }\n    }\n    // 6. Arabic / English consistency\n    if (!p.ar || !p.en) fail('language', `${p.where}: both ar and en required`);\n    if (p.ar && !AR_LETTER.test(p.ar)) fail('language', `${p.where}: ar text has no Arabic script`);\n    if (p.ar && AR_INDIC_DIGIT.test(p.ar)) fail('language', `${p.where}: ar text uses Arabic-Indic digits, use Latin digits`);\n    if (p.en && AR_LETTER.test(p.en)) fail('language', `${p.where}: en text contains Arabic script`);\n    const na = new Set(qaNumbers(p.ar)), ne = new Set(qaNumbers(p.en));\n    const diff = [...na].filter(x => !ne.has(x)).concat([...ne].filter(x => !na.has(x)));\n    if (diff.length) fail('language', `${p.where}: numbers differ between ar and en (${diff.join(', ')})`);\n    if (p.ar && p.ar.length > p.limitAr) fail('length', `${p.where} ar is ${p.ar.length} chars (max ${p.limitAr})`);\n    if (p.en && p.en.length > p.limitEn) fail('length', `${p.where} en is ${p.en.length} chars (max ${p.limitEn})`);\n  }\n\n  // 7. Image\n  const img = image || {};\n  if (!img.url && !img.path) fail('image', 'no image');\n  if (img.ai_generated) fail('image', 'image is AI-generated - real image required');\n  if (!img.source_url && !img.library_ref) fail('image', 'image has no provenance (source_url or library_ref)');\n  if (img.registry_status !== 'approved') fail('image', `image registry status is ${JSON.stringify(img.registry_status || 'unknown')}, must be \"approved\"`);\n  if (img.width && img.width < 600) fail('image', `image width ${img.width}px < 600px`);\n  else if (img.width && img.width < 1000) warn('image', `image width ${img.width}px, will be upscaled on the cover`);\n  if (!img.source_url && img.library_ref) warn('image', 'image original source not recorded - confirm usage rights before posting');\n  if (c.car && c.car.model) {\n    // make + model only (trims are rarely visible); model keeps its suffix, e.g. \"Monjaro EM-i\".\n    const want = [c.car.make, c.car.model].filter(Boolean).join(' ').toLowerCase().split(/\\s+/).filter(Boolean);\n    const have = String(img.vehicle || '').toLowerCase();\n    const missingTok = want.filter(t => !have.includes(t));\n    if (!img.vehicle) fail('image', 'image vehicle not recorded - cannot confirm it shows this car');\n    else if (missingTok.length) fail('image', `image shows \"${img.vehicle}\", post is about \"${want.join(' ')}\" (missing: ${missingTok.join(', ')})`);\n  }\n\n  // 8. Rendered files + filenames\n  const r = Array.isArray(rendered) ? rendered : [];\n  if (r.length !== 6) fail('render', `expected 6 rendered files, got ${r.length}`);\n  QA_ROLES.forEach((role, i) => {\n    const f = r[i];\n    const expected = `${opts && opts.postId}_${String(i + 1).padStart(2, '0')}_${role}.png`;\n    if (!f) return;\n    if (f.filename !== expected) fail('filename', `slide ${i + 1} file is \"${f.filename}\", expected \"${expected}\"`);\n    if (!f.url && !f.path) fail('render', `slide ${i + 1} has no file url/path`);\n    if (f.exists === false) fail('render', `slide ${i + 1} file missing on disk/server`);\n    if (f.width && f.height && (f.width !== 1080 || f.height !== 1350)) fail('render', `slide ${i + 1} is ${f.width}x${f.height}, expected 1080x1350`);\n    if (typeof f.bytes === 'number' && f.bytes < 20000) fail('render', `slide ${i + 1} is ${f.bytes} bytes - likely blank`);\n    if (f.overflow && f.overflow.length) fail('render', `slide ${i + 1} text overflow in: ${f.overflow.join(', ')}`);\n  });\n\n  return { passed: failures.length === 0, failures, warnings, checkedAt: new Date().toISOString() };\n}\n\n// ---- n8n entry point\nconst d = $json;\nconst qa = runQaGate(d.buyerCheck || {}, d.imageRecord || {}, d.rendered || [], { postId: d.postId, today: new Date().toISOString().slice(0, 10) });\nreturn [{ json: { ...d, qa, qaPassed: qa.passed, qaSummary: qa.passed ? `PASSED (${qa.warnings.length} warnings)` : qa.failures.join(' | ') } }];\n"
+      },
+      "name": "QA Gate",
+      "id": "fe83a268-ba96-53ae-b3ff-e3b89120171a",
+      "position": [
+        3240,
+        160
+      ],
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "if-qa-passed-cond1",
+              "leftValue": "={{ $json.qaPassed }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3440,
+        160
+      ],
+      "id": "d7736c9e-1a5f-5beb-a2cf-6fe4d916bc21",
+      "name": "IF QA Passed"
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1swTksdY6SzMb-510gzr2XclM7I4e92zFHgApKwdrLDI/edit?gid=0#gid=0",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Sheet1",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Date": "={{ new Date().toISOString().split('T')[0] }}",
+            "Title": "={{ $json.title }}",
+            "Source": "={{ $json.source }}",
+            "URL": "={{ $json.link }}",
+            "Status": "QA-Failed",
+            "PostId": "={{ $json.postId }}",
+            "Format": "Buyer Check",
+            "AI Draft": "={{ $json.aiDraft }}",
+            "Summary": "={{ $json.qaSummary }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Date",
+              "displayName": "Date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Title",
+              "displayName": "Title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "URL",
+              "displayName": "URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Source",
+              "displayName": "Source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Summary",
+              "displayName": "Summary",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Language",
+              "displayName": "Language",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Image",
+              "displayName": "Image",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Categories",
+              "displayName": "Categories",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "AI Draft",
+              "displayName": "AI Draft",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "PostId",
+              "displayName": "PostId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "NormalizedKey",
+              "displayName": "NormalizedKey",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Format",
+              "displayName": "Format",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ContentPillar",
+              "displayName": "ContentPillar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ObjectiveTag",
+              "displayName": "ObjectiveTag",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "RelevanceScore",
+              "displayName": "RelevanceScore",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "HookScore",
+              "displayName": "HookScore",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ImageURLs",
+              "displayName": "ImageURLs",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TelegramMessageId",
+              "displayName": "TelegramMessageId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "BrochureMatch",
+              "displayName": "BrochureMatch",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [
+        3640,
+        360
+      ],
+      "id": "b9ffaf6f-1dfc-584e-8b6a-ce0cf151c23a",
+      "name": "Log QA Failed",
+      "typeVersion": 4.7,
+      "credentials": {
+        "googleApi": {
+          "id": "uFKZInJrFdzm21AL",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "1020351066",
+        "text": "=CarIndex: QA FAILED - blocked, not sent for approval\n\nStory: {{ $('QA Gate').item.json.title }}\nCar: {{ $('QA Gate').item.json.carName }}\nSource: {{ $('QA Gate').item.json.link }}\nPostId: {{ $('QA Gate').item.json.postId }}\n\n{{ ($('QA Gate').item.json.qa.failures || []).map(f => '- ' + f).join('\\n') }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        3840,
+        360
+      ],
+      "id": "1c074b37-379c-5f07-94f5-12d9dd0bbcc8",
+      "name": "Telegram QA Fail Alert",
+      "webhookId": "6781599d-4ad1-4f6e-b3f1-c08e76813070",
+      "credentials": {
+        "telegramApi": {
+          "id": "tToA6Qq4ligDtQuP",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// One item per slide, binary renamed to the QA-checked filename.\nconst d = $('QA Gate').first().json;\nconst bins = $('Download Rendered Slide').all();\nreturn d.rendered.map((r, i) => ({\n  json: { caption: `${i + 1}/6 ${r.filename}`, filename: r.filename },\n  binary: bins[i] && bins[i].binary && bins[i].binary.data ? { data: { ...bins[i].binary.data, fileName: r.filename } } : {},\n}));\n"
+      },
+      "name": "Split Slides For Telegram",
+      "id": "1b5a5d12-6254-5e17-b34e-c315ea0fbd0d",
+      "position": [
+        3640,
+        80
+      ],
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "operation": "sendPhoto",
+        "chatId": "1020351066",
+        "binaryData": true,
+        "additionalFields": {
+          "caption": "={{ $json.caption }}"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        3840,
+        80
+      ],
+      "id": "5eb38405-6a23-5bff-9a0a-da1e7aee3d3e",
+      "name": "Send Slide Preview",
+      "webhookId": "e26f2db2-4cc7-4f3a-8913-abc5d79cd989",
+      "credentials": {
+        "telegramApi": {
+          "id": "tToA6Qq4ligDtQuP",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Telegram approval: message builder + reply parser. No auto-publishing anywhere.\n// Used by the n8n \"Build Telegram Approval\" and \"Extract Reply\" Code nodes and locally.\n\nfunction tgApprovalText(post, qa) {\n  const c = post.content;\n  const car = [c.car.make, c.car.model, c.car.variant].filter(Boolean).join(' ');\n  const srcs = (c.sources || []).map(s => `• ${s.outlet} (${s.published}) ${s.url}`).join('\\n');\n  const warn = (qa.warnings || []).length ? `\\nQA warnings:\\n${qa.warnings.map(w => '• ' + w).join('\\n')}\\n` : '';\n  const missing = (c.key_data || []).filter(k => k.status !== 'verified').map(k => `${k.label_en} (${k.status})`);\n  return [\n    'CarIndex - approval needed',\n    '',\n    `Story: ${post.storyTitle}`,\n    `Car: ${car}`,\n    `Format: Buyer Check (6 slides) | Type: ${c.story_type}`,\n    `Hook: ${c.hook.en}`,\n    `Files: ${post.files.map(f => f.filename).join(', ')}`,\n    `Image: ${post.image.credit}`,\n    missing.length ? `Marked missing: ${missing.join(', ')}` : 'Marked missing: none',\n    '',\n    'Sources:',\n    srcs,\n    `QA: PASSED (${(qa.failures || []).length} failures)`,\n    warn,\n    `PostId: ${post.postId}`,\n    '',\n    'REPLY to this message:',\n    'YES  -> approve',\n    'NO <reason>  -> reject (reason is recorded)',\n    'Nothing is published automatically.',\n  ].join('\\n');\n}\n\n// Returns {decision: 'APPROVED'|'REJECTED'|null, reason}\nfunction tgParseReply(text) {\n  const t = String(text || '').trim();\n  // (?=...) instead of \\b: JS \\b does not work next to Arabic letters.\n  const END = '(?=$|[\\\\s:,.!\\\\-–—])';\n  if (new RegExp(`^(yes|y|approve|approved|نعم|موافق|أيوه|ايوه)${END}[\\\\s.!]*$`, 'i').test(t)) {\n    return { decision: 'APPROVED', reason: '' };\n  }\n  const m = t.match(new RegExp(`^(no|n|reject|rejected|لا|رفض)${END}[\\\\s:,.\\\\-–—]*([\\\\s\\\\S]*)$`, 'i'));\n  if (m) return { decision: 'REJECTED', reason: m[2].trim() || '(no reason given)' };\n  return { decision: null, reason: '' };\n}\n\n// ---- n8n entry point (runs once, after the 6 previews)\nconst d = $('QA Gate').first().json;\nconst text = tgApprovalText({ postId: d.postId, storyTitle: d.title, content: d.buyerCheck, files: d.rendered, image: d.imageRecord }, d.qa);\nreturn [{ json: { approvalText: text, postId: d.postId } }];\n"
+      },
+      "name": "Build Approval Message",
+      "id": "5798ea08-b579-5610-8b51-388debd19b86",
+      "position": [
+        4040,
+        80
+      ],
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2
     }
   ],
   "connections": {
@@ -6766,6 +7168,13 @@
             "type": "main",
             "index": 0
           }
+        ],
+        [
+          {
+            "node": "Log Low Relevance Skip",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
@@ -6857,22 +7266,7 @@
       "main": [
         [
           {
-            "node": "Build Video Scenes",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Reel Script Designer",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Build Competitor Image Queries",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Merge Carousel Inputs",
+            "node": "Carousel Designer",
             "type": "main",
             "index": 0
           }
@@ -6894,18 +7288,7 @@
       "main": [
         [
           {
-            "node": "Aggregate Rendered Slides",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Aggregate Rendered Slides": {
-      "main": [
-        [
-          {
-            "node": "Merge Slides Into Item",
+            "node": "Download Rendered Slide",
             "type": "main",
             "index": 0
           }
@@ -6916,7 +7299,7 @@
       "main": [
         [
           {
-            "node": "Merge Video + Carousel",
+            "node": "QA Gate",
             "type": "main",
             "index": 0
           }
@@ -6927,18 +7310,7 @@
       "main": [
         [
           {
-            "node": "Download Slide for Telegram",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Download Slide for Telegram": {
-      "main": [
-        [
-          {
-            "node": "Send Telegram Approval",
+            "node": "Split Slides For Telegram",
             "type": "main",
             "index": 0
           }
@@ -7246,24 +7618,7 @@
     },
     "Set Video Output": {
       "main": [
-        [
-          {
-            "node": "Merge Video + Carousel",
-            "type": "main",
-            "index": 1
-          }
-        ]
-      ]
-    },
-    "Merge Video + Carousel": {
-      "main": [
-        [
-          {
-            "node": "IF Carousel Incomplete",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "IF Triage Failed": {
@@ -7639,29 +7994,6 @@
         ]
       ]
     },
-    "IF Carousel Incomplete": {
-      "main": [
-        [
-          {
-            "node": "Log Incomplete Carousel",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Create Notion Page",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Append row in sheet",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Log Incomplete Carousel": {
       "main": [
         [
@@ -7706,7 +8038,7 @@
         ],
         [
           {
-            "node": "Nano Banana Fallback Image",
+            "node": "Set No Image",
             "type": "main",
             "index": 0
           }
@@ -7790,7 +8122,7 @@
         ],
         [
           {
-            "node": "Nano Banana Fallback Image",
+            "node": "Set No Image",
             "type": "main",
             "index": 0
           }
@@ -7919,6 +8251,106 @@
         [
           {
             "node": "Telegram Auditor Hard-Fail Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set No Image": {
+      "main": [
+        [
+          {
+            "node": "Content Creation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Rendered Slide": {
+      "main": [
+        [
+          {
+            "node": "Merge Slides Into Item",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "QA Gate": {
+      "main": [
+        [
+          {
+            "node": "IF QA Passed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF QA Passed": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create Notion Page",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Log QA Failed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log QA Failed": {
+      "main": [
+        [
+          {
+            "node": "Telegram QA Fail Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Slides For Telegram": {
+      "main": [
+        [
+          {
+            "node": "Send Slide Preview",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Slide Preview": {
+      "main": [
+        [
+          {
+            "node": "Build Approval Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Approval Message": {
+      "main": [
+        [
+          {
+            "node": "Send Telegram Approval",
             "type": "main",
             "index": 0
           }

@@ -1,0 +1,72 @@
+{
+  "storyTitle": "Chery Tiggo 7 Pro (local assembly) - price after the September increase",
+  "test_type": "Buyer Check",
+  "source_article": {
+    "title": "وكيل شيري يعلن زيادة أسعار تيجو 7 برو موديل 2027 المجمعة محليًا",
+    "outlet": "Masrawy",
+    "url": "https://www.masrawy.com/autos/autos_news/details/2026/9/20/3051042/%D8%A7%D8%B1%D8%AA%D9%81%D8%A7%D8%B9-%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D8%B4%D9%8A%D8%B1%D9%8A-%D8%AA%D9%8A%D8%AC%D9%88-7-%D8%A8%D8%B1%D9%88-%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D9%81%D9%8A-%D9%85%D8%B5%D8%B1-%D8%A8%D8%B9%D8%AF-%D8%A3%D8%B3%D8%A7%D8%A8%D9%8A%D8%B9-%D9%85%D9%86-%D8%AA%D9%82%D8%AF%D9%8A%D9%85-%D8%A7%D9%84%D9%86%D8%B3%D8%AE%D8%A9-%D8%A7%D9%84%D9%85%D8%AD%D9%84%D9%8A%D8%A9",
+    "published": "2026-09-20",
+    "language": "AR"
+  },
+  "curation": "Real Egypt price move on a locally assembled SUV, one identifiable vehicle, sourced prices. Passes Relevance Pre-Filter (brand 'chery' + price keyword).",
+  "fact_check": [
+    {"fact": "Comfort 1,080,000 / Luxury 1,180,000 EGP, +5,000 in September", "result": "confirmed", "how": "web search 2026-09-24: Masrawy 2026-09-20, Auto Express EG 2026-09-23, SayaratElyoum, Egypt Telegraph all report +5,000 to 1,080,000 / 1,180,000"},
+    {"fact": "Launch price 1,075,000 (owner package, Aug 28)", "result": "STALE - superseded", "how": "the owner's Drive package uses 1,075,000; it was raised on 2026-09-20. Old figure not used."},
+    {"fact": "Imported Comfort 1,130,000 before local assembly", "result": "confirmed", "how": "web search 2026-09-24: Masrawy 2026-08-21 'ما أسعار شيري تيجو 7 برو المستوردة في مصر؟'"},
+    {"fact": "1.5L turbo, 145 hp, 210 Nm, CVT, FWD (local car)", "result": "confirmed", "how": "web search 2026-09-24 (Auto Express EG / Misr Cars launch coverage 2026-08-24) + owner package (official brochure)"},
+    {"fact": "Imported car 154 hp (search summary of Masrawy 2026-08-21)", "result": "not used", "how": "differs from local car's 145 hp; not needed for this post"},
+    {"fact": "Sales of the local-assembly car", "result": "missing", "how": "owner package: registration data ends May 2026, before the Aug 24 launch"}
+  ],
+  "image_file": "chery_tiggo_7_pro__chery_my_web_002.webp",
+  "content": {
+    "language": "ar-en",
+    "format": "buyer_check",
+    "story_type": "buyer_check",
+    "objective": "save",
+    "car": {"make": "Chery", "model": "Tiggo 7 Pro", "variant": "Comfort (local assembly)", "model_year": "2027", "market": "EG"},
+    "hook": {"ar": "تيجو 7 برو المحلية بقت بـ1,080,000 جنيه", "en": "Locally built Tiggo 7 Pro now starts at EGP 1,080,000"},
+    "key_data": [
+      {"id": "k1", "label_ar": "سعر فئة Comfort", "label_en": "Comfort price", "value": "1,080,000", "unit": "EGP", "status": "verified", "source_id": "s1", "note": "after +5,000 in Sep 2026"},
+      {"id": "k2", "label_ar": "سعر فئة Luxury", "label_en": "Luxury price", "value": "1,180,000", "unit": "EGP", "status": "verified", "source_id": "s1", "note": ""},
+      {"id": "k3", "label_ar": "زيادة سبتمبر", "label_en": "September increase", "value": "5,000", "unit": "EGP", "status": "verified", "source_id": "s2", "note": ""},
+      {"id": "k4", "label_ar": "Comfort المستوردة قبل التجميع المحلي", "label_en": "Imported Comfort, before local assembly", "value": "1,130,000", "unit": "EGP", "status": "verified", "source_id": "s3", "note": ""},
+      {"id": "k5", "label_ar": "الفرق عن المستوردة", "label_en": "Gap vs imported", "value": "50,000", "unit": "EGP", "status": "verified", "source_id": null, "derived": {"op": "diff", "of": ["k4", "k1"]}, "note": "1,130,000 - 1,080,000"},
+      {"id": "k6", "label_ar": "القوة", "label_en": "Power", "value": "145", "unit": "hp", "status": "verified", "source_id": "s4", "note": ""},
+      {"id": "k7", "label_ar": "العزم", "label_en": "Torque", "value": "210", "unit": "Nm", "status": "verified", "source_id": "s4", "note": ""},
+      {"id": "k8", "label_ar": "المحرك", "label_en": "Engine", "value": "1.5", "unit": "L turbo", "status": "verified", "source_id": "s4", "note": ""},
+      {"id": "k9", "label_ar": "ناقل الحركة", "label_en": "Gearbox", "value": "CVT", "unit": "", "status": "verified", "source_id": "s4", "note": ""},
+      {"id": "k10", "label_ar": "مبيعات النسخة المحلية", "label_en": "Local-assembly sales", "value": null, "unit": "units", "status": "missing", "source_id": null, "note": "no registration data after the Aug 24 launch"}
+    ],
+    "slides": [
+      {"n": 1, "role": "cover", "title_ar": "تيجو 7 برو المحلية", "title_en": "Local Tiggo 7 Pro", "fact_ids": ["k1"]},
+      {"n": 2, "role": "key_fact", "title_ar": "سعر فئة Comfort بعد زيادة سبتمبر", "title_en": "Comfort price after the September increase",
+       "body_ar": "جي بي أوتو زودت السعر 5,000 جنيه في سبتمبر، وفئة Luxury بقت بـ1,180,000 جنيه.",
+       "body_en": "GB Auto added EGP 5,000 in September. The Luxury trim is now EGP 1,180,000.", "fact_ids": ["k1", "k3", "k2"]},
+      {"n": 3, "role": "why_it_matters", "title_ar": "لسه تحت سعر المستوردة", "title_en": "Still below the imported price",
+       "body_ar": "فئة Comfort المستوردة كانت بـ1,130,000 جنيه قبل التجميع المحلي. بعد الزيادة الفرق بقى 50,000 جنيه.",
+       "body_en": "The imported Comfort was EGP 1,130,000 before local assembly. After the increase the gap is EGP 50,000.", "fact_ids": ["k4", "k1", "k5"]},
+      {"n": 4, "role": "strengths", "title_ar": "نقاط القوة", "title_en": "Strengths", "fact_ids": ["k8", "k6", "k7", "k9"],
+       "points": [
+         {"ar": "محرك 1.5 تيربو بقوة 145 حصان وعزم 210 نيوتن متر", "en": "1.5 turbo engine: 145 hp and 210 Nm", "fact_ids": ["k8", "k6", "k7"]},
+         {"ar": "ناقل حركة CVT أوتوماتيك ودفع أمامي", "en": "CVT automatic gearbox, front-wheel drive", "fact_ids": ["k9"]},
+         {"ar": "تجميع محلي من جي بي أوتو، الوكيل الحصري لشيري في مصر", "en": "Assembled locally by GB Auto, Chery's exclusive Egypt distributor", "fact_ids": []}
+       ]},
+      {"n": 5, "role": "caveat", "title_ar": "اللي لسه مش معروف", "title_en": "What is not known yet",
+       "body_ar": "السعر زاد بعد أقل من شهر من الإطلاق، ومفيش أرقام مبيعات للنسخة المحلية لحد دلوقتي.",
+       "body_en": "The price rose less than a month after launch, and there is no sales data for the local version yet.", "fact_ids": ["k3", "k10"],
+       "skip_if": [
+         {"ar": "لو محتاج سعر ثابت: الوكيل غيّر السعر بعد أقل من شهر", "en": "If you need price certainty: the dealer changed it within a month"}
+       ]},
+      {"n": 6, "role": "cta_source", "title_ar": "احفظها قبل ما تروح المعرض", "title_en": "Save it before the showroom visit", "fact_ids": []}
+    ],
+    "caveat": {"ar": "السعر زاد بعد أقل من شهر من الإطلاق، ومفيش أرقام مبيعات للنسخة المحلية لسه.", "en": "Price rose within a month of launch; no local-version sales data yet."},
+    "sources": [
+      {"id": "s1", "outlet": "Masrawy", "url": "https://www.masrawy.com/autos/autos_news/details/2026/9/20/3051042/%D8%A7%D8%B1%D8%AA%D9%81%D8%A7%D8%B9-%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D8%B4%D9%8A%D8%B1%D9%8A-%D8%AA%D9%8A%D8%AC%D9%88-7-%D8%A8%D8%B1%D9%88-%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D9%81%D9%8A-%D9%85%D8%B5%D8%B1-%D8%A8%D8%B9%D8%AF-%D8%A3%D8%B3%D8%A7%D8%A8%D9%8A%D8%B9-%D9%85%D9%86-%D8%AA%D9%82%D8%AF%D9%8A%D9%85-%D8%A7%D9%84%D9%86%D8%B3%D8%AE%D8%A9-%D8%A7%D9%84%D9%85%D8%AD%D9%84%D9%8A%D8%A9", "published": "2026-09-20", "what": "GB Auto raises local Tiggo 7 Pro prices: Comfort 1,080,000 / Luxury 1,180,000"},
+      {"id": "s2", "outlet": "Auto Express EG", "url": "https://www.autoexpress-eg.com/2026/09/23/%D8%B4%D9%8A%D8%B1%D9%8A-%D8%AA%D9%8A%D8%AC%D9%88-tiggo-7-pro-%D9%88-%D8%A3%D8%B1%D9%8A%D8%B2%D9%88-5-%D9%81%D9%8A-%D9%85%D8%B5%D8%B1-%D8%A8%D8%B2%D9%8A%D8%A7%D8%AF%D8%A9-5-%D8%A2%D9%84%D8%A7%D9%81/", "published": "2026-09-23", "what": "Tiggo 7 Pro and Arrizo 5 up EGP 5,000"},
+      {"id": "s3", "outlet": "Masrawy", "url": "https://www.masrawy.com/autos/autos_news/details/2026/8/21/3035832/%D9%82%D8%A8%D9%84-%D8%AA%D9%82%D8%AF%D9%8A%D9%85-%D8%A7%D9%84%D9%86%D8%B3%D8%AE%D8%A9-%D8%A7%D9%84%D9%85%D8%AD%D9%84%D9%8A%D8%A9-%D9%83%D9%85-%D9%8A%D8%A8%D9%84%D8%BA-%D8%B3%D8%B9%D8%B1-%D8%B4%D9%8A%D8%B1%D9%8A-%D8%AA%D9%8A%D8%AC%D9%88-7-%D8%A8%D8%B1%D9%88-%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%88%D8%B1%D8%AF%D8%A9-%D9%81%D9%8A-%D9%85%D8%B5%D8%B1-", "published": "2026-08-21", "what": "Imported Tiggo 7 Pro prices before local assembly"},
+      {"id": "s4", "outlet": "Auto Express EG", "url": "https://www.autoexpress-eg.com/2026/08/24/%D8%B4%D9%8A%D8%B1%D9%8A-%D8%AA%D9%8A%D8%AC%D9%88-7-%D8%A8%D8%B1%D9%88-tiggo-7-pro-%D8%AA%D9%82%D8%AF%D9%85-%D8%B1%D8%B3%D9%85%D9%8A%D9%8B%D8%A7-%D9%81%D9%8A-%D9%85%D8%B5%D8%B1-%D8%A8%D8%B5%D9%86/", "published": "2026-08-24", "what": "Local Tiggo 7 Pro launch: 1.5T, 145 hp, 210 Nm, CVT"}
+    ],
+    "visual_direction": {"subject": "Chery Tiggo 7 Pro exterior", "angle": "front", "notes": "real OEM photo only"}
+  },
+  "telegram_reply": "YES"
+}

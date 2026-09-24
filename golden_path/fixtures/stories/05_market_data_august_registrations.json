@@ -1,0 +1,58 @@
+{
+  "storyTitle": "August 2026 licensing: MG ZS is the top passenger model with 647 units",
+  "test_type": "Market / data",
+  "source_article": {
+    "title": "للشهر الثاني على التوالي.. إم جي تتصدر تراخيص السيارات الملاكي في أغسطس 2026",
+    "outlet": "Egypt Automotive",
+    "url": "https://www.egyptautomotive.com/archives/1230408",
+    "published": "2026-09-19",
+    "language": "AR"
+  },
+  "curation": "Monthly licensing data (AMIC/Al-Ahram). Pre-filter passes (brand 'mg', 'مبيعات' keyword absent but brand hit). Format mismatch expected: Buyer Check needs one car.",
+  "fact_check": [
+    {"fact": "MG 2,326 passenger licenses in Aug 2026, #1 for 2nd month", "result": "confirmed", "how": "web search 2026-09-24: Al Mal, Egypt Automotive, Egypt Telegraph, Misr Cars, economy-trend"},
+    {"fact": "MG ZS 647 units, MG GT 452", "result": "confirmed (search summary)", "how": "web search 2026-09-24 summary"},
+    {"fact": "Published date of Egypt Automotive article", "result": "approximate", "how": "akhbaralsyrat mirror dated 2026-09-19; exact Egypt Automotive date not confirmed"},
+    {"fact": "MG ZS price", "result": "missing", "how": "not in a licensing story"},
+    {"fact": "Licenses vs sales", "result": "rule", "how": "licenses are registrations, not manufacturer sales (owner house rule)"}
+  ],
+  "image_file": "mg_zs__drive_library.png",
+  "content": {
+    "language": "ar-en",
+    "format": "buyer_check",
+    "story_type": "market_data",
+    "objective": "share",
+    "car": {"make": "MG", "model": "ZS", "variant": "", "model_year": "", "market": "EG"},
+    "hook": {"ar": "MG ZS أكتر موديل ملاكي اترخص في أغسطس: 647 عربية", "en": "MG ZS was August's most-licensed passenger model: 647 units"},
+    "key_data": [
+      {"id": "k1", "label_ar": "تراخيص MG ZS في أغسطس", "label_en": "MG ZS licenses, August", "value": "647", "unit": "units", "status": "verified", "source_id": "s1", "claim": "top passenger model by licenses in August 2026", "note": "licenses, not sales"},
+      {"id": "k2", "label_ar": "تراخيص MG كلها", "label_en": "All MG licenses", "value": "2,326", "unit": "units", "status": "verified", "source_id": "s1", "note": ""},
+      {"id": "k3", "label_ar": "MG GT", "label_en": "MG GT", "value": "452", "unit": "units", "status": "verified", "source_id": "s1", "note": ""},
+      {"id": "k4", "label_ar": "سعر MG ZS", "label_en": "MG ZS price", "value": null, "unit": "EGP", "status": "missing", "source_id": null, "note": "not in licensing sources"}
+    ],
+    "slides": [
+      {"n": 1, "role": "cover", "title_ar": "تراخيص أغسطس", "title_en": "August licenses", "fact_ids": ["k1"]},
+      {"n": 2, "role": "key_fact", "title_ar": "تراخيص MG ZS في أغسطس", "title_en": "MG ZS licenses in August",
+       "body_ar": "MG كلها رخصت 2,326 عربية ملاكي، وMG GT جت بعدها بـ452.", "body_en": "MG licensed 2,326 passenger cars in total; the MG GT added 452.", "fact_ids": ["k1", "k2", "k3"]},
+      {"n": 3, "role": "why_it_matters", "title_ar": "ده ترخيص مش مبيعات", "title_en": "Licenses, not sales",
+       "body_ar": "الأرقام دي عربيات اترخصت، مش مبيعات المصنع. ممكن تختلف عن أرقام الوكيل.", "body_en": "These are licensed cars, not factory sales, and can differ from dealer figures.", "fact_ids": ["k1"]},
+      {"n": 4, "role": "strengths", "title_ar": "نقاط القوة", "title_en": "Strengths", "fact_ids": ["k1"],
+       "points": [
+         {"ar": "طلب واضح في السوق: 647 ترخيص في شهر", "en": "Clear demand: 647 licenses in one month", "fact_ids": ["k1"]},
+         {"ar": "MG الأولى في الملاكي للشهر التاني على التوالي", "en": "MG led passenger licensing for a second straight month", "fact_ids": ["k2"]}
+       ]},
+      {"n": 5, "role": "caveat", "title_ar": "اللي الأرقام مش بتقوله", "title_en": "What the numbers do not say",
+       "body_ar": "التراخيص مش بتقول حاجة عن السعر أو الجودة، وسعر ZS مش موجود في المصادر.", "body_en": "Licensing says nothing about price or quality, and the ZS price is not in the sources.", "fact_ids": ["k4"],
+       "skip_if": [
+         {"ar": "لو بتختار عربية على أساس انتشارها بس", "en": "If popularity is your only reason to buy"}
+       ]},
+      {"n": 6, "role": "cta_source", "title_ar": "تابعنا لأرقام السوق كل شهر", "title_en": "Follow for monthly market data", "fact_ids": []}
+    ],
+    "caveat": {"ar": "تراخيص مش مبيعات، ومفيش سعر في المصادر.", "en": "Licenses, not sales; no price in sources."},
+    "sources": [
+      {"id": "s1", "outlet": "Egypt Automotive", "url": "https://www.egyptautomotive.com/archives/1230408", "published": "2026-09-19", "what": "MG tops August 2026 passenger licensing: 2,326; MG ZS 647; MG GT 452"}
+    ],
+    "visual_direction": {"subject": "MG ZS exterior", "angle": "front three-quarter", "notes": ""}
+  },
+  "telegram_reply": "YES"
+}

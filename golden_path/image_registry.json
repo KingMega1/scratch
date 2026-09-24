@@ -1,0 +1,60 @@
+{
+  "_note": "Every image the renderer may use must be listed here with status. 'approved' = checked by a human for correct car, no watermark, no UI chrome. Nothing unlisted or AI-generated passes QA.",
+  "images": {
+    "chery_tiggo_7_pro__chery_my_web_002.webp": {
+      "status": "approved",
+      "vehicle": "Chery Tiggo 7 Pro",
+      "width": 1200, "height": 900,
+      "source_url": "https://www.chery.my/wp-content/uploads/2024/05/tiggo7-exterior-1-v2.webp",
+      "source_page": "https://www.chery.my/model/tiggo-7-pro/",
+      "library_ref": "Drive: CarIndex n8n Workflow/out/chery_tiggo_7_pro/web_002.webp (manifest.json)",
+      "credit": "Chery Malaysia official site (chery.my)",
+      "checked": "2026-09-24 visual check: clean front shot, Tiggo 7 Pro badge visible. Malaysian-market car; not confirmed identical to Egypt local-assembly exterior."
+    },
+    "seat_leon__drive_library.png": {
+      "status": "approved",
+      "vehicle": "SEAT Leon",
+      "width": 698, "height": 476,
+      "source_url": null,
+      "library_ref": "Drive file 1uKCC3yLn_GprpQXyiOA0mLEd_hnvvb5_ (leon.png)",
+      "credit": "CarIndex photo library (original source not recorded)",
+      "checked": "2026-09-24 visual check: clean studio 3/4 front, SEAT Leon hatchback, Spanish plate. Low resolution."
+    },
+    "geely_monjaro__drive_library.png": {
+      "status": "approved",
+      "vehicle": "Geely Monjaro",
+      "width": 698, "height": 476,
+      "source_url": null,
+      "library_ref": "Drive file 1LCcZxBXXnUAW9E3TncQiZF_13O1bghkR (monjaro.png)",
+      "credit": "CarIndex photo library (original source not recorded)",
+      "checked": "2026-09-24 visual check: clean studio shot of a Geely Monjaro. Not confirmed to be the Monjaro EM-i."
+    },
+    "deepal_s05__drive_library.png": {
+      "status": "approved",
+      "vehicle": "Deepal S05",
+      "width": 690, "height": 458,
+      "source_url": null,
+      "library_ref": "Drive file 1HmDW4l5Uw8B7VOJV8RkpU1FCvXDbSccE (deepal_s05.png)",
+      "credit": "CarIndex photo library (original source not recorded)",
+      "checked": "2026-09-24 visual check: clean studio shot, S05 plate."
+    },
+    "baic_u5_plus__drive_library.png": {
+      "status": "rejected",
+      "vehicle": "BAIC U5 Plus",
+      "width": 1288, "height": 943,
+      "source_url": null,
+      "library_ref": "Drive file 1TTgP2_rGqtYV27jmPgIPEvekcN2hmQtu (u5_plus.png)",
+      "credit": "CarIndex photo library",
+      "checked": "2026-09-24 visual check: screenshot of a contactcars.com gallery - carousel arrows, contactcars watermark, 'Dazzling LED Headlight' text overlay, headlight close-up only. Not usable."
+    },
+    "mg_zs__drive_library.png": {
+      "status": "rejected",
+      "vehicle": "MG ZS",
+      "width": 1288, "height": 943,
+      "source_url": null,
+      "library_ref": "Drive file 1GI9TjkJSZyGHTgzQMvjGx9VyGcsCoZRk (mg_zs.png)",
+      "credit": "CarIndex photo library",
+      "checked": "2026-09-24 visual check: screenshot of a contactcars.com gallery - carousel arrows, share icon, contactcars watermark. Not usable."
+    }
+  }
+}

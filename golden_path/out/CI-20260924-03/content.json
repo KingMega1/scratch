@@ -1,0 +1,195 @@
+{
+  "language": "ar-en",
+  "format": "buyer_check",
+  "story_type": "comparison",
+  "objective": "save",
+  "car": {
+    "make": "Geely",
+    "model": "Monjaro EM-i",
+    "variant": "Pro",
+    "model_year": "2027",
+    "market": "EG"
+  },
+  "hook": {
+    "ar": "مونجارو EM-i ولا MG RX9؟ الفرق 200,990 جنيه",
+    "en": "Monjaro EM-i or MG RX9? EGP 200,990 apart"
+  },
+  "key_data": [
+    {
+      "id": "k1",
+      "label_ar": "مونجارو EM-i فئة Pro",
+      "label_en": "Monjaro EM-i Pro",
+      "value": "1,699,000",
+      "unit": "EGP",
+      "status": "verified",
+      "source_id": "s1",
+      "note": ""
+    },
+    {
+      "id": "k2",
+      "label_ar": "MG RX9 PHEV (فئة واحدة)",
+      "label_en": "MG RX9 PHEV (single trim)",
+      "value": "1,899,990",
+      "unit": "EGP",
+      "status": "verified",
+      "source_id": "s2",
+      "note": ""
+    },
+    {
+      "id": "k3",
+      "label_ar": "فرق السعر",
+      "label_en": "Price gap",
+      "value": "200,990",
+      "unit": "EGP",
+      "status": "verified",
+      "source_id": null,
+      "derived": {
+        "op": "diff",
+        "of": [
+          "k2",
+          "k1"
+        ]
+      },
+      "note": ""
+    },
+    {
+      "id": "k4",
+      "label_ar": "مقاعد RX9",
+      "label_en": "RX9 seats",
+      "value": "7",
+      "unit": "",
+      "status": "verified",
+      "source_id": "s2",
+      "note": ""
+    },
+    {
+      "id": "k5",
+      "label_ar": "قوة RX9 الإجمالية",
+      "label_en": "RX9 combined power",
+      "value": "295",
+      "unit": "hp",
+      "status": "verified",
+      "source_id": "s2",
+      "note": ""
+    },
+    {
+      "id": "k6",
+      "label_ar": "أسعار Max و Ultra",
+      "label_en": "Max and Ultra prices",
+      "value": null,
+      "unit": "EGP",
+      "status": "conflict",
+      "source_id": null,
+      "note": "1,790,000 vs 1,799,000; 1,949,900 vs 1,969,000"
+    }
+  ],
+  "slides": [
+    {
+      "n": 1,
+      "role": "cover",
+      "title_ar": "مونجارو EM-i ضد RX9",
+      "title_en": "Monjaro EM-i vs RX9",
+      "fact_ids": [
+        "k3"
+      ]
+    },
+    {
+      "n": 2,
+      "role": "key_fact",
+      "title_ar": "أقل سعر لمونجارو EM-i",
+      "title_en": "Monjaro EM-i entry price",
+      "body_ar": "MG RX9 PHEV بفئة واحدة بـ1,899,990 جنيه، يعني الفرق 200,990 جنيه.",
+      "body_en": "MG RX9 PHEV comes in one trim at EGP 1,899,990, a gap of EGP 200,990.",
+      "fact_ids": [
+        "k1",
+        "k2",
+        "k3"
+      ]
+    },
+    {
+      "n": 3,
+      "role": "why_it_matters",
+      "title_ar": "نفس الفكرة، سعر مختلف",
+      "title_en": "Same idea, different price",
+      "body_ar": "الاتنين SUV هايبرد بتتشحن من الكهربا. RX9 فيها 7 مقاعد وقوة 295 حصان.",
+      "body_en": "Both are plug-in hybrid SUVs. The RX9 has 7 seats and 295 hp.",
+      "fact_ids": [
+        "k2",
+        "k4",
+        "k5"
+      ]
+    },
+    {
+      "n": 4,
+      "role": "strengths",
+      "title_ar": "نقاط القوة",
+      "title_en": "Strengths",
+      "fact_ids": [],
+      "points": [
+        {
+          "ar": "مونجارو EM-i Pro أقل من RX9 بـ200,990 جنيه",
+          "en": "Monjaro EM-i Pro costs EGP 200,990 less than the RX9",
+          "fact_ids": [
+            "k3"
+          ]
+        },
+        {
+          "ar": "RX9 فيها 7 مقاعد للعيلة الكبيرة",
+          "en": "The RX9 seats 7 for larger families",
+          "fact_ids": [
+            "k4"
+          ]
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "role": "caveat",
+      "title_ar": "قبل ما تقارن",
+      "title_en": "Before you compare",
+      "body_ar": "أسعار فئات مونجارو الأعلى مختلفة بين المصادر، فقارنّا فئة Pro بس.",
+      "body_en": "Sources disagree on the higher Monjaro trims, so we compare the Pro only.",
+      "fact_ids": [
+        "k6"
+      ],
+      "skip_if": [
+        {
+          "ar": "لو محتاج 7 مقاعد، اتأكد من مقاعد مونجارو قبل الحجز",
+          "en": "If you need 7 seats, confirm the Monjaro seat count first"
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "role": "cta_source",
+      "title_ar": "احفظها لو بتدور على هايبرد",
+      "title_en": "Save it if you are shopping plug-in hybrids",
+      "fact_ids": []
+    }
+  ],
+  "caveat": {
+    "ar": "أسعار الفئات الأعلى متضاربة بين المصادر.",
+    "en": "Higher-trim prices conflict across sources."
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "outlet": "Masrawy",
+      "url": "https://www.masrawy.com/autos/autos_news/details/2026/9/2/3042059/%D8%B1%D8%B3%D9%85%D9%8A-%D8%A7-%D9%81%D9%8A-%D9%85%D8%B5%D8%B1-%D8%AC%D9%8A%D9%84%D9%8A-monjaro-em-i-%D8%A7%D9%84%D9%87%D8%AC%D9%8A%D9%86%D8%A9-%D8%AA%D8%A8%D8%AF%D8%A3-%D9%85%D9%86-1-699-%D9%85%D9%84%D9%8A%D9%88%D9%86-%D8%AC%D9%86%D9%8A%D9%87",
+      "published": "2026-09-02",
+      "what": "Monjaro EM-i launch prices"
+    },
+    {
+      "id": "s2",
+      "outlet": "Masrawy",
+      "url": "https://www.masrawy.com/autos/autos_news/details/2026/8/4/3027740/%D8%A3%D9%83%D8%A8%D8%B1-suv-%D9%85%D9%86-mg-%D8%AA%D9%86%D8%B7%D9%84%D9%82-%D8%B1%D8%B3%D9%85%D9%8A-%D8%A7-%D9%81%D9%8A-%D9%85%D8%B5%D8%B1-rx9-phev-%D8%A8%D8%B3%D8%B9%D8%B1-1-89-%D9%85%D9%84%D9%8A%D9%88%D9%86-%D8%AC%D9%86%D9%8A%D9%87",
+      "published": "2026-08-04",
+      "what": "MG RX9 PHEV launch: price, seats, power"
+    }
+  ],
+  "visual_direction": {
+    "subject": "Geely Monjaro EM-i exterior (EM-i variant specifically)",
+    "angle": "front three-quarter",
+    "notes": ""
+  }
+}
