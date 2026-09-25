@@ -146,10 +146,20 @@ def load_snapshot(snap_id, scrape_alias, url_to_model):
         src, sub = source_id(r["source"])
         if r["title_prefix"] and not re.fullmatch(r"20\d\d", r["model_year"] or ""):
             # e.g. 'Peugeot 3008 2027 Allure' was split at '3008'; re-split at the last 20xx token
-            m = re.match(r"^(.*) (20\d\d) (.+)$", f'{r["title_prefix"]} {r["model_year"]} {r["trim_raw"]}')
-            if not m:
-                sys.exit(f"unparseable S1 title: {r}")
-            r = dict(r, title_prefix=m.group(1), model_year=m.group(2), trim_raw=m.group(3), _resplit=True)
+            full = f'{r["title_prefix"]} {r["model_year"]} {r["trim_raw"]}'
+            m = re.match(r"^(.*) (20\d\d) (.+)$", full)
+            if m:
+                r = dict(r, title_prefix=m.group(1), model_year=m.group(2), trim_raw=m.group(3), _resplit=True)
+            else:
+                m = re.match(r"^(.*) (20\d\d)$", full)  # year at the end: 'Peugeot 3008 A/T / Allure 2027'
+                if not m:
+                    sys.exit(f"unparseable title: {r}")
+                pre, trim = r["title_prefix"] + " " + r["model_year"], r["trim_raw"][: -len(m.group(2))].strip()
+                # S1-era parser split 'Peugeot 3008 A/T / Allure 2027' at '3008'; transmission marker starts the trim
+                t = re.match(r"^(.*?) ((?:[AM]/T|CVT|DCT) */.*)$", pre)
+                if t:
+                    pre, trim = t.group(1), f"{t.group(2)} {trim}".strip()
+                r = dict(r, title_prefix=pre, model_year=m.group(2), trim_raw=trim, _resplit=True)
         cands = url_to_model.get(r["source_url"], set())
         mid = None
         if r["title_prefix"]:

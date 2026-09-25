@@ -152,10 +152,22 @@ def p_contactcars(L):
     return out
 
 
+class _Swap:
+    """Match-like view of '(prefix) (trim) (year)' exposing group(1)=prefix, group(2)=year, group(3)=trim."""
+    def __init__(self, m):
+        self.g = (m.group(0), m.group(1), m.group(3), m.group(2))
+
+    def group(self, i):
+        return self.g[i]
+
+
 def p_hatla2ee(L):
     out, i = [], 0
     while i < len(L):
-        m = re.match(r"^(.*?) (\d{4}) (.+)$", L[i])
+        m = (re.match(r"^(.*?) (20\d\d) (.+)$", L[i]) or re.match(r"^(.*?) ((?:[AM]/T|CVT|DCT) */.*) (20\d\d)$", L[i])
+             or re.match(r"^(.*) (.+?) (20\d\d)$", L[i]))
+        if m and not m.group(2).startswith("20"):  # title with the year at the end: 'Peugeot 3008 A/T / Allure 2027'
+            m = _Swap(m)
         if m and i + 1 < len(L) and re.match(r"^\d+ CC$", L[i + 1]) or (m and i + 1 < len(L) and NUM.match(L[i + 1] or "")):
             j, cc = i + 1, None
             if re.match(r"^\d+ CC$", L[j]):
