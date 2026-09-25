@@ -7,17 +7,24 @@ MODE="${1:-full}"
 cd "$(dirname "$0")/.."
 T0=$(date +%s)
 DATE=$(date -u +%Y-%m-%d)
-LAST=$(ls -d snapshots/S*_* 2>/dev/null | sed 's#snapshots/S\([0-9]*\)_.*#\1#' | sort -n | tail -1)
-N=$(( ${LAST:-0} + 1 ))
-SNAP="snapshots/S${N}_${DATE}"
-PREV=$(ls -d snapshots/S*_* | awk -F'[S_]' '{print $2" "$0}' | sort -n | tail -1 | cut -d' ' -f2)
-PREV_DISC=$(ls -d snapshots/S*_*/ 2>/dev/null | while read d; do [ -f "$d/model_urls.csv" ] && echo "$d"; done | tail -1)
+LAST=0; PREV=""; PREV_DISC=""
+for d in $(ls -d snapshots/S*_* 2>/dev/null | sort -t_ -k2,2 -k1,1V); do
+  n=${d#snapshots/S}; n=${n%%_*}
+  if [ "$n" -gt "$LAST" ]; then LAST=$n; fi
+  if [ -f "$d/observations_parsed.csv" ]; then PREV="$d"; fi      # latest snapshot with prices
+  if [ -f "$d/model_urls.csv" ]; then PREV_DISC="$d"; fi          # latest snapshot with a discovery run
+done
+SNAP="snapshots/S$((LAST + 1))_${DATE}"
 mkdir -p "$SNAP"
 echo "== $SNAP (prev prices: $PREV, prev discovery: ${PREV_DISC:-none}) mode=$MODE"
 
-python3 scripts/discover.py sitemaps --out "$SNAP"
-python3 scripts/discover.py diff --out "$SNAP" ${PREV_DISC:+--prev "$PREV_DISC"}
-python3 scripts/discover.py triage --out "$SNAP" --max 40
+# discovery must never block the price refresh: failures are recorded, not fatal
+if python3 scripts/discover.py sitemaps --out "$SNAP"; then
+  python3 scripts/discover.py diff --out "$SNAP" ${PREV_DISC:+--prev "$PREV_DISC"} || echo "SOURCE_HEALTH discovery diff failed"
+  python3 scripts/discover.py triage --out "$SNAP" --max 40 || echo "SOURCE_HEALTH discovery triage failed"
+else
+  echo "SOURCE_HEALTH sitemap discovery failed"
+fi
 
 python3 scripts/fetch_snapshot.py fetch --urls snapshots/urls_suv_2m.txt --out "$SNAP" --kind model
 python3 scripts/fetch_snapshot.py evidence --out "$SNAP"
