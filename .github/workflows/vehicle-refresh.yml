@@ -1,0 +1,53 @@
+name: vehicle-data refresh
+
+# Manual trigger (Actions tab -> Run workflow) or by pushing a change to vehicle-data/refresh.request.
+# Scheduled runs are intentionally OFF until decisions D10 (cadence) and D14 (source ToS) are made;
+# uncomment the schedule block to enable.
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "prices = model pages only; full = also trim pages (specs)"
+        default: full
+        type: choice
+        options: [full, prices]
+  push:
+    paths: ["vehicle-data/refresh.request"]
+  # schedule:
+  #   - cron: "17 5 * * 0"   # weekly, Sunday 05:17 UTC
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vehicle-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet requests beautifulsoup4
+      - name: Refresh
+        run: vehicle-data/scripts/refresh.sh "${{ inputs.mode || 'full' }}"
+      - name: Upload raw pages (90-day artifact; evidence + parsed files are committed)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: raw-pages-${{ github.run_id }}
+          path: vehicle-data/snapshots/*/raw/
+          retention-days: 90
+          if-no-files-found: ignore
+      - name: Commit snapshot and views
+        run: |
+          git config user.name "carindex-refresh-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add vehicle-data/snapshots vehicle-data/views vehicle-data/review
+          git reset -q -- 'vehicle-data/snapshots/*/raw'
+          git commit -m "vehicle-data refresh $(date -u +%Y-%m-%d) [automated]" || echo "nothing to commit"
+          git push

@@ -14,7 +14,20 @@ from collections import Counter, defaultdict
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 S0_ID, S0_DATE = "S0_2026-09-10", "2026-09-10"
-S1_ID, S1_DIR = "S1_2026-09-25", os.path.join(ROOT, "snapshots", "S1_2026-09-25")
+SNAP_ROOT = os.path.join(ROOT, "snapshots")
+
+
+def _snap_key(d):
+    n, date = d.split("_", 1)
+    return (date, int(n[1:]))
+
+
+# dated scrape snapshots S1..Sn (S0 is the pre-existing carindex_master.csv); order = observation date
+SNAPSHOTS = sorted((d for d in (os.listdir(SNAP_ROOT) if os.path.isdir(SNAP_ROOT) else [])
+                    if re.match(r"^S\d+_\d{4}-\d{2}-\d{2}$", d) and os.path.exists(os.path.join(SNAP_ROOT, d, "observations_parsed.csv"))),
+                   key=_snap_key)
+SNAP_ORDER = [S0_ID] + SNAPSHOTS
+LATEST_ID = SNAP_ORDER[-1]
 
 SOURCE_TIER = {  # per CarIndex_Source_Registry_2026-09-25 / Living Data Architecture §4.3 (D5 still open)
     "contactcars": "T2", "hatla2ee": "T2", "egycar": "T2", "yallamotor": "T2", "official-toyotaegypt": "T1",
@@ -112,7 +125,7 @@ def load_s0(master_path, scrape_alias):
                     source_raw=r["source"], tier=("T3" if sub in ("classified", "summary") else SOURCE_TIER.get(src, "T2")),
                     url=r["source_url"], model_year=parse_year(r["model_year"]), model_year_raw=r["model_year"],
                     trim_raw=r["variant_raw"], trim_key=trim_key(r["variant_raw"]),
-                    effective_date=r["price_date"] or None, row_ref=f"carindex_master.csv#row{i + 2}")
+                    effective_date=r["price_date"] or None, row_ref=f"carindex_master.csv#row{r.get('master_row') or i + 2}")
         for ptype in ("official", "market"):
             v, st = parse_price(r[f"{ptype}_price"])
             obs.append(dict(base, price_type=ptype, value=v, value_status=st, value_raw=r[f"{ptype}_price"]))
@@ -120,10 +133,11 @@ def load_s0(master_path, scrape_alias):
     return obs, specs, url_to_model
 
 
-def load_s1(scrape_alias, url_to_model, models):
-    rows = read_csv(os.path.join(S1_DIR, "observations_parsed.csv"))
-    cells = {(c["source_url"], c["row_label"]): c
-             for c in read_csv(os.path.join(S1_DIR, "contactcars_pricetable_cells.csv"))}
+def load_snapshot(snap_id, scrape_alias, url_to_model):
+    d = os.path.join(SNAP_ROOT, snap_id)
+    rows = read_csv(os.path.join(d, "observations_parsed.csv"))
+    cp = os.path.join(d, "contactcars_pricetable_cells.csv")
+    cells = {(c["source_url"], c["row_label"]): c for c in (read_csv(cp) if os.path.exists(cp) else [])}
     name_keys = {}  # folded 'brand model' -> model_id, for multi-model pages
     for (b, m), a in scrape_alias.items():
         name_keys[fold(b + m)] = a["model_id"]
@@ -152,12 +166,12 @@ def load_s1(scrape_alias, url_to_model, models):
             if c is None:
                 sys.exit(f"pricetable row without cell match: {r}")
             off_raw, mkt_raw = c["official_cell"], c["market_cell"]
-        base = dict(snapshot=S1_ID, observed_at=_iso(r["fetched_at"]), model_id=mid, source=src, source_sub=sub,
+        base = dict(snapshot=snap_id, observed_at=_iso(r["fetched_at"]), model_id=mid, source=src, source_sub=sub,
                     source_raw=r["source"], tier=SOURCE_TIER.get(src, "T2"), url=r["source_url"],
                     model_year=parse_year(r["model_year"]), model_year_raw=r["model_year"],
                     trim_raw=r["trim_raw"].strip(), trim_key=trim_key(r["trim_raw"]),
                     effective_date=r["effective_date"] or None, page_sha256=r["page_sha256"],
-                    row_ref=f"observations_parsed.csv#row{i + 2}")
+                    row_ref=f"{snap_id}/observations_parsed.csv#row{i + 2}")
         for ptype, raw in (("official", off_raw), ("market", mkt_raw)):
             v, st = parse_price(raw)
             obs.append(dict(base, price_type=ptype, value=v, value_status=st, value_raw=raw))
@@ -233,26 +247,30 @@ def build_price(mid, obs):
         yk = None if o["source"] == "egycar" else o["model_year"]
         ser[(o["source"], o["price_type"], yk, o["trim_key"])][o["snapshot"]].append(o)
     for (src, pt, yk, tk), snaps in sorted(ser.items(), key=lambda kv: tuple("" if x is None else str(x) for x in kv[0])):
-        A, B = snaps.get(S0_ID, []), snaps.get(S1_ID, [])
+        seen = [x for x in SNAP_ORDER if x in snaps]
+        B = snaps[seen[-1]]
+        A = snaps[seen[-2]] if len(seen) > 1 else []
         av = sorted({o["value"] for o in A if o["value"] is not None})
         bv = sorted({o["value"] for o in B if o["value"] is not None})
-        a, b = (A[0] if A else None), (B[0] if B else None)
-        if len(av) > 1 or len(bv) > 1:
+        a, b = (A[0] if A else None), B[0]
+        if seen[-1] != LATEST_ID:
+            ch = "NOT_SEEN_IN_LATEST"
+        elif len(av) > 1 or len(bv) > 1:
             ch = "AMBIGUOUS_DUPLICATE_ROWS"
-        elif a and b:
-            if av and bv:
-                ch = "UNCHANGED" if av == bv else "CHANGED"
-            elif bool(av) != bool(bv):
-                ch = "PRICE_STATUS_CHANGE"
-            else:
-                ch = "UNCHANGED_NON_NUMERIC"
-        elif b:
-            ch = "NEW_IN_S1"
+        elif a is None:
+            ch = "NEW_IN_LATEST" if len(SNAP_ORDER) > 1 else "BASELINE"
+        elif av and bv:
+            ch = "UNCHANGED" if av == bv else "CHANGED"
+        elif bool(av) != bool(bv):
+            ch = "PRICE_STATUS_CHANGE"
         else:
-            ch = "NOT_SEEN_IN_S1"
+            ch = "UNCHANGED_NON_NUMERIC"
+        snap_val = lambda os_: (lambda v: v[0] if len(v) == 1 else None)(sorted({o["value"] for o in os_ if o["value"] is not None}))
         h = dict(source=src, price_type=pt, change=ch, _year_key=yk, trim_key=tk,
-                 s0=a and dict(value=av[0] if len(av) == 1 else None, values=av, status=a["value_status"], label=a["trim_raw"]),
-                 s1=b and dict(value=bv[0] if len(bv) == 1 else None, values=bv, status=b["value_status"], label=b["trim_raw"], observed_at=b["observed_at"]))
+                 prev=a and dict(snapshot=a["snapshot"], value=av[0] if len(av) == 1 else None, values=av, status=a["value_status"], label=a["trim_raw"]),
+                 latest=dict(snapshot=b["snapshot"], value=bv[0] if len(bv) == 1 else None, values=bv, status=b["value_status"],
+                             label=b["trim_raw"], observed_at=b["observed_at"]),
+                 series=[dict(snapshot=x, value=snap_val(snaps[x])) for x in seen])
         if ch == "CHANGED":
             h["delta_egp"] = bv[0] - av[0]
         series_history.append(h)
@@ -265,7 +283,7 @@ def build_price(mid, obs):
         trims = []
         for tk in sorted(cohorts[y]):
             rows = cohorts[y][tk]
-            latest = S1_ID if any(o["snapshot"] == S1_ID for o in rows) else S0_ID
+            latest = max((o["snapshot"] for o in rows), key=SNAP_ORDER.index)
             cur = [o for o in rows if o["snapshot"] == latest]
             off = resolve([o for o in cur if o["price_type"] == "official"])
             mkts = [obs_ref(o) for o in cur if o["price_type"] == "market" and o["value"] is not None]
@@ -357,6 +375,44 @@ def build_specs(mid, specs):
     return dict(snapshot=S0_ID, observed_at=S0_DATE, attributes=out)
 
 
+def load_trim_specs(url_to_model):
+    """Specs from trim-detail pages (fetch_snapshot.py specs), latest snapshot that has them."""
+    snap = next((x for x in reversed(SNAPSHOTS) if os.path.exists(os.path.join(SNAP_ROOT, x, "specs_parsed.csv"))), None)
+    if not snap:
+        return None, {}
+    fields = {(r["source"], r["spec_label"].strip()): r for r in read_csv(os.path.join(ROOT, "crosswalk", "spec_fields.csv"))}
+    base_map = {}
+    for u, mids in url_to_model.items():
+        if len(mids) == 1:
+            base_map[re.sub(r"/year-\d{4}$", "", u).lower()] = next(iter(mids))
+    out = defaultdict(list)
+    for i, r in enumerate(read_csv(os.path.join(SNAP_ROOT, snap, "specs_parsed.csv"))):
+        model_url = re.sub(r"/[0-9a-f]{12}$|/\d+$", "", r["trim_url"]).lower()
+        mid = base_map.get(model_url)
+        f = fields.get((r["source"], r["spec_label"].strip())) or fields.get((r["source"], r["spec_id"].split(":", 1)[-1]))
+        if not mid or not f:
+            continue
+        trim = r["trim_raw"] or re.sub(r" Prices & Features$", "", r["title"] or "")
+        out[mid].append(dict(attribute=f["attribute"], value=r["value"], unit_as_stated=f["unit_as_stated"] or None,
+                             source=r["source"], trim=trim, model_year=r["model_year"] or None, url=r["trim_url"],
+                             observed_at=_iso(r["fetched_at"]), ref=f"{snap}/specs_parsed.csv#row{i + 2}"))
+    return snap, out
+
+
+def build_trim_specs(snap, rows):
+    if not snap:
+        return None
+    by = defaultdict(list)
+    for r in rows:
+        by[r["attribute"]].append(r)
+    attrs = {}
+    for a, lst in sorted(by.items()):
+        vals = sorted({str(x["value"]) for x in lst})
+        attrs[a] = dict(status="SINGLE_VALUE" if len(vals) == 1 else "MULTIPLE_VALUES", values=vals,
+                        observations=lst, note=None if len(vals) == 1 else "differs by trim and/or source; not reconciled")
+    return dict(snapshot=snap, trim_pages=len({r["url"] for r in rows}), attributes=attrs)
+
+
 # ---------------------------------------------------------------- registration
 
 def build_registration(reg_payload, reg_alias, window, slice_ids):
@@ -436,9 +492,10 @@ def main():
     rules = cfg["rules"]
     models, scrape_alias, reg_alias = load_registry()
     s0_obs, s0_specs, url_to_model = load_s0(a.master, scrape_alias)
-    s1_obs = load_s1(scrape_alias, url_to_model, models)
+    s1_obs = [o for sid in SNAPSHOTS for o in load_snapshot(sid, scrape_alias, url_to_model)]
     obs = s0_obs + s1_obs
     attach_undated(obs)
+    spec_snap, trim_specs = load_trim_specs(url_to_model)
     reg_payload = json.load(open(a.reg))
 
     # universe: price rule on S0 official prices (as in config)
@@ -474,19 +531,19 @@ def main():
             gaps.append(dict(type="UNRESOLVED_TRIMS_IN_PRICED_COHORT", detail=", ".join(price["price_from"]["unresolved_trims_in_cohort"])))
         if price["latest_priced_cohort"] and price["latest_priced_cohort"] < 2026:
             gaps.append(dict(type="STALE_COHORT", detail=f'latest priced model year is {price["latest_priced_cohort"]}'))
-        s1_seen = any(o["model_id"] == mid and o["snapshot"] == S1_ID for o in s1_obs)
+        s1_seen = any(o["model_id"] == mid and o["snapshot"] == LATEST_ID for o in s1_obs)
         if not s1_seen:
-            gaps.append(dict(type="NOT_IN_S1", detail="no S1 observation mapped to this model"))
+            gaps.append(dict(type="NOT_IN_LATEST_SNAPSHOT", detail=f"no {LATEST_ID} observation mapped to this model"))
         single_src = sorted({o["source"] for o in obs if o["model_id"] == mid and o["tier"] == "T2" and o["value"]})
         if len(single_src) == 1:
             gaps.append(dict(type="SINGLE_SOURCE_MODEL", detail=f"all price evidence from {single_src[0]}"))
         for h in history:
             if h["change"] == "AMBIGUOUS_DUPLICATE_ROWS":
                 review.append(dict(item_type="DUPLICATE_ROWS_IN_SNAPSHOT", model_id=mid,
-                                   detail=f'{h["model_year"]} {h["trim_key"]} {h["source"]} {h["price_type"]}: S0 {h["s0"] and h["s0"]["values"]} / S1 {h["s1"] and h["s1"]["values"]}', status="OPEN"))
-            if h["change"] == "PRICE_STATUS_CHANGE" and h["trim_key"] == "othertrims" and h["price_type"] == "official" and h["s0"] and h["s0"]["value"]:
+                                   detail=f'{h["model_year"]} {h["trim_key"]} {h["source"]} {h["price_type"]}: {h["prev"] and h["prev"]["snapshot"]} {h["prev"] and h["prev"]["values"]} / {h["latest"]["snapshot"]} {h["latest"]["values"]}', status="OPEN"))
+            if h["change"] == "PRICE_STATUS_CHANGE" and h["trim_key"] == "othertrims" and h["price_type"] == "official" and h["prev"] and h["prev"]["snapshot"] == S0_ID and h["prev"]["value"]:
                 review.append(dict(item_type="S0_PRICE_COLUMN_SUSPECT", model_id=mid,
-                                   detail=f'{h["model_year"]} Other Trims: S0 recorded official {h["s0"]["value"]}; S1 table cells show this row priced only in the market column', status="OPEN"))
+                                   detail=f'{h["model_year"]} Other Trims: S0 recorded official {h["prev"]["value"]}; {h["latest"]["snapshot"]} table cells show this row priced only in the market column', status="OPEN"))
         for c in conflicts:
             review.append(dict(item_type=c["type"], model_id=mid, detail=f'{c["model_year"]} {c["trim_key"]}: {c["values"]} from {c["sources"]}', status="OPEN"))
         eff = sorted({o["effective_date"] for o in obs if o["model_id"] == mid and o.get("effective_date")})
@@ -495,9 +552,10 @@ def main():
             in_slice=mid in slice_ids,
             slice_eval=dict(price_rule_passed=price_ok[mid], registrations_in_window=reg_all.get(mid, {}).get("registrations_in_window"),
                             registration_rule_passed=reg_all.get(mid, {}).get("registrations_in_window", 0) >= rules["registration_min"]),
-            price=price, specs=build_specs(mid, s0_specs), registration=reg.get(mid) or reg_all.get(mid),
-            freshness=dict(price_snapshots=[dict(id=S0_ID, observed_at=S0_DATE),
-                                             dict(id=S1_ID, observed_at="2026-09-25" if s1_seen else None)],
+            price=price, specs=dict(build_specs(mid, s0_specs), trim_pages=build_trim_specs(spec_snap, trim_specs.get(mid, []))), registration=reg.get(mid) or reg_all.get(mid),
+            freshness=dict(price_snapshots=[dict(id=x, observed_at=(S0_DATE if x == S0_ID else x.split("_", 1)[1]),
+                                                 model_observed=any(o["model_id"] == mid and o["snapshot"] == x for o in obs))
+                                            for x in SNAP_ORDER],
                            source_stated_price_dates=eff, spec_snapshot=S0_DATE,
                            registration_data_through=win[-1]),
             conflicts=conflicts, gaps=gaps))
@@ -506,17 +564,18 @@ def main():
     def ins(p):
         return dict(path=os.path.relpath(p, ROOT) if p.startswith(ROOT) else os.path.basename(p), sha256=sha256(p))
     doc = dict(
-        schema="carindex.p1.buyer_view/v1", slice=cfg["slice_id"], generated_as_of=a.as_of,
+        schema="carindex.p1.buyer_view/v2", slice=cfg["slice_id"], generated_as_of=a.as_of,
         notes=["Model level is canonical; trims are evidence attached to a model.",
                "No value is averaged or imputed. CONFLICT means sources disagree and no canonical value is given.",
                "Registration counts are first licences (Ahram/AMIC data via Registration Explorer), not sales.",
                "IDs are PROVISIONAL (Living Data Architecture D3/D4 undecided); do not build public URLs on them."],
         universe_rule=rules,
-        inputs=[ins(a.master), ins(a.reg), ins(os.path.join(S1_DIR, "observations_parsed.csv")),
-                ins(os.path.join(S1_DIR, "contactcars_pricetable_cells.csv")),
+        inputs=[ins(a.master), ins(a.reg)] + [ins(os.path.join(SNAP_ROOT, x, f)) for x in SNAPSHOTS
+                for f in ("observations_parsed.csv", "contactcars_pricetable_cells.csv", "specs_parsed.csv")
+                if os.path.exists(os.path.join(SNAP_ROOT, x, f))] + [
                 ins(os.path.join(ROOT, "registry", "models.csv")), ins(os.path.join(ROOT, "crosswalk", "scrape_aliases.csv")),
                 ins(os.path.join(ROOT, "crosswalk", "registration_aliases.csv")), ins(os.path.join(ROOT, "crosswalk", "trim_synonyms.csv"))],
-        price_history=dict(snapshots=[S0_ID, S1_ID], series_compared=sum(changes.values()), changes=dict(changes),
+        price_history=dict(snapshots=SNAP_ORDER, latest=LATEST_ID, series_compared=sum(changes.values()), changes=dict(changes),
                            next_snapshot="see vehicle-data/README.md"),
         models=sorted(out_models, key=lambda x: (not x["in_slice"], -(x["slice_eval"]["registrations_in_window"] or 0))))
     os.makedirs(os.path.dirname(a.out), exist_ok=True)
@@ -527,15 +586,17 @@ def main():
         w = csv.DictWriter(f, fieldnames=["item_type", "model_id", "detail", "status"])
         w.writeheader()
         w.writerows(review)
-    with open(os.path.join(ROOT, "views", "price_history_S0_S1.csv"), "w", newline="", encoding="utf-8") as f:
-        cols = ["model_id", "model_year", "trim_key", "source", "price_type", "change", "s0_value", "s0_status", "s1_value", "s1_status", "delta_egp"]
+    with open(os.path.join(ROOT, "views", "price_history.csv"), "w", newline="", encoding="utf-8") as f:
+        cols = ["model_id", "model_year", "trim_key", "source", "price_type", "change", "prev_snapshot", "prev_value", "prev_status",
+                "latest_snapshot", "latest_value", "latest_status", "delta_egp", "series"]
         w = csv.DictWriter(f, fieldnames=cols)
         w.writeheader()
         for h in all_history:
+            p_, l_ = h["prev"] or {}, h["latest"]
             w.writerow(dict(model_id=h["model_id"], model_year=h["model_year"], trim_key=h["trim_key"], source=h["source"],
-                            price_type=h["price_type"], change=h["change"],
-                            s0_value=h["s0"] and h["s0"]["value"], s0_status=h["s0"] and h["s0"]["status"],
-                            s1_value=h["s1"] and h["s1"]["value"], s1_status=h["s1"] and h["s1"]["status"], delta_egp=h.get("delta_egp")))
+                            price_type=h["price_type"], change=h["change"], prev_snapshot=p_.get("snapshot"), prev_value=p_.get("value"),
+                            prev_status=p_.get("status"), latest_snapshot=l_["snapshot"], latest_value=l_["value"], latest_status=l_["status"],
+                            delta_egp=h.get("delta_egp"), series=" ".join(f'{x["snapshot"]}={x["value"]}' for x in h["series"])))
     with open(os.path.join(ROOT, "views", "p1_suv_2m_summary.csv"), "w", newline="", encoding="utf-8") as f:
         cols = ["model_id", "slug", "brand", "model", "in_slice", "from_status", "from_value", "from_value_min", "from_value_max",
                 "from_model_year", "from_confidence", "cohorts_priced", "trims_in_conflict_latest_cohort",
