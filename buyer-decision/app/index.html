@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" class="lang-en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Find My Car — CarIndex</title>
+<meta name="description" content="Around EGP 2M? One recommended car, 2–3 real alternatives, and the evidence behind them.">
+<!-- Set content to a collector URL to send events; empty = local QA buffer only. -->
+<meta name="ci-track-endpoint" content="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container bar">
+    <a class="logo" href="#" aria-label="CarIndex home"><span class="wm-car">CAR</span><span class="wm-index">INDEX</span></a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="#">News</a><a href="#">Cars</a><a href="#">Compare</a><a href="#" aria-current="page">Find My Car</a><a href="#">Reviews</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="container">
+  <div id="screen" class="screen" aria-live="polite"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="trust">No paid rankings · No dealer influence · Source-backed, dated information</p>
+    <p class="method" id="method"></p>
+  </div>
+</footer>
+
+<div id="sheet" class="sheet" hidden>
+  <div class="sheet-backdrop" data-close></div>
+  <section class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title" tabindex="-1">
+    <button class="icon-btn sheet-close" data-close aria-label="Close">×</button>
+    <div id="sheet-body"></div>
+  </section>
+</div>
+
+<script src="../data/universe.v1.js"></script>
+<script src="track.js"></script>
+<script src="engine.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
