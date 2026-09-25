@@ -534,6 +534,8 @@ def main():
     rules = cfg["rules"]
     models, scrape_alias, reg_alias = load_registry()
     s0_obs, s0_specs, url_to_model = load_s0(a.master, scrape_alias)
+    for r in read_csv(os.path.join(ROOT, "crosswalk", "url_aliases.csv")):  # pages added after S0 (reviewed mapping)
+        url_to_model.setdefault(r["url"], set()).add(r["model_id"])
     s1_obs = [o for sid in SNAPSHOTS for o in load_snapshot(sid, scrape_alias, url_to_model)]
     obs = s0_obs + s1_obs
     attach_undated(obs)
@@ -607,6 +609,18 @@ def main():
                            registration_data_through=win[-1]),
             conflicts=conflicts, gaps=gaps))
 
+    for r in read_csv(os.path.join(ROOT, "crosswalk", "url_aliases.csv")):
+        if r["confidence"] != "HIGH":
+            review.append(dict(item_type="URL_ALIAS", model_id=r["model_id"], detail=f'{r["url"]} ({r["match_rule"]})', status="ACCEPTED_PENDING_REVIEW"))
+    tri = next((os.path.join(SNAP_ROOT, x, "discovery_triage.csv") for x in reversed(SNAPSHOTS)
+                if os.path.exists(os.path.join(SNAP_ROOT, x, "discovery_triage.csv"))
+                and any(True for _ in read_csv(os.path.join(SNAP_ROOT, x, "discovery_triage.csv")))), None)
+    mapped = {re.sub(r"/year-\d{4}$", "", u).lower() for u in url_to_model}
+    for r in (read_csv(tri) if tri else []):
+        if r.get("in_slice_band") == "True" and "SUV" in (r.get("body") or "") and r["url"].lower() not in mapped:
+            review.append(dict(item_type="NEW_MODEL_CANDIDATE", model_id="",
+                               detail=f'{r["url"]} body={r["body"]} official {r["official_min"]}-{r["official_max"]} years {r["model_years"]} ({r["event"]})',
+                               status="OPEN"))
     changes = Counter(h["change"] for h in all_history)
     def ins(p):
         return dict(path=os.path.relpath(p, ROOT) if p.startswith(ROOT) else os.path.basename(p), sha256=sha256(p))
