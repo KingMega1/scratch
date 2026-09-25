@@ -1,0 +1,18 @@
+item_type,model_id,detail,status
+DUPLICATE_ROWS_IN_SNAPSHOT,m_000002,"2027 redlinenpack contactcars official: S0 [2125000, 2155000] / S1 [2125000]",OPEN
+PRICE_CONFLICT,m_000002,"2027 blackdiamond: [2275000, 2300000] from ['contactcars', 'egycar', 'hatla2ee']",OPEN
+PRICE_CONFLICT,m_000002,"2027 blaze: [1925000, 1950000] from ['contactcars', 'egycar', 'hatla2ee']",OPEN
+PRICE_CONFLICT,m_000002,"2027 night: [2175000, 2200000] from ['contactcars', 'egycar', 'hatla2ee']",OPEN
+PRICE_CONFLICT,m_000002,"2027 redline: [2025000, 2050000] from ['contactcars', 'egycar', 'hatla2ee']",OPEN
+PRICE_CONFLICT,m_000002,"2027 redlinenpack: [2100000, 2125000] from ['contactcars', 'hatla2ee']",OPEN
+PRICE_CONFLICT,m_000002,"2027 shadow: [1775000, 1800000] from ['contactcars', 'egycar', 'hatla2ee']",OPEN
+REGISTRATION_ALIAS,m_000004,Jetour|T2 DM (powertrain suffix (DM) of same model name),ACCEPTED_PENDING_REVIEW
+S0_PRICE_COLUMN_SUSPECT,m_000008,2025 Other Trims: S0 recorded official 1180000; S1 table cells show this row priced only in the market column,OPEN
+PRICE_CONFLICT,m_000008,"2026 shine: [1730000, 1850000] from ['contactcars', 'hatla2ee']",OPEN
+PRICE_CONFLICT,m_000008,"2026 shineentry: [1590000, 1710000] from ['contactcars', 'hatla2ee']",OPEN
+S0_PRICE_COLUMN_SUSPECT,m_000010,2024 Other Trims: S0 recorded official 1700000; S1 table cells show this row priced only in the market column,OPEN
+REGISTRATION_ALIAS,m_000015,Mitsubishi|Eclipse (prefix; only Mitsubishi model starting 'Eclipse' in any scrape or registration source),ACCEPTED_PENDING_REVIEW
+REGISTRATION_ALIAS,m_000018,BYD|Sealion 06 (zero-padded number fold (06->6)),ACCEPTED_PENDING_REVIEW
+REGISTRATION_ALIAS,m_000019,Soueast|S06DM (powertrain suffix (DM) of same model name),ACCEPTED_PENDING_REVIEW
+REGISTRATION_ALIAS,m_000023,Baic|BJ30e (powertrain suffix (e) of same model name),ACCEPTED_PENDING_REVIEW
+S0_PRICE_COLUMN_SUSPECT,m_000024,2025 Other Trims: S0 recorded official 1848300; S1 table cells show this row priced only in the market column,OPEN

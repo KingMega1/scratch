@@ -1,0 +1,28 @@
+reg_brand,reg_model,model_id,status,match_rule,confidence,note
+Kia,Sportage,m_000001,ACCEPTED,exact,HIGH,
+Hyundai,Tucson,m_000002,ACCEPTED,exact,HIGH,
+Volkswagen,Tiguan,m_000003,ACCEPTED,exact,HIGH,
+Jetour,T2,m_000004,ACCEPTED,exact,HIGH,
+Jetour,T2 DM,m_000004,ACCEPTED,powertrain suffix (DM) of same model name,MEDIUM,reg engine=Hybrid; scrape lists an i-DM trim under T2
+Peugeot,3008,m_000005,ACCEPTED,exact,HIGH,
+Nissan,Qashqai,m_000006,ACCEPTED,exact,HIGH,
+Opel,Grandland,m_000007,ACCEPTED,exact,HIGH,
+Citroen,C5,m_000008,REJECTED_AMBIGUOUS,prefix,LOW,reg 'C5' cannot be separated from the Citroen C5 sedan that ContactCars also lists (Citroen C5 2026); volume not attributable
+Jetour,T1,m_000009,ACCEPTED,exact,HIGH,
+BYD,Song Plus,m_000010,ACCEPTED,exact,HIGH,reg engine=BEV; scrape has no powertrain field for this model
+Chery,Tiggo8 Pro Max,m_000011,ACCEPTED,case/space fold,HIGH,
+Renault,AUSTRAL,m_000012,ACCEPTED,case fold,HIGH,
+Soueast,S09,m_000013,ACCEPTED,case/space fold,HIGH,
+Peugeot,5008,m_000014,ACCEPTED,exact,HIGH,
+Mitsubishi,Eclipse,m_000015,ACCEPTED,prefix; only Mitsubishi model starting 'Eclipse' in any scrape or registration source,MEDIUM,review
+Kia,Seltos,m_000016,ACCEPTED,exact,HIGH,
+KGM,Torres,m_000017,ACCEPTED,exact,HIGH,
+BYD,Sealion 06,m_000018,ACCEPTED,zero-padded number fold (06->6),MEDIUM,reg engines BEV+Hybrid match scrape EV + DM-i trims
+Soueast,S06,m_000019,ACCEPTED,case/space fold,HIGH,
+Soueast,S06DM,m_000019,ACCEPTED,powertrain suffix (DM) of same model name,MEDIUM,reg engine=Hybrid
+MG,HS,m_000020,ACCEPTED,exact,HIGH,
+Deepal,S05,m_000021,ACCEPTED,case/space fold,HIGH,reg engine=REEV
+Haval,H7,m_000022,ACCEPTED,exact,HIGH,reg engine=Hybrid
+Baic,BJ30,m_000023,ACCEPTED,exact,HIGH,reg engine=ICE
+Baic,BJ30e,m_000023,ACCEPTED,powertrain suffix (e) of same model name,MEDIUM,reg engine=Hybrid; scrape lists Hybrid trims under BJ30
+BYD,Song L,m_000024,REJECTED_CONFLICT,prefix,LOW,reg 'Song L' is 100% BEV; scrape model is Song L DM-i (plug-in hybrid) - different product

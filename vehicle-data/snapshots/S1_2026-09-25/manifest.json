@@ -1,0 +1,41 @@
+{
+ "snapshot_id": "S1_2026-09-25",
+ "observed_at": "2026-09-25",
+ "fetched_utc_window": [
+  "2026-09-25T10:26Z",
+  "2026-09-25T10:29Z"
+ ],
+ "method": "manual: scripts/fetch_snapshot.py fetch+parse over snapshots/urls_suv_2m.txt (the 42 T2 URLs S0 used for slice models). Run from a Composio workbench sandbox because this repo's sandbox has no egress to the sites.",
+ "pages": {
+  "requested": 42,
+  "http_200": 42
+ },
+ "files": [
+  {
+   "name": "observations_parsed.csv",
+   "sha256": "9574ff56f7b589897a5742bc96a389f10e019b2886d05ae95a8597b4eecab6bf",
+   "rows": 166
+  },
+  {
+   "name": "contactcars_pricetable_cells.csv",
+   "sha256": "5b840da0a4455d9b6ec3e84a635c39536934939fe21271c8e1865d1fe572ad31",
+   "rows": 23
+  },
+  {
+   "name": "fetch_manifest.json",
+   "sha256": "6eff2ec3005b235235250b43021034783179a7fa7f2c834ca049fda0e15c5a17",
+   "location": "Composio workbench /mnt/files/carindex/snapshots/S1_2026-09-25/ (not in git)"
+  }
+ ],
+ "raw_pages": {
+  "location": "Composio workbench /mnt/files/carindex/snapshots/S1_2026-09-25/raw/ (42 gzip files named by page SHA-256; per-page SHA-256 is in observations_parsed.csv)",
+  "archive_sha256": "da056237266e5f80ea0d1eb21a6adfd4dd3c678d0bb85a56050a82d90e9745ab",
+  "in_git": false,
+  "note": "Not yet copied to CarIndex Drive: the Composio Drive connection lacks write scope and this sandbox cannot reach Composio storage."
+ },
+ "reproducibility": "fetch_snapshot.py parse over the stored raw pages reproduced both CSVs byte-for-byte (SHA-256 above) on 2026-09-25.",
+ "scope_limits": [
+  "Only S0's slice URLs were re-fetched; YallaMotor, classified and Hatla2ee summary pages were not.",
+  "Specs were not re-collected (S0 specs used)."
+ ]
+}

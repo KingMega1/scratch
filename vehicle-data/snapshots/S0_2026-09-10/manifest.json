@@ -1,0 +1,33 @@
+{
+ "snapshot_id": "S0_2026-09-10",
+ "observed_at": "2026-09-10",
+ "method": "one-time collection recorded in source_records.csv (method not documented in files read today)",
+ "files": [
+  {
+   "name": "source_records.csv",
+   "drive_file_id": "1QwT4YsUwmgRC2wonFHpmRIyX09e-pqEk",
+   "drive_path": "CarIndex/Automotive Market Vehicles Prices Scrapped/",
+   "sha256": "e5fe722fb0c2b4fd41ecc2b6559a25eea377d4f8a05fce365c405bc169f7494c",
+   "rows": 1444
+  },
+  {
+   "name": "carindex_master.csv",
+   "drive_file_id": "1ki9OgVsRiA2gqymKpw0htE9-7ysahQc5",
+   "drive_path": "CarIndex/Automotive Market Vehicles Prices Scrapped/",
+   "sha256": "d498a63de00bfe027057701229d9b3eedbe6ca1743594bbd72af86e176bb9dbb",
+   "rows": 1444,
+   "role": "input to build_p1.py (row-parallel to source_records.csv, adds brand/model/body normalisation)"
+  },
+  {
+   "name": "vehicle_candidates.csv",
+   "drive_file_id": "1oFUsnAWsXNal1xUO9bjhBSI2lf5zZy_H",
+   "sha256": "45ef5796bdf26b2db026c3be0f2fb56852e1b1297a646fb9fa7c04aa00ea4fbb",
+   "role": "not used by build (verdict strings; see Living Data Architecture step 4)"
+  }
+ ],
+ "known_issues": [
+  "'Other Trims' rows from ContactCars price-table pages: S0 recorded some prices in official_price that S1 table cells show in the market column (see review/review_queue.csv S0_PRICE_COLUMN_SUSPECT)",
+  "Duplicate ContactCars rows for Hyundai Tucson 2027 REDLINE (N Pack): 2,125,000 and 2,155,000"
+ ],
+ "raw_copy_in_git": false
+}

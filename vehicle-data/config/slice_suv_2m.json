@@ -1,0 +1,13 @@
+{
+  "slice_id": "suv_2m_v1",
+  "description": "First P1 vertical slice: SUV/crossover models a buyer with ~EGP 2M would consider.",
+  "rules": {
+    "body_type": "carindex_master.body_type_normalized contains 'SUV'",
+    "price_band_egp": [1600000, 2400000],
+    "price_rule": "at least one numeric official_price in S0 (2026-09-10) for the model falls in, or the model's official price range overlaps, the band (+/-20% of EGP 2.0M)",
+    "registration_window": ["2025-09", "2026-08"],
+    "registration_min": 500,
+    "registration_rule": "passenger first-registrations in the window via ACCEPTED registration aliases >= registration_min",
+    "note": "Models that pass the price rule but whose registration link is REJECTED/unresolved are kept in the output with in_slice=false and a gap entry, so P1 sees them as known-unknowns."
+  }
+}
