@@ -21,7 +21,7 @@ echo "== $SNAP (prev prices: $PREV, prev discovery: ${PREV_DISC:-none}) mode=$MO
 # discovery must never block the price refresh: failures are recorded, not fatal
 if python3 scripts/discover.py sitemaps --out "$SNAP"; then
   python3 scripts/discover.py diff --out "$SNAP" ${PREV_DISC:+--prev "$PREV_DISC"} || echo "SOURCE_HEALTH discovery diff failed"
-  python3 scripts/discover.py triage --out "$SNAP" --max 40 || echo "SOURCE_HEALTH discovery triage failed"
+  python3 scripts/discover.py triage --out "$SNAP" --max 120 || echo "SOURCE_HEALTH discovery triage failed"
 else
   echo "SOURCE_HEALTH sitemap discovery failed"
 fi

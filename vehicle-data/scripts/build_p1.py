@@ -133,6 +133,24 @@ def load_s0(master_path, scrape_alias):
     return obs, specs, url_to_model
 
 
+def normalize_title(r):
+    """Re-split titles the S1-era Hatla2ee parser split at a model number (e.g. 'Peugeot 3008 ...')."""
+    if r["title_prefix"] and not re.fullmatch(r"20\d\d", r["model_year"] or ""):
+        full = f'{r["title_prefix"]} {r["model_year"]} {r["trim_raw"]}'
+        m = re.match(r"^(.*) (20\d\d) (.+)$", full)  # 'Peugeot 3008 2027 Allure'
+        if m:
+            return dict(r, title_prefix=m.group(1), model_year=m.group(2), trim_raw=m.group(3), _resplit=True)
+        m = re.match(r"^(.*) (20\d\d)$", full)  # year at the end: 'Peugeot 3008 A/T / Allure 2027'
+        if not m:
+            sys.exit(f"unparseable title: {r}")
+        pre, trim = r["title_prefix"] + " " + r["model_year"], r["trim_raw"][: -len(m.group(2))].strip()
+        t = re.match(r"^(.*?) ((?:[AM]/T|CVT|DCT) */.*)$", pre)  # transmission marker starts the trim
+        if t:
+            pre, trim = t.group(1), f"{t.group(2)} {trim}".strip()
+        return dict(r, title_prefix=pre, model_year=m.group(2), trim_raw=trim, _resplit=True)
+    return r
+
+
 def load_snapshot(snap_id, scrape_alias, url_to_model):
     d = os.path.join(SNAP_ROOT, snap_id)
     rows = read_csv(os.path.join(d, "observations_parsed.csv"))
@@ -144,22 +162,7 @@ def load_snapshot(snap_id, scrape_alias, url_to_model):
     obs = []
     for i, r in enumerate(rows):
         src, sub = source_id(r["source"])
-        if r["title_prefix"] and not re.fullmatch(r"20\d\d", r["model_year"] or ""):
-            # e.g. 'Peugeot 3008 2027 Allure' was split at '3008'; re-split at the last 20xx token
-            full = f'{r["title_prefix"]} {r["model_year"]} {r["trim_raw"]}'
-            m = re.match(r"^(.*) (20\d\d) (.+)$", full)
-            if m:
-                r = dict(r, title_prefix=m.group(1), model_year=m.group(2), trim_raw=m.group(3), _resplit=True)
-            else:
-                m = re.match(r"^(.*) (20\d\d)$", full)  # year at the end: 'Peugeot 3008 A/T / Allure 2027'
-                if not m:
-                    sys.exit(f"unparseable title: {r}")
-                pre, trim = r["title_prefix"] + " " + r["model_year"], r["trim_raw"][: -len(m.group(2))].strip()
-                # S1-era parser split 'Peugeot 3008 A/T / Allure 2027' at '3008'; transmission marker starts the trim
-                t = re.match(r"^(.*?) ((?:[AM]/T|CVT|DCT) */.*)$", pre)
-                if t:
-                    pre, trim = t.group(1), f"{t.group(2)} {trim}".strip()
-                r = dict(r, title_prefix=pre, model_year=m.group(2), trim_raw=trim, _resplit=True)
+        r = normalize_title(r)
         cands = url_to_model.get(r["source_url"], set())
         mid = None
         if r["title_prefix"]:
@@ -423,6 +426,35 @@ def build_trim_specs(snap, rows):
     return dict(snapshot=snap, trim_pages=len({r["url"] for r in rows}), attributes=attrs)
 
 
+def load_stated_changes(url_to_model):
+    """Hatla2ee 'Latest Changes' rows: source-stated, dated official price changes (latest snapshot that has them)."""
+    snap = next((x for x in reversed(SNAPSHOTS) if os.path.exists(os.path.join(SNAP_ROOT, x, "price_changes_stated.csv"))), None)
+    if not snap:
+        return {}
+    d = os.path.join(SNAP_ROOT, snap)
+    prefix = Counter((r["source_url"], r["title_prefix"]) for r in read_csv(os.path.join(d, "observations_parsed.csv")) if r["title_prefix"])
+    page_prefix = {}
+    for (u, pre), n in prefix.most_common():
+        page_prefix.setdefault(u, pre)
+    out = defaultdict(list)
+    for i, r in enumerate(read_csv(os.path.join(d, "price_changes_stated.csv"))):
+        mids = url_to_model.get(r["source_url"], set())
+        if len(mids) != 1:
+            continue
+        full = f'{r["title_prefix"]} {r["trim_raw"]}'.strip()
+        pre = page_prefix.get(r["source_url"], "")
+        label = re.sub(r"\s+", " ", full[len(pre):] if pre and full.startswith(pre) else full).strip()
+        old, _ = parse_price(r["old_price"])
+        new, _ = parse_price(r["new_price"])
+        out[next(iter(mids))].append(dict(model_year=parse_year(r["model_year"]), trim_label=label, trim_key=trim_key(label),
+                                          old_official=old, new_official=new, change_egp=(new - old) if old and new else None,
+                                          effective_date=r["effective_date"], source=r["source"], url=r["source_url"],
+                                          observed_at=_iso(r["fetched_at"]), ref=f"{snap}/price_changes_stated.csv#row{i + 2}"))
+    for v in out.values():
+        v.sort(key=lambda x: (x["effective_date"], x["trim_key"]), reverse=True)
+    return out
+
+
 # ---------------------------------------------------------------- registration
 
 def build_registration(reg_payload, reg_alias, window, slice_ids):
@@ -506,6 +538,7 @@ def main():
     obs = s0_obs + s1_obs
     attach_undated(obs)
     spec_snap, trim_specs = load_trim_specs(url_to_model)
+    stated = load_stated_changes(url_to_model)
     reg_payload = json.load(open(a.reg))
 
     # universe: price rule on S0 official prices (as in config)
@@ -562,7 +595,11 @@ def main():
             in_slice=mid in slice_ids,
             slice_eval=dict(price_rule_passed=price_ok[mid], registrations_in_window=reg_all.get(mid, {}).get("registrations_in_window"),
                             registration_rule_passed=reg_all.get(mid, {}).get("registrations_in_window", 0) >= rules["registration_min"]),
-            price=price, specs=dict(build_specs(mid, s0_specs), trim_pages=build_trim_specs(spec_snap, trim_specs.get(mid, []))), registration=reg.get(mid) or reg_all.get(mid),
+            price=dict(price, source_stated_changes=dict(
+                note="official price changes as stated and dated by the source (Hatla2ee 'Latest Changes'); effective_date is the source's date",
+                last_change_date=(stated.get(mid) or [{}])[0].get("effective_date"),
+                changes=stated.get(mid, []))),
+            specs=dict(build_specs(mid, s0_specs), trim_pages=build_trim_specs(spec_snap, trim_specs.get(mid, []))), registration=reg.get(mid) or reg_all.get(mid),
             freshness=dict(price_snapshots=[dict(id=x, observed_at=(S0_DATE if x == S0_ID else x.split("_", 1)[1]),
                                                  model_observed=any(o["model_id"] == mid and o["snapshot"] == x for o in obs))
                                             for x in SNAP_ORDER],

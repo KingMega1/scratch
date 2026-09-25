@@ -29,6 +29,7 @@ def rows_of(snap):
     cells = {(c["source_url"], c["row_label"]): c for c in b.read_csv(cp)} if os.path.exists(cp) else {}
     out = {}
     for r in rows:
+        r = b.normalize_title(r)
         off, mkt = r["official_price"], r["market_price"]
         if "pricetable" in r["source"]:
             c = cells.get((r["source_url"], f'{r["title_prefix"]} {r["model_year"]} {r["trim_raw"]}'.strip()))
@@ -109,6 +110,13 @@ def detect(prev, cur):
                 ev.append(dict(event="SPEC_ADDED", url=k[0], spec_id=k[1], label=c["spec_label"], new=c["value"], confidence="LOW"))
             elif a and not c:
                 ev.append(dict(event="SPEC_DROPPED", url=k[0], spec_id=k[1], label=a["spec_label"], old=a["value"], confidence="LOW"))
+    sc = os.path.join(cur, "price_changes_stated.csv")
+    prev_date = ps.split("_", 1)[1] if "_" in ps else ""
+    for r in (b.read_csv(sc) if os.path.exists(sc) else []):
+        if r["effective_date"] >= prev_date:  # source-dated change on/after the previous run -> alert candidate
+            ev.append(dict(event="SOURCE_STATED_PRICE_CHANGE", url=r["source_url"], model_year=r["model_year"],
+                           label=f'{r["title_prefix"]} {r["trim_raw"]}', price_type="official", old=r["old_price"],
+                           new=r["new_price"], confidence="MEDIUM", detail=f'source effective_date {r["effective_date"]}'))
     for e in ev:
         e.update(prev_snapshot=ps, snapshot=cs)
         e["event_id"] = eid(e["event"], e.get("url"), e.get("model_year"), e.get("trim_key"), e.get("price_type"),

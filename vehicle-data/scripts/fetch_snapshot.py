@@ -163,6 +163,8 @@ class _Swap:
 
 def p_hatla2ee(L):
     out, i = [], 0
+    end = next((k for k, l in enumerate(L) if l.startswith("Latest Changes in")), len(L))
+    L = L[:end]  # class table only; the price-change section is parsed by p_hatla2ee_changes
     while i < len(L):
         m = (re.match(r"^(.*?) (20\d\d) (.+)$", L[i]) or re.match(r"^(.*?) ((?:[AM]/T|CVT|DCT) */.*) (20\d\d)$", L[i])
              or re.match(r"^(.*) (.+?) (20\d\d)$", L[i]))
@@ -181,6 +183,32 @@ def p_hatla2ee(L):
                 out.append(dict(model_year=m.group(2), trim_raw=m.group(3), official_price=nums[0],
                                 market_price=nums[1] if len(nums) == 4 else None, effective_date=None,
                                 engine_cc=cc, title_prefix=m.group(1)))
+                i = j
+        i += 1
+    return out
+
+
+def p_hatla2ee_changes(L):
+    """'Latest Changes in <model> Prices': source-stated official price changes with the date the source gives."""
+    try:
+        i = next(k for k, l in enumerate(L) if l.startswith("Latest Changes in")) + 1
+    except StopIteration:
+        return []
+    out = []
+    while i < len(L) and not L[i].startswith("Compare"):
+        m = re.match(r"^(.*?) +((?:[AM]/T|CVT|DCT) */.*) (20\d\d)$", L[i]) or re.match(r"^(.*) (.+?) (20\d\d)$", L[i])
+        if m and i + 1 < len(L) and NUM.match(L[i + 1]):
+            j, nums, date = i + 1, [], None
+            while j < len(L) and j - i < 12:
+                if re.fullmatch(r"\d{4}-\d{2}-\d{2}", L[j]):
+                    date = L[j]
+                    break
+                if re.fullmatch(r"[+-]?\d{1,3}(,\d{3})*", L[j]):
+                    nums.append(L[j])
+                j += 1
+            if date and len(nums) >= 2:
+                out.append(dict(title_prefix=m.group(1), trim_raw=m.group(2), model_year=m.group(3), old_price=nums[0],
+                                new_price=nums[1], stated_change=nums[2] if len(nums) > 2 else "", effective_date=date))
                 i = j
         i += 1
     return out
@@ -243,13 +271,21 @@ def parse(out):
     cols = ["source", "source_url", "fetched_at", "page_sha256", "model_year", "title_prefix", "trim_raw", "engine_cc",
             "official_price", "market_price", "effective_date", "page_updated_label", "row_type"]
     _write_csv(os.path.join(out, "observations_parsed.csv"), cols, rows)
+    ch = []
+    for e in ev:
+        if site(e["url"]) == "Hatla2ee":
+            for o in p_hatla2ee_changes(e["lines"]):
+                ch.append(dict(o, source="Hatla2ee", source_url=e["url"], fetched_at=e["http_date"], page_sha256=e["sha256"]))
+    _write_csv(os.path.join(out, "price_changes_stated.csv"),
+               ["source", "source_url", "fetched_at", "page_sha256", "title_prefix", "trim_raw", "model_year", "old_price",
+                "new_price", "stated_change", "effective_date"], ch)
     buf = io.StringIO()
     w = csv.writer(buf)
     w.writerow(["source_url", "row_label", "official_cell", "market_cell"])
     w.writerows(cells)
     with open(os.path.join(out, "contactcars_pricetable_cells.csv"), "w", newline="") as f:
         f.write(buf.getvalue())
-    print(f"price rows={len(rows)} table_cells={len(cells)}")
+    print(f"price rows={len(rows)} table_cells={len(cells)} stated_changes={len(ch)}")
 
 
 def _write_csv(path, cols, rows):
@@ -312,14 +348,11 @@ def specs(out):
             t = next((l for l in L if l.endswith("Prices & Features")), "")
             m = re.match(r"^(.*?) (.+?) (\d{4}) Prices & Features$", t)
             base.update(title=t, trim_raw=None, model_year=m.group(3) if m else None)
-            try:
-                i = L.index("Car Details", L.index("Show All 7 Photos") if "Show All 7 Photos" in L else 0)
-            except ValueError:
-                i = next((k for k, l in enumerate(L) if l == "Car Details" and k + 1 < len(L) and L[k + 1] in H2_SPEC_KEYS), None)
+            i = next((k for k, l in enumerate(L) if l == "Car Details" and k + 1 < len(L) and L[k + 1] in H2_SPEC_KEYS), None)
             if i is None:
                 continue
             j = i + 1
-            while j + 1 < len(L) and L[j] in H2_SPEC_KEYS:
+            while j + 1 < len(L) and L[j] not in ("Features", "Financing", "Difference with Other Classes"):
                 rows.append(dict(base, spec_id="h2:" + L[j], spec_label=L[j], value=L[j + 1], via="car-details"))
                 j += 2
     cols = ["source", "trim_url", "fetched_at", "page_sha256", "brand", "model", "title", "trim_raw", "model_year",

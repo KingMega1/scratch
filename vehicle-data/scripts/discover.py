@@ -80,12 +80,26 @@ def diff(out, prev):
     print("discovery events:", dict(Counter(e["event"] for e in ev)), "baseline" if not old else f"vs {prev}")
 
 
-def triage(out, max_n):
+def _cc_available(L):
+    """ContactCars model page 'Available Models' block: (year, official min, official max)."""
+    out = []
+    for k, l in enumerate(L):
+        if re.fullmatch(r"\d+ Trims? Available", l):
+            blk = L[k:k + 14]
+            yr = next((x for x in blk if re.fullmatch(r"20\d\d", x)), None)
+            nums = [int(x.replace(",", "")) for x in blk if re.fullmatch(r"\d{1,3}(,\d{3}){2,}", x)]
+            if yr and nums:
+                out.append((yr, min(nums), max(nums)))
+    return out
+
+
+def triage(out, max_n, band=(1600000, 2400000)):
+    """One fetch per NEW/UNKNOWN candidate (+1 for body type only when the price is in the slice band)."""
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import fetch_snapshot as fs
     ev = [e for e in _read(os.path.join(out, "discovery_events.csv"))
           if e["event"] in ("NEW_MODEL_URL", "UNKNOWN_TO_CATALOG") and e["site"] in ("ContactCars", "Hatla2ee")]
-    ev.sort(key=lambda e: e["lastmod"], reverse=True)  # most recently touched first
+    ev.sort(key=lambda e: (e["event"] != "NEW_MODEL_URL", e["site"] != "ContactCars", e["lastmod"]), reverse=False)
     rows = []
     for e in ev[:max_n]:
         try:
@@ -94,16 +108,29 @@ def triage(out, max_n):
             rows.append(dict(e, status="ERROR", note=str(x)))
             continue
         L = fs.vis(html) if st == 200 else []
-        body = next((L[i + 1] for i, l in enumerate(L) if l in ("Body Shape", "Body Type") and i + 1 < len(L)), "")
-        parsed = fs.p_contactcars(L) if e["site"] == "ContactCars" else fs.p_hatla2ee(L)
-        prices = sorted(int(p["official_price"].replace(",", "")) for p in parsed if re.fullmatch(r"[\d,]{7,}", p["official_price"] or ""))
-        years = sorted({p["model_year"] for p in parsed if p.get("model_year")})
-        rows.append(dict(e, status=st, body=body, trims=len(parsed), official_min=prices[0] if prices else "",
-                         official_max=prices[-1] if prices else "", model_years=" ".join(years)))
+        if e["site"] == "ContactCars":
+            av = _cc_available(L)
+            years = sorted({a[0] for a in av})
+            lo, hi = (min(a[1] for a in av), max(a[2] for a in av)) if av else (None, None)
+            trims = sum(int(re.match(r"\d+", l).group()) for l in L if re.fullmatch(r"\d+ Trims? Available", l))
+        else:
+            parsed = fs.p_hatla2ee(L)
+            pr = sorted(int(p["official_price"].replace(",", "")) for p in parsed if re.fullmatch(r"[\d,]{7,}", p["official_price"] or ""))
+            years = sorted({p["model_year"] for p in parsed if p.get("model_year")})
+            lo, hi, trims = (pr[0] if pr else None), (pr[-1] if pr else None), len(parsed)
+        body, in_band = "", bool(lo and lo <= band[1] and hi >= band[0])
+        if in_band and e["site"] == "ContactCars" and years:
+            time.sleep(1)
+            st2, h2 = _get(f'{e["url"]}/year-{years[-1]}')
+            L2 = fs.vis(h2) if st2 == 200 else []
+            body = next((L2[i + 1] for i, l in enumerate(L2) if l in ("Body Shape", "Body Style") and i + 1 < len(L2)), "")
+        rows.append(dict(e, status=st, body=body, trims=trims, official_min=lo or "", official_max=hi or "",
+                         model_years=" ".join(years), in_slice_band=in_band))
         time.sleep(1)
     _write(os.path.join(out, "discovery_triage.csv"),
-           ["event", "site", "url", "lastmod", "status", "body", "trims", "official_min", "official_max", "model_years", "note"], rows)
-    print(f"triaged {len(rows)} of {len(ev)} candidates")
+           ["event", "site", "url", "lastmod", "status", "body", "trims", "official_min", "official_max", "model_years",
+            "in_slice_band", "note"], rows)
+    print(f"triaged {len(rows)} of {len(ev)} candidates; in slice band: {sum(1 for r in rows if r.get('in_slice_band'))}")
 
 
 def _read(p):
