@@ -59,7 +59,7 @@ def spec(attrs, key):
 def main(view_path, queue_path):
     raw = open(view_path, "rb").read()
     view = json.loads(raw)
-    assert view["schema"] == "carindex.p1.buyer_view/v1", view["schema"]
+    assert view["schema"] in ("carindex.p1.buyer_view/v1", "carindex.p1.buyer_view/v2"), view["schema"]
     pending = {}
     for r in csv.DictReader(open(queue_path, encoding="utf-8")):
         pending.setdefault(r["model_id"], []).append({"type": r["item_type"], "status": r["status"], "detail": r["detail"]})
@@ -69,7 +69,11 @@ def main(view_path, queue_path):
         if not m["in_slice"]:
             out_of_slice.append(f"{m['brand']} {m['model']}")
             continue
-        attrs = m["specs"]["attributes"]
+        # v2: trim-page specs (latest full refresh) first, S0 attributes as fallback — per P2 README
+        attrs = dict(m["specs"]["attributes"])
+        for k, v in ((m["specs"].get("trim_pages") or {}).get("attributes") or {}).items():
+            if v.get("status") not in (None, "MISSING"):
+                attrs[k] = v
         groups = set()
         for v in (spec(attrs, "fuel_type_raw") or {"values": []})["values"]:
             g = fuel_group(v["value"])
@@ -94,8 +98,9 @@ def main(view_path, queue_path):
             basis = "label"
             if g is None:
                 g, basis = (next(iter(groups)), "model") if len(groups) == 1 else (None, "unstated")
+            # v1: s0/s1 · v2: prev/latest (+ series)
             changes = [
-                {"source": h["source"], "from": h["s0"].get("value"), "to": h["s1"].get("value")}
+                {"source": h["source"], "from": (h.get("prev") or h.get("s0") or {}).get("value"), "to": (h.get("latest") or h.get("s1") or {}).get("value")}
                 for h in t.get("history", []) if h["price_type"] == "official" and h["change"] == "CHANGED"
             ]
             trims.append({

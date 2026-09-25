@@ -32,7 +32,9 @@
   const qs = new URLSearchParams(location.search);
   const utm = {};
   ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(k => { if (qs.get(k)) utm[k] = qs.get(k); });
-  const endpoint = (document.querySelector('meta[name="ci-track-endpoint"]') || {}).content || root.CI_TRACK_ENDPOINT || '';
+  // "auto" = the collector that served this page (same origin /e); empty = local buffer only
+  let endpoint = (document.querySelector('meta[name="ci-track-endpoint"]') || {}).content || root.CI_TRACK_ENDPOINT || '';
+  if (endpoint === 'auto') endpoint = /^https?:$/.test(location.protocol) ? location.origin + '/e' : '';
   const debug = qs.get('debug') === '1';
   let last = null;
   let ctx = {};

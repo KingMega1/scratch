@@ -7,12 +7,10 @@ import path from 'node:path';
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const port = 8799, out = path.join(root, 'tests/.e2e-events.ndjson');
 fs.rmSync(out, { force: true });
-// test copy of the page with the collector endpoint set (the shipped page keeps it empty)
-const page0 = fs.readFileSync(path.join(root, 'app/index.html'), 'utf8').replace('name="ci-track-endpoint" content=""', `name="ci-track-endpoint" content="http://127.0.0.1:${port}/e"`);
-fs.writeFileSync(path.join(root, 'app/.e2e.html'), page0);
-const col = spawn('node', [path.join(root, 'tools/collector.mjs'), String(port), out], { stdio: 'ignore' });
+// the shipped page, served by the collector exactly as testers will get it (endpoint "auto")
+const col = spawn('node', [path.join(root, 'tools/collector.mjs'), String(port), out], { stdio: 'ignore', env: { ...process.env, CI_QUIET: '1' } });
 await new Promise(r => setTimeout(r, 400));
-const base = `http://127.0.0.1:${port}/app/.e2e.html`;
+const base = `http://127.0.0.1:${port}/app/index.html`;
 fs.mkdirSync(path.join(root, 'shots'), { recursive: true });
 
 const browser = await chromium.launch();
@@ -35,7 +33,7 @@ async function run(label, viewport, lang, answers, prios = ['popular'], expectAl
     await page.screenshot({ path: path.join(root, `shots/${label}-2-question.png`), fullPage: true });
     await page.click('#done');
   }
-  await page.waitForSelector('.hero, .nomatch'); await page.waitForTimeout(400);
+  await page.waitForSelector('.hero, .nomatch', { timeout: 8000 }); await page.waitForTimeout(2000); // reveal animation
   const noMatch = !!(await page.$('.nomatch'));
   await page.screenshot({ path: path.join(root, `shots/${label}-3-result.png`), fullPage: true });
   const dir = await page.evaluate(() => document.documentElement.dir);
@@ -61,6 +59,16 @@ async function run(label, viewport, lang, answers, prios = ['popular'], expectAl
   await page.fill('#fb-text', lang === 'ar' ? 'عايز أعرف تكلفة الصيانة' : 'Show running costs.');
   await page.click('#fb-send');
   const url = page.url();
+  // phone back button: evidence sheet closes first, then result → last question → earlier question
+  await page.click('.hero [data-cta="evidence"]'); await page.waitForSelector('#sheet:not([hidden])');
+  await page.goBack(); await page.waitForTimeout(150);
+  check(await page.$eval('#sheet', el => el.hidden) && !!(await page.$('.hero')), `${label}: back closes evidence, stays on result`);
+  await page.goBack(); await page.waitForSelector('#h-q');
+  const q1 = await page.textContent('#h-q');
+  await page.goBack(); await page.waitForTimeout(150);
+  const q2 = await page.$('#h-q') ? await page.textContent('#h-q') : await page.textContent('h1');
+  check(q1 !== q2, `${label}: back walks through questions (${q1.trim().slice(0, 18)} → ${q2.trim().slice(0, 18)})`);
+  await page.goForward(); await page.goForward(); await page.waitForSelector('.hero');
   // language switch keeps the result
   await page.click('#lang-btn'); await page.waitForSelector('.hero');
   const heroAfterSwitch = (await page.textContent('#h-hero')).trim();
@@ -87,7 +95,9 @@ await run('ar-mobile-seven-long', { width: 390, height: 844 }, 'ar', ['seven', '
 await run('en-mobile-hybrid-warranty', { width: 390, height: 844 }, 'en', ['five', 'city', 'no', 'hybrid'], ['warranty']);
 await browser.close();
 await new Promise(r => setTimeout(r, 300));
-col.kill(); fs.rmSync(path.join(root, 'app/.e2e.html'), { force: true });
+const kpi = await (await fetch(`http://127.0.0.1:${port}/kpi`)).text();
+check(/Start → result/.test(kpi), 'live /kpi page renders');
+col.kill();
 
 const lines = fs.existsSync(out) ? fs.readFileSync(out, 'utf8').trim().split('\n').length : 0;
 check(lines > 40, `collector received ${lines} events`);

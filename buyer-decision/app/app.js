@@ -67,7 +67,14 @@
   ];
   const DEFAULTS = { charging: 'unsure', powertrain: 'any', priorities: [] };
   const fresh = () => ({ budget: U.meta.budget_anchor_egp, stretch: false });
-  let A = fresh(), stepIdx = 0, stepStart = 0, flowStart = 0, lastResult = null, current = null;
+  let A = fresh(), stepIdx = 0, stepStart = 0, flowStart = 0, lastResult = null, current = null, restoring = false, backViaButton = false;
+  const resultURL = () => location.pathname + location.search + '#a=' + encodeURIComponent(btoa(JSON.stringify(A)));
+  // every screen is a history entry so the phone's back button walks back through the journey
+  function nav(state) {
+    if (restoring) return;
+    const url = state.kind === 'result' ? resultURL() : location.pathname + location.search;
+    if (state.replace) history.replaceState(state, '', url); else history.pushState(state, '', url);
+  }
 
   const optsFor = q => q.opts.filter(o => !o[2] || o[2](A));
   const countWith = patch => E.countEligible(U, { ...DEFAULTS, ...A, ...patch });
@@ -91,8 +98,9 @@
   const pos = p => ((Math.min(Math.max(p, STRIP_MIN), STRIP_MAX) - STRIP_MIN) / (STRIP_MAX - STRIP_MIN)) * 100;
   const entryPrice = m => Math.min(...m.trims.map(t => t.max));
 
-  function renderEntry() {
-    current = renderEntry;
+  function renderEntry(replace) {
+    current = () => renderEntry(true);
+    nav({ kind: 'entry', replace });
     const dots = U.models.map((m, i) => `<span class="dot" data-p="${entryPrice(m)}" style="left:${pos(entryPrice(m))}%;top:${16 + (i % 4) * 9}px"></span>`).join('');
     go(`
       <section class="entry" aria-labelledby="h-entry">
@@ -140,7 +148,7 @@
       if (auto !== null) { A[Q[i].id] = auto; T.track('q_skipped', { q_id: Q[i].id, reason: 'no_effect', value: auto }); continue; }
       stepIdx = i; return renderQuestion(Q[i]);
     }
-    renderResult('flow');
+    revealThen(() => renderResult('flow'));
   }
   function prevQuestion(from) {
     for (let i = from - 1; i >= 0; i--) if (shouldSkip(Q[i]) === null) { stepIdx = i; return renderQuestion(Q[i]); }
@@ -149,7 +157,8 @@
   const visibleStep = () => Q.slice(0, stepIdx + 1).filter(q => shouldSkip(q) === null).length;
 
   function renderQuestion(q, silent) {
-    current = () => renderQuestion(q, true);
+    current = () => { restoring = true; renderQuestion(q, true); restoring = false; };
+    nav({ kind: 'q', i: Q.indexOf(q) });
     const L = S.q[q.id];
     const sel = q.multi ? (A[q.id] || []) : A[q.id];
     const cards = optsFor(q).map(([v, icon]) => {
@@ -168,7 +177,11 @@
         ${q.multi ? `<div class="q-actions"><button class="btn btn-primary btn-big" id="done">${S.show_car}</button><button class="link-btn" id="skipq">${S.skip_prio}</button></div>` : ''}
       </section>`);
     if (!silent) { stepStart = performance.now(); T.track('q_view', { q_id: q.id, step: visibleStep() }); }
-    $('#back').onclick = () => { T.track('q_back', { q_id: q.id, step: visibleStep() }); prevQuestion(stepIdx); };
+    $('#back').onclick = () => {
+      backViaButton = true; T.track('q_back', { q_id: q.id, step: visibleStep(), via: 'button' });
+      const prev = history.state;
+      if (prev && prev.kind === 'q' && history.length > 1) { restoring = false; history.back(); } else prevQuestion(stepIdx);
+    };
     screen.querySelectorAll('.opt').forEach(b => b.onclick = () => {
       if (b.getAttribute('aria-disabled') === 'true') return;
       if (q.multi) {
@@ -184,8 +197,8 @@
       setTimeout(() => nextQuestion(stepIdx + 1), 180);
     });
     if (q.multi) {
-      $('#done').onclick = () => { answered(q, A[q.id] || []); renderResult('flow'); };
-      $('#skipq').onclick = () => { A[q.id] = []; answered(q, []); renderResult('flow'); };
+      $('#done').onclick = () => { answered(q, A[q.id] || []); revealThen(() => renderResult('flow')); };
+      $('#skipq').onclick = () => { A[q.id] = []; answered(q, []); revealThen(() => renderResult('flow')); };
     }
   }
   function answered(q, value) {
@@ -209,12 +222,40 @@
   const adoptionLine = m => (m.registration.count ? S.adoption({ count: num(m.registration.count), rank: m.registration.rank, of: m.registration.of }) : '');
   const answersForTrack = () => { const { pin, ...rest } = A; return rest; };
 
+  const SUV_SVG = `<svg class="suv" viewBox="0 0 600 200" aria-hidden="true" focusable="false">
+    <defs><linearGradient id="sweep" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <clipPath id="body"><path d="M34 148V106q2-14 22-18l92-10 46-48q10-10 26-10h196q18 0 28 10l54 48 42 6q22 4 24 24v40Z"/></clipPath>
+    <radialGradient id="beam" cx="0" cy=".5" r="1"><stop offset="0" stop-color="#1477D1" stop-opacity=".55"/><stop offset="1" stop-color="#1477D1" stop-opacity="0"/></radialGradient></defs>
+    <ellipse cx="300" cy="190" rx="275" ry="9" fill="#000" opacity=".5"/>
+    <path class="beam" d="M568 100 L600 78 L600 138 Z" fill="url(#beam)"/>
+    <g class="car">
+      <path d="M34 148V106q2-14 22-18l92-10 46-48q10-10 26-10h196q18 0 28 10l54 48 42 6q22 4 24 24v40Z" fill="#1d1f22" stroke="rgba(255,255,255,.28)" stroke-width="1.5"/>
+      <path d="M206 34 166 78h140V34Z M318 34v44h172l-44-38q-6-6-16-6Z" fill="#2b3642"/>
+      <path d="M56 112h506" stroke="rgba(255,255,255,.12)"/><path d="M34 132h536" stroke="rgba(255,255,255,.08)" stroke-width="6"/>
+      <rect x="542" y="96" width="24" height="9" rx="4" fill="#E8F1FA"/>
+      <rect x="36" y="96" width="14" height="10" rx="3" fill="#FFB020" opacity=".8"/>
+      <g clip-path="url(#body)"><rect class="sweep" x="-200" y="0" width="160" height="200" fill="url(#sweep)"/></g>
+      <g class="wheel"><circle cx="150" cy="150" r="38" fill="#0b0b0b" stroke="#3a3f46" stroke-width="3"/><circle cx="150" cy="150" r="17" fill="#6B7280"/><path d="M150 133v34M133 150h34" stroke="#3a3f46" stroke-width="3"/></g>
+      <g class="wheel"><circle cx="458" cy="150" r="38" fill="#0b0b0b" stroke="#3a3f46" stroke-width="3"/><circle cx="458" cy="150" r="17" fill="#6B7280"/><path d="M458 133v34M441 150h34" stroke="#3a3f46" stroke-width="3"/></g>
+    </g></svg>`;
+  const reduceMotion = () => window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function revealThen(done) {
+    const r = E.recommend(U, { ...DEFAULTS, ...A });
+    if (reduceMotion() || !r.hero) return done();
+    const steps = [S.match_all(U.meta.models_in_slice), S.match_fit(r.eligible), S.match_one];
+    go(`<section class="matching" aria-live="polite"><div class="scan" aria-hidden="true"><i></i></div><p class="match-line" id="ml">${steps[0]}</p></section>`, '#ml');
+    let i = 0;
+    const tick = setInterval(() => { i++; if (i < steps.length) $('#ml').textContent = steps[i]; else { clearInterval(tick); done(); } }, 520);
+  }
+
   function renderResult(source, pin) {
     if (pin !== undefined) A.pin = pin;
+    const silent = !!arguments[2];
     current = () => renderResult('lang', undefined, true);
     const r = E.recommend(U, { ...DEFAULTS, ...A });
     lastResult = r;
-    history.replaceState(null, '', location.pathname + location.search + '#a=' + encodeURIComponent(btoa(JSON.stringify(A))));
+    nav({ kind: 'result', replace: silent || source === 'shared_link' || source === 'promote' });
     if (!r.hero) return renderNoMatch(r, arguments[2]);
     const h = r.hero, m = h.model, alts = r.alternatives;
     const closeAlt = h.closeCall && U.models.find(x => x.id === h.closeCall);
@@ -222,14 +263,13 @@
     const sevenMissing = A.seats === 'seven' ? U.models.filter(x => !x.specs.seats).length : 0;
     go(`
       <div class="result">
-        <section class="hero mode-${r.mode}" aria-labelledby="h-hero">
-          <div class="hero-top">
-            <div>
-              <p class="eyebrow">${S.mode[r.mode]}</p>
-              <h1 id="h-hero" class="hero-name">${name(m)}</h1>
-              <p class="hero-trim">${lat(h.pick.label)} · ${m.model_year} · ${ptText(h.group)}</p>
-            </div>
-            <div class="hero-price"><p class="label-mono">${S.official_price(lat(h.pick.label))}</p><p class="price-big">${priceOf(h.pick)}</p></div>
+        <section class="hero mode-${r.mode} ${silent ? '' : 'reveal'}" aria-labelledby="h-hero">
+          <div class="stage">
+            <p class="eyebrow r1">${S.mode[r.mode]}</p>
+            <h1 id="h-hero" class="hero-name r2">${name(m)}</h1>
+            <p class="hero-trim r3">${lat(h.pick.label)} · ${m.model_year} · ${ptText(h.group)}</p>
+            ${SUV_SVG}
+            <div class="hero-price r4"><p class="label-mono">${S.official_price(lat(h.pick.label))}</p><p class="price-big">${priceOf(h.pick)}</p></div>
           </div>
           ${S.mode_note[r.mode] ? `<p class="mode-note">${S.mode_note[r.mode]}</p>` : ''}
           ${closeAlt ? `<p class="mode-note">${S.close_call(name(closeAlt))}</p>` : ''}
@@ -239,7 +279,7 @@
             <div><h2 class="h3">${S.worth_h}</h2><ul class="list">${h.compromises.map(c => `<li><span class="mk bad" aria-hidden="true">!</span><span>${say(c)}</span></li>`).join('')}</ul>
               <h2 class="h3" style="margin-top:20px">${S.sure_h}</h2><ul class="list sure">${h.confidence.notes.map(c => `<li>${say(c)}</li>`).join('')}</ul></div>
           </div>
-          <div class="hero-actions">
+          <div class="hero-actions r5">
             <button class="btn btn-on-dark" data-cta="evidence" data-id="${m.id}">${S.actions.evidence}</button>
             <button class="btn btn-outline-dark" data-cta="share">${S.actions.share}</button>
           </div>
@@ -265,6 +305,8 @@
           <div id="compare" hidden>${compareTable([h, ...alts])}</div>
         </section>` : ''}
 
+        <section class="feedback" id="fb" aria-labelledby="h-fb"></section>
+
         <section class="notice" aria-labelledby="h-unc">
           <span class="ic" aria-hidden="true">i</span>
           <div><strong id="h-unc">${S.unknown_h}</strong>
@@ -283,10 +325,8 @@
             Q.filter(q => !q.multi && A[q.id] && shouldSkip(q) === null).map(q => `<button class="chip" data-edit="${q.id}">${S.a[A[q.id]]}</button>`).join('')}${
             (A.priorities || []).map(p => `<button class="chip" data-edit="priorities">${S.a[p]}</button>`).join('')}<button class="link-btn" id="restart">${S.restart}</button></div>
         </section>
-
-        <section class="feedback" id="fb" aria-labelledby="h-fb"></section>
       </div>`, '#h-hero');
-    if (!arguments[2]) {
+    if (!silent) {
       T.markResult();
       T.track('result_view', { hero_id: m.slug, alt_ids: alts.map(x => x.model.slug), alt_roles: alts.map(x => x.role), eligible: r.eligible,
         mode: r.mode, confidence: h.confidence.level, margin: r.margin, ms_to_result: flowStart ? Math.round(performance.now() - flowStart) : null, answers: answersForTrack(), source, pinned: !!A.pin });
@@ -392,10 +432,22 @@
       <section><h3>${S.ev_gaps_h}</h3><p>${missing.map(k => S.spec[k]).join(lang === 'ar' ? '، ' : ', ')}</p></section>
       <section><h3>${S.ev_sources_h}</h3><ul class="src-list">${urls.map(u => `<li><a class="ltr" href="${esc(u)}" target="_blank" rel="noopener nofollow">${esc(u)}</a></li>`).join('')}</ul></section>`;
     sheet.hidden = false; $('.sheet-panel').focus();
+    history.pushState({ kind: 'sheet' }, '', location.href);
     T.track('evidence_open', { model_id: m.slug, source });
   }
-  sheet.addEventListener('click', e => { if (e.target.closest('[data-close]')) sheet.hidden = true; });
-  addEventListener('keydown', e => { if (e.key === 'Escape' && !sheet.hidden) sheet.hidden = true; });
+  const closeSheet = () => { if (sheet.hidden) return; if (history.state && history.state.kind === 'sheet') history.back(); else sheet.hidden = true; };
+  sheet.addEventListener('click', e => { if (e.target.closest('[data-close]')) closeSheet(); });
+  addEventListener('keydown', e => { if (e.key === 'Escape') closeSheet(); });
+  addEventListener('popstate', e => {
+    const st = e.state || { kind: 'entry' };
+    if (!sheet.hidden) { sheet.hidden = true; if (st.kind === 'result') return; }
+    restoring = true;
+    try {
+      if (st.kind === 'q' && Q[st.i]) { if (!backViaButton) T.track('q_back', { q_id: Q[st.i].id, step: st.i + 1, via: 'browser' }); stepIdx = st.i; renderQuestion(Q[st.i], true); }
+      else if (st.kind === 'result') renderResult('back', A.pin, true);
+      else if (st.kind === 'entry') renderEntry(true);
+    } finally { restoring = false; backViaButton = false; }
+  });
 
   function share() {
     const url = location.href;
@@ -445,5 +497,5 @@
   let restored = null;
   if (hash) { try { restored = JSON.parse(atob(decodeURIComponent(hash[1]))); } catch (e) { restored = null; } }
   if (restored && typeof restored.budget === 'number') { A = restored; T.track('fmc_view', { entry: 'shared_link' }); renderResult('shared_link', A.pin); }
-  else { T.track('fmc_view', { entry: 'direct' }); renderEntry(); }
+  else { T.track('fmc_view', { entry: 'direct' }); renderEntry(true); }
 })();

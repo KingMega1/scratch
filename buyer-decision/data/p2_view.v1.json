@@ -1,6 +1,6 @@
 {
  "meta": {
-  "source_schema": "carindex.p1.buyer_view/v1",
+  "source_schema": "carindex.p1.buyer_view/v2",
   "slice": "suv_2m_v1",
   "generated_as_of": "2026-09-25",
   "universe_rule": {
@@ -22,15 +22,15 @@
    "S0_2026-09-10",
    "S1_2026-09-25"
   ],
-  "p2_view_sha256": "39fe2158feccb8a1cfb926b3036a21ba6bb2f3bae18956438526ef7dc2bf76e7",
+  "p2_view_sha256": "61d8f5339fb3b700d23e66fc170c6560b737e4f9eed4293ae55575948040780c",
   "p2_inputs": [
    {
-    "path": "carindex_master.csv",
-    "sha256": "d498a63de00bfe027057701229d9b3eedbe6ca1743594bbd72af86e176bb9dbb"
+    "path": "s0_slice_master.csv",
+    "sha256": "25125c60665a1fabfe767d2de8f01c61d7d661b86471bbc39d4dff946c753d3b"
    },
    {
-    "path": "reg_payload.json",
-    "sha256": "400e7675c320f40fdff75f5704af06e06dbe6e84379857ffea73ad9567d0d158"
+    "path": "registration_slice.json",
+    "sha256": "844f4adc4016334609e9e6d78f893fb568f332d346f4bcc99047e4ec8c741e56"
    },
    {
     "path": "snapshots/S1_2026-09-25/observations_parsed.csv",
@@ -429,11 +429,13 @@
     "price_snapshots": [
      {
       "id": "S0_2026-09-10",
-      "observed_at": "2026-09-10"
+      "observed_at": "2026-09-10",
+      "model_observed": true
      },
      {
       "id": "S1_2026-09-25",
-      "observed_at": "2026-09-25"
+      "observed_at": "2026-09-25",
+      "model_observed": true
      }
     ],
     "source_stated_price_dates": [
@@ -932,11 +934,13 @@
     "price_snapshots": [
      {
       "id": "S0_2026-09-10",
-      "observed_at": "2026-09-10"
+      "observed_at": "2026-09-10",
+      "model_observed": true
      },
      {
       "id": "S1_2026-09-25",
-      "observed_at": "2026-09-25"
+      "observed_at": "2026-09-25",
+      "model_observed": true
      }
     ],
     "source_stated_price_dates": [
@@ -1043,7 +1047,7 @@
     {
      "type": "DUPLICATE_ROWS_IN_SNAPSHOT",
      "status": "OPEN",
-     "detail": "2027 redlinenpack contactcars official: S0 [2125000, 2155000] / S1 [2125000]"
+     "detail": "2027 redlinenpack contactcars official: S0_2026-09-10 [2125000, 2155000] / S1_2026-09-25 [2125000]"
     },
     {
      "type": "PRICE_CONFLICT",
@@ -1280,11 +1284,13 @@
     "price_snapshots": [
      {
       "id": "S0_2026-09-10",
-      "observed_at": "2026-09-10"
+      "observed_at": "2026-09-10",
+      "model_observed": true
      },
      {
       "id": "S1_2026-09-25",
-      "observed_at": "2026-09-25"
+      "observed_at": "2026-09-25",
+      "model_observed": true
      }
     ],
     "source_stated_price_dates": [],
@@ -1526,11 +1532,13 @@
     "price_snapshots": [
      {
       "id": "S0_2026-09-10",
-      "observed_at": "2026-09-10"
+      "observed_at": "2026-09-10",
+      "model_observed": true
      },
      {
       "id": "S1_2026-09-25",
-      "observed_at": "2026-09-25"
+      "observed_at": "2026-09-25",
+      "model_observed": true
      }
     ],
     "source_stated_price_dates": [],
@@ -1829,11 +1837,13 @@
     "price_snapshots": [
      {
       "id": "S0_2026-09-10",
-      "observed_at": "2026-09-10"
+      "observed_at": "2026-09-10",
+      "model_observed": true
      },
      {
       "id": "S1_2026-09-25",
-      "observed_at": "2026-09-25"
+      "observed_at": "2026-09-25",
+      "model_observed": true
      }
     ],
     "source_stated_price_dates": [],
@@ -2050,11 +2060,13 @@
     "price_snapshots": [
      {
       "id": "S0_2026-09-10",
-      "observed_at": "2026-09-10"
+      "observed_at": "2026-09-10",
+      "model_observed": true
      },
      {
       "id": "S1_2026-09-25",
-      "observed_at": "2026-09-25"
+      "observed_at": "2026-09-25",
+      "model_observed": true
      }
     ],
     "source_stated_price_dates": [],
@@ -2352,11 +2364,13 @@
     "price_snapshots": [
      {
       "id": "S0_2026-09-10",
-      "observed_at": "2026-09-10"
+      "observed_at": "2026-09-10",
+      "model_observed": true
      },
      {
       "id": "S1_2026-09-25",
-      "observed_at": "2026-09-25"
+      "observed_at": "2026-09-25",
+      "model_observed": true
      }
     ],
     "source_stated_price_dates": [],
@@ -2797,11 +2811,13 @@
     "price_snapshots": [
      {
       "id": "S0_2026-09-10",
-      "observed_at": "2026-09-10"
+      "observed_at": "2026-09-10",
+      "model_observed": true
      },
      {
       "id": "S1_2026-09-25",
-      "observed_at": "2026-09-25"
+      "observed_at": "2026-09-25",
+      "model_observed": true
      }
     ],
     "source_stated_price_dates": [
@@ -3056,11 +3072,13 @@
     "price_snapshots": [
      {
       "id": "S0_2026-09-10",
-      "observed_at": "2026-09-10"
+      "observed_at": "2026-09-10",
+      "model_observed": true
      },
      {
       "id": "S1_2026-09-25",
-      "observed_at": "2026-09-25"
+      "observed_at": "2026-09-25",
+      "model_observed": true
      }
     ],
     "source_stated_price_dates": [],
@@ -3257,11 +3275,13 @@
     "price_snapshots": [
      {
       "id": "S0_2026-09-10",
-      "observed_at": "2026-09-10"
+      "observed_at": "2026-09-10",
+      "model_observed": true
      },
      {
       "id": "S1_2026-09-25",
-      "observed_at": "2026-09-25"
+      "observed_at": "2026-09-25",
+      "model_observed": true
      }
     ],
     "source_stated_price_dates": [],
@@ -3521,11 +3541,13 @@
     "price_snapshots": [
      {
       "id": "S0_2026-09-10",
-      "observed_at": "2026-09-10"
+      "observed_at": "2026-09-10",
+      "model_observed": true
      },
      {
       "id": "S1_2026-09-25",
-      "observed_at": "2026-09-25"
+      "observed_at": "2026-09-25",
+      "model_observed": true
      }
     ],
     "source_stated_price_dates": [],
@@ -3839,11 +3861,13 @@
     "price_snapshots": [
      {
       "id": "S0_2026-09-10",
-      "observed_at": "2026-09-10"
+      "observed_at": "2026-09-10",
+      "model_observed": true
      },
      {
       "id": "S1_2026-09-25",
-      "observed_at": "2026-09-25"
+      "observed_at": "2026-09-25",
+      "model_observed": true
      }
     ],
     "source_stated_price_dates": [
@@ -4098,11 +4122,13 @@
     "price_snapshots": [
      {
       "id": "S0_2026-09-10",
-      "observed_at": "2026-09-10"
+      "observed_at": "2026-09-10",
+      "model_observed": true
      },
      {
       "id": "S1_2026-09-25",
-      "observed_at": "2026-09-25"
+      "observed_at": "2026-09-25",
+      "model_observed": true
      }
     ],
     "source_stated_price_dates": [],
@@ -4491,11 +4517,13 @@
     "price_snapshots": [
      {
       "id": "S0_2026-09-10",
-      "observed_at": "2026-09-10"
+      "observed_at": "2026-09-10",
+      "model_observed": true
      },
      {
       "id": "S1_2026-09-25",
-      "observed_at": "2026-09-25"
+      "observed_at": "2026-09-25",
+      "model_observed": true
      }
     ],
     "source_stated_price_dates": [],
@@ -4709,11 +4737,13 @@
     "price_snapshots": [
      {
       "id": "S0_2026-09-10",
-      "observed_at": "2026-09-10"
+      "observed_at": "2026-09-10",
+      "model_observed": true
      },
      {
       "id": "S1_2026-09-25",
-      "observed_at": "2026-09-25"
+      "observed_at": "2026-09-25",
+      "model_observed": true
      }
     ],
     "source_stated_price_dates": [],
@@ -4922,11 +4952,13 @@
     "price_snapshots": [
      {
       "id": "S0_2026-09-10",
-      "observed_at": "2026-09-10"
+      "observed_at": "2026-09-10",
+      "model_observed": true
      },
      {
       "id": "S1_2026-09-25",
-      "observed_at": "2026-09-25"
+      "observed_at": "2026-09-25",
+      "model_observed": true
      }
     ],
     "source_stated_price_dates": [],
@@ -5201,11 +5233,13 @@
     "price_snapshots": [
      {
       "id": "S0_2026-09-10",
-      "observed_at": "2026-09-10"
+      "observed_at": "2026-09-10",
+      "model_observed": true
      },
      {
       "id": "S1_2026-09-25",
-      "observed_at": "2026-09-25"
+      "observed_at": "2026-09-25",
+      "model_observed": true
      }
     ],
     "source_stated_price_dates": [
@@ -5493,11 +5527,13 @@
     "price_snapshots": [
      {
       "id": "S0_2026-09-10",
-      "observed_at": "2026-09-10"
+      "observed_at": "2026-09-10",
+      "model_observed": true
      },
      {
       "id": "S1_2026-09-25",
-      "observed_at": "2026-09-25"
+      "observed_at": "2026-09-25",
+      "model_observed": true
      }
     ],
     "source_stated_price_dates": [],
@@ -5742,11 +5778,13 @@
     "price_snapshots": [
      {
       "id": "S0_2026-09-10",
-      "observed_at": "2026-09-10"
+      "observed_at": "2026-09-10",
+      "model_observed": true
      },
      {
       "id": "S1_2026-09-25",
-      "observed_at": "2026-09-25"
+      "observed_at": "2026-09-25",
+      "model_observed": true
      }
     ],
     "source_stated_price_dates": [],
@@ -5978,11 +6016,13 @@
     "price_snapshots": [
      {
       "id": "S0_2026-09-10",
-      "observed_at": "2026-09-10"
+      "observed_at": "2026-09-10",
+      "model_observed": true
      },
      {
       "id": "S1_2026-09-25",
-      "observed_at": "2026-09-25"
+      "observed_at": "2026-09-25",
+      "model_observed": true
      }
     ],
     "source_stated_price_dates": [],
@@ -6165,11 +6205,13 @@
     "price_snapshots": [
      {
       "id": "S0_2026-09-10",
-      "observed_at": "2026-09-10"
+      "observed_at": "2026-09-10",
+      "model_observed": true
      },
      {
       "id": "S1_2026-09-25",
-      "observed_at": "2026-09-25"
+      "observed_at": "2026-09-25",
+      "model_observed": true
      }
     ],
     "source_stated_price_dates": [],

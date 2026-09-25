@@ -230,3 +230,34 @@ html.lang-ar .num{ font-family:"Space Grotesk",system-ui,sans-serif; }
 html.lang-ar .logo{ direction:ltr; }
 html[dir="rtl"] .sheet-panel{ animation-name:slide-rtl; }
 @keyframes slide-rtl{ from{ transform:translateX(-24px); opacity:0; } to{ transform:none; opacity:1; } }
+
+/* ---------- reveal (result stage) ---------- */
+.stage{ display:grid; gap:var(--s2); justify-items:start; }
+.suv{ width:min(100%,560px); height:auto; justify-self:center; margin-block:var(--s3) 0; overflow:visible; }
+html[dir="rtl"] .suv{ transform:scaleX(-1); }
+.suv .wheel{ transform-box:fill-box; transform-origin:center; }
+.suv .sweep{ opacity:0; }
+.stage .hero-price{ text-align:start; }
+.reveal .r1,.reveal .r2,.reveal .r3,.reveal .r4,.reveal .r5{ opacity:0; animation:fade-up .5s var(--ease) forwards; }
+.reveal .r1{ animation-delay:.05s; } .reveal .r2{ animation-delay:.15s; } .reveal .r3{ animation-delay:.25s; }
+.reveal .r4{ animation-delay:1.0s; } .reveal .r5{ animation-delay:1.2s; }
+.reveal .car{ animation:drive-in 1s cubic-bezier(.15,.8,.25,1) both; }
+.reveal .wheel{ animation:spin 1s cubic-bezier(.15,.8,.25,1) both; }
+.reveal .sweep{ animation:sweep 1.3s ease-in-out .9s both; }
+.reveal .beam{ animation:beam 1.2s ease-out .8s both; }
+@keyframes fade-up{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; } }
+@keyframes drive-in{ from{ transform:translateX(-120px); opacity:0; } to{ transform:none; opacity:1; } }
+@keyframes spin{ from{ transform:rotate(-540deg); } to{ transform:none; } }
+@keyframes sweep{ 0%{ opacity:1; transform:translateX(0); } 100%{ opacity:1; transform:translateX(900px); } }
+@keyframes beam{ from{ opacity:0; } to{ opacity:1; } }
+/* matching moment */
+.matching{ min-height:52vh; display:grid; place-content:center; justify-items:center; gap:var(--s5); background:var(--obsidian); color:#fff; border-radius:var(--r-card); padding:var(--s6); text-align:center; }
+.match-line{ font:600 clamp(22px,4vw,32px)/1.3 var(--f-head); }
+.scan{ width:min(280px,70vw); height:4px; border-radius:var(--r-pill); background:rgba(255,255,255,.12); overflow:hidden; }
+.scan i{ display:block; width:35%; height:100%; background:var(--ocean); animation:scan 1s ease-in-out infinite alternate; }
+@keyframes scan{ from{ transform:translateX(-10%); } to{ transform:translateX(200%); } }
+html[dir="rtl"] .scan i{ animation-direction:alternate-reverse; }
+@media (prefers-reduced-motion:reduce){ .reveal .r1,.reveal .r2,.reveal .r3,.reveal .r4,.reveal .r5{ opacity:1; } }
+
+/* programmatic focus on screen headings (for screen readers) should not draw a ring */
+[tabindex="-1"]:focus{ outline:none; }
