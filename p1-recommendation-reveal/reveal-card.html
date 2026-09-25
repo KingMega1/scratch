@@ -1,0 +1,94 @@
+<!doctype html>
+<!--
+  P1 "top match" reveal card — drop-in replacement for the current result screen
+  (Find My Car / R3 Recommendation), fixing the demonstrated failure: a 2-minute
+  quiz was paying off in a percentage + generic car-silhouette icon, never the
+  actual matched car. Ships as one file: markup + styles + the exact swap logic.
+
+  Usage: replace the "YOUR TOP MATCH / 81% / [icon]" block in the live result
+  screen with #reveal-card below. Wire real data via the data-* attributes or
+  by editing the four fields marked DATA in the HTML. carPhotoUrl must point
+  at a real, licensed/approved photo; if none exists yet, keep .prov visible
+  and route the image through the unverified-image path (see comment on .prov).
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CarIndex — top match reveal</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@600;700&display=swap">
+<style>
+  :root{
+    --obsidian:#111111; --ocean:#1477D1; --chalk:#F9F9F7; --clementine:#FFB020;
+    --f-head:'Space Grotesk',system-ui,sans-serif; --f-body:'Inter',system-ui,sans-serif; --f-mono:'JetBrains Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--chalk);font-family:var(--f-body);}
+
+  #reveal-card{
+    position:relative; max-width:520px; margin:24px auto; border-radius:16px; overflow:hidden;
+    background:var(--obsidian); color:var(--chalk); box-shadow:0 10px 30px -14px rgba(17,17,17,.35);
+  }
+  #reveal-card .photo{
+    position:absolute; inset:0;
+    /* DATA: swap for the real matched car's photo. object-fit + position keep it a real hero,
+       not a thumbnail — tune background-position per photo, this is not a fixed crop. */
+    background-image:var(--car-photo-url, url('corolla-placeholder.jpg'));
+    background-size:cover; background-position:38% 30%;
+  }
+  #reveal-card .scrim{
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(17,17,17,0) 28%, rgba(17,17,17,.55) 58%, rgba(17,17,17,.96) 100%);
+  }
+  #reveal-card .content{ position:relative; padding:28px 28px 30px; min-height:380px; display:flex; flex-direction:column; justify-content:flex-end; }
+
+  /* Provenance: a small corner tag, not a full banner. This is the fix — the old full-width
+     amber caution banner directly under the hero photo read as an apology at the one moment
+     the brand should feel confident. Keep it honest, keep it quiet. Full-banner treatment
+     stays correct on evidence pages (Car Detail, conflict panels) — do not remove it there. */
+  #reveal-card .prov{
+    position:absolute; top:18px; inset-inline-end:18px; font-family:var(--f-mono); font-size:11px;
+    background:rgba(17,17,17,.55); color:var(--clementine); padding:4px 10px; border-radius:999px;
+    border:1px solid rgba(255,176,32,.5); letter-spacing:.02em;
+  }
+  #reveal-card .prov[hidden]{ display:none; } /* hide once the photo is a real, rights-clear asset */
+
+  #reveal-card .match-chip{
+    display:inline-flex; align-items:center; gap:8px; font-family:var(--f-mono); font-size:12px;
+    background:rgba(249,249,247,.14); padding:6px 12px; border-radius:999px; margin-bottom:14px; width:fit-content;
+  }
+  #reveal-card .match-chip b{ color:var(--ocean); font-size:14px; } /* DATA: match % */
+
+  #reveal-card h1{ font-family:var(--f-head); font-weight:700; font-size:34px; margin:0 0 4px; } /* DATA: car name */
+  #reveal-card .sub{ font-size:14px; color:rgba(249,249,247,.72); margin-bottom:18px; } /* DATA: body/fuel/engine/price line */
+
+  #reveal-card .why{ background:rgba(249,249,247,.08); border-radius:12px; padding:16px 18px; }
+  #reveal-card .why .h{ font-family:var(--f-mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:rgba(249,249,247,.55); margin-bottom:8px; }
+  #reveal-card .why .row{ display:flex; gap:8px; font-size:14px; line-height:1.5; margin-bottom:4px; }
+  #reveal-card .why .row .mk{ color:var(--ocean); flex:none; }
+  /* DATA: repeat .row for each real reason; keep it to genuine, specific matches — no filler */
+
+  #reveal-card .see-why{ margin-top:16px; font-family:var(--f-mono); font-size:13px; color:var(--chalk); text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<div id="reveal-card">
+  <div class="photo" style="--car-photo-url:url('corolla-hero.png')"></div>
+  <div class="scrim"></div>
+  <div class="prov">UNVERIFIED PHOTO</div>
+  <div class="content">
+    <div class="match-chip">YOUR TOP MATCH &middot; <b>94%</b></div>
+    <h1>Toyota Corolla 2026</h1>
+    <div class="sub">Sedan &middot; 1600cc &middot; CVT &middot; from EGP 1,280,000</div>
+    <div class="why">
+      <div class="h">Why it fits you</div>
+      <div class="row"><span class="mk">&#10003;</span>Comfortably inside your budget, 4/4 sources agree</div>
+      <div class="row"><span class="mk">&#10003;</span>Suited to a city/highway mix</div>
+      <div class="row"><span class="mk">&#10003;</span>Strong on reliability — your #1 priority</div>
+    </div>
+    <a class="see-why" href="#">See full match breakdown &rarr;</a>
+  </div>
+</div>
+
+</body>
+</html>
