@@ -5,6 +5,11 @@
 set -euo pipefail
 MODE="${1:-full}"
 cd "$(dirname "$0")/.."
+if [ "$MODE" = "triage" ]; then   # one-off: score the baseline UNKNOWN_TO_CATALOG candidates of the latest discovery run
+  D=$(ls -d snapshots/S*_*/ | while read d; do if [ -f "$d/discovery_events.csv" ] && grep -q UNKNOWN_TO_CATALOG "$d/discovery_events.csv"; then echo "$d"; fi; done | tail -1)
+  python3 scripts/discover.py triage --out "$D" --max 400
+  exit 0
+fi
 T0=$(date +%s)
 DATE=$(date -u +%Y-%m-%d)
 LAST=0; PREV=""; PREV_DISC=""
