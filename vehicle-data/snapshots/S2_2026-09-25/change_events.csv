@@ -1,0 +1,9 @@
+event_id,event,snapshot,prev_snapshot,url,model_year,trim_key,label,price_type,spec_id,old,new,delta_egp,delta_pct,material,confidence,detail
+23efce0c2bd059ee,SOURCE_HEALTH,S2_2026-09-25,S1_2026-09-25,https://eg.hatla2ee.com/en/new-car/peugeot/5008,,,,,,,,,,,HIGH,rows 2 -> 3
+7d4ccb384e8160a6,SOURCE_HEALTH,S2_2026-09-25,S1_2026-09-25,https://eg.hatla2ee.com/en/new-car/peugeot/3008,,,,,,,,,,,HIGH,rows 2 -> 3
+7bc6cfd5adea7b22,SOURCE_HEALTH,S2_2026-09-25,S1_2026-09-25,https://eg.hatla2ee.com/en/new-car/volks-wagen/tiguan,,,,,,,,,,,HIGH,rows 2 -> 3
+1f197298f11f6e01,NEW_TRIM,S2_2026-09-25,S1_2026-09-25,https://eg.hatla2ee.com/en/new-car/peugeot/3008,2027,allure,A/T / Allure,official,,,"[2099990, 2199990]",,,,MEDIUM,
+0e20fe5cd91541a8,NEW_TRIM,S2_2026-09-25,S1_2026-09-25,https://eg.hatla2ee.com/en/new-car/peugeot/3008,2027,gt,A/T / GT,official,,,[2399990],,,,MEDIUM,
+fdc6ea389881e9d4,NEW_TRIM,S2_2026-09-25,S1_2026-09-25,https://eg.hatla2ee.com/en/new-car/peugeot/5008,2027,allure,A/T / Allure,official,,,"[2274990, 2424990]",,,,MEDIUM,
+cc4caf8c91c33359,NEW_TRIM,S2_2026-09-25,S1_2026-09-25,https://eg.hatla2ee.com/en/new-car/peugeot/5008,2027,gt,A/T / GT,official,,,[2574990],,,,MEDIUM,
+7b4fa769f4c0648c,REVIEW_DUPLICATE_ROWS,S2_2026-09-25,S1_2026-09-25,https://eg.hatla2ee.com/en/new-car/volks-wagen/tiguan,2025,rline,,official,,[2350000],"[2350000, 2650000]",,,,LOW,

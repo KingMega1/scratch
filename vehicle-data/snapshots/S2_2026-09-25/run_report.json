@@ -1,0 +1,19 @@
+{
+ "snapshot": "snapshots/S2_2026-09-25",
+ "mode": "full",
+ "seconds": 413,
+ "pages_fetched": 182,
+ "pages_ok": 182,
+ "bytes_downloaded": 156441522,
+ "price_rows": 169,
+ "spec_rows": 3767,
+ "discovery_events": 789,
+ "triaged": 40,
+ "change_events": {
+  "NEW_TRIM": 4,
+  "REVIEW_DUPLICATE_ROWS": 1,
+  "SOURCE_HEALTH": 3
+ },
+ "review_items": 19,
+ "llm_calls": 0
+}
