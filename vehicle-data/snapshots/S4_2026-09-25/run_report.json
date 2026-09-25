@@ -10,9 +10,13 @@
  "discovery_events": 0,
  "triaged": 0,
  "change_events": {
+  "NEW_SOURCE_PAGE": 44
+ },
+ "review_items": 44,
+ "llm_calls": 0,
+ "change_events_ci": {
   "NEW_TRIM": 32,
   "SPEC_ADDED": 1543
  },
- "review_items": 44,
- "llm_calls": 0
+ "note": "change_events recomputed after detect_changes started collapsing first-time pages into NEW_SOURCE_PAGE"
 }

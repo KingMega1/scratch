@@ -53,6 +53,7 @@ Result: 21 models in the slice. 3 more are kept with `in_slice=false` and a gap:
 - `registry/models.csv`: model IDs.
 - `crosswalk/scrape_aliases.csv`: price/spec names → `model_id`.
 - `crosswalk/registration_aliases.csv`: registration `Brand|Consolidated` → `model_id`, with `status` (ACCEPTED / REJECTED_*), `match_rule` and `confidence`. MEDIUM aliases are in the review queue.
+- `crosswalk/url_aliases.csv`: source pages added after S0 (found by discovery) → `model_id`.
 - `crosswalk/trim_synonyms.csv`: the only non-mechanical trim-label fixes (2 misspellings).
 
 ## Refresh pipeline (no LLM in the routine path)

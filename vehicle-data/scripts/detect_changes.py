@@ -73,8 +73,13 @@ def detect(prev, cur):
         healthy[url] = ok
         if not ok:
             ev.append(dict(event="SOURCE_HEALTH", url=url, detail=f"rows {n0} -> {n1}", confidence="HIGH"))
+    new_pages = sorted(set(cp) - set(pp))  # pages tracked for the first time: one event each, no per-trim noise
+    for url in new_pages:
+        ev.append(dict(event="NEW_SOURCE_PAGE", url=url, detail=f"{cp[url]} rows; first time tracked", confidence="HIGH"))
     for k in sorted(set(P) | set(C)):
         url, yr, tp, tk, pt = k
+        if url in new_pages:
+            continue
         a, c = P.get(k), C.get(k)
         base = dict(url=url, model_year=yr, trim_key=tk, price_type=pt)
         if a and c:
@@ -100,10 +105,14 @@ def detect(prev, cur):
     S0, S1 = specs_of(prev), specs_of(cur)
     if S0 and S1:
         seen_urls = {u for u, _ in S1}
+        prev_urls = {u for u, _ in S0}
+        new_trim_pages = sorted(seen_urls - prev_urls)
+        for u in new_trim_pages:
+            ev.append(dict(event="NEW_SOURCE_PAGE", url=u, detail="trim spec page first time tracked", confidence="HIGH"))
         for k in sorted(set(S0) | set(S1)):
             a, c = S0.get(k), S1.get(k)
-            if k[0] not in seen_urls:
-                continue  # trim page not fetched this run -> no spec events for it
+            if k[0] not in seen_urls or k[0] not in prev_urls:
+                continue  # page not fetched this run, or first time tracked -> no per-spec events
             if a and c and a["value"] != c["value"]:
                 ev.append(dict(event="SPEC_CHANGE", url=k[0], spec_id=k[1], label=c["spec_label"], old=a["value"], new=c["value"], confidence="MEDIUM"))
             elif c and not a:
