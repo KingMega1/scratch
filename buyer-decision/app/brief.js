@@ -110,6 +110,10 @@
     petrol: ['petrol', 'gasoline', 'gas', 'fuel only', 'بنزين'],
   };
   const CHINESE = ['chinese', 'china', 'صيني', 'صيني', 'الصيني', 'صينيه', 'الصين'];
+  const CH_OPEN = [/(?:no|not a) problem/, /(?:don'?t|do not) mind/, /(?:open to|fine with|ok with|okay with|happy with)/, /chinese (?:is|are) (?:fine|ok|okay)/, /(?:including|even) chinese/,
+    /(?:معنديش|مش عندي|ماعنديش|مفيش|مافيش|ما فيش|لا توجد|بدون) ?مشكل/, /عادي/, /مش فارق/, /ماشي/, /حتي الصيني/, /حتى الصيني/, /مفتوح/];
+  const CH_PREFER_NOT = [/prefer(?:ably)? not/, /rather not/, /ideally not/, /if possible,? (?:no|not)/, /(?:يفضل|افضل|أفضل|بفضل|ياريت|يا ريت|لو ينفع) (?:مش|بلاش|من غير|يكون مش|ماتكونش)/, /مش مفضل/, /مش بحب الصيني قوي/];
+  const CH_EXCLUDE = [/no chinese/, /not chinese/, /without chinese/, /avoid chinese/, /(?:مش عايز|مش عاوز|مش عايزه|بلاش|من غير|لا) ?(?:ال)?صيني/, /مش صيني/, /ولا صيني/];
   const OPEN_WORDS = ['fine', 'ok', 'okay', 'open', 'no problem', "don't mind", 'dont mind', 'عادي', 'معنديش مشكله', 'مفيش مشكله', 'ماشي', 'مش فارق', 'مش فارقه'];
   const PRIORITY = {
     pocket: ['cheap', 'cheapest', 'save money', 'saving', 'value for money', 'good value', 'best value', 'affordable', 'اوفر', 'ارخص', 'رخيصه', 'توفير', 'اقتصاديه', 'تستاهل فلوسها', 'قيمه مقابل'],
@@ -130,12 +134,14 @@
     easy: ['easy to drive', 'easy to park', 'parking', 'compact', 'small', 'سهله', 'سهله في الركن', 'صغيره', 'ركن', 'سهله السواقه'],
   };
   const SCORED = ['pocket', 'space', 'performance', 'warranty', 'economy', 'popular', 'easy'];
-  const REF_WORDS = ['like', 'around the', 'something around', 'similar to', 'size of', 'same size', 'similar size', 'something like', 'such as', 'comparable to', 'the size',
+  const REF_WORDS = ['something like', 'anything like', 'car like', 'one like', 'like a', 'like an', 'around the', 'something around', 'similar to', 'size of', 'same size', 'similar size', 'something like', 'such as', 'comparable to', 'the size',
     'زي', 'شبه', 'في حجم', 'فى حجم', 'حجم', 'قد', 'نفس حجم', 'من نوعيه', 'نوعيه', 'في مستوي', 'مستوي'];
   const CONSIDER_WORDS = ['considering', 'deciding between', 'between', 'or', 'vs', 'versus', 'compare', 'thinking about', 'looking at', 'choose between',
     'بين', 'ولا', 'او', 'بفكر في', 'محتار بين', 'متردد بين', 'بقارن', 'قدامي'];
 
   const EN_BRAND_ALIAS = { mercedes: 'mercedes', benz: 'mercedes', merc: 'mercedes', vw: 'volkswagen', chevy: 'chevrolet', 'land rover': 'range-rover', 'range rover': 'range-rover', citroen: 'citroen', 'alfa': 'alfa-romeo', 'lynk': 'lynk-co' };
+  // model names that are also ordinary words ("my dream car", "free", "shine"): only count them next to their brand
+  const WORDY = ['dream', 'free', 'shine', 'unit', 'univ', 'mage', 'one', 'box', 'saga', 'tipo', 'alto', 'golf', 'swift', 'leon', 'juke', 'x', 'gt', 'es', 'et', 'lx', 'rx', 'vx', 'hs', 'zs'];
   // short all-letter names that are safe without the brand in front
   const SAFE_SHORT = ['glc', 'gle', 'gla', 'glb', 'gls', 'cla', 'eqa', 'eqb', 'eqs', 'rx9'];
 
@@ -153,7 +159,7 @@
       for (const n of names) {
         if (!n) continue;
         const letters = /[a-zء-ي]/.test(n), digits = /\d/.test(n);
-        const standalone = n.length >= 4 && !/^\d+$/.test(n) || (letters && digits && n.length >= 2) || SAFE_SHORT.includes(n) || /[ء-ي]/.test(n) && n.length >= 3;
+        const standalone = !WORDY.includes(n) && n.length >= 4 && !/^\d+$/.test(n) || (letters && digits && n.length >= 2) || SAFE_SHORT.includes(n) || /[ء-ي]/.test(n) && n.length >= 3;
         aliases.push({ id: m.id, brand: b, alias: n, standalone, reg: (m.reg && m.reg.last12) || 0, u: !!m.u });
       }
     }
@@ -233,20 +239,30 @@
     if (city || long) { r.usage = city && long ? 'mixed' : city ? 'city' : 'long'; got('usage'); }
 
     // powertrain: "no electric" -> exclude; "hybrid" -> prefer
-    const ptWant = [], ptNot = [];
+    const ptWant = [], ptNot = [], ptOpen = [];
     for (const [k, words] of Object.entries(PT)) {
       const i = find(t, words.map(esc));
-      if (i >= 0) (negatedBefore(t, i + 1) ? ptNot : ptWant).push(k);
+      if (i < 0) continue;
+      const pre = t.slice(Math.max(0, i - 26), i + 1);
+      if (negatedBefore(t, i + 1)) ptNot.push(k);
+      // "open to EV" / "مفتوح للكهربا" = allowed, not preferred
+      else if (/(?:open to|ok with|okay with|fine with|don'?t mind|also|even|including|مفتوح|معنديش مانع|مش مانع|عادي|حتى|حتي)\s*(?:\S+\s*){0,2}$/.test(pre)) ptOpen.push(k);
+      else ptWant.push(k);
     }
-    if (ptNot.includes('ev') && !ptWant.length) { r.pt = 'no_ev'; got('pt'); }
-    else if (ptWant.length === 1) { r.pt = ptWant[0]; got('pt'); }
+    if (ptOpen.length && !ptWant.length && !ptNot.length) { r.pt = 'open'; got('pt'); }
+    if (ptNot.length) r.ptNo = [...new Set(ptNot)];
+    if (/(?:petrol|gasoline|بنزين)\s*(?:only|بس|فقط)|only\s*(?:petrol|gasoline)/.test(t)) { r.pt = 'petrol'; got('pt'); }
+    else if (ptNot.includes('ev') && !ptWant.filter(x => !ptNot.includes(x)).length) { r.pt = 'no_ev'; got('pt'); }
+    else if (ptWant.length === 1 && !ptNot.includes(ptWant[0])) { r.pt = ptWant[0]; got('pt'); }
     else if (ptWant.includes('hybrid')) { r.pt = 'hybrid'; got('pt'); }
 
     const ci = find(t, CHINESE.map(esc));
     if (ci >= 0) {
-      const after = t.slice(ci, ci + 40);
-      if (negatedBefore(t, ci + 1) || /(?:no|not|avoid|بلاش|مش|لا)/.test(after.slice(0, 18)) && !OPEN_WORDS.some(w => after.includes(w))) r.chinese = 'exclude';
-      else if (OPEN_WORDS.some(w => after.includes(w)) || OPEN_WORDS.some(w => t.slice(Math.max(0, ci - 25), ci).includes(w))) r.chinese = 'open';
+      // order matters: "مش عندي مشكلة في الصيني" contains "مش" but means open
+      const around = t.slice(Math.max(0, ci - 45), ci + 35);
+      if (CH_OPEN.some(re => re.test(around))) r.chinese = 'open';
+      else if (CH_PREFER_NOT.some(re => re.test(around))) r.chinese = 'prefer_not';
+      else if (negatedBefore(t, ci + 1) || CH_EXCLUDE.some(re => re.test(around))) r.chinese = 'exclude';
       else r.chinese = 'open';
       got('chinese');
     }
@@ -262,7 +278,16 @@
     const modelBrandIdx = new Set(mh.filter(h => h.withBrand).map(h => h.idx));
     const bare = bh.filter(h => !modelBrandIdx.has(h.idx) && !mh.some(x => x.brand === h.brand && Math.abs(x.idx - h.idx) < 4));
     const prefer = [], avoid = [];
-    for (const h of bare) (negatedBefore(t, h.idx + 1) ? avoid : prefer).push(h.brand);
+    const only = [];
+    for (const h of bare) {
+      // "7-seat", "seats": the word, not the SEAT brand (the brand counts when written SEAT / سيات)
+      if (h.brand === 'seat' && !/SEAT|سيات/.test(raw)) continue;
+      const post = t.slice(h.idx + h.len, h.idx + h.len + 12), pre = t.slice(Math.max(0, h.idx - 14), h.idx);
+      if (negatedBefore(t, h.idx + 1)) avoid.push(h.brand);
+      else if (/^\s*(?:only|بس|فقط)(?![a-zء-ي])/.test(post) || /(?:only|لازم|غير|الا)\s*$/.test(pre)) only.push(h.brand);
+      else prefer.push(h.brand);
+    }
+    if (only.length) { r.brandsOnly = [...new Set(only)]; got('brands'); }
     if (prefer.length) r.brandsPrefer = [...new Set(prefer)];
     if (avoid.length) r.brandsExclude = [...new Set(avoid)];
 
@@ -270,7 +295,7 @@
     for (const h of mh) {
       const pre = t.slice(Math.max(0, h.idx - 26), h.idx);
       const post = t.slice(h.end, h.end + 14);
-      const isRef = REF_WORDS.some(w => new RegExp(B + esc(w) + '\\s*(?:\\S+\\s*){0,3}$').test(pre)) || /^(?:'s|s)?\s*(?:size|price|class|sized|حجم|مقاس)/.test(post);
+      const isRef = REF_WORDS.some(w => new RegExp(B + esc(w) + '\\s*(?:\\S+\\s*){0,3}$').test(pre)) || /^(?:'s|s)?[\s-]*(?:size|price|class|sized|like|type|style|حجم|مقاس)/.test(post);
       const neg = negatedBefore(t, h.idx + 1);
       mentions.push({ id: h.id, role: neg ? 'avoid' : isRef ? 'reference' : 'consider' });
     }

@@ -60,11 +60,11 @@ for (const t of briefs) {
   const b = { ...P.parse(t, M), priorities: ['warranty'] }, base = E.recommend(U, b);
   if (!base.hero) continue;
   const id = base.hero.id;
-  const pool = base.ranked.map(x => byId[x].warranty_years).filter(v => v != null).sort((x, y) => x - y);
+  const pool = base.poolIds.map(x => byId[x].warranty_years).filter(v => v != null).sort((x, y) => x - y);
   const med = pool[Math.floor(pool.length / 2)];
   const withNull = E.recommend({ meta: U.meta, models: M.map(m => (m.id === id ? { ...m, warranty_years: null } : m)) }, b);
   const withMed = E.recommend({ meta: U.meta, models: M.map(m => (m.id === id ? { ...m, warranty_years: med } : m)) }, b);
-  ok(withNull.ranked.indexOf(id) === withMed.ranked.indexOf(id), `"${t}": unknown warranty ranks like the median (#${withNull.ranked.indexOf(id) + 1})`);
+  ok(withNull.poolIds.indexOf(id) === withMed.poolIds.indexOf(id), `"${t}": unknown warranty ranks like the median (#${withNull.poolIds.indexOf(id) + 1})`);
 }
 // 6. popularity is not in the score unless asked
 const a = E.recommend(U, P.parse('SUV around 2 million', M));

@@ -1,9 +1,13 @@
-/* CarIndex recommendation engine v3 (P1.1): model-first, brief-driven.
-   Rank = fit to the confirmed brief only. Source coverage and popularity never enter the score
-   (popularity only when the buyer asks for it). Unknown values score the median of the candidates. */
+/* CarIndex recommendation engine v4 (P1.1 integrity): Eligibility -> Fit -> Challenge. Model-first.
+   1. Eligibility: every confirmed hard constraint is checked per model as eligible / ineligible / unknown.
+      Only "eligible" models can be recommended. Unknown critical data never qualifies a model.
+   2. Fit: eligible models are ranked on the confirmed brief. Registrations/popularity are not in the
+      default score (only when the buyer asks for a popular choice). Unknown soft values score the median.
+   3. Challenge: named cars outside the eligible set (aspiration, shortlist over budget) are explained
+      separately and are never returned as recommendations. A final guard drops anything ineligible. */
 (function (root) {
   'use strict';
-  const ENGINE_VERSION = 'E3-2026-09-26';
+  const ENGINE_VERSION = 'E4-2026-09-27';
   const STEP = 100000;
 
   /* ---------- model facts ---------- */
@@ -22,16 +26,6 @@
   const regLast12 = m => (m.reg && m.reg.last12) || 0;
 
   // latest model-year trims only (older-year leftovers are not "the car you buy new")
-  // established on Egyptian roads: first registrations per month on sale, saturating at 25/month.
-  // Saturation keeps this from turning into "whatever sells most" (no self-reinforcing loop).
-  const LAST = '2026-08';
-  const monthsBetween = (a, b) => (+b.slice(0, 4) - +a.slice(0, 4)) * 12 + (+b.slice(5, 7) - +a.slice(5, 7)) + 1;
-  function established(m) {
-    if (!m.reg || !m.reg.first_month) return 0;
-    const months = Math.min(12, Math.max(1, monthsBetween(m.reg.first_month, LAST)));
-    return Math.min(1, (m.reg.last12 || 0) / months / 25);
-  }
-
   function currentTrims(m) {
     const y = Math.max(...m.trims.map(t => t.year || 0));
     let tr = m.trims.filter(t => (t.year || 0) === y && t.min > 0);
@@ -42,44 +36,72 @@
     const seen = new Set();
     return tr.filter(t => (seen.has(key(t)) ? false : seen.add(key(t))));
   }
-  const ptOk = (t, pt) => {
-    if (!pt || pt === 'open' || pt === 'hybrid' || pt === 'ev') return true;
-    if (pt === 'no_ev') return t.pt !== 'ev';
-    if (pt === 'petrol') return t.pt === 'petrol';
-    return true;
-  };
+  // a version's powertrain; when the source doesn't say and the model has only one kind, it is that kind
+  const trimPt = (t, m) => t.pt || (m && m.powertrains && m.powertrains.length === 1 ? m.powertrains[0] : null);
+  // hard powertrain exclusions from the brief: 'petrol' = petrol only; 'no_ev' = no fully electric; ptNo = explicit "no X"
+  function ptExcluded(b) {
+    const x = new Set(b.ptNo || []);
+    if (b.pt === 'no_ev') x.add('ev');
+    if (b.pt === 'petrol') { x.add('ev'); x.add('hybrid'); }
+    return x;
+  }
+  // true / false / null (unknown)
+  function ptOk(t, b, m) {
+    const x = ptExcluded(b);
+    if (!x.size) return true;
+    const pt = trimPt(t, m);
+    if (!pt) return null;
+    return !x.has(pt);
+  }
 
   /* ---------- budget territory ---------- */
   function territory(b) {
     const B = b.budget;
     const mode = b.budgetMode || 'around';
     const ceil = mode === 'max' ? (b.stretch ? B * 1.1 : B) : B * 1.1;
-    const floor = b.budgetMin ? b.budgetMin * 0.95 : B * (mode === 'max' ? 0.75 : 0.8);
+    // below this a car is presented as a "spend less" option, not a main recommendation (presentation only;
+    // scoring is continuous, so 1.59M and 1.61M on a 2M budget are treated almost identically)
+    const floor = b.budgetMin ? b.budgetMin * 0.95 : B * 0.7;
     return { budget: B, ceil: Math.round(ceil), floor: Math.round(floor), mode };
   }
 
-  /* ---------- hard constraints ---------- */
-  // returns null when the model qualifies, else the first constraint it breaks
-  function blocker(m, b, terr) {
-    if (!m.u) return 'not_on_sale';
-    if (b.body && b.body.length && !b.body.includes(m.body)) return 'body';
-    if (b.notBody && b.notBody.includes(m.body)) return 'body';
-    if (b.seats === 7 && !seven(m)) return 'seats';
-    if (b.chinese === 'exclude' && m.chinese) return 'chinese';
-    if (b.brandsExclude && b.brandsExclude.includes(m.brand_id)) return 'brand';
-    if (b.avoid && b.avoid.includes(m.id)) return 'brand';
-    const tr = currentTrims(m).filter(t => ptOk(t, b.pt));
-    if (!tr.length) return 'powertrain';
-    if (Math.min(...tr.map(t => t.min)) > terr.ceil) return 'budget';
-    return null;
+  /* ---------- Layer 1: eligibility ---------- */
+  // { status: 'eligible' | 'ineligible' | 'unknown', reason }
+  function eligibility(m, b, terr) {
+    const no = reason => ({ status: 'ineligible', reason });
+    const unk = reason => ({ status: 'unknown', reason });
+    if (!m.u) return no('not_on_sale');
+    if (!m.body) return unk('body');
+    if (b.body && b.body.length && !b.body.includes(m.body)) return no('body');
+    if (b.notBody && b.notBody.includes(m.body)) return no('body');
+    if (b.seats === 7) { if (!m.seats || !m.seats.length) return unk('seats'); if (!seven(m)) return no('seats'); }
+    if (b.chinese === 'exclude') { if (m.chinese == null) return unk('chinese'); if (m.chinese) return no('chinese'); }
+    if (b.brandsOnly && b.brandsOnly.length && !b.brandsOnly.includes(m.brand_id)) return no('brand_only');
+    if (b.brandsExclude && b.brandsExclude.includes(m.brand_id)) return no('brand');
+    if (b.avoid && b.avoid.includes(m.id)) return no('brand');
+    const tr = currentTrims(m);
+    if (!tr.length) return unk('price');
+    const oks = tr.map(t => ptOk(t, b, m));
+    const okTr = tr.filter((t, i) => oks[i] === true);
+    if (!okTr.length) return oks.some(o => o === null) ? unk('powertrain') : no('powertrain');
+    if (Math.min(...okTr.map(t => t.min)) > terr.ceil) return no('budget');
+    return { status: 'eligible' };
   }
+  const blocker = (m, b, terr) => { const e = eligibility(m, b, terr); return e.status === 'eligible' ? null : e.reason; };
 
+  // how well one price matches the budget intention: flat 1 across 90–100% of budget, smooth on both sides (no cliffs)
+  function priceFit(p, terr) {
+    const B = terr.budget;
+    if (p > terr.ceil) return -1;
+    if (p > B) return 1 - (p - B) / B * 2;          // +10% stretch -> 0.8
+    if (p >= 0.9 * B) return 1;
+    return Math.max(0, 1 - (0.9 * B - p) / (0.6 * B)); // 60% of budget -> 0.5
+  }
   function versions(m, b, terr) {
-    const tr = currentTrims(m).filter(t => ptOk(t, b.pt));
+    const tr = currentTrims(m).filter(t => ptOk(t, b, m) === true);
     const fit = tr.filter(t => t.min <= terr.ceil).sort((x, y) => x.min - y.min);
-    const within = fit.filter(t => t.min <= terr.budget);
-    // the version the budget buys: the best one at or under budget, else the first one in the stretch
-    const pick = within.length ? within[within.length - 1] : fit[0];
+    // the version the budget points at: best price fit (ties: the better-equipped, i.e. dearer, one)
+    const pick = fit.slice().sort((x, y) => priceFit(y.min, terr) - priceFit(x.min, terr) || y.min - x.min)[0];
     return { all: tr.sort((x, y) => x.min - y.min), fit, pick, entry: fit[0] };
   }
 
@@ -89,7 +111,7 @@
 
   function features(m, b, terr) {
     const v = versions(m, b, terr);
-    const fitPts = [...new Set(v.fit.map(t => t.pt))];
+    const fitPts = [...new Set(v.fit.map(t => trimPt(t, m)).filter(Boolean))];
     return {
       m, v,
       price: v.pick.min,
@@ -101,7 +123,6 @@
       hybrid: fitPts.includes('hybrid'), ev: fitPts.length > 0 && fitPts.every(p => p === 'ev'), anyEv: fitPts.includes('ev'),
       petrolOnly: fitPts.length > 0 && fitPts.every(p => p === 'petrol'),
       pop: Math.log10(1 + regLast12(m)),
-      est: established(m),
     };
   }
 
@@ -115,9 +136,8 @@
   function score(F, b, ctx) {
     const { terr, med, rng, ref } = ctx;
     const parts = {};
-    // budget: the version the budget buys, as close to the budget as possible (over budget costs more than under)
-    const r = F.price / terr.budget;
-    parts.budget = r <= 1 ? 1 - (1 - r) * 1.2 : 1 - (r - 1) * 4;
+    // budget: how well the model's best-matching version fits the budget intention
+    parts.budget = priceFit(F.price, terr);
     const pr = b.priorities || [];
     if (ref) {
       const s = F.size != null ? F.size : med.size;
@@ -133,10 +153,11 @@
     if (pr.includes('pocket')) parts.pocket = 1 - norm01(F.entry, terr.floor, terr.ceil);
     if (pr.includes('popular')) parts.popular = norm01(F.pop, rng.popLo, rng.popHi);
     if (pr.includes('economy')) parts.economy = F.hybrid ? 1 : F.ev ? (b.usage === 'long' ? 0.5 : 1) : 0.2;
-    // powertrain preference and driving pattern
-    // default evidence, always on: warranty length and being established here
-    parts.est = F.est;
+    // default, always on and declared: what the budget gets you (size class, warranty, power). Never popularity.
+    if (!pr.includes('easy')) parts.sizeD = norm01(F.size != null ? F.size : med.size, rng.sizeLo, rng.sizeHi);
     parts.warrantyD = norm01(F.warranty != null ? F.warranty : med.warranty, rng.wLo, rng.wHi);
+    parts.hpD = norm01(F.hp != null ? F.hp : med.hp, rng.hpLo, rng.hpHi);
+    // powertrain preference and driving pattern
     if (b.pt === 'hybrid') parts.pt = F.hybrid ? 1 : F.ev ? 0.1 : 0.3;
     if (b.pt === 'ev') parts.pt = F.anyEv ? 1 : 0;
     if (b.usage === 'city') parts.usage = F.hybrid || F.anyEv ? 1 : 0.5;
@@ -147,10 +168,11 @@
     if (b.attraction && (b.aspiration || []).length) {
       const asp = b.aspiration.map(id => ctx.byId[id]).filter(Boolean);
       if (b.attraction === 'brand') parts.attr = asp.some(a => a.brand_id === F.m.brand_id) ? 1 : asp.some(a => a.origin === F.m.origin) ? 0.7 : F.premium ? 0.5 : 0;
-      if (b.attraction === 'premium') parts.attr = F.premium ? 1 : asp.some(a => a.origin === F.m.origin) ? 0.5 : 0;
+      // "premium feel" counts only for models the market classes as premium (no invented proxy such as brand origin)
+      if (b.attraction === 'premium') parts.attr = F.premium ? 1 : 0;
       if (b.attraction === 'performance') parts.attr = norm01(F.hp != null ? F.hp : med.hp, rng.hpLo, rng.hpHi);
     }
-    const W = { est: 0.5, warrantyD: 0.25, budget: 1, ref: 1.4, space: 1, easy: 0.8, perf: 1, warranty: 0.8, pocket: 1, popular: 0.8, economy: 0.8, pt: 1.2, usage: 0.5, brand: 0.9, origin: 0.6, attr: 1 };
+    const W = { sizeD: 0.2, warrantyD: 0.2, hpD: 0.1, budget: 1, ref: 1.4, space: 1, easy: 0.8, perf: 1, warranty: 0.8, pocket: 1, popular: 0.8, economy: 0.8, pt: 1.2, usage: 0.5, brand: 0.9, origin: 0.6, attr: 1 };
     let s = 0, w = 0;
     for (const [k, v] of Object.entries(parts)) { s += W[k] * v; w += W[k]; }
     return { total: s / w, parts };
@@ -162,72 +184,83 @@
     models.forEach(m => { byId[m.id] = m; });
     b = normalizeBrief(b, byId);
     const terr = territory(b);
-    const mentioned = [...(b.shortlist || []), ...(b.aspiration || [])];
     const all = models.filter(m => m.u);
-    const pool = [], cheaper = [], blocked = {};
+    // Layer 1
+    const eligible = [], blocked = {}, unknown = {};
     for (const m of all) {
-      const why = blocker(m, b, terr);
-      if (why) { blocked[why] = (blocked[why] || 0) + 1; continue; }
-      const v = versions(m, b, terr);
-      const top = v.fit[v.fit.length - 1].min;
-      if (top < terr.floor) cheaper.push(m); else pool.push(m);
+      const e = eligibility(m, b, terr);
+      if (e.status === 'eligible') eligible.push(m);
+      else if (e.status === 'unknown') unknown[e.reason] = (unknown[e.reason] || 0) + 1;
+      else blocked[e.reason] = (blocked[e.reason] || 0) + 1;
     }
-    // too few cars in the budget territory: cheaper ones join (their budget score already reflects it)
-    let widened = false;
-    if (pool.length < 3 && cheaper.length) { pool.push(...cheaper.splice(0)); widened = true; }
-    const Fs = pool.map(m => features(m, b, terr));
+    // Layer 2
+    const Fs = eligible.map(m => features(m, b, terr));
     const med = { size: median(Fs.map(f => f.size)) || 3, hp: median(Fs.map(f => f.hp)), warranty: median(Fs.map(f => f.warranty)) };
     const vals = (k, d) => { const a = Fs.map(f => (f[k] != null ? f[k] : d)); return a.length ? [Math.min(...a), Math.max(...a)] : [0, 1]; };
     const [sizeLo, sizeHi] = vals('size', med.size), [hpLo, hpHi] = vals('hp', med.hp), [wLo, wHi] = vals('warranty', med.warranty), [popLo, popHi] = vals('pop', 0);
     const ref = refSize(b, byId);
     const ctx = { terr, med, rng: { sizeLo, sizeHi, hpLo, hpHi, wLo, wHi, popLo, popHi }, ref, byId };
     const scored = Fs.map(F => ({ F, ...score(F, b, ctx) }))
-      .sort((x, y) => y.total - x.total || x.F.price - y.F.price || x.F.m.id.localeCompare(y.F.m.id));
-    // shortlisted models the buyer can afford always make the result set
-    const out = { brief: b, terr, pool: scored.length, widened, blocked, ranked: scored.map(s => s.F.m.id) };
-    if (!scored.length) return { ...out, hero: null, alts: [], nearest: nearest(all, b, terr), shortlist: verdict(b, byId, terr, scored, ctx) };
+      .sort((x, y) => y.total - x.total || Math.abs(x.F.price - terr.budget) - Math.abs(y.F.price - terr.budget) || x.F.m.id.localeCompare(y.F.m.id));
+    // main recommendations come from the budget territory; much cheaper cars go to the separate "spend less" slot
+    let main = scored.filter(s => s.F.price >= terr.floor), value = scored.filter(s => s.F.price < terr.floor);
+    let widened = false;
+    if (main.length < 3 && value.length) { main = scored.slice(); value = []; widened = main.some(s => s.F.price < terr.floor); }
+    const out = { brief: b, terr, pool: scored.length, eligible: eligible.length, widened, blocked, unknown, ranked: main.map(s => s.F.m.id), poolIds: scored.map(s => s.F.m.id) };
+    const sl = verdict(b, byId, terr, scored, ctx);
+    const asp = aspirations(b, byId, terr);
+    if (!main.length) return { ...out, hero: null, alts: [], nearest: nearest(all, b, terr), shortlist: sl, aspiration: asp };
 
-    const hero = scored[0];
-    const alts = pickAlts(scored, hero, b);
-    // "you could spend substantially less": only if it meets every must-have and is a strong fit on its own terms
+    // the buyer's own shortlist leads when one of their cars is eligible
+    const named = main.concat(value).filter(s => (b.shortlist || []).includes(s.F.m.id));
+    const hero = named.length ? named[0] : main[0];
+    const alts = pickAlts(main, hero, b, named);
+    // "you could spend substantially less": meets every must-have and fits the stated priorities at least as well
     let less = null;
-    if (cheaper.length && !(b.priorities || []).includes('pocket')) {
-      const cF = cheaper.map(m => features(m, b, terr)).map(F => ({ F, ...score(F, { ...b, priorities: [...(b.priorities || [])] }, ctx) }));
-      const matchRef = x => !ref || (x.F.size != null && Math.abs(x.F.size - ref.size) < 1 && x.F.kind === ref.kind);
-      const cands = cF.filter(x => matchRef(x) && (x.F.size || 0) >= (hero.F.size || 0) - (b.seats === 7 ? 0 : 1))
-        .sort((x, y) => (regLast12(y.F.m) - regLast12(x.F.m)));
-      if (cands.length) {
-        const c = cands[0];
-        const saves = hero.F.price - c.F.v.fit[c.F.v.fit.length - 1].min;
-        if (saves >= terr.budget * 0.2) less = { id: c.F.m.id, price: c.F.v.fit[c.F.v.fit.length - 1].min, entry: c.F.entry, saves, sameSize: hero.F.size != null && c.F.size === hero.F.size, seven: c.F.seven };
+    if (value.length && !(b.priorities || []).includes('pocket')) {
+      const nonBudget = x => { const k = Object.keys(x.parts).filter(k => k !== 'budget'); return k.length ? k.reduce((a, c) => a + x.parts[c], 0) / k.length : 0; };
+      const cands = value.filter(x => nonBudget(x) >= nonBudget(hero) - 0.05 && (!ref || x.parts.ref >= (hero.parts.ref || 0) - 0.1))
+        .sort((x, y) => nonBudget(y) - nonBudget(x) || y.F.price - x.F.price);
+      const c = cands[0];
+      if (c) {
+        const top = c.F.v.fit[c.F.v.fit.length - 1].min, saves = hero.F.price - top;
+        if (saves >= terr.budget * 0.2) less = { id: c.F.m.id, price: top, entry: c.F.entry, saves, sameSize: hero.F.size != null && c.F.size === hero.F.size, seven: c.F.seven };
       }
     }
     const res = {
-      ...out, hero: pack(hero, b, terr, ctx), alts: alts.map(a => pack(a, b, terr, ctx, hero)),
-      less, shortlist: verdict(b, byId, terr, scored, ctx), aspiration: aspirations(b, byId, terr, scored, ctx),
-      unmet: unmet(all, b, terr, scored),
+      ...out, heroFromShortlist: named.length > 0 && hero === named[0],
+      hero: pack(hero, b, terr, ctx), alts: alts.map(a => pack(a, b, terr, ctx, hero)),
+      less, shortlist: sl, aspiration: asp, unmet: unmet(all, b, terr, scored),
     };
+    return guard(res, byId, b, terr);
+  }
+
+  // Final integrity guard: nothing ineligible can leave the engine as a recommendation, whatever produced it.
+  function guard(res, byId, b, terr) {
+    const ok = id => eligibility(byId[id], b, terr).status === 'eligible';
+    const dropped = [];
+    if (res.hero && !ok(res.hero.id)) { dropped.push(res.hero.id); res.hero = res.alts.shift() || null; }
+    res.alts = res.alts.filter(a => (ok(a.id) ? true : (dropped.push(a.id), false)));
+    if (res.less && !ok(res.less.id)) { dropped.push(res.less.id); res.less = null; }
+    if (dropped.length) { res.guardDropped = dropped; if (typeof console !== 'undefined') console.error('[engine] ineligible model blocked', dropped); }
     return res;
   }
 
-  function pickAlts(scored, hero, b) {
+  function pickAlts(scored, hero, b, named) {
     const alts = [];
     const used = new Set([hero.F.m.id]);
-    const add = (x, role) => { if (x && !used.has(x.F.m.id)) { alts.push({ ...x, role }); used.add(x.F.m.id); } };
-    // 1: shortlisted cars the buyer named come first
-    for (const id of b.shortlist || []) add(scored.find(s => s.F.m.id === id), 'yours');
-    // 2: the next best fit, from another brand where possible
+    const add = (x, role) => { if (x && !used.has(x.F.m.id) && alts.length < 2) { alts.push({ ...x, role }); used.add(x.F.m.id); } };
+    // 1: the other cars the buyer named (eligible only)
+    for (const x of named || []) add(x, 'yours');
+    // 2: when the buyer named cars, the best other fit is the one challenger
+    if (named && named.length) { add(scored.find(s => !used.has(s.F.m.id)), 'challenger'); return alts; }
+    // 3: next best fit, from another brand where possible
     add(scored.find(s => !used.has(s.F.m.id) && s.F.m.brand_id !== hero.F.m.brand_id) || scored.find(s => !used.has(s.F.m.id)), 'runner_up');
-    // 3: a real different angle, only if it is close enough to matter
-    if (alts.length < 2) {
-      const top = hero.total;
-      const close = scored.filter(s => !used.has(s.F.m.id) && s.total >= top - 0.25);
-      const alt = close.find(s => (s.F.hybrid && !hero.F.hybrid) || (s.F.anyEv !== hero.F.anyEv && b.pt !== 'no_ev'));
-      if (alt) add(alt, 'powertrain');
-      else add(close.find(s => s.F.price <= hero.F.price * 0.9), 'cheaper');
-      if (alts.length < 2) add(close.find(s => s.F.m.brand_id !== hero.F.m.brand_id), 'runner_up');
-    }
-    return alts.slice(0, 2);
+    // 4: a genuinely different angle, only if it is close enough to matter
+    const close = scored.filter(s => !used.has(s.F.m.id) && s.total >= hero.total - 0.2);
+    add(close.find(s => (s.F.hybrid && !hero.F.hybrid) || (s.F.anyEv !== hero.F.anyEv && !ptExcluded(b).has('ev'))), 'powertrain');
+    add(close.find(s => s.F.m.brand_id !== hero.F.m.brand_id), 'runner_up');
+    return alts;
   }
 
   function pack(x, b, terr, ctx, hero) {
@@ -267,9 +300,9 @@
       const m = byId[id];
       const s = scored.find(x => x.F.m.id === id);
       if (s) return { id, ok: true, score: s.total, rank: scored.indexOf(s) + 1, F: s.F, parts: s.parts };
-      const why = blocker(m, b, terr);
+      const e = eligibility(m, b, terr);
       const tr = m.u ? currentTrims(m) : [];
-      return { id, ok: false, why: why || 'below_floor', entry: tr.length ? Math.min(...tr.map(t => t.min)) : null };
+      return { id, ok: false, why: e.status === 'unknown' ? 'unknown_' + e.reason : e.reason, entry: tr.length ? Math.min(...tr.map(t => t.min)) : null };
     });
     const ok = rows.filter(r => r.ok).sort((x, y) => y.score - x.score);
     const res = { rows: rows.map(r => ({ id: r.id, ok: r.ok, why: r.why, entry: r.entry, rank: r.rank })), winner: null, margin: null, diffs: [] };
@@ -288,7 +321,7 @@
   }
 
   /* ---------- aspiration (named cars far above budget) ---------- */
-  function aspirations(b, byId, terr, scored) {
+  function aspirations(b, byId, terr) {
     const ids = (b.aspiration || []).filter(id => byId[id]);
     if (!ids.length) return null;
     return ids.map(id => {
@@ -332,12 +365,13 @@
     };
     if (b.seats === 7) tryB({ seats: null }, 'seats');
     if (b.chinese === 'exclude') tryB({ chinese: 'open' }, 'chinese');
-    if (b.pt && b.pt !== 'open') tryB({ pt: 'open' }, 'powertrain');
+    if ((b.pt && b.pt !== 'open') || (b.ptNo || []).length) tryB({ pt: 'open', ptNo: [] }, 'powertrain');
+    if ((b.brandsOnly || []).length) tryB({ brandsOnly: [] }, 'brand_only');
     if (b.body && b.body.length) tryB({ body: null }, 'body');
     if (b.brandsExclude && b.brandsExclude.length) tryB({ brandsExclude: [] }, 'brand');
     // the lowest budget that gives at least one match
     const prices = all.filter(m => !blocker(m, { ...b, budget: 1e9, budgetMode: 'max', stretch: false }, { budget: 1e9, ceil: 1e9, floor: 0 }))
-      .map(m => Math.min(...currentTrims(m).filter(t => ptOk(t, b.pt)).map(t => t.min))).sort((x, y) => x - y);
+      .map(m => Math.min(...currentTrims(m).filter(t => ptOk(t, b, m) === true).map(t => t.min))).sort((x, y) => x - y);
     if (prices.length) fixes.push({ key: 'budget', to: Math.ceil(prices[0] / STEP) * STEP });
     return fixes;
   }
@@ -362,6 +396,12 @@
       const terr = territory(b);
       b.shortlist = [...new Set([...(b.shortlist || []), ...cons.filter(id => { const m = byId[id]; if (!m) return false; const tr = currentTrims(m); return !tr.length || Math.min(...tr.map(t => t.min)) <= terr.ceil * 1.15; })])];
       b.aspiration = [...new Set([...(b.aspiration || []), ...cons.filter(id => !b.shortlist.includes(id))])];
+      // what they told us they like about an out-of-reach car ("comfort and a premium feel")
+      if (b.aspiration.length) {
+        const ck = b.checks || [], pr = b.priorities || [];
+        if (!b.attraction) b.attraction = ck.includes('brand') || ck.includes('comfort') ? 'premium' : pr.includes('space') ? 'size' : pr.includes('performance') ? 'performance' : null;
+        if (!b.attraction) delete b.attraction;
+      }
     } else {
       b.shortlist = [...new Set([...(b.shortlist || []), ...cons])];
       b.aspiration = b.aspiration || [];
@@ -389,7 +429,7 @@
     return new Set(sets).size > 1;
   }
 
-  const api = { ENGINE_VERSION, STEP, recommend, territory, count, material, top3, normalizeBrief, established, currentTrims, size, premium, sizeKey, seven, SEG };
+  const api = { ENGINE_VERSION, STEP, recommend, territory, count, material, top3, normalizeBrief, eligibility, priceFit, currentTrims, size, premium, sizeKey, seven, SEG };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.CIEngine = api;
 })(typeof window !== 'undefined' ? window : globalThis);

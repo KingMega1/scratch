@@ -107,13 +107,25 @@ await run('en-desktop-seven', { width: 1440, height: 900 }, 'en', 'I need a reli
 await run('ar-mobile-suv-2.2', { width: 390, height: 844 }, 'ar', 'عايز عربية عالية في حدود 2.2 مليون.', { opts: ['open'] },
   { summary: ['في حدود', 'عربية عالية'], edit: true });
 await run('en-mobile-shortlist', { width: 390, height: 844 }, 'en', "I'm considering Tucson and Sportage.", {},
-  { summary: ['Hyundai Tucson', 'Kia Sportage'], selectors: ['.verdict-card'], result: ['The cars you named', 'Hyundai Tucson'] });
+  { summary: ['Hyundai Tucson', 'Kia Sportage'], selectors: ['.verdict-card'], result: ['The cars you named', 'Your best fit', 'Worth comparing'] });
 await run('en-mobile-aspiration', { width: 390, height: 844 }, 'en', 'I love the GLC or GLE, budget 1.5M', { opts: ['size'] },
   { summary: ['Mercedes-Benz GLC'], result: ['About the', 'no version is within reach'] });
 await run('en-desktop-qashqai', { width: 1280, height: 900 }, 'en', "I want something around the Qashqai's size and price for my wife.", {},
   { summary: ['Nissan Qashqai'], result: ['Nissan Qashqai'] });
 await run('ar-mobile-guided', { width: 390, height: 844 }, 'ar', null, { opts: ['suv', 'five', 'no_ev', 'open', 'city'], prio: ['warranty', 'reliability'], more: 'مش عايز كيا' },
   { summary: ['ضمان طويل', 'الاعتمادية'] });
+// contradictory brief: no manufactured recommendation
+{
+  const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+  await page.route('https://fonts.googleapis.com/**', r => r.abort());
+  await page.goto(`${base}?lang=en`);
+  await page.fill('#brief', 'Maximum EGP 1.5M, must be 7 seats, Mercedes only.'); await page.click('#go');
+  await answerAll(page); await page.click('#confirm');
+  await page.waitForSelector('.hero, .nomatch', { timeout: 8000 });
+  check(!!(await page.$('.nomatch')) && !(await page.$('.hero')), 'contradictory brief (1.5M, 7 seats, Mercedes only): honest no-match, no recommendation');
+  check((await page.textContent('.nomatch')).includes('Consider other brands'), 'no-match offers the constraint to reconsider');
+  await page.close();
+}
 await browser.close();
 await new Promise(r => setTimeout(r, 300));
 const kpi = await (await fetch(`http://127.0.0.1:${port}/kpi`)).text();

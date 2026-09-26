@@ -48,7 +48,7 @@
   let qStart = Date.now(), t0 = null;
   const enc = o => btoa(unescape(encodeURIComponent(JSON.stringify(o)))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
   const dec = s => JSON.parse(decodeURIComponent(escape(atob(s.replace(/-/g, '+').replace(/_/g, '/')))));
-  const SHARE_KEYS = ['budget', 'budgetMin', 'budgetMode', 'stretch', 'budgetFrom', 'body', 'bodyAny', 'bodyImplied', 'notBody', 'seats', 'who', 'usage', 'pt', 'chinese', 'priorities', 'checks',
+  const SHARE_KEYS = ['brandsOnly', 'ptNo', 'budget', 'budgetMin', 'budgetMode', 'stretch', 'budgetFrom', 'body', 'bodyAny', 'bodyImplied', 'notBody', 'seats', 'who', 'usage', 'pt', 'chinese', 'priorities', 'checks',
     'brandsPrefer', 'brandsExclude', 'shortlist', 'reference', 'aspiration', 'attraction', 'avoid'];
   const slim = b => { const o = {}; SHARE_KEYS.forEach(k => { const v = b[k]; if (v != null && v !== false && !(Array.isArray(v) && !v.length)) o[k] = v; }); return o; };
   function urlFor(s) {
@@ -295,7 +295,9 @@
     if ((b.shortlist || []).length) add('shortlist', joinList(b.shortlist.map(nm)));
     if ((b.reference || []).length) add('reference', joinList(b.reference.map(nm)));
     if ((b.aspiration || []).length) add('aspiration', joinList(b.aspiration.map(nm)) + (b.attraction ? ` — ${S.attr_v[b.attraction]}` : ''));
+    if ((b.brandsOnly || []).length) add('only', joinList(b.brandsOnly.map(brandName)));
     if ((b.brandsPrefer || []).length) add('brands', joinList(b.brandsPrefer.map(brandName)));
+    if ((b.ptNo || []).length) add('pt_no', joinList(b.ptNo.map(x => S.pt[x])));
     const avoid = [...(b.brandsExclude || []).map(brandName), ...(b.avoid || []).map(nm)];
     if (avoid.length) add('avoid', joinList(avoid));
     if ((b.priorities || []).length) add('priorities', joinList(b.priorities.map(p => S.prio_v[p])));
@@ -346,6 +348,7 @@
           <div><p class="fb-label">${S.s_rows.usage}</p>${chipGroup('usage', Object.entries(Q.usage.o).map(([k, v]) => [k, v[0]]), [b.usage || ''], false)}</div>
           <div class="full"><p class="fb-label">${S.s_rows.priorities}</p>${chipGroup('prio', Object.entries(Q.priorities.o).map(([k, v]) => [k, v[0]]), [...(b.priorities || []), ...(b.checks || [])], true)}</div>
           ${(b.aspiration || []).length ? `<div class="full"><p class="fb-label">${S.s_rows.aspiration}: ${joinList(b.aspiration.map(nm))}</p>${chipGroup('attr', Object.entries(Q.attraction.o).map(([k, v]) => [k, v[0]]), [b.attraction || ''], false)}</div>` : ''}
+          ${(b.brandsOnly || []).length ? `<div class="full"><p class="fb-label">${S.s_rows.only}</p><div class="chips" id="only">${b.brandsOnly.map(x => `<button type="button" class="chip" data-only="${x}">${brandName(x)} ×</button>`).join('')}</div></div>` : ''}
           <div class="full"><p class="fb-label">${S.s_rows.shortlist}</p>
             <div class="chips" id="cars">${[...(b.shortlist || []), ...(b.aspiration || []), ...(b.reference || [])].map(id => `<button type="button" class="chip" data-rm="${id}" aria-label="${esc(S.e_remove(byId[id].brand + ' ' + byId[id].model))}">${nm(id)} ×</button>`).join('')}</div>
             <div class="add-row"><input id="add-car" type="text" dir="auto" placeholder="${esc(S.e_add_ph)}" aria-label="${esc(S.e_add)}"><button type="button" class="btn btn-ghost" id="add-btn">+</button></div>
@@ -365,6 +368,9 @@
         } else c.setAttribute('aria-pressed', String(!on));
       } else $$('.pick', g).forEach(x => x.setAttribute('aria-pressed', String(x === c && !on)));
     }));
+    let only = [...(b.brandsOnly || [])];
+    const onlyBox = $('#only');
+    if (onlyBox) onlyBox.addEventListener('click', e => { const c = e.target.closest('[data-only]'); if (!c) return; only = only.filter(x => x !== c.dataset.only); c.remove(); });
     let cars = { shortlist: [...(b.shortlist || [])], aspiration: [...(b.aspiration || [])], reference: [...(b.reference || [])] };
     $('#cars').addEventListener('click', e => {
       const c = e.target.closest('[data-rm]'); if (!c) return;
@@ -387,7 +393,8 @@
       nb.pt = sel('pt')[0] || null; nb.chinese = sel('chinese')[0] || null; nb.usage = sel('usage')[0] || null;
       const pr = sel('prio'); nb.priorities = pr.filter(x => P.SCORED.includes(x)); nb.checks = pr.filter(x => !P.SCORED.includes(x));
       if ((b.aspiration || []).length) nb.attraction = sel('attr')[0] || null;
-      Object.assign(nb, cars);
+      Object.assign(nb, cars); nb.brandsOnly = only;
+      if (nb.pt === 'open') nb.ptNo = [];
       const out = renorm(nb);
       if (!nb.body) { out.body = null; out.bodyAny = true; out.bodyImplied = false; }
       T.track('brief_edit_save', { changed: Object.keys(slim(out)).filter(k => JSON.stringify(slim(out)[k]) !== JSON.stringify(slim(b)[k])) });
@@ -406,11 +413,10 @@
 
   function reasons(p, r) {
     const m = byId[p.id], b = r.brief, B = r.terr.budget, out = [];
-    const tr = lat(p.pick.label);
-    const d = p.price - B;
-    if (Math.abs(d) <= B * 0.01) out.push(S.why.budget_at({ trim: tr, price: money(p.price) }));
-    else if (d < 0) out.push(S.why.budget_under({ trim: tr, price: money(p.price), amount: money(-d) }));
-    else out.push(S.why.budget_over({ trim: tr, price: money(p.price), amount: money(d) }));
+    const lo = p.fit[0].min, hi = p.fit[p.fit.length - 1].min;
+    if (hi > B && lo > B) out.push(S.why.budget_over({ range: S.from_to(money(lo), money(hi)), amount: money(lo - B) }));
+    else if (hi < B * 0.9) out.push(S.why.budget_under({ range: S.from_to(money(lo), money(hi)), amount: money(B - hi) }));
+    else out.push(S.why.budget_in({ range: S.from_to(money(lo), money(hi)), n: p.fit.length }));
     if (b.seats === 7 && p.seven) out.push(S.why.seven({ family: family(b) || (b.who || []).includes('wife') }));
     if (p.ref && p.ref.kind && p.ref.diff === 0) out.push(S.why.ref_same({ ref: nm(p.ref.ids[0]) }));
     if (p.ref && p.ref.diff > 0 && ((b.priorities || []).includes('space') || b.seats === 7)) out.push(S.why.ref_bigger({ ref: nm(p.ref.ids[0]) }));
@@ -433,14 +439,14 @@
       else if (b.attraction === 'performance' && p.hp) out.push(S.why.attr_perf({ hp: num(p.hp) }));
       else if (b.attraction === 'size' && p.ref && p.ref.diff >= 0 && p.sizeKey) out.push(S.why.space({ size: S.size(p.sizeKey) }));
     }
-    if (out.length < 3 && m.reg && m.reg.trend !== 'new' && (m.reg.last12 || 0) >= 300) out.push(S.why.established({ n: num(m.reg.last12) }));
+    if (out.length < 3 && p.sizeKey && (p.parts || {}).sizeD >= 0.75) out.push(S.why.size_d({ size: S.size(p.sizeKey) }));
+    if (out.length < 3 && p.hp && (p.parts || {}).hpD >= 0.75 && !pr.includes('performance')) out.push(S.why.hp_d({ hp: num(p.hp) }));
     if (out.length < 3 && p.warranty >= 5 && !pr.includes('warranty')) out.push(S.why.warranty_d({ w: warrantyTxt(m) }));
     return [...new Set(out)].slice(0, 5);
   }
 
   function trades(p, r) {
     const m = byId[p.id], b = r.brief, B = r.terr.budget, out = [];
-    if (p.overBudget <= 0 && p.headroom < B * 0.03) out.push(S.trade.full());
     const higher = p.all.find(t => t.min > p.pick.min);
     if (p.fit.length === 1 && higher) out.push(S.trade.entry_only({ trim: lat(p.pick.label), price: money(higher.min) }));
     if (b.usage === 'city' && p.petrolOnly) out.push(S.trade.petrol_city());
@@ -533,7 +539,7 @@
         if (!a.entry) continue;
         const cb = a.cheapestBrand && a.cheapestBrand.id !== a.id && a.cheapestBrand.p > r.terr.ceil ? `<p>${S.asp_brand({ brand: lat(byId[a.id].brand), n: nm(a.cheapestBrand.id), price: money(a.cheapestBrand.p) })}</p>` : '';
         topCards.push(`<section class="note-card"><h3>${S.asp_h(nm(a.id))}</h3><p>${S.asp_line({ n: nm(a.id), entry: money(a.entry), times: num(a.times), budget: mill(r.terr.budget) })}</p>${cb}
-          ${b.attraction ? `<p>${S.asp_attr({ what: S.attr_v[b.attraction] })}</p>` : ''}</section>`);
+          ${b.attraction === 'premium' && r.hero && ![r.hero, ...r.alts].some(x => x.premium) ? `<p>${S.asp_no_premium({ budget: mill(r.terr.budget) })}</p>` : b.attraction ? `<p>${S.asp_attr({ what: S.attr_v[b.attraction] })}</p>` : ''}</section>`);
         break;
       }
     }
@@ -561,7 +567,8 @@
         const k = x.dataset.fix; T.track('relax_apply', { key: k });
         const nb = { ...b };
         if (k === 'seats') nb.seats = null; if (k === 'chinese') nb.chinese = 'open'; if (k === 'powertrain') nb.pt = 'open';
-        if (k === 'body') { nb.body = null; nb.bodyAny = true; } if (k === 'brand') nb.brandsExclude = [];
+        if (k === 'body') { nb.body = null; nb.bodyAny = true; } if (k === 'brand') nb.brandsExclude = []; if (k === 'brand_only') nb.brandsOnly = [];
+        if (k === 'powertrain') nb.ptNo = [];
         if (k === 'budget') nb.budget = +x.dataset.to;
         go({ view: 'result', brief: k === 'budget' ? renorm(nb) : nb });
       }));
@@ -569,7 +576,6 @@
     }
 
     const h = r.hero, m = byId[h.id];
-    const heroYours = (b.shortlist || []).includes(h.id);
     const alts = r.alts;
     const checks = [...new Set([...(b.checks || []).filter(c => S.check[c]), 'test', 'terms'])];
     screen.innerHTML = `
@@ -580,14 +586,14 @@
           ${imageBlock(m, 'hero-img r1')}
           <div class="hero-top r2">
             <div>
-              <p class="eyebrow">${heroYours ? S.eyebrow_hero_yours : S.eyebrow_hero}</p>
+              <p class="eyebrow">${r.heroFromShortlist ? S.eyebrow_hero_yours : S.eyebrow_hero}</p>
               <h2 class="hero-name" id="h-hero">${nm(h.id)}</h2>
               <p class="hero-trim">${h.sizeKey ? S.size(h.sizeKey) : ''}</p>
             </div>
             <div class="hero-price">
-              <p class="label-mono">${S.suggested} · ${lat(h.pick.label)}</p>
-              <p class="price-big">${money(h.price)}</p>
-              <p class="small muted-dark">${S.in_range}: ${S.from_to(money(h.fit[0].min), money(h.fit[h.fit.length - 1].min))}</p>
+              <p class="label-mono">${S.in_range}</p>
+              <p class="price-big">${S.from_to(money(h.fit[0].min), money(h.fit[h.fit.length - 1].min))}</p>
+              <p class="small muted-dark">${S.n_versions(num(h.fit.length))}</p>
             </div>
           </div>
           <div class="r3 hero-detail">${detail(h, r, true)}</div>
@@ -640,15 +646,13 @@
       if (!s.close && s.diffs.length) lines.push(`<ul class="vs">${s.diffs.slice(0, 3).map(d => `<li>${S.vs[d.k]({ hero: bb, amount: money(d.v || 0), a: num(d.a || 0), h: num(d.h || 0) })}</li>`).join('')}</ul>`);
       lines.push(`<ul class="vs">${s.picks.map(p => `<li>${nm(p.id)}: ${S.sl_budget_line({ trim: lat(p.trim), price: money(p.price) })}</li>`).join('')}</ul>`);
     } else if (s.winner) lines.push(`<p class="verdict">${S.sl_one({ a: nm(s.winner) })}</p>`);
-    s.rows.filter(x => !x.ok).forEach(x => lines.push(`<p>${(S.sl_out[x.why] || S.sl_out.not_on_sale)({ n: nm(x.id), entry: x.entry ? money(x.entry) : '' })}</p>`));
-    if (s.heroOutside && r.hero) {
-      // why the recommendation beats the buyer's best named car: the named car's differences, turned around
-      const INV = { smaller: 'bigger', bigger: 'smaller', less_hp: 'more_hp', more_hp: 'less_hp', shorter_warranty: 'longer_warranty', longer_warranty: 'shorter_warranty', cheaper: 'dearer', dearer: 'cheaper' };
-      const named = r.alts.find(a => a.id === s.winner);
+    s.rows.filter(x => !x.ok).forEach(x => lines.push(`<p>${(S.sl_out[x.why] || S.sl_out[String(x.why).replace('unknown_', '')] || S.sl_out.not_on_sale)({ n: nm(x.id), entry: x.entry ? money(x.entry) : '' })}</p>`));
+    const ch = r.alts.find(x => x.role === 'challenger');
+    if (ch && r.heroFromShortlist) {
       const good = ['bigger', 'more_hp', 'longer_warranty', 'cheaper', 'seven', 'hybrid'];
-      const inv = (named && named.vs || []).map(d => ({ ...d, k: INV[d.k] || null, a: d.h, h: d.a })).filter(d => good.includes(d.k));
-      const why = inv.length ? joinList(inv.slice(0, 3).map(d => S.vs[d.k]({ hero: nm(s.winner), amount: money(d.v || 0), a: num(d.a || 0), h: num(d.h || 0) }))) + '.' : (reasons(r.hero, r).slice(1, 2)[0] || reasons(r.hero, r)[0]);
-      lines.push(`<p>${S.sl_also({ n: nm(s.heroOutside), why })}</p>`);
+      const pros = (ch.vs || []).filter(d => good.includes(d.k));
+      const why = pros.length ? joinList(pros.slice(0, 3).map(d => S.vs[d.k]({ hero: nm(r.hero.id), amount: money(d.v || 0), a: num(d.a || 0), h: num(d.h || 0) }))) + '.' : S.sl_also_fit;
+      lines.push(`<p>${S.sl_also({ n: nm(ch.id), why })}</p>`);
     }
     return `<section class="note-card verdict-card"><h3>${S.sl_h}</h3>${lines.join('')}</section>`;
   }
@@ -661,7 +665,7 @@
       <span class="chip role">${S.role[a.role] || S.role.runner_up}</span>
       <h3>${nm(a.id)}</h3>
       <p class="muted small">${a.sizeKey ? S.size(a.sizeKey) : ''}</p>
-      <p class="alt-price">${money(a.price)} <span class="label-mono">${lat(a.pick.label)}</span></p>
+      <p class="alt-price">${S.from_to(money(a.fit[0].min), money(a.fit[a.fit.length - 1].min))}</p>
       <ul class="vs">${why.map(x => `<li>${x}</li>`).join('')}</ul>
       ${vs.length ? `<ul class="vs muted">${vs.map(x => `<li>${x}</li>`).join('')}</ul>` : ''}
       <div class="foot"><button class="btn btn-ghost" type="button" data-detail="${a.id}">${S.details}</button></div>
@@ -671,7 +675,6 @@
   function compareTable(list, r) {
     const row = (label, f) => `<tr><th scope="row">${label}</th>${list.map((p, i) => `<td class="${i ? '' : 'is-hero'}">${f(p) || '—'}</td>`).join('')}</tr>`;
     return `<div class="table-wrap"><table class="cmp"><thead><tr><th></th>${list.map((p, i) => `<th class="${i ? '' : 'is-hero'}" scope="col">${nm(p.id)}</th>`).join('')}</tr></thead><tbody>
-      ${row(S.suggested, p => `${money(p.price)}<br><span class="muted small ltr">${esc(p.pick.label)}</span>`)}
       ${row(S.in_range, p => S.from_to(money(p.fit[0].min), money(p.fit[p.fit.length - 1].min)))}
       ${row(S.sp.size, p => (p.sizeKey ? S.size(p.sizeKey) : ''))}
       ${row(S.sp.seats, p => { const m = byId[p.id]; return m.seats ? m.seats.map(num).join(' / ') : ''; })}
