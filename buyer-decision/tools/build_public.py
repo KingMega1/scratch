@@ -8,7 +8,7 @@ import json, os, re, shutil, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 MODEL_KEYS = ["id", "brand_id", "brand", "model", "ar", "origin", "chinese", "body", "segment", "powertrains", "seats",
-              "warranty", "warranty_years", "warranty_verified", "hp", "distributor", "model_year", "image", "reg", "u"]
+              "warranty", "warranty_years", "warranty_verified", "awd", "hp", "distributor", "model_year", "image", "reg", "u"]
 TRIM_KEYS = ["label", "min", "year", "official", "date", "pt", "plugin"]  # no source names: provenance stays internal
 REG_KEYS = ["since_2021", "last12", "trend", "first_month", "yearly", "rank_in_body_last12", "of_body"]
 META_KEYS = ["version", "built", "registration_months", "last12_window", "models_in_universe"]
