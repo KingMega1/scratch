@@ -303,7 +303,8 @@ def main(W):
             "ar": {"brand": [x for x in b["ar_names"].split("|") if x], "model": ar_models.get(cid, [])},
             "body": body, "body_raw": body_raw, "segment": seg,
             "powertrains": sorted(pts), "seats": seat_nums, "seats_evidence": seats,
-            "warranty": sorted(warranty)[:1], "warranty_years": max(wy) if wy else None, "hp": hp, "fuel_consumption": fc,
+            "warranty": sorted(warranty)[:1], "warranty_years": max(wy) if wy else None,
+            "warranty_verified": "warranty" in facts.get(bid, {}), "hp": hp, "fuel_consumption": fc,
             "trims": trims, "price_min": pmin, "price_max": pmax, "price_source": price_source,
             "distributor": facts.get(bid, {}).get("distributor", {}).get("value"),
             "registration": regd, "model_year": latest_year or None,
@@ -351,7 +352,7 @@ def main(W):
         return {k: v for k, v in {
             "id": m["id"], "brand_id": m["brand_id"], "brand": m["brand"], "model": m["model"], "ar": m["ar"],
             "origin": m["origin"], "chinese": m["chinese"], "body": m["body"], "segment": m["segment"],
-            "powertrains": m["powertrains"], "seats": m["seats"], "warranty": m["warranty"], "warranty_years": m["warranty_years"],
+            "powertrains": m["powertrains"], "seats": m["seats"], "warranty": m["warranty"], "warranty_years": m["warranty_years"], "warranty_verified": m["warranty_verified"],
             "hp": m["hp"], "trims": [{k2: t.get(k2) for k2 in ("label", "min", "max", "year", "sources", "official", "date", "pt", "plugin", "pt_basis")} for t in m["trims"]],
             "price_min": m["price_min"], "price_max": m["price_max"], "price_source": m["price_source"],
             "distributor": m["distributor"], "model_year": m["model_year"], "image": m.get("image"),

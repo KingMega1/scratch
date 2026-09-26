@@ -48,7 +48,7 @@
   let qStart = Date.now(), t0 = null;
   const enc = o => btoa(unescape(encodeURIComponent(JSON.stringify(o)))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
   const dec = s => JSON.parse(decodeURIComponent(escape(atob(s.replace(/-/g, '+').replace(/_/g, '/')))));
-  const SHARE_KEYS = ['brandsOnly', 'ptNo', 'budget', 'budgetMin', 'budgetMode', 'stretch', 'budgetFrom', 'body', 'bodyAny', 'bodyImplied', 'notBody', 'seats', 'who', 'usage', 'pt', 'chinese', 'priorities', 'checks',
+  const SHARE_KEYS = ['sizePref', 'brandsOnly', 'ptNo', 'budget', 'budgetMin', 'budgetMode', 'stretch', 'budgetFrom', 'body', 'bodyAny', 'bodyImplied', 'notBody', 'seats', 'who', 'usage', 'pt', 'chinese', 'priorities', 'checks',
     'brandsPrefer', 'brandsExclude', 'shortlist', 'reference', 'aspiration', 'attraction', 'avoid'];
   const slim = b => { const o = {}; SHARE_KEYS.forEach(k => { const v = b[k]; if (v != null && v !== false && !(Array.isArray(v) && !v.length)) o[k] = v; }); return o; };
   function urlFor(s) {
@@ -106,6 +106,7 @@
   }
   const family = b => (b.who || []).some(w => ['kids', 'family', 'parents'].includes(w));
 
+  const FOLLOW_UPS = ['size', 'pt', 'chinese', 'usage', 'priorities'];
   function nextQ(brief, asked, path) {
     const nb = norm(brief);
     const derived = nb.budgetFrom && nb.budgetFrom !== 'shortlist';
@@ -114,10 +115,9 @@
     if (!(nb.body && nb.body.length) && !nb.bodyAny && nb.seats !== 7 && !asked.includes('body')) return 'body';
     const bodyAllows7 = !(nb.body && nb.body.length) || nb.body.some(x => x === 'suv' || x === 'mpv');
     if (nb.seats == null && !asked.includes('seats') && bodyAllows7 && (path === 'guided' || family(nb)) && E.material(U, nb, [{ seats: null }, { seats: 7 }])) return 'seats';
-    if (!nb.pt && !asked.includes('pt') && E.material(U, nb, [{ pt: 'open' }, { pt: 'no_ev' }, { pt: 'hybrid' }])) return 'pt';
-    if (!nb.chinese && !asked.includes('chinese') && E.material(U, nb, [{ chinese: 'open' }, { chinese: 'exclude' }])) return 'chinese';
-    if (!nb.usage && !asked.includes('usage') && E.material(U, nb, [{ usage: 'city' }, { usage: 'long' }])) return 'usage';
-    if (!asked.includes('priorities') && !(nb.priorities || []).length && !(nb.checks || []).length && E.count(U, nb) > 3) return 'priorities';
+    // then only the follow-up that best separates the cars still tied on this brief (at most 4)
+    const follow = asked.filter(x => FOLLOW_UPS.includes(x)).length;
+    if (follow < 4) { const q = E.nextQuestion(U, nb, asked); if (q) return q; }
     if (!asked.includes('more')) return 'more';
     return null;
   }
@@ -191,7 +191,11 @@
       body = `<textarea id="more" rows="3" dir="auto" placeholder="${esc(D.ph)}"></textarea>
         <div class="q-actions"><button class="btn btn-primary btn-big" id="done" type="button">${S.cont}</button><button class="link-btn" id="skip" type="button">${S.skip_q}</button></div>`;
     } else if (id === 'priorities') {
-      body = `<div class="options">${Object.entries(D.o).map(([k, [t, s]]) => `<button class="opt" type="button" role="checkbox" aria-checked="false" data-v="${k}"><span class="t">${t}</span><span class="s">${s}</span></button>`).join('')}</div>
+      const optBtn = ([k, [t, s]]) => `<button class="opt" type="button" role="checkbox" aria-checked="false" data-v="${k}"><span class="t">${t}</span><span class="s">${s}</span></button>`;
+      const all = Object.entries(D.o);
+      body = `<div class="options">${all.filter(([k]) => P.SCORED.includes(k)).map(optBtn).join('')}</div>
+        <p class="label-mono prio-sub">${S.prio_check_h}</p>
+        <div class="options">${all.filter(([k]) => !P.SCORED.includes(k)).map(optBtn).join('')}</div>
         <div class="q-actions"><button class="btn btn-primary btn-big" id="done" type="button">${S.cont}</button><button class="link-btn" id="skip" type="button">${S.skip_q}</button></div>`;
     } else {
       body = `<div class="options">${Object.entries(D.o).map(([k, [t, s]]) => `<button class="opt" type="button" data-v="${k}"><span class="t">${t}</span><span class="s">${s}</span></button>`).join('')}</div>`;
@@ -238,7 +242,7 @@
           body: v === 'any' ? { body: null, bodyAny: true } : { body: [v], bodyAny: false },
           seats: { seats: v === 'seven' ? 7 : 5 },
           attraction: v === 'design' ? { attraction: v, checks: [...new Set([...(st.brief.checks || []), 'design'])] } : { attraction: v },
-          pt: { pt: v }, chinese: { chinese: v }, usage: { usage: v },
+          pt: { pt: v }, chinese: { chinese: v }, usage: { usage: v }, size: { sizePref: v },
         }[id];
         setTimeout(() => answer(v, patch), 120);
       }));
@@ -288,6 +292,7 @@
     if (b.body && b.body.length) add('body', joinList(b.body.map(x => S.body[x])) + (b.bodyImplied ? ` <span class="muted">(${S.s_body_implied})</span>` : ''));
     else if (b.bodyAny) add('body', S.s_any);
     if (b.seats) add('seats', S.s_seats[b.seats]);
+    if (b.sizePref) add('size', S.size_v[b.sizePref]);
     if ((b.who || []).length) add('who', joinList(b.who.map(w => S.who[w])));
     if (b.usage) add('usage', S.usage_v[b.usage]);
     if (b.pt) add('pt', S.pt_v[b.pt]);
@@ -343,6 +348,7 @@
           <div><p class="fb-label">${S.s_rows.budget}</p>${budgetCard(b.budget || 1500000, b.budgetMode === 'max' ? 'max' : 'around', !!b.stretch)}</div>
           <div><p class="fb-label">${S.s_rows.body}</p>${chipGroup('body', Object.entries(Q.body.o).map(([k, v]) => [k, v[0]]), bodySel, true)}</div>
           <div><p class="fb-label">${S.s_rows.seats}</p>${chipGroup('seats', [['5', S.s_seats[5]], ['7', S.s_seats[7]]], [String(b.seats || '')], false)}</div>
+          <div><p class="fb-label">${S.s_rows.size}</p>${chipGroup('size', Object.entries(Q.size.o).map(([k, v]) => [k, v[0]]), [b.sizePref || ''], false)}</div>
           <div><p class="fb-label">${S.s_rows.pt}</p>${chipGroup('pt', Object.entries(Q.pt.o).map(([k, v]) => [k, v[0]]), [b.pt || ''], false)}</div>
           <div><p class="fb-label">${S.s_rows.chinese}</p>${chipGroup('chinese', Object.entries(Q.chinese.o).map(([k, v]) => [k, v[0]]), [b.chinese || ''], false)}</div>
           <div><p class="fb-label">${S.s_rows.usage}</p>${chipGroup('usage', Object.entries(Q.usage.o).map(([k, v]) => [k, v[0]]), [b.usage || ''], false)}</div>
@@ -390,6 +396,7 @@
       const body = sel('body');
       nb.body = body.includes('any') || !body.length ? null : body; nb.bodyAny = !nb.body; nb.bodyImplied = false;
       nb.seats = sel('seats')[0] ? +sel('seats')[0] : null;
+      nb.sizePref = sel('size')[0] || null;
       nb.pt = sel('pt')[0] || null; nb.chinese = sel('chinese')[0] || null; nb.usage = sel('usage')[0] || null;
       const pr = sel('prio'); nb.priorities = pr.filter(x => P.SCORED.includes(x)); nb.checks = pr.filter(x => !P.SCORED.includes(x));
       if ((b.aspiration || []).length) nb.attraction = sel('attr')[0] || null;
@@ -404,7 +411,8 @@
 
   /* ---------- result pieces ---------- */
   function warrantyTxt(m) {
-    if (!m.warranty_years) return null;
+    // shown only when it comes from the official distributor; price-site warranty claims are not verified
+    if (!m.warranty_years || !m.warranty_verified) return null;
     const raw = (m.warranty || []).join(' ');
     const km = raw.match(/(\d{1,3}(?:,\d{3})+|\d{5,6})\s*km/i);
     return S.warranty_v(`<span class="num">${m.warranty_years}</span>`, km ? num(+km[1].replace(/,/g, '')) : null);
@@ -423,8 +431,7 @@
     const pr = b.priorities || [], parts = p.parts || {};
     if (pr.includes('space') && parts.space >= 0.6 && p.sizeKey) out.push(S.why.space({ size: S.size(p.sizeKey) }));
     if (pr.includes('easy') && parts.easy >= 0.6 && p.sizeKey) out.push(S.why.easy({ size: S.size(p.sizeKey) }));
-    if (pr.includes('performance') && parts.perf >= 0.6 && p.hp) out.push(S.why.perf({ hp: num(p.hp) }));
-    if (pr.includes('warranty') && parts.warranty >= 0.6 && p.warranty) out.push(S.why.warranty({ w: warrantyTxt(m) }));
+    if (b.sizePref && parts.sizePref >= 0.75 && p.sizeKey) out.push(S.why.size_pref({ size: S.size(p.sizeKey) }));
     if (pr.includes('pocket') && p.entry < B) out.push(S.why.pocket({ entry: money(p.entry), amount: money(B - p.entry) }));
     if (pr.includes('popular') && m.reg && m.reg.rank_in_body_last12) out.push(S.why.popular({ rank: num(m.reg.rank_in_body_last12), of: num(m.reg.of_body), body: S.body_pl[m.body] }));
     if ((b.pt === 'hybrid' || pr.includes('economy') || b.usage === 'city') && p.hybrid) out.push(S.why.hybrid());
@@ -439,9 +446,6 @@
       else if (b.attraction === 'performance' && p.hp) out.push(S.why.attr_perf({ hp: num(p.hp) }));
       else if (b.attraction === 'size' && p.ref && p.ref.diff >= 0 && p.sizeKey) out.push(S.why.space({ size: S.size(p.sizeKey) }));
     }
-    if (out.length < 3 && p.sizeKey && (p.parts || {}).sizeD >= 0.75) out.push(S.why.size_d({ size: S.size(p.sizeKey) }));
-    if (out.length < 3 && p.hp && (p.parts || {}).hpD >= 0.75 && !pr.includes('performance')) out.push(S.why.hp_d({ hp: num(p.hp) }));
-    if (out.length < 3 && p.warranty >= 5 && !pr.includes('warranty')) out.push(S.why.warranty_d({ w: warrantyTxt(m) }));
     return [...new Set(out)].slice(0, 5);
   }
 
@@ -545,6 +549,7 @@
     }
     if (r.shortlist) topCards.push(shortlistCard(r));
     (r.unmet || []).forEach(u => topCards.push(`<div class="notice"><span class="ic" aria-hidden="true">i</span><p>${S.unmet[u.key]({ n: u.nearest ? nm(u.nearest.id) : '', price: u.nearest ? money(u.nearest.p) : '' })}</p></div>`));
+    if (r.equal) topCards.push(`<div class="notice"><span class="ic" aria-hidden="true">i</span><p>${S.equal_note({ n: num(r.tier), shown: num(1 + r.alts.length) })}</p></div>`);
     if (r.widened) topCards.push(`<div class="notice"><span class="ic" aria-hidden="true">i</span><p>${S.widened}</p></div>`);
 
     const briefBar = `
@@ -586,7 +591,7 @@
           ${imageBlock(m, 'hero-img r1')}
           <div class="hero-top r2">
             <div>
-              <p class="eyebrow">${r.heroFromShortlist ? S.eyebrow_hero_yours : S.eyebrow_hero}</p>
+              <p class="eyebrow">${r.heroFromShortlist ? S.eyebrow_hero_yours : r.equal ? S.eyebrow_equal : S.eyebrow_hero}</p>
               <h2 class="hero-name" id="h-hero">${nm(h.id)}</h2>
               <p class="hero-trim">${h.sizeKey ? S.size(h.sizeKey) : ''}</p>
             </div>
@@ -642,7 +647,7 @@
     const s = r.shortlist, lines = [];
     if (s.winner && s.second) {
       const a = nm(s.winner), bb = nm(s.second);
-      lines.push(`<p class="verdict">${s.close ? S.sl_close({ a, b: bb, edge: S.sl_edge[s.edge] || S.sl_edge.budget }) : S.sl_win({ a, b: bb })}</p>`);
+      lines.push(`<p class="verdict">${s.tie ? S.sl_tie({ a, b: bb }) : s.close ? S.sl_close({ a, b: bb, edge: S.sl_edge[s.edge] || S.sl_edge.budget }) : S.sl_win({ a, b: bb })}</p>`);
       if (!s.close && s.diffs.length) lines.push(`<ul class="vs">${s.diffs.slice(0, 3).map(d => `<li>${S.vs[d.k]({ hero: bb, amount: money(d.v || 0), a: num(d.a || 0), h: num(d.h || 0) })}</li>`).join('')}</ul>`);
       lines.push(`<ul class="vs">${s.picks.map(p => `<li>${nm(p.id)}: ${S.sl_budget_line({ trim: lat(p.trim), price: money(p.price) })}</li>`).join('')}</ul>`);
     } else if (s.winner) lines.push(`<p class="verdict">${S.sl_one({ a: nm(s.winner) })}</p>`);

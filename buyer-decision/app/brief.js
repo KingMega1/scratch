@@ -133,7 +133,8 @@
     brand: ['brand', 'prestige', 'badge', 'luxury', 'premium', 'ماركه', 'اسم', 'فخمه', 'فخامه', 'بريستيج'],
     easy: ['easy to drive', 'easy to park', 'parking', 'compact', 'small', 'سهله', 'سهله في الركن', 'صغيره', 'ركن', 'سهله السواقه'],
   };
-  const SCORED = ['pocket', 'space', 'performance', 'warranty', 'economy', 'popular', 'easy'];
+  // performance and warranty are recorded but not ranked: horsepower and warranty evidence is too thin / unverified
+  const SCORED = ['pocket', 'space', 'economy', 'popular', 'easy'];
   const REF_WORDS = ['something like', 'anything like', 'car like', 'one like', 'like a', 'like an', 'around the', 'something around', 'similar to', 'size of', 'same size', 'similar size', 'something like', 'such as', 'comparable to', 'the size',
     'زي', 'شبه', 'في حجم', 'فى حجم', 'حجم', 'قد', 'نفس حجم', 'من نوعيه', 'نوعيه', 'في مستوي', 'مستوي'];
   const CONSIDER_WORDS = ['considering', 'deciding between', 'between', 'or', 'vs', 'versus', 'compare', 'thinking about', 'looking at', 'choose between',

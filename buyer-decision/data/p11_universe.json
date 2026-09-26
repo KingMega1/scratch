@@ -25,7 +25,7 @@
    "safety rating",
    "aftersales quality"
   ],
-  "sha256": "d9c6c64f23d8506081e0b79c70d70eda1491fb6061b9c980f3524e4e9332b61b"
+  "sha256": "408442f1a49e4a3a8b624534a820ca0b1c7d825e6809011485151e0bdc77b7c8"
  },
  "models": [
   {
@@ -53,6 +53,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -163,6 +164,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -262,6 +264,7 @@
     "120,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -378,6 +381,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -452,6 +456,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -539,6 +544,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -654,6 +660,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -753,6 +760,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -852,6 +860,7 @@
     "150,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -951,6 +960,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -1026,6 +1036,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -1107,6 +1118,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -1230,6 +1242,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -1303,6 +1316,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -1389,6 +1403,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -1488,6 +1503,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -1566,6 +1582,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -1669,6 +1686,7 @@
     "120,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -1813,6 +1831,7 @@
     "120,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -1944,12 +1963,13 @@
    ],
    "seats_evidence": {
     "5": [
-     "Hatla2ee",
-     "ContactCars"
+     "ContactCars",
+     "Hatla2ee"
     ]
    },
    "warranty": [],
    "warranty_years": 7,
+   "warranty_verified": false,
    "hp": [
     154,
     185
@@ -2093,6 +2113,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -2191,6 +2212,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -2280,6 +2302,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -2362,6 +2385,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -2466,6 +2490,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -2575,6 +2600,7 @@
     "100,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -2658,6 +2684,7 @@
     "150,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -2741,6 +2768,7 @@
     "150,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -2820,6 +2848,7 @@
     "150,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -2902,6 +2931,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -3016,6 +3046,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -3092,6 +3123,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -3175,6 +3207,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -3251,6 +3284,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -3323,6 +3357,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -3411,6 +3446,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -3509,6 +3545,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -3610,6 +3647,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -3690,6 +3728,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -3786,6 +3825,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -3872,6 +3912,7 @@
     "150,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [
     272
    ],
@@ -3963,6 +4004,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -4057,6 +4099,7 @@
     "150,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -4139,6 +4182,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -4221,6 +4265,7 @@
     "150,000 Km / 6 Years"
    ],
    "warranty_years": 8,
+   "warranty_verified": false,
    "hp": [
     210
    ],
@@ -4321,6 +4366,7 @@
     "150,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [
     215,
     260
@@ -4423,6 +4469,7 @@
     "150,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -4507,6 +4554,7 @@
     "250,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -4601,6 +4649,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -4678,6 +4727,7 @@
     "250,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -4757,6 +4807,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -4857,6 +4908,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -4941,6 +4993,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -5030,6 +5083,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -5121,6 +5175,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -5218,6 +5273,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -5322,6 +5378,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -5420,6 +5477,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -5501,6 +5559,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -5605,6 +5664,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -5693,6 +5753,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -5783,6 +5844,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -5876,6 +5938,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [
     111,
     145
@@ -5988,6 +6051,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -6087,6 +6151,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -6189,6 +6254,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -6302,6 +6368,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -6395,12 +6462,13 @@
    ],
    "seats_evidence": {
     "7": [
-     "Hatla2ee",
-     "ContactCars"
+     "ContactCars",
+     "Hatla2ee"
     ]
    },
    "warranty": [],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [
     197
    ],
@@ -6521,6 +6589,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -6600,6 +6669,7 @@
     "5yr/150,000km"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [
     148
    ],
@@ -6717,6 +6787,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -6786,6 +6857,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [
     98
    ],
@@ -6884,6 +6956,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -6970,6 +7043,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -7052,6 +7126,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -7133,6 +7208,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -7247,6 +7323,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -7326,9 +7403,10 @@
    "seats": [],
    "seats_evidence": {},
    "warranty": [
-    "4 years / 120"
+    "4 years / 120,000 km"
    ],
    "warranty_years": 4,
+   "warranty_verified": true,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -7422,9 +7500,10 @@
    "seats": [],
    "seats_evidence": {},
    "warranty": [
-    "4 years / 120"
+    "4 years / 120,000 km"
    ],
    "warranty_years": 4,
+   "warranty_verified": true,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -7496,9 +7575,10 @@
    "seats": [],
    "seats_evidence": {},
    "warranty": [
-    "4 years / 120"
+    "4 years / 120,000 km"
    ],
    "warranty_years": 4,
+   "warranty_verified": true,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -7589,6 +7669,7 @@
     "250,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -7686,6 +7767,7 @@
     "250,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -7779,6 +7861,7 @@
     "250,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -7867,6 +7950,7 @@
     "150,000 Km / 7 Years"
    ],
    "warranty_years": 7,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -7961,6 +8045,7 @@
     "150,000 Km / 7 Years"
    ],
    "warranty_years": 7,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -8044,6 +8129,7 @@
     "150,000 Km / 7 Years"
    ],
    "warranty_years": 7,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -8131,6 +8217,7 @@
     "300,000 Km / 7 Years"
    ],
    "warranty_years": 7,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -8204,6 +8291,7 @@
     "200,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -8277,6 +8365,7 @@
     "200,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -8363,6 +8452,7 @@
     "200,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -8446,6 +8536,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -8535,6 +8626,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -8630,6 +8722,7 @@
     "200,000 Km / 7 Years"
    ],
    "warranty_years": 7,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -8719,6 +8812,7 @@
     "200,000 Km / 7 Years"
    ],
    "warranty_years": 7,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -8807,6 +8901,7 @@
     "200,000 Km / 7 Years"
    ],
    "warranty_years": 7,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -8885,6 +8980,7 @@
     "200,000 Km / 7 Years"
    ],
    "warranty_years": 7,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -8973,6 +9069,7 @@
     "200,000 Km / 7 Years"
    ],
    "warranty_years": 7,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -9063,6 +9160,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -9143,6 +9241,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -9223,6 +9322,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -9317,6 +9417,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -9404,6 +9505,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -9505,6 +9607,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -9583,6 +9686,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -9655,6 +9759,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -9725,6 +9830,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -9832,6 +9938,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -9937,6 +10044,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -10052,6 +10160,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -10161,6 +10270,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -10233,6 +10343,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -10334,6 +10445,7 @@
     "200,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -10503,6 +10615,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -10581,6 +10694,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -10670,6 +10784,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -10771,6 +10886,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -10862,6 +10978,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -10976,6 +11093,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -11069,6 +11187,7 @@
     "250,000 Km / 7 Years"
    ],
    "warranty_years": 7,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -11206,6 +11325,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -11309,6 +11429,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -11410,6 +11531,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -11500,6 +11622,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -11578,6 +11701,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -11661,6 +11785,7 @@
     "100,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -11769,6 +11894,7 @@
     "1,000,000 Km / 8 Years"
    ],
    "warranty_years": 8,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -11843,6 +11969,7 @@
     "100,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -11962,6 +12089,7 @@
     "125,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -12055,6 +12183,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -12149,6 +12278,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -12243,6 +12373,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -12337,6 +12468,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -12462,6 +12594,7 @@
     "5yr/100,000km"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [
     127
    ],
@@ -12670,6 +12803,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [
     140
    ],
@@ -12916,6 +13050,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -12991,6 +13126,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -13109,6 +13245,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [
     229
    ],
@@ -13217,6 +13354,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -13326,6 +13464,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -13435,6 +13574,7 @@
     "100,000km/5yr"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [
     180
    ],
@@ -13635,6 +13775,7 @@
     "200,000 Km / 7 Years"
    ],
    "warranty_years": 7,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -13731,6 +13872,7 @@
     "200,000 Km / 7 Years"
    ],
    "warranty_years": 7,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -13801,6 +13943,7 @@
     "200,000 Km / 7 Years"
    ],
    "warranty_years": 7,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -13880,6 +14023,7 @@
     "150,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -13960,6 +14104,7 @@
     "150,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -14045,6 +14190,7 @@
     "150,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -14130,6 +14276,7 @@
     "150,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -14208,6 +14355,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -14306,6 +14454,7 @@
     "150,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [
     156,
     197
@@ -14402,12 +14551,13 @@
    ],
    "seats_evidence": {
     "5": [
-     "Hatla2ee",
-     "ContactCars"
+     "ContactCars",
+     "Hatla2ee"
     ]
    },
    "warranty": [],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [
     184
    ],
@@ -14512,12 +14662,13 @@
    ],
    "seats_evidence": {
     "5": [
-     "Hatla2ee",
-     "ContactCars"
+     "ContactCars",
+     "Hatla2ee"
     ]
    },
    "warranty": [],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [
     184,
     375
@@ -14664,6 +14815,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -14764,6 +14916,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -14844,6 +14997,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -14920,6 +15074,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -15003,6 +15158,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -15082,6 +15238,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -15169,6 +15326,7 @@
     "100,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -15266,6 +15424,7 @@
     "100,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -15438,6 +15597,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -15516,6 +15676,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -15617,6 +15778,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -15720,6 +15882,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -15820,6 +15983,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -15926,6 +16090,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [
     123,
     190
@@ -16072,12 +16237,13 @@
    ],
    "seats_evidence": {
     "5": [
-     "Hatla2ee",
-     "ContactCars"
+     "ContactCars",
+     "Hatla2ee"
     ]
    },
    "warranty": [],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [
     115,
     140
@@ -16201,6 +16367,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -16301,14 +16468,15 @@
    ],
    "seats_evidence": {
     "5": [
-     "Hatla2ee",
-     "ContactCars"
+     "ContactCars",
+     "Hatla2ee"
     ]
    },
    "warranty": [
     "100,000km/5yr"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [
     140,
     180
@@ -16457,6 +16625,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -16531,6 +16700,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -16617,6 +16787,7 @@
     "120,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -16687,6 +16858,7 @@
     "120,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -16757,6 +16929,7 @@
     "120,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -16829,6 +17002,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -16932,6 +17106,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -17023,6 +17198,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -17100,6 +17276,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -17212,6 +17389,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -17293,6 +17471,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -17373,6 +17552,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -17433,6 +17613,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [
     170
    ],
@@ -17563,6 +17744,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -17651,6 +17833,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -17761,6 +17944,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -17841,6 +18025,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -17897,6 +18082,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [
     449
    ],
@@ -18010,6 +18196,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -18098,6 +18285,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -18186,6 +18374,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -18283,6 +18472,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -18370,6 +18560,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [
     120
    ],
@@ -18468,6 +18659,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -18567,6 +18759,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [
     185
    ],
@@ -18668,6 +18861,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [
     170
    ],
@@ -18741,6 +18935,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [
     170
    ],
@@ -18844,6 +19039,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [
     170,
     221
@@ -18948,6 +19144,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [
     181
    ],
@@ -19052,6 +19249,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [
     295
    ],
@@ -19142,6 +19340,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [
     119,
     120
@@ -19253,6 +19452,7 @@
     "200,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -19373,6 +19573,7 @@
     "1,000,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -19454,6 +19655,7 @@
     "150,000 Km / 7 Years"
    ],
    "warranty_years": 7,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -19565,6 +19767,7 @@
     "1,000,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [
     150
    ],
@@ -19744,6 +19947,7 @@
     "1,000,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -19829,6 +20033,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -19912,6 +20117,7 @@
     "1,000,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -20005,6 +20211,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [
     115
    ],
@@ -20123,6 +20330,7 @@
     "6yr/150,000km"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [
     100
    ],
@@ -20229,6 +20437,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [
     316,
     425
@@ -20411,6 +20620,7 @@
     "5yr/100,000km"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [
     148
    ],
@@ -20599,6 +20809,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [
     118
    ],
@@ -20701,6 +20912,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [
     108
    ],
@@ -20891,6 +21103,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [
     201,
     211
@@ -21022,6 +21235,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -21103,6 +21317,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -21191,6 +21406,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -21264,14 +21480,15 @@
    ],
    "seats_evidence": {
     "5": [
-     "Hatla2ee",
-     "ContactCars"
+     "ContactCars",
+     "Hatla2ee"
     ]
    },
    "warranty": [
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [
     163,
     180
@@ -21387,6 +21604,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -21472,6 +21690,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -21566,14 +21785,15 @@
    ],
    "seats_evidence": {
     "5": [
-     "Hatla2ee",
-     "ContactCars"
+     "ContactCars",
+     "Hatla2ee"
     ]
    },
    "warranty": [
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [
     165,
     180
@@ -21679,6 +21899,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -21780,6 +22001,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [
     165,
     180
@@ -21881,6 +22103,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -22044,6 +22267,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -22168,6 +22392,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -22269,6 +22494,7 @@
    },
    "warranty": [],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [
     150,
     160
@@ -22465,6 +22691,7 @@
     "100,000km/3yr"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -22618,6 +22845,7 @@
     "100,000km/3yr"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -22732,6 +22960,7 @@
     "100,000km/3yr"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [
     115,
     150
@@ -22888,6 +23117,7 @@
     "100,000km/3yr"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -22989,6 +23219,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -23072,6 +23303,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -23155,9 +23387,10 @@
    "seats": [],
    "seats_evidence": {},
    "warranty": [
-    "5 years / 100"
+    "5 years / 100,000 km"
    ],
    "warranty_years": 5,
+   "warranty_verified": true,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -23235,9 +23468,10 @@
    "seats": [],
    "seats_evidence": {},
    "warranty": [
-    "5 years / 100"
+    "5 years / 100,000 km"
    ],
    "warranty_years": 5,
+   "warranty_verified": true,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -23318,9 +23552,10 @@
    "seats": [],
    "seats_evidence": {},
    "warranty": [
-    "5 years / 100"
+    "5 years / 100,000 km"
    ],
    "warranty_years": 5,
+   "warranty_verified": true,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -23413,9 +23648,10 @@
    "seats": [],
    "seats_evidence": {},
    "warranty": [
-    "5 years / 100"
+    "5 years / 100,000 km"
    ],
    "warranty_years": 5,
+   "warranty_verified": true,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -23504,6 +23740,7 @@
     "100,000km/5yr"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -23610,6 +23847,7 @@
     "100,000km/5yr"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -23757,6 +23995,7 @@
     "100,000km/5yr"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -23913,6 +24152,7 @@
     "100,000km/5yr"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [
     150,
     190
@@ -24043,6 +24283,7 @@
     "150,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -24129,14 +24370,15 @@
    ],
    "seats_evidence": {
     "5": [
-     "Hatla2ee",
-     "ContactCars"
+     "ContactCars",
+     "Hatla2ee"
     ]
    },
    "warranty": [
     "150,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [
     156,
     197,
@@ -24264,6 +24506,7 @@
     "150,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [
     156,
     197
@@ -24358,6 +24601,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -24436,6 +24680,7 @@
     "150,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [
     197
    ],
@@ -24512,6 +24757,7 @@
     "150,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -24595,6 +24841,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -24673,6 +24920,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -24756,6 +25004,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -24841,6 +25090,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -24922,6 +25172,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -25000,6 +25251,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -25087,6 +25339,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -25187,6 +25440,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -25265,6 +25519,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -25354,6 +25609,7 @@
     "150,000km/5yr"
    ],
    "warranty_years": 8,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -25487,6 +25743,7 @@
     "150,000km/5yr"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [
     116,
     120,
@@ -25672,6 +25929,7 @@
     "150,000km/5yr"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [
     234
    ],
@@ -25779,6 +26037,7 @@
     "150,000km/5yr"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -25890,6 +26149,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -25965,6 +26225,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -26045,6 +26306,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -26140,6 +26402,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -26233,6 +26496,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -26335,6 +26599,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [
     150
    ],
@@ -26423,6 +26688,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -26481,6 +26747,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -26621,6 +26888,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -26709,6 +26977,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -26815,6 +27084,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -26924,6 +27194,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -27020,6 +27291,7 @@
     "200,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -27108,6 +27380,7 @@
     "200,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -27196,6 +27469,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -27273,6 +27547,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -27348,6 +27623,7 @@
     "120,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -27421,6 +27697,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -27494,6 +27771,7 @@
     "120,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -27597,6 +27875,7 @@
     "120,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -27680,6 +27959,7 @@
     "120,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -27755,6 +28035,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -27830,6 +28111,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -27903,6 +28185,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -27993,6 +28276,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -28061,6 +28345,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -28124,6 +28409,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -28192,6 +28478,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -28271,6 +28558,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -28327,6 +28615,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -28478,6 +28767,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -28529,6 +28819,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -28584,6 +28875,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -28659,6 +28951,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -28712,6 +29005,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -28765,6 +29059,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -28815,6 +29110,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -28864,6 +29160,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -28905,6 +29202,7 @@
     "150,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -28957,6 +29255,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -29010,6 +29309,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -29079,6 +29379,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -29209,6 +29510,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -29262,6 +29564,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -29316,6 +29619,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -29369,6 +29673,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -29423,6 +29728,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -29490,6 +29796,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -29557,6 +29864,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -29634,6 +29942,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -29734,6 +30043,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -29788,6 +30098,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -29894,6 +30205,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -29999,6 +30311,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -30075,6 +30388,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -30150,6 +30464,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -30222,6 +30537,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -30302,6 +30618,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -30378,6 +30695,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -30430,6 +30748,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -30485,6 +30804,7 @@
     "150,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -30536,6 +30856,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -30587,6 +30908,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -30640,6 +30962,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -30700,6 +31023,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -30741,6 +31065,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -30800,6 +31125,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -30853,6 +31179,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -30927,6 +31254,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -30981,6 +31309,7 @@
     "250,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -31035,6 +31364,7 @@
     "250,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -31085,6 +31415,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -31138,6 +31469,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -31216,6 +31548,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -31282,6 +31615,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -31360,6 +31694,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -31414,6 +31749,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -31477,6 +31813,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -31529,6 +31866,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -31581,6 +31919,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -31633,6 +31972,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -31689,6 +32029,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -31740,6 +32081,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -31792,6 +32134,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -31849,14 +32192,15 @@
    ],
    "seats_evidence": {
     "5": [
-     "Hatla2ee",
-     "ContactCars"
+     "ContactCars",
+     "Hatla2ee"
     ]
    },
    "warranty": [
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [
     165,
     180
@@ -31925,6 +32269,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -31991,6 +32336,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -32056,6 +32402,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -32108,6 +32455,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -32162,6 +32510,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -32231,6 +32580,7 @@
     "200,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -32296,6 +32646,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -32349,6 +32700,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -32425,6 +32777,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -32477,6 +32830,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -32529,6 +32883,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -32601,6 +32956,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -32695,6 +33051,7 @@
     "200,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -32788,6 +33145,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -32853,6 +33211,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -32931,6 +33290,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -32982,6 +33342,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -33037,6 +33398,7 @@
     "100,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -33089,6 +33451,7 @@
     "100,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -33143,6 +33506,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -33210,6 +33574,7 @@
     "125,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -33303,6 +33668,7 @@
     "125,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -33392,6 +33758,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -33446,6 +33813,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -33511,6 +33879,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -33564,6 +33933,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -33615,6 +33985,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -33654,6 +34025,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -33705,6 +34077,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -33765,6 +34138,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -33840,6 +34214,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -33896,6 +34271,7 @@
     "200,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -33959,6 +34335,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -34023,6 +34400,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -34074,6 +34452,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -34128,6 +34507,7 @@
     "150,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -34178,6 +34558,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -34234,6 +34615,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -34300,6 +34682,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -34367,6 +34750,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -34428,6 +34812,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -34485,6 +34870,7 @@
     "60,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -34533,6 +34919,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -34588,6 +34975,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -34663,6 +35051,7 @@
    },
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -34753,6 +35142,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -34836,6 +35226,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -34901,6 +35292,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -34955,6 +35347,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -35019,6 +35412,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -35077,6 +35471,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -35114,6 +35509,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -35154,6 +35550,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -35219,6 +35616,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -35281,6 +35679,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -35318,6 +35717,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -35357,6 +35757,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -35421,6 +35822,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -35462,6 +35864,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -35520,6 +35923,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -35574,6 +35978,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -35637,6 +36042,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -35674,6 +36080,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -35739,6 +36146,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -35789,6 +36197,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -35829,6 +36238,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -35883,6 +36293,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -35948,6 +36359,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -36001,6 +36413,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -36056,6 +36469,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -36109,6 +36523,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -36178,6 +36593,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -36231,6 +36647,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -36284,6 +36701,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -36335,6 +36753,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -36386,6 +36805,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -36440,6 +36860,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -36494,6 +36915,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -36547,6 +36969,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -36600,6 +37023,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -36654,6 +37078,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -36708,6 +37133,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [
     168,
     200
@@ -36777,6 +37203,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [
     340
    ],
@@ -36853,6 +37280,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -36918,6 +37346,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -36968,6 +37397,7 @@
     "200,000 Km / 6 Years"
    ],
    "warranty_years": 6,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -37022,6 +37452,7 @@
     "200,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -37112,6 +37543,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -37153,6 +37585,7 @@
     "1,000,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -37230,6 +37663,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -37269,6 +37703,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -37325,6 +37760,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -37381,6 +37817,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [
     161,
     187
@@ -37488,6 +37925,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -37543,6 +37981,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -37598,6 +38037,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -37768,6 +38208,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -37824,6 +38265,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -37968,6 +38410,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -38113,6 +38556,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -38167,6 +38611,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -38260,6 +38705,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -38367,6 +38813,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -38461,6 +38908,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -38607,6 +39055,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -38676,6 +39125,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -38830,6 +39280,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -38879,6 +39330,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -38940,6 +39392,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -39005,6 +39458,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -39080,6 +39534,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -39133,6 +39588,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -39212,6 +39668,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -39280,6 +39737,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -39329,6 +39787,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -39380,6 +39839,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -39469,6 +39929,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -39547,6 +40008,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -39623,6 +40085,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -39712,6 +40175,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -39788,6 +40252,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -39840,6 +40305,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -39912,6 +40378,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -39984,6 +40451,7 @@
     "100,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -40036,6 +40504,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -40114,6 +40583,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -40192,6 +40662,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -40260,6 +40731,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -40308,6 +40780,7 @@
     "150,000km/5yr"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -40373,6 +40846,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -40435,6 +40909,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -40473,6 +40948,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -40523,6 +40999,7 @@
     "150,000 Km / 5 Years"
    ],
    "warranty_years": 5,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -40590,6 +41067,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -40657,6 +41135,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -40699,6 +41178,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -40741,6 +41221,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -40783,6 +41264,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [],
@@ -40852,6 +41334,7 @@
     "100,000 Km / 3 Years"
    ],
    "warranty_years": 3,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -40902,6 +41385,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -40952,6 +41436,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -41004,6 +41489,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -41054,6 +41540,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -41106,6 +41593,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -41184,6 +41672,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [
@@ -41236,6 +41725,7 @@
    "seats_evidence": {},
    "warranty": [],
    "warranty_years": null,
+   "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
    "trims": [

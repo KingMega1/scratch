@@ -43,7 +43,7 @@ ok([rb.hero, ...rb.alts].every(x => byId[x.id].body === 'sedan'), 'sedan: only s
 // 3. budget is an intention: results move with it, and stay near it
 const lo = run('SUV around 1.2 million'), hi = run('SUV around 3 million');
 ok(lo.hero.id !== hi.hero.id, `budget changes the pick (${lo.hero.id} vs ${hi.hero.id})`);
-ok([hi.hero, ...hi.alts].every(x => x.price >= 3e6 * 0.8 && x.price <= 3e6 * 1.1), 'at 3M every pick is within 80–110% of budget');
+ok([hi.hero, ...hi.alts].every(x => x.price >= 3e6 * 0.75 && x.price <= 3e6 * 1.1), 'at 3M every pick is within 75–110% of budget');
 
 // 4. shortlist + aspiration
 const rs = run("I'm considering Tucson and Sportage.");

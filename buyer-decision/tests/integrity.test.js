@@ -44,7 +44,12 @@ for (let i = 0; i < 1500; i++) {
     mentions: rnd() < 0.4 ? [{ id: pick(rnd() < 0.5 ? pricey : onSale).id, role: pick(['consider', 'consider', 'reference']) }] : [],
     attraction: pick([null, 'size', 'brand', 'premium', 'performance']),
   };
-  audit(`fuzz#${i}`, b, E.recommend(U, b));
+  const r = E.recommend(U, b);
+  audit(`fuzz#${i}`, b, r);
+  // only brief-driven factors may rank; never hidden defaults, horsepower, warranty or popularity unless asked
+  ok((r.factors || []).every(f => ['budget', 'ref', 'sizePref', 'space', 'easy', 'pocket', 'popular', 'economy', 'pt', 'usage', 'brand', 'origin', 'attr'].includes(f)), `fuzz#${i}: unexpected factor ${r.factors}`);
+  if ((r.factors || []).includes('popular')) ok((b.priorities || []).includes('popular'), `fuzz#${i}: popularity ranked without being asked`);
+  if (r.hero && !r.heroFromShortlist && r.tier > 1) ok(r.equal, `fuzz#${i}: a winner was named from a ${r.tier}-way tie`);
 }
 
 // 2. hostile: give every over-budget premium model perfect specs — it must still never appear
