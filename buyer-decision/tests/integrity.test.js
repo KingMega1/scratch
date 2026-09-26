@@ -19,6 +19,7 @@ function audit(label, b, r) {
     ok(tr.some(v => v.min <= t.ceil), `${label}: ${x.id} has no version within ceiling ${t.ceil}`);
     if (nb.seats === 7) ok(m.seats && m.seats.some(s => s >= 7), `${label}: ${x.id} lacks confirmed 7 seats`);
     if (nb.chinese === 'exclude') ok(m.chinese === false, `${label}: ${x.id} is Chinese`);
+    if (nb.drive4 === true) ok(m.awd === true, `${label}: ${x.id} has no confirmed 4WD/AWD`);
     if (nb.body && nb.body.length) ok(nb.body.includes(m.body), `${label}: ${x.id} body ${m.body}`);
     if ((nb.brandsOnly || []).length) ok(nb.brandsOnly.includes(m.brand_id), `${label}: ${x.id} brand not in only-list`);
     if ((nb.brandsExclude || []).length) ok(!nb.brandsExclude.includes(m.brand_id), `${label}: ${x.id} excluded brand`);
@@ -39,7 +40,7 @@ for (let i = 0; i < 1500; i++) {
     body: rnd() < 0.5 ? [pick(['suv', 'sedan', 'hatch', 'mpv'])] : null, seats: rnd() < 0.25 ? 7 : null,
     chinese: pick([null, 'open', 'prefer_not', 'exclude']), pt: pick([null, 'open', 'no_ev', 'hybrid', 'petrol', 'ev']),
     ptNo: rnd() < 0.1 ? ['hybrid'] : [], brandsOnly: rnd() < 0.08 ? [pick(onSale).brand_id] : [], brandsExclude: rnd() < 0.1 ? [pick(onSale).brand_id] : [],
-    priorities: [pick([null, 'space', 'performance', 'warranty', 'pocket', 'popular', 'economy', 'easy'])].filter(Boolean),
+    priorities: [pick([null, 'space', 'pocket', 'popular', 'economy', 'easy', 'premium'])].filter(Boolean), drive4: rnd() < 0.1 ? true : null,
     usage: pick([null, 'city', 'mixed', 'long']),
     mentions: rnd() < 0.4 ? [{ id: pick(rnd() < 0.5 ? pricey : onSale).id, role: pick(['consider', 'consider', 'reference']) }] : [],
     attraction: pick([null, 'size', 'brand', 'premium', 'performance']),
@@ -47,7 +48,7 @@ for (let i = 0; i < 1500; i++) {
   const r = E.recommend(U, b);
   audit(`fuzz#${i}`, b, r);
   // only brief-driven factors may rank; never hidden defaults, horsepower, warranty or popularity unless asked
-  ok((r.factors || []).every(f => ['budget', 'ref', 'sizePref', 'space', 'easy', 'pocket', 'popular', 'economy', 'pt', 'usage', 'brand', 'origin', 'attr'].includes(f)), `fuzz#${i}: unexpected factor ${r.factors}`);
+  ok((r.factors || []).every(f => ['budget', 'ref', 'sizePref', 'space', 'easy', 'pocket', 'popular', 'economy', 'pt', 'usage', 'brand', 'origin', 'attr', 'premium'].includes(f)), `fuzz#${i}: unexpected factor ${r.factors}`);
   if ((r.factors || []).includes('popular')) ok((b.priorities || []).includes('popular'), `fuzz#${i}: popularity ranked without being asked`);
   if (r.hero && !r.heroFromShortlist && r.tier > 1) ok(r.equal, `fuzz#${i}: a winner was named from a ${r.tier}-way tie`);
 }

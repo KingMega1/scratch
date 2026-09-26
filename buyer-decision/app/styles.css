@@ -317,3 +317,4 @@ html[dir="rtl"] .scan i{ animation-direction:alternate-reverse; }
 .hero-price .small .num{ font-size:inherit; font-weight:600; }
 .hero-price .price-big .num{ font-size:inherit; }
 .prio-sub{ margin-top:var(--s4); }
+.note-card.conflict{ border-inline-start:4px solid var(--clementine); }

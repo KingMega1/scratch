@@ -96,7 +96,7 @@
     '7 كراسي', '7 كرسي', '7 مقاعد', '7 ركاب', '7 راكب', '7 افراد', '7 نفر', 'سبع كراسي', 'سبعه كراسي', 'سبع ركاب', 'سبعه ركاب', 'سبعه مقاعد', 'سبع مقاعد', 'صف تالت', 'صف ثالث', 'تلات صفوف', 'ثلاث صفوف', '٣ صفوف', '3 صفوف'];
   const FIVE = ['5 seats', '5 seat', '5-seat', '5 seater', '5-seater', 'five seats', '5 كراسي', '5 ركاب', '5 مقاعد', 'خمس كراسي', 'خمسه كراسي'];
   const FAMILY = { wife: ['wife', 'my wife', 'مراتي', 'المدام', 'مدام', 'زوجتي', 'الجماعه'], husband: ['husband', 'جوزي', 'زوجي'],
-    kids: ['kids', 'children', 'child', 'son', 'daughter', 'sons', 'daughters', 'baby', 'ولادي', 'الولاد', 'اولادي', 'الاولاد', 'عيالي', 'العيال', 'اطفال', 'بنتي', 'ابني', 'بناتي', 'البيبي'],
+    kids: ['kids', 'children', 'child', 'son', 'daughter', 'sons', 'daughters', 'baby', 'ولادي', 'الولاد', 'اولادي', 'الاولاد', 'عيالي', 'العيال', 'اطفال', 'بنتي', 'ابني', 'بناتي', 'البيبي', 'عيال', 'اطفالي', 'ولاد', 'اولاد'],
     family: ['family', 'العيله', 'عيلتي', 'العائله', 'اسرتي', 'اسره'], parents: ['parents', 'my mother', 'my father', 'mum', 'mom', 'ماما', 'بابا', 'والدتي', 'والدي', 'امي', 'ابويا'],
     self: ['first car', 'for myself', 'اول عربيه', 'ليا انا', 'عشاني'] };
   const USAGE = {
@@ -130,11 +130,15 @@
     comfort: ['comfort', 'comfortable', 'smooth', 'quiet', 'مريحه', 'راحه', 'هاديه'],
     tech: ['tech', 'technology', 'screen', 'carplay', 'android auto', 'features', 'gadgets', 'تكنولوجيا', 'شاشه', 'كماليات', 'فيتشرز', 'مميزات'],
     design: ['looks', 'design', 'beautiful', 'stylish', 'shape', 'شكل', 'شكلها', 'حلوه', 'تصميم', 'شيك'],
-    brand: ['brand', 'prestige', 'badge', 'luxury', 'premium', 'ماركه', 'اسم', 'فخمه', 'فخامه', 'بريستيج'],
+    premium: ['luxury', 'premium', 'upscale', 'high-end', 'high end', 'فخمه', 'فخامه', 'فاخره', 'لاكشري', 'بريميوم'],
+    brand: ['brand', 'prestige', 'badge', 'premium brand', 'ماركه', 'اسم', 'بريستيج', 'اسم الماركه'],
+    offroad: ['off road', 'off-road', 'offroad', 'rugged', 'rough road', 'rough-road', 'rough roads', 'desert', 'sand', 'dunes', 'trail', 'unpaved', 'dirt roads', 'mountain',
+      'اوف رود', 'صحرا', 'صحراء', 'رمل', 'رملي', 'طرق وعره', 'طرق صعبه', 'مدقات', 'جبل', 'تحمل الطرق', 'متينه'],
+    driving: ['sporty', 'sport', 'fun to drive', 'driving pleasure', 'handling', 'driver\'s car', 'driving character', 'رياضيه', 'متعه السواقه', 'ثبات'],
     easy: ['easy to drive', 'easy to park', 'parking', 'compact', 'small', 'سهله', 'سهله في الركن', 'صغيره', 'ركن', 'سهله السواقه'],
   };
   // performance and warranty are recorded but not ranked: horsepower and warranty evidence is too thin / unverified
-  const SCORED = ['pocket', 'space', 'economy', 'popular', 'easy'];
+  const SCORED = ['pocket', 'space', 'economy', 'popular', 'easy', 'premium'];
   const REF_WORDS = ['something like', 'anything like', 'car like', 'one like', 'like a', 'like an', 'around the', 'something around', 'similar to', 'size of', 'same size', 'similar size', 'something like', 'such as', 'comparable to', 'the size',
     'زي', 'شبه', 'في حجم', 'فى حجم', 'حجم', 'قد', 'نفس حجم', 'من نوعيه', 'نوعيه', 'في مستوي', 'مستوي'];
   const CONSIDER_WORDS = ['considering', 'deciding between', 'between', 'or', 'vs', 'versus', 'compare', 'thinking about', 'looking at', 'choose between',
@@ -271,6 +275,9 @@
     const pr = [];
     for (const [k, words] of Object.entries(PRIORITY)) if (has(t, words.map(esc))) pr.push(k);
     // "big" inside "7 seats for a big family" still means space; "brand" words next to a model name are about that model
+    // four-wheel drive stated explicitly = a requirement (checked against confirmed drivetrain data)
+    if (has(t, ['4x4', '4wd', 'awd', 'all wheel drive', 'all-wheel drive', 'four wheel drive', 'four-wheel drive', 'دفع رباعي', 'دفع كلي', 'فور باي فور', '4 × 4'].map(esc)) && !negatedBefore(t, find(t, ['4x4', '4wd', 'awd', 'دفع رباعي'].map(esc)) + 1)) { r.drive4 = true; got('drive'); }
+    if (pr.includes('offroad')) r.offroad = true;
     if (pr.length) { r.priorities = pr.filter(p => SCORED.includes(p)); r.checks = pr.filter(p => !SCORED.includes(p)); got('priorities'); }
 
     // brands and models

@@ -48,7 +48,7 @@
   let qStart = Date.now(), t0 = null;
   const enc = o => btoa(unescape(encodeURIComponent(JSON.stringify(o)))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
   const dec = s => JSON.parse(decodeURIComponent(escape(atob(s.replace(/-/g, '+').replace(/_/g, '/')))));
-  const SHARE_KEYS = ['sizePref', 'brandsOnly', 'ptNo', 'budget', 'budgetMin', 'budgetMode', 'stretch', 'budgetFrom', 'body', 'bodyAny', 'bodyImplied', 'notBody', 'seats', 'who', 'usage', 'pt', 'chinese', 'priorities', 'checks',
+  const SHARE_KEYS = ['drive4', 'offroad', 'sizePref', 'brandsOnly', 'ptNo', 'budget', 'budgetMin', 'budgetMode', 'stretch', 'budgetFrom', 'body', 'bodyAny', 'bodyImplied', 'notBody', 'seats', 'who', 'usage', 'pt', 'chinese', 'priorities', 'checks',
     'brandsPrefer', 'brandsExclude', 'shortlist', 'reference', 'aspiration', 'attraction', 'avoid'];
   const slim = b => { const o = {}; SHARE_KEYS.forEach(k => { const v = b[k]; if (v != null && v !== false && !(Array.isArray(v) && !v.length)) o[k] = v; }); return o; };
   function urlFor(s) {
@@ -106,7 +106,7 @@
   }
   const family = b => (b.who || []).some(w => ['kids', 'family', 'parents'].includes(w));
 
-  const FOLLOW_UPS = ['size', 'pt', 'chinese', 'usage', 'priorities'];
+  const FOLLOW_UPS = ['drive', 'size', 'pt', 'chinese', 'usage', 'priorities'];
   function nextQ(brief, asked, path) {
     const nb = norm(brief);
     const derived = nb.budgetFrom && nb.budgetFrom !== 'shortlist';
@@ -116,6 +116,8 @@
     const bodyAllows7 = !(nb.body && nb.body.length) || nb.body.some(x => x === 'suv' || x === 'mpv');
     if (nb.seats == null && !asked.includes('seats') && bodyAllows7 && (path === 'guided' || family(nb)) && E.material(U, nb, [{ seats: null }, { seats: 7 }])) return 'seats';
     // then only the follow-up that best separates the cars still tied on this brief (at most 4)
+    // stated off-road intent: whether four-wheel drive is a must decides eligibility, so it comes first
+    if (nb.offroad && nb.drive4 == null && !asked.includes('drive')) return 'drive';
     const follow = asked.filter(x => FOLLOW_UPS.includes(x)).length;
     if (follow < 4) { const q = E.nextQuestion(U, nb, asked); if (q) return q; }
     if (!asked.includes('more')) return 'more';
@@ -182,7 +184,12 @@
     const nb = norm(st.brief);
     const top = `<div class="q-top"><button class="link-btn" id="back" type="button">← ${S.back}</button><span class="label-mono">${S.step(step)}</span></div>`;
     const title = typeof D.t === 'function' ? D.t(nm(nb.aspiration[0]) + (nb.aspiration.length > 1 ? ` / ${nmShort(nb.aspiration[1])}` : '')) : D.t;
-    const head = `<div class="q-head"><h2 id="h-q">${title}</h2><p class="q-hint">${D.h}</p></div>`;
+    let hint = D.h;
+    if (id === 'seats') {
+      const five = (nb.shortlist || []).filter(x => byId[x] && byId[x].seats && Math.max(...byId[x].seats) < 7);
+      if (five.length) hint = S.seats_named({ cars: joinList(five.map(nm)) });
+    }
+    const head = `<div class="q-head"><h2 id="h-q">${title}</h2><p class="q-hint">${hint}</p></div>`;
     let body = '';
     if (id === 'budget') {
       const b = nb.budget || 1500000;
@@ -241,6 +248,7 @@
         const patch = {
           body: v === 'any' ? { body: null, bodyAny: true } : { body: [v], bodyAny: false },
           seats: { seats: v === 'seven' ? 7 : 5 },
+          drive: { drive4: v === 'yes' },
           attraction: v === 'design' ? { attraction: v, checks: [...new Set([...(st.brief.checks || []), 'design'])] } : { attraction: v },
           pt: { pt: v }, chinese: { chinese: v }, usage: { usage: v }, size: { sizePref: v },
         }[id];
@@ -293,6 +301,8 @@
     else if (b.bodyAny) add('body', S.s_any);
     if (b.seats) add('seats', S.s_seats[b.seats]);
     if (b.sizePref) add('size', S.size_v[b.sizePref]);
+    if (b.drive4 === true) add('drive', S.drive_v);
+    if (b.offroad) add('offroad', S.offroad_v);
     if ((b.who || []).length) add('who', joinList(b.who.map(w => S.who[w])));
     if (b.usage) add('usage', S.usage_v[b.usage]);
     if (b.pt) add('pt', S.pt_v[b.pt]);
@@ -432,6 +442,8 @@
     if (pr.includes('space') && parts.space >= 0.6 && p.sizeKey) out.push(S.why.space({ size: S.size(p.sizeKey) }));
     if (pr.includes('easy') && parts.easy >= 0.6 && p.sizeKey) out.push(S.why.easy({ size: S.size(p.sizeKey) }));
     if (b.sizePref && parts.sizePref >= 0.75 && p.sizeKey) out.push(S.why.size_pref({ size: S.size(p.sizeKey) }));
+    if (pr.includes('premium') && p.premium && p.sizeKey) out.push(S.why.premium({ size: S.size(p.sizeKey) }));
+    if (b.drive4 && m.awd) out.push(S.why.awd());
     if (pr.includes('pocket') && p.entry < B) out.push(S.why.pocket({ entry: money(p.entry), amount: money(B - p.entry) }));
     if (pr.includes('popular') && m.reg && m.reg.rank_in_body_last12) out.push(S.why.popular({ rank: num(m.reg.rank_in_body_last12), of: num(m.reg.of_body), body: S.body_pl[m.body] }));
     if ((b.pt === 'hybrid' || pr.includes('economy') || b.usage === 'city') && p.hybrid) out.push(S.why.hybrid());
@@ -547,7 +559,13 @@
         break;
       }
     }
-    if (r.shortlist) topCards.push(shortlistCard(r));
+    if (r.shortlist && r.shortlist.allOut) {
+      const cars = joinList(r.shortlist.rows.map(x => nm(x.id)));
+      const k = r.shortlist.allOut[0];
+      topCards.push(`<section class="note-card conflict"><h3>${S.conflict_h}</h3><p>${(S.conflict[k] || S.conflict.other)({ cars })}</p>
+        ${S.relax_key[k] ? `<button class="btn btn-ghost" type="button" data-relax="${k}">${S.conflict_relax({ cars })}</button>` : ''}</section>`);
+    } else if (r.shortlist) topCards.push(shortlistCard(r));
+    if (b.offroad) topCards.push(`<div class="notice"><span class="ic" aria-hidden="true">i</span><p>${b.drive4 ? S.offroad_note_4wd : S.offroad_note}</p></div>`);
     (r.unmet || []).forEach(u => topCards.push(`<div class="notice"><span class="ic" aria-hidden="true">i</span><p>${S.unmet[u.key]({ n: u.nearest ? nm(u.nearest.id) : '', price: u.nearest ? money(u.nearest.p) : '' })}</p></div>`));
     if (r.equal) topCards.push(`<div class="notice"><span class="ic" aria-hidden="true">i</span><p>${S.equal_note({ n: num(r.tier), shown: num(1 + r.alts.length) })}</p></div>`);
     if (r.widened) topCards.push(`<div class="notice"><span class="ic" aria-hidden="true">i</span><p>${S.widened}</p></div>`);
@@ -572,7 +590,7 @@
         const k = x.dataset.fix; T.track('relax_apply', { key: k });
         const nb = { ...b };
         if (k === 'seats') nb.seats = null; if (k === 'chinese') nb.chinese = 'open'; if (k === 'powertrain') nb.pt = 'open';
-        if (k === 'body') { nb.body = null; nb.bodyAny = true; } if (k === 'brand') nb.brandsExclude = []; if (k === 'brand_only') nb.brandsOnly = [];
+        if (k === 'body') { nb.body = null; nb.bodyAny = true; } if (k === 'brand') nb.brandsExclude = []; if (k === 'brand_only') nb.brandsOnly = []; if (k === 'drive') nb.drive4 = null;
         if (k === 'powertrain') nb.ptNo = [];
         if (k === 'budget') nb.budget = +x.dataset.to;
         go({ view: 'result', brief: k === 'budget' ? renorm(nb) : nb });
@@ -619,6 +637,7 @@
       </div>`;
     if (fromHistory) screen.querySelector('.result').classList.remove('reveal');
     wireResultBar(r);
+    wireRelax(b);
     T.markResult();
     T.track('result_view', { hero_id: h.id, alt_ids: alts.map(a => a.id), pool: r.pool, ms_to_result: t0 ? Date.now() - t0 : null, brief: slim(b) });
     T.track('feedback_view', { hero_id: h.id });
@@ -656,7 +675,8 @@
     if (ch && r.heroFromShortlist) {
       const good = ['bigger', 'more_hp', 'longer_warranty', 'cheaper', 'seven', 'hybrid'];
       const pros = (ch.vs || []).filter(d => good.includes(d.k));
-      const why = pros.length ? joinList(pros.slice(0, 3).map(d => S.vs[d.k]({ hero: nm(r.hero.id), amount: money(d.v || 0), a: num(d.a || 0), h: num(d.h || 0) }))) + '.' : S.sl_also_fit;
+      const own = reasons(ch, r).slice(1, 2)[0];
+      const why = pros.length ? joinList(pros.slice(0, 3).map(d => S.vs[d.k]({ hero: nm(r.hero.id), amount: money(d.v || 0), a: num(d.a || 0), h: num(d.h || 0) }))) + '.' : (own || S.sl_also_fit);
       lines.push(`<p>${S.sl_also({ n: nm(ch.id), why })}</p>`);
     }
     return `<section class="note-card verdict-card"><h3>${S.sl_h}</h3>${lines.join('')}</section>`;
@@ -689,6 +709,18 @@
       ${row(S.market_h, p => { const g = byId[p.id].reg; return g ? S.mk_line({ last12: num(g.last12 || 0), total: num(g.since_2021 || 0) }) : ''; })}
     </tbody></table></div>`;
   }
+
+  function wireRelax(b) {
+    $$('[data-relax]', screen).forEach(x => x.addEventListener('click', () => {
+      const k = x.dataset.relax; T.track('relax_apply', { key: k });
+      const nb = { ...b };
+      if (k === 'seats') nb.seats = null; if (k === 'chinese') nb.chinese = 'open'; if (k === 'drive') nb.drive4 = null;
+      if (k === 'body') { nb.body = null; nb.bodyAny = true; } if (k === 'brand') nb.brandsExclude = [];
+      if (k === 'budget') { const e = Math.min(...r0(b).shortlist.rows.map(z => z.entry || Infinity)); nb.budget = Math.ceil(e / E.STEP) * E.STEP; return go({ view: 'result', brief: renorm(nb) }); }
+      go({ view: 'result', brief: nb });
+    }));
+  }
+  const r0 = b => E.recommend(U, b);
 
   function wireResultBar(r) {
     $('#edit').addEventListener('click', () => { T.track('cta_click', { cta: 'edit', model_id: r.hero ? r.hero.id : null }); go({ view: 'edit' }); });

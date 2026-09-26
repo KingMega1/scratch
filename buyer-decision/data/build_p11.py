@@ -128,7 +128,8 @@ def main(W):
         lab = x["spec_label"]
         key = {"Seats": "seats", "Number of Seats": "seats", "Horse power": "hp", "Vehicle Warranty (Years)": "warranty_years",
                "Length (mm)": "length_mm", "Trunk Size": "trunk", "Fuel Type": "fuel", "fuelType": "fuel",
-               "Vehicle Size Class": "size_class_src", "Assembled In": "assembled_in", "Assembly Country": "assembled_in"}.get(lab)
+               "Vehicle Size Class": "size_class_src", "Assembled In": "assembled_in", "Assembly Country": "assembled_in",
+               "Traction Type": "drive", "Drivetrain Type": "drive"}.get(lab)
         if key and x["value"].strip():
             specs_s5[cid][key].add((x["value"].strip(), x["source"]))
 
@@ -266,6 +267,11 @@ def main(W):
             if v.isdigit(): wy.append(int(v))
         hp = sorted({int(x) for v in list(vals("horsepower")) + [v for v, _ in specs_s5[cid].get("hp", set())] for x in re.findall(r"\d{2,4}", v) if 60 <= int(x) <= 900})
         fc = sorted(vals("fuel_consumption"))
+        # drivetrain: does any current version send power to all four wheels (AWD / 4WD / 4x4)? True / False / None (unknown)
+        drv = set(vals("drive_type")) | {v for v, _ in specs_s5[cid].get("drive", set())}
+        drv_all4 = [bool(re.search(r"awd|4wd|4x4|all|four|rotational|dual.?motor|4 ?wd", v, re.I)) for v in drv]
+        drv_2 = [bool(re.search(r"fwd|rwd|2wd|4x2|front|rear", v, re.I)) and not a for v, a in zip(drv, drv_all4)]
+        awd = True if any(drv_all4) else (False if drv and all(drv_2) else None)
 
         # registration evidence (model level, 2021+)
         regd = None
@@ -304,7 +310,7 @@ def main(W):
             "body": body, "body_raw": body_raw, "segment": seg,
             "powertrains": sorted(pts), "seats": seat_nums, "seats_evidence": seats,
             "warranty": sorted(warranty)[:1], "warranty_years": max(wy) if wy else None,
-            "warranty_verified": "warranty" in facts.get(bid, {}), "hp": hp, "fuel_consumption": fc,
+            "warranty_verified": "warranty" in facts.get(bid, {}), "hp": hp, "fuel_consumption": fc, "awd": awd, "drive_evidence": sorted(drv),
             "trims": trims, "price_min": pmin, "price_max": pmax, "price_source": price_source,
             "distributor": facts.get(bid, {}).get("distributor", {}).get("value"),
             "registration": regd, "model_year": latest_year or None,
@@ -352,7 +358,7 @@ def main(W):
         return {k: v for k, v in {
             "id": m["id"], "brand_id": m["brand_id"], "brand": m["brand"], "model": m["model"], "ar": m["ar"],
             "origin": m["origin"], "chinese": m["chinese"], "body": m["body"], "segment": m["segment"],
-            "powertrains": m["powertrains"], "seats": m["seats"], "warranty": m["warranty"], "warranty_years": m["warranty_years"], "warranty_verified": m["warranty_verified"],
+            "powertrains": m["powertrains"], "seats": m["seats"], "warranty": m["warranty"], "warranty_years": m["warranty_years"], "warranty_verified": m["warranty_verified"], "awd": m["awd"],
             "hp": m["hp"], "trims": [{k2: t.get(k2) for k2 in ("label", "min", "max", "year", "sources", "official", "date", "pt", "plugin", "pt_basis")} for t in m["trims"]],
             "price_min": m["price_min"], "price_max": m["price_max"], "price_source": m["price_source"],
             "distributor": m["distributor"], "model_year": m["model_year"], "image": m.get("image"),

@@ -75,6 +75,8 @@
     if (b.body && b.body.length && !b.body.includes(m.body)) return no('body');
     if (b.notBody && b.notBody.includes(m.body)) return no('body');
     if (b.seats === 7) { if (!m.seats || !m.seats.length) return unk('seats'); if (!seven(m)) return no('seats'); }
+    // four-wheel drive: only a confirmed AWD/4WD version qualifies (drivetrain is known for few models)
+    if (b.drive4 === true) { if (m.awd == null) return unk('drive'); if (!m.awd) return no('drive'); }
     if (b.chinese === 'exclude') { if (m.chinese == null) return unk('chinese'); if (m.chinese) return no('chinese'); }
     if (b.brandsOnly && b.brandsOnly.length && !b.brandsOnly.includes(m.brand_id)) return no('brand_only');
     if (b.brandsExclude && b.brandsExclude.includes(m.brand_id)) return no('brand');
@@ -89,14 +91,15 @@
   }
   const blocker = (m, b, terr) => { const e = eligibility(m, b, terr); return e.status === 'eligible' ? null : e.reason; };
 
-  // how well one price matches the budget intention. The whole budget territory is flat (price position inside it is
-  // not a fit signal); only going into the stretch, or far below the territory, lowers it. No cliffs.
+  // how well one price matches the budget intention: full score for 90–100% of budget (70–100% for a
+  // "maximum"), a gentle slope below it (a car that saves ~20% no longer ties with one that uses the budget),
+  // a steeper one into the +10% stretch. No cliffs.
   function priceFit(p, terr) {
-    const B = terr.budget, lo = terr.mode === 'max' ? 0.7 * B : 0.8 * B;
+    const B = terr.budget, lo = terr.mode === 'max' ? 0.7 * B : 0.9 * B;
     if (p > terr.ceil) return -1;
     if (p > B) return 1 - (p - B) / B * 2;          // +10% stretch -> 0.8
     if (p >= lo) return 1;
-    return Math.max(0, 1 - (lo - p) / lo);          // half of the territory floor -> 0.5
+    return Math.max(0, 1 - (lo - p) / B * 0.5);     // 80% of budget -> 0.95, 70% -> 0.90
   }
   function versions(m, b, terr) {
     const tr = currentTrims(m).filter(t => ptOk(t, b, m) === true);
@@ -146,9 +149,11 @@
     parts.budget = priceFit(F.price, terr);
     if (ref) parts.ref = S == null ? null : Math.max(0, 1 - Math.abs(S - ref.size) * 0.45 - (ref.kind && F.kind !== ref.kind ? 0.35 : 0));
     if (b.sizePref && SIZE_TARGET[b.sizePref]) parts.sizePref = S == null ? null : Math.max(0, 1 - Math.abs(S - SIZE_TARGET[b.sizePref]) * 0.5);
-    if (pr.includes('space')) parts.space = S == null ? null : (S + (F.seven ? 1 : 0)) / 7;
+    // space = size class only; seat count is known for too few models to reward (7 seats is a separate must-have)
+    if (pr.includes('space')) parts.space = S == null ? null : S / 6;
     if (pr.includes('easy')) parts.easy = S == null ? null : 1 - S / 6;
     if (pr.includes('pocket')) parts.pocket = 1 - norm01(F.entry, terr.floor, terr.ceil);
+    if (pr.includes('premium')) parts.premium = F.m.segment ? (F.premium ? 1 : 0) : null;
     if (pr.includes('popular')) parts.popular = F.m.reg ? F.pop / 4.5 : null;
     if (pr.includes('economy')) parts.economy = F.hybrid ? 1 : F.ev ? (b.usage === 'long' ? 0.5 : 1) : 0.2;
     if (b.pt === 'hybrid') parts.pt = F.hybrid ? 1 : F.ev ? 0.1 : 0.3;
@@ -165,7 +170,7 @@
     }
     return parts;
   }
-  const W = { budget: 1, ref: 1.4, sizePref: 1.2, space: 1, easy: 0.8, pocket: 1, popular: 0.8, economy: 0.8, pt: 1.2, usage: 0.5, brand: 0.9, origin: 0.6, attr: 1 };
+  const W = { premium: 1.2, budget: 1, ref: 1.4, sizePref: 1.2, space: 1, easy: 0.8, pocket: 1, popular: 0.8, economy: 0.8, pt: 1.2, usage: 0.5, brand: 0.9, origin: 0.6, attr: 1 };
   const COVERAGE = 0.8; // share of candidates that must have evidence before a factor may rank them
   const TIE = 0.02;     // totals closer than this are a tie: the brief doesn't separate them
 
@@ -347,6 +352,7 @@
       res.edge = Object.keys(pa).filter(k => pb[k] != null).sort((x, y) => (pa[y] - pb[y]) - (pa[x] - pb[x]))[0] || null;
       res.picks = ok.slice(0, 2).map(r => ({ id: r.id, trim: r.F.v.pick.label, price: r.F.price, hp: r.F.hp, warranty: r.F.warranty, size: r.F.size }));
     } else if (ok.length === 1) res.winner = ok[0].id;
+    if (!ok.length && rows.length) res.allOut = [...new Set(rows.map(r => r.why))];
     const heroId = scored.length ? scored[0].F.m.id : null;
     res.heroOutside = heroId && !ids.includes(heroId) ? heroId : null;
     return res;
@@ -399,6 +405,7 @@
     if (b.chinese === 'exclude') tryB({ chinese: 'open' }, 'chinese');
     if ((b.pt && b.pt !== 'open') || (b.ptNo || []).length) tryB({ pt: 'open', ptNo: [] }, 'powertrain');
     if ((b.brandsOnly || []).length) tryB({ brandsOnly: [] }, 'brand_only');
+    if (b.drive4 === true) tryB({ drive4: null }, 'drive');
     if (b.body && b.body.length) tryB({ body: null }, 'body');
     if (b.brandsExclude && b.brandsExclude.length) tryB({ brandsExclude: [] }, 'brand');
     // the lowest budget that gives at least one match
@@ -458,13 +465,14 @@
   // Candidate questions and the answers we can use defensibly. A question is worth asking only if its answers
   // lead to different recommendations; when the brief hasn't produced a winner, prefer the one that shrinks the tie most.
   const QUESTIONS = {
+    drive: b => (b.offroad && b.drive4 == null ? [{ drive4: true }, { drive4: false }] : null),
     size: b => (!b.sizePref && !(b.reference || []).length && !(b.priorities || []).some(p => p === 'space' || p === 'easy') ? [{ sizePref: 'small' }, { sizePref: 'medium' }, { sizePref: 'large' }] : null),
     pt: b => (!b.pt ? [{ pt: 'open' }, { pt: 'no_ev' }, { pt: 'hybrid' }] : null),
     chinese: b => (!b.chinese ? [{ chinese: 'open' }, { chinese: 'exclude' }] : null),
     usage: b => (!b.usage ? [{ usage: 'city' }, { usage: 'mixed' }, { usage: 'long' }] : null),
-    priorities: b => (!(b.priorities || []).length ? ['space', 'easy', 'pocket', 'economy', 'popular'].map(p => ({ priorities: [p] })) : null),
+    priorities: b => (!(b.priorities || []).length ? ['space', 'easy', 'pocket', 'economy', 'popular', 'premium'].map(p => ({ priorities: [p] })) : null),
   };
-  const HARD_QS = ['pt', 'chinese'];
+  const HARD_QS = ['pt', 'chinese', 'drive'];
   function nextQuestion(U, b, asked) {
     const now = recommend(U, b);
     if (!now.hero) return null;

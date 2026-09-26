@@ -25,7 +25,7 @@
    "safety rating",
    "aftersales quality"
   ],
-  "sha256": "408442f1a49e4a3a8b624534a820ca0b1c7d825e6809011485151e0bdc77b7c8"
+  "sha256": "65159170b333dcd1e0a0cc3091493a81c20b7de4b7b1b2db49d307c9bd1d2c8e"
  },
  "models": [
   {
@@ -56,6 +56,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "AT / sprint",
@@ -167,6 +169,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Sprint",
@@ -267,6 +271,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Other Trims",
@@ -384,6 +390,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Air",
@@ -459,6 +467,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Air",
@@ -547,6 +557,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Pro",
@@ -663,6 +675,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Sportback",
@@ -763,6 +777,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Advanced",
@@ -863,6 +879,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Advanced",
@@ -963,6 +981,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "S-Line Long",
@@ -1039,6 +1059,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "S Line",
@@ -1121,6 +1143,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Advanced",
@@ -1245,6 +1269,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -1319,6 +1345,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -1406,6 +1434,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "S Line",
@@ -1506,6 +1536,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "S Line Plus",
@@ -1585,6 +1617,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Luxury",
@@ -1689,6 +1723,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "RWD 5 Seats",
@@ -1834,6 +1870,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Other Trims",
@@ -1963,8 +2001,8 @@
    ],
    "seats_evidence": {
     "5": [
-     "ContactCars",
-     "Hatla2ee"
+     "Hatla2ee",
+     "ContactCars"
     ]
    },
    "warranty": [],
@@ -1975,6 +2013,14 @@
     185
    ],
    "fuel_consumption": [],
+   "awd": true,
+   "drive_evidence": [
+    "4WD (Four-Wheel Drive)",
+    "FWD",
+    "FWD (Front-Wheel Drive)",
+    "Four-wheel Drive",
+    "Front traction"
+   ],
    "trims": [
     {
      "label": "Pro",
@@ -2116,6 +2162,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Manual",
@@ -2215,6 +2263,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "(1 class)",
@@ -2305,6 +2355,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Luxury",
@@ -2388,6 +2440,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "High Line",
@@ -2493,6 +2547,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "High Line",
@@ -2603,6 +2659,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Manual",
@@ -2687,6 +2745,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Deluxe",
@@ -2771,6 +2831,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Premium",
@@ -2851,6 +2913,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "PREMIUM PLUS",
@@ -2934,6 +2998,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Luxury Bronze",
@@ -3049,6 +3115,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "xDrive60 Pure Excellence",
@@ -3126,6 +3194,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "xDrive50",
@@ -3210,6 +3280,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "xDrive20 - xLine",
@@ -3287,6 +3359,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "eDrive20 M Sport",
@@ -3360,6 +3434,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "30 xDrive",
@@ -3449,6 +3525,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "sDrive18i xLine",
@@ -3548,6 +3626,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "sDrive18i - M Sport X",
@@ -3650,6 +3730,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "xDrive40i - xLine",
@@ -3731,6 +3813,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "xDrive40i - M Sport",
@@ -3828,6 +3912,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "M60i",
@@ -3919,6 +4005,10 @@
    "fuel_consumption": [
     "4.9L/100km"
    ],
+   "awd": false,
+   "drive_evidence": [
+    "FWD"
+   ],
    "trims": [
     {
      "label": "Ultra",
@@ -4007,6 +4097,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Manual",
@@ -4102,6 +4194,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Ultra",
@@ -4185,6 +4279,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -4270,6 +4366,10 @@
     210
    ],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "FWD"
+   ],
    "trims": [
     {
      "label": "Ultra",
@@ -4372,6 +4472,10 @@
     260
    ],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "Front traction"
+   ],
    "trims": [
     {
      "label": "EV Luxury",
@@ -4472,6 +4576,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Ultra",
@@ -4557,6 +4663,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Luxury IQ",
@@ -4652,6 +4760,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Premium Sport AWD",
@@ -4730,6 +4840,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Luxury",
@@ -4810,6 +4922,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "ELITE",
@@ -4911,6 +5025,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -4996,6 +5112,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Elite",
@@ -5086,6 +5204,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "PREMIUM",
@@ -5178,6 +5298,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Elite",
@@ -5276,6 +5398,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Elite",
@@ -5381,6 +5505,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Premium",
@@ -5480,6 +5606,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Flagship",
@@ -5562,6 +5690,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "1.5 MT Basic",
@@ -5667,6 +5797,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "1.5T DCT Comfort",
@@ -5756,6 +5888,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Luxury",
@@ -5847,6 +5981,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Luxury",
@@ -5944,6 +6080,8 @@
     145
    ],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "COMFORT",
@@ -6054,6 +6192,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "COMFORT",
@@ -6154,6 +6294,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "CKD Comfort",
@@ -6257,6 +6399,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "COMFORT 7 Seat",
@@ -6371,6 +6515,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Luxury",
@@ -6473,6 +6619,11 @@
     197
    ],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "FWD (Front-Wheel Drive)",
+    "Front traction"
+   ],
    "trims": [
     {
      "label": "Luxury",
@@ -6592,6 +6743,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "PHEV 1.5T DHT LUXURY",
@@ -6675,6 +6828,10 @@
    ],
    "fuel_consumption": [
     "8.4L/100km"
+   ],
+   "awd": false,
+   "drive_evidence": [
+    "FWD"
    ],
    "trims": [
     {
@@ -6790,6 +6947,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Premier",
@@ -6863,6 +7022,10 @@
    ],
    "fuel_consumption": [
     "4.9L/100km"
+   ],
+   "awd": false,
+   "drive_evidence": [
+    "FWD"
    ],
    "trims": [
     {
@@ -6959,6 +7122,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Shine",
@@ -7046,6 +7211,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Plus",
@@ -7129,6 +7296,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Shine Two Tone",
@@ -7211,6 +7380,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Feel",
@@ -7326,6 +7497,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Other Trims",
@@ -7409,6 +7582,8 @@
    "warranty_verified": true,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "V1 1.5L",
@@ -7506,6 +7681,8 @@
    "warranty_verified": true,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "V1",
@@ -7581,6 +7758,8 @@
    "warranty_verified": true,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Impulse",
@@ -7672,6 +7851,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Premium",
@@ -7770,6 +7951,10 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "RWD (Rear-Wheel Drive)"
+   ],
    "trims": [
     {
      "label": "REEV",
@@ -7864,6 +8049,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "REEV",
@@ -7953,6 +8140,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "1.5T A/T (Info panel figure)",
@@ -8048,6 +8237,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Automatic",
@@ -8132,6 +8323,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Automatic",
@@ -8220,6 +8413,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "(REEV)",
@@ -8294,6 +8489,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Luxury",
@@ -8368,6 +8565,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "330",
@@ -8455,6 +8654,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Highline",
@@ -8539,6 +8740,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Trocadero",
@@ -8629,6 +8832,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "pallas",
@@ -8725,6 +8930,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Comfort",
@@ -8815,6 +9022,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Luxury",
@@ -8904,6 +9113,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Luxury",
@@ -8983,6 +9194,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Automatic",
@@ -9072,6 +9285,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Luxury",
@@ -9163,6 +9378,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -9244,6 +9461,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Cross",
@@ -9325,6 +9544,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Standard",
@@ -9420,6 +9641,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "EV",
@@ -9508,6 +9731,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "EVO",
@@ -9610,6 +9835,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -9689,6 +9916,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Exclusive",
@@ -9762,6 +9991,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "PHEV",
@@ -9833,6 +10064,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Gs",
@@ -9941,6 +10174,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "GS",
@@ -10047,6 +10282,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Comfort",
@@ -10163,6 +10400,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "GS",
@@ -10273,6 +10512,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Premium",
@@ -10346,6 +10587,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Comfort",
@@ -10448,6 +10691,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Comfort - Local simplified (AUTO MOBILITY)",
@@ -10618,6 +10863,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -10697,6 +10944,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Pro",
@@ -10787,6 +11036,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Pro",
@@ -10889,6 +11140,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Premium (Abou Ghaly)",
@@ -10981,6 +11234,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Pro",
@@ -11096,6 +11351,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Premium (Abou Ghaly)",
@@ -11190,6 +11447,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Comfort (Abou Ghaly)",
@@ -11328,6 +11587,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Dynamic",
@@ -11432,6 +11693,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Dynamic",
@@ -11534,6 +11797,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Dynamic",
@@ -11625,6 +11890,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -11704,6 +11971,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -11788,6 +12057,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Platinum",
@@ -11897,6 +12168,10 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "FWD (Front-Wheel Drive)"
+   ],
    "trims": [
     {
      "label": "Ultra Black",
@@ -11972,6 +12247,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Standard",
@@ -12092,6 +12369,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified",
@@ -12186,6 +12465,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Luxury",
@@ -12281,6 +12562,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "1.5T Luxury",
@@ -12376,6 +12659,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Comfort",
@@ -12471,6 +12756,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "GL",
@@ -12600,6 +12887,10 @@
    ],
    "fuel_consumption": [
     "6.7L/100km"
+   ],
+   "awd": false,
+   "drive_evidence": [
+    "FWD"
    ],
    "trims": [
     {
@@ -12808,6 +13099,10 @@
     140
    ],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "FWD"
+   ],
    "trims": [
     {
      "label": "HB BLAZE",
@@ -13053,6 +13348,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -13129,6 +13426,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Connect Plus LR RR",
@@ -13250,6 +13549,10 @@
     229
    ],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "RWD"
+   ],
    "trims": [
     {
      "label": "Connect Plus Long Range RWD",
@@ -13357,6 +13660,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Connect",
@@ -13467,6 +13772,11 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": true,
+   "drive_evidence": [
+    "AWD",
+    "RWD"
+   ],
    "trims": [
     {
      "label": "HEV Executive RWD",
@@ -13579,6 +13889,14 @@
     180
    ],
    "fuel_consumption": [],
+   "awd": true,
+   "drive_evidence": [
+    "4WD (Four-Wheel Drive)",
+    "FWD (Front-Wheel Drive)",
+    "FWD/AWD",
+    "Four-wheel Drive",
+    "Front traction"
+   ],
    "trims": [
     {
      "label": "SHADOW",
@@ -13778,6 +14096,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Ultra Efficiency",
@@ -13875,6 +14195,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Ultra Range",
@@ -13946,6 +14268,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Ultra Performance",
@@ -14026,6 +14350,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Ultimate",
@@ -14107,6 +14433,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "LIMITED",
@@ -14193,6 +14521,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Limited",
@@ -14279,6 +14609,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Smart",
@@ -14358,6 +14690,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "3.6 A/T Limited L 4x4 (Info panel figure)",
@@ -14460,6 +14794,8 @@
     197
    ],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Luxury 1.5 L",
@@ -14551,8 +14887,8 @@
    ],
    "seats_evidence": {
     "5": [
-     "ContactCars",
-     "Hatla2ee"
+     "Hatla2ee",
+     "ContactCars"
     ]
    },
    "warranty": [],
@@ -14562,6 +14898,11 @@
     184
    ],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "FWD (Front-Wheel Drive)",
+    "Front traction"
+   ],
    "trims": [
     {
      "label": "Luxury",
@@ -14662,8 +15003,8 @@
    ],
    "seats_evidence": {
     "5": [
-     "ContactCars",
-     "Hatla2ee"
+     "Hatla2ee",
+     "ContactCars"
     ]
    },
    "warranty": [],
@@ -14674,6 +15015,12 @@
     375
    ],
    "fuel_consumption": [],
+   "awd": true,
+   "drive_evidence": [
+    "FWD (Front-Wheel Drive)",
+    "Four-wheel Drive",
+    "Front traction"
+   ],
    "trims": [
     {
      "label": "Luxury",
@@ -14818,6 +15165,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Comfort - Facelift",
@@ -14919,6 +15268,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Luxury",
@@ -15000,6 +15351,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Luxury FL",
@@ -15077,6 +15430,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Premium",
@@ -15161,6 +15516,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -15241,6 +15598,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Flagship",
@@ -15329,6 +15688,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "High Line",
@@ -15427,6 +15788,10 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "FWD (Front-Wheel Drive)"
+   ],
    "trims": [
     {
      "label": "Automtic /comfort",
@@ -15600,6 +15965,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -15679,6 +16046,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Air",
@@ -15781,6 +16150,10 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "FWD"
+   ],
    "trims": [
     {
      "label": "Air",
@@ -15885,6 +16258,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Base (single trim)",
@@ -15986,6 +16361,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "GT Line 7 Seats",
@@ -16096,6 +16473,8 @@
     190
    ],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Highline",
@@ -16237,8 +16616,8 @@
    ],
    "seats_evidence": {
     "5": [
-     "ContactCars",
-     "Hatla2ee"
+     "Hatla2ee",
+     "ContactCars"
     ]
    },
    "warranty": [],
@@ -16249,6 +16628,12 @@
     140
    ],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "FWD",
+    "FWD (Front-Wheel Drive)",
+    "Front traction"
+   ],
    "trims": [
     {
      "label": "EX",
@@ -16370,6 +16755,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Base (single trim)",
@@ -16468,8 +16855,8 @@
    ],
    "seats_evidence": {
     "5": [
-     "ContactCars",
-     "Hatla2ee"
+     "Hatla2ee",
+     "ContactCars"
     ]
    },
    "warranty": [
@@ -16482,6 +16869,12 @@
     180
    ],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "FWD",
+    "FWD (Front-Wheel Drive)",
+    "Front traction"
+   ],
    "trims": [
     {
      "label": "LX",
@@ -16628,6 +17021,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -16703,6 +17098,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "RZ350e",
@@ -16790,6 +17187,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Pro",
@@ -16861,6 +17260,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Ultra",
@@ -16932,6 +17333,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Ultra",
@@ -17005,6 +17408,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Core Plus",
@@ -17109,6 +17514,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Core",
@@ -17201,6 +17608,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Ultra",
@@ -17279,6 +17688,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Highline / Sedan",
@@ -17392,6 +17803,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Highline",
@@ -17474,6 +17887,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "A 200 Saloon",
@@ -17555,6 +17970,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "B 200 Sports",
@@ -17618,6 +18035,8 @@
     170
    ],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "C 180 Avantgarde",
@@ -17747,6 +18166,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "CLA 200 Coupé",
@@ -17836,6 +18257,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "E 200",
@@ -17947,6 +18370,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "EQA 250+",
@@ -18028,6 +18453,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "EQB 250+",
@@ -18087,6 +18514,8 @@
     449
    ],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "EQS 500 4M SUV",
@@ -18199,6 +18628,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "GLA 200",
@@ -18288,6 +18719,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "GLC 200",
@@ -18377,6 +18810,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "GLE 450 4MATIC",
@@ -18475,6 +18910,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "GLS 580 4MATIC",
@@ -18566,6 +19003,10 @@
    ],
    "fuel_consumption": [
     "5.5L/100km"
+   ],
+   "awd": false,
+   "drive_evidence": [
+    "FWD"
    ],
    "trims": [
     {
@@ -18662,6 +19103,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "A/T LUX Black Interior",
@@ -18766,6 +19209,10 @@
    "fuel_consumption": [
     "6.25L/100km"
    ],
+   "awd": false,
+   "drive_evidence": [
+    "FWD"
+   ],
    "trims": [
     {
      "label": "Luxury",
@@ -18866,6 +19313,10 @@
     170
    ],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "FWD"
+   ],
    "trims": [
     {
      "label": "(1 class)",
@@ -18940,6 +19391,10 @@
     170
    ],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "FWD"
+   ],
    "trims": [
     {
      "label": "Comfort",
@@ -19048,6 +19503,11 @@
     "5.5L/100km",
     "7.6L/100km"
    ],
+   "awd": false,
+   "drive_evidence": [
+    "FWD",
+    "FWD (Front-Wheel Drive)"
+   ],
    "trims": [
     {
      "label": "Plus Luxury",
@@ -19149,6 +19609,10 @@
     181
    ],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "FWD"
+   ],
    "trims": [
     {
      "label": "Luxury",
@@ -19256,6 +19720,10 @@
    "fuel_consumption": [
     "6.7L/100km"
    ],
+   "awd": false,
+   "drive_evidence": [
+    "FWD"
+   ],
    "trims": [
     {
      "label": "Luxury",
@@ -19347,6 +19815,10 @@
    ],
    "fuel_consumption": [
     "5.8L/100km"
+   ],
+   "awd": false,
+   "drive_evidence": [
+    "FWD"
    ],
    "trims": [
     {
@@ -19455,6 +19927,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "C",
@@ -19576,6 +20050,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Highline",
@@ -19658,6 +20134,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Mid Line",
@@ -19772,6 +20250,11 @@
     150
    ],
    "fuel_consumption": [],
+   "awd": true,
+   "drive_evidence": [
+    "AWD",
+    "Front traction"
+   ],
    "trims": [
     {
      "label": "Insport BL",
@@ -19950,6 +20433,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Highline",
@@ -20036,6 +20521,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -20120,6 +20607,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Highline",
@@ -20217,6 +20706,10 @@
    ],
    "fuel_consumption": [
     "6.1L/100km"
+   ],
+   "awd": false,
+   "drive_evidence": [
+    "FWD"
    ],
    "trims": [
     {
@@ -20337,6 +20830,10 @@
    "fuel_consumption": [
     "5.6L/100km"
    ],
+   "awd": false,
+   "drive_evidence": [
+    "FWD"
+   ],
    "trims": [
     {
      "label": "Visia",
@@ -20443,6 +20940,10 @@
     425
    ],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "RWD"
+   ],
    "trims": [
     {
      "label": "XE",
@@ -20626,6 +21127,13 @@
    ],
    "fuel_consumption": [
     "6.1L/100km"
+   ],
+   "awd": true,
+   "drive_evidence": [
+    "4WD",
+    "4WD (Four-Wheel Drive)",
+    "FWD",
+    "FWD (Front-Wheel Drive)"
    ],
    "trims": [
     {
@@ -20816,6 +21324,10 @@
    "fuel_consumption": [
     "8.9L/100km"
    ],
+   "awd": false,
+   "drive_evidence": [
+    "FWD"
+   ],
    "trims": [
     {
      "label": "Premium",
@@ -20918,6 +21430,10 @@
    ],
    "fuel_consumption": [
     "6.9L/100km"
+   ],
+   "awd": false,
+   "drive_evidence": [
+    "FWD"
    ],
    "trims": [
     {
@@ -21109,6 +21625,10 @@
     211
    ],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "FWD"
+   ],
    "trims": [
     {
      "label": "Acenta Plus",
@@ -21238,6 +21758,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Sport Topline Plus",
@@ -21320,6 +21842,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Top Line",
@@ -21409,6 +21933,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Luxury",
@@ -21480,8 +22006,8 @@
    ],
    "seats_evidence": {
     "5": [
-     "ContactCars",
-     "Hatla2ee"
+     "Hatla2ee",
+     "ContactCars"
     ]
    },
    "warranty": [
@@ -21494,6 +22020,11 @@
     180
    ],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "FWD (Front-Wheel Drive)",
+    "Front traction"
+   ],
    "trims": [
     {
      "label": "Highline Plus",
@@ -21607,6 +22138,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Black Edition",
@@ -21693,6 +22226,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "ALLURE",
@@ -21785,8 +22320,8 @@
    ],
    "seats_evidence": {
     "5": [
-     "ContactCars",
-     "Hatla2ee"
+     "Hatla2ee",
+     "ContactCars"
     ]
    },
    "warranty": [
@@ -21799,6 +22334,11 @@
     180
    ],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "FWD (Front-Wheel Drive)",
+    "Front traction"
+   ],
    "trims": [
     {
      "label": "Allure",
@@ -21902,6 +22442,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Allure",
@@ -21990,10 +22532,10 @@
     7
    ],
    "seats_evidence": {
-    "7": [
+    "5": [
      "Hatla2ee"
     ],
-    "5": [
+    "7": [
      "Hatla2ee"
     ]
    },
@@ -22007,6 +22549,10 @@
     180
    ],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "Front traction"
+   ],
    "trims": [
     {
      "label": "Allure",
@@ -22106,6 +22652,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Automatic",
@@ -22270,6 +22818,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Automatic",
@@ -22395,6 +22945,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Premium",
@@ -22500,6 +23052,11 @@
     160
    ],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "FWD (Front-Wheel Drive)",
+    "Front traction"
+   ],
    "trims": [
     {
      "label": "Evolution",
@@ -22694,6 +23251,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Authentic",
@@ -22848,6 +23407,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Evolution",
@@ -22966,6 +23527,8 @@
     150
    ],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "1.6 Dynamic",
@@ -23120,6 +23683,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Evolution",
@@ -23222,6 +23787,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Family 7 Seats",
@@ -23306,6 +23873,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Couch",
@@ -23393,6 +23962,8 @@
    "warranty_verified": true,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Style Plus",
@@ -23474,6 +24045,8 @@
    "warranty_verified": true,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Style Plus",
@@ -23558,6 +24131,8 @@
    "warranty_verified": true,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Edge",
@@ -23654,6 +24229,8 @@
    "warranty_verified": true,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Advance",
@@ -23743,6 +24320,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Selection Suite",
@@ -23850,6 +24429,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Selection Loft",
@@ -23998,6 +24579,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Selection Loft",
@@ -24158,6 +24741,8 @@
     190
    ],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Selection Suite 1.5",
@@ -24286,6 +24871,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Highline",
@@ -24370,8 +24957,8 @@
    ],
    "seats_evidence": {
     "5": [
-     "ContactCars",
-     "Hatla2ee"
+     "Hatla2ee",
+     "ContactCars"
     ]
    },
    "warranty": [
@@ -24385,6 +24972,11 @@
     355
    ],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "FWD (Front-Wheel Drive)",
+    "Front traction"
+   ],
    "trims": [
     {
      "label": "Highline",
@@ -24512,6 +25104,8 @@
     197
    ],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Highline",
@@ -24604,6 +25198,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Intelligent",
@@ -24685,6 +25281,11 @@
     197
    ],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "FWD (Front-Wheel Drive)",
+    "Front traction"
+   ],
    "trims": [
     {
      "label": "Premium",
@@ -24760,6 +25361,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Intelligent (DM-i)",
@@ -24844,6 +25447,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Standard",
@@ -24923,6 +25528,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified",
@@ -25007,6 +25614,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "GLX",
@@ -25093,6 +25702,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "GL",
@@ -25175,6 +25786,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "One tone",
@@ -25254,6 +25867,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified",
@@ -25342,6 +25957,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "GLX",
@@ -25443,6 +26060,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "GLX",
@@ -25522,6 +26141,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -25612,6 +26233,10 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": true,
+   "drive_evidence": [
+    "FWD/AWD"
+   ],
    "trims": [
     {
      "label": "Sport",
@@ -25751,6 +26376,10 @@
    ],
    "fuel_consumption": [
     "5.5L/100km"
+   ],
+   "awd": false,
+   "drive_evidence": [
+    "FWD"
    ],
    "trims": [
     {
@@ -25936,6 +26565,10 @@
    "fuel_consumption": [
     "12.6L/100km"
    ],
+   "awd": true,
+   "drive_evidence": [
+    "AWD"
+   ],
    "trims": [
     {
      "label": "Sport 4.0 4WD",
@@ -26040,6 +26673,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "1.5 A/T Active",
@@ -26152,6 +26787,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "1.5 A/T Highline",
@@ -26228,6 +26865,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Life",
@@ -26309,6 +26948,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -26405,6 +27046,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "R-line",
@@ -26499,6 +27142,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "R-Line",
@@ -26604,6 +27249,11 @@
     150
    ],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "FWD (Front-Wheel Drive)",
+    "Front traction"
+   ],
    "trims": [
     {
      "label": "R-Line",
@@ -26691,6 +27341,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Ultra",
@@ -26750,6 +27402,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Plus Single Motor",
@@ -26891,6 +27545,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Twin Motor",
@@ -26980,6 +27636,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Essential",
@@ -27087,6 +27745,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Essential",
@@ -27197,6 +27857,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Ultimate",
@@ -27294,6 +27956,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Premium",
@@ -27383,6 +28047,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Luxury",
@@ -27472,6 +28138,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -27550,6 +28218,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -27626,6 +28296,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "STANDARD RANGE",
@@ -27700,6 +28372,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -27774,6 +28448,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Long Range",
@@ -27878,6 +28554,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Premium",
@@ -27962,6 +28640,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "AT/ Flagship",
@@ -28038,6 +28718,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Flagship",
@@ -28114,6 +28796,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -28188,6 +28872,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Long Range",
@@ -28279,6 +28965,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Other Trims",
@@ -28348,6 +29036,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Air",
@@ -28412,6 +29102,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Air",
@@ -28481,6 +29173,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "S Line Plus",
@@ -28561,6 +29255,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Other Trims",
@@ -28618,6 +29314,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Automatic",
@@ -28770,6 +29468,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "S Line",
@@ -28822,6 +29522,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "S-Line",
@@ -28878,6 +29580,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Automatic",
@@ -28954,6 +29658,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Automatic",
@@ -29008,6 +29714,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -29062,6 +29770,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -29113,6 +29823,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -29163,6 +29875,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -29205,6 +29919,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Premium",
@@ -29258,6 +29974,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Sport line",
@@ -29312,6 +30030,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "GC Sport Line",
@@ -29382,6 +30102,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "LCI Advantage",
@@ -29513,6 +30235,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "420i M Sport",
@@ -29567,6 +30291,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Coupe",
@@ -29622,6 +30348,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "420i GC",
@@ -29676,6 +30404,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "M440i xDrive",
@@ -29731,6 +30461,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Pure Excellence LWB",
@@ -29799,6 +30531,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -29867,6 +30601,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "GC eDrive40 - M Sport",
@@ -29945,6 +30681,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "eDrive40 - Luxury line",
@@ -30046,6 +30784,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Available Models catalogue (1 trim)",
@@ -30101,6 +30841,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Base",
@@ -30208,6 +30950,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Coupe",
@@ -30314,6 +31058,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Competition",
@@ -30391,6 +31137,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "GC",
@@ -30467,6 +31215,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "GC LCI",
@@ -30540,6 +31290,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "xDrive30i - xLine",
@@ -30621,6 +31373,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "xDrive30i - M Sport",
@@ -30698,6 +31452,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -30751,6 +31507,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -30807,6 +31565,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Automatic",
@@ -30859,6 +31619,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -30911,6 +31673,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -30965,6 +31729,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -31026,6 +31792,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -31068,6 +31836,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -31128,6 +31898,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -31182,6 +31954,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -31257,6 +32031,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -31312,6 +32088,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Signature",
@@ -31367,6 +32145,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Luxury",
@@ -31418,6 +32198,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -31472,6 +32254,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Automatic/Tinted Glass",
@@ -31551,6 +32335,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "COMFORT",
@@ -31618,6 +32404,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -31697,6 +32485,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Base (single trim)",
@@ -31752,6 +32542,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -31816,6 +32608,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Base (single trim)",
@@ -31869,6 +32663,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Base (single trim)",
@@ -31922,6 +32718,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Base (single trim)",
@@ -31975,6 +32773,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Base (single trim)",
@@ -32032,6 +32832,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "ACTIV",
@@ -32084,6 +32886,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Base (single trim)",
@@ -32137,6 +32941,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Shine",
@@ -32192,8 +32998,8 @@
    ],
    "seats_evidence": {
     "5": [
-     "ContactCars",
-     "Hatla2ee"
+     "Hatla2ee",
+     "ContactCars"
     ]
    },
    "warranty": [
@@ -32206,6 +33012,11 @@
     180
    ],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "FWD (Front-Wheel Drive)",
+    "Front traction"
+   ],
    "trims": [
     {
      "label": "Advanced",
@@ -32272,6 +33083,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -32339,6 +33152,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "1.5 A/T Hybrid",
@@ -32405,6 +33220,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "1.5 A/T SHINE -Limited Edition",
@@ -32458,6 +33275,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "E70 pro",
@@ -32513,6 +33332,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "1.5 A/T Hybrid",
@@ -32583,6 +33404,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Advance",
@@ -32649,6 +33472,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Standard",
@@ -32703,6 +33528,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -32780,6 +33607,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "REEV",
@@ -32833,6 +33662,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Comfort",
@@ -32886,6 +33717,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "BEV AION Y PLUS",
@@ -32959,6 +33792,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "GS",
@@ -33054,6 +33889,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Comfort (Abou Ghaly)",
@@ -33148,6 +33985,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Pro",
@@ -33214,6 +34053,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Dynamic",
@@ -33293,6 +34134,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -33345,6 +34188,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -33401,6 +34246,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "High Deluxe",
@@ -33454,6 +34301,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "High Deluxe",
@@ -33509,6 +34358,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "ULTRA (HEV)",
@@ -33577,6 +34428,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified",
@@ -33671,6 +34524,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified",
@@ -33761,6 +34616,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -33816,6 +34673,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -33882,6 +34741,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "BEV",
@@ -33936,6 +34797,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "BEV",
@@ -33988,6 +34851,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -34028,6 +34893,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -34080,6 +34947,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -34141,6 +35010,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Base (single trim)",
@@ -34217,6 +35088,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -34274,6 +35147,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Play",
@@ -34338,6 +35213,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Ultra",
@@ -34403,6 +35280,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -34455,6 +35334,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Smart",
@@ -34510,6 +35391,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Ultimat",
@@ -34561,6 +35444,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -34618,6 +35503,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -34685,6 +35572,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -34753,6 +35642,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -34815,6 +35706,10 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": true,
+   "drive_evidence": [
+    "AWD"
+   ],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -34873,6 +35768,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Automatic",
@@ -34922,6 +35819,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -34978,6 +35877,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Top Line",
@@ -35054,6 +35955,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Base (single trim)",
@@ -35145,6 +36048,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "1.6 A/T LX FO",
@@ -35229,6 +36134,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -35295,6 +36202,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -35350,6 +36259,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -35415,6 +36326,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -35474,6 +36387,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -35512,6 +36427,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -35553,6 +36470,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -35619,6 +36538,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -35682,6 +36603,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -35720,6 +36643,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -35760,6 +36685,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -35825,6 +36752,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -35867,6 +36796,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -35926,6 +36857,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Halo",
@@ -35981,6 +36914,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Plus",
@@ -36045,6 +36980,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -36083,6 +37020,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Automatic (Trim 1)",
@@ -36149,6 +37088,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Modena",
@@ -36200,6 +37141,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -36241,6 +37184,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified (1 trim)",
@@ -36296,6 +37241,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Sport - Coupe",
@@ -36362,6 +37309,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -36416,6 +37365,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -36472,6 +37423,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -36526,6 +37479,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified (1 trim)",
@@ -36596,6 +37551,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified (1 trim)",
@@ -36650,6 +37607,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified (1 trim)",
@@ -36704,6 +37663,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified (1 trim)",
@@ -36756,6 +37717,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -36808,6 +37771,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -36863,6 +37828,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -36918,6 +37885,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified (1 trim)",
@@ -36972,6 +37941,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -37026,6 +37997,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified (1 trim)",
@@ -37081,6 +38054,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified (1 trim)",
@@ -37139,6 +38114,8 @@
     200
    ],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Standard",
@@ -37208,6 +38185,10 @@
     340
    ],
    "fuel_consumption": [],
+   "awd": false,
+   "drive_evidence": [
+    "RWD"
+   ],
    "trims": [
     {
      "label": "(1 class)",
@@ -37283,6 +38264,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -37349,6 +38332,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "(1 class)",
@@ -37400,6 +38385,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Premium",
@@ -37455,6 +38442,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "C - Classic",
@@ -37546,6 +38535,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -37588,6 +38579,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Midline",
@@ -37666,6 +38659,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -37706,6 +38701,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -37763,6 +38760,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -37823,6 +38822,11 @@
     187
    ],
    "fuel_consumption": [],
+   "awd": true,
+   "drive_evidence": [
+    "4WD",
+    "4X2"
+   ],
    "trims": [
     {
      "label": "Single Cab 2.5D XE Plus 4X2 MT",
@@ -37928,6 +38932,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -37984,6 +38990,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -38040,6 +39048,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Cayman",
@@ -38211,6 +39221,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Other Trims",
@@ -38268,6 +39280,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Carrera",
@@ -38413,6 +39427,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "3.0 A/T",
@@ -38559,6 +39575,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "RS",
@@ -38614,6 +39632,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "3.8 A/T",
@@ -38708,6 +39728,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "3.0 A/T Coupe",
@@ -38816,6 +39838,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Automatic",
@@ -38911,6 +39935,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Automatic",
@@ -39058,6 +40084,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "3.0 A/T Targa 4",
@@ -39128,6 +40156,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Automatic",
@@ -39283,6 +40313,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -39333,6 +40365,11 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": true,
+   "drive_evidence": [
+    "AWD",
+    "RWD"
+   ],
    "trims": [
     {
      "label": "Nobel Version RWD",
@@ -39395,6 +40432,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Standard",
@@ -39461,6 +40500,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "1.6 A/T Dynamic",
@@ -39537,6 +40578,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "1.6 A/T SW",
@@ -39591,6 +40634,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -39671,6 +40716,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -39740,6 +40787,10 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": true,
+   "drive_evidence": [
+    "4x4"
+   ],
    "trims": [
     {
      "label": "Double Cab 4x4",
@@ -39790,6 +40841,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -39842,6 +40895,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Pure+",
@@ -39932,6 +40987,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Pro+",
@@ -40011,6 +41068,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Pro+",
@@ -40088,6 +41147,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Pure+",
@@ -40178,6 +41239,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Pro+",
@@ -40255,6 +41318,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -40308,6 +41373,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "2.0 A/T",
@@ -40381,6 +41448,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "2.0 A/T SUV",
@@ -40454,6 +41523,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Automatic",
@@ -40507,6 +41578,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "1.0 M/T GA",
@@ -40586,6 +41659,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "1.5 A/T GLX Screen",
@@ -40665,6 +41740,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -40734,6 +41811,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -40783,6 +41862,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Single Cab",
@@ -40849,6 +41930,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -40912,6 +41995,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -40951,6 +42036,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Top Line",
@@ -41002,6 +42089,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Top Line",
@@ -41070,6 +42159,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -41138,6 +42229,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -41181,6 +42274,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -41224,6 +42319,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -41267,6 +42364,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [],
    "price_min": null,
    "price_max": null,
@@ -41337,6 +42436,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "R-Line",
@@ -41388,6 +42489,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "PHEV 1260",
@@ -41439,6 +42542,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "2.2 JTD",
@@ -41492,6 +42597,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -41543,6 +42650,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -41596,6 +42705,10 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": true,
+   "drive_evidence": [
+    "AWD"
+   ],
    "trims": [
     {
      "label": "Long Range",
@@ -41675,6 +42788,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Unspecified trim",
@@ -41728,6 +42843,8 @@
    "warranty_verified": false,
    "hp": [],
    "fuel_consumption": [],
+   "awd": null,
+   "drive_evidence": [],
    "trims": [
     {
      "label": "Standard",
