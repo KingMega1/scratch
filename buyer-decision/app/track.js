@@ -1,20 +1,21 @@
-/* CarIndex funnel instrumentation — event contract v1 (see docs/EVENT_SCHEMA.md).
+/* CarIndex funnel instrumentation — event contract EV3.
    Transport: window.dataLayer (GTM-compatible) + optional beacon endpoint.
    No endpoint configured => events are buffered locally for QA only (nothing leaves the browser). */
 (function (root) {
   'use strict';
 
-  const SCHEMA_VERSION = 'EV2';
-  const FLOW_VERSION = 'F2-2026-09-25';
+  const SCHEMA_VERSION = 'EV3';
+  const FLOW_VERSION = 'F3-P1.1-2026-09-26';
   const EVENTS = {
-    fmc_view: [], fmc_start: ['budget'],
-    q_view: ['q_id', 'step'], q_answer: ['q_id', 'step', 'value', 'ms_on_step', 'eligible_after'],
+    fmc_view: [], fmc_start: ['path'],
+    brief_submit: ['chars', 'extracted', 'source'],
+    q_view: ['q_id', 'step'], q_answer: ['q_id', 'step', 'value', 'ms_on_step'],
     q_skipped: ['q_id', 'reason'], q_back: ['q_id', 'step'],
-    result_view: ['hero_id', 'alt_ids', 'eligible', 'mode', 'confidence', 'margin', 'ms_to_result', 'answers'],
-    no_match_view: ['answers', 'relax_keys'], relax_apply: ['key'],
-    alt_promote: ['from_id', 'to_id', 'role'], evidence_open: ['model_id', 'source'],
-    compare_view: ['model_ids'], cta_click: ['cta', 'model_id'],
-    edit_answer: ['q_id'], restart: ['from'],
+    summary_view: ['keys'], summary_confirm: ['keys'], summary_edit: [], brief_edit_save: ['changed'],
+    result_view: ['hero_id', 'alt_ids', 'pool', 'ms_to_result', 'brief'],
+    no_match_view: ['brief', 'fix_keys'], relax_apply: ['key'], budget_adjust: ['from', 'to'],
+    evidence_open: ['model_id', 'source'], compare_view: ['model_ids'], cta_click: ['cta', 'model_id'],
+    restart: ['from'],
     feedback_view: ['hero_id'], feedback_answer: ['helped', 'hero_id'], feedback_text: ['helped', 'hero_id', 'text_length'],
     lang_switch: ['from', 'to'],
     exit: ['last_event', 'reached_result'],
