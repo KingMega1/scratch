@@ -1,7 +1,7 @@
 /**
- * CarIndex buyer-test collector — Google Apps Script bound to a Google Sheet.
+ * CarIndex buyer-test collector — Google Apps Script web app writing to a Google Sheet (by id).
  * Receives the app's funnel events (text/plain JSON beacons from app/track.js) and appends one row per event.
- * Deploy: Sheet → Extensions → Apps Script → paste → Deploy → New deployment → Web app
+ * Deploy: script.new → paste → Deploy → New deployment → Web app
  *         (Execute as: Me, Who has access: Anyone) → copy the /exec URL into build_public.py (--endpoint).
  * Rows are linked per journey by session_id; feedback rows carry the recommendation they refer to (hero_id).
  */
@@ -27,10 +27,16 @@ function doPost(e) {
 
 function doGet() { return out({ ok: true, rows: sheet_().getLastRow() - 1 }); }
 
+const SHEET_ID = '1YMny8RS6Vom_70AJzuWrNptAqxxgjZiE__OgN4sMdcY'; // "CarIndex buyer test — events"
 function sheet_() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const ss = SpreadsheetApp.openById(SHEET_ID);
   let sh = ss.getSheetByName(SHEET);
-  if (!sh) { sh = ss.insertSheet(SHEET); sh.appendRow(COLS); sh.setFrozenRows(1); }
+  if (!sh) {
+    // the Sheet was created from a CSV header: use its first tab, named "events"
+    sh = ss.getSheets()[0];
+    if (sh.getLastRow() === 0) sh.appendRow(COLS);
+    sh.setName(SHEET); sh.setFrozenRows(1);
+  }
   return sh;
 }
 function out(o) { return ContentService.createTextOutput(JSON.stringify(o)).setMimeType(ContentService.MimeType.JSON); }
