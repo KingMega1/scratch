@@ -158,7 +158,7 @@
       const example = S.examples.includes(text);
       const p = P.parse(text, U.models);
       T.track('fmc_start', { path: 'text' });
-      T.track('brief_submit', { chars: text.length, extracted: p.extracted, source: example ? 'example' : 'typed' });
+      T.track('brief_submit', { chars: text.length, extracted: p.extracted, source: example ? 'example' : 'typed', text: text.slice(0, 1000) });
       t0 = Date.now();
       st.path = 'text';
       const brief = merge({ text }, p);
@@ -221,7 +221,7 @@
         const text = skip ? '' : $('#more').value.trim();
         if (!text) { T.track('q_skipped', { q_id: id, reason: 'skip' }); advance(st.brief, [...st.asked, id]); return; }
         const p = P.parse(text, U.models);
-        T.track('q_answer', { q_id: id, step, value: p.extracted.join(',') || 'text', ms_on_step: Date.now() - qStart });
+        T.track('q_answer', { q_id: id, step, value: p.extracted.join(',') || 'text', ms_on_step: Date.now() - qStart, text: text.slice(0, 1000) });
         const b = merge(st.brief, p); b.notes = text;
         advance(b, [...st.asked, id]);
       };
