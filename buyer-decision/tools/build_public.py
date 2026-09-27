@@ -25,7 +25,7 @@ def sanitize(u):
     return {"meta": {k: u["meta"][k] for k in META_KEYS}, "models": models}
 
 
-def main(out):
+def main(out, endpoint=""):
     if os.path.exists(out):
         shutil.rmtree(out)
     os.makedirs(os.path.join(out, "app"))
@@ -40,7 +40,7 @@ def main(out):
     html = html.replace('../data/p11_client.js', '../data/view.js')
     # test deployment: no event sending, not indexed by search engines
     html = re.sub(r'<!-- auto = .*?-->\n<meta name="ci-track-endpoint" content="auto">',
-                  '<meta name="ci-track-endpoint" content="">\n<meta name="robots" content="noindex, nofollow">', html)
+                  f'<meta name="ci-track-endpoint" content="{endpoint}">\n<meta name="robots" content="noindex, nofollow">', html)
     assert 'content="auto"' not in html and 'view.js' in html
     open(os.path.join(out, "app", "index.html"), "w", encoding="utf-8").write(html)
     open(os.path.join(out, "index.html"), "w", encoding="utf-8").write(
@@ -55,4 +55,6 @@ def main(out):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    # optional: --endpoint <Apps Script /exec URL> sends funnel + feedback events to the test Sheet (tools/sheet_collector.gs)
+    ep = sys.argv[sys.argv.index("--endpoint") + 1] if "--endpoint" in sys.argv else ""
+    main(sys.argv[1], ep)
