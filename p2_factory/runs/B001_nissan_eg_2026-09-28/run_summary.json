@@ -1,0 +1,49 @@
+{
+  "batch": "B001_nissan_eg_2026-09-28",
+  "legacy_observations": 3823,
+  "recipe_stats": {
+    "pages": 7,
+    "price_obs": 27,
+    "spec_obs": 36,
+    "http_requests": 17
+  },
+  "reconcile": {
+    "matched_equal": 16,
+    "matched_diff": 5,
+    "t1_only": 5,
+    "consumer_only": 11
+  },
+  "counts": {
+    "evidence": 1461,
+    "observations": 3886,
+    "conflicts": 23,
+    "promotion_candidates": 43,
+    "exceptions": 11
+  },
+  "batch_obs_by_state": {
+    "t1_verified": 20,
+    "validated": 43
+  },
+  "batch_obs_by_kind": {
+    "deterministic": 63
+  },
+  "exceptions_by_route": {
+    "ai_exception": 4,
+    "deterministic": 3,
+    "human_review": 4
+  },
+  "conflicts_by_type": {
+    "MODEL_YEAR": 1,
+    "TRIM_ONLY_IN_CONSUMER": 11,
+    "TRIM_ONLY_IN_T1": 5,
+    "VALUE": 6
+  },
+  "candidates_by_type": {
+    "ADD": 7,
+    "CONFIRM": 20,
+    "CORRECT": 5,
+    "FLAG_STALE": 11
+  },
+  "universe_version": "U11-2026-09-26",
+  "registration_passenger_units_last12": 237442.0
+}

@@ -1,0 +1,73 @@
+run_id,phase,scope,kpi,numerator,denominator,value,status,definition
+B001_nissan_eg_2026-09-28,before,global,model_coverage_consumer,283.0,283.0,1.0,MEASURED,in-universe models with >=1 priced trim / in-universe models (P1 U11 u=true)
+B001_nissan_eg_2026-09-28,before,global,market_coverage_units,223908.0,237442.0,0.9430008170416354,MEASURED,passenger registrations Sep-2025..Aug-2026 attributed by P1 to in-universe models / all passenger registrations (P1 attribution method undocumented)
+B001_nissan_eg_2026-09-28,before,global,t1_verified_trim_share,31.0,675.0,0.045925925925925926,MEASURED,consumer trims whose price is official (P1 flag) or matched EXACTLY by a T1 deterministic observation with no open conflict
+B001_nissan_eg_2026-09-28,before,global,t1_model_share_units,19183.0,223908.0,0.08567358022044769,MEASURED,registration-weighted share of in-universe models with >=1 T1-verified price
+B001_nissan_eg_2026-09-28,before,global,t1_source_available_models,18.0,283.0,0.0636042402826855,MEASURED,in-universe models for which CarIndex holds at least one validated Tier-1 observation (any field)
+B001_nissan_eg_2026-09-28,before,global,field_t1_backed_power_hp,0.0,283.0,0.0,MEASURED,in-universe models with a validated Tier-1 observation for power_hp (staging)
+B001_nissan_eg_2026-09-28,before,global,field_t1_backed_seats,0.0,283.0,0.0,MEASURED,in-universe models with a validated Tier-1 observation for seats (staging)
+B001_nissan_eg_2026-09-28,before,global,field_t1_backed_engine_cc,0.0,283.0,0.0,MEASURED,in-universe models with a validated Tier-1 observation for engine_cc (staging)
+B001_nissan_eg_2026-09-28,before,global,field_t1_backed_torque_nm,0.0,283.0,0.0,MEASURED,in-universe models with a validated Tier-1 observation for torque_nm (staging)
+B001_nissan_eg_2026-09-28,before,global,price_freshness_30d,649.0,675.0,0.9614814814814815,MEASURED,"consumer trims whose price observation date is <=30 days before 2026-09-28 (observation date, not source effective date)"
+B001_nissan_eg_2026-09-28,before,global,field_complete_power_hp,48.0,283.0,0.1696113074204947,MEASURED,"in-universe models with non-empty ""hp"""
+B001_nissan_eg_2026-09-28,before,global,field_complete_seats,64.0,283.0,0.22614840989399293,MEASURED,"in-universe models with non-empty ""seats"""
+B001_nissan_eg_2026-09-28,before,global,field_complete_warranty_years,167.0,283.0,0.5901060070671378,MEASURED,"in-universe models with non-empty ""warranty_years"""
+B001_nissan_eg_2026-09-28,before,global,field_complete_powertrains,281.0,283.0,0.9929328621908127,MEASURED,"in-universe models with non-empty ""powertrains"""
+B001_nissan_eg_2026-09-28,before,global,field_complete_image,142.0,283.0,0.5017667844522968,MEASURED,"in-universe models with non-empty ""image"""
+B001_nissan_eg_2026-09-28,before,global,trim_row_provenance,0.0,675.0,0.0,MEASURED,consumer trims traceable to a source URL + evidence hash (P1 U11 trims carry no source field; only staging matches provide provenance)
+B001_nissan_eg_2026-09-28,before,global,automation_coverage,0.0,675.0,0.0,MEASURED,consumer trim prices reproducible by a re-runnable deterministic recipe
+B001_nissan_eg_2026-09-28,before,Nissan,model_coverage_consumer,7.0,7.0,1.0,MEASURED,in-universe models with >=1 priced trim / in-universe models (P1 U11 u=true)
+B001_nissan_eg_2026-09-28,before,Nissan,market_coverage_units,25484.0,25677.0,0.9924835455855435,MEASURED,"Nissan registrations covered by in-universe models / all Nissan passenger registrations, last 12 months"
+B001_nissan_eg_2026-09-28,before,Nissan,missing_models_ge10_units,4.0,,,COUNT,Nissan registration labels with >=10 units (last 12m) that do not resolve to an in-universe model
+B001_nissan_eg_2026-09-28,before,Nissan,t1_verified_trim_share,0.0,37.0,0.0,MEASURED,consumer trims whose price is official (P1 flag) or matched EXACTLY by a T1 deterministic observation with no open conflict
+B001_nissan_eg_2026-09-28,before,Nissan,t1_model_share_units,0.0,25484.0,0.0,MEASURED,registration-weighted share of in-universe models with >=1 T1-verified price
+B001_nissan_eg_2026-09-28,before,Nissan,t1_source_available_models,0.0,7.0,0.0,MEASURED,in-universe models for which CarIndex holds at least one validated Tier-1 observation (any field)
+B001_nissan_eg_2026-09-28,before,Nissan,field_t1_backed_power_hp,0.0,7.0,0.0,MEASURED,in-universe models with a validated Tier-1 observation for power_hp (staging)
+B001_nissan_eg_2026-09-28,before,Nissan,field_t1_backed_seats,0.0,7.0,0.0,MEASURED,in-universe models with a validated Tier-1 observation for seats (staging)
+B001_nissan_eg_2026-09-28,before,Nissan,field_t1_backed_engine_cc,0.0,7.0,0.0,MEASURED,in-universe models with a validated Tier-1 observation for engine_cc (staging)
+B001_nissan_eg_2026-09-28,before,Nissan,field_t1_backed_torque_nm,0.0,7.0,0.0,MEASURED,in-universe models with a validated Tier-1 observation for torque_nm (staging)
+B001_nissan_eg_2026-09-28,before,Nissan,price_freshness_30d,37.0,37.0,1.0,MEASURED,"consumer trims whose price observation date is <=30 days before 2026-09-28 (observation date, not source effective date)"
+B001_nissan_eg_2026-09-28,before,Nissan,field_complete_power_hp,7.0,7.0,1.0,MEASURED,"in-universe models with non-empty ""hp"""
+B001_nissan_eg_2026-09-28,before,Nissan,field_complete_seats,1.0,7.0,0.14285714285714285,MEASURED,"in-universe models with non-empty ""seats"""
+B001_nissan_eg_2026-09-28,before,Nissan,field_complete_warranty_years,2.0,7.0,0.2857142857142857,MEASURED,"in-universe models with non-empty ""warranty_years"""
+B001_nissan_eg_2026-09-28,before,Nissan,field_complete_powertrains,7.0,7.0,1.0,MEASURED,"in-universe models with non-empty ""powertrains"""
+B001_nissan_eg_2026-09-28,before,Nissan,field_complete_image,5.0,7.0,0.7142857142857143,MEASURED,"in-universe models with non-empty ""image"""
+B001_nissan_eg_2026-09-28,before,Nissan,trim_row_provenance,0.0,37.0,0.0,MEASURED,consumer trims traceable to a source URL + evidence hash (P1 U11 trims carry no source field; only staging matches provide provenance)
+B001_nissan_eg_2026-09-28,before,Nissan,automation_coverage,0.0,37.0,0.0,MEASURED,consumer trim prices reproducible by a re-runnable deterministic recipe
+B001_nissan_eg_2026-09-28,after,global,model_coverage_consumer,283.0,283.0,1.0,MEASURED,in-universe models with >=1 priced trim / in-universe models (P1 U11 u=true)
+B001_nissan_eg_2026-09-28,after,global,market_coverage_units,223908.0,237442.0,0.9430008170416354,MEASURED,passenger registrations Sep-2025..Aug-2026 attributed by P1 to in-universe models / all passenger registrations (P1 attribution method undocumented)
+B001_nissan_eg_2026-09-28,after,global,t1_verified_trim_share,49.0,675.0,0.0725925925925926,MEASURED,consumer trims whose price is official (P1 flag) or matched EXACTLY by a T1 deterministic observation with no open conflict [staging overlay; canonical unchanged]
+B001_nissan_eg_2026-09-28,after,global,t1_model_share_units,43734.0,223908.0,0.19532129267377674,MEASURED,registration-weighted share of in-universe models with >=1 T1-verified price
+B001_nissan_eg_2026-09-28,after,global,t1_source_available_models,25.0,283.0,0.08833922261484099,MEASURED,in-universe models for which CarIndex holds at least one validated Tier-1 observation (any field)
+B001_nissan_eg_2026-09-28,after,global,field_t1_backed_power_hp,4.0,283.0,0.014134275618374558,MEASURED,in-universe models with a validated Tier-1 observation for power_hp (staging)
+B001_nissan_eg_2026-09-28,after,global,field_t1_backed_seats,2.0,283.0,0.007067137809187279,MEASURED,in-universe models with a validated Tier-1 observation for seats (staging)
+B001_nissan_eg_2026-09-28,after,global,field_t1_backed_engine_cc,3.0,283.0,0.01060070671378092,MEASURED,in-universe models with a validated Tier-1 observation for engine_cc (staging)
+B001_nissan_eg_2026-09-28,after,global,field_t1_backed_torque_nm,3.0,283.0,0.01060070671378092,MEASURED,in-universe models with a validated Tier-1 observation for torque_nm (staging)
+B001_nissan_eg_2026-09-28,after,global,price_freshness_30d,649.0,675.0,0.9614814814814815,MEASURED,"consumer trims whose price observation date is <=30 days before 2026-09-28 (observation date, not source effective date)"
+B001_nissan_eg_2026-09-28,after,global,field_complete_power_hp,48.0,283.0,0.1696113074204947,MEASURED,"in-universe models with non-empty ""hp"""
+B001_nissan_eg_2026-09-28,after,global,field_complete_seats,64.0,283.0,0.22614840989399293,MEASURED,"in-universe models with non-empty ""seats"""
+B001_nissan_eg_2026-09-28,after,global,field_complete_warranty_years,167.0,283.0,0.5901060070671378,MEASURED,"in-universe models with non-empty ""warranty_years"""
+B001_nissan_eg_2026-09-28,after,global,field_complete_powertrains,281.0,283.0,0.9929328621908127,MEASURED,"in-universe models with non-empty ""powertrains"""
+B001_nissan_eg_2026-09-28,after,global,field_complete_image,142.0,283.0,0.5017667844522968,MEASURED,"in-universe models with non-empty ""image"""
+B001_nissan_eg_2026-09-28,after,global,open_conflicts_visible,23.0,,,COUNT,open conflicts recorded in staging for this scope
+B001_nissan_eg_2026-09-28,after,global,trim_row_provenance,18.0,675.0,0.02666666666666667,MEASURED,consumer trims traceable to a source URL + evidence hash (P1 U11 trims carry no source field; only staging matches provide provenance)
+B001_nissan_eg_2026-09-28,after,global,automation_coverage,18.0,675.0,0.02666666666666667,MEASURED,consumer trim prices reproducible by a re-runnable deterministic recipe
+B001_nissan_eg_2026-09-28,after,Nissan,model_coverage_consumer,7.0,7.0,1.0,MEASURED,in-universe models with >=1 priced trim / in-universe models (P1 U11 u=true)
+B001_nissan_eg_2026-09-28,after,Nissan,market_coverage_units,25484.0,25677.0,0.9924835455855435,MEASURED,"Nissan registrations covered by in-universe models / all Nissan passenger registrations, last 12 months"
+B001_nissan_eg_2026-09-28,after,Nissan,missing_models_ge10_units,4.0,,,COUNT,Nissan registration labels with >=10 units (last 12m) that do not resolve to an in-universe model
+B001_nissan_eg_2026-09-28,after,Nissan,t1_verified_trim_share,18.0,37.0,0.4864864864864865,MEASURED,consumer trims whose price is official (P1 flag) or matched EXACTLY by a T1 deterministic observation with no open conflict [staging overlay; canonical unchanged]
+B001_nissan_eg_2026-09-28,after,Nissan,t1_model_share_units,24551.0,25484.0,0.9633887929681368,MEASURED,registration-weighted share of in-universe models with >=1 T1-verified price
+B001_nissan_eg_2026-09-28,after,Nissan,t1_source_available_models,7.0,7.0,1.0,MEASURED,in-universe models for which CarIndex holds at least one validated Tier-1 observation (any field)
+B001_nissan_eg_2026-09-28,after,Nissan,field_t1_backed_power_hp,4.0,7.0,0.5714285714285714,MEASURED,in-universe models with a validated Tier-1 observation for power_hp (staging)
+B001_nissan_eg_2026-09-28,after,Nissan,field_t1_backed_seats,2.0,7.0,0.2857142857142857,MEASURED,in-universe models with a validated Tier-1 observation for seats (staging)
+B001_nissan_eg_2026-09-28,after,Nissan,field_t1_backed_engine_cc,3.0,7.0,0.42857142857142855,MEASURED,in-universe models with a validated Tier-1 observation for engine_cc (staging)
+B001_nissan_eg_2026-09-28,after,Nissan,field_t1_backed_torque_nm,3.0,7.0,0.42857142857142855,MEASURED,in-universe models with a validated Tier-1 observation for torque_nm (staging)
+B001_nissan_eg_2026-09-28,after,Nissan,price_freshness_30d,37.0,37.0,1.0,MEASURED,"consumer trims whose price observation date is <=30 days before 2026-09-28 (observation date, not source effective date)"
+B001_nissan_eg_2026-09-28,after,Nissan,field_complete_power_hp,7.0,7.0,1.0,MEASURED,"in-universe models with non-empty ""hp"""
+B001_nissan_eg_2026-09-28,after,Nissan,field_complete_seats,1.0,7.0,0.14285714285714285,MEASURED,"in-universe models with non-empty ""seats"""
+B001_nissan_eg_2026-09-28,after,Nissan,field_complete_warranty_years,2.0,7.0,0.2857142857142857,MEASURED,"in-universe models with non-empty ""warranty_years"""
+B001_nissan_eg_2026-09-28,after,Nissan,field_complete_powertrains,7.0,7.0,1.0,MEASURED,"in-universe models with non-empty ""powertrains"""
+B001_nissan_eg_2026-09-28,after,Nissan,field_complete_image,5.0,7.0,0.7142857142857143,MEASURED,"in-universe models with non-empty ""image"""
+B001_nissan_eg_2026-09-28,after,Nissan,open_conflicts_visible,23.0,,,COUNT,open conflicts recorded in staging for this scope
+B001_nissan_eg_2026-09-28,after,Nissan,trim_row_provenance,18.0,37.0,0.4864864864864865,MEASURED,consumer trims traceable to a source URL + evidence hash (P1 U11 trims carry no source field; only staging matches provide provenance)
+B001_nissan_eg_2026-09-28,after,Nissan,automation_coverage,18.0,37.0,0.4864864864864865,MEASURED,consumer trim prices reproducible by a re-runnable deterministic recipe

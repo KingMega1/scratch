@@ -1,0 +1,12 @@
+exception_id,batch_id,kind,subject,detail,route
+16a6a6af9c088555fb88,B001_nissan_eg_2026-09-28,IDENTITY_UNKNOWN,nissan/juke LVL003,official grade LVL003 @ 1299999 EGP has no name on page,ai_exception
+b4ef67ab2517817767bb,B001_nissan_eg_2026-09-28,IDENTITY_UNKNOWN,nissan/juke LVL002,official grade LVL002 @ 1259999 EGP has no name on page,ai_exception
+a1589e1246619f3c249d,B001_nissan_eg_2026-09-28,UNSTRUCTURED_SOURCE,https://en.nissan.com.eg/vehicles/new/sunny/specifications.html,HTTP 404: no spec page; brochure is the only official spec source,deterministic
+4ba7e7e573d750994501,B001_nissan_eg_2026-09-28,UNSTRUCTURED_SOURCE,https://en.nissan.com.eg/vehicles/new/sentra/specifications.html,HTTP 404: no spec page; brochure is the only official spec source,deterministic
+6798704b12a25baf647f,B001_nissan_eg_2026-09-28,UNSTRUCTURED_SOURCE,https://en.nissan.com.eg/vehicles/new/qashqai/specifications.html,HTTP 404: no spec page; brochure is the only official spec source,deterministic
+08de63634ac4e280c38c,B001_nissan_eg_2026-09-28,UNSTRUCTURED_SOURCE,https://www-europe.nissan-cdn.net/content/dam/Nissan/nissan_middle_east/brochures/LIB/NISSAN_EGYPT_MAGNITE-EN.pdf,brochure text has labels without extractable values (values rendered as images/columns): needs manual or AI-assisted read,ai_exception
+d3b608b669ae5111d7c1,B001_nissan_eg_2026-09-28,UNSTRUCTURED_SOURCE,https://www-europe.nissan-cdn.net/content/dam/Nissan/eg/brochures/NEW-NISSAN-QASHQAI-EGP.pdf,brochure text has labels without extractable values (values rendered as images/columns): needs manual or AI-assisted read,ai_exception
+8bd1969f1104376b647c,B001_nissan_eg_2026-09-28,MISSING_MODEL,Nissan-Armada,11 passenger registrations Sep-2025..Aug-2026; not in P1 universe; not listed on en.nissan.com.eg (other importer / grey import / re-registration?),human_review
+58bd14fba692f851ba8a,B001_nissan_eg_2026-09-28,MISSING_MODEL,Nissan-Kicks,10 passenger registrations Sep-2025..Aug-2026; not in P1 universe; not listed on en.nissan.com.eg (other importer / grey import / re-registration?),human_review
+ae17ceba5841619b1af9,B001_nissan_eg_2026-09-28,MISSING_MODEL,Nissan-N7,158 passenger registrations Sep-2025..Aug-2026; not in P1 universe; not listed on en.nissan.com.eg (other importer / grey import / re-registration?),human_review
+866dbf720273d00494cc,B001_nissan_eg_2026-09-28,MISSING_MODEL,Nissan-Rogue,12 passenger registrations Sep-2025..Aug-2026; not in P1 universe; not listed on en.nissan.com.eg (other importer / grey import / re-registration?),human_review

@@ -1,0 +1,302 @@
+{
+ "run_id": "canary-20260928T151601Z",
+ "all_pass": false,
+ "results": [
+  {
+   "case": "T1_initial",
+   "request": {
+    "ref": "60bbcc5"
+   },
+   "expected": "ACCEPTED_NEW",
+   "drive": "ACCEPTED_NEW",
+   "n8n": "ACCEPTED_NEW",
+   "commit": "60bbcc56596192b136b1bb94f029f40e2ede0b18",
+   "sha256": "5b54e3ba1998503988661e5fc1f545abc35f289d4b639678f80745edb7fe891a",
+   "schema": "carindex.p1.buyer_view/v2",
+   "identity_equal_across_systems": true,
+   "drive_current": "5b54e3ba1998503988661e5fc1f545abc35f289d4b639678f80745edb7fe891a",
+   "n8n_current": "5b54e3ba1998503988661e5fc1f545abc35f289d4b639678f80745edb7fe891a",
+   "drive_version": 1,
+   "n8n_version": 1,
+   "reason": null,
+   "n8n_execution": {
+    "status": "success",
+    "mode": "cli",
+    "startedAt": "2026-09-28T15:16:12.641Z"
+   },
+   "pass_": true
+  },
+  {
+   "case": "T2_rerun_same",
+   "request": {
+    "ref": "60bbcc5"
+   },
+   "expected": "DUPLICATE_NO_CHANGE",
+   "drive": "DUPLICATE_NO_CHANGE",
+   "n8n": "DUPLICATE_NO_CHANGE",
+   "commit": "60bbcc56596192b136b1bb94f029f40e2ede0b18",
+   "sha256": "5b54e3ba1998503988661e5fc1f545abc35f289d4b639678f80745edb7fe891a",
+   "schema": "carindex.p1.buyer_view/v2",
+   "identity_equal_across_systems": true,
+   "drive_current": "5b54e3ba1998503988661e5fc1f545abc35f289d4b639678f80745edb7fe891a",
+   "n8n_current": "5b54e3ba1998503988661e5fc1f545abc35f289d4b639678f80745edb7fe891a",
+   "drive_version": 1,
+   "n8n_version": 1,
+   "reason": "content identical to version 1",
+   "n8n_execution": {
+    "status": "success",
+    "mode": "cli",
+    "startedAt": "2026-09-28T15:16:26.513Z"
+   },
+   "pass_": true
+  },
+  {
+   "case": "T3_update",
+   "request": {
+    "ref": "19dd248"
+   },
+   "expected": "UPDATED",
+   "drive": "UPDATED",
+   "n8n": "UPDATED",
+   "commit": "19dd248cc9ff12219e4b8e534d17415affcf9ea5",
+   "sha256": "a01ff925b99ae2f004ec7177ee1a12f70464f705e915dbeeb5d7fab2e82e86ad",
+   "schema": "carindex.p1.buyer_view/v2",
+   "identity_equal_across_systems": true,
+   "drive_current": "a01ff925b99ae2f004ec7177ee1a12f70464f705e915dbeeb5d7fab2e82e86ad",
+   "n8n_current": "a01ff925b99ae2f004ec7177ee1a12f70464f705e915dbeeb5d7fab2e82e86ad",
+   "drive_version": 2,
+   "n8n_version": 2,
+   "reason": null,
+   "n8n_execution": {
+    "status": "success",
+    "mode": "cli",
+    "startedAt": "2026-09-28T15:16:44.913Z"
+   },
+   "pass_": true
+  },
+  {
+   "case": "T4_newer_commit_same_content",
+   "request": {
+    "ref": "d475768"
+   },
+   "expected": "DUPLICATE_NO_CHANGE",
+   "drive": "DUPLICATE_NO_CHANGE",
+   "n8n": "DUPLICATE_NO_CHANGE",
+   "commit": "d475768bb80e08b90c4e257a3ddc7d79b499e507",
+   "sha256": "a01ff925b99ae2f004ec7177ee1a12f70464f705e915dbeeb5d7fab2e82e86ad",
+   "schema": "carindex.p1.buyer_view/v2",
+   "identity_equal_across_systems": true,
+   "drive_current": "a01ff925b99ae2f004ec7177ee1a12f70464f705e915dbeeb5d7fab2e82e86ad",
+   "n8n_current": "a01ff925b99ae2f004ec7177ee1a12f70464f705e915dbeeb5d7fab2e82e86ad",
+   "drive_version": 2,
+   "n8n_version": 2,
+   "reason": "content identical to version 2",
+   "n8n_execution": {
+    "status": "success",
+    "mode": "cli",
+    "startedAt": "2026-09-28T15:17:03.125Z"
+   },
+   "pass_": true
+  },
+  {
+   "case": "T5_stale_older",
+   "request": {
+    "ref": "579f775"
+   },
+   "expected": "REJECTED_STALE",
+   "drive": "REJECTED_STALE",
+   "n8n": "REJECTED_STALE",
+   "commit": "579f775a0b56d4826e7234a1d1ce483b4d05fd24",
+   "sha256": "3e60df42c7f5f0616ad2a467952c2e21e6afc0ece4cbce73f850e2e7f0612022",
+   "schema": "carindex.p1.buyer_view/v2",
+   "identity_equal_across_systems": true,
+   "drive_current": "a01ff925b99ae2f004ec7177ee1a12f70464f705e915dbeeb5d7fab2e82e86ad",
+   "n8n_current": "a01ff925b99ae2f004ec7177ee1a12f70464f705e915dbeeb5d7fab2e82e86ad",
+   "drive_version": 2,
+   "n8n_version": 2,
+   "reason": "commit is older than current version 2 (19dd248)",
+   "n8n_execution": {
+    "status": "success",
+    "mode": "cli",
+    "startedAt": "2026-09-28T15:17:20.032Z"
+   },
+   "pass_": true
+  },
+  {
+   "case": "T6_branch_head",
+   "request": {},
+   "expected": "DUPLICATE_NO_CHANGE",
+   "drive": "DUPLICATE_NO_CHANGE",
+   "n8n": "DUPLICATE_NO_CHANGE",
+   "commit": "d475768bb80e08b90c4e257a3ddc7d79b499e507",
+   "sha256": "a01ff925b99ae2f004ec7177ee1a12f70464f705e915dbeeb5d7fab2e82e86ad",
+   "schema": "carindex.p1.buyer_view/v2",
+   "identity_equal_across_systems": true,
+   "drive_current": "a01ff925b99ae2f004ec7177ee1a12f70464f705e915dbeeb5d7fab2e82e86ad",
+   "n8n_current": "a01ff925b99ae2f004ec7177ee1a12f70464f705e915dbeeb5d7fab2e82e86ad",
+   "drive_version": 2,
+   "n8n_version": 2,
+   "reason": "content identical to version 2",
+   "n8n_execution": {
+    "status": "success",
+    "mode": "cli",
+    "startedAt": "2026-09-28T15:17:36.009Z"
+   },
+   "pass_": true
+  },
+  {
+   "case": "M1_unsupported_schema_v1",
+   "request": {
+    "ref": "f6f6d18"
+   },
+   "expected": "REJECTED_UNSUPPORTED_SCHEMA",
+   "drive": "REJECTED_UNSUPPORTED_SCHEMA",
+   "n8n": "REJECTED_UNSUPPORTED_SCHEMA",
+   "commit": "f6f6d18902aa815caa2ccf5ac4ac9922dc29d2ee",
+   "sha256": "39fe2158feccb8a1cfb926b3036a21ba6bb2f3bae18956438526ef7dc2bf76e7",
+   "schema": "carindex.p1.buyer_view/v1",
+   "identity_equal_across_systems": true,
+   "drive_current": "a01ff925b99ae2f004ec7177ee1a12f70464f705e915dbeeb5d7fab2e82e86ad",
+   "n8n_current": "a01ff925b99ae2f004ec7177ee1a12f70464f705e915dbeeb5d7fab2e82e86ad",
+   "drive_version": 2,
+   "n8n_version": 2,
+   "reason": "schema 'carindex.p1.buyer_view/v1' not supported",
+   "n8n_execution": {
+    "status": "success",
+    "mode": "cli",
+    "startedAt": "2026-09-28T15:17:51.107Z"
+   },
+   "pass_": true
+  },
+  {
+   "case": "M2_path_not_allowed",
+   "request": {
+    "ref": "19dd248",
+    "path": "README.md"
+   },
+   "expected": "REJECTED_NOT_ALLOWED",
+   "drive": "REJECTED_NOT_ALLOWED",
+   "n8n": "REJECTED_NOT_ALLOWED",
+   "commit": null,
+   "sha256": null,
+   "schema": null,
+   "identity_equal_across_systems": true,
+   "drive_current": null,
+   "n8n_current": null,
+   "drive_version": null,
+   "n8n_version": null,
+   "reason": "path not in allowlist",
+   "n8n_execution": {
+    "status": "success",
+    "mode": "cli",
+    "startedAt": "2026-09-28T15:18:03.562Z"
+   },
+   "pass_": false
+  },
+  {
+   "case": "M3_unknown_commit",
+   "request": {
+    "ref": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeef"
+   },
+   "expected": "REJECTED_SOURCE_NOT_FOUND",
+   "drive": "REJECTED_SOURCE_NOT_FOUND",
+   "n8n": "REJECTED_SOURCE_NOT_FOUND",
+   "commit": null,
+   "sha256": null,
+   "schema": null,
+   "identity_equal_across_systems": true,
+   "drive_current": "a01ff925b99ae2f004ec7177ee1a12f70464f705e915dbeeb5d7fab2e82e86ad",
+   "n8n_current": "a01ff925b99ae2f004ec7177ee1a12f70464f705e915dbeeb5d7fab2e82e86ad",
+   "drive_version": 2,
+   "n8n_version": 2,
+   "reason": "commit lookup HTTP 422",
+   "n8n_execution": {
+    "status": "success",
+    "mode": "cli",
+    "startedAt": "2026-09-28T15:18:14.190Z"
+   },
+   "pass_": true
+  },
+  {
+   "case": "M4_commit_off_canonical_branch",
+   "request": {
+    "ref": "ad06669"
+   },
+   "expected": "REJECTED_NOT_ON_CANONICAL_BRANCH",
+   "drive": "REJECTED_NOT_ON_CANONICAL_BRANCH",
+   "n8n": "REJECTED_NOT_ON_CANONICAL_BRANCH",
+   "commit": "ad06669f6bb9b53280279259ad83d2400690ea6f",
+   "sha256": null,
+   "schema": null,
+   "identity_equal_across_systems": true,
+   "drive_current": "a01ff925b99ae2f004ec7177ee1a12f70464f705e915dbeeb5d7fab2e82e86ad",
+   "n8n_current": "a01ff925b99ae2f004ec7177ee1a12f70464f705e915dbeeb5d7fab2e82e86ad",
+   "drive_version": 2,
+   "n8n_version": 2,
+   "reason": "compare branch...commit = diverged (HTTP 200)",
+   "n8n_execution": {
+    "status": "success",
+    "mode": "cli",
+    "startedAt": "2026-09-28T15:18:27.314Z"
+   },
+   "pass_": true
+  },
+  {
+   "case": "M5_hash_mismatch",
+   "request": {
+    "ref": "19dd248",
+    "expected_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+   },
+   "expected": "REJECTED_INTEGRITY",
+   "drive": "REJECTED_INTEGRITY",
+   "n8n": "REJECTED_INTEGRITY",
+   "commit": "19dd248cc9ff12219e4b8e534d17415affcf9ea5",
+   "sha256": "a01ff925b99ae2f004ec7177ee1a12f70464f705e915dbeeb5d7fab2e82e86ad",
+   "schema": null,
+   "identity_equal_across_systems": true,
+   "drive_current": "a01ff925b99ae2f004ec7177ee1a12f70464f705e915dbeeb5d7fab2e82e86ad",
+   "n8n_current": "a01ff925b99ae2f004ec7177ee1a12f70464f705e915dbeeb5d7fab2e82e86ad",
+   "drive_version": 2,
+   "n8n_version": 2,
+   "reason": "sha256 != expected_sha256",
+   "n8n_execution": {
+    "status": "success",
+    "mode": "cli",
+    "startedAt": "2026-09-28T15:18:41.838Z"
+   },
+   "pass_": true
+  },
+  {
+   "case": "M6_missing_file",
+   "request": {
+    "ref": "19dd248",
+    "path": "vehicle-data/views/does_not_exist.json"
+   },
+   "expected": "REJECTED_SOURCE_NOT_FOUND",
+   "drive": "REJECTED_SOURCE_NOT_FOUND",
+   "n8n": "REJECTED_SOURCE_NOT_FOUND",
+   "commit": "19dd248cc9ff12219e4b8e534d17415affcf9ea5",
+   "sha256": null,
+   "schema": null,
+   "identity_equal_across_systems": true,
+   "drive_current": null,
+   "n8n_current": null,
+   "drive_version": null,
+   "n8n_version": null,
+   "reason": "contents HTTP 404",
+   "n8n_execution": {
+    "status": "success",
+    "mode": "cli",
+    "startedAt": "2026-09-28T15:18:56.363Z"
+   },
+   "pass_": false
+  },
+  {
+   "case": "M7_unparseable_request_n8n",
+   "expected": "REJECTED_NOT_ALLOWED",
+   "n8n": "REJECTED_NOT_ALLOWED",
+   "n8n_current": null,
+   "pass_": true
+  }
+ ]
+}

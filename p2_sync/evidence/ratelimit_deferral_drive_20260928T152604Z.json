@@ -1,0 +1,10 @@
+{
+ "request_id": "ratelimit-live-test",
+ "artifact_id": "github:KingMega1/scratch:vehicle-data/views/p1_suv_2m.json",
+ "path": "vehicle-data/views/p1_suv_2m.json",
+ "ref": "19dd248",
+ "decided_at": "2026-09-28T15:26:04Z",
+ "reason": "GitHub HTTP 403 (rate limit / outage): retry later, state unchanged",
+ "decision": "DEFERRED_SOURCE_UNAVAILABLE",
+ "ledger_entry": null
+}

@@ -1,0 +1,11 @@
+# Sync hardening: prepared, NOT applied (2026-09-28)
+
+These must be done before scheduling the proven sync. None of them is authorised as a production change yet.
+
+| # | Action | Why | Exact change | Needs |
+|---|---|---|---|---|
+| H1 | Move n8n sync state from workflow static data into an **n8n Data Table** named `p2_sync_ledger` (built into n8n 2.37; no new credential) | Static data is overwritten when the workflow is re-imported, and only the latest state is queryable | 2 tables: `artifacts` (artifact_id PK, version, commit, sha256, git_blob_sha, schema, processed_at) and `events` (append-only). In `sync_core.js`, `ledger.*` reads/writes become Data Table node get/upsert/insert. One-time migration of the current `p2sync` object. Re-run `run_canary.py` for parity | Owner OK to add tables to the live n8n instance |
+| H2 | Replace Google Drive for desktop with the Drive API | The mirror currently needs the owner's Mac online | The existing n8n credential "Google Sheets account 2" is a **service account**. It can write to Drive only if (a) the Drive API is enabled on its GCP project and (b) the mirror folder is shared with the service-account email. **That is a permission expansion, so it is a CEO gate.** Alternative with no new permission: drop the Drive mirror for machines and keep Drive as a human-convenience copy only (GitHub stays canonical) | CEO decision |
+| H3 | Fix the invalid n8n API credential | `.claude/settings.local.json` `N8N_API_KEY` returns 401; the fallback is SSH + CLI | Owner creates a new key in n8n → Settings → n8n API and replaces the value locally. Revoke the old key | Owner (n8n login) |
+| H4 | Schedule only after H1–H3 | Avoid lost state and silent gaps | Add a Schedule Trigger (e.g. every 6 h, polling the branch head) in parallel with the Manual Trigger and activate. Use a read-only GitHub token as an n8n credential (60 requests/h unauthenticated is too low). Keep `DEFERRED_SOURCE_UNAVAILABLE` retry semantics | Read-only fine-grained PAT (Contents: Read) |
+| H5 | Wire `official_t1.py` into the CI refresh | Tier-1 evidence should refresh with the aggregator snapshot | Add `python3 scripts/official_t1.py run --out snapshots/official/O$N_$DATE` to `refresh.sh` (non-fatal). Port the brochure rules once `pypdf` is added to the workflow | Push access |

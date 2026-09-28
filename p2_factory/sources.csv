@@ -1,0 +1,16 @@
+source_id,name,family,domain,tier,market_scope,access_notes,status
+nissan_eg_web,Nissan Egypt official site (vehicle pages),vehicle_spec_price,en.nissan.com.eg,1,egypt,"robots.txt allows /vehicles/new/*; prices in embedded individualVehiclePriceJSON with Updated_On",active
+nissan_eg_brochure,Nissan Egypt official brochures (PDF),vehicle_spec_price,www-europe.nissan-cdn.net/content/dam/Nissan/eg/brochures,1,egypt,"Linked from en.nissan.com.eg/vehicles/brochures.html; Magnite PDF hosted under nissan_middle_east path but titled NISSAN_EGYPT",active
+carindex_drive_brochure,CarIndex Drive brochure/price-list archive,vehicle_spec_price,Drive:02 Automotive Data & Market Intelligence/Automotive Updates,1,egypt,"Tier inherited from the issuing OEM/distributor only when the file is an official document; Drive copy is evidence, not a source of its own",active
+official_toyota_eg,Toyota Egypt official site,vehicle_spec_price,toyota.com.eg,1,egypt,"5 rows in the 2026-09-10 snapshot",one_time
+contactcars,ContactCars new-car pages,vehicle_spec_price,www.contactcars.com,4,egypt,"Aggregator; ToS/robots not reviewed (LIVING_DATA D14)",one_time
+contactcars_lineup,ContactCars lineup pages,vehicle_spec_price,www.contactcars.com,4,egypt,,one_time
+contactcars_pricetable,ContactCars price tables,vehicle_spec_price,www.contactcars.com,4,egypt,,one_time
+contactcars_classified,ContactCars classifieds,vehicle_spec_price,www.contactcars.com,4,egypt,"May carry seller PII: strip at ingestion",one_time
+hatla2ee,Hatla2ee new-car pages,vehicle_spec_price,eg.hatla2ee.com,4,egypt,,one_time
+hatla2ee_summary,Hatla2ee summary/range pages,vehicle_spec_price,eg.hatla2ee.com,4,egypt,"Range values only; never sole evidence",one_time
+egycar,EgyCar new-car pages,vehicle_spec_price,www.egy-car.com,4,egypt,,one_time
+yallamotor,YallaMotor Egypt,vehicle_spec_price,egypt.yallamotor.com,4,egypt,,one_time
+yallamotor_classified,YallaMotor classifieds,vehicle_spec_price,egypt.yallamotor.com,4,egypt,"May carry seller PII",one_time
+registration_master,CarIndex Registration Master (Ahram/traffic monthly licensing),registration,Drive:CarIndex_Registration_Master.xlsx,1,egypt,"Government/industry licensing counts; redistribution rights unconfirmed (D15)",active
+news_rss,n8n content pipeline RSS articles,news,various,3,egypt,"News is never canonical vehicle truth: claims only (CONTRACT.md §7)",active

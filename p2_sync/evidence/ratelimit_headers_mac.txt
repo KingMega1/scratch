@@ -1,0 +1,6 @@
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 0
+x-ratelimit-used: 60
+x-ratelimit-resource: core
+x-ratelimit-reset: 1790612161
+access-control-expose-headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset

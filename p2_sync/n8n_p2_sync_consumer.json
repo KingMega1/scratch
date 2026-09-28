@@ -1,0 +1,104 @@
+[
+ {
+  "id": "P2SyncProbe00001",
+  "name": "[NON-PROD] P2 vehicle-data sync consumer (GitHub -> n8n ledger)",
+  "active": false,
+  "settings": {
+   "executionOrder": "v1",
+   "saveManualExecutions": true,
+   "saveDataSuccessExecution": "all"
+  },
+  "nodes": [
+   {
+    "id": "n1",
+    "name": "Manual Trigger",
+    "type": "n8n-nodes-base.manualTrigger",
+    "typeVersion": 1,
+    "position": [
+     0,
+     0
+    ],
+    "parameters": {}
+   },
+   {
+    "id": "n2",
+    "name": "Read Sync Request",
+    "type": "n8n-nodes-base.readWriteFile",
+    "typeVersion": 1,
+    "position": [
+     220,
+     0
+    ],
+    "parameters": {
+     "operation": "read",
+     "fileSelector": "/home/node/.n8n-files/p2sync/request.json",
+     "options": {}
+    },
+    "onError": "continueRegularOutput",
+    "alwaysOutputData": true
+   },
+   {
+    "id": "n3",
+    "name": "Parse Request",
+    "type": "n8n-nodes-base.code",
+    "typeVersion": 2,
+    "position": [
+     440,
+     0
+    ],
+    "parameters": {
+     "jsCode": "// Request supplied as a file (canary / CLI). Missing file = default request (branch head).\nconst it = $input.first();\nlet request = {};\nif (it && it.binary && it.binary.data) {\n  const buf = await this.helpers.getBinaryDataBuffer(0, 'data');\n  try { request = JSON.parse(buf.toString('utf8')); } catch (e) { request = { path: '__unparseable_request__' }; }\n}\nreturn [{ json: { request } }];"
+    }
+   },
+   {
+    "id": "n4",
+    "name": "Sync From GitHub",
+    "type": "n8n-nodes-base.code",
+    "typeVersion": 2,
+    "position": [
+     660,
+     0
+    ],
+    "parameters": {
+     "jsCode": "// P2 vehicle-data sync consumer core (runs inside an n8n Code node; no Node builtins available).\n// Contract: SYNC_CONTRACT.md. GitHub is canonical; this node only reads GitHub and records a ledger\n// in workflow static data. It never writes to GitHub, Drive, or any production dataset.\n//\n// Inputs (first item json, all optional): {request_id, ref, path, expected_sha256, reset_ledger}\nconst CFG = {\n  repo: 'KingMega1/scratch',\n  branch: 'claude/carindex-buyer-vehicle-data-97yinp',\n  defaultPath: 'vehicle-data/views/p1_suv_2m.json',\n  allowPaths: [/^vehicle-data\\/views\\/[a-z0-9_]+\\.json$/, /^vehicle-data\\/sync_canary\\/[a-z0-9_]+\\.json$/],\n  schemas: {\n    'carindex.p1.buyer_view/v2': ['schema', 'generated_as_of', 'models'],\n    'carindex.sync_canary/v1': ['schema', 'artifact_id', 'generated_as_of', 'payload'],\n  },\n};\nconst UA = { 'User-Agent': 'carindex-p2-sync/1', Accept: 'application/vnd.github+json' };\n\n// ---- pure-JS SHA-1 / SHA-256 over byte arrays (crypto module is disallowed in the n8n sandbox)\nfunction sha256(bytes) {\n  const K = new Uint32Array([0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2]);\n  const H = new Uint32Array([0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19]);\n  const p = pad(bytes, false), W = new Uint32Array(64);\n  const r = (x, n) => (x >>> n) | (x << (32 - n));\n  for (let i = 0; i < p.length; i += 64) {\n    for (let t = 0; t < 16; t++) W[t] = (p[i+4*t] << 24) | (p[i+4*t+1] << 16) | (p[i+4*t+2] << 8) | p[i+4*t+3];\n    for (let t = 16; t < 64; t++) {\n      const s0 = r(W[t-15], 7) ^ r(W[t-15], 18) ^ (W[t-15] >>> 3), s1 = r(W[t-2], 17) ^ r(W[t-2], 19) ^ (W[t-2] >>> 10);\n      W[t] = (W[t-16] + s0 + W[t-7] + s1) | 0;\n    }\n    let [a, b, c, d, e, f, g, h] = H;\n    for (let t = 0; t < 64; t++) {\n      const t1 = (h + (r(e, 6) ^ r(e, 11) ^ r(e, 25)) + ((e & f) ^ (~e & g)) + K[t] + W[t]) | 0;\n      const t2 = ((r(a, 2) ^ r(a, 13) ^ r(a, 22)) + ((a & b) ^ (a & c) ^ (b & c))) | 0;\n      h = g; g = f; f = e; e = (d + t1) | 0; d = c; c = b; b = a; a = (t1 + t2) | 0;\n    }\n    H[0] += a; H[1] += b; H[2] += c; H[3] += d; H[4] += e; H[5] += f; H[6] += g; H[7] += h;\n  }\n  return hex(H);\n}\nfunction sha1(bytes) {\n  const H = new Uint32Array([0x67452301, 0xefcdab89, 0x98badcfe, 0x10325476, 0xc3d2e1f0]);\n  const p = pad(bytes, false), W = new Uint32Array(80);\n  const l = (x, n) => (x << n) | (x >>> (32 - n));\n  for (let i = 0; i < p.length; i += 64) {\n    for (let t = 0; t < 16; t++) W[t] = (p[i+4*t] << 24) | (p[i+4*t+1] << 16) | (p[i+4*t+2] << 8) | p[i+4*t+3];\n    for (let t = 16; t < 80; t++) W[t] = l(W[t-3] ^ W[t-8] ^ W[t-14] ^ W[t-16], 1);\n    let [a, b, c, d, e] = H;\n    for (let t = 0; t < 80; t++) {\n      const [f, k] = t < 20 ? [(b & c) | (~b & d), 0x5a827999] : t < 40 ? [b ^ c ^ d, 0x6ed9eba1]\n        : t < 60 ? [(b & c) | (b & d) | (c & d), 0x8f1bbcdc] : [b ^ c ^ d, 0xca62c1d6];\n      const tmp = (l(a, 5) + f + e + k + W[t]) | 0;\n      e = d; d = c; c = l(b, 30); b = a; a = tmp;\n    }\n    H[0] += a; H[1] += b; H[2] += c; H[3] += d; H[4] += e;\n  }\n  return hex(H);\n}\nfunction pad(bytes) {\n  const n = bytes.length, total = (((n + 9) + 63) >> 6) << 6, p = new Uint8Array(total);\n  p.set(bytes); p[n] = 0x80;\n  const bits = n * 8;\n  for (let i = 0; i < 8; i++) p[total - 1 - i] = Math.floor(bits / Math.pow(2, 8 * i)) & 0xff;\n  return p;\n}\nfunction hex(words) { return Array.from(words, w => (w >>> 0).toString(16).padStart(8, '0')).join(''); }\nfunction gitBlobSha(bytes) {\n  const head = new TextEncoder().encode(`blob ${bytes.length}\\0`), all = new Uint8Array(head.length + bytes.length);\n  all.set(head); all.set(bytes, head.length);\n  return sha1(all);\n}\n\n// The task runner may hand back a Buffer, an ArrayBuffer, a serialised {type:'Buffer',data:[]} or a string.\nfunction toBytes(b) {\n  if (b == null) return new Uint8Array(0);\n  if (b instanceof Uint8Array) return new Uint8Array(b.buffer, b.byteOffset, b.byteLength);\n  if (b instanceof ArrayBuffer) return new Uint8Array(b);\n  if (b.type === 'Buffer' && Array.isArray(b.data)) return Uint8Array.from(b.data);\n  if (typeof b === 'string') return new TextEncoder().encode(b);\n  if (ArrayBuffer.isView(b)) return new Uint8Array(b.buffer, b.byteOffset, b.byteLength);\n  return new Uint8Array(0);\n}\n\n// ---- sync\nconst transient = (st) => st === 0 || st === 403 || st === 429 || st >= 500;   // GitHub rate limit = 403/429\nasync function gh(ctx, url, bin) {\n  try {\n    const res = await ctx.helpers.httpRequest({ url, headers: UA, json: !bin, encoding: bin ? 'arraybuffer' : undefined,\n                                                returnFullResponse: true, ignoreHttpStatusErrors: true });\n    return { status: res.statusCode, body: res.body };\n  } catch (e) { return { status: 0, body: null, error: e.message }; }\n}\n\nasync function run(ctx, input, ledger, now) {\n  const req = Object.assign({}, input);\n  const path = req.path || CFG.defaultPath, ref = req.ref || CFG.branch;\n  const artifact_id = `github:${CFG.repo}:${path}`;\n  const out = { request_id: req.request_id || null, artifact_id, path, ref, decided_at: now };\n  const decide = (decision, extra) => {\n    Object.assign(out, extra || {}, { decision });\n    ledger.events.push({ at: now, request_id: out.request_id, artifact_id, decision, commit: out.commit || null,\n                         sha256: out.sha256 || null, reason: out.reason || null });\n    if (ledger.events.length > 200) ledger.events.splice(0, ledger.events.length - 200);\n    out.ledger_entry = ledger.artifacts[artifact_id] || null;\n    return out;\n  };\n  if (!CFG.allowPaths.some(rx => rx.test(path))) return decide('REJECTED_NOT_ALLOWED', { reason: 'path not in allowlist' });\n\n  // one call resolves the commit AND proves it is on the canonical branch lineage (identical to, or behind, the head)\n  const lin = await gh(ctx, `https://api.github.com/repos/${CFG.repo}/compare/${encodeURIComponent(CFG.branch)}...${encodeURIComponent(ref)}`);\n  if (transient(lin.status)) return decide('DEFERRED_SOURCE_UNAVAILABLE', { reason: `GitHub HTTP ${lin.status} (rate limit / outage): retry later, state unchanged` });\n  if (lin.status === 404 || lin.status === 422) return decide('REJECTED_SOURCE_NOT_FOUND', { reason: `ref not found (HTTP ${lin.status})` });\n  if (lin.status !== 200 || !['identical', 'behind'].includes(lin.body.status))\n    return decide('REJECTED_NOT_ON_CANONICAL_BRANCH', { reason: `compare branch...ref = ${lin.body && lin.body.status} (HTTP ${lin.status})` });\n  const mb = lin.body.merge_base_commit;   // for identical/behind the merge base IS the requested commit\n  const commit = mb.sha; out.commit = commit; out.commit_date = mb.commit.committer.date;\n\n  const meta = await gh(ctx, `https://api.github.com/repos/${CFG.repo}/contents/${path}?ref=${commit}`);\n  if (transient(meta.status)) return decide('DEFERRED_SOURCE_UNAVAILABLE', { reason: `GitHub HTTP ${meta.status}: retry later, state unchanged` });\n  if (meta.status !== 200 || !meta.body || !meta.body.sha) return decide('REJECTED_SOURCE_NOT_FOUND', { reason: `contents HTTP ${meta.status}` });\n  const raw = await gh(ctx, `https://raw.githubusercontent.com/${CFG.repo}/${commit}/${path}`, true);\n  if (transient(raw.status)) return decide('DEFERRED_SOURCE_UNAVAILABLE', { reason: `raw HTTP ${raw.status}: retry later, state unchanged` });\n  if (raw.status !== 200) return decide('REJECTED_SOURCE_NOT_FOUND', { reason: `raw HTTP ${raw.status}` });\n  const bytes = toBytes(raw.body);\n  out.body_type = raw.body === null ? 'null' : (raw.body && raw.body.constructor ? raw.body.constructor.name : typeof raw.body);\n  const sha = sha256(bytes), blob = gitBlobSha(bytes);\n  Object.assign(out, { sha256: sha, git_blob_sha: blob, bytes: bytes.length });\n  if (blob !== meta.body.sha) return decide('REJECTED_INTEGRITY', { reason: `git blob ${blob} != GitHub ${meta.body.sha}` });\n  if (req.expected_sha256 && req.expected_sha256 !== sha) return decide('REJECTED_INTEGRITY', { reason: 'sha256 != expected_sha256' });\n\n  let doc;\n  try { doc = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes)); }\n  catch (e) { return decide('REJECTED_MALFORMED', { reason: `not UTF-8 JSON: ${e.message.slice(0, 120)}` }); }\n  if (!doc || typeof doc !== 'object' || Array.isArray(doc)) return decide('REJECTED_MALFORMED', { reason: 'top level is not an object' });\n  const req_keys = CFG.schemas[doc.schema];\n  out.schema = doc.schema || null;\n  if (!req_keys) return decide('REJECTED_UNSUPPORTED_SCHEMA', { reason: `schema ${JSON.stringify(doc.schema)} not supported` });\n  const missing = req_keys.filter(k => !(k in doc));\n  if (missing.length) return decide('REJECTED_MALFORMED', { reason: `missing keys ${missing.join(',')}` });\n  // \"processing\": the consumer derives the facts it will use downstream\n  const consumed = { generated_as_of: doc.generated_as_of,\n                     items: Array.isArray(doc.models) ? doc.models.length : (doc.payload && doc.payload.items || []).length,\n                     synthetic: doc.schema === 'carindex.sync_canary/v1' };\n\n  const cur = ledger.artifacts[artifact_id];\n  const entry = (version) => ({ artifact_id, version, schema: doc.schema, commit, commit_date: out.commit_date,\n                                git_blob_sha: blob, sha256: sha, bytes: bytes.length,\n                                canonical_url: `https://github.com/${CFG.repo}/blob/${commit}/${path}`,\n                                consumed, processed_at: now });\n  if (!cur) { ledger.artifacts[artifact_id] = entry(1); return decide('ACCEPTED_NEW', { consumed }); }\n  if (cur.sha256 === sha) {\n    cur.last_seen_commit = commit; cur.last_seen_at = now;\n    return decide('DUPLICATE_NO_CHANGE', { reason: `content identical to version ${cur.version}` });\n  }\n  const order = await gh(ctx, `https://api.github.com/repos/${CFG.repo}/compare/${cur.commit}...${commit}`);\n  if (transient(order.status)) return decide('DEFERRED_SOURCE_UNAVAILABLE', { reason: `GitHub HTTP ${order.status}: retry later, state unchanged` });\n  const st = order.status === 200 ? order.body.status : `HTTP ${order.status}`;\n  if (st === 'ahead') {\n    const prev = { version: cur.version, commit: cur.commit, sha256: cur.sha256 };\n    ledger.artifacts[artifact_id] = Object.assign(entry(cur.version + 1), { previous: prev });\n    return decide('UPDATED', { consumed, previous: prev });\n  }\n  if (st === 'behind') return decide('REJECTED_STALE', { reason: `commit is older than current version ${cur.version} (${cur.commit.slice(0, 7)})` });\n  return decide('REJECTED_DIVERGED', { reason: `compare current...candidate = ${st}` });\n}\n\n// ---- n8n entry point\nconst staticData = $getWorkflowStaticData('global');\nconst input = ($input.first() && $input.first().json) || {};\nlet req = {};\nif (input.request) req = input.request; else if (input.ref || input.path) req = input;\nif (req.reset_ledger === true) delete staticData.p2sync;\nstaticData.p2sync = staticData.p2sync || { contract: 'carindex.p2.sync/v1', artifacts: {}, events: [] };\nconst result = await run(this, req, staticData.p2sync, new Date().toISOString());\nreturn [{ json: result }];\n"
+    }
+   }
+  ],
+  "connections": {
+   "Manual Trigger": {
+    "main": [
+     [
+      {
+       "node": "Read Sync Request",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   },
+   "Read Sync Request": {
+    "main": [
+     [
+      {
+       "node": "Parse Request",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   },
+   "Parse Request": {
+    "main": [
+     [
+      {
+       "node": "Sync From GitHub",
+       "type": "main",
+       "index": 0
+      }
+     ]
+    ]
+   }
+  },
+  "pinData": {}
+ }
+]
