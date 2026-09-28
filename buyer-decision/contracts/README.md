@@ -68,3 +68,6 @@ Questionnaire impact (no new mandatory question):
 1. Existing question, relabelled answers: "Open to fully electric" / "Only if I can charge at home" / "No — hybrid or petrol is fine" / "Petrol only".
 2. Only after "No", and only when it changes the result (existing materiality check): "Main reason?" range / charging / cost / resale / not sure.
 3. Free text fills the same fields ("مش عايز كهربا عشان الشحن" → `avoid_bev` + `charging_access`).
+4. "Here's what we understood" shows one powertrain line built from `stance` + `excluded` + `concerns`. Today it
+   shows the exclusion twice ("Petrol or hybrid, no fully electric" and a separate "Not: Electric" row); fixed as
+   part of this work, not separately.

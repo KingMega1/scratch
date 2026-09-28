@@ -183,10 +183,42 @@
       if (!rows.length || known.length / rows.length < COVERAGE) { dropped.push(k); rows.forEach(r => { delete r.parts[k]; }); continue; }
       used.push(k);
       const mean = known.reduce((a, r) => a + r.parts[k], 0) / known.length;
-      rows.forEach(r => { if (r.parts[k] == null) r.parts[k] = mean; });
+      rows.forEach(r => { if (r.parts[k] == null) { r.parts[k] = mean; (r.filled = r.filled || []).push(k); } });
     }
     rows.forEach(r => { let s = 0, w = 0; for (const [k, v] of Object.entries(r.parts)) { s += W[k] * v; w += W[k]; } r.total = w ? s / w : 0; });
     return { rows, used, dropped };
+  }
+
+  /* ---------- confidence (output only; never changes the ranking) ----------
+     Is the leader's lead robust to what we don't know? The leader must stay ahead by more than TIE when
+       (a) any single ranking factor is removed (the lead must not rest on one factor), and
+       (b) every mean-filled unknown is set against it: its own unknowns to the worst known value, rivals' to the best.
+     level: 'tie' (lead within TIE) | 'lean' (ahead, but fails a or b; `depends` says why) | 'clear' | 'only' (one candidate). */
+  function confidence(main, used) {
+    if (!main.length) return null;
+    if (main.length === 1) return { level: 'only', lead: null, depends: [], basis: [] };
+    const hero = main[0], lead = hero.total - main[1].total;
+    const tot = (parts, keys) => { let s = 0, w = 0; for (const k of keys) { s += W[k] * parts[k]; w += W[k]; } return w ? s / w : 0; };
+    const stillLeads = (rows, keys) => {
+      const h = tot(rows[0], keys); let best = -Infinity;
+      for (let i = 1; i < rows.length; i++) best = Math.max(best, tot(rows[i], keys));
+      return h - best > TIE;
+    };
+    // what the lead over the runner-up is made of (weighted difference per factor)
+    const sw = used.reduce((a, k) => a + W[k], 0);
+    const basis = used.map(k => ({ k, d: +((W[k] * (hero.parts[k] - main[1].parts[k])) / sw).toFixed(4) }))
+      .filter(x => Math.abs(x.d) > 1e-4).sort((a, b) => b.d - a.d);
+    if (lead <= TIE) return { level: 'tie', lead: +lead.toFixed(4), depends: [], basis, vs: main[1].F.m.id };
+    const parts = main.map(x => x.parts), depends = [];
+    if (used.length === 1) depends.push(used[0]);
+    else for (const k of used) if (!stillLeads(parts, used.filter(x => x !== k))) depends.push(k);
+    if (main.some(x => (x.filled || []).length)) {
+      const lo = {}, hi = {};
+      for (const k of used) { const kn = main.filter(x => !(x.filled || []).includes(k)).map(x => x.parts[k]); lo[k] = Math.min(...kn); hi[k] = Math.max(...kn); }
+      const worst = main.map((x, i) => { const p = { ...x.parts }; for (const k of x.filled || []) p[k] = i === 0 ? lo[k] : hi[k]; return p; });
+      if (!stillLeads(worst, used)) depends.push('unknown_data');
+    }
+    return { level: depends.length ? 'lean' : 'clear', lead: +lead.toFixed(4), depends, basis, vs: main[1].F.m.id };
   }
 
   /* ---------- main ---------- */
@@ -218,7 +250,7 @@
     // has the brief earned a winner? the top tier = everything within TIE of the best main candidate
     const best = main.length ? main[0].total : 0;
     const tier = main.filter(s => s.total >= best - TIE);
-    const out = { factors: fit.used, factorsDropped: fit.dropped, tier: tier.length, decided: tier.length <= 3, clear: tier.length === 1, brief: b, terr, pool: scored.length, eligible: eligible.length, widened, blocked, unknown, ranked: main.map(s => s.F.m.id), poolIds: scored.map(s => s.F.m.id) };
+    const out = { confidence: confidence(main, fit.used), factors: fit.used, factorsDropped: fit.dropped, tier: tier.length, decided: tier.length <= 3, clear: tier.length === 1, brief: b, terr, pool: scored.length, eligible: eligible.length, widened, blocked, unknown, ranked: main.map(s => s.F.m.id), poolIds: scored.map(s => s.F.m.id) };
     const sl = verdict(b, byId, terr, scored, ctx);
     const asp = aspirations(b, byId, terr);
     if (!main.length) return { ...out, hero: null, alts: [], nearest: nearest(all, b, terr), shortlist: sl, aspiration: asp };

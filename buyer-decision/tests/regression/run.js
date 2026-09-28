@@ -167,11 +167,15 @@ L.push(`Market-status gate: inactive (${MARKET ? 'dataset loaded, shadow only' :
 L.push('Diagnostics are known P1.2 problems, counted per recommended car (thresholds provisional; P2 owns market-status definitions).', '');
 L.push('| Diagnostic | Count |', '|---|---|');
 Object.entries(diagCount).sort().forEach(([k, v]) => L.push(`| ${k} | ${v} |`));
-L.push('', '## Cases', '', '| Case | Group | Brief | Asked | Result (mode) | Diagnostics |', '|---|---|---|---|---|---|');
-for (const { c, asked, s, d } of rows) {
+const confTxt = cf => (!cf ? '—' : `${cf.level}${cf.lead != null ? ' lead ' + cf.lead : ''}${cf.depends.length ? ' · depends on ' + cf.depends.join('+') : ''}${cf.basis.length ? ' · lead from ' + cf.basis.filter(x => x.d > 0).map(x => `${x.k} ${x.d}`).join(', ') : ''}`);
+const confCount = {};
+rows.forEach(({ r }) => { const l = r.confidence ? r.confidence.level : 'none'; confCount[l] = (confCount[l] || 0) + 1; });
+L.push('', '## Confidence (output only; ranking unchanged)', '', Object.entries(confCount).map(([k, v]) => `${k}: ${v}`).join(' · '));
+L.push('', '## Cases', '', '| Case | Group | Brief | Asked | Result (mode) | Confidence | Diagnostics |', '|---|---|---|---|---|---|---|');
+for (const { c, asked, s, d, r } of rows) {
   const res = s.hero ? [s.hero, ...s.alts].map(nm).join(' · ') + (s.less ? ` · less: ${nm(s.less)}` : '') : 'no match';
   const dd = d.map(x => `${x.k}${x.id ? ' ' + nm(x.id) : ''}${x.v != null ? ' (' + x.v + ')' : ''}`).join('; ');
-  L.push(`| ${c.id} | ${c.group} | ${(c.text || '(guided)').replace(/\|/g, '/')} | ${asked.join(', ') || '—'} | ${res} (${s.mode}${s.mode === 'equal' ? ', ' + s.tier + ' tied' : ''}) | ${dd} |`);
+  L.push(`| ${c.id} | ${c.group} | ${(c.text || '(guided)').replace(/\|/g, '/')} | ${asked.join(', ') || '—'} | ${res} (${s.mode}${s.mode === 'equal' ? ', ' + s.tier + ' tied' : ''}) | ${confTxt(r.confidence)} | ${dd} |`);
 }
 if (understanding.length) { L.push('', '## Understanding failures', ''); understanding.forEach(u => L.push(`- ${u.id}: ${u.msg}${u.known ? ' — KNOWN ' + u.known : ''}`)); }
 if (parity.length) { L.push('', '## EN/AR brief parity', ''); parity.forEach(p => L.push('- ' + p)); }
