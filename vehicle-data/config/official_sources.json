@@ -1,0 +1,33 @@
+{
+ "note": "Tier-1 official Egypt OEM/distributor pages. One entry per page. universe_id = P1 CI_UNIVERSE model id; registry_model_id = registry/models.csv id when the model is in the registry. robots.txt checked 2026-09-28 for both hosts (paths allowed).",
+ "sources": {
+  "nissan_eg_web":  {"tier": 1, "scope": "egypt", "owner": "Nissan Egypt (official site)", "host": "en.nissan.com.eg"},
+  "nissan_eg_brochure": {"tier": 1, "scope": "egypt", "owner": "Nissan Egypt official brochures", "host": "www-europe.nissan-cdn.net"},
+  "mg_eg_web": {"tier": 1, "scope": "egypt", "owner": "Mansour MG Egypt (official distributor site)", "host": "www.mgmotor.com.eg"}
+ },
+ "pages": [
+  {"source": "nissan_eg_web", "recipe": "nissan_vlp_price_json", "url": "https://en.nissan.com.eg/vehicles/new/magnite.html", "universe_id": "nissan/magnite"},
+  {"source": "nissan_eg_web", "recipe": "nissan_vlp_price_json", "url": "https://en.nissan.com.eg/vehicles/new/sunny.html", "universe_id": "nissan/sunny"},
+  {"source": "nissan_eg_web", "recipe": "nissan_vlp_price_json", "url": "https://en.nissan.com.eg/vehicles/new/sentra.html", "universe_id": "nissan/sentra"},
+  {"source": "nissan_eg_web", "recipe": "nissan_vlp_price_json", "url": "https://en.nissan.com.eg/vehicles/new/qashqai.html", "universe_id": "nissan/qashqai", "registry_model_id": "m_000006"},
+  {"source": "nissan_eg_web", "recipe": "nissan_vlp_price_json", "url": "https://en.nissan.com.eg/vehicles/new/x-trail.html", "universe_id": "nissan/x-trail"},
+  {"source": "nissan_eg_web", "recipe": "nissan_vlp_price_json", "url": "https://en.nissan.com.eg/vehicles/new/juke.html", "universe_id": "nissan/juke"},
+  {"source": "nissan_eg_web", "recipe": "nissan_vlp_price_json", "url": "https://en.nissan.com.eg/vehicles/new/allnewpatrol.html", "universe_id": "nissan/patrol"},
+  {"source": "nissan_eg_web", "recipe": "nissan_spec_table", "url": "https://en.nissan.com.eg/vehicles/new/magnite/specifications.html", "universe_id": "nissan/magnite"},
+  {"source": "nissan_eg_web", "recipe": "nissan_spec_table", "url": "https://en.nissan.com.eg/vehicles/new/x-trail/specifications.html", "universe_id": "nissan/x-trail"},
+  {"source": "nissan_eg_web", "recipe": "nissan_spec_table", "url": "https://en.nissan.com.eg/vehicles/new/juke/specifications.html", "universe_id": "nissan/juke"},
+  {"source": "nissan_eg_web", "recipe": "nissan_spec_table", "url": "https://en.nissan.com.eg/vehicles/new/allnewpatrol/specifications.html", "universe_id": "nissan/patrol"},
+  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/mg5/", "universe_id": "mg/5"},
+  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/mg7/", "universe_id": "mg/7"},
+  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/mg-gt/", "universe_id": "mg/gt"},
+  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/mg-one/", "universe_id": "mg/one"},
+  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/zs/", "universe_id": "mg/zs", "note": "ZS (current) page; New ZS on its own page"},
+  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/new-zs/", "universe_id": "mg/zs", "variant": "New ZS"},
+  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/hs/", "universe_id": "mg/hs", "registry_model_id": "m_000020"},
+  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/new-hs/", "universe_id": "mg/hs", "registry_model_id": "m_000020", "variant": "New HS"},
+  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/g50-plus/", "universe_id": "mg/g50-plus"},
+  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/mg-rx9/", "universe_id": "mg/rx9"},
+  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/rx5-plus/", "universe_id": "mg/rx5-plus"},
+  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/mg-cyberster/", "universe_id": null, "note": "not in P1 universe U11: MISSING_MODEL candidate"}
+ ]
+}

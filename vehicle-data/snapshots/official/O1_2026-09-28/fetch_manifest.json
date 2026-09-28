@@ -1,0 +1,228 @@
+[
+ {
+  "url": "https://en.nissan.com.eg/vehicles/new/magnite.html",
+  "source": "nissan_eg_web",
+  "recipe": "nissan_vlp_price_json",
+  "status": 200,
+  "http_date": "Tue, 22 Sep 2026 00:52:00 GMT",
+  "bytes": 275854,
+  "sha256": "efbc11776e0bab7f3637045f850ee0eb4c093f54d646dcbcbfdf6b0db6b451a3",
+  "file": "efbc11776e0bab7f.html.gz"
+ },
+ {
+  "url": "https://en.nissan.com.eg/vehicles/new/sunny.html",
+  "source": "nissan_eg_web",
+  "recipe": "nissan_vlp_price_json",
+  "status": 200,
+  "http_date": "Sat, 26 Sep 2026 23:05:56 GMT",
+  "bytes": 1844600,
+  "sha256": "82ebb5e93da1f6243323891ab6d15e60a403e9436e706c50d0c9a4a2b99e3a42",
+  "file": "82ebb5e93da1f624.html.gz"
+ },
+ {
+  "url": "https://en.nissan.com.eg/vehicles/new/sentra.html",
+  "source": "nissan_eg_web",
+  "recipe": "nissan_vlp_price_json",
+  "status": 200,
+  "http_date": "Mon, 21 Sep 2026 10:04:52 GMT",
+  "bytes": 1844001,
+  "sha256": "4aa7f6e07bf4595337f9efa0b2f0d47aa29761fc49f71486c1e0aa62082419e3",
+  "file": "4aa7f6e07bf45953.html.gz"
+ },
+ {
+  "url": "https://en.nissan.com.eg/vehicles/new/qashqai.html",
+  "source": "nissan_eg_web",
+  "recipe": "nissan_vlp_price_json",
+  "status": 200,
+  "http_date": "Mon, 21 Sep 2026 07:35:34 GMT",
+  "bytes": 243809,
+  "sha256": "652a71d6c8965fd5f8b8c49512d5313fda80e86a456cd7550dfc587eebcd90e1",
+  "file": "652a71d6c8965fd5.html.gz"
+ },
+ {
+  "url": "https://en.nissan.com.eg/vehicles/new/x-trail.html",
+  "source": "nissan_eg_web",
+  "recipe": "nissan_vlp_price_json",
+  "status": 200,
+  "http_date": "Mon, 28 Sep 2026 13:34:49 GMT",
+  "bytes": 280747,
+  "sha256": "a7f2b710909c06d73a7daa1470a198d44466188a17f5d9e907082a98ccdd1ebd",
+  "file": "a7f2b710909c06d7.html.gz"
+ },
+ {
+  "url": "https://en.nissan.com.eg/vehicles/new/juke.html",
+  "source": "nissan_eg_web",
+  "recipe": "nissan_vlp_price_json",
+  "status": 200,
+  "http_date": "Mon, 28 Sep 2026 11:28:13 GMT",
+  "bytes": 193026,
+  "sha256": "a5fd391d212cf291bf77ead7b3958ca2f6804071a5aab7d1cb324b7c6cbd126f",
+  "file": "a5fd391d212cf291.html.gz"
+ },
+ {
+  "url": "https://en.nissan.com.eg/vehicles/new/allnewpatrol.html",
+  "source": "nissan_eg_web",
+  "recipe": "nissan_vlp_price_json",
+  "status": 200,
+  "http_date": "Mon, 28 Sep 2026 13:34:50 GMT",
+  "bytes": 281100,
+  "sha256": "44ee9b9740d927791db0168048257dc444f437dce0704f730493e93032d8f061",
+  "file": "44ee9b9740d92779.html.gz"
+ },
+ {
+  "url": "https://en.nissan.com.eg/vehicles/new/magnite/specifications.html",
+  "source": "nissan_eg_web",
+  "recipe": "nissan_spec_table",
+  "status": 200,
+  "http_date": "Thu, 17 Sep 2026 11:52:08 GMT",
+  "bytes": 394949,
+  "sha256": "33bc2c22ded959de61b64b2e68c98918dfa7ddb1a72a715be8f6be88a8e6a685",
+  "file": "33bc2c22ded959de.html.gz"
+ },
+ {
+  "url": "https://en.nissan.com.eg/vehicles/new/x-trail/specifications.html",
+  "source": "nissan_eg_web",
+  "recipe": "nissan_spec_table",
+  "status": 200,
+  "http_date": "Mon, 28 Sep 2026 13:40:30 GMT",
+  "bytes": 281186,
+  "sha256": "23304b772e4374e07e6d820f7f3e1a93c5b0369ceafc164685b3a3b1e715262a",
+  "file": "23304b772e4374e0.html.gz"
+ },
+ {
+  "url": "https://en.nissan.com.eg/vehicles/new/juke/specifications.html",
+  "source": "nissan_eg_web",
+  "recipe": "nissan_spec_table",
+  "status": 200,
+  "http_date": "Mon, 28 Sep 2026 13:40:30 GMT",
+  "bytes": 302111,
+  "sha256": "2f0b6baeddf0a83eb4038dee0b0f5aba3088ee2ff3914916119e41438355144b",
+  "file": "2f0b6baeddf0a83e.html.gz"
+ },
+ {
+  "url": "https://en.nissan.com.eg/vehicles/new/allnewpatrol/specifications.html",
+  "source": "nissan_eg_web",
+  "recipe": "nissan_spec_table",
+  "status": 200,
+  "http_date": "Mon, 28 Sep 2026 13:40:31 GMT",
+  "bytes": 937302,
+  "sha256": "4690b1b98c225587cc378c90cf29caa57073d79844acf637c1912ead069e3ddb",
+  "file": "4690b1b98c225587.html.gz"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/mg5/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "status": 200,
+  "http_date": "Mon, 28 Sep 2026 18:01:54 GMT",
+  "bytes": 256111,
+  "sha256": "bdfb54261057fbe293e7abd3fd80e9f6304cfbc68f1e0ea46e83e7c2c32ef7d9",
+  "file": "bdfb54261057fbe2.html.gz"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/mg7/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "status": 200,
+  "http_date": "Mon, 28 Sep 2026 18:01:56 GMT",
+  "bytes": 257724,
+  "sha256": "3ac57796f8d094705acd3b0ffa7280367d3af6810783f6cd6ae250736580d46f",
+  "file": "3ac57796f8d09470.html.gz"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/mg-gt/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "status": 200,
+  "http_date": "Mon, 28 Sep 2026 18:01:59 GMT",
+  "bytes": 231346,
+  "sha256": "aba1f000c45e4faf80b1c7e2c5ec2aa309555b1d1a1a8a172ab06cb85f97596e",
+  "file": "aba1f000c45e4faf.html.gz"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/mg-one/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "status": 200,
+  "http_date": "Mon, 28 Sep 2026 18:02:01 GMT",
+  "bytes": 256510,
+  "sha256": "fa5373ef36b1fd15c03633f4e0264ce4cc4904f71bb54213e73e2ac7d926560c",
+  "file": "fa5373ef36b1fd15.html.gz"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/zs/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "status": 200,
+  "http_date": "Mon, 28 Sep 2026 18:02:04 GMT",
+  "bytes": 247383,
+  "sha256": "dd8c112796c0b88c7d4d58949f1ecaab286c8f3cb617b6c6d5257e57e636258e",
+  "file": "dd8c112796c0b88c.html.gz"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/new-zs/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "status": 200,
+  "http_date": "Mon, 28 Sep 2026 18:02:06 GMT",
+  "bytes": 234706,
+  "sha256": "672e72e3d20c7515efa64c550a84a4adb2276609ebca51ed711cebeb9861c153",
+  "file": "672e72e3d20c7515.html.gz"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/hs/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "error": "HTTP Error 404: Not Found"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/new-hs/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "status": 200,
+  "http_date": "Mon, 28 Sep 2026 18:02:10 GMT",
+  "bytes": 240944,
+  "sha256": "15d48d0c22f62f23406949602f1e4389a7480ba1c9a7b28c01b017105015fe25",
+  "file": "15d48d0c22f62f23.html.gz"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/g50-plus/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "status": 200,
+  "http_date": "Mon, 28 Sep 2026 18:02:12 GMT",
+  "bytes": 227202,
+  "sha256": "0185afeb4d118a3983ea5f29a97da7cc790576b9f28e7499ebd096404b6d9f3f",
+  "file": "0185afeb4d118a39.html.gz"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/mg-rx9/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "status": 200,
+  "http_date": "Mon, 28 Sep 2026 18:02:14 GMT",
+  "bytes": 240550,
+  "sha256": "b429b15c3903d7e2d8a2418e40142f125142b1159b994162dab2ecb12ce3194a",
+  "file": "b429b15c3903d7e2.html.gz"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/rx5-plus/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "status": 200,
+  "http_date": "Mon, 28 Sep 2026 18:02:17 GMT",
+  "bytes": 258082,
+  "sha256": "427e0a0e2d8ad69e4f279741d02b51e5a3dc5092484e2e49ca37c3a27dd62c40",
+  "file": "427e0a0e2d8ad69e.html.gz"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/mg-cyberster/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "status": 200,
+  "http_date": "Mon, 28 Sep 2026 18:02:19 GMT",
+  "bytes": 228169,
+  "sha256": "b9ca92af4836de2b3b6a36a11a3e077a06c761b711954912b1e252985cab26c7",
+  "file": "b9ca92af4836de2b.html.gz"
+ }
+]

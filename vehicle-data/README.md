@@ -101,3 +101,33 @@ The output is deterministic: two runs on the same inputs are byte-identical.
 - **Registration:** model × month aggregate embedded in `Vehicle_Registration_Explorer.html`. `CarIndex_Registration_Master.xlsx` (80 MB) is over the connector's 10 MB download limit, so it was not read directly.
 - **S1 fetch and parse:** Composio remote workbench, which has egress to the three sites. Results were copied back and verified by SHA-256.
 - **Crosswalk decisions:** deterministic rules plus reviewed judgement. Each decision is recorded per row with its rule and confidence.
+
+## Tier-1 official sources (added 2026-09-28)
+
+Official Egypt OEM/distributor pages are a separate, additive snapshot family. The aggregator refresh and `build_p1.py` do not change.
+
+```
+config/official_sources.json ─► scripts/official_t1.py run --out snapshots/official/O<n>_<date>
+                                   ├─ fetch_manifest.json, evidence.jsonl.gz (fragments the parsers read), raw/ (git-ignored)
+                                   ├─ official_observations.csv   one row per page × grade × field, with provenance + recipe@version
+                                   └─ exceptions.csv              unnamed grades, 404s, missing tables, models absent from the universe
+                             ─► scripts/reconcile_official.py --official <snap> --universe <P1 view.js>
+                                   ├─ review/official_reconciliation.csv   every comparison + decision
+                                   └─ review/promotions_official.csv       AUTO_PROMOTE subset as a patch (not applied)
+```
+
+Recipes, all deterministic with `llm_calls=0`:
+
+| Recipe | What it reads |
+|---|---|
+| `nissan_vlp_price_json` | The Nissan Egypt embedded price JSON, including `Updated_On` as the source effective date |
+| `nissan_spec_table` | The Nissan Egypt spec table. Grade-scoped |
+| `mg_model_page` | The MG Egypt per-grade Specs & Options table, the Compare dimensions and the Pricing & Finance widget price (confidence MEDIUM) |
+
+Promotion policy (CEO, 2026-09-28):
+- **AUTO_PROMOTE** requires all four: a Tier-1 official Egypt source, an exact trim/model identity, a deterministic value with HIGH confidence, and no unresolved conflict on that model. An open model-year discrepancy blocks every price of the model.
+- **CEO_REVIEW** applies to any material discrepancy: price differs by more than EGP 5,000; a spec differs; model year differs; or availability differs (a trim or model is absent on one side).
+- **REVIEW** covers label or identity questions: unnamed or renamed grades, and page variants.
+- **Seats is never auto-filled.** It is a hard constraint for Find My Car.
+
+Ported from the P2 factory Nissan batch B001. The brochure-PDF spec rules from B001 are not ported yet, because they need `pypdf` and the CI installs only `requests` + `bs4`.
