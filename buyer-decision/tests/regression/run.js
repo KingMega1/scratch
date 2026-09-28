@@ -9,7 +9,7 @@ const fs = require('fs'), path = require('path');
 global.window = {};
 eval(fs.readFileSync(path.join(__dirname, '../../data/p11_client.js'), 'utf8'));
 const P = require('../../app/brief.js'), E = require('../../app/engine.js');
-const { CASES, PAIRS, DEFAULT_ANSWERS } = require('./cases.js');
+const { CASES, PAIRS, DEFAULT_ANSWERS, UNDERSTANDING } = require('./cases.js');
 const U = window.CI_UNIVERSE, M = U.models, byId = {}; M.forEach(m => { byId[m.id] = m; });
 const SNAP = path.join(__dirname, 'snapshot.json'), REPORT = path.join(__dirname, 'REPORT.md');
 const UPDATE = process.argv.includes('--update'), STRICT = process.argv.includes('--strict');
@@ -137,6 +137,10 @@ for (const c of CASES) {
   d.forEach(x => { diagCount[x.k] = (diagCount[x.k] || 0) + 1; });
   rows.push({ c, asked, s, d, r });
 }
+UNDERSTANDING.forEach(([text, exp], i) => {
+  const parsed = P.parse(text, M), miss = Object.entries(exp).filter(([k, v]) => JSON.stringify(parsed[k]) !== JSON.stringify(v));
+  if (miss.length) understanding.push({ id: `U${i + 1} "${text}"`, known: null, msg: miss.map(([k, v]) => `${k}: expected ${JSON.stringify(v)}, parsed ${JSON.stringify(parsed[k])}`).join('; ') });
+});
 // EN/AR parity: same need should give the same confirmed brief; when it does, the result must match
 const parity = [];
 for (const [a, z] of PAIRS) {
@@ -165,7 +169,7 @@ if (failures.length) { L.push('', '## Invariant failures', ''); failures.forEach
 fs.writeFileSync(REPORT, L.join('\n') + '\n');
 if (UPDATE || !fs.existsSync(SNAP)) fs.writeFileSync(SNAP, JSON.stringify(newSnap, null, 1) + '\n');
 
-console.log(`cases ${CASES.length} · invariants ${checks - fails}/${checks} pass · changes vs snapshot ${changes.length}`);
+console.log(`cases ${CASES.length} + ${UNDERSTANDING.length} parse checks · understanding failures ${understanding.length} · invariants ${checks - fails}/${checks} pass · changes vs snapshot ${changes.length}`);
 Object.entries(diagCount).sort().forEach(([k, v]) => console.log(`  ${k}: ${v}`));
 failures.forEach(f => console.log('FAIL ' + f));
 understanding.forEach(u => console.log(`${u.known ? 'KNOWN' : 'FAIL'} understanding ${u.id}: ${u.msg}`));

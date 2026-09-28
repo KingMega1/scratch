@@ -21,11 +21,17 @@
   const has = (t, words) => words.some(w => new RegExp(B + w + E).test(t));
   const find = (t, words) => { for (const w of words) { const m = new RegExp(B + '(' + w + ')' + E).exec(t); if (m) return m.index; } return -1; };
 
-  const NEG = ['no', 'not', "don't", 'dont', 'without', 'except', 'avoid', 'nothing', 'never', 'rather not',
+  const NEG = ['no', 'not', "don't", 'dont', 'without', 'except', 'avoid', 'nothing', 'never', 'rather not', 'anything but', 'anything except',
     'مش', 'بلاش', 'من غير', 'مابحبش', 'مبحبش', 'ماعدا', 'مش عايز', 'مش عاوز', 'بدون', 'ابعد عن', 'مافيش'];
+  // words that sit between a negation and its object without changing it ("don't want a fully electric car")
+  const FILLER = new RegExp(B + "(?:want|wanna|need|have|get|buy|a|an|the|any|fully|full|pure|purely|completely|totally|100%|عربية|عربيه|عربيات)" + E, 'g');
+  // "no problem with X" / "معنديش مشكلة مع X" is openness, not a negation
+  const OPEN_NEG = /(?:no (?:problem|issue|issues|objection) with|not against|don'?t mind|have nothing against|معنديش مشكل[ةه]|ماعنديش مشكل[ةه]|مفيش مشكل[ةه]|مافيش مشكل[ةه]|معنديش مانع|ماعنديش مانع|مش مانع)\s*(?:\S+\s*){0,3}$/;
   const negatedBefore = (t, idx) => {
-    const pre = t.slice(Math.max(0, idx - 22), idx);
-    return NEG.some(n => new RegExp(B + esc(n) + '\\s*(?:[^\\s,.;!?]+\\s*){0,2}$').test(pre));
+    const pre = t.slice(Math.max(0, idx - 40), idx);
+    if (OPEN_NEG.test(pre)) return false;
+    const core = pre.replace(FILLER, ' ').replace(/[ \t]+/g, ' ');
+    return NEG.some(n => new RegExp(B + esc(n) + '\\s*(?:[^\\s,.;!?]+\\s*){0,2}$').test(core));
   };
 
   /* ---------- budget ---------- */
@@ -249,7 +255,10 @@
       const i = find(t, words.map(esc));
       if (i < 0) continue;
       const pre = t.slice(Math.max(0, i - 26), i + 1);
-      if (negatedBefore(t, i + 1)) ptNot.push(k);
+      // "not sure about electric" is undecided: record nothing, the follow-up question asks
+      if (/(?:not sure|unsure|undecided|مش متأكد|مش متاكد|مش عارف)\s*(?:\S+\s*){0,3}$/.test(pre)) continue;
+      if (OPEN_NEG.test(t.slice(Math.max(0, i - 40), i + 1))) ptOpen.push(k);
+      else if (negatedBefore(t, i + 1)) ptNot.push(k);
       // "open to EV" / "مفتوح للكهربا" = allowed, not preferred
       else if (/(?:open to|ok with|okay with|fine with|don'?t mind|also|even|including|مفتوح|معنديش مانع|مش مانع|عادي|حتى|حتي)\s*(?:\S+\s*){0,2}$/.test(pre)) ptOpen.push(k);
       else ptWant.push(k);

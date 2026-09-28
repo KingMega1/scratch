@@ -74,14 +74,38 @@ const CASES = [
 
   // --- budget / powertrain probes (same need, one variable changed) ---
   { id: 'T1', group: 'probe', lang: 'EN', text: 'SUV, maximum EGP 3M, I don\'t want a fully electric car', persona: { priorities: { priorities: ['economy'] } },
-    expect: { pt: 'no_ev' }, known: 'D1 negation "don\'t want a fully electric" parsed as pt=ev' },
+    expect: { pt: 'no_ev' } },
   { id: 'T1a', group: 'probe', lang: 'EN', text: 'SUV max EGP 3M, no fully electric', persona: { priorities: { priorities: ['economy'] } }, expect: { pt: 'no_ev' } },
   { id: 'T1b', group: 'probe', lang: 'AR', text: 'عايز عربية عالية مش كهربا لحد 3 مليون', persona: { priorities: { priorities: ['economy'] } }, expect: { pt: 'no_ev' } },
   { id: 'T2', group: 'probe', lang: 'EN', text: 'SUV around EGP 3M, open to electric', persona: { priorities: { priorities: ['economy'] } }, expect: { pt: 'open' } },
   { id: 'T3', group: 'probe', lang: 'EN', text: 'SUV around EGP 3M', persona: { priorities: { priorities: ['premium'] } } },
 ];
 
+// parser understanding only (no journey): negation / openness / uncertainty around powertrain and other constraints.
+// D1 (fixed): negation with words in between ("don't want a fully electric") was read as wanting electric.
+const UNDERSTANDING = [
+  ["I don't want a fully electric car", { pt: 'no_ev' }],
+  ['I do not want a fully electric car', { pt: 'no_ev' }],
+  ["I really don't want a pure electric", { pt: 'no_ev' }],
+  ["I'd rather not have a fully electric car", { pt: 'no_ev' }],
+  ['anything but electric', { pt: 'no_ev' }],
+  ["I don't want an EV", { pt: 'no_ev' }],
+  ['no fully electric', { pt: 'no_ev' }],
+  ['I want a hybrid, not electric', { pt: 'hybrid', ptNo: ['ev'] }],
+  ['no problem with hybrid', { pt: 'open' }],
+  ['I have no issue with electric', { pt: 'open' }],
+  ["I don't mind a fully electric car", { pt: 'open' }],
+  ['open to a fully electric car', { pt: 'open' }],
+  ['not sure about electric', { pt: undefined }],
+  ['مش عايز عربية كهربائية بالكامل', { pt: 'no_ev' }],
+  ['مش عايزة عربية كهربا 100%', { pt: 'no_ev' }],
+  ['معنديش مشكلة مع الكهربا', { pt: 'open' }],
+  ['nothing Chinese, hybrid please', { pt: 'hybrid', chinese: 'exclude' }],
+  ["SUV, I don't want a Chinese car", { chinese: 'exclude', body: ['suv'] }],
+  ["I don't want a sedan", { notBody: ['sedan'] }],
+];
+
 // EN/AR pairs expressing the same need: parsed briefs are compared; results are compared when briefs agree
 const PAIRS = [['T1a', 'T1b'], ['L3', 'L3a'], ['L4', 'L4a'], ['M1', 'M2'], ['C1', 'C4'], ['L6', 'L8'], ['S1', 'S2']];
 
-module.exports = { CASES, PAIRS, DEFAULT_ANSWERS };
+module.exports = { CASES, PAIRS, DEFAULT_ANSWERS, UNDERSTANDING };

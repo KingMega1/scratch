@@ -1,13 +1,13 @@
 # Regression / diagnostic report
 
-Engine E5-2026-09-27 · data U11-2026-09-26 · 54 cases · invariants 1075/1075 pass · understanding failures 1 (known 1)
+Engine E5-2026-09-27 · data U11-2026-09-26 · 54 cases · invariants 1069/1069 pass · understanding failures 0 (known 0)
 
 Diagnostics are known P1.2 problems, counted per recommended car (thresholds provisional; P2 owns market-status definitions).
 
 | Diagnostic | Count |
 |---|---|
-| evidence_gap | 150 |
-| market_low_registrations | 18 |
+| evidence_gap | 149 |
+| market_low_registrations | 17 |
 | market_single_unofficial_price | 84 |
 | market_unspecified_trim_only | 7 |
 | premium_flag_swing | 8 |
@@ -67,12 +67,8 @@ Diagnostics are known P1.2 problems, counted per recommended car (thresholds pro
 | V2 | catalogue | small city car | budget, body, chinese, pt | Geely EX2 · Arcfox T1 · Dongfeng Box (equal, 4 tied) | market_single_unofficial_price Geely EX2 (Hatla2ee); evidence_gap Geely EX2 (seats+hp+warranty); evidence_gap Arcfox T1 (seats+hp+warranty); market_single_unofficial_price Dongfeng Box (Hatla2ee); evidence_gap Dongfeng Box (seats+hp+warranty) |
 | X1 | catalogue | Maximum EGP 1.5M, must be 7 seats, Mercedes only. | — | no match (no_match) |  |
 | X2 | catalogue | my dream car, SUV 2m | priorities, size, pt, chinese | Kia Seltos · Zeekr X · Nissan X-Trail (equal, 27 tied) | evidence_gap Kia Seltos (warranty); market_single_unofficial_price Zeekr X (Hatla2ee); evidence_gap Zeekr X (seats+hp+warranty); evidence_gap Nissan X-Trail (seats+warranty) |
-| T1 | probe | SUV, maximum EGP 3M, I don't want a fully electric car | priorities, size, chinese | BYD Sealion 6 · Toyota bZ4X · Kia EV6 (equal, 3 tied) | market_single_unofficial_price BYD Sealion 6 (hatla2ee); evidence_gap BYD Sealion 6 (warranty); market_low_registrations Toyota bZ4X (8); evidence_gap Toyota bZ4X (hp+warranty); market_single_unofficial_price Kia EV6 (ContactCars); evidence_gap Kia EV6 (seats+hp+warranty) |
+| T1 | probe | SUV, maximum EGP 3M, I don't want a fully electric car | priorities, size, chinese | BYD Sealion 6 · Lynk & Co 08 (equal, 2 tied) | market_single_unofficial_price BYD Sealion 6 (hatla2ee); evidence_gap BYD Sealion 6 (warranty); market_single_unofficial_price Lynk & Co 08 (Hatla2ee); evidence_gap Lynk & Co 08 (seats+hp+warranty) |
 | T1a | probe | SUV max EGP 3M, no fully electric | priorities, size, chinese | BYD Sealion 6 · Lynk & Co 08 (equal, 2 tied) | market_single_unofficial_price BYD Sealion 6 (hatla2ee); evidence_gap BYD Sealion 6 (warranty); market_single_unofficial_price Lynk & Co 08 (Hatla2ee); evidence_gap Lynk & Co 08 (seats+hp+warranty) |
 | T1b | probe | عايز عربية عالية مش كهربا لحد 3 مليون | priorities, size, chinese | BYD Sealion 6 · Lynk & Co 08 (equal, 2 tied) | market_single_unofficial_price BYD Sealion 6 (hatla2ee); evidence_gap BYD Sealion 6 (warranty); market_single_unofficial_price Lynk & Co 08 (Hatla2ee); evidence_gap Lynk & Co 08 (seats+hp+warranty) |
 | T2 | probe | SUV around EGP 3M, open to electric | priorities, size, chinese | Toyota bZ4X · Lynk & Co 08 · Kia EV6 (equal, 3 tied) | market_low_registrations Toyota bZ4X (8); evidence_gap Toyota bZ4X (hp+warranty); market_single_unofficial_price Lynk & Co 08 (Hatla2ee); evidence_gap Lynk & Co 08 (seats+hp+warranty); market_single_unofficial_price Kia EV6 (ContactCars); evidence_gap Kia EV6 (seats+hp+warranty) |
 | T3 | probe | SUV around EGP 3M | priorities, pt, size, usage | Audi Q2 · BMW X1 · MINI Countryman (equal, 6 tied) | market_single_unofficial_price Audi Q2 (Hatla2ee); evidence_gap Audi Q2 (seats+hp+warranty); market_single_unofficial_price BMW X1 (ContactCars); evidence_gap BMW X1 (seats+hp+warranty); market_single_unofficial_price MINI Countryman (Hatla2ee); evidence_gap MINI Countryman (seats+hp+warranty); premium_flag_swing (3/3 cars change without it) |
-
-## Understanding failures
-
-- T1: pt: expected "no_ev", parsed "ev" — KNOWN D1 negation "don't want a fully electric" parsed as pt=ev
