@@ -1,44 +1,68 @@
 # Budget-curve sensitivity sweep
 
-Budgets EGP 0.8M–6M in 0.1M steps (53) × 7 profiles × 3 budget modes. Data U11-2026-09-26.
+Budgets EGP 0.8M–6M in 0.1M steps (53) × 8 profiles × 3 budget intentions, data U11-2026-09-26. Follow-up questions are not simulated (real journeys add priorities and tie less).
 
-Price ratios are version price ÷ stated budget for all shown cars (main pick + alternatives). Churn = share of 0.1M steps where the main pick changes.
+Earned shows the median buyer-priority fit gain in brackets (scale 0–1). Ratios = shown car price ÷ stated budget, over all shown cars (main + alternatives). "Earned" = an above-budget car whose buyer-priority fit beats the best car at or under budget by more than the tie margin (0.02); "no priority" = the brief has no priority that could justify extra spend. Winner = the main-ranking leader when not a tie ("TIE" otherwise).
 
-## Current curve
+## target
 
-| Profile | Mode | Results | Median pick ratio | Cars <80% | Cars <70% | Cars >100% | Pick churn | Tie / lean / clear | Spend-less card | Widened |
+| Variant | Results | Cars <80% | Cars <70% | Cars >100% | Stretch median / max | Above-budget earned / not earned / no priority | Winner changes vs current | Top-3 changes | Spend-less card | Tie |
 |---|---|---|---|---|---|---|---|---|---|---|
-| SUV, open | around | 53 | 0.87 | 0% | 0% | 4% | 83% | 100/0/0% | 21% | 0% |
-| SUV, open | max | 53 | 0.70 | 38% | 0% | 0% | 87% | 100/0/0% | 0% | 0% |
-| SUV, open | max+stretch | 53 | 0.70 | 38% | 0% | 4% | 87% | 100/0/0% | 0% | 0% |
-| SUV, space | around | 53 | 0.89 | 9% | 0% | 17% | 31% | 72/28/0% | 8% | 0% |
-| SUV, space | max | 53 | 0.81 | 27% | 0% | 0% | 19% | 85/15/0% | 0% | 0% |
-| SUV, space | max+stretch | 53 | 0.83 | 24% | 0% | 14% | 15% | 79/21/0% | 0% | 0% |
-| SUV, premium | around | 53 | 0.83 | 0% | 0% | 13% | 58% | 100/0/0% | 0% | 0% |
-| SUV, premium | max | 53 | 0.72 | 35% | 0% | 0% | 56% | 100/0/0% | 0% | 0% |
-| SUV, premium | max+stretch | 53 | 0.72 | 35% | 0% | 13% | 52% | 100/0/0% | 0% | 0% |
-| SUV, hybrid | around | 53 | 0.83 | 10% | 0% | 5% | 48% | 92/8/0% | 21% | 0% |
-| SUV, hybrid | max | 53 | 0.73 | 41% | 0% | 0% | 46% | 92/8/0% | 0% | 0% |
-| SUV, hybrid | max+stretch | 53 | 0.73 | 40% | 0% | 6% | 48% | 92/8/0% | 0% | 0% |
-| SUV, no Chinese | around | 53 | 0.88 | 1% | 0% | 4% | 73% | 94/6/0% | 42% | 0% |
-| SUV, no Chinese | max | 53 | 0.71 | 36% | 0% | 0% | 71% | 98/0/0% | 0% | 0% |
-| SUV, no Chinese | max+stretch | 53 | 0.71 | 36% | 0% | 3% | 71% | 98/2/0% | 0% | 0% |
-| Sedan, open | around | 53 | 0.89 | 0% | 0% | 2% | 60% | 100/0/0% | 64% | 0% |
-| Sedan, open | max | 53 | 0.72 | 40% | 0% | 0% | 56% | 100/0/0% | 0% | 0% |
-| Sedan, open | max+stretch | 53 | 0.72 | 39% | 0% | 1% | 56% | 100/0/0% | 0% | 0% |
-| 7 seats | around | 51 (+2 none) | 0.87 | 33% | 20% | 1% | 31% | 94/4/0% | 43% | 20% |
-| 7 seats | max | 50 (+3 none) | 0.72 | 54% | 18% | 0% | 29% | 98/0/0% | 0% | 20% |
-| 7 seats | max+stretch | 51 (+2 none) | 0.72 | 54% | 18% | 1% | 29% | 96/2/0% | 0% | 20% |
+| current (around 90–100, max 70–100) | 422 (+2 none) | 6% | 2% | 7% | +2% / +9% | 13% (fit +0.17) / 65% / 21% | — | — | 26% | 93% |
+| 90–100 (both) | 422 (+2 none) | 6% | 2% | 7% | +2% / +9% | 13% (fit +0.17) / 65% / 21% | 0% | 0% | 26% | 93% |
+| 85–110 (flat to 110) | 422 (+2 none) | 14% | 2% | 34% | +8% / +10% | 3% (fit +0.70) / 48% / 49% | 3% | 84% | 13% | 95% |
+| 85–115 (flat to 110, steep 110–115) | 422 (+2 none) | 14% | 2% | 35% | +8% / +14% | 5% (fit +0.17) / 47% / 49% | 4% | 86% | 13% | 95% |
+| 90–100 + earned-stretch rule | 422 (+2 none) | 6% | 2% | 1% | +7% / +9% | 92% (fit +0.17) / 0% / 8% | 0% | 18% | 26% | 93% |
 
-## Variants vs current
+## max
 
-| Variant | Main pick changes | Top-3 set changes | Cars <80% (cur → var) | Cars >100% (cur → var) | Pick churn (cur → var) | Spend-less card (cur → var) |
-|---|---|---|---|---|---|---|
-| below slope ×2 (1.0) | 21% | 21% | 28% → 28% | 4% → 5% | 53% → 54% | 9% → 15% |
-| below slope ÷2 (0.25) | 22% | 23% | 28% → 32% | 4% → 4% | 53% → 51% | 9% → 4% |
-| around: flat from 80% | 25% | 26% | 28% → 36% | 4% → 4% | 53% → 51% | 9% → 1% |
-| max: flat from 80% | 37% | 38% | 28% → 23% | 4% → 4% | 53% → 52% | 9% → 12% |
-| max: flat from 90% | 54% | 56% | 28% → 8% | 4% → 4% | 53% → 55% | 9% → 28% |
-| stretch penalty ÷2 (1) | 1% | 17% | 28% → 28% | 4% → 9% | 53% → 53% | 9% → 9% |
-| spend-less floor 60% | 44% | 45% | 28% → 32% | 4% → 4% | 53% → 50% | 9% → 22% |
-| spend-less floor 80% | 54% | 56% | 28% → 5% | 4% → 5% | 53% → 56% | 9% → 2% |
+| Variant | Results | Cars <80% | Cars <70% | Cars >100% | Stretch median / max | Above-budget earned / not earned / no priority | Winner changes vs current | Top-3 changes | Spend-less card | Tie |
+|---|---|---|---|---|---|---|---|---|---|---|
+| current (around 90–100, max 70–100) | 421 (+3 none) | 39% | 2% | 0% | — / — | — / — / — | — | — | 0% | 96% |
+| 90–100 (both) | 421 (+3 none) | 6% | 2% | 0% | — / — | — / — / — | 1% | 85% | 26% | 94% |
+| 85–110 (flat to 110) | 421 (+3 none) | 15% | 2% | 0% | — / — | — / — / — | 1% | 80% | 11% | 95% |
+| 85–115 (flat to 110, steep 110–115) | 421 (+3 none) | 15% | 2% | 0% | — / — | — / — / — | 1% | 80% | 11% | 95% |
+| 90–100 + earned-stretch rule | 421 (+3 none) | 6% | 2% | 0% | — / — | — / — / — | 1% | 85% | 26% | 94% |
+
+## max+stretch
+
+| Variant | Results | Cars <80% | Cars <70% | Cars >100% | Stretch median / max | Above-budget earned / not earned / no priority | Winner changes vs current | Top-3 changes | Spend-less card | Tie |
+|---|---|---|---|---|---|---|---|---|---|---|
+| current (around 90–100, max 70–100) | 422 (+2 none) | 38% | 2% | 6% | +1% / +9% | 14% (fit +0.17) / 66% / 20% | — | — | 0% | 95% |
+| 90–100 (both) | 422 (+2 none) | 6% | 2% | 7% | +2% / +9% | 13% (fit +0.17) / 65% / 21% | 2% | 84% | 26% | 93% |
+| 85–110 (flat to 110) | 422 (+2 none) | 14% | 2% | 34% | +8% / +10% | 3% (fit +0.70) / 48% / 49% | 4% | 91% | 13% | 95% |
+| 85–115 (flat to 110, steep 110–115) | 422 (+2 none) | 14% | 2% | 35% | +8% / +14% | 5% (fit +0.17) / 47% / 49% | 4% | 92% | 13% | 95% |
+| 90–100 + earned-stretch rule | 422 (+2 none) | 6% | 2% | 1% | +7% / +9% | 92% (fit +0.17) / 0% / 8% | 2% | 87% | 26% | 93% |
+
+## Pathological examples (up to 4 per kind per variant)
+
+### current (around 90–100, max 70–100)
+
+- extra spend not earned: 142 — e.g. SUV, no priorities | target @ 1M: Chery Tiggo 7 at 101% (no priority to justify it); SUV, space | max+stretch @ 1.5M: BAIC BJ30 at 105% (priority fit +0.000 vs best in budget); SUV, premium | max+stretch @ 2.6M: MINI Countryman at 101% (priority fit +0.000 vs best in budget); SUV, economy | max+stretch @ 4.3M: Li Auto L9 at 101% (priority fit +0.000 vs best in budget)
+- main car under 70% of budget: 82 — e.g. 7 seats | target @ 5.1M: Kia Sorento at 69%; 7 seats | target @ 5.8M: ROX 01 at 62%; 7 seats | max @ 5.6M: ROX 01 at 64%; 7 seats | max+stretch @ 5.4M: Hyundai Santa Fe at 65%
+- result lost vs current: none
+
+### 90–100 (both)
+
+- extra spend not earned: 146 — e.g. SUV, no priorities | target @ 1M: Chery Tiggo 7 at 101% (no priority to justify it); SUV, space | max+stretch @ 2.4M: Li Auto L6 at 106% (priority fit +0.000 vs best in budget); SUV, premium | max+stretch @ 2.5M: Li Auto L6 at 102% (priority fit +0.000 vs best in budget); SUV, economy | max+stretch @ 3.7M: ROX Adamas at 101% (priority fit +0.000 vs best in budget)
+- main car under 70% of budget: 84 — e.g. 7 seats | target @ 5.1M: Kia Sorento at 69%; 7 seats | target @ 5.8M: Toyota Fortuner at 64%; 7 seats | max @ 5.6M: ROX 01 at 64%; 7 seats | max+stretch @ 5.4M: Hyundai Santa Fe at 65%
+- result lost vs current: none
+
+### 85–110 (flat to 110)
+
+- extra spend not earned: 828 — e.g. SUV, no priorities | target @ 0.8M: Arcfox T1 at 106% (no priority to justify it); SUV, space | max+stretch @ 3M: Genesis GV60 at 108% (priority fit +0.000 vs best in budget); SUV, economy | max+stretch @ 1.8M: Volvo EX30 at 108% (priority fit +0.000 vs best in budget); SUV, no Chinese | max+stretch @ 3.3M: BMW X1 at 102% (no priority to justify it)
+- main car under 70% of budget: 84 — e.g. 7 seats | target @ 5.1M: Kia Sorento at 69%; 7 seats | target @ 5.8M: Toyota Fortuner at 64%; 7 seats | max @ 5.6M: ROX 01 at 64%; 7 seats | max+stretch @ 5.4M: Hyundai Santa Fe at 65%
+- result lost vs current: none
+
+### 85–115 (flat to 110, steep 110–115)
+
+- extra spend not earned: 830 — e.g. SUV, no priorities | target @ 0.8M: Arcfox T1 at 106% (no priority to justify it); SUV, space | max+stretch @ 3.4M: Li Auto L7 at 106% (priority fit +0.000 vs best in budget); SUV, economy | max+stretch @ 2.2M: Toyota bZ4X at 108% (priority fit +0.000 vs best in budget); SUV, no Chinese | max+stretch @ 3.3M: BMW X1 at 102% (no priority to justify it)
+- main car under 70% of budget: 84 — e.g. 7 seats | target @ 5.1M: Kia Sorento at 69%; 7 seats | target @ 5.8M: Toyota Fortuner at 64%; 7 seats | max @ 5.6M: ROX 01 at 64%; 7 seats | max+stretch @ 5.4M: Hyundai Santa Fe at 65%
+- result lost vs current: none
+
+### 90–100 + earned-stretch rule
+
+- extra spend not earned: 2 — e.g. 7 seats | target @ 1M: Jetour X70 at 110% (no priority to justify it); 7 seats | max+stretch @ 1M: Jetour X70 at 110% (no priority to justify it)
+- main car under 70% of budget: 84 — e.g. 7 seats | target @ 5.1M: Kia Sorento at 69%; 7 seats | target @ 5.8M: Toyota Fortuner at 64%; 7 seats | max @ 5.6M: ROX 01 at 64%; 7 seats | max+stretch @ 5.4M: Hyundai Santa Fe at 65%
+- result lost vs current: none
+
