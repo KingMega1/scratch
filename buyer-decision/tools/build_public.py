@@ -27,6 +27,9 @@ def sanitize(u):
 
 def main(out, endpoint=""):
     if os.path.exists(out):
+        # never wipe a git checkout (the public repo): build elsewhere and copy the files in
+        if os.path.exists(os.path.join(out, ".git")):
+            raise SystemExit(f"refusing to delete {out}: it contains .git; build to an empty folder and copy the files in")
         shutil.rmtree(out)
     os.makedirs(os.path.join(out, "app"))
     os.makedirs(os.path.join(out, "data"))

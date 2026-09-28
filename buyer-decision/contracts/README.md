@@ -1,6 +1,6 @@
 # P1.2 data contracts (draft, for P2 / CEO review)
 
-P1 consumes these; it does not produce or infer them. Status: draft, not wired into the app or engine.
+P1 consumes these; it does not produce or infer them. Status: approved contracts; adapters in `app/contracts.js` (tests: `tests/contracts.test.js`). Not loaded by the app, not used by the engine.
 
 ## 1. Market status (owner: P2)
 
@@ -14,15 +14,19 @@ One record per model. P1 reads `status` and never infers availability itself.
 | `as_of` | date | freshness is judged by P2 thresholds |
 | `evidence` | array of `{type, source, date}` | e.g. distributor site, registrations, dealer listing |
 
-P1 behaviour per status is one config table (proposal; needs CEO approval):
+P1 placement per status (CEO decision 2026-09-28; `MARKET_POLICY` in `app/contracts.js`):
 
-| Status | Main recommendation | Shown as |
-|---|---|---|
-| official | yes | — |
-| grey | proposal: yes, flagged | "Not sold through the official distributor" |
-| unverified | proposal: yes, flagged | "Availability not yet confirmed" |
-| announced | no | may appear in "coming soon" context only |
-| discontinued | no | explained if the buyer names it |
+| Status | Placement |
+|---|---|
+| official | eligible for main recommendations |
+| grey | conditionally eligible, clearly flagged, only when P2 marks the evidence sufficient (`grey_sufficient`) |
+| unverified | not eligible for main recommendations (not the same as unavailable) |
+| announced | may appear separately as "worth waiting for" |
+| discontinued | excluded from normal new-car recommendations |
+
+The gate is **not active**. It may only act on a dataset P2 marks `audited: true` and after an explicit switch
+(`gateActive(dataset, enabled)`). Today every model reads `unverified` (no dataset), which would remove all
+recommendations — the regression report shows this in shadow (`shadow_market_not_main`).
 
 ## 2. Registration signals (owner: P2)
 
@@ -56,7 +60,8 @@ Vehicle technology and buyer intent are separate. The brief records intent; the 
 
 - `excluded` holds only technologies the buyer explicitly refused (hard constraint). Everything else is fit.
 - `concerns` shape fit per technology, e.g. `range` / `long_distance` lower BEV fit but not REEV / PHEV; `charging_access` + `home_charging: no` lowers BEV and PHEV benefit; `running_cost` raises HEV / PHEV / REEV / BEV.
-- Existing `usage` (city / mixed / long) stays and feeds the same fit.
+- Existing `usage` (city / mixed / long) is reused: `long` becomes the `long_distance` concern; no duplicate question.
+- Adapter: `powertrainIntent(brief)` derives this block from today's brief fields; `trimTech()` maps today's tags and marks HEV / PHEV / REEV as unresolved; `techAllowed()` returns true / false / null (unresolved).
 
 Questionnaire impact (no new mandatory question):
 

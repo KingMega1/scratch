@@ -8,7 +8,9 @@
 const fs = require('fs'), path = require('path');
 global.window = {};
 eval(fs.readFileSync(path.join(__dirname, '../../data/p11_client.js'), 'utf8'));
-const P = require('../../app/brief.js'), E = require('../../app/engine.js');
+const P = require('../../app/brief.js'), E = require('../../app/engine.js'), C = require('../../app/contracts.js');
+// market-status dataset from P2 (none yet). The gate is never applied here; placement is reported in shadow only.
+const MARKET = null;
 const { CASES, PAIRS, DEFAULT_ANSWERS, UNDERSTANDING } = require('./cases.js');
 const U = window.CI_UNIVERSE, M = U.models, byId = {}; M.forEach(m => { byId[m.id] = m; });
 const SNAP = path.join(__dirname, 'snapshot.json'), REPORT = path.join(__dirname, 'REPORT.md');
@@ -94,6 +96,14 @@ function diagnostics(b, r) {
     if (!(m.warranty_years && m.warranty_verified)) gaps.push('warranty');
     if (gaps.length) out.push({ k: 'evidence_gap', id: x.id, v: gaps.join('+') });
   }
+  // shadow: contract adapters (inactive) — market placement and technology resolution per recommended car
+  const intent = C.powertrainIntent(nb);
+  for (const x of list) {
+    const pl = C.marketPlacement(C.marketStatus(x.id, MARKET));
+    if (pl !== 'main') out.push({ k: `shadow_market_${pl}`, id: x.id });
+    const allowed = x.fit.map(t => C.techAllowed(C.trimTech(t, byId[x.id]), intent));
+    if (allowed.every(a => a === null)) out.push({ k: 'shadow_tech_unconfirmed_for_intent', id: x.id, v: intent.stance });
+  }
   // confidence: a "clear" winner whose lead over the next car comes from one binary factor
   if (mode(r) === 'clear' && r.alts[0] && r.alts[0].parts) {
     const h = r.hero.parts, a = r.alts[0].parts, keys = Object.keys(h), sw = keys.reduce((s, k) => s + W[k], 0);
@@ -153,6 +163,7 @@ if (parity.length) diagCount.parse_parity_brief_differs = parity.length;
 // ---------- report ----------
 const L = [];
 L.push(`# Regression / diagnostic report`, '', `Engine ${E.ENGINE_VERSION} · data ${U.meta.version} · ${CASES.length} cases · invariants ${checks - fails}/${checks} pass · understanding failures ${understanding.length} (known ${understanding.filter(u => u.known).length})`, '');
+L.push(`Market-status gate: inactive (${MARKET ? 'dataset loaded, shadow only' : 'no audited P2 dataset; every model reads unverified'}). shadow_* rows show what the contracts would do; they change nothing.`, '');
 L.push('Diagnostics are known P1.2 problems, counted per recommended car (thresholds provisional; P2 owns market-status definitions).', '');
 L.push('| Diagnostic | Count |', '|---|---|');
 Object.entries(diagCount).sort().forEach(([k, v]) => L.push(`| ${k} | ${v} |`));

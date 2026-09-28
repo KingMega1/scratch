@@ -4,7 +4,7 @@ A short consultation: the buyer describes what they need in their own words (EN 
 
 ## Run locally
 `node tools/collector.mjs` → prints local/LAN links (and a public tunnel link if `cloudflared` is installed). Events go to `events.ndjson`; live KPIs at `/kpi`.
-Tests: `node tests/engine.test.js` · `node tests/integrity.test.js` · `node tests/regression/run.js` (P1.2 regression + diagnostics → `tests/regression/REPORT.md`) · `node tests/e2e.mjs` (Playwright).
+Tests: `node tests/engine.test.js` · `node tests/integrity.test.js` · `node tests/contracts.test.js` · `node tests/regression/run.js` (P1.2 regression + diagnostics → `tests/regression/REPORT.md`) · `node tests/e2e.mjs` (Playwright).
 Public test site: `python3 tools/build_public.py <out>` (static app + sanitized `data/view.js`; no source names, no pipeline, event sending off, noindex).
 
 ## Data (`data/build_p11.py` → `p11_client.js`)
