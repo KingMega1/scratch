@@ -33,6 +33,11 @@ async function answerAll(page, picks = {}) {
   return asked;
 }
 
+// the main result: the single pick (#h-hero), or the first of equal options (listed by price, none leads)
+const RESULT = '.hero, .equal-set';
+const seen = { en: { equal: 0, single: 0 }, ar: { equal: 0, single: 0 } };
+const pickOf = async page => ((await page.$('#h-hero')) ? page.textContent('#h-hero') : page.textContent('.equal-set .alt h3')).then(t => t.trim());
+
 async function run(label, viewport, lang, text, picks = {}, expect = {}) {
   const page = await browser.newPage({ viewport, locale: lang === 'ar' ? 'ar-EG' : 'en-GB' });
   const errors = [];
@@ -53,41 +58,52 @@ async function run(label, viewport, lang, text, picks = {}, expect = {}) {
     check((await page.textContent('.understood')).includes(lang === 'ar' ? 'استبعدها' : 'Leave out'), `${label}: edit updates the summary`);
   }
   await page.click('#confirm');
-  await page.waitForSelector('.hero, .nomatch', { timeout: 8000 }); await page.waitForTimeout(1600);
+  await page.waitForSelector('.hero, .equal-set, .nomatch', { timeout: 8000 }); await page.waitForTimeout(1600);
   await page.screenshot({ path: path.join(root, `shots/${label}-3-result.png`), fullPage: true });
   const dir = await page.evaluate(() => document.documentElement.dir);
   check(dir === (lang === 'ar' ? 'rtl' : 'ltr'), `${label}: dir=${dir}`);
-  const hero = (await page.textContent('#h-hero')).trim();
+  const hero = await pickOf(page);
   const nAlts = await page.$$eval('.alt', a => a.length);
   const body = await page.textContent('main');
   for (const s of expect.result || []) check(body.includes(s), `${label}: result has "${s}"`);
   for (const sel of expect.selectors || []) check(!!(await page.$(sel)), `${label}: shows ${sel}`);
+  // approved presentation: ties as equal cards (no lead position); a single pick carries a confidence label
+  if (await page.$('.equal-set')) {
+    seen[lang].equal++;
+    check(!(await page.$('.hero')) && !(await page.$('.cmp .is-hero')), `${label}: tie shown as equal options, no lead card or highlighted column`);
+    check(body.includes(lang === 'ar' ? 'اختيارات قوية' : 'Strong matches'), `${label}: tie labelled "Strong matches"`);
+  } else if (await page.$('.hero')) {
+    seen[lang].single++;
+    const eb = (await page.textContent('.hero .eyebrow')).trim();
+    const ok = lang === 'ar' ? ['الأنسب لكل اللي قلته', 'اختيارنا دلوقتي', 'الأنسب ليك'] : ['Best fit for what you told us', 'Our current pick', 'Your best fit'];
+    check(ok.includes(eb), `${label}: pick labelled by confidence ("${eb}")`);
+  }
   check(!/How sure|Only one source|sources don.t|What most expats/i.test(body), `${label}: no internal-uncertainty copy`);
   if (lang === 'ar') {
-    check(/[؀-ۿ]/.test(await page.textContent('.hero')), `${label}: hero copy is Arabic`);
+    check(/[؀-ۿ]/.test(await page.textContent('.hero, .equal-set')), `${label}: result copy is Arabic`);
     check(!/[٠-٩]/.test(body), `${label}: Latin digits only`);
   }
   if (nAlts) {
     await page.click('.alt [data-detail]'); await page.waitForSelector('#sheet:not([hidden])'); await page.waitForTimeout(350);
     await page.screenshot({ path: path.join(root, `shots/${label}-4-detail.png`) });
     await page.goBack(); await page.waitForTimeout(200);
-    check(await page.$eval('#sheet', el => el.hidden) && !!(await page.$('.hero')), `${label}: back closes the detail sheet, stays on result`);
+    check(await page.$eval('#sheet', el => el.hidden) && !!(await page.$(RESULT)), `${label}: back closes the detail sheet, stays on result`);
     await page.click('#cmp-btn'); await page.waitForTimeout(100);
   }
   await page.locator('#fb').scrollIntoViewIfNeeded();
   await page.click('[data-h="somewhat"]'); await page.fill('#fb-text', lang === 'ar' ? 'عايز أعرف تكلفة الصيانة' : 'Show running costs.'); await page.click('#fb-send');
   const url = page.url();
   // budget up/down re-ranks in place
-  await page.click('[data-adj="1"]'); await page.waitForSelector('.hero');
+  await page.click('[data-adj="1"]'); await page.waitForSelector(RESULT);
   check(page.url() !== url, `${label}: budget +100k updates the result link`);
-  await page.click('[data-adj="-1"]'); await page.waitForSelector('.hero');
-  check((await page.textContent('#h-hero')).trim() === hero, `${label}: budget back to original restores the pick`);
+  await page.click('[data-adj="-1"]'); await page.waitForSelector(RESULT);
+  check((await pickOf(page)) === hero, `${label}: budget back to original restores the pick`);
   // back: result -> summary
   await page.goBack(); await page.waitForSelector('#confirm');
   check(true, `${label}: back from result returns to the summary`);
-  await page.goForward(); await page.waitForSelector('.hero');
-  await page.click('#lang-btn'); await page.waitForSelector('.hero');
-  check((await page.textContent('#h-hero')).trim() === hero, `${label}: language switch keeps the pick`);
+  await page.goForward(); await page.waitForSelector(RESULT);
+  await page.click('#lang-btn'); await page.waitForSelector(RESULT);
+  check((await pickOf(page)) === hero, `${label}: language switch keeps the pick`);
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
   check(overflow <= 0, `${label}: no horizontal page scroll (${overflow}px)`);
   const ev = await page.evaluate(() => window.dataLayer.map(e => e.event));
@@ -96,8 +112,8 @@ async function run(label, viewport, lang, text, picks = {}, expect = {}) {
   check(errors.length === 0, `${label}: no console errors ${errors.join(' | ')}`);
   const p2 = await browser.newPage({ viewport });
   await p2.route('https://fonts.googleapis.com/**', r => r.abort());
-  await p2.goto(url); await p2.waitForSelector('.hero');
-  check((await p2.textContent('#h-hero')).trim() === hero, `${label}: shared link reproduces the pick`);
+  await p2.goto(url); await p2.waitForSelector(RESULT);
+  check((await pickOf(p2)) === hero, `${label}: shared link reproduces the pick`);
   await p2.close(); await page.close();
   console.log(`  [${label}] asked: ${asked.length} (${asked.map(a => a.slice(0, 28)).join(' | ')}) → ${hero} · alts ${nAlts}`);
 }
@@ -114,6 +130,24 @@ await run('en-desktop-qashqai', { width: 1280, height: 900 }, 'en', "I want some
   { summary: ['Nissan Qashqai'], result: ['Nissan Qashqai'] });
 await run('ar-mobile-guided', { width: 390, height: 844 }, 'ar', null, { opts: ['suv', 'five', 'no_ev', 'open', 'city'], prio: ['warranty', 'reliability'], more: 'مش عايز كيا' },
   { summary: ['ضمان طويل', 'الاعتمادية'] });
+// approved presentation rules (CEO 2026-09-28)
+await run('en-mobile-equal', { width: 390, height: 844 }, 'en', "I want something around the Qashqai's size and price for my wife.", { opts: ['open'] }, {});
+await run('ar-mobile-equal', { width: 390, height: 844 }, 'ar', 'عايز عربية عالية في حدود مليون', { opts: ['open'] }, {});
+await run('en-desktop-stretch-lean', { width: 1280, height: 900 }, 'en', 'SUV up to EGP 1.4M, I can stretch a little for the right car, space matters most', { opts: ['open'] },
+  { result: ['Our current pick', 'Why this one', 'What could change the answer', 'The extra spend buys more space'] });
+{
+  const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+  await page.route('https://fonts.googleapis.com/**', r => r.abort());
+  for (const [lang, text, h] of [['en', '7-seater around EGP 1M', 'Nothing currently meets all your requirements within your budget'], ['ar', 'عايز ٧ راكب في حدود مليون', 'مفيش حاليًا عربية فيها كل طلباتك جوه ميزانيتك']]) {
+    await page.goto(`${base}?lang=${lang}`);
+    await page.fill('#brief', text); await page.click('#go');
+    await answerAll(page, { opts: ['open'] }); await page.click('#confirm');
+    await page.waitForSelector('.hero, .equal-set, .nomatch', { timeout: 8000 });
+    const t = await page.textContent('main');
+    check(!!(await page.$('.nomatch')) && !(await page.$('.hero, .equal-set')) && t.includes(h), `${lang}: nothing within budget → nearest option shown separately, not recommended`);
+  }
+  await page.close();
+}
 // contradictory brief: no manufactured recommendation
 {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
@@ -126,6 +160,7 @@ await run('ar-mobile-guided', { width: 390, height: 844 }, 'ar', null, { opts: [
   check((await page.textContent('.nomatch')).includes('Consider other brands'), 'no-match offers the constraint to reconsider');
   await page.close();
 }
+check(seen.en.equal > 0 && seen.ar.equal > 0 && seen.en.single > 0 && seen.ar.single > 0, `both presentations exercised in EN and AR (${JSON.stringify(seen)})`);
 await browser.close();
 await new Promise(r => setTimeout(r, 300));
 const kpi = await (await fetch(`http://127.0.0.1:${port}/kpi`)).text();

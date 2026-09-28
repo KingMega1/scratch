@@ -44,7 +44,7 @@ function consult(c) {
 }
 
 const recs = r => (r.hero ? [r.hero, ...r.alts] : []);
-const mode = r => (!r.hero ? 'no_match' : r.shortlist && r.shortlist.allOut ? 'conflict' : r.heroFromShortlist ? 'shortlist' : r.equal ? 'equal' : 'clear');
+const mode = r => (!r.hero ? (r.nearestAbove ? 'nearest_only' : 'no_match') : r.shortlist && r.shortlist.allOut ? 'conflict' : r.heroFromShortlist ? 'shortlist' : r.equal ? 'equal' : 'clear');
 
 // ---------- invariants (must hold now) ----------
 let fails = 0, checks = 0;
@@ -55,6 +55,15 @@ function invariants(id, b, r, r2) {
   ok(JSON.stringify(summary(r)) === JSON.stringify(summary(r2)), `${id}: non-deterministic output`);
   const list = recs(r);
   ok(list.length <= 3 && new Set(list.map(x => x.id)).size === list.length, `${id}: more than 3 or duplicate recommendations`);
+  // approved budget rules (CEO 2026-09-28)
+  for (const x of list) {
+    if (x.price > t.budget) {
+      ok(!!x.stretch && x.stretch.gain > 0.02 && x.stretch.buys.length > 0, `${id}: ${x.id} above budget without earned stretch`);
+      ok(nb.budgetMode !== 'max' || nb.stretch, `${id}: ${x.id} above a firm maximum`);
+    }
+  }
+  if (r.nearestAbove) ok(!r.hero && r.nearestAbove.every(x => x.price > t.budget), `${id}: nearest-above shown as a recommendation`);
+  if (r.equal) ok(list.every(x => x.role === 'equal'), `${id}: tied cars not all marked equal`);
   for (const x of list.concat(r.less ? [{ id: r.less.id, less: true }] : [])) {
     const m = byId[x.id], tr = E.currentTrims(m);
     ok(m.u, `${id}: ${x.id} not in universe`);

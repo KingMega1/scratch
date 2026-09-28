@@ -5,7 +5,7 @@
   'use strict';
 
   const SCHEMA_VERSION = 'EV3';
-  const FLOW_VERSION = 'F3-P1.1-2026-09-26';
+  const FLOW_VERSION = 'F4-P1.2-2026-09-28';
   const EVENTS = {
     fmc_view: [], fmc_start: ['path'],
     brief_submit: ['chars', 'extracted', 'source'],

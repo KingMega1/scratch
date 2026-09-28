@@ -1,0 +1,113 @@
+# Delta report
+
+Old engine: HEAD · new engine: working copy · 57 regression cases.
+Changed cases: 24 · unexplained: 0
+
+
+- **L5** (Family SUV around EGP 1.5M): tie, stretch
+  - out: Renault Austral at 93% of budget — tie set re-sampled (tie of 39 → 37; shown cars span the tied set)
+  - out: MG HS at 102% of budget — stretch not earned (no better fit than the best car within budget)
+  - in: MG One at 93% of budget
+  - in: Mitsubishi Eclipse Cross at 100% of budget
+- **L6** (7-seat family car, maximum EGP 2.2M): questions, band, mode
+  - follow-up questions differ (question choice depends on the ranking)
+  - out: Chery Tiggo 8 Pro Max at 78% of budget — below the new 90% band (was 78% of a maximum budget)
+  - presentation: single → equal
+- **L8** (عايز ٧ راكب لمراتي والأولاد لحد 2.2 مليون): questions, band, mode
+  - follow-up questions differ (question choice depends on the ranking)
+  - out: Chery Tiggo 8 Pro Max at 78% of budget — below the new 90% band (was 78% of a maximum budget)
+  - presentation: single → equal
+- **A3** (guided): tie, stretch
+  - out: Kia EV3 at 93% of budget — tie set re-sampled (tie of 9 → 6; shown cars span the tied set)
+  - out: MG HS at 102% of budget — stretch not earned (no better fit than the best car within budget)
+  - in: BYD Sealion 5 at 93% of budget
+  - in: Geely EX5 at 100% of budget
+- **B1** (EGP 1M, SUV): questions, stretch, mode
+  - follow-up questions differ (question choice depends on the ranking)
+  - out: Chery Tiggo 7 at 101% of budget — stretch not earned (no better fit than the best car within budget)
+  - in: Nissan Magnite at 87% of budget
+  - in: Chery Tiggo 4 Pro at 100% of budget
+  - presentation: equal → single
+- **B2** (EGP 1.5M SUV): tie, stretch
+  - out: Kia EV3 at 93% of budget — tie set re-sampled (tie of 9 → 6; shown cars span the tied set)
+  - out: MG HS at 102% of budget — stretch not earned (no better fit than the best car within budget)
+  - in: BYD Sealion 5 at 93% of budget
+  - in: Geely EX5 at 100% of budget
+- **F1** (7-seater, maximum EGP 2.2M, wife + children): questions, band, mode
+  - follow-up questions differ (question choice depends on the ranking)
+  - out: Chery Tiggo 8 Pro Max at 78% of budget — below the new 90% band (was 78% of a maximum budget)
+  - presentation: single → equal
+- **F2** (عايز ٧ راكب لمراتي والأولاد واعتمادية مهمة، لحد 2.2 مليون): questions, band, mode
+  - follow-up questions differ (question choice depends on the ranking)
+  - out: Chery Tiggo 8 Pro Max at 78% of budget — below the new 90% band (was 78% of a maximum budget)
+  - presentation: single → equal
+- **F5** (Family SUV around EGP 1.5M): stretch
+  - out: Jetour X90 Plus at 104% of budget — stretch not earned (no better fit than the best car within budget)
+  - out: BAIC BJ30 at 105% of budget — stretch not earned (no better fit than the best car within budget)
+  - in: Jetour X70 at 83% of budget
+  - in: Mitsubishi Eclipse Cross at 100% of budget
+- **G1** (I love the GLC or GLE, budget 1.5M): stretch
+  - out: Jetour X90 Plus at 104% of budget — stretch not earned (no better fit than the best car within budget)
+  - out: BAIC BJ30 at 105% of budget — stretch not earned (no better fit than the best car within budget)
+  - in: Jetour X70 at 83% of budget
+  - in: Mitsubishi Eclipse Cross at 100% of budget
+- **G2** (EGP 1.5M, I really like GLC/GLE because I want comfort and a premium feel.): tie, stretch
+  - out: MG One at 93% of budget — tie set re-sampled (tie of 43 → 40; shown cars span the tied set)
+  - out: Nissan Qashqai at 104% of budget — stretch not earned (no better fit than the best car within budget)
+  - in: Chevrolet Captiva at 93% of budget
+  - in: Mitsubishi Eclipse Cross at 100% of budget
+- **C1** (SUV 1.5 million, open to Chinese): tie, stretch
+  - out: Renault Austral at 93% of budget — tie set re-sampled (tie of 39 → 37; shown cars span the tied set)
+  - out: MG HS at 102% of budget — stretch not earned (no better fit than the best car within budget)
+  - in: MG One at 93% of budget
+  - in: Mitsubishi Eclipse Cross at 100% of budget
+- **C2** (SUV 1.5 million, prefer not Chinese): tie
+  - out: Citroën C4 X at 95% of budget — tie set re-sampled (tie of 9 → 8; shown cars span the tied set)
+  - in: Renault Austral at 93% of budget
+- **C3** (SUV 1.5 million, absolutely no Chinese brands): questions, tie
+  - follow-up questions differ (question choice depends on the ranking)
+  - out: Citroën C4 X at 95% of budget — tie set re-sampled (tie of 9 → 8; shown cars span the tied set)
+  - in: Renault Austral at 93% of budget
+- **C4** (عايز عربية عالية في حدود مليون ونص ومش عندي مشكلة في الصيني): tie, stretch
+  - out: Renault Austral at 93% of budget — tie set re-sampled (tie of 39 → 37; shown cars span the tied set)
+  - out: MG HS at 102% of budget — stretch not earned (no better fit than the best car within budget)
+  - in: MG One at 93% of budget
+  - in: Mitsubishi Eclipse Cross at 100% of budget
+- **P1** (petrol only, 1.5M SUV): stretch
+  - out: Citroën C4 at 102% of budget — stretch not earned (no better fit than the best car within budget)
+  - in: Mitsubishi Eclipse Cross at 100% of budget
+- **P2** (1.5M SUV, I want a hybrid): questions, stretch
+  - follow-up questions differ (question choice depends on the ranking)
+  - out: MG HS at 102% of budget — stretch not earned (no better fit than the best car within budget)
+  - in: DFSK E5 Plus at 100% of budget
+- **P3** (1.5M SUV, open to EV): tie, stretch
+  - out: Renault Austral at 93% of budget — tie set re-sampled (tie of 39 → 37; shown cars span the tied set)
+  - out: MG HS at 102% of budget — stretch not earned (no better fit than the best car within budget)
+  - in: MG One at 93% of budget
+  - in: Mitsubishi Eclipse Cross at 100% of budget
+- **P4** (no hybrid, no EV, SUV 1.5M): stretch
+  - out: Citroën C4 at 102% of budget — stretch not earned (no better fit than the best car within budget)
+  - in: Mitsubishi Eclipse Cross at 100% of budget
+- **P5** (ميزانيتي مليون ونص ومش عايز صيني، عايزة عربية هايبرد للزحمة): tie
+  - out: Citroën C4 X at 95% of budget — tie set re-sampled (tie of 9 → 8; shown cars span the tied set)
+  - in: Renault Austral at 93% of budget
+- **V1** (I need a car): questions, tie, stretch
+  - follow-up questions differ (question choice depends on the ranking)
+  - out: Renault Austral at 93% of budget — tie set re-sampled (tie of 51 → 49; shown cars span the tied set)
+  - out: MG HS at 102% of budget — stretch not earned (no better fit than the best car within budget)
+  - in: MG One at 93% of budget
+  - in: Mitsubishi Eclipse Cross at 100% of budget
+- **T4** (7-seater around EGP 1M): questions, stretch, mode
+  - follow-up questions differ (question choice depends on the ranking)
+  - out: Jetour X70 at 110% of budget — stretch not earned (brief has no priority that could justify it)
+  - presentation: single → nearest_only (nearest: Jetour X70 +10%)
+- **T5** (SUV, maximum EGP 1.5M, can stretch a bit for the right car): stretch
+  - out: Jetour X90 Plus at 104% of budget — stretch not earned (no better fit than the best car within budget)
+  - out: BAIC BJ30 at 105% of budget — stretch not earned (no better fit than the best car within budget)
+  - in: Jetour X70 at 83% of budget
+  - in: Mitsubishi Eclipse Cross at 100% of budget
+- **T6** (SUV): band, stretch
+  - out: Bestune T55 at 75% of budget — below the new 90% band (was 75% of a maximum budget)
+  - out: Geely EX5 at 101% of budget — stretch not earned (no better fit than the best car within budget)
+  - in: Chery Tiggo 7 Pro at 84% of budget
+  - in: Renault Austral at 100% of budget

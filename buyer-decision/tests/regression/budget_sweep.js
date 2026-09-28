@@ -7,7 +7,9 @@ const fs = require('fs'), path = require('path'), vm = require('vm');
 global.window = {};
 eval(fs.readFileSync(path.join(__dirname, '../../data/p11_client.js'), 'utf8'));
 const U = window.CI_UNIVERSE, byId = {}; U.models.forEach(m => { byId[m.id] = m; });
-const SRC = fs.readFileSync(path.join(__dirname, '../../app/engine.js'), 'utf8');
+// pinned to the engine the sweep was run against (before the approved 90–100 + earned-stretch change, 2026-09-28);
+// override with a git ref: node tests/regression/budget_sweep.js <ref>
+const SRC = require('child_process').execSync(`git show ${process.argv[2] || '653b250'}:buyer-decision/app/engine.js`, { cwd: path.join(__dirname, '../../..') }).toString();
 const TIE = 0.02;
 
 // current curve, verbatim from engine.js (a change there fails this sweep loudly)

@@ -124,11 +124,11 @@
   "mode": "equal",
   "hero": "jetour/x70",
   "alts": [
-   "renault/austral",
-   "mg/hs"
+   "mg/one",
+   "mitsubishi/eclipse-cross"
   ],
   "less": "baic/x35",
-  "tier": 39,
+  "tier": 37,
   "eligible": 87,
   "factors": [
    "budget",
@@ -136,18 +136,16 @@
   ]
  },
  "L6": {
-  "mode": "clear",
-  "hero": "chery/tiggo-8-pro-max",
+  "mode": "equal",
+  "hero": "mg/rx9",
   "alts": [
-   "mg/rx9",
    "chery/tiggo-9"
   ],
   "less": null,
-  "tier": 1,
+  "tier": 2,
   "eligible": 13,
   "factors": [
-   "budget",
-   "sizePref"
+   "budget"
   ]
  },
  "L7": {
@@ -164,18 +162,16 @@
   ]
  },
  "L8": {
-  "mode": "clear",
-  "hero": "chery/tiggo-8-pro-max",
+  "mode": "equal",
+  "hero": "mg/rx9",
   "alts": [
-   "mg/rx9",
    "chery/tiggo-9"
   ],
   "less": null,
-  "tier": 1,
+  "tier": 2,
   "eligible": 13,
   "factors": [
-   "budget",
-   "sizePref"
+   "budget"
   ]
  },
  "A1": {
@@ -212,11 +208,11 @@
   "mode": "equal",
   "hero": "forthing/t5-evo",
   "alts": [
-   "kia/ev3",
-   "mg/hs"
+   "byd/sealion-5",
+   "geely/ex5"
   ],
   "less": null,
-  "tier": 9,
+  "tier": 6,
   "eligible": 87,
   "factors": [
    "budget",
@@ -225,13 +221,14 @@
   ]
  },
  "B1": {
-  "mode": "equal",
+  "mode": "clear",
   "hero": "baic/x35",
   "alts": [
-   "chery/tiggo-7"
+   "nissan/magnite",
+   "chery/tiggo-4-pro"
   ],
   "less": null,
-  "tier": 2,
+  "tier": 1,
   "eligible": 22,
   "factors": [
    "budget",
@@ -242,11 +239,11 @@
   "mode": "equal",
   "hero": "forthing/t5-evo",
   "alts": [
-   "kia/ev3",
-   "mg/hs"
+   "byd/sealion-5",
+   "geely/ex5"
   ],
   "less": null,
-  "tier": 9,
+  "tier": 6,
   "eligible": 87,
   "factors": [
    "budget",
@@ -301,33 +298,29 @@
   ]
  },
  "F1": {
-  "mode": "clear",
-  "hero": "chery/tiggo-8-pro-max",
+  "mode": "equal",
+  "hero": "mg/rx9",
   "alts": [
-   "mg/rx9",
    "chery/tiggo-9"
   ],
   "less": null,
-  "tier": 1,
+  "tier": 2,
   "eligible": 13,
   "factors": [
-   "budget",
-   "sizePref"
+   "budget"
   ]
  },
  "F2": {
-  "mode": "clear",
-  "hero": "chery/tiggo-8-pro-max",
+  "mode": "equal",
+  "hero": "mg/rx9",
   "alts": [
-   "mg/rx9",
    "chery/tiggo-9"
   ],
   "less": null,
-  "tier": 1,
+  "tier": 2,
   "eligible": 13,
   "factors": [
-   "budget",
-   "sizePref"
+   "budget"
   ]
  },
  "F3": {
@@ -363,8 +356,8 @@
   "mode": "clear",
   "hero": "changan/cs75-plus",
   "alts": [
-   "jetour/x90-plus",
-   "baic/bj30"
+   "jetour/x70",
+   "mitsubishi/eclipse-cross"
   ],
   "less": null,
   "tier": 1,
@@ -434,8 +427,8 @@
   "mode": "clear",
   "hero": "changan/cs75-plus",
   "alts": [
-   "jetour/x90-plus",
-   "baic/bj30"
+   "jetour/x70",
+   "mitsubishi/eclipse-cross"
   ],
   "less": null,
   "tier": 1,
@@ -449,11 +442,11 @@
   "mode": "equal",
   "hero": "chery/tiggo-7-pro",
   "alts": [
-   "mg/one",
-   "nissan/qashqai"
+   "chevrolet/captiva",
+   "mitsubishi/eclipse-cross"
   ],
   "less": null,
-  "tier": 43,
+  "tier": 40,
   "eligible": 87,
   "factors": [
    "budget",
@@ -466,11 +459,11 @@
   "mode": "equal",
   "hero": "jetour/x70",
   "alts": [
-   "renault/austral",
-   "mg/hs"
+   "mg/one",
+   "mitsubishi/eclipse-cross"
   ],
   "less": "baic/x35",
-  "tier": 39,
+  "tier": 37,
   "eligible": 87,
   "factors": [
    "budget",
@@ -481,11 +474,11 @@
   "mode": "equal",
   "hero": "mitsubishi/outlander",
   "alts": [
-   "citroen/c4-x",
+   "renault/austral",
    "kia/seltos"
   ],
   "less": null,
-  "tier": 9,
+  "tier": 8,
   "eligible": 87,
   "factors": [
    "budget",
@@ -497,11 +490,11 @@
   "mode": "equal",
   "hero": "mitsubishi/outlander",
   "alts": [
-   "citroen/c4-x",
+   "renault/austral",
    "kia/seltos"
   ],
   "less": null,
-  "tier": 9,
+  "tier": 8,
   "eligible": 28,
   "factors": [
    "budget",
@@ -512,11 +505,11 @@
   "mode": "equal",
   "hero": "jetour/x70",
   "alts": [
-   "renault/austral",
-   "mg/hs"
+   "mg/one",
+   "mitsubishi/eclipse-cross"
   ],
   "less": "baic/x35",
-  "tier": 39,
+  "tier": 37,
   "eligible": 87,
   "factors": [
    "budget",
@@ -528,10 +521,10 @@
   "hero": "jetour/x70",
   "alts": [
    "mg/one",
-   "citroen/c4"
+   "mitsubishi/eclipse-cross"
   ],
   "less": "baic/x35",
-  "tier": 30,
+  "tier": 29,
   "eligible": 67,
   "factors": [
    "budget",
@@ -543,10 +536,10 @@
   "hero": "dfsk/e5",
   "alts": [
    "byd/sealion-5",
-   "mg/hs"
+   "dfsk/e5-plus"
   ],
   "less": null,
-  "tier": 6,
+  "tier": 3,
   "eligible": 87,
   "factors": [
    "budget",
@@ -558,11 +551,11 @@
   "mode": "equal",
   "hero": "jetour/x70",
   "alts": [
-   "renault/austral",
-   "mg/hs"
+   "mg/one",
+   "mitsubishi/eclipse-cross"
   ],
   "less": "baic/x35",
-  "tier": 39,
+  "tier": 37,
   "eligible": 87,
   "factors": [
    "budget",
@@ -574,10 +567,10 @@
   "hero": "jetour/x70",
   "alts": [
    "mg/one",
-   "citroen/c4"
+   "mitsubishi/eclipse-cross"
   ],
   "less": "baic/x35",
-  "tier": 30,
+  "tier": 29,
   "eligible": 67,
   "factors": [
    "budget",
@@ -588,11 +581,11 @@
   "mode": "equal",
   "hero": "mitsubishi/outlander",
   "alts": [
-   "citroen/c4-x",
+   "renault/austral",
    "kia/seltos"
   ],
   "less": null,
-  "tier": 9,
+  "tier": 8,
   "eligible": 28,
   "factors": [
    "budget",
@@ -680,11 +673,11 @@
   "mode": "equal",
   "hero": "bestune/b70",
   "alts": [
-   "renault/austral",
-   "mg/hs"
+   "mg/one",
+   "mitsubishi/eclipse-cross"
   ],
   "less": null,
-  "tier": 51,
+  "tier": 49,
   "eligible": 144,
   "factors": [
    "budget",
@@ -790,6 +783,47 @@
    "budget",
    "sizePref",
    "economy"
+  ]
+ },
+ "T4": {
+  "mode": "nearest_only",
+  "hero": null,
+  "alts": [],
+  "less": null,
+  "tier": 0,
+  "eligible": 1,
+  "factors": [
+   "budget"
+  ]
+ },
+ "T5": {
+  "mode": "clear",
+  "hero": "changan/cs75-plus",
+  "alts": [
+   "jetour/x70",
+   "mitsubishi/eclipse-cross"
+  ],
+  "less": null,
+  "tier": 1,
+  "eligible": 87,
+  "factors": [
+   "budget",
+   "space"
+  ]
+ },
+ "T6": {
+  "mode": "clear",
+  "hero": "changan/cs75-plus",
+  "alts": [
+   "chery/tiggo-7-pro",
+   "renault/austral"
+  ],
+  "less": null,
+  "tier": 1,
+  "eligible": 76,
+  "factors": [
+   "budget",
+   "space"
   ]
  },
  "T3": {

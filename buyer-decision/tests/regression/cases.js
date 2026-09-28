@@ -78,6 +78,10 @@ const CASES = [
   { id: 'T1a', group: 'probe', lang: 'EN', text: 'SUV max EGP 3M, no fully electric', persona: { priorities: { priorities: ['economy'] } }, expect: { pt: 'no_ev' } },
   { id: 'T1b', group: 'probe', lang: 'AR', text: 'عايز عربية عالية مش كهربا لحد 3 مليون', persona: { priorities: { priorities: ['economy'] } }, expect: { pt: 'no_ev' } },
   { id: 'T2', group: 'probe', lang: 'EN', text: 'SUV around EGP 3M, open to electric', persona: { priorities: { priorities: ['economy'] } }, expect: { pt: 'open' } },
+  { id: 'T4', group: 'probe', lang: 'EN', text: '7-seater around EGP 1M' },
+  { id: 'T5', group: 'probe', lang: 'EN', text: 'SUV, maximum EGP 1.5M, can stretch a bit for the right car', persona: { priorities: { priorities: ['space'] } } },
+  { id: 'T6', group: 'probe', lang: 'EN', note: 'earned stretch path', text: 'SUV',
+    script: [{ budget: 1400000, budgetMode: 'max', stretch: true }, { priorities: ['space'] }, { chinese: 'open' }, { pt: 'open' }] },
   { id: 'T3', group: 'probe', lang: 'EN', text: 'SUV around EGP 3M', persona: { priorities: { priorities: ['premium'] } } },
 ];
 

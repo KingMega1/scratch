@@ -432,7 +432,8 @@
   function reasons(p, r) {
     const m = byId[p.id], b = r.brief, B = r.terr.budget, out = [];
     const lo = p.fit[0].min, hi = p.fit[p.fit.length - 1].min;
-    if (hi > B && lo > B) out.push(S.why.budget_over({ range: S.from_to(money(lo), money(hi)), amount: money(lo - B) }));
+    if (p.stretch) out.push(S.why.stretch({ range: S.from_to(money(lo), money(hi)), amount: money(p.stretch.over), buys: joinList(p.stretch.buys.map(k => S.fk[k] || k)), vs: nm(p.stretch.vs) }));
+    else if (hi > B && lo > B) out.push(S.why.budget_over({ range: S.from_to(money(lo), money(hi)), amount: money(lo - B) }));
     else if (hi < B * 0.9) out.push(S.why.budget_under({ range: S.from_to(money(lo), money(hi)), amount: money(B - hi) }));
     else out.push(S.why.budget_in({ range: S.from_to(money(lo), money(hi)), n: p.fit.length }));
     if (b.seats === 7 && p.seven) out.push(S.why.seven({ family: family(b) || (b.who || []).includes('wife') }));
@@ -523,14 +524,24 @@
     return `<p class="small">${off && m.distributor ? S.next_official({ d: lat(m.distributor), date: S.month(off.date.slice(0, 7)) }) : S.next_generic}</p>`;
   }
 
+  // the main pick's lead is not robust (confidence 'lean'): say what it rests on
+  const isLean = (p, r) => !!(r.hero && p.id === r.hero.id && !r.equal && !r.heroFromShortlist && r.confidence && r.confidence.level === 'lean');
+  function changeBlock(r) {
+    const c = r.confidence, items = c.depends.map(k => S.dep[k]).filter(Boolean);
+    // name the runner-up only when it is on screen (it can sit in a tied group the alternatives sample)
+    if (c.vs && r.alts.some(a => a.id === c.vs)) items.push(S.dep_alt({ n: nm(c.vs) }));
+    return items.length ? `<div><h3>${S.change_h}</h3><ul class="list">${items.map(x => `<li><span>${x}</span></li>`).join('')}</ul></div>` : '';
+  }
+
   function detail(p, r, dark) {
-    const why = reasons(p, r), tr = trades(p, r);
+    const why = reasons(p, r), tr = trades(p, r), lean = isLean(p, r);
     const mk = dark ? 'mk' : 'mk light';
     return `
       <div class="cols">
-        <div><h3>${S.why_h}</h3><ul class="list">${why.map(x => `<li><span class="${mk} good" aria-hidden="true">✓</span><span>${x}</span></li>`).join('')}</ul></div>
+        <div><h3>${lean ? S.why_h_lean : S.why_h}</h3><ul class="list">${why.map(x => `<li><span class="${mk} good" aria-hidden="true">✓</span><span>${x}</span></li>`).join('')}</ul></div>
         ${tr.length ? `<div><h3>${S.trade_h}</h3><ul class="list">${tr.map(x => `<li><span class="${mk} bad" aria-hidden="true">!</span><span>${x}</span></li>`).join('')}</ul></div>` : ''}
       </div>
+      ${lean ? `<div class="cols">${changeBlock(r)}</div>` : ''}
       <div class="cols">
         <div><h3>${S.versions_h}</h3>${versionsBlock(p, r)}</div>
         <div><h3>${S.specs_h}</h3>${specs(p)}</div>
@@ -583,7 +594,8 @@
       const fixes = r.nearest || [];
       T.track('no_match_view', { brief: slim(b), fix_keys: fixes.map(f => f.key) });
       screen.innerHTML = `<div class="result">${briefBar}${topCards.join('')}
-        <section class="nomatch"><h2>${S.nomatch_h}</h2><p>${S.nomatch_p}</p>
+        ${r.nearestAbove ? `<section class="nomatch"><h2>${S.nearest_h}</h2><ul class="vs">${r.nearestAbove.map(x => `<li>${S.nearest_line({ n: nm(x.id), price: money(x.price), amount: money(x.over) })}</li>`).join('')}</ul></section>` : ''}
+        <section class="nomatch">${r.nearestAbove ? '' : `<h2>${S.nomatch_h}</h2>`}<p>${S.nomatch_p}</p>
         <div class="chips">${fixes.map(f => `<button class="btn btn-ghost" type="button" data-fix="${f.key}" data-to="${f.to || ''}">${f.key === 'budget' ? S.fix.budget(mill(f.to)) : S.fix[f.key](num(f.n))}</button>`).join('')}</div></section></div>`;
       wireResultBar(r);
       $$('[data-fix]', screen).forEach(x => x.addEventListener('click', () => {
@@ -605,25 +617,29 @@
       <div class="result reveal">
         ${briefBar}
         ${topCards.join('')}
+        ${r.equal ? `<section class="r2 equal-set" aria-labelledby="h-equal"><div class="section-head"><h2 class="h3" id="h-equal">${S.equal_h}</h2><button class="link-btn" id="cmp-btn" type="button" aria-expanded="false">${S.compare}</button></div>
+          <p class="muted small">${S.equal_sub}</p>
+          <div class="alts">${[h, ...alts].map(a => altCard(a, h, r)).join('')}</div>
+          <div id="compare" hidden>${compareTable([h, ...alts], r)}</div></section>` : `
         <article class="hero">
           ${imageBlock(m, 'hero-img r1')}
           <div class="hero-top r2">
             <div>
-              <p class="eyebrow">${r.heroFromShortlist ? S.eyebrow_hero_yours : r.equal ? S.eyebrow_equal : S.eyebrow_hero}</p>
+              <p class="eyebrow">${r.heroFromShortlist ? S.eyebrow_hero_yours : r.confidence && r.confidence.level === 'lean' ? S.eyebrow_lean : S.eyebrow_clear}</p>
               <h2 class="hero-name" id="h-hero">${nm(h.id)}</h2>
               <p class="hero-trim">${h.sizeKey ? S.size(h.sizeKey) : ''}</p>
             </div>
             <div class="hero-price">
               <p class="label-mono">${S.in_range}</p>
               <p class="price-big">${S.from_to(money(h.fit[0].min), money(h.fit[h.fit.length - 1].min))}</p>
-              <p class="small muted-dark">${S.n_versions(num(h.fit.length))}</p>
+              <p class="small muted-dark">${h.stretch ? S.over_by(money(h.stretch.over)) : S.n_versions(num(h.fit.length))}</p>
             </div>
           </div>
           <div class="r3 hero-detail">${detail(h, r, true)}</div>
         </article>
         ${alts.length ? `<section class="r4"><div class="section-head"><h2 class="h3">${S.alts_h}</h2>${alts.length ? `<button class="link-btn" id="cmp-btn" type="button" aria-expanded="false">${S.compare}</button>` : ''}</div>
           <div class="alts">${alts.map(a => altCard(a, h, r)).join('')}</div>
-          <div id="compare" hidden>${compareTable([h, ...alts], r)}</div></section>` : ''}
+          <div id="compare" hidden>${compareTable([h, ...alts], r)}</div></section>` : ''}`}
         ${r.less ? `<section class="note-card r4"><h3>${S.less_h}</h3><p>${S.less_line({ n: nm(r.less.id), price: money(r.less.price), saves: money(r.less.saves), seven: r.less.seven && b.seats === 7, same: r.less.sameSize })}</p>
           <button class="link-btn" type="button" data-detail="${r.less.id}">${S.details}</button></section>` : ''}
         <section class="note-card r5"><h3>${S.check_h}</h3><ul class="checks">${checks.map(c => `<li>${S.check[c]}</li>`).join('')}</ul></section>
@@ -684,7 +700,8 @@
 
   function altCard(a, h, r) {
     const m = byId[a.id];
-    const why = reasons(a, r).slice(0, 2), vs = vsLine(a, h);
+    // equal options are not described relative to one of them
+    const why = reasons(a, r).slice(0, 2), vs = a.role === 'equal' ? [] : vsLine(a, h);
     return `<article class="alt">
       ${imageBlock(m, 'alt-img')}
       <span class="chip role">${S.role[a.role] || S.role.runner_up}</span>
@@ -698,8 +715,9 @@
   }
 
   function compareTable(list, r) {
-    const row = (label, f) => `<tr><th scope="row">${label}</th>${list.map((p, i) => `<td class="${i ? '' : 'is-hero'}">${f(p) || '—'}</td>`).join('')}</tr>`;
-    return `<div class="table-wrap"><table class="cmp"><thead><tr><th></th>${list.map((p, i) => `<th class="${i ? '' : 'is-hero'}" scope="col">${nm(p.id)}</th>`).join('')}</tr></thead><tbody>
+    const lead = i => (i || r.equal ? '' : 'is-hero');
+    const row = (label, f) => `<tr><th scope="row">${label}</th>${list.map((p, i) => `<td class="${lead(i)}">${f(p) || '—'}</td>`).join('')}</tr>`;
+    return `<div class="table-wrap"><table class="cmp"><thead><tr><th></th>${list.map((p, i) => `<th class="${lead(i)}" scope="col">${nm(p.id)}</th>`).join('')}</tr></thead><tbody>
       ${row(S.in_range, p => S.from_to(money(p.fit[0].min), money(p.fit[p.fit.length - 1].min)))}
       ${row(S.sp.size, p => (p.sizeKey ? S.size(p.sizeKey) : ''))}
       ${row(S.sp.seats, p => { const m = byId[p.id]; return m.seats ? m.seats.map(num).join(' / ') : ''; })}
