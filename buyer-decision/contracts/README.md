@@ -1,4 +1,4 @@
-# P1.2 data contracts (draft, for P2 / CEO review)
+# P1.2 data contracts
 
 P1 consumes these; it does not produce or infer them. Status: approved contracts; adapters in `app/contracts.js` (tests: `tests/contracts.test.js`). Not loaded by the app, not used by the engine.
 
