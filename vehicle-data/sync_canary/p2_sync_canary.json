@@ -1,18 +1,1 @@
-{
- "artifact_id": "p2.sync_canary.001",
- "generated_as_of": "2026-09-29",
- "label": "NON-PRODUCTION / SYNTHETIC sync canary. Not vehicle data. Safe to delete.",
- "payload": {
-  "items": [
-   {
-    "k": "canary",
-    "v": 2
-   },
-   {
-    "k": "canary_b",
-    "v": 2
-   }
-  ]
- },
- "schema": "carindex.sync_canary/v1"
-}
+{"schema": "carindex.sync_canary/v1", "artifact_id": "p2.sync_canary.001", "payload": [TRUNCATED
