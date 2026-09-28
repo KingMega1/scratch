@@ -655,7 +655,10 @@
     wireResultBar(r);
     wireRelax(b);
     T.markResult();
-    T.track('result_view', { hero_id: h.id, alt_ids: alts.map(a => a.id), pool: r.pool, ms_to_result: t0 ? Date.now() - t0 : null, brief: slim(b) });
+    T.newRecommendation();
+    const mode = r.shortlist && r.shortlist.allOut ? 'conflict' : r.heroFromShortlist ? 'shortlist' : r.equal ? 'equal' : 'single';
+    T.track('result_view', { hero_id: h.id, alt_ids: alts.map(a => a.id), pool: r.pool, ms_to_result: t0 ? Date.now() - t0 : null, brief: slim(b),
+      mode, confidence_level: r.confidence ? r.confidence.level : null, margin: r.confidence ? r.confidence.lead : null });
     T.track('feedback_view', { hero_id: h.id });
     $$('[data-detail]', screen).forEach(x => x.addEventListener('click', () => openDetail(x.dataset.detail, r)));
     const cb = $('#cmp-btn');

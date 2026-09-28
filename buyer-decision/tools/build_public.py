@@ -37,7 +37,7 @@ def main(out, endpoint=""):
     u = json.loads(raw[raw.index("=") + 1:].strip().rstrip(";"))
     open(os.path.join(out, "data", "view.js"), "w", encoding="utf-8").write(
         "window.CI_UNIVERSE = " + json.dumps(sanitize(u), ensure_ascii=False, separators=(",", ":")) + ";\n")
-    for f in ("styles.css", "i18n.js", "brief.js", "engine.js", "track.js", "app.js"):
+    for f in ("styles.css", "i18n.js", "brief.js", "engine.js", "redact.js", "track.js", "app.js"):
         shutil.copy(os.path.join(ROOT, "app", f), os.path.join(out, "app", f))
     html = open(os.path.join(ROOT, "app", "index.html"), encoding="utf-8").read()
     html = html.replace('../data/p11_client.js', '../data/view.js')

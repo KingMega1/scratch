@@ -148,6 +148,17 @@ await run('en-desktop-stretch-lean', { width: 1280, height: 900 }, 'en', 'SUV up
   }
   await page.close();
 }
+// free text leaves the browser only redacted (D5)
+{
+  const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+  await page.goto(`${base}?lang=en&env=qa&utm_source=handoff&utm_medium=test&utm_campaign=ev3`);
+  await page.fill('#brief', 'SUV around 2M, call me on 0101 234 5678 or a.b@example.com'); await page.click('#go');
+  await page.waitForSelector('#h-q, #confirm');
+  const e = await page.evaluate(() => window.dataLayer.find(x => x.event === 'brief_submit'));
+  check(!('text' in e.props) && e.props.text_redacted === 'SUV around 2M, call me on [PHONE] or [EMAIL]', `brief text redacted before sending: ${e.props.text_redacted}`);
+  check(e.env === 'qa' && e.is_test === true && e.utm_medium === 'test' && e.utm_campaign === 'ev3', 'env / is_test / all UTMs on the envelope');
+  await page.close();
+}
 // contradictory brief: no manufactured recommendation
 {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
