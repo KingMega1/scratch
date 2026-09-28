@@ -1,0 +1,813 @@
+{
+ "H1": {
+  "mode": "clear",
+  "hero": "li-auto/l6",
+  "alts": [
+   "gmc/terrain",
+   "audi/q5"
+  ],
+  "less": null,
+  "tier": 1,
+  "eligible": 121,
+  "factors": [
+   "budget",
+   "space",
+   "premium",
+   "economy"
+  ]
+ },
+ "H2": {
+  "mode": "equal",
+  "hero": "haval/h6",
+  "alts": [
+   "geely/starray",
+   "mitsubishi/destinator"
+  ],
+  "less": null,
+  "tier": 34,
+  "eligible": 108,
+  "factors": [
+   "budget",
+   "ref"
+  ]
+ },
+ "L1": {
+  "mode": "equal",
+  "hero": "forthing/s7",
+  "alts": [
+   "xpeng/m03"
+  ],
+  "less": null,
+  "tier": 2,
+  "eligible": 33,
+  "factors": [
+   "budget",
+   "space"
+  ]
+ },
+ "L2": {
+  "mode": "equal",
+  "hero": "jetour/x90-plus",
+  "alts": [
+   "changan/cs75-plus",
+   "geely/monjaro"
+  ],
+  "less": null,
+  "tier": 6,
+  "eligible": 107,
+  "factors": [
+   "budget",
+   "space"
+  ]
+ },
+ "L3": {
+  "mode": "equal",
+  "hero": "jetour/t2",
+  "alts": [
+   "toyota/bz4x",
+   "hyundai/tucson"
+  ],
+  "less": null,
+  "tier": 3,
+  "eligible": 6,
+  "factors": [
+   "budget"
+  ]
+ },
+ "L3a": {
+  "mode": "equal",
+  "hero": "jetour/t2",
+  "alts": [
+   "toyota/bz4x",
+   "hyundai/tucson"
+  ],
+  "less": null,
+  "tier": 3,
+  "eligible": 6,
+  "factors": [
+   "budget"
+  ]
+ },
+ "L4": {
+  "mode": "equal",
+  "hero": "audi/q2",
+  "alts": [
+   "alfa-romeo/tonale",
+   "mini/countryman"
+  ],
+  "less": null,
+  "tier": 4,
+  "eligible": 151,
+  "factors": [
+   "budget",
+   "sizePref",
+   "premium"
+  ]
+ },
+ "L4a": {
+  "mode": "equal",
+  "hero": "audi/q2",
+  "alts": [
+   "alfa-romeo/tonale",
+   "mini/countryman"
+  ],
+  "less": null,
+  "tier": 4,
+  "eligible": 151,
+  "factors": [
+   "budget",
+   "sizePref",
+   "premium"
+  ]
+ },
+ "L5": {
+  "mode": "equal",
+  "hero": "jetour/x70",
+  "alts": [
+   "renault/austral",
+   "mg/hs"
+  ],
+  "less": "baic/x35",
+  "tier": 39,
+  "eligible": 87,
+  "factors": [
+   "budget",
+   "sizePref"
+  ]
+ },
+ "L6": {
+  "mode": "clear",
+  "hero": "chery/tiggo-8-pro-max",
+  "alts": [
+   "mg/rx9",
+   "chery/tiggo-9"
+  ],
+  "less": null,
+  "tier": 1,
+  "eligible": 13,
+  "factors": [
+   "budget",
+   "sizePref"
+  ]
+ },
+ "L7": {
+  "mode": "conflict",
+  "hero": "mg/rx9",
+  "alts": [
+   "chery/tiggo-9"
+  ],
+  "less": null,
+  "tier": 2,
+  "eligible": 13,
+  "factors": [
+   "budget"
+  ]
+ },
+ "L8": {
+  "mode": "clear",
+  "hero": "chery/tiggo-8-pro-max",
+  "alts": [
+   "mg/rx9",
+   "chery/tiggo-9"
+  ],
+  "less": null,
+  "tier": 1,
+  "eligible": 13,
+  "factors": [
+   "budget",
+   "sizePref"
+  ]
+ },
+ "A1": {
+  "mode": "equal",
+  "hero": "kia/seltos",
+  "alts": [
+   "zeekr/x",
+   "nissan/x-trail"
+  ],
+  "less": null,
+  "tier": 27,
+  "eligible": 119,
+  "factors": [
+   "budget",
+   "sizePref"
+  ]
+ },
+ "A2": {
+  "mode": "equal",
+  "hero": "soueast/s08",
+  "alts": [
+   "kia/ev3",
+   "toyota/bz4x"
+  ],
+  "less": null,
+  "tier": 22,
+  "eligible": 128,
+  "factors": [
+   "budget",
+   "sizePref"
+  ]
+ },
+ "A3": {
+  "mode": "equal",
+  "hero": "forthing/t5-evo",
+  "alts": [
+   "kia/ev3",
+   "mg/hs"
+  ],
+  "less": null,
+  "tier": 9,
+  "eligible": 87,
+  "factors": [
+   "budget",
+   "sizePref",
+   "economy"
+  ]
+ },
+ "B1": {
+  "mode": "equal",
+  "hero": "baic/x35",
+  "alts": [
+   "chery/tiggo-7"
+  ],
+  "less": null,
+  "tier": 2,
+  "eligible": 22,
+  "factors": [
+   "budget",
+   "sizePref"
+  ]
+ },
+ "B2": {
+  "mode": "equal",
+  "hero": "forthing/t5-evo",
+  "alts": [
+   "kia/ev3",
+   "mg/hs"
+  ],
+  "less": null,
+  "tier": 9,
+  "eligible": 87,
+  "factors": [
+   "budget",
+   "sizePref",
+   "economy"
+  ]
+ },
+ "B3": {
+  "mode": "equal",
+  "hero": "audi/q3",
+  "alts": [
+   "bmw/x2",
+   "volvo/xc60"
+  ],
+  "less": null,
+  "tier": 7,
+  "eligible": 171,
+  "factors": [
+   "budget",
+   "sizePref"
+  ]
+ },
+ "B4": {
+  "mode": "clear",
+  "hero": "bmw/x2",
+  "alts": [
+   "mercedes/glc",
+   "porsche/macan"
+  ],
+  "less": null,
+  "tier": 1,
+  "eligible": 179,
+  "factors": [
+   "budget",
+   "sizePref",
+   "premium"
+  ]
+ },
+ "B5": {
+  "mode": "equal",
+  "hero": "bestune/b70",
+  "alts": [
+   "mg/6",
+   "toyota/corolla"
+  ],
+  "less": null,
+  "tier": 8,
+  "eligible": 36,
+  "factors": [
+   "budget",
+   "sizePref"
+  ]
+ },
+ "F1": {
+  "mode": "clear",
+  "hero": "chery/tiggo-8-pro-max",
+  "alts": [
+   "mg/rx9",
+   "chery/tiggo-9"
+  ],
+  "less": null,
+  "tier": 1,
+  "eligible": 13,
+  "factors": [
+   "budget",
+   "sizePref"
+  ]
+ },
+ "F2": {
+  "mode": "clear",
+  "hero": "chery/tiggo-8-pro-max",
+  "alts": [
+   "mg/rx9",
+   "chery/tiggo-9"
+  ],
+  "less": null,
+  "tier": 1,
+  "eligible": 13,
+  "factors": [
+   "budget",
+   "sizePref"
+  ]
+ },
+ "F3": {
+  "mode": "equal",
+  "hero": "jetour/x70",
+  "alts": [
+   "soueast/s-07",
+   "chery/tiggo-8-pro"
+  ],
+  "less": null,
+  "tier": 6,
+  "eligible": 10,
+  "factors": [
+   "budget",
+   "sizePref"
+  ]
+ },
+ "F4": {
+  "mode": "equal",
+  "hero": "forthing/s7",
+  "alts": [
+   "xpeng/m03"
+  ],
+  "less": null,
+  "tier": 2,
+  "eligible": 33,
+  "factors": [
+   "budget",
+   "space"
+  ]
+ },
+ "F5": {
+  "mode": "clear",
+  "hero": "changan/cs75-plus",
+  "alts": [
+   "jetour/x90-plus",
+   "baic/bj30"
+  ],
+  "less": null,
+  "tier": 1,
+  "eligible": 87,
+  "factors": [
+   "budget",
+   "space"
+  ]
+ },
+ "S1": {
+  "mode": "shortlist",
+  "hero": "kia/sportage",
+  "alts": [
+   "hyundai/tucson"
+  ],
+  "less": "dfsk/600",
+  "tier": 27,
+  "eligible": 119,
+  "factors": [
+   "budget",
+   "sizePref"
+  ]
+ },
+ "S2": {
+  "mode": "shortlist",
+  "hero": "kia/sportage",
+  "alts": [
+   "hyundai/tucson"
+  ],
+  "less": "dfsk/600",
+  "tier": 27,
+  "eligible": 119,
+  "factors": [
+   "budget",
+   "sizePref"
+  ]
+ },
+ "S3": {
+  "mode": "conflict",
+  "hero": "mg/rx9",
+  "alts": [
+   "chery/tiggo-9"
+  ],
+  "less": null,
+  "tier": 2,
+  "eligible": 13,
+  "factors": [
+   "budget"
+  ]
+ },
+ "S4": {
+  "mode": "equal",
+  "hero": "haval/h6",
+  "alts": [
+   "geely/starray",
+   "mitsubishi/destinator"
+  ],
+  "less": null,
+  "tier": 34,
+  "eligible": 108,
+  "factors": [
+   "budget",
+   "ref"
+  ]
+ },
+ "G1": {
+  "mode": "clear",
+  "hero": "changan/cs75-plus",
+  "alts": [
+   "jetour/x90-plus",
+   "baic/bj30"
+  ],
+  "less": null,
+  "tier": 1,
+  "eligible": 87,
+  "factors": [
+   "budget",
+   "ref"
+  ]
+ },
+ "G2": {
+  "mode": "equal",
+  "hero": "chery/tiggo-7-pro",
+  "alts": [
+   "mg/one",
+   "nissan/qashqai"
+  ],
+  "less": null,
+  "tier": 43,
+  "eligible": 87,
+  "factors": [
+   "budget",
+   "sizePref",
+   "premium",
+   "attr"
+  ]
+ },
+ "C1": {
+  "mode": "equal",
+  "hero": "jetour/x70",
+  "alts": [
+   "renault/austral",
+   "mg/hs"
+  ],
+  "less": "baic/x35",
+  "tier": 39,
+  "eligible": 87,
+  "factors": [
+   "budget",
+   "sizePref"
+  ]
+ },
+ "C2": {
+  "mode": "equal",
+  "hero": "mitsubishi/outlander",
+  "alts": [
+   "citroen/c4-x",
+   "kia/seltos"
+  ],
+  "less": null,
+  "tier": 9,
+  "eligible": 87,
+  "factors": [
+   "budget",
+   "sizePref",
+   "origin"
+  ]
+ },
+ "C3": {
+  "mode": "equal",
+  "hero": "mitsubishi/outlander",
+  "alts": [
+   "citroen/c4-x",
+   "kia/seltos"
+  ],
+  "less": null,
+  "tier": 9,
+  "eligible": 28,
+  "factors": [
+   "budget",
+   "sizePref"
+  ]
+ },
+ "C4": {
+  "mode": "equal",
+  "hero": "jetour/x70",
+  "alts": [
+   "renault/austral",
+   "mg/hs"
+  ],
+  "less": "baic/x35",
+  "tier": 39,
+  "eligible": 87,
+  "factors": [
+   "budget",
+   "sizePref"
+  ]
+ },
+ "P1": {
+  "mode": "equal",
+  "hero": "jetour/x70",
+  "alts": [
+   "mg/one",
+   "citroen/c4"
+  ],
+  "less": "baic/x35",
+  "tier": 30,
+  "eligible": 67,
+  "factors": [
+   "budget",
+   "sizePref"
+  ]
+ },
+ "P2": {
+  "mode": "equal",
+  "hero": "dfsk/e5",
+  "alts": [
+   "byd/sealion-5",
+   "mg/hs"
+  ],
+  "less": null,
+  "tier": 6,
+  "eligible": 87,
+  "factors": [
+   "budget",
+   "sizePref",
+   "pt"
+  ]
+ },
+ "P3": {
+  "mode": "equal",
+  "hero": "jetour/x70",
+  "alts": [
+   "renault/austral",
+   "mg/hs"
+  ],
+  "less": "baic/x35",
+  "tier": 39,
+  "eligible": 87,
+  "factors": [
+   "budget",
+   "sizePref"
+  ]
+ },
+ "P4": {
+  "mode": "equal",
+  "hero": "jetour/x70",
+  "alts": [
+   "mg/one",
+   "citroen/c4"
+  ],
+  "less": "baic/x35",
+  "tier": 30,
+  "eligible": 67,
+  "factors": [
+   "budget",
+   "sizePref"
+  ]
+ },
+ "P5": {
+  "mode": "equal",
+  "hero": "mitsubishi/outlander",
+  "alts": [
+   "citroen/c4-x",
+   "kia/seltos"
+  ],
+  "less": null,
+  "tier": 9,
+  "eligible": 28,
+  "factors": [
+   "budget",
+   "sizePref",
+   "pt",
+   "usage"
+  ]
+ },
+ "Q1": {
+  "mode": "equal",
+  "hero": "jetour/x90-plus",
+  "alts": [
+   "changan/cs75-plus",
+   "geely/monjaro"
+  ],
+  "less": null,
+  "tier": 6,
+  "eligible": 107,
+  "factors": [
+   "budget",
+   "space"
+  ]
+ },
+ "R1": {
+  "mode": "equal",
+  "hero": "jetour/t2",
+  "alts": [
+   "toyota/bz4x",
+   "hyundai/tucson"
+  ],
+  "less": null,
+  "tier": 3,
+  "eligible": 6,
+  "factors": [
+   "budget"
+  ]
+ },
+ "R2": {
+  "mode": "equal",
+  "hero": "jetour/t2",
+  "alts": [
+   "toyota/bz4x",
+   "hyundai/tucson"
+  ],
+  "less": null,
+  "tier": 3,
+  "eligible": 6,
+  "factors": [
+   "budget"
+  ]
+ },
+ "M1": {
+  "mode": "equal",
+  "hero": "audi/q2",
+  "alts": [
+   "alfa-romeo/tonale",
+   "mini/countryman"
+  ],
+  "less": null,
+  "tier": 4,
+  "eligible": 151,
+  "factors": [
+   "budget",
+   "sizePref",
+   "premium"
+  ]
+ },
+ "M2": {
+  "mode": "equal",
+  "hero": "audi/q2",
+  "alts": [
+   "alfa-romeo/tonale",
+   "mini/countryman"
+  ],
+  "less": null,
+  "tier": 4,
+  "eligible": 151,
+  "factors": [
+   "budget",
+   "sizePref",
+   "premium"
+  ]
+ },
+ "V1": {
+  "mode": "equal",
+  "hero": "bestune/b70",
+  "alts": [
+   "renault/austral",
+   "mg/hs"
+  ],
+  "less": null,
+  "tier": 51,
+  "eligible": 144,
+  "factors": [
+   "budget",
+   "sizePref"
+  ]
+ },
+ "V2": {
+  "mode": "equal",
+  "hero": "geely/ex2",
+  "alts": [
+   "arcfox/t1",
+   "dongfeng/box"
+  ],
+  "less": null,
+  "tier": 4,
+  "eligible": 34,
+  "factors": [
+   "budget",
+   "easy",
+   "usage"
+  ]
+ },
+ "X1": {
+  "mode": "no_match",
+  "hero": null,
+  "alts": [],
+  "less": null,
+  "tier": 0,
+  "eligible": 0,
+  "factors": []
+ },
+ "X2": {
+  "mode": "equal",
+  "hero": "kia/seltos",
+  "alts": [
+   "zeekr/x",
+   "nissan/x-trail"
+  ],
+  "less": null,
+  "tier": 27,
+  "eligible": 119,
+  "factors": [
+   "budget",
+   "sizePref"
+  ]
+ },
+ "T1": {
+  "mode": "equal",
+  "hero": "byd/sealion-6",
+  "alts": [
+   "toyota/bz4x",
+   "kia/ev6"
+  ],
+  "less": null,
+  "tier": 3,
+  "eligible": 151,
+  "factors": [
+   "budget",
+   "sizePref",
+   "economy",
+   "pt"
+  ]
+ },
+ "T1a": {
+  "mode": "equal",
+  "hero": "byd/sealion-6",
+  "alts": [
+   "lynk-co/08"
+  ],
+  "less": null,
+  "tier": 2,
+  "eligible": 121,
+  "factors": [
+   "budget",
+   "sizePref",
+   "economy"
+  ]
+ },
+ "T1b": {
+  "mode": "equal",
+  "hero": "byd/sealion-6",
+  "alts": [
+   "lynk-co/08"
+  ],
+  "less": null,
+  "tier": 2,
+  "eligible": 121,
+  "factors": [
+   "budget",
+   "sizePref",
+   "economy"
+  ]
+ },
+ "T2": {
+  "mode": "equal",
+  "hero": "toyota/bz4x",
+  "alts": [
+   "lynk-co/08",
+   "kia/ev6"
+  ],
+  "less": null,
+  "tier": 3,
+  "eligible": 153,
+  "factors": [
+   "budget",
+   "sizePref",
+   "economy"
+  ]
+ },
+ "T3": {
+  "mode": "equal",
+  "hero": "audi/q2",
+  "alts": [
+   "bmw/x1",
+   "mini/countryman"
+  ],
+  "less": null,
+  "tier": 6,
+  "eligible": 153,
+  "factors": [
+   "budget",
+   "sizePref",
+   "premium"
+  ]
+ }
+}
