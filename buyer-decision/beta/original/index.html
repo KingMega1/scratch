@@ -1,0 +1,579 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>CarIndex Portal</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: sticky brand bar, one centered 1080px column, hash-routed views (home / find / explore / beta / admin) */
+/* Decision Terminal tokens (Design 2026-09-29 carindex-portal-tokens.css), light-only by design */
+:root{
+  --paper:#F9F9F7; --surface:#FFFFFF; --ink:#111111; --slate:#5F6570; --line-2:#D4D3CD; --row:#FBFAF7;
+  --blue:#1D6FE0; --blue-ink:#155BBB; --blue-tint:#E6EFFC;
+  --amber-tint:#FFF4DC; --amber-ink:#7A5200; --red-ink:#B42318; --red-tint:#FDECEA; --green-tint:#E4F2E8;
+  --bg:var(--paper); --fg:var(--ink); --muted:var(--slate); --line:#E4E3DE; --card:var(--surface);
+  --accent:var(--blue); --accent-ink:#FFFFFF; --amber:#FFB020; --red:#FF3737; --green:#1F8A44; --soft:var(--blue-tint);
+  --f-ar:"Cairo","Poppins",system-ui,sans-serif;
+  --f-en:"Poppins","Cairo",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-en);font-size:15px;line-height:1.55}
+html[lang="ar"] body{font-family:var(--f-ar)}
+.num,.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
+a{color:var(--accent)}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:16px}
+header.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--surface);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:16px;padding-block:10px;flex-wrap:wrap}
+.logo img{height:26px;display:block}
+nav{display:flex;gap:4px;margin-inline-start:auto;overflow-x:auto;max-width:100%}
+@media (max-width:640px){nav{order:3;margin-inline-start:0;width:100%}#langBtn{margin-inline-start:auto}}
+nav a{white-space:nowrap;color:var(--slate);text-decoration:none;padding:12px 10px;font-weight:500;font-size:15px}
+nav a[aria-current="page"]{color:var(--ink);font-weight:700;box-shadow:inset 0 -3px 0 var(--blue)}
+.btn{text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;font:inherit;font-weight:700;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);padding:0 20px;border-radius:10px;cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.sm{min-height:36px;padding:0 12px;font-size:13px}
+.btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,.chip:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+main{padding-block:28px 64px}
+h1,h2,h3{text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:clamp(28px,5vw,46px);font-weight:700}
+html[lang="ar"] h1{font-weight:800}
+h2{font-size:22px}
+h3{font-size:17px}
+p{margin:0}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+html[lang="ar"] .eyebrow{letter-spacing:0}
+.stack{display:flex;flex-direction:column;gap:14px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.muted{color:var(--muted)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;border:1px solid var(--line-2);white-space:nowrap}
+.badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border-radius:6px;padding:3px 7px;white-space:nowrap}
+.b-off{background:var(--green-tint);color:var(--green)}.b-agg{background:var(--amber-tint);color:var(--amber-ink)}.b-blue{background:var(--blue-tint);color:var(--blue-ink)}.b-ink{background:var(--ink);color:#fff}.b-red{background:var(--red-tint);color:var(--red-ink)}
+html[lang="ar"] .badge{font-family:var(--f-ar);letter-spacing:0;font-size:12px}
+.stale{color:var(--amber-ink);background:var(--amber-tint);padding:0 4px;border-radius:4px}
+.pill.off{background:var(--green-tint);border-color:transparent;color:var(--green)}.pill.agg{background:var(--amber-tint);border-color:transparent;color:var(--amber-ink)}.pill.warn{background:var(--red-tint);border-color:transparent;color:var(--red-ink)}.pill.info{background:var(--blue-tint);border-color:transparent;color:var(--blue-ink)}
+/* home */
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:center}
+.hero>*{min-width:0}
+.ticket{border:1.5px solid var(--fg);border-radius:12px;padding:18px;background:var(--card);font-size:14px}
+.ticket .line{display:flex;justify-content:space-between;gap:10px;padding-block:7px;border-bottom:1px dashed var(--line)}
+.ticket .line:last-child{border:0}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+@media (max-width:760px){.hero,.pillars{grid-template-columns:1fr}}
+/* journey */
+.steps{display:flex;gap:6px;margin-bottom:6px}
+.steps span{flex:1;height:4px;border-radius:4px;background:var(--line)}
+.steps span.on{background:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--fg);padding:10px 14px;border-radius:10px;font-weight:500;text-align:start}
+.chip{border-width:1.5px;border-color:var(--line-2);border-radius:12px;padding:14px 18px;min-height:48px}
+.chip[aria-pressed="true"]{border-color:var(--blue);background:var(--blue);color:#fff}
+.budget-out{font-size:34px;font-weight:700}
+input[type=range]{width:100%;accent-color:var(--accent)}
+input[type=text],input[type=email],input[type=search],select,textarea{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px;width:100%}
+label{font-weight:600;font-size:14px}
+/* results */
+.res{display:grid;grid-template-columns:1fr;gap:16px}
+.car{display:grid;grid-template-columns:1fr auto;gap:8px 16px}
+.car>*{min-width:0}
+.car .price{font-size:26px;font-weight:700;text-align:end}
+@media (max-width:560px){.car{grid-template-columns:1fr}.car .price,.car .price+div{text-align:start!important}}
+.car.hero-car{border:2px solid var(--ink)}
+.alts{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:6px}
+.why .w{border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--row)}
+.why .w.watch{background:var(--amber-tint);border-color:#F2D9A3}
+.why .w b{display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:4px}
+html[lang="ar"] .why .w b{font-family:var(--f-ar);letter-spacing:0;font-size:13px}
+.why .w ul{margin:0;padding-inline-start:18px}
+.tradeoff{border-inline-start:3px solid var(--amber);padding:6px 12px;background:var(--bg);border-radius:0 8px 8px 0}
+html[dir="rtl"] .tradeoff{border-radius:8px 0 0 8px}
+details summary{cursor:pointer;font-weight:600;color:var(--accent)}
+.prov{font-size:12px;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.fb{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+/* explorer */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:10px 12px;text-align:start;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);font-weight:600;white-space:nowrap;background:var(--row);border-bottom-color:var(--line-2)}
+tr.model-row{cursor:pointer}
+tr.model-row:hover{background:var(--bg)}
+td.r{text-align:end}
+.filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px}
+@media (max-width:760px){.filters{grid-template-columns:1fr 1fr}.filters .s{grid-column:1/-1}}
+/* admin */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.kpi .n{color:var(--ink);font-family:var(--f-mono);font-size:28px;font-weight:700}
+.bar-row{display:grid;grid-template-columns:140px 1fr 50px;gap:10px;align-items:center;font-size:13px}
+.bar-row i{display:block;height:10px;background:var(--accent);border-radius:3px}
+footer{background:var(--ink);color:#C9C9C4;padding-block:28px;font-size:13px}
+footer img{height:22px;display:block}
+.toast{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom,0px));inset-inline:16px;margin:auto;max-width:420px;background:var(--fg);color:var(--bg);padding:12px 16px;border-radius:10px;font-weight:600;z-index:20}
+@media (prefers-reduced-motion:no-preference){.fade{animation:f .25s ease-out}@keyframes f{from{opacity:.4;transform:translateY(4px)}}}
+</style>
+
+<header class="bar"><div class="wrap">
+  <a class="logo" href="#home" aria-label="CarIndex"><img class="l-light" id="logoL" alt="CAR/INDEX"><img class="l-dark" id="logoD" alt="CAR/INDEX"></a>
+  <nav id="nav"></nav>
+  <button class="btn sm" id="langBtn" type="button">English</button>
+</div></header>
+<main class="wrap" id="view" aria-live="polite"></main>
+<footer><div class="wrap stack"><img id="logoF" alt="CAR/INDEX">
+  <p id="footTrust"></p>
+  <p id="footData" class="mono" style="font-size:12px"></p>
+</div></footer>
+
+<script src="logo.js"></script>
+<script src="view.js"></script>
+<script src="engine.js"></script>
+<script>
+(function(){
+'use strict';
+const U = window.CI_UNIVERSE, E = window.CIEngine;
+const byId = {}; U.models.forEach(m => byId[m.id] = m);
+const INU = U.models.filter(m => m.u);
+let MARKET = {official:{}, p1:{}, p1_as_of:null};
+const $ = s => document.querySelector(s);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt = n => n == null ? '—' : Math.round(n).toLocaleString('en-US');
+const egp = n => `<span class="num">EGP ${fmt(n)}</span>`;
+const mEGP = n => (n/1e6).toFixed(n % 100000 ? 2 : 1).replace(/\.?0+$/,'') + 'M';
+const store = { get(k,d){ try{ const v = localStorage.getItem('ci.'+k); return v ? JSON.parse(v) : d; }catch(e){ return d; } }, set(k,v){ try{ localStorage.setItem('ci.'+k, JSON.stringify(v)); }catch(e){} } };
+logoL.src = CI_LOGO.dark; logoF.src = CI_LOGO.light; logoD.remove();
+
+/* ---------- i18n (Arabic-primary) ---------- */
+const T = {
+ ar:{nav:{home:'الرئيسية',find:'رشّحلي عربية · BETA',explore:'السوق والأسعار',beta:'الدعوة',admin:'لوحة داخلية'},
+  tag:'قبل ما تاخد قرار عربية، شوف CarIndex',
+  sub:'أسعار ومواصفات وبيانات تسجيل مستقلة لسوق العربيات في مصر. بنقولك إيه يناسبك وليه، ومن غير انحياز لأي ماركة.',
+  start:'ابدأ الترشيح', explore:'استكشف الأسعار',
+  p1t:'الأرقام الأول', p1:'كل سعر معاه مصدره وتاريخه، وبنفرّق بين السعر الرسمي وأسعار المواقع.',
+  p2t:'بنشرح السبب', p2:'مش بس اسم عربية. بنقولك ليه تناسبك، وإيه اللي هتتنازل عنه.',
+  p3t:'مستقلين', p3:'مش وكيل ولا معرض. نفس المعيار على كل الماركات.',
+  inv:'بيتا بالدعوة', invIn:'عندك كود دعوة؟', invBtn:'ادخل', invBad:'الكود ده مش صحيح. اتأكد منه أو انضم لقائمة الانتظار.',
+  wl:'انضم لقائمة الانتظار', wlSub:'هنبعتلك لما يتفتح مكان. مش هنبعت أي رسايل دلوقتي.',
+  name:'الاسم (اختياري)', email:'الإيميل', city:'المدينة', plan:'ناوي تشتري إمتى؟', wlBtn:'سجّلني', wlDone:'تم التسجيل في قائمة الانتظار',
+  q:['ميزانيتك قد إيه؟','نوع العربية؟','نوع المحرك؟','كام شخص هيركب عادة؟','إيه أهم حاجة ليك؟ (لحد اتنين)','هتسوق فين أكتر؟'],
+  bMax:'ده أقصى حد', bAround:'في حدود المبلغ ده',
+  body:{suv:'SUV / كروس أوفر',sedan:'سيدان',hatch:'هاتشباك',mpv:'عائلية (MPV)',any:'مش فارقة'},
+  pt:{open:'مش فارقة',petrol:'بنزين بس',hybrid:'هايبرد',ev:'كهربا',no_ev:'أي حاجة غير الكهربا'},
+  fam:{'2':'1–2','5':'3–5','7':'6 أو أكتر (7 مقاعد)'},
+  pr:{space:'مساحة أكبر',easy:'سهلة في الركن والزحمة',pocket:'أوفر سعر',economy:'استهلاك أقل',popular:'اختيار منتشر',premium:'إحساس فخامة'},
+  use:{city:'في المدينة',mixed:'مختلط',long:'سفر وطرق سريعة'},
+  next:'التالي', back:'رجوع', see:'شوف الترشيح', example:'جرّب سيناريو جاهز', restart:'ابدأ من جديد',
+  yourBrief:'طلبك', rec:'ترشيحنا', equalRec:'اختيارات متساوية', alt:'بدائل تستاهل تبصلها',
+  why:'ليه دي؟', tradeoffs:'تنازلات وتحفظات', evidence:'المصدر والدقة',
+  conf:{clear:'الأنسب لإجاباتك',lean:'الأنسب لإجاباتك، مع بيانات ناقصة',tie:'أكتر من عربية مناسبة بنفس الدرجة',only:'الوحيدة اللي بتحقق كل شروطك'},
+  noRes:'مفيش عربية بتحقق كل شروطك في الميزانية دي.', tryThis:'جرّب',
+  fbQ:'الترشيح ده كان مفيد؟', fbY:'مفيد', fbN:'مش مفيد', fbC:'قولنا ليه (اختياري)', fbSend:'ابعت', fbDone:'شكراً، وصلنا رأيك',
+  official:'سعر رسمي', agg:'سعر من مواقع', unver:'غير مؤكد', asOf:'بتاريخ', src:'المصدر',
+  ex:{t:'سوق العربيات في مصر',s:'ابحث في الموديلات المعروضة. كل سعر معاه مصدره وتاريخه.',q:'ابحث بالماركة أو الموديل',all:'كل الأنواع',sort:'ترتيب',sp:'الأرخص أولاً',sd:'الأغلى أولاً',sn:'بالاسم',max:'أقصى سعر',models:'موديل',from:'يبدأ من',trims:'الفئات',more:'اعرض أكتر'},
+  admin:{t:'لوحة المتابعة الداخلية',s:'أحداث البيتا وآراء المستخدمين. للعرض الداخلي فقط.'},
+  gateNeed:'الترشيح متاح حالياً لأصحاب الدعوات.',
+ },
+ en:{nav:{home:'Home',find:'Recommend · BETA',explore:'Market & prices',beta:'Invitation',admin:'Internal'},
+  tag:'Before I make a car decision, I check CarIndex',
+  sub:'Independent prices, specs and registration signals for Egypt\'s car market. We tell you what fits and why, with no brand bias.',
+  start:'Start a recommendation', explore:'Explore prices',
+  p1t:'Numbers first', p1:'Every price carries its source and date, and we separate official prices from listing sites.',
+  p2t:'We explain why', p2:'Not just a car name: why it fits you, and what you give up.',
+  p3t:'Independent', p3:'Not a dealer or a showroom. The same standard for every brand.',
+  inv:'Invitation Beta', invIn:'Have an invite code?', invBtn:'Enter', invBad:'That code isn\'t valid. Check it, or join the waitlist.',
+  wl:'Join the waitlist', wlSub:'We\'ll tell you when a seat opens. No messages are sent now.',
+  name:'Name (optional)', email:'Email', city:'City', plan:'When do you plan to buy?', wlBtn:'Add me', wlDone:'You\'re on the waitlist',
+  q:['What\'s your budget?','What body type?','What powertrain?','How many people usually ride?','What matters most? (up to two)','Where do you drive most?'],
+  bMax:'This is my maximum', bAround:'Around this amount',
+  body:{suv:'SUV / crossover',sedan:'Sedan',hatch:'Hatchback',mpv:'Family MPV',any:'No preference'},
+  pt:{open:'No preference',petrol:'Petrol only',hybrid:'Hybrid',ev:'Electric',no_ev:'Anything but full EV'},
+  fam:{'2':'1–2','5':'3–5','7':'6+ (7 seats)'},
+  pr:{space:'More space',easy:'Easy to park',pocket:'Lowest price',economy:'Lower running cost',popular:'A popular choice',premium:'Premium feel'},
+  use:{city:'City',mixed:'Mixed',long:'Highway and travel'},
+  next:'Next', back:'Back', see:'See my recommendation', example:'Try an example scenario', restart:'Start again',
+  yourBrief:'Your brief', rec:'Our recommendation', equalRec:'Equally good options', alt:'Alternatives worth a look',
+  why:'Why this car?', tradeoffs:'Trade-offs and caveats', evidence:'Source and confidence',
+  conf:{clear:'Best fit for your answers',lean:'Best fit for your answers, with data gaps',tie:'Several cars fit equally well',only:'The only car that meets every requirement'},
+  noRes:'No car meets every requirement within this budget.', tryThis:'Try',
+  fbQ:'Was this recommendation useful?', fbY:'Useful', fbN:'Not useful', fbC:'Tell us why (optional)', fbSend:'Send', fbDone:'Thanks, we got your feedback',
+  official:'Official price', agg:'Listing price', unver:'Unverified', asOf:'as of', src:'Source',
+  ex:{t:'Egypt car market',s:'Search the models on sale. Every price carries its source and date.',q:'Search brand or model',all:'All body types',sort:'Sort',sp:'Cheapest first',sd:'Dearest first',sn:'By name',max:'Max price',models:'models',from:'From',trims:'Versions',more:'Show more'},
+  admin:{t:'Internal beta dashboard',s:'Beta events and user feedback. Internal demo only.'},
+  gateNeed:'Recommendations are open to invited testers for now.',
+ }};
+let lang = store.get('lang','ar');
+const t = () => T[lang];
+function setLang(l){ lang = l; store.set('lang', l); document.documentElement.lang = l; document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr'; langBtn.textContent = l === 'ar' ? 'English' : 'عربي'; render(); }
+langBtn.onclick = () => setLang(lang === 'ar' ? 'en' : 'ar');
+const nm = m => m ? `${m.brand} ${m.model}` : '';
+
+/* ---------- storage + instrumentation ---------- */
+let db = null, user = null, canEdit = false;
+const SID = store.get('sid', null) || (() => { const s = Math.random().toString(36).slice(2, 10); store.set('sid', s); return s; })();
+const localQ = store.get('events', []);
+function track(type, props){
+  const ev = {type, t: new Date().toISOString(), sid: SID, lang, props: props || {}};
+  localQ.push(ev); if (localQ.length > 500) localQ.shift(); store.set('events', localQ);
+  if (db) db.collection('events').add(ev).catch(() => {});
+}
+(async () => {
+  try { db = await window.claude?.use?.('db'); } catch(e){ db = null; }
+  try { user = await window.claude?.use?.('user'); canEdit = user ? (await user.canEdit()) : false; } catch(e){ user = null; }
+  if (location.hash.replace('#','') === 'admin') render();
+})();
+
+/* ---------- gate ---------- */
+const CODES = ['CARINDEX','BETA2026'];
+const invited = () => store.get('invited', false);
+
+/* ---------- routing ---------- */
+const ROUTES = ['home','explore','find','beta','admin'];
+const route = () => { const h = location.hash.replace('#',''); return ROUTES.includes(h) ? h : 'home'; };
+window.addEventListener('hashchange', () => { render(); window.scrollTo(0,0); });
+function renderNav(){
+  nav.innerHTML = ROUTES.map(r => `<a href="#${r}" ${route()===r?'aria-current="page"':''}>${t().nav[r]}</a>`).join('');
+  footTrust.textContent = lang === 'ar' ? 'CarIndex مستقل وغير تابع لأي وكيل. بيانات التسجيل بتظهر كمؤشرات نسبية فقط.' : 'CarIndex is independent of any dealer. Registration data is shown as relative signals only.';
+  footData.textContent = `engine ${E.ENGINE_VERSION} · universe ${U.meta.version} (${U.meta.models_in_universe} models) · official O1_2026-09-28 · p1 view ${MARKET.p1_as_of || '…'}`;
+}
+function render(){
+  renderNav();
+  const r = route();
+  view.className = 'wrap fade';
+  ({home, find, explore, beta, admin})[r]();
+}
+
+/* ---------- HOME ---------- */
+function home(){
+  const L = t();
+  const cheapest = INU.filter(m => m.body === 'suv').map(m => ({m, p: Math.min(...E.currentTrims(m).map(x => x.min))})).filter(x => isFinite(x.p)).sort((a,b)=>a.p-b.p)[0];
+  const nOff = Object.keys(MARKET.official).length;
+  view.innerHTML = `
+  <section class="hero">
+    <div class="stack">
+      <span class="eyebrow">${L.inv} · ${lang==='ar'?'مصر':'Egypt'}</span>
+      <h1>${L.tag}</h1>
+      <p class="muted" style="max-width:56ch;font-size:17px">${L.sub}</p>
+      <div class="row"><a class="btn primary" href="#explore">${L.explore}</a><a class="btn" href="#find">${L.start} <span class="badge b-blue">BETA</span></a></div>
+    </div>
+    <div class="ticket" aria-label="index snapshot">
+      <div class="eyebrow" style="margin-bottom:6px">CAR/INDEX · ${lang==='ar'?'لقطة من البيانات':'Index snapshot'}</div>
+      <div class="line"><span>${lang==='ar'?'موديلات معروضة':'Models on sale'}</span><span class="num">${INU.length}</span></div>
+      <div class="line"><span>${lang==='ar'?'فئات بأسعار':'Priced versions'}</span><span class="num">${INU.reduce((a,m)=>a+E.currentTrims(m).length,0)}</span></div>
+      <div class="line"><span>${lang==='ar'?'موديلات بأسعار رسمية من الوكيل':'Models with official dealer prices'}</span><span class="num">${nOff || '…'}</span></div>
+      <div class="line"><span>${lang==='ar'?'أرخص SUV حالياً':'Cheapest SUV now'}</span><span>${cheapest ? esc(nm(cheapest.m)) + ' · ' + egp(cheapest.p) : '—'}</span></div>
+      <div class="line"><span>${lang==='ar'?'بيانات التسجيل لحد':'Registrations through'}</span><span class="num">${U.meta.registration_months[1]}</span></div>
+    </div>
+  </section>
+  <section class="pillars">
+    ${[['p1t','p1'],['p2t','p2'],['p3t','p3']].map(([a,b]) => `<div class="card stack"><h3>${L[a]}</h3><p class="muted">${L[b]}</p></div>`).join('')}
+  </section>`;
+}
+
+/* ---------- FIND (journey) ---------- */
+let J = store.get('brief', null) || {step:0, budget:2000000, mode:'max', body:['suv'], pt:'open', fam:'5', pr:['space','economy'], use:'city'};
+const EXAMPLE = {step:6, budget:1800000, mode:'max', body:['suv'], pt:'open', fam:'5', pr:['economy','popular'], use:'city'};
+function toBrief(j){
+  const b = {budget: j.budget, budgetMode: j.mode, pt: j.pt, priorities: j.pr.slice(0,2)};
+  if (j.body.length && !j.body.includes('any')) b.body = j.body; else b.bodyAny = true;
+  if (j.fam === '7') b.seats = 7;
+  if (j.use !== 'mixed') b.usage = j.use;
+  return b;
+}
+function find(){
+  const L = t();
+  if (!invited()) { view.innerHTML = `<div class="stack" style="max-width:640px"><span class="eyebrow">${L.inv}</span><h1 style="font-size:32px">${L.gateNeed}</h1>${gateHTML()}<p class="muted"><a href="#beta">${L.wl}</a></p></div>`; bindGate(); return; }
+  if (J.step >= 6) return results();
+  const s = J.step, steps = `<div class="steps">${[0,1,2,3,4,5].map(i=>`<span class="${i<=s?'on':''}"></span>`).join('')}</div>`;
+  let body = '';
+  const chips = (opts, sel, key, multi) => `<div class="chips" role="group">${Object.entries(opts).map(([k,v]) => `<button type="button" class="chip" data-k="${key}" data-v="${k}" data-multi="${multi?1:0}" aria-pressed="${(multi ? sel.includes(k) : sel===k)}">${v}</button>`).join('')}</div>`;
+  if (s === 0) body = `<div class="budget-out num" id="bOut">EGP ${fmt(J.budget)}</div>
+    <label for="bRange" class="muted" style="font-weight:500">EGP 500,000 – 6,000,000</label>
+    <input id="bRange" type="range" min="500000" max="6000000" step="50000" value="${J.budget}">
+    ${chips({max:L.bMax, around:L.bAround}, J.mode, 'mode')}`;
+  if (s === 1) body = chips(L.body, J.body, 'body', true);
+  if (s === 2) body = chips(L.pt, J.pt, 'pt');
+  if (s === 3) body = chips(L.fam, J.fam, 'fam');
+  if (s === 4) body = chips(L.pr, J.pr, 'pr', true);
+  if (s === 5) body = chips(L.use, J.use, 'use');
+  view.innerHTML = `<div class="stack" style="max-width:720px">
+    <div class="row" style="justify-content:space-between"><span class="eyebrow">${lang==='ar'?'خطوة':'Step'} <span class="num">${s+1}/6</span></span><button class="btn sm" id="exBtn" type="button">${L.example}</button></div>
+    ${steps}<h2 style="font-size:28px">${L.q[s]}</h2>${body}
+    <div class="row">${s>0?`<button class="btn" id="backBtn" type="button">${L.back}</button>`:''}<button class="btn primary" id="nextBtn" type="button">${s===5?L.see:L.next}</button>
+    <span class="muted" id="countHint"></span></div></div>`;
+  if (s === 0 && J.step === 0 && !J.started) { J.started = true; track('journey_start', {}); }
+  const upd = () => { try { const c = E.count(U, toBrief(J)); countHint.textContent = typeof c === 'number' ? (lang==='ar'?`${c} موديل مناسب لحد دلوقتي`:`${c} models match so far`) : (c && c.eligible != null ? (lang==='ar'?`${c.eligible} موديل مناسب لحد دلوقتي`:`${c.eligible} models match so far`) : ''); } catch(e){ countHint.textContent=''; } };
+  upd();
+  const r = $('#bRange'); if (r) r.oninput = () => { J.budget = +r.value; bOut.textContent = 'EGP ' + fmt(J.budget); upd(); };
+  view.querySelectorAll('.chip').forEach(c => c.onclick = () => {
+    const k = c.dataset.k, v = c.dataset.v;
+    if (c.dataset.multi === '1') {
+      let a = J[k].slice();
+      if (k === 'body' && v === 'any') a = ['any']; else { a = a.filter(x => x !== 'any'); a = a.includes(v) ? a.filter(x => x !== v) : a.concat(v); }
+      if (k === 'pr' && a.length > 2) a = a.slice(-2);
+      J[k] = a;
+    } else J[k] = v;
+    store.set('brief', J); find();
+  });
+  const bb = $('#backBtn'); if (bb) bb.onclick = () => { J.step--; find(); };
+  nextBtn.onclick = () => {
+    const key = ['budget','body','pt','fam','pr','use'][s];
+    track('answer', {step: s+1, q: key, v: key==='budget' ? {budget: J.budget, mode: J.mode} : J[key]});
+    J.step++; store.set('brief', J); find(); window.scrollTo(0,0);
+  };
+  exBtn.onclick = () => { J = {...EXAMPLE, started: true}; track('journey_start', {example: true}); store.set('brief', J); find(); };
+}
+
+const REG = () => store.get('regFlag', false);
+function regSignal(m){
+  if (!REG()) return null;
+  const r = m.reg; if (!r) return null;
+  if (r.trend === 'new') return {k:'new', txt: lang==='ar'?'جديدة على السوق المصري':'New to the Egyptian market'};
+  if (!r.rank_in_body_last12 || !r.of_body) return null;
+  const q = r.rank_in_body_last12 / r.of_body;
+  if (q <= 0.1) return {k:'top', txt: lang==='ar'?'من أكتر العربيات تسجيلاً في فئتها آخر 12 شهر':'Among the most-registered in its class, last 12 months'};
+  if (q <= 0.33) return {k:'pop', txt: lang==='ar'?'اختيار منتشر في فئتها':'A popular choice in its class'};
+  return {k:'niche', txt: lang==='ar'?'أقل انتشاراً في فئتها':'Less common in its class'};
+}
+function offMatch(o, trim){ const lab = (trim.label||'').toLowerCase().trim(); if (!lab) return null; const esc2 = lab.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); const re = new RegExp('(^|\\s)' + esc2 + '(\\s|$)', 'i'); return o.prices.find(p => re.test(p.grade.toLowerCase())) || null; }
+function priceProv(m, trim){
+  const o = MARKET.official[m.id];
+  if (o && o.prices.length) {
+    const mt = offMatch(o, trim);
+    if (mt && Math.abs(mt.egp - trim.min) >= 1000) return {official:false, eff: trim.date, src: o.src, has: true, conflict: mt};
+    if (mt) return {official: true, eff: mt.eff, src: o.src, has: true};
+    return {official: !!mt, eff: mt ? mt.eff : o.prices[0].eff, src: o.src, label: mt ? 'dealer site' : 'dealer site (other grades)', has: true};
+  }
+  return {official: !!trim.official, eff: trim.date, src: null, label: trim.official ? 'official' : 'listing sites', has: false};
+}
+const staleD = d => { const t0 = Date.parse(d); return isFinite(t0) && (Date.now() - t0) > 14*864e5; };
+const dateH = d => `<span class="num ${staleD(d)?'stale':''}">${esc(d)}</span>`;
+function provHTML(m, trim){
+  const L = t(), p = priceProv(m, trim);
+  const host = p.src ? p.src.replace(/^https?:\/\//,'').split('/')[0] : null;
+  return `<div class="prov">${p.official ? `<span class="badge b-off">✓ ${L.official}</span>` : `<span class="badge b-agg">${L.agg}</span>`}
+    <span>${L.asOf} ${dateH(p.eff)}</span>
+    ${host ? `<span>· ${L.src}: <a href="${esc(p.src)}" target="_blank" rel="noopener">${esc(host)}</a></span>` : `<span>· ${L.src}: ${lang==='ar'?'مواقع أسعار السيارات':'car price listing sites'}</span>`}
+    ${p.conflict ? `<span class="pill warn">${lang==='ar'?'السعر الرسمي للفئة دي':'Official price for this grade'}: ${egp(p.conflict.egp)}</span>` : ''}
+    ${!p.official && p.has && !p.conflict ? `<span class="pill info">${lang==='ar'?'في أسعار رسمية لفئات تانية':'Official prices exist for other grades'}</span>`:''}</div>`;
+}
+function segLabel(m){ const s = E.SEG[m.segment]; if (!s) return m.body === 'suv' ? 'SUV' : m.body; const sz = ['','mini','small','compact','mid-size','large','full-size'][s[1]]; const szA = ['','صغيرة جداً','صغيرة','كومباكت','متوسطة','كبيرة','كبيرة جداً'][s[1]]; const bodyA = {suv:'SUV',sedan:'سيدان',hatch:'هاتشباك',mpv:'MPV'}[s[0]]; return lang==='ar' ? `${bodyA} ${szA}${s[2]?' فاخرة':''}` : `${s[2]?'premium ':''}${sz} ${s[0]==='hatch'?'hatchback':s[0]==='suv'?'SUV':s[0]}`; }
+
+function whyCards(x, brief, watch){
+  const m = byId[x.id], ar = lang==='ar', pk = x.pick, B = brief.budget, inB = x.price <= B, parts = x.parts || {};
+  const cards = [];
+  // 1. Budget: the versions that fit, with prices
+  const fitList = (x.fit || []).slice(0, 4).map(v => `<li>${esc(v.label)} · ${egp(v.min)}</li>`).join('');
+  cards.push({h: ar?'الميزانية':'Budget', p: (ar ? `فئة ${esc(pk.label)} بـ ${egp(x.price)}، ${inB?`أقل من ميزانيتك بـ ${egp(B-x.price)}`:`أعلى بـ ${egp(x.price-B)} (زيادة بسيطة)`}.` : `The ${esc(pk.label)} version is ${egp(x.price)}, ${inB?`${egp(B-x.price)} under your budget`:`${egp(x.price-B)} over, a small stretch`}.`) + ((x.fit||[]).length>1?`<ul>${fitList}</ul>`:'')});
+  // 2. Your priority
+  const pr = [];
+  if ('space' in parts) pr.push(ar?`حجمها ${segLabel(m)}، من الأكبر في الاختيارات المتاحة ليك.`:`A ${segLabel(m)}, one of the roomier options in your range.`);
+  if ('easy' in parts) pr.push(ar?`حجمها ${segLabel(m)}، أسهل في الركن والزحمة.`:`As a ${segLabel(m)}, easier to park and handle in traffic.`);
+  if ('economy' in parts || 'pt' in parts || 'usage' in parts) { const hy = (x.fit||[]).filter(v => v.pt==='hybrid' || v.pt==='ev' || v.plugin); pr.push(x.hybrid || x.anyEv ? (ar?`فئات ${x.anyEv&&!x.hybrid?'كهربا':'هايبرد'} في ميزانيتك: `:`${x.anyEv&&!x.hybrid?'Electric':'Hybrid'} versions in your budget: `) + hy.slice(0,3).map(v=>`${esc(v.label)} ${egp(v.min)}`).join('، ') : (ar?'بنزين بس، مفيش هايبرد للموديل ده في ميزانيتك.':'Petrol only; no hybrid version of this model in your budget.')); }
+  if ('premium' in parts) pr.push(x.premium ? (ar?'السوق بيصنفها ضمن الفئة الفاخرة.':'The market classes it as premium.') : (ar?'مش مصنفة فاخرة، بس هي الأنسب لباقي إجاباتك.':'Not classed as premium, but it fits the rest of your answers best.'));
+  if ('pocket' in parts) pr.push(ar?`أقل فئة بتبدأ من ${egp(x.entry)}.`:`Its entry version starts at ${egp(x.entry)}.`);
+  if ('popular' in parts) pr.push(ar?'اخترت "اختيار منتشر"، فاستخدمنا بيانات التسجيل الرسمية كمؤشر نسبي للانتشار.':'You asked for a popular choice, so official registration data was used as a relative adoption signal.');
+  if (brief.seats === 7 && x.seven) pr.push(ar?'فيها صف تالت، زي ما طلبت.':'It has a third row, as you asked.');
+  if (pr.length) cards.push({h: ar?'أولويتك':'Your priority', p: pr.join(' ')});
+  // 3. Market reality: provenance, plus registration signal only behind the flag
+  const o = MARKET.official[m.id], nv = E.currentTrims(m).length, rs = regSignal(m);
+  cards.push({h: ar?'السوق':'Market reality', p: (ar?`<span class="num">${nv}</span> فئة معروضة حالياً. `:`<span class="num">${nv}</span> versions on sale now. `) + (o && o.prices.length ? (ar?'في أسعار رسمية من موقع الوكيل. ':'Official prices exist on the dealer site. ') : o ? (ar?'المواصفات منشورة رسمياً على موقع الوكيل، والأسعار من مواقع الأسعار. ':'Official specs are on the dealer site; prices come from listing sites. ') : (ar?'الأسعار من مواقع الأسعار، مش من الوكيل. ':'Prices come from listing sites, not the dealer. ')) + (rs ? esc(rs.txt) + (ar?' (مؤشر نسبي من بيانات التسجيل، يونيو 2026 ناقص من المصدر).':' (relative signal from registrations; June 2026 is missing at source).') : '')});
+  // 4. Watch out
+  if (watch.length) cards.push({h: ar?'خلي بالك':'Watch out', p: `<ul>${watch.map(s=>`<li>${s}</li>`).join('')}</ul>`, watch: true});
+  return cards;
+}
+function tradeoffs(x, hero){
+  const m = byId[x.id], ar = lang==='ar', out = [], cmp = [];
+  (x.vs || []).forEach(d => {
+    const M = {cheaper: ar?`أرخص من ${esc(nm(byId[hero.id]))} بـ ${egp(d.v)}`:`${egp(d.v)} cheaper than the ${esc(nm(byId[hero.id]))}`,
+      dearer: ar?`أغلى من ${esc(nm(byId[hero.id]))} بـ ${egp(d.v)}`:`${egp(d.v)} more than the ${esc(nm(byId[hero.id]))}`,
+      bigger: ar?'أكبر في الحجم':'Larger size class', smaller: ar?'أصغر في الحجم':'Smaller size class', seven: ar?'فيها 7 مقاعد':'Has seven seats',
+      more_hp: ar?`قوة أعلى (${d.a} مقابل ${d.h} حصان)`:`More power (${d.a} vs ${d.h} hp)`, less_hp: ar?`قوة أقل (${d.a} مقابل ${d.h} حصان)`:`Less power (${d.a} vs ${d.h} hp)`,
+      longer_warranty: ar?`ضمان أطول (${d.a} مقابل ${d.h} سنين، حسب الوكيل)`:`Longer warranty (${d.a} vs ${d.h} yrs, as stated by the dealer)`, shorter_warranty: ar?`ضمان أقصر (${d.a} مقابل ${d.h} سنين)`:`Shorter warranty (${d.a} vs ${d.h} yrs)`,
+      hybrid: ar?'متاحة هايبرد':'Available as a hybrid', ev: ar?'متاحة كهربا':'Available as an EV'};
+    if (M[d.k]) cmp.push(M[d.k]);
+  });
+  if (!x.hp) out.push(ar?'القوة بالحصان مش متأكدين منها لسه.':'Horsepower is not yet confirmed in our data.');
+  if (m.warranty_years && !m.warranty_verified) out.push(ar?'الضمان حسب إعلان الوكيل، مش متحقق منه.':'Warranty is as advertised; we have not verified it.');
+  if (!x.pick.official && !(MARKET.official[m.id])) out.push(ar?'السعر من مواقع الأسعار، مش من الوكيل مباشرة.':'Price comes from listing sites, not the dealer directly.');
+  if (x.overBudget) out.push(ar?`أعلى من ميزانيتك بـ ${egp(x.overBudget)}.`:`${egp(x.overBudget)} above your budget.`);
+  return {cmp, out};
+}
+function carCard(x, brief, hero, kind, idx){
+  const isHero = kind === 'hero';
+  const m = byId[x.id], L = t();
+  const TO = tradeoffs(x, hero || x), why = whyCards(x, brief, TO.out), r = regSignal(m);
+  return `<article class="card car ${isHero?'hero-car':''}" data-car="${esc(x.id)}">
+    <div class="stack" style="gap:6px">
+      <div class="row" style="gap:8px">${isHero?`<span class="badge b-ink">${lang==='ar'?'الأنسب لإجاباتك':'Best fit for your answers'}</span>`:`<span class="badge b-blue">${kind==='equal'||idx===1?(lang==='ar'?'مناسبة جدًا':'Very good fit'):(lang==='ar'?'مناسبة':'Good fit')}</span>`}<span class="eyebrow">${esc(segLabel(m))} · ${esc(m.origin||'')}</span></div>
+      <h3 style="font-size:${isHero?24:19}px">${esc(nm(m))}</h3>
+      <div class="row">${r?`<span class="pill">${esc(r.txt)}</span>`:''}${x.hybrid?`<span class="pill">${lang==='ar'?'هايبرد متاح':'Hybrid available'}</span>`:''}${x.seven?`<span class="pill">7 ${lang==='ar'?'مقاعد':'seats'}</span>`:''}</div>
+    </div>
+    <div><div class="price num">${fmt(x.price)}</div><div class="muted" style="font-size:12px;text-align:end">EGP · ${esc(x.pick.label)}</div></div>
+    <div style="grid-column:1/-1" class="stack">
+      <details ${idx===0?'open':''} data-why="${esc(x.id)}"><summary>${L.why}</summary><div class="why">${why.map(w=>`<div class="w ${w.watch?'watch':''}"><b>${w.h}</b>${w.p}</div>`).join('')}</div></details>
+      ${TO.cmp.length?`<div class="tradeoff" style="border-color:var(--accent)"><b style="font-size:13px">${lang==='ar'?'مقارنة بـ '+esc(nm(byId[hero.id])):'Compared with the '+esc(nm(byId[hero.id]))}</b><ul style="margin:4px 0 0;padding-inline-start:18px">${TO.cmp.map(s=>`<li>${s}</li>`).join('')}</ul></div>`:''}
+      ${provHTML(m, x.pick)}
+      ${x.fit && x.fit.length > 1 ? `<details><summary>${lang==='ar'?'الفئات في ميزانيتك':'Versions in your budget'} (<span class="num">${x.fit.length}</span>)</summary><table style="margin-top:6px"><tbody>${x.fit.map(v=>`<tr><td>${esc(v.label)}</td><td class="r">${egp(v.min)}</td><td>${v.pt?esc(v.pt):''}</td></tr>`).join('')}</tbody></table></details>`:''}
+    </div></article>`;
+}
+function briefChips(j){ const L = t(); return [ `${j.mode==='max'?'≤':'≈'} EGP ${fmt(j.budget)}`, j.body.map(b=>L.body[b]).join(' / '), L.pt[j.pt], (lang==='ar'?'ركاب: ':'Riders: ')+L.fam[j.fam], j.pr.map(p=>L.pr[p]).join(' + '), L.use[j.use] ].map(s=>`<span class="pill">${esc(s)}</span>`).join(''); }
+
+function whyNot(r){
+  const ar = lang==='ar', R = {budget: ar?'فوق ميزانيتك':'Above your budget', body: ar?'نوع عربية مختلف':'A different body type', seats: ar?'مفيهاش 7 مقاعد':'No seven-seat version', powertrain: ar?'مفيش نوع المحرك اللي اخترته':'Not offered with your powertrain', brand: ar?'ماركة استبعدتها':'A brand you excluded', drive: ar?'مفيش دفع رباعي':'No four-wheel drive', chinese: ar?'صيني':'Chinese-made', not_on_sale: ar?'مش معروضة':'Not on sale'};
+  const U2 = {price: ar?'مفيش سعر مؤكد':'No confirmed price', body: ar?'نوع العربية مش معروف':'Body type unknown', seats: ar?'عدد المقاعد مش معروف':'Seat count unknown', powertrain: ar?'نوع المحرك مش معروف':'Powertrain unknown', drive: ar?'نوع الدفع مش معروف':'Drivetrain unknown'};
+  const rows = Object.entries(r.blocked||{}).sort((a,b)=>b[1]-a[1]).map(([k,n]) => `<li>${R[k]||k}: <span class="num">${n}</span> ${ar?'موديل':'models'}</li>`)
+    .concat(Object.entries(r.unknown||{}).map(([k,n]) => `<li>${U2[k]||k}: <span class="num">${n}</span> ${ar?'موديل (مش بنرشّح عربية بيانتها ناقصة)':'models (we never recommend on missing data)'}</li>`));
+  if (!rows.length) return '';
+  return `<details class="card" id="whynot"><summary>${ar?'ليه مش العربيات التانية؟':'Why not the others?'}</summary><ul style="margin:8px 0 0;padding-inline-start:18px">${rows.join('')}</ul></details>`;
+}
+function results(){
+  const L = t(), brief = toBrief(J);
+  let r; try { r = E.recommend(U, brief); } catch(e){ view.innerHTML = `<p>${esc(e.message)}</p>`; return; }
+  const top = r.hero ? [r.hero.id, ...r.alts.map(a=>a.id)] : [];
+  track('result_view', {brief, top, confidence: r.confidence && r.confidence.level, pool: r.pool});
+  const lvl = r.equal ? 'tie' : (r.confidence ? r.confidence.level : 'only');
+  let html = `<div class="stack"><div class="row" style="justify-content:space-between"><span class="eyebrow">${L.yourBrief}</span><button class="btn sm" id="restart" type="button">${L.restart}</button></div>
+    <div class="row">${briefChips(J)}</div>`;
+  if (!r.hero) {
+    const sug = (r.nearest || []).map(n => n.key==='budget' ? (lang==='ar'?`ميزانية حوالي EGP ${fmt(n.to)}`:`a budget near EGP ${fmt(n.to)}`) : n.key==='seats' ? (lang==='ar'?`تشيل شرط الـ 7 مقاعد (${n.n} موديل)`:`dropping the 7-seat requirement (${n.n} models)`) : n.key==='powertrain' ? (lang==='ar'?'أي نوع محرك':'any powertrain') : n.key==='body' ? (lang==='ar'?'نوع عربية تاني':'another body type') : n.key).filter(Boolean);
+    html += `<div class="card stack"><h2>${L.noRes}</h2>${sug.length?`<p>${L.tryThis}: ${sug.join(lang==='ar'?'، أو ':', or ')}.</p>`:''}
+      ${(r.nearestAbove||[]).length?`<p class="muted">${lang==='ar'?'أقرب عربيات فوق الميزانية':'Closest cars above budget'}: ${r.nearestAbove.map(a=>`${esc(nm(byId[a.id]))} (${egp(a.price)})`).join('، ')}</p>`:''}
+      <button class="btn" id="edit" type="button">${lang==='ar'?'عدّل طلبك':'Edit your brief'}</button></div>`;
+  } else {
+    html += `<div class="row" style="margin-top:8px"><h2>${r.equal?L.equalRec:L.rec}</h2><span class="pill ${lvl==='clear'||lvl==='only'?'off':lvl==='lean'?'agg':'info'}">${L.conf[lvl]}</span></div>
+      ${lvl==='lean' && r.confidence.depends.includes('unknown_data') ? `<p class="muted" style="font-size:13px">${lang==='ar'?'الترتيب ممكن يتغير لما تكمل عندنا بيانات ناقصة عن العربيات دي.':'The order could change once we fill data gaps for these cars.'}</p>`:''}
+      ${lvl==='tie' ? `<p class="muted" style="font-size:13px">${lang==='ar'?'طلبك مش بيفرّق بينهم. ضيف أولوية أو قلّل الميزانية عشان نختار واحدة.':'Your brief does not separate them. Add a priority or narrow the budget to get a single pick.'}</p>`:''}
+      <div class="res">${carCard(r.hero, brief, null, r.equal?'equal':'hero', 0)}</div>
+      ${r.alts.length?`<h3 style="margin-top:10px">${r.equal?'':L.alt}</h3><div class="alts">${r.alts.map((a,i)=>carCard(a, brief, r.hero, r.equal?'equal':'alt', i+1)).join('')}</div>`:''}
+      ${r.less ? `<div class="card"><b>${lang==='ar'?'ممكن تصرف أقل':'You could spend less'}</b><p>${esc(nm(byId[r.less.id]))} ${lang==='ar'?'بتحقق طلبك وبتوفر حوالي':'meets your brief and saves about'} ${egp(r.less.saves)}.</p></div>`:''}
+      <div class="card fb" id="fb"><b>${L.fbQ}</b><button class="btn sm" data-fb="up" type="button">👍 ${L.fbY}</button><button class="btn sm" data-fb="down" type="button">👎 ${L.fbN}</button>
+        <div id="fbMore" hidden style="width:100%" class="stack"><label for="fbText">${L.fbC}</label><textarea id="fbText" rows="2" maxlength="500"></textarea><div><button class="btn sm primary" id="fbSend" type="button">${L.fbSend}</button></div></div></div>
+      ${whyNot(r)}
+      <p class="muted" style="font-size:12px">${lang==='ar'?'محدش دفع عشان يظهر هنا. ':'Nobody paid to appear here. '}${lang==='ar'?`اتقارنت ${r.pool} موديل بيحققوا شروطك. مش بنعرض أوزان أو درجات، بس الأسباب.`:`${r.pool} models met your requirements and were compared. We show reasons, not scores.`}</p>`;
+  }
+  html += `</div>`;
+  view.innerHTML = html;
+  restart.onclick = () => { J = {...J, step:0, started:false}; store.set('brief', J); find(); };
+  const ed = $('#edit'); if (ed) ed.onclick = () => { J.step = 0; find(); };
+  view.querySelectorAll('details[data-why]').forEach(d => d.addEventListener('toggle', () => { if (d.open) track('why_open', {id: d.dataset.why}); }));
+  if (r.hero) r.alts.forEach(a => track('alt_view', {id: a.id, role: a.role}));
+  let vote = null;
+  view.querySelectorAll('[data-fb]').forEach(b => b.onclick = () => { vote = b.dataset.fb; view.querySelectorAll('[data-fb]').forEach(x=>x.setAttribute('aria-pressed', x===b)); b.classList.add('primary'); fbMore.hidden = false; saveFb(vote, '', top, brief); });
+  const fs = $('#fbSend'); if (fs) fs.onclick = () => { saveFb(vote, fbText.value.trim(), top, brief); fb.innerHTML = `<b>${L.fbDone}</b>`; };
+}
+function saveFb(vote, comment, top, brief){
+  track('feedback', {vote, comment: comment ? comment.slice(0,500) : '', top});
+  if (db && comment) db.collection('feedback').add({vote, comment: comment.slice(0,500), top, brief, t: new Date().toISOString(), sid: SID}).catch(()=>{});
+  if (comment) toast(t().fbDone);
+}
+
+/* ---------- gate + waitlist ---------- */
+function gateHTML(){ const L = t(); return `<form id="gate" class="card stack" novalidate><label for="code">${L.invIn}</label><div class="row" style="flex-wrap:nowrap"><input id="code" type="text" autocomplete="off" style="text-transform:uppercase"><button class="btn primary" type="submit">${L.invBtn}</button></div><p id="gateErr" class="muted" hidden style="color:var(--red)">${L.invBad}</p></form>`; }
+function bindGate(){ const f = $('#gate'); if (!f) return; f.onsubmit = e => { e.preventDefault(); const c = code.value.trim().toUpperCase(); if (CODES.includes(c)) { store.set('invited', true); track('invite_ok', {}); location.hash = 'find'; render(); } else { gateErr.hidden = false; track('invite_bad', {}); } }; }
+function beta(){
+  const L = t();
+  view.innerHTML = `<div class="stack" style="max-width:640px">
+    <span class="eyebrow">${L.inv}</span><h1 style="font-size:34px">${lang==='ar'?'CarIndex لسه في مرحلة البيتا بالدعوة':'CarIndex is in Invitation Beta'}</h1>
+    <p class="muted">${lang==='ar'?'بنفتح الترشيحات لعدد محدود عشان نحسّن الدقة قبل الإطلاق. سعر السوق والبيانات متاحة للكل.':'We are opening recommendations to a small group to tune accuracy before launch. Market prices are open to everyone.'}</p>
+    ${invited() ? `<div class="card"><span class="pill off">✓ ${lang==='ar'?'عندك دعوة':'You\'re invited'}</span> <a href="#find">${L.start}</a></div>` : gateHTML()}
+    <form id="wl" class="card stack" novalidate><h2>${L.wl}</h2><p class="muted">${L.wlSub}</p>
+      <div><label for="wName">${L.name}</label><input id="wName" type="text" maxlength="80" autocomplete="name"></div>
+      <div><label for="wEmail">${L.email}</label><input id="wEmail" type="email" maxlength="120" autocomplete="email" required></div>
+      <div class="row" style="flex-wrap:nowrap"><div style="flex:1"><label for="wCity">${L.city}</label><select id="wCity"><option>Cairo</option><option>Giza</option><option>Alexandria</option><option>Delta</option><option>Upper Egypt</option><option>Canal</option><option>Other</option></select></div>
+      <div style="flex:1"><label for="wPlan">${L.plan}</label><select id="wPlan"><option value="0-3">${lang==='ar'?'خلال 3 شهور':'Within 3 months'}</option><option value="3-6">${lang==='ar'?'3–6 شهور':'3–6 months'}</option><option value="6+">${lang==='ar'?'بعد 6 شهور':'6+ months'}</option><option value="browsing">${lang==='ar'?'بتفرج بس':'Just browsing'}</option></select></div></div>
+      <p id="wErr" hidden style="color:var(--red)">${lang==='ar'?'اكتب إيميل صحيح.':'Enter a valid email address.'}</p>
+      <div><button class="btn primary" type="submit">${L.wlBtn}</button></div></form></div>`;
+  bindGate();
+  wl.onsubmit = async e => {
+    e.preventDefault();
+    const email = wEmail.value.trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { wErr.hidden = false; return; }
+    const rec = {name: wName.value.trim().slice(0,80), email: email.slice(0,120), city: wCity.value, plan: wPlan.value, lang, t: new Date().toISOString(), sid: SID};
+    let saved = false;
+    if (db && user) { try { const id = await user.id(); await db.doc('waitlist/' + id).set(rec); saved = true; } catch(err){} }
+    if (!saved) { const w = store.get('waitlist', []); w.push(rec); store.set('waitlist', w); }
+    track('waitlist_submit', {city: rec.city, plan: rec.plan, stored: saved ? 'shared' : 'this-browser'});
+    wl.innerHTML = `<h2>${L.wlDone}</h2><p class="muted">${saved ? (lang==='ar'?'اتسجل عندنا.':'Saved.') : (lang==='ar'?'اتسجل على الجهاز ده بس (التخزين المشترك مش متاح هنا).':'Saved in this browser only (shared storage is not available in this view).')}</p>`;
+  };
+}
+
+/* ---------- EXPLORE ---------- */
+let X = store.get('explore', {q:'', body:'', max:'', sort:'p', n:40});
+function modelRows(){
+  return INU.map(m => { const tr = E.currentTrims(m); const p = tr.length ? Math.min(...tr.map(x=>x.min)) : null; return {m, tr, p}; }).filter(r => r.p);
+}
+function explore(){
+  const L = t().ex;
+  view.innerHTML = `<div class="stack"><span class="eyebrow">CAR/INDEX · ${lang==='ar'?'بيانات':'Data'}</span><h1 style="font-size:32px">${L.t}</h1><p class="muted">${L.s}</p>
+    <div class="filters"><div class="s"><label for="xq" class="muted">${L.q}</label><input id="xq" type="search" value="${esc(X.q)}"></div>
+    <div><label for="xb" class="muted">${t().yourBrief===''?'':(lang==='ar'?'النوع':'Body')}</label><select id="xb"><option value="">${L.all}</option>${Object.entries(t().body).filter(([k])=>k!=='any').map(([k,v])=>`<option value="${k}" ${X.body===k?'selected':''}>${v}</option>`).join('')}</select></div>
+    <div><label for="xm" class="muted">${L.max}</label><select id="xm"><option value="">—</option>${[1,1.5,2,2.5,3,4,6].map(v=>`<option value="${v*1e6}" ${+X.max===v*1e6?'selected':''}>EGP ${v}M</option>`).join('')}</select></div>
+    <div><label for="xs" class="muted">${L.sort}</label><select id="xs"><option value="p" ${X.sort==='p'?'selected':''}>${L.sp}</option><option value="d" ${X.sort==='d'?'selected':''}>${L.sd}</option><option value="n" ${X.sort==='n'?'selected':''}>${L.sn}</option></select></div></div>
+    <div class="row"><span class="pill off">✓ ${t().official}</span><span class="muted" style="font-size:13px">${lang==='ar'?'من موقع الوكيل مباشرة (نيسان، MG حالياً)':'straight from the dealer site (Nissan, MG so far)'}</span><span class="pill agg">${t().agg}</span><span class="muted" style="font-size:13px">${lang==='ar'?'متجمعة من مواقع الأسعار':'collected from price listing sites'}</span></div>
+    <div id="xcount" class="muted"></div><div class="tbl-wrap"><table><thead><tr><th>${lang==='ar'?'الموديل':'Model'}</th><th>${lang==='ar'?'الفئة':'Class'}</th><th class="r">${L.from}</th><th>${L.trims}</th>${REG()?`<th>${lang==='ar'?'الانتشار':'Adoption'}</th>`:''}</tr></thead><tbody id="xbody"></tbody></table></div>
+    <div><button class="btn" id="xmore" type="button">${L.more}</button></div></div>`;
+  const apply = () => {
+    X = {...X, q: xq.value, body: xb.value, max: xm.value, sort: xs.value}; store.set('explore', X);
+    const q = X.q.trim().toLowerCase();
+    let rows = modelRows().filter(r => (!X.body || r.m.body === X.body) && (!X.max || r.p <= +X.max) && (!q || (nm(r.m).toLowerCase().includes(q) || (r.m.ar.brand||[]).concat(r.m.ar.model||[]).some(a => a.includes(X.q.trim())))));
+    rows.sort(X.sort==='p' ? (a,b)=>a.p-b.p : X.sort==='d' ? (a,b)=>b.p-a.p : (a,b)=>nm(a.m).localeCompare(nm(b.m)));
+    xcount.innerHTML = `<span class="num">${rows.length}</span> ${L.models}`;
+    xmore.hidden = rows.length <= X.n;
+    xbody.innerHTML = rows.slice(0, X.n).map(r => { const off = MARKET.official[r.m.id]; const sg = regSignal(r.m);
+      return `<tr class="model-row" data-id="${esc(r.m.id)}" tabindex="0"><td><b>${esc(nm(r.m))}</b>${off?` <span class="pill off" style="font-size:11px">✓</span>`:''}</td><td>${esc(segLabel(r.m))}</td><td class="r">${egp(r.p)}</td><td class="num">${r.tr.length}</td>${REG()?`<td style="font-size:13px">${sg?esc(sg.txt):'—'}</td>`:''}</tr>
+      <tr hidden data-detail="${esc(r.m.id)}"><td colspan="${REG()?5:4}">${detailHTML(r)}</td></tr>`; }).join('');
+    xbody.querySelectorAll('.model-row').forEach(tr => { const tog = () => { const d = xbody.querySelector(`[data-detail="${CSS.escape(tr.dataset.id)}"]`); d.hidden = !d.hidden; if (!d.hidden) track('explore_open', {id: tr.dataset.id}); }; tr.onclick = tog; tr.onkeydown = e => { if (e.key==='Enter') tog(); }; });
+  };
+  let deb; xq.oninput = () => { clearTimeout(deb); deb = setTimeout(() => { apply(); if (xq.value.trim().length > 1) track('explore_search', {q: xq.value.trim().slice(0,40)}); }, 250); };
+  [xb, xm, xs].forEach(s => s.onchange = apply);
+  xmore.onclick = () => { X.n += 40; apply(); };
+  apply();
+}
+function detailHTML(r){
+  const m = r.m, off = MARKET.official[m.id], ar = lang==='ar', L = t();
+  const specs = [];
+  if (m.hp && m.hp.length) specs.push([ar?'القوة':'Power', m.hp.join(' / ') + ' hp']);
+  if (m.seats && m.seats.length) specs.push([ar?'المقاعد':'Seats', m.seats.join(' / ')]);
+  if (m.warranty && m.warranty.length) specs.push([ar?'الضمان':'Warranty', m.warranty[0] + (m.warranty_verified ? '' : ` (${L.unver})`)]);
+  if (m.powertrains) specs.push([ar?'المحرك':'Powertrain', m.powertrains.join(', ')]);
+  if (off) Object.entries(off.specs).slice(0,8).forEach(([k,v]) => specs.push([k.replace(/_/g,' '), v.join(' / ') + ' ✓']));
+  const offRows = off ? off.prices.slice().sort((a,b)=>a.egp-b.egp) : [];
+  return `<div class="stack" style="padding-block:6px">
+   ${offRows.length ? `<div><b style="font-size:13px">${L.official}</b> <span class="muted" style="font-size:12px">· <a href="${esc(off.src)}" target="_blank" rel="noopener">${esc(off.src.replace(/^https?:\/\//,'').split('/')[0])}</a> · ${lang==='ar'?'سعر ساري من':'effective'} <span class="num">${esc(offRows[0].eff)}</span></span>
+     <table><tbody>${offRows.map(p=>`<tr><td>${esc(p.grade)}</td><td class="r">${egp(p.egp)}</td><td><span class="pill off">✓</span></td></tr>`).join('')}</tbody></table></div>`:''}
+   <div><b style="font-size:13px">${offRows.length ? (lang==='ar'?'أسعار المواقع للمقارنة':'Listing prices for comparison') : (lang==='ar'?'الفئات والأسعار':'Versions and prices')}</b>
+     <table><tbody>${r.tr.map(x=>`<tr><td>${esc(x.label)}</td><td class="r">${egp(x.min)}</td><td>${x.official?`<span class="badge b-off">✓ ${L.official}</span>`:`<span class="badge b-agg">${L.agg}</span>`}${(()=>{ const mt = off && offMatch(off, x); return mt && Math.abs(mt.egp - x.min) >= 1000 ? ` <span class="pill warn">${ar?'مختلف عن الرسمي':'Differs from official'} (${egp(mt.egp)})</span>` : ''; })()}</td><td style="font-size:12px">${dateH(x.date)}</td></tr>`).join('')}</tbody></table></div>
+   ${specs.length?`<div class="row" style="gap:6px">${specs.map(([k,v])=>`<span class="pill"><span class="muted">${esc(k)}</span> <span class="num">${esc(v)}</span></span>`).join('')}</div>`:''}
+   ${!off && !r.tr.some(x=>x.official) ? `<p class="muted" style="font-size:12px">${lang==='ar'?'مفيش سعر رسمي من الوكيل لسه للموديل ده.':'No official dealer price captured yet for this model.'}</p>`:''}
+  </div>`;
+}
+
+/* ---------- ADMIN ---------- */
+async function admin(){
+  const L = t().admin;
+  view.innerHTML = `<div class="stack"><span class="eyebrow">Kaizen · internal</span><h1 style="font-size:32px">${L.t}</h1><p class="muted">${L.s}</p><div id="adm" class="stack"><p class="muted">${lang==='ar'?'بنحمّل…':'Loading…'}</p></div></div>`;
+  let evs = [], fbs = [], wlN = null, scope;
+  if (db) {
+    try { const s = await db.collection('events').orderBy('t','desc').limit(1000).get(); evs = s.docs.map(d => d.data()); scope = lang==='ar'?'كل المختبرين (تخزين مشترك)':'All testers (shared store)'; } catch(e){ evs = localQ.slice(); scope = 'this browser'; }
+    try { const s = await db.collection('feedback').orderBy('t','desc').limit(50).get(); fbs = s.docs.map(d => d.data()); } catch(e){}
+    if (canEdit) { try { const s = await db.collection('waitlist').limit(1000).get(); wlN = s.docs.length; } catch(e){} }
+  } else { evs = localQ.slice(); scope = lang==='ar'?'المتصفح ده بس':'This browser only'; wlN = store.get('waitlist', []).length; }
+  const c = {}; evs.forEach(e => c[e.type] = (c[e.type]||0) + 1);
+  const sessions = new Set(evs.map(e => e.sid)).size;
+  const up = evs.filter(e => e.type==='feedback' && e.props && e.props.vote==='up').length, down = evs.filter(e => e.type==='feedback' && e.props && e.props.vote==='down').length;
+  const funnel = ['journey_start','answer','result_view','why_open','alt_view','feedback','waitlist_submit'];
+  const mx = Math.max(1, ...funnel.map(k => c[k]||0));
+  const heroes = {}; evs.filter(e=>e.type==='result_view' && e.props && e.props.top).forEach(e => { const h = e.props.top[0]; if (h) heroes[h] = (heroes[h]||0)+1; });
+  adm.innerHTML = `<div class="row"><label style="font-weight:500"><input type="checkbox" id="regFlag" ${REG()?'checked':''}> ${lang==='ar'?'اعرض مؤشرات التسجيل (داخلي، حقوق النشر غير مؤكدة)':'Show registration signals (internal; publication rights unconfirmed)'}</label></div><p class="muted" style="font-size:13px">${lang==='ar'?'النطاق':'Scope'}: ${esc(scope)}</p>
+   <div class="kpis">${[[lang==='ar'?'جلسات':'Sessions', sessions],[lang==='ar'?'رحلات بدأت':'Journeys started', c.journey_start||0],[lang==='ar'?'نتائج اتعرضت':'Results viewed', c.result_view||0],['👍 / 👎', `${up} / ${down}`],[lang==='ar'?'قائمة الانتظار':'Waitlist', wlN==null?(lang==='ar'?'للمحررين':'editors only'):wlN]].map(([k,v])=>`<div class="card kpi"><div class="muted" style="font-size:12px">${k}</div><div class="n">${v}</div></div>`).join('')}</div>
+   <div class="card stack"><h3>${lang==='ar'?'الأحداث':'Events'}</h3>${funnel.map(k=>`<div class="bar-row"><span class="mono">${k}</span><span><i style="width:${(c[k]||0)/mx*100}%"></i></span><span class="num">${c[k]||0}</span></div>`).join('')}</div>
+   <div class="card stack"><h3>${lang==='ar'?'أكتر ترشيح أول':'Most frequent top pick'}</h3>${Object.entries(heroes).sort((a,b)=>b[1]-a[1]).slice(0,5).map(([id,n])=>`<div class="bar-row"><span>${esc(nm(byId[id])||id)}</span><span><i style="width:${n/Math.max(...Object.values(heroes))*100}%"></i></span><span class="num">${n}</span></div>`).join('') || '<p class="muted">—</p>'}</div>
+   <div class="card stack"><h3>${lang==='ar'?'آخر التعليقات':'Latest comments'}</h3>${(fbs.length?fbs:evs.filter(e=>e.type==='feedback'&&e.props&&e.props.comment).map(e=>({vote:e.props.vote,comment:e.props.comment,t:e.t}))).slice(0,10).map(f=>`<div style="border-bottom:1px solid var(--line);padding-block:6px"><span>${f.vote==='up'?'👍':'👎'}</span> ${esc(f.comment)} <span class="muted num" style="font-size:11px">${esc((f.t||'').slice(0,16))}</span></div>`).join('') || '<p class="muted">—</p>'}</div>`;
+}
+
+document.addEventListener('change', e => { if (e.target && e.target.id === 'regFlag') { store.set('regFlag', e.target.checked); track('reg_flag', {on: e.target.checked}); } });
+/* ---------- boot ---------- */
+setLang(lang);
+fetch('market.json').then(r => r.json()).then(d => { MARKET = d; render(); }).catch(() => {});
+})();
+</script>
+
+</body></html>

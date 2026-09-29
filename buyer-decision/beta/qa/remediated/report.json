@@ -1,0 +1,337 @@
+{
+ "build": "beta/remediated",
+ "runs": [
+  {
+   "tag": "desktop-en",
+   "lang": "en",
+   "vp": "1280x900",
+   "dir": "ltr",
+   "nav": [
+    "#home",
+    "#explore",
+    "#find",
+    "#beta"
+   ],
+   "gate_error_shown": true,
+   "preselected_per_step": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+   ],
+   "next_disabled_before_answer": [
+    true,
+    true,
+    true,
+    true,
+    false,
+    true
+   ],
+   "result": {
+    "heading": "Strong matches",
+    "equal_set_layout": [
+     "340",
+     "340",
+     "340"
+    ],
+    "hero_badge": null,
+    "cars": [
+     "Geely Okavango",
+     "BAIC BJ30",
+     "Dongfeng 008"
+    ],
+    "why_cards": [],
+    "provenance_badges": [
+     "Listing price",
+     "Listing price",
+     "Listing price"
+    ],
+    "nobody_paid": true,
+    "shows_scores": false
+   },
+   "feedback_raw_in_storage": false,
+   "waitlist_validation": true,
+   "waitlist_done": "You're on the waitlistSaved in this browser only (shared storage is not available in this view).",
+   "explore_rows": 40,
+   "admin_reachable": true,
+   "overflow_px": 0,
+   "errors": []
+  },
+  {
+   "tag": "desktop-ar",
+   "lang": "ar",
+   "vp": "1280x900",
+   "dir": "rtl",
+   "nav": [
+    "#home",
+    "#explore",
+    "#find",
+    "#beta"
+   ],
+   "gate_error_shown": true,
+   "preselected_per_step": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+   ],
+   "next_disabled_before_answer": [
+    true,
+    true,
+    true,
+    true,
+    false,
+    true
+   ],
+   "result": {
+    "heading": "اختيارات قوية",
+    "equal_set_layout": [
+     "340",
+     "340",
+     "340"
+    ],
+    "hero_badge": null,
+    "cars": [
+     "Geely Okavango",
+     "BAIC BJ30",
+     "Dongfeng 008"
+    ],
+    "why_cards": [],
+    "provenance_badges": [
+     "سعر من مواقع",
+     "سعر من مواقع",
+     "سعر من مواقع"
+    ],
+    "nobody_paid": true,
+    "shows_scores": false
+   },
+   "feedback_raw_in_storage": false,
+   "waitlist_validation": true,
+   "waitlist_done": "تم التسجيل في قائمة الانتظاراتسجل على الجهاز ده بس (التخزين المشترك مش متاح هنا).",
+   "explore_rows": 40,
+   "admin_reachable": true,
+   "overflow_px": 0,
+   "errors": []
+  },
+  {
+   "tag": "mobile-en",
+   "lang": "en",
+   "vp": "390x844",
+   "dir": "ltr",
+   "nav": [
+    "#home",
+    "#explore",
+    "#find",
+    "#beta"
+   ],
+   "gate_error_shown": true,
+   "preselected_per_step": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+   ],
+   "next_disabled_before_answer": [
+    true,
+    true,
+    true,
+    true,
+    false,
+    true
+   ],
+   "result": {
+    "heading": "Strong matches",
+    "equal_set_layout": [
+     "358",
+     "358",
+     "358"
+    ],
+    "hero_badge": null,
+    "cars": [
+     "Geely Okavango",
+     "BAIC BJ30",
+     "Dongfeng 008"
+    ],
+    "why_cards": [],
+    "provenance_badges": [
+     "Listing price",
+     "Listing price",
+     "Listing price"
+    ],
+    "nobody_paid": true,
+    "shows_scores": false
+   },
+   "feedback_raw_in_storage": false,
+   "waitlist_validation": true,
+   "waitlist_done": "You're on the waitlistSaved in this browser only (shared storage is not available in this view).",
+   "explore_rows": 40,
+   "admin_reachable": true,
+   "overflow_px": 0,
+   "errors": []
+  },
+  {
+   "tag": "mobile-ar",
+   "lang": "ar",
+   "vp": "390x844",
+   "dir": "rtl",
+   "nav": [
+    "#home",
+    "#explore",
+    "#find",
+    "#beta"
+   ],
+   "gate_error_shown": true,
+   "preselected_per_step": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+   ],
+   "next_disabled_before_answer": [
+    true,
+    true,
+    true,
+    true,
+    false,
+    true
+   ],
+   "result": {
+    "heading": "اختيارات قوية",
+    "equal_set_layout": [
+     "358",
+     "358",
+     "358"
+    ],
+    "hero_badge": null,
+    "cars": [
+     "Geely Okavango",
+     "BAIC BJ30",
+     "Dongfeng 008"
+    ],
+    "why_cards": [],
+    "provenance_badges": [
+     "سعر من مواقع",
+     "سعر من مواقع",
+     "سعر من مواقع"
+    ],
+    "nobody_paid": true,
+    "shows_scores": false
+   },
+   "feedback_raw_in_storage": false,
+   "waitlist_validation": true,
+   "waitlist_done": "تم التسجيل في قائمة الانتظاراتسجل على الجهاز ده بس (التخزين المشترك مش متاح هنا).",
+   "explore_rows": 40,
+   "admin_reachable": true,
+   "overflow_px": 0,
+   "errors": []
+  },
+  {
+   "tag": "narrow-ar",
+   "lang": "ar",
+   "vp": "320x700",
+   "dir": "rtl",
+   "nav": [
+    "#home",
+    "#explore",
+    "#find",
+    "#beta"
+   ],
+   "gate_error_shown": true,
+   "preselected_per_step": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+   ],
+   "next_disabled_before_answer": [
+    true,
+    true,
+    true,
+    true,
+    false,
+    true
+   ],
+   "result": {
+    "heading": "اختيارات قوية",
+    "equal_set_layout": [
+     "288",
+     "288",
+     "288"
+    ],
+    "hero_badge": null,
+    "cars": [
+     "Geely Okavango",
+     "BAIC BJ30",
+     "Dongfeng 008"
+    ],
+    "why_cards": [],
+    "provenance_badges": [
+     "سعر من مواقع",
+     "سعر من مواقع",
+     "سعر من مواقع"
+    ],
+    "nobody_paid": true,
+    "shows_scores": false
+   },
+   "feedback_raw_in_storage": false,
+   "waitlist_validation": true,
+   "waitlist_done": "تم التسجيل في قائمة الانتظاراتسجل على الجهاز ده بس (التخزين المشترك مش متاح هنا).",
+   "explore_rows": 40,
+   "admin_reachable": true,
+   "overflow_px": 0,
+   "errors": []
+  }
+ ],
+ "axe": {
+  "home": [],
+  "journey_step2": [],
+  "results": [],
+  "beta": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "n": 1,
+    "sample": "  Element has insufficient color contrast of 3.8 (foreground color: #1f8a44, background color: #e4f2e8, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+   }
+  ],
+  "explore": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "n": 1,
+    "sample": "  Element has insufficient color contrast of 3.8 (foreground color: #1f8a44, background color: #e4f2e8, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+   }
+  ]
+ },
+ "keyboard": {
+  "tab_order_gate": [
+   "A#home",
+   "A#home",
+   "A#explore",
+   "A#find",
+   "A#beta",
+   "langBtn",
+   "code",
+   "BUTTON",
+   "A#beta",
+   "BODY",
+   "A#home",
+   "A#home"
+  ],
+  "chip_space_toggles": 1,
+  "focus_after_rerender": "BUTTON",
+  "focus_outline_style": "solid"
+ },
+ "checks": [],
+ "text_scale_overflow_px": 0
+}
