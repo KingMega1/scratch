@@ -18,8 +18,8 @@ import argparse, csv, json, os, re
 MATERIAL_EGP = 5000          # same threshold vehicle-data uses for NEAR_AGREEMENT
 TRIM_STOP = {"cvt", "at", "mt", "a", "t", "automatic", "manual", "2wd", "4x2", "v6", "v6tt", "e-power", "epower",
              "fwd", "sunny", "magnite", "qashqai", "juke", "sentra", "patrol", "x-trail", "xtrail", "nissan",
-             "saloon", "salon"}
-TRIM_SYN = {"baseline": "base", "midline": "mid", "n": "", "t1": "1", "t2": "2", "le1": "le 1", "le2": "le 2"}
+             "saloon", "salon", "toyota", "fortuner", "bz4x", "corolla", "kia", "chery", "jetour", "changan"}
+TRIM_SYN = {"baseline": "base", "midline": "mid", "n": "", "t1": "1", "t2": "2", "le1": "le 1", "le2": "le 2", "hl": "highline", "tl": "topline"}
 
 
 def trim_key(label):
@@ -105,12 +105,30 @@ def main():
                         dict(op="set_price", trim=t["label"], min=v, official=True, date=o["effective_date"] or o["fetched_at"], source=o["source_url"]))
                 else:
                     add(uid, "price", t["label"], v, t["min"], "CEO_REVIEW",
-                        f"material price discrepancy EGP {d:,.0f}", [o])
-        if prices:
+                        f"material price discrepancy EGP {d:,.0f}" + (f" [{o['note']}]" if o["confidence"] == "LOW" else ""), [o])
+        if prices and not any(o["field"] == "price_from_official_egp" for o in rows):
             for t in cur:
                 if t["label"] not in matched:
                     add(uid, "availability", t["label"], "absent from official site", t["min"], "CEO_REVIEW",
                         "universe trim not listed by the official source (stale, dealer-only, renamed or duplicate label)", [])
+        # ---- model-level "from" price (banner/nav: cheapest version, grade not named) -- B003
+        for o in [o for o in rows if o["field"] == "price_from_official_egp"]:
+            v = float(o["value_num"]); lo = min(t["min"] for t in cur) if cur else None
+            cheapest = [t["label"] for t in cur if t["min"] == lo]
+            if lo is None:
+                add(uid, "price_from", None, v, None, "CEO_REVIEW", "official from-price for a model with no priced trim in universe", [o])
+            elif v == lo and o["confidence"] == "HIGH":
+                if len(cheapest) == 1:
+                    add(uid, "price_from", cheapest[0], v, lo, "AUTO_PROMOTE", "official from-price equals the single cheapest universe trim: attach official provenance",
+                        [o], dict(op="set_official", trim=cheapest[0], official=True, date=o["effective_date"] or o["fetched_at"], source=o["source_url"]))
+                else:
+                    add(uid, "price_from", ";".join(cheapest), v, lo, "REVIEW", "from-price matches, but several universe labels share the minimum (duplicate labels?)", [o])
+            elif abs(v - lo) <= MATERIAL_EGP and o["confidence"] == "HIGH":
+                add(uid, "price_from", ";".join(cheapest), v, lo, "REVIEW",
+                    f"non-material from-price difference EGP {abs(v - lo):,.0f}; grade not named, so no trim-level patch", [o])
+            else:
+                add(uid, "price_from", ";".join(cheapest), v, lo, "CEO_REVIEW",
+                    f"material from-price discrepancy EGP {abs(v - lo):,.0f}" + (f" [{o['note']}]" if o["confidence"] == "LOW" else ""), [o])
         # ---- model year stated by the official source
         yrs = {int(o["model_year"]) for o in prices if o["model_year"]}
         cy = {t["year"] for t in cur}
@@ -137,6 +155,8 @@ def main():
             elif set(vals) == set(curv):
                 add(uid, field, None, vals, curv, "AUTO_PROMOTE", "exact match: attach official provenance", fo,
                     dict(op="attach_provenance", field=key, value=vals, source=fo[0]["source_url"]))
+            elif scoped and set(vals) < set(curv):
+                add(uid, field, None, vals, curv, "REVIEW", "official table covers one configuration; its value is a consistent subset of the universe values", fo)
             elif set(curv) <= set(vals) or set(vals) <= set(curv):
                 add(uid, field, None, vals, curv, "CEO_REVIEW", "partial overlap between official and universe values (grade coverage differs)", fo)
             else:

@@ -1,33 +1,531 @@
 {
- "note": "Tier-1 official Egypt OEM/distributor pages. One entry per page. universe_id = P1 CI_UNIVERSE model id; registry_model_id = registry/models.csv id when the model is in the registry. robots.txt checked 2026-09-28 for both hosts (paths allowed).",
+ "note": "Tier-1 official Egypt OEM/distributor pages. One entry per page. universe_id = P1 CI_UNIVERSE model id; registry_model_id = registry/models.csv id when the model is in the registry. robots.txt checked 2026-09-28 for both hosts (paths allowed). B003 (2026-09-29): Chery, Changan (GB Auto), Toyota Egypt, Kia Egypt, Chevrolet (GM Arabia eg-ar), Skoda Egypt, Jetour Egypt added; robots.txt checked 2026-09-29 (paths allowed). Blocked/unusable sources are listed under blocked_sources, not fetched.",
  "sources": {
-  "nissan_eg_web":  {"tier": 1, "scope": "egypt", "owner": "Nissan Egypt (official site)", "host": "en.nissan.com.eg"},
-  "nissan_eg_brochure": {"tier": 1, "scope": "egypt", "owner": "Nissan Egypt official brochures", "host": "www-europe.nissan-cdn.net"},
-  "mg_eg_web": {"tier": 1, "scope": "egypt", "owner": "Mansour MG Egypt (official distributor site)", "host": "www.mgmotor.com.eg"}
+  "nissan_eg_web": {
+   "tier": 1,
+   "scope": "egypt",
+   "owner": "Nissan Egypt (official site)",
+   "host": "en.nissan.com.eg"
+  },
+  "nissan_eg_brochure": {
+   "tier": 1,
+   "scope": "egypt",
+   "owner": "Nissan Egypt official brochures",
+   "host": "www-europe.nissan-cdn.net"
+  },
+  "mg_eg_web": {
+   "tier": 1,
+   "scope": "egypt",
+   "owner": "Mansour MG Egypt (official distributor site)",
+   "host": "www.mgmotor.com.eg"
+  },
+  "chery_eg_web": {
+   "tier": 1,
+   "scope": "egypt",
+   "owner": "Chery Egypt / GB Auto (official distributor site)",
+   "host": "www.chery-eg.com"
+  },
+  "changan_eg_web": {
+   "tier": 1,
+   "scope": "egypt",
+   "owner": "Changan Egypt / GB Auto (official distributor site)",
+   "host": "changan.com.eg"
+  },
+  "toyota_eg_web": {
+   "tier": 1,
+   "scope": "egypt",
+   "owner": "Toyota Egypt (official distributor site)",
+   "host": "toyota.com.eg"
+  },
+  "kia_eg_web": {
+   "tier": 1,
+   "scope": "egypt",
+   "owner": "Kia Egypt (official distributor site)",
+   "host": "kia.com.eg"
+  },
+  "chevrolet_eg_web": {
+   "tier": 1,
+   "scope": "egypt",
+   "owner": "Chevrolet Egypt (GM Arabia official site, eg-ar locale)",
+   "host": "www.chevroletarabia.com"
+  },
+  "skoda_eg_web": {
+   "tier": 1,
+   "scope": "egypt",
+   "owner": "Skoda Egypt (official importer site, (c) Kayan Egypt)",
+   "host": "www.skoda-egypt.com"
+  },
+  "jetour_eg_web": {
+   "tier": 1,
+   "scope": "egypt",
+   "owner": "Jetour Egypt (official distributor site)",
+   "host": "jetouregypt.com"
+  }
  },
  "pages": [
-  {"source": "nissan_eg_web", "recipe": "nissan_vlp_price_json", "url": "https://en.nissan.com.eg/vehicles/new/magnite.html", "universe_id": "nissan/magnite"},
-  {"source": "nissan_eg_web", "recipe": "nissan_vlp_price_json", "url": "https://en.nissan.com.eg/vehicles/new/sunny.html", "universe_id": "nissan/sunny"},
-  {"source": "nissan_eg_web", "recipe": "nissan_vlp_price_json", "url": "https://en.nissan.com.eg/vehicles/new/sentra.html", "universe_id": "nissan/sentra"},
-  {"source": "nissan_eg_web", "recipe": "nissan_vlp_price_json", "url": "https://en.nissan.com.eg/vehicles/new/qashqai.html", "universe_id": "nissan/qashqai", "registry_model_id": "m_000006"},
-  {"source": "nissan_eg_web", "recipe": "nissan_vlp_price_json", "url": "https://en.nissan.com.eg/vehicles/new/x-trail.html", "universe_id": "nissan/x-trail"},
-  {"source": "nissan_eg_web", "recipe": "nissan_vlp_price_json", "url": "https://en.nissan.com.eg/vehicles/new/juke.html", "universe_id": "nissan/juke"},
-  {"source": "nissan_eg_web", "recipe": "nissan_vlp_price_json", "url": "https://en.nissan.com.eg/vehicles/new/allnewpatrol.html", "universe_id": "nissan/patrol"},
-  {"source": "nissan_eg_web", "recipe": "nissan_spec_table", "url": "https://en.nissan.com.eg/vehicles/new/magnite/specifications.html", "universe_id": "nissan/magnite"},
-  {"source": "nissan_eg_web", "recipe": "nissan_spec_table", "url": "https://en.nissan.com.eg/vehicles/new/x-trail/specifications.html", "universe_id": "nissan/x-trail"},
-  {"source": "nissan_eg_web", "recipe": "nissan_spec_table", "url": "https://en.nissan.com.eg/vehicles/new/juke/specifications.html", "universe_id": "nissan/juke"},
-  {"source": "nissan_eg_web", "recipe": "nissan_spec_table", "url": "https://en.nissan.com.eg/vehicles/new/allnewpatrol/specifications.html", "universe_id": "nissan/patrol"},
-  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/mg5/", "universe_id": "mg/5"},
-  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/mg7/", "universe_id": "mg/7"},
-  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/mg-gt/", "universe_id": "mg/gt"},
-  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/mg-one/", "universe_id": "mg/one"},
-  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/zs/", "universe_id": "mg/zs", "note": "ZS (current) page; New ZS on its own page"},
-  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/new-zs/", "universe_id": "mg/zs", "variant": "New ZS"},
-  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/hs/", "universe_id": "mg/hs", "registry_model_id": "m_000020"},
-  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/new-hs/", "universe_id": "mg/hs", "registry_model_id": "m_000020", "variant": "New HS"},
-  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/g50-plus/", "universe_id": "mg/g50-plus"},
-  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/mg-rx9/", "universe_id": "mg/rx9"},
-  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/rx5-plus/", "universe_id": "mg/rx5-plus"},
-  {"source": "mg_eg_web", "recipe": "mg_model_page", "url": "https://www.mgmotor.com.eg/model/mg-cyberster/", "universe_id": null, "note": "not in P1 universe U11: MISSING_MODEL candidate"}
- ]
+  {
+   "source": "nissan_eg_web",
+   "recipe": "nissan_vlp_price_json",
+   "url": "https://en.nissan.com.eg/vehicles/new/magnite.html",
+   "universe_id": "nissan/magnite"
+  },
+  {
+   "source": "nissan_eg_web",
+   "recipe": "nissan_vlp_price_json",
+   "url": "https://en.nissan.com.eg/vehicles/new/sunny.html",
+   "universe_id": "nissan/sunny"
+  },
+  {
+   "source": "nissan_eg_web",
+   "recipe": "nissan_vlp_price_json",
+   "url": "https://en.nissan.com.eg/vehicles/new/sentra.html",
+   "universe_id": "nissan/sentra"
+  },
+  {
+   "source": "nissan_eg_web",
+   "recipe": "nissan_vlp_price_json",
+   "url": "https://en.nissan.com.eg/vehicles/new/qashqai.html",
+   "universe_id": "nissan/qashqai",
+   "registry_model_id": "m_000006"
+  },
+  {
+   "source": "nissan_eg_web",
+   "recipe": "nissan_vlp_price_json",
+   "url": "https://en.nissan.com.eg/vehicles/new/x-trail.html",
+   "universe_id": "nissan/x-trail"
+  },
+  {
+   "source": "nissan_eg_web",
+   "recipe": "nissan_vlp_price_json",
+   "url": "https://en.nissan.com.eg/vehicles/new/juke.html",
+   "universe_id": "nissan/juke"
+  },
+  {
+   "source": "nissan_eg_web",
+   "recipe": "nissan_vlp_price_json",
+   "url": "https://en.nissan.com.eg/vehicles/new/allnewpatrol.html",
+   "universe_id": "nissan/patrol"
+  },
+  {
+   "source": "nissan_eg_web",
+   "recipe": "nissan_spec_table",
+   "url": "https://en.nissan.com.eg/vehicles/new/magnite/specifications.html",
+   "universe_id": "nissan/magnite"
+  },
+  {
+   "source": "nissan_eg_web",
+   "recipe": "nissan_spec_table",
+   "url": "https://en.nissan.com.eg/vehicles/new/x-trail/specifications.html",
+   "universe_id": "nissan/x-trail"
+  },
+  {
+   "source": "nissan_eg_web",
+   "recipe": "nissan_spec_table",
+   "url": "https://en.nissan.com.eg/vehicles/new/juke/specifications.html",
+   "universe_id": "nissan/juke"
+  },
+  {
+   "source": "nissan_eg_web",
+   "recipe": "nissan_spec_table",
+   "url": "https://en.nissan.com.eg/vehicles/new/allnewpatrol/specifications.html",
+   "universe_id": "nissan/patrol"
+  },
+  {
+   "source": "mg_eg_web",
+   "recipe": "mg_model_page",
+   "url": "https://www.mgmotor.com.eg/model/mg5/",
+   "universe_id": "mg/5"
+  },
+  {
+   "source": "mg_eg_web",
+   "recipe": "mg_model_page",
+   "url": "https://www.mgmotor.com.eg/model/mg7/",
+   "universe_id": "mg/7"
+  },
+  {
+   "source": "mg_eg_web",
+   "recipe": "mg_model_page",
+   "url": "https://www.mgmotor.com.eg/model/mg-gt/",
+   "universe_id": "mg/gt"
+  },
+  {
+   "source": "mg_eg_web",
+   "recipe": "mg_model_page",
+   "url": "https://www.mgmotor.com.eg/model/mg-one/",
+   "universe_id": "mg/one"
+  },
+  {
+   "source": "mg_eg_web",
+   "recipe": "mg_model_page",
+   "url": "https://www.mgmotor.com.eg/model/zs/",
+   "universe_id": "mg/zs",
+   "note": "ZS (current) page; New ZS on its own page"
+  },
+  {
+   "source": "mg_eg_web",
+   "recipe": "mg_model_page",
+   "url": "https://www.mgmotor.com.eg/model/new-zs/",
+   "universe_id": "mg/zs",
+   "variant": "New ZS"
+  },
+  {
+   "source": "mg_eg_web",
+   "recipe": "mg_model_page",
+   "url": "https://www.mgmotor.com.eg/model/hs/",
+   "universe_id": "mg/hs",
+   "registry_model_id": "m_000020"
+  },
+  {
+   "source": "mg_eg_web",
+   "recipe": "mg_model_page",
+   "url": "https://www.mgmotor.com.eg/model/new-hs/",
+   "universe_id": "mg/hs",
+   "registry_model_id": "m_000020",
+   "variant": "New HS"
+  },
+  {
+   "source": "mg_eg_web",
+   "recipe": "mg_model_page",
+   "url": "https://www.mgmotor.com.eg/model/g50-plus/",
+   "universe_id": "mg/g50-plus"
+  },
+  {
+   "source": "mg_eg_web",
+   "recipe": "mg_model_page",
+   "url": "https://www.mgmotor.com.eg/model/mg-rx9/",
+   "universe_id": "mg/rx9"
+  },
+  {
+   "source": "mg_eg_web",
+   "recipe": "mg_model_page",
+   "url": "https://www.mgmotor.com.eg/model/rx5-plus/",
+   "universe_id": "mg/rx5-plus"
+  },
+  {
+   "source": "mg_eg_web",
+   "recipe": "mg_model_page",
+   "url": "https://www.mgmotor.com.eg/model/mg-cyberster/",
+   "universe_id": null,
+   "note": "not in P1 universe U11: MISSING_MODEL candidate"
+  },
+  {
+   "source": "chery_eg_web",
+   "recipe": "gb_model_page",
+   "url": "https://www.chery-eg.com/en/car/arrizo-5",
+   "universe_id": "chery/arrizo-5"
+  },
+  {
+   "source": "chery_eg_web",
+   "recipe": "gb_model_page",
+   "url": "https://www.chery-eg.com/en/car/arrizo-6-gt",
+   "universe_id": "chery/arrizo-6-gt"
+  },
+  {
+   "source": "chery_eg_web",
+   "recipe": "gb_model_page",
+   "url": "https://www.chery-eg.com/en/car/arrizo-8",
+   "universe_id": "chery/arrizo-8"
+  },
+  {
+   "source": "chery_eg_web",
+   "recipe": "gb_model_page",
+   "url": "https://www.chery-eg.com/en/car/eq7",
+   "universe_id": "chery/eq7"
+  },
+  {
+   "source": "chery_eg_web",
+   "recipe": "gb_model_page",
+   "url": "https://www.chery-eg.com/en/car/tiggo-4-pro",
+   "universe_id": "chery/tiggo-4-pro"
+  },
+  {
+   "source": "chery_eg_web",
+   "recipe": "gb_model_page",
+   "url": "https://www.chery-eg.com/en/car/tiggo-7",
+   "universe_id": "chery/tiggo-7"
+  },
+  {
+   "source": "chery_eg_web",
+   "recipe": "gb_model_page",
+   "url": "https://www.chery-eg.com/en/car/tiggo-7-pro",
+   "universe_id": "chery/tiggo-7-pro"
+  },
+  {
+   "source": "chery_eg_web",
+   "recipe": "gb_model_page",
+   "url": "https://www.chery-eg.com/en/car/tiggo-7-pro-max",
+   "universe_id": "chery/tiggo-7-pro-max"
+  },
+  {
+   "source": "chery_eg_web",
+   "recipe": "gb_model_page",
+   "url": "https://www.chery-eg.com/en/car/tiggo-8",
+   "universe_id": "chery/tiggo-8"
+  },
+  {
+   "source": "chery_eg_web",
+   "recipe": "gb_model_page",
+   "url": "https://www.chery-eg.com/en/car/tiggo-8-pro-max",
+   "universe_id": "chery/tiggo-8-pro-max"
+  },
+  {
+   "source": "chery_eg_web",
+   "recipe": "gb_model_page",
+   "url": "https://www.chery-eg.com/en/car/tiggo-9",
+   "universe_id": "chery/tiggo-9"
+  },
+  {
+   "source": "changan_eg_web",
+   "recipe": "gb_model_page",
+   "url": "https://changan.com.eg/en/model/cs35/",
+   "universe_id": "changan/cs35-plus"
+  },
+  {
+   "source": "changan_eg_web",
+   "recipe": "gb_model_page",
+   "url": "https://changan.com.eg/en/model/cs55-plus/",
+   "universe_id": "changan/cs55-plus"
+  },
+  {
+   "source": "changan_eg_web",
+   "recipe": "gb_model_page",
+   "url": "https://changan.com.eg/en/model/cs75/",
+   "universe_id": "changan/cs75-plus"
+  },
+  {
+   "source": "changan_eg_web",
+   "recipe": "gb_model_page",
+   "url": "https://changan.com.eg/en/model/eado-2/",
+   "universe_id": "changan/eado"
+  },
+  {
+   "source": "changan_eg_web",
+   "recipe": "gb_model_page",
+   "url": "https://changan.com.eg/en/model/eado-plus/",
+   "universe_id": "changan/eado-plus"
+  },
+  {
+   "source": "changan_eg_web",
+   "recipe": "gb_model_page",
+   "url": "https://changan.com.eg/en/model/uni-t/",
+   "universe_id": "changan/uni-t"
+  },
+  {
+   "source": "changan_eg_web",
+   "recipe": "gb_model_page",
+   "url": "https://changan.com.eg/en/model/uni-v/",
+   "universe_id": "changan/uni-v"
+  },
+  {
+   "source": "toyota_eg_web",
+   "recipe": "toyota_page_state",
+   "url": "https://toyota.com.eg/en/models/corolla",
+   "universe_id": "toyota/corolla"
+  },
+  {
+   "source": "toyota_eg_web",
+   "recipe": "toyota_page_state",
+   "url": "https://toyota.com.eg/en/models/toyota-corolla-hybrid",
+   "universe_id": "toyota/corolla",
+   "variant": "Corolla Hybrid"
+  },
+  {
+   "source": "toyota_eg_web",
+   "recipe": "toyota_page_state",
+   "url": "https://toyota.com.eg/en/models/toyota-fortuner",
+   "universe_id": "toyota/fortuner"
+  },
+  {
+   "source": "toyota_eg_web",
+   "recipe": "toyota_page_state",
+   "url": "https://toyota.com.eg/en/models/urban-cruiser",
+   "universe_id": "toyota/urban-cruiser"
+  },
+  {
+   "source": "toyota_eg_web",
+   "recipe": "toyota_page_state",
+   "url": "https://toyota.com.eg/en/models/toyota-b-z-4-x",
+   "universe_id": "toyota/bz4x"
+  },
+  {
+   "source": "toyota_eg_web",
+   "recipe": "toyota_page_state",
+   "url": "https://toyota.com.eg/en/models/toyota-rav4",
+   "universe_id": null,
+   "note": "not in P1 universe U11: MISSING_MODEL candidate"
+  },
+  {
+   "source": "toyota_eg_web",
+   "recipe": "toyota_page_state",
+   "url": "https://toyota.com.eg/en/models/toyota-landcruiser-prado",
+   "universe_id": null,
+   "note": "not in P1 universe U11: MISSING_MODEL candidate"
+  },
+  {
+   "source": "toyota_eg_web",
+   "recipe": "toyota_page_state",
+   "url": "https://toyota.com.eg/en/models/toyota-camry",
+   "universe_id": null,
+   "note": "not in P1 universe U11: MISSING_MODEL candidate"
+  },
+  {
+   "source": "kia_eg_web",
+   "recipe": "kia_versions",
+   "url": "https://kia.com.eg/models/The_K4",
+   "universe_id": "kia/k4"
+  },
+  {
+   "source": "kia_eg_web",
+   "recipe": "kia_versions",
+   "url": "https://kia.com.eg/models/The_Seltos",
+   "universe_id": "kia/seltos"
+  },
+  {
+   "source": "kia_eg_web",
+   "recipe": "kia_versions",
+   "url": "https://kia.com.eg/models/The_Sportage",
+   "universe_id": "kia/sportage"
+  },
+  {
+   "source": "kia_eg_web",
+   "recipe": "kia_versions",
+   "url": "https://kia.com.eg/models/The_Sorento",
+   "universe_id": "kia/sorento"
+  },
+  {
+   "source": "kia_eg_web",
+   "recipe": "kia_versions",
+   "url": "https://kia.com.eg/models/The_Carnival",
+   "universe_id": null,
+   "note": "not in P1 universe U11: MISSING_MODEL candidate"
+  },
+  {
+   "source": "kia_eg_web",
+   "recipe": "kia_versions",
+   "url": "https://kia.com.eg/kia-ev3",
+   "universe_id": "kia/ev3"
+  },
+  {
+   "source": "kia_eg_web",
+   "recipe": "kia_versions",
+   "url": "https://kia.com.eg/kia-ev5",
+   "universe_id": "kia/ev5"
+  },
+  {
+   "source": "kia_eg_web",
+   "recipe": "kia_versions",
+   "url": "https://kia.com.eg/kia-ev6",
+   "universe_id": "kia/ev6"
+  },
+  {
+   "source": "kia_eg_web",
+   "recipe": "kia_versions",
+   "url": "https://kia.com.eg/kia-ev9",
+   "universe_id": "kia/ev9"
+  },
+  {
+   "source": "chevrolet_eg_web",
+   "recipe": "chevrolet_nav_prices",
+   "url": "https://www.chevroletarabia.com/eg-ar/cars/optra",
+   "universe_id": null,
+   "label_map": {
+    "أوبترا": "chevrolet/optra",
+    "كابتيفا": "chevrolet/captiva",
+    "كابتيفا الكهربائية الجديدة كلياً": "chevrolet/captiva-ev",
+    "EUV": "chevrolet/spark-ev"
+   },
+   "note": "one page carries the nav price card of every passenger model; label_map pins card label -> universe id"
+  },
+  {
+   "source": "skoda_eg_web",
+   "recipe": "skoda_pricelist_json",
+   "url": "https://www.skoda-egypt.com/models/kodiaq/kodiaq/the-kodiaq-pricelist",
+   "universe_id": "skoda/kodiaq"
+  },
+  {
+   "source": "skoda_eg_web",
+   "recipe": "skoda_pricelist_json",
+   "url": "https://www.skoda-egypt.com/models/octavia/octavia/octavia-pricelist",
+   "universe_id": "skoda/octavia"
+  },
+  {
+   "source": "skoda_eg_web",
+   "recipe": "skoda_pricelist_json",
+   "url": "https://www.skoda-egypt.com/models/scala/scala/scala-pricelist",
+   "universe_id": null,
+   "note": "not in P1 universe U11: MISSING_MODEL candidate"
+  },
+  {
+   "source": "jetour_eg_web",
+   "recipe": "jetour_model_page",
+   "url": "https://jetouregypt.com/models/T1/",
+   "universe_id": "jetour/t1"
+  },
+  {
+   "source": "jetour_eg_web",
+   "recipe": "jetour_model_page",
+   "url": "https://jetouregypt.com/models/T2/",
+   "universe_id": "jetour/t2"
+  },
+  {
+   "source": "jetour_eg_web",
+   "recipe": "jetour_model_page",
+   "url": "https://jetouregypt.com/models/T2-i-DM/",
+   "universe_id": "jetour/t2",
+   "variant": "T2 i-DM"
+  },
+  {
+   "source": "jetour_eg_web",
+   "recipe": "jetour_model_page",
+   "url": "https://jetouregypt.com/models/dashing/",
+   "universe_id": "jetour/dashing"
+  },
+  {
+   "source": "jetour_eg_web",
+   "recipe": "jetour_model_page",
+   "url": "https://jetouregypt.com/models/x70/",
+   "universe_id": "jetour/x70"
+  },
+  {
+   "source": "jetour_eg_web",
+   "recipe": "jetour_model_page",
+   "url": "https://jetouregypt.com/models/jetour-x70-fl/",
+   "universe_id": "jetour/x70",
+   "variant": "X70 FL"
+  },
+  {
+   "source": "jetour_eg_web",
+   "recipe": "jetour_model_page",
+   "url": "https://jetouregypt.com/models/x70plus/",
+   "universe_id": "jetour/x70-plus-ckd"
+  },
+  {
+   "source": "jetour_eg_web",
+   "recipe": "jetour_model_page",
+   "url": "https://jetouregypt.com/models/x90-plus-1-6t/",
+   "universe_id": "jetour/x90-plus"
+  }
+ ],
+ "blocked_sources": {
+  "hyundai_eg_web": {
+   "host": "hyundai-egypt.net",
+   "owner": "Hyundai Motor Egypt / GB Auto",
+   "status": "UNSTRUCTURED_SOURCE",
+   "checked": "2026-09-29",
+   "detail": "robots allows; model pages publish no price and no spec table in HTML (price calculator trim list is filled client-side); book-your-car.hyundai-egypt.net timed out. Needs brochure-PDF recipe (pypdf) or a governed API route."
+  },
+  "soueast_eg_web": {
+   "host": "www.soueastegypt.com",
+   "owner": "Soueast Egypt",
+   "status": "ROBOTS_DISALLOW",
+   "checked": "2026-09-29",
+   "detail": "robots.txt allows only named search-engine spiders and ends 'User-agent: * / Disallow: /'. Not fetched."
+  },
+  "changanegypt_com": {
+   "host": "www.changanegypt.com",
+   "status": "NOT_OFFICIAL",
+   "checked": "2026-09-29",
+   "detail": "stale lookalike (CS35/Benni Mini/V7 catalogue, gambling link in page). Official Changan Egypt is changan.com.eg (GB Auto)."
+  }
+ }
 }

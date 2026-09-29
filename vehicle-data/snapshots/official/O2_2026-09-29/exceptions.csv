@@ -1,0 +1,23 @@
+url,universe_id,kind,detail
+https://en.nissan.com.eg/vehicles/new/juke.html,nissan/juke,GRADE_UNNAMED,LVL003 @ 1299999: official page publishes no grade name
+https://en.nissan.com.eg/vehicles/new/juke.html,nissan/juke,GRADE_UNNAMED,LVL002 @ 1259999: official page publishes no grade name
+https://www.mgmotor.com.eg/model/hs/,mg/hs,SOURCE_HEALTH,HTTP Error 404: Not Found
+https://www.mgmotor.com.eg/model/mg-rx9/,mg/rx9,UNSTRUCTURED_SOURCE,no per-grade Specs & Options table
+https://www.mgmotor.com.eg/model/mg-cyberster/,,UNSTRUCTURED_SOURCE,no per-grade Specs & Options table
+https://www.mgmotor.com.eg/model/mg-cyberster/,,MISSING_MODEL,not in P1 universe U11: MISSING_MODEL candidate
+https://www.chery-eg.com/en/car/tiggo-4-pro,chery/tiggo-4-pro,SOURCE_HEALTH,The read operation timed out
+https://www.chery-eg.com/en/car/tiggo-7,chery/tiggo-7,MODEL_PAGE_NOT_FOUND,official site returns its 'Page not found' template for this model
+https://toyota.com.eg/en/models/toyota-rav4,,MISSING_MODEL,not in P1 universe U11: MISSING_MODEL candidate
+https://toyota.com.eg/en/models/toyota-landcruiser-prado,,MISSING_MODEL,not in P1 universe U11: MISSING_MODEL candidate
+https://toyota.com.eg/en/models/toyota-camry,,MISSING_MODEL,not in P1 universe U11: MISSING_MODEL candidate
+https://kia.com.eg/models/The_Carnival,,MISSING_MODEL,not in P1 universe U11: MISSING_MODEL candidate
+https://www.skoda-egypt.com/models/kodiaq/kodiaq/the-kodiaq-pricelist,skoda/kodiaq,IMPLAUSIBLE_VALUE,"Selection: 129,500.00"
+https://www.skoda-egypt.com/models/kodiaq/kodiaq/the-kodiaq-pricelist,skoda/kodiaq,IMPLAUSIBLE_VALUE,"Selection Plus: 129,500.00"
+https://www.skoda-egypt.com/models/kodiaq/kodiaq/the-kodiaq-pricelist,skoda/kodiaq,IMPLAUSIBLE_VALUE,"Sportline: 172,000.00"
+https://www.skoda-egypt.com/models/scala/scala/scala-pricelist,,UNSTRUCTURED_SOURCE,price list module JSON missing
+https://www.skoda-egypt.com/models/scala/scala/scala-pricelist,,MISSING_MODEL,not in P1 universe U11: MISSING_MODEL candidate
+https://jetouregypt.com/models/T2-i-DM/,jetour/t2,UNSTRUCTURED_SOURCE,no engine cards and no grade price list
+https://jetouregypt.com/models/x70/,jetour/x70,UNSTRUCTURED_SOURCE,no engine cards and no grade price list
+https://jetouregypt.com/models/jetour-x70-fl/,jetour/x70,UNSTRUCTURED_SOURCE,no engine cards and no grade price list
+https://jetouregypt.com/models/x70plus/,jetour/x70-plus-ckd,UNSTRUCTURED_SOURCE,no engine cards and no grade price list
+https://jetouregypt.com/models/x90-plus-1-6t/,jetour/x90-plus,UNSTRUCTURED_SOURCE,no engine cards and no grade price list

@@ -9,7 +9,8 @@ Writes (same conventions as fetch_snapshot.py):
   official_observations.csv  one row per (page, grade, field): value as stated + provenance
   exceptions.csv             pages/grades a deterministic recipe could not resolve (routed to review, never guessed)
 Raw pages go to <out>/raw/ (git-ignored). Ported from the P2 factory Nissan batch B001 (2026-09-28).
-Recipes: nissan_vlp_price_json, nissan_spec_table, mg_model_page.
+Recipes: nissan_vlp_price_json, nissan_spec_table, mg_model_page (B001/O1);
+gb_model_page, toyota_page_state, kia_versions, chevrolet_nav_prices, skoda_pricelist_json, jetour_model_page (B003/O2).
 """
 import argparse, csv, datetime as dt, gzip, hashlib, html, json, os, re, sys, time, urllib.request
 
@@ -161,7 +162,207 @@ def mg_model_page(page, body):
     return rows, ev, exc
 
 
-RECIPES = {"nissan_vlp_price_json": nissan_vlp_price_json, "nissan_spec_table": nissan_spec_table, "mg_model_page": mg_model_page}
+# ------------------------------------------------------------------ B003 recipes (2026-09-29)
+PRICE_TOK = re.compile(r"^(?:EGP\s*)?([\d,]{5,})(?:\.00)?\s*(?:EGP)?$")
+PRICE_FLOOR_EGP = 300000        # deterministic plausibility guard for a new passenger car price in Egypt (2026)
+
+
+def _hp(v):
+    m = re.match(r"^\s*([\d.]+)\s*(?:hp|HP|/|$)", v or "")
+    return float(m.group(1)) if m else None
+
+
+GB_SPEC_LABELS = {  # label as printed -> (field, unit, parser)
+    "Power (HP/ RPM)": ("power_hp", "hp", _hp), "POWER (HP/RPM)": ("power_hp", "hp", _hp),
+    "Length (mm)": ("length_mm", "mm", num), "Length": ("length_mm", "mm", num),
+    "Wheelbase (mm)": ("wheelbase_mm", "mm", num), "Wheelbase": ("wheelbase_mm", "mm", num),
+    "Ground Clearance (mm)": ("ground_clearance_mm", "mm", num),
+    "Fuel Tank Capacity (L)": ("fuel_tank_l", "l", num), "Tank Capacity (L)": ("fuel_tank_l", "l", num),
+    "Engine Capacity (L)": ("engine", None, None), "Transmission": ("transmission", None, None),
+    "Drivetrain": ("drive", None, None), "Capacity (kWh)": ("battery_kwh", "kWh", num)}
+
+
+def gb_model_page(page, body):
+    """GB Auto brand sites (Chery Egypt, Changan Egypt): banner 'Starting/Start Price' + one label|value spec table."""
+    t = body.decode("utf-8", "ignore"); L = pipes(t); rows, ev, exc = [], {}, []
+    mk = page["url"].rstrip("/").split("/")[-1]
+    if "Page not found..." in L or "Page not found" in L:
+        return [], {"not_found": True}, [("MODEL_PAGE_NOT_FOUND", "official site returns its 'Page not found' template for this model")]
+    for i, tok in enumerate(L):
+        if tok in ("Starting Price", "Start Price"):
+            for j in (i + 1, i - 1):
+                m = PRICE_TOK.match(L[j]) if 0 <= j < len(L) else None
+                if m:
+                    ev["banner_price"] = L[j]
+                    rows.append(dict(model_key=mk, grade_key=None, trim_raw=None, model_year=None, field="price_from_official_egp",
+                                     value_raw=L[j], value_num=num(m.group(1)), unit="EGP", effective_date=None, confidence="HIGH",
+                                     evidence_pointer=f'model banner "{tok}"',
+                                     note="model-level starting price (cheapest grade); grade not named on the page"))
+                    break
+            if "banner_price" in ev:
+                break
+    grades = None
+    if "Grade" in L:
+        g = L.index("Grade"); k = g + 1
+        while k < len(L) and L[k] not in ("S", "-", "O") and len(L[k]) < 25:
+            k += 1
+        grades = L[g + 1:k]; ev["grade_header"] = grades
+    for i, tok in enumerate(L[:-1]):
+        if tok in GB_SPEC_LABELS and tok not in ev.setdefault("spec_rows", {}):
+            f, u, parse = GB_SPEC_LABELS[tok]; v = L[i + 1]
+            if f in {r["field"] for r in rows}:
+                continue
+            ev["spec_rows"][tok] = v
+            rows.append(dict(model_key=mk, grade_key=None, trim_raw=None, model_year=None, field=f, value_raw=v,
+                             value_num=parse(v) if parse else None, unit=u, effective_date=None, confidence="HIGH",
+                             evidence_pointer=f'spec table "{tok}"',
+                             note="spec table shows ONE unnamed configuration; grade-scoped unless confirmed model-wide"))
+    if not rows:
+        exc.append(("UNSTRUCTURED_SOURCE", "no banner price and no label|value spec table"))
+    return rows, ev, exc
+
+
+def toyota_page_state(page, body):
+    """Toyota Egypt: window.__PAGE_STATE__.vehicle_model with vehicleCategories[] {name, price, erp_id}."""
+    t = body.decode("utf-8", "ignore")
+    m = re.search(r"window\.__PAGE_STATE__\s*=\s*", t)
+    if not m:
+        return [], {}, [("UNSTRUCTURED_SOURCE", "window.__PAGE_STATE__ missing")]
+    vm = json.JSONDecoder().raw_decode(t[m.end():])[0].get("vehicle_model") or {}
+    rows, exc = [], []
+    yr = vm.get("year"); mk = vm.get("slug") or page["url"].rstrip("/").split("/")[-1]
+    ev = {k: vm.get(k) for k in ("name", "slug", "year", "price_from", "horse_power", "engine_capacity", "fuel_type")}
+    ev["categories"] = [{k: c.get(k) for k in ("id", "name", "previous_name", "price", "erp_id", "is_available_online")}
+                        for c in vm.get("vehicleCategories") or []]
+    for c in vm.get("vehicleCategories") or []:
+        nm = c.get("name") or ""; trim = nm.split(" - ", 1)[1] if " - " in nm else nm
+        legacy = not c.get("erp_id")
+        rows.append(dict(model_key=mk, grade_key=str(c.get("id")), trim_raw=trim, model_year=yr, field="price_official_egp",
+                         value_raw=str(c.get("price")), value_num=num(c.get("price")), unit="EGP", effective_date=None,
+                         evidence_pointer=f"__PAGE_STATE__.vehicle_model.vehicleCategories[id={c.get('id')}].price",
+                         confidence="MEDIUM" if legacy else "HIGH",
+                         note="grade has no erp_id (legacy/unsold grade still published)" if legacy else None))
+    hp = _hp(vm.get("horse_power"))
+    if hp:
+        rows.append(dict(model_key=mk, grade_key=None, trim_raw=None, model_year=yr, field="power_hp", value_raw=vm.get("horse_power"),
+                         value_num=hp, unit="hp", effective_date=None, confidence="HIGH",
+                         evidence_pointer="__PAGE_STATE__.vehicle_model.horse_power",
+                         note="model headline figure; grade-scoped unless confirmed model-wide"))
+    if not rows:
+        exc.append(("UNSTRUCTURED_SOURCE", "vehicle_model has no categories"))
+    return rows, ev, exc
+
+
+def kia_versions(page, body):
+    """Kia Egypt: ICE '<Model> Versions' block (name | stock status | 'EGP n'); EV pages 'Name (n EGP)'."""
+    L = pipes(body.decode("utf-8", "ignore")); rows, ev, exc = [], {"versions": []}, []
+    mk = page["url"].rstrip("/").split("/")[-1]
+    vi = next((i for i, t in enumerate(L) if t.endswith(" Versions")), None)
+    if vi is not None:
+        names = []
+        for t in L[vi + 1:]:
+            if t in names:
+                break
+            names.append(t)
+        k = vi + 1 + len(names)
+        for n in names:
+            try:
+                a = L.index(n, k)
+            except ValueError:
+                continue
+            seg = L[a + 1:a + 5]
+            pr = next((x for x in seg if re.match(r"^EGP [\d,]+$", x)), None)
+            stock = "Out of stock" if "Out of stock" in seg[:2] else None
+            ev["versions"].append(dict(name=n, price=pr, stock=stock))
+            rows.append(dict(model_key=mk, grade_key=n, trim_raw=n, model_year=None, field="price_official_egp",
+                             value_raw=pr or "", value_num=num(pr) if pr else None, unit="EGP", effective_date=None,
+                             evidence_pointer=f'"{L[vi]}" / "{n}"', confidence="HIGH",
+                             note="; ".join(x for x in (stock and "site marks this version Out of stock",
+                                                        None if pr else "version listed without price (NOT_PUBLISHED)") if x) or None))
+            k = a + 1
+    for t in L:
+        m = re.match(r"^(.{1,30}?) \(([\d,]+) EGP\)$", t)
+        if m and m.group(1) not in [v["name"] for v in ev["versions"]]:
+            ev["versions"].append(dict(name=m.group(1), price=m.group(2)))
+            rows.append(dict(model_key=mk, grade_key=m.group(1), trim_raw=m.group(1), model_year=None, field="price_official_egp",
+                             value_raw=t, value_num=num(m.group(2)), unit="EGP", effective_date=None,
+                             evidence_pointer=f'trim list "{t}"', confidence="HIGH", note=None))
+    if not rows:
+        exc.append(("UNSTRUCTURED_SOURCE", "no Versions block and no 'Name (price EGP)' list"))
+    return rows, ev, exc
+
+
+def chevrolet_nav_prices(page, body):
+    """Chevrolet Egypt (GM Arabia eg-ar): navigation cards '<name> | من <price> ج.م.'; page['label_map'] -> universe_id."""
+    L = pipes(body.decode("utf-8", "ignore")); rows, ev, exc, seen = [], {}, [], set()
+    lm = page.get("label_map", {})
+    for i, t in enumerate(L):
+        m = re.match(r"^من ([\d,]+) ج\.م\.?$", t)
+        if not m or i == 0:
+            continue
+        lab = L[i - 1]
+        if lab in seen:
+            continue
+        seen.add(lab); ev[lab] = t
+        if lab not in lm:
+            continue      # commercial vehicles (trucks/vans) are out of the passenger universe
+        rows.append(dict(model_key=lab, grade_key=None, trim_raw=None, model_year=None, field="price_from_official_egp",
+                         value_raw=t, value_num=num(m.group(1)), unit="EGP", effective_date=None, confidence="HIGH",
+                         evidence_pointer=f'nav card "{lab}"', universe_id=lm[lab],
+                         note="model-level 'from' price (cheapest version); versions not named"))
+    for lab, uid in lm.items():
+        if lab not in seen:
+            exc.append(("MODEL_NOT_LISTED", f"nav has no price card for '{lab}' ({uid})"))
+    return rows, ev, exc
+
+
+def skoda_pricelist_json(page, body):
+    """Skoda Egypt price list module: "engines":[{"equipmentPrices":{"<equipment>":{"priceFrom":"n"}}}]."""
+    t = html.unescape(body.decode("utf-8", "ignore")); rows, exc = [], []
+    m = re.search(r'"engines":(\[)', t)
+    if not m:
+        return [], {}, [("UNSTRUCTURED_SOURCE", "price list module JSON missing")]
+    engines = json.JSONDecoder().raw_decode(t[m.start(1):])[0]
+    mk = page["url"].rstrip("/").split("/")[-2]
+    for e in engines:
+        for eq, p in sorted((e.get("equipmentPrices") or {}).items()):
+            rows.append(dict(model_key=mk, grade_key=eq, trim_raw=eq, model_year=None, field="price_official_egp",
+                             value_raw=p.get("priceFrom"), value_num=num(p.get("priceFrom")), unit="EGP", effective_date=None,
+                             evidence_pointer=f'price list JSON engines[fuel={e.get("fuelTypeKind")}].equipmentPrices."{eq}".priceFrom',
+                             confidence="HIGH", note=None))
+    return rows, {"engines": engines}, exc
+
+
+def jetour_model_page(page, body):
+    """Jetour Egypt: engine cards '<title> | Engine | .. | Max power (hp) | n hp' + optional grade price list
+    'Comes in N Grades' -> '<grade> | n EGP'. The nav 'Starting Price' tile is not attributable and is ignored."""
+    L = pipes(body.decode("utf-8", "ignore")); rows, ev, exc = [], {"engines": [], "grades": []}, []
+    mk = page["url"].rstrip("/").split("/")[-1]
+    for i, t in enumerate(L):
+        if t == "Max power (hp)" and i + 1 < len(L):
+            title = next((L[j] for j in range(i - 1, max(0, i - 6), -1) if L[j].lower().startswith("jetour ")), None)
+            ev["engines"].append([title, L[i + 1]])
+            rows.append(dict(model_key=mk, grade_key=title, trim_raw=title, model_year=None, field="power_hp", value_raw=L[i + 1],
+                             value_num=_hp(L[i + 1]), unit="hp", effective_date=None, confidence="HIGH",
+                             evidence_pointer=f'engine card "{title}" / "Max power (hp)"', note=None))
+    gi = next((i for i, t in enumerate(L) if re.match(r"^Comes in \d+ Grades", t)), None)
+    if gi is not None:
+        for i in range(gi + 1, len(L) - 1):
+            m = re.match(r"^([\d,]+) EGP$", L[i + 1])
+            if m and not L[i].startswith("Starting Price"):
+                ev["grades"].append([L[i], L[i + 1]])
+                rows.append(dict(model_key=mk, grade_key=L[i], trim_raw=L[i], model_year=None, field="price_official_egp",
+                                 value_raw=L[i + 1], value_num=num(m.group(1)), unit="EGP", effective_date=None, confidence="HIGH",
+                                 evidence_pointer=f'"{L[gi]}" / "{L[i]}"', note=None))
+    if not rows:
+        exc.append(("UNSTRUCTURED_SOURCE", "no engine cards and no grade price list"))
+    return rows, ev, exc
+
+
+RECIPES = {"nissan_vlp_price_json": nissan_vlp_price_json, "nissan_spec_table": nissan_spec_table, "mg_model_page": mg_model_page,
+           "gb_model_page": gb_model_page, "toyota_page_state": toyota_page_state, "kia_versions": kia_versions,
+           "chevrolet_nav_prices": chevrolet_nav_prices, "skoda_pricelist_json": skoda_pricelist_json,
+           "jetour_model_page": jetour_model_page}
 
 
 def run(cfg_path, out, pages_from=None, delay=1.0):
@@ -170,9 +371,14 @@ def run(cfg_path, out, pages_from=None, delay=1.0):
     for p in cfg["pages"]:
         src = cfg["sources"][p["source"]]
         try:
-            req = urllib.request.Request(p["url"], headers=UA)
-            with urllib.request.urlopen(req, timeout=60) as r:
-                body, status, date = r.read(), r.status, r.headers.get("date")
+            if pages_from:   # replay: re-parse the raw bytes an earlier snapshot captured (no network)
+                pm = next(m for m in json.load(open(os.path.join(pages_from, "fetch_manifest.json")))
+                          if m["url"] == p["url"] and m.get("file"))
+                body, status, date = gzip.decompress(open(os.path.join(pages_from, "raw", pm["file"]), "rb").read()), 200, pm["http_date"]
+            else:
+                req = urllib.request.Request(p["url"], headers=UA)
+                with urllib.request.urlopen(req, timeout=60) as r:
+                    body, status, date = r.read(), r.status, r.headers.get("date")
         except Exception as e:  # recorded, never silently dropped
             man.append(dict(url=p["url"], source=p["source"], recipe=p["recipe"], error=str(e)))
             excs.append(dict(url=p["url"], universe_id=p.get("universe_id"), kind="SOURCE_HEALTH", detail=str(e)[:200]))
@@ -184,15 +390,20 @@ def run(cfg_path, out, pages_from=None, delay=1.0):
         rows, ev, exc = RECIPES[p["recipe"]](p, body)
         evs.append(dict(url=p["url"], sha256=h, http_date=date, recipe=p["recipe"], fragments=ev))
         for r_ in rows:
+            if r_["field"].startswith("price") and r_.get("value_num") and r_["value_num"] < PRICE_FLOOR_EGP:
+                r_["confidence"] = "LOW"
+                r_["note"] = "; ".join(x for x in (r_.get("note"), f"IMPLAUSIBLE: below EGP {PRICE_FLOOR_EGP:,} floor, likely placeholder/stale") if x)
+                exc.append(("IMPLAUSIBLE_VALUE", f'{r_.get("trim_raw") or r_["model_key"]}: {r_["value_raw"]}'))
             obs.append(dict(r_, source=p["source"], source_tier=src["tier"], recipe=p["recipe"] + "@1",
-                            universe_id=p.get("universe_id"), registry_model_id=p.get("registry_model_id"),
+                            universe_id=r_.get("universe_id") or p.get("universe_id"), registry_model_id=p.get("registry_model_id"),
                             source_url=p["url"], fetched_at=date, page_sha256=h,
                             note="; ".join(x for x in (r_.get("note"), p.get("variant") and f"page variant: {p['variant']}") if x) or None))
         for kind, detail in exc:
             excs.append(dict(url=p["url"], universe_id=p.get("universe_id"), kind=kind, detail=detail))
-        if p.get("universe_id") is None:
+        if p.get("universe_id") is None and not p.get("label_map"):
             excs.append(dict(url=p["url"], universe_id=None, kind="MISSING_MODEL", detail=p.get("note", "")))
-        time.sleep(delay)
+        if not pages_from:
+            time.sleep(delay)
     json.dump(man, open(os.path.join(out, "fetch_manifest.json"), "w"), indent=1)
     with gzip.open(os.path.join(out, "evidence.jsonl.gz"), "wt", encoding="utf-8") as f:
         for e in evs:
@@ -213,4 +424,5 @@ def run(cfg_path, out, pages_from=None, delay=1.0):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); ap.add_argument("cmd", choices=["run"])
     ap.add_argument("--config", default="config/official_sources.json"); ap.add_argument("--out", required=True)
-    a = ap.parse_args(); run(a.config, a.out)
+    ap.add_argument("--pages-from", help="replay raw pages of an earlier snapshot (determinism check, no network)")
+    a = ap.parse_args(); run(a.config, a.out, a.pages_from)
