@@ -1,0 +1,30 @@
+{
+ "generated": "2026-09-29",
+ "llm_calls": 0,
+ "replay_parse": {
+  "what": "official_t1.py --pages-from O2 (same raw bytes, no network)",
+  "observations_byte_identical": true,
+  "evidence_sha_equal": true,
+  "note": "exceptions.csv differs only for pages that had no raw bytes in O2 (tiggo-4-pro timeout, mg hs 404): replay records 'no raw page' instead of the network error"
+ },
+ "second_live_fetch": {
+  "what": "independent live fetch of all 70 pages ~1h after O2 (not committed)",
+  "shared_observation_keys": 313,
+  "value_differences": 0,
+  "page_bytes_identical": 27,
+  "pages": 70,
+  "coverage_differences": "only from transient fetch failures: O2 missed chery tiggo-4-pro (timeout); live2 missed 3 changan pages (timeout)",
+  "reading": "43 of 70 pages changed bytes (tracking tokens, CSRF, carousels) yet no parsed value changed: the parsers read only data fragments, so page churn does not create false change events"
+ },
+ "o1_vs_o2_nissan_mg": {
+  "keys_O1": 163,
+  "keys_O2": 163,
+  "value_changes": 0,
+  "added": 0,
+  "removed": 0,
+  "pages_byte_identical": 11,
+  "pages": 23,
+  "reading": "no official Nissan/MG price or spec changed between 2026-09-28 and 2026-09-29. A real change would appear as a differing value_raw on the same (url, grade, field, evidence_pointer) key and, after reconcile, as a changed official_value/decision row in review/official_reconciliation.csv (git diff)."
+ },
+ "reconcile_rerun_identical": true
+}

@@ -130,4 +130,33 @@ Promotion policy (CEO, 2026-09-28):
 - **REVIEW** covers label or identity questions: unnamed or renamed grades, and page variants.
 - **Seats is never auto-filled.** It is a hard constraint for Find My Car.
 
+**B003 (2026-09-29): snapshot `O2_2026-09-29`, 70 pages, 331 observations, `llm_calls=0`.** It adds these recipes:
+
+| Recipe | Source | What it reads |
+|---|---|---|
+| `gb_model_page` | Chery Egypt (chery-eg.com), Changan Egypt (changan.com.eg), both GB Auto | Banner "Starting/Start Price" (model-level, cheapest grade) and the label/value spec table. Grade-scoped. A "Page not found" template is recorded as `MODEL_PAGE_NOT_FOUND` |
+| `toyota_page_state` | Toyota Egypt | `window.__PAGE_STATE__.vehicle_model.vehicleCategories[]` per-grade price. A grade without an `erp_id` is confidence MEDIUM (a legacy grade still published) |
+| `kia_versions` | Kia Egypt | The ICE "<Model> Versions" block (price and "Out of stock" status) and the EV "Name (price EGP)" lists |
+| `chevrolet_nav_prices` | Chevrolet Egypt (chevroletarabia.com/eg-ar) | Navigation "from" price cards. `label_map` pins each card label to a universe id |
+| `skoda_pricelist_json` | Skoda Egypt | The price-list module JSON (`equipmentPrices.*.priceFrom`) |
+| `jetour_model_page` | Jetour Egypt | Engine cards (hp) and the "Comes in N Grades" price list |
+
+Rules added in B003:
+- **Price floor.** Any official price below EGP 300,000 gets confidence LOW and an `IMPLAUSIBLE_VALUE` exception. The Skoda Kodiaq list publishes 129,500.
+- **From-price comparison.** A model-level from-price is compared with the cheapest universe trim. It is AUTO_PROMOTE only when it is equal, HIGH confidence, and exactly one trim holds the minimum.
+- **Unparsed pages.** A configured page that timed out or could not be parsed becomes `source_health` REVIEW, not "absent from the official site".
+- **Grade-scoped hp.** A grade-scoped hp that is a subset of the universe values is REVIEW, not CEO_REVIEW.
+
+Blocked sources are listed in `config.blocked_sources`:
+- Hyundai (hyundai-egypt.net): no price or spec in the HTML.
+- Soueast: robots.txt disallows `*`.
+- changanegypt.com: not official.
+
+Refresh: `scripts/refresh.sh` runs `official_t1.py` into the next `O<n>_<date>`, then reconciles against the P1 `view.js`. Both steps are non-fatal. The schedule stays off (D10/D14).
+
+Determinism: `official_t1.py run --pages-from <snap>` re-parses captured raw bytes with no network. The evidence is in `snapshots/official/O2_2026-09-29/determinism_evidence.json`:
+- A replay reproduces the observations byte-identically.
+- A second live fetch gave 0 value differences across 313 keys, even though 43 of 70 pages had changed bytes.
+- O1→O2 for Nissan and MG: 0 changes.
+
 Ported from the P2 factory Nissan batch B001. The brochure-PDF spec rules from B001 are not ported yet, because they need `pypdf` and the CI installs only `requests` + `bs4`.

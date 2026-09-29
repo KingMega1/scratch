@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/vehicle-refresh.yml b/.github/workflows/vehicle-refresh.yml
+index e941f3f..f0355e7 100644
+--- a/.github/workflows/vehicle-refresh.yml
++++ b/.github/workflows/vehicle-refresh.yml
+@@ -3,6 +3,7 @@ name: vehicle-data refresh
+ # Manual trigger (Actions tab -> Run workflow) or by pushing a change to vehicle-data/refresh.request.
+ # Scheduled runs are intentionally OFF until decisions D10 (cadence) and D14 (source ToS) are made;
+ # uncomment the schedule block to enable.
++# refresh.sh also runs the Tier-1 official snapshot (official_t1.py) + reconciliation, non-fatally (B003).
+ on:
+   workflow_dispatch:
+     inputs:
+@@ -44,7 +45,9 @@ jobs:
+         uses: actions/upload-artifact@v4
+         with:
+           name: raw-pages-${{ github.run_id }}
+-          path: vehicle-data/snapshots/*/raw/
++          path: |
++            vehicle-data/snapshots/*/raw/
++            vehicle-data/snapshots/official/*/raw/
+           retention-days: 90
+           if-no-files-found: ignore
+       - name: Commit snapshot and views

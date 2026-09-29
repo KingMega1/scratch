@@ -104,8 +104,11 @@ def main():
                         f"non-material difference EGP {d:,.0f} (<= {MATERIAL_EGP:,}): tier rule takes the official value", [o],
                         dict(op="set_price", trim=t["label"], min=v, official=True, date=o["effective_date"] or o["fetched_at"], source=o["source_url"]))
                 else:
-                    add(uid, "price", t["label"], v, t["min"], "CEO_REVIEW",
-                        f"material price discrepancy EGP {d:,.0f}" + (f" [{o['note']}]" if o["confidence"] == "LOW" else ""), [o])
+                    why = (f"material price discrepancy EGP {d:,.0f}" if d > MATERIAL_EGP
+                           else f"EGP {d:,.0f} difference but official value confidence {o['confidence']} ({o['note']})")
+                    if o["confidence"] == "LOW":
+                        why += f" [{o['note']}]"
+                    add(uid, "price", t["label"], v, t["min"], "CEO_REVIEW", why, [o])
         if prices and not any(o["field"] == "price_from_official_egp" for o in rows):
             for t in cur:
                 if t["label"] not in matched:
@@ -162,10 +165,25 @@ def main():
             else:
                 add(uid, field, None, vals, curv, "CEO_REVIEW", "specification discrepancy", fo)
 
+    # pages that exist but were not parsed (timeout/404/unstructured) are a source-health question, not evidence of
+    # absence; only the site's own 'Page not found' template is availability evidence (B003)
+    xp = os.path.join(a.official, "exceptions.csv")
+    X = list(csv.DictReader(open(xp, encoding="utf-8"))) if os.path.exists(xp) else []
+    unparsed = {}
+    for x in X:
+        if x["universe_id"] and x["universe_id"] not in by_model:
+            unparsed.setdefault(x["universe_id"], []).append(x)
+    for uid, xs in sorted(unparsed.items()):
+        kinds = sorted({x["kind"] for x in xs})
+        if "MODEL_PAGE_NOT_FOUND" in kinds:
+            add(uid, "availability", None, "official model page returns 'Page not found'", "in universe", "CEO_REVIEW",
+                "official site no longer publishes this model (discontinued, renamed or moved to another importer?)", [])
+        else:
+            add(uid, "source_health", None, None, None, "REVIEW", f"official page configured but not parsed ({', '.join(kinds)}); no conclusion drawn", [])
     # lineup coverage: in-universe models of a covered brand that no official page lists
     brands = {uid.split("/")[0] for uid in by_model}
     for m in U["models"]:
-        if m.get("u") and m["id"].split("/")[0] in brands and m["id"] not in by_model:
+        if m.get("u") and m["id"].split("/")[0] in brands and m["id"] not in by_model and m["id"] not in unparsed:
             add(m["id"], "availability", None, "not listed on official site", f'in universe; reg last12={(m.get("reg") or {}).get("last12")}',
                 "CEO_REVIEW", "brand lineup fetched from the official site does not include this model (discontinued? other importer?)", [])
     # an open model-year discrepancy is an unresolved conflict for every price of that model

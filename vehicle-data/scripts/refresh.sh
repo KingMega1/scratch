@@ -43,6 +43,21 @@ fi
 python3 scripts/detect_changes.py --prev "$PREV" --cur "$SNAP"
 python3 scripts/build_p1.py --master inputs/s0_slice_master.csv --reg inputs/registration_slice.json --as-of "$DATE"
 
+# Tier-1 official Egypt OEM/distributor sources (B001/B003): additive, NON-FATAL. A failure here is recorded as
+# SOURCE_HEALTH and never blocks the aggregator refresh or the P1 view. Reconciliation writes review/ only.
+ON=$(ls -d snapshots/official/O*_* 2>/dev/null | sed 's#.*/O\([0-9]*\)_.*#\1#' | sort -n | tail -1)
+OSNAP="snapshots/official/O$(( ${ON:-0} + 1 ))_${DATE}"
+if python3 scripts/official_t1.py run --out "$OSNAP"; then
+  P1_VIEW_URL="${P1_VIEW_URL:-https://raw.githubusercontent.com/KingMega1/carindex-buyer-test/main/data/view.js}"
+  if curl -fsSL -o /tmp/p1_view.js "$P1_VIEW_URL"; then
+    python3 scripts/reconcile_official.py --official "$OSNAP" --universe /tmp/p1_view.js --out review || echo "SOURCE_HEALTH official reconciliation failed"
+  else
+    echo "SOURCE_HEALTH P1 universe not reachable; official snapshot kept, reconciliation skipped"
+  fi
+else
+  echo "SOURCE_HEALTH official Tier-1 snapshot failed"
+fi
+
 python3 - "$SNAP" "$T0" "$MODE" <<'PY'
 import json, sys, time, csv, os
 snap, t0, mode = sys.argv[1], int(sys.argv[2]), sys.argv[3]
