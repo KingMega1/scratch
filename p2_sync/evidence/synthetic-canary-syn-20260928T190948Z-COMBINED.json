@@ -1,0 +1,215 @@
+{
+ "run_id": "syn-20260928T190948Z",
+ "canonical_head_after_cleanup": "3bc553268af42dac1251b3cbfe5214dfccca4cdf",
+ "commits": {
+  "A": "1567bb8",
+  "B": "cd16814b4ddc7ba73dce0ac44b9fe58b335cbeea",
+  "C": "24fac8b",
+  "D": "05e4d70",
+  "E": "3bc553268af42dac1251b3cbfe5214dfccca4cdf"
+ },
+ "base": "d475768bb80e08b90c4e257a3ddc7d79b499e507",
+ "file_sha256": {
+  "A": "a3e35953246ad969c9fc5db8e5bf499e637cd43d61ae7c8617c11759ef6562aa",
+  "B": "8c04357e540a55278b9ba5cc922ad31e75af9444579caca05ad8d508799b7f1e",
+  "C": "7d3dbb27d6ddb327ea8865b7d16da132487fed1c3b0a47c4fe7bf15bd2cbb060",
+  "D": "dd3723fab1f62531f788147703190bc774cf620becdebfcce3680195a04e9a80"
+ },
+ "S1_S3_from_ledgers": {
+  "drive": [
+   [
+    "S1_new",
+    "ACCEPTED_NEW",
+    "1567bb8"
+   ],
+   [
+    "S2_rerun_idempotent",
+    "DUPLICATE_NO_CHANGE",
+    "1567bb8"
+   ],
+   [
+    "S3_update",
+    "UPDATED",
+    "cd16814"
+   ]
+  ],
+  "n8n": [
+   [
+    "S1_new",
+    "ACCEPTED_NEW",
+    "1567bb8"
+   ],
+   [
+    "S2_rerun_idempotent",
+    "DUPLICATE_NO_CHANGE",
+    "1567bb8"
+   ],
+   [
+    "S3_update",
+    "UPDATED",
+    "cd16814"
+   ],
+   [
+    "S3_update",
+    "DUPLICATE_NO_CHANGE",
+    "cd16814"
+   ]
+  ]
+ },
+ "S4_S8": [
+  {
+   "case": "S4_stale",
+   "commit": "1567bb8",
+   "expected": [
+    "REJECTED_STALE",
+    "REJECTED_STALE"
+   ],
+   "drive": "REJECTED_STALE",
+   "n8n": "REJECTED_STALE",
+   "sha256": "a3e35953246ad969c9fc5db8e5bf499e637cd43d61ae7c8617c11759ef6562aa",
+   "git_blob_sha": "7dcf497238da486e0e54fc0ea73bfcef8830714e",
+   "schema": "carindex.sync_canary/v1",
+   "current_version": [
+    2,
+    2
+   ],
+   "current_sha256": "8c04357e540a55278b9ba5cc922ad31e75af9444579caca05ad8d508799b7f1e",
+   "identity_equal": true,
+   "reason": "commit is older than current version 2 (cd16814)",
+   "pass_": true
+  },
+  {
+   "case": "S5_integrity_expected_hash",
+   "commit": "cd16814b4ddc7ba73dce0ac44b9fe58b335cbeea",
+   "expected": [
+    "REJECTED_INTEGRITY",
+    "REJECTED_INTEGRITY"
+   ],
+   "drive": "REJECTED_INTEGRITY",
+   "n8n": "REJECTED_INTEGRITY",
+   "sha256": "8c04357e540a55278b9ba5cc922ad31e75af9444579caca05ad8d508799b7f1e",
+   "git_blob_sha": "daa86595473c737e4d7d7feb3fe0241fe4a17d5d",
+   "schema": null,
+   "current_version": [
+    2,
+    2
+   ],
+   "current_sha256": "8c04357e540a55278b9ba5cc922ad31e75af9444579caca05ad8d508799b7f1e",
+   "identity_equal": true,
+   "reason": "sha256 != expected_sha256",
+   "pass_": true
+  },
+  {
+   "case": "S6_malformed_json",
+   "commit": "24fac8b",
+   "expected": [
+    "REJECTED_MALFORMED",
+    "REJECTED_MALFORMED"
+   ],
+   "drive": "REJECTED_MALFORMED",
+   "n8n": "REJECTED_MALFORMED",
+   "sha256": "7d3dbb27d6ddb327ea8865b7d16da132487fed1c3b0a47c4fe7bf15bd2cbb060",
+   "git_blob_sha": "62dbd2e2c70fc217b8c569088dfee31bd3fc5312",
+   "schema": null,
+   "current_version": [
+    2,
+    2
+   ],
+   "current_sha256": "8c04357e540a55278b9ba5cc922ad31e75af9444579caca05ad8d508799b7f1e",
+   "identity_equal": true,
+   "reason": "not UTF-8 JSON: Expecting value: line 1 column 88 (char 87)",
+   "pass_": true
+  },
+  {
+   "case": "S7_missing_required_keys",
+   "commit": "05e4d70",
+   "expected": [
+    "REJECTED_MALFORMED",
+    "REJECTED_MALFORMED"
+   ],
+   "drive": "REJECTED_MALFORMED",
+   "n8n": "REJECTED_MALFORMED",
+   "sha256": "dd3723fab1f62531f788147703190bc774cf620becdebfcce3680195a04e9a80",
+   "git_blob_sha": "ffa0b94e28f691e59d20a1892030cb09dde144fa",
+   "schema": "carindex.sync_canary/v1",
+   "current_version": [
+    2,
+    2
+   ],
+   "current_sha256": "8c04357e540a55278b9ba5cc922ad31e75af9444579caca05ad8d508799b7f1e",
+   "identity_equal": true,
+   "reason": "missing keys artifact_id,generated_as_of,payload",
+   "pass_": true
+  },
+  {
+   "case": "S8_drive_drift_repair",
+   "commit": "cd16814b4ddc7ba73dce0ac44b9fe58b335cbeea",
+   "expected": [
+    "REPAIRED_MIRROR",
+    "DUPLICATE_NO_CHANGE"
+   ],
+   "drive": "REPAIRED_MIRROR",
+   "n8n": "DUPLICATE_NO_CHANGE",
+   "sha256": "8c04357e540a55278b9ba5cc922ad31e75af9444579caca05ad8d508799b7f1e",
+   "git_blob_sha": "daa86595473c737e4d7d7feb3fe0241fe4a17d5d",
+   "schema": "carindex.sync_canary/v1",
+   "current_version": [
+    2,
+    2
+   ],
+   "current_sha256": "8c04357e540a55278b9ba5cc922ad31e75af9444579caca05ad8d508799b7f1e",
+   "identity_equal": true,
+   "reason": "Drive copy hash c78f0d9ce29f274d5cbba90c322c6e6248adb47463ac766982c255c79803ebc6 != version 2; restored from GitHub",
+   "pass_": true
+  }
+ ],
+ "post_cleanup": {
+  "canary_file_at_head_http": 404,
+  "canary_dir_at_head_http": 404,
+  "net_tree_diff_vs_base": "(none)",
+  "drive_decision": "REJECTED_SOURCE_NOT_FOUND",
+  "n8n_decision": "REJECTED_SOURCE_NOT_FOUND",
+  "drive_current": "8c04357e540a55278b9ba5cc922ad31e75af9444579caca05ad8d508799b7f1e",
+  "n8n_current": "8c04357e540a55278b9ba5cc922ad31e75af9444579caca05ad8d508799b7f1e",
+  "pass_": true
+ },
+ "final_ledger_entries": {
+  "drive": {
+   "version": 2,
+   "commit": "cd16814b4ddc7ba73dce0ac44b9fe58b335cbeea",
+   "sha256": "8c04357e540a55278b9ba5cc922ad31e75af9444579caca05ad8d508799b7f1e",
+   "git_blob_sha": "daa86595473c737e4d7d7feb3fe0241fe4a17d5d",
+   "schema": "carindex.sync_canary/v1",
+   "previous": {
+    "commit": "1567bb89ded79e9f9d688df7da11aada0e45f1d6",
+    "sha256": "a3e35953246ad969c9fc5db8e5bf499e637cd43d61ae7c8617c11759ef6562aa",
+    "version": 1
+   }
+  },
+  "n8n": {
+   "version": 2,
+   "commit": "cd16814b4ddc7ba73dce0ac44b9fe58b335cbeea",
+   "sha256": "8c04357e540a55278b9ba5cc922ad31e75af9444579caca05ad8d508799b7f1e",
+   "git_blob_sha": "daa86595473c737e4d7d7feb3fe0241fe4a17d5d",
+   "schema": "carindex.sync_canary/v1",
+   "previous": {
+    "version": 1,
+    "commit": "1567bb89ded79e9f9d688df7da11aada0e45f1d6",
+    "sha256": "a3e35953246ad969c9fc5db8e5bf499e637cd43d61ae7c8617c11759ef6562aa"
+   },
+   "consumed": {
+    "generated_as_of": "2026-09-29",
+    "items": 2,
+    "synthetic": true
+   }
+  }
+ },
+ "drive_local_current_sha256": "8c04357e540a55278b9ba5cc922ad31e75af9444579caca05ad8d508799b7f1e",
+ "n8n_workflow": {
+  "id": "P2SyncProbe00001",
+  "versionId": "f1e9e0b2-defe-4d67-b0ac-50b2a00740b5",
+  "active": false
+ },
+ "note": "S3 n8n CLI output was lost in transit; decision taken from the n8n ledger event (UPDATED @ cd16814). A manual replay of S3 at 19:20Z was recorded as DUPLICATE_NO_CHANGE (idempotent).",
+ "all_pass": true
+}
