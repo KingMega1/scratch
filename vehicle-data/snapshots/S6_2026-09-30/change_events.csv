@@ -1,0 +1,15 @@
+event_id,event,snapshot,prev_snapshot,url,model_year,trim_key,label,price_type,spec_id,old,new,delta_egp,delta_pct,material,confidence,detail
+9be191164e98c66b,TRIM_MISSING,S6_2026-09-30,S5_2026-09-25,https://eg.hatla2ee.com/en/new-car/opel/Grandland,2026,highlineplus,A/T / Highline+,official,,[1849990],,,,,MEDIUM,missing in one healthy run; DISCONTINUED needs k consecutive misses + review (D6)
+498dc7286c9c4885,TRIM_MISSING,S6_2026-09-30,S5_2026-09-25,https://eg.hatla2ee.com/en/new-car/opel/Grandland,2026,topline,A/T / Top Line,official,,[1949990],,,,,MEDIUM,missing in one healthy run; DISCONTINUED needs k consecutive misses + review (D6)
+b86a3692f4c11ec3,TRIM_MISSING,S6_2026-09-30,S5_2026-09-25,https://eg.hatla2ee.com/en/new-car/opel/Grandland,2026,toplineplus,A/T / Top Line+,official,,[2099990],,,,,MEDIUM,missing in one healthy run; DISCONTINUED needs k consecutive misses + review (D6)
+20710830d599e22c,NEW_TRIM,S6_2026-09-30,S5_2026-09-25,https://eg.hatla2ee.com/en/new-car/opel/Grandland,2027,highlineplus,A/T / Highline+,official,,,[1849990],,,,MEDIUM,
+de546d4ae7186be6,NEW_TRIM,S6_2026-09-30,S5_2026-09-25,https://eg.hatla2ee.com/en/new-car/opel/Grandland,2027,topline,A/T / Top Line,official,,,[1974990],,,,MEDIUM,
+f10f7cb5ccb3bb26,NEW_TRIM,S6_2026-09-30,S5_2026-09-25,https://eg.hatla2ee.com/en/new-car/opel/Grandland,2027,toplineplus,A/T / Top Line+,official,,,[2124990],,,,MEDIUM,
+54a911f4fc71ae46,PRICE_CHANGE,S6_2026-09-30,S5_2026-09-25,https://www.contactcars.com/en/new-cars/deepal-s05/year-2026,2026,reev,REEV,market,,1700000,1640000,-60000,-0.0353,True,MEDIUM,
+9b5be35aacf02233,PRICE_CHANGE,S6_2026-09-30,S5_2026-09-25,https://www.contactcars.com/en/new-cars/hyundai-tucson/year-2027,2027,blaze,BLAZE,market,,1980000,1960000,-20000,-0.0101,True,MEDIUM,
+dd77f05bcd401833,PRICE_CHANGE,S6_2026-09-30,S5_2026-09-25,https://www.contactcars.com/en/new-cars/kia-sportage/year-2027,2027,gtline,GT-line:,market,,2460000,2440000,-20000,-0.0081,True,MEDIUM,
+68a9136378dde733,PRICE_CHANGE,S6_2026-09-30,S5_2026-09-25,https://www.contactcars.com/en/new-cars/kia-sportage/year-2027,2027,lx,LX,market,,1880000,1860000,-20000,-0.0106,True,MEDIUM,
+8853306186ca0e42,PRICE_CHANGE,S6_2026-09-30,S5_2026-09-25,https://www.contactcars.com/en/new-cars/soueast-s_06/year-2027,2027,premium,Premium,market,,1540000,1520000,-20000,-0.013,True,MEDIUM,
+8e850988b4802e45,PRICE_CHANGE,S6_2026-09-30,S5_2026-09-25,https://www.contactcars.com/en/new-cars/soueast-s_09/year-2027,2027,premium,Premium,market,,1680000,1800000,120000,0.0714,True,MEDIUM,
+0e0365520ace244c,SOURCE_STATED_PRICE_CHANGE,S6_2026-09-30,S5_2026-09-25,https://eg.hatla2ee.com/en/new-car/opel/Grandland,2027,,Opel Grandland A/T / Top Line+,official,,"2,099,990","2,124,990",,,,MEDIUM,source effective_date 2026-09-27
+c7dcb6bf65a64309,SOURCE_STATED_PRICE_CHANGE,S6_2026-09-30,S5_2026-09-25,https://eg.hatla2ee.com/en/new-car/opel/Grandland,2027,,Opel Grandland A/T / Top Line,official,,"1,949,990","1,974,990",,,,MEDIUM,source effective_date 2026-09-27
