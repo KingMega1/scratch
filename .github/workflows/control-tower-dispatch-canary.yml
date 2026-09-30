@@ -4,9 +4,20 @@ on:
   push:
     paths:
       - "ops/dispatch-canary.request"
+  workflow_dispatch:
+    inputs:
+      canary_number:
+        description: "Automatic continuation canary number"
+        required: true
+        default: "1"
 
 permissions:
   contents: read
+  actions: write
+
+concurrency:
+  group: at-37-dispatch-canary
+  cancel-in-progress: false
 
 jobs:
   canary:
@@ -14,10 +25,23 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+      - name: Determine canary number
+        id: seq
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            N="${{ inputs.canary_number }}"
+          else
+            N="1"
+          fi
+          echo "n=$N" >> "$GITHUB_OUTPUT"
+          echo "AT-37 canary $N"
       - name: Emit executor evidence
+        shell: bash
         run: |
           mkdir -p canary-evidence
-          printf '{"task_id":"AT-37","run_id":"%s","job":"canary","commit":"%s","started_at":"%s","result":"PASS"}\n'             "$GITHUB_RUN_ID" "$GITHUB_SHA" "$(date -u +%FT%TZ)" > canary-evidence/result.json
+          printf '{"task_id":"AT-37","canary_number":"%s","run_id":"%s","job":"canary","branch":"%s","commit":"%s","started_at":"%s","result":"PASS"}\n' \
+            "${{ steps.seq.outputs.n }}" "$GITHUB_RUN_ID" "$GITHUB_REF_NAME" "$GITHUB_SHA" "$(date -u +%FT%TZ)" > canary-evidence/result.json
           cat canary-evidence/result.json
       - name: Upload canary evidence
         uses: actions/upload-artifact@v4
@@ -25,3 +49,15 @@ jobs:
           name: at-37-dispatch-canary-${{ github.run_id }}
           path: canary-evidence/result.json
           retention-days: 30
+      - name: Automatically dispatch next canary
+        if: ${{ success() && fromJSON(steps.seq.outputs.n) < 3 }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NEXT: ${{ fromJSON(steps.seq.outputs.n) + 1 }}
+        shell: bash
+        run: |
+          gh workflow run control-tower-dispatch-canary.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref "$GITHUB_REF_NAME" \
+            -f canary_number="$NEXT"
+          echo "Automatically dispatched AT-37 canary $NEXT"
