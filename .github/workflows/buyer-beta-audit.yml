@@ -1,0 +1,39 @@
+name: buyer-beta independent acceptance audit
+
+on:
+  push:
+    paths:
+      - "buyer-decision/beta/audit.request"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install audit dependencies
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm install --no-save playwright axe-core
+          npx playwright install --with-deps chromium
+      - name: Run remediated Buyer Beta QA
+        env:
+          AXE: ${{ github.workspace }}/node_modules/axe-core/axe.min.js
+        run: |
+          rm -rf buyer-decision/beta/qa/ci-remediated
+          node buyer-decision/beta/qa.mjs buyer-decision/beta/remediated buyer-decision/beta/qa/ci-remediated
+      - name: Upload independent audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: at-29-buyer-beta-audit-${{ github.run_id }}
+          path: buyer-decision/beta/qa/ci-remediated/
+          retention-days: 30
+          if-no-files-found: error
