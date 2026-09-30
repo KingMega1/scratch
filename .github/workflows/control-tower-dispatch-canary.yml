@@ -53,3 +53,9 @@ jobs:
         run: |
           NEXT=$((CURRENT + 1))
           gh workflow run control-tower-dispatch-canary.yml --repo "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME" -f canary_number="$NEXT"
+      - name: Dispatch real eligible task AT-30 after canary 3
+        if: ${{ success() && steps.seq.outputs.n == '3' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: gh workflow run at-30-real-dispatch.yml --repo "$GITHUB_REPOSITORY" --ref main
