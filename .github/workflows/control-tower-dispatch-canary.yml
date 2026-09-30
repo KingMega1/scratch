@@ -1,0 +1,27 @@
+name: control-tower automatic dispatch canary
+
+on:
+  push:
+    paths:
+      - "ops/dispatch-canary.request"
+
+permissions:
+  contents: read
+
+jobs:
+  canary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Emit executor evidence
+        run: |
+          mkdir -p canary-evidence
+          printf '{"task_id":"AT-37","run_id":"%s","job":"canary","commit":"%s","started_at":"%s","result":"PASS"}\n'             "$GITHUB_RUN_ID" "$GITHUB_SHA" "$(date -u +%FT%TZ)" > canary-evidence/result.json
+          cat canary-evidence/result.json
+      - name: Upload canary evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: at-37-dispatch-canary-${{ github.run_id }}
+          path: canary-evidence/result.json
+          retention-days: 30
