@@ -3,13 +3,13 @@ name: control-tower automatic dispatch canary
 on:
   push:
     paths:
-      - "ops/dispatch-canary.request"
+      - 'ops/dispatch-canary.request'
   workflow_dispatch:
     inputs:
       canary_number:
-        description: "Automatic continuation canary number"
+        description: Automatic continuation canary number
         required: true
-        default: "1"
+        default: '1'
 
 permissions:
   contents: read
@@ -25,37 +25,47 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+
       - name: Determine canary number
         id: seq
         shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_CANARY: ${{ inputs.canary_number }}
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            N="${{ inputs.canary_number }}"
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            N="$INPUT_CANARY"
           else
             N="1"
           fi
           echo "n=$N" >> "$GITHUB_OUTPUT"
           echo "AT-37 canary $N"
+
       - name: Emit executor evidence
         shell: bash
+        env:
+          CANARY_NUMBER: ${{ steps.seq.outputs.n }}
         run: |
           mkdir -p canary-evidence
           printf '{"task_id":"AT-37","canary_number":"%s","run_id":"%s","job":"canary","branch":"%s","commit":"%s","started_at":"%s","result":"PASS"}\n' \
-            "${{ steps.seq.outputs.n }}" "$GITHUB_RUN_ID" "$GITHUB_REF_NAME" "$GITHUB_SHA" "$(date -u +%FT%TZ)" > canary-evidence/result.json
+            "$CANARY_NUMBER" "$GITHUB_RUN_ID" "$GITHUB_REF_NAME" "$GITHUB_SHA" "$(date -u +%FT%TZ)" > canary-evidence/result.json
           cat canary-evidence/result.json
+
       - name: Upload canary evidence
         uses: actions/upload-artifact@v4
         with:
           name: at-37-dispatch-canary-${{ github.run_id }}
           path: canary-evidence/result.json
           retention-days: 30
+
       - name: Automatically dispatch next canary
-        if: ${{ success() && fromJSON(steps.seq.outputs.n) < 3 }}
+        if: ${{ success() && steps.seq.outputs.n != '3' }}
         env:
           GH_TOKEN: ${{ github.token }}
-          NEXT: ${{ fromJSON(steps.seq.outputs.n) + 1 }}
+          CURRENT: ${{ steps.seq.outputs.n }}
         shell: bash
         run: |
+          NEXT=$((CURRENT + 1))
           gh workflow run control-tower-dispatch-canary.yml \
             --repo "$GITHUB_REPOSITORY" \
             --ref "$GITHUB_REF_NAME" \
