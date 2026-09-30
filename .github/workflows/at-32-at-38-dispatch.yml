@@ -1,0 +1,85 @@
+name: AT-32 dispatch eligible AT-38 P2 validation
+
+# This is the only GitHub entry point for the AT-32 -> AT-38 fallback route.
+# It deliberately records DISPATCHED, never RUNNING or DONE: those states need
+# evidence from the actual vehicle-data refresh executor and Control Tower acceptance.
+on:
+  repository_dispatch:
+    types: [control-tower-task-ready]
+  workflow_dispatch:
+    inputs:
+      task_id:
+        description: Eligible Control Tower task id
+        required: true
+        type: string
+      control_tower_event_id:
+        description: Immutable Control Tower event/checkpoint id
+        required: true
+        type: string
+      p1_universe_id:
+        description: P1 universe rechecked by the Control Tower before dispatch
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Validate the immutable dispatch envelope
+        id: envelope
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_TASK: ${{ inputs.task_id }}
+          INPUT_EVENT: ${{ inputs.control_tower_event_id }}
+          INPUT_UNIVERSE: ${{ inputs.p1_universe_id }}
+          PAYLOAD_TASK: ${{ github.event.client_payload.task_id }}
+          PAYLOAD_EVENT: ${{ github.event.client_payload.control_tower_event_id }}
+          PAYLOAD_UNIVERSE: ${{ github.event.client_payload.p1_universe_id }}
+        shell: bash
+        run: |
+          if [ "$EVENT_NAME" = workflow_dispatch ]; then
+            TASK="$INPUT_TASK"; EVENT_ID="$INPUT_EVENT"; UNIVERSE="$INPUT_UNIVERSE"
+          else
+            TASK="$PAYLOAD_TASK"; EVENT_ID="$PAYLOAD_EVENT"; UNIVERSE="$PAYLOAD_UNIVERSE"
+          fi
+          test "$TASK" = AT-38
+          test -n "$EVENT_ID"
+          test -n "$UNIVERSE"
+          printf 'task_id=%s\ncontrol_tower_event_id=%s\np1_universe_id=%s\n' "$TASK" "$EVENT_ID" "$UNIVERSE" >> "$GITHUB_OUTPUT"
+      - name: Dispatch the proven deterministic executor
+        id: executor
+        env:
+          GH_TOKEN: ${{ github.token }}
+          P2_REF: claude/carindex-buyer-vehicle-data-97yinp
+        shell: bash
+        run: |
+          gh workflow run vehicle-refresh.yml --repo "$GITHUB_REPOSITORY" --ref "$P2_REF" -f mode=full
+          printf 'executor_ref=%s\n' "$P2_REF" >> "$GITHUB_OUTPUT"
+      - name: Write dispatch receipt artifact
+        env:
+          TASK_ID: ${{ steps.envelope.outputs.task_id }}
+          CONTROL_TOWER_EVENT_ID: ${{ steps.envelope.outputs.control_tower_event_id }}
+          P1_UNIVERSE_ID: ${{ steps.envelope.outputs.p1_universe_id }}
+          EXECUTOR_REF: ${{ steps.executor.outputs.executor_ref }}
+        shell: bash
+        run: |
+          mkdir -p dispatch-evidence
+          jq -n \
+            --arg task_id "$TASK_ID" \
+            --arg control_tower_event_id "$CONTROL_TOWER_EVENT_ID" \
+            --arg p1_universe_id "$P1_UNIVERSE_ID" \
+            --arg executor_ref "$EXECUTOR_REF" \
+            --arg dispatch_run_id "$GITHUB_RUN_ID" \
+            --arg dispatched_at "$(date -u +%FT%TZ)" \
+            '{task_id:$task_id,control_tower_event_id:$control_tower_event_id,p1_universe_id:$p1_universe_id,executor_ref:$executor_ref,dispatch_run_id:$dispatch_run_id,dispatched_at:$dispatched_at,state:"DISPATCHED_AWAITING_EXECUTOR_EVIDENCE"}' \
+            > dispatch-evidence/at-32-at-38-dispatch.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: at-32-at-38-dispatch-${{ github.run_id }}
+          path: dispatch-evidence/at-32-at-38-dispatch.json
+          retention-days: 90
