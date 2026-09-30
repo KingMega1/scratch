@@ -1,0 +1,54 @@
+name: AT-38 executor evidence return
+
+# Runs after the real vehicle-data executor. It sends an immutable executor-return
+# event to n8n, which writes the Control Tower checkpoint and waits for the P2
+# owner's ACCEPT/REJECT/REWORK decision before any task is marked DONE or continued.
+on:
+  workflow_run:
+    workflows: [vehicle-data refresh]
+    types: [completed]
+
+permissions:
+  contents: read
+
+jobs:
+  return-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Build executor evidence
+        env:
+          EXECUTOR_RUN_ID: ${{ github.event.workflow_run.id }}
+          EXECUTOR_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+          EXECUTOR_HEAD_BRANCH: ${{ github.event.workflow_run.head_branch }}
+          EXECUTOR_HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+          EXECUTOR_HTML_URL: ${{ github.event.workflow_run.html_url }}
+        shell: bash
+        run: |
+          mkdir -p return-evidence
+          jq -n \
+            --arg task_id AT-38 \
+            --arg executor_run_id "$EXECUTOR_RUN_ID" \
+            --arg executor_job refresh \
+            --arg conclusion "$EXECUTOR_CONCLUSION" \
+            --arg branch "$EXECUTOR_HEAD_BRANCH" \
+            --arg commit "$EXECUTOR_HEAD_SHA" \
+            --arg run_url "$EXECUTOR_HTML_URL" \
+            --arg returned_at "$(date -u +%FT%TZ)" \
+            '{task_id:$task_id,executor_run_id:$executor_run_id,executor_job:$executor_job,conclusion:$conclusion,branch:$branch,commit:$commit,run_url:$run_url,returned_at:$returned_at,state:(if $conclusion == "success" then "EXECUTOR_EVIDENCE_RETURNED" else "EXECUTOR_FAILED" end)}' \
+            > return-evidence/at-38-executor-return.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: at-38-executor-return-${{ github.event.workflow_run.id }}
+          path: return-evidence/at-38-executor-return.json
+          retention-days: 90
+      - name: Return evidence to the configured Control Tower consumer
+        env:
+          CONTROL_TOWER_RETURN_URL: ${{ secrets.CONTROL_TOWER_RETURN_URL }}
+        shell: bash
+        run: |
+          test -n "$CONTROL_TOWER_RETURN_URL" || { echo 'CONTROL_TOWER_RETURN_URL is required; refusing synthetic writeback.'; exit 1; }
+          curl --fail-with-body --retry 2 --retry-all-errors --max-time 20 \
+            -H 'Content-Type: application/json' \
+            --data @return-evidence/at-38-executor-return.json \
+            "$CONTROL_TOWER_RETURN_URL"
