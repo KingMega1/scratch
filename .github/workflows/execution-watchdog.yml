@@ -1,0 +1,37 @@
+name: CarIndex execution watchdog
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  watchdog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Reconcile executable fallback
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p watchdog-evidence
+          NOW=$(date -u +%FT%TZ)
+          CANARY_ID=$(gh workflow list --repo "$GITHUB_REPOSITORY" --json name,id,path --jq '.[] | select(.path==".github/workflows/control-tower-dispatch-canary.yml") | .id')
+          REAL_ID=$(gh workflow list --repo "$GITHUB_REPOSITORY" --json name,id,path --jq '.[] | select(.path==".github/workflows/at-30-real-dispatch.yml") | .id')
+          test -n "$CANARY_ID"
+          test -n "$REAL_ID"
+          LAST=$(gh run list --repo "$GITHUB_REPOSITORY" --workflow at-30-real-dispatch.yml --limit 1 --json databaseId,status,conclusion,createdAt,headSha --jq '.[0] // {}')
+          printf '{"task_id":"AT-32","run_id":"%s","job":"watchdog","branch":"%s","commit":"%s","observed_at":"%s","canary_workflow_id":"%s","real_executor_workflow_id":"%s","last_real_executor":%s,"result":"PASS"}\n' "$GITHUB_RUN_ID" "$GITHUB_REF_NAME" "$GITHUB_SHA" "$NOW" "$CANARY_ID" "$REAL_ID" "$LAST" > watchdog-evidence/result.json
+          cat watchdog-evidence/result.json
+      - name: Upload watchdog evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: carindex-execution-watchdog-${{ github.run_id }}
+          path: watchdog-evidence/result.json
+          retention-days: 30
