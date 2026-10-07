@@ -39,7 +39,8 @@ jobs:
           echo "url=$URL" >> "$GITHUB_OUTPUT"
       - name: Protection check (no bypass must be blocked)
         run: |
-          read -r CODE LOC < <(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' "${{ steps.target.outputs.url }}/en")
+          OUT=$(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' "${{ steps.target.outputs.url }}/en" || true)
+          CODE=${OUT%% *}; LOC=${OUT#* }
           echo "status without bypass: $CODE ${LOC%%\?*}"
           # Vercel Authentication answers 401/403, or 302 to vercel.com login. Anything else = protection off.
           case "$CODE" in
