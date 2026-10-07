@@ -159,6 +159,27 @@ await run('en-desktop-stretch-lean', { width: 1280, height: 900 }, 'en', 'SUV up
   check(e.env === 'qa' && e.is_test === true && e.utm_medium === 'test' && e.utm_campaign === 'ev3', 'env / is_test / all UTMs on the envelope');
   await page.close();
 }
+// comparative brand phrasing: never an exclusion; shown verbatim as not applied; buyer resolves it explicitly on Edit
+{
+  const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+  const errors = []; page.on('pageerror', e => errors.push(e.message));
+  await page.goto(`${base}?lang=en&env=qa`);
+  await page.fill('#brief', 'SUV around 1.5M, 7 seats, no Chinese brands, nothing below a Hyundai'); await page.click('#go');
+  await answerAll(page, { opts: ['open'] });
+  const sum = (await page.textContent('.understood')).replace(/\s+/g, ' ');
+  check(sum.includes('Not applied') && sum.includes('“nothing below a Hyundai”') && !/Leave out: ?Hyundai/.test(sum), `confirm step shows the unresolved phrase verbatim, no Hyundai exclusion (${sum.slice(0, 160)})`);
+  const brief = await page.evaluate(() => history.state.st.brief);
+  check(!(brief.brandsExclude || []).length && brief.chinese === 'exclude' && brief.seats === 7, 'hard constraints kept (no Chinese, 7 seats); Hyundai not excluded');
+  await page.click('#edit'); await page.waitForSelector('#save');
+  check(!!(await page.$('[data-unres]')), 'edit step lists the unresolved phrase');
+  await page.fill('#add-brand', 'Hyundai'); await page.click('#brand-only');
+  await page.click('[data-unres]'); await page.click('#save'); await page.waitForSelector('#confirm');
+  const after = (await page.textContent('.understood')).replace(/\s+/g, ' ');
+  const b2 = await page.evaluate(() => history.state.st.brief);
+  check(JSON.stringify(b2.brandsOnly) === '["hyundai"]' && !(b2.unresolved || []).length && !after.includes('Not applied'), 'buyer resolves it explicitly (only Hyundai); unresolved row gone');
+  check(errors.length === 0, `comparative-brand flow: no page errors ${errors.join(' | ')}`);
+  await page.close();
+}
 // contradictory brief: no manufactured recommendation
 {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });

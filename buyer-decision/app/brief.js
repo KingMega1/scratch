@@ -19,9 +19,15 @@
   const B = '(?:^|[^a-z0-9ء-ي])(?:و|ف|ب|ل|ال|لل|بال|وال|فال)?';
   const E = '(?=$|[^a-z0-9ء-ي])';
   const has = (t, words) => words.some(w => new RegExp(B + w + E).test(t));
+  // comparative brand/model "floor" language ("nothing below a Hyundai", "at least Toyota level", "Kia or better").
+  // The brief has no brand-tier concept, so this is never turned into an exclusion (which would reverse the meaning)
+  // nor into a preference: it is kept as an unresolved phrase for the buyer to resolve on the confirm/edit step.
+  const FLOOR_PRE = /(?:below|under|beneath|less than|lower than|worse than|cheaper than|inferior to|better than|above|higher than|at least|at minimum|minimum|no less than|not less than|on par with|level of|اقل من|احسن من|افضل من|اعلي من|علي الاقل|ع الاقل|يقلش عن|مستوي)\s*(?:a|an|the)?\s*$/;
+  const FLOOR_POST = /^(?:'s)?\s*(?:or (?:better|above|higher|up|more)|and (?:above|up|better|higher)|(?:level|tier|class|standard)(?![a-z])|او احسن|او افضل|او اعلي|وانت طالع|فما فوق|وما فوق)/;
+  const isFloor = (t, idx, end) => FLOOR_PRE.test(t.slice(Math.max(0, idx - 30), idx)) || FLOOR_POST.test(t.slice(end, end + 16));
   const find = (t, words) => { for (const w of words) { const m = new RegExp(B + '(' + w + ')' + E).exec(t); if (m) return m.index; } return -1; };
 
-  const NEG = ['no', 'not', "don't", 'dont', 'without', 'except', 'avoid', 'nothing', 'never', 'rather not', 'anything but', 'anything except',
+  const NEG = ['no', 'not', "don't", 'dont', 'without', 'except', 'exclude', 'excluding', 'avoid', 'استبعد', 'nothing', 'never', 'rather not', 'anything but', 'anything except',
     'مش', 'بلاش', 'من غير', 'مابحبش', 'مبحبش', 'ماعدا', 'مش عايز', 'مش عاوز', 'بدون', 'ابعد عن', 'مافيش'];
   // words that sit between a negation and its object without changing it ("don't want a fully electric car")
   const FILLER = new RegExp(B + "(?:want|wanna|need|have|get|buy|a|an|the|any|fully|full|pure|purely|completely|totally|100%|عربية|عربيه|عربيات)" + E, 'g');
@@ -295,11 +301,16 @@
     const modelBrandIdx = new Set(mh.filter(h => h.withBrand).map(h => h.idx));
     const bare = bh.filter(h => !modelBrandIdx.has(h.idx) && !mh.some(x => x.brand === h.brand && Math.abs(x.idx - h.idx) < 4));
     const prefer = [], avoid = [];
-    const only = [];
+    const only = [], unresolved = [];
+    // the buyer's own words around a comparative phrase, kept verbatim for the confirm step
+    const snippet = (idx, end) => { const a = Math.max(0, t.lastIndexOf(',', idx) + 1, t.lastIndexOf('.', idx) + 1), z = [t.indexOf(',', end), t.indexOf('.', end)].filter(x => x >= 0); const zz = z.length ? Math.min(...z) : t.length;
+      // the buyer's own spelling when normalising kept positions aligned (t = ' ' + norm(raw) + ' '), else the whole input
+      return (norm(raw).length === raw.length ? raw.slice(Math.max(0, a - 1), Math.max(0, zz - 1)) : raw).trim(); };
     for (const h of bare) {
       // "7-seat", "seats": the word, not the SEAT brand (the brand counts when written SEAT / سيات)
       if (h.brand === 'seat' && !/SEAT|سيات/.test(raw)) continue;
       const post = t.slice(h.idx + h.len, h.idx + h.len + 12), pre = t.slice(Math.max(0, h.idx - 14), h.idx);
+      if (isFloor(t, h.idx, h.idx + h.len)) { unresolved.push({ kind: 'brand_floor', brand: h.brand, text: snippet(h.idx, h.idx + h.len) }); continue; }
       if (negatedBefore(t, h.idx + 1)) avoid.push(h.brand);
       else if (/^\s*(?:only|بس|فقط)(?![a-zء-ي])/.test(post) || /(?:only|لازم|غير|الا)\s*$/.test(pre)) only.push(h.brand);
       else prefer.push(h.brand);
@@ -310,6 +321,7 @@
 
     const mentions = [];
     for (const h of mh) {
+      if (isFloor(t, h.idx, h.end)) { unresolved.push({ kind: 'model_floor', model: h.id, text: snippet(h.idx, h.end) }); continue; }
       const pre = t.slice(Math.max(0, h.idx - 26), h.idx);
       const post = t.slice(h.end, h.end + 14);
       const isRef = REF_WORDS.some(w => new RegExp(B + esc(w) + '\\s*(?:\\S+\\s*){0,3}$').test(pre)) || /^(?:'s|s)?[\s-]*(?:size|price|class|sized|like|type|style|حجم|مقاس)/.test(post);
@@ -317,6 +329,7 @@
       mentions.push({ id: h.id, role: neg ? 'avoid' : isRef ? 'reference' : 'consider' });
     }
     if (mentions.length) { r.mentions = mentions; got('models'); }
+    if (unresolved.length) r.unresolved = unresolved.filter((u, i, a) => a.findIndex(v => v.text === u.text) === i);
     return r;
   }
 

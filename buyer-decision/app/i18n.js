@@ -79,8 +79,10 @@
       s_yes: 'Yes, show my cars', s_edit: 'Edit',
       s_rows: {
         budget: 'Budget', body: 'Type', seats: 'Seats', who: 'For', usage: 'Driving', pt: 'Powertrain', chinese: 'Chinese brands',
-        only: 'Only', pt_no: 'Not', drive: 'Drive', offroad: 'Use', size: 'Size', brands: 'Brands', avoid: 'Leave out', shortlist: 'You’re considering', reference: 'Similar to', aspiration: 'You like', priorities: 'Matters most', checks: 'We’ll flag', notes: 'Your notes',
+        only: 'Only', pt_no: 'Not', drive: 'Drive', offroad: 'Use', size: 'Size', brands: 'Brands', avoid: 'Leave out', shortlist: 'You’re considering', reference: 'Similar to', aspiration: 'You like', priorities: 'Matters most', checks: 'We’ll flag', notes: 'Your notes', unresolved: 'Not applied',
       },
+      unresolved_hint: 'we can’t rank brands against each other, so this wasn’t applied. Use Edit to choose brands to include or leave out.',
+      e_brands: 'Brands', e_brand_ph: 'Type a brand, e.g. Hyundai', e_brand_only: 'Only these', e_brand_excl: 'Leave out',
       s_budget: (b, mode, stretch, from) => `${mode === 'max' ? `Up to ${b}` : mode === 'range' ? b : `Around ${b}`}${mode === 'max' ? (stretch ? ', can stretch about 10%' : ', firm') : ' (±10%)'}${from ? ` — ${from}` : ''}`,
       s_budget_from: n => `based on the ${n}’s price`,
       s_budget_from_sl: 'based on the cars you named',
@@ -323,8 +325,10 @@
       s_yes: 'أيوه، وريني العربيات', s_edit: 'تعديل',
       s_rows: {
         budget: 'الميزانية', body: 'النوع', seats: 'الكراسي', who: 'لمين', usage: 'السواقة', pt: 'الموتور', chinese: 'الماركات الصيني',
-        only: 'بس', pt_no: 'من غير', drive: 'الدفع', offroad: 'الاستخدام', size: 'الحجم', brands: 'ماركات', avoid: 'استبعد', shortlist: 'بتفكر في', reference: 'شبه', aspiration: 'عاجباك', priorities: 'الأهم', checks: 'هننبهك على', notes: 'ملاحظاتك',
+        only: 'بس', pt_no: 'من غير', drive: 'الدفع', offroad: 'الاستخدام', size: 'الحجم', brands: 'ماركات', avoid: 'استبعد', shortlist: 'بتفكر في', reference: 'شبه', aspiration: 'عاجباك', priorities: 'الأهم', checks: 'هننبهك على', notes: 'ملاحظاتك', unresolved: 'ماطبقناهوش',
       },
+      unresolved_hint: 'إحنا مش بنرتّب الماركات قصاد بعض، فماطبقناش ده. دوس تعديل واختار الماركات اللي عايزها بس أو اللي عايز تستبعدها.',
+      e_brands: 'الماركات', e_brand_ph: 'اكتب ماركة، مثلًا هيونداي', e_brand_only: 'دي بس', e_brand_excl: 'استبعدها',
       s_budget: (b, mode, stretch, from) => `${mode === 'max' ? `لحد ${b}` : mode === 'range' ? b : `في حدود ${b}`}${mode === 'max' ? (stretch ? '، وممكن تزود حوالي 10%' : '، ثابتة') : ' (±10%)'}${from ? ` — ${from}` : ''}`,
       s_budget_from: n => `على أساس سعر الـ ${n}`,
       s_budget_from_sl: 'على أساس العربيات اللي ذكرتها',

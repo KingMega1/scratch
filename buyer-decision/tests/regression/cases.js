@@ -88,6 +88,24 @@ const CASES = [
 // parser understanding only (no journey): negation / openness / uncertainty around powertrain and other constraints.
 // D1 (fixed): negation with words in between ("don't want a fully electric") was read as wanting electric.
 const UNDERSTANDING = [
+  // P1-PARSER-COMPARATIVE-BRAND-FIX-01: comparative brand/model "floor" phrasing is never an exclusion (nor a preference);
+  // it is kept verbatim as unresolved for the confirm/edit step. Explicit exclusions stay hard.
+  ['nothing below Hyundai', { brandsExclude: undefined, brandsOnly: undefined, brandsPrefer: undefined, unresolved: [{ kind: 'brand_floor', brand: 'hyundai', text: 'nothing below Hyundai' }] }],
+  ['at least Hyundai', { brandsExclude: undefined, brandsOnly: undefined, brandsPrefer: undefined, unresolved: [{ kind: 'brand_floor', brand: 'hyundai', text: 'at least Hyundai' }] }],
+  ['nothing cheaper than Hyundai', { brandsExclude: undefined, brandsOnly: undefined, brandsPrefer: undefined, unresolved: [{ kind: 'brand_floor', brand: 'hyundai', text: 'nothing cheaper than Hyundai' }] }],
+  ['Kia or better', { brandsExclude: undefined, brandsPrefer: undefined, unresolved: [{ kind: 'brand_floor', brand: 'kia', text: 'Kia or better' }] }],
+  ['nothing below a Tucson', { mentions: undefined, unresolved: [{ kind: 'model_floor', model: 'hyundai/tucson', text: 'nothing below a Tucson' }] }],
+  ['مش عايز اقل من هيونداي', { brandsExclude: undefined, brandsPrefer: undefined, unresolved: [{ kind: 'brand_floor', brand: 'hyundai', text: 'مش عايز اقل من هيونداي' }] }],
+  ['Around 1.2–1.5M, need 7 seats, no Chinese brands, nothing below a Hyundai.', { seats: 7, chinese: 'exclude', brandsExclude: undefined, unresolved: [{ kind: 'brand_floor', brand: 'hyundai', text: 'nothing below a Hyundai' }] }],
+  ['exclude Hyundai', { brandsExclude: ['hyundai'], unresolved: undefined }],
+  ['no Hyundai', { brandsExclude: ['hyundai'], unresolved: undefined }],
+  ["I don't want Nissan", { brandsExclude: ['nissan'], unresolved: undefined }],
+  ['مش عايز هيونداي', { brandsExclude: ['hyundai'], unresolved: undefined }],
+  ['no Chinese brands', { chinese: 'exclude', brandsExclude: undefined, unresolved: undefined }],
+  ['at least 7 seats', { seats: 7, unresolved: undefined }],
+  ['nothing below 7 seats', { seats: 7, unresolved: undefined }],
+  ['Hyundai only', { brandsOnly: ['hyundai'], unresolved: undefined }],
+  ["I'm considering Tucson and Sportage.", { unresolved: undefined }],
   ["I don't want a fully electric car", { pt: 'no_ev' }],
   ['I do not want a fully electric car', { pt: 'no_ev' }],
   ["I really don't want a pure electric", { pt: 'no_ev' }],

@@ -318,6 +318,8 @@
     if ((b.priorities || []).length) add('priorities', joinList(b.priorities.map(p => S.prio_v[p])));
     if ((b.checks || []).length) add('checks', joinList(b.checks.map(p => S.prio_v[p])));
     if (b.notes) add('notes', `<span dir="auto">“${esc(b.notes)}”</span>`);
+    // comparative brand phrases the brief cannot represent: shown verbatim, never applied (see brief.js FLOOR_*)
+    if ((b.unresolved || []).length) add('unresolved', `${b.unresolved.map(u => `<span dir="auto">“${esc(u.text)}”</span>`).join(' · ')} <span class="muted">— ${S.unresolved_hint}</span>`);
     return R;
   }
   function brandName(bid) { const m = U.models.find(x => x.brand_id === bid); return m ? lat(m.brand) : esc(bid); }
@@ -364,7 +366,12 @@
           <div><p class="fb-label">${S.s_rows.usage}</p>${chipGroup('usage', Object.entries(Q.usage.o).map(([k, v]) => [k, v[0]]), [b.usage || ''], false)}</div>
           <div class="full"><p class="fb-label">${S.s_rows.priorities}</p>${chipGroup('prio', Object.entries(Q.priorities.o).map(([k, v]) => [k, v[0]]), [...(b.priorities || []), ...(b.checks || [])], true)}</div>
           ${(b.aspiration || []).length ? `<div class="full"><p class="fb-label">${S.s_rows.aspiration}: ${joinList(b.aspiration.map(nm))}</p>${chipGroup('attr', Object.entries(Q.attraction.o).map(([k, v]) => [k, v[0]]), [b.attraction || ''], false)}</div>` : ''}
-          ${(b.brandsOnly || []).length ? `<div class="full"><p class="fb-label">${S.s_rows.only}</p><div class="chips" id="only">${b.brandsOnly.map(x => `<button type="button" class="chip" data-only="${x}">${brandName(x)} ×</button>`).join('')}</div></div>` : ''}
+          <div class="full"><p class="fb-label">${S.e_brands}</p>
+            ${(b.unresolved || []).length ? `<p class="muted small" id="unres">${S.s_rows.unresolved}: ${b.unresolved.map(u => `<button type="button" class="chip" data-unres="${esc(u.text)}"><span dir="auto">“${esc(u.text)}”</span> ×</button>`).join(' ')}<br>${S.unresolved_hint}</p>` : ''}
+            <div class="chips" id="only">${(b.brandsOnly || []).map(x => `<button type="button" class="chip" data-only="${x}">${S.s_rows.only}: ${brandName(x)} ×</button>`).join('')}</div>
+            <div class="chips" id="excl">${(b.brandsExclude || []).map(x => `<button type="button" class="chip" data-excl="${x}">${S.s_rows.avoid}: ${brandName(x)} ×</button>`).join('')}</div>
+            <div class="add-row"><input id="add-brand" type="text" dir="auto" placeholder="${esc(S.e_brand_ph)}" aria-label="${esc(S.e_brands)}"><button type="button" class="btn btn-ghost" id="brand-only">${S.e_brand_only}</button><button type="button" class="btn btn-ghost" id="brand-excl">${S.e_brand_excl}</button></div>
+          </div>
           <div class="full"><p class="fb-label">${S.s_rows.shortlist}</p>
             <div class="chips" id="cars">${[...(b.shortlist || []), ...(b.aspiration || []), ...(b.reference || [])].map(id => `<button type="button" class="chip" data-rm="${id}" aria-label="${esc(S.e_remove(byId[id].brand + ' ' + byId[id].model))}">${nm(id)} ×</button>`).join('')}</div>
             <div class="add-row"><input id="add-car" type="text" dir="auto" placeholder="${esc(S.e_add_ph)}" aria-label="${esc(S.e_add)}"><button type="button" class="btn btn-ghost" id="add-btn">+</button></div>
@@ -384,9 +391,25 @@
         } else c.setAttribute('aria-pressed', String(!on));
       } else $$('.pick', g).forEach(x => x.setAttribute('aria-pressed', String(x === c && !on)));
     }));
-    let only = [...(b.brandsOnly || [])];
-    const onlyBox = $('#only');
-    if (onlyBox) onlyBox.addEventListener('click', e => { const c = e.target.closest('[data-only]'); if (!c) return; only = only.filter(x => x !== c.dataset.only); c.remove(); });
+    let only = [...(b.brandsOnly || [])], excl = [...(b.brandsExclude || [])], unres = [...(b.unresolved || [])];
+    $('#only').addEventListener('click', e => { const c = e.target.closest('[data-only]'); if (!c) return; only = only.filter(x => x !== c.dataset.only); c.remove(); });
+    $('#excl').addEventListener('click', e => { const c = e.target.closest('[data-excl]'); if (!c) return; excl = excl.filter(x => x !== c.dataset.excl); c.remove(); });
+    const unBox = $('#unres');
+    if (unBox) unBox.addEventListener('click', e => { const c = e.target.closest('[data-unres]'); if (!c) return; unres = unres.filter(u => u.text !== c.dataset.unres); c.remove(); });
+    // explicit brand choice: every brand named in the box goes to "only" or "leave out", nothing else is read from it
+    const addBrands = kind => {
+      const p = P.parse($('#add-brand').value, U.models);
+      const ids = [...new Set([...(p.brandsPrefer || []), ...(p.brandsOnly || []), ...(p.brandsExclude || []), ...(p.unresolved || []).map(u => u.brand).filter(Boolean)])];
+      for (const id of ids) {
+        only = only.filter(x => x !== id); excl = excl.filter(x => x !== id);
+        $$(`[data-only="${id}"],[data-excl="${id}"]`, screen).forEach(x => x.remove());
+        (kind === 'only' ? only : excl).push(id);
+        $(kind === 'only' ? '#only' : '#excl').insertAdjacentHTML('beforeend', `<button type="button" class="chip" data-${kind === 'only' ? 'only' : 'excl'}="${id}">${kind === 'only' ? S.s_rows.only : S.s_rows.avoid}: ${brandName(id)} ×</button>`);
+      }
+      $('#add-brand').value = '';
+    };
+    $('#brand-only').addEventListener('click', () => addBrands('only'));
+    $('#brand-excl').addEventListener('click', () => addBrands('excl'));
     let cars = { shortlist: [...(b.shortlist || [])], aspiration: [...(b.aspiration || [])], reference: [...(b.reference || [])] };
     $('#cars').addEventListener('click', e => {
       const c = e.target.closest('[data-rm]'); if (!c) return;
@@ -410,7 +433,7 @@
       nb.pt = sel('pt')[0] || null; nb.chinese = sel('chinese')[0] || null; nb.usage = sel('usage')[0] || null;
       const pr = sel('prio'); nb.priorities = pr.filter(x => P.SCORED.includes(x)); nb.checks = pr.filter(x => !P.SCORED.includes(x));
       if ((b.aspiration || []).length) nb.attraction = sel('attr')[0] || null;
-      Object.assign(nb, cars); nb.brandsOnly = only;
+      Object.assign(nb, cars); nb.brandsOnly = only; nb.brandsExclude = excl; nb.unresolved = unres;
       if (nb.pt === 'open') nb.ptNo = [];
       const out = renorm(nb);
       if (!nb.body) { out.body = null; out.bodyAny = true; out.bodyImplied = false; }
@@ -587,7 +610,7 @@
           <div class="hero-actions"><button class="link-btn" id="edit" type="button">${S.r_edit}</button><button class="link-btn" id="share" type="button">${S.share}</button><button class="link-btn" id="restart" type="button">${S.r_restart}</button></div></div>
         <div class="budget-inline"><span class="label-mono">${S.r_budget}</span>
           <button class="icon-btn" type="button" data-adj="-1" aria-label="${esc(S.minus)}">−</button><span class="price-big" id="bud">${mill(r.terr.budget)}</span><button class="icon-btn" type="button" data-adj="1" aria-label="${esc(S.plus)}">+</button></div>
-        <div class="answers chips">${summaryRows(b).filter(x => !['budget', 'notes'].includes(x.key)).map(x => `<span class="chip"><span class="muted">${x.label}:</span> ${x.value}</span>`).join('')}</div>
+        <div class="answers chips">${summaryRows(b).filter(x => !['budget', 'notes', 'unresolved'].includes(x.key)).map(x => `<span class="chip"><span class="muted">${x.label}:</span> ${x.value}</span>`).join('')}</div>
       </section>`;
 
     if (!r.hero) {
