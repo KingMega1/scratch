@@ -6,7 +6,7 @@ import { dict } from '@/lib/i18n/dictionaries';
 import { num } from '@/lib/format';
 import { pageMeta } from '@/lib/seo';
 import { vehicles } from '@/server/vehicles/read-model';
-import { CarMedia, CarName, PriceFigure, PriceState, carNameText } from '@/components/car';
+import { CarMedia, CarName, OfficialFigure, PriceFrom, PriceState, carNameText } from '@/components/car';
 import TrackOnMount from '@/components/TrackOnMount';
 import type { PublicCar } from '@/lib/vehicles/types';
 
@@ -26,22 +26,25 @@ export default async function Compare({ params, searchParams }: P) {
   const sp = await searchParams;
   const raw = [typeof sp.ids === 'string' ? sp.ids : '', ...(['a', 'b', 'c'] as const).map(k => (typeof sp[k] === 'string' ? sp[k] : ''))].join(',');
   const V = vehicles();
-  const ids = [...new Set(raw.split(',').map(s => s.trim()).filter(s => /^[a-z0-9-]+\/[a-z0-9-]+$/.test(s)))].filter(id => V.get(id)).slice(0, 3);
+  const ids = [...new Set(raw.split(',').map(s => s.trim()).filter(s => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(s)))].filter(id => V.get(id)).slice(0, 3);
   const cars = ids.map(id => V.get(id)!) as PublicCar[];
   const options = [...V.all()].sort((a, b) => carNameText(a, locale).localeCompare(carNameText(b, locale)));
   const dash = <span className="state state-unknown">{t.state.unknown}</span>;
+  const top = (x: PublicCar) => x.trims.at(-1);
+  const spec = (x: PublicCar, k: string) => x.specs[k] ? <>{x.specs[k].values.map((v, i) => <div key={i}><bdi>{v.value}</bdi></div>)}</> : dash;
   const rows: [string, (car: PublicCar) => React.ReactNode][] = [
-    [c.rows.from, x => x.price ? <PriceFigure value={x.price.min} official={x.price.trims[0].state === 'official'} locale={locale} /> : dash],
-    [c.rows.to, x => x.price ? <PriceFigure value={x.price.max} official={x.price.trims.at(-1)!.state === 'official'} locale={locale} /> : dash],
-    [c.rows.state, x => <PriceState state={x.price ? x.price.state : 'unknown'} locale={locale} />],
-    [c.rows.versions, x => x.price ? <span className="tnum">{x.price.trims.length}</span> : dash],
-    [c.rows.body, x => t.body[x.body]],
+    [c.rows.from, x => <PriceFrom car={x} locale={locale} />],
+    [c.rows.to, x => top(x) ? <OfficialFigure o={top(x)!.official} locale={locale} /> : dash],
+    [c.rows.state, x => <PriceState state={x.priceFrom.state} locale={locale} />],
+    [c.rows.versions, x => x.trims.length ? <span className="tnum">{x.trims.length}</span> : dash],
     [c.rows.pt, x => x.powertrains.length ? x.powertrains.map(p => t.pt[p]).join(' / ') : dash],
-    [c.rows.hp, x => x.hp ? <span className="tnum">{x.hp.join(' / ')}</span> : dash],
-    [c.rows.seats, x => x.seats ? <span className="tnum">{x.seats.join(' / ')}</span> : dash],
-    [c.rows.drive, x => x.awdConfirmed ? t.car.awdYes : dash],
-    [c.rows.warranty, x => x.warranty?.text ? <><bdi>{x.warranty.text}</bdi>{!x.warranty.verified ? <div className="small">{t.car.warrantyUnverified}</div> : null}</> : dash],
-    [c.rows.regs, x => x.registrations ? <span className="tnum">{num(x.registrations.last12)}</span> : dash],
+    [c.rows.hp, x => spec(x, 'horsepower')],
+    [t.car.spec.engine_capacity, x => spec(x, 'engine_capacity')],
+    [t.car.spec.transmission, x => spec(x, 'transmission')],
+    [c.rows.drive, x => spec(x, 'drive_type')],
+    [c.rows.seats, x => spec(x, 'seats')],
+    [c.rows.warranty, x => spec(x, 'warranty')],
+    [c.rows.regs, x => x.registrations?.inWindow != null ? <span className="tnum">{num(x.registrations.inWindow)}</span> : dash],
   ];
   const slot = (i: number) => (
     <div className="field" key={i}>

@@ -15,7 +15,7 @@ npm run build && npm run test:smoke   # Playwright, desktop + mobile
 |---|---|---|
 | Design | P3 accepted artifact `FzaL2VQFihFn7zMnJ1UoUk` | implemented in `src/app`, `src/styles/site.css` |
 | Brand | Brand V2 **v2.0-draft.10** agent package (Drive `1CatHPXah60JBNVMPT2yGqc8WE28lg0vQ`, skill `01-skill-prompt.md` v0.7) | `brand/v2.0-draft.10/`, `src/styles/carindex.tokens.css` (generated file, unedited), `public/fonts`, `public/brand` |
-| Vehicle data | GitHub accepted view `KingMega1/carindex-buyer-test@f994e7f…:data/view.js` (`U11-2026-09-26`) | `data/registry/` (deterministic projection) |
+| Vehicle data | **Canonical**: `KingMega1/scratch` branch `claude/carindex-buyer-vehicle-data-97yinp`, root `vehicle-data/`, accepted view `vehicle-data/views/p1_suv_2m.json` (`carindex.p1.buyer_view/v2`), pinned commit `6f3df7d` | `data/registry/universe.snapshot.json` (deterministic projection) + `display-crosswalk.TEMP.json` (photos/Arabic names, non-canonical) |
 | Recommendation | P1 engine `E6-2026-09-28` (vendored verbatim, hash-pinned, server-only) | `src/server/p1/vendor/` |
 
 ## Architecture
@@ -38,7 +38,7 @@ GitHub accepted view --(scripts/sync-vehicle-data.mjs, deterministic)--> data/re
 | `POST /api/v1/events` | EV3 collector (PII-stripped, redacted) | live (log sink) |
 
 ## Gates
-- **Find My Car**: scaffold only. Semantic work unblocks after `P3 semantic delta -> P1 delta re-review -> PASS`.
+- **Find My Car**: scaffold only. Semantic integration stays blocked until **P1 R3 RELEASE**. The vendored engine (E6) was built for the superseded U11 universe; rebinding to the canonical buyer_view is part of R3.
   Contract: `src/lib/recommendation/contract.ts`. Component slots: `src/components/fmc/boundaries.tsx`.
 - **Customer PII**: `FEATURE_CUSTOMER_PII` stays false until legal/security/provider sign-off.
 - **Admin** (`/admin`): 404 unless `ADMIN_BASIC_AUTH_USER/PASS` are set; then Basic auth, noindex.
@@ -54,3 +54,7 @@ or repoint `vehicles_read.active` (S2). No destructive migrations.
 ## Asset flags (P2 handoff)
 `data-asset-flags` on images: `TEMP_UNVERIFIED`, `EXACT_CAR_UNCONFIRMED`, `PHOTO_NEEDS_ENRICHMENT`, `WATERMARK_CROPPED`.
 Models without a mapped photo show the Brand V2 body-type icon, never a guessed photo.
+
+## Vehicle identity (open decision)
+The canonical view marks `model_id` PROVISIONAL (D3/D4) and says not to build public URLs on it. Routes use the view's
+`slug` field (`/cars/kia-sportage`). If D3/D4 changes slugs, add redirects; do not reuse old slugs for other models.

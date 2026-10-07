@@ -105,4 +105,4 @@ export type RecommendationApiError =
   | { error: 'rate_limited' }
   | { error: 'unavailable' };
 
-export const SEMANTIC_GATE = 'P3 semantic delta -> P1 delta re-review -> PASS';
+export const SEMANTIC_GATE = 'P1 R3 RELEASE (after P3 semantic delta -> P1 delta re-review -> PASS)';

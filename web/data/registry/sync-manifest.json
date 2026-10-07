@@ -1,15 +1,18 @@
 {
-  "snapshot_id": "U11-2026-09-26@f994e7f24411",
-  "registry_version": "U11-2026-09-26",
+  "snapshot_id": "suv_2m_v1/S6_2026-09-30@6f3df7dc12bd",
+  "registry_version": "suv_2m_v1/S6_2026-09-30",
+  "schema": "carindex.p1.buyer_view/v2",
   "source": {
-    "repo": "KingMega1/carindex-buyer-test",
-    "commit": "f994e7f2441194f149ce0e9988abe41ef10e2e11",
-    "path": "data/view.js",
-    "sha256": "d7d1ee55f3bc9241cbbdcc2c8036a49c4d6e5ae9c8b15c16ed5b1eca299a5414"
+    "repo": "KingMega1/scratch",
+    "branch": "claude/carindex-buyer-vehicle-data-97yinp",
+    "commit": "6f3df7dc12bd389d924ad9a74cad1c0533913cf7",
+    "root": "vehicle-data/",
+    "path": "vehicle-data/views/p1_suv_2m.json",
+    "sha256": "a370a1b1aaa83848f1e80dfc5be6cf61429d22937d021fbb7edf302a80c777d5"
   },
-  "synced_at": "2026-10-07T06:35:33.426Z",
+  "synced_at": "2026-10-07T07:39:24.325Z",
   "counts": {
-    "total": 393,
-    "inUniverse": 283
+    "total": 24,
+    "in_slice": 21
   }
 }

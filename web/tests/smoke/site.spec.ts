@@ -20,9 +20,9 @@ test.describe('locale + direction', () => {
     });
   }
   test('language switch keeps the entity', async ({ page }) => {
-    await page.goto('/ar/cars/nissan/sunny');
+    await page.goto('/ar/cars/kia-sportage');
     await page.locator('a.lang').click();
-    await expect(page).toHaveURL(/\/en\/cars\/nissan\/sunny$/);
+    await expect(page).toHaveURL(/\/en\/cars\/kia-sportage$/);
     await expect(page.locator('html')).toHaveAttribute('dir', 'ltr');
   });
 });
@@ -30,8 +30,8 @@ test.describe('locale + direction', () => {
 test.describe('pages', () => {
   const PAGES: [string, RegExp][] = [
     ['/ar', /قبل ما تشتري/], ['/en', /Before making a car decision/i], ['/en/cars', /Browse/i], ['/ar/cars', /تصفّح/],
-    ['/en/market', /Market/], ['/ar/market', /السوق/], ['/en/cars/nissan/sunny', /Nissan Sunny/], ['/ar/cars/nissan/sunny', /نيسان/],
-    ['/en/compare?ids=nissan/sunny,hyundai/elantra', /Compare/], ['/en/search?q=sportage', /Kia Sportage/],
+    ['/en/market', /Market/], ['/ar/market', /السوق/], ['/en/cars/kia-sportage', /Kia Sportage/], ['/ar/cars/kia-sportage', /كيا/],
+    ['/en/compare?ids=kia-sportage,hyundai-tucson', /Compare/], ['/en/search?q=sportage', /Kia Sportage/],
     ['/en/my-carindex', /My CarIndex/], ['/en/news', /News/], ['/en/find-my-car', /Find My Car/], ['/en/methodology', /Methodology/],
     ['/en/market/catalog', /Full catalog/i],
   ];
@@ -82,7 +82,7 @@ test.describe('navigation + brand', () => {
     expect(tokens.toUpperCase()).toBe('#FFD12A');
   });
   test('no horizontal overflow', async ({ page }) => {
-    for (const p of ['/ar', '/en', '/ar/market', '/en/cars/nissan/sunny', '/ar/compare?ids=nissan/sunny,hyundai/elantra']) {
+    for (const p of ['/ar', '/en', '/ar/market', '/en/cars/kia-sportage', '/ar/compare?ids=kia-sportage,hyundai-tucson']) {
       await page.goto(p);
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
       expect(overflow, p).toBeLessThanOrEqual(1);
@@ -106,11 +106,16 @@ test.describe('boundaries', () => {
     expect((await request.post('/api/v1/recommendation', { data: { entry: 'x' } })).status()).toBe(400);
   });
   test('compare shows no winner marks', async ({ page }) => {
-    await page.goto('/en/compare?ids=nissan/sunny,hyundai/elantra');
+    await page.goto('/en/compare?ids=kia-sportage,hyundai-tucson');
     await expect(page.locator('.win, [data-winner]')).toHaveCount(0);
   });
+  test('conflicting price is shown as a conflict, never averaged or bracketed', async ({ page }) => {
+    await page.goto('/en/cars/hyundai-tucson');
+    await expect(page.locator('.cd-info .state-conflict')).toBeVisible();
+    await expect(page.locator('tr[data-official-state="conflict"] .bracket')).toHaveCount(0);
+  });
   test('car detail Take is a data-bound slot', async ({ page }) => {
-    await page.goto('/en/cars/nissan/patrol');
+    await page.goto('/en/cars/hyundai-tucson');
     await expect(page.locator('[data-slot="carindex-take"]')).toHaveAttribute('data-bound', 'false');
   });
   test('security headers', async ({ request }) => {
@@ -121,6 +126,13 @@ test.describe('boundaries', () => {
   test('health exposes versions, not secrets', async ({ request }) => {
     const j = await (await request.get('/api/health')).json();
     expect(j.registry.registry_version).toBeTruthy();
+    expect(j.registry.source.repo).toBe('KingMega1/scratch');
+    expect(j.registry.source.path).toBe('vehicle-data/views/p1_suv_2m.json');
+    expect(j.registry.source.commit).toMatch(/^[0-9a-f]{40}$/);
+    expect(j.registry.source.sha256).toMatch(/^[0-9a-f]{64}$/);
+    expect(j.registry.snapshot_id).toContain(j.registry.registry_version);
+    expect(j.registry.synced_at).toBeTruthy();
+    expect(j.recommendation.status).toBe('blocked');
     expect(j.recommendation.vendor_integrity).toBe(true);
     expect(JSON.stringify(j)).not.toMatch(/key|secret|password|token/i);
   });

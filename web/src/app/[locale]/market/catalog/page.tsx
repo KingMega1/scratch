@@ -3,10 +3,10 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { isLocale, type Locale } from '@/lib/i18n/config';
 import { dict } from '@/lib/i18n/dictionaries';
-import { num, price } from '@/lib/format';
+import { num } from '@/lib/format';
 import { pageMeta } from '@/lib/seo';
 import { vehicles } from '@/server/vehicles/read-model';
-import { CarName, PriceState } from '@/components/car';
+import { CarName, PriceFrom, PriceState } from '@/components/car';
 import type { PublicCar } from '@/lib/vehicles/types';
 
 type P = { params: Promise<{ locale: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: P): Promise<Metadata> {
 }
 const SORTS: Record<string, (a: PublicCar, b: PublicCar) => number> = {
   name: (a, b) => a.id.localeCompare(b.id),
-  price: (a, b) => (a.price?.min ?? Infinity) - (b.price?.min ?? Infinity),
-  regs: (a, b) => (b.registrations?.last12 ?? -1) - (a.registrations?.last12 ?? -1),
+  price: (a, b) => (a.priceFrom.sortValue ?? Infinity) - (b.priceFrom.sortValue ?? Infinity),
+  regs: (a, b) => (b.registrations?.inWindow ?? -1) - (a.registrations?.inWindow ?? -1),
 };
 
 /* Full catalog: the dense table, kept one level deeper than Market (not the Market homepage). */
@@ -41,15 +41,14 @@ export default async function Catalog({ params, searchParams }: P) {
       <h1 className="h-page">{c.h1}</h1>
       <p className="small tnum">{num(rows.length)}</p>
       <div className="table-scroll"><table className="t">
-        <thead><tr>{th('name', c.model)}<th scope="col">{c.body}</th>{th('price', c.from)}<th scope="col" className="t-num">{c.to}</th><th scope="col">{c.state}</th>{th('regs', c.regs)}</tr></thead>
+        <thead><tr>{th('name', c.model)}{th('price', c.from)}<th scope="col">{c.state}</th><th scope="col">{t.car.spec.powertrain}</th>{th('regs', c.regs)}</tr></thead>
         <tbody>{rows.map(r => (
           <tr key={r.id}>
             <td><Link href={`/${locale}/cars/${r.id}`}><CarName car={r} locale={locale} /></Link></td>
-            <td>{t.body[r.body]}</td>
-            <td className="t-num">{r.price ? price(r.price.min, locale) : '—'}</td>
-            <td className="t-num">{r.price && r.price.max !== r.price.min ? price(r.price.max, locale) : '—'}</td>
-            <td><PriceState state={r.price ? r.price.state : 'unknown'} locale={locale} /></td>
-            <td className="t-num">{r.registrations ? num(r.registrations.last12) : '—'}</td>
+            <td><PriceFrom car={r} locale={locale} /></td>
+            <td><PriceState state={r.priceFrom.state} locale={locale} /></td>
+            <td>{r.powertrains.map(p => t.pt[p]).join(' / ') || '—'}</td>
+            <td className="t-num">{r.registrations?.inWindow != null ? num(r.registrations.inWindow) : '—'}</td>
           </tr>
         ))}</tbody>
       </table></div>

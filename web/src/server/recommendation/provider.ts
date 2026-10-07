@@ -2,6 +2,7 @@ import 'server-only';
 import type { BuyerBrief, RecommendationResult } from '@/lib/recommendation/contract';
 import { p1EngineInfo } from '../p1/loader';
 import { serverEnv } from '../env';
+import { vehicles } from '../vehicles/read-model';
 
 /* Server-side Recommendation integration boundary.
    The browser never receives P1 scoring, weights or eligibility code; it calls POST /api/v1/recommendation.
@@ -21,7 +22,7 @@ class GatedP1Provider implements RecommendationProvider {
   status(): ProviderStatus {
     const info = p1EngineInfo();
     // FEATURE_FMC_SEMANTIC may only be switched on after the P1 PASS; even then recommend() must be implemented first.
-    return { status: 'blocked', reason: 'pending_semantic_acceptance', engine_version: info.engine_version, universe_version: info.universe_version };
+    return { status: 'blocked', reason: 'pending_semantic_acceptance', engine_version: info.engine_version, universe_version: vehicles().meta().registry_version };
   }
   async recommend(): Promise<RecommendationResult> {
     throw new Error(`recommendation semantics blocked (FEATURE_FMC_SEMANTIC=${serverEnv().FEATURE_FMC_SEMANTIC})`);

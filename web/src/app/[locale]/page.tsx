@@ -7,8 +7,7 @@ import { date, num } from '@/lib/format';
 import { pageMeta } from '@/lib/seo';
 import { vehicles } from '@/server/vehicles/read-model';
 import { content } from '@/server/cms/provider';
-import { BodyIcon, CarCard, CarName, PriceFigure, PriceState } from '@/components/car';
-import type { Body } from '@/lib/vehicles/types';
+import { CarCard, CarName, OfficialFigure, PriceState } from '@/components/car';
 
 type P = { params: Promise<{ locale: string }> };
 
@@ -25,12 +24,13 @@ export default async function Home({ params }: P) {
   const t = dict(locale), h = t.home;
   const V = vehicles();
   const cars = V.all();
-  const official = cars.filter(c => c.price?.trims.some(x => x.state === 'official')).length;
-  const marketNow = cars.filter(c => c.price && c.registrations).sort((a, b) => b.registrations!.last12 - a.registrations!.last12).slice(0, 4);
-  const bodies: Body[] = ['suv', 'sedan', 'hatch', 'mpv'];
-  const bodyCount = (b: Body) => cars.filter(c => c.body === b).length;
-  const exCar = marketNow.find(c => c.price?.trims.some(x => x.state === 'official')) ?? cars.find(c => c.price?.trims.some(x => x.state === 'official'));
-  const example = exCar ? { car: exCar, trim: exCar.price!.trims.find(x => x.state === 'official')! } : null;
+  const official = cars.filter(c => c.priceFrom.state === 'checked').length;
+  const reg = (c: (typeof cars)[number]) => c.registrations?.inWindow ?? -1;
+  const marketNow = [...cars].sort((a, b) => reg(b) - reg(a)).slice(0, 4);
+  const brands = V.brands().slice(0, 8);
+  const exCar = marketNow.find(c => c.trims.some(x => x.official.state === 'checked')) ?? cars.find(c => c.trims.some(x => x.official.state === 'checked'));
+  const exTrim = exCar?.trims.find(x => x.official.state === 'checked');
+  const example = exCar && exTrim ? { car: exCar, trim: exTrim } : null;
   const items = (await content().list({ includeDrafts: true })).slice(0, 3);
 
   return (
@@ -87,14 +87,18 @@ export default async function Home({ params }: P) {
 
       <section className="section" aria-labelledby="disc-h">
         <div className="wrap">
-          <h2 id="disc-h" className="h-section">{h.discoverH}</h2>
+          <h2 id="disc-h" className="h-section">{t.market.brandsH}</h2>
           <div className="strip" style={{ marginBlockStart: 16 }}>
-            {bodies.map(b => (
-              <Link key={b} className="body-tile" href={`/${locale}/cars?body=${b}`}>
-                <BodyIcon body={b} className="" />
-                <b>{t.body[b]}</b>
-                <span className="n tnum">{t.market.models(bodyCount(b))}</span>
+            {brands.map(b => (
+              <Link key={b.id} className="body-tile" href={`/${locale}/cars?brand=${b.id}`}>
+                <b>{locale === 'ar' ? b.ar ?? <bdi>{b.en}</bdi> : b.en}</b>
+                <span className="n tnum">{t.market.models(b.count)}</span>
               </Link>
+            ))}
+          </div>
+          <div className="chips" style={{ marginBlockStart: 16 }}>
+            {t.bands.map(b => (
+              <Link key={b.key} className="chip" href={`/${locale}/cars?${new URLSearchParams({ ...(b.min != null ? { min: String(b.min) } : {}), ...(b.max != null ? { max: String(b.max) } : {}) })}`}>{b.label}</Link>
             ))}
           </div>
         </div>
@@ -123,9 +127,9 @@ export default async function Home({ params }: P) {
           {example ? (
             <p className="card" style={{ display: 'inline-flex', flexWrap: 'wrap', gap: 10, alignItems: 'center' }}>
               <Link className="link" href={`/${locale}/cars/${example.car.id}`}><CarName car={example.car} locale={locale} /> · <bdi>{example.trim.label}</bdi></Link>
-              <PriceFigure value={example.trim.price} official locale={locale} />
-              <PriceState state="official" locale={locale} />
-              <span className="small">{date(example.trim.date, locale)}</span>
+              <OfficialFigure o={example.trim.official} locale={locale} />
+              <PriceState state="checked" locale={locale} />
+              <span className="small">{example.trim.official.sources.map(x => x.name).join(', ')} · {date(example.trim.official.sources[0]?.observedAt ?? '', locale)}</span>
             </p>
           ) : null}
           <div style={{ marginBlockStart: 16 }} />

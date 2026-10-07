@@ -2,82 +2,72 @@ import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { dict } from '@/lib/i18n/dictionaries';
 import { date, price } from '@/lib/format';
-import type { Body, PublicCar, PriceState as PS } from '@/lib/vehicles/types';
+import type { OfficialPrice, PriceState as PS, PublicCar } from '@/lib/vehicles/types';
 
 export const carHref = (locale: Locale, id: string) => `/${locale}/cars/${id}`;
 
-/* Brand before model (Brand V2). In Arabic, Latin model names are bidi-isolated. */
+/* Brand before model (Brand V2). In Arabic, Latin names are bidi-isolated. Arabic display names come from a
+   TEMP display crosswalk (non-canonical) until P2 publishes them. */
 export function CarName({ car, locale }: { car: PublicCar; locale: Locale }) {
   if (locale === 'ar') {
-    const brand = car.brand.ar ?? car.brand.en;
-    const model = car.model.ar ?? car.model.en;
-    return <>{car.brand.ar ? brand : <bdi>{brand}</bdi>} {car.model.ar ? model : <bdi>{model}</bdi>}</>;
+    return <>{car.brand.ar ?? <bdi>{car.brand.en}</bdi>} {car.model.ar ?? <bdi>{car.model.en}</bdi>}</>;
   }
   return <>{car.brand.en} {car.model.en}</>;
 }
 export const carNameText = (car: PublicCar, locale: Locale) =>
   locale === 'ar' ? `${car.brand.ar ?? car.brand.en} ${car.model.ar ?? car.model.en}` : `${car.brand.en} ${car.model.en}`;
 
-const ICON: Record<Body, string> = {
-  suv: '/brand/body-family-suv-ink.svg', sedan: '/brand/body-sedan-ink.svg', hatch: '/brand/body-hatchback-ink.svg', mpv: '/brand/body-minivan-ink.svg',
-};
-export function BodyIcon({ body, className = 'icon' }: { body: Body; className?: string }) {
-  return <img className={className} src={ICON[body]} alt="" width={112} height={64} />;
+/* Every model in the canonical slice is an SUV; the family-SUV icon is the neutral placeholder. */
+export function BodyIcon({ className = 'icon' }: { className?: string }) {
+  return <img className={className} src="/brand/body-family-suv-ink.svg" alt="" width={112} height={64} />;
 }
 
-/* Photo when the registry maps one to the model; otherwise the neutral body-type icon (never a guessed photo). */
-export function CarMedia({ car, locale, eager = false, caption = false }: { car: PublicCar; locale: Locale; eager?: boolean; caption?: boolean }) {
-  const t = dict(locale);
-  if (!car.image) return <BodyIcon body={car.body} />;
-  const img = (
-    <img
-      className="photo" src={car.image.src} alt={carNameText(car, locale)} loading={eager ? 'eager' : 'lazy'} decoding="async"
-      referrerPolicy="no-referrer" data-asset-flags={car.image.flags.join(' ')}
-    />
-  );
-  if (!caption) return img;
+/* Photo only when a model-mapped placeholder exists; otherwise the neutral icon (never a guessed photo). */
+export function CarMedia({ car, locale, eager = false }: { car: PublicCar; locale: Locale; eager?: boolean }) {
+  if (!car.image) return <BodyIcon />;
   return (
-    <figure style={{ width: '100%', height: '100%' }}>
-      {img}
-      <figcaption>{car.image.flags.includes('EXACT_CAR_UNCONFIRMED') ? t.car.photoNote : null}{car.image.credit ? ` ${car.image.credit}` : ''}</figcaption>
-    </figure>
+    <img className="photo" src={car.image.src} alt={carNameText(car, locale)} loading={eager ? 'eager' : 'lazy'} decoding="async"
+      referrerPolicy="no-referrer" data-asset-flags={car.image.flags.join(' ')} />
   );
 }
 
-export function PriceState({ state, locale }: { state: PS | 'mixed' | 'unknown'; locale: Locale }) {
+export function PriceState({ state, locale }: { state: PS; locale: Locale }) {
   return <span className={`state state-${state}`}>{dict(locale).state[state]}</span>;
 }
 
-/* Bracket only on figures backed by a dated official source (Brand V2 F2). */
-export function PriceFigure({ value, official, locale }: { value: number; official: boolean; locale: Locale }) {
+/* Bracket (F2) only around a single official figure with a named, dated source. Ranges and conflicts never get one. */
+export function Figure({ value, checked, locale }: { value: number; checked: boolean; locale: Locale }) {
   const p = <span className="price tnum">{price(value, locale)}</span>;
-  return official ? <span className="bracket">{p}</span> : p;
+  return checked ? <span className="bracket">{p}</span> : p;
 }
 
-export function CarPrice({ car, locale }: { car: PublicCar; locale: Locale }) {
-  const t = dict(locale);
-  if (!car.price) return <PriceState state="unknown" locale={locale} />;
-  const minTrim = car.price.trims[0];
-  return (
-    <>
-      <span className="small">{t.car.from}</span>
-      <PriceFigure value={car.price.min} official={minTrim.state === 'official'} locale={locale} />
-      <PriceState state={minTrim.state} locale={locale} />
-    </>
-  );
+export function OfficialFigure({ o, locale }: { o: OfficialPrice; locale: Locale }) {
+  if (o.state === 'checked' && o.value != null) return <Figure value={o.value} checked locale={locale} />;
+  if (o.state === 'near' && o.min != null) return <span className="price tnum">{price(o.min, locale)}{o.max != null && o.max !== o.min ? ` – ${price(o.max, locale)}` : ''}</span>;
+  if (o.state === 'conflict' && o.values.length) return <span className="price tnum">{o.values.map(v => price(v, locale)).join(' / ')}</span>;
+  return <span className="state state-unknown">{dict(locale).state.unknown}</span>;
+}
+
+export function PriceFrom({ car, locale }: { car: PublicCar; locale: Locale }) {
+  const t = dict(locale), f = car.priceFrom;
+  if (f.state === 'checked' && f.value != null) return <><span className="small">{t.car.from}</span><Figure value={f.value} checked locale={locale} /></>;
+  if (f.state === 'near' && f.min != null) return <><span className="small">{t.car.from}</span><span className="price tnum">{price(f.min, locale)}{f.max != null && f.max !== f.min ? ` – ${price(f.max, locale)}` : ''}</span></>;
+  if (f.state === 'conflict') return <><PriceState state="conflict" locale={locale} />{f.min != null ? <span className="small tnum">{t.v2.lowestQuoted}: {price(f.min, locale)}</span> : null}</>;
+  return <PriceState state="unknown" locale={locale} />;
 }
 
 export function CarCard({ car, locale, eager = false }: { car: PublicCar; locale: Locale; eager?: boolean }) {
   const t = dict(locale);
-  const meta = [t.body[car.body], car.powertrains.map(p => t.pt[p]).join(' / '), car.price ? t.car.versions(car.price.trims.length) : null].filter(Boolean).join(' · ');
+  const meta = [car.powertrains.map(p => t.pt[p]).join(' / '), car.trims.length ? t.car.versions(car.trims.length) : null].filter(Boolean).join(' · ');
   return (
     <Link className="cc" href={carHref(locale, car.id)} data-model-id={car.id}>
       <div className="cc-media"><CarMedia car={car} locale={locale} eager={eager} /></div>
       <div className="cc-body">
         <span className="cc-name"><CarName car={car} locale={locale} /></span>
-        <span className="cc-meta">{meta}</span>
-        <span className="cc-price"><CarPrice car={car} locale={locale} /></span>
-        {car.price ? <span className="small">{date(car.price.asOf, locale)}</span> : null}
+        {meta ? <span className="cc-meta">{meta}</span> : null}
+        <span className="cc-price"><PriceFrom car={car} locale={locale} /></span>
+        {car.lastObserved ? <span className="small">{t.state.stale}: {date(car.lastObserved, locale)}</span> : null}
+        {!car.inSlice ? <span className="small">{t.v2.outOfSlice}</span> : null}
       </div>
     </Link>
   );

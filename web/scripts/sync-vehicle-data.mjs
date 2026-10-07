@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-/* Deterministic vehicle-data sync: accepted GitHub view -> serving read model (JSON projection).
-   GitHub accepted vehicle truth is canonical. This projection never writes back upstream.
+/* Deterministic vehicle-data sync: canonical GitHub accepted view -> serving read model (JSON projection).
+   Canonical: KingMega1/scratch @ <pinned commit> : vehicle-data/views/p1_suv_2m.json (carindex.p1.buyer_view/*).
+   GitHub accepted vehicle truth wins over any projection. This sync never writes upstream.
    Same source commit => byte-identical data/registry/universe.snapshot.json.
    Run-specific facts (synced_at) live only in data/registry/sync-manifest.json. */
 import { createHash } from 'node:crypto';
@@ -8,14 +9,15 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 const SOURCE = {
-  repo: process.env.CI_VEHICLE_SOURCE_REPO || 'KingMega1/carindex-buyer-test',
-  commit: process.env.CI_VEHICLE_SOURCE_COMMIT || 'f994e7f2441194f149ce0e9988abe41ef10e2e11',
-  path: process.env.CI_VEHICLE_SOURCE_PATH || 'data/view.js',
+  repo: process.env.CI_VEHICLE_SOURCE_REPO || 'KingMega1/scratch',
+  branch: process.env.CI_VEHICLE_SOURCE_BRANCH || 'claude/carindex-buyer-vehicle-data-97yinp',
+  commit: process.env.CI_VEHICLE_SOURCE_COMMIT || '6f3df7dc12bd389d924ad9a74cad1c0533913cf7',
+  root: 'vehicle-data/',
+  path: process.env.CI_VEHICLE_SOURCE_PATH || 'vehicle-data/views/p1_suv_2m.json',
 };
 const OUT = resolve(process.cwd(), 'data/registry');
 const localFile = process.argv.find(a => a.startsWith('--file='))?.slice(7);
-
-if (!/^[0-9a-f]{40}$/.test(SOURCE.commit)) throw new Error('CI_VEHICLE_SOURCE_COMMIT must be a full 40-char commit SHA (branches are not deterministic)');
+if (!/^[0-9a-f]{40}$/.test(SOURCE.commit)) throw new Error('CI_VEHICLE_SOURCE_COMMIT must be a full 40-char SHA (branch heads are not deterministic)');
 
 async function fetchSource() {
   if (localFile) return readFileSync(localFile, 'utf8');
@@ -25,53 +27,43 @@ async function fetchSource() {
   return res.text();
 }
 
-function parseView(text) {
-  // The accepted view is a JS assignment of a JSON literal. Parse as data; never execute it.
-  const m = /^\s*window\.CI_UNIVERSE\s*=\s*([\s\S]*?);?\s*$/.exec(text);
-  if (!m) throw new Error('unexpected view format: expected window.CI_UNIVERSE = {...};');
-  return JSON.parse(m[1]);
-}
-
-function validate(U) {
-  const errors = [];
-  if (!U.meta?.version) errors.push('meta.version missing');
-  if (!Array.isArray(U.models) || !U.models.length) errors.push('models missing');
-  const ids = new Set();
-  for (const m of U.models || []) {
-    if (!/^[a-z0-9-]+\/[a-z0-9-]+$/.test(m.id || '')) errors.push(`bad id ${m.id}`);
-    if (ids.has(m.id)) errors.push(`duplicate id ${m.id}`);
-    ids.add(m.id);
-    if (!m.brand || !m.model) errors.push(`${m.id}: brand/model missing`);
-    if (!Array.isArray(m.trims)) errors.push(`${m.id}: trims missing`);
-    for (const t of m.trims || []) if (typeof t.min !== 'number' || t.min < 0) errors.push(`${m.id}: bad trim price`);
+function validate(v) {
+  const e = [];
+  if (!/^carindex\.p1\.buyer_view\/v\d+$/.test(v.schema || '')) e.push(`unexpected schema ${v.schema}`);
+  if (!v.slice) e.push('slice missing');
+  if (!v.generated_as_of) e.push('generated_as_of missing');
+  if (!v.price_history?.latest) e.push('price_history.latest missing');
+  if (!Array.isArray(v.models) || !v.models.length) e.push('models missing');
+  const ids = new Set(), slugs = new Set();
+  for (const m of v.models || []) {
+    if (!m.model_id || ids.has(m.model_id)) e.push(`bad/duplicate model_id ${m.model_id}`);
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(m.slug || '') || slugs.has(m.slug)) e.push(`bad/duplicate slug ${m.slug}`);
+    ids.add(m.model_id); slugs.add(m.slug);
+    if (!m.brand || !m.model || !m.price || !Array.isArray(m.gaps) || !Array.isArray(m.conflicts)) e.push(`${m.model_id}: required blocks missing`);
   }
-  const inUniverse = (U.models || []).filter(m => m.u).length;
-  if (U.meta?.models_in_universe != null && U.meta.models_in_universe !== inUniverse)
-    errors.push(`meta.models_in_universe=${U.meta.models_in_universe} but ${inUniverse} models have u=true`);
-  if (errors.length) throw new Error('validation failed:\n' + errors.slice(0, 20).join('\n'));
-  return { total: U.models.length, inUniverse };
+  if (e.length) throw new Error('validation failed:\n' + e.slice(0, 20).join('\n'));
 }
 
 const text = await fetchSource();
 const sha256 = createHash('sha256').update(text).digest('hex');
-const U = parseView(text);
-const counts = validate(U);
+const view = JSON.parse(text);
+validate(view);
+const registry_version = `${view.slice}/${view.price_history.latest}`;
 const snapshot = {
   meta: {
-    registry_version: U.meta.version,
-    snapshot_id: `${U.meta.version}@${SOURCE.commit.slice(0, 12)}`,
-    built: U.meta.built,
-    registration_months: U.meta.registration_months,
-    last12_window: U.meta.last12_window,
-    models_in_universe: counts.inUniverse,
-    models_total: counts.total,
+    schema: view.schema,
+    registry_version,
+    snapshot_id: `${registry_version}@${SOURCE.commit.slice(0, 12)}`,
+    generated_as_of: view.generated_as_of,
+    models_total: view.models.length,
+    models_in_slice: view.models.filter(m => m.in_slice).length,
     source: { ...SOURCE, sha256 },
   },
-  models: [...U.models].sort((a, b) => a.id.localeCompare(b.id)),
+  view,
 };
 writeFileSync(resolve(OUT, 'universe.snapshot.json'), JSON.stringify(snapshot) + '\n');
 writeFileSync(resolve(OUT, 'sync-manifest.json'), JSON.stringify({
-  snapshot_id: snapshot.meta.snapshot_id, registry_version: snapshot.meta.registry_version,
-  source: snapshot.meta.source, synced_at: new Date().toISOString(), counts,
+  snapshot_id: snapshot.meta.snapshot_id, registry_version, schema: view.schema, source: snapshot.meta.source,
+  synced_at: new Date().toISOString(), counts: { total: snapshot.meta.models_total, in_slice: snapshot.meta.models_in_slice },
 }, null, 2) + '\n');
-console.log(`synced ${snapshot.meta.snapshot_id}: ${counts.inUniverse}/${counts.total} models, sha256 ${sha256.slice(0, 16)}…`);
+console.log(`synced ${snapshot.meta.snapshot_id}: ${snapshot.meta.models_in_slice}/${snapshot.meta.models_total} in slice, sha256 ${sha256.slice(0, 16)}…`);

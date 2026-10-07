@@ -3,7 +3,6 @@ import { createHash } from 'node:crypto';
 import vm from 'node:vm';
 import manifest from './vendor/manifest.json';
 import { P1_SOURCES } from './vendor/sources.generated';
-import { rawUniverseForEngine } from '../vehicles/read-model';
 
 /* Loads the vendored P1 engine verbatim (hash-verified) in an isolated VM context, server-side only.
    S1 uses it for version reporting and integrity proof; no results are mapped while semantics are blocked. */
@@ -37,7 +36,10 @@ export function p1EngineInfo() {
   const l = load();
   return {
     engine_version: l.engine?.ENGINE_VERSION ?? null,
-    universe_version: rawUniverseForEngine().meta.version,
+    // The vendored engine was built against U11-2026-09-26 (superseded). Universe binding to the canonical
+    // buyer_view is part of the P1 R3 RELEASE integration and stays blocked until then.
+    universe_version: null as string | null,
+    engine_universe_built_for: 'U11-2026-09-26',
     source_commit: manifest.source_commit,
     error: l.error,
   };

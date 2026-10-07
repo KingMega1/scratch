@@ -20,7 +20,6 @@ export async function generateMetadata({ params }: P): Promise<Metadata> {
 function href(locale: Locale, q: CarQuery, patch: Partial<CarQuery>) {
   const m = { ...q, ...patch, page: patch.page ?? 1 };
   const sp = new URLSearchParams();
-  if (m.body) sp.set('body', m.body);
   if (m.brand) sp.set('brand', m.brand);
   if (m.min != null) sp.set('min', String(m.min));
   if (m.max != null) sp.set('max', String(m.max));
@@ -40,22 +39,17 @@ export default async function Cars({ params, searchParams }: P) {
   const q = parseCarQuery(await searchParams);
   const { items, total, pages } = queryCars(q);
   const brand = q.brand ? vehicles().brands().find(b => b.id === q.brand) : null;
+  const sliceNote = t.v2.slice(vehicles().meta().models_in_slice);
   const all = vehicles().all().length;
   const bandOn = (b: { min?: number; max?: number }) => q.min === b.min && q.max === b.max;
-  const hasFilters = q.body || q.brand || q.min != null || q.max != null || q.pt || q.official;
+  const hasFilters = q.brand || q.min != null || q.max != null || q.pt || q.official;
 
   return (
     <div className="wrap section" style={{ paddingBlockStart: 32 }}>
       <h1 className="h-page">{c.h1(num(all))}</h1>
+      <p className="sub">{sliceNote}</p>
       {brand ? <p className="sub">{c.brand}: <b>{locale === 'ar' ? brand.ar ?? brand.en : brand.en}</b></p> : null}
       <div className="filters" role="group" aria-label={c.filters}>
-        <div className="filter-row">
-          <span className="label">{t.body.any}</span>
-          <Link className="chip" href={href(locale, q, { body: undefined })} aria-current={!q.body ? 'true' : undefined}>{c.all}</Link>
-          {(['suv', 'sedan', 'hatch', 'mpv'] as const).map(b => (
-            <Link key={b} className="chip" href={href(locale, q, { body: b })} aria-current={q.body === b ? 'true' : undefined}>{t.body[b]}</Link>
-          ))}
-        </div>
         <div className="filter-row">
           <span className="label">{c.price}</span>
           <Link className="chip" href={href(locale, q, { min: undefined, max: undefined })} aria-current={q.min == null && q.max == null ? 'true' : undefined}>{c.all}</Link>
@@ -66,7 +60,7 @@ export default async function Cars({ params, searchParams }: P) {
         <div className="filter-row">
           <span className="label">{c.pt}</span>
           <Link className="chip" href={href(locale, q, { pt: undefined })} aria-current={!q.pt ? 'true' : undefined}>{c.all}</Link>
-          {(['petrol', 'hybrid', 'ev'] as const).map(p => (
+          {(['ice', 'hybrid', 'reev', 'ev'] as const).map(p => (
             <Link key={p} className="chip" href={href(locale, q, { pt: p })} aria-current={q.pt === p ? 'true' : undefined}>{t.pt[p]}</Link>
           ))}
           <Link className="chip" href={href(locale, q, { official: !q.official })} aria-current={q.official ? 'true' : undefined}>{c.officialOnly}</Link>

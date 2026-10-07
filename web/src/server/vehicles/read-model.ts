@@ -1,129 +1,162 @@
 import 'server-only';
 import snapshot from '@data/registry/universe.snapshot.json';
-import type { AssetFlag, Body, BrandSummary, Powertrain, PublicCar, PublicImage, PublicTrim, RegistryMeta } from '@/lib/vehicles/types';
+import crosswalk from '@data/registry/display-crosswalk.TEMP.json';
+import type { AssetFlag, BrandSummary, OfficialPrice, PriceChange, PriceState, Powertrain, PublicCar, PublicImage, PublicTrim, RegistryMeta, SpecValue } from '@/lib/vehicles/types';
 
 /* Serving read model.
-   Canonical truth: GitHub accepted vehicle view (see data/registry/sync-manifest.json for commit + sha256).
-   S1 adapter: the deterministic JSON projection produced by scripts/sync-vehicle-data.mjs.
-   S2 adapter: PostgreSQL read model loaded by the same sync (schema in db/read-model.sql). Same interface.
-   This module is read-only; nothing in the website can write vehicle truth. */
+   Canonical: KingMega1/scratch vehicle-data/views/p1_suv_2m.json (carindex.p1.buyer_view/v2) at the commit pinned in
+   data/registry/sync-manifest.json. GitHub accepted vehicle truth wins over any projection.
+   S1 adapter: deterministic JSON projection (scripts/sync-vehicle-data.mjs). S2: Postgres read model, same interface.
+   Read-only: nothing in the website writes vehicle truth. No value is averaged or imputed here. */
 
 export interface VehicleReadModel {
   meta(): RegistryMeta;
   all(): PublicCar[];
   get(id: string): PublicCar | null;
   brands(): BrandSummary[];
+  priceHistory(): { snapshots: string[]; latest: string; changes: Record<string, number> };
 }
 
-type RawTrim = { label?: string; min: number; year?: number; official?: boolean; date?: string; pt?: string | null };
-type RawModel = {
-  id: string; brand_id: string; brand: string; model: string; ar?: { brand?: string[]; model?: string[] };
-  origin?: string; chinese?: boolean; body: string; segment?: string; powertrains?: (string | null)[];
-  warranty?: string[]; warranty_years?: number; warranty_verified?: boolean; model_year?: number;
-  image?: { src: string; credit?: string; page?: string }; awd?: boolean; hp?: number[]; seats?: number[]; distributor?: string;
-  reg?: { since_2021: number; last12: number; trend?: string | null; first_month?: string; yearly?: Record<string, number>; rank_in_body_last12?: number; of_body?: number };
-  u?: boolean; trims: RawTrim[];
-};
+/* eslint-disable @typescript-eslint/no-explicit-any */
+type Raw = any;
 
-/* Curated temporary assets (until P2 delivers official exact-car imagery).
-   Patrol: correct generation (Y63), source watermark is cropped by layout. Not a verified exact-trim match. */
-const LOCAL_ASSETS: Record<string, PublicImage> = {
-  'nissan/patrol': {
-    src: '/media/patrol.png', credit: null, sourcePage: null,
-    flags: ['TEMP_UNVERIFIED', 'EXACT_CAR_UNCONFIRMED', 'PHOTO_NEEDS_ENRICHMENT', 'WATERMARK_CROPPED'],
-  },
-};
+const SOURCE_NAME: Record<string, string> = { contactcars: 'ContactCars', egycar: 'EgyCar', hatla2ee: 'Hatla2ee' };
+const srcName = (s: string) => SOURCE_NAME[s?.toLowerCase?.()] ?? s;
+const PT: Record<string, Powertrain> = { ICE: 'ice', Hybrid: 'hybrid', HEV: 'hybrid', PHEV: 'phev', REEV: 'reev', BEV: 'ev' };
 
-const PT: Powertrain[] = ['petrol', 'hybrid', 'ev'];
-const asPt = (x: unknown): Powertrain | null => (PT.includes(x as Powertrain) ? (x as Powertrain) : null);
-const TRENDS = ['gaining', 'steady', 'declining', 'new'] as const;
+function official(o: Raw): OfficialPrice {
+  const obs: Raw[] = o?.observations ?? [];
+  const sources = obs.filter(x => x.value_status === 'OK' || x.value != null).map(x => ({
+    name: x.source, url: x.url ?? null, observedAt: (x.observed_at || '').slice(0, 10), effectiveDate: x.source_effective_date ?? null,
+  }));
+  const base = { values: [] as number[], agreedBySources: (o?.sources ?? []).length, sources };
+  switch (o?.status) {
+    case 'AGREED':
+    case 'SINGLE_SOURCE':
+      return o.value != null ? { ...base, state: 'checked', value: o.value, min: null, max: null } : { ...base, state: 'unknown', value: null, min: null, max: null };
+    case 'NEAR_AGREEMENT':
+      return { ...base, state: 'near', value: null, min: o.value_min ?? null, max: o.value_max ?? null };
+    case 'CONFLICT': {
+      const values = [...new Set<number>((o.conflicting_values ?? []).filter((v: unknown) => typeof v === 'number'))].sort((a, b) => a - b);
+      return { ...base, state: 'conflict', value: null, min: values[0] ?? null, max: values.at(-1) ?? null, values };
+    }
+    default:
+      return { ...base, state: 'unknown', value: null, min: null, max: null };
+  }
+}
 
-function shapeTrims(m: RawModel): PublicTrim[] {
-  const priced = m.trims.filter(t => t.min > 0);
-  if (!priced.length) return [];
-  const year = Math.max(...priced.map(t => t.year || 0));
-  const seen = new Set<string>();
-  const out: PublicTrim[] = [];
-  for (const t of priced.filter(t => (t.year || 0) === year).sort((a, b) => a.min - b.min)) {
-    const label = (t.label || '').trim() || '—';
-    const key = `${label.toLowerCase()}|${t.min}`;
-    if (seen.has(key)) continue;
-    seen.add(key);
-    out.push({ label, price: t.min, year, state: t.official ? 'official' : 'listing', date: t.date || '', powertrain: asPt(t.pt) ?? (m.powertrains?.length === 1 ? asPt(m.powertrains[0]) : null) });
+function trim(t: Raw, modelYear: number | null): PublicTrim {
+  const m = (t.market_observations ?? []).find((x: Raw) => typeof x.value === 'number');
+  return {
+    key: t.trim_key, label: (t.labels?.[0] ?? t.trim_key) as string, modelYear,
+    official: official(t.official),
+    market: m ? { value: m.value, source: m.source, observedAt: (m.observed_at || '').slice(0, 10) } : null,
+  };
+}
+const trimSort = (a: PublicTrim, b: PublicTrim) =>
+  (a.official.value ?? a.official.min ?? Infinity) - (b.official.value ?? b.official.min ?? Infinity) || a.label.localeCompare(b.label);
+
+function priceFrom(p: Raw): PublicCar['priceFrom'] {
+  const f = p?.price_from;
+  if (!f) return { state: 'unknown', value: null, min: null, max: null, sortValue: null, modelYear: null };
+  if (f.status === 'RESOLVED') return { state: 'checked', value: f.value, min: null, max: null, sortValue: f.value, modelYear: f.model_year ?? null };
+  if (f.status === 'RESOLVED_RANGE') return { state: 'near', value: null, min: f.value_min, max: f.value_max, sortValue: f.value_min, modelYear: f.model_year ?? null };
+  if (f.status === 'CONFLICT') return { state: 'conflict', value: null, min: f.candidate_min ?? null, max: null, sortValue: f.candidate_min ?? null, modelYear: f.model_year ?? null };
+  return { state: 'unknown', value: null, min: null, max: null, sortValue: null, modelYear: null };
+}
+
+function changes(m: Raw): PriceChange[] {
+  const out: PriceChange[] = [];
+  for (const c of m.price?.source_stated_changes?.changes ?? []) {
+    if (typeof c.old_official !== 'number' || typeof c.new_official !== 'number') continue;
+    out.push({ modelYear: c.model_year ?? null, trim: c.trim_label ?? c.trim_key, from: c.old_official, to: c.new_official, effectiveDate: c.effective_date, source: c.source, url: c.url ?? null, kind: 'stated' });
+  }
+  for (const co of m.price?.cohorts ?? []) for (const t of co.trims ?? []) for (const h of t.history ?? []) {
+    if (h.change !== 'CHANGED' || h.price_type !== 'official') continue; // market moves are reported separately, never as official
+    out.push({ modelYear: co.model_year ?? null, trim: t.labels?.[0] ?? t.trim_key, from: h.prev.value, to: h.latest.value, effectiveDate: (h.latest.observed_at || '').slice(0, 10), source: srcName(h.source), url: null, kind: 'observed' });
+  }
+  return out.sort((a, b) => b.effectiveDate.localeCompare(a.effectiveDate) || a.trim.localeCompare(b.trim));
+}
+
+const SPEC_KEYS = ['horsepower', 'torque', 'engine_capacity', 'transmission', 'drive_type', 'seats', 'trunk_capacity', 'fuel_consumption', 'length', 'wheelbase', 'battery_capacity', 'electric_range', 'warranty'];
+function specs(m: Raw): Record<string, SpecValue> {
+  const out: Record<string, SpecValue> = {};
+  const attrs = m.specs?.attributes ?? {};
+  for (const k of SPEC_KEYS) {
+    const a = attrs[k];
+    if (!a || a.status === 'MISSING' || !a.values?.length) continue;
+    out[k] = { multiple: a.status === 'MULTIPLE_VALUES', values: a.values.map((v: Raw) => ({ value: String(v.value), sources: v.sources ?? [] })) };
   }
   return out;
 }
 
-function shape(m: RawModel): PublicCar {
-  const trims = shapeTrims(m);
-  const states = new Set(trims.map(t => t.state));
-  const image: PublicImage | null = LOCAL_ASSETS[m.id] ?? (m.image ? {
-    src: m.image.src, credit: m.image.credit ?? null, sourcePage: m.image.page ?? null,
-    // Scraped community photos: mapped to the right model by the registry, generation/trim not verified.
+function shape(m: Raw): PublicCar {
+  const cohorts: Raw[] = m.price?.cohorts ?? [];
+  const latestYear = m.price?.latest_priced_cohort ?? null;
+  const latest = cohorts.find(c => c.model_year === latestYear) ?? null;
+  const reg = m.registration;
+  const cw = (crosswalk.map as Record<string, Raw>)[m.slug];
+  const image: PublicImage | null = cw?.image ? {
+    src: cw.image.src, credit: cw.image.credit ?? null, sourcePage: cw.image.page ?? null,
     flags: ['TEMP_UNVERIFIED', 'EXACT_CAR_UNCONFIRMED', 'PHOTO_NEEDS_ENRICHMENT'] as AssetFlag[],
-  } : null);
-  const trend = m.reg?.trend && (TRENDS as readonly string[]).includes(m.reg.trend) ? (m.reg.trend as NonNullable<PublicCar['registrations']>['trend']) : null;
+  } : null;
+  const lastObserved = (m.freshness?.price_snapshots ?? []).filter((s: Raw) => s.model_observed).map((s: Raw) => s.observed_at).sort().at(-1) ?? null;
   return {
-    id: m.id,
-    brandId: m.brand_id,
-    brand: { en: m.brand, ar: m.ar?.brand?.[0] ?? null },
-    model: { en: m.model, ar: m.ar?.model?.[0] ?? null },
-    body: (['suv', 'sedan', 'hatch', 'mpv'].includes(m.body) ? m.body : 'sedan') as Body,
-    segment: m.segment || null,
-    origin: m.origin || null,
-    chineseBrand: !!m.chinese,
-    powertrains: [...new Set((m.powertrains || []).map(asPt).filter((x): x is Powertrain => !!x))],
-    modelYear: m.model_year ?? null,
-    hp: m.hp?.length ? m.hp : null,
-    seats: m.seats?.length ? m.seats : null,
-    awdConfirmed: m.awd === true,
-    warranty: m.warranty?.length || m.warranty_years ? { text: m.warranty?.[0] ?? null, years: m.warranty_years ?? null, verified: !!m.warranty_verified } : null,
-    distributor: m.distributor ?? null,
-    price: trims.length ? {
-      min: trims[0].price, max: trims[trims.length - 1].price,
-      state: states.size > 1 ? 'mixed' : [...states][0],
-      asOf: trims.map(t => t.date).sort().at(-1) || '',
-      trims,
+    id: m.slug,
+    brand: { en: m.brand, ar: cw?.ar?.brand ?? null },
+    model: { en: m.model, ar: cw?.ar?.model ?? null },
+    inSlice: !!m.in_slice,
+    priceFrom: priceFrom(m.price),
+    trims: latest ? latest.trims.map((t: Raw) => trim(t, latest.model_year)).sort(trimSort) : [],
+    otherCohorts: cohorts.filter(c => c !== latest).map(c => ({ modelYear: c.model_year ?? null, trims: (c.trims ?? []).map((t: Raw) => trim(t, c.model_year)).sort(trimSort) }))
+      .filter(c => c.trims.length).sort((a, b) => (b.modelYear ?? 0) - (a.modelYear ?? 0)),
+    changes: changes(m),
+    specs: specs(m),
+    powertrains: [...new Set(Object.keys(reg?.powertrain_mix_in_window ?? {}).map(k => PT[k]).filter(Boolean))],
+    registrations: reg ? {
+      inWindow: reg.registrations_in_window ?? null, rank: reg.rank_in_slice ?? null, ranked: reg.slice_models_ranked ?? null,
+      share: reg.share_of_slice_registrations ?? null,
+      yoy: reg.momentum?.yoy_suppressed_reason ? null : reg.momentum?.yoy_change ?? null, yoyCaveat: reg.momentum?.caveat ?? null,
+      firstSeen: reg.first_seen_month ?? null,
+      window: reg.window ? [reg.window.start, reg.window.end] : null, monthsMissing: reg.window?.months_missing ?? [],
+      monthly: Object.entries(reg.monthly ?? {}).map(([month, count]) => ({ month, count: count as number })).sort((a, b) => a.month.localeCompare(b.month)),
     } : null,
-    registrations: m.reg ? {
-      last12: m.reg.last12, since2021: m.reg.since_2021, trend,
-      firstMonth: m.reg.first_month ?? null, rankInBody: m.reg.rank_in_body_last12 ?? null, ofBody: m.reg.of_body ?? null,
-      yearly: m.reg.yearly ?? {},
-    } : null,
+    gaps: (m.gaps ?? []).map((g: Raw) => g.type ?? g.code ?? String(g)),
+    conflicts: (m.conflicts ?? []).length,
+    lastObserved,
     image,
   };
 }
+
+const brandId = (s: string) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 class JsonSnapshotReadModel implements VehicleReadModel {
   private cars: PublicCar[];
   private byId: Map<string, PublicCar>;
   private brandList: BrandSummary[];
-  constructor(private snap: { meta: RegistryMeta; models: RawModel[] }) {
-    // Only models accepted into the public universe are served.
-    this.cars = snap.models.filter(m => m.u).map(shape);
+  constructor(private snap: { meta: RegistryMeta; view: Raw }) {
+    this.cars = snap.view.models.map(shape);
     this.byId = new Map(this.cars.map(c => [c.id, c]));
     const b = new Map<string, BrandSummary>();
     for (const c of this.cars) {
-      const x = b.get(c.brandId) ?? { id: c.brandId, en: c.brand.en, ar: c.brand.ar, count: 0, registrationsLast12: 0 };
-      x.count++; x.registrationsLast12 += c.registrations?.last12 ?? 0;
-      b.set(c.brandId, x);
+      const id = brandId(c.brand.en);
+      const x = b.get(id) ?? { id, en: c.brand.en, ar: c.brand.ar, count: 0, registrations: 0 };
+      x.count++; x.registrations += c.registrations?.inWindow ?? 0;
+      b.set(id, x);
     }
-    this.brandList = [...b.values()].sort((x, y) => y.registrationsLast12 - x.registrationsLast12 || x.en.localeCompare(y.en));
+    this.brandList = [...b.values()].sort((x, y) => y.registrations - x.registrations || x.en.localeCompare(y.en));
   }
   meta() { return this.snap.meta; }
   all() { return this.cars; }
   get(id: string) { return this.byId.get(id) ?? null; }
   brands() { return this.brandList; }
+  priceHistory() { const h = this.snap.view.price_history; return { snapshots: h.snapshots, latest: h.latest, changes: h.changes }; }
 }
 
 let instance: VehicleReadModel | null = null;
 export function vehicles(): VehicleReadModel {
-  if (!instance) instance = new JsonSnapshotReadModel(snapshot as unknown as { meta: RegistryMeta; models: RawModel[] });
+  if (!instance) instance = new JsonSnapshotReadModel(snapshot as unknown as { meta: RegistryMeta; view: Raw });
   return instance;
 }
-
-/* Raw registry access for the P1 engine adapter only (engine needs the universe it was built for). Never exposed. */
-export function rawUniverseForEngine(): { meta: { version: string }; models: RawModel[] } {
-  const s = snapshot as unknown as { meta: RegistryMeta; models: RawModel[] };
-  return { meta: { version: s.meta.registry_version }, models: s.models };
-}
+export const brandSlug = brandId;
+export type { PriceState };

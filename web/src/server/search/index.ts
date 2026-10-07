@@ -2,7 +2,6 @@ import 'server-only';
 import type { Locale } from '@/lib/i18n/config';
 import { dict } from '@/lib/i18n/dictionaries';
 import { priceShort } from '@/lib/format';
-import type { Body } from '@/lib/vehicles/types';
 import { vehicles } from '../vehicles/read-model';
 import { content } from '../cms/provider';
 
@@ -22,12 +21,7 @@ export function norm(s: string): string {
 type Doc = { group: SearchHit['group']; keys: string; title: Record<Locale, string>; href: (l: Locale) => string; meta?: Record<Locale, string>; id?: string; weight: number };
 let DOCS: Doc[] | null = null;
 
-const BODY_WORDS: Record<Body, string[]> = {
-  suv: ['suv', 'اس يو في', 'كروس اوفر', 'crossover', 'جيب', 'عاليه'],
-  sedan: ['sedan', 'سيدان', 'صالون'],
-  hatch: ['hatchback', 'hatch', 'هاتشباك', 'هاتش'],
-  mpv: ['mpv', 'minivan', 'van', 'ميني فان', 'فان', '7 seats', '7 seat', 'سبع ركاب', '7 راكب'],
-};
+const SUV_WORDS = ['suv', 'اس يو في', 'كروس اوفر', 'crossover', 'جيب', 'عاليه'];
 
 function build(): Doc[] {
   const V = vehicles();
@@ -35,16 +29,16 @@ function build(): Doc[] {
   for (const c of V.all()) {
     const ar = `${c.brand.ar ?? c.brand.en} ${c.model.ar ?? c.model.en}`;
     docs.push({
-      group: 'cars', id: c.id, weight: Math.log10(10 + (c.registrations?.last12 ?? 0)),
-      keys: norm([c.brand.en, c.model.en, c.brand.ar, c.model.ar, c.id.replace('/', ' '), ar].filter(Boolean).join(' ')),
+      group: 'cars', id: c.id, weight: Math.log10(10 + (c.registrations?.inWindow ?? 0)),
+      keys: norm([c.brand.en, c.model.en, c.brand.ar, c.model.ar, c.id.replace(/-/g, ' '), ar].filter(Boolean).join(' ')),
       title: { en: `${c.brand.en} ${c.model.en}`, ar },
-      meta: c.price ? { en: priceShort(c.price.min, 'en'), ar: priceShort(c.price.min, 'ar') } : undefined,
+      meta: c.priceFrom.sortValue != null ? { en: priceShort(c.priceFrom.sortValue, 'en'), ar: priceShort(c.priceFrom.sortValue, 'ar') } : undefined,
       href: l => `/${l}/cars/${c.id}`,
     });
   }
   for (const b of V.brands()) {
     docs.push({
-      group: 'brands', id: b.id, weight: 2 + Math.log10(10 + b.registrationsLast12),
+      group: 'brands', id: b.id, weight: 2 + Math.log10(10 + b.registrations),
       keys: norm(`${b.en} ${b.ar ?? ''} ${b.id}`), title: { en: b.en, ar: b.ar ?? b.en },
       meta: { en: dict('en').market.models(b.count), ar: dict('ar').market.models(b.count) },
       href: l => `/${l}/cars?brand=${b.id}`,
@@ -99,9 +93,9 @@ export async function search(qRaw: string, locale: Locale, limit = 8): Promise<S
   const t = dict(locale).search;
   const actions: SearchHit[] = [];
   const max = parsePrice(q);
-  const body = (Object.keys(BODY_WORDS) as Body[]).find(b => BODY_WORDS[b].some(w => q.includes(norm(w))));
-  if (max) actions.push({ group: 'actions', title: t.actUnder(priceShort(max, locale)), href: `/${locale}/cars?max=${max}${body ? `&body=${body}` : ''}` });
-  if (body) actions.push({ group: 'actions', title: t.actBody(dict(locale).body[body]), href: `/${locale}/cars?body=${body}` });
+  const suv = SUV_WORDS.some(w => q.includes(norm(w)));
+  if (max) actions.push({ group: 'actions', title: t.actUnder(priceShort(max, locale)), href: `/${locale}/cars?max=${max}` });
+  if (suv) actions.push({ group: 'actions', title: t.actBody(dict(locale).body.suv), href: `/${locale}/cars` });
   const carHits = scored.filter(x => x.d.group === 'cars');
   if (/\b(vs|و|ولا|or|versus)\b/.test(q) && carHits.length >= 2) {
     const [a, b] = carHits;
