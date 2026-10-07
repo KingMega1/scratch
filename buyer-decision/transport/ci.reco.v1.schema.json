@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ci.reco.v1",
+  "title": "CarIndex P1 recommendation result (transport output)",
+  "description": "Returned by transport/reco.js execute(brief, dataset, {locale}). Every human-facing string is engine-owned copy from app/i18n.js composed by app/present.js (verbatim extraction of the released app.js), given as {html, text}: html is the released markup (only span/ul/li/p/h2/h3/section/div/article/figure/img/a/button/table elements with fixed classes, all data values escaped); text is the same with tags removed. No scoring weights, margins, raw evidence, buyer free text or PII. 'share' is the only part safe to put in a URL; the whole object is safe to return to the buyer who asked.",
+  "type": "object",
+  "required": ["schema", "result_id", "engine_version", "universe_version", "dataset", "registry", "transport_version", "locale", "dir", "price_as_of", "stale_after_days", "share", "mode", "confidence", "eyebrow", "budget", "brief_bar", "notices", "hero", "alternatives", "equal", "compare_html", "less", "checks", "no_match"],
+  "additionalProperties": false,
+  "$defs": {
+    "frag": { "type": "object", "required": ["html", "text"], "additionalProperties": false, "properties": { "html": { "type": "string" }, "text": { "type": "string" } } },
+    "version": {
+      "type": "object", "required": ["label", "min", "year", "official", "date", "stale", "powertrain"], "additionalProperties": false,
+      "properties": {
+        "label": { "type": "string" }, "min": { "type": "number" }, "year": { "type": ["integer", "null"] },
+        "official": { "type": "boolean", "description": "price from the official distributor list (dataset trim.official)" },
+        "date": { "type": ["string", "null"], "description": "date the price was observed (dataset trim.date)" },
+        "stale": { "type": ["boolean", "null"], "description": "date older than stale_after_days before price_as_of" },
+        "powertrain": { "type": ["string", "null"] }
+      }
+    },
+    "car": {
+      "type": "object",
+      "required": ["id", "brand", "model", "name", "role", "role_label", "size", "price_range", "price_note", "pick", "versions", "higher_versions_from", "stretch", "why_heading", "why", "trade_offs", "what_could_change", "card", "image", "html"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "description": "dataset model id, e.g. kia/sportage" },
+        "brand": { "type": "string" }, "model": { "type": "string" }, "name": { "$ref": "#/$defs/frag" },
+        "role": { "type": ["string", "null"], "description": "engine role: hero | equal | runner_up | challenger | ..." },
+        "role_label": { "oneOf": [{ "$ref": "#/$defs/frag" }, { "type": "null" }] },
+        "size": { "oneOf": [{ "$ref": "#/$defs/frag" }, { "type": "null" }] },
+        "price_range": { "type": "object", "required": ["from", "to", "html", "text"], "properties": { "from": { "type": "number" }, "to": { "type": "number" }, "html": { "type": "string" }, "text": { "type": "string" } } },
+        "price_note": { "oneOf": [{ "$ref": "#/$defs/frag" }, { "type": "null" }] },
+        "pick": { "type": "object", "required": ["label", "min"], "properties": { "label": { "type": "string" }, "min": { "type": "number" } } },
+        "versions": { "type": "array", "items": { "$ref": "#/$defs/version" }, "description": "versions within the buyer's ceiling, cheapest first" },
+        "higher_versions_from": { "type": ["number", "null"] },
+        "stretch": { "oneOf": [{ "type": "null" }, { "type": "object", "required": ["over", "buys", "vs"], "properties": { "over": { "type": "number" }, "buys": { "type": "array", "items": { "type": "string" } }, "vs": { "type": "string" } } }] },
+        "why_heading": { "type": "string", "description": "S.why_h or, for a lean pick, S.why_h_lean ('Why this one')" },
+        "why": { "type": "array", "items": { "$ref": "#/$defs/frag" } },
+        "trade_offs": { "type": "array", "items": { "$ref": "#/$defs/frag" } },
+        "what_could_change": { "type": "array", "items": { "$ref": "#/$defs/frag" }, "description": "lean pick only: S.dep[confidence.depends[i]] verbatim, plus S.dep_alt when the runner-up is shown" },
+        "card": { "oneOf": [{ "type": "null" }, { "type": "object", "required": ["why", "vs", "html"], "properties": { "why": { "type": "array", "items": { "$ref": "#/$defs/frag" } }, "vs": { "type": "array", "items": { "$ref": "#/$defs/frag" } }, "html": { "type": "string" } } }], "description": "alternative/equal card exactly as the released app shows it" },
+        "image": { "oneOf": [{ "type": "null" }, { "type": "object", "required": ["src", "credit", "page"], "properties": { "src": { "type": "string" }, "credit": { "type": "string" }, "page": { "type": "string" } } }] },
+        "html": { "type": "object", "required": ["detail", "specs", "versions", "market", "next_steps"], "properties": { "detail": { "type": "string" }, "specs": { "type": "string" }, "versions": { "type": "string" }, "market": { "type": "string" }, "next_steps": { "type": "string" } } }
+      }
+    }
+  },
+  "properties": {
+    "schema": { "const": "ci.reco.v1" },
+    "result_id": { "type": "string", "pattern": "^cr1_[0-9a-f]{32}$", "description": "sha256(schema, engine_version, dataset.sha256, locale, share.r): same inputs -> same id" },
+    "engine_version": { "type": "string", "description": "E.ENGINE_VERSION, e.g. E6-2026-09-28" },
+    "universe_version": { "type": "string", "description": "dataset meta.version, e.g. U11-2026-09-26" },
+    "dataset": { "type": "object", "required": ["id", "sha256"], "properties": { "id": { "type": "string" }, "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" } } },
+    "registry": { "type": "object", "required": ["snapshot_id", "registration_months", "last12_window"], "properties": { "snapshot_id": { "type": ["string", "null"] }, "registration_months": { "type": ["array", "null"] }, "last12_window": { "type": ["array", "null"] } } },
+    "transport_version": { "type": "string" },
+    "locale": { "enum": ["en", "ar"] },
+    "dir": { "enum": ["ltr", "rtl"] },
+    "price_as_of": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "stale_after_days": { "const": 14 },
+    "share": { "type": "object", "required": ["r", "brief"], "properties": { "r": { "type": "string", "description": "same token as the released app's ?r= share link; reproduces this result with the same engine + dataset" }, "brief": { "type": "object", "description": "share-safe brief (SHARE_KEYS only: no free text, notes, unresolved phrases or PII)" } } },
+    "mode": { "enum": ["single", "equal", "shortlist", "conflict", "no_match"], "description": "same precedence as the released app's result_view event: conflict > shortlist > equal > single; no_match when there is no recommendation" },
+    "confidence": { "oneOf": [{ "type": "null" }, { "type": "object", "required": ["level", "depends", "vs"], "additionalProperties": false, "properties": { "level": { "enum": ["clear", "lean", "tie", "only"] }, "depends": { "type": "array", "items": { "type": "string" } }, "vs": { "type": ["string", "null"] } } }] },
+    "eyebrow": { "oneOf": [{ "$ref": "#/$defs/frag" }, { "type": "null" }], "description": "single pick label: 'Best fit for what you told us' / 'Our current pick' / shortlist label; null for ties and no-match" },
+    "budget": { "type": "object", "required": ["amount", "mode", "ceiling", "html", "text"] },
+    "brief_bar": { "type": "array", "items": { "type": "object", "required": ["key", "label", "value"] } },
+    "notices": { "type": "array", "items": { "$ref": "#/$defs/frag" }, "description": "cards above the result (aspiration, shortlist verdict/conflict, off-road, unmet, equal note, widened), in order" },
+    "hero": { "oneOf": [{ "$ref": "#/$defs/car" }, { "type": "null" }] },
+    "alternatives": { "type": "array", "items": { "$ref": "#/$defs/car" } },
+    "equal": { "oneOf": [{ "type": "null" }, { "type": "object", "required": ["heading", "sub", "tier"] }], "description": "present for ties: render hero + alternatives as equal cards, listed by price, none leads" },
+    "compare_html": { "type": ["string", "null"] },
+    "less": { "oneOf": [{ "type": "null" }, { "type": "object", "required": ["id", "price", "saves", "heading", "html", "text", "detail_html"] }] },
+    "checks": { "type": "array", "items": { "type": "object", "required": ["key", "html", "text"] } },
+    "no_match": { "oneOf": [{ "type": "null" }, { "type": "object", "required": ["nearest_above", "nearest_html", "head_html", "fixes", "fixes_html"] }] }
+  }
+}

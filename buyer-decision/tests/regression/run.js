@@ -140,9 +140,10 @@ const briefKey = b => { const n = E.normalizeBrief(b, byId); return JSON.stringi
 
 // ---------- run ----------
 const snap = fs.existsSync(SNAP) ? JSON.parse(fs.readFileSync(SNAP, 'utf8')) : {};
-const understanding = [], rows = [], newSnap = {}, changes = [], diagCount = {}, byCase = {};
+const understanding = [], rows = [], newSnap = {}, changes = [], diagCount = {}, byCase = {}, corpus = [];
 for (const c of CASES) {
   const { b, asked } = consult(c);
+  corpus.push({ id: c.id, lang: c.lang === 'AR' ? 'ar' : 'en', brief: b });
   if (c.expect) {
     const parsed = P.parse(c.text, M), miss = Object.entries(c.expect).filter(([k, v]) => JSON.stringify(parsed[k]) !== JSON.stringify(v));
     if (miss.length) understanding.push({ id: c.id, known: c.known || null, msg: miss.map(([k, v]) => `${k}: expected ${JSON.stringify(v)}, parsed ${JSON.stringify(parsed[k])}`).join('; ') });
@@ -191,6 +192,8 @@ if (parity.length) { L.push('', '## EN/AR brief parity', ''); parity.forEach(p =
 if (changes.length) { L.push('', '## Changes vs snapshot', ''); changes.forEach(x => L.push(`- ${x.id}: ${JSON.stringify(x.before)} → ${JSON.stringify(x.after)}`)); }
 if (failures.length) { L.push('', '## Invariant failures', ''); failures.forEach(f => L.push('- ' + f)); }
 fs.writeFileSync(REPORT, L.join('\n') + '\n');
+// the consulted briefs, for the transport equivalence tests (tests/transport/*): same inputs the regression judges
+fs.writeFileSync(path.join(__dirname, 'corpus.json'), JSON.stringify(corpus) + '\n');
 if (UPDATE || !fs.existsSync(SNAP)) fs.writeFileSync(SNAP, JSON.stringify(newSnap, null, 1) + '\n');
 
 console.log(`cases ${CASES.length} + ${UNDERSTANDING.length} parse checks · understanding failures ${understanding.length} · invariants ${checks - fails}/${checks} pass · changes vs snapshot ${changes.length}`);
