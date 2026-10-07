@@ -40,30 +40,30 @@ test('EN/AR negation and comparative brand have equivalent applied inputs',()=>{
   const a=parse("I don't want a fully electric car"),b=parse('مش عايز عربية كهربا');assert.deepEqual(a.ptNo,b.ptNo);assert.equal(a.pt,b.pt);
   assert.equal(parse('better than Hyundai').unresolved[0].brand,parse('أحسن من هيونداي').unresolved[0].brand);
 });
-// Transpile the existing TS contracts for executable tests without changing application code.
-function load(file, imports={}) {const mod={exports:{}};const code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS}}).outputText;vm.runInNewContext(code,{module:mod,exports:mod.exports,require:n=>imports[n]??require(n),console});return mod.exports;}
+// Transpile server TS for executable tests without changing application code.
+function load(file, imports={}) {const mod={exports:{}};const code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,esModuleInterop:true}}).outputText;vm.runInNewContext(code,{module:mod,exports:mod.exports,require:n=>imports[n]??require(n),console,process,Buffer},{filename:file});return mod.exports;}
+const R=load('src/server/p1/release.ts',{'server-only':{}});
 const C=load('src/lib/recommendation/contract.ts');
-const A=load('src/server/recommendation/integration-adapter.ts',{'@/lib/recommendation/contract':C});
-const fixture=JSON.parse(fs.readFileSync('tests/fixtures/reco.tie.NONPRODUCTION.json'));
-test('share-safe result schema requires an opaque UUID and excludes free text',()=>{
-  const r=fixture.result??fixture; const sample={...r,result_id:'buyer@example.com'};assert.equal(C.RecommendationResult.safeParse(sample).success,false);
-  assert.equal(C.RecommendationResult.safeParse({...r,share_safe:false}).success,false);
+const os=require('node:os'), path=require('node:path');
+const copyRelease=()=>{const d=fs.mkdtempSync(path.join(os.tmpdir(),'p1rel-'));fs.cpSync('p1-release',d,{recursive:true});return d;};
+test('release binding verifies record, file hashes, versions and dataset (P1-RELEASE-T1, P3 V7)',()=>{
+  const r=R.verifyRelease(path.resolve('p1-release'),require);
+  assert.equal(r.ok,true,r.error);
+  assert.equal(r.T.ENGINE_VERSION,'E6-2026-09-28');assert.equal(r.T.TRANSPORT_VERSION,'T1-2026-10-07');
+  assert.equal(r.ds.universe_version,'U11-2026-09-26');assert.equal(r.ds.U.models.filter(m=>m.u).length,283);
+  assert.equal(R.BOUND.p3_artifact,'1791369522-eecc');assert.notEqual(R.BOUND.p3_artifact,'1791368192-d509');
 });
-test('prepared adapter cannot execute without exact P1 RELEASE for P3 Version 7',()=>{
-  assert.equal(A.P3_INTEGRATION_ARTIFACT,'1791369522-eecc');
-  let called=false;const transport={execute:()=>{called=true;}};
-  assert.throws(()=>A.prepareReleasedAdapter(null,transport),/pending_semantic_acceptance/);assert.equal(called,false);
-  assert.throws(()=>A.prepareReleasedAdapter({decision:'RELEASE',p3_artifact_id:'older-version'},transport),/pending_semantic_acceptance/);
-  assert.throws(()=>A.prepareReleasedAdapter({decision:'RELEASE',p3_artifact_id:'1791368192-d509',p1_evidence_ref:'x',engine_version:'x',universe_version:'x',registry_snapshot_id:'x'},transport),/pending_semantic_acceptance/); // Version 5 no longer accepted
-});
-test('P5 preserves engine-supplied tie/lean and stale official price metadata',async()=>{
-  const {_NOTICE,...r}=fixture;
-  const release={decision:'RELEASE',p3_artifact_id:A.P3_INTEGRATION_ARTIFACT,p1_evidence_ref:'QA-only',engine_version:r.engine_version,universe_version:r.universe_version,registry_snapshot_id:r.registry_snapshot_id};
-  for(const state of [r.state,{kind:'lean',lead_model_id:r.candidates[0].model_id,depends_on:['unknown_data']}]) {
-    const input={...r,state,candidates:r.candidates.map(c=>({...c,price:{...c.price,stale:true}}))};
-    const out=await A.prepareReleasedAdapter(release,{execute:async()=>input})(r.brief);
-    assert.deepEqual(JSON.parse(JSON.stringify(out)),input);
-  }
-  await assert.rejects(A.prepareReleasedAdapter(release,{execute:async()=>({...r,brief:{...r.brief,free_text:'buyer@example.com'}})})(r.brief),/unsafe_result|Unrecognized/);
-  await assert.rejects(A.prepareReleasedAdapter(release,{execute:async()=>({...r,engine_version:'other'})})(r.brief),/release_version_mismatch/);
+for (const [name,mutate,re] of [
+  ['tampered engine.js', d=>fs.appendFileSync(path.join(d,'buyer-decision/app/engine.js'),'\n'), /file hash mismatch: buyer-decision\/app\/engine.js/],
+  ['tampered i18n copy', d=>{const f=path.join(d,'buyer-decision/app/i18n.js');fs.writeFileSync(f,fs.readFileSync(f,'utf8').replace('don’t have yet',"don't have yet"));}, /file hash mismatch: buyer-decision\/app\/i18n.js/],
+  ['tampered dataset', d=>{const f=path.join(d,'buyer-decision/datasets/U11-2026-09-26/recommendation_view.json');fs.writeFileSync(f,fs.readFileSync(f,'utf8').replace('"U11-2026-09-26"','"U12-2026-10-01"'));}, /file hash mismatch/],
+  ['edited release record', d=>{const f=path.join(d,'buyer-decision/release/P1-RELEASE-T1.json');fs.writeFileSync(f,fs.readFileSync(f,'utf8').replace('E6-2026-09-28','E7-2026-10-01'));}, /release record hash mismatch/],
+  ['missing transport', d=>fs.rmSync(path.join(d,'buyer-decision/transport/reco.js')), /release load failed/],
+]) test(`release binding refuses: ${name}`,()=>{const d=copyRelease();mutate(d);const r=R.verifyRelease(d,require);assert.equal(r.ok,false);assert.match(r.error,re);});
+test('API envelope: only known ops, bounded inputs; no free-text field outside start/answer/parse',()=>{
+  assert.equal(C.FmcRequest.safeParse({op:'execute',locale:'en',brief:{}}).success,true);
+  assert.equal(C.FmcRequest.safeParse({op:'execute',locale:'fr',brief:{}}).success,false);
+  assert.equal(C.FmcRequest.safeParse({op:'start',locale:'en',path:'text',text:'x'.repeat(1001)}).success,false);
+  assert.equal(C.FmcRequest.safeParse({op:'shared',locale:'en',r:'x'.repeat(4001)}).success,false);
+  assert.equal(C.FmcRequest.safeParse({op:'score',locale:'en'}).success,false);
 });

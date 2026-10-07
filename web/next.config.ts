@@ -29,6 +29,12 @@ const securityHeaders = [
 const config: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  // P1 release (P1-RELEASE-T1) is loaded from disk at runtime and hash-verified; ship the vendored files with the functions that use it.
+  outputFileTracingIncludes: {
+    '/api/v1/recommendation': ['./p1-release/**/*'],
+    '/[locale]/find-my-car': ['./p1-release/**/*'],
+    '/admin': ['./p1-release/**/*'],
+  },
   async headers() {
     return [
       { source: '/:path*', headers: securityHeaders },

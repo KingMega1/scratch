@@ -137,6 +137,7 @@ const ar = {
     blockedBody: 'بنراجع طريقة عرض الترشيحات قبل ما نفتحها في الموقع الجديد. لحد ما تخلص، تقدر تتصفّح العربيات أو تقارن بينهم.',
     ctaCars: 'تصفّح العربيات', ctaCompare: 'قارن',
     loading: 'بنجهّز...', error: 'حصلت مشكلة. الصفحة لسه شغالة، جرّب تاني بعد شوية.', retry: 'جرّب تاني',
+    carPage: 'صفحة العربية', compareOnSite: 'قارن العربيات دي', notOnSite: 'صفحتها لسه مش على الموقع',
   },
   pages: {
     methodology: ['طريقة الشغل', 'كل سعر على كار إندكس جاي من مصدر مسمّى وله تاريخ. بنفرّق بين السعر الرسمي وسعر السوق، وبنعرض الحالة جنب كل رقم. لو المصادر مختلفة بنعرض كل الأرقام ومش بناخد متوسط. العلامة حوالين الرقم معناها إننا راجعناه على مصدر رسمي بتاريخ. لو مش متأكدين من رقم، بنقول كده ومش بنخمّن.'],
@@ -285,6 +286,7 @@ const en: Dict = {
     blockedBody: 'We’re reviewing how recommendations are presented before opening them on the new site. Meanwhile you can browse or compare cars.',
     ctaCars: 'Browse cars', ctaCompare: 'Compare',
     loading: 'Loading…', error: 'Something went wrong. The rest of the site still works; try again shortly.', retry: 'Try again',
+    carPage: 'Car page', compareOnSite: 'Compare these cars', notOnSite: 'Car page not on the site yet',
   },
   pages: {
     methodology: ['Methodology', 'Every price on CarIndex comes from a named kind of source with a date. We keep official prices apart from market prices and show the state next to every figure. When sources disagree we show every figure and never average. The bracket around a figure means we checked it against an official, dated source. When we aren’t sure of a figure, we say so instead of guessing.'],

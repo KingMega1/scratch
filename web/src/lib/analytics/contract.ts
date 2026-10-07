@@ -14,6 +14,13 @@ export const WEB_EVENTS = {
   filter_apply: ['keys'],
   evidence_open: ['model_id'],
   fmc_view: [],
+  fmc_start: ['path'],
+  fmc_q_answer: ['q_id', 'step'],
+  fmc_summary_confirm: ['keys'],
+  fmc_summary_edit: [],
+  fmc_result_view: ['mode', 'result_id'],
+  fmc_adjust: ['kind'],
+  fmc_error: ['code'],
   identity_gate_view: [],
   exit: ['last_event'],
 } as const;

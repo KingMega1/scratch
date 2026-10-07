@@ -17,7 +17,7 @@ permissions:
 jobs:
   smoke:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     defaults:
       run:
         working-directory: web
@@ -48,6 +48,11 @@ jobs:
             302|303|307) case "$LOC" in https://vercel.com/*) ;; *) echo "redirect is not Vercel auth"; exit 1;; esac ;;
             *) echo "preview protection is not active"; exit 1;;
           esac
+      - name: Targeted FMC / P1 integration (deployed)
+        env:
+          FMC_BASE_URL: ${{ steps.target.outputs.url }}
+          VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
+        run: npm run test:fmc
       - name: Smoke (deployed)
         env:
           SMOKE_BASE_URL: ${{ steps.target.outputs.url }}

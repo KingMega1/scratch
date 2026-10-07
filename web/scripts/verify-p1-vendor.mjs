@@ -1,23 +1,31 @@
 #!/usr/bin/env node
-/* Verifies the vendored P1 sources are byte-identical to manifest.json (sha256 + bytes). Exit 1 on any drift.
-   P5 never edits P1 code; this makes an accidental edit fail CI instead of failing at runtime. */
+/* Verifies web/p1-release/ is byte-identical to the P1 release record P1-RELEASE-T1 (sha256 + bytes), that the
+   record itself is the one P5 bound (src/server/p1/release.ts BOUND.record_sha256), and that the transport loads
+   with the bound engine/transport/dataset versions. Exit 1 on any drift. P5 never edits P1 code. */
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
+import { createRequire } from 'node:module';
+import { join } from 'node:path';
 
-const dir = new URL('../src/server/p1/vendor/', import.meta.url);
-const manifest = JSON.parse(readFileSync(new URL('manifest.json', dir), 'utf8'));
-const gen = readFileSync(new URL('sources.generated.ts', dir), 'utf8');
-const m = /export const P1_SOURCES: Record<string, string> = (\{[\s\S]*\});\s*$/.exec(gen);
-if (!m) { console.error('sources.generated.ts: unexpected format'); process.exit(1); }
-const sources = JSON.parse(m[1]);
+const root = new URL('../p1-release/', import.meta.url).pathname;
+const sha = b => createHash('sha256').update(b).digest('hex');
+const src = readFileSync(new URL('../src/server/p1/release.ts', import.meta.url), 'utf8');
+const want = k => (new RegExp(`${k}: '([^']+)'`).exec(src) || [])[1];
 const errors = [];
-for (const [name, meta] of Object.entries(manifest.files)) {
-  const code = sources[name];
-  if (code == null) { errors.push(`${name}: missing`); continue; }
-  const sha = createHash('sha256').update(code).digest('hex');
-  if (sha !== meta.sha256) errors.push(`${name}: sha256 ${sha.slice(0, 12)} != manifest ${meta.sha256.slice(0, 12)}`);
-  if (Buffer.byteLength(code) !== meta.bytes) errors.push(`${name}: bytes ${Buffer.byteLength(code)} != manifest ${meta.bytes}`);
+const recBytes = readFileSync(join(root, 'buyer-decision/release/P1-RELEASE-T1.json'));
+if (sha(recBytes) !== want('record_sha256')) errors.push('release record sha256 != BOUND.record_sha256');
+const rec = JSON.parse(recBytes);
+const vendored = JSON.parse(readFileSync(join(root, 'VENDORED.json'), 'utf8'));
+for (const p of vendored.files) {
+  const f = Object.values(rec.files).find(x => x.path === p);
+  if (!f) { errors.push(`${p}: not in release record`); continue; }
+  const b = readFileSync(join(root, p));
+  if (sha(b) !== f.sha256 || b.length !== f.bytes) errors.push(`${p}: ${sha(b).slice(0, 12)} != record ${f.sha256.slice(0, 12)}`);
 }
-for (const name of Object.keys(sources)) if (!manifest.files[name]) errors.push(`${name}: not in manifest`);
-if (errors.length) { console.error('P1 vendor integrity FAILED\n' + errors.join('\n')); process.exit(1); }
-console.log(`P1 vendor OK @ ${manifest.source_commit.slice(0, 12)}: ${Object.keys(manifest.files).join(', ')}`);
+const T = createRequire(import.meta.url)(join(root, 'buyer-decision/transport/reco.js'));
+const ds = T.loadAcceptedDataset(join(root, rec.dataset.path));
+if (T.ENGINE_VERSION !== want('engine_version')) errors.push(`engine ${T.ENGINE_VERSION}`);
+if (T.TRANSPORT_VERSION !== want('transport_version')) errors.push(`transport ${T.TRANSPORT_VERSION}`);
+if (ds.universe_version !== want('universe_version') || ds.sha256 !== want('dataset_content_sha256')) errors.push(`dataset ${ds.universe_version} ${ds.sha256.slice(0, 12)}`);
+if (errors.length) { console.error('P1 release integrity FAILED\n' + errors.join('\n')); process.exit(1); }
+console.log(`P1 release OK: ${rec.record} @ ${vendored.record_commit.slice(0, 12)} · ${vendored.files.length} files · ${T.ENGINE_VERSION} · ${T.TRANSPORT_VERSION} · ${ds.universe_version} ${ds.sha256.slice(0, 12)}`);

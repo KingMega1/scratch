@@ -36,6 +36,12 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: SMOKE_SCREENSHOTS=1 npm run test:smoke
       - run: cp test-results/smoke.json test-results/smoke-preview.json
+      - name: Targeted FMC / P1 integration (P1-RELEASE-T1) against the built app
+        run: |
+          mkdir -p test-results
+          npx next start -p 3200 > test-results/fmc-server.log 2>&1 &
+          for i in $(seq 1 60); do curl -sf http://localhost:3200/api/health >/dev/null && break; sleep 1; done
+          FMC_BASE_URL=http://localhost:3200 FMC_SERVER_LOG=test-results/fmc-server.log npm run test:fmc
       - name: Build local production-mode boundary fixture (never deployed)
         run: CI_ENV=production NEXT_PUBLIC_SITE_URL=https://carindex.example npm run build
       - name: Production draft, indexing and browser-buffer guards

@@ -16,6 +16,7 @@
     "verify:p1": "node scripts/verify-p1-vendor.mjs",
     "test:unit": "node --test tests/unit/*.mjs",
     "test:smoke": "playwright test",
+    "test:fmc": "node --test --test-concurrency=1 tests/integration/fmc.api.test.mjs",
     "audit:deps": "npm audit --omit=dev --audit-level=high"
   },
   "dependencies": {

@@ -6,7 +6,6 @@ import { deployEnv } from '@/lib/deploy-env';
 const Env = z.object({
   CI_ENV: z.enum(['local', 'preview', 'staging', 'production']).default('local'),
   FEATURE_CUSTOMER_PII: z.enum(['true', 'false']).default('false'),
-  FEATURE_FMC_SEMANTIC: z.enum(['true', 'false']).default('false'),
   ADMIN_BASIC_AUTH_USER: z.string().optional(),
   ADMIN_BASIC_AUTH_PASS: z.string().optional(),
 });

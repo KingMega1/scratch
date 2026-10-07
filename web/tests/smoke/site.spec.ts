@@ -95,16 +95,24 @@ test.describe('boundaries', () => {
   test('admin is not public', async ({ request }) => {
     expect((await request.get('/admin')).status()).toBe(404);
   });
-  test('Find My Car is scaffold-only and blocked', async ({ page, request }) => {
+  test('Find My Car is bound to the P1 release (no 503 gate)', async ({ page, request }) => {
     await page.goto('/en/find-my-car');
-    await expect(page.locator('[data-fmc-status="blocked"]')).toBeVisible();
-    await expect(page.locator('body')).not.toContainText(/very good fit|good fit/i);
-    const r = await request.post('/api/v1/recommendation', { data: { entry: 'guided', answered: [], budget: null, body: null, seats_min: null, powertrain: null, chinese_brands: null, drive_4wd_required: null, brands: null, models: [], usage: null, priorities: [], checks: [], confirmed: true } });
-    expect(r.status()).toBe(503);
-    expect((await r.json()).error).toBe('pending_semantic_acceptance');
+    const shell = page.locator('[data-fmc-status="ready"]');
+    await expect(shell).toBeVisible();
+    await expect(shell).toHaveAttribute('data-release', 'P1-RELEASE-T1');
+    await expect(shell).toHaveAttribute('data-engine-version', 'E6-2026-09-28');
+    await expect(shell).toHaveAttribute('data-transport-version', 'T1-2026-10-07');
+    await expect(shell).toHaveAttribute('data-universe-version', 'U11-2026-09-26');
+    const r = await request.post('/api/v1/recommendation', { data: { op: 'execute', locale: 'en', brief: { budget: 2000000, budgetMode: 'around', body: ['suv'] } } });
+    expect(r.status()).toBe(200);
+    const j = await r.json();
+    expect(j.result.schema).toBe('ci.reco.v1');
+    expect(j.result.engine_version).toBe('E6-2026-09-28');
+    expect(j.result.result_id).toMatch(/^cr1_[0-9a-f]{32}$/);
   });
   test('recommendation API validates input', async ({ request }) => {
     expect((await request.post('/api/v1/recommendation', { data: { entry: 'x' } })).status()).toBe(400);
+    expect((await request.post('/api/v1/recommendation', { data: { op: 'shared', locale: 'en', r: '!!' } })).status()).toBe(400);
   });
   test('compare shows no winner marks', async ({ page }) => {
     await page.goto('/en/compare?ids=kia-sportage,hyundai-tucson');
@@ -133,8 +141,12 @@ test.describe('boundaries', () => {
     expect(j.registry.source.sha256).toMatch(/^[0-9a-f]{64}$/);
     expect(j.registry.snapshot_id).toContain(j.registry.registry_version);
     expect(j.registry.synced_at).toBeTruthy();
-    expect(j.recommendation.status).toBe('blocked');
-    expect(j.recommendation.vendor_integrity).toBe(true);
+    expect(j.recommendation.status).toBe('ready');
+    expect(j.recommendation.integrity).toBe(true);
+    expect(j.recommendation.release).toBe('P1-RELEASE-T1');
+    expect(j.recommendation.transport_commit).toBe('49b73a5379735d59ba74c65425f48b02ddf18ca7');
+    expect(j.recommendation.universe_version).toBe('U11-2026-09-26');
+    expect(j.recommendation.p3_artifact).toBe('1791369522-eecc');
     expect(JSON.stringify(j)).not.toMatch(/key|secret|password|token/i);
   });
 });
@@ -168,7 +180,7 @@ test.describe('seo', () => {
     expect(xml).toMatch(/<loc>[^<]+\/en\/cars\/kia-sportage<\/loc>/);
     expect(xml).not.toMatch(/<loc>[^<]+\/(find-my-car|search|my-carindex|privacy|terms)<\/loc>/);
   });
-  test('blocked Find My Car scaffold is noindex', async ({ request }) => {
+  test('Find My Car is noindex', async ({ request }) => {
     expect(await (await request.get('/en/find-my-car')).text()).toMatch(/<meta name="robots" content="noindex/);
   });
 });
@@ -213,5 +225,84 @@ test.describe('production-only boundaries (local build, no deploy)',()=>{
   test('production indexes launch pages but keeps FMC and account noindex',async({request})=>{
     const html=await(await request.get('/en')).text();expect(html).not.toMatch(/<meta name="robots" content="noindex/);
     for(const p of ['/ar/find-my-car','/en/my-carindex']) expect(await(await request.get(p)).text()).toMatch(/<meta name="robots" content="noindex/);
+  });
+});
+
+/* Find My Car journeys over the P1 transport (P1-RELEASE-T1). Copy assertions use P1 engine-owned strings verbatim. */
+const FMC = {
+  en: { text: 'Family SUV around EGP 2 million, hybrid preferred', summary: 'Here’s what we understood', confirm: 'Yes, show my cars', based: 'Based on your brief' },
+  ar: { text: 'عايز عربية عالية في حدود 2.2 مليون.', summary: 'ده اللي فهمناه', confirm: 'أيوه، وريني العربيات', based: 'على أساس طلبك' },
+} as const;
+async function answerUntilSummary(page: Page) {
+  for (let i = 0; i < 12; i++) {
+    const view = await page.locator('.fmc').getAttribute('data-fmc-view');
+    if (view === 'summary') return;
+    const q = page.locator('.fmc-question');
+    await expect(q).toBeVisible();
+    const step = await q.locator('.label-mono').first().textContent();
+    const skip = q.locator('.fmc-actions .link-btn');
+    if (await skip.count()) await skip.click();
+    else if (await q.locator('.budget-card').count()) await q.locator('.fmc-actions .btn-primary').click();
+    else await q.locator('.opt').first().click();
+    await expect(q.locator('.label-mono').first()).not.toHaveText(step ?? '', { timeout: 15_000 }).catch(() => undefined);
+  }
+}
+test.describe('find my car (P1 transport)', () => {
+  for (const l of ['en', 'ar'] as const) {
+    test(`${l}: free text -> questions -> summary -> result, engine copy intact`, async ({ page }, testInfo) => {
+      const errors: string[] = []; page.on('pageerror', e => errors.push(String(e)));
+      await page.goto(`/${l}/find-my-car`);
+      await page.locator('#fmc-brief').fill(FMC[l].text);
+      await page.locator('[data-fmc="go"]').click();
+      await answerUntilSummary(page);
+      await expect(page.locator('#fmc-s-h')).toHaveText(FMC[l].summary);
+      await shot(page, `fmc-${l}-summary`, testInfo);
+      await page.locator('[data-fmc="confirm"]').click();
+      const res = page.locator('.fmc-result');
+      await expect(res).toBeVisible({ timeout: 20_000 });
+      await expect(res).toHaveAttribute('data-engine-version', 'E6-2026-09-28');
+      await expect(res).toHaveAttribute('data-universe-version', 'U11-2026-09-26');
+      await expect(page.locator('#fmc-r-h')).toHaveText(FMC[l].based);
+      await expect(page.locator('.fmc')).toHaveAttribute('dir', l === 'ar' ? 'rtl' : 'ltr');
+      expect(page.url()).toMatch(/\?r=[A-Za-z0-9_-]+$/);
+      expect(decodeURIComponent(page.url())).not.toContain(FMC[l].text);
+      const ids = await page.locator('[data-model-id]').evaluateAll(els => els.map(e => e.getAttribute('data-model-id')));
+      expect(ids.length).toBeGreaterThan(0);
+      await shot(page, `fmc-${l}-result`, testInfo);
+      const w = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+      expect(w).toBeLessThanOrEqual(1);
+      expect(errors).toEqual([]);
+    });
+    test(`${l}: shared result link reproduces the result; guided path starts with a question`, async ({ page, request }) => {
+      const j = await (await request.post('/api/v1/recommendation', { data: { op: 'execute', locale: l, brief: { budget: 1500000, budgetMode: 'around', body: ['suv'], seats: 7 } } })).json();
+      await page.goto(`/${l}/find-my-car?r=${j.result.share.r}`);
+      await expect(page.locator('.fmc-result')).toHaveAttribute('data-result-id', j.result.result_id, { timeout: 20_000 });
+      await page.goto(`/${l}/find-my-car`);
+      await page.locator('[data-fmc="guided"]').click();
+      await expect(page.locator('.fmc-question')).toBeVisible();
+    });
+  }
+  test('outside the 24-model site projection: card kept from ci.reco.v1, site link withheld', async ({ page, request }) => {
+    const brief = { budget: 1200000, budgetMode: 'around', body: ['sedan'] };
+    const j = await (await request.post('/api/v1/recommendation', { data: { op: 'execute', locale: 'en', brief } })).json();
+    const outside = Object.entries(j.website as Record<string, string | null>).filter(([, v]) => v === null).map(([k]) => k);
+    expect(outside.length).toBeGreaterThan(0);
+    await page.goto(`/en/find-my-car?r=${j.result.share.r}`);
+    await expect(page.locator('.fmc-result')).toBeVisible({ timeout: 20_000 });
+    for (const id of outside.filter(id => [j.result.hero?.id, ...j.result.alternatives.map((a: { id: string }) => a.id)].includes(id))) {
+      await expect(page.locator(`[data-fmc-not-on-site="${id}"]`).first()).toBeVisible();
+      await expect(page.locator(`[data-fmc-site-link="${id}"]`)).toHaveCount(0);
+    }
+    const shown = await page.locator('.fmc-result [data-model-id]').evaluateAll(els => els.map(e => e.getAttribute('data-model-id')));
+    expect(shown).toEqual([j.result.hero.id, ...j.result.alternatives.map((a: { id: string }) => a.id)]);
+  });
+  test('result view has no WCAG A/AA violations', async ({ page, request }) => {
+    const j = await (await request.post('/api/v1/recommendation', { data: { op: 'execute', locale: 'ar', brief: { budget: 2000000, budgetMode: 'around', body: ['suv'] } } })).json();
+    await page.goto(`/ar/find-my-car?r=${j.result.share.r}`);
+    await expect(page.locator('.fmc-result')).toBeVisible({ timeout: 20_000 });
+    await page.addScriptTag({ content: AXE });
+    const v = await page.evaluate(async () => (await (window as unknown as { axe: { run: (d: Document, o: object) => Promise<{ violations: { id: string; nodes: { target: string[] }[] }[] }> } }).axe
+      .run(document, { runOnly: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'] })).violations.map(x => `${x.id}: ${x.nodes.map(n => n.target.join(' ')).slice(0, 3).join(' | ')}`));
+    expect(v).toEqual([]);
   });
 });

@@ -1,33 +1,15 @@
 import 'server-only';
-import type { BuyerBrief, RecommendationResult } from '@/lib/recommendation/contract';
-import { p1EngineInfo } from '../p1/loader';
-import { serverEnv } from '../env';
-import { vehicles } from '../vehicles/read-model';
+import { BOUND, release } from '../p1/release';
 
-/* Server-side Recommendation integration boundary.
-   The browser never receives P1 scoring, weights or eligibility code; it calls POST /api/v1/recommendation.
-   S1 state: BLOCKED. The provider reports availability only. Engine -> ci.reco.v1 mapping is deliberately
-   NOT implemented until P1 passes the revised P3 semantics (see SEMANTIC_GATE). */
-
+/* Find My Car availability. READY only when the P1 release binding verifies (record, file hashes, engine/transport
+   versions, accepted dataset); otherwise FMC is refused — there is no fallback engine or dataset. */
 export type ProviderStatus =
-  | { status: 'blocked'; reason: 'pending_semantic_acceptance'; engine_version: string | null; universe_version: string }
-  | { status: 'ready'; engine_version: string; universe_version: string };
+  | { status: 'ready'; engine_version: string; transport_version: string; universe_version: string; dataset_sha256: string; record: string; p3_artifact: string }
+  | { status: 'blocked'; reason: 'release_unavailable'; engine_version: string | null; universe_version: string | null; error: string };
 
-export interface RecommendationProvider {
-  status(): ProviderStatus;
-  recommend(brief: BuyerBrief): Promise<RecommendationResult>;
+export function recommendationStatus(): ProviderStatus {
+  const r = release();
+  if (!r.ok) return { status: 'blocked', reason: 'release_unavailable', engine_version: null, universe_version: null, error: r.error };
+  return { status: 'ready', engine_version: r.T.ENGINE_VERSION, transport_version: r.T.TRANSPORT_VERSION, universe_version: r.ds.universe_version,
+    dataset_sha256: r.ds.sha256, record: BOUND.record, p3_artifact: BOUND.p3_artifact };
 }
-
-class GatedP1Provider implements RecommendationProvider {
-  status(): ProviderStatus {
-    const info = p1EngineInfo();
-    // FEATURE_FMC_SEMANTIC may only be switched on after the P1 PASS; even then recommend() must be implemented first.
-    return { status: 'blocked', reason: 'pending_semantic_acceptance', engine_version: info.engine_version, universe_version: vehicles().meta().registry_version };
-  }
-  async recommend(): Promise<RecommendationResult> {
-    throw new Error(`recommendation semantics blocked (FEATURE_FMC_SEMANTIC=${serverEnv().FEATURE_FMC_SEMANTIC})`);
-  }
-}
-
-let p: RecommendationProvider | null = null;
-export const recommendationProvider = () => (p ??= new GatedP1Provider());

@@ -35,15 +35,11 @@ test('temporary display crosswalk is labelled non-canonical and covers only know
   const slugs = new Set(snap.view.models.map(m => m.slug));
   for (const k of Object.keys(cw.map)) assert.ok(slugs.has(k), k);
 });
-test('P1 vendored sources match manifest hashes', () => {
-  const m = JSON.parse(readFileSync('src/server/p1/vendor/manifest.json', 'utf8'));
-  const src = readFileSync('src/server/p1/vendor/sources.generated.ts', 'utf8');
-  const obj = JSON.parse(src.slice(src.indexOf('= ') + 2, src.lastIndexOf(';')));
-  for (const [name, meta] of Object.entries(m.files)) assert.equal(createHash('sha256').update(obj[name]).digest('hex'), meta.sha256, name);
-});
-test('non-production fixture is labelled and has no fit tiers / no single winner', () => {
-  const f = readFileSync('tests/fixtures/reco.tie.NONPRODUCTION.json', 'utf8');
-  assert.match(f, /NON-PRODUCTION/);
-  assert.doesNotMatch(f, /very good fit|good fit/i);
-  assert.equal(JSON.parse(f).state.kind, 'tie');
+test('P1 release files match the release record P1-RELEASE-T1 (sha256 + bytes)', () => {
+  const rec = JSON.parse(readFileSync('p1-release/buyer-decision/release/P1-RELEASE-T1.json', 'utf8'));
+  const vendored = JSON.parse(readFileSync('p1-release/VENDORED.json', 'utf8'));
+  for (const p of vendored.files) {
+    const f = Object.values(rec.files).find(x => x.path === p), b = readFileSync('p1-release/' + p);
+    assert.equal(createHash('sha256').update(b).digest('hex'), f.sha256, p); assert.equal(b.length, f.bytes, p);
+  }
 });
