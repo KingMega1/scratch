@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { isLocale, type Locale } from '@/lib/i18n/config';
 import { dict } from '@/lib/i18n/dictionaries';
 import { pageMeta } from '@/lib/seo';
+import { showDrafts } from '@/lib/deploy-env';
 import { content, type ContentType } from '@/server/cms/provider';
 
 type P = { params: Promise<{ locale: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
@@ -21,7 +22,7 @@ export default async function News({ params, searchParams }: P) {
   const t = dict(locale), n = t.news;
   const sp = await searchParams;
   const type = TYPES.find(x => x === sp.type);
-  const items = await content().list({ type, includeDrafts: true });
+  const items = await content().list({ type, includeDrafts: showDrafts() });
   return (
     <div className="wrap section" style={{ paddingBlockStart: 32 }}>
       <h1 className="h-page">{n.h1}</h1>
@@ -35,7 +36,7 @@ export default async function News({ params, searchParams }: P) {
           <Link key={c.slug} className="news-card" href={`/${locale}/news/${c.slug}`}>
             <span className="tag">{n.types[c.type]}</span>
             {c.status === 'draft' ? <span className="tag tag-draft">{n.draft}</span> : null}
-            <h3>{c.title[locale]}</h3><p>{c.summary[locale]}</p>
+            <h2>{c.title[locale]}</h2><p>{c.summary[locale]}</p>
           </Link>
         ))}</div>
       ) : <div className="notice">{n.empty}</div>}

@@ -38,9 +38,9 @@ export default async function Catalog({ params, searchParams }: P) {
   return (
     <div className="wrap section" style={{ paddingBlockStart: 32 }}>
       <nav className="breadcrumb"><Link href={`/${locale}/market`}>{c.back}</Link></nav>
-      <h1 className="h-page">{c.h1}</h1>
+      <h1 id="catalog-h" className="h-page">{c.h1}</h1>
       <p className="small tnum">{num(rows.length)}</p>
-      <div className="table-scroll"><table className="t">
+      <div className="table-scroll" role="region" aria-labelledby="catalog-h" tabIndex={0}><table className="t">
         <thead><tr>{th('name', c.model)}<th scope="col">{c.body}</th>{th('price', c.from)}<th scope="col" className="t-num">{c.to}</th><th scope="col">{c.state}</th>{th('regs', c.regs)}</tr></thead>
         <tbody>{rows.map(r => (
           <tr key={r.id}>

@@ -29,7 +29,7 @@ type RawModel = {
    Patrol: correct generation (Y63), source watermark is cropped by layout. Not a verified exact-trim match. */
 const LOCAL_ASSETS: Record<string, PublicImage> = {
   'nissan/patrol': {
-    src: '/media/patrol.png', credit: null, sourcePage: null,
+    src: '/media/patrol.webp', credit: null, sourcePage: null,
     flags: ['TEMP_UNVERIFIED', 'EXACT_CAR_UNCONFIRMED', 'PHOTO_NEEDS_ENRICHMENT', 'WATERMARK_CROPPED'],
   },
 };

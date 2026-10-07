@@ -5,6 +5,7 @@ import { isLocale, type Locale } from '@/lib/i18n/config';
 import { dict } from '@/lib/i18n/dictionaries';
 import { date, num } from '@/lib/format';
 import { pageMeta } from '@/lib/seo';
+import { showDrafts } from '@/lib/deploy-env';
 import { vehicles } from '@/server/vehicles/read-model';
 import { content } from '@/server/cms/provider';
 import { BodyIcon, CarCard, CarName, PriceFigure, PriceState } from '@/components/car';
@@ -31,13 +32,13 @@ export default async function Home({ params }: P) {
   const bodyCount = (b: Body) => cars.filter(c => c.body === b).length;
   const exCar = marketNow.find(c => c.price?.trims.some(x => x.state === 'official')) ?? cars.find(c => c.price?.trims.some(x => x.state === 'official'));
   const example = exCar ? { car: exCar, trim: exCar.price!.trims.find(x => x.state === 'official')! } : null;
-  const items = (await content().list({ includeDrafts: true })).slice(0, 3);
+  const items = (await content().list({ includeDrafts: showDrafts() })).slice(0, 3);
 
   return (
     <>
       <section className="hero inverse" aria-labelledby="hero-h">
         {/* Hero photo: correct-generation Nissan Patrol placeholder; flagged for P2 replacement. */}
-        <img className="hero-img" src="/media/patrol.png" alt="" fetchPriority="high" data-asset-flags="TEMP_UNVERIFIED EXACT_CAR_UNCONFIRMED PHOTO_NEEDS_ENRICHMENT WATERMARK_CROPPED" />
+        <img className="hero-img" src="/media/patrol.webp" alt="" fetchPriority="high" data-asset-flags="TEMP_UNVERIFIED EXACT_CAR_UNCONFIRMED PHOTO_NEEDS_ENRICHMENT WATERMARK_CROPPED" />
         <div className="wrap hero-content">
           <p className="kicker">{h.kicker}</p>
           <h1 id="hero-h" className="display">{h.h1}</h1>
@@ -100,6 +101,7 @@ export default async function Home({ params }: P) {
         </div>
       </section>
 
+      {items.length ? (
       <section className="section" style={{ paddingBlockStart: 0 }} aria-labelledby="news-h">
         <div className="wrap">
           <h2 id="news-h" className="h-section">{h.newsH}</h2>
@@ -115,6 +117,7 @@ export default async function Home({ params }: P) {
           </div>
         </div>
       </section>
+      ) : null /* no published editorial yet (drafts are preview-only) */}
 
       <section className="section surface" aria-labelledby="method-h">
         <div className="wrap">

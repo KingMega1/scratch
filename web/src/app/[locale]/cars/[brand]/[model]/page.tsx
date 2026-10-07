@@ -95,7 +95,7 @@ export default async function CarDetail({ params }: P) {
       <section className="cd-section" aria-labelledby="prices-h">
         <h2 id="prices-h" className="h-section">{c.pricesH}</h2>
         {pr ? (
-          <div className="table-scroll"><table className="t">
+          <div className="table-scroll" role="region" aria-labelledby="prices-h" tabIndex={0}><table className="t">
             <thead><tr><th scope="col">{c.grade}</th><th scope="col" className="t-num">{c.priceCol}</th><th scope="col">{c.stateCol}</th><th scope="col">{c.dateCol}</th></tr></thead>
             <tbody>{pr.trims.map(tr => (
               <tr key={`${tr.label}-${tr.price}`}>

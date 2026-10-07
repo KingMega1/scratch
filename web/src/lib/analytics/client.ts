@@ -51,6 +51,9 @@ export function track(event: WebEvent, props: Props = {}) {
   (window.dataLayer = window.dataLayer || []).push(e);
   const endpoint = document.querySelector<HTMLMetaElement>('meta[name="ci-track-endpoint"]')?.content || '';
   if (endpoint && navigator.sendBeacon) navigator.sendBeacon(endpoint, new Blob([JSON.stringify(e)], { type: 'application/json' }));
-  try { const buf = JSON.parse(store.get('ci_events') || '[]'); buf.push(e); store.set('ci_events', JSON.stringify(buf.slice(-300))); } catch { /* ignore */ }
+  // QA buffer (persistent browsing trail in localStorage): non-production builds only.
+  if (document.documentElement.dataset.env !== 'prod') {
+    try { const buf = JSON.parse(store.get('ci_events') || '[]'); buf.push(e); store.set('ci_events', JSON.stringify(buf.slice(-300))); } catch { /* ignore */ }
+  }
   return e;
 }
