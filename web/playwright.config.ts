@@ -8,7 +8,14 @@ export default defineConfig({
   timeout: 30_000,
   retries: 0,
   reporter: [['list'], ['json', { outputFile: 'test-results/smoke.json' }]],
-  use: { baseURL: BASE, trace: 'off' },
+  // Deployed runs: Vercel preview protection stays ON; automated tests pass the project's automation-bypass secret
+  // (env VERCEL_AUTOMATION_BYPASS_SECRET, never committed).
+  use: {
+    baseURL: BASE, trace: 'off',
+    extraHTTPHeaders: process.env.VERCEL_AUTOMATION_BYPASS_SECRET
+      ? { 'x-vercel-protection-bypass': process.env.VERCEL_AUTOMATION_BYPASS_SECRET, 'x-vercel-set-bypass-cookie': 'samesitenone' }
+      : undefined,
+  },
   projects: [
     { name: 'desktop', use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 900 } } },
     { name: 'mobile', use: { ...devices['Pixel 7'] } },
