@@ -39,9 +39,14 @@ jobs:
           echo "url=$URL" >> "$GITHUB_OUTPUT"
       - name: Protection check (no bypass must be blocked)
         run: |
-          CODE=$(curl -s -o /dev/null -w '%{http_code}' "${{ steps.target.outputs.url }}/en")
-          echo "status without bypass: $CODE"
-          [ "$CODE" = "401" ] || [ "$CODE" = "403" ] || { echo "preview protection is not active"; exit 1; }
+          read -r CODE LOC < <(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' "${{ steps.target.outputs.url }}/en")
+          echo "status without bypass: $CODE ${LOC%%\?*}"
+          # Vercel Authentication answers 401/403, or 302 to vercel.com login. Anything else = protection off.
+          case "$CODE" in
+            401|403) ;;
+            302|303|307) case "$LOC" in https://vercel.com/*) ;; *) echo "redirect is not Vercel auth"; exit 1;; esac ;;
+            *) echo "preview protection is not active"; exit 1;;
+          esac
       - name: Smoke (deployed)
         env:
           SMOKE_BASE_URL: ${{ steps.target.outputs.url }}
