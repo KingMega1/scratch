@@ -1,0 +1,56 @@
+name: web-smoke-deployed
+# Runs the full Playwright smoke suite (desktop + mobile) against a deployed Vercel preview.
+# Trigger: push a change to web/ops/smoke-deployed.request (first line: base URL), or manual dispatch.
+# Preview protection stays ON; requests carry the project's automation-bypass secret (repo secret).
+on:
+  push:
+    paths: ['web/ops/smoke-deployed.request']
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: Deployed base URL (https://...vercel.app)
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Resolve target
+        id: target
+        run: |
+          URL="${{ github.event.inputs.base_url }}"
+          if [ -z "$URL" ]; then URL="$(head -n1 ops/smoke-deployed.request | tr -d '[:space:]')"; fi
+          case "$URL" in https://*.vercel.app) ;; *) echo "refusing non-vercel target: $URL"; exit 1;; esac
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+      - name: Protection check (no bypass must be blocked)
+        run: |
+          CODE=$(curl -s -o /dev/null -w '%{http_code}' "${{ steps.target.outputs.url }}/en")
+          echo "status without bypass: $CODE"
+          [ "$CODE" = "401" ] || [ "$CODE" = "403" ] || { echo "preview protection is not active"; exit 1; }
+      - name: Smoke (deployed)
+        env:
+          SMOKE_BASE_URL: ${{ steps.target.outputs.url }}
+          VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
+          SMOKE_SCREENSHOTS: '1'
+        run: mkdir -p test-results/screens && npx playwright test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: smoke-deployed-evidence
+          path: web/test-results/
+          retention-days: 14
