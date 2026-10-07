@@ -14,7 +14,8 @@ export interface SemanticRelease {
 export interface ReleasedP1Transport {
   execute(brief: BuyerBrief): Promise<unknown>;
 }
-export const P3_INTEGRATION_ARTIFACT = '1791368192-d509';
+// P3 Version 7 — approved with the P1 final semantic gate (BLOCKER: PASS, P1 SEMANTIC RELEASE: YES).
+export const P3_INTEGRATION_ARTIFACT = '1791369522-eecc';
 
 export function prepareReleasedAdapter(release: SemanticRelease | null, transport: ReleasedP1Transport) {
   if (!release || release.decision !== 'RELEASE' || release.p3_artifact_id !== P3_INTEGRATION_ARTIFACT ||

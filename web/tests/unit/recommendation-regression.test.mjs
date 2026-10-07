@@ -49,10 +49,12 @@ test('share-safe result schema requires an opaque UUID and excludes free text',(
   const r=fixture.result??fixture; const sample={...r,result_id:'buyer@example.com'};assert.equal(C.RecommendationResult.safeParse(sample).success,false);
   assert.equal(C.RecommendationResult.safeParse({...r,share_safe:false}).success,false);
 });
-test('prepared adapter cannot execute without exact P1 RELEASE for P3 Version 5',()=>{
+test('prepared adapter cannot execute without exact P1 RELEASE for P3 Version 7',()=>{
+  assert.equal(A.P3_INTEGRATION_ARTIFACT,'1791369522-eecc');
   let called=false;const transport={execute:()=>{called=true;}};
   assert.throws(()=>A.prepareReleasedAdapter(null,transport),/pending_semantic_acceptance/);assert.equal(called,false);
   assert.throws(()=>A.prepareReleasedAdapter({decision:'RELEASE',p3_artifact_id:'older-version'},transport),/pending_semantic_acceptance/);
+  assert.throws(()=>A.prepareReleasedAdapter({decision:'RELEASE',p3_artifact_id:'1791368192-d509',p1_evidence_ref:'x',engine_version:'x',universe_version:'x',registry_snapshot_id:'x'},transport),/pending_semantic_acceptance/); // Version 5 no longer accepted
 });
 test('P5 preserves engine-supplied tie/lean and stale official price metadata',async()=>{
   const {_NOTICE,...r}=fixture;
