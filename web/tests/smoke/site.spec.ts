@@ -1,4 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
+import { readFileSync } from 'node:fs';
 
 const SHOTS = process.env.SMOKE_SCREENSHOTS === '1';
 async function shot(page: Page, name: string, testInfo: { project: { name: string } }) {
@@ -82,7 +83,7 @@ test.describe('navigation + brand', () => {
     expect(tokens.toUpperCase()).toBe('#FFD12A');
   });
   test('no horizontal overflow', async ({ page }) => {
-    for (const p of ['/ar', '/en', '/ar/market', '/en/cars/kia-sportage', '/ar/compare?ids=kia-sportage,hyundai-tucson']) {
+    for (const p of ['ar','en'].flatMap(l => ['', '/cars', '/cars/kia-sportage', '/compare?ids=kia-sportage,hyundai-tucson', '/market', '/market/catalog', '/search?q=sportage', '/my-carindex', '/news'].map(p => `/${l}${p}`))) {
       await page.goto(p);
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
       expect(overflow, p).toBeLessThanOrEqual(1);
@@ -135,5 +136,82 @@ test.describe('boundaries', () => {
     expect(j.recommendation.status).toBe('blocked');
     expect(j.recommendation.vendor_integrity).toBe(true);
     expect(JSON.stringify(j)).not.toMatch(/key|secret|password|token/i);
+  });
+});
+
+/* Independent audit (P5-AUDIT-01) regression guards. */
+const AXE = readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
+test.describe('accessibility (axe, WCAG 2.1 A/AA)', () => {
+  for (const path of ['ar','en'].flatMap(l => ['', '/cars', '/cars/kia-sportage', '/compare?ids=kia-sportage,hyundai-tucson', '/market', '/market/catalog', '/search?q=sportage', '/find-my-car', '/my-carindex', '/news', '/news/official-vs-listing-prices', '/methodology'].map(p => `/${l}${p}`))) {
+    test(`no WCAG A/AA violations: ${path}`, async ({ page }) => {
+      await page.goto(path);
+      await page.addScriptTag({ content: AXE });
+      const v = await page.evaluate(async () => (await (window as unknown as { axe: { run: (d: Document, o: object) => Promise<{ violations: { id: string; nodes: { target: string[] }[] }[] }> } }).axe
+        .run(document, { runOnly: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'] })).violations.map(x => `${x.id}: ${x.nodes.map(n => n.target.join(' ')).slice(0, 3).join(' | ')}`));
+      expect(v, path).toEqual([]);
+    });
+  }
+});
+
+test.describe('seo', () => {
+  test('hreflang is absolute and reciprocal; canonical is self', async ({ request }) => {
+    for (const [l, other] of [['ar', 'en'], ['en', 'ar']]) {
+      const html = await (await request.get(`/${l}/cars/kia-sportage`)).text();
+      expect(html).toMatch(new RegExp(`<link rel="canonical" href="https?://[^"]+/${l}/cars/kia-sportage"`));
+      expect(html).toMatch(new RegExp(`<link rel="alternate" hrefLang="${other}" href="https?://[^"]+/${other}/cars/kia-sportage"`));
+      expect(html).toMatch(/<link rel="alternate" hrefLang="x-default" href="https?:\/\/[^"]+\/ar\/cars\/kia-sportage"/);
+    }
+  });
+  test('sitemap lists both locales and no noindex pages', async ({ request }) => {
+    const xml = await (await request.get('/sitemap.xml')).text();
+    expect(xml).toMatch(/<loc>[^<]+\/ar\/cars\/kia-sportage<\/loc>/);
+    expect(xml).toMatch(/<loc>[^<]+\/en\/cars\/kia-sportage<\/loc>/);
+    expect(xml).not.toMatch(/<loc>[^<]+\/(find-my-car|search|my-carindex|privacy|terms)<\/loc>/);
+  });
+  test('blocked Find My Car scaffold is noindex', async ({ request }) => {
+    expect(await (await request.get('/en/find-my-car')).text()).toMatch(/<meta name="robots" content="noindex/);
+  });
+});
+
+test.describe('api boundaries', () => {
+  test('events collector rejects unknown events and accepts a valid EV3 envelope', async ({ request }) => {
+    const base = { schema: 'EV3', event_id: 'e1', ts: new Date().toISOString(), session_id: 's', anon_id: 'a', source_app: 'web', universe_version: null, engine_version: null, locale: 'en', route: 'home', journey_stage: 'awareness' };
+    expect((await request.post('/api/v1/events', { data: { ...base, event: 'not_an_event', props: {} } })).status()).toBe(400);
+    expect((await request.post('/api/v1/events', { data: { ...base, event: 'page_view', props: { route: '/en', 'user 01012345678': 'x', nested: { email: 'a@b.co' } } } })).status()).toBe(202);
+  });
+  test('car API rejects malformed ids', async ({ request }) => {
+    expect((await request.get('/api/v1/cars/..%2f..%2fetc/passwd')).status()).toBeGreaterThanOrEqual(400);
+    expect((await request.get('/api/v1/cars/KIA-Sportage')).status()).toBe(400);
+  });
+  test('admin is 404 on every path variant when unconfigured', async ({ request }) => {
+    for (const p of ['/admin', '/admin/', '/ar/../admin', '/admin.json']) expect((await request.get(p)).status(), p).toBe(404);
+  });
+});
+
+test.describe('Arabic compare search', () => {
+  for (const join of ['و','ولا']) test(`compare action for Arabic ${join}`,async({request})=>{
+    const j=await(await request.get(`/api/v1/search?q=${encodeURIComponent(`كيا سبورتاج ${join} هيونداي توسان`)}&locale=ar`)).json();
+    expect(JSON.stringify(j)).toContain('/ar/compare?ids=');
+  });
+});
+
+test.describe('production-only boundaries (local build, no deploy)',()=>{
+  test.skip(process.env.SMOKE_PRODUCTION !== '1');
+  test('drafts cannot leak through home, news, article, search or car detail',async({request})=>{
+    for(const l of ['ar','en']) {
+      for(const p of [`/${l}`,`/${l}/news`,`/${l}/cars/kia-sportage`,`/${l}/search?q=official`]) {
+        const html=await(await request.get(p)).text();expect(html).not.toContain('official-vs-listing-prices');
+      }
+      expect((await request.get(`/${l}/news/official-vs-listing-prices`)).status()).toBe(404);
+    }
+  });
+  test('production browser has no QA browsing buffer; env query cannot enable it',async({page})=>{
+    await page.goto('/en?env=qa');await page.waitForTimeout(100);
+    expect(await page.evaluate(()=>localStorage.getItem('ci_events'))).toBeNull();
+    await expect(page.locator('html')).toHaveAttribute('data-env','prod');
+  });
+  test('production indexes launch pages but keeps FMC and account noindex',async({request})=>{
+    const html=await(await request.get('/en')).text();expect(html).not.toMatch(/<meta name="robots" content="noindex/);
+    for(const p of ['/ar/find-my-car','/en/my-carindex']) expect(await(await request.get(p)).text()).toMatch(/<meta name="robots" content="noindex/);
   });
 });

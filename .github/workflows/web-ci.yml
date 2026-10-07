@@ -29,11 +29,17 @@ jobs:
           cache-dependency-path: web/package-lock.json
       - run: npm ci
       - run: npm run typecheck
+      - run: npm run verify:p1
       - run: npm run test:unit
       - run: npm run audit:deps
       - run: npm run build
       - run: npx playwright install --with-deps chromium
       - run: SMOKE_SCREENSHOTS=1 npm run test:smoke
+      - run: cp test-results/smoke.json test-results/smoke-preview.json
+      - name: Build local production-mode boundary fixture (never deployed)
+        run: CI_ENV=production NEXT_PUBLIC_SITE_URL=https://carindex.example npm run build
+      - name: Production draft, indexing and browser-buffer guards
+        run: CI_ENV=production SMOKE_PRODUCTION=1 SMOKE_PORT=3278 npm run test:smoke -- --grep production-only
       - uses: actions/upload-artifact@v4
         if: always()
         with:

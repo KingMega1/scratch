@@ -23,4 +23,4 @@ export const JOURNEY_STAGE: Record<string, string> = {
   car: 'consideration', compare: 'consideration', 'find-my-car': 'decision', 'my-carindex': 'retention',
 };
 /* Keys that may never appear in an analytics payload (defense in depth; validated client and server side). */
-export const FORBIDDEN_KEYS = /^(phone|mobile|msisdn|email|e_mail|name|full_name|first_name|last_name|address|national_id|otp|code|text|query|q)$/i;
+export const FORBIDDEN_KEYS = /^(phone|mobile|msisdn|email|e_mail|name|full_name|first_name|last_name|address|national_id|otp|code|text|free_text|query|q)$/i;

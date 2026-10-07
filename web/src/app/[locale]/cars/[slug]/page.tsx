@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: P): Promise<Metadata> {
 function TrimTable({ trims, locale }: { trims: PublicTrim[]; locale: Locale }) {
   const t = dict(locale), c = t.car;
   return (
-    <div className="table-scroll"><table className="t">
+    <div className="table-scroll" role="region" aria-label={c.grade} tabIndex={0}><table className="t">
       <thead><tr><th scope="col">{c.grade}</th><th scope="col" className="t-num">{c.priceCol}</th><th scope="col">{c.stateCol}</th><th scope="col" className="t-num">{t.v2.market}</th></tr></thead>
       <tbody>{trims.map(tr => (
         <tr key={tr.key} data-trim={tr.key} data-official-state={tr.official.state}>
@@ -131,7 +131,7 @@ export default async function CarDetail({ params }: P) {
       {car.changes.length ? (
         <section className="cd-section" aria-labelledby="chg-h">
           <h2 id="chg-h" className="h-section">{v2.changesH}</h2>
-          <div className="table-scroll"><table className="t">
+          <div className="table-scroll" role="region" aria-label={c.grade} tabIndex={0}><table className="t">
             <thead><tr><th scope="col">{c.dateCol}</th><th scope="col">{c.grade}</th><th scope="col" className="t-num">{locale === 'ar' ? 'من' : 'From'}</th><th scope="col" className="t-num">{locale === 'ar' ? 'إلى' : 'To'}</th><th scope="col">{v2.sources}</th></tr></thead>
             <tbody>{car.changes.slice(0, 12).map((x, i) => (
               <tr key={i}><td className="tnum">{date(x.effectiveDate, locale)}</td><td><bdi>{x.trim}</bdi>{x.modelYear ? <span className="small"> · {x.modelYear}</span> : null}</td>

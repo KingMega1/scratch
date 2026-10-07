@@ -4,6 +4,7 @@ import { dict } from '@/lib/i18n/dictionaries';
 import { priceShort } from '@/lib/format';
 import { vehicles } from '../vehicles/read-model';
 import { content } from '../cms/provider';
+import { showDrafts } from '@/lib/deploy-env';
 
 /* Public search consumes a SHAPED index built from the public read model + published CMS content.
    It never queries canonical data or internal fields. Results carry only display fields and hrefs. */
@@ -54,7 +55,7 @@ function build(): Doc[] {
 }
 
 async function contentDocs(): Promise<Doc[]> {
-  const items = await content().list({ includeDrafts: true });
+  const items = await content().list({ includeDrafts: showDrafts() });
   return items.map(c => ({
     group: 'content' as const, weight: 1, keys: norm(`${c.title.en} ${c.title.ar} ${c.summary.en} ${c.summary.ar} ${c.tags.join(' ')}`),
     title: c.title, href: (l: Locale) => `/${l}/news/${c.slug}`,
@@ -97,7 +98,7 @@ export async function search(qRaw: string, locale: Locale, limit = 8): Promise<S
   if (max) actions.push({ group: 'actions', title: t.actUnder(priceShort(max, locale)), href: `/${locale}/cars?max=${max}` });
   if (suv) actions.push({ group: 'actions', title: t.actBody(dict(locale).body.suv), href: `/${locale}/cars` });
   const carHits = scored.filter(x => x.d.group === 'cars');
-  if (/\b(vs|و|ولا|or|versus)\b/.test(q) && carHits.length >= 2) {
+  if (/(?:^|\s)(?:vs|و|ولا|or|versus)(?:\s|$)/.test(q) && carHits.length >= 2) {
     const [a, b] = carHits;
     actions.push({ group: 'actions', title: t.actCompare(a.d.title[locale], b.d.title[locale]), href: `/${locale}/compare?ids=${a.d.id},${b.d.id}` });
   }

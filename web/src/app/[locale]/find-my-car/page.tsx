@@ -11,7 +11,8 @@ type P = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: P): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
-  return pageMeta(locale, '/find-my-car', dict(locale).fmc.h1, dict(locale).fmc.lede);
+  // Scaffold-only while the provider is blocked: keep it out of search indexes until the P1 PASS.
+  return pageMeta(locale, '/find-my-car', dict(locale).fmc.h1, dict(locale).fmc.lede, { noindex: recommendationProvider().status().status !== 'ready' });
 }
 export const dynamic = 'force-dynamic';
 

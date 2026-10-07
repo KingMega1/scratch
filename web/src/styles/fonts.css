@@ -1,9 +1,11 @@
 /* Brand V2 fonts (v2.0-draft.10, SIL OFL 1.1), self-hosted from /public/fonts. No runtime Google Fonts.
+   WOFF2 is a lossless re-wrap of the package TTFs (fontTools, ~65% smaller); the TTFs stay as fallback and as the
+   byte-verified package originals (tests/unit/brand.test.mjs).
    Mirrors the package's carindex-fonts.css. Lexend is logo-source only and is not loaded (logo ships as SVG). */
-@font-face { font-family: 'Archivo'; src: url('/fonts/Archivo-Variable.ttf') format('truetype'); font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; }
-@font-face { font-family: 'Noto Kufi Arabic'; src: url('/fonts/NotoKufiArabic-Variable.ttf') format('truetype'); font-weight: 100 900; font-display: swap; unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+200C-200F; }
-@font-face { font-family: 'IBM Plex Sans'; src: url('/fonts/IBMPlexSans-Variable.ttf') format('truetype'); font-weight: 100 700; font-stretch: 85% 100%; font-display: swap; }
-@font-face { font-family: 'IBM Plex Sans Arabic'; src: url('/fonts/IBMPlexSansArabic-Regular.ttf') format('truetype'); font-weight: 400; font-display: swap; }
-@font-face { font-family: 'IBM Plex Sans Arabic'; src: url('/fonts/IBMPlexSansArabic-Medium.ttf') format('truetype'); font-weight: 500; font-display: swap; }
-@font-face { font-family: 'IBM Plex Sans Arabic'; src: url('/fonts/IBMPlexSansArabic-SemiBold.ttf') format('truetype'); font-weight: 600; font-display: swap; }
-@font-face { font-family: 'IBM Plex Sans Arabic'; src: url('/fonts/IBMPlexSansArabic-Bold.ttf') format('truetype'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Archivo'; src: url('/fonts/Archivo-Variable.woff2') format('woff2'), url('/fonts/Archivo-Variable.ttf') format('truetype'); font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; }
+@font-face { font-family: 'Noto Kufi Arabic'; src: url('/fonts/NotoKufiArabic-Variable.woff2') format('woff2'), url('/fonts/NotoKufiArabic-Variable.ttf') format('truetype'); font-weight: 100 900; font-display: swap; unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+200C-200F; }
+@font-face { font-family: 'IBM Plex Sans'; src: url('/fonts/IBMPlexSans-Variable.woff2') format('woff2'), url('/fonts/IBMPlexSans-Variable.ttf') format('truetype'); font-weight: 100 700; font-stretch: 85% 100%; font-display: swap; }
+@font-face { font-family: 'IBM Plex Sans Arabic'; src: url('/fonts/IBMPlexSansArabic-Regular.woff2') format('woff2'), url('/fonts/IBMPlexSansArabic-Regular.ttf') format('truetype'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'IBM Plex Sans Arabic'; src: url('/fonts/IBMPlexSansArabic-Medium.woff2') format('woff2'), url('/fonts/IBMPlexSansArabic-Medium.ttf') format('truetype'); font-weight: 500; font-display: swap; }
+@font-face { font-family: 'IBM Plex Sans Arabic'; src: url('/fonts/IBMPlexSansArabic-SemiBold.woff2') format('woff2'), url('/fonts/IBMPlexSansArabic-SemiBold.ttf') format('truetype'); font-weight: 600; font-display: swap; }
+@font-face { font-family: 'IBM Plex Sans Arabic'; src: url('/fonts/IBMPlexSansArabic-Bold.woff2') format('woff2'), url('/fonts/IBMPlexSansArabic-Bold.ttf') format('truetype'); font-weight: 700; font-display: swap; }

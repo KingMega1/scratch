@@ -1,4 +1,5 @@
 import 'server-only';
+import { showDrafts } from '@/lib/deploy-env';
 import type { Locale } from '@/lib/i18n/config';
 
 /* CMS boundary for editorial content ONLY: News, Guides, Insights.
@@ -59,10 +60,10 @@ const STUB_CONTENT: ContentItem[] = [
 
 class StubContentProvider implements ContentProvider {
   async list(opts: { type?: ContentType; includeDrafts?: boolean } = {}) {
-    return STUB_CONTENT.filter(c => (!opts.type || c.type === opts.type) && (opts.includeDrafts !== false || c.status === 'published'));
+    return STUB_CONTENT.filter(c => (!opts.type || c.type === opts.type) && (showDrafts() && opts.includeDrafts === true || c.status === 'published'));
   }
-  async get(slug: string) { return STUB_CONTENT.find(c => c.slug === slug) ?? null; }
-  async relatedTo(modelId: string) { return STUB_CONTENT.filter(c => c.relatedModelIds.includes(modelId) || c.tags.includes('prices')); }
+  async get(slug: string) { return STUB_CONTENT.find(c => c.slug === slug && (showDrafts() || c.status === 'published')) ?? null; }
+  async relatedTo(modelId: string) { return STUB_CONTENT.filter(c => (showDrafts() || c.status === 'published') && (c.relatedModelIds.includes(modelId) || c.tags.includes('prices'))); }
 }
 
 let provider: ContentProvider | null = null;

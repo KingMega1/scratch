@@ -4,13 +4,14 @@ import { notFound } from 'next/navigation';
 import { isLocale, type Locale } from '@/lib/i18n/config';
 import { dict } from '@/lib/i18n/dictionaries';
 import { pageMeta } from '@/lib/seo';
+import { showDrafts } from '@/lib/deploy-env';
 import { content } from '@/server/cms/provider';
 
 type P = { params: Promise<{ locale: string; slug: string }> };
 export async function generateMetadata({ params }: P): Promise<Metadata> {
   const { locale, slug } = await params;
   const item = await content().get(slug);
-  if (!isLocale(locale) || !item) return {};
+  if (!isLocale(locale) || !item || (item.status !== 'published' && !showDrafts())) return {};
   return pageMeta(locale, `/news/${slug}`, item.title[locale], item.summary[locale], { noindex: item.status !== 'published' });
 }
 
@@ -19,7 +20,7 @@ export default async function Article({ params }: P) {
   if (!isLocale(l)) notFound();
   const locale = l as Locale;
   const item = await content().get(slug);
-  if (!item) notFound();
+  if (!item || (item.status !== 'published' && !showDrafts())) notFound(); // drafts are never served in production
   const n = dict(locale).news;
   return (
     <article className="wrap section prose" style={{ paddingBlockStart: 32 }}>

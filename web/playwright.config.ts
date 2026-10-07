@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 const PORT = Number(process.env.SMOKE_PORT || 3200);
-const BASE = process.env.SMOKE_BASE_URL || `http://localhost:${PORT}`;
+const BASE = process.env.SMOKE_BASE_URL || `http://127.0.0.1:${PORT}`;
 
 export default defineConfig({
   testDir: 'tests/smoke',
@@ -21,7 +21,7 @@ export default defineConfig({
     { name: 'mobile', use: { ...devices['Pixel 7'] } },
   ],
   webServer: process.env.SMOKE_BASE_URL ? undefined : {
-    command: `npx next start -p ${PORT}`, url: `${BASE}/api/health`, reuseExistingServer: false, timeout: 60_000,
-    env: { CI_ENV: 'preview' },
+    command: `npx next start -H 127.0.0.1 -p ${PORT}`, url: `${BASE}/api/health`, reuseExistingServer: false, timeout: 60_000,
+    env: { CI_ENV: process.env.SMOKE_PRODUCTION === '1' ? 'production' : 'preview' },
   },
 });

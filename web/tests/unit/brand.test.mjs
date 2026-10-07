@@ -24,3 +24,12 @@ test('no JetBrains Mono, no Google Fonts, no V1.5 references in source', () => {
     assert.doesNotMatch(s, /V1\.5/, f);
   }
 });
+
+test('every package TTF has a WOFF2 sibling and fonts.css prefers it', () => {
+  const css = readFileSync('src/styles/fonts.css', 'utf8');
+  for (const f of Object.keys(DRIVE_SIZES)) {
+    const w = f.replace(/\.ttf$/, '.woff2');
+    assert.ok(statSync(`public/fonts/${w}`).size < statSync(`public/fonts/${f}`).size, w);
+    assert.match(css, new RegExp(`url\\('/fonts/${w.replace('.', '\\.')}'\\) format\\('woff2'\\), url\\('/fonts/${f.replace('.', '\\.')}'\\)`));
+  }
+});
