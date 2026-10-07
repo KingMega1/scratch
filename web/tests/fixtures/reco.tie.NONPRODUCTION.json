@@ -1,0 +1,22 @@
+{
+  "_NOTICE": "NON-PRODUCTION TEST FIXTURE. Synthetic model IDs. Shape-only; not P1 output; not to be rendered on any public route.",
+  "schema": "ci.reco.v1",
+  "result_id": "00000000-0000-4000-8000-000000000001",
+  "created_at": "2026-10-07T00:00:00.000Z",
+  "engine_version": "FIXTURE",
+  "universe_version": "FIXTURE",
+  "registry_snapshot_id": "FIXTURE",
+  "brief": {
+    "entry": "guided", "answered": ["budget", "body"],
+    "budget": { "amount": 1500000, "intent": "max" },
+    "body": ["suv"], "seats_min": null, "powertrain": null, "chinese_brands": null, "drive_4wd_required": null,
+    "brands": null, "models": [], "usage": null, "priorities": [], "checks": [], "confirmed": true
+  },
+  "state": { "kind": "tie", "tied_count": 3, "shown_model_ids": ["fixture/model-a", "fixture/model-b"] },
+  "candidates": [
+    { "model_id": "fixture/model-a", "role": "equal", "price": { "amount": 1000000, "state": "listing", "date": "2026-09-10", "stale": false, "version_label": "Fixture" }, "why": [], "tradeoffs": [], "provenance": [] },
+    { "model_id": "fixture/model-b", "role": "equal", "price": { "amount": 1100000, "state": "official", "date": "2026-09-10", "stale": false, "version_label": "Fixture" }, "why": [], "tradeoffs": [], "provenance": [] }
+  ],
+  "why_not_others": null,
+  "share_safe": true
+}

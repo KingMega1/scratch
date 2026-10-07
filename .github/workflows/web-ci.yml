@@ -1,0 +1,42 @@
+name: web-ci
+# CarIndex website (WEB-LAUNCH-01): typecheck, unit, build, dependency scan, smoke (desktop + mobile).
+on:
+  push:
+    paths: ['web/**', '.github/workflows/web-ci.yml']
+  pull_request:
+    paths: ['web/**', '.github/workflows/web-ci.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: web
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      CI_ENV: preview
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run test:unit
+      - run: npm run audit:deps
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: SMOKE_SCREENSHOTS=1 npm run test:smoke
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: smoke-evidence
+          path: web/test-results/
+          retention-days: 14
