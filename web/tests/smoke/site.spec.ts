@@ -245,11 +245,12 @@ async function answerUntilSummary(page: Page) {
     else if (await q.locator('.budget-card').count()) await q.locator('.fmc-actions .btn-primary').click();
     else await q.locator('.opt').first().click();
     // advance when the view leaves the question screen or the step label changes
-    await expect.poll(async () => {
-      const v = await page.locator('.fmc').getAttribute('data-fmc-view');
-      if (v !== 'q') return 'moved';
-      return (await page.locator('.fmc-question .label-mono').first().textContent()) !== step ? 'moved' : 'same';
-    }, { timeout: 20_000 }).toBe('moved');
+    // one atomic DOM read: never wait on an element the next render may have removed
+    await expect.poll(() => page.evaluate(prev => {
+      const root = document.querySelector('.fmc');
+      if (!root || root.getAttribute('data-fmc-view') !== 'q') return 'moved';
+      return document.querySelector('.fmc-question .label-mono')?.textContent !== prev ? 'moved' : 'same';
+    }, step), { timeout: 20_000 }).toBe('moved');
   }
 }
 test.describe('find my car (P1 transport)', () => {

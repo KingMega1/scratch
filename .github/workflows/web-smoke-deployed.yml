@@ -53,6 +53,8 @@ jobs:
           FMC_BASE_URL: ${{ steps.target.outputs.url }}
           VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
         run: npm run test:fmc
+      - name: Let the per-client FMC rate-limit bucket refill (limit stays on)
+        run: sleep 60
       - name: Smoke (deployed)
         env:
           SMOKE_BASE_URL: ${{ steps.target.outputs.url }}
