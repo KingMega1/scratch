@@ -158,5 +158,8 @@ export function vehicles(): VehicleReadModel {
   if (!instance) instance = new JsonSnapshotReadModel(snapshot as unknown as { meta: RegistryMeta; view: Raw });
   return instance;
 }
+// Temporary display-only ID bridge. Source remains the audited P5 crosswalk, not P1 semantics.
+const p1DisplaySlugs = new Map(Object.entries(crosswalk.map).map(([slug, row]) => [row.matched_old_id, slug]));
+export const p1DisplaySlug = (p1Id: string): string | null => p1DisplaySlugs.get(p1Id) ?? null;
 export const brandSlug = brandId;
 export type { PriceState };
