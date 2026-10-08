@@ -37,8 +37,7 @@ export default async function Home({ params }: P) {
   return (
     <>
       <section className="hero inverse" aria-labelledby="hero-h">
-        {/* Hero photo: correct-generation Nissan Patrol placeholder; flagged for P2 replacement. */}
-        <img className="hero-img" src="/media/patrol.webp" alt="" fetchPriority="high" data-asset-flags="TEMP_UNVERIFIED EXACT_CAR_UNCONFIRMED PHOTO_NEEDS_ENRICHMENT WATERMARK_CROPPED" />
+        {/* Brand V2 safe fallback: no vehicle photo until exact-car and usage rights are verified. */}
         <div className="wrap hero-content">
           <p className="kicker">{h.kicker}</p>
           <h1 id="hero-h" className="display">{h.h1}</h1>
