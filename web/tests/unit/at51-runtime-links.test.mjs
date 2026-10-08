@@ -20,7 +20,7 @@ const mocks = {
   '../vehicles/read-model':{vehicles:()=>({get:id=>bySite.get(id)??null}),p1DisplaySlug:id=>slugs.get(id)??null},
   '../http/guard':{log:()=>{}}
 };
-const code = ts.transpileModule(fs.readFileSync(new URL('src/server/recommendation/fmc.ts',root),'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,esModuleInterop:true}}).outputText;
+const code = ts.transpileModule(fs.readFileSync(new URL('src/server/recommendation/fmc.ts',root),'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,esModuleInterop:true}}).outputText;
 const mod={exports:{}}, require=createRequire(import.meta.url);
 vm.runInNewContext(code,{module:mod,exports:mod.exports,require:n=>mocks[n]??require(n),console,process,Buffer});
 const F=mod.exports;
