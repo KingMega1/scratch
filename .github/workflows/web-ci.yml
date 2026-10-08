@@ -36,6 +36,11 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: SMOKE_SCREENSHOTS=1 npm run test:smoke
       - run: cp test-results/smoke.json test-results/smoke-preview.json
+      - name: Preserve preview screenshots for independent Brand V2 QA
+        run: |
+          mkdir -p ci-evidence
+          cp -a test-results/screens ci-evidence/screens
+          cp test-results/smoke-preview.json ci-evidence/smoke-preview.json
       - name: Targeted FMC / P1 integration (P1-RELEASE-T1) against the built app
         run: |
           mkdir -p test-results
@@ -50,5 +55,7 @@ jobs:
         if: always()
         with:
           name: smoke-evidence
-          path: web/test-results/
+          path: |
+            web/test-results/
+            web/ci-evidence/
           retention-days: 14
