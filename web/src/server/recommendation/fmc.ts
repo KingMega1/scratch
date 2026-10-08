@@ -1,6 +1,7 @@
 import 'server-only';
 import { BOUND, release, type Dataset, type Transport } from '../p1/release';
 import { vehicles } from '../vehicles/read-model';
+import displayCrosswalk from '@data/registry/display-crosswalk.TEMP.json';
 import { log } from '../http/guard';
 
 /* Find My Car service: drives the P1 transport (P1-RELEASE-T1) exactly as P5-INTEGRATION.md §3 describes.
@@ -211,10 +212,12 @@ export function guardResult(r: any, brief: Brief, locale: Locale) {
 export function websiteLinks(r: any): Record<string, string | null> {
   const ids = new Set<string>([r.hero?.id, ...(r.alternatives || []).map((a: any) => a.id), r.less?.id, ...(r.no_match?.nearest_above || []).map((x: any) => x.id)].filter(Boolean));
   const V = vehicles(), byId = presenter(r.locale).byId, out: Record<string, string | null> = {};
-  const key = (s: string) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  // Audited, read-only 24-row display projection; P2 canonical promotion remains separate.
+  const siteByP1 = new Map(Object.entries(displayCrosswalk.map).map(([slug, row]) => [row.matched_old_id, slug]));
+  const key = (s: string) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]/g, '');
   for (const id of ids) {
-    const slug = String(id).replace('/', '-'), car = V.get(slug), m = byId[id];
-    out[id] = car && m && key(`${car.brand.en} ${car.model.en}`) === key(`${m.brand} ${m.model}`) ? slug : null;
+    const slug = siteByP1.get(id), car = slug ? V.get(slug) : null, m = byId[id];
+    out[id] = slug && car && m?.u === true && key(`${car.brand.en} ${car.model.en}`) === key(`${m.brand} ${m.model}`) ? slug : null;
   }
   return out;
 }
