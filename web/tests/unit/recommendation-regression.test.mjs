@@ -67,3 +67,21 @@ test('API envelope: only known ops, bounded inputs; no free-text field outside s
   assert.equal(C.FmcRequest.safeParse({op:'shared',locale:'en',r:'x'.repeat(4001)}).success,false);
   assert.equal(C.FmcRequest.safeParse({op:'score',locale:'en'}).success,false);
 });
+const F=load('src/server/recommendation/fmc.ts',{'server-only':{},'../p1/release':R,'../vehicles/read-model':{vehicles:()=>({get:()=>null})},'../http/guard':{log:()=>{}}});
+test('result guard refuses version mismatch, stale binding, leaked share keys and leaked buyer text',()=>{
+  const rel=R.verifyRelease(path.resolve('p1-release'),require);const T=rel.T,ds=rel.ds;
+  const b=T.normalize({text:'my number is 01012345678',budget:2000000,budgetMode:'around',body:['suv']},ds);
+  const good=T.execute(b,ds,{locale:'en'});
+  F.guardResult(good,b,'en'); // passes
+  const bad=(patch)=>({...JSON.parse(JSON.stringify(good)),...patch});
+  for(const [name,r,loc] of [
+    ['engine mismatch',bad({engine_version:'E5-2026-01-01'}),'en'],
+    ['transport mismatch',bad({transport_version:'T0'}),'en'],
+    ['universe mismatch (stale result)',bad({universe_version:'U10-2026-08-01'}),'en'],
+    ['dataset hash mismatch',bad({dataset:{id:good.dataset.id,sha256:'0'.repeat(64)}}),'en'],
+    ['locale mismatch',good,'ar'],
+    ['bad result id',bad({result_id:'buyer@example.com'}),'en'],
+  ]) assert.throws(()=>F.guardResult(r,b,loc),/release_version_mismatch/,name);
+  assert.throws(()=>F.guardResult(bad({share:{...good.share,brief:{...good.share.brief,text:'x'}}}),b,'en'),/privacy_guard/);
+  assert.throws(()=>F.guardResult(bad({notices:[{html:'01012345678',text:'my number is 01012345678'}]}),b,'en'),/privacy_guard/);
+});

@@ -18,7 +18,7 @@ const snapshot = JSON.parse(fs.readFileSync(new URL('../../data/registry/univers
 const ds = T.loadLaunchSnapshot();
 const SITE = new Set(snapshot.view.models.map(m => m.slug));
 
-// The API keeps its per-client rate limit (60/min); the test waits out 429s instead of disabling it.
+// The API keeps its per-client rate limit (120/min); the test waits out 429s instead of disabling it.
 async function api(body, expect = 200) {
   let res;
   for (let i = 0; i < 6; i++) {
@@ -169,4 +169,45 @@ test('FMC page renders the bound tool (no 503 gate) in EN and AR', async () => {
     assert.ok(html.includes('data-fmc-status="ready"'), `${l}: ready`);
     assert.ok(html.includes('data-release="P1-RELEASE-T1"') && html.includes('data-transport-version="T1-2026-10-07"'));
   }
+});
+
+/* Named recommendation scenarios (AT-43 recovery 2026-10-08). Each case is a P1 regression-corpus brief; the API result
+   must equal the P1 transport and show the expected P1 behaviour. P5 asserts presence/shape only, never recomputes. */
+const byId = Object.fromEntries(corpus.map(c => [c.id, c]));
+const exec = async (id, locale = 'en') => (await api({ op: 'execute', locale, brief: byId[id].brief })).result;
+const cars = r => [r.hero, ...r.alternatives].filter(Boolean);
+const U = Object.fromEntries(ds.U.models.map(m => [m.id, m]));
+
+test('scenario: lean outcome names what the pick depends on; unknown critical data wording exact (U+2019)', async () => {
+  const r = await exec('H1');
+  assert.equal(r.confidence.level, 'lean');
+  assert.ok(r.confidence.depends.includes('unknown_data'));
+  assert.ok(r.hero.what_could_change.some(x => x.text === 'Details we don’t have yet for some of these cars'));
+  assert.equal(r.hero.why_heading, T._internals.I.S.en.why_h_lean);
+});
+test('scenario: tie outcome has no single winner', async () => {
+  const r = await exec('L1');
+  assert.equal(r.confidence.level, 'tie'); assert.equal(r.eyebrow, null); assert.ok(r.equal);
+});
+test('scenario: budget ceiling and earned stretch', async () => {
+  const r = await exec('T6');
+  const s = cars(r).filter(c => c.stretch);
+  assert.ok(s.length > 0, 'stretch car present');
+  for (const c of s) { assert.ok(c.stretch.over > 0); assert.ok(c.stretch.buys.length > 0); }
+  for (const c of cars(await exec('L1'))) for (const v of c.versions) assert.ok(v.min <= (await exec('L1')).budget.ceiling);
+});
+test('scenario: explicit exclusions and negation are honoured', async () => {
+  for (const c of cars(await exec('T1'))) assert.ok(c.versions.every(v => v.powertrain !== 'ev'), `T1: ${c.id} offers EV`); // "no EV"
+  for (const id of ['C3', 'P5']) for (const c of cars(await exec(id))) assert.notEqual(U[c.id].origin, 'China', `${id}: Chinese brand ${c.id}`);
+  for (const c of cars(await exec('B5'))) assert.notEqual(U[c.id].brand_id, 'kia', 'B5: excluded brand');
+  const nm = await exec('X1'); assert.equal(nm.mode, 'no_match'); assert.equal(nm.hero, null); assert.ok(nm.no_match);
+});
+test('scenario: source freshness and official-price provenance on every version', async () => {
+  const r = await exec('L1');
+  for (const c of cars(r)) for (const v of c.versions) {
+    assert.equal(typeof v.official, 'boolean');
+    if (v.date) assert.equal(v.stale, (Date.parse(r.price_as_of) - Date.parse(v.date)) > 14 * 864e5);
+  }
+  assert.equal(r.stale_after_days, 14);
+  assert.match(r.price_as_of, /^\d{4}-\d{2}-\d{2}$/);
 });

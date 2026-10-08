@@ -9,7 +9,8 @@ export const runtime = 'nodejs';
 /* POST /api/v1/recommendation — Find My Car steps over the P1 transport (P1-RELEASE-T1, ci.reco.v1).
    Bodies are never logged (they can hold the buyer's own words); errors log only their code. */
 export async function POST(req: Request) {
-  const limited = rateLimit(req, 'reco', 60); if (limited) return limited;
+  // ~10 calls per buyer journey; 120/min per client keeps abuse bounded without failing real retries.
+  const limited = rateLimit(req, 'reco', 120); if (limited) return limited;
   let body: unknown;
   try { body = await readJson(req, 24_576); } catch { return json({ error: 'invalid_request' } satisfies RecommendationApiError, 400); }
   const p = FmcRequest.safeParse(body);

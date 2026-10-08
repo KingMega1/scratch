@@ -244,10 +244,16 @@ async function answerUntilSummary(page: Page) {
     if (await skip.count()) await skip.click();
     else if (await q.locator('.budget-card').count()) await q.locator('.fmc-actions .btn-primary').click();
     else await q.locator('.opt').first().click();
-    await expect(q.locator('.label-mono').first()).not.toHaveText(step ?? '', { timeout: 15_000 }).catch(() => undefined);
+    // advance when the view leaves the question screen or the step label changes
+    await expect.poll(async () => {
+      const v = await page.locator('.fmc').getAttribute('data-fmc-view');
+      if (v !== 'q') return 'moved';
+      return (await page.locator('.fmc-question .label-mono').first().textContent()) !== step ? 'moved' : 'same';
+    }, { timeout: 20_000 }).toBe('moved');
   }
 }
 test.describe('find my car (P1 transport)', () => {
+  test.setTimeout(90_000);
   for (const l of ['en', 'ar'] as const) {
     test(`${l}: free text -> questions -> summary -> result, engine copy intact`, async ({ page }, testInfo) => {
       const errors: string[] = []; page.on('pageerror', e => errors.push(String(e)));
@@ -305,4 +311,44 @@ test.describe('find my car (P1 transport)', () => {
       .run(document, { runOnly: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'] })).violations.map(x => `${x.id}: ${x.nodes.map(n => n.target.join(' ')).slice(0, 3).join(' | ')}`));
     expect(v).toEqual([]);
   });
+});
+
+/* Full buyer journey (AT-43 recovery): Homepage -> Find My Car -> brief -> recommendation -> WHY -> alternatives
+   -> Car Detail -> share link; EV3 analytics events carry ids/keys only, never the buyer's words. */
+test.describe('buyer journey end to end', () => {
+  test.setTimeout(90_000);
+  for (const l of ['en', 'ar'] as const) {
+    test(`${l}: homepage -> FMC -> result -> car detail, analytics clean`, async ({ page, request }) => {
+      await page.goto(`/${l}`);
+      await page.locator('a[data-cta="hero_fmc"]').click();
+      await expect(page).toHaveURL(new RegExp(`/${l}/find-my-car`));
+      await page.locator('#fmc-brief').fill(FMC[l].text);
+      await page.locator('[data-fmc="go"]').click();
+      await answerUntilSummary(page);
+      await page.locator('[data-fmc="confirm"]').click();
+      const res = page.locator('.fmc-result');
+      await expect(res).toBeVisible({ timeout: 20_000 });
+      await expect(res.locator('.fmc-detail h3, .fmc-card').first()).toBeVisible(); // WHY block or equal cards
+      const ev = await page.evaluate(() => (window as unknown as { dataLayer: { event: string; props: Record<string, unknown>; result_id: string | null; engine_version: string | null }[] }).dataLayer);
+      const names = ev.map(e => e.event);
+      for (const n of ['fmc_view', 'fmc_start', 'fmc_q_answer', 'fmc_summary_confirm', 'fmc_result_view']) expect(names, n).toContain(n);
+      const rv = ev.find(e => e.event === 'fmc_result_view')!;
+      expect(rv.result_id).toMatch(/^cr1_/); expect(rv.engine_version).toBe('E6-2026-09-28');
+      expect(JSON.stringify(ev)).not.toContain(FMC[l].text);
+      expect(JSON.stringify(ev)).not.toMatch(/"(text|free_text|notes|q)"\s*:/);
+      // Car Detail hop from a result that includes a car with a page on the site
+      let token = '', target = '';
+      for (const brief of [{ budget: 2000000, budgetMode: 'around', body: ['suv'], chinese: 'exclude' }, { budget: 2500000, budgetMode: 'max', body: ['suv'] }, { budget: 1800000, budgetMode: 'around', body: ['suv'], priorities: ['popular'] }]) {
+        const j = await (await request.post('/api/v1/recommendation', { data: { op: 'execute', locale: l, brief } })).json();
+        const hit = Object.entries(j.website as Record<string, string | null>).find(([, v]) => v);
+        if (hit) { token = j.result.share.r; target = hit[1] as string; break; }
+      }
+      expect(target, 'a result with an on-site car').not.toBe('');
+      await page.goto(`/${l}/find-my-car?r=${token}`);
+      await expect(page.locator('.fmc-result')).toBeVisible({ timeout: 20_000 });
+      await page.locator(`a[href="/${l}/cars/${target}"]`).first().click();
+      await expect(page).toHaveURL(new RegExp(`/${l}/cars/${target}$`));
+      await expect(page.locator('h1')).toBeVisible();
+    });
+  }
 });
