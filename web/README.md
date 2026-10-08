@@ -16,7 +16,7 @@ npm run build && npm run test:smoke   # Playwright, desktop + mobile
 | Design | P3 accepted artifact `FzaL2VQFihFn7zMnJ1UoUk` | implemented in `src/app`, `src/styles/site.css` |
 | Brand | Brand V2 **v2.0-draft.10** agent package (Drive `1CatHPXah60JBNVMPT2yGqc8WE28lg0vQ`, skill `01-skill-prompt.md` v0.7) | `brand/v2.0-draft.10/`, `src/styles/carindex.tokens.css` (generated file, unedited), `public/fonts`, `public/brand` |
 | Vehicle data | **Canonical**: `KingMega1/scratch` branch `claude/carindex-buyer-vehicle-data-97yinp`, root `vehicle-data/`, accepted view `vehicle-data/views/p1_suv_2m.json` (`carindex.p1.buyer_view/v2`), pinned commit `6f3df7d` | `data/registry/universe.snapshot.json` (deterministic projection) + `display-crosswalk.TEMP.json` (photos/Arabic names, non-canonical) |
-| Recommendation | P1 engine `E6-2026-09-28` (vendored verbatim, hash-pinned, server-only) | `src/server/p1/vendor/` |
+| Recommendation | **P1-RELEASE-T1** transport, server-callable and release-hash pinned; 283-model U11 recommendation universe is independent of the 24-model browse projection | `p1-release/buyer-decision/`, `src/server/recommendation/` |
 
 ## Architecture
 ```
@@ -33,13 +33,12 @@ GitHub accepted view --(scripts/sync-vehicle-data.mjs, deterministic)--> data/re
 | `GET /api/health` | versions + integrity | live |
 | `GET /api/v1/cars`, `/api/v1/cars/:brand/:model` | shaped vehicle data | live |
 | `GET /api/v1/search?q=&locale=` | shaped public search index | live |
-| `POST /api/v1/recommendation` | brief -> `ci.reco.v1` | **503 pending P1 PASS** |
+| `POST /api/v1/recommendation` | brief -> `ci.reco.v1` through P1-RELEASE-T1 | **Live on protected preview; integration smoke PASS 7 Oct** |
 | `POST /api/v1/identity/otp/{start,verify}` | phone-first OTP | **503 feature-gated** |
 | `POST /api/v1/events` | EV3 collector (PII-stripped, redacted) | live (log sink) |
 
 ## Gates
-- **Find My Car**: scaffold only. Semantic integration stays blocked until **P1 R3 RELEASE**. The vendored engine (E6) was built for the superseded U11 universe; rebinding to the canonical buyer_view is part of R3.
-  Contract: `src/lib/recommendation/contract.ts`. Component slots: `src/components/fmc/boundaries.tsx`.
+- **Find My Car**: P1-RELEASE-T1 is bound in the protected preview (commit `ea2183004d6a6aa57fea6e092b3e461e8269dbf2`). CI `37633003449` and deployed integration/smoke `37633310225` passed 7 Oct 2026. Preserve P1's 283-model recommendation universe and exact output/copy; the 24-model website browse view must never filter recommendation results. Recommended cars without a browse page remain visible with no model-detail link. Contract: `ci.reco.v1`; integration test: `tests/integration/fmc.api.test.mjs`. **This is not production launch acceptance.**
 - **Customer PII**: `FEATURE_CUSTOMER_PII` stays false until legal/security/provider sign-off.
 - **Admin** (`/admin`): 404 unless `ADMIN_BASIC_AUTH_USER/PASS` are set; then Basic auth, noindex.
 
