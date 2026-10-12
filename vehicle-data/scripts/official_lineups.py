@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Official lineup discovery/change detection. Existing P2 worker; stage only, no model/price promotion."""
-import argparse, hashlib, json, re, time
+import argparse, gzip, hashlib, json, re, time
 from pathlib import Path
 from html import unescape
 from urllib.parse import urljoin, urlparse
@@ -67,6 +67,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--config",default="vehicle-data/config/official_lineups.json")
     ap.add_argument("--out",required=True)
+    ap.add_argument("--enrich-limit",type=int,default=8,help="bounded official model-page evidence collection; no promotion")
     ap.add_argument("--u11",help="optional accepted U11 local JSON; never fetched or rewritten implicitly")
     a = ap.parse_args()
     out = Path(a.out); out.mkdir(parents=True,exist_ok=True)
@@ -86,7 +87,7 @@ def main():
             row["models"] = extract(src,html)
             row["status"] = "OK" if row["models"] else "EMPTY_EXTRACTION"
             # Evidence bytes persist with hash; repeated runs never overwrite different evidence.
-            (out/(row["sha256"]+".html")).write_bytes(body)
+            (out/(row["sha256"]+".html.gz")).write_bytes(gzip.compress(body,mtime=0))
         except Exception as exc:
             row["error"] = str(exc)
         current["sources"].append(row)
@@ -114,7 +115,28 @@ def main():
                 # Missing identity input is explicit; never silently approve availability.
 
     current["events"] = events
-    current["enrichment_queue"] = enrichment_queue(events,registry_ids,u)
+    current["enrichment_queue"] = enrichment_queue([dict(m,event="OFFICIAL_CURRENT_ENTRY") for src in current["sources"] if src["status"]=="OK" for m in src["models"]],registry_ids,u)
+    current["model_page_evidence"] = []
+    seen_pages = set()
+    candidates = [m for src in current["sources"] if src["status"]=="OK" for m in src["models"]]
+    candidates.sort(key=lambda m:(m.get("p1_id") is None,m["source_url"]))
+    for candidate in candidates:
+        if candidate["source_url"] in seen_pages: continue
+        if len(current["model_page_evidence"])>=max(0,min(a.enrich_limit,20)): break
+        seen_pages.add(candidate["source_url"])
+        item = dict(candidate,status="ERROR",price_status="UNKNOWN",spec_status="UNKNOWN",authority="STAGE_ONLY")
+        try:
+            with urlopen(Request(candidate["source_url"],headers={"User-Agent":"CarIndexEvidence/1.0"}),timeout=30) as response:
+                page = response.read(8*1024*1024+1)
+            if len(page)>8*1024*1024: raise ValueError("page exceeds 8 MiB")
+            digest = hashlib.sha256(page).hexdigest()
+            (out/(digest+".html.gz")).write_bytes(gzip.compress(page,mtime=0))
+            item.update(status="CAPTURED_FOR_P2_REVIEW",sha256=digest,bytes=len(page),evidence_file=digest+".html.gz")
+            # Source bytes are collected for existing extraction/review; no guessed grade/spec normalization.
+        except Exception as exc:
+            item["error"]=str(exc)
+        current["model_page_evidence"].append(item)
+        time.sleep(1)
     (out/"latest.json").write_text(json.dumps(current,ensure_ascii=False,indent=2)+"\n")
     (out/(current["observed_at"].replace(":","-")+".json")).write_text(json.dumps(current,ensure_ascii=False,indent=2)+"\n")
     print(json.dumps({"observed_at":current["observed_at"],"sources":len(current["sources"]),
