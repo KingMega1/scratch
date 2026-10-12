@@ -84,8 +84,8 @@ export default async function CarDetail({ params }: P) {
           {car.priceFrom.state === 'conflict' ? <p className="small" style={{ margin: 0 }}>{v2.conflictNote}</p> : null}
           {car.lastObserved ? <div className="small">{t.state.stale}: {date(car.lastObserved, locale)}</div> : null}
           <div className="cd-ctas">
-            <Link className="btn btn-primary" href={L(`/find-my-car?model=${encodeURIComponent(car.id)}`)}>{c.fits}</Link>
-            <Link className="btn btn-ghost" href={L(`/compare?ids=${encodeURIComponent(car.id)}`)}>{c.compare}</Link>
+            <Link className="btn btn-primary" href={L(`/find-my-car?model=${encodeURIComponent(car.p1Id ?? car.id)}`)}>{c.fits}</Link>
+            <Link className="btn btn-ghost" href={L(`/compare?ids=${encodeURIComponent(car.p1Id ?? car.id)}`)}>{c.compare}</Link>
           </div>
         </div>
       </section>
@@ -96,7 +96,7 @@ export default async function CarDetail({ params }: P) {
           <h2 id="gaps-h" style={{ marginBlockStart: 0, fontSize: 18 }}>{v2.gapsH}</h2>
           <ul className="gap-list">
             {!car.inSlice ? <li>{v2.outOfSlice}</li> : null}
-            {car.gaps.map(g => <li key={g}>{v2.gaps[g] ?? g}</li>)}
+            {car.gaps.map(g => <li key={g}>{({ NO_VERIFIED_PRICE: locale === 'ar' ? 'السعر لم يتم التحقق منه بعد.' : 'Price has not been verified yet.', NO_VERIFIED_SPECS: locale === 'ar' ? 'المواصفات لم يتم التحقق منها بعد.' : 'Specifications have not been verified yet.', P2_ID_PENDING: locale === 'ar' ? 'بيانات الموديل التفصيلية قيد المراجعة.' : 'Detailed model evidence is under review.' } as Record<string,string>)[g] ?? v2.gaps[g] ?? g}</li>)}
           </ul>
         </section>
       ) : null}
@@ -144,6 +144,7 @@ export default async function CarDetail({ params }: P) {
 
       <section className="cd-section" aria-labelledby="specs-h">
         <h2 id="specs-h" className="h-section">{c.specsH}</h2>
+        {car.evidenceState === 'U11_IDENTITY_ONLY' ? <p className="slot-empty">{locale === 'ar' ? 'المواصفات لم يتم التحقق منها بعد.' : 'Specifications have not been verified yet.'}</p> : null}
         <div className="spec-grid">{specRows.map(([k, v]) => <div className="spec" key={k}><div className="k">{k}</div><div className="v">{v}</div></div>)}</div>
       </section>
 
@@ -185,7 +186,7 @@ export default async function CarDetail({ params }: P) {
       <section className="cd-section card" style={{ background: 'var(--ci-color-fog)' }} aria-labelledby="fmc-h">
         <h2 id="fmc-h" className="h-section">{c.fmcH}</h2>
         <p className="sub">{c.fmcBody}</p>
-        <Link className="btn btn-primary" href={L(`/find-my-car?model=${encodeURIComponent(car.id)}`)}>{t.nav.fmc}</Link>
+        <Link className="btn btn-primary" href={L(`/find-my-car?model=${encodeURIComponent(car.p1Id ?? car.id)}`)}>{t.nav.fmc}</Link>
       </section>
 
       <section className="cd-section">

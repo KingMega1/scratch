@@ -38,6 +38,9 @@ export interface PublicImage { src: string; credit: string | null; sourcePage: s
 export type GapCode = 'SINGLE_SOURCE_MODEL' | 'FROM_PRICE_IN_CONFLICT' | 'REGISTRATION_UNLINKED' | 'PRICE_RULE_NOT_MET' | 'NO_OFFICIAL_PRICE' | 'UNRESOLVED_TRIMS_IN_PRICED_COHORT' | string;
 
 export interface PublicCar {
+  p1Id?: string;
+  body?: string | null;
+  evidenceState?: string;
   id: string;                // URL slug from the view (identity PROVISIONAL upstream: D3/D4)
   brand: { en: string; ar: string | null };
   model: { en: string; ar: string | null };

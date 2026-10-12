@@ -39,7 +39,7 @@ export default async function Cars({ params, searchParams }: P) {
   const q = parseCarQuery(await searchParams);
   const { items, total, pages } = queryCars(q);
   const brand = q.brand ? vehicles().brands().find(b => b.id === q.brand) : null;
-  const sliceNote = t.v2.slice(vehicles().meta().models_in_slice);
+  const sliceNote = locale === 'ar' ? 'موديلات السوق المصري من نسخة البيانات الحالية. الأسعار والمواصفات غير المؤكدة موضّحة لكل عربية.' : 'Egyptian-market models from the current data release. Unverified prices and specifications are marked on each car.';
   const all = vehicles().all().length;
   const bandOn = (b: { min?: number; max?: number }) => q.min === b.min && q.max === b.max;
   const hasFilters = q.brand || q.min != null || q.max != null || q.pt || q.official;
@@ -60,7 +60,7 @@ export default async function Cars({ params, searchParams }: P) {
         <div className="filter-row">
           <span className="label">{c.pt}</span>
           <Link className="chip" href={href(locale, q, { pt: undefined })} aria-current={!q.pt ? 'true' : undefined}>{c.all}</Link>
-          {(['ice', 'hybrid', 'reev', 'ev'] as const).map(p => (
+          {(['ice', 'hybrid', 'phev', 'reev', 'ev'] as const).map(p => (
             <Link key={p} className="chip" href={href(locale, q, { pt: p })} aria-current={q.pt === p ? 'true' : undefined}>{t.pt[p]}</Link>
           ))}
           <Link className="chip" href={href(locale, q, { official: !q.official })} aria-current={q.official ? 'true' : undefined}>{c.officialOnly}</Link>
