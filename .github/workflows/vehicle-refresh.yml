@@ -10,9 +10,11 @@ on:
         description: "prices = model pages only; full = also trim pages (specs)"
         default: full
         type: choice
-        options: [full, prices, triage]
+        options: [full, prices, triage, official]
   push:
     paths: ["vehicle-data/refresh.request"]
+  pull_request:
+    paths: ["vehicle-data/scripts/official_lineups.py", "vehicle-data/tests/**", "vehicle-data/config/official_lineups.json", ".github/workflows/vehicle-refresh.yml"]
   # schedule:
   #   - cron: "17 5 * * 0"   # weekly, Sunday 05:17 UTC
 
@@ -24,7 +26,14 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  official-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest discover -s vehicle-data/tests -v
   refresh:
+    if: github.event_name != 'pull_request'
+    needs: official-regression
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -39,14 +48,20 @@ jobs:
         run: |
           MODE="${{ inputs.mode }}"
           if [ -z "$MODE" ]; then MODE=$(awk 'NR==1{print $1}' vehicle-data/refresh.request); fi
-          case "$MODE" in full|prices|triage) ;; *) MODE=full ;; esac
-          vehicle-data/scripts/refresh.sh "$MODE"
+          case "$MODE" in full|prices|triage|official) ;; *) MODE=full ;; esac
+          if [ "$MODE" = official ]; then
+            python3 vehicle-data/scripts/official_lineups.py --out vehicle-data/snapshots/official-lineups
+          else
+            vehicle-data/scripts/refresh.sh "$MODE"
+          fi
       - name: Upload raw pages (90-day artifact; evidence + parsed files are committed)
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: raw-pages-${{ github.run_id }}
-          path: vehicle-data/snapshots/*/raw/
+          path: |
+            vehicle-data/snapshots/*/raw/
+            vehicle-data/snapshots/official-lineups/
           retention-days: 90
           if-no-files-found: ignore
       - name: Commit snapshot and views
