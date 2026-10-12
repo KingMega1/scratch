@@ -85,7 +85,7 @@ export default async function CarDetail({ params }: P) {
           {car.lastObserved ? <div className="small">{t.state.stale}: {date(car.lastObserved, locale)}</div> : null}
           <div className="cd-ctas">
             <Link className="btn btn-primary" href={L(`/find-my-car?model=${encodeURIComponent(car.p1Id ?? car.id)}`)}>{c.fits}</Link>
-            <Link className="btn btn-ghost" href={L(`/compare?ids=${encodeURIComponent(car.p1Id ?? car.id)}`)}>{c.compare}</Link>
+            <Link className="btn btn-ghost" href={L(`/compare?ids=${encodeURIComponent(car.id)}`)}>{c.compare}</Link>
           </div>
         </div>
       </section>
