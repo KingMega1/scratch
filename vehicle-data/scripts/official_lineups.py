@@ -56,7 +56,7 @@ def enrichment_queue(events, registry_ids, u11=None):
     for e in events:
         if "source_key" not in e: continue
         id = e.get("p1_id")
-        state = "P2_IDENTITY_REVIEW" if not id else "P2_EVIDENCE_MISSING" if id not in registry_ids else "P2_EVIDENCE_REFRESH"
+        state = "P2_IDENTITY_REVIEW" if not id else "P2_ID_MAPPING_REQUIRED" if id not in registry_ids else "P2_EVIDENCE_REFRESH"
         if id in models and models[id].get("u") is not True:
             state = "OFFICIAL_U11_AVAILABILITY_CONFLICT"
         output.append(dict(e,queue_state=state,authority="STAGE_ONLY",
@@ -92,7 +92,7 @@ def main():
         current["sources"].append(row)
         time.sleep(1)
     events = changes(current,prev)
-    registry = Path("vehicle-data/registry/models.csv")
+    registry = Path("vehicle-data/crosswalk/p1_catalogue_ids.AT51.csv")
     # P2 registry is read-only; serving IDs are not backfilled from names.
     import csv
     registry_ids = set()
@@ -100,6 +100,19 @@ def main():
         for r in csv.DictReader(registry.read_text().splitlines()):
             registry_ids.add(r.get("p1_id")) if r.get("p1_id") else None
     u = json.loads(Path(a.u11).read_text()) if a.u11 else None
+    if u is None:
+        identity_url = json.loads(Path(a.config).read_text()).get("u11_source")
+        if identity_url:
+            try:
+                with urlopen(Request(identity_url,headers={"User-Agent":"CarIndexEvidence/1.0"}),timeout=30) as response:
+                    identity_bytes = response.read(2*1024*1024+1)
+                if len(identity_bytes)>2*1024*1024: raise ValueError("identity source exceeds 2 MiB")
+                u = json.loads(identity_bytes)
+                current["identity_source"] = {"url":identity_url,"sha256":hashlib.sha256(identity_bytes).hexdigest(),"version":u["meta"]["version"]}
+            except Exception as exc:
+                current["identity_source_error"] = str(exc)
+                # Missing identity input is explicit; never silently approve availability.
+
     current["events"] = events
     current["enrichment_queue"] = enrichment_queue(events,registry_ids,u)
     (out/"latest.json").write_text(json.dumps(current,ensure_ascii=False,indent=2)+"\n")
