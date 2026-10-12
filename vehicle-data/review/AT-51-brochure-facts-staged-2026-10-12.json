@@ -1,0 +1,65 @@
+{
+  "state": "VERIFYING",
+  "authority": "STAGED_NOT_CANONICAL",
+  "records": [
+    {
+      "p1_id": "nissan/magnite",
+      "source": "https://drive.google.com/file/d/1Zb9aNZY_3M1YJzBsH3PEpxa8p0yhWyJI/view",
+      "issuer": "Nissan Motor Egypt",
+      "document_effective_date": null,
+      "grades": [
+        "1.0T VISIA CVT",
+        "1.0T ACENTA CVT",
+        "1.0T TEKNA CVT",
+        "1.0T TEKNA+ CVT"
+      ],
+      "facts": [
+        {
+          "field": "engine_capacity_cc",
+          "value": 999,
+          "scope": "technical table page 7"
+        },
+        {
+          "field": "power_hp",
+          "value": 100,
+          "rpm": 5000,
+          "scope": "technical table page 7"
+        },
+        {
+          "field": "torque_nm",
+          "value": 152,
+          "rpm_range": [
+            2200,
+            4400
+          ],
+          "scope": "technical table page 7"
+        },
+        {
+          "field": "ground_clearance_mm",
+          "value": 205,
+          "scope": "technical table page 7"
+        },
+        {
+          "field": "fuel_consumption_l_100km",
+          "value": 6.3,
+          "scope": "technical table page 7"
+        },
+        {
+          "field": "warranty_years",
+          "value": 5,
+          "scope": "service/warranty page 9"
+        },
+        {
+          "field": "warranty_km",
+          "value": 150000,
+          "scope": "service/warranty page 9"
+        }
+      ],
+      "caveats": [
+        "Brochure date unknown; verify variant applicability and current source parity before canonical acceptance.",
+        "No prices taken from brochure.",
+        "335/690 trunk values not normalized: seat-position distinction unresolved."
+      ]
+    }
+  ]
+}

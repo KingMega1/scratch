@@ -43,7 +43,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install --quiet requests beautifulsoup4
+      - run: pip install --quiet requests beautifulsoup4 pypdf
       - name: Refresh
         run: |
           MODE="${{ inputs.mode }}"
@@ -51,6 +51,9 @@ jobs:
           case "$MODE" in full|prices|triage|official) ;; *) MODE=full ;; esac
           if [ "$MODE" = official ]; then
             python3 vehicle-data/scripts/official_lineups.py --out vehicle-data/snapshots/official-lineups
+            SNAP="vehicle-data/snapshots/official/O4_2026-10-12_${GITHUB_RUN_ID}"
+            python3 vehicle-data/scripts/official_t1.py run --config vehicle-data/config/official_sources.json --out "$SNAP"
+            python3 vehicle-data/scripts/asset_evidence.py --config vehicle-data/config/official_sources.json --snapshot "$SNAP" --pdf-limit 8
           else
             vehicle-data/scripts/refresh.sh "$MODE"
           fi
@@ -62,6 +65,8 @@ jobs:
           path: |
             vehicle-data/snapshots/*/raw/
             vehicle-data/snapshots/official-lineups/
+            vehicle-data/snapshots/official/**/raw/
+            vehicle-data/snapshots/official/**/brochures/
           retention-days: 90
           if-no-files-found: ignore
       - name: Commit snapshot and views
