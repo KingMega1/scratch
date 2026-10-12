@@ -17,7 +17,7 @@ for(const locale of ['en','ar']){
   }
   for(const e of release.excluded)expect((await request.get('/'+locale+'/cars/'+e.site_slug)).status()).toBe(404);
   await page.goto('/'+locale+'/cars/alfa-romeo-giulia');
-  await expect(page.locator('.cd-info .state-unknown')).toBeVisible();
+  await expect(page.locator('.cd-info .state-unknown').first()).toBeVisible();
   await expect(page.locator('.cd-info .bracket')).toHaveCount(0);
   await expect(page.locator('#specs-h').locator('..')).toContainText(locale==='ar'?'المواصفات لم يتم التحقق منها بعد.':'Specifications have not been verified yet.');
   expect(await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
