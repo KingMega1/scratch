@@ -10,6 +10,7 @@ import { alternatives } from '@/server/vehicles/query';
 import { takes } from '@/server/take/provider';
 import { content } from '@/server/cms/provider';
 import { CarCard, CarMedia, CarName, OfficialFigure, PriceFrom, PriceState, carNameText } from '@/components/car';
+import brochures from '@data/registry/brochure-serving.release.json';
 import TrackOnMount from '@/components/TrackOnMount';
 import type { PublicTrim } from '@/lib/vehicles/types';
 
@@ -57,6 +58,7 @@ export default async function CarDetail({ params }: P) {
   if (!car) notFound();
   const t = dict(locale), c = t.car, v2 = t.v2;
   const meta = vehicles().meta();
+  const brochure = brochures.entries.find(b => b.p1_id === car.p1Id);
   const take = await takes().forModel(car.id);
   const alts = alternatives(car);
   const related = (await content().relatedTo(car.id)).slice(0, 3);
@@ -147,6 +149,14 @@ export default async function CarDetail({ params }: P) {
         {car.evidenceState === 'U11_IDENTITY_ONLY' ? <p className="slot-empty">{locale === 'ar' ? 'المواصفات لم يتم التحقق منها بعد.' : 'Specifications have not been verified yet.'}</p> : null}
         <div className="spec-grid">{specRows.map(([k, v]) => <div className="spec" key={k}><div className="k">{k}</div><div className="v">{v}</div></div>)}</div>
       </section>
+
+      {brochure ? (
+        <section className="cd-section" aria-labelledby="brochure-h" data-brochure-model-id={brochure.p1_id}>
+          <h2 id="brochure-h" className="h-section">{locale === 'ar' ? 'كتالوج الموديل من نيسان مصر' : 'Model brochure from Nissan Egypt'}</h2>
+          <a className="btn btn-ghost" href={brochure.url} target="_blank" rel="noopener noreferrer">{locale === 'ar' ? 'افتح الكتالوج الرسمي (PDF)' : 'Open official brochure (PDF)'}</a>
+          <p className="small">{brochure.document_year ? (locale === 'ar' ? 'سنة الموديل في الكتالوج: ' : 'Model year stated in the brochure: ') + brochure.document_year + '. ' : ''}{locale === 'ar' ? 'تاريخ سريان الكتالوج غير مذكور. التجهيزات تختلف حسب الفئة؛ راجع جدول الفئات في الكتالوج.' : 'The brochure does not state an effective date. Equipment varies by grade; refer to its grade table.'}</p>
+        </section>
+      ) : null}
 
       <section className="cd-section" aria-labelledby="gal-h" data-asset-flags="PHOTO_NEEDS_ENRICHMENT">
         <h2 id="gal-h" className="h-section">{c.galleryH}</h2>
