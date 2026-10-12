@@ -290,7 +290,7 @@ test.describe('find my car (P1 transport)', () => {
     });
   }
   test('recommendations beyond the old slice retain cards and now have catalogue links', async ({ page, request }) => {
-    const brief = { budget: 900000, budgetMode: 'around', body: ['sedan'] };
+    const brief = { budget: 1200000, budgetMode: 'around', body: ['sedan'] };
     const j = await (await request.post('/api/v1/recommendation', { data: { op: 'execute', locale: 'en', brief } })).json();
     const entries = Object.entries(j.website as Record<string,string|null>);
     expect(entries.length).toBeGreaterThan(0);
@@ -298,10 +298,12 @@ test.describe('find my car (P1 transport)', () => {
     await page.goto(`/en/find-my-car?r=${j.result.share.r}`);
     await expect(page.locator('.fmc-result')).toBeVisible({ timeout: 20_000 });
     for(const [id,slug] of entries.filter(([id])=>[j.result.hero?.id,...j.result.alternatives.map((a:{id:string})=>a.id)].includes(id))){
-      const card=page.locator(`[data-reco-model="${id}"]`);
-      await expect(card).toBeVisible();
-      await expect(card.locator(`a[href="/en/cars/${slug}"]`)).toBeVisible();
+      const link=page.locator(`[data-fmc-site-link="${id}"]`).first();
+      await expect(link).toBeVisible();
+      await expect(link).toHaveAttribute("href",`/en/cars/${slug}`);
     }
+    const shown = await page.locator('.fmc-result [data-model-id]').evaluateAll(els => els.map(e => e.getAttribute('data-model-id')));
+    expect(shown).toEqual([j.result.hero.id, ...j.result.alternatives.map((a: { id: string }) => a.id)]);
   });
   test('result view has no WCAG A/AA violations', async ({ page, request }) => {
     const j = await (await request.post('/api/v1/recommendation', { data: { op: 'execute', locale: 'ar', brief: { budget: 2000000, budgetMode: 'around', body: ['suv'] } } })).json();
