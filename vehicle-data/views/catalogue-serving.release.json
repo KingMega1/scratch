@@ -8419,16 +8419,7 @@
         ],
         "brochures": [],
         "logo": null,
-        "hero_image": {
-          "src": "/media/models/changan-uni-t.webp",
-          "credit": "changan.com.eg",
-          "source_url": "https://changan.com.eg/en/model/uni-t/",
-          "image_url": "https://changan.com.eg/wp-content/uploads/2023/10/image0-1-1.png",
-          "flags": [],
-          "status": "ACCEPT",
-          "quality_class": "COMPACT_ONLY",
-          "sha256": "2e10f612c7ecb90c0ef63de44ab9f45de01c84373998a879d0e0915e85344d56"
-        },
+        "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
         "conflicts": []
@@ -10366,16 +10357,7 @@
           "quality_class": "HQ",
           "sha256": "df12e6e2811e570f02941f030870ed429f2436ed887070b4d6374f22e4bfff4c"
         },
-        "hero_image": {
-          "src": "/media/models/chery-tiggo-7-pro.webp",
-          "credit": "chery-eg.com",
-          "source_url": "https://www.chery-eg.com/en/car/tiggo-7-pro",
-          "image_url": "https://www.chery-eg.com/media/extDesignImages/01.jpg",
-          "flags": [],
-          "status": "ACCEPT",
-          "quality_class": "WEB",
-          "sha256": "0fdadf9247fd392ab84ec518a3fff66fe0bb9b8c4a60d9b5352c66dda41deb11"
-        },
+        "hero_image": null,
         "hero_image_limited": null,
         "gallery": [
           {
@@ -10483,7 +10465,9 @@
             "credit": "chery-eg.com"
           }
         ],
-        "conflicts": []
+        "conflicts": [
+          "power_hp: SP-1 CONFLICT: 145 vs 154"
+        ]
       }
     },
     {
@@ -22232,16 +22216,7 @@
         "warranty": null,
         "brochures": [],
         "logo": null,
-        "hero_image": {
-          "src": "/media/models/jetour-t1.webp",
-          "credit": "jetouregypt.com",
-          "source_url": "https://jetouregypt.com/models/T1/",
-          "image_url": "https://jetouregypt.com/models/T1/new_assets/images/carModel/t1/Silver-car.png",
-          "flags": [],
-          "status": "ACCEPT",
-          "quality_class": "COMPACT_ONLY",
-          "sha256": "8d3fd56a336ffcc70339a44676a5e6e9fd31497aaf1029b2d6187e5e0c7c2b0e"
-        },
+        "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
         "conflicts": []
@@ -22903,16 +22878,7 @@
         ],
         "brochures": [],
         "logo": null,
-        "hero_image": {
-          "src": "/media/models/jetour-x90-plus.webp",
-          "credit": "jetouregypt.com",
-          "source_url": "https://jetouregypt.com/models/x90-plus-1-6t/",
-          "image_url": "https://jetouregypt.com/models/x90-plus-1-6t/new_assets/images/1.jpg",
-          "flags": [],
-          "status": "ACCEPT",
-          "quality_class": "COMPACT_ONLY",
-          "sha256": "2938687fb7524b76995b5fe7bf982045c43dae60e959ed6c67efe6b11b0c43ff"
-        },
+        "hero_image": null,
         "hero_image_limited": null,
         "gallery": [
           {
@@ -28330,16 +28296,7 @@
         "warranty": null,
         "brochures": [],
         "logo": null,
-        "hero_image": {
-          "src": "/media/models/mg-5.webp",
-          "credit": "mgmotor.com.eg",
-          "source_url": "https://www.mgmotor.com.eg/model/mg5/",
-          "image_url": "https://www.mgmotor.com.eg/wp-content/uploads/2022/06/MG5_ME-1.jpg",
-          "flags": [],
-          "status": "ACCEPT",
-          "quality_class": "COMPACT_ONLY",
-          "sha256": "48289c4a428aa5b17f0bcb19ef57fa5e986449f60c38c5c7b3d6459253ec3f2f"
-        },
+        "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
         "conflicts": []
@@ -28899,16 +28856,7 @@
         "warranty": null,
         "brochures": [],
         "logo": null,
-        "hero_image": {
-          "src": "/media/models/mg-gt.webp",
-          "credit": "mgmotor.com.eg",
-          "source_url": "https://www.mgmotor.com.eg/model/mg-gt/",
-          "image_url": "https://www.mgmotor.com.eg/wp-content/uploads/2025/12/Exterior-Isolated.webp",
-          "flags": [],
-          "status": "ACCEPT",
-          "quality_class": "COMPACT_ONLY",
-          "sha256": "6cd2dbdffaa8da03ee7650e9b5474c38c32b27272fa3a2b2430e61167cf94617"
-        },
+        "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
         "conflicts": []
@@ -29159,16 +29107,7 @@
         "warranty": null,
         "brochures": [],
         "logo": null,
-        "hero_image": {
-          "src": "/media/models/mg-hs.webp",
-          "credit": "mgmotor.com.eg",
-          "source_url": "https://www.mgmotor.com.eg/model/new-hs/",
-          "image_url": "https://www.mgmotor.com.eg/wp-content/uploads/2025/08/Exterior.webp",
-          "flags": [],
-          "status": "ACCEPT",
-          "quality_class": "COMPACT_ONLY",
-          "sha256": "323fcb1c414f93f92e235cde137164e032ae92c8a69d77f39115baab10a81229"
-        },
+        "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
         "conflicts": [
@@ -29348,16 +29287,7 @@
         "warranty": null,
         "brochures": [],
         "logo": null,
-        "hero_image": {
-          "src": "/media/models/mg-one.webp",
-          "credit": "mgmotor.com.eg",
-          "source_url": "https://www.mgmotor.com.eg/model/mg-one/",
-          "image_url": "https://www.mgmotor.com.eg/wp-content/uploads/2024/07/Exterior.webp",
-          "flags": [],
-          "status": "ACCEPT",
-          "quality_class": "COMPACT_ONLY",
-          "sha256": "f128fc63dcf9d518c772a00e8618dd9998029531358dfa03934a5cd3fb765190"
-        },
+        "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
         "conflicts": []
@@ -29804,16 +29734,7 @@
         "warranty": null,
         "brochures": [],
         "logo": null,
-        "hero_image": {
-          "src": "/media/models/mg-zs.webp",
-          "credit": "mgmotor.com.eg",
-          "source_url": "https://www.mgmotor.com.eg/model/zs/",
-          "image_url": "https://www.mgmotor.com.eg/wp-content/uploads/2022/07/Moto_MG-ZS_Beauty_Music_Blue_ME-2.png",
-          "flags": [],
-          "status": "ACCEPT",
-          "quality_class": "COMPACT_ONLY",
-          "sha256": "323e3920f1c32d473a6880a763db83c22009006f0ec7588800e9aeaa01a0f5cf"
-        },
+        "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
         "conflicts": []
@@ -32189,16 +32110,7 @@
         "warranty": null,
         "brochures": [],
         "logo": null,
-        "hero_image": {
-          "src": "/media/models/nissan-sunny.webp",
-          "credit": "en.nissan.com.eg",
-          "source_url": "https://en.nissan.com.eg/vehicles/new/sunny.html",
-          "image_url": "https://www-europe.nissan-cdn.net/content/dam/Nissan/eg/vehicles/sunny/product_code/product_version/overview/1160x600s3.jpg",
-          "flags": [],
-          "status": "ACCEPT",
-          "quality_class": "WEB",
-          "sha256": "9812de822796c136f842b5d0a3d9b30de91f38e9570708450262524160873869"
-        },
+        "hero_image": null,
         "hero_image_limited": null,
         "gallery": [
           {
