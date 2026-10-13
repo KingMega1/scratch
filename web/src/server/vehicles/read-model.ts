@@ -92,6 +92,15 @@ function specs(m: Raw): Record<string, SpecValue> {
   return out;
 }
 
+/* P2 media contract: a serving-release entry may carry accepted.hero_image (or hero_image) =
+   { src: '/media/models/<site_slug>.<ext>', credit, source_url }. Only same-origin files under /media/ are served
+   (CSP img-src 'self'); anything else is ignored and the entry keeps the registry image or the unavailable treatment. */
+export function p2Hero(e: Raw): PublicImage | null {
+  const h = e?.accepted?.hero_image ?? e?.hero_image;
+  if (!h || typeof h.src !== 'string' || !/^\/media\/[\w./-]+\.(webp|png|jpe?g|avif)$/i.test(h.src) || h.src.includes('..')) return null;
+  return { src: h.src, credit: h.credit ?? h.issuer ?? null, sourcePage: h.source_url ?? h.source_page ?? null, flags: [] as AssetFlag[] };
+}
+
 function shape(m: Raw): PublicCar {
   const cohorts: Raw[] = m.price?.cohorts ?? [];
   const latestYear = m.price?.latest_priced_cohort ?? null;
@@ -149,6 +158,8 @@ class JsonSnapshotReadModel implements VehicleReadModel {
       car.body = e.body;
       car.p1Id = e.p1_id;
       car.evidenceState = e.evidence_state;
+      const hero = p2Hero(e as Raw);
+      if (hero) car.image = hero; // P2-accepted hero (catalogue serving release) takes precedence over the P5 media registry
       if (raw) {
         // S6 registrations say only "ICE"; name the fuel only when the pinned U11 identity states it unambiguously.
         const fuels = ['petrol', 'diesel'].filter(f => e.powertrains.includes(f)) as Powertrain[];

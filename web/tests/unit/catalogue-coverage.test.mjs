@@ -65,6 +65,19 @@ test('actual filters/pagination do not lose models or make unknown prices numeri
  assert.equal(Q.queryCars({brand:'nissan'}).total,7);
  assert.ok(Q.queryCars({pt:'phev'}).items.every(c=>c.powertrains.includes('phev')));
 });
+test('P2 media contract: accepted same-origin hero images are served automatically; others ignored',()=>{
+ const rel2=structuredClone(release);
+ rel2.entries.find(e=>e.site_slug==='kia-sportage').accepted={hero_image:{src:'/media/models/kia-sportage.webp',credit:'Kia Egypt',source_url:'https://example.test/kia'}};
+ rel2.entries.find(e=>e.site_slug==='hyundai-tucson').accepted={hero_image:{src:'https://cdn.example.test/tucson.jpg'}};
+ rel2.entries.find(e=>e.site_slug==='mg-hs').hero_image={src:'/media/../secret.webp'};
+ const V2=runtime('src/server/vehicles/read-model.ts',{
+  '@data/registry/universe.snapshot.json':snap,'@data/registry/display-crosswalk.TEMP.json':cw,
+  '@data/registry/catalogue-serving.release.json':rel2,'@data/registry/media-verified.json':{entries:[]},
+ });
+ assert.deepEqual(V2.vehicles().get('kia-sportage').image,{src:'/media/models/kia-sportage.webp',credit:'Kia Egypt',sourcePage:'https://example.test/kia',flags:[]});
+ assert.equal(V2.vehicles().get('hyundai-tucson').image,null);
+ assert.equal(V2.vehicles().get('mg-hs').image,null);
+});
 test('Tucson conflict survives without averaging; P1 files and accepted vendor remain untouched',()=>{
  const old=snap.view.models.find(m=>m.slug==='hyundai-tucson');
  const car=V.vehicles().get('hyundai-tucson');
