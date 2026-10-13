@@ -147,6 +147,14 @@ def market_obs(snap):
         out.append(dict(p1_id=p1, site=SITE[r["source"]], source=r["source"], url=r["source_url"], model_year=r["model_year"] or "",
                         trim_label=r["trim_raw"], trim_key=tk, price_egp=v, observed_at=day(r["fetched_at"]),
                         source_effective_date=r.get("effective_date") or "", page_sha256=r["page_sha256"]))
+    yrs = collections.defaultdict(set)  # EgyCar pages carry no model year: join the cohort holding the same value
+    for o in out:
+        if o["model_year"]:
+            yrs[(o["p1_id"], o["price_egp"])].add(o["model_year"])
+    for o in [o for o in out if not o["model_year"]]:
+        ys = sorted(yrs.get((o["p1_id"], o["price_egp"]), ()))
+        if len(ys) == 1:
+            o["model_year"] = ys[0]
     stated = []
     for r in read(os.path.join(snap, "price_changes_stated.csv")):
         p1 = owner_of(own, r["source_url"])
@@ -162,6 +170,9 @@ def tier_b(obs, stated):
     by = collections.defaultdict(list)
     for o in obs:
         by[(o["p1_id"], o["model_year"])].append(o)
+    stated_by = collections.defaultdict(list)
+    for x in stated:
+        stated_by[(x["p1_id"], x["model_year"], x["trim_key"])].append(x)
     st = collections.defaultdict(list)
     for s in stated:
         st[(s["p1_id"], s["model_year"], s["price_egp"])].append(s)
@@ -190,7 +201,10 @@ def tier_b(obs, stated):
             cc = next((o for o in g if o["site"] == "ContactCars"), g[0])
             dates = sorted({s["effective_date"] for s in st[(p1, yr, v)] if s["trim_key"] == tk or basis != "trim_key_equal"}
                            | {o["source_effective_date"] for o in g if o["source_effective_date"]})
-            if len(gs) >= 2 and not other:
+            latest = max((x for x in stated_by.get((p1, yr, tk), [])), key=lambda x: x["effective_date"], default=None)
+            if len(gs) >= 2 and not other and latest and latest["price_egp"] != v and latest["effective_date"] > max(o["observed_at"] for o in g):
+                status, tier, reason = "REWORK", "B", f'PB-3 later stated change {latest["effective_date"]} -> {latest["price_egp"]}'
+            elif len(gs) >= 2 and not other:
                 status, tier, reason = "ACCEPT", "B", f"PB-1 {len(gs)} sites agree ({basis})"
             elif other:
                 status, tier, reason = "REWORK", "B" if len(gs) >= 2 else "C", \
@@ -211,7 +225,7 @@ def tier_b(obs, stated):
 
 # ------------------------------------------------------------------ official evidence (Tier A)
 
-def tier_a(market):
+def tier_a(market, stated=()):
     rows = []
     rng = collections.defaultdict(list)
     for o in market:
@@ -238,12 +252,43 @@ def tier_a(market):
                              evidence_ref=f'{snap}:{r["page_sha256"][:16]}:{r["evidence_pointer"]}', observed_at=r["fetched_at"][:10],
                              confidence=r["confidence"], status=status, reason=reason, sites=1,
                              kind="from" if r["field"] == "price_from_official_egp" else "trim"))
-    for r in read(os.path.join(ROOT, "registry", "price_evidence_manual.csv")):
-        rows.append(dict(r, price_egp=int(r["price_egp"]), trim_key=b.trim_key(r["trim_label"]), sites=1, kind=r.get("kind") or "trim"))
+    manual = read(os.path.join(ROOT, "registry", "price_evidence_manual.csv"))
+    for r in manual:
+        v = int(r["price_egp"])
+        m = rng.get(r["p1_id"])
+        doc = {int(x["price_egp"]) for x in manual if x["p1_id"] == r["p1_id"] and x["evidence_ref"] == r["evidence_ref"]}
+        later = sorted({s["effective_date"] for s in stated if s["p1_id"] == r["p1_id"] and s["effective_date"] > (r["effective_date"] or "9")
+                        and s["price_egp"] not in doc})  # a later change to a value the document already states corroborates it
+        if r["tier"] != "A":
+            status, reason = "REWORK", f"Tier {r['tier']}: single media/dealer/social report; review only"
+        elif later:
+            status, reason = "REWORK", f"PA-2 market source states a later official price change ({later[-1]}) than the document date"
+        elif m and not ((1 - DIVERGENCE) * min(m) <= v <= (1 + DIVERGENCE) * max(m)):
+            status, reason = "REWORK", f"PA-1 outside +/-25% of market official range {min(m)}-{max(m)}"
+        else:
+            status, reason = "ACCEPT", "PA-1 official importer/distributor document"
+        rows.append(dict(r, price_egp=v, trim_key=b.trim_key(r["trim_label"]), sites=1, kind=r.get("kind") or "trim",
+                         status=status, reason=reason + (f"; {r['note']}" if r.get("note") else "")))
     return rows
 
 
 def supersede(a_rows, b_rows):
+    a_ok = collections.defaultdict(set)
+    for r in a_rows:
+        if r["status"] == "ACCEPT" and r["kind"] == "trim":
+            a_ok[r["p1_id"]].add(r["price_egp"])
+    a_by = collections.defaultdict(list)
+    for r in a_rows:
+        if r["status"] == "ACCEPT" and r["kind"] == "trim":
+            a_by[r["p1_id"]].append(r)
+    for r in b_rows:  # PS-2: a newer-dated market value close to an official value but different -> official trim REWORK
+        if r["status"] != "ACCEPT" or r["date_basis"] != "SOURCE_STATED" or r["p1_id"] not in a_by:
+            continue
+        near = min(a_by[r["p1_id"]], key=lambda a: abs(a["price_egp"] - r["price_egp"]))
+        d = abs(near["price_egp"] - r["price_egp"])
+        if b.NEAR_AGREEMENT_EGP < d <= 0.05 * near["price_egp"] and r["effective_date"] > (near["effective_date"] or near["as_of"]):
+            near["status"] = "REWORK"
+            near["reason"] = f'PS-2 CONFLICT: {r["issuer"]} states {r["price_egp"]} effective {r["effective_date"]} (newer than official {near["effective_date"] or "undated"})'
     a_ok = collections.defaultdict(set)
     for r in a_rows:
         if r["status"] == "ACCEPT" and r["kind"] == "trim":
@@ -286,7 +331,7 @@ def main():
           ["model_id", "p1_id", "site_slug", "brand", "model", "brand_ar", "model_ar", "body", "on_sale_u11", "generation",
            "id_status", "id_rule", "identity_checks"], ids)
     mobs, stated = market_obs(snap)
-    a_rows = tier_a(mobs)
+    a_rows = tier_a(mobs, stated)
     rows = supersede(a_rows, tier_b(mobs, stated))
     byid = {r["p1_id"]: r for r in ids}
     for r in rows:
