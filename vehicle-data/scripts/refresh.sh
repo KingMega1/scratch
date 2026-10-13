@@ -12,6 +12,29 @@ if [ "$MODE" = "triage" ]; then   # one-off: score the baseline UNKNOWN_TO_CATAL
 fi
 T0=$(date +%s)
 DATE=$(date -u +%Y-%m-%d)
+if [ "$MODE" = "u11" ]; then      # all 283 U11 on-sale models: market model pages + linked model-year pages (prices only)
+  SNAP="snapshots/U_${DATE}_${GITHUB_RUN_ID:-local}"
+  mkdir -p "$SNAP"
+  cut -d, -f3 inputs/u11/u11_source_urls.csv | tail -n +2 | sort -u > "$SNAP/urls.txt"
+  python3 scripts/fetch_snapshot.py fetch --urls "$SNAP/urls.txt" --out "$SNAP" --kind model
+  python3 scripts/fetch_snapshot.py evidence --out "$SNAP"
+  python3 scripts/fetch_snapshot.py yearlinks --out "$SNAP"
+  python3 scripts/fetch_snapshot.py fetch --urls "$SNAP/year_urls.txt" --out "$SNAP" --kind model
+  python3 scripts/fetch_snapshot.py evidence --out "$SNAP"
+  python3 scripts/fetch_snapshot.py parse --out "$SNAP"
+  python3 - "$SNAP" "$T0" <<'PY'
+import json, sys, time, csv
+snap, t0 = sys.argv[1], int(sys.argv[2])
+man = json.load(open(f"{snap}/fetch_manifest.json"))
+cnt = lambda p: sum(1 for _ in csv.DictReader(open(p)))
+rep = dict(snapshot=snap, mode="u11", seconds=int(time.time()) - t0, pages_fetched=len(man),
+           pages_ok=sum(1 for m in man if m.get("status") == 200), bytes_downloaded=sum(m.get("bytes", 0) for m in man),
+           price_rows=cnt(f"{snap}/observations_parsed.csv"), stated_changes=cnt(f"{snap}/price_changes_stated.csv"), llm_calls=0)
+json.dump(rep, open(f"{snap}/run_report.json", "w"), indent=1)
+print(json.dumps(rep, indent=1))
+PY
+  exit 0
+fi
 LAST=0; PREV=""; PREV_DISC=""
 for d in $(ls -d snapshots/S*_* 2>/dev/null | sort -t_ -k2,2 -k1,1V); do
   n=${d#snapshots/S}; n=${n%%_*}

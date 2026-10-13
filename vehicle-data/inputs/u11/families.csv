@@ -1,0 +1,24 @@
+family_id,display,member_model_ids,reason
+mercedes/a-class,A-Class,mercedes/a180|mercedes/a200|mercedes/a-250e,engine variants listed as separate models in identity v1
+mercedes/b-class,B-Class,mercedes/b-200,engine variant
+mercedes/cla,CLA,mercedes/cla-180|mercedes/cla-200|mercedes/cla250|mercedes/cla-300,engine variants
+mercedes/c-class,C-Class,mercedes/c180|mercedes/c200|mercedes/c400|mercedes/c-43-amg,engine variants
+mercedes/e-class,E-Class,mercedes/e200|mercedes/e300|mercedes/e350,engine variants
+mercedes/gla,GLA,mercedes/gla-180|mercedes/gla-200,engine variants
+mercedes/glb,GLB,mercedes/glb-200,engine variant
+mercedes/glc,GLC,mercedes/glc-200|mercedes/glc-300|mercedes/glc-400|mercedes/glc-43,engine variants
+mercedes/gle,GLE,mercedes/gle-450|mercedes/gle-53,engine variants
+mercedes/gls,GLS,mercedes/gls-580,engine variant
+mercedes/eqa,EQA,mercedes/eqa-260|mercedes/eqa250,engine variants
+mercedes/eqb,EQB,mercedes/eqb250,engine variant
+mercedes/s-class,S-Class,mercedes/s450|mercedes/s500|mercedes/s580|mercedes/s63,engine variants
+mercedes/v-class,V-Class,mercedes/v300,engine variant
+bmw/1-series,1 Series,bmw/118i,engine variant
+bmw/3-series,3 Series,bmw/320i|bmw/330i|bmw/340i,engine variants
+bmw/5-series,5 Series,bmw/520i|bmw/530i,engine variants
+bmw/7-series,7 Series,bmw/740i|bmw/750li|bmw/760i,engine variants
+hyundai/elantra,Elantra,hyundai/elantra|hyundai/elantra-ad|hyundai/elantra-cn7,generation labels; latest priced cohort is used
+hyundai/tucson,Tucson,hyundai/tucson|hyundai/tucson-nx4e,generation label
+jetour/x70,X70,jetour/x70|jetour/x70-facelift,facelift label
+haval/jolion,Jolion,haval/jolion|haval/jolion-ckd,assembly label (CKD)
+skoda/octavia,Octavia,skoda/octavia|skoda/octavia-a8,generation label

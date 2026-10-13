@@ -324,6 +324,30 @@ def links(out):
     print(f"trim links={len(found)}")
 
 
+def yearlinks(out, min_year=2025):
+    """ContactCars model-year pages linked from tracked ContactCars base pages (same slug only, year >= min_year)."""
+    ev = [e for e in load_evidence(out, "model") if "error" not in e]
+    have = {e["url"] for e in ev}
+    found = set()
+    for e in ev:
+        if site(e["url"]) != "ContactCars" or "/year-" in e["url"]:
+            continue
+        slug = re.sub(r"^https?://[^/]+", "", e["url"]).rstrip("/").split("/")[3]
+        years = {m.group(2) for l in e["links"] for m in [re.fullmatch(r"/en/new-cars/([a-z0-9_]+-[a-z0-9_]+)/year-(20\d\d)", l)]
+                 if m and m.group(1) == slug}
+        L = e["lines"]  # 'Available Models' blocks: "<n> Trims Available" followed by the model year
+        for k, l in enumerate(L):
+            if re.fullmatch(r"\d+ Trims? Available", l):
+                years |= {next((x for x in L[k:k + 14] if re.fullmatch(r"20\d\d", x)), "0")}
+        for y in years:
+            u = f"https://www.contactcars.com/en/new-cars/{slug}/year-{y}"
+            if int(y) >= min_year and u not in have:
+                found.add(u)
+    with open(os.path.join(out, "year_urls.txt"), "w") as f:
+        f.write("".join(u + "\n" for u in sorted(found)))
+    print(f"year links={len(found)}")
+
+
 def specs(out):
     rows = []
     for e in load_evidence(out, "trim"):
@@ -363,7 +387,7 @@ def specs(out):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["fetch", "evidence", "parse", "links", "specs"])
+    ap.add_argument("cmd", choices=["fetch", "evidence", "parse", "links", "yearlinks", "specs"])
     ap.add_argument("--urls")
     ap.add_argument("--out", required=True)
     ap.add_argument("--kind", default="model", choices=["model", "trim"])
@@ -372,4 +396,4 @@ if __name__ == "__main__":
     if a.cmd == "fetch":
         fetch([u.strip() for u in open(a.urls) if u.strip()], a.out, a.kind, a.delay)
     else:
-        {"evidence": evidence, "parse": parse, "links": links, "specs": specs}[a.cmd](a.out)
+        {"evidence": evidence, "parse": parse, "links": links, "yearlinks": yearlinks, "specs": specs}[a.cmd](a.out)

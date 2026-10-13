@@ -10,7 +10,7 @@ on:
         description: "prices = model pages only; full = also trim pages (specs)"
         default: full
         type: choice
-        options: [full, prices, triage]
+        options: [full, prices, triage, u11]
   push:
     paths: ["vehicle-data/refresh.request"]
   # schedule:
@@ -26,7 +26,7 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
         with:
@@ -39,7 +39,7 @@ jobs:
         run: |
           MODE="${{ inputs.mode }}"
           if [ -z "$MODE" ]; then MODE=$(awk 'NR==1{print $1}' vehicle-data/refresh.request); fi
-          case "$MODE" in full|prices|triage) ;; *) MODE=full ;; esac
+          case "$MODE" in full|prices|triage|u11) ;; *) MODE=full ;; esac
           vehicle-data/scripts/refresh.sh "$MODE"
       - name: Upload raw pages (90-day artifact; evidence + parsed files are committed)
         if: always()
