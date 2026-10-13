@@ -20,6 +20,10 @@ if [ "$MODE" = "media" ]; then    # brand-logo / model-image candidates with lic
   python3 scripts/media_candidates.py --out "snapshots/M_${DATE}_${GITHUB_RUN_ID:-local}"
   exit 0
 fi
+if [ "$MODE" = "logos" ]; then     # Commons logo search for brands without an accepted logo -> contact sheets
+  python3 scripts/logo_search.py --out "snapshots/ML_${DATE}_${GITHUB_RUN_ID:-local}"
+  exit 0
+fi
 if [ "$MODE" = "u11specs" ]; then   # trim-detail pages linked from the latest U11 market snapshot -> specs_parsed.csv
   U=$(ls -d snapshots/U_* | sort | tail -1)
   SNAP="snapshots/US_${DATE}_${GITHUB_RUN_ID:-local}"
