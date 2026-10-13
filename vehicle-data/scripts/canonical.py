@@ -302,6 +302,8 @@ def supersede(a_rows, b_rows):
 
 # ------------------------------------------------------------------ specs, warranty, brochures, media
 
+SERVE_PREFIX = "/media/p2/"  # P5 serves web/public/media/p2/<models|brands>/... (same-origin; no clash with P5's own /media/models/)
+
 KNOWN_CONFLICTS = {  # evidence-level conflicts recorded in AT-51; never promoted until resolved
     ("mg/hs", "power_hp"): "SP-1 CONFLICT: MG Egypt HS page prose 221 hp vs spec table 200 hp (hybrid)",
 }
@@ -487,7 +489,7 @@ def main():
         spec_ok = len(CORE_SPECS & set(specs)) >= 3
         def asset(x):  # IM-1: P5 serves local files only; src is set once the verified bytes are materialized
             d = {k: x[k] for k in ("asset_id", "sha256", "width", "height", "quality_class", "url", "page", "rights_basis", "status")}
-            d["src"] = "/" + x["local_path"] if x.get("local_path") and os.path.exists(os.path.join(ROOT, x["local_path"])) else None
+            d["src"] = SERVE_PREFIX + x["local_path"].split("media/", 1)[1] if x.get("local_path") and os.path.exists(os.path.join(ROOT, x["local_path"])) else None
             d["credit"] = x.get("credit") or (re.sub(r"^https?://(www\.)?([^/]+).*$", r"\2", x["page"] or x["url"])
                                               if "drive.google" not in x["url"] else "CarIndex archive")
             return d
