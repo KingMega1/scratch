@@ -39,7 +39,7 @@ jobs:
         run: |
           MODE="${{ inputs.mode }}"
           if [ -z "$MODE" ]; then MODE=$(awk 'NR==1{print $1}' vehicle-data/refresh.request); fi
-          case "$MODE" in full|prices|triage|u11|media|sheets|materialize|u11specs) ;; *) MODE=full ;; esac
+          case "$MODE" in full|prices|triage|u11|media|sheets|materialize|u11specs|*+*) ;; *) MODE=full ;; esac
           vehicle-data/scripts/refresh.sh "$MODE"
       - name: Upload raw pages (90-day artifact; evidence + parsed files are committed)
         if: always()
@@ -57,5 +57,11 @@ jobs:
           git reset -q -- 'vehicle-data/snapshots/*/raw'
           git commit -m "vehicle-data refresh $(date -u +%Y-%m-%d) [automated]" || echo "nothing to commit"
           git fetch origin "${GITHUB_REF_NAME}"
-          git rebase "origin/${GITHUB_REF_NAME}"
+          # derived files (views/registry outputs) may also change upstream: keep this run's copy, then rebuild them
+          git rebase -X theirs "origin/${GITHUB_REF_NAME}"
+          if [ -f vehicle-data/scripts/canonical.py ] && [ -d vehicle-data/inputs/u11 ]; then
+            python3 vehicle-data/scripts/canonical.py
+            git add vehicle-data/views vehicle-data/registry vehicle-data/review
+            git commit -m "vehicle-data canonical rebuild after refresh [automated]" || echo "canonical unchanged"
+          fi
           git push origin "HEAD:${GITHUB_REF_NAME}"
