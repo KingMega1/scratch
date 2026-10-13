@@ -22,7 +22,7 @@ if [ "$MODE" = "materialize" ]; then   # accepted media -> P5-servable WebP (sha
   exit 0
 fi
 if [ "$MODE" = "sheets" ]; then   # download media candidates, measure, build contact sheets for visual verification
-  python3 scripts/media_sheets.py --out "snapshots/MS_${DATE}_${GITHUB_RUN_ID:-local}"
+  python3 scripts/media_sheets.py --out "snapshots/MS_${DATE}_${GITHUB_RUN_ID:-local}" --max-oem 0
   exit 0
 fi
 if [ "$MODE" = "u11" ]; then      # all 283 U11 on-sale models: market model pages + linked model-year pages (prices only)

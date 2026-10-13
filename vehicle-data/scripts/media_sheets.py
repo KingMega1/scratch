@@ -76,7 +76,7 @@ def main():
                     i = M["files"].get(f, {})
                     if i.get("thumb_url"):
                         cands.append((p1, "photo", f"commons:{c['qid']}", i["thumb_url"], i.get("page"), i.get("license"), i.get("artist")))
-    for path in glob.glob(os.path.join(ROOT, "inputs", "u11", "official", "*.asset_evidence.json")):
+    for path in (glob.glob(os.path.join(ROOT, "inputs", "u11", "official", "*.asset_evidence.json")) if a.max_oem else []):
         per = {}
         for x in json.load(open(path))["candidates"]:
             u = x["url"]
