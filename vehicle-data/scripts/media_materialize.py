@@ -40,7 +40,10 @@ def main():
                 if im.width > 2400:
                     im = im.resize((2400, round(im.height * 2400 / im.width)), Image.LANCZOS)
                 os.makedirs(os.path.dirname(dst), exist_ok=True)
-                im.save(dst, "WEBP", quality=85, method=6)
+                if dst.endswith(".png"):  # logos keep lossless PNG with transparency
+                    im.save(dst, "PNG", optimize=True)
+                else:
+                    im.save(dst, "WEBP", quality=85, method=6)
                 res.update(written=True, out_width=im.width, out_height=im.height, out_bytes=os.path.getsize(dst))
                 if r["kind"] == "hero":
                     t = im.convert("RGB")

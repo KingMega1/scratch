@@ -465,7 +465,8 @@ def main():
         def asset(x):  # IM-1: P5 serves local files only; src is set once the verified bytes are materialized
             d = {k: x[k] for k in ("asset_id", "sha256", "width", "height", "quality_class", "url", "page", "rights_basis", "status")}
             d["src"] = "/" + x["local_path"] if x.get("local_path") and os.path.exists(os.path.join(ROOT, x["local_path"])) else None
-            d["credit"] = re.sub(r"^https?://(www\.)?([^/]+).*$", r"\2", x["page"] or x["url"]) if "drive.google" not in x["url"] else "CarIndex archive"
+            d["credit"] = x.get("credit") or (re.sub(r"^https?://(www\.)?([^/]+).*$", r"\2", x["page"] or x["url"])
+                                              if "drive.google" not in x["url"] else "CarIndex archive")
             return d
         logo = next((asset(x) for x in med.get(m["brand"], []) if x["kind"] == "logo" and x["status"] == "ACCEPT"), None)
         hero = next((asset(x) for x in med.get(m["p1_id"], []) if x["kind"] == "hero" and x["status"] == "ACCEPT"), None)
