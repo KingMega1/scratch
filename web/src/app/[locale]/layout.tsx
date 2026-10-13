@@ -36,8 +36,8 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   return (
     <html lang={locale} dir={dirOf(locale)} data-env={env === 'production' ? 'prod' : env === 'local' ? 'dev' : 'staging'}>
       <head>
-        <link rel="preload" href={locale === 'ar' ? '/fonts/IBMPlexSansArabic-Regular.woff2' : '/fonts/IBMPlexSans-Variable.woff2'} as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href={locale === 'ar' ? '/fonts/NotoKufiArabic-Variable.woff2' : '/fonts/Archivo-Variable.woff2'} as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href={locale === 'ar' ? '/fonts/IBMPlexSansArabic-Regular.subset.woff2' : '/fonts/IBMPlexSans-Variable.subset.woff2'} as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href={locale === 'ar' ? '/fonts/NotoKufiArabic-Variable.subset.woff2' : '/fonts/Archivo-Variable.subset.woff2'} as="font" type="font/woff2" crossOrigin="anonymous" />
         {trackEndpoint ? <meta name="ci-track-endpoint" content={trackEndpoint} /> : null}
       </head>
       <body>

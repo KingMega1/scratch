@@ -77,7 +77,7 @@ export default async function CarDetail({ params }: P) {
       <nav className="breadcrumb" aria-label="breadcrumb"><Link href={L('/cars')}>{t.nav.cars}</Link></nav>
 
       <section className="cd-hero" aria-labelledby="car-h">
-        <div className="cd-media"><CarMedia car={car} locale={locale} eager /></div>
+        <div className="cd-media"><CarMedia car={car} locale={locale} eager sizes="(max-width: 900px) 100vw, 640px" /></div>
         <div className="cd-info">
           {car.priceFrom.state !== 'conflict' ? <PriceState state={car.priceFrom.state} locale={locale} /> : null}
           <h1 id="car-h" className="h-page" style={{ margin: 0 }}><CarName car={car} locale={locale} /></h1>

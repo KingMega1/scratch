@@ -25,11 +25,12 @@ test('no JetBrains Mono, no Google Fonts, no V1.5 references in source', () => {
   }
 });
 
-test('every package TTF has a WOFF2 sibling and fonts.css prefers it', () => {
+test('every package TTF has a subset WOFF2 sibling and fonts.css prefers it', () => {
+  // *.subset.woff2: same Brand V2 typefaces cut to the used scripts (Latin / Arabic) and weight/width ranges (perf, AT-43).
   const css = readFileSync('src/styles/fonts.css', 'utf8');
   for (const f of Object.keys(DRIVE_SIZES)) {
-    const w = f.replace(/\.ttf$/, '.woff2');
-    assert.ok(statSync(`public/fonts/${w}`).size < statSync(`public/fonts/${f}`).size, w);
+    const w = f.replace(/\.ttf$/, '.subset.woff2');
+    assert.ok(statSync(`public/fonts/${w}`).size < statSync(`public/fonts/${f.replace(/\.ttf$/, '.woff2')}`).size, w);
     assert.match(css, new RegExp(`url\\('/fonts/${w.replace('.', '\\.')}'\\) format\\('woff2'\\), url\\('/fonts/${f.replace('.', '\\.')}'\\)`));
   }
 });

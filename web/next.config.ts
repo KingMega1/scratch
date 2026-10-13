@@ -29,6 +29,10 @@ const securityHeaders = [
 const config: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  // ~10 KB of CSS: inline it in <head> so first paint is not blocked on a stylesheet round trip (Lighthouse render-blocking).
+  experimental: { inlineCss: true },
+  // Same-origin optimizer for /media and /brand photos only (no remote hosts). AVIF/WebP negotiated per browser.
+  images: { formats: ['image/avif', 'image/webp'], localPatterns: [{ pathname: '/media/**' }, { pathname: '/brand/**' }], minimumCacheTTL: 86400 },
   // P1 release (P1-RELEASE-T1) is loaded from disk at runtime and hash-verified; ship the vendored files with the functions that use it.
   outputFileTracingIncludes: {
     '/api/v1/recommendation': ['./p1-release/**/*'],
@@ -39,6 +43,9 @@ const config: NextConfig = {
     return [
       { source: '/:path*', headers: securityHeaders },
       { source: '/fonts/:file*', headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] },
+      // Model photos keep stable names (P2 may replace a file in place): cache a day, revalidate in the background.
+      { source: '/media/:path*', headers: [{ key: 'Cache-Control', value: 'public, max-age=86400, stale-while-revalidate=604800' }] },
+      { source: '/brand/:path*', headers: [{ key: 'Cache-Control', value: 'public, max-age=86400, stale-while-revalidate=604800' }] },
     ];
   },
 };

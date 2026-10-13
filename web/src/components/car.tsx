@@ -27,9 +27,14 @@ export function BodyIcon({ body, className = 'icon' }: { body?: string | null; c
   return <img className={className} src={`/brand/${BODY_ICON[body ?? ''] ?? 'body-compact-crossover'}-ink.svg`} alt="" width={112} height={64} />;
 }
 
+/* Responsive variants via Next's same-origin image optimizer (CSP img-src 'self' unchanged). `src` stays the original file
+   (fallback + provenance); browsers pick the smallest srcset candidate that fits `sizes`. q=85 keeps visual quality. */
+const WIDTHS = [384, 640, 828, 1200];
+export const photoSrcSet = (src: string) => WIDTHS.map(w => `/_next/image?url=${encodeURIComponent(src)}&w=${w}&q=85 ${w}w`).join(', ');
+
 /* Verified exact-model photo only (data/registry/media-verified.json). Otherwise a clean "image not available yet"
    treatment with the body-type icon: never a different car, never a generated photo. */
-export function CarMedia({ car, locale, eager = false }: { car: PublicCar; locale: Locale; eager?: boolean }) {
+export function CarMedia({ car, locale, eager = false, sizes = '(max-width: 720px) 100vw, 360px' }: { car: PublicCar; locale: Locale; eager?: boolean; sizes?: string }) {
   if (!car.image) {
     return (
       <div className="no-photo" role="img" aria-label={`${carNameText(car, locale)} — ${dict(locale).car.noPhoto}`} data-no-photo="true">
@@ -39,8 +44,8 @@ export function CarMedia({ car, locale, eager = false }: { car: PublicCar; local
     );
   }
   return (
-    <img className="photo" src={car.image.src} alt={carNameText(car, locale)} loading={eager ? 'eager' : 'lazy'} decoding="async"
-      data-verified-photo="true" />
+    <img className="photo" src={car.image.src} srcSet={photoSrcSet(car.image.src)} sizes={sizes} alt={carNameText(car, locale)}
+      loading={eager ? 'eager' : 'lazy'} fetchPriority={eager ? 'high' : undefined} decoding="async" data-verified-photo="true" />
   );
 }
 

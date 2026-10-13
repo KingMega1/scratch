@@ -7,7 +7,7 @@ import { pageMeta } from '@/lib/seo';
 import { showDrafts } from '@/lib/deploy-env';
 import { vehicles } from '@/server/vehicles/read-model';
 import { content } from '@/server/cms/provider';
-import { CarCard, CarName, carNameText } from '@/components/car';
+import { CarCard, CarName, carNameText, photoSrcSet } from '@/components/car';
 import { BrandMark, sortBrands } from '@/components/brand';
 
 type P = { params: Promise<{ locale: string }> };
@@ -47,10 +47,10 @@ export default async function Home({ params }: P) {
           </div>
           {heroCars.length ? (
             <ul className="hero-cars" aria-label={t.nav.cars}>
-              {heroCars.map(c => (
+              {heroCars.map((c, i) => (
                 <li key={c.id}>
                   <Link href={`/${locale}/cars/${c.id}`} data-hero-car={c.id}>
-                    <img src={c.image!.src} alt={carNameText(c, locale)} width={640} height={400} fetchPriority="high" data-verified-photo="true" />
+                    <img src={c.image!.src} srcSet={photoSrcSet(c.image!.src)} sizes="(max-width: 720px) 45vw, 300px" alt={carNameText(c, locale)} width={640} height={400} fetchPriority={i === 0 ? 'high' : 'auto'} data-verified-photo="true" />
                     <span><CarName car={c} locale={locale} /></span>
                   </Link>
                 </li>

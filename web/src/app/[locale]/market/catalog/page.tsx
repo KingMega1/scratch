@@ -6,7 +6,7 @@ import { dict } from '@/lib/i18n/dictionaries';
 import { num } from '@/lib/format';
 import { pageMeta } from '@/lib/seo';
 import { brandSlug, vehicles } from '@/server/vehicles/read-model';
-import { PriceFrom, arModel } from '@/components/car';
+import { PriceFrom, arModel, photoSrcSet } from '@/components/car';
 import { BrandGrid, BrandMark, brandName } from '@/components/brand';
 import type { Powertrain, PublicCar } from '@/lib/vehicles/types';
 
@@ -36,7 +36,7 @@ function ModelCard({ car, locale, withBrand }: { car: PublicCar; locale: Locale;
   return (
     <li>
       <Link className={`mc${car.image ? ' has-photo' : ''}`} href={`/${locale}/cars/${car.id}`} data-model-id={car.id} data-price-state={car.priceFrom.state}>
-        {car.image ? <img className="mc-photo" src={car.image.src} alt="" loading="lazy" decoding="async" data-verified-photo="true" /> : null}
+        {car.image ? <img className="mc-photo" src={car.image.src} srcSet={photoSrcSet(car.image.src)} sizes="(max-width: 639px) calc(100vw - 32px), (max-width: 1023px) 46vw, 340px" alt="" loading="lazy" decoding="async" data-verified-photo="true" /> : null}
         <span className="mc-name">
           {withBrand ? <span className="mc-brand">{locale === 'ar' && !car.brand.ar ? <bdi>{brand}</bdi> : brand}</span> : null}
           {locale === 'ar' && !arModel(car) ? <bdi>{model}</bdi> : model}

@@ -8,6 +8,7 @@ import { recommendationStatus } from '@/server/recommendation/provider';
 import TrackOnMount from '@/components/TrackOnMount';
 import FindMyCar from '@/components/fmc/FindMyCar';
 import { identity } from '@/server/identity/provider';
+import { uiCopy } from '@/server/recommendation/fmc';
 
 type P = { params: Promise<{ locale: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
 export async function generateMetadata({ params }: P): Promise<Metadata> {
@@ -36,7 +37,7 @@ export default async function FindMyCarPage({ params, searchParams }: P) {
       <h1 className="h-page">{f.h1}</h1>
       <p className="lede">{f.lede}</p>
       {status.status === 'ready' ? (
-        <FindMyCar locale={locale} shareToken={r} identityEnabled={identity().enabled()} site={{ carPage: f.carPage, compareOnSite: f.compareOnSite, notOnSite: f.notOnSite, loading: f.loading, error: f.error, retry: f.retry }} />
+        <FindMyCar locale={locale} initialCopy={uiCopy(locale)} shareToken={r} identityEnabled={identity().enabled()} site={{ carPage: f.carPage, compareOnSite: f.compareOnSite, notOnSite: f.notOnSite, loading: f.loading, error: f.error, retry: f.retry }} />
       ) : (
         <section className="state-panel" aria-labelledby="fmc-blocked-h" role="status">
           <h2 id="fmc-blocked-h" style={{ margin: 0 }}>{f.blockedH}</h2>

@@ -32,8 +32,9 @@ async function call(body: Record<string, unknown>) {
   return j;
 }
 
-export default function FindMyCar({ locale, site, shareToken, identityEnabled = false }: { locale: 'en' | 'ar'; site: SiteCopy; shareToken: string | null; identityEnabled?: boolean }) {
-  const [copy, setCopy] = useState<Copy | null>(null);
+export default function FindMyCar({ locale, site, shareToken, identityEnabled = false, initialCopy = null }: { locale: 'en' | 'ar'; site: SiteCopy; shareToken: string | null; identityEnabled?: boolean; initialCopy?: Copy | null }) {
+  // P1 UI copy is rendered on the server (same uiCopy() the status op returns) so the first paint is final: no skeleton swap / layout shift.
+  const [copy, setCopy] = useState<Copy | null>(initialCopy);
   const [view, setView] = useState<View>({ view: 'welcome' });
   const [stack, setStack] = useState<View[]>([]);
   const [busy, setBusy] = useState<string | null>(null);
@@ -63,8 +64,9 @@ export default function FindMyCar({ locale, site, shareToken, identityEnabled = 
   }, [locale, view]);
 
   useEffect(() => {
+    if (initialCopy) return;
     call({ op: 'status', locale }).then(j => setCopy(j.copy)).catch(e => setErr(e.code || 'unavailable'));
-  }, [locale]);
+  }, [locale, initialCopy]);
   useEffect(() => { if (copy && shareToken) run({ op: 'shared', r: shareToken }, { push: false }); /* eslint-disable-next-line react-hooks/exhaustive-deps */ }, [copy, shareToken]);
 
   const back = () => { const s = [...stack]; const prev = s.pop(); if (prev) { setStack(s); setView(prev); } };
