@@ -1,7 +1,7 @@
 {
  "counts": {
   "brochure_accepted": 17,
-  "fully_enriched": 0,
+  "fully_enriched": 1,
   "gallery_models": 35,
   "hero_accepted": 50,
   "hero_accepted_hq": 37,
@@ -14,7 +14,7 @@
   "price_source_dated": 152,
   "price_tier_a": 26,
   "specs_accepted": 187,
-  "warranty_accepted": 12
+  "warranty_accepted": 73
  },
  "generated_as_of": "2026-10-13",
  "inputs": {
@@ -1721,7 +1721,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -1867,7 +1866,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/avatr-11/65af84984974 | https://www.contactcars.com/en/new-cars/avatr-11/ab4b2521e09a | https://www.contactcars.com/en/new-cars/avatr-11/c9aae7d94998",
+     "unit": "",
+     "value": "5 years / 120000 km"
+    }
+   ]
   },
   {
    "brand": "Avatr",
@@ -1878,7 +1885,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -2050,7 +2056,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/avatr-12/0b0eb088eb20 | https://www.contactcars.com/en/new-cars/avatr-12/924d1eede9dc",
+     "unit": "",
+     "value": "5 years / 120000 km"
+    }
+   ]
   },
   {
    "brand": "BAIC",
@@ -2698,6 +2712,13 @@
      "source": "drive:1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta",
      "unit": "",
      "value": "7 years / 200000 km"
+    },
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/baic-x_55/4fa857e28011 | https://www.contactcars.com/en/new-cars/baic-x_55/d0aec17feef6 | https://www.contactcars.com/en/new-cars/baic-x_55/e94fe7227453",
+     "unit": "",
+     "value": "6 years / 150000 km"
     }
    ]
   },
@@ -3282,7 +3303,6 @@
     "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -3367,7 +3387,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/bmw-ix2/f04830dab161",
+     "unit": "",
+     "value": "5 years / 200000 km"
+    }
+   ]
   },
   {
    "brand": "BMW",
@@ -3579,7 +3607,6 @@
    "gallery": [],
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -3716,7 +3743,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/bmw-x1/a5613cfe6622 | https://www.contactcars.com/en/new-cars/bmw-x1/a6233af18aea",
+     "unit": "",
+     "value": "5 years / 200000 km"
+    }
+   ]
   },
   {
    "brand": "BMW",
@@ -3726,7 +3761,6 @@
    "gaps": [
     "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -3823,7 +3857,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/bmw-x2/b772d0b9bdf8",
+     "unit": "",
+     "value": "5 years / 200000 km"
+    }
+   ]
   },
   {
    "brand": "BMW",
@@ -3833,7 +3875,6 @@
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -4006,7 +4047,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/bmw-x5/2ca8302a6e3d | https://www.contactcars.com/en/new-cars/bmw-x5/4030fccfc140",
+     "unit": "",
+     "value": "5 years / 200000 km"
+    }
+   ]
   },
   {
    "brand": "BMW",
@@ -4016,7 +4065,6 @@
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -4189,7 +4237,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/bmw-x6/27e4e27147fc | https://www.contactcars.com/en/new-cars/bmw-x6/5ddb91116173",
+     "unit": "",
+     "value": "5 years / 200000 km"
+    }
+   ]
   },
   {
    "brand": "BMW",
@@ -5062,7 +5118,6 @@
    "gaps": [
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -5452,7 +5507,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/byd-sealion_6/0665da465892 | https://www.contactcars.com/en/new-cars/byd-sealion_6/0d8aa7a60482 | https://www.contactcars.com/en/new-cars/byd-sealion_6/0db2db58c4b1 | https://www.contactcars.com/en/new-cars/byd-sealion_6/2d043e04cf29 | https://www.contactcars.",
+     "unit": "",
+     "value": "6 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "BYD",
@@ -5463,7 +5526,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -5631,7 +5693,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/byd-ti7/72cd20acab13 | https://www.contactcars.com/en/new-cars/byd-ti7/bc320e3b3af8",
+     "unit": "",
+     "value": "6 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Cadillac",
@@ -5737,7 +5807,6 @@
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -5874,7 +5943,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/cadillac-vistiq/57796e1c45e1",
+     "unit": "",
+     "value": "6 years / 250000 km"
+    }
+   ]
   },
   {
    "brand": "Changan",
@@ -6371,7 +6448,6 @@
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -6620,7 +6696,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/changan-cs55_plus/77d013c47faf | https://www.contactcars.com/en/new-cars/changan-cs55_plus/9048e8cd589b",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Changan",
@@ -6764,7 +6848,6 @@
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -6991,7 +7074,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Changan",
@@ -7119,7 +7210,6 @@
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -7328,7 +7418,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Changan",
@@ -7338,7 +7436,6 @@
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -7551,7 +7648,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/changan-eado_plus/8ad2cc92df5d | https://www.contactcars.com/en/new-cars/changan-eado_plus/a9b14fac93dc | https://www.contactcars.com/en/new-cars/changan-eado_plus/af1ce14bbd16",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Changan",
@@ -7561,7 +7666,6 @@
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -7754,7 +7858,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/changan-uni_t/42ecaff78b50 | https://www.contactcars.com/en/new-cars/changan-uni_t/cbc5cefd9271",
+     "unit": "",
+     "value": "6 years / 250000 km"
+    }
+   ]
   },
   {
    "brand": "Changan",
@@ -8336,7 +8448,6 @@
    ],
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -8516,7 +8627,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/chery-arrizo_6_gt/f430539f6832 | https://www.contactcars.com/en/new-cars/chery-arrizo_6_gt/fcdbe1678c8d",
+     "unit": "",
+     "value": "5 years / 100000 km"
+    }
+   ]
   },
   {
    "brand": "Chery",
@@ -9466,7 +9585,6 @@
    ],
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -9696,7 +9814,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro/9f04d2ce6c8b | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro/ee4d1d933c6d",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Chery",
@@ -10129,7 +10255,6 @@
    ],
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -10332,7 +10457,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro_max/33feabfcd443 | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro_max/3b30f2ee5347 | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro_max/9ade8c2f410d | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro_max/b17ce20",
+     "unit": "",
+     "value": "6 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Chery",
@@ -10863,7 +10996,6 @@
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -10970,7 +11102,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/chevrolet-captiva_ev/b1a7a8b93754",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Chevrolet",
@@ -11462,6 +11602,13 @@
      "source": "drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM",
      "unit": "",
      "value": "5 years / 150000 km"
+    },
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/citroen-c3_aircross/b3a2e0ef19c5",
+     "unit": "",
+     "value": "5 years / 150000 km"
     }
    ]
   },
@@ -11924,6 +12071,13 @@
      "applicability": "all trims (CUPRA Egypt)",
      "issuer": "KAYAN Egypt",
      "source": "drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD",
+     "unit": "",
+     "value": "4 years / 120000 km"
+    },
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/cupra-formentor/248e920b2d28 | https://www.contactcars.com/en/new-cars/cupra-formentor/b8df1d32f2d6",
      "unit": "",
      "value": "4 years / 120000 km"
     }
@@ -12636,6 +12790,13 @@
      "source": "drive:1ICDxqqGw8_EQFD5vpR6kETXRopW5FU7h",
      "unit": "",
      "value": "6 years / 250000 km; REEV system 8 years / 250000 km"
+    },
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/deepal-g318/719d5f1cd642 | https://www.contactcars.com/en/new-cars/deepal-g318/85b6fa3af309",
+     "unit": "",
+     "value": "6 years / 250000 km"
     }
    ]
   },
@@ -12650,7 +12811,6 @@
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -12798,7 +12958,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/deepal-s05/0ce4d3799765 | https://www.contactcars.com/en/new-cars/deepal-s05/904e96d0417e",
+     "unit": "",
+     "value": "6 years / 250000 km"
+    }
+   ]
   },
   {
    "brand": "Deepal",
@@ -12812,7 +12980,6 @@
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -12965,7 +13132,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/deepal-s07/60c7541fc4d1 | https://www.contactcars.com/en/new-cars/deepal-s07/97aeea524a2f",
+     "unit": "",
+     "value": "6 years / 250000 km"
+    }
+   ]
   },
   {
    "brand": "DFSK",
@@ -12976,7 +13151,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -13101,7 +13275,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/dfsk-600/1f90aabbeb6c",
+     "unit": "",
+     "value": "7 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "DFSK",
@@ -13176,7 +13358,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -13301,7 +13482,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/dfsk-e5_plus/b17b1787dbab",
+     "unit": "",
+     "value": "7 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Dongfeng",
@@ -13573,7 +13762,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -13673,7 +13861,15 @@
     ]
    },
    "specs_accepted": false,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/dongfeng-box/a46b2dc3e5ee | https://www.contactcars.com/en/new-cars/dongfeng-box/c8225a6c63eb",
+     "unit": "",
+     "value": "6 years / 200000 km"
+    }
+   ]
   },
   {
    "brand": "Dongfeng",
@@ -13684,7 +13880,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -13820,7 +14015,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/dongfeng-mage/0f4750a9488b | https://www.contactcars.com/en/new-cars/dongfeng-mage/afc8c075891a",
+     "unit": "",
+     "value": "6 years / 200000 km"
+    }
+   ]
   },
   {
    "brand": "DS",
@@ -15152,7 +15355,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -15306,7 +15508,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/forthing-s7/0d6041f22452",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Forthing",
@@ -15685,7 +15895,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -15852,7 +16061,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/gac-empow/1a572e19abee | https://www.contactcars.com/en/new-cars/gac-empow/2337ad7d2484 | https://www.contactcars.com/en/new-cars/gac-empow/606ea55e8437",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "GAC",
@@ -15981,7 +16198,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -16115,7 +16331,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/gac-gs4_max/a4b7bf21eae9",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Geely",
@@ -17332,7 +17556,6 @@
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -17384,7 +17607,15 @@
     ]
    },
    "specs_accepted": false,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/geely-starray/263c3b4024fa | https://www.contactcars.com/en/new-cars/geely-starray/b74318c338fd | https://www.contactcars.com/en/new-cars/geely-starray/f309335d66a9 | https://www.contactcars.com/en/new-cars/geely-starray/feb663b9b3ba",
+     "unit": "",
+     "value": "7 years / 250000 km"
+    }
+   ]
   },
   {
    "brand": "Genesis",
@@ -17981,7 +18212,6 @@
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -18149,7 +18379,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/haval-jolion/3491c59e6adb | https://www.contactcars.com/en/new-cars/haval-jolion/807eec2131bb | https://www.contactcars.com/en/new-cars/haval-jolion/9050881a7249",
+     "unit": "",
+     "value": "5 years / 100000 km"
+    }
+   ]
   },
   {
    "brand": "Honda",
@@ -18697,7 +18935,6 @@
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -18893,7 +19130,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/hyundai-elantra_ad/1f35334b8d91 | https://www.contactcars.com/en/new-cars/hyundai-elantra_ad/29947ff1b96a | https://www.contactcars.com/en/new-cars/hyundai-elantra_ad/2b87218421e3 | https://www.contactcars.com/en/new-cars/hyundai-elantra_ad/33fc34a88eec | http",
+     "unit": "",
+     "value": "5 years / 100000 km"
+    }
+   ]
   },
   {
    "brand": "Hyundai",
@@ -19761,6 +20006,13 @@
      "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1",
      "unit": "",
      "value": "5 years / 100000 km"
+    },
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/hyundai-tucson/07b6ff51878a | https://www.contactcars.com/en/new-cars/hyundai-tucson/1c0aef2e9e29 | https://www.contactcars.com/en/new-cars/hyundai-tucson/1def13da17e4 | https://www.contactcars.com/en/new-cars/hyundai-tucson/2355eb50bb1e | https://www.contactc",
+     "unit": "",
+     "value": "5 years / 100000 km"
     }
    ]
   },
@@ -20372,7 +20624,6 @@
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -20538,7 +20789,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/jetour-dashing/05fc20afadbd | https://www.contactcars.com/en/new-cars/jetour-dashing/9504e286735c",
+     "unit": "",
+     "value": "6 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Jetour",
@@ -20713,7 +20972,6 @@
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -20884,7 +21142,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/jetour-t2/85762aa68bbd | https://www.contactcars.com/en/new-cars/jetour-t2/8b5111622905 | https://www.contactcars.com/en/new-cars/jetour-t2/df25efea26ee",
+     "unit": "",
+     "value": "6 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Jetour",
@@ -20908,7 +21174,6 @@
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -21084,7 +21349,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/jetour-x70___facelift/0b4092ed0cba | https://www.contactcars.com/en/new-cars/jetour-x70___facelift/3dbbfd3aa353",
+     "unit": "",
+     "value": "6 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Jetour",
@@ -21217,7 +21490,6 @@
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -21362,7 +21634,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/jetour-x90_plus/6c9a762048cc",
+     "unit": "",
+     "value": "6 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Kaiyi",
@@ -21516,7 +21796,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -21657,7 +21936,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/kaiyi-x7/ca1e9a72326e",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "KGM",
@@ -21668,7 +21955,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -21813,7 +22099,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/kgm-actyon/708750152a7b | https://www.contactcars.com/en/new-cars/kgm-actyon/e141d8266b45",
+     "unit": "",
+     "value": "5 years / 100000 km"
+    }
+   ]
   },
   {
    "brand": "KGM",
@@ -21827,7 +22121,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -21907,7 +22200,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/kgm-torres/20b5af5e54ef | https://www.contactcars.com/en/new-cars/kgm-torres/49c8e5f3cec0 | https://www.contactcars.com/en/new-cars/kgm-torres/552ecac4e835 | https://www.contactcars.com/en/new-cars/kgm-torres/61a525287552 | https://www.contactcars.com/en/new-c",
+     "unit": "",
+     "value": "5 years / 100000 km"
+    }
+   ]
   },
   {
    "brand": "Kia",
@@ -23069,7 +23370,6 @@
     }
    ],
    "gaps": [
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -23357,7 +23657,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/kia-seltos/13d31e9c7e57 | https://www.contactcars.com/en/new-cars/kia-seltos/e5b1c5af2e26 | https://www.contactcars.com/en/new-cars/kia-seltos/fd06107c991d",
+     "unit": "",
+     "value": "5 years / 100000 km"
+    }
+   ]
   },
   {
    "brand": "Kia",
@@ -23459,7 +23767,6 @@
    "gaps": [
     "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -23601,7 +23908,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/kia-sorento/272f0f849309",
+     "unit": "",
+     "value": "5 years / 100000 km"
+    }
+   ]
   },
   {
    "brand": "Kia",
@@ -23635,7 +23950,6 @@
    ],
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -23825,7 +24139,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/kia-sportage/10551a66837e | https://www.contactcars.com/en/new-cars/kia-sportage/1356a8313eac | https://www.contactcars.com/en/new-cars/kia-sportage/29efd96c8bed | https://www.contactcars.com/en/new-cars/kia-sportage/87e4907ffdaa | https://www.contactcars.com/",
+     "unit": "",
+     "value": "5 years / 100000 km"
+    }
+   ]
   },
   {
    "brand": "Lexus",
@@ -28124,7 +28446,6 @@
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -28308,7 +28629,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/nissan-juke/70055f43e394 | https://www.contactcars.com/en/new-cars/nissan-juke/8b612158efae | https://www.contactcars.com/en/new-cars/nissan-juke/947160b2daf2 | https://www.contactcars.com/en/new-cars/nissan-juke/b325e27e526e",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Nissan",
@@ -28488,7 +28817,6 @@
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -28733,7 +29061,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/nissan-magnite/2528862f5cb9 | https://www.contactcars.com/en/new-cars/nissan-magnite/2a1e39f52c6e | https://www.contactcars.com/en/new-cars/nissan-magnite/4056faeab047 | https://www.contactcars.com/en/new-cars/nissan-magnite/77d6e652b679",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Nissan",
@@ -29879,7 +30215,6 @@
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -30061,7 +30396,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/nissan-x_trail/aea663689509 | https://www.contactcars.com/en/new-cars/nissan-x_trail/c6449596621e | https://www.contactcars.com/en/new-cars/nissan-x_trail/e4b238f7cc7a",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Opel",
@@ -30072,7 +30415,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -30215,7 +30557,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/opel-corsa/c8abfec00ffa",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Opel",
@@ -30540,7 +30890,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -30674,7 +31023,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/opel-grand_land/136512896a09 | https://www.contactcars.com/en/new-cars/opel-grand_land/acf0e0469c29 | https://www.contactcars.com/en/new-cars/opel-grand_land/f462fff7468a",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Opel",
@@ -30903,7 +31260,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -31057,7 +31413,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/peugeot-3008/01e7892ddfeb | https://www.contactcars.com/en/new-cars/peugeot-3008/90b7dd90fa5d",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Peugeot",
@@ -31075,7 +31439,6 @@
    "gaps": [
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -31311,7 +31674,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/peugeot-408/20adeed008f0 | https://www.contactcars.com/en/new-cars/peugeot-408/782b64dde48d",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Peugeot",
@@ -32108,7 +32479,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -32264,7 +32634,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/renault-megane/174e9dfd6f34 | https://www.contactcars.com/en/new-cars/renault-megane/a1e7892e81cf | https://www.contactcars.com/en/new-cars/renault-megane/ba7691afe30c",
+     "unit": "",
+     "value": "3 years / 100000 km"
+    }
+   ]
   },
   {
    "brand": "Renault",
@@ -32338,7 +32716,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -32481,7 +32858,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/rox-01/c85b3e843232 | https://www.contactcars.com/en/new-cars/rox-01/f198fe1aa695",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "ROX",
@@ -33215,6 +33600,13 @@
      "source": "drive:1UaB-J_dPqnDHskEy_2EZfDpstNOuIqR6",
      "unit": "",
      "value": "5 years / 100000 km"
+    },
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/seat-leon/84affa42ebfc",
+     "unit": "",
+     "value": "5 years / 100000 km"
     }
    ]
   },
@@ -33369,7 +33761,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -33446,7 +33837,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/skoda-kodiaq/30ce97ca248d | https://www.contactcars.com/en/new-cars/skoda-kodiaq/3a1b2c16a7bd | https://www.contactcars.com/en/new-cars/skoda-kodiaq/ab2a65bc0d0b",
+     "unit": "",
+     "value": "5 years / 100000 km"
+    }
+   ]
   },
   {
    "brand": "Skoda",
@@ -33457,7 +33856,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -33590,7 +33988,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/skoda-octavia/1619646be3fb | https://www.contactcars.com/en/new-cars/skoda-octavia/39c29653c52d | https://www.contactcars.com/en/new-cars/skoda-octavia/cdf8cbac0c60",
+     "unit": "",
+     "value": "5 years / 100000 km"
+    }
+   ]
   },
   {
    "brand": "Skoda",
@@ -33603,7 +34009,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -33734,7 +34139,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/skoda-superb/8affd09ac12e | https://www.contactcars.com/en/new-cars/skoda-superb/a5c2a6b4f3bd | https://www.contactcars.com/en/new-cars/skoda-superb/df4ea8db77b5",
+     "unit": "",
+     "value": "5 years / 100000 km"
+    }
+   ]
   },
   {
    "brand": "Soueast",
@@ -33745,7 +34158,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -33897,7 +34309,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/soueast-s_05/b42d52629099",
+     "unit": "",
+     "value": "6 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Soueast",
@@ -33908,7 +34328,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -34134,7 +34553,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/soueast-s_06/1bab410868c6 | https://www.contactcars.com/en/new-cars/soueast-s_06/50166ab19c79 | https://www.contactcars.com/en/new-cars/soueast-s_06/7623c28b58a5",
+     "unit": "",
+     "value": "6 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Soueast",
@@ -34145,7 +34572,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -34311,7 +34737,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f | https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e",
+     "unit": "",
+     "value": "6 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Soueast",
@@ -34353,7 +34787,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -34487,7 +34920,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/soueast-s_09/b040f1133140",
+     "unit": "",
+     "value": "6 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Soueast",
@@ -35288,7 +35729,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -35404,7 +35844,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/toyota-bz4x/270ce3763c34 | https://www.contactcars.com/en/new-cars/toyota-bz4x/a767df779f46",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Toyota",
@@ -35414,7 +35862,6 @@
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -35606,7 +36053,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/toyota-corolla/0977e0f927a1 | https://www.contactcars.com/en/new-cars/toyota-corolla/3c706eba9fb1 | https://www.contactcars.com/en/new-cars/toyota-corolla/7153d54a7be9 | https://www.contactcars.com/en/new-cars/toyota-corolla/93109c3fa6c8 | https://www.contactc",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Toyota",
@@ -35617,7 +36072,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -35739,7 +36193,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/toyota-fortuner/a65a790d6b33",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Toyota",
@@ -35750,7 +36212,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -35913,7 +36374,15 @@
     ]
    },
    "specs_accepted": true,
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/toyota-urban_cruiser/1ce94a8ae146 | https://www.contactcars.com/en/new-cars/toyota-urban_cruiser/fc3c2dd6f7ee",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Vgv",

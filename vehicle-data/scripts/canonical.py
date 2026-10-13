@@ -375,6 +375,29 @@ def market_spec_facts():
         vals[(p1, a, v)][r["source"]].add(u)
         if r["source"] == "ContactCars" and r.get("trim_raw"):
             trims[(p1, a, v)].add(r["trim_raw"])
+    # warranty: ContactCars 'Basic Vehicle Warranty' text vs Hatla2ee years + km on trim pages of the same model
+    words = {"two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8, "ten": 10}
+    hy, hk = {}, {}
+    for r in read(os.path.join(snaps[-1], "specs_parsed.csv")):
+        u = r["trim_url"]
+        p1 = owner_of(own, u) if "contactcars" in u else own.get(u.rsplit("/", 1)[0])
+        if not p1:
+            continue
+        if r["spec_label"] == "Basic Vehicle Warranty":
+            t = r["value"].lower()
+            y = re.search(r"(\d+|two|three|four|five|six|seven|eight|ten)\s*(years?|سنوات|سنة)", t)
+            k = re.search(r"(\d[\d,]*)\s*(?:,000)?\s*(km|kms|ألف)", t)
+            if y and k:
+                yv = int(words.get(y.group(1), y.group(1)))
+                kv = int(k.group(1).replace(",", ""))
+                kv = kv * 1000 if kv < 1000 else kv
+                vals[(p1, "warranty", f"{yv} years / {kv} km")]["ContactCars"].add(u)
+        elif r["spec_label"] in ("Vehicle Warranty (Years)", "Vehicle Warranty (km)"):
+            (hy if "Years" in r["spec_label"] else hk).setdefault(u, r["value"].replace(",", "").strip())
+    for u, y in hy.items():
+        p1 = own.get(u.rsplit("/", 1)[0])
+        if p1 and y.isdigit() and hk.get(u, "").isdigit():
+            vals[(p1, "warranty", f"{int(y)} years / {int(hk[u])} km")]["Hatla2ee"].add(u)
     out = []
     for (p1, a, v), by in sorted(vals.items()):
         if {"ContactCars", "Hatla2ee"} <= set(by):
