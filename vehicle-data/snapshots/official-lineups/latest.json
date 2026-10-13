@@ -1,6 +1,6 @@
 {
   "schema": "carindex.p2.official-discovery/v1",
-  "observed_at": "2026-10-12T19:26:33Z",
+  "observed_at": "2026-10-13T00:21:51Z",
   "authority": "STAGE_ONLY",
   "llm_calls": 0,
   "sources": [
@@ -102,14 +102,14 @@
           "identity_state": "EXPLICIT_ALIAS"
         }
       ],
-      "sha256": "35b26469d7b58375d51c5c36ae482ba43269c055b680025297925fcaae958906"
+      "sha256": "959a5c5a4e5a538a3e2b82d1b7d414c6a0bc3719df40c6a845b8d108f09767e9"
     },
     {
       "url": "https://toyota.com.eg/ar/brochures",
       "brand": "Toyota",
       "status": "EMPTY_EXTRACTION",
       "models": [],
-      "sha256": "1596e859384b1b8280dc20e16be81373e741f6c630940812d4573a39774706af"
+      "sha256": "50d9be7bed8e2a3e7a7e9c42c69e77bce24120758b1acecf52a89e7103c6e4da"
     }
   ],
   "identity_source": {
@@ -121,8 +121,8 @@
     {
       "event": "OFFICIAL_PAGE_CHANGED",
       "source_url": "https://smart.ezzelarabstar.com/product-category/smart-5/",
-      "previous_sha256": "2be939fb34aca2e5a25fb80cad06286afd88157f5a96b0afaaad1dc90bf37b91",
-      "sha256": "35b26469d7b58375d51c5c36ae482ba43269c055b680025297925fcaae958906"
+      "previous_sha256": "35b26469d7b58375d51c5c36ae482ba43269c055b680025297925fcaae958906",
+      "sha256": "959a5c5a4e5a538a3e2b82d1b7d414c6a0bc3719df40c6a845b8d108f09767e9"
     },
     {
       "event": "SOURCE_HEALTH",
@@ -303,9 +303,9 @@
       "price_status": "UNKNOWN",
       "spec_status": "UNKNOWN",
       "authority": "STAGE_ONLY",
-      "sha256": "c6cb011294b91191a7a7973585355a24aba0f8930a15f8ebbbc7d40758fd8b58",
-      "bytes": 275865,
-      "evidence_file": "c6cb011294b91191a7a7973585355a24aba0f8930a15f8ebbbc7d40758fd8b58.html.gz"
+      "sha256": "92657938b74e720eef07bf1f9c5073241a0b4572e78cfc0ff26710dfb7588562",
+      "bytes": 275854,
+      "evidence_file": "92657938b74e720eef07bf1f9c5073241a0b4572e78cfc0ff26710dfb7588562.html.gz"
     },
     {
       "source_key": "qashqai",
@@ -359,9 +359,9 @@
       "price_status": "UNKNOWN",
       "spec_status": "UNKNOWN",
       "authority": "STAGE_ONLY",
-      "sha256": "c9f462599ae7a24de1eb6586cbc63bd473b9ea40e51f7ccae9ce6efc90717143",
+      "sha256": "bffc05b7260e100ba9d42b2309f44b4a1cb843521127c0d263d6ee36e882fc14",
       "bytes": 280748,
-      "evidence_file": "c9f462599ae7a24de1eb6586cbc63bd473b9ea40e51f7ccae9ce6efc90717143.html.gz"
+      "evidence_file": "bffc05b7260e100ba9d42b2309f44b4a1cb843521127c0d263d6ee36e882fc14.html.gz"
     },
     {
       "source_key": "1",
@@ -373,9 +373,9 @@
       "price_status": "UNKNOWN",
       "spec_status": "UNKNOWN",
       "authority": "STAGE_ONLY",
-      "sha256": "6345dae07a48a3166b62888d43be27f16c1e96bc6cb8631403fee44c6223cfc2",
+      "sha256": "dce67784049a48db1b84c24ca71c9ca8d925b0bc99204efdfeda63b0561bd7cc",
       "bytes": 498428,
-      "evidence_file": "6345dae07a48a3166b62888d43be27f16c1e96bc6cb8631403fee44c6223cfc2.html.gz"
+      "evidence_file": "dce67784049a48db1b84c24ca71c9ca8d925b0bc99204efdfeda63b0561bd7cc.html.gz"
     }
   ]
 }
