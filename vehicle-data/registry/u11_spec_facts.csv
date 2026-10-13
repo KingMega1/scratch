@@ -16,6 +16,21 @@ baic/x55,transmission,Dedicated Hybrid Transmission (DHT),,X55e Topline,Al-Kan A
 baic/x55,warranty,7 years / 200000 km,,X55e Topline,Al-Kan Auto,A,drive:1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta,ACCEPT,SP-1 Egypt brochure/price list
 baic/x55,wheelbase_mm,2735,mm,X55e Topline,Al-Kan Auto,A,drive:1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta,ACCEPT,SP-1 Egypt brochure/price list
 baic/x55,width_mm,1886,mm,X55e Topline,Al-Kan Auto,A,drive:1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta,ACCEPT,SP-1 Egypt brochure/price list
+bmw/ix3,accel_0_100_s,4.9,s,iX3 50 xDrive (new generation),Global Auto (BMW Egypt),A,drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx,ACCEPT,SP-1 Egypt brochure/price list
+bmw/ix3,battery_kwh,113.4,kWh gross,iX3 50 xDrive (new generation),Global Auto (BMW Egypt),A,drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx,ACCEPT,SP-1 Egypt brochure/price list
+bmw/ix3,boot_l,520,L,iX3 50 xDrive (new generation),Global Auto (BMW Egypt),A,drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx,ACCEPT,SP-1 Egypt brochure/price list
+bmw/ix3,boot_max_l,1750,L,iX3 50 xDrive (new generation),Global Auto (BMW Egypt),A,drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx,ACCEPT,SP-1 Egypt brochure/price list
+bmw/ix3,drive,"AWD (xDrive, dual motor)",,iX3 50 xDrive (new generation),Global Auto (BMW Egypt),A,drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx,ACCEPT,SP-1 Egypt brochure/price list
+bmw/ix3,energy_consumption_kwh100,15.1-18.1,kWh/100km combined,iX3 50 xDrive (new generation),Global Auto (BMW Egypt),A,drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx,ACCEPT,SP-1 Egypt brochure/price list
+bmw/ix3,ev_range_km,673-805,km WLTP,iX3 50 xDrive (new generation),Global Auto (BMW Egypt),A,drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx,ACCEPT,SP-1 Egypt brochure/price list
+bmw/ix3,ground_clearance_mm,176,mm,iX3 50 xDrive (new generation),Global Auto (BMW Egypt),A,drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx,ACCEPT,SP-1 Egypt brochure/price list
+bmw/ix3,kerb_weight_kg,2285,kg,iX3 50 xDrive (new generation),Global Auto (BMW Egypt),A,drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx,ACCEPT,SP-1 Egypt brochure/price list
+bmw/ix3,motor_power_kw,345,kW,iX3 50 xDrive (new generation),Global Auto (BMW Egypt),A,drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx,ACCEPT,SP-1 Egypt brochure/price list
+bmw/ix3,power_hp,469,hp,iX3 50 xDrive (new generation),Global Auto (BMW Egypt),A,drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx,ACCEPT,SP-1 Egypt brochure/price list
+bmw/ix3,powertrain_class,BEV,,iX3 50 xDrive (new generation),Global Auto (BMW Egypt),A,drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx,ACCEPT,SP-1 Egypt brochure/price list
+bmw/ix3,top_speed_kmh,210,km/h,iX3 50 xDrive (new generation),Global Auto (BMW Egypt),A,drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx,ACCEPT,SP-1 Egypt brochure/price list
+bmw/ix3,torque_nm,645,Nm,iX3 50 xDrive (new generation),Global Auto (BMW Egypt),A,drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx,ACCEPT,SP-1 Egypt brochure/price list
+bmw/ix3,warranty,extended warranty up to 5 years / 200000 km; free maintenance 3 years / 60000 km (terms apply),,iX3 50 xDrive (new generation),Global Auto (BMW Egypt),A,drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx,ACCEPT,SP-1 Egypt brochure/price list
 byd/atto-8,airbags,7,,DM-i Ultra,BYD Egypt,A,drive:1McudK_l0dYvIGO7wLpZjgbkllnZkj56s,ACCEPT,SP-1 Egypt brochure/price list
 byd/atto-8,battery_kwh,19,kWh (LFP Blade),DM-i Ultra,BYD Egypt,A,drive:1McudK_l0dYvIGO7wLpZjgbkllnZkj56s,ACCEPT,SP-1 Egypt brochure/price list
 byd/atto-8,boot_l,270,L (all rows up),DM-i Ultra,BYD Egypt,A,drive:1McudK_l0dYvIGO7wLpZjgbkllnZkj56s,ACCEPT,SP-1 Egypt brochure/price list
@@ -174,15 +189,55 @@ chery/tiggo-9,engine,1.5L T,,model page,chery_eg_web,A,https://www.chery-eg.com/
 chery/tiggo-9,fuel_tank_l,70,l,model page,chery_eg_web,A,https://www.chery-eg.com/en/car/tiggo-9,ACCEPT,SP-1 official Egypt page
 chery/tiggo-9,length_mm,4810,mm,model page,chery_eg_web,A,https://www.chery-eg.com/en/car/tiggo-9,ACCEPT,SP-1 official Egypt page
 chery/tiggo-9,wheelbase_mm,2800,mm,model page,chery_eg_web,A,https://www.chery-eg.com/en/car/tiggo-9,ACCEPT,SP-1 official Egypt page
+citroen/c3-aircross,airbags,4,,C3 Aircross Plus (MY2027),Citroën Egypt,A,drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM,ACCEPT,SP-1 Egypt brochure/price list
+citroen/c3-aircross,boot_l,460,L,C3 Aircross Plus (MY2027),Citroën Egypt,A,drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM,ACCEPT,SP-1 Egypt brochure/price list
+citroen/c3-aircross,boot_max_l,1600,L,C3 Aircross Plus (MY2027),Citroën Egypt,A,drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM,ACCEPT,SP-1 Egypt brochure/price list
+citroen/c3-aircross,engine,1.2L turbo,,C3 Aircross Plus (MY2027),Citroën Egypt,A,drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM,ACCEPT,SP-1 Egypt brochure/price list
+citroen/c3-aircross,fuel_tank_l,44,L,C3 Aircross Plus (MY2027),Citroën Egypt,A,drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM,ACCEPT,SP-1 Egypt brochure/price list
+citroen/c3-aircross,height_mm,1660,mm,C3 Aircross Plus (MY2027),Citroën Egypt,A,drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM,ACCEPT,SP-1 Egypt brochure/price list
+citroen/c3-aircross,length_mm,4395,mm,C3 Aircross Plus (MY2027),Citroën Egypt,A,drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM,ACCEPT,SP-1 Egypt brochure/price list
+citroen/c3-aircross,power_hp,130,hp @5500 rpm,C3 Aircross Plus (MY2027),Citroën Egypt,A,drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM,ACCEPT,SP-1 Egypt brochure/price list
+citroen/c3-aircross,torque_nm,230,Nm @2250 rpm,C3 Aircross Plus (MY2027),Citroën Egypt,A,drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM,ACCEPT,SP-1 Egypt brochure/price list
+citroen/c3-aircross,transmission,6-speed automatic,,C3 Aircross Plus (MY2027),Citroën Egypt,A,drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM,ACCEPT,SP-1 Egypt brochure/price list
+citroen/c3-aircross,warranty,5 years / 150000 km,,C3 Aircross Plus (MY2027),Citroën Egypt,A,drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM,ACCEPT,SP-1 Egypt brochure/price list
+citroen/c3-aircross,wheelbase_mm,2670,mm,C3 Aircross Plus (MY2027),Citroën Egypt,A,drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM,ACCEPT,SP-1 Egypt brochure/price list
+citroen/c3-aircross,wheels_in,17,in,C3 Aircross Plus (MY2027),Citroën Egypt,A,drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM,ACCEPT,SP-1 Egypt brochure/price list
+citroen/c3-aircross,width_mm,1795,mm,C3 Aircross Plus (MY2027),Citroën Egypt,A,drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM,ACCEPT,SP-1 Egypt brochure/price list
+cupra/formentor,accel_0_100_s,9.0,s,Formentor 1.5 TSI 150 HP MHEV,CUPRA Egypt,A,drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG,ACCEPT,SP-1 Egypt brochure/price list
+cupra/formentor,boot_l,450,L,Formentor 1.5 TSI 150 HP MHEV,CUPRA Egypt,A,drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG,ACCEPT,SP-1 Egypt brochure/price list
+cupra/formentor,engine_cc,1498,cc,Formentor 1.5 TSI 150 HP MHEV,CUPRA Egypt,A,drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG,ACCEPT,SP-1 Egypt brochure/price list
+cupra/formentor,fuel_consumption_l100,5.7-6.3,L/100km WLTP,Formentor 1.5 TSI 150 HP MHEV,CUPRA Egypt,A,drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG,ACCEPT,SP-1 Egypt brochure/price list
+cupra/formentor,fuel_tank_l,50,L,Formentor 1.5 TSI 150 HP MHEV,CUPRA Egypt,A,drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG,ACCEPT,SP-1 Egypt brochure/price list
+cupra/formentor,height_mm,1520,mm,Formentor 1.5 TSI 150 HP MHEV,CUPRA Egypt,A,drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG,ACCEPT,SP-1 Egypt brochure/price list
+cupra/formentor,kerb_weight_kg,1482,kg (with driver),Formentor 1.5 TSI 150 HP MHEV,CUPRA Egypt,A,drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG,ACCEPT,SP-1 Egypt brochure/price list
+cupra/formentor,length_mm,4451,mm,Formentor 1.5 TSI 150 HP MHEV,CUPRA Egypt,A,drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG,ACCEPT,SP-1 Egypt brochure/price list
 cupra/formentor,power_hp,150 | 265,hp,V1 1.5L | VZ 2.0L,KAYAN Egypt,A,drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD,ACCEPT,SP-1 Egypt brochure/price list
+cupra/formentor,top_speed_kmh,205,km/h,Formentor 1.5 TSI 150 HP MHEV,CUPRA Egypt,A,drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG,ACCEPT,SP-1 Egypt brochure/price list
 cupra/formentor,torque_nm,250 | 370,Nm,V1 1.5L | VZ 2.0L,KAYAN Egypt,A,drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD,ACCEPT,SP-1 Egypt brochure/price list
+cupra/formentor,transmission,7-speed DSG (MHEV),,Formentor 1.5 TSI 150 HP MHEV,CUPRA Egypt,A,drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG,ACCEPT,SP-1 Egypt brochure/price list
 cupra/formentor,warranty,4 years / 120000 km,,all trims (CUPRA Egypt),KAYAN Egypt,A,drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD,ACCEPT,SP-1 Egypt brochure/price list
+cupra/formentor,wheelbase_mm,2679,mm,Formentor 1.5 TSI 150 HP MHEV,CUPRA Egypt,A,drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG,ACCEPT,SP-1 Egypt brochure/price list
+cupra/formentor,width_mm,1839,mm,Formentor 1.5 TSI 150 HP MHEV,CUPRA Egypt,A,drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG,ACCEPT,SP-1 Egypt brochure/price list
 cupra/leon,power_hp,150,hp,V1 1.4L,KAYAN Egypt,A,drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD,ACCEPT,SP-1 Egypt brochure/price list
 cupra/leon,torque_nm,250,Nm,V1 1.4L,KAYAN Egypt,A,drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD,ACCEPT,SP-1 Egypt brochure/price list
 cupra/leon,warranty,4 years / 120000 km,,all trims (CUPRA Egypt),KAYAN Egypt,A,drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD,ACCEPT,SP-1 Egypt brochure/price list
 cupra/terramar,power_hp,150,hp,Impulse and Control 1.4L,KAYAN Egypt,A,drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD,ACCEPT,SP-1 Egypt brochure/price list
 cupra/terramar,torque_nm,250,Nm,Impulse and Control 1.4L,KAYAN Egypt,A,drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD,ACCEPT,SP-1 Egypt brochure/price list
 cupra/terramar,warranty,4 years / 120000 km,,all trims (CUPRA Egypt),KAYAN Egypt,A,drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD,ACCEPT,SP-1 Egypt brochure/price list
+exeed/lx,boot_l,351,L,LX (Comfort and Luxury),Natco,A,drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p,ACCEPT,SP-1 Egypt brochure/price list
+exeed/lx,boot_max_l,1174,L,LX (Comfort and Luxury),Natco,A,drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p,ACCEPT,SP-1 Egypt brochure/price list
+exeed/lx,drive,FWD,,LX (Comfort and Luxury),Natco,A,drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p,ACCEPT,SP-1 Egypt brochure/price list
+exeed/lx,engine,1.5T | 1.6T,,LX Comfort | LX Luxury,Natco,A,drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p,ACCEPT,SP-1 Egypt brochure/price list
+exeed/lx,fuel_tank_l,50,L,LX (Comfort and Luxury),Natco,A,drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p,ACCEPT,SP-1 Egypt brochure/price list
+exeed/lx,height_mm,1699,mm,LX (Comfort and Luxury),Natco,A,drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p,ACCEPT,SP-1 Egypt brochure/price list
+exeed/lx,length_mm,4533,mm,LX (Comfort and Luxury),Natco,A,drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p,ACCEPT,SP-1 Egypt brochure/price list
+exeed/lx,power_hp,145 | 184,hp,LX Comfort | LX Luxury,Natco,A,drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p,ACCEPT,SP-1 Egypt brochure/price list
+exeed/lx,seats,5,,LX (Comfort and Luxury),Natco,A,drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p,ACCEPT,SP-1 Egypt brochure/price list
+exeed/lx,torque_nm,230 | 290,Nm,LX Comfort | LX Luxury,Natco,A,drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p,ACCEPT,SP-1 Egypt brochure/price list
+exeed/lx,transmission,6DCT wet | 7DCT wet,,LX Comfort | LX Luxury,Natco,A,drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p,ACCEPT,SP-1 Egypt brochure/price list
+exeed/lx,wheelbase_mm,2670,mm,LX (Comfort and Luxury),Natco,A,drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p,ACCEPT,SP-1 Egypt brochure/price list
+exeed/lx,wheels_in,18 | 19,in,LX Comfort | LX Luxury,Natco,A,drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p,ACCEPT,SP-1 Egypt brochure/price list
+exeed/lx,width_mm,1848,mm,LX (Comfort and Luxury),Natco,A,drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p,ACCEPT,SP-1 Egypt brochure/price list
 geely/ex2,airbags,6,,EX2 (both trims),Abou Ghaly Motors,A,drive:1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-,ACCEPT,SP-1 Egypt brochure/price list
 geely/ex2,battery_kwh,39.4,kWh (LFP),EX2 (both trims),Abou Ghaly Motors,A,drive:1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-,ACCEPT,SP-1 Egypt brochure/price list
 geely/ex2,boot_l,375,L,EX2 (both trims),Abou Ghaly Motors,A,drive:1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-,ACCEPT,SP-1 Egypt brochure/price list
@@ -218,6 +273,18 @@ geely/ex5,width_mm,1905,mm,EX5 EM-i (Pro and Max),Abou Ghaly Motors,A,drive:1h0b
 jetour/t1,power_hp,184 hp,hp,Jetour T1 1.5L Turbo,jetour_eg_web,A,https://jetouregypt.com/models/T1/,ACCEPT,SP-1 official Egypt page
 jetour/t2,power_hp,184 hp,hp,Jetour T2 1.5L Turbo,jetour_eg_web,A,https://jetouregypt.com/models/T2/,ACCEPT,SP-1 official Egypt page
 jetour/t2,power_hp,254 hp,hp,Jetour T2 2.0L Turbo,jetour_eg_web,A,https://jetouregypt.com/models/T2/,ACCEPT,SP-1 official Egypt page
+kia/seltos,boot_l,460,L,"Seltos (all trims, Kia Egypt brochure)",KIA Egypt,A,drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_,ACCEPT,SP-1 Egypt brochure/price list
+kia/seltos,drive,FWD,,"Seltos (all trims, Kia Egypt brochure)",KIA Egypt,A,drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_,ACCEPT,SP-1 Egypt brochure/price list
+kia/seltos,engine_cc,1497 | 1382 turbo | 1382 turbo,cc,EX | HL-Turbo | TL-Turbo,KIA Egypt,A,drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_,ACCEPT,SP-1 Egypt brochure/price list
+kia/seltos,fuel_tank_l,50,L,"Seltos (all trims, Kia Egypt brochure)",KIA Egypt,A,drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_,ACCEPT,SP-1 Egypt brochure/price list
+kia/seltos,ground_clearance_mm,190,mm,"Seltos (all trims, Kia Egypt brochure)",KIA Egypt,A,drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_,ACCEPT,SP-1 Egypt brochure/price list
+kia/seltos,height_mm,1620,mm,"Seltos (all trims, Kia Egypt brochure)",KIA Egypt,A,drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_,ACCEPT,SP-1 Egypt brochure/price list
+kia/seltos,length_mm,4385,mm,"Seltos (all trims, Kia Egypt brochure)",KIA Egypt,A,drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_,ACCEPT,SP-1 Egypt brochure/price list
+kia/seltos,power_hp,115 | 140 | 140,hp,EX | HL-Turbo | TL-Turbo,KIA Egypt,A,drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_,ACCEPT,SP-1 Egypt brochure/price list
+kia/seltos,torque_nm,145 | 247 | 247,Nm,EX | HL-Turbo | TL-Turbo,KIA Egypt,A,drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_,ACCEPT,SP-1 Egypt brochure/price list
+kia/seltos,transmission,IVT | 7DCT | 7DCT,,EX | HL-Turbo | TL-Turbo,KIA Egypt,A,drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_,ACCEPT,SP-1 Egypt brochure/price list
+kia/seltos,wheelbase_mm,2630,mm,"Seltos (all trims, Kia Egypt brochure)",KIA Egypt,A,drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_,ACCEPT,SP-1 Egypt brochure/price list
+kia/seltos,width_mm,1800,mm,"Seltos (all trims, Kia Egypt brochure)",KIA Egypt,A,drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_,ACCEPT,SP-1 Egypt brochure/price list
 mg/5,airbags,2,count,Classic,mg_eg_web,A,https://www.mgmotor.com.eg/model/mg5/,ACCEPT,SP-1 official Egypt page
 mg/5,airbags,2,count,Comfort,mg_eg_web,A,https://www.mgmotor.com.eg/model/mg5/,ACCEPT,SP-1 official Egypt page
 mg/5,airbags,6,count,Luxury,mg_eg_web,A,https://www.mgmotor.com.eg/model/mg5/,ACCEPT,SP-1 official Egypt page
@@ -377,8 +444,46 @@ nissan/patrol,fuel_type,Petrol,,grade-scoped (one grade shown),nissan_eg_web,A,h
 nissan/patrol,wheelbase_mm,3075,mm,grade-scoped (one grade shown),nissan_eg_web,A,https://en.nissan.com.eg/vehicles/new/allnewpatrol/specifications.html,ACCEPT,SP-1 official Egypt page
 nissan/x-trail,fuel_type,Petrol / Electric,,grade-scoped (one grade shown),nissan_eg_web,A,https://en.nissan.com.eg/vehicles/new/x-trail/specifications.html,ACCEPT,SP-1 official Egypt page
 nissan/x-trail,seats,5,count,grade-scoped (one grade shown),nissan_eg_web,A,https://en.nissan.com.eg/vehicles/new/x-trail/specifications.html,ACCEPT,SP-1 official Egypt page
+opel/frontera,airbags,6,,Frontera 1.2T,Al Mansour Automotive,A,drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q,ACCEPT,SP-1 Egypt brochure/price list
+opel/frontera,boot_l,460,L (5 seats),Frontera 1.2T,Al Mansour Automotive,A,drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q,ACCEPT,SP-1 Egypt brochure/price list
+opel/frontera,boot_max_l,1600,L (2 seats),Frontera 1.2T,Al Mansour Automotive,A,drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q,ACCEPT,SP-1 Egypt brochure/price list
+opel/frontera,engine,1.2L turbo 3-cylinder,,Frontera 1.2T,Al Mansour Automotive,A,drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q,ACCEPT,SP-1 Egypt brochure/price list
+opel/frontera,fuel_consumption_l100,6.1,L/100km (cycle not stated),Frontera 1.2T,Al Mansour Automotive,A,drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q,ACCEPT,SP-1 Egypt brochure/price list
+opel/frontera,fuel_tank_l,44,L,Frontera 1.2T,Al Mansour Automotive,A,drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q,ACCEPT,SP-1 Egypt brochure/price list
+opel/frontera,height_mm,1627,mm,Frontera 1.2T,Al Mansour Automotive,A,drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q,ACCEPT,SP-1 Egypt brochure/price list
+opel/frontera,length_mm,4385,mm,Frontera 1.2T,Al Mansour Automotive,A,drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q,ACCEPT,SP-1 Egypt brochure/price list
+opel/frontera,power_hp,130,hp,Frontera 1.2T,Al Mansour Automotive,A,drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q,ACCEPT,SP-1 Egypt brochure/price list
+opel/frontera,seats,7,,Frontera 1.2T,Al Mansour Automotive,A,drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q,ACCEPT,SP-1 Egypt brochure/price list
+opel/frontera,top_speed_kmh,190,km/h,Frontera 1.2T,Al Mansour Automotive,A,drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q,ACCEPT,SP-1 Egypt brochure/price list
+opel/frontera,torque_nm,230,Nm,Frontera 1.2T,Al Mansour Automotive,A,drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q,ACCEPT,SP-1 Egypt brochure/price list
+opel/frontera,transmission,6-speed automatic,,Frontera 1.2T,Al Mansour Automotive,A,drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q,ACCEPT,SP-1 Egypt brochure/price list
+opel/frontera,wheelbase_mm,2670,mm,Frontera 1.2T,Al Mansour Automotive,A,drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q,ACCEPT,SP-1 Egypt brochure/price list
+opel/frontera,width_mm,1795,mm,Frontera 1.2T,Al Mansour Automotive,A,drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q,ACCEPT,SP-1 Egypt brochure/price list
+peugeot/408,airbags,6,,New 408 FL (Allure and GT),Peugeot Egypt,A,drive:1HKD_rYBpzLfbLBwqbbIu8iPSwS-G51Te,ACCEPT,SP-1 Egypt brochure/price list
+peugeot/408,boot_l,536,L,New 408 FL (Allure and GT),Peugeot Egypt,A,drive:1HKD_rYBpzLfbLBwqbbIu8iPSwS-G51Te,ACCEPT,SP-1 Egypt brochure/price list
+peugeot/408,boot_max_l,1611,L,New 408 FL (Allure and GT),Peugeot Egypt,A,drive:1HKD_rYBpzLfbLBwqbbIu8iPSwS-G51Te,ACCEPT,SP-1 Egypt brochure/price list
+peugeot/408,engine,1.6 THP,,New 408 FL (Allure and GT),Peugeot Egypt,A,drive:1HKD_rYBpzLfbLBwqbbIu8iPSwS-G51Te,ACCEPT,SP-1 Egypt brochure/price list
+peugeot/408,ground_clearance_mm,189,mm,New 408 FL (Allure and GT),Peugeot Egypt,A,drive:1HKD_rYBpzLfbLBwqbbIu8iPSwS-G51Te,ACCEPT,SP-1 Egypt brochure/price list
+peugeot/408,power_hp,215,hp @5500 rpm,New 408 FL (Allure and GT),Peugeot Egypt,A,drive:1HKD_rYBpzLfbLBwqbbIu8iPSwS-G51Te,ACCEPT,SP-1 Egypt brochure/price list
+peugeot/408,torque_nm,300,Nm @2000 rpm,New 408 FL (Allure and GT),Peugeot Egypt,A,drive:1HKD_rYBpzLfbLBwqbbIu8iPSwS-G51Te,ACCEPT,SP-1 Egypt brochure/price list
+peugeot/408,transmission,8-speed automatic,,New 408 FL (Allure and GT),Peugeot Egypt,A,drive:1HKD_rYBpzLfbLBwqbbIu8iPSwS-G51Te,ACCEPT,SP-1 Egypt brochure/price list
+peugeot/408,wheels_in,18,in,New 408 FL (Allure and GT),Peugeot Egypt,A,drive:1HKD_rYBpzLfbLBwqbbIu8iPSwS-G51Te,ACCEPT,SP-1 Egypt brochure/price list
 seat/arona,warranty,5 years / 100000 km,,all trims (SEAT Egypt),KAYAN Egypt,A,drive:1UaB-J_dPqnDHskEy_2EZfDpstNOuIqR6,ACCEPT,SP-1 Egypt brochure/price list
+seat/ibiza,accel_0_100_s,10.8,s,Ibiza FR 1.6 MPI,SEAT Egypt,A,drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW,ACCEPT,SP-1 Egypt brochure/price list
+seat/ibiza,airbags,6,,Ibiza FR 1.6 MPI,SEAT Egypt,A,drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW,ACCEPT,SP-1 Egypt brochure/price list
+seat/ibiza,boot_l,355,L,Ibiza FR 1.6 MPI,SEAT Egypt,A,drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW,ACCEPT,SP-1 Egypt brochure/price list
+seat/ibiza,engine,1.6L MPI,,Ibiza FR 1.6 MPI,SEAT Egypt,A,drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW,ACCEPT,SP-1 Egypt brochure/price list
+seat/ibiza,fuel_consumption_l100,6.8,L/100km combined,Ibiza FR 1.6 MPI,SEAT Egypt,A,drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW,ACCEPT,SP-1 Egypt brochure/price list
+seat/ibiza,fuel_tank_l,40,L,Ibiza FR 1.6 MPI,SEAT Egypt,A,drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW,ACCEPT,SP-1 Egypt brochure/price list
+seat/ibiza,height_mm,1447,mm,Ibiza FR 1.6 MPI,SEAT Egypt,A,drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW,ACCEPT,SP-1 Egypt brochure/price list
+seat/ibiza,kerb_weight_kg,1166,kg (with driver),Ibiza FR 1.6 MPI,SEAT Egypt,A,drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW,ACCEPT,SP-1 Egypt brochure/price list
+seat/ibiza,length_mm,4059,mm,Ibiza FR 1.6 MPI,SEAT Egypt,A,drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW,ACCEPT,SP-1 Egypt brochure/price list
+seat/ibiza,power_hp,110,hp @5800 rpm,Ibiza FR 1.6 MPI,SEAT Egypt,A,drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW,ACCEPT,SP-1 Egypt brochure/price list
+seat/ibiza,top_speed_kmh,190,km/h,Ibiza FR 1.6 MPI,SEAT Egypt,A,drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW,ACCEPT,SP-1 Egypt brochure/price list
+seat/ibiza,torque_nm,152,Nm @3850-4100 rpm,Ibiza FR 1.6 MPI,SEAT Egypt,A,drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW,ACCEPT,SP-1 Egypt brochure/price list
+seat/ibiza,transmission,6-speed automatic,,Ibiza FR 1.6 MPI,SEAT Egypt,A,drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW,ACCEPT,SP-1 Egypt brochure/price list
 seat/ibiza,warranty,5 years / 100000 km,,all trims (SEAT Egypt),KAYAN Egypt,A,drive:1UaB-J_dPqnDHskEy_2EZfDpstNOuIqR6,ACCEPT,SP-1 Egypt brochure/price list
+seat/ibiza,width_mm,1780,mm,Ibiza FR 1.6 MPI,SEAT Egypt,A,drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW,ACCEPT,SP-1 Egypt brochure/price list
 seat/leon,warranty,5 years / 100000 km,,all trims (SEAT Egypt),KAYAN Egypt,A,drive:1UaB-J_dPqnDHskEy_2EZfDpstNOuIqR6,ACCEPT,SP-1 Egypt brochure/price list
 toyota/corolla,power_hp,96 HP(Engine) & 93 HP(HEV Motor),hp,Corolla Hybrid,toyota_eg_web,A,https://toyota.com.eg/en/models/toyota-corolla-hybrid,ACCEPT,SP-1 official Egypt page
 toyota/corolla,power_hp,120 HP/ 6000 RPM,hp,model page,toyota_eg_web,A,https://toyota.com.eg/en/models/corolla,ACCEPT,SP-1 official Egypt page

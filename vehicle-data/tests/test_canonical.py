@@ -103,6 +103,18 @@ class Canonical(unittest.TestCase):
                 self.assertEqual(e[k], o[k], (e["p1_id"], k))
         self.assertEqual(r["excluded"], rc1["excluded"])
 
+    def test_registry_csvs_well_formed(self):
+        for p in ("registry/brochures.csv", "registry/spec_facts.csv", "registry/price_evidence_manual.csv",
+                  "registry/media_accepted.csv"):
+            for r in rd(p):
+                self.assertNotIn(None, r, p)
+
+    def test_accepted_facts_have_egypt_source(self):
+        bro = {r["drive_id"]: r["status"] for r in rd("registry/brochures.csv")}
+        for r in rd("registry/spec_facts.csv"):
+            if r["status"] == "ACCEPT":
+                self.assertIn(bro.get(r["source_drive_id"]), ("ACCEPT", "ACCEPT_PRICE_LIST"), r)
+
     def test_unknown_specs_not_invented(self):
         for m in self.canon["models"]:
             self.assertIsNone(m["generation"])

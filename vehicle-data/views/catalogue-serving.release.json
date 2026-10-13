@@ -22,9 +22,9 @@
       "price_tier_a": 26,
       "price_source_dated": 152,
       "market_status_official": 37,
-      "specs_accepted": 33,
-      "warranty_accepted": 8,
-      "brochure_accepted": 7,
+      "specs_accepted": 41,
+      "warranty_accepted": 10,
+      "brochure_accepted": 15,
       "hero_accepted": 0,
       "logo_accepted": 0,
       "fully_enriched": 0
@@ -2520,11 +2520,8 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -2552,9 +2549,152 @@
             }
           ]
         },
-        "specs": null,
-        "warranty": null,
-        "brochures": [],
+        "specs": {
+          "accel_0_100_s": [
+            {
+              "value": "4.9",
+              "unit": "s",
+              "applicability": "iX3 50 xDrive (new generation)",
+              "issuer": "Global Auto (BMW Egypt)",
+              "source": "drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx"
+            }
+          ],
+          "battery_kwh": [
+            {
+              "value": "113.4",
+              "unit": "kWh gross",
+              "applicability": "iX3 50 xDrive (new generation)",
+              "issuer": "Global Auto (BMW Egypt)",
+              "source": "drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx"
+            }
+          ],
+          "boot_l": [
+            {
+              "value": "520",
+              "unit": "L",
+              "applicability": "iX3 50 xDrive (new generation)",
+              "issuer": "Global Auto (BMW Egypt)",
+              "source": "drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx"
+            }
+          ],
+          "boot_max_l": [
+            {
+              "value": "1750",
+              "unit": "L",
+              "applicability": "iX3 50 xDrive (new generation)",
+              "issuer": "Global Auto (BMW Egypt)",
+              "source": "drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx"
+            }
+          ],
+          "drive": [
+            {
+              "value": "AWD (xDrive, dual motor)",
+              "unit": "",
+              "applicability": "iX3 50 xDrive (new generation)",
+              "issuer": "Global Auto (BMW Egypt)",
+              "source": "drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx"
+            }
+          ],
+          "energy_consumption_kwh100": [
+            {
+              "value": "15.1-18.1",
+              "unit": "kWh/100km combined",
+              "applicability": "iX3 50 xDrive (new generation)",
+              "issuer": "Global Auto (BMW Egypt)",
+              "source": "drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx"
+            }
+          ],
+          "ev_range_km": [
+            {
+              "value": "673-805",
+              "unit": "km WLTP",
+              "applicability": "iX3 50 xDrive (new generation)",
+              "issuer": "Global Auto (BMW Egypt)",
+              "source": "drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "176",
+              "unit": "mm",
+              "applicability": "iX3 50 xDrive (new generation)",
+              "issuer": "Global Auto (BMW Egypt)",
+              "source": "drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx"
+            }
+          ],
+          "kerb_weight_kg": [
+            {
+              "value": "2285",
+              "unit": "kg",
+              "applicability": "iX3 50 xDrive (new generation)",
+              "issuer": "Global Auto (BMW Egypt)",
+              "source": "drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx"
+            }
+          ],
+          "motor_power_kw": [
+            {
+              "value": "345",
+              "unit": "kW",
+              "applicability": "iX3 50 xDrive (new generation)",
+              "issuer": "Global Auto (BMW Egypt)",
+              "source": "drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "469",
+              "unit": "hp",
+              "applicability": "iX3 50 xDrive (new generation)",
+              "issuer": "Global Auto (BMW Egypt)",
+              "source": "drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "BEV",
+              "unit": "",
+              "applicability": "iX3 50 xDrive (new generation)",
+              "issuer": "Global Auto (BMW Egypt)",
+              "source": "drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx"
+            }
+          ],
+          "top_speed_kmh": [
+            {
+              "value": "210",
+              "unit": "km/h",
+              "applicability": "iX3 50 xDrive (new generation)",
+              "issuer": "Global Auto (BMW Egypt)",
+              "source": "drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "645",
+              "unit": "Nm",
+              "applicability": "iX3 50 xDrive (new generation)",
+              "issuer": "Global Auto (BMW Egypt)",
+              "source": "drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "extended warranty up to 5 years / 200000 km; free maintenance 3 years / 60000 km (terms apply)",
+            "unit": "",
+            "applicability": "iX3 50 xDrive (new generation)",
+            "issuer": "Global Auto (BMW Egypt)",
+            "source": "drive:1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx"
+          }
+        ],
+        "brochures": [
+          {
+            "drive_id": "1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx",
+            "title": "The New BMW iX3 Brochure.pdf",
+            "issuer": "Global Auto (BMW Egypt importer)",
+            "scope": "iX3 50 xDrive (new generation) only",
+            "url": "https://drive.google.com/file/d/1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx/view"
+          }
+        ],
         "logo": null,
         "hero_image": null,
         "gallery": [],
@@ -6741,19 +6881,150 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
-        "warranty": null,
-        "brochures": [],
+        "specs": {
+          "airbags": [
+            {
+              "value": "4",
+              "unit": "",
+              "applicability": "C3 Aircross Plus (MY2027)",
+              "issuer": "Citroën Egypt",
+              "source": "drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM"
+            }
+          ],
+          "boot_l": [
+            {
+              "value": "460",
+              "unit": "L",
+              "applicability": "C3 Aircross Plus (MY2027)",
+              "issuer": "Citroën Egypt",
+              "source": "drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM"
+            }
+          ],
+          "boot_max_l": [
+            {
+              "value": "1600",
+              "unit": "L",
+              "applicability": "C3 Aircross Plus (MY2027)",
+              "issuer": "Citroën Egypt",
+              "source": "drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM"
+            }
+          ],
+          "engine": [
+            {
+              "value": "1.2L turbo",
+              "unit": "",
+              "applicability": "C3 Aircross Plus (MY2027)",
+              "issuer": "Citroën Egypt",
+              "source": "drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "44",
+              "unit": "L",
+              "applicability": "C3 Aircross Plus (MY2027)",
+              "issuer": "Citroën Egypt",
+              "source": "drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1660",
+              "unit": "mm",
+              "applicability": "C3 Aircross Plus (MY2027)",
+              "issuer": "Citroën Egypt",
+              "source": "drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4395",
+              "unit": "mm",
+              "applicability": "C3 Aircross Plus (MY2027)",
+              "issuer": "Citroën Egypt",
+              "source": "drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "130",
+              "unit": "hp @5500 rpm",
+              "applicability": "C3 Aircross Plus (MY2027)",
+              "issuer": "Citroën Egypt",
+              "source": "drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "230",
+              "unit": "Nm @2250 rpm",
+              "applicability": "C3 Aircross Plus (MY2027)",
+              "issuer": "Citroën Egypt",
+              "source": "drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "6-speed automatic",
+              "unit": "",
+              "applicability": "C3 Aircross Plus (MY2027)",
+              "issuer": "Citroën Egypt",
+              "source": "drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2670",
+              "unit": "mm",
+              "applicability": "C3 Aircross Plus (MY2027)",
+              "issuer": "Citroën Egypt",
+              "source": "drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM"
+            }
+          ],
+          "wheels_in": [
+            {
+              "value": "17",
+              "unit": "in",
+              "applicability": "C3 Aircross Plus (MY2027)",
+              "issuer": "Citroën Egypt",
+              "source": "drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1795",
+              "unit": "mm",
+              "applicability": "C3 Aircross Plus (MY2027)",
+              "issuer": "Citroën Egypt",
+              "source": "drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "5 years / 150000 km",
+            "unit": "",
+            "applicability": "C3 Aircross Plus (MY2027)",
+            "issuer": "Citroën Egypt",
+            "source": "drive:16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM"
+          }
+        ],
+        "brochures": [
+          {
+            "drive_id": "16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM",
+            "title": "NEW CITROËN C3 AIRCROSS 2027.pdf",
+            "issuer": "Citroën Egypt",
+            "scope": "C3 Aircross Plus (MY2027)",
+            "url": "https://drive.google.com/file/d/16EPhjwzmpIPTrx7v3SLZHNCDk0zHLRCM/view"
+          }
+        ],
         "logo": null,
         "hero_image": null,
         "gallery": [],
@@ -6995,8 +7266,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
         "GENERATION_UNKNOWN"
@@ -7038,6 +7307,78 @@
           ]
         },
         "specs": {
+          "accel_0_100_s": [
+            {
+              "value": "9.0",
+              "unit": "s",
+              "applicability": "Formentor 1.5 TSI 150 HP MHEV",
+              "issuer": "CUPRA Egypt",
+              "source": "drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG"
+            }
+          ],
+          "boot_l": [
+            {
+              "value": "450",
+              "unit": "L",
+              "applicability": "Formentor 1.5 TSI 150 HP MHEV",
+              "issuer": "CUPRA Egypt",
+              "source": "drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "1498",
+              "unit": "cc",
+              "applicability": "Formentor 1.5 TSI 150 HP MHEV",
+              "issuer": "CUPRA Egypt",
+              "source": "drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG"
+            }
+          ],
+          "fuel_consumption_l100": [
+            {
+              "value": "5.7-6.3",
+              "unit": "L/100km WLTP",
+              "applicability": "Formentor 1.5 TSI 150 HP MHEV",
+              "issuer": "CUPRA Egypt",
+              "source": "drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "50",
+              "unit": "L",
+              "applicability": "Formentor 1.5 TSI 150 HP MHEV",
+              "issuer": "CUPRA Egypt",
+              "source": "drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1520",
+              "unit": "mm",
+              "applicability": "Formentor 1.5 TSI 150 HP MHEV",
+              "issuer": "CUPRA Egypt",
+              "source": "drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG"
+            }
+          ],
+          "kerb_weight_kg": [
+            {
+              "value": "1482",
+              "unit": "kg (with driver)",
+              "applicability": "Formentor 1.5 TSI 150 HP MHEV",
+              "issuer": "CUPRA Egypt",
+              "source": "drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4451",
+              "unit": "mm",
+              "applicability": "Formentor 1.5 TSI 150 HP MHEV",
+              "issuer": "CUPRA Egypt",
+              "source": "drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG"
+            }
+          ],
           "power_hp": [
             {
               "value": "150 | 265",
@@ -7047,6 +7388,15 @@
               "source": "drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD"
             }
           ],
+          "top_speed_kmh": [
+            {
+              "value": "205",
+              "unit": "km/h",
+              "applicability": "Formentor 1.5 TSI 150 HP MHEV",
+              "issuer": "CUPRA Egypt",
+              "source": "drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG"
+            }
+          ],
           "torque_nm": [
             {
               "value": "250 | 370",
@@ -7054,6 +7404,33 @@
               "applicability": "V1 1.5L | VZ 2.0L",
               "issuer": "KAYAN Egypt",
               "source": "drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "7-speed DSG (MHEV)",
+              "unit": "",
+              "applicability": "Formentor 1.5 TSI 150 HP MHEV",
+              "issuer": "CUPRA Egypt",
+              "source": "drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2679",
+              "unit": "mm",
+              "applicability": "Formentor 1.5 TSI 150 HP MHEV",
+              "issuer": "CUPRA Egypt",
+              "source": "drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1839",
+              "unit": "mm",
+              "applicability": "Formentor 1.5 TSI 150 HP MHEV",
+              "issuer": "CUPRA Egypt",
+              "source": "drive:1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG"
             }
           ]
         },
@@ -7066,7 +7443,15 @@
             "source": "drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": "1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG",
+            "title": "CUPRA FORMENTOR - Catalogue - MY2026.pdf.pdf",
+            "issuer": "CUPRA Egypt (KAYAN)",
+            "scope": "Formentor 1.5 TSI 150 HP MHEV (V1) MY2026",
+            "url": "https://drive.google.com/file/d/1DFHuZRhyI9DSF6yMxSZ4l7YRC6G0euuG/view"
+          }
+        ],
         "logo": null,
         "hero_image": null,
         "gallery": [],
@@ -8308,8 +8693,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
         "NO_VERIFIED_WARRANTY",
@@ -8340,9 +8723,144 @@
             }
           ]
         },
-        "specs": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "351",
+              "unit": "L",
+              "applicability": "LX (Comfort and Luxury)",
+              "issuer": "Natco",
+              "source": "drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p"
+            }
+          ],
+          "boot_max_l": [
+            {
+              "value": "1174",
+              "unit": "L",
+              "applicability": "LX (Comfort and Luxury)",
+              "issuer": "Natco",
+              "source": "drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p"
+            }
+          ],
+          "drive": [
+            {
+              "value": "FWD",
+              "unit": "",
+              "applicability": "LX (Comfort and Luxury)",
+              "issuer": "Natco",
+              "source": "drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p"
+            }
+          ],
+          "engine": [
+            {
+              "value": "1.5T | 1.6T",
+              "unit": "",
+              "applicability": "LX Comfort | LX Luxury",
+              "issuer": "Natco",
+              "source": "drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "50",
+              "unit": "L",
+              "applicability": "LX (Comfort and Luxury)",
+              "issuer": "Natco",
+              "source": "drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1699",
+              "unit": "mm",
+              "applicability": "LX (Comfort and Luxury)",
+              "issuer": "Natco",
+              "source": "drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4533",
+              "unit": "mm",
+              "applicability": "LX (Comfort and Luxury)",
+              "issuer": "Natco",
+              "source": "drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "145 | 184",
+              "unit": "hp",
+              "applicability": "LX Comfort | LX Luxury",
+              "issuer": "Natco",
+              "source": "drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "LX (Comfort and Luxury)",
+              "issuer": "Natco",
+              "source": "drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "230 | 290",
+              "unit": "Nm",
+              "applicability": "LX Comfort | LX Luxury",
+              "issuer": "Natco",
+              "source": "drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "6DCT wet | 7DCT wet",
+              "unit": "",
+              "applicability": "LX Comfort | LX Luxury",
+              "issuer": "Natco",
+              "source": "drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2670",
+              "unit": "mm",
+              "applicability": "LX (Comfort and Luxury)",
+              "issuer": "Natco",
+              "source": "drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p"
+            }
+          ],
+          "wheels_in": [
+            {
+              "value": "18 | 19",
+              "unit": "in",
+              "applicability": "LX Comfort | LX Luxury",
+              "issuer": "Natco",
+              "source": "drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1848",
+              "unit": "mm",
+              "applicability": "LX (Comfort and Luxury)",
+              "issuer": "Natco",
+              "source": "drive:1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p"
+            }
+          ]
+        },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": "1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p",
+            "title": "Exeed LX Brochure(Vertical).pdf",
+            "issuer": "Natco (EXEED Egypt)",
+            "scope": "LX (Comfort | Luxury)",
+            "url": "https://drive.google.com/file/d/1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p/view"
+          }
+        ],
         "logo": null,
         "hero_image": null,
         "gallery": [],
@@ -13673,8 +14191,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
         "NO_VERIFIED_WARRANTY",
@@ -13727,9 +14243,126 @@
             }
           ]
         },
-        "specs": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "460",
+              "unit": "L",
+              "applicability": "Seltos (all trims, Kia Egypt brochure)",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_"
+            }
+          ],
+          "drive": [
+            {
+              "value": "FWD",
+              "unit": "",
+              "applicability": "Seltos (all trims, Kia Egypt brochure)",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "1497 | 1382 turbo | 1382 turbo",
+              "unit": "cc",
+              "applicability": "EX | HL-Turbo | TL-Turbo",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "50",
+              "unit": "L",
+              "applicability": "Seltos (all trims, Kia Egypt brochure)",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "190",
+              "unit": "mm",
+              "applicability": "Seltos (all trims, Kia Egypt brochure)",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1620",
+              "unit": "mm",
+              "applicability": "Seltos (all trims, Kia Egypt brochure)",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4385",
+              "unit": "mm",
+              "applicability": "Seltos (all trims, Kia Egypt brochure)",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "115 | 140 | 140",
+              "unit": "hp",
+              "applicability": "EX | HL-Turbo | TL-Turbo",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "145 | 247 | 247",
+              "unit": "Nm",
+              "applicability": "EX | HL-Turbo | TL-Turbo",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "IVT | 7DCT | 7DCT",
+              "unit": "",
+              "applicability": "EX | HL-Turbo | TL-Turbo",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2630",
+              "unit": "mm",
+              "applicability": "Seltos (all trims, Kia Egypt brochure)",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1800",
+              "unit": "mm",
+              "applicability": "Seltos (all trims, Kia Egypt brochure)",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_"
+            }
+          ]
+        },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": "1VN465hL3XnGN1dhCdvExjpDkZ3pren1_",
+            "title": "Seltos brochure-2.pdf",
+            "issuer": "KIA Egypt",
+            "scope": "EX | HL-Turbo | TL-Turbo",
+            "url": "https://drive.google.com/file/d/1VN465hL3XnGN1dhCdvExjpDkZ3pren1_/view"
+          }
+        ],
         "logo": null,
         "hero_image": null,
         "gallery": [],
@@ -18390,8 +19023,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
         "NO_VERIFIED_WARRANTY",
@@ -18422,9 +19053,153 @@
             }
           ]
         },
-        "specs": null,
+        "specs": {
+          "airbags": [
+            {
+              "value": "6",
+              "unit": "",
+              "applicability": "Frontera 1.2T",
+              "issuer": "Al Mansour Automotive",
+              "source": "drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q"
+            }
+          ],
+          "boot_l": [
+            {
+              "value": "460",
+              "unit": "L (5 seats)",
+              "applicability": "Frontera 1.2T",
+              "issuer": "Al Mansour Automotive",
+              "source": "drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q"
+            }
+          ],
+          "boot_max_l": [
+            {
+              "value": "1600",
+              "unit": "L (2 seats)",
+              "applicability": "Frontera 1.2T",
+              "issuer": "Al Mansour Automotive",
+              "source": "drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q"
+            }
+          ],
+          "engine": [
+            {
+              "value": "1.2L turbo 3-cylinder",
+              "unit": "",
+              "applicability": "Frontera 1.2T",
+              "issuer": "Al Mansour Automotive",
+              "source": "drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q"
+            }
+          ],
+          "fuel_consumption_l100": [
+            {
+              "value": "6.1",
+              "unit": "L/100km (cycle not stated)",
+              "applicability": "Frontera 1.2T",
+              "issuer": "Al Mansour Automotive",
+              "source": "drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "44",
+              "unit": "L",
+              "applicability": "Frontera 1.2T",
+              "issuer": "Al Mansour Automotive",
+              "source": "drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1627",
+              "unit": "mm",
+              "applicability": "Frontera 1.2T",
+              "issuer": "Al Mansour Automotive",
+              "source": "drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4385",
+              "unit": "mm",
+              "applicability": "Frontera 1.2T",
+              "issuer": "Al Mansour Automotive",
+              "source": "drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "130",
+              "unit": "hp",
+              "applicability": "Frontera 1.2T",
+              "issuer": "Al Mansour Automotive",
+              "source": "drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q"
+            }
+          ],
+          "seats": [
+            {
+              "value": "7",
+              "unit": "",
+              "applicability": "Frontera 1.2T",
+              "issuer": "Al Mansour Automotive",
+              "source": "drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q"
+            }
+          ],
+          "top_speed_kmh": [
+            {
+              "value": "190",
+              "unit": "km/h",
+              "applicability": "Frontera 1.2T",
+              "issuer": "Al Mansour Automotive",
+              "source": "drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "230",
+              "unit": "Nm",
+              "applicability": "Frontera 1.2T",
+              "issuer": "Al Mansour Automotive",
+              "source": "drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "6-speed automatic",
+              "unit": "",
+              "applicability": "Frontera 1.2T",
+              "issuer": "Al Mansour Automotive",
+              "source": "drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2670",
+              "unit": "mm",
+              "applicability": "Frontera 1.2T",
+              "issuer": "Al Mansour Automotive",
+              "source": "drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1795",
+              "unit": "mm",
+              "applicability": "Frontera 1.2T",
+              "issuer": "Al Mansour Automotive",
+              "source": "drive:1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q"
+            }
+          ]
+        },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": "1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q",
+            "title": "FINAL 2255202234 Opel Frontera Brochure 2026.pdf",
+            "issuer": "Al Mansour Automotive (Opel Egypt)",
+            "scope": "Frontera 1.2T (7-seater)",
+            "url": "https://drive.google.com/file/d/1w1PUCt_R0GPOZzwNjHAEMEsS-_Uc4n2Q/view"
+          }
+        ],
         "logo": null,
         "hero_image": null,
         "gallery": [],
@@ -18751,8 +19526,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
         "NO_VERIFIED_WARRANTY",
@@ -18794,9 +19567,99 @@
             }
           ]
         },
-        "specs": null,
+        "specs": {
+          "airbags": [
+            {
+              "value": "6",
+              "unit": "",
+              "applicability": "New 408 FL (Allure and GT)",
+              "issuer": "Peugeot Egypt",
+              "source": "drive:1HKD_rYBpzLfbLBwqbbIu8iPSwS-G51Te"
+            }
+          ],
+          "boot_l": [
+            {
+              "value": "536",
+              "unit": "L",
+              "applicability": "New 408 FL (Allure and GT)",
+              "issuer": "Peugeot Egypt",
+              "source": "drive:1HKD_rYBpzLfbLBwqbbIu8iPSwS-G51Te"
+            }
+          ],
+          "boot_max_l": [
+            {
+              "value": "1611",
+              "unit": "L",
+              "applicability": "New 408 FL (Allure and GT)",
+              "issuer": "Peugeot Egypt",
+              "source": "drive:1HKD_rYBpzLfbLBwqbbIu8iPSwS-G51Te"
+            }
+          ],
+          "engine": [
+            {
+              "value": "1.6 THP",
+              "unit": "",
+              "applicability": "New 408 FL (Allure and GT)",
+              "issuer": "Peugeot Egypt",
+              "source": "drive:1HKD_rYBpzLfbLBwqbbIu8iPSwS-G51Te"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "189",
+              "unit": "mm",
+              "applicability": "New 408 FL (Allure and GT)",
+              "issuer": "Peugeot Egypt",
+              "source": "drive:1HKD_rYBpzLfbLBwqbbIu8iPSwS-G51Te"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "215",
+              "unit": "hp @5500 rpm",
+              "applicability": "New 408 FL (Allure and GT)",
+              "issuer": "Peugeot Egypt",
+              "source": "drive:1HKD_rYBpzLfbLBwqbbIu8iPSwS-G51Te"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "300",
+              "unit": "Nm @2000 rpm",
+              "applicability": "New 408 FL (Allure and GT)",
+              "issuer": "Peugeot Egypt",
+              "source": "drive:1HKD_rYBpzLfbLBwqbbIu8iPSwS-G51Te"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "8-speed automatic",
+              "unit": "",
+              "applicability": "New 408 FL (Allure and GT)",
+              "issuer": "Peugeot Egypt",
+              "source": "drive:1HKD_rYBpzLfbLBwqbbIu8iPSwS-G51Te"
+            }
+          ],
+          "wheels_in": [
+            {
+              "value": "18",
+              "unit": "in",
+              "applicability": "New 408 FL (Allure and GT)",
+              "issuer": "Peugeot Egypt",
+              "source": "drive:1HKD_rYBpzLfbLBwqbbIu8iPSwS-G51Te"
+            }
+          ]
+        },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": "1HKD_rYBpzLfbLBwqbbIu8iPSwS-G51Te",
+            "title": "NEW 408 FL Brochure  (2).pdf",
+            "issuer": "Peugeot Egypt",
+            "scope": "New 408 FL (Allure | GT)",
+            "url": "https://drive.google.com/file/d/1HKD_rYBpzLfbLBwqbbIu8iPSwS-G51Te/view"
+          }
+        ],
         "logo": null,
         "hero_image": null,
         "gallery": [],
@@ -19764,8 +20627,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
         "GENERATION_UNKNOWN"
@@ -19806,7 +20667,134 @@
             }
           ]
         },
-        "specs": null,
+        "specs": {
+          "accel_0_100_s": [
+            {
+              "value": "10.8",
+              "unit": "s",
+              "applicability": "Ibiza FR 1.6 MPI",
+              "issuer": "SEAT Egypt",
+              "source": "drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW"
+            }
+          ],
+          "airbags": [
+            {
+              "value": "6",
+              "unit": "",
+              "applicability": "Ibiza FR 1.6 MPI",
+              "issuer": "SEAT Egypt",
+              "source": "drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW"
+            }
+          ],
+          "boot_l": [
+            {
+              "value": "355",
+              "unit": "L",
+              "applicability": "Ibiza FR 1.6 MPI",
+              "issuer": "SEAT Egypt",
+              "source": "drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW"
+            }
+          ],
+          "engine": [
+            {
+              "value": "1.6L MPI",
+              "unit": "",
+              "applicability": "Ibiza FR 1.6 MPI",
+              "issuer": "SEAT Egypt",
+              "source": "drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW"
+            }
+          ],
+          "fuel_consumption_l100": [
+            {
+              "value": "6.8",
+              "unit": "L/100km combined",
+              "applicability": "Ibiza FR 1.6 MPI",
+              "issuer": "SEAT Egypt",
+              "source": "drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "40",
+              "unit": "L",
+              "applicability": "Ibiza FR 1.6 MPI",
+              "issuer": "SEAT Egypt",
+              "source": "drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1447",
+              "unit": "mm",
+              "applicability": "Ibiza FR 1.6 MPI",
+              "issuer": "SEAT Egypt",
+              "source": "drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW"
+            }
+          ],
+          "kerb_weight_kg": [
+            {
+              "value": "1166",
+              "unit": "kg (with driver)",
+              "applicability": "Ibiza FR 1.6 MPI",
+              "issuer": "SEAT Egypt",
+              "source": "drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4059",
+              "unit": "mm",
+              "applicability": "Ibiza FR 1.6 MPI",
+              "issuer": "SEAT Egypt",
+              "source": "drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "110",
+              "unit": "hp @5800 rpm",
+              "applicability": "Ibiza FR 1.6 MPI",
+              "issuer": "SEAT Egypt",
+              "source": "drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW"
+            }
+          ],
+          "top_speed_kmh": [
+            {
+              "value": "190",
+              "unit": "km/h",
+              "applicability": "Ibiza FR 1.6 MPI",
+              "issuer": "SEAT Egypt",
+              "source": "drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "152",
+              "unit": "Nm @3850-4100 rpm",
+              "applicability": "Ibiza FR 1.6 MPI",
+              "issuer": "SEAT Egypt",
+              "source": "drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "6-speed automatic",
+              "unit": "",
+              "applicability": "Ibiza FR 1.6 MPI",
+              "issuer": "SEAT Egypt",
+              "source": "drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1780",
+              "unit": "mm",
+              "applicability": "Ibiza FR 1.6 MPI",
+              "issuer": "SEAT Egypt",
+              "source": "drive:1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW"
+            }
+          ]
+        },
         "warranty": [
           {
             "value": "5 years / 100000 km",
@@ -19816,7 +20804,15 @@
             "source": "drive:1UaB-J_dPqnDHskEy_2EZfDpstNOuIqR6"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": "1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW",
+            "title": "SEAT-IBIZA-brochure-MY2026.pdf.pdf",
+            "issuer": "SEAT Egypt (KAYAN)",
+            "scope": "Ibiza FR 1.6 MPI (MY2026; dated 10/2025)",
+            "url": "https://drive.google.com/file/d/1hSu-aFtu63DHdg3hUjyLVOhXr6ws2msW/view"
+          }
+        ],
         "logo": null,
         "hero_image": null,
         "gallery": [],
