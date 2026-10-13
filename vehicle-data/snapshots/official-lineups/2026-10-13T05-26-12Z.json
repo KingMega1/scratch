@@ -1,0 +1,381 @@
+{
+  "schema": "carindex.p2.official-discovery/v1",
+  "observed_at": "2026-10-13T05:26:12Z",
+  "authority": "STAGE_ONLY",
+  "llm_calls": 0,
+  "sources": [
+    {
+      "url": "https://en.nissan.com.eg/vehicles/new.html",
+      "brand": "Nissan",
+      "status": "OK",
+      "models": [
+        {
+          "source_key": "allnewpatrol",
+          "p1_id": "nissan/patrol",
+          "source_url": "https://en.nissan.com.eg/vehicles/new/allnewpatrol.html",
+          "brand": "Nissan",
+          "identity_state": "EXPLICIT_ALIAS"
+        },
+        {
+          "source_key": "juke",
+          "p1_id": "nissan/juke",
+          "source_url": "https://en.nissan.com.eg/vehicles/new/juke.html",
+          "brand": "Nissan",
+          "identity_state": "EXPLICIT_ALIAS"
+        },
+        {
+          "source_key": "magnite",
+          "p1_id": "nissan/magnite",
+          "source_url": "https://en.nissan.com.eg/vehicles/new/magnite.html",
+          "brand": "Nissan",
+          "identity_state": "EXPLICIT_ALIAS"
+        },
+        {
+          "source_key": "navara-double-cab",
+          "p1_id": null,
+          "source_url": "https://en.nissan.com.eg/vehicles/new/navara-double-cab.html",
+          "brand": "Nissan",
+          "identity_state": "P2_IDENTITY_REVIEW"
+        },
+        {
+          "source_key": "navara-single-cab",
+          "p1_id": null,
+          "source_url": "https://en.nissan.com.eg/vehicles/new/navara-single-cab.html",
+          "brand": "Nissan",
+          "identity_state": "P2_IDENTITY_REVIEW"
+        },
+        {
+          "source_key": "qashqai",
+          "p1_id": "nissan/qashqai",
+          "source_url": "https://en.nissan.com.eg/vehicles/new/qashqai.html",
+          "brand": "Nissan",
+          "identity_state": "EXPLICIT_ALIAS"
+        },
+        {
+          "source_key": "sentra",
+          "p1_id": "nissan/sentra",
+          "source_url": "https://en.nissan.com.eg/vehicles/new/sentra.html",
+          "brand": "Nissan",
+          "identity_state": "EXPLICIT_ALIAS"
+        },
+        {
+          "source_key": "sunny",
+          "p1_id": "nissan/sunny",
+          "source_url": "https://en.nissan.com.eg/vehicles/new/sunny.html",
+          "brand": "Nissan",
+          "identity_state": "EXPLICIT_ALIAS"
+        },
+        {
+          "source_key": "x-trail",
+          "p1_id": "nissan/x-trail",
+          "source_url": "https://en.nissan.com.eg/vehicles/new/x-trail.html",
+          "brand": "Nissan",
+          "identity_state": "EXPLICIT_ALIAS"
+        }
+      ],
+      "sha256": "574f1ecdb1ab16c2c4b2540ff5ce4bf3581271f03b00d1e9848bb8c6754b5c03"
+    },
+    {
+      "url": "https://smart.ezzelarabstar.com/product-category/smart-5/",
+      "brand": "Smart",
+      "status": "OK",
+      "models": [
+        {
+          "source_key": "1",
+          "p1_id": "smart/1",
+          "source_url": "https://smart.ezzelarabstar.com/product-category/smart-5/",
+          "brand": "Smart",
+          "identity_state": "EXPLICIT_ALIAS"
+        },
+        {
+          "source_key": "3",
+          "p1_id": "smart/3",
+          "source_url": "https://smart.ezzelarabstar.com/product-category/smart-5/",
+          "brand": "Smart",
+          "identity_state": "EXPLICIT_ALIAS"
+        },
+        {
+          "source_key": "5",
+          "p1_id": "smart/5",
+          "source_url": "https://smart.ezzelarabstar.com/product-category/smart-5/",
+          "brand": "Smart",
+          "identity_state": "EXPLICIT_ALIAS"
+        }
+      ],
+      "sha256": "4d1e0822391315aea679a75e2dd525fc92bddf5a371c843447d5da8bce5ec6fc"
+    },
+    {
+      "url": "https://toyota.com.eg/ar/brochures",
+      "brand": "Toyota",
+      "status": "EMPTY_EXTRACTION",
+      "models": [],
+      "sha256": "6730cd70d6a35c996225973fccdde25f8af5fbc5fa92c44b6ec7a9707ebd74e8"
+    }
+  ],
+  "identity_source": {
+    "url": "https://raw.githubusercontent.com/KingMega1/scratch/1947c0d0bd979f92720324fba68b13f2b767f71d/web/p1-release/buyer-decision/datasets/U11-2026-09-26/recommendation_view.json",
+    "sha256": "148c28900733fd972c325c43b3959ac5c4c8b646d8287f057f792dbf9ced1209",
+    "version": "U11-2026-09-26"
+  },
+  "events": [
+    {
+      "event": "OFFICIAL_PAGE_CHANGED",
+      "source_url": "https://smart.ezzelarabstar.com/product-category/smart-5/",
+      "previous_sha256": "959a5c5a4e5a538a3e2b82d1b7d414c6a0bc3719df40c6a845b8d108f09767e9",
+      "sha256": "4d1e0822391315aea679a75e2dd525fc92bddf5a371c843447d5da8bce5ec6fc"
+    },
+    {
+      "event": "SOURCE_HEALTH",
+      "source_url": "https://toyota.com.eg/ar/brochures",
+      "status": "EMPTY_EXTRACTION"
+    }
+  ],
+  "enrichment_queue": [
+    {
+      "source_key": "allnewpatrol",
+      "p1_id": "nissan/patrol",
+      "source_url": "https://en.nissan.com.eg/vehicles/new/allnewpatrol.html",
+      "brand": "Nissan",
+      "identity_state": "EXPLICIT_ALIAS",
+      "event": "OFFICIAL_CURRENT_ENTRY",
+      "queue_state": "P2_ID_MAPPING_REQUIRED",
+      "authority": "STAGE_ONLY",
+      "next_action": "P2 verify current availability, exact identity, prices/specs/brochure; no automatic canonical or P1 change"
+    },
+    {
+      "source_key": "juke",
+      "p1_id": "nissan/juke",
+      "source_url": "https://en.nissan.com.eg/vehicles/new/juke.html",
+      "brand": "Nissan",
+      "identity_state": "EXPLICIT_ALIAS",
+      "event": "OFFICIAL_CURRENT_ENTRY",
+      "queue_state": "P2_ID_MAPPING_REQUIRED",
+      "authority": "STAGE_ONLY",
+      "next_action": "P2 verify current availability, exact identity, prices/specs/brochure; no automatic canonical or P1 change"
+    },
+    {
+      "source_key": "magnite",
+      "p1_id": "nissan/magnite",
+      "source_url": "https://en.nissan.com.eg/vehicles/new/magnite.html",
+      "brand": "Nissan",
+      "identity_state": "EXPLICIT_ALIAS",
+      "event": "OFFICIAL_CURRENT_ENTRY",
+      "queue_state": "P2_ID_MAPPING_REQUIRED",
+      "authority": "STAGE_ONLY",
+      "next_action": "P2 verify current availability, exact identity, prices/specs/brochure; no automatic canonical or P1 change"
+    },
+    {
+      "source_key": "navara-double-cab",
+      "p1_id": null,
+      "source_url": "https://en.nissan.com.eg/vehicles/new/navara-double-cab.html",
+      "brand": "Nissan",
+      "identity_state": "P2_IDENTITY_REVIEW",
+      "event": "OFFICIAL_CURRENT_ENTRY",
+      "queue_state": "P2_IDENTITY_REVIEW",
+      "authority": "STAGE_ONLY",
+      "next_action": "P2 verify current availability, exact identity, prices/specs/brochure; no automatic canonical or P1 change"
+    },
+    {
+      "source_key": "navara-single-cab",
+      "p1_id": null,
+      "source_url": "https://en.nissan.com.eg/vehicles/new/navara-single-cab.html",
+      "brand": "Nissan",
+      "identity_state": "P2_IDENTITY_REVIEW",
+      "event": "OFFICIAL_CURRENT_ENTRY",
+      "queue_state": "P2_IDENTITY_REVIEW",
+      "authority": "STAGE_ONLY",
+      "next_action": "P2 verify current availability, exact identity, prices/specs/brochure; no automatic canonical or P1 change"
+    },
+    {
+      "source_key": "qashqai",
+      "p1_id": "nissan/qashqai",
+      "source_url": "https://en.nissan.com.eg/vehicles/new/qashqai.html",
+      "brand": "Nissan",
+      "identity_state": "EXPLICIT_ALIAS",
+      "event": "OFFICIAL_CURRENT_ENTRY",
+      "queue_state": "P2_EVIDENCE_REFRESH",
+      "authority": "STAGE_ONLY",
+      "next_action": "P2 verify current availability, exact identity, prices/specs/brochure; no automatic canonical or P1 change"
+    },
+    {
+      "source_key": "sentra",
+      "p1_id": "nissan/sentra",
+      "source_url": "https://en.nissan.com.eg/vehicles/new/sentra.html",
+      "brand": "Nissan",
+      "identity_state": "EXPLICIT_ALIAS",
+      "event": "OFFICIAL_CURRENT_ENTRY",
+      "queue_state": "P2_ID_MAPPING_REQUIRED",
+      "authority": "STAGE_ONLY",
+      "next_action": "P2 verify current availability, exact identity, prices/specs/brochure; no automatic canonical or P1 change"
+    },
+    {
+      "source_key": "sunny",
+      "p1_id": "nissan/sunny",
+      "source_url": "https://en.nissan.com.eg/vehicles/new/sunny.html",
+      "brand": "Nissan",
+      "identity_state": "EXPLICIT_ALIAS",
+      "event": "OFFICIAL_CURRENT_ENTRY",
+      "queue_state": "P2_ID_MAPPING_REQUIRED",
+      "authority": "STAGE_ONLY",
+      "next_action": "P2 verify current availability, exact identity, prices/specs/brochure; no automatic canonical or P1 change"
+    },
+    {
+      "source_key": "x-trail",
+      "p1_id": "nissan/x-trail",
+      "source_url": "https://en.nissan.com.eg/vehicles/new/x-trail.html",
+      "brand": "Nissan",
+      "identity_state": "EXPLICIT_ALIAS",
+      "event": "OFFICIAL_CURRENT_ENTRY",
+      "queue_state": "P2_ID_MAPPING_REQUIRED",
+      "authority": "STAGE_ONLY",
+      "next_action": "P2 verify current availability, exact identity, prices/specs/brochure; no automatic canonical or P1 change"
+    },
+    {
+      "source_key": "1",
+      "p1_id": "smart/1",
+      "source_url": "https://smart.ezzelarabstar.com/product-category/smart-5/",
+      "brand": "Smart",
+      "identity_state": "EXPLICIT_ALIAS",
+      "event": "OFFICIAL_CURRENT_ENTRY",
+      "queue_state": "OFFICIAL_U11_AVAILABILITY_CONFLICT",
+      "authority": "STAGE_ONLY",
+      "next_action": "P2 verify current availability, exact identity, prices/specs/brochure; no automatic canonical or P1 change"
+    },
+    {
+      "source_key": "3",
+      "p1_id": "smart/3",
+      "source_url": "https://smart.ezzelarabstar.com/product-category/smart-5/",
+      "brand": "Smart",
+      "identity_state": "EXPLICIT_ALIAS",
+      "event": "OFFICIAL_CURRENT_ENTRY",
+      "queue_state": "OFFICIAL_U11_AVAILABILITY_CONFLICT",
+      "authority": "STAGE_ONLY",
+      "next_action": "P2 verify current availability, exact identity, prices/specs/brochure; no automatic canonical or P1 change"
+    },
+    {
+      "source_key": "5",
+      "p1_id": "smart/5",
+      "source_url": "https://smart.ezzelarabstar.com/product-category/smart-5/",
+      "brand": "Smart",
+      "identity_state": "EXPLICIT_ALIAS",
+      "event": "OFFICIAL_CURRENT_ENTRY",
+      "queue_state": "OFFICIAL_U11_AVAILABILITY_CONFLICT",
+      "authority": "STAGE_ONLY",
+      "next_action": "P2 verify current availability, exact identity, prices/specs/brochure; no automatic canonical or P1 change"
+    }
+  ],
+  "model_page_evidence": [
+    {
+      "source_key": "allnewpatrol",
+      "p1_id": "nissan/patrol",
+      "source_url": "https://en.nissan.com.eg/vehicles/new/allnewpatrol.html",
+      "brand": "Nissan",
+      "identity_state": "EXPLICIT_ALIAS",
+      "status": "CAPTURED_FOR_P2_REVIEW",
+      "price_status": "UNKNOWN",
+      "spec_status": "UNKNOWN",
+      "authority": "STAGE_ONLY",
+      "sha256": "140d45f5bcc2dba197a38a3a0af140893d395f2965dfe89f681bd3a51ae6ad0e",
+      "bytes": 281102,
+      "evidence_file": "140d45f5bcc2dba197a38a3a0af140893d395f2965dfe89f681bd3a51ae6ad0e.html.gz"
+    },
+    {
+      "source_key": "juke",
+      "p1_id": "nissan/juke",
+      "source_url": "https://en.nissan.com.eg/vehicles/new/juke.html",
+      "brand": "Nissan",
+      "identity_state": "EXPLICIT_ALIAS",
+      "status": "CAPTURED_FOR_P2_REVIEW",
+      "price_status": "UNKNOWN",
+      "spec_status": "UNKNOWN",
+      "authority": "STAGE_ONLY",
+      "sha256": "395b996fcd699156791a89935276234a387d2741574c95aba993d700dc13acd5",
+      "bytes": 193015,
+      "evidence_file": "395b996fcd699156791a89935276234a387d2741574c95aba993d700dc13acd5.html.gz"
+    },
+    {
+      "source_key": "magnite",
+      "p1_id": "nissan/magnite",
+      "source_url": "https://en.nissan.com.eg/vehicles/new/magnite.html",
+      "brand": "Nissan",
+      "identity_state": "EXPLICIT_ALIAS",
+      "status": "CAPTURED_FOR_P2_REVIEW",
+      "price_status": "UNKNOWN",
+      "spec_status": "UNKNOWN",
+      "authority": "STAGE_ONLY",
+      "sha256": "92657938b74e720eef07bf1f9c5073241a0b4572e78cfc0ff26710dfb7588562",
+      "bytes": 275854,
+      "evidence_file": "92657938b74e720eef07bf1f9c5073241a0b4572e78cfc0ff26710dfb7588562.html.gz"
+    },
+    {
+      "source_key": "qashqai",
+      "p1_id": "nissan/qashqai",
+      "source_url": "https://en.nissan.com.eg/vehicles/new/qashqai.html",
+      "brand": "Nissan",
+      "identity_state": "EXPLICIT_ALIAS",
+      "status": "CAPTURED_FOR_P2_REVIEW",
+      "price_status": "UNKNOWN",
+      "spec_status": "UNKNOWN",
+      "authority": "STAGE_ONLY",
+      "sha256": "b670af308eab735f865b055f1afe547896ab346aed95fee7ca8f24117834d8ee",
+      "bytes": 243810,
+      "evidence_file": "b670af308eab735f865b055f1afe547896ab346aed95fee7ca8f24117834d8ee.html.gz"
+    },
+    {
+      "source_key": "sentra",
+      "p1_id": "nissan/sentra",
+      "source_url": "https://en.nissan.com.eg/vehicles/new/sentra.html",
+      "brand": "Nissan",
+      "identity_state": "EXPLICIT_ALIAS",
+      "status": "CAPTURED_FOR_P2_REVIEW",
+      "price_status": "UNKNOWN",
+      "spec_status": "UNKNOWN",
+      "authority": "STAGE_ONLY",
+      "sha256": "2d0d30634914811cebd3efd1bd99b9feafc59e1b94d623dffbd9d706af92644f",
+      "bytes": 1843994,
+      "evidence_file": "2d0d30634914811cebd3efd1bd99b9feafc59e1b94d623dffbd9d706af92644f.html.gz"
+    },
+    {
+      "source_key": "sunny",
+      "p1_id": "nissan/sunny",
+      "source_url": "https://en.nissan.com.eg/vehicles/new/sunny.html",
+      "brand": "Nissan",
+      "identity_state": "EXPLICIT_ALIAS",
+      "status": "CAPTURED_FOR_P2_REVIEW",
+      "price_status": "UNKNOWN",
+      "spec_status": "UNKNOWN",
+      "authority": "STAGE_ONLY",
+      "sha256": "e30894e2e61fae874e3d9a8ad6794e4dd25e9021b865d5e505d7d96d6de3595b",
+      "bytes": 1844593,
+      "evidence_file": "e30894e2e61fae874e3d9a8ad6794e4dd25e9021b865d5e505d7d96d6de3595b.html.gz"
+    },
+    {
+      "source_key": "x-trail",
+      "p1_id": "nissan/x-trail",
+      "source_url": "https://en.nissan.com.eg/vehicles/new/x-trail.html",
+      "brand": "Nissan",
+      "identity_state": "EXPLICIT_ALIAS",
+      "status": "CAPTURED_FOR_P2_REVIEW",
+      "price_status": "UNKNOWN",
+      "spec_status": "UNKNOWN",
+      "authority": "STAGE_ONLY",
+      "sha256": "bffc05b7260e100ba9d42b2309f44b4a1cb843521127c0d263d6ee36e882fc14",
+      "bytes": 280748,
+      "evidence_file": "bffc05b7260e100ba9d42b2309f44b4a1cb843521127c0d263d6ee36e882fc14.html.gz"
+    },
+    {
+      "source_key": "1",
+      "p1_id": "smart/1",
+      "source_url": "https://smart.ezzelarabstar.com/product-category/smart-5/",
+      "brand": "Smart",
+      "identity_state": "EXPLICIT_ALIAS",
+      "status": "CAPTURED_FOR_P2_REVIEW",
+      "price_status": "UNKNOWN",
+      "spec_status": "UNKNOWN",
+      "authority": "STAGE_ONLY",
+      "sha256": "16f70f85deb16ab9eded7f754f289af93b433197be2f70d2195e0c66d5729702",
+      "bytes": 498428,
+      "evidence_file": "16f70f85deb16ab9eded7f754f289af93b433197be2f70d2195e0c66d5729702.html.gz"
+    }
+  ]
+}

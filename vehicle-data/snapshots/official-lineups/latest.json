@@ -1,6 +1,6 @@
 {
   "schema": "carindex.p2.official-discovery/v1",
-  "observed_at": "2026-10-13T00:21:51Z",
+  "observed_at": "2026-10-13T05:26:12Z",
   "authority": "STAGE_ONLY",
   "llm_calls": 0,
   "sources": [
@@ -102,14 +102,14 @@
           "identity_state": "EXPLICIT_ALIAS"
         }
       ],
-      "sha256": "959a5c5a4e5a538a3e2b82d1b7d414c6a0bc3719df40c6a845b8d108f09767e9"
+      "sha256": "4d1e0822391315aea679a75e2dd525fc92bddf5a371c843447d5da8bce5ec6fc"
     },
     {
       "url": "https://toyota.com.eg/ar/brochures",
       "brand": "Toyota",
       "status": "EMPTY_EXTRACTION",
       "models": [],
-      "sha256": "50d9be7bed8e2a3e7a7e9c42c69e77bce24120758b1acecf52a89e7103c6e4da"
+      "sha256": "6730cd70d6a35c996225973fccdde25f8af5fbc5fa92c44b6ec7a9707ebd74e8"
     }
   ],
   "identity_source": {
@@ -121,8 +121,8 @@
     {
       "event": "OFFICIAL_PAGE_CHANGED",
       "source_url": "https://smart.ezzelarabstar.com/product-category/smart-5/",
-      "previous_sha256": "35b26469d7b58375d51c5c36ae482ba43269c055b680025297925fcaae958906",
-      "sha256": "959a5c5a4e5a538a3e2b82d1b7d414c6a0bc3719df40c6a845b8d108f09767e9"
+      "previous_sha256": "959a5c5a4e5a538a3e2b82d1b7d414c6a0bc3719df40c6a845b8d108f09767e9",
+      "sha256": "4d1e0822391315aea679a75e2dd525fc92bddf5a371c843447d5da8bce5ec6fc"
     },
     {
       "event": "SOURCE_HEALTH",
@@ -373,9 +373,9 @@
       "price_status": "UNKNOWN",
       "spec_status": "UNKNOWN",
       "authority": "STAGE_ONLY",
-      "sha256": "dce67784049a48db1b84c24ca71c9ca8d925b0bc99204efdfeda63b0561bd7cc",
+      "sha256": "16f70f85deb16ab9eded7f754f289af93b433197be2f70d2195e0c66d5729702",
       "bytes": 498428,
-      "evidence_file": "dce67784049a48db1b84c24ca71c9ca8d925b0bc99204efdfeda63b0561bd7cc.html.gz"
+      "evidence_file": "16f70f85deb16ab9eded7f754f289af93b433197be2f70d2195e0c66d5729702.html.gz"
     }
   ]
 }
