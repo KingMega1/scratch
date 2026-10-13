@@ -1,0 +1,44 @@
+{
+  "schema": "carindex.p2.official-lineups/v1",
+  "authority": "stage-only; P2 accepts evidence; P1 universe unchanged",
+  "sources": [
+    {
+      "brand": "Nissan",
+      "url": "https://en.nissan.com.eg/vehicles/new.html",
+      "kind": "nissan",
+      "aliases": {
+        "sunny": "nissan/sunny",
+        "sentra": "nissan/sentra",
+        "x-trail": "nissan/x-trail",
+        "x-trail-e-power": "nissan/x-trail",
+        "magnite": "nissan/magnite",
+        "juke": "nissan/juke",
+        "qashqai": "nissan/qashqai",
+        "patrol": "nissan/patrol",
+        "allnewpatrol": "nissan/patrol"
+      }
+    },
+    {
+      "brand": "Smart",
+      "url": "https://smart.ezzelarabstar.com/product-category/smart-5/",
+      "kind": "smart",
+      "aliases": {
+        "1": "smart/1",
+        "3": "smart/3",
+        "5": "smart/5"
+      }
+    },
+    {
+      "brand": "Toyota",
+      "url": "https://toyota.com.eg/ar/brochures",
+      "kind": "toyota",
+      "aliases": {
+        "toyota-bz4x": "toyota/bz4x",
+        "toyota-corolla": "toyota/corolla",
+        "toyota-fortuner": "toyota/fortuner",
+        "toyota-urban-cruiser": "toyota/urban-cruiser"
+      }
+    }
+  ],
+  "u11_source": "https://raw.githubusercontent.com/KingMega1/scratch/1947c0d0bd979f92720324fba68b13f2b767f71d/web/p1-release/buyer-decision/datasets/U11-2026-09-26/recommendation_view.json"
+}

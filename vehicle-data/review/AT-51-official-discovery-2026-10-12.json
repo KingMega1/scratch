@@ -1,0 +1,80 @@
+{
+  "state": "VERIFYING",
+  "authority": "STAGE_ONLY",
+  "discoveries": [
+    {
+      "brand": "Smart",
+      "model": "#1",
+      "u11_ids": [
+        "smart/1",
+        "smart/hashtag-1"
+      ],
+      "status": "OFFICIAL_LINEUP_U11_OFF_SALE_CONFLICT",
+      "source": "https://smart.ezzelarabstar.com/product-category/smart-5/",
+      "observed_at": "2026-10-12",
+      "action": "P2 catalogue availability review; retain P1 off-sale flags"
+    },
+    {
+      "brand": "Smart",
+      "model": "#3",
+      "u11_ids": [
+        "smart/3",
+        "smart/hashtag-3"
+      ],
+      "status": "OFFICIAL_LINEUP_U11_OFF_SALE_CONFLICT",
+      "source": "https://smart.ezzelarabstar.com/product-category/smart-5/",
+      "observed_at": "2026-10-12",
+      "action": "P2 catalogue availability review and duplicate identity review; retain P1 off-sale flags"
+    },
+    {
+      "brand": "Smart",
+      "model": "#5",
+      "u11_ids": [
+        "smart/5"
+      ],
+      "status": "OFFICIAL_LINEUP_U11_OFF_SALE_CONFLICT",
+      "source": "https://smart.ezzelarabstar.com/product-category/smart-5/",
+      "observed_at": "2026-10-12",
+      "action": "P2 catalogue availability review; retain P1 off-sale flags"
+    },
+    {
+      "brand": "Toyota",
+      "model": "Camry",
+      "u11_ids": [],
+      "status": "DISCOVERY_CANDIDATE_NOT_IN_U11",
+      "source": "https://toyota.com.eg/ar/brochures",
+      "observed_at": "2026-10-12",
+      "evidence": "official-page search index only; live English content unavailable",
+      "action": "Verify current Egypt lineup and precise identity; P2 staging only"
+    },
+    {
+      "brand": "Toyota",
+      "model": "RAV4",
+      "u11_ids": [],
+      "status": "DISCOVERY_CANDIDATE_NOT_IN_U11",
+      "source": "https://toyota.com.eg/ar/brochures",
+      "observed_at": "2026-10-12",
+      "evidence": "official-page search index only; live English content unavailable",
+      "action": "Verify current Egypt lineup; P2 staging only"
+    },
+    {
+      "brand": "Toyota",
+      "model": "Land Cruiser Prado",
+      "u11_ids": [],
+      "status": "DISCOVERY_CANDIDATE_NOT_IN_U11",
+      "source": "https://toyota.com.eg/ar/brochures",
+      "observed_at": "2026-10-12",
+      "evidence": "official-page search index only; live English content unavailable",
+      "action": "Verify generation LC250 and precise identity; P2 staging only"
+    },
+    {
+      "brand": "Nissan",
+      "model": "Navara single/double cab",
+      "u11_ids": [],
+      "status": "OFFICIAL_COMMERCIAL_LINEUP_SCOPE_REVIEW",
+      "source": "https://en.nissan.com.eg/vehicles/new.html",
+      "observed_at": "2026-10-12",
+      "action": "Do not silently add commercial models to passenger recommendation universe"
+    }
+  ]
+}

@@ -1,0 +1,698 @@
+[
+ {
+  "url": "https://en.nissan.com.eg/vehicles/new/magnite.html",
+  "source": "nissan_eg_web",
+  "recipe": "nissan_vlp_price_json",
+  "status": 200,
+  "http_date": "Sat, 10 Oct 2026 00:34:00 GMT",
+  "bytes": 275865,
+  "sha256": "c6cb011294b91191a7a7973585355a24aba0f8930a15f8ebbbc7d40758fd8b58",
+  "file": "c6cb011294b91191.html.gz"
+ },
+ {
+  "url": "https://en.nissan.com.eg/vehicles/new/sunny.html",
+  "source": "nissan_eg_web",
+  "recipe": "nissan_vlp_price_json",
+  "status": 200,
+  "http_date": "Sun, 11 Oct 2026 06:52:38 GMT",
+  "bytes": 1844593,
+  "sha256": "e30894e2e61fae874e3d9a8ad6794e4dd25e9021b865d5e505d7d96d6de3595b",
+  "file": "e30894e2e61fae87.html.gz"
+ },
+ {
+  "url": "https://en.nissan.com.eg/vehicles/new/sentra.html",
+  "source": "nissan_eg_web",
+  "recipe": "nissan_vlp_price_json",
+  "status": 200,
+  "http_date": "Sat, 10 Oct 2026 22:14:36 GMT",
+  "bytes": 1843994,
+  "sha256": "2d0d30634914811cebd3efd1bd99b9feafc59e1b94d623dffbd9d706af92644f",
+  "file": "2d0d30634914811c.html.gz"
+ },
+ {
+  "url": "https://en.nissan.com.eg/vehicles/new/qashqai.html",
+  "source": "nissan_eg_web",
+  "recipe": "nissan_vlp_price_json",
+  "status": 200,
+  "http_date": "Sun, 11 Oct 2026 07:12:02 GMT",
+  "bytes": 243810,
+  "sha256": "b670af308eab735f865b055f1afe547896ab346aed95fee7ca8f24117834d8ee",
+  "file": "b670af308eab735f.html.gz"
+ },
+ {
+  "url": "https://en.nissan.com.eg/vehicles/new/x-trail.html",
+  "source": "nissan_eg_web",
+  "recipe": "nissan_vlp_price_json",
+  "status": 200,
+  "http_date": "Sat, 10 Oct 2026 00:36:18 GMT",
+  "bytes": 280748,
+  "sha256": "c9f462599ae7a24de1eb6586cbc63bd473b9ea40e51f7ccae9ce6efc90717143",
+  "file": "c9f462599ae7a24d.html.gz"
+ },
+ {
+  "url": "https://en.nissan.com.eg/vehicles/new/juke.html",
+  "source": "nissan_eg_web",
+  "recipe": "nissan_vlp_price_json",
+  "status": 200,
+  "http_date": "Sun, 11 Oct 2026 07:24:09 GMT",
+  "bytes": 193015,
+  "sha256": "395b996fcd699156791a89935276234a387d2741574c95aba993d700dc13acd5",
+  "file": "395b996fcd699156.html.gz"
+ },
+ {
+  "url": "https://en.nissan.com.eg/vehicles/new/allnewpatrol.html",
+  "source": "nissan_eg_web",
+  "recipe": "nissan_vlp_price_json",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:26:41 GMT",
+  "bytes": 281102,
+  "sha256": "140d45f5bcc2dba197a38a3a0af140893d395f2965dfe89f681bd3a51ae6ad0e",
+  "file": "140d45f5bcc2dba1.html.gz"
+ },
+ {
+  "url": "https://en.nissan.com.eg/vehicles/new/magnite/specifications.html",
+  "source": "nissan_eg_web",
+  "recipe": "nissan_spec_table",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:00 GMT",
+  "bytes": 394951,
+  "sha256": "a4962478966f4b0011f2243e214502da108f1da4a41ffa29610e8e578ac32c1b",
+  "file": "a4962478966f4b00.html.gz"
+ },
+ {
+  "url": "https://en.nissan.com.eg/vehicles/new/x-trail/specifications.html",
+  "source": "nissan_eg_web",
+  "recipe": "nissan_spec_table",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:02 GMT",
+  "bytes": 281188,
+  "sha256": "4e9d1bee4a07cb644bbd37ff4abd2b3082a714e139d039e364a5d362283a1b40",
+  "file": "4e9d1bee4a07cb64.html.gz"
+ },
+ {
+  "url": "https://en.nissan.com.eg/vehicles/new/juke/specifications.html",
+  "source": "nissan_eg_web",
+  "recipe": "nissan_spec_table",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:03 GMT",
+  "bytes": 302113,
+  "sha256": "164149257d7308267563e2095ff39ce2b6457010e140909ee9b963369de04d0f",
+  "file": "164149257d730826.html.gz"
+ },
+ {
+  "url": "https://en.nissan.com.eg/vehicles/new/allnewpatrol/specifications.html",
+  "source": "nissan_eg_web",
+  "recipe": "nissan_spec_table",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:05 GMT",
+  "bytes": 937304,
+  "sha256": "d6c69cfe49845345457fcba4020b31497b5a9ab6f30becbf3d0db73e77a53cf5",
+  "file": "d6c69cfe49845345.html.gz"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/mg5/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:08 GMT",
+  "bytes": 256145,
+  "sha256": "2d0ed4de0dcfc98ba382c5e18ae6b3c6385b3e6b29cd49db4353b0da4b76f323",
+  "file": "2d0ed4de0dcfc98b.html.gz"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/mg7/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:11 GMT",
+  "bytes": 256261,
+  "sha256": "cf49e7b831f1679ee7185ae8a2a3cb3dbb15ed0c6087dc5068b19e557420c45e",
+  "file": "cf49e7b831f1679e.html.gz"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/mg-gt/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:13 GMT",
+  "bytes": 231393,
+  "sha256": "f475ff0944773c7892a36ca610aa33282f671c2a7f6e2e933538ccce9dc247ad",
+  "file": "f475ff0944773c78.html.gz"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/mg-one/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:16 GMT",
+  "bytes": 256533,
+  "sha256": "43e05783801b299f4f221661d51593d2d0797ff5e372dfbba955046e0aed67e6",
+  "file": "43e05783801b299f.html.gz"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/zs/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:19 GMT",
+  "bytes": 247391,
+  "sha256": "529bdc7b5ec1afce288d0067b8fd435b93e146853b70233e473e29895fc51ec3",
+  "file": "529bdc7b5ec1afce.html.gz"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/new-zs/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:21 GMT",
+  "bytes": 233955,
+  "sha256": "6f35082b77e28716422578f2149bcbff569bca2aacd5ecb1381b6ecbd9f98f84",
+  "file": "6f35082b77e28716.html.gz"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/hs/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "error": "HTTP Error 404: Not Found"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/new-hs/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:25 GMT",
+  "bytes": 240194,
+  "sha256": "e39380c651b9c4a0035d04cc559177f39c80d95ad63e0c9ae22e095696661df2",
+  "file": "e39380c651b9c4a0.html.gz"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/g50-plus/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:28 GMT",
+  "bytes": 227202,
+  "sha256": "e059602603a5cba1a97b0eeb935e9c81982813a693ec72903619d7796bcb88ce",
+  "file": "e059602603a5cba1.html.gz"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/mg-rx9/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:31 GMT",
+  "bytes": 239004,
+  "sha256": "b09382964b237e4ca531d5eb0aff001fa0361bb2dc38b67244bd8d95ab45835c",
+  "file": "b09382964b237e4c.html.gz"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/rx5-plus/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:33 GMT",
+  "bytes": 258099,
+  "sha256": "6b1d4d4cc57123604291477e72deda34c97e876b2ba93b6d98334156e7285db1",
+  "file": "6b1d4d4cc5712360.html.gz"
+ },
+ {
+  "url": "https://www.mgmotor.com.eg/model/mg-cyberster/",
+  "source": "mg_eg_web",
+  "recipe": "mg_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:36 GMT",
+  "bytes": 226680,
+  "sha256": "7a6584dedf03e3738a8340e26a544a420f635920e1f5d653853e4f3aab8600fc",
+  "file": "7a6584dedf03e373.html.gz"
+ },
+ {
+  "url": "https://www.chery-eg.com/en/car/arrizo-5",
+  "source": "chery_eg_web",
+  "recipe": "gb_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:38 GMT",
+  "bytes": 220826,
+  "sha256": "d6790793d307176fa85e69a4a5e5a64861e663b3003c693f8f3a24645bc4ae05",
+  "file": "d6790793d307176f.html.gz"
+ },
+ {
+  "url": "https://www.chery-eg.com/en/car/arrizo-6-gt",
+  "source": "chery_eg_web",
+  "recipe": "gb_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:40 GMT",
+  "bytes": 224850,
+  "sha256": "2934a7049da4c17549f60b5a629268d427813b7b753eab3737e7c7b3f0c6b9fd",
+  "file": "2934a7049da4c175.html.gz"
+ },
+ {
+  "url": "https://www.chery-eg.com/en/car/arrizo-8",
+  "source": "chery_eg_web",
+  "recipe": "gb_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:42 GMT",
+  "bytes": 221750,
+  "sha256": "7cf02750dc4a8f24419b49940e0bcece29ec28a488c78ed3b598eeab95037ff6",
+  "file": "7cf02750dc4a8f24.html.gz"
+ },
+ {
+  "url": "https://www.chery-eg.com/en/car/eq7",
+  "source": "chery_eg_web",
+  "recipe": "gb_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:44 GMT",
+  "bytes": 228859,
+  "sha256": "6f8d97ecf43221fc09315b7c6ea7d5a88b612199f0cc632f4c4668cf0510d27d",
+  "file": "6f8d97ecf43221fc.html.gz"
+ },
+ {
+  "url": "https://www.chery-eg.com/en/car/tiggo-4-pro",
+  "source": "chery_eg_web",
+  "recipe": "gb_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:46 GMT",
+  "bytes": 210011,
+  "sha256": "ea945a4e0711bea97fe48664903bba9880088eb1175e75bc1cd0f818db7c8035",
+  "file": "ea945a4e0711bea9.html.gz"
+ },
+ {
+  "url": "https://www.chery-eg.com/en/car/tiggo-7",
+  "source": "chery_eg_web",
+  "recipe": "gb_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:48 GMT",
+  "bytes": 169889,
+  "sha256": "87ff5092dd3b7b05b35a690ea8da38510c65748395372869102ba3039d9a0812",
+  "file": "87ff5092dd3b7b05.html.gz"
+ },
+ {
+  "url": "https://www.chery-eg.com/en/car/tiggo-7-pro",
+  "source": "chery_eg_web",
+  "recipe": "gb_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:50 GMT",
+  "bytes": 229370,
+  "sha256": "14847dda777ef5bc4391fffbc2ad9a10646821b456fddbda4b3975d973262d25",
+  "file": "14847dda777ef5bc.html.gz"
+ },
+ {
+  "url": "https://www.chery-eg.com/en/car/tiggo-7-pro-max",
+  "source": "chery_eg_web",
+  "recipe": "gb_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:52 GMT",
+  "bytes": 224314,
+  "sha256": "0f0e9c85a9453eb788d75c965b6ca597b0c08c9d037eccf443f7a3880f229aac",
+  "file": "0f0e9c85a9453eb7.html.gz"
+ },
+ {
+  "url": "https://www.chery-eg.com/en/car/tiggo-8",
+  "source": "chery_eg_web",
+  "recipe": "gb_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:54 GMT",
+  "bytes": 225942,
+  "sha256": "3011e9bfbe6244024a0b13fb5b00ae4c8587a2ab7ac382eef7110509f4e67e2c",
+  "file": "3011e9bfbe624402.html.gz"
+ },
+ {
+  "url": "https://www.chery-eg.com/en/car/tiggo-8-pro-max",
+  "source": "chery_eg_web",
+  "recipe": "gb_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:56 GMT",
+  "bytes": 228522,
+  "sha256": "f84f5abf6812e4e6e1202f992b725d7a72ec96e4035b49e2feae6ccb7602fa85",
+  "file": "f84f5abf6812e4e6.html.gz"
+ },
+ {
+  "url": "https://www.chery-eg.com/en/car/tiggo-9",
+  "source": "chery_eg_web",
+  "recipe": "gb_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:27:58 GMT",
+  "bytes": 219133,
+  "sha256": "676f58f8f5dcf0c5f718c209b7683fc7b087c1d631a84ed738d2938e6667b971",
+  "file": "676f58f8f5dcf0c5.html.gz"
+ },
+ {
+  "url": "https://changan.com.eg/en/model/cs35/",
+  "source": "changan_eg_web",
+  "recipe": "gb_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:00 GMT",
+  "bytes": 280264,
+  "sha256": "d639ee3794b5c64f4f59327be4ef4d3e62264a7ec239cec4845e21c5a15e27a4",
+  "file": "d639ee3794b5c64f.html.gz"
+ },
+ {
+  "url": "https://changan.com.eg/en/model/cs55-plus/",
+  "source": "changan_eg_web",
+  "recipe": "gb_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:04 GMT",
+  "bytes": 291889,
+  "sha256": "33749dde45f283b00d89ca46296c551b394ecbd9282b86d0bc6f1810a7ef16c8",
+  "file": "33749dde45f283b0.html.gz"
+ },
+ {
+  "url": "https://changan.com.eg/en/model/cs75/",
+  "source": "changan_eg_web",
+  "recipe": "gb_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:08 GMT",
+  "bytes": 279730,
+  "sha256": "b90bfaaeef9036377843a54fb3c9054983ed5a740a5470d48ca8cc179e2f30a2",
+  "file": "b90bfaaeef903637.html.gz"
+ },
+ {
+  "url": "https://changan.com.eg/en/model/eado-2/",
+  "source": "changan_eg_web",
+  "recipe": "gb_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:11 GMT",
+  "bytes": 262053,
+  "sha256": "86c8f7da70cbd23500154c632ad6ab47540f896b47e19f782d43bdc59906ab21",
+  "file": "86c8f7da70cbd235.html.gz"
+ },
+ {
+  "url": "https://changan.com.eg/en/model/eado-plus/",
+  "source": "changan_eg_web",
+  "recipe": "gb_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:15 GMT",
+  "bytes": 274001,
+  "sha256": "b8f3da0a148e9459d55a3d014b0ccfd74f0f93337cafd344cc96b412b9f75456",
+  "file": "b8f3da0a148e9459.html.gz"
+ },
+ {
+  "url": "https://changan.com.eg/en/model/uni-t/",
+  "source": "changan_eg_web",
+  "recipe": "gb_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:18 GMT",
+  "bytes": 295309,
+  "sha256": "af4ad403da27ab4b5ce52582aaa9eb65f12b1111d94901fde2f7448f0464219b",
+  "file": "af4ad403da27ab4b.html.gz"
+ },
+ {
+  "url": "https://changan.com.eg/en/model/uni-v/",
+  "source": "changan_eg_web",
+  "recipe": "gb_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:22 GMT",
+  "bytes": 242662,
+  "sha256": "d8635d8564d304638711f2ce7cfe1c4ed3c1dc4003f78de0b1089a8134976757",
+  "file": "d8635d8564d30463.html.gz"
+ },
+ {
+  "url": "https://toyota.com.eg/en/models/corolla",
+  "source": "toyota_eg_web",
+  "recipe": "toyota_page_state",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:26 GMT",
+  "bytes": 124077,
+  "sha256": "fca7cb86be010d5d6e2c3680d12aec7bbe3f70940e52482ec1797647baf75c61",
+  "file": "fca7cb86be010d5d.html.gz"
+ },
+ {
+  "url": "https://toyota.com.eg/en/models/toyota-corolla-hybrid",
+  "source": "toyota_eg_web",
+  "recipe": "toyota_page_state",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:28 GMT",
+  "bytes": 71539,
+  "sha256": "34925a5ef920e578a3014749a9090c19130a4547880df930335a8518d9f30d71",
+  "file": "34925a5ef920e578.html.gz"
+ },
+ {
+  "url": "https://toyota.com.eg/en/models/toyota-fortuner",
+  "source": "toyota_eg_web",
+  "recipe": "toyota_page_state",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:29 GMT",
+  "bytes": 76022,
+  "sha256": "50008f0697d0c0804a5f7137e0dc560e11b241c71a57ee00c351113d6fbffb78",
+  "file": "50008f0697d0c080.html.gz"
+ },
+ {
+  "url": "https://toyota.com.eg/en/models/urban-cruiser",
+  "source": "toyota_eg_web",
+  "recipe": "toyota_page_state",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:31 GMT",
+  "bytes": 76872,
+  "sha256": "75b9a08cb28a494e0759e26a31cb9f9963292f6bfbbab44e849404bdc96e540d",
+  "file": "75b9a08cb28a494e.html.gz"
+ },
+ {
+  "url": "https://toyota.com.eg/en/models/toyota-b-z-4-x",
+  "source": "toyota_eg_web",
+  "recipe": "toyota_page_state",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:33 GMT",
+  "bytes": 93533,
+  "sha256": "fd5fa63a18a8a420f823db088428566013babe6f7ce9687b7c393b08450e5901",
+  "file": "fd5fa63a18a8a420.html.gz"
+ },
+ {
+  "url": "https://toyota.com.eg/en/models/toyota-rav4",
+  "source": "toyota_eg_web",
+  "recipe": "toyota_page_state",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:35 GMT",
+  "bytes": 64025,
+  "sha256": "f0c513ec0e491147edfd2843a9854415ff082921eaa49f1e4527dfb13b4c295c",
+  "file": "f0c513ec0e491147.html.gz"
+ },
+ {
+  "url": "https://toyota.com.eg/en/models/toyota-landcruiser-prado",
+  "source": "toyota_eg_web",
+  "recipe": "toyota_page_state",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:37 GMT",
+  "bytes": 64489,
+  "sha256": "dc6347df893fe95f611c1bd8f1d84ca67c78746ab33376202725d6ae833c9048",
+  "file": "dc6347df893fe95f.html.gz"
+ },
+ {
+  "url": "https://toyota.com.eg/en/models/toyota-camry",
+  "source": "toyota_eg_web",
+  "recipe": "toyota_page_state",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:39 GMT",
+  "bytes": 61185,
+  "sha256": "2c3d0ef8bf8492f7a4eaa892c4f12b6c75cffc666576f572e6f06c27473a8718",
+  "file": "2c3d0ef8bf8492f7.html.gz"
+ },
+ {
+  "url": "https://kia.com.eg/models/The_K4",
+  "source": "kia_eg_web",
+  "recipe": "kia_versions",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:40 GMT",
+  "bytes": 126702,
+  "sha256": "173ebb44c8600c63ce058944e2f5814eca08069b8af8e37c05f706c6b68c4ce5",
+  "file": "173ebb44c8600c63.html.gz"
+ },
+ {
+  "url": "https://kia.com.eg/models/The_Seltos",
+  "source": "kia_eg_web",
+  "recipe": "kia_versions",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:42 GMT",
+  "bytes": 122971,
+  "sha256": "7ff788bcf560db4952453fdc8cf17831e9b742ae85b43b7b2c93bbac2a6ef39f",
+  "file": "7ff788bcf560db49.html.gz"
+ },
+ {
+  "url": "https://kia.com.eg/models/The_Sportage",
+  "source": "kia_eg_web",
+  "recipe": "kia_versions",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:44 GMT",
+  "bytes": 131937,
+  "sha256": "6f0675d7675879b5a46a364fe95c91e0ec79a9b5457bfceaac6237a67cf8e983",
+  "file": "6f0675d7675879b5.html.gz"
+ },
+ {
+  "url": "https://kia.com.eg/models/The_Sorento",
+  "source": "kia_eg_web",
+  "recipe": "kia_versions",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:45 GMT",
+  "bytes": 128823,
+  "sha256": "2ac01a66ecf9769e2f2975484457141911753fb875b1cb27b6b3eff3c419c3c9",
+  "file": "2ac01a66ecf9769e.html.gz"
+ },
+ {
+  "url": "https://kia.com.eg/models/The_Carnival",
+  "source": "kia_eg_web",
+  "recipe": "kia_versions",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:47 GMT",
+  "bytes": 126232,
+  "sha256": "1f69a02ce41a09b831a68e537c4e70a9cfd7435136851186bdd09632d324b787",
+  "file": "1f69a02ce41a09b8.html.gz"
+ },
+ {
+  "url": "https://kia.com.eg/kia-ev3",
+  "source": "kia_eg_web",
+  "recipe": "kia_versions",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:49 GMT",
+  "bytes": 98887,
+  "sha256": "6874997ac33cf1364e0fe87a0df2bd81f091d40fc5e7bf4ac16e422af1c27551",
+  "file": "6874997ac33cf136.html.gz"
+ },
+ {
+  "url": "https://kia.com.eg/kia-ev5",
+  "source": "kia_eg_web",
+  "recipe": "kia_versions",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:51 GMT",
+  "bytes": 90093,
+  "sha256": "8acfc75294b8e9dc22a8df281c3392ac818efb6b948ab8514dd623a99effcf8d",
+  "file": "8acfc75294b8e9dc.html.gz"
+ },
+ {
+  "url": "https://kia.com.eg/kia-ev6",
+  "source": "kia_eg_web",
+  "recipe": "kia_versions",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:53 GMT",
+  "bytes": 97990,
+  "sha256": "e4672684259039cc7e76d22eb049e0cd1822e5bb94a974fe182675cb0b5abf4d",
+  "file": "e4672684259039cc.html.gz"
+ },
+ {
+  "url": "https://kia.com.eg/kia-ev9",
+  "source": "kia_eg_web",
+  "recipe": "kia_versions",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:55 GMT",
+  "bytes": 100775,
+  "sha256": "72a147606ee1a118a607e57373df52f053daf7b393a667ed821d765c40f59b9b",
+  "file": "72a147606ee1a118.html.gz"
+ },
+ {
+  "url": "https://www.chevroletarabia.com/eg-ar/cars/optra",
+  "source": "chevrolet_eg_web",
+  "recipe": "chevrolet_nav_prices",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:56 GMT",
+  "bytes": 312707,
+  "sha256": "d84f71ca852c4cb8bef7cdeef5ae5e94fa3b75c5826167a19150600dd6199c65",
+  "file": "d84f71ca852c4cb8.html.gz"
+ },
+ {
+  "url": "https://www.skoda-egypt.com/models/kodiaq/kodiaq/the-kodiaq-pricelist",
+  "source": "skoda_eg_web",
+  "recipe": "skoda_pricelist_json",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:28:58 GMT",
+  "bytes": 160813,
+  "sha256": "b4a467bf6d9f38a86916e9ff5f1aa68870428648ae4af7456108800dc3da28d3",
+  "file": "b4a467bf6d9f38a8.html.gz"
+ },
+ {
+  "url": "https://www.skoda-egypt.com/models/octavia/octavia/octavia-pricelist",
+  "source": "skoda_eg_web",
+  "recipe": "skoda_pricelist_json",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:29:00 GMT",
+  "bytes": 160955,
+  "sha256": "10736a71a17b7be5c41ef9466d8c9754ab9b4c9db2262a5ced3e65fa1b622b56",
+  "file": "10736a71a17b7be5.html.gz"
+ },
+ {
+  "url": "https://www.skoda-egypt.com/models/scala/scala/scala-pricelist",
+  "source": "skoda_eg_web",
+  "recipe": "skoda_pricelist_json",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:29:01 GMT",
+  "bytes": 92161,
+  "sha256": "c8481203f2b94ee8c13b0a14a0b2204026ea7f6b8eeb5a1e87cb97b4edf59663",
+  "file": "c8481203f2b94ee8.html.gz"
+ },
+ {
+  "url": "https://jetouregypt.com/models/T1/",
+  "source": "jetour_eg_web",
+  "recipe": "jetour_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:29:02 GMT",
+  "bytes": 72257,
+  "sha256": "b2fffacc0f9143461b1ffd1e81c375a90639392e6aa05a1d3e01f57cf1aa92b2",
+  "file": "b2fffacc0f914346.html.gz"
+ },
+ {
+  "url": "https://jetouregypt.com/models/T2/",
+  "source": "jetour_eg_web",
+  "recipe": "jetour_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:29:04 GMT",
+  "bytes": 80477,
+  "sha256": "3374608da1cab2e7b9f7ba25fee2ab4f9b9f64b63586ad75824dd0fb0dec68c0",
+  "file": "3374608da1cab2e7.html.gz"
+ },
+ {
+  "url": "https://jetouregypt.com/models/T2-i-DM/",
+  "source": "jetour_eg_web",
+  "recipe": "jetour_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:29:05 GMT",
+  "bytes": 85545,
+  "sha256": "4427f97fbf8aa9b1065a75acfdac2cc9a1e312437d6903eeec637593ddc095bb",
+  "file": "4427f97fbf8aa9b1.html.gz"
+ },
+ {
+  "url": "https://jetouregypt.com/models/dashing/",
+  "source": "jetour_eg_web",
+  "recipe": "jetour_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:29:07 GMT",
+  "bytes": 82908,
+  "sha256": "f49cdc79a13b266489fd774195ac96f87bdd0a74e7ae1c79d1dbeda201d30be9",
+  "file": "f49cdc79a13b2664.html.gz"
+ },
+ {
+  "url": "https://jetouregypt.com/models/x70/",
+  "source": "jetour_eg_web",
+  "recipe": "jetour_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:29:08 GMT",
+  "bytes": 77819,
+  "sha256": "34da09442c11c236d88e0fa1b8b784a73fe6024a491e74da125ebce7d8e2a957",
+  "file": "34da09442c11c236.html.gz"
+ },
+ {
+  "url": "https://jetouregypt.com/models/jetour-x70-fl/",
+  "source": "jetour_eg_web",
+  "recipe": "jetour_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:29:10 GMT",
+  "bytes": 86642,
+  "sha256": "2a45e11f8267eaa0ad47d5b63f4552fb2c729b8e649943aaff99e467ffbddb15",
+  "file": "2a45e11f8267eaa0.html.gz"
+ },
+ {
+  "url": "https://jetouregypt.com/models/x70plus/",
+  "source": "jetour_eg_web",
+  "recipe": "jetour_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:29:11 GMT",
+  "bytes": 78045,
+  "sha256": "3aeb9b79e1ff27fed813e7770c7cb375d7f87469b97b5d28e887770bbec49026",
+  "file": "3aeb9b79e1ff27fe.html.gz"
+ },
+ {
+  "url": "https://jetouregypt.com/models/x90-plus-1-6t/",
+  "source": "jetour_eg_web",
+  "recipe": "jetour_model_page",
+  "status": 200,
+  "http_date": "Mon, 12 Oct 2026 19:29:13 GMT",
+  "bytes": 89103,
+  "sha256": "88bf08b57acfdfc7a3095d8504caf5adb3ef78a7d1cf0fdfa61cea541d7ff11a",
+  "file": "88bf08b57acfdfc7.html.gz"
+ }
+]
