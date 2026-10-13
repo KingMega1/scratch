@@ -6,7 +6,8 @@ import { dict } from '@/lib/i18n/dictionaries';
 import { date, monthLabel, num, price } from '@/lib/format';
 import { pageMeta } from '@/lib/seo';
 import { vehicles } from '@/server/vehicles/read-model';
-import { CarCard, CarName } from '@/components/car';
+import { BodyIcon, CarCard, CarName } from '@/components/car';
+import { BrandGrid } from '@/components/brand';
 
 type P = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: P): Promise<Metadata> {
@@ -21,7 +22,7 @@ export default async function Market({ params }: P) {
   if (!isLocale(l)) notFound();
   const locale = l as Locale;
   const t = dict(locale), m = t.market, v2 = t.v2;
-  const V = vehicles(), cars = V.all(), meta = V.meta(), hist = V.priceHistory();
+  const V = vehicles(), cars = V.all(), meta = V.meta();
   const L = (p: string) => `/${locale}${p}`;
   const brands = V.brands();
   const inBand = (b: { min?: number; max?: number }) => cars.filter(c => c.priceFrom.sortValue != null && (b.min == null || c.priceFrom.sortValue >= b.min) && (b.max == null || c.priceFrom.sortValue < b.max)).length;
@@ -31,33 +32,24 @@ export default async function Market({ params }: P) {
   const launches = window ? withReg.filter(c => (c.registrations!.firstSeen ?? '') >= window[0]).sort((a, b) => (b.registrations!.firstSeen ?? '').localeCompare(a.registrations!.firstSeen ?? '')) : [];
   const gaining = withReg.filter(c => (c.registrations!.yoy ?? 0) > 0).sort((a, b) => b.registrations!.yoy! - a.registrations!.yoy!).slice(0, 6);
   const changes = cars.flatMap(c => c.changes.map(x => ({ car: c, x }))).sort((a, b) => b.x.effectiveDate.localeCompare(a.x.effectiveDate)).slice(0, 12);
-  const latestDate = (/\d{4}-\d{2}-\d{2}$/.exec(hist.latest) ?? [''])[0];
-  const checked = cars.filter(c => c.priceFrom.state === 'checked').length;
-  const conflicts = cars.filter(c => c.priceFrom.state === 'conflict' || c.conflicts > 0).length;
 
   return (
     <>
       <div className="wrap section" style={{ paddingBlockEnd: 24, paddingBlockStart: 32 }}>
         <h1 className="h-page">{m.h1}</h1>
         <p className="lede">{m.lede}</p>
-        <p className="sub">{v2.slice(meta.models_in_slice)}</p>
         <form role="search" action={L('/search')} className="search-box" style={{ maxWidth: 640 }}>
           <label className="visually-hidden" htmlFor="mq">{t.nav.search}</label>
           <input id="mq" name="q" type="search" placeholder={t.searchPlaceholder} />
           <button className="btn btn-primary" type="submit">{t.search.submit}</button>
         </form>
+        <p style={{ marginBlockStart: 20 }}><Link className="btn btn-dark" href={L('/market/catalog')} data-cta="catalog">{m.catalogCta}</Link></p>
       </div>
 
       <section id="brands" className="section" style={{ paddingBlockStart: 16 }} aria-labelledby="b-h">
         <div className="wrap">
           <h2 id="b-h" className="h-section">{m.brandsH}</h2>
-          <div className="brand-grid" style={{ marginBlockStart: 16 }}>
-            {brands.map(b => (
-              <Link key={b.id} className="brand-chip" href={L(`/cars?brand=${b.id}`)}>
-                <b>{locale === 'ar' ? b.ar ?? <bdi>{b.en}</bdi> : b.en}</b><span className="tnum">{m.models(b.count)}</span>
-              </Link>
-            ))}
-          </div>
+          <BrandGrid brands={brands} locale={locale} />
         </div>
       </section>
 
@@ -73,7 +65,9 @@ export default async function Market({ params }: P) {
           </div>
           <h2 id="body" className="h-section" style={{ marginBlockStart: 40 }}>{m.bodyH}</h2>
           <div className="chips" style={{ marginBlockStart: 12 }}>
-            <Link className="chip" href={L('/cars')}>{t.body.suv} · <span className="tnum">{m.models(cars.length)}</span></Link>
+            {(['suv', 'sedan', 'hatch', 'mpv'] as const).filter(k => cars.some(c => c.body === k)).map(k => (
+              <Link key={k} className="body-tile" href={L(`/cars?body=${k}`)} data-body={k}><BodyIcon body={k} className="" /><b>{t.body[k]}</b><span className="n tnum">{m.models(cars.filter(c => c.body === k).length)}</span></Link>
+            ))}
           </div>
         </div>
       </section>
@@ -81,9 +75,6 @@ export default async function Market({ params }: P) {
       <section id="changes" className="section" aria-labelledby="ch-h">
         <div className="wrap">
           <h2 id="ch-h" className="h-section">{m.changedH}</h2>
-          <p className="sub tnum">{locale === 'ar'
-            ? `${hist.snapshots.length} لقطات أسعار لحد ${date(latestDate, locale)}. بين آخر لقطتين: ${num(hist.changes.CHANGED ?? 0)} سعر اتغيّر، و ${num(hist.changes.NEW_IN_LATEST ?? 0)} سعر جديد.`
-            : `${hist.snapshots.length} price snapshots up to ${date(latestDate, locale)}. Between the last two: ${num(hist.changes.CHANGED ?? 0)} prices changed, ${num(hist.changes.NEW_IN_LATEST ?? 0)} are new.`}</p>
           {changes.length ? (
             <div className="table-scroll"><table className="t">
               <thead><tr><th scope="col">{t.car.dateCol}</th><th scope="col">{t.catalog.model}</th><th scope="col" className="t-num">{locale === 'ar' ? 'من' : 'From'}</th><th scope="col" className="t-num">{locale === 'ar' ? 'إلى' : 'To'}</th><th scope="col">{v2.sources}</th></tr></thead>
@@ -129,21 +120,6 @@ export default async function Market({ params }: P) {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="in-h">
-        <div className="wrap">
-          <h2 id="in-h" className="h-section">{m.insightsH}</h2>
-          <div className="grid grid-3" style={{ marginBlockStart: 16 }}>
-            <div className="card"><p>{locale === 'ar' ? `${num(checked)} من ${num(cars.length)} موديل ليهم سعر رسمي محسوم لأرخص فئة.` : `${num(checked)} of ${num(cars.length)} models have a resolved official entry price.`}</p></div>
-            <div className="card"><p>{locale === 'ar' ? `${num(conflicts)} موديل فيهم المصادر مختلفة على سعر فئة واحدة على الأقل. بنعرض الأرقام كلها ومش بناخد متوسط.` : `${num(conflicts)} models have sources disagreeing on at least one version price. We show every figure and never average.`}</p></div>
-            <div className="card"><p>{v2.marketNote}</p></div>
-          </div>
-          <div className="card" style={{ marginBlockStart: 32, background: 'var(--ci-color-fog)' }}>
-            <h2 className="h-section">{m.catalogH}</h2>
-            <p className="sub">{m.catalogBody}</p>
-            <Link className="btn btn-dark" href={L('/market/catalog')}>{m.catalogCta}</Link>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

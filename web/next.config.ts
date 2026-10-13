@@ -3,12 +3,12 @@ import type { NextConfig } from 'next';
 const isDev = process.env.NODE_ENV !== 'production';
 
 // S1 CSP baseline. Scripts: self + Next inline bootstrap (unsafe-inline until nonce rollout in S3).
-// Images: self + Wikimedia (TEMP_UNVERIFIED placeholder photos until P2 enrichment lands).
+// Images: self only (verified model photos are served from /media/models; see data/registry/media-verified.json).
 const csp = [
   "default-src 'self'",
   `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''}`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: https://upload.wikimedia.org",
+  "img-src 'self' data:",
   "font-src 'self'",
   "connect-src 'self'",
   "frame-ancestors 'none'",

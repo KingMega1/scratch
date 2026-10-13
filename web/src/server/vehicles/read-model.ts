@@ -2,6 +2,7 @@ import 'server-only';
 import snapshot from '@data/registry/universe.snapshot.json';
 import crosswalk from '@data/registry/display-crosswalk.TEMP.json';
 import serving from '@data/registry/catalogue-serving.release.json';
+import media from '@data/registry/media-verified.json';
 import type { AssetFlag, BrandSummary, OfficialPrice, PriceChange, PriceState, Powertrain, PublicCar, PublicImage, PublicTrim, RegistryMeta, SpecValue } from '@/lib/vehicles/types';
 
 /* Serving read model.
@@ -97,10 +98,10 @@ function shape(m: Raw): PublicCar {
   const latest = cohorts.find(c => c.model_year === latestYear) ?? null;
   const reg = m.registration;
   const cw = (crosswalk.map as Record<string, Raw>)[m.slug];
-  const image: PublicImage | null = cw?.image ? {
-    src: cw.image.src, credit: cw.image.credit ?? null, sourcePage: cw.image.page ?? null,
-    flags: ['TEMP_UNVERIFIED', 'EXACT_CAR_UNCONFIRMED', 'PHOTO_NEEDS_ENRICHMENT'] as AssetFlag[],
-  } : null;
+  // Images come only from the verified media registry (exact model, named source, usage basis). The TEMP display
+  // crosswalk photos (TEMP_UNVERIFIED, not Egypt-market-checked) are no longer served.
+  const vm = (media.entries as Raw[]).find(x => x.site_slug === m.slug);
+  const image: PublicImage | null = vm ? { src: vm.src, credit: vm.credit ?? null, sourcePage: vm.source_url ?? null, flags: [] as AssetFlag[] } : null;
   const lastObserved = (m.freshness?.price_snapshots ?? []).filter((s: Raw) => s.model_observed).map((s: Raw) => s.observed_at).sort().at(-1) ?? null;
   return {
     id: m.slug,
@@ -148,9 +149,14 @@ class JsonSnapshotReadModel implements VehicleReadModel {
       car.body = e.body;
       car.p1Id = e.p1_id;
       car.evidenceState = e.evidence_state;
+      if (raw) {
+        // S6 registrations say only "ICE"; name the fuel only when the pinned U11 identity states it unambiguously.
+        const fuels = ['petrol', 'diesel'].filter(f => e.powertrains.includes(f)) as Powertrain[];
+        if (fuels.length === 1) car.powertrains = car.powertrains.map(p => (p === 'ice' ? fuels[0] : p));
+      }
       if (!raw) {
         // Facts explicitly attributed to the pinned U11 release. Prices/specs/images are never copied or inferred.
-        const pt: Record<string, Powertrain> = {petrol:'ice', diesel:'ice', hybrid:'hybrid', phev:'phev', reev:'reev', ev:'ev'};
+        const pt: Record<string, Powertrain> = {petrol:'petrol', diesel:'diesel', hybrid:'hybrid', phev:'phev', reev:'reev', ev:'ev'};
         car.powertrains = [...new Set(e.powertrains.map(p => pt[p]).filter(Boolean))];
         car.registrations = e.registration ? {
           inWindow:e.registration.last12, firstSeen:e.registration.first_month,

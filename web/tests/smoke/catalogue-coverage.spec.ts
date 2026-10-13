@@ -5,7 +5,7 @@ for(const locale of ['en','ar']){
  test(locale+' complete catalogue and all 283 detail pages',async({page,request})=>{
   test.setTimeout(240000);
   await page.goto('/'+locale+'/market/catalog');
-  await expect(page.locator('tbody tr')).toHaveCount(283);
+  await expect(page.locator('a.mc[data-model-id]')).toHaveCount(283); // brand-grouped cards, every on-sale model
   for(let i=0;i<release.entries.length;i+=8){
    await Promise.all(release.entries.slice(i,i+8).map(async(e:{site_slug:string})=>{
     const response=await request.get('/'+locale+'/cars/'+e.site_slug);
@@ -17,7 +17,7 @@ for(const locale of ['en','ar']){
   }
   for(const e of release.excluded)expect((await request.get('/'+locale+'/cars/'+e.site_slug)).status()).toBe(404);
   await page.goto('/'+locale+'/cars/alfa-romeo-giulia');
-  await expect(page.locator('.cd-info .state-unknown').first()).toBeVisible();
+  await expect(page.locator('.cd-info .price-na, .cd-info .state-unknown').first()).toBeVisible();
   await expect(page.locator('.cd-info .bracket')).toHaveCount(0);
   await expect(page.locator('#specs-h').locator('..')).toContainText(locale==='ar'?'المواصفات لم يتم التحقق منها بعد.':'Specifications have not been verified yet.');
   expect(await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth)).toBeLessThanOrEqual(1);

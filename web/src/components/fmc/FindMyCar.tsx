@@ -293,7 +293,7 @@ function Result({ copy, site, locale, v, onRestart, onEdit, onAdjust }: { copy: 
 
       {r.hero && !r.equal ? <>
         <article className="fmc-hero" aria-labelledby="fmc-hero-h" data-model-id={r.hero.id}>
-          {r.hero.image ? <figure className="fmc-hero-img"><img src={r.hero.image.src} alt={r.hero.name.text} loading="lazy" referrerPolicy="no-referrer" onError={e => (e.currentTarget.closest('figure') as HTMLElement).remove()} /></figure> : null}
+          {/* P1 dataset photos are unverified (AT-43 image policy): not rendered; P1 markup is unchanged. */}
           <div className="fmc-hero-top">
             <div>{r.eyebrow ? <H as="p" className="eyebrow" html={r.eyebrow.html} /> : null}
               <H as="h2" className="hero-name" html={r.hero.name.html} />

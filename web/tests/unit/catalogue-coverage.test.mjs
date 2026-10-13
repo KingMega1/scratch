@@ -39,7 +39,7 @@ function runtime(path, dependencies){
 }
 const V=runtime('src/server/vehicles/read-model.ts',{
  '@data/registry/universe.snapshot.json':snap,'@data/registry/display-crosswalk.TEMP.json':cw,
- '@data/registry/catalogue-serving.release.json':release,
+ '@data/registry/catalogue-serving.release.json':release,'@data/registry/media-verified.json':JSON.parse(readFileSync('data/registry/media-verified.json','utf8')),
 });
 const Q=runtime('src/server/vehicles/query.ts',{'./read-model':V});
 test('actual website read-model: all 283 gettable, 283 recommendation bridges, 3 absent',()=>{
@@ -48,7 +48,10 @@ test('actual website read-model: all 283 gettable, 283 recommendation bridges, 3
   assert.equal(V.p1DisplaySlug(e.p1_id),e.site_slug);
   const car=V.vehicles().get(e.site_slug);assert.ok(car);assert.equal(car.p1Id,e.p1_id);
   if(!e.p2_evidence){assert.equal(car.priceFrom.value,null);assert.equal(car.priceFrom.sortValue,null);
-   assert.equal(car.priceFrom.state,'unknown');assert.deepEqual(car.specs,{});assert.deepEqual(car.trims,[]);assert.equal(car.image,null);}
+   assert.equal(car.priceFrom.state,'unknown');assert.deepEqual(car.specs,{});assert.deepEqual(car.trims,[]);
+   // images only from the verified media registry, never copied or inferred from U11
+   const vm=JSON.parse(readFileSync('data/registry/media-verified.json','utf8')).entries.find(x=>x.site_slug===car.id);
+   assert.equal(car.image?.src??null, vm?vm.src:null);}
  }
  for(const e of release.excluded){assert.equal(V.vehicles().get(e.site_slug),null);assert.equal(V.p1DisplaySlug(e.p1_id),null);}
  assert.equal(V.vehicles().get('invented-model'),null);

@@ -427,3 +427,40 @@ table.t th.t-num { text-align: end; }
 .fmc .fmc-toast { position: fixed; inset-block-end: 24px; inset-inline-start: 50%; transform: translateX(-50%); background: var(--ci-color-ink); color: var(--ci-color-white); padding: 10px 16px; border-radius: 8px; z-index: 60; }
 @media (max-width: 640px) { .fmc .fmc-hero .hero-name { font-size: 26px; } .fmc .fmc-detail { padding: 16px; } .fmc .fmc-hero-top { padding: 16px 16px 0; } .fmc .fmc-site { padding: 0 16px 16px; } }
 .fmc .chip { gap: 4px; }
+
+/* ---------- AT-43 UX recovery (Brand V2 tokens only) ---------- */
+.no-photo { width: 100%; height: 100%; min-height: 120px; display: grid; place-content: center; justify-items: center; gap: 8px; background: var(--ci-color-fog); color: var(--ci-semantic-text-secondary); font-size: 13px; text-align: center; padding: 12px; }
+.no-photo img.icon { width: 96px; height: auto; opacity: .6; }
+.cd-media .no-photo img.icon { width: 160px; }
+.price-na { font-size: 14px; color: var(--ci-semantic-text-secondary); }
+.brand-grid { list-style: none; padding: 0; margin: 16px 0 0; }
+.brand-chip { display: grid; grid-template-columns: 36px 1fr; grid-template-rows: auto auto; column-gap: 10px; align-items: center; min-height: 64px; }
+.brand-chip .brand-mark { grid-row: 1 / span 2; }
+.brand-chip:hover, .brand-chip:focus-visible { border-color: var(--ci-color-ink); }
+.brand-mark { width: 32px; height: 32px; color: var(--ci-color-ink); flex: none; }
+.brand-mark-text { display: grid; place-items: center; border: 1.5px solid var(--ci-color-line); border-radius: 50%; font-size: 12px; font-weight: 700; letter-spacing: .02em; color: var(--ci-semantic-text-secondary); }
+.catalog .cat-controls { display: grid; gap: 10px; margin-block: 8px 20px; }
+.catalog .filter-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.catalog .filter-row .label { font-weight: 700; font-size: 14px; margin-inline-end: 4px; }
+.brand-jump { display: flex; gap: 8px; overflow-x: auto; padding-block: 4px 12px; margin-block-end: 8px; scrollbar-width: thin; }
+.brand-jump .chip { white-space: nowrap; flex: none; }
+.cat-brand { padding-block: 20px; border-top: 1px solid var(--ci-color-line); scroll-margin-top: 80px; }
+.cat-brand-head { display: flex; align-items: center; gap: 12px; margin-block-end: 12px; }
+.cat-brand-head h2 { margin: 0; font-size: 22px; }
+.cat-brand-head .brand-mark { width: 36px; height: 36px; }
+.mc-grid { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .mc-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .mc-grid { grid-template-columns: repeat(3, 1fr); } }
+.mc { display: grid; gap: 6px; padding: 14px 16px; border: 1px solid var(--ci-color-line); border-radius: var(--radius-card); text-decoration: none; color: inherit; background: var(--ci-color-white); min-height: 44px; }
+.mc:hover, .mc:focus-visible { border-color: var(--ci-color-ink); }
+.mc-name { font-weight: 700; font-size: 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+.mc-brand { color: var(--ci-semantic-text-secondary); font-weight: 600; }
+.mc-price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; }
+.mc-label { font-size: 13px; color: var(--ci-semantic-text-secondary); }
+.mc-specs { font-size: 13px; color: var(--ci-semantic-text-secondary); }
+.brand-strip { list-style: none; padding: 0 0 6px; margin: 0; }
+.brand-strip li { flex: none; }
+.brand-strip .body-tile { width: 132px; }
+.brand-chip.no-logo { grid-template-columns: 1fr; }
+/* P1 result cards carry dataset photos that are not exact-model verified; P5 does not show them (markup untouched). */
+.fmc .alt-img { display: none; }

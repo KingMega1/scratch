@@ -2,7 +2,8 @@
    Only this shape reaches the browser. Internal machinery (confidence grades, row refs, QA queues) stays server-side;
    customer-facing evidence (source name, date, link) is kept because every figure must carry it. */
 
-export type Powertrain = 'ice' | 'hybrid' | 'phev' | 'reev' | 'ev';
+/* 'ice' = combustion where the source does not say petrol or diesel (never shown as petrol by assumption). */
+export type Powertrain = 'petrol' | 'diesel' | 'ice' | 'hybrid' | 'phev' | 'reev' | 'ev';
 
 /* Brand V2 evidence states. 'checked' = official figure with a named, dated source (bracket allowed). */
 export type PriceState = 'checked' | 'near' | 'conflict' | 'unknown';

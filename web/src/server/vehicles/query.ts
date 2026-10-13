@@ -2,16 +2,19 @@ import 'server-only';
 import type { Powertrain, PublicCar } from '@/lib/vehicles/types';
 import { brandSlug, vehicles } from './read-model';
 
-export interface CarQuery { brand?: string; min?: number; max?: number; pt?: Powertrain; official?: boolean; sort?: 'popular' | 'price_asc' | 'price_desc'; page?: number }
+export interface CarQuery { body?: string; brand?: string; min?: number; max?: number; pt?: Powertrain; official?: boolean; sort?: 'popular' | 'price_asc' | 'price_desc'; page?: number }
 export const PAGE_SIZE = 24;
-const PTS: Powertrain[] = ['ice', 'hybrid', 'phev', 'reev', 'ev'];
+export const PTS: Powertrain[] = ['petrol', 'diesel', 'hybrid', 'phev', 'reev', 'ev', 'ice'];
+/* Legacy ?pt=ice links keep working: they match every combustion model. */
+const ptMatch = (c: PublicCar, pt: Powertrain) => pt === 'ice' ? c.powertrains.some(p => p === 'ice' || p === 'petrol' || p === 'diesel') : c.powertrains.includes(pt);
 const int = (v: unknown) => { const n = Number(v); return Number.isFinite(n) && n >= 0 && n <= 1e9 ? Math.round(n) : undefined; };
 
 /* Parse untrusted query params into a closed set of values (server-side validation). */
 export function parseCarQuery(sp: Record<string, string | string[] | undefined>): CarQuery {
   const one = (k: string) => { const v = sp[k]; return typeof v === 'string' ? v : Array.isArray(v) ? v[0] : undefined; };
-  const pt = one('pt') as Powertrain; const sort = one('sort'); const brand = one('brand');
+  const pt = one('pt') as Powertrain; const sort = one('sort'); const brand = one('brand'); const body = one('body');
   return {
+    body: body && ['suv', 'sedan', 'hatch', 'mpv'].includes(body) ? body : undefined,
     brand: brand && /^[a-z0-9-]{1,40}$/.test(brand) ? brand : undefined,
     min: int(one('min')), max: int(one('max')),
     pt: PTS.includes(pt) ? pt : undefined,
@@ -25,7 +28,7 @@ export function parseCarQuery(sp: Record<string, string | string[] | undefined>)
 export function queryCars(q: CarQuery): { items: PublicCar[]; total: number; pages: number } {
   let list = vehicles().all().filter(c => {
     const p = c.priceFrom.sortValue;
-    return (!q.brand || brandSlug(c.brand.en) === q.brand) && (!q.pt || c.powertrains.includes(q.pt)) &&
+    return (!q.body || c.body === q.body) && (!q.brand || brandSlug(c.brand.en) === q.brand) && (!q.pt || ptMatch(c, q.pt)) &&
       (!q.official || c.priceFrom.state === 'checked') &&
       (q.min == null || (p != null && p >= q.min)) && (q.max == null || (p != null && p <= q.max));
   });

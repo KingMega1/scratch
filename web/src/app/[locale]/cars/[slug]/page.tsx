@@ -158,11 +158,6 @@ export default async function CarDetail({ params }: P) {
         </section>
       ) : null}
 
-      <section className="cd-section" aria-labelledby="gal-h" data-asset-flags="PHOTO_NEEDS_ENRICHMENT">
-        <h2 id="gal-h" className="h-section">{c.galleryH}</h2>
-        {car.image ? <div style={{ maxWidth: 640 }}><div className="cd-media" style={{ borderRadius: 10, overflow: 'hidden' }}><CarMedia car={car} locale={locale} /></div></div> : <div className="slot-empty">{c.noPhoto}</div>}
-      </section>
-
       <section className="cd-section" aria-labelledby="mkt-h">
         <h2 id="mkt-h" className="h-section">{c.marketH}</h2>
         {r && r.inWindow != null ? (

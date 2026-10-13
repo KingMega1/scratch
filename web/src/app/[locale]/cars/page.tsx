@@ -6,7 +6,7 @@ import { dict } from '@/lib/i18n/dictionaries';
 import { num } from '@/lib/format';
 import { pageMeta } from '@/lib/seo';
 import { vehicles } from '@/server/vehicles/read-model';
-import { parseCarQuery, queryCars, type CarQuery } from '@/server/vehicles/query';
+import { PTS, parseCarQuery, queryCars, type CarQuery } from '@/server/vehicles/query';
 import { CarCard } from '@/components/car';
 
 type P = { params: Promise<{ locale: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
@@ -20,6 +20,7 @@ export async function generateMetadata({ params }: P): Promise<Metadata> {
 function href(locale: Locale, q: CarQuery, patch: Partial<CarQuery>) {
   const m = { ...q, ...patch, page: patch.page ?? 1 };
   const sp = new URLSearchParams();
+  if (m.body) sp.set('body', m.body);
   if (m.brand) sp.set('brand', m.brand);
   if (m.min != null) sp.set('min', String(m.min));
   if (m.max != null) sp.set('max', String(m.max));
@@ -39,15 +40,14 @@ export default async function Cars({ params, searchParams }: P) {
   const q = parseCarQuery(await searchParams);
   const { items, total, pages } = queryCars(q);
   const brand = q.brand ? vehicles().brands().find(b => b.id === q.brand) : null;
-  const sliceNote = locale === 'ar' ? 'موديلات السوق المصري من نسخة البيانات الحالية. الأسعار والمواصفات غير المؤكدة موضّحة لكل عربية.' : 'Egyptian-market models from the current data release. Unverified prices and specifications are marked on each car.';
   const all = vehicles().all().length;
   const bandOn = (b: { min?: number; max?: number }) => q.min === b.min && q.max === b.max;
-  const hasFilters = q.brand || q.min != null || q.max != null || q.pt || q.official;
+  const hasFilters = q.body || q.brand || q.min != null || q.max != null || q.pt || q.official;
+  const fuels = PTS.filter(p => p !== 'ice' && vehicles().all().some(x => x.powertrains.includes(p)));
 
   return (
     <div className="wrap section" style={{ paddingBlockStart: 32 }}>
       <h1 className="h-page">{c.h1(num(all))}</h1>
-      <p className="sub">{sliceNote}</p>
       {brand ? <p className="sub">{c.brand}: <b>{locale === 'ar' ? brand.ar ?? brand.en : brand.en}</b></p> : null}
       <div className="filters" role="group" aria-label={c.filters}>
         <div className="filter-row">
@@ -60,10 +60,17 @@ export default async function Cars({ params, searchParams }: P) {
         <div className="filter-row">
           <span className="label">{c.pt}</span>
           <Link className="chip" href={href(locale, q, { pt: undefined })} aria-current={!q.pt ? 'true' : undefined}>{c.all}</Link>
-          {(['ice', 'hybrid', 'phev', 'reev', 'ev'] as const).map(p => (
+          {fuels.map(p => (
             <Link key={p} className="chip" href={href(locale, q, { pt: p })} aria-current={q.pt === p ? 'true' : undefined}>{t.pt[p]}</Link>
           ))}
           <Link className="chip" href={href(locale, q, { official: !q.official })} aria-current={q.official ? 'true' : undefined}>{c.officialOnly}</Link>
+        </div>
+        <div className="filter-row">
+          <span className="label">{t.compare.rows.body}</span>
+          <Link className="chip" href={href(locale, q, { body: undefined })} aria-current={!q.body ? 'true' : undefined}>{c.all}</Link>
+          {(['suv', 'sedan', 'hatch', 'mpv'] as const).map(b => (
+            <Link key={b} className="chip" href={href(locale, q, { body: b })} aria-current={q.body === b ? 'true' : undefined}>{t.body[b]}</Link>
+          ))}
         </div>
         <div className="filter-row">
           <span className="label">{c.sort}</span>

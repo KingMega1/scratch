@@ -31,10 +31,10 @@ test.describe('locale + direction', () => {
 test.describe('pages', () => {
   const PAGES: [string, RegExp][] = [
     ['/ar', /قبل ما تشتري/], ['/en', /Before making a car decision/i], ['/en/cars', /Browse/i], ['/ar/cars', /تصفّح/],
-    ['/en/market', /Market/], ['/ar/market', /السوق/], ['/en/cars/kia-sportage', /Kia Sportage/], ['/ar/cars/kia-sportage', /كيا/],
+    ['/en/market', /Car Prices/], ['/ar/market', /أسعار السيارات/], ['/en/cars/kia-sportage', /Kia Sportage/], ['/ar/cars/kia-sportage', /كيا/],
     ['/en/compare?ids=kia-sportage,hyundai-tucson', /Compare/], ['/en/search?q=sportage', /Kia Sportage/],
     ['/en/my-carindex', /My CarIndex/], ['/en/news', /News/], ['/en/find-my-car', /Find My Car/], ['/en/methodology', /Methodology/],
-    ['/en/market/catalog', /Full catalog/i],
+    ['/en/market/catalog', /All cars and prices/i], ['/ar/market/catalog', /كل العربيات وأسعارها/],
   ];
   for (const [path, re] of PAGES) {
     test(`renders ${path}`, async ({ page }, info) => {
@@ -58,7 +58,10 @@ test.describe('navigation + brand', () => {
       await expect(page.locator('#gh-drawer')).toBeVisible();
     }
     const scope = isMobile ? page.locator('#gh-drawer nav') : page.locator('.gh-nav');
-    for (const label of ['Find My Car', 'Cars', 'Compare', 'Market', 'News & Guides']) await expect(scope.getByRole('link', { name: label, exact: true })).toBeVisible();
+    for (const label of ['Find My Car', 'Cars', 'Compare', 'Car Prices']) await expect(scope.getByRole('link', { name: label, exact: true })).toBeVisible();
+    // secondary content leaves primary navigation but stays reachable from the footer
+    for (const label of ['News & Guides', 'Market', 'Methodology']) await expect(scope.getByRole('link', { name: label, exact: true })).toHaveCount(0);
+    for (const label of ['News', 'Guides']) await expect(page.locator('footer').getByRole('link', { name: label, exact: true })).toBeAttached();
     for (const label of ['Methodology', 'Independence', 'About', 'Contact', 'Privacy', 'Terms']) await expect(page.locator('footer').getByRole('link', { name: label, exact: true })).toBeAttached();
     await expect(page.locator('a[href*="dashboard" i], a[href*="invit" i]')).toHaveCount(0);
   });

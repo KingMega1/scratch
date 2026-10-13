@@ -6,12 +6,12 @@ import { type Locale, otherLocale, switchLocalePath } from '@/lib/i18n/config';
 import { dict } from '@/lib/i18n/dictionaries';
 import { track } from '@/lib/analytics/client';
 
+/* Primary navigation is the buyer journeys only. News, guides and methodology stay reachable from the footer. */
 const NAV = [
   ['fmc', '/find-my-car'],
   ['cars', '/cars'],
   ['compare', '/compare'],
   ['market', '/market'],
-  ['news', '/news'],
   ['search', '/search'],
 ] as const;
 
