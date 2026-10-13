@@ -13126,9 +13126,11 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
+    "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
+    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -13178,90 +13180,9 @@
    },
    "rework_price_rows": 0,
    "site_slug": "dfsk-600",
-   "specs": {
-    "engine_cc": [
-     {
-      "applicability": "market trim pages: 1.5 A/T",
-      "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/dfsk-600/1f90aabbeb6c",
-      "unit": "",
-      "value": "1500"
-     }
-    ],
-    "fuel_tank_l": [
-     {
-      "applicability": "market trim pages: 1.5 A/T",
-      "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/dfsk-600/1f90aabbeb6c",
-      "unit": "",
-      "value": "58"
-     }
-    ],
-    "height_mm": [
-     {
-      "applicability": "market trim pages: 1.5 A/T",
-      "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/dfsk-600/1f90aabbeb6c",
-      "unit": "",
-      "value": "1710"
-     }
-    ],
-    "length_mm": [
-     {
-      "applicability": "market trim pages: 1.5 A/T",
-      "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/dfsk-600/1f90aabbeb6c",
-      "unit": "",
-      "value": "4720"
-     }
-    ],
-    "seats": [
-     {
-      "applicability": "market trim pages: 1.5 A/T",
-      "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/dfsk-600/1f90aabbeb6c",
-      "unit": "",
-      "value": "7"
-     }
-    ],
-    "torque_nm": [
-     {
-      "applicability": "market trim pages: 1.5 A/T",
-      "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/dfsk-600/1f90aabbeb6c",
-      "unit": "",
-      "value": "300"
-     }
-    ],
-    "wheelbase_mm": [
-     {
-      "applicability": "market trim pages: 1.5 A/T",
-      "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/dfsk-600/1f90aabbeb6c",
-      "unit": "",
-      "value": "2785"
-     }
-    ],
-    "width_mm": [
-     {
-      "applicability": "market trim pages: 1.5 A/T",
-      "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/dfsk-600/1f90aabbeb6c",
-      "unit": "",
-      "value": "1865"
-     }
-    ]
-   },
-   "specs_accepted": true,
-   "warranty": [
-    {
-     "applicability": "market trim pages: model",
-     "issuer": "ContactCars+Hatla2ee",
-     "source": "https://www.contactcars.com/en/new-cars/dfsk-600/1f90aabbeb6c",
-     "unit": "",
-     "value": "7 years / 150000 km"
-    }
-   ]
+   "specs": null,
+   "specs_accepted": false,
+   "warranty": null
   },
   {
    "brand": "DFSK",
@@ -13269,11 +13190,9 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -13323,9 +13242,90 @@
    },
    "rework_price_rows": 0,
    "site_slug": "dfsk-e5",
-   "specs": null,
-   "specs_accepted": false,
-   "warranty": null
+   "specs": {
+    "engine_cc": [
+     {
+      "applicability": "market trim pages: REEV",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be",
+      "unit": "",
+      "value": "1500"
+     }
+    ],
+    "fuel_tank_l": [
+     {
+      "applicability": "market trim pages: REEV",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be",
+      "unit": "",
+      "value": "60"
+     }
+    ],
+    "height_mm": [
+     {
+      "applicability": "market trim pages: REEV",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be",
+      "unit": "",
+      "value": "1710"
+     }
+    ],
+    "power_hp": [
+     {
+      "applicability": "market trim pages: REEV",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be",
+      "unit": "",
+      "value": "175"
+     }
+    ],
+    "seats": [
+     {
+      "applicability": "market trim pages: REEV",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be",
+      "unit": "",
+      "value": "7"
+     }
+    ],
+    "torque_nm": [
+     {
+      "applicability": "market trim pages: REEV",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be",
+      "unit": "",
+      "value": "300"
+     }
+    ],
+    "wheelbase_mm": [
+     {
+      "applicability": "market trim pages: REEV",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be",
+      "unit": "",
+      "value": "2785"
+     }
+    ],
+    "width_mm": [
+     {
+      "applicability": "market trim pages: REEV",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be",
+      "unit": "",
+      "value": "1865"
+     }
+    ]
+   },
+   "specs_accepted": true,
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be",
+     "unit": "",
+     "value": "7 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "DFSK",
