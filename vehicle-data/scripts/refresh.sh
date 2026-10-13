@@ -16,6 +16,10 @@ if [ "$MODE" = "media" ]; then    # brand-logo / model-image candidates with lic
   python3 scripts/media_candidates.py --out "snapshots/M_${DATE}_${GITHUB_RUN_ID:-local}"
   exit 0
 fi
+if [ "$MODE" = "sheets" ]; then   # download media candidates, measure, build contact sheets for visual verification
+  python3 scripts/media_sheets.py --out "snapshots/MS_${DATE}_${GITHUB_RUN_ID:-local}"
+  exit 0
+fi
 if [ "$MODE" = "u11" ]; then      # all 283 U11 on-sale models: market model pages + linked model-year pages (prices only)
   SNAP="snapshots/U_${DATE}_${GITHUB_RUN_ID:-local}"
   mkdir -p "$SNAP"

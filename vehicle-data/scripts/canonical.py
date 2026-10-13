@@ -300,6 +300,56 @@ def supersede(a_rows, b_rows):
     return a_rows + b_rows
 
 
+# ------------------------------------------------------------------ specs, warranty, brochures, media
+
+KNOWN_CONFLICTS = {  # evidence-level conflicts recorded in AT-51; never promoted until resolved
+    ("mg/hs", "power_hp"): "SP-1 CONFLICT: MG Egypt HS page prose 221 hp vs spec table 200 hp (hybrid)",
+}
+CORE_SPECS = {"power_hp", "system_power_hp", "motor_power_hp", "motor_power_kw", "torque_nm", "system_torque_nm", "motor_torque_nm",
+              "engine", "engine_cc", "transmission", "length_mm", "wheelbase_mm", "seats", "kerb_weight_kg", "fuel_tank_l",
+              "battery_kwh", "ev_range_km", "ground_clearance_mm", "airbags", "drive", "boot_l", "fuel_consumption_l100"}
+
+
+def spec_facts():
+    """SP-1: official Egypt page (O4, HIGH) or accepted Egypt brochure/price-list facts; differing values for the same
+    model+field+applicability -> REWORK (CONFLICT)."""
+    f = []
+    for r in read(os.path.join(ROOT, "registry", "spec_facts.csv")):
+        f.append(dict(p1_id=r["p1_id"], field=r["field"], value=r["value"], unit=r["unit"], applicability=r["applicability"],
+                      source=f'drive:{r["source_drive_id"]}', issuer=r["source_issuer"], tier="A",
+                      status="ACCEPT" if r["status"] == "ACCEPT" else "REWORK", reason="SP-1 Egypt brochure/price list"))
+    for path in sorted(glob.glob(os.path.join(IN, "official", "*.official_observations.csv"))):
+        for r in read(path):
+            if r["field"].startswith("price") or not r["universe_id"]:
+                continue
+            ok = r["confidence"] == "HIGH"
+            f.append(dict(p1_id=r["universe_id"], field=r["field"], value=r["value_raw"], unit=r["unit"],
+                          applicability=" / ".join(filter(None, [re.sub(r"^.*page variant: ", "", r["note"]) if "page variant" in r["note"] else "",
+                                                                  r["trim_raw"]])) or
+                                        ("grade-scoped (one grade shown)" if "ONE grade" in r["note"] else "model page"),
+                          source=r["source_url"], issuer=r["source"], tier="A", status="ACCEPT" if ok else "REWORK",
+                          reason="SP-1 official Egypt page" if ok else f'SP-1 confidence {r["confidence"]}'))
+    seen = {}
+    for x in f:  # same fact from two pages (e.g. page variants) collapses; different values conflict
+        seen.setdefault((x["p1_id"], x["field"], x["applicability"]), set()).add(x["value"].strip().lower())
+    out, dedup = [], set()
+    for x in f:
+        k = (x["p1_id"], x["field"], x["applicability"])
+        if (k, x["value"]) in dedup:
+            continue
+        dedup.add((k, x["value"]))
+        if (x["p1_id"], x["field"]) in KNOWN_CONFLICTS and "hybrid" in x["applicability"].lower():
+            x["status"], x["reason"] = "REWORK", KNOWN_CONFLICTS[(x["p1_id"], x["field"])]
+        elif len(seen[k]) > 1 and x["status"] == "ACCEPT":
+            x["status"], x["reason"] = "REWORK", "SP-1 CONFLICT: " + " vs ".join(sorted(seen[k]))
+        out.append(x)
+    return out
+
+
+def media_accepted():
+    return read(os.path.join(ROOT, "registry", "media_accepted.csv"))
+
+
 # ------------------------------------------------------------------ assemble
 
 def price_view(rows):
@@ -346,19 +396,47 @@ def main():
     for r in rows:
         per[r["p1_id"]].append(r)
     as_of = a.as_of or (os.path.basename(snap).split("_")[1] if snap else "")
+    facts = spec_facts()
+    write(os.path.join(ROOT, "registry", "u11_spec_facts.csv"),
+          ["p1_id", "field", "value", "unit", "applicability", "issuer", "tier", "source", "status", "reason"],
+          sorted(facts, key=lambda x: (x["p1_id"], x["field"], x["applicability"], x["value"])))
+    fby = collections.defaultdict(list)
+    for x in facts:
+        fby[x["p1_id"]].append(x)
+    bro = collections.defaultdict(list)
+    for r in read(os.path.join(ROOT, "registry", "brochures.csv")):
+        if r["status"] == "ACCEPT":
+            bro[r["p1_id"]].append(dict(drive_id=r["drive_id"], title=r["title"], issuer=r["issuer"], scope=r["variant_scope"],
+                                        url=f'https://drive.google.com/file/d/{r["drive_id"]}/view'))
+    med = collections.defaultdict(list)
+    for r in media_accepted():
+        med[r["owner"]].append(r)
     models, cov = [], []
     for m in [r for r in ids if r["on_sale_u11"] == "true"]:
         pr = per.get(m["p1_id"], [])
         pv = price_view(pr)
-        conflicts = sorted({r["reason"] for r in pr if r["status"] == "REWORK" and "CONFLICT" in r["reason"]})
-        gaps = [g for g, ok in (("NO_ACCEPTED_PRICE", pv), ("NO_ACCEPTED_SPECS", False), ("NO_OFFICIAL_BROCHURE", False),
-                                ("NO_VERIFIED_HERO_IMAGE", False), ("NO_OFFICIAL_LOGO", False), ("NO_VERIFIED_WARRANTY", False),
+        fx = fby.get(m["p1_id"], [])
+        acc = [x for x in fx if x["status"] == "ACCEPT"]
+        specs = {}
+        for x in sorted(acc, key=lambda x: (x["field"], x["applicability"], x["value"])):
+            specs.setdefault(x["field"], []).append(dict(value=x["value"], unit=x["unit"], applicability=x["applicability"],
+                                                         issuer=x["issuer"], source=x["source"]))
+        warranty = specs.pop("warranty", None)
+        spec_ok = len(CORE_SPECS & set(specs)) >= 3
+        logo = next((dict(x) for x in med.get(m["brand"], []) if x["kind"] == "logo"), None)
+        hero = next((dict(x) for x in med.get(m["p1_id"], []) if x["kind"] == "hero"), None)
+        gallery = [dict(x) for x in med.get(m["p1_id"], []) if x["kind"] == "gallery"]
+        conflicts = sorted({r["reason"] for r in pr if r["status"] == "REWORK" and "CONFLICT" in r["reason"]} |
+                           {f'{x["field"]}: {x["reason"]}' for x in fx if "CONFLICT" in x["reason"]})
+        gaps = [g for g, ok in (("NO_ACCEPTED_PRICE", pv), ("NO_ACCEPTED_SPECS", spec_ok), ("NO_OFFICIAL_BROCHURE", bro.get(m["p1_id"])),
+                                ("NO_VERIFIED_HERO_IMAGE", hero), ("NO_OFFICIAL_LOGO", logo), ("NO_VERIFIED_WARRANTY", warranty),
                                 ("GENERATION_UNKNOWN", False)) if not ok]
         rec = dict(model_id=m["model_id"], p1_id=m["p1_id"], site_slug=m["site_slug"], brand=m["brand"], model=m["model"],
                    id_status=m["id_status"], generation=None, market_status="official" if m["p1_id"] in official_models else "unverified",
                    market_status_basis="model listed on official Egypt OEM/importer page (O4)" if m["p1_id"] in official_models
                    else "U11 on-sale (registrations + market listings); no official Egypt page captured yet",
-                   price=pv, specs=None, warranty=None, brochure=None, logo=None, hero_image=None, gallery=[],
+                   price=pv, specs=specs or None, specs_accepted=spec_ok, warranty=warranty, brochures=bro.get(m["p1_id"], []),
+                   logo=logo, hero_image=hero, gallery=gallery,
                    conflicts=conflicts, gaps=gaps, rework_price_rows=sum(r["status"] == "REWORK" for r in pr))
         models.append(rec)
         cov.append(dict(model_id=m["model_id"], p1_id=m["p1_id"], brand=m["brand"], model=m["model"], id_status=m["id_status"],
@@ -367,7 +445,10 @@ def main():
                         price_from_egp=pv["price_from"] if pv else "", price_model_year=(pv or {}).get("model_year") or "",
                         price_tier=pv["tier"] if pv else "", price_effective_date=(pv or {}).get("effective_date") or "",
                         price_date_basis=pv["date_basis"] if pv else "", accepted_trims=len(pv["trims"]) if pv else 0,
-                        specs_status="UNKNOWN", brochure_status="NONE", hero_status="NONE", logo_status="NONE", warranty_status="UNKNOWN",
+                        specs_status="ACCEPTED" if spec_ok else ("PARTIAL" if specs else "UNKNOWN"), spec_fields=len(specs),
+                        brochure_status="ACCEPTED" if bro.get(m["p1_id"]) else "NONE", hero_status="ACCEPTED" if hero else "NONE",
+                        gallery_count=len(gallery), logo_status="ACCEPTED" if logo else "NONE",
+                        warranty=" | ".join(sorted({w["value"] for w in warranty})) if warranty else "",
                         evidence_links=(pv or {}).get("evidence_url", ""), conflicts=" | ".join(conflicts),
                         missing=";".join(gaps), last_verified=as_of))
     canon = dict(schema="carindex.p2.canonical/v1", generated_as_of=as_of, market_snapshot=os.path.relpath(snap, ROOT) if snap else None,
@@ -378,7 +459,14 @@ def main():
                              price_accepted=sum(bool(m["price"]) for m in models),
                              price_tier_a=sum(bool(m["price"]) and m["price"]["tier"] == "A" for m in models),
                              price_source_dated=sum(bool(m["price"]) and m["price"]["date_basis"] == "SOURCE_STATED" for m in models),
-                             market_status_official=sum(m["market_status"] == "official" for m in models)),
+                             market_status_official=sum(m["market_status"] == "official" for m in models),
+                             specs_accepted=sum(m["specs_accepted"] for m in models),
+                             warranty_accepted=sum(bool(m["warranty"]) for m in models),
+                             brochure_accepted=sum(bool(m["brochures"]) for m in models),
+                             hero_accepted=sum(bool(m["hero_image"]) for m in models),
+                             logo_accepted=sum(bool(m["logo"]) for m in models),
+                             fully_enriched=sum(bool(m["price"] and m["specs_accepted"] and m["warranty"] and m["brochures"]
+                                                     and m["hero_image"] and m["logo"]) for m in models)),
                  models=models)
     json.dump(canon, open(os.path.join(ROOT, "views", "canonical_u11.json"), "w"), indent=1, ensure_ascii=False, sort_keys=True)
     write(os.path.join(ROOT, "review", "u11_coverage.csv"), list(cov[0].keys()), cov)
@@ -396,7 +484,9 @@ def serving(canon):
         e = dict(e, p2_model_id=c["model_id"], id_status="P2_ACCEPTED" if c["id_status"] == "ACCEPTED" else "P2_REWORK",
                  price_status="ACCEPTED" if c["price"] else e["price_status"] if e["evidence_state"] == "P2_S6_EVIDENCE" else "UNKNOWN",
                  missing_evidence=[g for g in c["gaps"]] + ([] if c["id_status"] == "ACCEPTED" else ["P2_ID_PENDING"]))
-        e["accepted"] = dict(market_status=c["market_status"], price=c["price"], conflicts=c["conflicts"])
+        e["accepted"] = dict(market_status=c["market_status"], price=c["price"], specs=c["specs"], warranty=c["warranty"],
+                             brochures=c["brochures"], logo=c["logo"], hero_image=c["hero_image"], gallery=c["gallery"],
+                             conflicts=c["conflicts"])
         entries.append(e)
     rel = dict(rc1, release_id=f"P2-CATALOGUE-U11-{canon['generated_as_of']}-RC2", state="VERIFYING",
                acceptance="P2_ACCEPTED_FIELDS_ONLY", generated_as_of=canon["generated_as_of"],

@@ -1,0 +1,20 @@
+drive_id,title,bytes,p1_id,variant_scope,issuer,egypt_basis,status,reason
+1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta,Baic x55e (H) 3.pdf,9067087,baic/x55,X55e Topline (DHT hybrid variant only),Al-Kan Auto (BAIC Egypt distributor),distributor named in document; bilingual EN/AR,ACCEPT,BR-1 exact model + Egypt distributor
+1qYwHh4hBITgJzS7XBAOp2ZqQRzKE50v7,BYD SEALION 6 DMi - Brochure.pdf,4067784,byd/sealion-6,DM-i (Ultra | Luxury),BYD Egypt,BYD Egypt template; hotline 17669; bilingual EN/AR,ACCEPT,BR-1 exact model + Egypt distributor
+1lkoRego8KO0SUe1Zqzus89RvOzWP0wLE,BYD SEALION 6 EV - Brochure  .pdf,1659564,byd/sealion-6,EV (Ultra | Luxury),BYD Egypt,"""Stay connected with BYD Egypt""; byd-egypt.com; hotline 17669",ACCEPT,BR-1 exact model + Egypt distributor
+1qOQf1rK-62b05QMWTJQh2TqZIvY5W6Lv,BYD M9 DMi - Brochure.pdf,1415900,byd/m9,DM-i (Ultra | Luxury),BYD Egypt,"""Stay connected with BYD Egypt""; byd-egypt.com; hotline 17669",ACCEPT,BR-1 exact model + Egypt distributor
+1McudK_l0dYvIGO7wLpZjgbkllnZkj56s,BYD ATTO8 DMi - Brochure.pdf,1453112,byd/atto-8,DM-i Ultra,BYD Egypt,"""Stay connected with BYD Egypt""; byd-egypt.com; hotline 17669",ACCEPT,BR-1 exact model + Egypt distributor; CONFLICT: U11 powertrain 'ev' vs brochure 'Super Plug-in Hybrid'
+1I8DP1F7P9pK1sFDXf8SNPwh6PQoicUwG,RX9-Brochure_compressed-Final.pdf,1527272,mg/rx9,Luxury (1.5T PHEV),MG Egypt,EGP-market Arabic warranty text; MG Egypt official model in O4,ACCEPT,BR-1 exact model + Egypt warranty terms
+1891ZGE2wJahnJ4C7oQJmkTmI-EdaIeOh,MG RX9-Brochure_compressed.pdf,1547594,mg/rx9,,MG Egypt,,DUPLICATE_CANDIDATE,same title as 1I8DP1F7...; content hash not verified (connector size limit)
+1v_1Ftq735wPEEWBuM3KjdmZopTx-uGOS,MG RX9-Brochure_compressed.pdf,1547594,mg/rx9,,MG Egypt,,DUPLICATE_CANDIDATE,same title+bytes as 1891ZGE2...; content hash not verified
+1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7,Geely Brochure_EX5-EMI.pdf,2678092,geely/ex5,EX5 EM-i (Pro | Max),Abou Ghaly Motors (Geely Egypt),distributor email + hotline 19570 + KM28 Ismailia Desert Road,ACCEPT,BR-1 exact model + Egypt distributor
+1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-,GEELY EX2_BROCHURE_V3.pdf,2924770,geely/ex2,EX2 (2 trims),Abou Ghaly Motors (Geely Egypt),distributor email + hotline 19570 + KM28 Ismailia Desert Road,ACCEPT,BR-1 exact model + Egypt distributor
+109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD,Tiggo 7 Pro Brochure.pdf,777848,chery/tiggo-7-pro,,Chery (issuer unclear),Arabic text (OCR unreadable),REWORK,text extraction unusable; no facts promoted
+1C2ANaeWMf3FSty2jWoX1ayrajBWqinds,900 Brochure.pdf,2252527,lynk-co/900,,unknown,none (CLTC cycle; no Egypt issuer),REWORK,Egypt applicability not established; OCR layout ambiguous
+1MJDgvtpBAKWTprDZCE0sEKJ6SfkCO41o,ven-eng-arabic UPDATED FINAL.pdf,3594060,,Venucia (model not named),Venucia Egypt (/VENUCIAEGYPT),social handle in document,NOT_IN_U11,brand/model absent from U11; model name not stated -> discovery candidate
+1UaB-J_dPqnDHskEy_2EZfDpstNOuIqR6,SEAT Egypt Price list _ 22_08_2026 .pdf,441623,seat/*,price list,KAYAN Egypt for Trading and Investment,issuer + EGP prices,ACCEPT_PRICE_LIST,used for Tier A prices + warranty
+1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD,CUPRA Price List 22_08_2026.pdf,393161,cupra/*,price list,KAYAN Egypt for Trading and Investment,issuer + EGP prices,ACCEPT_PRICE_LIST,used for Tier A prices + warranty
+1Zb9aNZY_3M1YJzBsH3PEpxa8p0yhWyJI,NISSAN_EGYPT_MAGNITE-EN.pdf,4222184,nissan/magnite,,Nissan Egypt,official nissan.com.eg brochure URL; sha256 e9b79987 (O4),DUPLICATE_PAIR_PRIMARY,identical bytes to 1I2dMyi9 (O4 hash match); facts pending
+1I2dMyi9mpn-lNnxttlTCKubCHQgeR-HT,NISSAN_EGYPT_MAGNITE-EN.pdf,4222184,nissan/magnite,,Nissan Egypt,,DUPLICATE,duplicate of 1Zb9aNZY (same bytes/title); retained, not deleted
+1CFB8v3V64pVJvrz8k_eRxhbypcGBOEjx,The New BMW iX3 Brochure.pdf,4675081,bmw/ix3,,,,PENDING,
+1EEu0FFENAKctS02kQBp3Tm5hI9l6tzRZ,The New BMW iX3 Brochure.pdf,4675081,bmw/ix3,,,,DUPLICATE_CANDIDATE,same title+bytes as 1CFB8v3V

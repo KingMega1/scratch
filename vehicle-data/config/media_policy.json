@@ -1,0 +1,14 @@
+{
+ "decision_id": "CEO-MEDIA-2026-10-13",
+ "decided_by": "CEO (session instruction, 2026-10-13)",
+ "decision": "Official OEM / manufacturer / Egypt importer-distributor photos and brand logos are approved for use on CarIndex.",
+ "accept_rules": [
+  "source is an official OEM, manufacturer press/media site, or the Egypt importer/distributor (site, brochure, press kit)",
+  "exact brand + model verified visually; generation consistent with the model years on sale in Egypt",
+  "no other vehicle substituted; no synthetic or edited imagery; no third-party watermark",
+  "hero: full vehicle, >=1600 px wide preferred (>=1200 px minimum, flagged LOW_RES below 1600)",
+  "source URL, retrieval time, SHA-256 and rights basis stored per asset"
+ ],
+ "rights_basis_values": ["CEO_APPROVED_OEM_OFFICIAL", "COMMONS_LICENSED"],
+ "still_excluded": ["dealer/classified photos", "media-site photos", "unverified social posts", "AI-generated images"]
+}

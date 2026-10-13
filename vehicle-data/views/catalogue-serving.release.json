@@ -21,7 +21,13 @@
       "price_accepted": 189,
       "price_tier_a": 26,
       "price_source_dated": 152,
-      "market_status_official": 37
+      "market_status_official": 37,
+      "specs_accepted": 33,
+      "warranty_accepted": 8,
+      "brochure_accepted": 7,
+      "hero_accepted": 0,
+      "logo_accepted": 0,
+      "fully_enriched": 0
     }
   },
   "relation": "Website on-sale set equals pinned U11 on-sale set (283). 'accepted' carries only P2-ACCEPTED values; absent means UNKNOWN. P1 recommendation semantics unchanged.",
@@ -95,6 +101,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -170,6 +182,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -256,6 +274,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -292,6 +316,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=1450000",
           "PB-2 CONFLICT: ContactCars=1600000",
@@ -333,6 +363,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=1500000",
           "PB-2 CONFLICT: ContactCars=1650000",
@@ -381,6 +417,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=925000",
           "PB-2 CONFLICT: ContactCars=995000",
@@ -429,6 +471,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -515,6 +563,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -579,6 +633,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=4749000;EgyCar=4749000",
           "PB-2 CONFLICT: Hatla2ee=4748998"
@@ -646,6 +706,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -710,6 +776,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -774,6 +846,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -817,6 +895,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -860,6 +944,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -935,6 +1025,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=5250000",
           "PB-2 CONFLICT: ContactCars=5750000",
@@ -1026,6 +1122,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -1112,6 +1214,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -1176,6 +1284,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=3330000",
           "PB-2 CONFLICT: Hatla2ee=3300000"
@@ -1276,6 +1390,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -1352,6 +1472,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=1575000;EgyCar=1575000",
           "PB-2 CONFLICT: Hatla2ee=1574900"
@@ -1419,6 +1545,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=850000;EgyCar=850000",
           "PB-2 CONFLICT: ContactCars=975000;EgyCar=975000",
@@ -1467,6 +1599,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -1510,6 +1648,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -1543,16 +1687,180 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": {
+          "airbags": [
+            {
+              "value": "driver, passenger, side, curtain",
+              "unit": "",
+              "applicability": "X55e Topline",
+              "issuer": "Al-Kan Auto",
+              "source": "drive:1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta"
+            }
+          ],
+          "boot_l": [
+            {
+              "value": "350",
+              "unit": "L",
+              "applicability": "X55e Topline",
+              "issuer": "Al-Kan Auto",
+              "source": "drive:1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "1498",
+              "unit": "cc",
+              "applicability": "X55e Topline",
+              "issuer": "Al-Kan Auto",
+              "source": "drive:1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta"
+            }
+          ],
+          "fuel_consumption_l100": [
+            {
+              "value": "5.13",
+              "unit": "L/100km (combined; cycle not stated)",
+              "applicability": "X55e Topline",
+              "issuer": "Al-Kan Auto",
+              "source": "drive:1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "53",
+              "unit": "L",
+              "applicability": "X55e Topline",
+              "issuer": "Al-Kan Auto",
+              "source": "drive:1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1680",
+              "unit": "mm",
+              "applicability": "X55e Topline",
+              "issuer": "Al-Kan Auto",
+              "source": "drive:1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta"
+            }
+          ],
+          "kerb_weight_kg": [
+            {
+              "value": "1618",
+              "unit": "kg",
+              "applicability": "X55e Topline",
+              "issuer": "Al-Kan Auto",
+              "source": "drive:1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4620",
+              "unit": "mm",
+              "applicability": "X55e Topline",
+              "issuer": "Al-Kan Auto",
+              "source": "drive:1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta"
+            }
+          ],
+          "motor_power_hp": [
+            {
+              "value": "217",
+              "unit": "hp",
+              "applicability": "X55e Topline",
+              "issuer": "Al-Kan Auto",
+              "source": "drive:1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta"
+            }
+          ],
+          "motor_torque_nm": [
+            {
+              "value": "310",
+              "unit": "Nm",
+              "applicability": "X55e Topline",
+              "issuer": "Al-Kan Auto",
+              "source": "drive:1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "UNKNOWN (DHT hybrid; plug-in not stated)",
+              "unit": "",
+              "applicability": "X55e Topline",
+              "issuer": "Al-Kan Auto",
+              "source": "drive:1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "X55e Topline",
+              "issuer": "Al-Kan Auto",
+              "source": "drive:1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta"
+            }
+          ],
+          "total_range_km": [
+            {
+              "value": "1000+",
+              "unit": "km (cycle not stated)",
+              "applicability": "X55e Topline",
+              "issuer": "Al-Kan Auto",
+              "source": "drive:1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Dedicated Hybrid Transmission (DHT)",
+              "unit": "",
+              "applicability": "X55e Topline",
+              "issuer": "Al-Kan Auto",
+              "source": "drive:1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2735",
+              "unit": "mm",
+              "applicability": "X55e Topline",
+              "issuer": "Al-Kan Auto",
+              "source": "drive:1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1886",
+              "unit": "mm",
+              "applicability": "X55e Topline",
+              "issuer": "Al-Kan Auto",
+              "source": "drive:1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "7 years / 200000 km",
+            "unit": "",
+            "applicability": "X55e Topline",
+            "issuer": "Al-Kan Auto",
+            "source": "drive:1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta"
+          }
+        ],
+        "brochures": [
+          {
+            "drive_id": "1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta",
+            "title": "Baic x55e (H) 3.pdf",
+            "issuer": "Al-Kan Auto (BAIC Egypt distributor)",
+            "scope": "X55e Topline (DHT hybrid variant only)",
+            "url": "https://drive.google.com/file/d/1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta/view"
+          }
+        ],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=1200000",
           "PB-2 CONFLICT: ContactCars=1300000",
@@ -1603,6 +1911,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -1667,6 +1981,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -1710,6 +2030,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=1305000",
           "PB-2 CONFLICT: Hatla2ee=1225000"
@@ -1756,6 +2082,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -1820,6 +2152,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -1885,6 +2223,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -1949,6 +2293,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -2013,6 +2363,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -2077,6 +2433,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -2120,6 +2482,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -2184,6 +2552,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -2248,6 +2622,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -2291,6 +2671,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -2355,6 +2741,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -2419,6 +2811,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -2483,6 +2881,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -2516,8 +2920,6 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
         "NO_VERIFIED_WARRANTY",
@@ -2526,6 +2928,156 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": {
+          "airbags": [
+            {
+              "value": "7",
+              "unit": "",
+              "applicability": "DM-i Ultra",
+              "issuer": "BYD Egypt",
+              "source": "drive:1McudK_l0dYvIGO7wLpZjgbkllnZkj56s"
+            }
+          ],
+          "battery_kwh": [
+            {
+              "value": "19",
+              "unit": "kWh (LFP Blade)",
+              "applicability": "DM-i Ultra",
+              "issuer": "BYD Egypt",
+              "source": "drive:1McudK_l0dYvIGO7wLpZjgbkllnZkj56s"
+            }
+          ],
+          "boot_l": [
+            {
+              "value": "270",
+              "unit": "L (all rows up)",
+              "applicability": "DM-i Ultra",
+              "issuer": "BYD Egypt",
+              "source": "drive:1McudK_l0dYvIGO7wLpZjgbkllnZkj56s"
+            }
+          ],
+          "boot_max_l": [
+            {
+              "value": "1960",
+              "unit": "L",
+              "applicability": "DM-i Ultra",
+              "issuer": "BYD Egypt",
+              "source": "drive:1McudK_l0dYvIGO7wLpZjgbkllnZkj56s"
+            }
+          ],
+          "drive": [
+            {
+              "value": "FWD",
+              "unit": "",
+              "applicability": "DM-i Ultra",
+              "issuer": "BYD Egypt",
+              "source": "drive:1McudK_l0dYvIGO7wLpZjgbkllnZkj56s"
+            }
+          ],
+          "ev_range_km": [
+            {
+              "value": "~100",
+              "unit": "km (combined; cycle not stated)",
+              "applicability": "DM-i Ultra",
+              "issuer": "BYD Egypt",
+              "source": "drive:1McudK_l0dYvIGO7wLpZjgbkllnZkj56s"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "184",
+              "unit": "mm",
+              "applicability": "DM-i Ultra",
+              "issuer": "BYD Egypt",
+              "source": "drive:1McudK_l0dYvIGO7wLpZjgbkllnZkj56s"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1760",
+              "unit": "mm",
+              "applicability": "DM-i Ultra",
+              "issuer": "BYD Egypt",
+              "source": "drive:1McudK_l0dYvIGO7wLpZjgbkllnZkj56s"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "5040",
+              "unit": "mm",
+              "applicability": "DM-i Ultra",
+              "issuer": "BYD Egypt",
+              "source": "drive:1McudK_l0dYvIGO7wLpZjgbkllnZkj56s"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "PHEV",
+              "unit": "(\"Super Plug-in Hybrid\"; conflicts with U11 'ev')",
+              "applicability": "DM-i Ultra",
+              "issuer": "BYD Egypt",
+              "source": "drive:1McudK_l0dYvIGO7wLpZjgbkllnZkj56s"
+            }
+          ],
+          "seats": [
+            {
+              "value": "7",
+              "unit": "",
+              "applicability": "DM-i Ultra",
+              "issuer": "BYD Egypt",
+              "source": "drive:1McudK_l0dYvIGO7wLpZjgbkllnZkj56s"
+            }
+          ],
+          "system_power_hp": [
+            {
+              "value": "275",
+              "unit": "hp",
+              "applicability": "DM-i Ultra",
+              "issuer": "BYD Egypt",
+              "source": "drive:1McudK_l0dYvIGO7wLpZjgbkllnZkj56s"
+            }
+          ],
+          "system_torque_nm": [
+            {
+              "value": "315",
+              "unit": "Nm",
+              "applicability": "DM-i Ultra",
+              "issuer": "BYD Egypt",
+              "source": "drive:1McudK_l0dYvIGO7wLpZjgbkllnZkj56s"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2950",
+              "unit": "mm",
+              "applicability": "DM-i Ultra",
+              "issuer": "BYD Egypt",
+              "source": "drive:1McudK_l0dYvIGO7wLpZjgbkllnZkj56s"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1996",
+              "unit": "mm",
+              "applicability": "DM-i Ultra",
+              "issuer": "BYD Egypt",
+              "source": "drive:1McudK_l0dYvIGO7wLpZjgbkllnZkj56s"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [
+          {
+            "drive_id": "1McudK_l0dYvIGO7wLpZjgbkllnZkj56s",
+            "title": "BYD ATTO8 DMi - Brochure.pdf",
+            "issuer": "BYD Egypt",
+            "scope": "DM-i Ultra",
+            "url": "https://drive.google.com/file/d/1McudK_l0dYvIGO7wLpZjgbkllnZkj56s/view"
+          }
+        ],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=2849000",
           "PB-2 CONFLICT: Hatla2ee=2849900"
@@ -2604,6 +3156,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -2637,8 +3195,6 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
         "NO_VERIFIED_WARRANTY",
@@ -2647,6 +3203,156 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": {
+          "airbags": [
+            {
+              "value": "6 | 8",
+              "unit": "",
+              "applicability": "DM-i Ultra | DM-i Luxury",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qOQf1rK-62b05QMWTJQh2TqZIvY5W6Lv"
+            }
+          ],
+          "battery_kwh": [
+            {
+              "value": "20.39 | 36.6",
+              "unit": "kWh (LFP Blade)",
+              "applicability": "DM-i Ultra | DM-i Luxury",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qOQf1rK-62b05QMWTJQh2TqZIvY5W6Lv"
+            }
+          ],
+          "boot_l": [
+            {
+              "value": "470",
+              "unit": "L",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qOQf1rK-62b05QMWTJQh2TqZIvY5W6Lv"
+            }
+          ],
+          "boot_max_l": [
+            {
+              "value": "2036",
+              "unit": "L",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qOQf1rK-62b05QMWTJQh2TqZIvY5W6Lv"
+            }
+          ],
+          "drive": [
+            {
+              "value": "FWD",
+              "unit": "",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qOQf1rK-62b05QMWTJQh2TqZIvY5W6Lv"
+            }
+          ],
+          "ev_range_km": [
+            {
+              "value": "80 | 145",
+              "unit": "km WLTP combined",
+              "applicability": "DM-i Ultra | DM-i Luxury",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qOQf1rK-62b05QMWTJQh2TqZIvY5W6Lv"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1805",
+              "unit": "mm",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qOQf1rK-62b05QMWTJQh2TqZIvY5W6Lv"
+            }
+          ],
+          "kerb_weight_kg": [
+            {
+              "value": "2470 | 2650",
+              "unit": "kg",
+              "applicability": "DM-i Ultra | DM-i Luxury",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qOQf1rK-62b05QMWTJQh2TqZIvY5W6Lv"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "5145",
+              "unit": "mm",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qOQf1rK-62b05QMWTJQh2TqZIvY5W6Lv"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "PHEV",
+              "unit": "(CCS2 charging port; DM-i)",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qOQf1rK-62b05QMWTJQh2TqZIvY5W6Lv"
+            }
+          ],
+          "seats": [
+            {
+              "value": "7 (2+2+3)",
+              "unit": "",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qOQf1rK-62b05QMWTJQh2TqZIvY5W6Lv"
+            }
+          ],
+          "system_power_hp": [
+            {
+              "value": "275",
+              "unit": "hp",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qOQf1rK-62b05QMWTJQh2TqZIvY5W6Lv"
+            }
+          ],
+          "system_torque_nm": [
+            {
+              "value": "315",
+              "unit": "Nm",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qOQf1rK-62b05QMWTJQh2TqZIvY5W6Lv"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "3045",
+              "unit": "mm",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qOQf1rK-62b05QMWTJQh2TqZIvY5W6Lv"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1970",
+              "unit": "mm",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qOQf1rK-62b05QMWTJQh2TqZIvY5W6Lv"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [
+          {
+            "drive_id": "1qOQf1rK-62b05QMWTJQh2TqZIvY5W6Lv",
+            "title": "BYD M9 DMi - Brochure.pdf",
+            "issuer": "BYD Egypt",
+            "scope": "DM-i (Ultra | Luxury)",
+            "url": "https://drive.google.com/file/d/1qOQf1rK-62b05QMWTJQh2TqZIvY5W6Lv/view"
+          }
+        ],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=3300000",
           "PB-2 CONFLICT: ContactCars=3850000",
@@ -2695,6 +3401,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -2792,6 +3504,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -2825,8 +3543,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
         "NO_VERIFIED_WARRANTY",
@@ -2879,6 +3595,260 @@
             }
           ]
         },
+        "specs": {
+          "airbags": [
+            {
+              "value": "6",
+              "unit": "",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qYwHh4hBITgJzS7XBAOp2ZqQRzKE50v7"
+            },
+            {
+              "value": "6",
+              "unit": "",
+              "applicability": "EV (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1lkoRego8KO0SUe1Zqzus89RvOzWP0wLE"
+            }
+          ],
+          "battery_kwh": [
+            {
+              "value": "18.3",
+              "unit": "kWh (LFP Blade)",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qYwHh4hBITgJzS7XBAOp2ZqQRzKE50v7"
+            },
+            {
+              "value": "71.8 | 87.04",
+              "unit": "kWh (LFP Blade)",
+              "applicability": "EV Ultra | EV Luxury",
+              "issuer": "BYD Egypt",
+              "source": "drive:1lkoRego8KO0SUe1Zqzus89RvOzWP0wLE"
+            }
+          ],
+          "boot_l": [
+            {
+              "value": "552",
+              "unit": "L",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qYwHh4hBITgJzS7XBAOp2ZqQRzKE50v7"
+            },
+            {
+              "value": "425",
+              "unit": "L",
+              "applicability": "EV (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1lkoRego8KO0SUe1Zqzus89RvOzWP0wLE"
+            }
+          ],
+          "boot_max_l": [
+            {
+              "value": "1440",
+              "unit": "L",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qYwHh4hBITgJzS7XBAOp2ZqQRzKE50v7"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "1497",
+              "unit": "cc",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qYwHh4hBITgJzS7XBAOp2ZqQRzKE50v7"
+            }
+          ],
+          "ev_range_km": [
+            {
+              "value": "80",
+              "unit": "km (combined; cycle not stated)",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qYwHh4hBITgJzS7XBAOp2ZqQRzKE50v7"
+            },
+            {
+              "value": "420 | 520",
+              "unit": "km WLTP combined",
+              "applicability": "EV Ultra | EV Luxury",
+              "issuer": "BYD Egypt",
+              "source": "drive:1lkoRego8KO0SUe1Zqzus89RvOzWP0wLE"
+            }
+          ],
+          "fuel_consumption_l100": [
+            {
+              "value": "6.4",
+              "unit": "L/100km WLTP combined",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qYwHh4hBITgJzS7XBAOp2ZqQRzKE50v7"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1670",
+              "unit": "mm",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qYwHh4hBITgJzS7XBAOp2ZqQRzKE50v7"
+            },
+            {
+              "value": "1670",
+              "unit": "mm",
+              "applicability": "EV (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1lkoRego8KO0SUe1Zqzus89RvOzWP0wLE"
+            }
+          ],
+          "kerb_weight_kg": [
+            {
+              "value": "1900",
+              "unit": "kg",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qYwHh4hBITgJzS7XBAOp2ZqQRzKE50v7"
+            },
+            {
+              "value": "2020 | 2050",
+              "unit": "kg",
+              "applicability": "EV Ultra | EV Luxury",
+              "issuer": "BYD Egypt",
+              "source": "drive:1lkoRego8KO0SUe1Zqzus89RvOzWP0wLE"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4775",
+              "unit": "mm",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qYwHh4hBITgJzS7XBAOp2ZqQRzKE50v7"
+            },
+            {
+              "value": "4775",
+              "unit": "mm",
+              "applicability": "EV (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1lkoRego8KO0SUe1Zqzus89RvOzWP0wLE"
+            }
+          ],
+          "max_ac_kw": [
+            {
+              "value": "6.6",
+              "unit": "kW",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qYwHh4hBITgJzS7XBAOp2ZqQRzKE50v7"
+            },
+            {
+              "value": "11",
+              "unit": "kW",
+              "applicability": "EV (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1lkoRego8KO0SUe1Zqzus89RvOzWP0wLE"
+            }
+          ],
+          "motor_power_hp": [
+            {
+              "value": "215",
+              "unit": "hp",
+              "applicability": "EV (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1lkoRego8KO0SUe1Zqzus89RvOzWP0wLE"
+            }
+          ],
+          "motor_torque_nm": [
+            {
+              "value": "310",
+              "unit": "Nm",
+              "applicability": "EV (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1lkoRego8KO0SUe1Zqzus89RvOzWP0wLE"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "PHEV",
+              "unit": "(home wallbox charging; DM-i)",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qYwHh4hBITgJzS7XBAOp2ZqQRzKE50v7"
+            }
+          ],
+          "system_power_hp": [
+            {
+              "value": "260",
+              "unit": "hp",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qYwHh4hBITgJzS7XBAOp2ZqQRzKE50v7"
+            }
+          ],
+          "system_torque_nm": [
+            {
+              "value": "300",
+              "unit": "Nm",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qYwHh4hBITgJzS7XBAOp2ZqQRzKE50v7"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2765",
+              "unit": "mm",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qYwHh4hBITgJzS7XBAOp2ZqQRzKE50v7"
+            },
+            {
+              "value": "2765",
+              "unit": "mm",
+              "applicability": "EV (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1lkoRego8KO0SUe1Zqzus89RvOzWP0wLE"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1890",
+              "unit": "mm",
+              "applicability": "DM-i (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1qYwHh4hBITgJzS7XBAOp2ZqQRzKE50v7"
+            },
+            {
+              "value": "1890",
+              "unit": "mm",
+              "applicability": "EV (Ultra and Luxury)",
+              "issuer": "BYD Egypt",
+              "source": "drive:1lkoRego8KO0SUe1Zqzus89RvOzWP0wLE"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [
+          {
+            "drive_id": "1qYwHh4hBITgJzS7XBAOp2ZqQRzKE50v7",
+            "title": "BYD SEALION 6 DMi - Brochure.pdf",
+            "issuer": "BYD Egypt",
+            "scope": "DM-i (Ultra | Luxury)",
+            "url": "https://drive.google.com/file/d/1qYwHh4hBITgJzS7XBAOp2ZqQRzKE50v7/view"
+          },
+          {
+            "drive_id": "1lkoRego8KO0SUe1Zqzus89RvOzWP0wLE",
+            "title": "BYD SEALION 6 EV - Brochure  .pdf",
+            "issuer": "BYD Egypt",
+            "scope": "EV (Ultra | Luxury)",
+            "url": "https://drive.google.com/file/d/1lkoRego8KO0SUe1Zqzus89RvOzWP0wLE/view"
+          }
+        ],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=1700000",
           "PB-2 CONFLICT: Hatla2ee=1749900"
@@ -2957,6 +3927,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -3001,6 +3977,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -3044,6 +4026,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -3108,6 +4096,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -3140,7 +4134,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -3205,6 +4198,76 @@
             }
           ]
         },
+        "specs": {
+          "engine": [
+            {
+              "value": "Engine Capacity (L)",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/cs35/"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "53",
+              "unit": "l",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/cs35/"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "180",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/cs35/"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4,330",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/cs35/"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "160/ 5,500",
+              "unit": "hp",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/cs35/"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "7 DCT",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/cs35/"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2,600",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/cs35/"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=1100000",
           "PB-2 CONFLICT: ContactCars=999000",
@@ -3253,6 +4316,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -3285,7 +4354,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -3361,6 +4429,76 @@
             }
           ]
         },
+        "specs": {
+          "engine": [
+            {
+              "value": "1.5-Liter",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/cs55-plus/"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "55",
+              "unit": "l",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/cs55-plus/"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "171",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/cs55-plus/"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4515",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/cs55-plus/"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "185 HP",
+              "unit": "hp",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/cs55-plus/"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "7 DCT",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/cs55-plus/"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2,656",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/cs55-plus/"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -3393,7 +4531,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -3447,6 +4584,67 @@
             }
           ]
         },
+        "specs": {
+          "engine": [
+            {
+              "value": "1.5T",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/cs75/"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "58",
+              "unit": "l",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/cs75/"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "190",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/cs75/"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4,770",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/cs75/"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "8 AT",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/cs75/"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2800",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/cs75/"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: EgyCar=1630000;Hatla2ee=1630000",
           "PB-2 CONFLICT: Hatla2ee=1480000"
@@ -3482,7 +4680,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -3525,6 +4722,67 @@
             }
           ]
         },
+        "specs": {
+          "engine": [
+            {
+              "value": "1.5L",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/eado-2/"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "53",
+              "unit": "l",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/eado-2/"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "155",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/eado-2/"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4,730",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/eado-2/"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "7DCT-Wet",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/eado-2/"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2700",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/eado-2/"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -3557,7 +4815,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -3611,6 +4868,58 @@
             }
           ]
         },
+        "specs": {
+          "engine": [
+            {
+              "value": "1.5T",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/eado-plus/"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4,770",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/eado-plus/"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "178 / 5500",
+              "unit": "hp",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/eado-plus/"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "7 DCT",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/eado-plus/"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2,765",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/eado-plus/"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -3643,7 +4952,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -3686,6 +4994,58 @@
             }
           ]
         },
+        "specs": {
+          "engine": [
+            {
+              "value": "1.5L Turbo",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/uni-t/"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "55",
+              "unit": "l",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/uni-t/"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4,515",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/uni-t/"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "7-Speed DCT",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/uni-t/"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2,710 MM",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/uni-t/"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -3718,7 +5078,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -3750,6 +5109,49 @@
             }
           ]
         },
+        "specs": {
+          "fuel_tank_l": [
+            {
+              "value": "51",
+              "unit": "l",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/uni-v/"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "152",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/uni-v/"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "7-Speed DCT",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/uni-v/"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2,750",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "changan_eg_web",
+              "source": "https://changan.com.eg/en/model/uni-v/"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: EgyCar=1325000;Hatla2ee=1325000"
         ]
@@ -3784,7 +5186,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -3804,6 +5205,76 @@
           "evidence_url": "https://www.chery-eg.com/en/car/arrizo-5",
           "trims": []
         },
+        "specs": {
+          "engine": [
+            {
+              "value": "1499 DVVT",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/arrizo-5"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "48",
+              "unit": "l",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/arrizo-5"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "120",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/arrizo-5"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4532",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/arrizo-5"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "114 HP / 6150 rpm",
+              "unit": "hp",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/arrizo-5"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "5 Speed MT & 7 Speed CVT",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/arrizo-5"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2650",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/arrizo-5"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -3836,7 +5307,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -3856,6 +5326,67 @@
           "evidence_url": "https://www.chery-eg.com/en/car/arrizo-6-gt",
           "trims": []
         },
+        "specs": {
+          "engine": [
+            {
+              "value": "1.5L T",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/arrizo-6-gt"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "48",
+              "unit": "l",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/arrizo-6-gt"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4691",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/arrizo-6-gt"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "145/5500",
+              "unit": "hp",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/arrizo-6-gt"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "6 Speed Wet (DCT)",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/arrizo-6-gt"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2650",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/arrizo-6-gt"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -3888,7 +5419,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -3931,6 +5461,67 @@
             }
           ]
         },
+        "specs": {
+          "engine": [
+            {
+              "value": "1.6L Turbo",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/arrizo-8"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "55",
+              "unit": "l",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/arrizo-8"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4757",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/arrizo-8"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "197 / 5500",
+              "unit": "hp",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/arrizo-8"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "7 DCT-wet",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/arrizo-8"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2770",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/arrizo-8"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -3963,7 +5554,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -3983,6 +5573,49 @@
           "evidence_url": "https://www.chery-eg.com/en/car/eq7",
           "trims": []
         },
+        "specs": {
+          "battery_kwh": [
+            {
+              "value": "65.525",
+              "unit": "kWh",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/eq7"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "166",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/eq7"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4675",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/eq7"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2830",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/eq7"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -4015,7 +5648,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -4058,6 +5690,76 @@
             }
           ]
         },
+        "specs": {
+          "engine": [
+            {
+              "value": "1.5L Turbo",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-4-pro"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "51",
+              "unit": "l",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-4-pro"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "180",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-4-pro"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4358",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-4-pro"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "145/5500",
+              "unit": "hp",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-4-pro"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "CVT",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-4-pro"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2630",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-4-pro"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -4144,6 +5846,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -4176,7 +5884,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -4219,6 +5926,85 @@
             }
           ]
         },
+        "specs": {
+          "drive": [
+            {
+              "value": "FWD",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-7-pro"
+            }
+          ],
+          "engine": [
+            {
+              "value": "1.5L T",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-7-pro"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "51",
+              "unit": "l",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-7-pro"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "163",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-7-pro"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4,500",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-7-pro"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "145/5500",
+              "unit": "hp",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-7-pro"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "CVT",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-7-pro"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2,670",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-7-pro"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -4251,7 +6037,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -4283,6 +6068,67 @@
             }
           ]
         },
+        "specs": {
+          "engine": [
+            {
+              "value": "1.5L Turbo",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-8"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "51",
+              "unit": "l",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-8"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4,700",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-8"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "145/5500",
+              "unit": "hp",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-8"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "6 Speed Wet (DCT)",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-8"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2,710",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-8"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: Hatla2ee=1230000"
         ]
@@ -4360,6 +6206,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -4392,7 +6244,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -4435,6 +6286,67 @@
             }
           ]
         },
+        "specs": {
+          "engine": [
+            {
+              "value": "1.6L Turbo",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-8-pro-max"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "51",
+              "unit": "l",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-8-pro-max"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4720",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-8-pro-max"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "197/ 5,500",
+              "unit": "hp",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-8-pro-max"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "7 Speed DCT",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-8-pro-max"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2,710",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-8-pro-max"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -4460,7 +6372,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -4492,6 +6403,58 @@
             }
           ]
         },
+        "specs": {
+          "battery_kwh": [
+            {
+              "value": "19.43",
+              "unit": "kWh",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-9"
+            }
+          ],
+          "engine": [
+            {
+              "value": "1.5L T",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-9"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "70",
+              "unit": "l",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-9"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4810",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-9"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2800",
+              "unit": "mm",
+              "applicability": "model page",
+              "issuer": "chery_eg_web",
+              "source": "https://www.chery-eg.com/en/car/tiggo-9"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -4544,6 +6507,12 @@
           "evidence_url": "https://www.chevroletarabia.com/eg-ar/cars/optra",
           "trims": []
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -4601,6 +6570,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: Hatla2ee=1399000"
         ]
@@ -4678,6 +6653,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -4721,6 +6702,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -4764,6 +6751,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=1080000",
           "PB-2 CONFLICT: EgyCar=1120000;Hatla2ee=1120000"
@@ -4831,6 +6824,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -4906,6 +6905,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: EgyCar=1290000;Hatla2ee=1290000",
           "PB-2 CONFLICT: EgyCar=1420000;Hatla2ee=1420000"
@@ -4952,6 +6957,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -4988,7 +6999,6 @@
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -5027,6 +7037,39 @@
             }
           ]
         },
+        "specs": {
+          "power_hp": [
+            {
+              "value": "150 | 265",
+              "unit": "hp",
+              "applicability": "V1 1.5L | VZ 2.0L",
+              "issuer": "KAYAN Egypt",
+              "source": "drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "250 | 370",
+              "unit": "Nm",
+              "applicability": "V1 1.5L | VZ 2.0L",
+              "issuer": "KAYAN Egypt",
+              "source": "drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "4 years / 120000 km",
+            "unit": "",
+            "applicability": "all trims (CUPRA Egypt)",
+            "issuer": "KAYAN Egypt",
+            "source": "drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD"
+          }
+        ],
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -5063,7 +7106,6 @@
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -5091,6 +7133,39 @@
             }
           ]
         },
+        "specs": {
+          "power_hp": [
+            {
+              "value": "150",
+              "unit": "hp",
+              "applicability": "V1 1.4L",
+              "issuer": "KAYAN Egypt",
+              "source": "drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "250",
+              "unit": "Nm",
+              "applicability": "V1 1.4L",
+              "issuer": "KAYAN Egypt",
+              "source": "drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "4 years / 120000 km",
+            "unit": "",
+            "applicability": "all trims (CUPRA Egypt)",
+            "issuer": "KAYAN Egypt",
+            "source": "drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD"
+          }
+        ],
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -5127,7 +7202,6 @@
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -5166,6 +7240,39 @@
             }
           ]
         },
+        "specs": {
+          "power_hp": [
+            {
+              "value": "150",
+              "unit": "hp",
+              "applicability": "Impulse and Control 1.4L",
+              "issuer": "KAYAN Egypt",
+              "source": "drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "250",
+              "unit": "Nm",
+              "applicability": "Impulse and Control 1.4L",
+              "issuer": "KAYAN Egypt",
+              "source": "drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "4 years / 120000 km",
+            "unit": "",
+            "applicability": "all trims (CUPRA Egypt)",
+            "issuer": "KAYAN Egypt",
+            "source": "drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD"
+          }
+        ],
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: Hatla2ee=2299000"
         ]
@@ -5243,6 +7350,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: EgyCar=2050000;Hatla2ee=2050000",
           "PB-2 CONFLICT: EgyCar=2200000;Hatla2ee=2200000"
@@ -5322,6 +7435,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: Hatla2ee=1599000",
           "PB-2 CONFLICT: Hatla2ee=1750000"
@@ -5390,6 +7509,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: EgyCar=2000000",
           "PB-2 CONFLICT: Hatla2ee=1925000",
@@ -5458,6 +7583,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -5522,6 +7653,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -5586,6 +7723,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -5651,6 +7794,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -5694,6 +7843,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -5769,6 +7924,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -5844,6 +8005,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -5887,6 +8054,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=2060000",
           "PB-2 CONFLICT: Hatla2ee=2000000"
@@ -5933,6 +8106,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -6009,6 +8188,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -6085,6 +8270,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -6149,6 +8340,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -6213,6 +8410,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -6288,6 +8491,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -6363,6 +8572,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -6406,6 +8621,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -6449,6 +8670,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -6525,6 +8752,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -6570,6 +8803,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -6614,6 +8853,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -6678,6 +8923,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -6742,6 +8993,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -6785,6 +9042,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -6882,6 +9145,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -6925,6 +9194,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -7000,6 +9275,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -7064,6 +9345,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -7150,6 +9437,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -7236,6 +9529,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -7279,6 +9578,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -7311,8 +9616,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
         "NO_VERIFIED_WARRANTY",
@@ -7343,6 +9646,174 @@
             }
           ]
         },
+        "specs": {
+          "airbags": [
+            {
+              "value": "6",
+              "unit": "",
+              "applicability": "EX2 (both trims)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-"
+            }
+          ],
+          "battery_kwh": [
+            {
+              "value": "39.4",
+              "unit": "kWh (LFP)",
+              "applicability": "EX2 (both trims)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-"
+            }
+          ],
+          "boot_l": [
+            {
+              "value": "375",
+              "unit": "L",
+              "applicability": "EX2 (both trims)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-"
+            }
+          ],
+          "boot_max_l": [
+            {
+              "value": "1320",
+              "unit": "L",
+              "applicability": "EX2 (both trims)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-"
+            }
+          ],
+          "drive": [
+            {
+              "value": "RWD",
+              "unit": "",
+              "applicability": "EX2 (both trims)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-"
+            }
+          ],
+          "ev_range_km": [
+            {
+              "value": "325",
+              "unit": "km WLTP combined (395 NEDC)",
+              "applicability": "EX2 (both trims)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "160",
+              "unit": "mm",
+              "applicability": "EX2 (both trims)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1580",
+              "unit": "mm",
+              "applicability": "EX2 (both trims)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-"
+            }
+          ],
+          "kerb_weight_kg": [
+            {
+              "value": "1300",
+              "unit": "kg",
+              "applicability": "EX2 (both trims)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4135",
+              "unit": "mm",
+              "applicability": "EX2 (both trims)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-"
+            }
+          ],
+          "max_dc_kw": [
+            {
+              "value": "70",
+              "unit": "kW",
+              "applicability": "EX2 (both trims)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-"
+            }
+          ],
+          "motor_power_kw": [
+            {
+              "value": "85",
+              "unit": "kW",
+              "applicability": "EX2 (both trims)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-"
+            }
+          ],
+          "motor_torque_nm": [
+            {
+              "value": "150",
+              "unit": "Nm",
+              "applicability": "EX2 (both trims)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "BEV",
+              "unit": "",
+              "applicability": "EX2 (both trims)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "EX2 (both trims)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2650",
+              "unit": "mm",
+              "applicability": "EX2 (both trims)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1805",
+              "unit": "mm",
+              "applicability": "EX2 (both trims)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [
+          {
+            "drive_id": "1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-",
+            "title": "GEELY EX2_BROCHURE_V3.pdf",
+            "issuer": "Abou Ghaly Motors (Geely Egypt)",
+            "scope": "EX2 (2 trims)",
+            "url": "https://drive.google.com/file/d/1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-/view"
+          }
+        ],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=849900",
           "PB-2 CONFLICT: Hatla2ee=849899"
@@ -7379,8 +9850,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
         "NO_VERIFIED_WARRANTY",
@@ -7422,6 +9891,156 @@
             }
           ]
         },
+        "specs": {
+          "accel_0_100_s": [
+            {
+              "value": "8.0",
+              "unit": "s",
+              "applicability": "EX5 EM-i (Pro and Max)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7"
+            }
+          ],
+          "airbags": [
+            {
+              "value": "front, side, curtain",
+              "unit": "",
+              "applicability": "EX5 EM-i (Pro and Max)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7"
+            }
+          ],
+          "boot_l": [
+            {
+              "value": "528",
+              "unit": "L",
+              "applicability": "EX5 EM-i (Pro and Max)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7"
+            }
+          ],
+          "boot_max_l": [
+            {
+              "value": "2065",
+              "unit": "L",
+              "applicability": "EX5 EM-i (Pro and Max)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7"
+            }
+          ],
+          "engine": [
+            {
+              "value": "1.5L 4-cylinder NA",
+              "unit": "",
+              "applicability": "EX5 EM-i (Pro and Max)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7"
+            }
+          ],
+          "ev_range_km": [
+            {
+              "value": "105",
+              "unit": "km NEDC",
+              "applicability": "EX5 EM-i (Pro and Max)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7"
+            }
+          ],
+          "fuel_consumption_l100": [
+            {
+              "value": "4.3",
+              "unit": "L/100km NEDC combined",
+              "applicability": "EX5 EM-i (Pro and Max)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1685",
+              "unit": "mm",
+              "applicability": "EX5 EM-i (Pro and Max)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4740",
+              "unit": "mm",
+              "applicability": "EX5 EM-i (Pro and Max)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7"
+            }
+          ],
+          "motor_power_kw": [
+            {
+              "value": "160",
+              "unit": "kW",
+              "applicability": "EX5 EM-i (Pro and Max)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7"
+            }
+          ],
+          "motor_torque_nm": [
+            {
+              "value": "262",
+              "unit": "Nm",
+              "applicability": "EX5 EM-i (Pro and Max)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "1-speed DHT automatic",
+              "unit": "",
+              "applicability": "EX5 EM-i (Pro and Max)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2755",
+              "unit": "mm",
+              "applicability": "EX5 EM-i (Pro and Max)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7"
+            }
+          ],
+          "wheels_in": [
+            {
+              "value": "18 | 19",
+              "unit": "in",
+              "applicability": "EX5 EM-i Pro | Max",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1905",
+              "unit": "mm",
+              "applicability": "EX5 EM-i (Pro and Max)",
+              "issuer": "Abou Ghaly Motors",
+              "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [
+          {
+            "drive_id": "1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
+            "title": "Geely Brochure_EX5-EMI.pdf",
+            "issuer": "Abou Ghaly Motors (Geely Egypt)",
+            "scope": "EX5 EM-i (Pro | Max)",
+            "url": "https://drive.google.com/file/d/1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7/view"
+          }
+        ],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -7486,6 +10105,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -7548,6 +10173,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -7591,6 +10222,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -7634,6 +10271,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -7677,6 +10320,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -7720,6 +10369,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -7763,6 +10418,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -7806,6 +10467,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -7849,6 +10516,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -7925,6 +10598,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -7989,6 +10668,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -8075,6 +10760,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -8118,6 +10809,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -8182,6 +10879,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -8247,6 +10950,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -8312,6 +11021,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -8376,6 +11091,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -8484,6 +11205,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -8603,6 +11330,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -8646,6 +11379,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -8689,6 +11428,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -8732,6 +11477,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -8818,6 +11569,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -8905,6 +11662,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -9038,6 +11801,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=1800000;EgyCar=1800000",
           "PB-2 CONFLICT: ContactCars=1950000",
@@ -9096,6 +11865,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -9139,6 +11914,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -9203,6 +11984,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -9246,6 +12033,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -9321,6 +12114,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -9364,6 +12163,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=1225000;ContactCars=1245000",
           "PB-2 CONFLICT: ContactCars=1295000",
@@ -9412,6 +12217,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -9476,6 +12287,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -9551,6 +12368,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -9615,6 +12438,22 @@
             }
           ]
         },
+        "specs": {
+          "power_hp": [
+            {
+              "value": "184 hp",
+              "unit": "hp",
+              "applicability": "Jetour T1 1.5L Turbo",
+              "issuer": "jetour_eg_web",
+              "source": "https://jetouregypt.com/models/T1/"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -9680,6 +12519,29 @@
             }
           ]
         },
+        "specs": {
+          "power_hp": [
+            {
+              "value": "184 hp",
+              "unit": "hp",
+              "applicability": "Jetour T2 1.5L Turbo",
+              "issuer": "jetour_eg_web",
+              "source": "https://jetouregypt.com/models/T2/"
+            },
+            {
+              "value": "254 hp",
+              "unit": "hp",
+              "applicability": "Jetour T2 2.0L Turbo",
+              "issuer": "jetour_eg_web",
+              "source": "https://jetouregypt.com/models/T2/"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -9777,6 +12639,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -9820,6 +12688,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -9895,6 +12769,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -9959,6 +12839,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -10002,6 +12888,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -10067,6 +12959,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=1400000",
           "PB-2 CONFLICT: Hatla2ee=1399900"
@@ -10145,6 +13043,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -10209,6 +13113,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=1850000",
           "PB-2 CONFLICT: Hatla2ee=1850001"
@@ -10255,6 +13165,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -10341,6 +13257,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -10427,6 +13349,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -10513,6 +13441,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -10599,6 +13533,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -10685,6 +13625,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=1400000;ContactCars=1500000;EgyCar=1500000",
           "PB-2 CONFLICT: ContactCars=1600000;ContactCars=1700000;EgyCar=1700000",
@@ -10781,6 +13727,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -10824,6 +13776,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -10932,6 +13890,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=1824900",
           "PB-2 CONFLICT: ContactCars=1924900",
@@ -10986,6 +13950,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -11029,6 +13999,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -11093,6 +14069,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -11157,6 +14139,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -11221,6 +14209,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -11307,6 +14301,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -11382,6 +14382,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -11447,6 +14453,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -11490,6 +14502,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -11533,6 +14551,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -11598,6 +14622,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -11655,6 +14685,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -11699,6 +14735,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=3905000;ContactCars=4390000",
           "PB-2 CONFLICT: Hatla2ee=3650000;Hatla2ee=4100000"
@@ -11767,6 +14809,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -11864,6 +14912,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: EgyCar=4920000",
           "PB-2 CONFLICT: EgyCar=5600000;Hatla2ee=5600000"
@@ -11910,6 +14964,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -11946,6 +15006,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -11989,6 +15055,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -12053,6 +15125,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -12129,6 +15207,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -12172,6 +15256,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -12215,6 +15305,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -12248,7 +15344,6 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -12258,6 +15353,182 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": {
+          "airbags": [
+            {
+              "value": "2",
+              "unit": "count",
+              "applicability": "Classic",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg5/"
+            },
+            {
+              "value": "2",
+              "unit": "count",
+              "applicability": "Comfort",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg5/"
+            },
+            {
+              "value": "6",
+              "unit": "count",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg5/"
+            }
+          ],
+          "engine": [
+            {
+              "value": "1.5L",
+              "unit": "",
+              "applicability": "Classic",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg5/"
+            },
+            {
+              "value": "1.5L",
+              "unit": "",
+              "applicability": "Comfort",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg5/"
+            },
+            {
+              "value": "1.5L",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg5/"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "45",
+              "unit": "l",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg5/"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1489",
+              "unit": "mm",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg5/"
+            }
+          ],
+          "kerb_weight_kg": [
+            {
+              "value": "1230",
+              "unit": "kg",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg5/"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4601",
+              "unit": "mm",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg5/"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "120 @ 6000",
+              "unit": "hp",
+              "applicability": "Classic",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg5/"
+            },
+            {
+              "value": "120 @ 6000",
+              "unit": "hp",
+              "applicability": "Comfort",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg5/"
+            },
+            {
+              "value": "120 @ 6000",
+              "unit": "hp",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg5/"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "150 @ 4500",
+              "unit": "Nm",
+              "applicability": "Classic",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg5/"
+            },
+            {
+              "value": "150 @ 4500",
+              "unit": "Nm",
+              "applicability": "Comfort",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg5/"
+            },
+            {
+              "value": "150 @ 4500",
+              "unit": "Nm",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg5/"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "CVT",
+              "unit": "",
+              "applicability": "Classic",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg5/"
+            },
+            {
+              "value": "CVT",
+              "unit": "",
+              "applicability": "Comfort",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg5/"
+            },
+            {
+              "value": "CVT",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg5/"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2680",
+              "unit": "mm",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg5/"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1818",
+              "unit": "mm",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg5/"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -12333,6 +15604,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -12365,7 +15642,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -12408,6 +15684,120 @@
             }
           ]
         },
+        "specs": {
+          "airbags": [
+            {
+              "value": "4",
+              "unit": "count",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg7/"
+            },
+            {
+              "value": "6",
+              "unit": "count",
+              "applicability": "Trophy",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg7/"
+            }
+          ],
+          "engine": [
+            {
+              "value": "1.5L Turbo",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg7/"
+            },
+            {
+              "value": "1.5L Turbo",
+              "unit": "",
+              "applicability": "Trophy",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg7/"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "65",
+              "unit": "l",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg7/"
+            }
+          ],
+          "kerb_weight_kg": [
+            {
+              "value": "1570",
+              "unit": "kg",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg7/"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "185",
+              "unit": "hp",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg7/"
+            },
+            {
+              "value": "185",
+              "unit": "hp",
+              "applicability": "Trophy",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg7/"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "300 @ 1500-4000",
+              "unit": "Nm",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg7/"
+            },
+            {
+              "value": "300 @ 1500-4000",
+              "unit": "Nm",
+              "applicability": "Trophy",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg7/"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "7 Speed Wet Dual Clutch",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg7/"
+            },
+            {
+              "value": "7 Speed Wet Dual Clutch",
+              "unit": "",
+              "applicability": "Trophy",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg7/"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2778",
+              "unit": "mm",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg7/"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -12440,7 +15830,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -12472,6 +15861,67 @@
             }
           ]
         },
+        "specs": {
+          "engine": [
+            {
+              "value": "1.5L Turbo",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/g50-plus/"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "50",
+              "unit": "l",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/g50-plus/"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "170",
+              "unit": "hp",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/g50-plus/"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "285",
+              "unit": "Nm",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/g50-plus/"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "7 Speed Wet Dual Clutch",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/g50-plus/"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2800",
+              "unit": "mm",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/g50-plus/"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -12504,7 +15954,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -12547,6 +15996,95 @@
             }
           ]
         },
+        "specs": {
+          "engine": [
+            {
+              "value": "1.5L Turbo",
+              "unit": "",
+              "applicability": "Comfort",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-gt/"
+            },
+            {
+              "value": "1.5L Turbo",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-gt/"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "50",
+              "unit": "l",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-gt/"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "170",
+              "unit": "hp",
+              "applicability": "Comfort",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-gt/"
+            },
+            {
+              "value": "170",
+              "unit": "hp",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-gt/"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "275",
+              "unit": "Nm",
+              "applicability": "Comfort",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-gt/"
+            },
+            {
+              "value": "275",
+              "unit": "Nm",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-gt/"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "7WDCT",
+              "unit": "",
+              "applicability": "Comfort",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-gt/"
+            },
+            {
+              "value": "7 Speed Wet Dual Clutch",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-gt/"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2680",
+              "unit": "mm",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-gt/"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -12580,7 +16118,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -12623,7 +16160,184 @@
             }
           ]
         },
-        "conflicts": []
+        "specs": {
+          "airbags": [
+            {
+              "value": "6",
+              "unit": "count",
+              "applicability": "Hybrid",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-hs/"
+            },
+            {
+              "value": "6",
+              "unit": "count",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-hs/"
+            },
+            {
+              "value": "6",
+              "unit": "count",
+              "applicability": "New HS / Hybrid",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-hs/"
+            },
+            {
+              "value": "6",
+              "unit": "count",
+              "applicability": "New HS / Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-hs/"
+            }
+          ],
+          "engine": [
+            {
+              "value": "1.5L Turbo",
+              "unit": "",
+              "applicability": "Hybrid",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-hs/"
+            },
+            {
+              "value": "1.5L Turbo",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-hs/"
+            },
+            {
+              "value": "1.5L Turbo",
+              "unit": "",
+              "applicability": "New HS / Hybrid",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-hs/"
+            },
+            {
+              "value": "1.5L Turbo",
+              "unit": "",
+              "applicability": "New HS / Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-hs/"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "55",
+              "unit": "l",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-hs/"
+            },
+            {
+              "value": "55",
+              "unit": "l",
+              "applicability": "New HS / Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-hs/"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "170",
+              "unit": "hp",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-hs/"
+            },
+            {
+              "value": "170",
+              "unit": "hp",
+              "applicability": "New HS / Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-hs/"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "340",
+              "unit": "Nm",
+              "applicability": "Hybrid",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-hs/"
+            },
+            {
+              "value": "275",
+              "unit": "Nm",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-hs/"
+            },
+            {
+              "value": "340",
+              "unit": "Nm",
+              "applicability": "New HS / Hybrid",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-hs/"
+            },
+            {
+              "value": "275",
+              "unit": "Nm",
+              "applicability": "New HS / Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-hs/"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "EDU Gen 3",
+              "unit": "",
+              "applicability": "Hybrid",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-hs/"
+            },
+            {
+              "value": "7 Speed Wet Dual Clutch",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-hs/"
+            },
+            {
+              "value": "EDU Gen 3",
+              "unit": "",
+              "applicability": "New HS / Hybrid",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-hs/"
+            },
+            {
+              "value": "7 Speed Wet Dual Clutch",
+              "unit": "",
+              "applicability": "New HS / Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-hs/"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2750",
+              "unit": "mm",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-hs/"
+            },
+            {
+              "value": "2750",
+              "unit": "mm",
+              "applicability": "New HS / Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-hs/"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
+        "conflicts": [
+          "power_hp: SP-1 CONFLICT: MG Egypt HS page prose 221 hp vs spec table 200 hp (hybrid)"
+        ]
       }
     },
     {
@@ -12655,7 +16369,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -12687,6 +16400,120 @@
             }
           ]
         },
+        "specs": {
+          "airbags": [
+            {
+              "value": "6",
+              "unit": "count",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-one/"
+            },
+            {
+              "value": "2",
+              "unit": "count",
+              "applicability": "Standard",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-one/"
+            }
+          ],
+          "engine": [
+            {
+              "value": "1.5L Turbo",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-one/"
+            },
+            {
+              "value": "1.5L Turbo",
+              "unit": "",
+              "applicability": "Standard",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-one/"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "55",
+              "unit": "l",
+              "applicability": "Standard",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-one/"
+            }
+          ],
+          "kerb_weight_kg": [
+            {
+              "value": "1515",
+              "unit": "kg",
+              "applicability": "Standard",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-one/"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "181",
+              "unit": "hp",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-one/"
+            },
+            {
+              "value": "181",
+              "unit": "hp",
+              "applicability": "Standard",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-one/"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "285 @ 1500-4000",
+              "unit": "Nm",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-one/"
+            },
+            {
+              "value": "285 @ 1500-4000",
+              "unit": "Nm",
+              "applicability": "Standard",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-one/"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "CVT",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-one/"
+            },
+            {
+              "value": "CVT",
+              "unit": "",
+              "applicability": "Standard",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-one/"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2670",
+              "unit": "mm",
+              "applicability": "Standard",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-one/"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -12720,16 +16547,185 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": {
+          "battery_kwh": [
+            {
+              "value": "24.7",
+              "unit": "kWh",
+              "applicability": "Luxury",
+              "issuer": "MG Egypt",
+              "source": "drive:1I8DP1F7P9pK1sFDXf8SNPwh6PQoicUwG"
+            }
+          ],
+          "boot_max_l": [
+            {
+              "value": "1026",
+              "unit": "L (3rd row folded)",
+              "applicability": "Luxury",
+              "issuer": "MG Egypt",
+              "source": "drive:1I8DP1F7P9pK1sFDXf8SNPwh6PQoicUwG"
+            }
+          ],
+          "ev_range_km": [
+            {
+              "value": "100",
+              "unit": "km",
+              "applicability": "Luxury",
+              "issuer": "MG Egypt",
+              "source": "drive:1I8DP1F7P9pK1sFDXf8SNPwh6PQoicUwG"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "65",
+              "unit": "L",
+              "applicability": "Luxury",
+              "issuer": "MG Egypt",
+              "source": "drive:1I8DP1F7P9pK1sFDXf8SNPwh6PQoicUwG"
+            },
+            {
+              "value": "65",
+              "unit": "l",
+              "applicability": "PHEV",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-rx9/"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1778",
+              "unit": "mm",
+              "applicability": "Luxury",
+              "issuer": "MG Egypt",
+              "source": "drive:1I8DP1F7P9pK1sFDXf8SNPwh6PQoicUwG"
+            }
+          ],
+          "kerb_weight_kg": [
+            {
+              "value": "2160",
+              "unit": "kg",
+              "applicability": "PHEV",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-rx9/"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4983",
+              "unit": "mm",
+              "applicability": "Luxury",
+              "issuer": "MG Egypt",
+              "source": "drive:1I8DP1F7P9pK1sFDXf8SNPwh6PQoicUwG"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "PHEV",
+              "unit": "(1.5T PHEV)",
+              "applicability": "Luxury",
+              "issuer": "MG Egypt",
+              "source": "drive:1I8DP1F7P9pK1sFDXf8SNPwh6PQoicUwG"
+            }
+          ],
+          "seats": [
+            {
+              "value": "7",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "MG Egypt",
+              "source": "drive:1I8DP1F7P9pK1sFDXf8SNPwh6PQoicUwG"
+            }
+          ],
+          "system_power_hp": [
+            {
+              "value": "295",
+              "unit": "hp",
+              "applicability": "Luxury",
+              "issuer": "MG Egypt",
+              "source": "drive:1I8DP1F7P9pK1sFDXf8SNPwh6PQoicUwG"
+            }
+          ],
+          "system_torque_nm": [
+            {
+              "value": "390",
+              "unit": "Nm",
+              "applicability": "Luxury",
+              "issuer": "MG Egypt",
+              "source": "drive:1I8DP1F7P9pK1sFDXf8SNPwh6PQoicUwG"
+            }
+          ],
+          "total_range_km": [
+            {
+              "value": "1100",
+              "unit": "km NEDC",
+              "applicability": "Luxury",
+              "issuer": "MG Egypt",
+              "source": "drive:1I8DP1F7P9pK1sFDXf8SNPwh6PQoicUwG"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "DHT",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "MG Egypt",
+              "source": "drive:1I8DP1F7P9pK1sFDXf8SNPwh6PQoicUwG"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2915",
+              "unit": "mm",
+              "applicability": "Luxury",
+              "issuer": "MG Egypt",
+              "source": "drive:1I8DP1F7P9pK1sFDXf8SNPwh6PQoicUwG"
+            },
+            {
+              "value": "2915",
+              "unit": "mm",
+              "applicability": "PHEV",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/mg-rx9/"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1967",
+              "unit": "mm",
+              "applicability": "Luxury",
+              "issuer": "MG Egypt",
+              "source": "drive:1I8DP1F7P9pK1sFDXf8SNPwh6PQoicUwG"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "6 years / 150000 km; battery 7 years / 150000 km",
+            "unit": "",
+            "applicability": "Luxury",
+            "issuer": "MG Egypt",
+            "source": "drive:1I8DP1F7P9pK1sFDXf8SNPwh6PQoicUwG"
+          }
+        ],
+        "brochures": [
+          {
+            "drive_id": "1I8DP1F7P9pK1sFDXf8SNPwh6PQoicUwG",
+            "title": "RX9-Brochure_compressed-Final.pdf",
+            "issuer": "MG Egypt",
+            "scope": "Luxury (1.5T PHEV)",
+            "url": "https://drive.google.com/file/d/1I8DP1F7P9pK1sFDXf8SNPwh6PQoicUwG/view"
+          }
+        ],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -12762,7 +16758,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -12794,6 +16789,176 @@
             }
           ]
         },
+        "specs": {
+          "airbags": [
+            {
+              "value": "4",
+              "unit": "count",
+              "applicability": "Comfort",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/zs/"
+            },
+            {
+              "value": "4",
+              "unit": "count",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/zs/"
+            },
+            {
+              "value": "4",
+              "unit": "count",
+              "applicability": "New ZS / Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-zs/"
+            }
+          ],
+          "engine": [
+            {
+              "value": "1.5L",
+              "unit": "",
+              "applicability": "Comfort",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/zs/"
+            },
+            {
+              "value": "1.5L",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/zs/"
+            },
+            {
+              "value": "1.5L",
+              "unit": "",
+              "applicability": "New ZS / Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-zs/"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "48",
+              "unit": "l",
+              "applicability": "Comfort",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/zs/"
+            },
+            {
+              "value": "45",
+              "unit": "l",
+              "applicability": "New ZS / Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-zs/"
+            }
+          ],
+          "kerb_weight_kg": [
+            {
+              "value": "1258",
+              "unit": "kg",
+              "applicability": "Comfort",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/zs/"
+            },
+            {
+              "value": "1318",
+              "unit": "kg",
+              "applicability": "New ZS / Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-zs/"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "119 @ 5600",
+              "unit": "hp",
+              "applicability": "Comfort",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/zs/"
+            },
+            {
+              "value": "119 @ 5600",
+              "unit": "hp",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/zs/"
+            },
+            {
+              "value": "118 @ 6000",
+              "unit": "hp",
+              "applicability": "New ZS / Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-zs/"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "150",
+              "unit": "Nm",
+              "applicability": "Comfort",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/zs/"
+            },
+            {
+              "value": "150",
+              "unit": "Nm",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/zs/"
+            },
+            {
+              "value": "180 @ 4500",
+              "unit": "Nm",
+              "applicability": "New ZS / Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-zs/"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "4 Speed Automatic",
+              "unit": "",
+              "applicability": "Comfort",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/zs/"
+            },
+            {
+              "value": "4 Speed Automatic",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/zs/"
+            },
+            {
+              "value": "CVT",
+              "unit": "",
+              "applicability": "New ZS / Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-zs/"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2585",
+              "unit": "mm",
+              "applicability": "Comfort",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/zs/"
+            },
+            {
+              "value": "2585",
+              "unit": "mm",
+              "applicability": "New ZS / Luxury",
+              "issuer": "mg_eg_web",
+              "source": "https://www.mgmotor.com.eg/model/new-zs/"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -12837,6 +17002,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -12880,6 +17051,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -12966,6 +17143,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -13009,6 +17192,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -13052,6 +17241,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -13095,6 +17290,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -13181,6 +17382,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -13213,7 +17420,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -13245,6 +17451,58 @@
             }
           ]
         },
+        "specs": {
+          "drive": [
+            {
+              "value": "Front-Wheel Drive (FWD)",
+              "unit": "",
+              "applicability": "grade-scoped (one grade shown)",
+              "issuer": "nissan_eg_web",
+              "source": "https://en.nissan.com.eg/vehicles/new/juke/specifications.html"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "46",
+              "unit": "l",
+              "applicability": "grade-scoped (one grade shown)",
+              "issuer": "nissan_eg_web",
+              "source": "https://en.nissan.com.eg/vehicles/new/juke/specifications.html"
+            }
+          ],
+          "fuel_type": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "grade-scoped (one grade shown)",
+              "issuer": "nissan_eg_web",
+              "source": "https://en.nissan.com.eg/vehicles/new/juke/specifications.html"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "172",
+              "unit": "mm",
+              "applicability": "grade-scoped (one grade shown)",
+              "issuer": "nissan_eg_web",
+              "source": "https://en.nissan.com.eg/vehicles/new/juke/specifications.html"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2636",
+              "unit": "mm",
+              "applicability": "grade-scoped (one grade shown)",
+              "issuer": "nissan_eg_web",
+              "source": "https://en.nissan.com.eg/vehicles/new/juke/specifications.html"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -13277,7 +17535,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -13342,6 +17599,94 @@
             }
           ]
         },
+        "specs": {
+          "boot_l": [
+            {
+              "value": "336",
+              "unit": "l",
+              "applicability": "grade-scoped (one grade shown)",
+              "issuer": "nissan_eg_web",
+              "source": "https://en.nissan.com.eg/vehicles/new/magnite/specifications.html"
+            }
+          ],
+          "drive": [
+            {
+              "value": "2WD",
+              "unit": "",
+              "applicability": "grade-scoped (one grade shown)",
+              "issuer": "nissan_eg_web",
+              "source": "https://en.nissan.com.eg/vehicles/new/magnite/specifications.html"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "999",
+              "unit": "cc",
+              "applicability": "grade-scoped (one grade shown)",
+              "issuer": "nissan_eg_web",
+              "source": "https://en.nissan.com.eg/vehicles/new/magnite/specifications.html"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "40",
+              "unit": "l",
+              "applicability": "grade-scoped (one grade shown)",
+              "issuer": "nissan_eg_web",
+              "source": "https://en.nissan.com.eg/vehicles/new/magnite/specifications.html"
+            }
+          ],
+          "fuel_type": [
+            {
+              "value": "Unleaded Petrol",
+              "unit": "",
+              "applicability": "grade-scoped (one grade shown)",
+              "issuer": "nissan_eg_web",
+              "source": "https://en.nissan.com.eg/vehicles/new/magnite/specifications.html"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "205",
+              "unit": "mm",
+              "applicability": "grade-scoped (one grade shown)",
+              "issuer": "nissan_eg_web",
+              "source": "https://en.nissan.com.eg/vehicles/new/magnite/specifications.html"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "3995",
+              "unit": "mm",
+              "applicability": "grade-scoped (one grade shown)",
+              "issuer": "nissan_eg_web",
+              "source": "https://en.nissan.com.eg/vehicles/new/magnite/specifications.html"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "count",
+              "applicability": "grade-scoped (one grade shown)",
+              "issuer": "nissan_eg_web",
+              "source": "https://en.nissan.com.eg/vehicles/new/magnite/specifications.html"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2500",
+              "unit": "mm",
+              "applicability": "grade-scoped (one grade shown)",
+              "issuer": "nissan_eg_web",
+              "source": "https://en.nissan.com.eg/vehicles/new/magnite/specifications.html"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -13374,7 +17719,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -13483,6 +17827,49 @@
             }
           ]
         },
+        "specs": {
+          "drive": [
+            {
+              "value": "4WD",
+              "unit": "",
+              "applicability": "grade-scoped (one grade shown)",
+              "issuer": "nissan_eg_web",
+              "source": "https://en.nissan.com.eg/vehicles/new/allnewpatrol/specifications.html"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "97",
+              "unit": "l",
+              "applicability": "grade-scoped (one grade shown)",
+              "issuer": "nissan_eg_web",
+              "source": "https://en.nissan.com.eg/vehicles/new/allnewpatrol/specifications.html"
+            }
+          ],
+          "fuel_type": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "grade-scoped (one grade shown)",
+              "issuer": "nissan_eg_web",
+              "source": "https://en.nissan.com.eg/vehicles/new/allnewpatrol/specifications.html"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "3075",
+              "unit": "mm",
+              "applicability": "grade-scoped (one grade shown)",
+              "issuer": "nissan_eg_web",
+              "source": "https://en.nissan.com.eg/vehicles/new/allnewpatrol/specifications.html"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -13581,6 +17968,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PS-2 CONFLICT: ContactCars+EgyCar states 1757000 effective 2026-07-15 (newer than official 2026-05-19)"
         ]
@@ -13647,6 +18040,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -13733,6 +18132,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -13809,6 +18214,31 @@
             }
           ]
         },
+        "specs": {
+          "fuel_type": [
+            {
+              "value": "Petrol / Electric",
+              "unit": "",
+              "applicability": "grade-scoped (one grade shown)",
+              "issuer": "nissan_eg_web",
+              "source": "https://en.nissan.com.eg/vehicles/new/x-trail/specifications.html"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "count",
+              "applicability": "grade-scoped (one grade shown)",
+              "issuer": "nissan_eg_web",
+              "source": "https://en.nissan.com.eg/vehicles/new/x-trail/specifications.html"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -13873,6 +18303,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -13916,6 +18352,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -13980,6 +18422,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -14044,6 +18492,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -14108,6 +18562,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -14172,6 +18632,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -14247,6 +18713,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -14322,6 +18794,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -14397,6 +18875,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -14440,6 +18924,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -14483,6 +18973,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -14526,6 +19022,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=675000;EgyCar=675000",
           "PB-2 CONFLICT: Hatla2ee=685000"
@@ -14593,6 +19095,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: EgyCar=1550000",
           "PB-2 CONFLICT: EgyCar=1690000",
@@ -14687,6 +19195,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -14773,6 +19287,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -14848,6 +19368,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -14923,6 +19449,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -14998,6 +19530,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -15041,6 +19579,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -15077,7 +19621,6 @@
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -15105,6 +19648,20 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": [
+          {
+            "value": "5 years / 100000 km",
+            "unit": "",
+            "applicability": "all trims (SEAT Egypt)",
+            "issuer": "KAYAN Egypt",
+            "source": "drive:1UaB-J_dPqnDHskEy_2EZfDpstNOuIqR6"
+          }
+        ],
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -15169,6 +19726,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -15205,7 +19768,6 @@
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -15244,6 +19806,20 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": [
+          {
+            "value": "5 years / 100000 km",
+            "unit": "",
+            "applicability": "all trims (SEAT Egypt)",
+            "issuer": "KAYAN Egypt",
+            "source": "drive:1UaB-J_dPqnDHskEy_2EZfDpstNOuIqR6"
+          }
+        ],
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -15280,7 +19856,6 @@
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -15308,6 +19883,20 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": [
+          {
+            "value": "5 years / 100000 km",
+            "unit": "",
+            "applicability": "all trims (SEAT Egypt)",
+            "issuer": "KAYAN Egypt",
+            "source": "drive:1UaB-J_dPqnDHskEy_2EZfDpstNOuIqR6"
+          }
+        ],
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -15372,6 +19961,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -15436,6 +20031,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -15511,6 +20112,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -15575,6 +20182,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: EgyCar=3000000"
         ]
@@ -15641,6 +20254,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -15717,6 +20336,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -15792,6 +20417,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -15836,6 +20467,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -15900,6 +20537,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -15943,6 +20586,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -15986,6 +20635,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -16050,6 +20705,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -16093,6 +20754,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -16136,6 +20803,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -16179,6 +20852,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -16222,6 +20901,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -16265,6 +20950,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -16308,6 +20999,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -16351,6 +21048,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -16415,6 +21118,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=2200000",
           "PB-2 CONFLICT: Hatla2ee=2199999"
@@ -16527,6 +21236,29 @@
             }
           ]
         },
+        "specs": {
+          "power_hp": [
+            {
+              "value": "96 HP(Engine) & 93 HP(HEV Motor)",
+              "unit": "hp",
+              "applicability": "Corolla Hybrid",
+              "issuer": "toyota_eg_web",
+              "source": "https://toyota.com.eg/en/models/toyota-corolla-hybrid"
+            },
+            {
+              "value": "120 HP/ 6000 RPM",
+              "unit": "hp",
+              "applicability": "model page",
+              "issuer": "toyota_eg_web",
+              "source": "https://toyota.com.eg/en/models/corolla"
+            }
+          ]
+        },
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -16591,6 +21323,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -16666,6 +21404,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -16700,6 +21444,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=1069000",
           "PB-2 CONFLICT: Hatla2ee=1069900"
@@ -16767,6 +21517,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: Hatla2ee=1690000"
         ]
@@ -16833,6 +21589,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -16897,6 +21659,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -16972,6 +21740,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: EgyCar=2890000"
         ]
@@ -17049,6 +21823,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: EgyCar=2590000;Hatla2ee=2590000"
         ]
@@ -17108,6 +21888,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -17151,6 +21937,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -17226,6 +22018,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -17312,6 +22110,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -17376,6 +22180,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: EgyCar=3690000",
           "PB-2 CONFLICT: EgyCar=4100000",
@@ -17446,6 +22256,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -17510,6 +22326,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -17574,6 +22396,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -17617,6 +22445,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -17660,6 +22494,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -17724,6 +22564,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -17788,6 +22634,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -17907,6 +22759,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -17950,6 +22808,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -17993,6 +22857,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -18036,6 +22906,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -18079,6 +22955,12 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     },
@@ -18154,6 +23036,12 @@
             }
           ]
         },
+        "specs": null,
+        "warranty": null,
+        "brochures": [],
+        "logo": null,
+        "hero_image": null,
+        "gallery": [],
         "conflicts": []
       }
     }
