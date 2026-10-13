@@ -77,6 +77,36 @@ def main():
                              restrictions=md.get("Restrictions") or ""))
             groups.setdefault(b, []).append((h[:12], im, p["title"][5:60]))
             time.sleep(0.4)
+    for site in csv.DictReader(open(os.path.join(ROOT, "registry", "logo_sites.csv"))):  # official Egypt-site header logos
+        b = site["brand"]
+        try:
+            html = requests.get(site["homepage"], headers=dict(UA, **{"User-Agent": "Mozilla/5.0"}), timeout=60).text
+        except Exception:
+            continue
+        srcs = []
+        for m in re.finditer(r'<img[^>]+>', html, re.I):
+            tag = m.group(0)
+            src = re.search(r'(?:src|data-src)="([^"]+)"', tag)
+            if src and re.search(r"logo", tag, re.I):
+                srcs.append(requests.compat.urljoin(site["homepage"], src.group(1)))
+        srcs += [requests.compat.urljoin(site["homepage"], u) for u in re.findall(r'href="([^"]*logo[^"]*\.(?:svg|png))"', html, re.I)]
+        for u in list(dict.fromkeys(srcs))[:4]:
+            try:
+                r = requests.get(u, headers=UA, timeout=60)
+                body = r.content
+                if u.lower().split("?")[0].endswith(".svg") or body[:200].lstrip().startswith((b"<svg", b"<?xml")):
+                    import cairosvg
+                    body = cairosvg.svg2png(bytestring=body, output_width=1200)
+                im = Image.open(io.BytesIO(body))
+                im.load()
+            except Exception:
+                continue
+            h = hashlib.sha256(r.content).hexdigest()
+            rows.append(dict(asset_id=h[:12], owner=b, kind="logo", source="official_egypt_site", title=u.rsplit("/", 1)[-1], url=u,
+                             page=site["homepage"], width=im.width, height=im.height, sha256=h, license="official site (CEO-MEDIA-2026-10-13)",
+                             artist="", restrictions=""))
+            groups.setdefault(b, []).append((h[:12], im, "SITE " + u.rsplit("/", 1)[-1][:40]))
+            time.sleep(0.4)
     with open(os.path.join(a.out, "logo_candidates.csv"), "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys()), lineterminator="\n")
         w.writeheader()
