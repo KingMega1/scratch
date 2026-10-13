@@ -289,16 +289,18 @@ test.describe('find my car (P1 transport)', () => {
       await expect(page.locator('.fmc-question')).toBeVisible();
     });
   }
-  test('outside the 24-model site projection: card kept from ci.reco.v1, site link withheld', async ({ page, request }) => {
+  test('recommendations beyond the old slice retain cards and now have catalogue links', async ({ page, request }) => {
     const brief = { budget: 1200000, budgetMode: 'around', body: ['sedan'] };
     const j = await (await request.post('/api/v1/recommendation', { data: { op: 'execute', locale: 'en', brief } })).json();
-    const outside = Object.entries(j.website as Record<string, string | null>).filter(([, v]) => v === null).map(([k]) => k);
-    expect(outside.length).toBeGreaterThan(0);
+    const entries = Object.entries(j.website as Record<string,string|null>);
+    expect(entries.length).toBeGreaterThan(0);
+    for(const [,slug] of entries) expect(slug).toBeTruthy();
     await page.goto(`/en/find-my-car?r=${j.result.share.r}`);
     await expect(page.locator('.fmc-result')).toBeVisible({ timeout: 20_000 });
-    for (const id of outside.filter(id => [j.result.hero?.id, ...j.result.alternatives.map((a: { id: string }) => a.id)].includes(id))) {
-      await expect(page.locator(`[data-fmc-not-on-site="${id}"]`).first()).toBeVisible();
-      await expect(page.locator(`[data-fmc-site-link="${id}"]`)).toHaveCount(0);
+    for(const [id,slug] of entries.filter(([id])=>[j.result.hero?.id,...j.result.alternatives.map((a:{id:string})=>a.id)].includes(id))){
+      const link=page.locator(`[data-fmc-site-link="${id}"]`).first();
+      await expect(link).toBeVisible();
+      await expect(link).toHaveAttribute("href",`/en/cars/${slug}`);
     }
     const shown = await page.locator('.fmc-result [data-model-id]').evaluateAll(els => els.map(e => e.getAttribute('data-model-id')));
     expect(shown).toEqual([j.result.hero.id, ...j.result.alternatives.map((a: { id: string }) => a.id)]);

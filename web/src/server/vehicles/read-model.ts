@@ -1,6 +1,7 @@
 import 'server-only';
 import snapshot from '@data/registry/universe.snapshot.json';
 import crosswalk from '@data/registry/display-crosswalk.TEMP.json';
+import serving from '@data/registry/catalogue-serving.release.json';
 import type { AssetFlag, BrandSummary, OfficialPrice, PriceChange, PriceState, Powertrain, PublicCar, PublicImage, PublicTrim, RegistryMeta, SpecValue } from '@/lib/vehicles/types';
 
 /* Serving read model.
@@ -135,7 +136,30 @@ class JsonSnapshotReadModel implements VehicleReadModel {
   private byId: Map<string, PublicCar>;
   private brandList: BrandSummary[];
   constructor(private snap: { meta: RegistryMeta; view: Raw }) {
-    this.cars = snap.view.models.map(shape);
+    const rawById = new Map<string, Raw>(snap.view.models.map((m: Raw) => [m.model_id, m]));
+    this.cars = serving.entries.map(e => {
+      const raw = e.p2_model_id ? rawById.get(e.p2_model_id) : null;
+      const car = shape(raw ?? {
+        slug: e.site_slug, brand: e.brand, model: e.model, in_slice: true,
+        price: {}, specs: {}, registration: null, gaps: e.missing_evidence, conflicts: [],
+      });
+      car.brand.ar = e.ar.brand;
+      car.model.ar = e.ar.model;
+      car.body = e.body;
+      car.p1Id = e.p1_id;
+      car.evidenceState = e.evidence_state;
+      if (!raw) {
+        // Facts explicitly attributed to the pinned U11 release. Prices/specs/images are never copied or inferred.
+        const pt: Record<string, Powertrain> = {petrol:'ice', diesel:'ice', hybrid:'hybrid', phev:'phev', reev:'reev', ev:'ev'};
+        car.powertrains = [...new Set(e.powertrains.map(p => pt[p]).filter(Boolean))];
+        car.registrations = e.registration ? {
+          inWindow:e.registration.last12, firstSeen:e.registration.first_month,
+          window:e.registration.window as [string,string], rank:null, ranked:null, share:null,
+          yoy:null, yoyCaveat:null, monthsMissing:[], monthly:[],
+        } : null;
+      }
+      return car;
+    });
     this.byId = new Map(this.cars.map(c => [c.id, c]));
     const b = new Map<string, BrandSummary>();
     for (const c of this.cars) {
@@ -146,7 +170,9 @@ class JsonSnapshotReadModel implements VehicleReadModel {
     }
     this.brandList = [...b.values()].sort((x, y) => y.registrations - x.registrations || x.en.localeCompare(y.en));
   }
-  meta() { return this.snap.meta; }
+  meta() { return { ...this.snap.meta, registry_version: serving.release_id,
+    snapshot_id: serving.release_id + '@' + serving.identity_authority.commit.slice(0,12),
+    models_total: serving.entries.length }; }
   all() { return this.cars; }
   get(id: string) { return this.byId.get(id) ?? null; }
   brands() { return this.brandList; }
@@ -158,5 +184,8 @@ export function vehicles(): VehicleReadModel {
   if (!instance) instance = new JsonSnapshotReadModel(snapshot as unknown as { meta: RegistryMeta; view: Raw });
   return instance;
 }
+// Temporary display-only ID bridge. Source remains the audited P5 crosswalk, not P1 semantics.
+const p1DisplaySlugs = new Map(serving.entries.map(row => [row.p1_id, row.site_slug]));
+export const p1DisplaySlug = (p1Id: string): string | null => p1DisplaySlugs.get(p1Id) ?? null;
 export const brandSlug = brandId;
 export type { PriceState };

@@ -24,7 +24,7 @@ export function BodyIcon({ className = 'icon' }: { className?: string }) {
 
 /* Photo only when a model-mapped placeholder exists; otherwise the neutral icon (never a guessed photo). */
 export function CarMedia({ car, locale, eager = false }: { car: PublicCar; locale: Locale; eager?: boolean }) {
-  if (!car.image) return <BodyIcon />;
+  if (!car.image) return <div className="slot-empty" role="img" aria-label={locale === 'ar' ? 'صورة الموديل غير متاحة بعد' : 'Model image not available yet'}>{dict(locale).car.noPhoto}</div>;
   return (
     <img className="photo" src={car.image.src} alt={carNameText(car, locale)} loading={eager ? 'eager' : 'lazy'} decoding="async"
       referrerPolicy="no-referrer" data-asset-flags={car.image.flags.join(' ')} />

@@ -16,7 +16,8 @@ const schema = JSON.parse(fs.readFileSync(new URL('../../p1-release/buyer-decisi
 const corpus = JSON.parse(fs.readFileSync(new URL('../fixtures/p1-release/corpus.json', import.meta.url)));
 const snapshot = JSON.parse(fs.readFileSync(new URL('../../data/registry/universe.snapshot.json', import.meta.url)));
 const ds = T.loadLaunchSnapshot();
-const SITE = new Set(snapshot.view.models.map(m => m.slug));
+const serving = JSON.parse(fs.readFileSync(new URL('../../data/registry/catalogue-serving.release.json', import.meta.url)));
+const SITE = new Map(serving.entries.map(m => [m.p1_id, m.site_slug]));
 
 // The API keeps its per-client rate limit (120/min); the test waits out 429s instead of disabling it.
 async function api(body, expect = 200) {
@@ -100,18 +101,18 @@ test('consultation: text and guided paths follow the released question order to 
   assert.equal(g.view, 'q'); assert.equal(g.q.id, T.nextQuestion({}, [], ds, { path: 'guided' }));
 });
 
-test('outside the 24-model browse projection: P1 recommendations are kept, in order; only site links are withheld', async () => {
+test('all on-sale recommendations have exact catalogue links; P1 output stays in order', async () => {
   let outside = 0, inside = 0;
   for (const c of corpus) {
     const j = RESULTS[`${c.id}/en`];
     for (const id of carIds(j.result)) {
-      const slug = id.replace('/', '-');
-      if (SITE.has(slug)) { assert.equal(j.website[id], slug); inside++; } else { assert.equal(j.website[id], null); outside++; }
+      const slug = SITE.get(id);
+      if (slug) { assert.equal(j.website[id], slug); inside++; } else { assert.equal(j.website[id], null); outside++; }
     }
   }
-  assert.ok(outside > 0, 'corpus exercises cars outside the website projection');
+  assert.equal(outside, 0, 'all on-sale recommendations have a website route');
   assert.ok(inside > 0, 'corpus exercises cars inside the website projection');
-  console.log(`outside-24 cars rendered from ci.reco.v1 only: ${outside}; with site page link: ${inside}`);
+  console.log(`unlinked on-sale recommendations: ${outside}; with site page link: ${inside}`);
 });
 
 test('tie: equal set has no eyebrow (no lead card) and keeps P1 price order', async () => {

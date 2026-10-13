@@ -10,6 +10,7 @@ import { alternatives } from '@/server/vehicles/query';
 import { takes } from '@/server/take/provider';
 import { content } from '@/server/cms/provider';
 import { CarCard, CarMedia, CarName, OfficialFigure, PriceFrom, PriceState, carNameText } from '@/components/car';
+import brochures from '@data/registry/brochure-serving.release.json';
 import TrackOnMount from '@/components/TrackOnMount';
 import type { PublicTrim } from '@/lib/vehicles/types';
 
@@ -57,6 +58,7 @@ export default async function CarDetail({ params }: P) {
   if (!car) notFound();
   const t = dict(locale), c = t.car, v2 = t.v2;
   const meta = vehicles().meta();
+  const brochure = brochures.entries.find(b => b.p1_id === car.p1Id);
   const take = await takes().forModel(car.id);
   const alts = alternatives(car);
   const related = (await content().relatedTo(car.id)).slice(0, 3);
@@ -84,7 +86,7 @@ export default async function CarDetail({ params }: P) {
           {car.priceFrom.state === 'conflict' ? <p className="small" style={{ margin: 0 }}>{v2.conflictNote}</p> : null}
           {car.lastObserved ? <div className="small">{t.state.stale}: {date(car.lastObserved, locale)}</div> : null}
           <div className="cd-ctas">
-            <Link className="btn btn-primary" href={L(`/find-my-car?model=${encodeURIComponent(car.id)}`)}>{c.fits}</Link>
+            <Link className="btn btn-primary" href={L(`/find-my-car?model=${encodeURIComponent(car.p1Id ?? car.id)}`)}>{c.fits}</Link>
             <Link className="btn btn-ghost" href={L(`/compare?ids=${encodeURIComponent(car.id)}`)}>{c.compare}</Link>
           </div>
         </div>
@@ -96,7 +98,7 @@ export default async function CarDetail({ params }: P) {
           <h2 id="gaps-h" style={{ marginBlockStart: 0, fontSize: 18 }}>{v2.gapsH}</h2>
           <ul className="gap-list">
             {!car.inSlice ? <li>{v2.outOfSlice}</li> : null}
-            {car.gaps.map(g => <li key={g}>{v2.gaps[g] ?? g}</li>)}
+            {car.gaps.map(g => <li key={g}>{({ NO_VERIFIED_PRICE: locale === 'ar' ? 'السعر لم يتم التحقق منه بعد.' : 'Price has not been verified yet.', NO_VERIFIED_SPECS: locale === 'ar' ? 'المواصفات لم يتم التحقق منها بعد.' : 'Specifications have not been verified yet.', P2_ID_PENDING: locale === 'ar' ? 'بيانات الموديل التفصيلية قيد المراجعة.' : 'Detailed model evidence is under review.' } as Record<string,string>)[g] ?? v2.gaps[g] ?? g}</li>)}
           </ul>
         </section>
       ) : null}
@@ -144,8 +146,17 @@ export default async function CarDetail({ params }: P) {
 
       <section className="cd-section" aria-labelledby="specs-h">
         <h2 id="specs-h" className="h-section">{c.specsH}</h2>
+        {car.evidenceState === 'U11_IDENTITY_ONLY' ? <p className="slot-empty">{locale === 'ar' ? 'المواصفات لم يتم التحقق منها بعد.' : 'Specifications have not been verified yet.'}</p> : null}
         <div className="spec-grid">{specRows.map(([k, v]) => <div className="spec" key={k}><div className="k">{k}</div><div className="v">{v}</div></div>)}</div>
       </section>
+
+      {brochure ? (
+        <section className="cd-section" aria-labelledby="brochure-h" data-brochure-model-id={brochure.p1_id}>
+          <h2 id="brochure-h" className="h-section">{locale === 'ar' ? 'كتالوج الموديل من نيسان مصر' : 'Model brochure from Nissan Egypt'}</h2>
+          <a className="btn btn-ghost" href={brochure.url} target="_blank" rel="noopener noreferrer">{locale === 'ar' ? 'افتح الكتالوج الرسمي (PDF)' : 'Open official brochure (PDF)'}</a>
+          <p className="small">{brochure.document_year ? (locale === 'ar' ? 'سنة الموديل في الكتالوج: ' : 'Model year stated in the brochure: ') + brochure.document_year + '. ' : ''}{locale === 'ar' ? 'تاريخ سريان الكتالوج غير مذكور. التجهيزات تختلف حسب الفئة؛ راجع جدول الفئات في الكتالوج.' : 'The brochure does not state an effective date. Equipment varies by grade; refer to its grade table.'}</p>
+        </section>
+      ) : null}
 
       <section className="cd-section" aria-labelledby="gal-h" data-asset-flags="PHOTO_NEEDS_ENRICHMENT">
         <h2 id="gal-h" className="h-section">{c.galleryH}</h2>
@@ -185,7 +196,7 @@ export default async function CarDetail({ params }: P) {
       <section className="cd-section card" style={{ background: 'var(--ci-color-fog)' }} aria-labelledby="fmc-h">
         <h2 id="fmc-h" className="h-section">{c.fmcH}</h2>
         <p className="sub">{c.fmcBody}</p>
-        <Link className="btn btn-primary" href={L(`/find-my-car?model=${encodeURIComponent(car.id)}`)}>{t.nav.fmc}</Link>
+        <Link className="btn btn-primary" href={L(`/find-my-car?model=${encodeURIComponent(car.p1Id ?? car.id)}`)}>{t.nav.fmc}</Link>
       </section>
 
       <section className="cd-section">
