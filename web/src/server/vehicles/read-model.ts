@@ -162,7 +162,7 @@ class JsonSnapshotReadModel implements VehicleReadModel {
       if (hero) car.image = hero; // P2-accepted hero (catalogue serving release) takes precedence over the P5 media registry
       if (raw) {
         // S6 registrations say only "ICE"; name the fuel only when the pinned U11 identity states it unambiguously.
-        const fuels = ['petrol', 'diesel'].filter(f => e.powertrains.includes(f)) as Powertrain[];
+        const fuels = ['petrol', 'diesel'].filter(f => (e.powertrains as string[]).includes(f)) as Powertrain[];
         if (fuels.length === 1) car.powertrains = car.powertrains.map(p => (p === 'ice' ? fuels[0] : p));
       }
       if (!raw) {

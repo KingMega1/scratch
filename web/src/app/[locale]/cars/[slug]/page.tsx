@@ -71,6 +71,19 @@ export default async function CarDetail({ params }: P) {
     ...Object.entries(car.specs).map(([k, s]) => [c.spec[k] ?? k, <>{s.values.map((v, i) => <div key={i}><bdi>{v.value}</bdi>{s.multiple ? <span className="small"> · {v.sources.join(', ')}</span> : null}</div>)}</>] as [string, React.ReactNode]),
   ];
 
+  // Customer-facing gap labels (RC1 + P2 RC2 codes). Internal media gaps (brochure/logo/hero) and unknown codes are never shown raw.
+  const ar = locale === 'ar';
+  const GAP: Record<string, string> = {
+    NO_VERIFIED_PRICE: ar ? 'السعر لم يتم التحقق منه بعد.' : 'Price has not been verified yet.',
+    NO_ACCEPTED_PRICE: ar ? 'السعر لم يتم التحقق منه بعد.' : 'Price has not been verified yet.',
+    NO_VERIFIED_SPECS: ar ? 'المواصفات لم يتم التحقق منها بعد.' : 'Specifications have not been verified yet.',
+    NO_ACCEPTED_SPECS: ar ? 'المواصفات لم يتم التحقق منها بعد.' : 'Specifications have not been verified yet.',
+    NO_VERIFIED_WARRANTY: ar ? 'الضمان لم يتم التحقق منه بعد.' : 'Warranty has not been verified yet.',
+    GENERATION_UNKNOWN: ar ? 'جيل الموديل لم يتم تأكيده بعد.' : 'Model generation has not been confirmed yet.',
+    P2_ID_PENDING: ar ? 'بيانات الموديل التفصيلية قيد المراجعة.' : 'Detailed model evidence is under review.',
+  };
+  const gapItems = [...new Map(car.gaps.map(g => [GAP[g] ?? v2.gaps[g], g] as const).filter(([l]) => l).map(([l, g]) => [l, [g, l] as const])).values()];
+
   return (
     <div className="wrap section" style={{ paddingBlockStart: 24 }} data-model-id={car.id}>
       <TrackOnMount event="car_view" props={{ model_id: car.id }} />
@@ -93,12 +106,12 @@ export default async function CarDetail({ params }: P) {
       </section>
       {car.image ? <p className="small" style={{ marginBlockStart: 8 }}>{c.photoNote}{car.image.credit ? <> <bdi>{car.image.credit}</bdi></> : null}</p> : null}
 
-      {car.gaps.length || !car.inSlice ? (
+      {gapItems.length || !car.inSlice ? (
         <section className="cd-section notice" aria-labelledby="gaps-h">
           <h2 id="gaps-h" style={{ marginBlockStart: 0, fontSize: 18 }}>{v2.gapsH}</h2>
           <ul className="gap-list">
             {!car.inSlice ? <li>{v2.outOfSlice}</li> : null}
-            {car.gaps.map(g => <li key={g}>{({ NO_VERIFIED_PRICE: locale === 'ar' ? 'السعر لم يتم التحقق منه بعد.' : 'Price has not been verified yet.', NO_VERIFIED_SPECS: locale === 'ar' ? 'المواصفات لم يتم التحقق منها بعد.' : 'Specifications have not been verified yet.', P2_ID_PENDING: locale === 'ar' ? 'بيانات الموديل التفصيلية قيد المراجعة.' : 'Detailed model evidence is under review.' } as Record<string,string>)[g] ?? v2.gaps[g] ?? g}</li>)}
+            {gapItems.map(([g, label]) => <li key={g}>{label}</li>)}
           </ul>
         </section>
       ) : null}
