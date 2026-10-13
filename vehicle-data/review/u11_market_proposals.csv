@@ -1,0 +1,14 @@
+proposal_id,type,brand,model,u11_id,u11_state,evidence,evidence_ref,proposed_action,status
+MP-01,MARKET_STATUS_CONFLICT,Citroen,New C5 Aircross,citroen/c5-aircross,off-sale (excluded),Citroen Egypt brochure (citroen-eg.com; 5y/150k warranty),drive:1z1YyR0vdu3gHJTqhAt9EVcB0ICm3hRvr,P1 review: restore on-sale if registrations/price confirm,OPEN
+MP-02,MARKET_STATUS_CONFLICT,BYD,Shark 6 DM-O,byd/shark-6-dmo,excluded (no_price; no_sale_evidence),BYD Egypt brochure (hotline 17669),drive:1IZeSVNsFw0Vok1UvWN6Ml7MBgwh1shbF,P1 review: pickup body + sale evidence now exists,OPEN
+MP-03,MARKET_STATUS_CONFLICT,Hyundai,Venue,hyundai/venue,excluded (no_price),GB Auto Hyundai Egypt brochure published Sep 2026,drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1,P1 review: needs price evidence before eligibility,OPEN
+MP-04,MARKET_STATUS_CONFLICT,Smart,#1 / #3 / #5,smart/*,off-sale,official Smart Egypt listings (AT-51 O4 discovery),PR #7 review/AT-51-official-discovery-2026-10-12.json,P1 review,OPEN
+MP-05,MISSING_MODEL,IM,LS9,,absent,brochure with MANSOUR footer,drive:1n-wKDhwZc1_bjPKnleGzstGECO-foino,add to P2 registry as candidate; registrations/price needed,OPEN
+MP-06,MISSING_MODEL,iCAUR,V27,,brand absent,Egypt brochure (hotline 17833; 6y/200k warranty),drive:1xT6L--2JxIF9Y9KUhHeUXjao92eu_eSi,add brand + model candidate,OPEN
+MP-07,MISSING_MODEL,Venucia,unnamed model (1.5 TGDI 190 hp; L 4562),,brand absent,Venucia Egypt spec sheet (/VENUCIAEGYPT),drive:1MJDgvtpBAKWTprDZCE0sEKJ6SfkCO41o,identify model name; add candidate,OPEN
+MP-08,MISSING_MODEL,JAC,JS2,,absent (U11 has jac/s2),Kasrawy/JAC price list dated 2026-10-06 (CEO screenshot; Tier C until official copy),AT-39 notes,"verify JS2 vs S2 identity, then add",OPEN
+MP-09,MISSING_MODEL,MG,Cyberster,,absent,MG Egypt official lineup (AT-51 O4),PR #7 AT-51 discovery,add candidate,OPEN
+MP-10,MISSING_MODEL,Toyota,RAV4 / Land Cruiser Prado / Camry,,absent,Toyota Egypt official pages (O4 page state),PR #7 AT-51 discovery,add candidates,OPEN
+MP-11,MISSING_MODEL,Kia,Carnival,,absent,Kia Egypt official lineup (AT-51 O4),PR #7 AT-51 discovery,add candidate,OPEN
+MP-12,MISSING_MODEL,Skoda,Scala,,absent,Skoda Egypt price list JSON (AT-51 O4),PR #7 AT-51 discovery,add candidate,OPEN
+MP-13,POWERTRAIN_CONFLICT,BYD,Atto 8,byd/atto-8,on-sale; powertrain 'ev',BYD Egypt brochure: Super Plug-in Hybrid (DM-i),drive:1McudK_l0dYvIGO7wLpZjgbkllnZkj56s,P1 powertrain correction review (no P1 change made),OPEN

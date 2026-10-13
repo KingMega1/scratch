@@ -1,6 +1,6 @@
 {
  "counts": {
-  "brochure_accepted": 15,
+  "brochure_accepted": 17,
   "fully_enriched": 0,
   "hero_accepted": 0,
   "id_accepted": 283,
@@ -10,8 +10,8 @@
   "price_accepted": 189,
   "price_source_dated": 152,
   "price_tier_a": 26,
-  "specs_accepted": 41,
-  "warranty_accepted": 10
+  "specs_accepted": 43,
+  "warranty_accepted": 12
  },
  "generated_as_of": "2026-10-13",
  "inputs": {
@@ -6158,18 +6158,23 @@
   },
   {
    "brand": "Deepal",
-   "brochures": [],
+   "brochures": [
+    {
+     "drive_id": "1ICDxqqGw8_EQFD5vpR6kETXRopW5FU7h",
+     "issuer": "Deepal Egypt",
+     "scope": "G318 REEV 4WD (Adventure | Premium)",
+     "title": "Deepal G318 brochure Final.pdf",
+     "url": "https://drive.google.com/file/d/1ICDxqqGw8_EQFD5vpR6kETXRopW5FU7h/view"
+    }
+   ],
    "conflicts": [
     "PB-2 CONFLICT: EgyCar=2050000;Hatla2ee=2050000",
     "PB-2 CONFLICT: EgyCar=2200000;Hatla2ee=2200000"
    ],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_SPECS",
-    "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -6217,9 +6222,162 @@
    },
    "rework_price_rows": 2,
    "site_slug": "deepal-g318",
-   "specs": null,
-   "specs_accepted": false,
-   "warranty": null
+   "specs": {
+    "airbags": [
+     {
+      "applicability": "G318 REEV 4WD (Adventure and Premium)",
+      "issuer": "Deepal Egypt",
+      "source": "drive:1ICDxqqGw8_EQFD5vpR6kETXRopW5FU7h",
+      "unit": "",
+      "value": "8"
+     }
+    ],
+    "battery_kwh": [
+     {
+      "applicability": "G318 REEV 4WD (Adventure and Premium)",
+      "issuer": "Deepal Egypt",
+      "source": "drive:1ICDxqqGw8_EQFD5vpR6kETXRopW5FU7h",
+      "unit": "kWh (LFP)",
+      "value": "35.07"
+     }
+    ],
+    "boot_l": [
+     {
+      "applicability": "G318 REEV 4WD (Adventure and Premium)",
+      "issuer": "Deepal Egypt",
+      "source": "drive:1ICDxqqGw8_EQFD5vpR6kETXRopW5FU7h",
+      "unit": "L",
+      "value": "818"
+     }
+    ],
+    "boot_max_l": [
+     {
+      "applicability": "G318 REEV 4WD (Adventure and Premium)",
+      "issuer": "Deepal Egypt",
+      "source": "drive:1ICDxqqGw8_EQFD5vpR6kETXRopW5FU7h",
+      "unit": "L",
+      "value": "1747"
+     }
+    ],
+    "drive": [
+     {
+      "applicability": "G318 REEV 4WD (Adventure and Premium)",
+      "issuer": "Deepal Egypt",
+      "source": "drive:1ICDxqqGw8_EQFD5vpR6kETXRopW5FU7h",
+      "unit": "",
+      "value": "4WD"
+     }
+    ],
+    "engine": [
+     {
+      "applicability": "G318 REEV 4WD (Adventure and Premium)",
+      "issuer": "Deepal Egypt",
+      "source": "drive:1ICDxqqGw8_EQFD5vpR6kETXRopW5FU7h",
+      "unit": "",
+      "value": "1.5T range-extender generator (105 kW / 215 Nm)"
+     }
+    ],
+    "fuel_tank_l": [
+     {
+      "applicability": "G318 REEV 4WD (Adventure and Premium)",
+      "issuer": "Deepal Egypt",
+      "source": "drive:1ICDxqqGw8_EQFD5vpR6kETXRopW5FU7h",
+      "unit": "L",
+      "value": "60"
+     }
+    ],
+    "ground_clearance_mm": [
+     {
+      "applicability": "G318 REEV 4WD (Adventure and Premium)",
+      "issuer": "Deepal Egypt",
+      "source": "drive:1ICDxqqGw8_EQFD5vpR6kETXRopW5FU7h",
+      "unit": "mm (air suspension range)",
+      "value": "170-208"
+     }
+    ],
+    "height_mm": [
+     {
+      "applicability": "G318 REEV 4WD (Adventure and Premium)",
+      "issuer": "Deepal Egypt",
+      "source": "drive:1ICDxqqGw8_EQFD5vpR6kETXRopW5FU7h",
+      "unit": "mm",
+      "value": "1895-1960"
+     }
+    ],
+    "length_mm": [
+     {
+      "applicability": "G318 REEV 4WD (Adventure and Premium)",
+      "issuer": "Deepal Egypt",
+      "source": "drive:1ICDxqqGw8_EQFD5vpR6kETXRopW5FU7h",
+      "unit": "mm",
+      "value": "5010"
+     }
+    ],
+    "powertrain_class": [
+     {
+      "applicability": "G318 REEV 4WD (Adventure and Premium)",
+      "issuer": "Deepal Egypt",
+      "source": "drive:1ICDxqqGw8_EQFD5vpR6kETXRopW5FU7h",
+      "unit": "",
+      "value": "REEV"
+     }
+    ],
+    "system_power_kw": [
+     {
+      "applicability": "G318 REEV 4WD (Adventure and Premium)",
+      "issuer": "Deepal Egypt",
+      "source": "drive:1ICDxqqGw8_EQFD5vpR6kETXRopW5FU7h",
+      "unit": "kW (F 131 + R 185)",
+      "value": "316"
+     }
+    ],
+    "system_torque_nm": [
+     {
+      "applicability": "G318 REEV 4WD (Adventure and Premium)",
+      "issuer": "Deepal Egypt",
+      "source": "drive:1ICDxqqGw8_EQFD5vpR6kETXRopW5FU7h",
+      "unit": "Nm (F 265 + R 310)",
+      "value": "575"
+     }
+    ],
+    "total_range_km": [
+     {
+      "applicability": "G318 REEV 4WD (Adventure and Premium)",
+      "issuer": "Deepal Egypt",
+      "source": "drive:1ICDxqqGw8_EQFD5vpR6kETXRopW5FU7h",
+      "unit": "km NEDC (848 WLTP)",
+      "value": "963"
+     }
+    ],
+    "wheelbase_mm": [
+     {
+      "applicability": "G318 REEV 4WD (Adventure and Premium)",
+      "issuer": "Deepal Egypt",
+      "source": "drive:1ICDxqqGw8_EQFD5vpR6kETXRopW5FU7h",
+      "unit": "mm",
+      "value": "2880"
+     }
+    ],
+    "width_mm": [
+     {
+      "applicability": "G318 REEV 4WD (Adventure and Premium)",
+      "issuer": "Deepal Egypt",
+      "source": "drive:1ICDxqqGw8_EQFD5vpR6kETXRopW5FU7h",
+      "unit": "mm",
+      "value": "1985"
+     }
+    ]
+   },
+   "specs_accepted": true,
+   "warranty": [
+    {
+     "applicability": "G318 REEV 4WD (Adventure and Premium)",
+     "issuer": "Deepal Egypt",
+     "source": "drive:1ICDxqqGw8_EQFD5vpR6kETXRopW5FU7h",
+     "unit": "",
+     "value": "6 years / 250000 km; REEV system 8 years / 250000 km"
+    }
+   ]
   },
   {
    "brand": "Deepal",
@@ -9551,7 +9709,15 @@
   },
   {
    "brand": "Hyundai",
-   "brochures": [],
+   "brochures": [
+    {
+     "drive_id": "10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1",
+     "issuer": "GB Auto (Hyundai Egypt)",
+     "scope": "Venue 1.6 MPI + Tucson 1.6T (combined brochure, Sep 2026)",
+     "title": "Venue Brochure RTP.pdf",
+     "url": "https://drive.google.com/file/d/10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1/view"
+    }
+   ],
    "conflicts": [
     "PB-2 CONFLICT: ContactCars=1800000;EgyCar=1800000",
     "PB-2 CONFLICT: ContactCars=1950000",
@@ -9571,11 +9737,8 @@
    "gallery": [],
    "gaps": [
     "NO_ACCEPTED_PRICE",
-    "NO_ACCEPTED_SPECS",
-    "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -9590,9 +9753,90 @@
    "price": null,
    "rework_price_rows": 32,
    "site_slug": "hyundai-tucson",
-   "specs": null,
-   "specs_accepted": false,
-   "warranty": null
+   "specs": {
+    "engine": [
+     {
+      "applicability": "Tucson 1.6T GDI (GB Auto brochure Sep 2026)",
+      "issuer": "GB Auto (Hyundai Egypt)",
+      "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1",
+      "unit": "",
+      "value": "Smartstream 1.6 Turbo GDI"
+     }
+    ],
+    "height_mm": [
+     {
+      "applicability": "Tucson 1.6T GDI (GB Auto brochure Sep 2026)",
+      "issuer": "GB Auto (Hyundai Egypt)",
+      "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1",
+      "unit": "mm (roof rack)",
+      "value": "1650"
+     }
+    ],
+    "length_mm": [
+     {
+      "applicability": "Tucson 1.6T GDI (GB Auto brochure Sep 2026)",
+      "issuer": "GB Auto (Hyundai Egypt)",
+      "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1",
+      "unit": "mm",
+      "value": "4510-4520"
+     }
+    ],
+    "power_hp": [
+     {
+      "applicability": "Tucson 1.6T GDI (GB Auto brochure Sep 2026)",
+      "issuer": "GB Auto (Hyundai Egypt)",
+      "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1",
+      "unit": "hp",
+      "value": "180"
+     }
+    ],
+    "torque_nm": [
+     {
+      "applicability": "Tucson 1.6T GDI (GB Auto brochure Sep 2026)",
+      "issuer": "GB Auto (Hyundai Egypt)",
+      "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1",
+      "unit": "Nm",
+      "value": "265"
+     }
+    ],
+    "transmission": [
+     {
+      "applicability": "Tucson 1.6T GDI (GB Auto brochure Sep 2026)",
+      "issuer": "GB Auto (Hyundai Egypt)",
+      "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1",
+      "unit": "",
+      "value": "7-speed DCT"
+     }
+    ],
+    "wheelbase_mm": [
+     {
+      "applicability": "Tucson 1.6T GDI (GB Auto brochure Sep 2026)",
+      "issuer": "GB Auto (Hyundai Egypt)",
+      "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1",
+      "unit": "mm",
+      "value": "2680"
+     }
+    ],
+    "width_mm": [
+     {
+      "applicability": "Tucson 1.6T GDI (GB Auto brochure Sep 2026)",
+      "issuer": "GB Auto (Hyundai Egypt)",
+      "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1",
+      "unit": "mm",
+      "value": "1865"
+     }
+    ]
+   },
+   "specs_accepted": true,
+   "warranty": [
+    {
+     "applicability": "Tucson 1.6T GDI (GB Auto brochure Sep 2026)",
+     "issuer": "GB Auto (Hyundai Egypt)",
+     "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1",
+     "unit": "",
+     "value": "5 years / 100000 km"
+    }
+   ]
   },
   {
    "brand": "IM",
