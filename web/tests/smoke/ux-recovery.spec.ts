@@ -17,7 +17,7 @@ for (const l of ['en', 'ar'] as const) {
   });
 
   test(`${l}: fuel terminology uses the canonical labels`, async ({ page }) => {
-    await page.goto(`/${l}/market/catalog`);
+    await page.goto(`/${l}/market/catalog?fuel=petrol`);
     const labels = await page.locator('[data-fuel]').allTextContents();
     const allowed = l === 'ar' ? ['بنزين', 'ديزل', 'هجين', 'هجين قابل للشحن', 'كهرباء بمدى ممتد', 'كهرباء'] : ['Petrol', 'Diesel', 'Hybrid', 'Plug-in Hybrid', 'Range-extended electric', 'Electric'];
     expect(labels.length).toBeGreaterThan(2);
@@ -40,27 +40,36 @@ for (const l of ['en', 'ar'] as const) {
     expect(strip).toEqual([...strip].sort((a, b) => col.compare(a, b)));
   });
 
-  test(`${l}: catalogue Brand → Model → Price → specs, all models, sorting and filters`, async ({ page }) => {
+  test(`${l}: catalogue brand logos -> models -> details, search, filters, paging`, async ({ page }) => {
     await page.goto(`/${l}/market/catalog`);
-    await expect(page.locator('a.mc[data-model-id]')).toHaveCount(release.entries.length);
+    await expect(page.locator('[data-catalog-mode="brands"]')).toBeVisible();
+    await expect(page.locator('a.mc')).toHaveCount(0); // no dump of every model
     await expect(page.locator('table')).toHaveCount(0);
-    const first = page.locator('.cat-brand').first();
-    await expect(first.locator('h2')).toBeVisible();
-    await expect(first.locator('.mc-price .mc-label').first()).toHaveText(l === 'ar' ? 'السعر' : 'Price');
+    // brand -> its models -> detail
+    await page.locator('.brand-chip[data-brand-id="nissan"]').click();
+    await expect(page).toHaveURL(/brand=nissan/);
+    const n = Number(await page.locator('[data-result-count]').getAttribute('data-result-count'));
+    await expect(page.locator('a.mc')).toHaveCount(n);
+    await expect(page.locator('.mc-price .mc-label').first()).toHaveText(l === 'ar' ? 'السعر' : 'Price');
     await expect(page.locator('main')).not.toContainText(l === 'ar' ? 'السعر السعر' : 'Price Price');
+    await page.locator('a.mc[data-model-id="nissan-qashqai"]').click();
+    await expect(page).toHaveURL(new RegExp(`/${l}/cars/nissan-qashqai$`));
+    // search (Arabic letter variants normalised)
+    await page.goto(`/${l}/market/catalog?q=${encodeURIComponent(l === 'ar' ? 'كيا' : 'kia')}`);
+    const ids = await page.locator('a.mc').evaluateAll(els => els.map(e => e.getAttribute('data-model-id')));
+    expect(ids.length).toBeGreaterThan(0);
+    for (const id of ids) expect(id).toMatch(/^kia-/);
     // Brand V2: letter-and-number model codes stay Latin in Arabic
-    if (l === 'ar') await expect(page.locator('a.mc[data-model-id="mg-hs"]')).toContainText('HS');
-    // price sort: known prices ascending, unknown last (never guessed)
-    await page.goto(`/${l}/market/catalog?sort=price_asc`);
+    if (l === 'ar') { await page.goto('/ar/market/catalog?brand=mg'); await expect(page.locator('a.mc[data-model-id="mg-hs"]')).toContainText('HS'); }
+    // filtered results are paged (never all at once); price sort keeps unknown prices last
+    await page.goto(`/${l}/market/catalog?body=suv&sort=price_asc`);
+    await expect(page.locator('a.mc')).toHaveCount(24);
+    await expect(page.locator('.pager')).toBeVisible();
     const states = await page.locator('a.mc').evaluateAll(els => els.map(e => e.getAttribute('data-price-state')));
     const firstUnknown = states.indexOf('unknown');
-    expect(firstUnknown).toBeGreaterThan(0);
-    expect(states.slice(firstUnknown).every(s => s === 'unknown')).toBe(true);
-    // fuel filter narrows to matching cars
+    if (firstUnknown >= 0) expect(states.slice(firstUnknown).every(s => s === 'unknown')).toBe(true);
     await page.goto(`/${l}/market/catalog?fuel=ev`);
-    const n = await page.locator('a.mc').count();
-    expect(n).toBeGreaterThan(0);
-    expect(n).toBeLessThan(release.entries.length);
+    expect(await page.locator('a.mc').count()).toBeGreaterThan(0);
     expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
   });
 
@@ -88,3 +97,43 @@ test('Car Prices rename keeps URLs and the catalogue links', async ({ page, requ
   await page.goto('/en/market/catalog');
   await expect(page.locator('.breadcrumb a')).toHaveText('Car Prices');
 });
+
+/* Additional CEO feedback (13 Oct): navigation, first fold, fat footer, invitation at the final step. */
+for (const l of ['en', 'ar'] as const) {
+  test(`${l}: no account dashboard in customer navigation; route kept`, async ({ page, request, isMobile }) => {
+    await page.goto(`/${l}`);
+    if (isMobile) await page.locator('.gh-menu-btn').click();
+    await expect(page.locator('header a[href$="/my-carindex"]')).toHaveCount(0);
+    expect((await request.get(`/${l}/my-carindex`)).status()).toBe(200);
+    expect((await request.get('/admin')).status()).toBe(404); // internal, auth-only (404 when unconfigured)
+  });
+  test(`${l}: first fold has a clear Find My Car CTA and verified photos only`, async ({ page }) => {
+    await page.goto(`/${l}`);
+    const fold = page.locator('section.hero');
+    await expect(fold.locator('a[data-cta="hero_fmc"]')).toBeVisible();
+    const imgs = fold.locator('img');
+    expect(await imgs.count()).toBeGreaterThan(0);
+    for (const src of await imgs.evaluateAll(els => els.map(e => e.getAttribute('src')))) expect(media.entries.map(m => m.src)).toContain(src);
+    await expect(page.locator('#paths-h')).toHaveCount(0); // duplicate "Two ways to start" box removed
+  });
+  test(`${l}: fat footer with the Brand V2 logo on ink`, async ({ page }) => {
+    await page.goto(`/${l}`);
+    const f = page.locator('footer.gf');
+    await expect(f.locator('img[src="/brand/carindex-logo-white-yellow.svg"]')).toHaveCount(1);
+    expect(await f.locator('.gf-cols > div').count()).toBeGreaterThanOrEqual(5);
+    for (const p of ['/find-my-car', '/market', '/compare', '/methodology', '/privacy', '/news?type=news']) await expect(f.locator(`a[href="/${l}${p}"]`)).toHaveCount(1);
+    await expect(f.locator('a[href*="/market/catalog?brand="]').first()).toBeVisible();
+  });
+  test(`${l}: invitation sits at the final recommendation step with its tracking`, async ({ page, request }) => {
+    const j = await (await request.post('/api/v1/recommendation', { data: { op: 'execute', locale: l, brief: { budget: 2000000, budgetMode: 'around', body: ['suv'] } } })).json();
+    await page.goto(`/${l}/find-my-car?r=${j.result.share.r}`);
+    const inv = page.locator('[data-fmc-invite]');
+    await expect(inv).toBeVisible({ timeout: 20_000 });
+    await expect(inv.locator('input#phone')).toBeAttached();
+    const ev = await page.evaluate(() => ((window as unknown as { dataLayer?: { event: string }[] }).dataLayer || []).map(e => e.event));
+    expect(ev).toContain('identity_gate_view');
+    // it is the last block of the result
+    const last = await page.locator('.fmc-result > *:not(.fmc-sheet):not(.fmc-toast)').last().getAttribute('data-fmc-invite');
+    expect(last).toBe('true');
+  });
+}

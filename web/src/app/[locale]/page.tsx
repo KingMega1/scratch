@@ -3,12 +3,11 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { isLocale, type Locale } from '@/lib/i18n/config';
 import { dict } from '@/lib/i18n/dictionaries';
-import { num } from '@/lib/format';
 import { pageMeta } from '@/lib/seo';
 import { showDrafts } from '@/lib/deploy-env';
 import { vehicles } from '@/server/vehicles/read-model';
 import { content } from '@/server/cms/provider';
-import { CarCard } from '@/components/car';
+import { CarCard, CarName, carNameText } from '@/components/car';
 import { BrandMark, sortBrands } from '@/components/brand';
 
 type P = { params: Promise<{ locale: string }> };
@@ -27,47 +26,45 @@ export default async function Home({ params }: P) {
   const V = vehicles();
   const cars = V.all();
   const reg = (c: (typeof cars)[number]) => c.registrations?.inWindow ?? -1;
-  const marketNow = [...cars].sort((a, b) => reg(b) - reg(a)).slice(0, 4);
+  // "Car prices" shows cars that actually have a price (most registered first); unknown prices are not featured.
+  const marketNow = [...cars].filter(c => c.priceFrom.state !== 'unknown').sort((a, b) => reg(b) - reg(a)).slice(0, 4);
   const brands = sortBrands(V.brands(), locale);
+  // First fold uses verified exact-model photos only (data/registry/media-verified.json).
+  const heroCars = ['nissan-patrol', 'nissan-qashqai', 'nissan-magnite'].map(id => V.get(id)).filter((c): c is NonNullable<typeof c> => !!c?.image);
   const items = (await content().list({ includeDrafts: showDrafts() })).slice(0, 3);
 
   return (
     <>
-      <section className="hero inverse" aria-labelledby="hero-h">
-        {/* Brand V2 safe fallback: no vehicle photo until exact-car and usage rights are verified. */}
-        <div className="wrap hero-content">
-          <p className="kicker">{h.kicker}</p>
-          <h1 id="hero-h" className="display">{h.h1}</h1>
-          <p className="lede">{h.lede}</p>
-          <div className="ctas">
-            <Link className="btn btn-primary" href={`/${locale}/find-my-car`} data-cta="hero_fmc">{h.ctaFmc}</Link>
-            <Link className="btn btn-on-dark" href={`/${locale}/cars`} data-cta="hero_cars">{h.ctaCars}</Link>
+      <section className="hero hero-v2 inverse" aria-labelledby="hero-h">
+        <div className="wrap hero-grid">
+          <div className="hero-content">
+            <h1 id="hero-h" className="display">{h.h1}</h1>
+            <p className="lede">{h.lede}</p>
+            <div className="ctas">
+              <Link className="btn btn-primary btn-lg" href={`/${locale}/find-my-car`} data-cta="hero_fmc">{h.ctaFmc}</Link>
+              <Link className="btn btn-on-dark" href={`/${locale}/market/catalog`} data-cta="hero_cars">{h.ctaCars}</Link>
+            </div>
           </div>
+          {heroCars.length ? (
+            <ul className="hero-cars" aria-label={t.nav.cars}>
+              {heroCars.map(c => (
+                <li key={c.id}>
+                  <Link href={`/${locale}/cars/${c.id}`} data-hero-car={c.id}>
+                    <img src={c.image!.src} alt={carNameText(c, locale)} width={640} height={400} fetchPriority="high" data-verified-photo="true" />
+                    <span><CarName car={c} locale={locale} /></span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </div>
       </section>
 
       <section className="section" aria-labelledby="why-h">
         <div className="wrap">
           <h2 id="why-h" className="h-section">{h.whyH}</h2>
-          <p className="sub">{h.whySub}</p>
           <div className="grid grid-3">
             {h.why.map(([title, body]) => (<div className="card" key={title}><h3>{title}</h3><p>{body}</p></div>))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section" style={{ paddingBlockStart: 0 }} aria-labelledby="paths-h">
-        <div className="wrap">
-          <h2 id="paths-h" className="h-section">{h.pathsH}</h2>
-          <div className="grid grid-2" style={{ marginBlockStart: 16 }}>
-            <div className="path dark inverse">
-              <div><div className="k">{h.pathFmcK}</div><h3>{h.pathFmcH}</h3></div>
-              <div><Link className="btn btn-primary" href={`/${locale}/find-my-car`}>{h.pathFmcCta}</Link></div>
-            </div>
-            <div className="path light">
-              <div><div className="k">{h.pathCarsK}</div><h3>{h.pathCarsH(num(cars.length))}</h3></div>
-              <div><Link className="btn btn-dark" href={`/${locale}/cars`}>{h.pathCarsCta}</Link></div>
-            </div>
           </div>
         </div>
       </section>
@@ -87,7 +84,7 @@ export default async function Home({ params }: P) {
           <ul className="strip brand-strip" style={{ marginBlockStart: 16 }} data-brand-order={locale}>
             {brands.map(b => (
               <li key={b.id}>
-                <Link className="body-tile" href={`/${locale}/market/catalog#brand-${b.id}`} data-brand-id={b.id}>
+                <Link className="body-tile" href={`/${locale}/market/catalog?brand=${b.id}`} data-brand-id={b.id}>
                   <BrandMark id={b.id} label={b.en} />
                   <b>{locale === 'ar' ? b.ar ?? <bdi>{b.en}</bdi> : b.en}</b>
                   <span className="n tnum">{t.market.models(b.count)}</span>

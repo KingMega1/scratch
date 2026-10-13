@@ -464,3 +464,32 @@ table.t th.t-num { text-align: end; }
 .brand-chip.no-logo { grid-template-columns: 1fr; }
 /* P1 result cards carry dataset photos that are not exact-model verified; P5 does not show them (markup untouched). */
 .fmc .alt-img { display: none; }
+/* Home first fold: text + verified exact-model photos (no unverified hero image). */
+.hero-v2 { min-height: 0; align-items: stretch; }
+.hero-v2::after { display: none; }
+.hero-grid { display: grid; gap: 32px; padding-block: 48px; align-items: center; }
+@media (min-width: 1024px) { .hero-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); padding-block: 64px; } }
+.hero-v2 .hero-content { padding: 0; }
+.btn-lg { min-height: 52px; padding: 0 28px; font-size: 17px; }
+.hero-cars { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+.hero-cars li:first-child { grid-column: 1 / -1; }
+.hero-cars a { display: block; position: relative; border-radius: var(--radius-card); overflow: hidden; color: var(--ci-color-white); text-decoration: none; background: var(--ci-color-fog); }
+.hero-cars img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.hero-cars li:first-child img { aspect-ratio: 16 / 8; }
+.hero-cars span { position: absolute; inset-inline-start: 0; inset-block-end: 0; padding: 6px 10px; background: rgba(11,22,32,.78); font-size: 13px; font-weight: 600; border-start-end-radius: 6px; }
+@media (max-width: 599px) { .hero-grid { padding-block: 32px; gap: 24px; } .hero-cars { grid-template-columns: 1fr 1fr; } }
+.gf-tag { color: var(--ci-color-white); font-weight: 700; margin-block-start: 12px !important; }
+@media (min-width: 1024px) { .gf-cols { grid-template-columns: 1.4fr repeat(4, 1fr); } }
+.catalog .cat-search { max-width: 640px; margin-block: 8px 12px; }
+.cat-filters { border: 1px solid var(--ci-color-line); border-radius: var(--radius-card); padding: 10px 14px; margin-block-end: 24px; }
+.cat-filters > summary { cursor: pointer; font-weight: 700; min-height: 32px; display: flex; align-items: center; }
+.cat-filters[open] > summary { margin-block-end: 10px; }
+.cat-filters .filter-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-block: 6px; }
+.cat-filters .label { font-weight: 700; font-size: 14px; min-width: 88px; }
+.cat-brand-page { margin-block-end: 8px; }
+.cat-brand-page .h-page { margin: 0; }
+.cat-brand-page .brand-mark { width: 48px; height: 48px; }
+.pager { display: flex; gap: 12px; align-items: center; justify-content: center; margin-block-start: 20px; }
+.brand-strip .body-tile { min-height: 116px; align-content: center; }
+.mc.has-photo { padding-block-start: 0; overflow: hidden; }
+.mc-photo { display: block; width: calc(100% + 32px); margin-inline: -16px; aspect-ratio: 16 / 9; object-fit: cover; background: var(--ci-color-fog); margin-block-end: 6px; }

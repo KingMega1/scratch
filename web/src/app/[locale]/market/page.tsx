@@ -38,9 +38,9 @@ export default async function Market({ params }: P) {
       <div className="wrap section" style={{ paddingBlockEnd: 24, paddingBlockStart: 32 }}>
         <h1 className="h-page">{m.h1}</h1>
         <p className="lede">{m.lede}</p>
-        <form role="search" action={L('/search')} className="search-box" style={{ maxWidth: 640 }}>
+        <form role="search" action={L('/market/catalog')} className="search-box" style={{ maxWidth: 640 }}>
           <label className="visually-hidden" htmlFor="mq">{t.nav.search}</label>
-          <input id="mq" name="q" type="search" placeholder={t.searchPlaceholder} />
+          <input id="mq" name="q" type="search" placeholder={t.catalog.searchPh} maxLength={60} />
           <button className="btn btn-primary" type="submit">{t.search.submit}</button>
         </form>
         <p style={{ marginBlockStart: 20 }}><Link className="btn btn-dark" href={L('/market/catalog')} data-cta="catalog">{m.catalogCta}</Link></p>

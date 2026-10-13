@@ -6,7 +6,9 @@ import { type Locale, otherLocale, switchLocalePath } from '@/lib/i18n/config';
 import { dict } from '@/lib/i18n/dictionaries';
 import { track } from '@/lib/analytics/client';
 
-/* Primary navigation is the buyer journeys only. News, guides and methodology stay reachable from the footer. */
+/* Primary navigation is the buyer journeys only. News, guides and methodology stay reachable from the footer.
+   The My CarIndex account shell is not in customer navigation (route kept, noindex); its sign-in invitation now
+   appears at the end of a Find My Car result. */
 const NAV = [
   ['fmc', '/find-my-car'],
   ['cars', '/cars'],
@@ -54,7 +56,6 @@ export default function Header({ locale }: { locale: Locale }) {
               e.currentTarget.href = langHref + window.location.search;
             }}
           >{t.lang.switchTo}</a>
-          <Link className="btn btn-sm btn-ghost gh-account" href={`/${locale}/my-carindex`} aria-current={isCurrent('/my-carindex') ? 'page' : undefined}>{t.nav.account}</Link>
           <button className="gh-iconbtn gh-menu-btn" type="button" aria-expanded={open} aria-controls="gh-drawer" aria-label={open ? t.nav.close : t.nav.menu} onClick={() => setOpen(o => !o)}>
             <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false">{open
               ? <path d="M5 5l14 14M19 5 5 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -72,7 +73,6 @@ export default function Header({ locale }: { locale: Locale }) {
           {NAV.map(([k, href]) => (
             <Link key={k} href={`/${locale}${href}`} aria-current={isCurrent(href) ? 'page' : undefined}>{t.nav[k]}</Link>
           ))}
-          <Link href={`/${locale}/my-carindex`} aria-current={isCurrent('/my-carindex') ? 'page' : undefined}>{t.nav.account}</Link>
         </nav>
       </div>
     </header>

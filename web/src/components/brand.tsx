@@ -36,7 +36,7 @@ export function BrandGrid({ brands, locale, limit }: { brands: BrandSummary[]; l
         const name = brandName(b, locale);
         return (
           <li key={b.id}>
-            <Link className={`brand-chip${hasLogo(b.id) ? '' : ' no-logo'}`} href={`/${locale}/market/catalog#brand-${b.id}`} data-brand-id={b.id}>
+            <Link className={`brand-chip${hasLogo(b.id) ? '' : ' no-logo'}`} href={`/${locale}/market/catalog?brand=${b.id}`} data-brand-id={b.id} data-count={b.count}>
               <BrandMark id={b.id} label={b.en} />
               <b>{locale === 'ar' && !b.ar ? <bdi>{name}</bdi> : name}</b>
               <span className="tnum">{t.market.models(b.count)}</span>

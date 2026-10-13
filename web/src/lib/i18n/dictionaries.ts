@@ -14,7 +14,7 @@ const ar = {
   searchPlaceholder: 'دوّر على عربية، ماركة، سعر أو محتوى من كار إندكس',
   footer: {
     about: 'معلومات مستقلة تساعدك تختار عربيتك الجديدة في مصر. إحنا مش بنبيع عربيات، ومفيش ترشيح مدفوع.',
-    cols: { cars: 'العربيات', tools: 'أدوات', content: 'محتوى', company: 'كار إندكس' },
+    cols: { cars: 'العربيات', tools: 'أدوات', content: 'محتوى', company: 'كار إندكس', brands: 'الماركات' }, allBrands: 'كل الماركات',
     browseAll: 'كل العربيات', byBrand: 'حسب الماركة', byBody: 'حسب نوع العربية', launches: 'الجديد في السوق',
     marketPrices: 'أسعار السيارات', newsL: 'أخبار', guidesL: 'أدلة', insightsL: 'تحليلات',
     methodology: 'طريقة الشغل', independence: 'استقلاليتنا', about2: 'عن كار إندكس', contact: 'تواصل معانا', privacy: 'الخصوصية', terms: 'الشروط',
@@ -102,7 +102,7 @@ const ar = {
     catalogH: 'كل العربيات وأسعارها', catalogBody: 'كل الموديلات مرتّبة حسب الماركة، مع السعر ونوع الوقود.', catalogCta: 'افتح كل العربيات',
     regs: 'تسجيلات',
   },
-  catalog: { h1: 'كل العربيات وأسعارها', model: 'الموديل', body: 'النوع', from: 'من', to: 'لحد', state: 'حالة السعر', regs: 'تسجيلات 12 شهر', back: 'أسعار السيارات', price: 'السعر', fuel: 'نوع الوقود', sort: 'الترتيب', sortBrand: 'الماركة (أ–ي)', sortPriceAsc: 'السعر: من الأقل', sortPriceDesc: 'السعر: من الأعلى', allFuels: 'الكل', jump: 'الماركات', models: (n: number) => (n === 1 ? 'موديل واحد' : `${n} موديلات`), empty: 'مفيش عربيات بالاختيار ده.', priceDetails: 'تفاصيل السعر', na: 'غير متاح بعد' },
+  catalog: { h1: 'كل العربيات وأسعارها', model: 'الموديل', body: 'النوع', from: 'من', to: 'لحد', state: 'حالة السعر', regs: 'تسجيلات 12 شهر', back: 'أسعار السيارات', price: 'السعر', fuel: 'نوع الوقود', sort: 'الترتيب', sortBrand: 'الماركة (أ–ي)', sortPriceAsc: 'السعر: من الأقل', sortPriceDesc: 'السعر: من الأعلى', allFuels: 'الكل', jump: 'الماركات', models: (n: number) => (n === 1 ? 'موديل واحد' : `${n} موديلات`), empty: 'مفيش عربيات بالاختيار ده.', priceDetails: 'تفاصيل السعر', na: 'غير متاح بعد', searchLabel: 'دوّر على ماركة أو موديل', searchPh: 'دوّر على ماركة أو موديل، مثلًا تويوتا كورولا', filtersH: 'فلترة', sortName: 'الاسم (أ–ي)', results: (n: string) => `${n} نتيجة`, pages: 'الصفحات', prev: 'السابق', next: 'التالي', pageOf: (a: string, b: string) => `صفحة ${a} من ${b}` },
   compare: {
     h1: 'قارن', lede: 'اختار لحد 3 عربيات. بنعرض الفروق زي ما هي، واللي مش معروف بنقول إنه مش معروف.',
     pick: 'ضيف عربية', add: 'ضيف', remove: 'شيل', empty: 'اختار عربيتين على الأقل عشان تبدأ المقارنة.',
@@ -163,7 +163,7 @@ const en: Dict = {
   searchPlaceholder: 'Search cars, brands, prices or CarIndex content',
   footer: {
     about: 'Independent buyer-decision intelligence for Egypt. We don’t sell cars, and no recommendation is paid for.',
-    cols: { cars: 'Cars', tools: 'Tools', content: 'Content', company: 'CarIndex' },
+    cols: { cars: 'Cars', tools: 'Tools', content: 'Content', company: 'CarIndex', brands: 'Brands' }, allBrands: 'All brands',
     browseAll: 'All cars', byBrand: 'By brand', byBody: 'By body type', launches: 'New to the market',
     marketPrices: 'Car prices', newsL: 'News', guidesL: 'Guides', insightsL: 'Insights',
     methodology: 'Methodology', independence: 'Independence', about2: 'About', contact: 'Contact', privacy: 'Privacy', terms: 'Terms',
@@ -251,7 +251,7 @@ const en: Dict = {
     catalogH: 'All cars and prices', catalogBody: 'Every model by brand, with its price and fuel type.', catalogCta: 'See all cars',
     regs: 'registrations',
   },
-  catalog: { h1: 'All cars and prices', model: 'Model', body: 'Body', from: 'From', to: 'To', state: 'Price state', regs: 'Regs, 12 mo', back: 'Car Prices', price: 'Price', fuel: 'Fuel type', sort: 'Sort', sortBrand: 'Brand (A–Z)', sortPriceAsc: 'Price: low to high', sortPriceDesc: 'Price: high to low', allFuels: 'All', jump: 'Brands', models: (n: number) => (n === 1 ? '1 model' : `${n} models`), empty: 'No cars match this choice.', priceDetails: 'Price details', na: 'Not available yet' },
+  catalog: { h1: 'All cars and prices', model: 'Model', body: 'Body', from: 'From', to: 'To', state: 'Price state', regs: 'Regs, 12 mo', back: 'Car Prices', price: 'Price', fuel: 'Fuel type', sort: 'Sort', sortBrand: 'Brand (A–Z)', sortPriceAsc: 'Price: low to high', sortPriceDesc: 'Price: high to low', allFuels: 'All', jump: 'Brands', models: (n: number) => (n === 1 ? '1 model' : `${n} models`), empty: 'No cars match this choice.', priceDetails: 'Price details', na: 'Not available yet', searchLabel: 'Search a brand or model', searchPh: 'Search a brand or model, e.g. Toyota Corolla', filtersH: 'Filters', sortName: 'Name (A–Z)', results: (n: string) => `${n} results`, pages: 'Pages', prev: 'Previous', next: 'Next', pageOf: (a: string, b: string) => `Page ${a} of ${b}` },
   compare: {
     h1: 'Compare', lede: 'Pick up to 3 cars. Differences are shown as they are, and anything we don’t know is marked as unknown.',
     pick: 'Add a car', add: 'Add', remove: 'Remove', empty: 'Pick at least two cars to start comparing.',

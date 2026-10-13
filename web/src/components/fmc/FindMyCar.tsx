@@ -2,6 +2,8 @@
 import { useCallback, useEffect, useRef, useState, type MouseEvent } from 'react';
 import Link from 'next/link';
 import { setAnalyticsContext, track } from '@/lib/analytics/client';
+import { dict } from '@/lib/i18n/dictionaries';
+import VerifyForm from '@/components/VerifyForm';
 
 /* Find My Car client. Every human-facing string inside the tool is P1 engine-owned copy delivered by the server
    (uiCopy / question descriptors / ci.reco.v1 {html,text}); this component adds layout and P5 site links only.
@@ -30,7 +32,7 @@ async function call(body: Record<string, unknown>) {
   return j;
 }
 
-export default function FindMyCar({ locale, site, shareToken }: { locale: 'en' | 'ar'; site: SiteCopy; shareToken: string | null }) {
+export default function FindMyCar({ locale, site, shareToken, identityEnabled = false }: { locale: 'en' | 'ar'; site: SiteCopy; shareToken: string | null; identityEnabled?: boolean }) {
   const [copy, setCopy] = useState<Copy | null>(null);
   const [view, setView] = useState<View>({ view: 'welcome' });
   const [stack, setStack] = useState<View[]>([]);
@@ -82,7 +84,7 @@ export default function FindMyCar({ locale, site, shareToken }: { locale: 'en' |
       {view.view === 'q' ? <Question key={view.q.id + view.q.step} copy={copy} v={view} onBack={back} onAnswer={value => { track('fmc_q_answer', { q_id: view.q.id, step: view.q.step }); run({ op: 'answer', brief: view.brief, asked: view.asked, path: view.path, q: view.q.id, value }); }} /> : null}
       {view.view === 'summary' ? <Summary copy={copy} v={view} onBack={back} onConfirm={() => { track('fmc_summary_confirm', { keys: view.rows.map(r => r.key) }); run({ op: 'execute', brief: view.brief }, { matching: true }); }} onEdit={async () => { track('fmc_summary_edit', {}); try { const form = await call({ op: 'edit_form', locale, brief: view.brief }); setStack(s => [...s, view]); setView({ view: 'edit', brief: view.brief, form }); } catch (e: any) { setErr(e.code); } }} /> : null}
       {view.view === 'edit' ? <Edit copy={copy} v={view} locale={locale} onBack={back} onSave={edit => run({ op: 'edit_save', brief: view.brief, edit })} /> : null}
-      {view.view === 'result' ? <Result copy={copy} site={site} locale={locale} v={view} onRestart={restart}
+      {view.view === 'result' ? <Result copy={copy} site={site} locale={locale} v={view} identityEnabled={identityEnabled} onRestart={restart}
         onEdit={async () => { try { const form = await call({ op: 'edit_form', locale, brief: view.brief }); setStack(s => [...s, view]); setView({ view: 'edit', brief: view.brief, form }); } catch (e: any) { setErr(e.code); } }}
         onAdjust={action => { track('fmc_adjust', { kind: action.kind, key: action.key ?? null }); run({ op: 'adjust', brief: view.brief, action }); }} /> : null}
     </div>
@@ -241,7 +243,7 @@ function Edit({ copy, v, locale, onBack, onSave }: { copy: Copy; v: Extract<View
 }
 
 /* Result: renders ci.reco.v1 only. Ties (equal) show hero + alternatives as equal cards in the given order, none leads. */
-function Result({ copy, site, locale, v, onRestart, onEdit, onAdjust }: { copy: Copy; site: SiteCopy; locale: string; v: Extract<View, { view: 'result' }>; onRestart: () => void; onEdit: () => void;
+function Result({ copy, site, locale, v, identityEnabled, onRestart, onEdit, onAdjust }: { copy: Copy; site: SiteCopy; locale: string; v: Extract<View, { view: 'result' }>; identityEnabled: boolean; onRestart: () => void; onEdit: () => void;
   onAdjust: (a: { kind: 'budget' | 'fix' | 'relax'; key?: string; to?: number; dir?: number }) => void }) {
   const r = v.result, W = v.website;
   const [cmp, setCmp] = useState(false), [sheet, setSheet] = useState<string | null>(null), [toast, setToast] = useState(false);
@@ -314,6 +316,12 @@ function Result({ copy, site, locale, v, onRestart, onEdit, onAdjust }: { copy: 
       {onSite.length >= 2 ? <p><Link className="btn btn-ghost" href={`/${locale}/compare?ids=${onSite.slice(0, 3).join(',')}`}>{site.compareOnSite}</Link></p> : null}
       {r.less ? <section className="note-card"><h3>{r.less.heading}</h3><H as="p" html={r.less.html} /><button className="link-btn" type="button" data-detail={r.less.id}>{copy.details}</button> {siteLink(r.less.id)}</section> : null}
       {r.checks.length ? <section className="note-card"><h3>{copy.check_h}</h3><ul className="checks">{r.checks.map((c: any) => <H key={c.key} as="li" html={c.html} />)}</ul></section> : null}
+      {/* Final step: the account invitation (moved from the My CarIndex shell). Same form, same identity_gate_view tracking. */}
+      <section className="note-card fmc-invite" aria-labelledby="fmc-inv-h" data-fmc-invite="true">
+        <h3 id="fmc-inv-h">{dict(locale as 'en' | 'ar').account.verifyH}</h3>
+        <p className="small">{dict(locale as 'en' | 'ar').account.verifyBody}</p>
+        <VerifyForm locale={locale as 'en' | 'ar'} enabled={identityEnabled} />
+      </section>
 
       {sheet && sheetHtml ? (
         <div className="fmc-sheet" role="dialog" aria-modal="true" aria-labelledby="fmc-sheet-h" onKeyDown={e => { if (e.key === 'Escape') setSheet(null); }}>

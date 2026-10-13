@@ -5,7 +5,10 @@ for(const locale of ['en','ar']){
  test(locale+' complete catalogue and all 283 detail pages',async({page,request})=>{
   test.setTimeout(240000);
   await page.goto('/'+locale+'/market/catalog');
-  await expect(page.locator('a.mc[data-model-id]')).toHaveCount(283); // brand-grouped cards, every on-sale model
+  // progressive disclosure: entry shows brands (no model dump); brand counts cover every on-sale model
+  await expect(page.locator('a.mc[data-model-id]')).toHaveCount(0);
+  const counts = await page.locator('.brand-grid .brand-chip').evaluateAll(els => els.map(e => Number(e.getAttribute('data-count'))));
+  expect(counts.reduce((a, b) => a + b, 0)).toBe(283);
   for(let i=0;i<release.entries.length;i+=8){
    await Promise.all(release.entries.slice(i,i+8).map(async(e:{site_slug:string})=>{
     const response=await request.get('/'+locale+'/cars/'+e.site_slug);
