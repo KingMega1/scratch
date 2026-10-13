@@ -423,9 +423,15 @@ def main():
                                                          issuer=x["issuer"], source=x["source"]))
         warranty = specs.pop("warranty", None)
         spec_ok = len(CORE_SPECS & set(specs)) >= 3
-        logo = next((dict(x) for x in med.get(m["brand"], []) if x["kind"] == "logo"), None)
-        hero = next((dict(x) for x in med.get(m["p1_id"], []) if x["kind"] == "hero"), None)
-        gallery = [dict(x) for x in med.get(m["p1_id"], []) if x["kind"] == "gallery"]
+        def asset(x):  # IM-1: P5 serves local files only; src is set once the verified bytes are materialized
+            d = {k: x[k] for k in ("asset_id", "sha256", "width", "height", "quality_class", "url", "page", "rights_basis", "status")}
+            d["src"] = "/" + x["local_path"] if x.get("local_path") and os.path.exists(os.path.join(ROOT, x["local_path"])) else None
+            d["credit"] = re.sub(r"^https?://(www\.)?([^/]+).*$", r"\2", x["page"] or x["url"]) if "drive.google" not in x["url"] else "CarIndex archive"
+            return d
+        logo = next((asset(x) for x in med.get(m["brand"], []) if x["kind"] == "logo" and x["status"] == "ACCEPT"), None)
+        hero = next((asset(x) for x in med.get(m["p1_id"], []) if x["kind"] == "hero" and x["status"] == "ACCEPT"), None)
+        hero_limited = next((asset(x) for x in med.get(m["p1_id"], []) if x["kind"] == "hero" and x["status"] == "ACCEPT_LIMITED"), None)
+        gallery = [asset(x) for x in med.get(m["p1_id"], []) if x["kind"] == "gallery" and x["status"] == "ACCEPT"]
         conflicts = sorted({r["reason"] for r in pr if r["status"] == "REWORK" and "CONFLICT" in r["reason"]} |
                            {f'{x["field"]}: {x["reason"]}' for x in fx if "CONFLICT" in x["reason"]})
         gaps = [g for g, ok in (("NO_ACCEPTED_PRICE", pv), ("NO_ACCEPTED_SPECS", spec_ok), ("NO_OFFICIAL_BROCHURE", bro.get(m["p1_id"])),
@@ -436,7 +442,7 @@ def main():
                    market_status_basis="model listed on official Egypt OEM/importer page (O4)" if m["p1_id"] in official_models
                    else "U11 on-sale (registrations + market listings); no official Egypt page captured yet",
                    price=pv, specs=specs or None, specs_accepted=spec_ok, warranty=warranty, brochures=bro.get(m["p1_id"], []),
-                   logo=logo, hero_image=hero, gallery=gallery,
+                   logo=logo, hero_image=hero, hero_image_limited=hero_limited, gallery=gallery,
                    conflicts=conflicts, gaps=gaps, rework_price_rows=sum(r["status"] == "REWORK" for r in pr))
         models.append(rec)
         cov.append(dict(model_id=m["model_id"], p1_id=m["p1_id"], brand=m["brand"], model=m["model"], id_status=m["id_status"],
@@ -446,7 +452,8 @@ def main():
                         price_tier=pv["tier"] if pv else "", price_effective_date=(pv or {}).get("effective_date") or "",
                         price_date_basis=pv["date_basis"] if pv else "", accepted_trims=len(pv["trims"]) if pv else 0,
                         specs_status="ACCEPTED" if spec_ok else ("PARTIAL" if specs else "UNKNOWN"), spec_fields=len(specs),
-                        brochure_status="ACCEPTED" if bro.get(m["p1_id"]) else "NONE", hero_status="ACCEPTED" if hero else "NONE",
+                        brochure_status="ACCEPTED" if bro.get(m["p1_id"]) else "NONE", hero_status="ACCEPTED" if hero else ("ACCEPTED_LIMITED" if hero_limited else "NONE"),
+                        hero_quality=(hero or hero_limited or {}).get("quality_class", ""),
                         gallery_count=len(gallery), logo_status="ACCEPTED" if logo else "NONE",
                         warranty=" | ".join(sorted({w["value"] for w in warranty})) if warranty else "",
                         evidence_links=(pv or {}).get("evidence_url", ""), conflicts=" | ".join(conflicts),
@@ -464,6 +471,9 @@ def main():
                              warranty_accepted=sum(bool(m["warranty"]) for m in models),
                              brochure_accepted=sum(bool(m["brochures"]) for m in models),
                              hero_accepted=sum(bool(m["hero_image"]) for m in models),
+                             hero_accepted_hq=sum(bool(m["hero_image"]) and m["hero_image"]["quality_class"] == "HQ" for m in models),
+                             hero_limited_archive=sum(bool(m["hero_image_limited"]) and not m["hero_image"] for m in models),
+                             gallery_models=sum(bool(m["gallery"]) for m in models),
                              logo_accepted=sum(bool(m["logo"]) for m in models),
                              fully_enriched=sum(bool(m["price"] and m["specs_accepted"] and m["warranty"] and m["brochures"]
                                                      and m["hero_image"] and m["logo"]) for m in models)),
@@ -484,8 +494,13 @@ def serving(canon):
         e = dict(e, p2_model_id=c["model_id"], id_status="P2_ACCEPTED" if c["id_status"] == "ACCEPTED" else "P2_REWORK",
                  price_status="ACCEPTED" if c["price"] else e["price_status"] if e["evidence_state"] == "P2_S6_EVIDENCE" else "UNKNOWN",
                  missing_evidence=[g for g in c["gaps"]] + ([] if c["id_status"] == "ACCEPTED" else ["P2_ID_PENDING"]))
+        hero = c["hero_image"] or c["hero_image_limited"]
         e["accepted"] = dict(market_status=c["market_status"], price=c["price"], specs=c["specs"], warranty=c["warranty"],
-                             brochures=c["brochures"], logo=c["logo"], hero_image=c["hero_image"], gallery=c["gallery"],
+                             brochures=c["brochures"], logo=c["logo"],
+                             hero_image=dict(src=hero["src"], credit=hero["credit"], source_url=hero["url"], sourcePage=hero["page"],
+                                             flags=[] if c["hero_image"] else ["PHOTO_NEEDS_ENRICHMENT"], status=hero["status"],
+                                             quality_class=hero["quality_class"]) if hero and hero["src"] else None,
+                             gallery=[g for g in c["gallery"] if g["src"]],
                              conflicts=c["conflicts"])
         entries.append(e)
     rel = dict(rc1, release_id=f"P2-CATALOGUE-U11-{canon['generated_as_of']}-RC2", state="VERIFYING",

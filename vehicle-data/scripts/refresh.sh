@@ -16,6 +16,11 @@ if [ "$MODE" = "media" ]; then    # brand-logo / model-image candidates with lic
   python3 scripts/media_candidates.py --out "snapshots/M_${DATE}_${GITHUB_RUN_ID:-local}"
   exit 0
 fi
+if [ "$MODE" = "materialize" ]; then   # accepted media -> P5-servable WebP (sha256-verified) + canonical rebuild
+  python3 scripts/media_materialize.py --report "snapshots/MM_${DATE}_${GITHUB_RUN_ID:-local}"
+  python3 scripts/canonical.py
+  exit 0
+fi
 if [ "$MODE" = "sheets" ]; then   # download media candidates, measure, build contact sheets for visual verification
   python3 scripts/media_sheets.py --out "snapshots/MS_${DATE}_${GITHUB_RUN_ID:-local}"
   exit 0
