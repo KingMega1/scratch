@@ -12,6 +12,10 @@ if [ "$MODE" = "triage" ]; then   # one-off: score the baseline UNKNOWN_TO_CATAL
 fi
 T0=$(date +%s)
 DATE=$(date -u +%Y-%m-%d)
+if [ "$MODE" = "media" ]; then    # brand-logo / model-image candidates with licence metadata (Wikidata + Commons)
+  python3 scripts/media_candidates.py --out "snapshots/M_${DATE}_${GITHUB_RUN_ID:-local}"
+  exit 0
+fi
 if [ "$MODE" = "u11" ]; then      # all 283 U11 on-sale models: market model pages + linked model-year pages (prices only)
   SNAP="snapshots/U_${DATE}_${GITHUB_RUN_ID:-local}"
   mkdir -p "$SNAP"

@@ -1,0 +1,368 @@
+#!/usr/bin/env python3
+"""P2 canonical promotion for the 283 U11 on-sale models (deterministic; no LLM; no network).
+
+  canonical.py [--snap snapshots/U_<date>_<run>] [--as-of YYYY-MM-DD]
+
+Reads   inputs/u11/{p11_universe.json, catalogue-serving.RC1.json, official/*.official_observations.csv}
+        registry/models.csv (existing P2 IDs, never changed), registry/u11_models.csv (previous assignments, kept)
+        registry/price_evidence_manual.csv (Tier A/C documents supplied outside the crawler)
+        <snap>/observations_parsed.csv, contactcars_pricetable_cells.csv, price_changes_stated.csv (market pages)
+Writes  registry/u11_models.csv          canonical identity, one row per model (283 on sale + retained off-sale)
+        registry/u11_prices.csv          every price observation with tier, status (ACCEPT/REWORK/...), reason, dates
+        views/canonical_u11.json         accepted canonical records + gaps + conflicts (carindex.p2.canonical/v1)
+        views/catalogue-serving.release.json   carindex.p2.catalogue-serving/v1 (RC1 fields kept; accepted data added)
+        review/u11_coverage.csv          283-row coverage table (source of the CEO review sheet tab)
+
+Acceptance rules (AT-39 price evidence policy; conflicts -> REWORK, nothing inferred, nothing averaged):
+  ID-1   identity ACCEPT when p1_id/slug/model_id are unique, U11 and the P5 RC1 release agree on brand+model,
+         and any pre-existing P2 ID keeps its slug. IDs are never re-assigned; new IDs continue m_NNNNNN.
+  PA-1   Tier A (official Egypt OEM/importer page or document): ACCEPT if confidence HIGH, value not repeated across
+         >=3 trims of the model (parser-suspect), and within +/-25% of the market official-price range when one exists.
+  PB-1   Tier B: the same official EGP value for the same model, model year and trim reported by >=2 independent
+         sites (trim key equal, or the value unique within each site's cohort). Date = source-stated effective date
+         when a site states one for that value, else the common observation date (date_basis=OBSERVED).
+  PB-2   same model/year/trim with different values across sites -> REWORK (CONFLICT); single site -> Tier C REWORK.
+  PS-1   when a model has accepted Tier A trim prices, Tier B rows are kept as CORROBORATES / SUPERSEDED_BY_TIER_A.
+"""
+import argparse, collections, csv, glob, hashlib, importlib.util, json, os, re
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
+IN = os.path.join(ROOT, "inputs", "u11")
+_spec = importlib.util.spec_from_file_location("b", os.path.join(HERE, "build_p1.py"))
+b = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(b)
+b.load_registry()  # trim synonyms -> b.SYN
+
+SITE = {"ContactCars": "ContactCars", "ContactCars(pricetable)": "ContactCars", "Hatla2ee": "Hatla2ee", "EgyCar": "EgyCar"}
+DIVERGENCE = 0.25
+
+
+def read(p):
+    return list(csv.DictReader(open(p, newline="", encoding="utf-8"))) if os.path.exists(p) else []
+
+
+def write(p, cols, rows):
+    os.makedirs(os.path.dirname(p), exist_ok=True)
+    with open(p, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore", lineterminator="\n")
+        w.writeheader()
+        w.writerows(rows)
+
+
+def sha(p):
+    return hashlib.sha256(open(p, "rb").read()).hexdigest()
+
+
+def day(http_date):
+    return b._iso(http_date)[:10] if http_date else ""
+
+
+# ------------------------------------------------------------------ identity
+
+def identity():
+    U = [m for m in json.load(open(os.path.join(IN, "p11_universe.json")))["models"] if m.get("in_universe")]
+    rc1 = json.load(open(os.path.join(IN, "catalogue-serving.RC1.json")))
+    ent = {e["p1_id"]: e for e in rc1["entries"]}
+    reg = {r["model_id"]: r for r in read(os.path.join(ROOT, "registry", "models.csv"))}
+    prev = {r["p1_id"]: r for r in read(os.path.join(ROOT, "registry", "u11_models.csv"))}
+    used = set(reg) | {r["model_id"] for r in prev.values()}
+    nxt = max(int(x[2:]) for x in used) + 1
+    rows = []
+    for m in sorted(U, key=lambda m: m["id"]):
+        e = ent.get(m["id"])
+        mid = (prev.get(m["id"]) or {}).get("model_id") or (e or {}).get("p2_model_id")
+        if not mid:
+            mid = f"m_{nxt:06d}"
+            nxt += 1
+        checks = []
+        if not e:
+            checks.append("NOT_IN_P5_RC1")
+        elif b.fold(e["brand"] + e["model"]) != b.fold(m["brand"] + m["model"]):
+            checks.append("BRAND_MODEL_MISMATCH_P5")
+        if mid in reg and reg[mid]["slug"] != (e or {}).get("site_slug"):
+            checks.append("EXISTING_ID_SLUG_MISMATCH")
+        rows.append(dict(model_id=mid, p1_id=m["id"], site_slug=(e or {}).get("site_slug") or m["slug"], brand=m["brand"],
+                         model=m["model"], brand_ar=(e or {}).get("ar", {}).get("brand") or "",
+                         model_ar=(e or {}).get("ar", {}).get("model") or "", body=m.get("body") or "",
+                         on_sale_u11="true", generation="UNKNOWN", identity_checks=";".join(checks)))
+    for x in rc1.get("excluded", []):  # off-sale P2 records are retained, never served
+        rows.append(dict(model_id=x["p2_model_id"], p1_id=x["p1_id"], site_slug=x["site_slug"],
+                         brand=reg.get(x["p2_model_id"], {}).get("brand", ""), model=reg.get(x["p2_model_id"], {}).get("model_name", ""),
+                         on_sale_u11="false", generation="UNKNOWN", identity_checks="U11_OFF_SALE"))
+    for k in ("model_id", "p1_id", "site_slug"):
+        c = collections.Counter(r[k] for r in rows)
+        for r in rows:
+            if c[r[k]] > 1:
+                r["identity_checks"] = ";".join(filter(None, [r["identity_checks"], "DUPLICATE_" + k.upper()]))
+    for r in rows:
+        r["id_status"] = "ACCEPTED" if not r["identity_checks"] else ("RETAINED_OFF_SALE" if r["identity_checks"] == "U11_OFF_SALE" else "REWORK")
+        r["id_rule"] = "ID-1"
+    return rows, U
+
+
+# ------------------------------------------------------------------ market evidence (Tier B / C)
+
+def latest_snap():
+    s = sorted(glob.glob(os.path.join(ROOT, "snapshots", "U_*")))
+    return s[-1] if s else None
+
+
+def url_owner():
+    own = {}
+    for r in read(os.path.join(IN, "u11_source_urls.csv")):
+        own[r["url"]] = r["p1_id"]
+        if "contactcars" in r["url"]:  # model-year pages of the same ContactCars slug
+            own["cc:" + r["url"].split("/")[5]] = r["p1_id"]
+    return own
+
+
+def owner_of(own, url):
+    if url in own:
+        return own[url]
+    if "contactcars" in url:
+        return own.get("cc:" + url.split("/")[5])
+    return None
+
+
+def market_obs(snap):
+    if not snap:
+        return [], []
+    own = url_owner()
+    cells = {(c["source_url"], c["row_label"]): c for c in read(os.path.join(snap, "contactcars_pricetable_cells.csv"))}
+    out = []
+    for r in read(os.path.join(snap, "observations_parsed.csv")):
+        p1 = owner_of(own, r["source_url"])
+        if not p1 or r["source"] not in SITE:
+            continue
+        r = b.normalize_title(r)
+        off = r["official_price"]
+        if "pricetable" in r["source"]:
+            c = cells.get((r["source_url"], f'{r["title_prefix"]} {r["model_year"]} {r["trim_raw"]}'.strip()))
+            off = c["official_cell"] if c else ""
+        v, st = b.parse_price(off)
+        tk = b.trim_key(r["trim_raw"])
+        if v is None or tk == "othertrims":
+            continue
+        out.append(dict(p1_id=p1, site=SITE[r["source"]], source=r["source"], url=r["source_url"], model_year=r["model_year"] or "",
+                        trim_label=r["trim_raw"], trim_key=tk, price_egp=v, observed_at=day(r["fetched_at"]),
+                        source_effective_date=r.get("effective_date") or "", page_sha256=r["page_sha256"]))
+    stated = []
+    for r in read(os.path.join(snap, "price_changes_stated.csv")):
+        p1 = owner_of(own, r["source_url"])
+        v, _ = b.parse_price(r["new_price"])
+        if p1 and v:
+            stated.append(dict(p1_id=p1, model_year=r["model_year"], trim_key=b.trim_key(r["trim_raw"]), price_egp=v,
+                               effective_date=r["effective_date"], url=r["source_url"]))
+    return out, stated
+
+
+def tier_b(obs, stated):
+    """Per (model, year): agreeing values across >=2 sites -> ACCEPT; disagreements -> REWORK; single site -> Tier C."""
+    by = collections.defaultdict(list)
+    for o in obs:
+        by[(o["p1_id"], o["model_year"])].append(o)
+    st = collections.defaultdict(list)
+    for s in stated:
+        st[(s["p1_id"], s["model_year"], s["price_egp"])].append(s)
+    rows = []
+    for (p1, yr), L in sorted(by.items()):
+        sites = sorted({o["site"] for o in L})
+        per = {s: [o for o in L if o["site"] == s] for s in sites}
+        cnt = {s: collections.Counter(o["price_egp"] for o in per[s]) for s in sites}
+        groups = collections.defaultdict(list)  # (trim_key or unique-value, price) -> obs
+        for o in L:
+            groups[(o["trim_key"], o["price_egp"])].append(o)
+        done = set()
+        for (tk, v), g in sorted(groups.items(), key=lambda x: (x[0][1], x[0][0])):
+            gs = {o["site"] for o in g}
+            basis = "trim_key_equal"
+            if len(gs) < 2:  # same price, different label: accept only if the value is unique in every site's cohort
+                same_v = [o for o in L if o["price_egp"] == v]
+                vs = {o["site"] for o in same_v}
+                if len(vs) >= 2 and all(cnt[s][v] == 1 for s in vs):
+                    g, gs, basis = same_v, vs, "value_unique_in_cohort"
+            ids = tuple(sorted(id(o) for o in g))
+            if ids in done:
+                continue
+            done.add(ids)
+            other = [o for o in L if o["trim_key"] == tk and o["price_egp"] != v and o["site"] not in gs]
+            cc = next((o for o in g if o["site"] == "ContactCars"), g[0])
+            dates = sorted({s["effective_date"] for s in st[(p1, yr, v)] if s["trim_key"] == tk or basis != "trim_key_equal"}
+                           | {o["source_effective_date"] for o in g if o["source_effective_date"]})
+            if len(gs) >= 2 and not other:
+                status, tier, reason = "ACCEPT", "B", f"PB-1 {len(gs)} sites agree ({basis})"
+            elif other:
+                status, tier, reason = "REWORK", "B" if len(gs) >= 2 else "C", \
+                    "PB-2 CONFLICT: " + ";".join(sorted({f'{o["site"]}={o["price_egp"]}' for o in other}))
+            else:
+                status, tier, reason = "REWORK", "C", "PB-2 single site"
+            rows.append(dict(p1_id=p1, model_year=yr, trim_label=cc["trim_label"], trim_key=tk, price_egp=v,
+                             effective_date=dates[-1] if dates else "", date_basis="SOURCE_STATED" if dates else "OBSERVED",
+                             as_of=max(o["observed_at"] for o in g), issuer="+".join(sorted(gs)), tier=tier,
+                             evidence_url=" | ".join(sorted({o["url"] for o in g})),
+                             evidence_ref=" | ".join(sorted({o["page_sha256"][:16] for o in g})),
+                             observed_at=max(o["observed_at"] for o in g), confidence="MEDIUM" if status == "ACCEPT" else "LOW",
+                             status=status, reason=reason, sites=len(gs)))
+    # a value that is accepted for a trim cannot also be a 'single site' row of the same trim
+    acc = {(r["p1_id"], r["model_year"], r["price_egp"]) for r in rows if r["status"] == "ACCEPT"}
+    return [r for r in rows if r["status"] == "ACCEPT" or (r["p1_id"], r["model_year"], r["price_egp"]) not in acc]
+
+
+# ------------------------------------------------------------------ official evidence (Tier A)
+
+def tier_a(market):
+    rows = []
+    rng = collections.defaultdict(list)
+    for o in market:
+        rng[o["p1_id"]].append(o["price_egp"])
+    for path in sorted(glob.glob(os.path.join(IN, "official", "*.official_observations.csv"))):
+        snap = os.path.basename(path).split(".")[0]
+        obs = [r for r in read(path) if r["field"] in ("price_official_egp", "price_from_official_egp") and r["universe_id"] and r["value_num"]]
+        rep = collections.Counter((r["universe_id"], r["value_num"]) for r in obs if r["field"] == "price_official_egp")
+        for r in obs:
+            v = int(float(r["value_num"]))
+            p1 = r["universe_id"]
+            reason, status = "PA-1 official Egypt source, HIGH", "ACCEPT"
+            m = rng.get(p1)
+            if r["confidence"] != "HIGH":
+                status, reason = "REWORK", f"PA-1 confidence {r['confidence']}" + (f": {r['note']}" if r["note"] else "")
+            elif r["field"] == "price_official_egp" and rep[(p1, r["value_num"])] >= 3:
+                status, reason = "REWORK", "PA-1 same value on >=3 trims (parser-suspect)"
+            elif m and not ((1 - DIVERGENCE) * min(m) <= v <= (1 + DIVERGENCE) * max(m)):
+                status, reason = "REWORK", f"PA-1 outside +/-25% of market official range {min(m)}-{max(m)}"
+            rows.append(dict(p1_id=p1, model_year=r["model_year"], trim_label=r["trim_raw"] or "(from price)",
+                             trim_key=b.trim_key(r["trim_raw"]) if r["trim_raw"] else "_from", price_egp=v,
+                             effective_date=r["effective_date"], date_basis="SOURCE_STATED" if r["effective_date"] else "OBSERVED",
+                             as_of=r["fetched_at"][:10], issuer=r["source"], tier="A", evidence_url=r["source_url"],
+                             evidence_ref=f'{snap}:{r["page_sha256"][:16]}:{r["evidence_pointer"]}', observed_at=r["fetched_at"][:10],
+                             confidence=r["confidence"], status=status, reason=reason, sites=1,
+                             kind="from" if r["field"] == "price_from_official_egp" else "trim"))
+    for r in read(os.path.join(ROOT, "registry", "price_evidence_manual.csv")):
+        rows.append(dict(r, price_egp=int(r["price_egp"]), trim_key=b.trim_key(r["trim_label"]), sites=1, kind=r.get("kind") or "trim"))
+    return rows
+
+
+def supersede(a_rows, b_rows):
+    a_ok = collections.defaultdict(set)
+    for r in a_rows:
+        if r["status"] == "ACCEPT" and r["kind"] == "trim":
+            a_ok[r["p1_id"]].add(r["price_egp"])
+    for r in b_rows:
+        if r["p1_id"] in a_ok and r["status"] == "ACCEPT":
+            r["status"] = "CORROBORATES_TIER_A" if r["price_egp"] in a_ok[r["p1_id"]] else "SUPERSEDED_BY_TIER_A"
+            r["reason"] += "; PS-1"
+    return a_rows + b_rows
+
+
+# ------------------------------------------------------------------ assemble
+
+def price_view(rows):
+    acc = [r for r in rows if r["status"] == "ACCEPT"]
+    if not acc:
+        return None
+    trims = [r for r in acc if r.get("kind", "trim") == "trim"]
+    years = [int(r["model_year"]) for r in trims if str(r["model_year"]).isdigit()]
+    ly = max(years) if years else None
+    cohort = [r for r in trims if ly is None or str(r["model_year"]) == str(ly)] or trims
+    frm = [r for r in acc if r.get("kind") == "from"]
+    base = min(cohort or frm, key=lambda r: r["price_egp"])
+    return dict(price_from=base["price_egp"], model_year=ly, tier=base["tier"], effective_date=base["effective_date"] or None,
+                date_basis=base["date_basis"], as_of=base["as_of"], issuer=base["issuer"], evidence_url=base["evidence_url"],
+                trims=[dict(model_year=int(r["model_year"]) if str(r["model_year"]).isdigit() else None, label=r["trim_label"],
+                            price_egp=r["price_egp"], tier=r["tier"], effective_date=r["effective_date"] or None,
+                            date_basis=r["date_basis"], as_of=r["as_of"], issuer=r["issuer"], evidence_url=r["evidence_url"])
+                       for r in sorted(trims, key=lambda r: (str(r["model_year"]), r["price_egp"]))])
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--snap", default=None)
+    ap.add_argument("--as-of", default=None)
+    a = ap.parse_args()
+    snap = a.snap or latest_snap()
+    ids, U = identity()
+    write(os.path.join(ROOT, "registry", "u11_models.csv"),
+          ["model_id", "p1_id", "site_slug", "brand", "model", "brand_ar", "model_ar", "body", "on_sale_u11", "generation",
+           "id_status", "id_rule", "identity_checks"], ids)
+    mobs, stated = market_obs(snap)
+    a_rows = tier_a(mobs)
+    rows = supersede(a_rows, tier_b(mobs, stated))
+    byid = {r["p1_id"]: r for r in ids}
+    for r in rows:
+        r["model_id"] = byid.get(r["p1_id"], {}).get("model_id", "")
+        r["price_id"] = hashlib.sha256(f'{r["p1_id"]}|{r["model_year"]}|{r["trim_key"]}|{r["price_egp"]}|{r["tier"]}|{r["issuer"]}'.encode()).hexdigest()[:12]
+    rows.sort(key=lambda r: (r["p1_id"], r["tier"], str(r["model_year"]), r["price_egp"], r["issuer"]))
+    write(os.path.join(ROOT, "registry", "u11_prices.csv"),
+          ["price_id", "model_id", "p1_id", "model_year", "trim_label", "trim_key", "price_egp", "effective_date", "date_basis",
+           "as_of", "issuer", "tier", "evidence_url", "evidence_ref", "observed_at", "confidence", "status", "reason", "sites"], rows)
+    official_models = {r["p1_id"] for r in a_rows if r["tier"] == "A" and r["issuer"].endswith("_eg_web")}
+    per = collections.defaultdict(list)
+    for r in rows:
+        per[r["p1_id"]].append(r)
+    as_of = a.as_of or (os.path.basename(snap).split("_")[1] if snap else "")
+    models, cov = [], []
+    for m in [r for r in ids if r["on_sale_u11"] == "true"]:
+        pr = per.get(m["p1_id"], [])
+        pv = price_view(pr)
+        conflicts = sorted({r["reason"] for r in pr if r["status"] == "REWORK" and "CONFLICT" in r["reason"]})
+        gaps = [g for g, ok in (("NO_ACCEPTED_PRICE", pv), ("NO_ACCEPTED_SPECS", False), ("NO_OFFICIAL_BROCHURE", False),
+                                ("NO_VERIFIED_HERO_IMAGE", False), ("NO_OFFICIAL_LOGO", False), ("NO_VERIFIED_WARRANTY", False),
+                                ("GENERATION_UNKNOWN", False)) if not ok]
+        rec = dict(model_id=m["model_id"], p1_id=m["p1_id"], site_slug=m["site_slug"], brand=m["brand"], model=m["model"],
+                   id_status=m["id_status"], generation=None, market_status="official" if m["p1_id"] in official_models else "unverified",
+                   market_status_basis="model listed on official Egypt OEM/importer page (O4)" if m["p1_id"] in official_models
+                   else "U11 on-sale (registrations + market listings); no official Egypt page captured yet",
+                   price=pv, specs=None, warranty=None, brochure=None, logo=None, hero_image=None, gallery=[],
+                   conflicts=conflicts, gaps=gaps, rework_price_rows=sum(r["status"] == "REWORK" for r in pr))
+        models.append(rec)
+        cov.append(dict(model_id=m["model_id"], p1_id=m["p1_id"], brand=m["brand"], model=m["model"], id_status=m["id_status"],
+                        market_status=rec["market_status"],
+                        price_status="ACCEPTED" if pv else ("REWORK" if pr else "NO_EVIDENCE"),
+                        price_from_egp=pv["price_from"] if pv else "", price_model_year=(pv or {}).get("model_year") or "",
+                        price_tier=pv["tier"] if pv else "", price_effective_date=(pv or {}).get("effective_date") or "",
+                        price_date_basis=pv["date_basis"] if pv else "", accepted_trims=len(pv["trims"]) if pv else 0,
+                        specs_status="UNKNOWN", brochure_status="NONE", hero_status="NONE", logo_status="NONE", warranty_status="UNKNOWN",
+                        evidence_links=(pv or {}).get("evidence_url", ""), conflicts=" | ".join(conflicts),
+                        missing=";".join(gaps), last_verified=as_of))
+    canon = dict(schema="carindex.p2.canonical/v1", generated_as_of=as_of, market_snapshot=os.path.relpath(snap, ROOT) if snap else None,
+                 rules=__doc__.split("Acceptance rules")[1].strip(),
+                 inputs={os.path.relpath(p, ROOT): sha(p) for p in sorted(glob.glob(os.path.join(IN, "**", "*.*"), recursive=True))
+                         if not p.endswith(".md")},
+                 counts=dict(models=len(models), id_accepted=sum(m["id_status"] == "ACCEPTED" for m in models),
+                             price_accepted=sum(bool(m["price"]) for m in models),
+                             price_tier_a=sum(bool(m["price"]) and m["price"]["tier"] == "A" for m in models),
+                             price_source_dated=sum(bool(m["price"]) and m["price"]["date_basis"] == "SOURCE_STATED" for m in models),
+                             market_status_official=sum(m["market_status"] == "official" for m in models)),
+                 models=models)
+    json.dump(canon, open(os.path.join(ROOT, "views", "canonical_u11.json"), "w"), indent=1, ensure_ascii=False, sort_keys=True)
+    write(os.path.join(ROOT, "review", "u11_coverage.csv"), list(cov[0].keys()), cov)
+    serving(canon)
+    print(json.dumps(canon["counts"]))
+
+
+def serving(canon):
+    """Same contract as P5 RC1 (all RC1 entry fields kept, same order); accepted P2 data added as optional fields."""
+    rc1 = json.load(open(os.path.join(IN, "catalogue-serving.RC1.json")))
+    by = {m["p1_id"]: m for m in canon["models"]}
+    entries = []
+    for e in rc1["entries"]:
+        c = by[e["p1_id"]]
+        e = dict(e, p2_model_id=c["model_id"], id_status="P2_ACCEPTED" if c["id_status"] == "ACCEPTED" else "P2_REWORK",
+                 price_status="ACCEPTED" if c["price"] else e["price_status"] if e["evidence_state"] == "P2_S6_EVIDENCE" else "UNKNOWN",
+                 missing_evidence=[g for g in c["gaps"]] + ([] if c["id_status"] == "ACCEPTED" else ["P2_ID_PENDING"]))
+        e["accepted"] = dict(market_status=c["market_status"], price=c["price"], conflicts=c["conflicts"])
+        entries.append(e)
+    rel = dict(rc1, release_id=f"P2-CATALOGUE-U11-{canon['generated_as_of']}-RC2", state="VERIFYING",
+               acceptance="P2_ACCEPTED_FIELDS_ONLY", generated_as_of=canon["generated_as_of"],
+               evidence_authority=dict(schema=canon["schema"], path="vehicle-data/views/canonical_u11.json",
+                                       market_snapshot=canon["market_snapshot"], counts=canon["counts"]),
+               relation="Website on-sale set equals pinned U11 on-sale set (283). 'accepted' carries only P2-ACCEPTED values; "
+                        "absent means UNKNOWN. P1 recommendation semantics unchanged.",
+               counts=dict(rc1["counts"], price_accepted=canon["counts"]["price_accepted"], id_accepted=canon["counts"]["id_accepted"]),
+               entries=entries)
+    json.dump(rel, open(os.path.join(ROOT, "views", "catalogue-serving.release.json"), "w"), indent=2, ensure_ascii=False)
+
+
+if __name__ == "__main__":
+    main()

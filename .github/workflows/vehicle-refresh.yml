@@ -10,7 +10,7 @@ on:
         description: "prices = model pages only; full = also trim pages (specs)"
         default: full
         type: choice
-        options: [full, prices, triage, u11]
+        options: [full, prices, triage, u11, media]
   push:
     paths: ["vehicle-data/refresh.request"]
   # schedule:
@@ -39,7 +39,7 @@ jobs:
         run: |
           MODE="${{ inputs.mode }}"
           if [ -z "$MODE" ]; then MODE=$(awk 'NR==1{print $1}' vehicle-data/refresh.request); fi
-          case "$MODE" in full|prices|triage|u11) ;; *) MODE=full ;; esac
+          case "$MODE" in full|prices|triage|u11|media) ;; *) MODE=full ;; esac
           vehicle-data/scripts/refresh.sh "$MODE"
       - name: Upload raw pages (90-day artifact; evidence + parsed files are committed)
         if: always()
