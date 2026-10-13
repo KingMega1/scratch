@@ -38,14 +38,14 @@ def sheet(items, path, title):
     from PIL import Image, ImageDraw
     W, H, cols = 320, 220, 4
     rows = (len(items) + cols - 1) // cols
-    S = Image.new("RGB", (W * cols, H * rows + 30), "white")
+    S = Image.new("RGB", (W * cols, H * rows + 30), (205, 205, 205))  # grey: white and black logos both visible
     d = ImageDraw.Draw(S)
     d.text((6, 8), title[:150], fill="black")
     for k, (aid, im, label) in enumerate(items):
-        t = im.convert("RGB")
+        t = im.convert("RGBA")
         t.thumbnail((W - 8, H - 34))
         x, y = (k % cols) * W, 30 + (k // cols) * H
-        S.paste(t, (x + 4, y + 2))
+        S.paste(t, (x + 4, y + 2), t)
         d.text((x + 4, y + H - 30), f"{aid} {im.width}x{im.height}", fill="black")
         d.text((x + 4, y + H - 16), label[:52], fill="gray")
     S.save(path, "JPEG", quality=70)
@@ -86,6 +86,8 @@ def main():
         for p1, L in per.items():
             seen = set()
             cands += [c for c in L if not (c[3] in seen or seen.add(c[3]))][:60]
+    for r in csv.DictReader(open(os.path.join(ROOT, "registry", "logo_candidates.csv"))):  # official Egypt-site logo files
+        cands.append((r["brand"], "logo", r["source"], r["url"], r["page"], "CEO_APPROVED_OEM_OFFICIAL", ""))
     rows, groups, shas = [], {}, set()
     oem_kept = {}
     for owner, kind, src, url, page, lic, artist in cands:
