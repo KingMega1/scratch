@@ -30,7 +30,11 @@ def main():
         dst = os.path.join(ROOT, r["local_path"])
         res = dict(asset_id=r["asset_id"], owner=r["owner"], kind=r["kind"], local_path=r["local_path"], url=r["url"])
         try:
-            resp = requests.get(r["url"], headers=UA, timeout=60)
+            for i in range(4):  # 429 back-off (Commons rate limits)
+                resp = requests.get(r["url"], headers=UA, timeout=60)
+                if resp.status_code != 429:
+                    break
+                time.sleep(10 * (i + 1))
             b = resp.content
             h = hashlib.sha256(b).hexdigest()
             res.update(http=resp.status_code, sha256=h, sha_match=h == r["sha256"])
@@ -54,6 +58,9 @@ def main():
                     thumbs.append((r["owner"], t))
             else:
                 res.update(written=False)
+                if resp.status_code == 200:  # re-rendered upstream bytes: keep for a fresh visual review, never served
+                    os.makedirs(os.path.join(a.report, "mismatch"), exist_ok=True)
+                    open(os.path.join(a.report, "mismatch", r["asset_id"] + "_" + h[:12] + ".bin"), "wb").write(b)
         except Exception as x:
             res.update(written=False, error=str(x)[:200])
         out.append(res)
