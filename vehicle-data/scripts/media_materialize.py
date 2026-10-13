@@ -35,6 +35,9 @@ def main():
             h = hashlib.sha256(b).hexdigest()
             res.update(http=resp.status_code, sha256=h, sha_match=h == r["sha256"])
             if resp.status_code == 200 and h == r["sha256"]:
+                if r["url"].lower().split("?")[0].endswith(".svg") or b[:200].lstrip().startswith((b"<svg", b"<?xml")):
+                    import cairosvg  # official-site SVG logos: render at the reviewed width
+                    b = cairosvg.svg2png(bytestring=b, output_width=int(r["width"]))
                 im = Image.open(io.BytesIO(b))
                 im = im.convert("RGBA") if im.mode in ("RGBA", "LA", "P") else im.convert("RGB")
                 if im.width > 2400:
