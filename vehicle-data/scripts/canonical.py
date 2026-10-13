@@ -329,6 +329,7 @@ def spec_facts():
                                         ("grade-scoped (one grade shown)" if "ONE grade" in r["note"] else "model page"),
                           source=r["source_url"], issuer=r["source"], tier="A", status="ACCEPT" if ok else "REWORK",
                           reason="SP-1 official Egypt page" if ok else f'SP-1 confidence {r["confidence"]}'))
+    f += market_spec_facts()
     seen = {}
     for x in f:  # same fact from two pages (e.g. page variants) collapses; different values conflict
         seen.setdefault((x["p1_id"], x["field"], x["applicability"]), set()).add(x["value"].strip().lower())
@@ -343,6 +344,44 @@ def spec_facts():
         elif len(seen[k]) > 1 and x["status"] == "ACCEPT":
             x["status"], x["reason"] = "REWORK", "SP-1 CONFLICT: " + " vs ".join(sorted(seen[k]))
         out.append(x)
+    return out
+
+
+SP2_FIELDS = {"horsepower": "power_hp", "torque": "torque_nm", "engine_cc": "engine_cc", "seats": "seats", "length": "length_mm",
+              "width": "width_mm", "height": "height_mm", "wheelbase": "wheelbase_mm", "ground_clearance": "ground_clearance_mm",
+              "trunk": "boot_l", "fuel_tank": "fuel_tank_l", "battery_capacity": "battery_kwh"}
+
+
+def market_spec_facts():
+    """SP-2: a numeric spec value is accepted for a model only when ContactCars AND Hatla2ee trim pages of the same model
+    (latest U11 spec snapshot) state the identical value; one-site values are not promoted. Applicability = the trims
+    carrying it on ContactCars."""
+    snaps = sorted(glob.glob(os.path.join(ROOT, "snapshots", "US_*")))
+    if not snaps:
+        return []
+    own = url_owner()
+    attr = {(r["source"], r["spec_label"]): r["attribute"] for r in read(os.path.join(ROOT, "crosswalk", "spec_fields.csv"))}
+    vals = collections.defaultdict(lambda: collections.defaultdict(set))
+    trims = collections.defaultdict(set)
+    for r in read(os.path.join(snaps[-1], "specs_parsed.csv")):
+        u = r["trim_url"]
+        p1 = owner_of(own, u) if "contactcars" in u else own.get(u.rsplit("/", 1)[0])
+        a = SP2_FIELDS.get(attr.get((r["source"], r["spec_label"])))
+        m = re.search(r"\d[\d,]*(\.\d+)?", r["value"] or "")
+        if not (p1 and a and m):
+            continue
+        v = m.group(0).replace(",", "")
+        v = v.rstrip("0").rstrip(".") if "." in v else v
+        vals[(p1, a, v)][r["source"]].add(u)
+        if r["source"] == "ContactCars" and r.get("trim_raw"):
+            trims[(p1, a, v)].add(r["trim_raw"])
+    out = []
+    for (p1, a, v), by in sorted(vals.items()):
+        if {"ContactCars", "Hatla2ee"} <= set(by):
+            out.append(dict(p1_id=p1, field=a, value=v, unit="", tier="B", status="ACCEPT",
+                            applicability="market trim pages: " + (", ".join(sorted(trims[(p1, a, v)]))[:120] or "model"),
+                            source=" | ".join(sorted(by["ContactCars"]))[:300], issuer="ContactCars+Hatla2ee",
+                            reason=f"SP-2 identical value on 2 sites ({os.path.basename(snaps[-1])})"))
     return out
 
 
@@ -494,12 +533,13 @@ def serving(canon):
         e = dict(e, p2_model_id=c["model_id"], id_status="P2_ACCEPTED" if c["id_status"] == "ACCEPTED" else "P2_REWORK",
                  price_status="ACCEPTED" if c["price"] else e["price_status"] if e["evidence_state"] == "P2_S6_EVIDENCE" else "UNKNOWN",
                  missing_evidence=[g for g in c["gaps"]] + ([] if c["id_status"] == "ACCEPTED" else ["P2_ID_PENDING"]))
-        hero = c["hero_image"] or c["hero_image_limited"]
+        def pub(h, flags):  # P5 read-model p2Hero(): {src:'/media/...', credit, source_url}; it ignores flags
+            return dict(src=h["src"], credit=h["credit"], source_url=h["page"] or h["url"], image_url=h["url"], flags=flags,
+                        status=h["status"], quality_class=h["quality_class"], sha256=h["sha256"]) if h and h["src"] else None
         e["accepted"] = dict(market_status=c["market_status"], price=c["price"], specs=c["specs"], warranty=c["warranty"],
-                             brochures=c["brochures"], logo=c["logo"],
-                             hero_image=dict(src=hero["src"], credit=hero["credit"], source_url=hero["url"], sourcePage=hero["page"],
-                                             flags=[] if c["hero_image"] else ["PHOTO_NEEDS_ENRICHMENT"], status=hero["status"],
-                                             quality_class=hero["quality_class"]) if hero and hero["src"] else None,
+                             brochures=c["brochures"], logo=pub(c["logo"], []),
+                             hero_image=pub(c["hero_image"], []),
+                             hero_image_limited=pub(c["hero_image_limited"], ["PHOTO_NEEDS_ENRICHMENT", "ORIGIN_UNVERIFIED"]),
                              gallery=[g for g in c["gallery"] if g["src"]],
                              conflicts=c["conflicts"])
         entries.append(e)
