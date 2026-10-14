@@ -13,8 +13,8 @@
   "price_accepted": 189,
   "price_source_dated": 152,
   "price_tier_a": 26,
-  "specs_accepted": 187,
-  "warranty_accepted": 73
+  "specs_accepted": 188,
+  "warranty_accepted": 74
  },
  "generated_as_of": "2026-10-13",
  "inputs": {
@@ -13608,11 +13608,9 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -13662,9 +13660,90 @@
    },
    "rework_price_rows": 0,
    "site_slug": "dfsk-e5",
-   "specs": null,
-   "specs_accepted": false,
-   "warranty": null
+   "specs": {
+    "engine_cc": [
+     {
+      "applicability": "market trim pages: REEV",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be",
+      "unit": "",
+      "value": "1500"
+     }
+    ],
+    "fuel_tank_l": [
+     {
+      "applicability": "market trim pages: REEV",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be",
+      "unit": "",
+      "value": "60"
+     }
+    ],
+    "height_mm": [
+     {
+      "applicability": "market trim pages: REEV",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be",
+      "unit": "",
+      "value": "1710"
+     }
+    ],
+    "power_hp": [
+     {
+      "applicability": "market trim pages: REEV",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be",
+      "unit": "",
+      "value": "175"
+     }
+    ],
+    "seats": [
+     {
+      "applicability": "market trim pages: REEV",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be",
+      "unit": "",
+      "value": "7"
+     }
+    ],
+    "torque_nm": [
+     {
+      "applicability": "market trim pages: REEV",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be",
+      "unit": "",
+      "value": "300"
+     }
+    ],
+    "wheelbase_mm": [
+     {
+      "applicability": "market trim pages: REEV",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be",
+      "unit": "",
+      "value": "2785"
+     }
+    ],
+    "width_mm": [
+     {
+      "applicability": "market trim pages: REEV",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be",
+      "unit": "",
+      "value": "1865"
+     }
+    ]
+   },
+   "specs_accepted": true,
+   "warranty": [
+    {
+     "applicability": "market trim pages: model",
+     "issuer": "ContactCars+Hatla2ee",
+     "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be",
+     "unit": "",
+     "value": "7 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "DFSK",
@@ -14619,7 +14698,7 @@
     "quality_class": "WEB",
     "rights_basis": "Wikimedia Commons (Public domain); trademark of brand owner",
     "sha256": "ec51ae17fc3b0f53ed3e3a0b2c9c7e741b71d357e2a63b8c95ac977d7efa2ece",
-    "src": null,
+    "src": "/media/p2/brands/exeed.png",
     "status": "ACCEPT",
     "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Exeed_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
     "width": "540"
@@ -14782,7 +14861,7 @@
     "quality_class": "WEB",
     "rights_basis": "Wikimedia Commons (Public domain); trademark of brand owner",
     "sha256": "ec51ae17fc3b0f53ed3e3a0b2c9c7e741b71d357e2a63b8c95ac977d7efa2ece",
-    "src": null,
+    "src": "/media/p2/brands/exeed.png",
     "status": "ACCEPT",
     "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Exeed_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
     "width": "540"
@@ -14965,7 +15044,7 @@
     "quality_class": "WEB",
     "rights_basis": "Wikimedia Commons (Public domain); trademark of brand owner",
     "sha256": "ec51ae17fc3b0f53ed3e3a0b2c9c7e741b71d357e2a63b8c95ac977d7efa2ece",
-    "src": null,
+    "src": "/media/p2/brands/exeed.png",
     "status": "ACCEPT",
     "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Exeed_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
     "width": "540"
@@ -15238,7 +15317,7 @@
     "quality_class": "WEB",
     "rights_basis": "Wikimedia Commons (Public domain); trademark of brand owner",
     "sha256": "ec51ae17fc3b0f53ed3e3a0b2c9c7e741b71d357e2a63b8c95ac977d7efa2ece",
-    "src": null,
+    "src": "/media/p2/brands/exeed.png",
     "status": "ACCEPT",
     "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Exeed_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
     "width": "540"
@@ -15376,7 +15455,7 @@
     "quality_class": "WEB",
     "rights_basis": "Wikimedia Commons (Public domain); trademark of brand owner",
     "sha256": "ec51ae17fc3b0f53ed3e3a0b2c9c7e741b71d357e2a63b8c95ac977d7efa2ece",
-    "src": null,
+    "src": "/media/p2/brands/exeed.png",
     "status": "ACCEPT",
     "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Exeed_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
     "width": "540"

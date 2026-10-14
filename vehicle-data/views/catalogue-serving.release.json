@@ -22,8 +22,8 @@
       "price_tier_a": 26,
       "price_source_dated": 152,
       "market_status_official": 37,
-      "specs_accepted": 187,
-      "warranty_accepted": 73,
+      "specs_accepted": 188,
+      "warranty_accepted": 74,
       "brochure_accepted": 17,
       "hero_accepted": 40,
       "hero_accepted_hq": 37,
@@ -14502,11 +14502,9 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -14534,8 +14532,89 @@
             }
           ]
         },
-        "specs": null,
-        "warranty": null,
+        "specs": {
+          "engine_cc": [
+            {
+              "value": "1500",
+              "unit": "",
+              "applicability": "market trim pages: REEV",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "60",
+              "unit": "",
+              "applicability": "market trim pages: REEV",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1710",
+              "unit": "",
+              "applicability": "market trim pages: REEV",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "175",
+              "unit": "",
+              "applicability": "market trim pages: REEV",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be"
+            }
+          ],
+          "seats": [
+            {
+              "value": "7",
+              "unit": "",
+              "applicability": "market trim pages: REEV",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "300",
+              "unit": "",
+              "applicability": "market trim pages: REEV",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2785",
+              "unit": "",
+              "applicability": "market trim pages: REEV",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1865",
+              "unit": "",
+              "applicability": "market trim pages: REEV",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "7 years / 150000 km",
+            "unit": "",
+            "applicability": "market trim pages: model",
+            "issuer": "ContactCars+Hatla2ee",
+            "source": "https://www.contactcars.com/en/new-cars/dfsk-e5/63669d04e7be"
+          }
+        ],
         "brochures": [],
         "logo": null,
         "hero_image": null,
@@ -15658,7 +15737,16 @@
         },
         "warranty": null,
         "brochures": [],
-        "logo": null,
+        "logo": {
+          "src": "/media/p2/brands/exeed.png",
+          "credit": "commons.wikimedia.org",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Exeed_logo.png",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Exeed_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "WEB",
+          "sha256": "ec51ae17fc3b0f53ed3e3a0b2c9c7e741b71d357e2a63b8c95ac977d7efa2ece"
+        },
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
@@ -15830,7 +15918,16 @@
         },
         "warranty": null,
         "brochures": [],
-        "logo": null,
+        "logo": {
+          "src": "/media/p2/brands/exeed.png",
+          "credit": "commons.wikimedia.org",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Exeed_logo.png",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Exeed_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "WEB",
+          "sha256": "ec51ae17fc3b0f53ed3e3a0b2c9c7e741b71d357e2a63b8c95ac977d7efa2ece"
+        },
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
@@ -16105,7 +16202,16 @@
             "url": "https://drive.google.com/file/d/1TcfrZiOf0Hng6JzQjPPVQckSOGuaxX8p/view"
           }
         ],
-        "logo": null,
+        "logo": {
+          "src": "/media/p2/brands/exeed.png",
+          "credit": "commons.wikimedia.org",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Exeed_logo.png",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Exeed_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "WEB",
+          "sha256": "ec51ae17fc3b0f53ed3e3a0b2c9c7e741b71d357e2a63b8c95ac977d7efa2ece"
+        },
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
@@ -16238,7 +16344,16 @@
         },
         "warranty": null,
         "brochures": [],
-        "logo": null,
+        "logo": {
+          "src": "/media/p2/brands/exeed.png",
+          "credit": "commons.wikimedia.org",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Exeed_logo.png",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Exeed_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "WEB",
+          "sha256": "ec51ae17fc3b0f53ed3e3a0b2c9c7e741b71d357e2a63b8c95ac977d7efa2ece"
+        },
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
@@ -16364,7 +16479,16 @@
         },
         "warranty": null,
         "brochures": [],
-        "logo": null,
+        "logo": {
+          "src": "/media/p2/brands/exeed.png",
+          "credit": "commons.wikimedia.org",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Exeed_logo.png",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Exeed_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "WEB",
+          "sha256": "ec51ae17fc3b0f53ed3e3a0b2c9c7e741b71d357e2a63b8c95ac977d7efa2ece"
+        },
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
