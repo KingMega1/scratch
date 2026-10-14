@@ -199,7 +199,7 @@ def issuer_for(host, brand):
     return f"{brand} Egypt official site ({host})"
 
 
-BROCHURE_RX = re.compile(r"brochure|catalog|كتيب|بروشور|/brochures?/|download (bev|reev)\b", re.I)
+BROCHURE_RX = re.compile(r"brochure|brouch|catalog|كتيب|بروشور|/brochures?/|download (bev|reev)\b", re.I)
 VARIANT_RX = re.compile(r"(?<![a-z])(reev|phev|bev|ev|erev|hev|dm|i-dm|hybrid)(?![a-z])", re.I)
 NOT_BROCHURE_RX = re.compile(r"warrant|warrenty|maintenance|maintence|schedule|periodic|_PM|PM_|booklet|ضمان|صيانة|draft", re.I)
 WARRANTY_DOC_RX = re.compile(r"warrant|warrenty|ضمان", re.I)

@@ -2,7 +2,7 @@
 
 Produced by `scripts/extract_official.py harvest` (GitHub Actions run 38522002564, mode `x1`) and `scripts/extract_official.py extract` (offline, deterministic, rules in `scripts/extract_rules.py`). No LLM calls. Nothing here is accepted; P2 verifies and accepts into `registry/`.
 
-Batch 1. Re-extracted after rule fixes (Arabic month-based booklet statements, CKD suffix, Kia hashed PDFs); supersedes the first commit of these CSVs.
+Batch 1. Re-extracted after rule fixes (Arabic month-based booklet statements, CKD suffix, Kia hashed PDFs, 'brouchers' path); supersedes the first commit of these CSVs.
 
 ## Run
 - Requests 934, HTTP 200 874 (PDFs 159), skipped 39 (robots.txt disallow/unreachable or blocked source), 763 MB, 1412s.
@@ -13,11 +13,11 @@ Batch 1. Re-extracted after rule fixes (Arabic month-based booklet statements, C
 |---|---|---|
 | specs_candidates.csv | 62 | 3 |
 | warranty_candidates.csv | 37 | 20 |
-| brochure_candidates.csv | 54 | 51 |
-| brochure_sources.csv (page + anchor each brochure was linked from) | 54 | |
+| brochure_candidates.csv | 55 | 52 |
+| brochure_sources.csv (page + anchor each brochure was linked from) | 55 | |
 | brand_statements.csv (brand-wide warranty text; NOT fanned out to models) | 17 | 7 brands |
 
-## Models covered (56 of 272 allocated)
+## Models covered (57 of 272 allocated)
 - nissan/sunny (18124): brochure (allocated: warranty+brochure)
 - mg/zs (6861): brochure (allocated: warranty+brochure)
 - chevrolet/optra (6427): warranty (allocated: warranty+brochure)
@@ -38,6 +38,7 @@ Batch 1. Re-extracted after rule fixes (Arabic month-based booklet statements, C
 - nissan/qashqai (1694): brochure, specs (allocated: specs+warranty+brochure)
 - mg/gt (1665): brochure, warranty (allocated: warranty+brochure)
 - jetour/t1 (1553): brochure (allocated: warranty+brochure)
+- mitsubishi/xpander (1507): brochure (allocated: warranty+brochure)
 - renault/taliant (1380): brochure, specs (allocated: specs+warranty+brochure)
 - mg/hs (1338): brochure, warranty (allocated: warranty+brochure)
 - kia/sorento (1175): brochure (allocated: brochure)
@@ -81,7 +82,7 @@ Batch 1. Re-extracted after rule fixes (Arabic month-based booklet statements, C
 - Kia Egypt official site (kia.com.eg): 12
 - Renault Egypt official site (renault.com.eg): 11
 - MG Egypt official site (www.mgmotor.com.eg): 10
-- Mitsubishi Egypt official site (www.mitsubishimotors-eg.com): 6
+- Mitsubishi Egypt official site (www.mitsubishimotors-eg.com): 7
 - Changan Egypt official site (changan.com.eg): 6
 - Jetour Egypt official site (jetouregypt.com): 6
 - BYD Egypt official site (byd-egypt.com): 4

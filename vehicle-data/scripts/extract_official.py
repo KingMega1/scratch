@@ -53,10 +53,17 @@ SEEDS = {
     "Opel": (["https://www.opelegypt.net/"], "KNOWN"),
 }
 MAX_PAGES_PER_HOST = 70
-MAX_PDFS = 160
+MAX_PDFS = 450
 MAX_PDF_BYTES = 40_000_000
 KEYWORDS = re.compile(r"spec|warrant|brochure|download|catalog|technical|ضمان|المواصفات|مواصفات|كتيب|بروشور", re.I)
 PDF_HINT = re.compile(r"\.pdf(\?|$)|brochure", re.I)
+SKIP_PDF = re.compile(r"maintenance|maintence|schedule|periodic|_PM|PM_|PM\.pdf", re.I)  # not needed by any candidate file
+MAYBE_PDF = re.compile(r"\bpdf\b|brochure|brouch|catalog|كتيب|بروشور|تحميل|download", re.I)
+
+
+def host_key(u):
+    h = urlparse(u).netloc.lower()
+    return h[4:] if h.startswith("www.") else h
 
 
 def now():
@@ -120,7 +127,11 @@ class Robots:
             rp = urllib.robotparser.RobotFileParser()
             status = None
             try:
-                r = self.sess.get(key + "/robots.txt", headers=UA, timeout=30)
+                try:
+                    r = self.sess.get(key + "/robots.txt", headers=UA, timeout=60)
+                except Exception:
+                    time.sleep(5)
+                    r = self.sess.get(key + "/robots.txt", headers=UA, timeout=90)
                 status = r.status_code
                 if r.status_code == 200:
                     rp.parse(r.text.splitlines())
@@ -149,6 +160,8 @@ def page_evidence(url, final_url, html):
         h = t.get("src") or t.get("data")
         if h:
             links.append([urljoin(final_url, h), "embed"])
+    for h in set(re.findall(r"""(?:https?:)?//[^"'\s<>()]+?\.pdf\b|(?<=["'])/[^"'\s<>()]+?\.pdf\b""", html.replace("\\/", "/"), flags=re.I)):
+        links.append([urljoin(final_url, h.replace("\\/", "/")), "raw-html pdf"])
     scripts = []
     for sc in s.find_all("script"):
         txt = sc.string or ""
@@ -199,7 +212,7 @@ def harvest(out):
             manifest.append(rec)
             return None
         try:
-            r = sess.get(url, headers=UA, timeout=45, allow_redirects=True)
+            r = sess.get(url, headers=UA, timeout=75, allow_redirects=True)
             b = r.content
             rec.update(final_url=r.url, status=r.status_code, bytes=len(b), sha256=hashlib.sha256(b).hexdigest(),
                        content_type=r.headers.get("content-type", ""), http_date=r.headers.get("date"))
@@ -235,34 +248,41 @@ def harvest(out):
             sms = robots.sitemaps.get(key) or [key + "/sitemap.xml"]
             for sm in sms[:3]:
                 for loc in sitemap_urls(sess, robots, sm, depth=0):
-                    if urlparse(loc).netloc == p.netloc and (path_matches(loc, alltoks) or KEYWORDS.search(loc)):
+                    if host_key(loc) == host_key(u) and (path_matches(loc, alltoks) or KEYWORDS.search(loc)):
                         frontier.append((loc, st, 1))
         while frontier:
             u, st, d = frontier.pop(0)
             if PDF_HINT.search(urlparse(u).path) and u.lower().split("?")[0].endswith(".pdf"):
-                pdf_queue.setdefault(u, dict(brand=brand, host_status=st, source_page="", anchor="sitemap/seed"))
+                if not SKIP_PDF.search(u):
+                    pdf_queue.setdefault(u, dict(brand=brand, host_status=st, source_page="", anchor="sitemap/seed"))
                 continue
-            h = urlparse(u).netloc
+            h = host_key(u)
             if per_host.get(h, 0) >= MAX_PAGES_PER_HOST:
                 continue
             per_host[h] = per_host.get(h, 0) + 1
             e = get(u, brand, "page", st, d)
             if not e or d >= 2:
                 continue
+            hk = host_key(e["final_url"])
             for link, text in e["links"]:
-                lp = urlparse(link)
-                if link.lower().split("?")[0].endswith(".pdf") or re.search(r"brochure|كتيب|بروشور", text, re.I):
-                    if link.lower().split("?")[0].endswith(".pdf"):
+                if link.lower().split("?")[0].endswith(".pdf"):
+                    if not SKIP_PDF.search(link + " " + text):
                         pdf_queue.setdefault(link, dict(brand=brand, host_status=st, source_page=e["final_url"], anchor=text))
-                        continue
-                if lp.netloc != h or link in seen:
+                    continue
+                if MAYBE_PDF.search(text) and not SKIP_PDF.search(link + " " + text) and (
+                        host_key(link) != hk or re.search(r"/_doc/|/download|/media/|/uploads?/|/files?/", link, re.I)):
+                    pdf_queue.setdefault(link, dict(brand=brand, host_status=st, source_page=e["final_url"], anchor=text, maybe=True))
+                if host_key(link) != hk or link in seen:
                     continue
                 if path_matches(link, alltoks) or norm(text) in alltoks or KEYWORDS.search(link + " " + text):
                     frontier.append((link, st, d + 1))
         print(f"{brand}: pages={sum(per_host.values())} hosts={per_host} t={time.time() - t0:.0f}s", flush=True)
 
     # PDFs: brochures linked from official pages (any host, typically a CDN)
-    for i, (u, meta) in enumerate(list(pdf_queue.items())[:MAX_PDFS]):
+    ordered = sorted(pdf_queue.items(), key=lambda kv: bool(kv[1].get("maybe")))  # real .pdf links first
+    for i, (u, meta) in enumerate(ordered[:MAX_PDFS]):
+        if u in seen:
+            continue
         rec = dict(url=u, kind="pdf", retrieved_at=now(), **meta)
         if not robots.allowed(u):
             rec["skipped"] = "ROBOTS_DISALLOW_OR_UNREACHABLE"
@@ -282,6 +302,8 @@ def harvest(out):
             rec["error"] = f"{type(e).__name__}: {e}"[:300]
             manifest.append(rec)
             continue
+        if b[:5] != b"%PDF-":
+            rec["not_pdf"] = True
         manifest.append(rec)
         if r.status_code == 200 and b[:5] == b"%PDF-":
             with open(os.path.join(out, "raw", rec["sha256"][:16] + ".pdf"), "wb") as f:
