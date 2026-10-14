@@ -22,7 +22,10 @@ for (const dir of dirs) {
   const on = U.models.filter(m => m.u);
   // 1. brief-independent gates
   const terr = E.territory({ budget: 1e9, budgetMode: 'around' });
-  const notOk = on.filter(m => E.eligibility(m, { budget: 1e9 }, terr).status !== 'eligible');
+  // a P2-verified identity without a price is UNKNOWN (approved unknown-critical-data state), never anything else
+  const noPrice = on.filter(m => !E.currentTrims(m).length);
+  ok(noPrice.every(m => JSON.stringify(E.eligibility(m, { budget: 1e9 }, terr)) === JSON.stringify({ status: 'unknown', reason: 'price' })), `${v}: unpriced models not in the unknown-price state`);
+  const notOk = on.filter(m => E.currentTrims(m).length && E.eligibility(m, { budget: 1e9 }, terr).status !== 'eligible');
   ok(!notOk.length, `${v}: on-sale models failing a brief-independent gate: ${notOk.map(m => m.id).join(', ')}`);
   // 2. optional data never decides eligibility
   const briefs = [{ budget: 2e6 }, { budget: 2e6, body: ['suv'] }, { budget: 1.5e6, pt: 'hybrid' }, { budget: 5e6, chinese: 'exclude' }, { budget: 2.5e6, seats: 7 }, { budget: 3e6, drive4: true }];
@@ -35,7 +38,7 @@ for (const dir of dirs) {
     }
   }
   ok(!changed.length, `${v}: optional data changed eligibility: ${changed.slice(0, 5).join(' ')}`);
-  for (const m of on.slice(0, 400)) {
+  for (const m of on.filter(x => E.currentTrims(x).length)) {
     const noSeats = { ...m, seats: undefined }, noDrive = { ...m, awd: undefined };
     const b = E.normalizeBrief({ budget: 1e9 }, {}), t = E.territory(b);
     ok(E.eligibility(noSeats, b, t).status === 'eligible' && E.eligibility(noDrive, b, t).status === 'eligible', `${v}: ${m.id} missing seats/drive excluded without a 7-seat/4WD requirement`);
@@ -62,7 +65,7 @@ for (const dir of dirs) {
   { const b = E.normalizeBrief({ budget: 14e6, body: ['suv'], drive4: true }, byId); ok(elig('nissan/patrol', b) === (byId['nissan/patrol'].awd ? 'eligible' : 'ineligible'), `${v}: Patrol 4WD state`); }
   { const em = byId['geely/ex5-em-i']; const b = E.normalizeBrief({ budget: 1.5e6, body: ['suv'], pt: 'hybrid' }, byId);
     ok(em && (em.u ? elig('geely/ex5-em-i', b) === 'eligible' : true), `${v}: EX5 EM-i eligible when in universe`);
-    console.log(`  ${v}: on sale ${on.length} · EX5 EM-i in universe: ${!!(em && em.u)} · Patrol 4WD: ${byId['nissan/patrol'].awd} · 7-seat confirmed: ${on.filter(m => E.seven(m)).length} · seats unknown: ${on.filter(m => !(m.seats || []).length).length}`); }
+    console.log(`  ${v}: on sale ${on.length} (priced ${on.length - noPrice.length}) · EX5 EM-i in universe: ${!!(em && em.u)} · Patrol 4WD: ${byId['nissan/patrol'].awd} · 7-seat confirmed: ${on.filter(m => E.seven(m)).length} · seats unknown: ${on.filter(m => !(m.seats || []).length).length}`); }
 }
 console.log(`eligibility: ${n - fails}/${n} checks pass (${dirs.length} datasets)`);
 console.log(fails ? `${fails} FAILED` : 'ALL PASSED');
