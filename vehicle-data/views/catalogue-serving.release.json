@@ -25,12 +25,12 @@
       "specs_accepted": 191,
       "warranty_accepted": 89,
       "brochure_accepted": 63,
-      "hero_accepted": 45,
-      "hero_accepted_hq": 42,
+      "hero_accepted": 53,
+      "hero_accepted_hq": 49,
       "hero_limited_archive": 149,
-      "gallery_models": 38,
+      "gallery_models": 46,
       "logo_accepted": 248,
-      "fully_enriched": 18
+      "fully_enriched": 22
     }
   },
   "relation": "Website on-sale set equals pinned U11 on-sale set (283). 'accepted' carries only P2-ACCEPTED values; absent means UNKNOWN. P1 recommendation semantics unchanged.",
@@ -22428,7 +22428,34 @@
         },
         "hero_image": null,
         "hero_image_limited": null,
-        "gallery": [],
+        "gallery": [
+          {
+            "asset_id": "0fc21b2b565b",
+            "sha256": "0fc21b2b565b25d481b02fa92f78840ca28851d7e6550f86cc26fe2ecc1bb6e1",
+            "width": "1120",
+            "height": "600",
+            "quality_class": "WEB",
+            "url": "https://hyundai-egypt.net/wp-content/uploads/2024/09/Highlight_interior.png",
+            "page": "https://hyundai-egypt.net/models/tucson/",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/models/hyundai-tucson/01.webp",
+            "credit": "Hyundai Egypt / GB Auto"
+          },
+          {
+            "asset_id": "b918aa46cc73",
+            "sha256": "b918aa46cc73400bbd3fae9baf5e80ba84fa89db258feadd524b97b56fa12143",
+            "width": "1120",
+            "height": "600",
+            "quality_class": "WEB",
+            "url": "https://hyundai-egypt.net/wp-content/uploads/2024/09/Tucson_Highlight_Main.png",
+            "page": "https://hyundai-egypt.net/models/tucson/",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/models/hyundai-tucson/02.webp",
+            "credit": "Hyundai Egypt / GB Auto"
+          }
+        ],
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=1800000;EgyCar=1800000",
           "PB-2 CONFLICT: ContactCars=1950000",
@@ -29879,7 +29906,6 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
@@ -30077,9 +30103,32 @@
           "quality_class": "HQ",
           "sha256": "743faa5e9eb857b130b8ed30f7197fdb5dbb3f72fe44230df4c739180db7e50d"
         },
-        "hero_image": null,
+        "hero_image": {
+          "src": "/media/models/mg-5.webp",
+          "credit": "MG Egypt / Mansour",
+          "source_url": "https://www.mgmotor.com.eg/model/mg5/",
+          "image_url": "https://www.mgmotor.com.eg/wp-content/uploads/2022/06/0009-3.jpg",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "HQ",
+          "sha256": "99944d2099cc11dca6116f046d6352ef6dafb972cddde83a7f0c745998df9c1b"
+        },
         "hero_image_limited": null,
-        "gallery": [],
+        "gallery": [
+          {
+            "asset_id": "d7bd11a37ec8",
+            "sha256": "d7bd11a37ec8177b36a3b601a48f0d2d78c54d4a391ed026638722892796f11c",
+            "width": "1139",
+            "height": "800",
+            "quality_class": "WEB",
+            "url": "https://www.mgmotor.com.eg/wp-content/uploads/2022/07/MG5_ME_1.5L-CVT-DEL_Blue_Front-70_Beauty.jpg",
+            "page": "https://www.mgmotor.com.eg/model/mg5/",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/models/mg-5/01.webp",
+            "credit": "MG Egypt / Mansour"
+          }
+        ],
         "conflicts": []
       }
     },
@@ -30202,7 +30251,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -30378,9 +30426,45 @@
           "quality_class": "HQ",
           "sha256": "743faa5e9eb857b130b8ed30f7197fdb5dbb3f72fe44230df4c739180db7e50d"
         },
-        "hero_image": null,
+        "hero_image": {
+          "src": "/media/models/mg-7.webp",
+          "credit": "MG Egypt / Mansour",
+          "source_url": "https://www.mgmotor.com.eg/wp-content/uploads/2025/08/MG7-Brochure-Jul-25-Amended.pdf",
+          "image_url": "https://www.mgmotor.com.eg/wp-content/uploads/2025/08/MG7-Brochure-Jul-25-Amended.pdf#xref=5",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "HQ",
+          "sha256": "d84613806c2429825037427bfe5e7e0195d25a4ce7b32b9ea9e3974fd0b62136"
+        },
         "hero_image_limited": null,
-        "gallery": [],
+        "gallery": [
+          {
+            "asset_id": "a615a35d34dd",
+            "sha256": "a615a35d34dd592dc96aa4ca5f7bc08dd143dd3b2e2a09c8cb2cb714ec57fb22",
+            "width": "3518",
+            "height": "2490",
+            "quality_class": "HQ",
+            "url": "https://www.mgmotor.com.eg/wp-content/uploads/2025/08/MG7-Brochure-Jul-25-Amended.pdf#xref=1239",
+            "page": "https://www.mgmotor.com.eg/wp-content/uploads/2025/08/MG7-Brochure-Jul-25-Amended.pdf",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/models/mg-7/01.webp",
+            "credit": "MG Egypt / Mansour"
+          },
+          {
+            "asset_id": "0de74c5dc8b1",
+            "sha256": "0de74c5dc8b1c8a6a141476b3546585fafedd3d51e3aa65f3d5c54148363f9a2",
+            "width": "2345",
+            "height": "1930",
+            "quality_class": "HQ",
+            "url": "https://www.mgmotor.com.eg/wp-content/uploads/2025/08/MG7-Brochure-Jul-25-Amended.pdf#xref=18",
+            "page": "https://www.mgmotor.com.eg/wp-content/uploads/2025/08/MG7-Brochure-Jul-25-Amended.pdf",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/models/mg-7/02.webp",
+            "credit": "MG Egypt / Mansour"
+          }
+        ],
         "conflicts": []
       }
     },
@@ -30414,7 +30498,6 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_OFFICIAL_BROCHURE",
-        "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
@@ -30511,7 +30594,16 @@
           "quality_class": "HQ",
           "sha256": "743faa5e9eb857b130b8ed30f7197fdb5dbb3f72fe44230df4c739180db7e50d"
         },
-        "hero_image": null,
+        "hero_image": {
+          "src": "/media/models/mg-g50-plus.webp",
+          "credit": "MG Egypt / Mansour",
+          "source_url": "https://www.mgmotor.com.eg/wp-content/uploads/2025/11/MG-G50-Brochure-Amended-17_10.pdf",
+          "image_url": "https://www.mgmotor.com.eg/wp-content/uploads/2025/11/MG-G50-Brochure-Amended-17_10.pdf#xref=105",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "WEB",
+          "sha256": "49add55661e93f026cc679355b540834b0f27d8750bb0c4f1923c3fe347fc021"
+        },
         "hero_image_limited": null,
         "gallery": [],
         "conflicts": []
@@ -30546,7 +30638,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -30697,9 +30788,32 @@
           "quality_class": "HQ",
           "sha256": "743faa5e9eb857b130b8ed30f7197fdb5dbb3f72fe44230df4c739180db7e50d"
         },
-        "hero_image": null,
+        "hero_image": {
+          "src": "/media/models/mg-gt.webp",
+          "credit": "MG Egypt / Mansour",
+          "source_url": "https://www.mgmotor.com.eg/wp-content/uploads/2025/12/MG-GT-Brochure-Compressed.pdf",
+          "image_url": "https://www.mgmotor.com.eg/wp-content/uploads/2025/12/MG-GT-Brochure-Compressed.pdf#xref=154",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "HQ",
+          "sha256": "3efa19002bfb21683f7844277b86c376fea2aa659fae9b4a56eec9ff35f364ac"
+        },
         "hero_image_limited": null,
-        "gallery": [],
+        "gallery": [
+          {
+            "asset_id": "51b1017371fb",
+            "sha256": "51b1017371fb972fae5902ed425bf204093f2912d6002d07019746545f53e552",
+            "width": "1572",
+            "height": "884",
+            "quality_class": "WEB",
+            "url": "https://www.mgmotor.com.eg/wp-content/uploads/2025/12/MG-GT-Brochure-Compressed.pdf#xref=164",
+            "page": "https://www.mgmotor.com.eg/wp-content/uploads/2025/12/MG-GT-Brochure-Compressed.pdf",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/models/mg-gt/01.webp",
+            "credit": "MG Egypt / Mansour"
+          }
+        ],
         "conflicts": []
       }
     },
@@ -30733,7 +30847,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -30970,9 +31083,45 @@
           "quality_class": "HQ",
           "sha256": "743faa5e9eb857b130b8ed30f7197fdb5dbb3f72fe44230df4c739180db7e50d"
         },
-        "hero_image": null,
+        "hero_image": {
+          "src": "/media/models/mg-hs.webp",
+          "credit": "MG Egypt / Mansour",
+          "source_url": "https://www.mgmotor.com.eg/wp-content/uploads/2025/08/New-MG-HS-Brochure-RTP-1.pdf",
+          "image_url": "https://www.mgmotor.com.eg/wp-content/uploads/2025/08/New-MG-HS-Brochure-RTP-1.pdf#xref=5",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "HQ",
+          "sha256": "cf6da3466692607ad1fad4b541e86ac4e285c21b9d7895353a83aeb255f0e86f"
+        },
         "hero_image_limited": null,
-        "gallery": [],
+        "gallery": [
+          {
+            "asset_id": "b5d9c6f6ab7b",
+            "sha256": "b5d9c6f6ab7b71248f32131bee5b725fea0d0751556f63d0ed54633df06e78d5",
+            "width": "3024",
+            "height": "2032",
+            "quality_class": "HQ",
+            "url": "https://www.mgmotor.com.eg/wp-content/uploads/2025/08/New-MG-HS-Brochure-RTP-1.pdf#xref=3",
+            "page": "https://www.mgmotor.com.eg/wp-content/uploads/2025/08/New-MG-HS-Brochure-RTP-1.pdf",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/models/mg-hs/01.webp",
+            "credit": "MG Egypt / Mansour"
+          },
+          {
+            "asset_id": "1b3a373fdc35",
+            "sha256": "1b3a373fdc35ded5998c098454c55810f988799d048ab4eee6526220b74e5f4d",
+            "width": "3000",
+            "height": "1732",
+            "quality_class": "HQ",
+            "url": "https://www.mgmotor.com.eg/wp-content/uploads/2025/08/New-MG-HS-Brochure-RTP-1.pdf#xref=9",
+            "page": "https://www.mgmotor.com.eg/wp-content/uploads/2025/08/New-MG-HS-Brochure-RTP-1.pdf",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/models/mg-hs/02.webp",
+            "credit": "MG Egypt / Mansour"
+          }
+        ],
         "conflicts": [
           "power_hp: SP-1 CONFLICT: MG Egypt HS page prose 221 hp vs spec table 200 hp (hybrid)"
         ]
@@ -31007,7 +31156,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -31172,9 +31320,32 @@
           "quality_class": "HQ",
           "sha256": "743faa5e9eb857b130b8ed30f7197fdb5dbb3f72fe44230df4c739180db7e50d"
         },
-        "hero_image": null,
+        "hero_image": {
+          "src": "/media/models/mg-one.webp",
+          "credit": "MG Egypt / Mansour",
+          "source_url": "https://www.mgmotor.com.eg/wp-content/uploads/2026/09/MG-one-Brochure-luxury-1-compressed.pdf",
+          "image_url": "https://www.mgmotor.com.eg/wp-content/uploads/2026/09/MG-one-Brochure-luxury-1-compressed.pdf#xref=113",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "HQ",
+          "sha256": "3306ff639bc54377333830c33810eb7c99234fd2503ebcbee0984ef69792eeea"
+        },
         "hero_image_limited": null,
-        "gallery": [],
+        "gallery": [
+          {
+            "asset_id": "00e86ced1778",
+            "sha256": "00e86ced1778d6c36343c9c789a09fb280364f65622bac1ce32e76765f1aae5f",
+            "width": "3865",
+            "height": "1419",
+            "quality_class": "HQ",
+            "url": "https://www.mgmotor.com.eg/wp-content/uploads/2026/09/MG-one-Brochure-luxury-1-compressed.pdf#xref=101",
+            "page": "https://www.mgmotor.com.eg/wp-content/uploads/2026/09/MG-one-Brochure-luxury-1-compressed.pdf",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/models/mg-one/01.webp",
+            "credit": "MG Egypt / Mansour"
+          }
+        ],
         "conflicts": []
       }
     },
@@ -31208,7 +31379,6 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -31393,9 +31563,58 @@
           "quality_class": "HQ",
           "sha256": "743faa5e9eb857b130b8ed30f7197fdb5dbb3f72fe44230df4c739180db7e50d"
         },
-        "hero_image": null,
+        "hero_image": {
+          "src": "/media/models/mg-rx9.webp",
+          "credit": "MG Egypt / Mansour",
+          "source_url": "https://www.mgmotor.com.eg/wp-content/uploads/2026/09/MG-RX9-Final-V2.pdf",
+          "image_url": "https://www.mgmotor.com.eg/wp-content/uploads/2026/09/MG-RX9-Final-V2.pdf#xref=346",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "HQ",
+          "sha256": "72e34b00f884591299b23cd99b82902f3f327421f3a02d56fb33cf0251ca5f58"
+        },
         "hero_image_limited": null,
-        "gallery": [],
+        "gallery": [
+          {
+            "asset_id": "0cddc93fe394",
+            "sha256": "0cddc93fe394a863940987948e6506e15b3b60d747c5bda7a39f06bd77d1eb93",
+            "width": "2400",
+            "height": "1792",
+            "quality_class": "HQ",
+            "url": "https://www.mgmotor.com.eg/wp-content/uploads/2026/09/MG-RX9-Final-V2.pdf#xref=283",
+            "page": "https://www.mgmotor.com.eg/wp-content/uploads/2026/09/MG-RX9-Final-V2.pdf",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/models/mg-rx9/02.webp",
+            "credit": "MG Egypt / Mansour"
+          },
+          {
+            "asset_id": "53610d65030a",
+            "sha256": "53610d65030a522c0e3675600302c68cb001d4728866851cc11e620098f68ea0",
+            "width": "2528",
+            "height": "1696",
+            "quality_class": "HQ",
+            "url": "https://www.mgmotor.com.eg/wp-content/uploads/2026/09/MG-RX9-Final-V2.pdf#xref=287",
+            "page": "https://www.mgmotor.com.eg/wp-content/uploads/2026/09/MG-RX9-Final-V2.pdf",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/models/mg-rx9/03.webp",
+            "credit": "MG Egypt / Mansour"
+          },
+          {
+            "asset_id": "48fe2a1a3a6d",
+            "sha256": "48fe2a1a3a6dec334b430430b059764ca3757e6400a52a76a30cc5ed3c5f0032",
+            "width": "2799",
+            "height": "1575",
+            "quality_class": "HQ",
+            "url": "https://www.mgmotor.com.eg/wp-content/uploads/2026/09/MG-RX9-Final-V2.pdf#xref=130",
+            "page": "https://www.mgmotor.com.eg/wp-content/uploads/2026/09/MG-RX9-Final-V2.pdf",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/models/mg-rx9/04.webp",
+            "credit": "MG Egypt / Mansour"
+          }
+        ],
         "conflicts": []
       }
     },
@@ -31428,7 +31647,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
@@ -31642,9 +31860,32 @@
           "quality_class": "HQ",
           "sha256": "743faa5e9eb857b130b8ed30f7197fdb5dbb3f72fe44230df4c739180db7e50d"
         },
-        "hero_image": null,
+        "hero_image": {
+          "src": "/media/models/mg-zs.webp",
+          "credit": "MG Egypt / Mansour",
+          "source_url": "https://www.mgmotor.com.eg/model/zs/",
+          "image_url": "https://www.mgmotor.com.eg/wp-content/uploads/2022/07/comp_000_0010_000_v004.1109-2.jpg",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "HQ",
+          "sha256": "e4bc3aed271bd1f51b11f8d8b647eaa7e1006b1d1d9a3b7d42bb3dd84dd2ef21"
+        },
         "hero_image_limited": null,
-        "gallery": [],
+        "gallery": [
+          {
+            "asset_id": "14d3c7f05818",
+            "sha256": "14d3c7f05818e91fb4a75b6462d9a110dc244067f9402a69539674222bae23c1",
+            "width": "1920",
+            "height": "1080",
+            "quality_class": "HQ",
+            "url": "https://www.mgmotor.com.eg/wp-content/uploads/2022/07/comp_000_0010_000_v004.1109-3.jpg",
+            "page": "https://www.mgmotor.com.eg/model/zs/",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/models/mg-zs/01.webp",
+            "credit": "MG Egypt / Mansour"
+          }
+        ],
         "conflicts": []
       }
     },

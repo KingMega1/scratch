@@ -46,12 +46,16 @@ def main():
         dst = os.path.join(ROOT, r["local_path"])
         res = dict(asset_id=r["asset_id"], owner=r["owner"], kind=r["kind"], local_path=r["local_path"], url=r["url"])
         try:
+            url, _, frag = r["url"].partition("#xref=")  # brochure image: native image object <xref> of the PDF at url
             for i in range(4):  # 429 back-off (Commons rate limits)
-                resp = requests.get(r["url"], headers=UA, timeout=60)
+                resp = requests.get(url, headers=UA, timeout=120)
                 if resp.status_code != 429:
                     break
                 time.sleep(10 * (i + 1))
             b = resp.content
+            if frag and resp.status_code == 200:
+                import fitz
+                b = fitz.open(stream=b, filetype="pdf").extract_image(int(frag))["image"]
             h = hashlib.sha256(b).hexdigest()
             res.update(http=resp.status_code, sha256=h, sha_match=h == r["sha256"])
             ok = h == r["sha256"]
