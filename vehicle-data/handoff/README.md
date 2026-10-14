@@ -2,20 +2,22 @@
 
 | File | For | Status |
 |---|---|---|
-| `p5-rc2-integration-20261014.patch` | P5 | `git am` on P5 head 4fe3ea0 (verified identical apply; P5 typecheck clean, unit 61/61). Supersedes the 20261013 media patch. |
-| `parallel-allocation-20261014.csv` | Claude Code Cloud, ChatGPT Work | Non-overlapping work split, generated from `review/u11_coverage.csv`, ordered by U11 registrations (last 12 months). |
+| `p5-release-20261014b.json` | P5 | Current. Uses P5's own route (a6d3f0b). Lists the release sha256, the 309 served files with sha256, and the P5 verification result. |
+| `parallel-allocation-20261014.csv` | Claude Code Cloud, ChatGPT Work | Non-overlapping work split, generated from `review/u11_coverage.csv`. |
+| `chatgpt-milestone-04-selections.json` | P2 | ChatGPT Work milestone-04 selections. Bytes were reproduced sha256-identical in CI run 38530437824. |
 
-## P5 RC2 integration
-- `web/data/registry/p2-accepted.json`: the RC2 `accepted` block for each route (price, specs, warranty, brochures, logo, hero_image, market_status, conflicts).
-  - Generated from `vehicle-data/views/catalogue-serving.release.json`.
-  - `buildCatalogue(snap,u,cw,p2)` merges it and fails closed if a route is unknown or a p1_id does not match.
-- Files:
-  - 40 heroes at `/media/models/<site_slug>.webp`, which replaces 5 P5 Nissan photos in place with the same models at 2400 px;
-  - 54 logos at `/media/brands/<brand>.png`.
-- Rendering is unchanged. Only `accepted.hero_image` is consumed today, through `p2Hero()`.
-  - Prices and logos are delivered as data for P5 to adopt.
-  - The BYD and Nissan logos are white on a transparent background, so they need a dark surface.
-- Gallery images (35 models, 180 files) are not in the patch because P5 has no gallery UI yet. They are under `vehicle-data/media/models/<slug>/` and listed in RC2 `accepted.gallery`.
+## P5 release route (established by P5 in a6d3f0b)
+1. Copy `vehicle-data/views/catalogue-serving.release.json` verbatim to `web/data/registry/catalogue-serving.release.json`.
+2. Copy every `src` listed in the manifest from `vehicle-data/media/<models|brands>/...` to `web/public/media/p2/<models|brands>/...`.
+3. Check the files against the sha256 values in the manifest.
+
+Verification on a6d3f0b:
+- Typecheck passes.
+- Unit tests pass 61/62. The failing test is `catalogue-coverage.test.mjs:82`, whose fixture assumes MG HS has no accepted hero. RC2 now accepts an MG HS hero, so P5 should point that fixture at a model without one. No read-model change is needed.
+
+Gallery: 46 models, 202 images, in `accepted.gallery[].src`.
+
+White-only logos (BYD, Nissan) have no dark variant yet.
 
 ## Parallel allocation rules
 - **P2 (this branch).** Sole canonical acceptance for identity, price, specs, warranty, brochures and media mappings. Owns the `p2_canonical` column: price REWORK and NO_EVIDENCE.
