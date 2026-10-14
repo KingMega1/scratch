@@ -25,7 +25,7 @@ export function BrandMark({ id, label, size = 32 }: { id: string; label: string;
     const p2 = brandLogos[id];
     if (!p2) return null;
     const u = (w: number) => `/_next/image?url=${encodeURIComponent(p2.src)}&w=${w}&q=85`;
-    return <img className="brand-mark brand-mark-img" src={p2.src} srcSet={`${u(128)} 1x, ${u(256)} 2x`} alt={label} height={size} width={Math.round(size * 1.75)}
+    return <img className={`brand-mark brand-mark-img${p2.onInk ? ' on-ink' : ''}`} src={p2.src} srcSet={`${u(128)} 1x, ${u(256)} 2x`} alt={label} height={size} width={Math.round(size * 1.75)}
       loading="lazy" decoding="async" data-brand-logo={id} data-logo-source="p2" />;
   }
   return (

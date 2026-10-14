@@ -38,6 +38,17 @@ export interface PublicImage { src: string; credit: string | null; sourcePage: s
 
 export type GapCode = 'SINGLE_SOURCE_MODEL' | 'FROM_PRICE_IN_CONFLICT' | 'REGISTRATION_UNLINKED' | 'PRICE_RULE_NOT_MET' | 'NO_OFFICIAL_PRICE' | 'UNRESOLVED_TRIMS_IN_PRICED_COHORT' | string;
 
+/* P2-accepted customer content (catalogue serving release `accepted`). Values are shown as accepted; never inferred. */
+export interface P2Fact { value: string; unit: string; scope: string | null; issuer: string; sourceUrl: string | null }
+export interface P2GalleryImage { src: string; width: number | null; height: number | null; credit: string | null; page: string | null }
+export interface P2Brochure { title: string; url: string; issuer: string; scope: string | null }
+export interface P2Content {
+  specs: { key: string; facts: P2Fact[] }[];       // known customer spec keys only, release order
+  warranty: { kind: 'vehicle' | 'battery'; fact: P2Fact }[];
+  gallery: P2GalleryImage[];
+  brochures: P2Brochure[];                          // publicly reachable official links only
+}
+
 export interface PublicCar {
   p1Id?: string;
   body?: string | null;
@@ -66,6 +77,7 @@ export interface PublicCar {
   gaps: GapCode[];
   conflicts: number;
   lastObserved: string | null;
+  p2: P2Content | null;
   image: PublicImage | null;
 }
 

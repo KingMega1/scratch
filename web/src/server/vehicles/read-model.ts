@@ -3,7 +3,7 @@ import snapshot from '@data/registry/universe.snapshot.json';
 import crosswalk from '@data/registry/display-crosswalk.TEMP.json';
 import serving from '@data/registry/catalogue-serving.release.json';
 import media from '@data/registry/media-verified.json';
-import type { AssetFlag, BrandSummary, OfficialPrice, PriceChange, PriceState, Powertrain, PublicCar, PublicImage, PublicTrim, RegistryMeta, SpecValue } from '@/lib/vehicles/types';
+import type { P2Content, P2Fact, AssetFlag, BrandSummary, OfficialPrice, PriceChange, PriceState, Powertrain, PublicCar, PublicImage, PublicTrim, RegistryMeta, SpecValue } from '@/lib/vehicles/types';
 
 /* Serving read model.
    Canonical: KingMega1/scratch vehicle-data/views/p1_suv_2m.json (carindex.p1.buyer_view/v2) at the commit pinned in
@@ -133,16 +133,67 @@ export function p2Price(e: Raw): { priceFrom: PublicCar['priceFrom']; trims: Pub
   };
 }
 
+/* Customer spec keys shown from P2 accepted.specs (labels live in the dictionary). Anything else stays server-side. */
+export const P2_SPEC_KEYS = ['power_hp', 'system_power_hp', 'system_power_kw', 'motor_power_hp', 'motor_power_kw', 'torque_nm', 'system_torque_nm', 'motor_torque_nm',
+  'engine', 'engine_cc', 'engine_l', 'cylinders', 'transmission', 'drive', 'accel_0_100_s', 'top_speed_kmh', 'fuel_consumption_l100',
+  'battery_kwh', 'ev_range_km', 'total_range_km', 'energy_consumption_kwh100', 'max_ac_kw', 'max_dc_kw',
+  'length_mm', 'width_mm', 'height_mm', 'wheelbase_mm', 'ground_clearance_mm', 'kerb_weight_kg', 'seats', 'boot_l', 'boot_max_l', 'fuel_tank_l', 'wheels_in', 'airbags'] as const;
+const firstUrl = (s: string) => (s || '').split('|').map(x => x.trim()).find(x => /^https?:\/\//.test(x)) ?? null;
+/* Applicability as the customer should read it: whole-model statements carry no qualifier; trim lists keep the trims. */
+function scopeOf(a: string): string | null {
+  const x = (a || '').trim();
+  if (!x || /^model page$/i.test(x) || /^market trim pages:\s*model$/i.test(x)) return null;
+  const m = x.match(/^market trim pages:\s*(.+)$/i);
+  return (m ? m[1] : x).trim();
+}
+// Plain unit tokens are implied by the spec key (shown localised); only qualifiers such as "km WLTP combined" are kept.
+const PLAIN_UNIT = new Set(['', 'mm', 'hp', 'l', 'nm', 'count', 'kg', 'cc', 'kw', 's', 'km/h', 'in', 'kwh', 'km']);
+const fact = (x: Raw, brand: string): P2Fact => ({
+  value: String(x.value).trim(), unit: /U11|conflict/i.test(x.unit ?? '') || PLAIN_UNIT.has(String(x.unit ?? '').trim().toLowerCase()) ? '' : String(x.unit ?? '').trim(),
+  scope: scopeOf(x.applicability), issuer: issuerNames(String(x.issuer ?? ''), brand).join(' + '), sourceUrl: firstUrl(x.source),
+});
+export function p2Content(e: Raw): P2Content | null {
+  const a = e?.accepted ?? {};
+  // Same value + unit from several sources is one fact (scopes and sources combined); different values stay separate.
+  const merge = (fs: P2Fact[]): P2Fact[] => {
+    const m = new Map<string, P2Fact>();
+    for (const f of fs) {
+      const k = `${f.value}|${f.unit}`, o = m.get(k);
+      if (!o) { m.set(k, { ...f }); continue; }
+      o.scope = o.scope === null || f.scope === null ? null : [...new Set([...o.scope.split(/,\s*/), ...f.scope.split(/,\s*/)])].join(', ');
+      o.issuer = [...new Set([...o.issuer.split(' · '), f.issuer])].join(' · ');
+    }
+    return [...m.values()];
+  };
+  const specs = P2_SPEC_KEYS.filter(k => Array.isArray(a.specs?.[k]) && a.specs[k].length).map(k => ({ key: k as string, facts: merge((a.specs[k] as Raw[]).map(x => fact(x, e.brand))) }));
+  const warranty: P2Content['warranty'] = [];
+  for (const w of (a.warranty ?? []) as Raw[]) {
+    // "6 years / 150000 km; battery 7 years / 150000 km" -> vehicle + battery entries, same source and scope
+    for (const part of String(w.value).split(';').map(p => p.trim()).filter(Boolean)) {
+      const battery = /^battery\b/i.test(part);
+      warranty.push({ kind: battery ? 'battery' : 'vehicle', fact: { ...fact(w, e.brand), value: part.replace(/^battery\s*/i, '') } });
+    }
+  }
+  for (const w of (a.specs?.warranty_battery ?? []) as Raw[]) warranty.push({ kind: 'battery', fact: fact(w, e.brand) });
+  const gallery = ((a.gallery ?? []) as Raw[]).filter(g => typeof g.src === 'string' && /^\/media\/[\w./-]+\.(webp|png|jpe?g|avif)$/i.test(g.src) && !g.src.includes('..'))
+    .map(g => ({ src: g.src, width: Number(g.width) || null, height: Number(g.height) || null, credit: g.credit ?? null, page: g.page ?? null }));
+  // Drive links point at the CarIndex working archive (not public); only official public URLs reach customers.
+  const brochures = ((a.brochures ?? []) as Raw[]).filter(b => /^https:\/\//.test(b.url ?? '') && !/drive\.google\.com/.test(b.url))
+    .map(b => ({ title: String(b.title ?? ''), url: b.url, issuer: String(b.issuer ?? ''),
+      scope: b.scope && !/^\s*(download|view|open)?\s*(the\s*)?brochure\s*$/i.test(b.scope) ? b.scope : null })); // link text is not a scope
+  return specs.length || warranty.length || gallery.length || brochures.length ? { specs, warranty, gallery, brochures } : null;
+}
+
 /* P2 accepted brand logos (RC2 accepted.logo), same-origin files only. Keyed by the website brand id.
-   White-on-transparent marks (made for dark backgrounds) are invisible on light tiles and may not be recoloured (Brand V2),
-   so they are not served until P2 supplies a dark/colour variant (tests/unit/brand.test.mjs keeps this list exact). */
-export const LIGHT_ONLY_LOGOS = new Set(['/media/p2/brands/byd.png', '/media/p2/brands/nissan.png']);
-export function p2Logos(entries: Raw[]): Record<string, { src: string; credit: string | null }> {
-  const out: Record<string, { src: string; credit: string | null }> = {};
+   White-on-transparent marks (made for dark backgrounds) may not be recoloured (Brand V2): they are shown unaltered on an
+   ink tile instead (tests/unit/brand.test.mjs keeps this list exact against the files). */
+export const LIGHT_ONLY_LOGOS = new Set(['/media/brands/byd.png', '/media/brands/nissan.png']);
+export function p2Logos(entries: Raw[]): Record<string, { src: string; credit: string | null; onInk: boolean }> {
+  const out: Record<string, { src: string; credit: string | null; onInk: boolean }> = {};
   for (const e of entries) {
     const l = e?.accepted?.logo, id = brandId(e.brand);
-    if (out[id] || !l || typeof l.src !== 'string' || LIGHT_ONLY_LOGOS.has(l.src) || !/^\/media\/[\w./-]+\.(png|svg|webp)$/i.test(l.src) || l.src.includes('..')) continue;
-    out[id] = { src: l.src, credit: l.credit ?? null };
+    if (out[id] || !l || typeof l.src !== 'string' || !/^\/media\/[\w./-]+\.(png|svg|webp)$/i.test(l.src) || l.src.includes('..')) continue;
+    out[id] = { src: l.src, credit: l.credit ?? null, onInk: LIGHT_ONLY_LOGOS.has(l.src) };
   }
   return out;
 }
@@ -181,6 +232,7 @@ function shape(m: Raw): PublicCar {
     gaps: (m.gaps ?? []).map((g: Raw) => g.type ?? g.code ?? String(g)),
     conflicts: (m.conflicts ?? []).length,
     lastObserved,
+    p2: null,
     image,
   };
 }
@@ -212,6 +264,9 @@ class JsonSnapshotReadModel implements VehicleReadModel {
       } else if (((e as Raw).accepted?.conflicts ?? []).length && car.priceFrom.state === 'unknown') {
         car.gaps = [...new Set([...car.gaps, 'FROM_PRICE_IN_CONFLICT'])]; // sources disagree: say so, show no number
       }
+      car.p2 = p2Content(e as Raw);
+      if (car.p2?.specs.length) car.gaps = car.gaps.filter(g => g !== 'NO_VERIFIED_SPECS' && g !== 'NO_ACCEPTED_SPECS');
+      if (car.p2?.warranty.length) car.gaps = car.gaps.filter(g => g !== 'NO_VERIFIED_WARRANTY');
       if (raw) {
         // S6 registrations say only "ICE"; name the fuel only when the pinned U11 identity states it unambiguously.
         const fuels = ['petrol', 'diesel'].filter(f => (e.powertrains as string[]).includes(f)) as Powertrain[];

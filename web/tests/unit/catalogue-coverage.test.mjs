@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {readFileSync,existsSync} from 'node:fs';
 import ts from 'typescript';
 import {buildCatalogue,loadInputs} from '../../scripts/build-catalogue-release.mjs';
 const [snap,u,cw]=loadInputs(), release=JSON.parse(readFileSync('data/registry/catalogue-serving.release.json','utf8'));
@@ -96,4 +96,19 @@ test('Tucson conflict survives without averaging; P1 files and accepted vendor r
  const old=snap.view.models.find(m=>m.slug==='hyundai-tucson');
  const car=V.vehicles().get('hyundai-tucson');
  assert.equal(old.price.price_from.status,'CONFLICT');assert.equal(car.priceFrom.state,'conflict');assert.equal(car.priceFrom.value,null);
+});
+test('P2 specs, warranty, gallery and brochures are served as accepted, with scope and source; nothing invented',()=>{
+ let specs=0,warr=0,gal=0,bro=0,driveHidden=0;
+ for(const e of release.entries){
+  const a=e.accepted??{}, car=V.vehicles().get(e.site_slug), c=car.p2;
+  for(const s of c?.specs??[]){specs++;assert.deepEqual(new Set(s.facts.map(f=>f.value)),new Set(a.specs[s.key].map(x=>String(x.value).trim()))); // identical values from several sources are merged, never dropped
+   for(const f of s.facts){assert.ok(f.issuer,e.site_slug);assert.ok(!/U11|conflict/i.test(f.unit));}}
+  const wv=(a.warranty??[]).flatMap(w=>String(w.value).split(';').map(x=>x.trim()).filter(Boolean)).length+(a.specs?.warranty_battery??[]).length;
+  assert.equal(c?.warranty.length??0,wv,e.site_slug); warr+=wv;
+  assert.deepEqual((c?.gallery??[]).map(g=>g.src),(a.gallery??[]).map(g=>g.src)); gal+=(a.gallery??[]).length;
+  for(const g of a.gallery??[])assert.ok(existsSync('public'+g.src),g.src);
+  const pub=(a.brochures??[]).filter(b=>!/drive\.google\.com/.test(b.url)); driveHidden+=(a.brochures??[]).length-pub.length;
+  assert.deepEqual((c?.brochures??[]).map(b=>b.url),pub.map(b=>b.url)); bro+=pub.length;
+ }
+ assert.ok(specs>0&&warr>0&&gal>0&&bro>0); console.log({specs,warr,gal,bro,driveHidden});
 });

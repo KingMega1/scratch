@@ -10,7 +10,7 @@ const bid = (s: string) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u0
 const served = new Map<string, string>(media.entries.map(m => [m.site_slug, m.src]));
 for (const e of release.entries) if (e.accepted?.hero_image?.src) served.set(e.site_slug, e.accepted.hero_image.src);
 const lightOnly = new Set([...(readFileSync('src/server/vehicles/read-model.ts', 'utf8').match(/LIGHT_ONLY_LOGOS = new Set\(\[([^\]]*)\]/)![1].matchAll(/'([^']+)'/g))].map(m => m[1]));
-const p2Logo = new Map<string, string>(); for (const e of release.entries) if (e.accepted?.logo?.src && !lightOnly.has(e.accepted.logo.src) && !p2Logo.has(bid(e.brand))) p2Logo.set(bid(e.brand), e.accepted.logo.src);
+const p2Logo = new Map<string, string>(); for (const e of release.entries) if (e.accepted?.logo?.src && !p2Logo.has(bid(e.brand))) p2Logo.set(bid(e.brand), e.accepted.logo.src);
 const siteBrands = new Set(release.entries.map(e => bid(e.brand)));
 const logoIds = [...siteBrands].filter(id => (logos.brands as Record<string, unknown>)[id] || p2Logo.has(id));
 
@@ -43,7 +43,9 @@ for (const l of ['en', 'ar'] as const) {
     const shown = await page.locator('.brand-grid [data-brand-logo]').evaluateAll(els => els.map(e => e.getAttribute('data-brand-logo')));
     expect(shown.length).toBe(logoIds.length); // ink emblem (simple-icons) or the P2-accepted official logo; never guessed
     for (const id of shown) expect(logoIds).toContain(id);
-    for (const src of await page.locator('.brand-grid img').evaluateAll(els => els.map(e => e.getAttribute('src') || ''))) expect(src).toMatch(/^\/media\/p2\/brands\/[\w-]+\.png$/);
+    for (const src of await page.locator('.brand-grid img').evaluateAll(els => els.map(e => e.getAttribute('src') || ''))) expect(src).toMatch(/^\/media\/brands\/[\w-]+\.png$/);
+    // white-only official marks are shown unaltered on an ink tile
+    for (const src of lightOnly) { const img = page.locator(`.brand-grid img[src="${src}"]`); if (await img.count()) await expect(img).toHaveClass(/on-ink/); }
     const strip = await page.goto(`/${l}`).then(() => page.locator('.brand-strip b').allTextContents());
     expect(strip).toEqual([...strip].sort((a, b) => col.compare(a, b)));
   });
@@ -85,7 +87,7 @@ for (const l of ['en', 'ar'] as const) {
     for (const path of ['', '/market', '/cars', '/market/catalog']) {
       await page.goto(`/${l}${path}`);
       const srcs = await page.locator('main img').evaluateAll(els => els.map(e => (e as HTMLImageElement).getAttribute('src') || ''));
-      for (const s of srcs) expect(s, path).toMatch(/^\/(brand|media\/models|media\/p2\/(models|brands))\//);
+      for (const s of srcs) expect(s, path).toMatch(/^\/(brand|media\/models|media\/brands)\//);
       await expect(page.locator('[data-asset-flags*="TEMP_UNVERIFIED"]')).toHaveCount(0);
     }
     for (const [slug, src] of [...served].slice(0, 12)) {
@@ -160,5 +162,28 @@ for (const tier of ['A', 'B']) {
     if (tier === 'B') for (const s of p.issuer.split('+')) await expect(page.locator('main')).toContainText(s);
     await page.goto(`/en/market/catalog?brand=${bid(e.brand)}`);
     await expect(page.locator(`a.mc[data-model-id="${e.site_slug}"]`)).toHaveAttribute('data-price-state', 'checked');
+  });
+}
+
+/* P2 customer content on car pages: specs with scope and source, typed warranty, lazy gallery. */
+type SE = { site_slug: string; accepted?: { specs?: Record<string, unknown[]>; warranty?: { value: string }[]; gallery?: { src: string }[] } };
+const rel = release.entries as unknown as SE[];
+for (const l of ['en', 'ar'] as const) {
+  test(`${l}: accepted specs, warranty and gallery render with scope and source`, async ({ page }) => {
+    const s = rel.find(e => Object.keys(e.accepted?.specs ?? {}).includes('power_hp'))!;
+    await page.goto(`/${l}/cars/${s.site_slug}`);
+    await expect(page.locator('[data-spec="power_hp"]')).toBeVisible();
+    await expect(page.locator('#specs-h').locator('..')).not.toContainText(/_mm|_hp|power_hp|U11/);
+    const w = rel.find(e => (e.accepted?.warranty ?? []).some(x => /battery/i.test(x.value)))!;
+    await page.goto(`/${l}/cars/${w.site_slug}`);
+    await expect(page.locator('[data-warranty-kind="battery"]').first()).toBeVisible();
+    await expect(page.locator('[data-warranty-kind="vehicle"]').first()).toBeVisible();
+    const g = rel.find(e => (e.accepted?.gallery ?? []).length > 6)!;
+    await page.goto(`/${l}/cars/${g.site_slug}`);
+    await expect(page.locator('#gallery-h')).toBeVisible();
+    const lazy = await page.locator('img[data-gallery-photo]').evaluateAll(els => els.map(e => e.getAttribute('loading')));
+    expect(lazy.length).toBe(g.accepted!.gallery!.length);
+    expect(lazy.every(x => x === 'lazy')).toBe(true);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
   });
 }

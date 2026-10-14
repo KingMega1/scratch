@@ -35,7 +35,7 @@ test('every package TTF has a subset WOFF2 sibling and fonts.css prefers it', ()
   }
 });
 
-test('served P2 brand logos are visible on light tiles (white-only marks are listed and not served)', async () => {
+test('white-only P2 brand logos are listed and shown on an ink tile (never recoloured)', async () => {
   const { execFileSync } = await import('node:child_process');
   const src = readFileSync('src/server/vehicles/read-model.ts', 'utf8');
   const listed = new Set([...src.match(/LIGHT_ONLY_LOGOS = new Set\(\[([^\]]*)\]/)[1].matchAll(/'([^']+)'/g)].map(m => m[1]));

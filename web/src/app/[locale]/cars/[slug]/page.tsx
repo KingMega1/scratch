@@ -9,6 +9,7 @@ import { vehicles } from '@/server/vehicles/read-model';
 import { alternatives } from '@/server/vehicles/query';
 import { takes } from '@/server/take/provider';
 import { content } from '@/server/cms/provider';
+import { P2Brochures, P2Gallery, P2Specs, P2Warranty } from '@/components/p2content';
 import { CarCard, CarMedia, CarName, OfficialFigure, PriceFrom, PriceState, carNameText } from '@/components/car';
 import brochures from '@data/registry/brochure-serving.release.json';
 import TrackOnMount from '@/components/TrackOnMount';
@@ -105,6 +106,7 @@ export default async function CarDetail({ params }: P) {
         </div>
       </section>
       {car.image ? <p className="small" style={{ marginBlockStart: 8 }}>{c.photoNote}{car.image.credit ? <> <bdi>{car.image.credit}</bdi></> : null}</p> : null}
+      {car.p2 ? <P2Gallery c={car.p2} locale={locale} name={carNameText(car, locale)} /> : null}
 
       {gapItems.length || !car.inSlice ? (
         <section className="cd-section notice" aria-labelledby="gaps-h">
@@ -159,11 +161,14 @@ export default async function CarDetail({ params }: P) {
 
       <section className="cd-section" aria-labelledby="specs-h">
         <h2 id="specs-h" className="h-section">{c.specsH}</h2>
-        {car.evidenceState === 'U11_IDENTITY_ONLY' ? <p className="slot-empty">{locale === 'ar' ? 'المواصفات لم يتم التحقق منها بعد.' : 'Specifications have not been verified yet.'}</p> : null}
-        <div className="spec-grid">{specRows.map(([k, v]) => <div className="spec" key={k}><div className="k">{k}</div><div className="v">{v}</div></div>)}</div>
+        {car.evidenceState === 'U11_IDENTITY_ONLY' && !car.p2?.specs.length ? <p className="slot-empty">{locale === 'ar' ? 'المواصفات لم يتم التحقق منها بعد.' : 'Specifications have not been verified yet.'}</p> : null}
+        {car.p2?.specs.length ? <P2Specs c={car.p2} locale={locale} lead={specRows.slice(0, 1)} />
+          : <div className="spec-grid">{specRows.map(([k, v]) => <div className="spec" key={k}><div className="k">{k}</div><div className="v">{v}</div></div>)}</div>}
       </section>
 
-      {brochure ? (
+      {car.p2 ? <P2Warranty c={car.p2} locale={locale} /> : null}
+
+      {car.p2?.brochures.length ? <P2Brochures c={car.p2} locale={locale} /> : brochure ? (
         <section className="cd-section" aria-labelledby="brochure-h" data-brochure-model-id={brochure.p1_id}>
           <h2 id="brochure-h" className="h-section">{locale === 'ar' ? 'كتالوج الموديل من نيسان مصر' : 'Model brochure from Nissan Egypt'}</h2>
           <a className="btn btn-ghost" href={brochure.url} target="_blank" rel="noopener noreferrer">{locale === 'ar' ? 'افتح الكتالوج الرسمي (PDF)' : 'Open official brochure (PDF)'}</a>

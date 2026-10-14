@@ -439,6 +439,8 @@ table.t th.t-num { text-align: end; }
 .brand-chip:hover, .brand-chip:focus-visible { border-color: var(--ci-color-ink); }
 .brand-mark { width: 32px; height: 32px; color: var(--ci-color-ink); flex: none; }
 .brand-mark-img { width: 56px; object-fit: contain; object-position: center; }
+/* white official marks: unaltered, on an ink tile (never recoloured) */
+.brand-mark-img.on-ink { background: var(--ci-color-ink); border-radius: 6px; padding: 6px; box-sizing: border-box; }
 .brand-mark-text { display: grid; place-items: center; border: 1.5px solid var(--ci-color-line); border-radius: 50%; font-size: 12px; font-weight: 700; letter-spacing: .02em; color: var(--ci-semantic-text-secondary); }
 .catalog .cat-controls { display: grid; gap: 10px; margin-block: 8px 20px; }
 .catalog .filter-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
@@ -496,3 +498,14 @@ table.t th.t-num { text-align: end; }
 .brand-strip .body-tile { min-height: 116px; align-content: center; }
 .mc.has-photo { padding-block-start: 0; overflow: hidden; }
 .mc-photo { display: block; width: calc(100% + 32px); margin-inline: -16px; aspect-ratio: 16 / 9; object-fit: cover; background: var(--ci-color-fog); margin-block-end: 6px; }
+
+/* P2 content: gallery, warranty, brochures, per-trim facts */
+.gallery { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 8px; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 900px) { .gallery { grid-template-columns: repeat(3, 1fr); } }
+.gallery img { display: block; width: 100%; height: auto; aspect-ratio: auto; border-radius: var(--radius-card); background: var(--ci-color-fog); }
+.gallery-more summary { cursor: pointer; font-weight: 600; margin-block: 12px; min-height: 44px; display: flex; align-items: center; }
+.warranty-list, .brochure-list { list-style: none; padding: 0; margin: 12px 0; display: grid; gap: 12px; }
+.brochure-list li { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.spec .fact + .fact { margin-block-start: 6px; padding-block-start: 6px; border-block-start: 1px dashed var(--ci-color-line); }
+.fact-meta { font-weight: 400; color: var(--ci-semantic-text-secondary); }
+.fact-meta .fm { display: block; }
