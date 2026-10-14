@@ -20,6 +20,10 @@ if [ "$MODE" = "media" ]; then    # brand-logo / model-image candidates with lic
   python3 scripts/media_candidates.py --out "snapshots/M_${DATE}_${GITHUB_RUN_ID:-local}"
   exit 0
 fi
+if [ "$MODE" = "handoff" ]; then   # reproduce byte-identical images of a reviewed external handoff (handoff.request = selections json)
+  python3 scripts/handoff_fetch.py --sel "$(awk 'NR==1{print $1}' handoff.request)" --out "snapshots/MH_${DATE}_${GITHUB_RUN_ID:-local}"
+  exit 0
+fi
 if [ "$MODE" = "probe" ]; then     # raw pages for offline parser development (probe.urls); nothing parsed or accepted
   python3 scripts/probe.py --urls probe.urls --out "snapshots/P_${DATE}_${GITHUB_RUN_ID:-local}"
   exit 0
