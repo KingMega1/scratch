@@ -43,7 +43,7 @@ for (const l of ['en', 'ar'] as const) {
     const shown = await page.locator('.brand-grid [data-brand-logo]').evaluateAll(els => els.map(e => e.getAttribute('data-brand-logo')));
     expect(shown.length).toBe(logoIds.length); // ink emblem (simple-icons) or the P2-accepted official logo; never guessed
     for (const id of shown) expect(logoIds).toContain(id);
-    for (const src of await page.locator('.brand-grid img').evaluateAll(els => els.map(e => e.getAttribute('src') || ''))) expect(src).toMatch(/^\/media\/brands\/[\w-]+\.png$/);
+    for (const src of await page.locator('.brand-grid img').evaluateAll(els => els.map(e => e.getAttribute('src') || ''))) expect(src).toMatch(/^\/media\/p2\/brands\/[\w-]+\.png$/);
     // white-only official marks are shown unaltered on an ink tile
     for (const src of lightOnly) { const img = page.locator(`.brand-grid img[src="${src}"]`); if (await img.count()) await expect(img).toHaveClass(/on-ink/); }
     const strip = await page.goto(`/${l}`).then(() => page.locator('.brand-strip b').allTextContents());
@@ -87,7 +87,7 @@ for (const l of ['en', 'ar'] as const) {
     for (const path of ['', '/market', '/cars', '/market/catalog']) {
       await page.goto(`/${l}${path}`);
       const srcs = await page.locator('main img').evaluateAll(els => els.map(e => (e as HTMLImageElement).getAttribute('src') || ''));
-      for (const s of srcs) expect(s, path).toMatch(/^\/(brand|media\/models|media\/brands)\//);
+      for (const s of srcs) expect(s, path).toMatch(/^\/(brand|media\/models|media\/p2\/(models|brands))\//);
       await expect(page.locator('[data-asset-flags*="TEMP_UNVERIFIED"]')).toHaveCount(0);
     }
     for (const [slug, src] of [...served].slice(0, 12)) {

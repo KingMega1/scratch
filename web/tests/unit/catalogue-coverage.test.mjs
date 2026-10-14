@@ -49,8 +49,17 @@ const V=runtime('src/server/vehicles/read-model.ts',{
  '@data/registry/catalogue-serving.release.json':release,'@data/registry/media-verified.json':JSON.parse(readFileSync('data/registry/media-verified.json','utf8')),
 });
 const Q=runtime('src/server/vehicles/query.ts',{'./read-model':V});
-test('actual website read-model: all 283 gettable, 283 recommendation bridges, 3 absent',()=>{
- assert.equal(V.vehicles().all().length,283);
+const ADD=release.market_additions??[], TOTAL=283+ADD.length;
+test('actual website read-model: 283 U11 + P2 additions gettable, 283 recommendation bridges, 3 absent',()=>{
+ assert.equal(V.vehicles().all().length,TOTAL);
+ for(const a of ADD){ // P2 additions/splits: browsable with accepted fields only, no U11 data, no P1 id
+  const car=V.vehicles().get(a.site_slug);assert.ok(car,a.site_slug);assert.equal(car.p1Id??null,null);assert.equal(car.evidenceState,a.universe);
+  assert.equal(V.p1DisplaySlug(a.identity),a.site_slug);
+  if(a.accepted?.price){assert.equal(car.priceFrom.value,a.accepted.price.price_from);assert.equal(car.priceFrom.state,'checked');}
+  else{assert.equal(car.priceFrom.value,null);assert.equal(car.priceFrom.state,'unknown');}
+  assert.deepEqual(car.specs,{});assert.equal(car.registrations,null);
+  assert.equal(car.image?.src??null,a.accepted?.hero_image?.src??null);
+ }
  for(const e of release.entries){
   assert.equal(V.p1DisplaySlug(e.p1_id),e.site_slug);
   const car=V.vehicles().get(e.site_slug);assert.ok(car);assert.equal(car.p1Id,e.p1_id);
@@ -67,30 +76,35 @@ test('actual website read-model: all 283 gettable, 283 recommendation bridges, 3
   const vm=JSON.parse(readFileSync('data/registry/media-verified.json','utf8')).entries.find(x=>x.site_slug===car.id);
   assert.equal(car.image?.src??null, e.accepted?.hero_image?.src ?? (vm?vm.src:null));
  }
- for(const e of release.excluded){assert.equal(V.vehicles().get(e.site_slug),null);assert.equal(V.p1DisplaySlug(e.p1_id),null);}
+ // U11 off-sale exclusions stay out unless P2 re-adds the identity as a market addition (P2 owns the catalogue; P1 eligibility unchanged)
+ for(const e of release.excluded){const re=ADD.find(a=>a.identity===e.p1_id);
+  if(re){assert.equal(V.vehicles().get(re.site_slug).evidenceState,re.universe);continue;}
+  assert.equal(V.vehicles().get(e.site_slug),null);assert.equal(V.p1DisplaySlug(e.p1_id),null);}
  assert.equal(V.vehicles().get('invented-model'),null);
 });
 test('actual filters/pagination do not lose models or make unknown prices numeric',()=>{
- assert.equal(Q.queryCars({}).total,283);assert.equal(Q.queryCars({}).pages,12);
- const ids=new Set();for(let page=1;page<=12;page++)for(const c of Q.queryCars({page}).items)ids.add(c.id);
- assert.equal(ids.size,283);
- for(const q of [{min:1},{max:50000000},{official:true}])for(let page=1;page<=12;page++)
+ const PAGES=Math.ceil(TOTAL/24);
+ assert.equal(Q.queryCars({}).total,TOTAL);assert.equal(Q.queryCars({}).pages,PAGES);
+ const ids=new Set();for(let page=1;page<=PAGES;page++)for(const c of Q.queryCars({page}).items)ids.add(c.id);
+ assert.equal(ids.size,TOTAL);
+ for(const q of [{min:1},{max:50000000},{official:true}])for(let page=1;page<=PAGES;page++)
  for(const c of Q.queryCars({...q,page}).items)assert.notEqual(c.priceFrom.sortValue,null);
- assert.equal(Q.queryCars({brand:'nissan'}).total,7);
+ assert.equal(Q.queryCars({brand:'nissan'}).total,[...release.entries,...ADD].filter(e=>e.brand==='Nissan').length);
  assert.ok(Q.queryCars({pt:'phev'}).items.every(c=>c.powertrains.includes('phev')));
 });
 test('P2 media contract: accepted same-origin hero images are served automatically; others ignored',()=>{
  const rel2=structuredClone(release);
  rel2.entries.find(e=>e.site_slug==='kia-sportage').accepted={hero_image:{src:'/media/models/kia-sportage.webp',credit:'Kia Egypt',source_url:'https://example.test/kia'}};
  rel2.entries.find(e=>e.site_slug==='hyundai-tucson').accepted={hero_image:{src:'https://cdn.example.test/tucson.jpg'}};
- rel2.entries.find(e=>e.site_slug==='mg-hs').hero_image={src:'/media/../secret.webp'};
+ const noHero=rel2.entries.find(e=>!e.accepted?.hero_image&&!JSON.parse(readFileSync('data/registry/media-verified.json','utf8')).entries.some(m=>m.site_slug===e.site_slug));
+ noHero.hero_image={src:'/media/../secret.webp'};
  const V2=runtime('src/server/vehicles/read-model.ts',{
   '@data/registry/universe.snapshot.json':snap,'@data/registry/display-crosswalk.TEMP.json':cw,
   '@data/registry/catalogue-serving.release.json':rel2,'@data/registry/media-verified.json':{entries:[]},
  });
  assert.deepEqual(V2.vehicles().get('kia-sportage').image,{src:'/media/models/kia-sportage.webp',credit:'Kia Egypt',sourcePage:'https://example.test/kia',flags:[]});
  assert.equal(V2.vehicles().get('hyundai-tucson').image,null);
- assert.equal(V2.vehicles().get('mg-hs').image,null);
+ assert.equal(V2.vehicles().get(noHero.site_slug).image,null);
 });
 test('Tucson conflict survives without averaging; P1 files and accepted vendor remain untouched',()=>{
  const old=snap.view.models.find(m=>m.slug==='hyundai-tucson');

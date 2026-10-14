@@ -188,7 +188,7 @@ export function p2Content(e: Raw): P2Content | null {
 /* P2 accepted brand logos (RC2 accepted.logo), same-origin files only. Keyed by the website brand id.
    White-on-transparent marks (made for dark backgrounds) may not be recoloured (Brand V2): they are shown unaltered on an
    ink tile instead (tests/unit/brand.test.mjs keeps this list exact against the files). */
-export const LIGHT_ONLY_LOGOS = new Set(['/media/brands/byd.png', '/media/brands/nissan.png']);
+export const LIGHT_ONLY_LOGOS = new Set(['/media/p2/brands/byd.png', '/media/p2/brands/nissan.png']);
 export function p2Logos(entries: Raw[]): Record<string, { src: string; credit: string | null; onInk: boolean }> {
   const out: Record<string, { src: string; credit: string | null; onInk: boolean }> = {};
   for (const e of entries) {
@@ -238,13 +238,25 @@ function shape(m: Raw): PublicCar {
   };
 }
 
+/* P2 market additions (serving release market_additions): P2-accepted identities beyond the pinned U11 283 — new models
+   (P2_ADDITION) and identity splits (P2_SPLIT). Browsable with their accepted fields only; they carry no P1 id until a P1
+   release includes them, and never take S6 view data (p2_model_id is not joined). */
+const knownAr = new Map<string, string | null>(serving.entries.map(e => [e.brand, e.ar.brand]));
+const additions: Raw[] = (((serving as Raw).market_additions ?? []) as Raw[]).map(x => ({
+  p1_id: null, p2_model_id: null, id_status: x.universe, site_slug: x.site_slug, brand: x.brand, model: x.model,
+  ar: { brand: knownAr.get(x.brand) ?? null, model: null }, on_sale: true, body: x.body ?? null, powertrains: x.powertrains ?? [],
+  registration: null, p2_evidence: false, evidence_state: x.universe, price_status: 'UNKNOWN', conflicts: [],
+  missing_evidence: x.missing_evidence ?? [], accepted: x.accepted ?? {}, identity: x.identity, parent: x.parent ?? null,
+}));
+export const servingRows: Raw[] = [...(serving.entries as Raw[]), ...additions];
+
 class JsonSnapshotReadModel implements VehicleReadModel {
   private cars: PublicCar[];
   private byId: Map<string, PublicCar>;
   private brandList: BrandSummary[];
   constructor(private snap: { meta: RegistryMeta; view: Raw }) {
     const rawById = new Map<string, Raw>(snap.view.models.map((m: Raw) => [m.model_id, m]));
-    this.cars = serving.entries.map(e => {
+    this.cars = servingRows.map((e: Raw) => {
       const raw = e.p2_model_id ? rawById.get(e.p2_model_id) : null;
       const car = shape(raw ?? {
         slug: e.site_slug, brand: e.brand, model: e.model, in_slice: true,
@@ -276,7 +288,7 @@ class JsonSnapshotReadModel implements VehicleReadModel {
       if (!raw) {
         // Facts explicitly attributed to the pinned U11 release. Prices/specs/images are never copied or inferred.
         const pt: Record<string, Powertrain> = {petrol:'petrol', diesel:'diesel', hybrid:'hybrid', phev:'phev', reev:'reev', ev:'ev'};
-        car.powertrains = [...new Set(e.powertrains.map(p => pt[p]).filter(Boolean))];
+        car.powertrains = [...new Set((e.powertrains as string[]).map(p => pt[p]).filter(Boolean))];
         car.registrations = e.registration ? {
           inWindow:e.registration.last12, firstSeen:e.registration.first_month,
           window:e.registration.window as [string,string], rank:null, ranked:null, share:null,
@@ -297,7 +309,7 @@ class JsonSnapshotReadModel implements VehicleReadModel {
   }
   meta() { return { ...this.snap.meta, registry_version: serving.release_id,
     snapshot_id: serving.release_id + '@' + serving.identity_authority.commit.slice(0,12),
-    models_total: serving.entries.length }; }
+    models_total: servingRows.length }; }
   all() { return this.cars; }
   get(id: string) { return this.byId.get(id) ?? null; }
   brands() { return this.brandList; }
@@ -310,8 +322,10 @@ export function vehicles(): VehicleReadModel {
   return instance;
 }
 // Temporary display-only ID bridge. Source remains the audited P5 crosswalk, not P1 semantics.
-const p1DisplaySlugs = new Map(serving.entries.map(row => [row.p1_id, row.site_slug]));
+// U11 ids -> routes, plus P2 addition identities (the id form P1 candidates such as U12C2 use) for a future P1 binding.
+const p1DisplaySlugs = new Map<string, string>([...serving.entries.map(row => [row.p1_id, row.site_slug] as [string, string]),
+  ...additions.map(a => [a.identity, a.site_slug] as [string, string])]);
 export const p1DisplaySlug = (p1Id: string): string | null => p1DisplaySlugs.get(p1Id) ?? null;
 export const brandSlug = brandId;
-export const brandLogos = p2Logos(serving.entries as Raw[]);
+export const brandLogos = p2Logos(servingRows);
 export type { PriceState };

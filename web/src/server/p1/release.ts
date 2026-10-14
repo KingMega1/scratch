@@ -25,6 +25,21 @@ export const BOUND = {
   p3_artifact: '1791369522-eecc',
 } as const;
 
+/* PREPARED, NOT ACTIVE. P1 candidate U12C2 (P1-READINESS-01, commit b435c28): 366 models in universe, 323 priced/recommendable,
+   identities reconciled with P2 (283 U11 + additions/splits). Vendored verbatim under p1-release/ for dry runs only
+   (tests/unit/p1-candidate-u12c2.test.mjs). Activation = P1 release acceptance (a release record naming this dataset) plus a
+   reviewed change of BOUND above; nothing at runtime reads CANDIDATE. */
+export const CANDIDATE = {
+  status: 'CANDIDATE_NOT_ACCEPTED',
+  source_commit: 'b435c283175b51f107f5a722189d331afcbc7ad1',
+  dataset_id: 'U12C2-2026-10-14/recommendation_view',
+  universe_version: 'U12C2-2026-10-14',
+  path: 'buyer-decision/datasets/U12C2-2026-10-14',
+  file_sha256: '31a64bb7accf763e1fe3d0eb059d5e702029263abb1b65fcdb0da33b16b9644a',
+  content_sha256: '293acba6a5d4c0f9a7b46e233981f4040e19702e3e5cffa7843bd2a5bd09cb61',
+  p2_input_commit: 'bd8a67ac7f3c7da746a212deba73c818741710c9',
+} as const;
+
 const RUNTIME_FILES = ['engine', 'parser', 'copy_i18n', 'presentation_extracted', 'redaction', 'transport', 'schema', 'p5_contract', 'dataset_manifest', 'dataset_view'];
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
