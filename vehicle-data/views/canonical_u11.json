@@ -1,7 +1,7 @@
 {
  "counts": {
   "brochure_accepted": 81,
-  "fully_enriched": 26,
+  "fully_enriched": 27,
   "gallery_models": 46,
   "hero_accepted": 53,
   "hero_accepted_hq": 49,
@@ -10,15 +10,15 @@
   "logo_accepted": 248,
   "market_status_official": 37,
   "models": 283,
-  "price_accepted": 188,
-  "price_source_dated": 149,
+  "price_accepted": 192,
+  "price_source_dated": 152,
   "price_tier_a": 25,
   "specs_accepted": 199,
   "warranty_accepted": 95
  },
  "counts_market_universe": {
   "brochure_accepted": 82,
-  "fully_enriched": 26,
+  "fully_enriched": 27,
   "gallery_models": 46,
   "hero_accepted": 53,
   "hero_accepted_hq": 49,
@@ -27,8 +27,8 @@
   "logo_accepted": 346,
   "market_status_official": 38,
   "models": 412,
-  "price_accepted": 216,
-  "price_source_dated": 172,
+  "price_accepted": 220,
+  "price_source_dated": 175,
   "price_tier_a": 25,
   "specs_accepted": 202,
   "warranty_accepted": 97
@@ -3007,7 +3007,7 @@
    "model_id": "m_000045",
    "p1_id": "baic/x3",
    "price": null,
-   "rework_price_rows": 1,
+   "rework_price_rows": 2,
    "site_slug": "baic-x3",
    "specs": null,
    "specs_accepted": false,
@@ -9503,7 +9503,7 @@
     "tier": "A",
     "trims": []
    },
-   "rework_price_rows": 12,
+   "rework_price_rows": 15,
    "site_slug": "chery-arrizo-5",
    "specs": {
     "boot_l": [
@@ -22102,7 +22102,7 @@
      }
     ]
    },
-   "rework_price_rows": 6,
+   "rework_price_rows": 9,
    "site_slug": "hyundai-accent-rb",
    "specs": null,
    "specs_accepted": false,
@@ -22278,7 +22278,7 @@
      }
     ]
    },
-   "rework_price_rows": 10,
+   "rework_price_rows": 11,
    "site_slug": "hyundai-elantra",
    "specs": {
     "boot_l": [
@@ -23581,7 +23581,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
@@ -23622,8 +23621,52 @@
    "model": "IM 5",
    "model_id": "m_000159",
    "p1_id": "im/im-5",
-   "price": null,
-   "rework_price_rows": 3,
+   "price": {
+    "as_of": "2026-10-14",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
+    "evidence_url": "https://eg.hatla2ee.com/en/new-car/IM/IM+_5 | https://www.contactcars.com/en/new-cars/im_motors-im5",
+    "issuer": "ContactCars+Hatla2ee",
+    "model_year": 2026,
+    "price_from": 1900000,
+    "tier": "B",
+    "trims": [
+     {
+      "as_of": "2026-10-14",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/IM/IM+_5 | https://www.contactcars.com/en/new-cars/im_motors-im5",
+      "issuer": "ContactCars+Hatla2ee",
+      "label": "75 KW RWD",
+      "model_year": 2026,
+      "price_egp": 1900000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-14",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/IM/IM+_5 | https://www.contactcars.com/en/new-cars/im_motors-im5",
+      "issuer": "ContactCars+Hatla2ee",
+      "label": "100KW RWD",
+      "model_year": 2026,
+      "price_egp": 2250000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-14",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/IM/IM+_5 | https://www.contactcars.com/en/new-cars/im_motors-im5",
+      "issuer": "ContactCars+Hatla2ee",
+      "label": "100KW AWD",
+      "model_year": 2026,
+      "price_egp": 2450000,
+      "tier": "B"
+     }
+    ]
+   },
+   "rework_price_rows": 0,
    "site_slug": "im-im-5",
    "specs": null,
    "specs_accepted": false,
@@ -23678,7 +23721,7 @@
    "model_id": "m_000160",
    "p1_id": "im/im-6",
    "price": null,
-   "rework_price_rows": 1,
+   "rework_price_rows": 3,
    "site_slug": "im-im-6",
    "specs": null,
    "specs_accepted": false,
@@ -23754,7 +23797,7 @@
      }
     ]
    },
-   "rework_price_rows": 0,
+   "rework_price_rows": 1,
    "site_slug": "im-ls7",
    "specs": null,
    "specs_accepted": false,
@@ -25353,7 +25396,6 @@
     }
    ],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -25390,8 +25432,41 @@
    "model": "X70 Plus CKD",
    "model_id": "m_000169",
    "p1_id": "jetour/x70-plus-ckd",
-   "price": null,
-   "rework_price_rows": 2,
+   "price": {
+    "as_of": "2026-10-14",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-06-17",
+    "evidence_url": "https://www.contactcars.com/en/new-cars/jetour-x70_plus_ckd/year-2027 | https://www.egy-car.com/jetour-x70-plus",
+    "issuer": "ContactCars+EgyCar",
+    "model_year": 2027,
+    "price_from": 1275000,
+    "tier": "B",
+    "trims": [
+     {
+      "as_of": "2026-10-14",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-06-17",
+      "evidence_url": "https://www.contactcars.com/en/new-cars/jetour-x70_plus_ckd/year-2027 | https://www.egy-car.com/jetour-x70-plus",
+      "issuer": "ContactCars+EgyCar",
+      "label": "Luxury",
+      "model_year": 2027,
+      "price_egp": 1275000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-14",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-06-23",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/jetour/X70-Plus | https://www.contactcars.com/en/new-cars/jetour-x70_plus_ckd/year-2027 | https://www.egy-car.com/jetour-x70-plus",
+      "issuer": "ContactCars+EgyCar+Hatla2ee",
+      "label": "Luxury",
+      "model_year": 2027,
+      "price_egp": 1275000,
+      "tier": "B"
+     }
+    ]
+   },
+   "rework_price_rows": 1,
    "site_slug": "jetour-x70-plus-ckd",
    "specs": {
     "drive": [
@@ -28766,7 +28841,7 @@
    "model_id": "m_000183",
    "p1_id": "lexus/rz",
    "price": null,
-   "rework_price_rows": 2,
+   "rework_price_rows": 4,
    "site_slug": "lexus-rz",
    "specs": null,
    "specs_accepted": false,
@@ -31401,7 +31476,6 @@
     }
    ],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
@@ -31439,7 +31513,29 @@
    "model": "5",
    "model_id": "m_000204",
    "p1_id": "mg/5",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-14",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-06-29",
+    "evidence_url": "https://eg.hatla2ee.com/en/new-car/moris-garage/mg-5 | https://www.contactcars.com/en/new-cars/mg-5 | https://www.contactcars.com/en/new-cars/mg-5/year-2027",
+    "issuer": "ContactCars+Hatla2ee",
+    "model_year": 2027,
+    "price_from": 974990,
+    "tier": "B",
+    "trims": [
+     {
+      "as_of": "2026-10-14",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-06-29",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/moris-garage/mg-5 | https://www.contactcars.com/en/new-cars/mg-5 | https://www.contactcars.com/en/new-cars/mg-5/year-2027",
+      "issuer": "ContactCars+Hatla2ee",
+      "label": "Luxury",
+      "model_year": 2027,
+      "price_egp": 974990,
+      "tier": "B"
+     }
+    ]
+   },
    "rework_price_rows": 4,
    "site_slug": "mg-5",
    "specs": {
@@ -31815,7 +31911,7 @@
      }
     ]
    },
-   "rework_price_rows": 0,
+   "rework_price_rows": 2,
    "site_slug": "mg-7",
    "specs": {
     "airbags": [
@@ -32005,7 +32101,7 @@
      }
     ]
    },
-   "rework_price_rows": 1,
+   "rework_price_rows": 2,
    "site_slug": "mg-g50-plus",
    "specs": {
     "engine": [
@@ -32165,7 +32261,7 @@
      }
     ]
    },
-   "rework_price_rows": 0,
+   "rework_price_rows": 2,
    "site_slug": "mg-gt",
    "specs": {
     "engine": [
@@ -32376,7 +32472,7 @@
      }
     ]
    },
-   "rework_price_rows": 0,
+   "rework_price_rows": 3,
    "site_slug": "mg-hs",
    "specs": {
     "airbags": [
@@ -32781,7 +32877,10 @@
      "url": "https://drive.google.com/file/d/1I8DP1F7P9pK1sFDXf8SNPwh6PQoicUwG/view"
     }
    ],
-   "conflicts": [],
+   "conflicts": [
+    "PB-2 CONFLICT: ContactCars=1899000",
+    "PB-2 CONFLICT: Hatla2ee=1900000"
+   ],
    "gallery": [
     {
      "asset_id": "0cddc93fe394",
@@ -32862,7 +32961,7 @@
    "model_id": "m_000210",
    "p1_id": "mg/rx9",
    "price": null,
-   "rework_price_rows": 2,
+   "rework_price_rows": 3,
    "site_slug": "mg-rx9",
    "specs": {
     "battery_kwh": [
@@ -33095,13 +33194,24 @@
    "price": {
     "as_of": "2026-10-14",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-08-05",
-    "evidence_url": "https://www.contactcars.com/en/new-cars/mg-zs/year-2026 | https://www.egy-car.com/mg-zs",
-    "issuer": "ContactCars+EgyCar",
+    "effective_date": "2026-04-29",
+    "evidence_url": "https://eg.hatla2ee.com/en/new-car/moris-garage/zs | https://www.contactcars.com/en/new-cars/mg-zs/year-2026",
+    "issuer": "ContactCars+Hatla2ee",
     "model_year": 2026,
-    "price_from": 1150000,
+    "price_from": 1075000,
     "tier": "B",
     "trims": [
+     {
+      "as_of": "2026-10-14",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-04-29",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/moris-garage/zs | https://www.contactcars.com/en/new-cars/mg-zs/year-2026",
+      "issuer": "ContactCars+Hatla2ee",
+      "label": "Comfort",
+      "model_year": 2026,
+      "price_egp": 1075000,
+      "tier": "B"
+     },
      {
       "as_of": "2026-10-14",
       "date_basis": "SOURCE_STATED",
@@ -33665,7 +33775,7 @@
    "model_id": "m_000015",
    "p1_id": "mitsubishi/eclipse-cross",
    "price": null,
-   "rework_price_rows": 5,
+   "rework_price_rows": 14,
    "site_slug": "mitsubishi-eclipse-cross",
    "specs": {
     "engine_l": [
@@ -34177,7 +34287,7 @@
      }
     ]
    },
-   "rework_price_rows": 17,
+   "rework_price_rows": 21,
    "site_slug": "nissan-juke",
    "specs": {
     "boot_l": [
@@ -35444,7 +35554,7 @@
      }
     ]
    },
-   "rework_price_rows": 13,
+   "rework_price_rows": 11,
    "site_slug": "nissan-qashqai",
    "specs": {
     "boot_l": [
@@ -38603,10 +38713,7 @@
     "PB-2 CONFLICT: EgyCar=1550000",
     "PB-2 CONFLICT: EgyCar=1690000",
     "PB-2 CONFLICT: EgyCar=1790000",
-    "PB-2 CONFLICT: EgyCar=1890000",
-    "PB-2 CONFLICT: Hatla2ee=1400000",
-    "PB-2 CONFLICT: Hatla2ee=1570000",
-    "PB-2 CONFLICT: Hatla2ee=1630000"
+    "PB-2 CONFLICT: EgyCar=1890000"
    ],
    "gallery": [],
    "gaps": [
@@ -38640,26 +38747,103 @@
     "as_of": "2026-10-14",
     "date_basis": "SOURCE_STATED",
     "effective_date": "2026-09-12",
-    "evidence_url": "https://www.contactcars.com/en/new-cars/renault-austral/year-2026 | https://www.egy-car.com/renault-austral",
-    "issuer": "ContactCars+EgyCar",
+    "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Austral-shape-facelift | https://www.contactcars.com/en/new-cars/renault-austral/year-2026 | https://www.egy-car.com/renault-austral",
+    "issuer": "ContactCars+EgyCar+Hatla2ee",
     "model_year": 2026,
-    "price_from": 1890000,
+    "price_from": 1550000,
     "tier": "B",
     "trims": [
      {
       "as_of": "2026-10-14",
       "date_basis": "SOURCE_STATED",
       "effective_date": "2026-09-12",
-      "evidence_url": "https://www.contactcars.com/en/new-cars/renault-austral/year-2026 | https://www.egy-car.com/renault-austral",
-      "issuer": "ContactCars+EgyCar",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Austral-shape-facelift | https://www.contactcars.com/en/new-cars/renault-austral/year-2026 | https://www.egy-car.com/renault-austral",
+      "issuer": "ContactCars+EgyCar+Hatla2ee",
+      "label": "Evolution Facelift",
+      "model_year": 2026,
+      "price_egp": 1550000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-14",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-12",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Austral-shape-facelift | https://www.egy-car.com/renault-austral",
+      "issuer": "EgyCar+Hatla2ee",
+      "label": "Evolution",
+      "model_year": 2026,
+      "price_egp": 1550000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-14",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-12",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Austral-shape-facelift | https://www.contactcars.com/en/new-cars/renault-austral/year-2026 | https://www.egy-car.com/renault-austral",
+      "issuer": "ContactCars+EgyCar+Hatla2ee",
+      "label": "Techno Facelift",
+      "model_year": 2026,
+      "price_egp": 1690000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-14",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-12",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Austral-shape-facelift | https://www.egy-car.com/renault-austral",
+      "issuer": "EgyCar+Hatla2ee",
+      "label": "Techno",
+      "model_year": 2026,
+      "price_egp": 1690000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-14",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-12",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Austral-shape-facelift | https://www.contactcars.com/en/new-cars/renault-austral/year-2026 | https://www.egy-car.com/renault-austral",
+      "issuer": "ContactCars+EgyCar+Hatla2ee",
+      "label": "Iconic Facelift",
+      "model_year": 2026,
+      "price_egp": 1790000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-14",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-12",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Austral-shape-facelift | https://www.egy-car.com/renault-austral",
+      "issuer": "EgyCar+Hatla2ee",
+      "label": "Iconic",
+      "model_year": 2026,
+      "price_egp": 1790000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-14",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-12",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Austral-shape-facelift | https://www.contactcars.com/en/new-cars/renault-austral/year-2026 | https://www.egy-car.com/renault-austral",
+      "issuer": "ContactCars+EgyCar+Hatla2ee",
       "label": "Espirit Alpine",
+      "model_year": 2026,
+      "price_egp": 1890000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-14",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-12",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Austral-shape-facelift | https://www.egy-car.com/renault-austral",
+      "issuer": "EgyCar+Hatla2ee",
+      "label": "Esprit Alpine",
       "model_year": 2026,
       "price_egp": 1890000,
       "tier": "B"
      }
     ]
    },
-   "rework_price_rows": 13,
+   "rework_price_rows": 10,
    "site_slug": "renault-austral",
    "specs": {
     "boot_l": [
@@ -43289,7 +43473,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
@@ -43330,8 +43513,30 @@
    "model": "Swift Dzire",
    "model_id": "m_000258",
    "p1_id": "suzuki/swift-dzire",
-   "price": null,
-   "rework_price_rows": 1,
+   "price": {
+    "as_of": "2026-10-14",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-06-16",
+    "evidence_url": "https://eg.hatla2ee.com/en/new-car/suzuki/swift-dzire | https://www.contactcars.com/en/new-cars/suzuki-dzire",
+    "issuer": "ContactCars+Hatla2ee",
+    "model_year": 2026,
+    "price_from": 885000,
+    "tier": "B",
+    "trims": [
+     {
+      "as_of": "2026-10-14",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-06-16",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/suzuki/swift-dzire | https://www.contactcars.com/en/new-cars/suzuki-dzire",
+      "issuer": "ContactCars+Hatla2ee",
+      "label": "GLX",
+      "model_year": 2026,
+      "price_egp": 885000,
+      "tier": "B"
+     }
+    ]
+   },
+   "rework_price_rows": 0,
    "site_slug": "suzuki-swift-dzire",
    "specs": null,
    "specs_accepted": false,
@@ -47037,7 +47242,7 @@
    "model_id": "m_000283",
    "p1_id": "xpeng/p7",
    "price": null,
-   "rework_price_rows": 1,
+   "rework_price_rows": 3,
    "site_slug": "xpeng-p7",
    "specs": null,
    "specs_accepted": false,

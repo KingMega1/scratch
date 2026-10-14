@@ -18,9 +18,9 @@
     "counts": {
       "models": 283,
       "id_accepted": 283,
-      "price_accepted": 188,
+      "price_accepted": 192,
       "price_tier_a": 25,
-      "price_source_dated": 149,
+      "price_source_dated": 152,
       "market_status_official": 37,
       "specs_accepted": 199,
       "warranty_accepted": 95,
@@ -30,7 +30,7 @@
       "hero_limited_archive": 149,
       "gallery_models": 46,
       "logo_accepted": 248,
-      "fully_enriched": 26
+      "fully_enriched": 27
     }
   },
   "relation": "Website on-sale set equals pinned U11 on-sale set (283). 'accepted' carries only P2-ACCEPTED values; absent means UNKNOWN. P1 recommendation semantics unchanged.",
@@ -39,7 +39,7 @@
     "p2_evidence": 21,
     "identity_only": 262,
     "excluded": 3,
-    "price_accepted": 188,
+    "price_accepted": 192,
     "id_accepted": 283
   },
   "entries": [
@@ -24801,10 +24801,9 @@
       },
       "p2_evidence": false,
       "evidence_state": "U11_IDENTITY_ONLY",
-      "price_status": "UNKNOWN",
+      "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_PRICE",
         "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
@@ -24813,7 +24812,51 @@
       ],
       "accepted": {
         "market_status": "unverified",
-        "price": null,
+        "price": {
+          "price_from": 1900000,
+          "model_year": 2026,
+          "tier": "B",
+          "effective_date": null,
+          "date_basis": "OBSERVED",
+          "as_of": "2026-10-14",
+          "issuer": "ContactCars+Hatla2ee",
+          "evidence_url": "https://eg.hatla2ee.com/en/new-car/IM/IM+_5 | https://www.contactcars.com/en/new-cars/im_motors-im5",
+          "trims": [
+            {
+              "model_year": 2026,
+              "label": "75 KW RWD",
+              "price_egp": 1900000,
+              "tier": "B",
+              "effective_date": null,
+              "date_basis": "OBSERVED",
+              "as_of": "2026-10-14",
+              "issuer": "ContactCars+Hatla2ee",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/IM/IM+_5 | https://www.contactcars.com/en/new-cars/im_motors-im5"
+            },
+            {
+              "model_year": 2026,
+              "label": "100KW RWD",
+              "price_egp": 2250000,
+              "tier": "B",
+              "effective_date": null,
+              "date_basis": "OBSERVED",
+              "as_of": "2026-10-14",
+              "issuer": "ContactCars+Hatla2ee",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/IM/IM+_5 | https://www.contactcars.com/en/new-cars/im_motors-im5"
+            },
+            {
+              "model_year": 2026,
+              "label": "100KW AWD",
+              "price_egp": 2450000,
+              "tier": "B",
+              "effective_date": null,
+              "date_basis": "OBSERVED",
+              "as_of": "2026-10-14",
+              "issuer": "ContactCars+Hatla2ee",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/IM/IM+_5 | https://www.contactcars.com/en/new-cars/im_motors-im5"
+            }
+          ]
+        },
         "specs": null,
         "warranty": null,
         "brochures": [],
@@ -26610,15 +26653,47 @@
       },
       "p2_evidence": false,
       "evidence_state": "U11_IDENTITY_ONLY",
-      "price_status": "UNKNOWN",
+      "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_PRICE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
         "market_status": "unverified",
-        "price": null,
+        "price": {
+          "price_from": 1275000,
+          "model_year": 2027,
+          "tier": "B",
+          "effective_date": "2026-06-17",
+          "date_basis": "SOURCE_STATED",
+          "as_of": "2026-10-14",
+          "issuer": "ContactCars+EgyCar",
+          "evidence_url": "https://www.contactcars.com/en/new-cars/jetour-x70_plus_ckd/year-2027 | https://www.egy-car.com/jetour-x70-plus",
+          "trims": [
+            {
+              "model_year": 2027,
+              "label": "Luxury",
+              "price_egp": 1275000,
+              "tier": "B",
+              "effective_date": "2026-06-17",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-14",
+              "issuer": "ContactCars+EgyCar",
+              "evidence_url": "https://www.contactcars.com/en/new-cars/jetour-x70_plus_ckd/year-2027 | https://www.egy-car.com/jetour-x70-plus"
+            },
+            {
+              "model_year": 2027,
+              "label": "Luxury",
+              "price_egp": 1275000,
+              "tier": "B",
+              "effective_date": "2026-06-23",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-14",
+              "issuer": "ContactCars+EgyCar+Hatla2ee",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/jetour/X70-Plus | https://www.contactcars.com/en/new-cars/jetour-x70_plus_ckd/year-2027 | https://www.egy-car.com/jetour-x70-plus"
+            }
+          ]
+        },
         "specs": {
           "drive": [
             {
@@ -33087,16 +33162,37 @@
       },
       "p2_evidence": false,
       "evidence_state": "U11_IDENTITY_ONLY",
-      "price_status": "UNKNOWN",
+      "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_PRICE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
         "market_status": "unverified",
-        "price": null,
+        "price": {
+          "price_from": 974990,
+          "model_year": 2027,
+          "tier": "B",
+          "effective_date": "2026-06-29",
+          "date_basis": "SOURCE_STATED",
+          "as_of": "2026-10-14",
+          "issuer": "ContactCars+Hatla2ee",
+          "evidence_url": "https://eg.hatla2ee.com/en/new-car/moris-garage/mg-5 | https://www.contactcars.com/en/new-cars/mg-5 | https://www.contactcars.com/en/new-cars/mg-5/year-2027",
+          "trims": [
+            {
+              "model_year": 2027,
+              "label": "Luxury",
+              "price_egp": 974990,
+              "tier": "B",
+              "effective_date": "2026-06-29",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-14",
+              "issuer": "ContactCars+Hatla2ee",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/moris-garage/mg-5 | https://www.contactcars.com/en/new-cars/mg-5 | https://www.contactcars.com/en/new-cars/mg-5/year-2027"
+            }
+          ]
+        },
         "specs": {
           "airbags": [
             {
@@ -34800,7 +34896,10 @@
             "credit": "MG Egypt / Mansour"
           }
         ],
-        "conflicts": []
+        "conflicts": [
+          "PB-2 CONFLICT: ContactCars=1899000",
+          "PB-2 CONFLICT: Hatla2ee=1900000"
+        ]
       }
     },
     {
@@ -34838,15 +34937,26 @@
       "accepted": {
         "market_status": "unverified",
         "price": {
-          "price_from": 1150000,
+          "price_from": 1075000,
           "model_year": 2026,
           "tier": "B",
-          "effective_date": "2026-08-05",
+          "effective_date": "2026-04-29",
           "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-14",
-          "issuer": "ContactCars+EgyCar",
-          "evidence_url": "https://www.contactcars.com/en/new-cars/mg-zs/year-2026 | https://www.egy-car.com/mg-zs",
+          "issuer": "ContactCars+Hatla2ee",
+          "evidence_url": "https://eg.hatla2ee.com/en/new-car/moris-garage/zs | https://www.contactcars.com/en/new-cars/mg-zs/year-2026",
           "trims": [
+            {
+              "model_year": 2026,
+              "label": "Comfort",
+              "price_egp": 1075000,
+              "tier": "B",
+              "effective_date": "2026-04-29",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-14",
+              "issuer": "ContactCars+Hatla2ee",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/moris-garage/zs | https://www.contactcars.com/en/new-cars/mg-zs/year-2026"
+            },
             {
               "model_year": 2026,
               "label": "Luxury Facelift MCE",
@@ -40573,15 +40683,81 @@
       "accepted": {
         "market_status": "unverified",
         "price": {
-          "price_from": 1890000,
+          "price_from": 1550000,
           "model_year": 2026,
           "tier": "B",
           "effective_date": "2026-09-12",
           "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-14",
-          "issuer": "ContactCars+EgyCar",
-          "evidence_url": "https://www.contactcars.com/en/new-cars/renault-austral/year-2026 | https://www.egy-car.com/renault-austral",
+          "issuer": "ContactCars+EgyCar+Hatla2ee",
+          "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Austral-shape-facelift | https://www.contactcars.com/en/new-cars/renault-austral/year-2026 | https://www.egy-car.com/renault-austral",
           "trims": [
+            {
+              "model_year": 2026,
+              "label": "Evolution Facelift",
+              "price_egp": 1550000,
+              "tier": "B",
+              "effective_date": "2026-09-12",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-14",
+              "issuer": "ContactCars+EgyCar+Hatla2ee",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Austral-shape-facelift | https://www.contactcars.com/en/new-cars/renault-austral/year-2026 | https://www.egy-car.com/renault-austral"
+            },
+            {
+              "model_year": 2026,
+              "label": "Evolution",
+              "price_egp": 1550000,
+              "tier": "B",
+              "effective_date": "2026-09-12",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-14",
+              "issuer": "EgyCar+Hatla2ee",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Austral-shape-facelift | https://www.egy-car.com/renault-austral"
+            },
+            {
+              "model_year": 2026,
+              "label": "Techno Facelift",
+              "price_egp": 1690000,
+              "tier": "B",
+              "effective_date": "2026-09-12",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-14",
+              "issuer": "ContactCars+EgyCar+Hatla2ee",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Austral-shape-facelift | https://www.contactcars.com/en/new-cars/renault-austral/year-2026 | https://www.egy-car.com/renault-austral"
+            },
+            {
+              "model_year": 2026,
+              "label": "Techno",
+              "price_egp": 1690000,
+              "tier": "B",
+              "effective_date": "2026-09-12",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-14",
+              "issuer": "EgyCar+Hatla2ee",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Austral-shape-facelift | https://www.egy-car.com/renault-austral"
+            },
+            {
+              "model_year": 2026,
+              "label": "Iconic Facelift",
+              "price_egp": 1790000,
+              "tier": "B",
+              "effective_date": "2026-09-12",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-14",
+              "issuer": "ContactCars+EgyCar+Hatla2ee",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Austral-shape-facelift | https://www.contactcars.com/en/new-cars/renault-austral/year-2026 | https://www.egy-car.com/renault-austral"
+            },
+            {
+              "model_year": 2026,
+              "label": "Iconic",
+              "price_egp": 1790000,
+              "tier": "B",
+              "effective_date": "2026-09-12",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-14",
+              "issuer": "EgyCar+Hatla2ee",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Austral-shape-facelift | https://www.egy-car.com/renault-austral"
+            },
             {
               "model_year": 2026,
               "label": "Espirit Alpine",
@@ -40590,8 +40766,19 @@
               "effective_date": "2026-09-12",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-14",
-              "issuer": "ContactCars+EgyCar",
-              "evidence_url": "https://www.contactcars.com/en/new-cars/renault-austral/year-2026 | https://www.egy-car.com/renault-austral"
+              "issuer": "ContactCars+EgyCar+Hatla2ee",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Austral-shape-facelift | https://www.contactcars.com/en/new-cars/renault-austral/year-2026 | https://www.egy-car.com/renault-austral"
+            },
+            {
+              "model_year": 2026,
+              "label": "Esprit Alpine",
+              "price_egp": 1890000,
+              "tier": "B",
+              "effective_date": "2026-09-12",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-14",
+              "issuer": "EgyCar+Hatla2ee",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Austral-shape-facelift | https://www.egy-car.com/renault-austral"
             }
           ]
         },
@@ -40741,10 +40928,7 @@
           "PB-2 CONFLICT: EgyCar=1550000",
           "PB-2 CONFLICT: EgyCar=1690000",
           "PB-2 CONFLICT: EgyCar=1790000",
-          "PB-2 CONFLICT: EgyCar=1890000",
-          "PB-2 CONFLICT: Hatla2ee=1400000",
-          "PB-2 CONFLICT: Hatla2ee=1570000",
-          "PB-2 CONFLICT: Hatla2ee=1630000"
+          "PB-2 CONFLICT: EgyCar=1890000"
         ]
       }
     },
@@ -45506,10 +45690,9 @@
       },
       "p2_evidence": false,
       "evidence_state": "U11_IDENTITY_ONLY",
-      "price_status": "UNKNOWN",
+      "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_PRICE",
         "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
@@ -45518,7 +45701,29 @@
       ],
       "accepted": {
         "market_status": "unverified",
-        "price": null,
+        "price": {
+          "price_from": 885000,
+          "model_year": 2026,
+          "tier": "B",
+          "effective_date": "2026-06-16",
+          "date_basis": "SOURCE_STATED",
+          "as_of": "2026-10-14",
+          "issuer": "ContactCars+Hatla2ee",
+          "evidence_url": "https://eg.hatla2ee.com/en/new-car/suzuki/swift-dzire | https://www.contactcars.com/en/new-cars/suzuki-dzire",
+          "trims": [
+            {
+              "model_year": 2026,
+              "label": "GLX",
+              "price_egp": 885000,
+              "tier": "B",
+              "effective_date": "2026-06-16",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-14",
+              "issuer": "ContactCars+Hatla2ee",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/suzuki/swift-dzire | https://www.contactcars.com/en/new-cars/suzuki-dzire"
+            }
+          ]
+        },
         "specs": null,
         "warranty": null,
         "brochures": [],

@@ -139,6 +139,11 @@ def url_owner():
         own[r["url"]] = r["p1_id"]
         if "contactcars" in r["url"]:  # model-year pages of the same ContactCars slug
             own["cc:" + r["url"].split("/")[5]] = r["p1_id"]
+    ap = os.path.join(ROOT, "review", "market_universe_audit.csv")  # pages the universe audit resolved to a 283 model
+    for r in (read(ap) if os.path.exists(ap) else []):
+        if r["audit_class"] == "IN_283":
+            for u in filter(None, r["page_urls"].split(" | ")):
+                own.setdefault(u, r["identity"])
     for d in market_universe()["identities"]:  # additions own their pages; splits take theirs from the parent
         for u in d.get("urls", []):
             own[u] = d["id"]
