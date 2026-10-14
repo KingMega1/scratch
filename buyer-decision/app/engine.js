@@ -7,7 +7,7 @@
       separately and are never returned as recommendations. A final guard drops anything ineligible. */
 (function (root) {
   'use strict';
-  const ENGINE_VERSION = 'E6-2026-09-28';
+  const ENGINE_VERSION = 'E6.1-2026-10-14';
   const STEP = 100000;
 
   /* ---------- model facts ---------- */
@@ -70,7 +70,9 @@
   function eligibility(m, b, terr) {
     const no = reason => ({ status: 'ineligible', reason });
     const unk = reason => ({ status: 'unknown', reason });
-    if (!m.u) return no('not_on_sale');
+    // a known market car held out of the recommendation set (dataset `held`: 'size' = size class not yet confirmed,
+    // 'scope' = body type not recommended yet) is reported as such, never as "not sold in Egypt"; ranking is unaffected
+    if (!m.u) return m.held === 'size' ? unk('size') : m.held === 'scope' ? no('scope') : no('not_on_sale');
     if (!m.body) return unk('body');
     if (b.body && b.body.length && !b.body.includes(m.body)) return no('body');
     if (b.notBody && b.notBody.includes(m.body)) return no('body');

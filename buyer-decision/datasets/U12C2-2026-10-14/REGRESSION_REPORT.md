@@ -1,6 +1,6 @@
 # Regression / diagnostic report
 
-Engine E6-2026-09-28 · data U12C2-2026-10-14 · 57 cases · invariants 1194/1194 pass · understanding failures 0 (known 0)
+Engine E6.1-2026-10-14 · data U12C2-2026-10-14 · 57 cases · invariants 1194/1194 pass · understanding failures 0 (known 0)
 
 Market-status gate: inactive (no audited P2 dataset; every model reads unverified). shadow_* rows show what the contracts would do; they change nothing.
 

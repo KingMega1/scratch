@@ -125,6 +125,12 @@ const UNDERSTANDING = [
   ['nothing Chinese, hybrid please', { pt: 'hybrid', chinese: 'exclude' }],
   ["SUV, I don't want a Chinese car", { chinese: 'exclude', body: ['suv'] }],
   ["I don't want a sedan", { notBody: ['sedan'] }],
+  // P1-READINESS-02: four-digit model names are models when the brand is written before them; bare years are not
+  ['I want a Peugeot 3008', { mentions: [{ id: 'peugeot/3008', role: 'consider' }] }],
+  ['عايز بيجو 3008', { mentions: [{ id: 'peugeot/3008', role: 'consider' }] }],
+  ['Peugeot 5008 for my family', { mentions: [{ id: 'peugeot/5008', role: 'consider' }] }],
+  ['I want a 2024 model SUV', { mentions: undefined }],
+  ['SUV 2025 model around 2M', { mentions: undefined }],
 ];
 
 // EN/AR pairs expressing the same need: parsed briefs are compared; results are compared when briefs agree

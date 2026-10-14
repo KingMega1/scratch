@@ -24,7 +24,7 @@ const rd = f => fs.readFileSync(path.join(p2dir, f));
 const P2 = JSON.parse(rd('catalogue-serving.release.json')), MU = JSON.parse(rd('market_universe.json'));
 const REG = {}; { const [h, ...rows] = rd('registration_models.csv').toString().trim().split('\n'); const k = h.split(',');
   for (const r of rows) { const v = r.split(','); const o = Object.fromEntries(k.map((x, i) => [x, v[i]])); REG[`${o.reg_brand}|${o.reg_model}`] = o; } }
-const VERSION = 'U12C2-2026-10-14';
+const VERSION = process.env.CI_VERSION || 'U12C2-2026-10-14';
 const base = T.loadLaunchSnapshot(), U11 = JSON.parse(JSON.stringify(base.U));
 const V = Object.fromEntries(U11.models.map(m => [m.id, m]));
 const IDN = Object.fromEntries(MU.identities.map(x => [x.id, x]));
@@ -99,9 +99,11 @@ for (const m of models) {
     m.u = true; m.trims = []; log.unknown_price.push(m.id); continue;
   }
   else if (!((m.model_year || 0) >= 2025 || live)) why = 'discontinued';
-  if (why) { m.u = false; out(m.id, why); continue; }
+  // `held` tells the engine WHY a known market car is outside the recommendation set, so a buyer who names it is told the
+  // truth (never "not sold in Egypt"): 'scope' = a body type we don't recommend yet, 'size' = size class not yet confirmed
+  if (why) { m.u = false; if (why.startsWith('body_not_passenger_car')) m.held = 'scope'; out(m.id, why); continue; }
   // the hold applies only to cars new to the universe: U11 members without a size class are already in today's pools
-  if (E.size(m) == null && !(V[m.id] && V[m.id].u)) { m.u = false; log.held_no_size_class.push(m.id); continue; }
+  if (E.size(m) == null && !(V[m.id] && V[m.id].u)) { m.u = false; m.held = 'size'; log.held_no_size_class.push(m.id); continue; }
   m.u = true; log.in_universe.push(m.id);
 }
 const U = { meta: { ...U11.meta, version: VERSION, built: '2026-10-14', models_in_universe: models.filter(m => m.u).length, models_priced_in_universe: models.filter(m => m.u && m.trims.length).length }, models: models.filter(m => m.body).sort((x, y) => x.id.localeCompare(y.id)) }; // identities without a body stay in the manifest only

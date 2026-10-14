@@ -182,7 +182,7 @@
     }
     for (const [a, b] of Object.entries(EN_BRAND_ALIAS)) if (brands[b]) brands[b].add(a);
     aliases.sort((x, y) => y.alias.length - x.alias.length);
-    INDEX = { brands, aliases };
+    INDEX = { brands, aliases, models };
     return INDEX;
   }
 
@@ -208,8 +208,8 @@
         if (overlaps(s, e, a.alias)) continue;
         const bh = brandHits.find(h => h.brand === a.brand && h.idx < s && s - (h.idx + h.len) <= 3);
         if (!a.standalone && !bh) continue;
-        // "7 seats" / "2024" are not models
-        if (/^\d{4}$/.test(a.alias)) continue;
+        // "7 seats" / "2024" are not models — unless the brand is written right before it ("Peugeot 3008")
+        if (/^\d{4}$/.test(a.alias) && !bh) continue;
         hits.push({ ...a, idx: bh ? bh.idx : s, end: e, withBrand: !!bh });
         taken.push([s, e, a.alias]);
       }
@@ -226,7 +226,8 @@
   }
 
   function parse(text, models) {
-    if (!INDEX) buildIndex(models);
+    // rebuild when called with another dataset (a server can switch accepted snapshots without restarting)
+    if (!INDEX || INDEX.models !== models) buildIndex(models);
     const raw = String(text || '');
     const t = ' ' + norm(raw) + ' ';
     const r = { text: raw, extracted: [] };
