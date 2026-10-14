@@ -1258,13 +1258,11 @@
     "Mercedes|CLE"
    ],
    "evidence": [
-    "Market new-car pages with priced model years 2025 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
-    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Cabriolet-Coupe+no_sale_evidence (P1 eligibility unchanged)",
-    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+    "Market new-car pages with priced model years 2025 2026 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Cabriolet-Coupe+no_sale_evidence (P1 eligibility unchanged)"
    ],
    "audit_keys": [
-    "mercedes/cle-200",
-    "mercedesbenz/mercedesbenzcle200"
+    "mercedes/cle-200"
    ],
    "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
   },
@@ -1345,14 +1343,12 @@
    "evidence": [
     "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
     "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)",
-    "Market new-car pages with priced model years 2025 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
-    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)",
-    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+    "Market new-car pages with priced model years 2025 2026 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
    ],
    "audit_keys": [
     "mercedes/g-500",
-    "mercedes/g-63",
-    "mercedesbenz/mercedesbenzg63"
+    "mercedes/g-63"
    ],
    "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
   },
@@ -3799,40 +3795,6 @@
    "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
   },
   {
-   "id": "mercedes/gla",
-   "decision": "SOURCE_ALIAS",
-   "brand": "mercedes",
-   "model": "mercedes benz gla 200",
-   "alias_of_audit_key": "mercedesbenz/mercedesbenzgla200",
-   "audit_keys": [
-    "mercedesbenz/mercedesbenzgla200"
-   ],
-   "urls": [
-    "https://eg.hatla2ee.com/en/new-car/mercedes/mercedes-benz-gla-200"
-   ],
-   "evidence": [
-    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
-   ],
-   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
-  },
-  {
-   "id": "mercedes/glc",
-   "decision": "SOURCE_ALIAS",
-   "brand": "mercedes",
-   "model": "mercedes benz glc 43",
-   "alias_of_audit_key": "mercedesbenz/mercedesbenzglc43",
-   "audit_keys": [
-    "mercedesbenz/mercedesbenzglc43"
-   ],
-   "urls": [
-    "https://eg.hatla2ee.com/en/new-car/mercedes/mercedes-benz-glc-43"
-   ],
-   "evidence": [
-    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
-   ],
-   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
-  },
-  {
    "id": "mini/countryman",
    "decision": "SOURCE_ALIAS",
    "brand": "mini",
@@ -4326,6 +4288,51 @@
     "ContactCars article: NDS (Nour El-Din El-Sherif) named Venucia distributor https://www.contactcars.com/ar/media/articles/0a812810b974"
    ],
    "note": "Omission named by CEO: registered and launched by an Egyptian distributor; no market/official listing captured yet (source gap)."
+  },
+  {
+   "id": "denza/b3",
+   "decision": "NOT_ON_SALE",
+   "brand": "Denza",
+   "model": "B3",
+   "audit_keys": [
+    "denza/b3"
+   ],
+   "urls": [],
+   "evidence": [
+    "Registrations last 12m 111 / last 6m 48 (Denza|B3; BEV:111)",
+    "CEO statement 2026-10-14: Denza is not launched in Egypt yet"
+   ],
+   "note": "NOT_LAUNCHED: registrations are pre-launch/parallel imports; no Egyptian distributor sale."
+  },
+  {
+   "id": "denza/b5",
+   "decision": "NOT_ON_SALE",
+   "brand": "Denza",
+   "model": "B5",
+   "audit_keys": [
+    "denza/b5"
+   ],
+   "urls": [],
+   "evidence": [
+    "Registrations last 12m 138 / last 6m 49 (Denza|B5; Hybrid:138)",
+    "CEO statement 2026-10-14: Denza is not launched in Egypt yet"
+   ],
+   "note": "NOT_LAUNCHED: registrations are pre-launch/parallel imports; no Egyptian distributor sale."
+  },
+  {
+   "id": "denza/b8",
+   "decision": "NOT_ON_SALE",
+   "brand": "Denza",
+   "model": "B8",
+   "audit_keys": [
+    "denza/b8"
+   ],
+   "urls": [],
+   "evidence": [
+    "Registrations last 12m 61 / last 6m 58 (Denza|B8; Hybrid:61)",
+    "CEO statement 2026-10-14: Denza is not launched in Egypt yet"
+   ],
+   "note": "NOT_LAUNCHED: registrations are pre-launch/parallel imports; no Egyptian distributor sale."
   }
  ],
  "aliases": []

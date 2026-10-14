@@ -191,6 +191,9 @@ if 'venucia/v' in A:
     evidence=ev(['venucia/v','venucia/vonline'])+['Distributor launch news: NDS Group (Venucia Egypt distributor) launched V-Online, single trim, official price EGP 1,350,000 (Shift-EG https://www.shift-eg.com/news/local-news/details/26647/ ; publication date not captured) -> price NOT accepted (no dated Egyptian listing)',
       'ContactCars article: NDS (Nour El-Din El-Sherif) named Venucia distributor https://www.contactcars.com/ar/media/articles/0a812810b974'],
     note='Omission named by CEO: registered and launched by an Egyptian distributor; no market/official listing captured yet (source gap).'))
+for k in ['denza/b3','denza/b5','denza/b8']:  # CEO statement 2026-10-14: Denza not launched in Egypt yet
+  if k in A: ids.append(dict(id=k,decision='NOT_ON_SALE',brand='Denza',model=A[k]['model'],audit_keys=[k],urls=[],evidence=ev([k])+['CEO statement 2026-10-14: Denza is not launched in Egypt yet'],
+    note='NOT_LAUNCHED: registrations are pre-launch/parallel imports; no Egyptian distributor sale.'))
 c['identities']=ids
 json.dump(c,open('config/market_universe.json','w'),indent=1,ensure_ascii=False)
 import collections;print(collections.Counter(d['decision'] for d in ids))
