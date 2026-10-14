@@ -50049,8 +50049,125 @@
             }
           ]
         },
-        "specs": null,
-        "warranty": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "565",
+              "unit": "",
+              "applicability": "market trim pages: Advanced, Ultimate",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/citroen-c5_aircross/7f61920e6dcc | https://www.contactcars.com/en/new-cars/citroen-c5_aircross/a736c29d823a"
+            }
+          ],
+          "drive": [
+            {
+              "value": "FWD",
+              "unit": "",
+              "applicability": "market trim pages: Advanced, Ultimate",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/citroen-c5_aircross/7f61920e6dcc | https://www.contactcars.com/en/new-cars/citroen-c5_aircross/a736c29d823a"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "1600",
+              "unit": "",
+              "applicability": "market trim pages: Advanced, Ultimate",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/citroen-c5_aircross/7f61920e6dcc | https://www.contactcars.com/en/new-cars/citroen-c5_aircross/a736c29d823a"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "200",
+              "unit": "",
+              "applicability": "market trim pages: Advanced, Ultimate",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/citroen-c5_aircross/7f61920e6dcc | https://www.contactcars.com/en/new-cars/citroen-c5_aircross/a736c29d823a"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1689",
+              "unit": "",
+              "applicability": "market trim pages: Advanced, Ultimate",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/citroen-c5_aircross/7f61920e6dcc | https://www.contactcars.com/en/new-cars/citroen-c5_aircross/a736c29d823a"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4652",
+              "unit": "",
+              "applicability": "market trim pages: Advanced, Ultimate",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/citroen-c5_aircross/7f61920e6dcc | https://www.contactcars.com/en/new-cars/citroen-c5_aircross/a736c29d823a"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "180",
+              "unit": "",
+              "applicability": "market trim pages: Advanced, Ultimate",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/citroen-c5_aircross/7f61920e6dcc | https://www.contactcars.com/en/new-cars/citroen-c5_aircross/a736c29d823a"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages: Advanced, Ultimate",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/citroen-c5_aircross/7f61920e6dcc | https://www.contactcars.com/en/new-cars/citroen-c5_aircross/a736c29d823a"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "market trim pages: Advanced, Ultimate",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/citroen-c5_aircross/7f61920e6dcc | https://www.contactcars.com/en/new-cars/citroen-c5_aircross/a736c29d823a"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "300",
+              "unit": "",
+              "applicability": "market trim pages: Advanced, Ultimate",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/citroen-c5_aircross/7f61920e6dcc | https://www.contactcars.com/en/new-cars/citroen-c5_aircross/a736c29d823a"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: Advanced, Ultimate",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/citroen-c5_aircross/7f61920e6dcc | https://www.contactcars.com/en/new-cars/citroen-c5_aircross/a736c29d823a"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1902",
+              "unit": "",
+              "applicability": "market trim pages: Advanced, Ultimate",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/citroen-c5_aircross/7f61920e6dcc | https://www.contactcars.com/en/new-cars/citroen-c5_aircross/a736c29d823a"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "5 years / 150000 km",
+            "unit": "",
+            "applicability": "market trim pages: model",
+            "issuer": "ContactCars+Hatla2ee",
+            "source": "https://www.contactcars.com/en/new-cars/citroen-c5_aircross/7f61920e6dcc | https://www.contactcars.com/en/new-cars/citroen-c5_aircross/a736c29d823a"
+          }
+        ],
         "brochures": [],
         "logo": {
           "src": "/media/p2/brands/citroen.png",
@@ -50067,10 +50184,8 @@
         "conflicts": []
       },
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ]
     },
@@ -50548,8 +50663,134 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
-        "warranty": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "430",
+              "unit": "",
+              "applicability": "market trim pages: Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-rx5_plus/153d55b8e689"
+            }
+          ],
+          "drive": [
+            {
+              "value": "FWD",
+              "unit": "",
+              "applicability": "market trim pages: Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-rx5_plus/153d55b8e689"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "1500",
+              "unit": "",
+              "applicability": "market trim pages: Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-rx5_plus/153d55b8e689"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "55",
+              "unit": "",
+              "applicability": "market trim pages: Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-rx5_plus/153d55b8e689"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1719",
+              "unit": "",
+              "applicability": "market trim pages: Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-rx5_plus/153d55b8e689"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4571",
+              "unit": "",
+              "applicability": "market trim pages: Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-rx5_plus/153d55b8e689"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "171",
+              "unit": "",
+              "applicability": "market trim pages: Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-rx5_plus/153d55b8e689"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages: Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-rx5_plus/153d55b8e689"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "market trim pages: Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-rx5_plus/153d55b8e689"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "275",
+              "unit": "",
+              "applicability": "market trim pages: Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-rx5_plus/153d55b8e689"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "DCT",
+              "unit": "",
+              "applicability": "market trim pages: Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-rx5_plus/153d55b8e689"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2708",
+              "unit": "",
+              "applicability": "market trim pages: Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-rx5_plus/153d55b8e689"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1855",
+              "unit": "",
+              "applicability": "market trim pages: Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-rx5_plus/153d55b8e689"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "6 years / 150000 km",
+            "unit": "",
+            "applicability": "market trim pages: model",
+            "issuer": "ContactCars+Hatla2ee",
+            "source": "https://www.contactcars.com/en/new-cars/mg-rx5_plus/153d55b8e689"
+          }
+        ],
         "brochures": [],
         "logo": {
           "src": "/media/p2/brands/mg.png",
@@ -50567,10 +50808,8 @@
       },
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ]
     },
@@ -50665,8 +50904,139 @@
             }
           ]
         },
-        "specs": null,
-        "warranty": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "480",
+              "unit": "",
+              "applicability": "market trim pages:  Luxury Ultimate, M Sport Ultimate, xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-320i/2315945377de | https://www.contactcars.com/en/new-cars/bmw-320i/3da5612cb6ce | https://www.contactcars.com/en/new-cars/bmw-340i/8cc5fe2f0266"
+            }
+          ],
+          "drive": [
+            {
+              "value": "RWD",
+              "unit": "",
+              "applicability": "market trim pages:  Luxury Ultimate, M Sport Ultimate",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-320i/2315945377de | https://www.contactcars.com/en/new-cars/bmw-320i/3da5612cb6ce"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "1600",
+              "unit": "",
+              "applicability": "market trim pages:  Luxury Ultimate, M Sport Ultimate",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-320i/2315945377de | https://www.contactcars.com/en/new-cars/bmw-320i/3da5612cb6ce"
+            },
+            {
+              "value": "3000",
+              "unit": "",
+              "applicability": "market trim pages: xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-340i/8cc5fe2f0266"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "59",
+              "unit": "",
+              "applicability": "market trim pages:  Luxury Ultimate, M Sport Ultimate, xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-320i/2315945377de | https://www.contactcars.com/en/new-cars/bmw-320i/3da5612cb6ce | https://www.contactcars.com/en/new-cars/bmw-340i/8cc5fe2f0266"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1440",
+              "unit": "",
+              "applicability": "market trim pages:  Luxury Ultimate, M Sport Ultimate",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-320i/2315945377de | https://www.contactcars.com/en/new-cars/bmw-320i/3da5612cb6ce"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4713",
+              "unit": "",
+              "applicability": "market trim pages:  Luxury Ultimate, M Sport Ultimate",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-320i/2315945377de | https://www.contactcars.com/en/new-cars/bmw-320i/3da5612cb6ce"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "170",
+              "unit": "",
+              "applicability": "market trim pages:  Luxury Ultimate, M Sport Ultimate",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-320i/2315945377de | https://www.contactcars.com/en/new-cars/bmw-320i/3da5612cb6ce"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages:  Luxury Ultimate, M Sport Ultimate, xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-320i/2315945377de | https://www.contactcars.com/en/new-cars/bmw-320i/3da5612cb6ce | https://www.contactcars.com/en/new-cars/bmw-340i/8cc5fe2f0266"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "250",
+              "unit": "",
+              "applicability": "market trim pages:  Luxury Ultimate, M Sport Ultimate",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-320i/2315945377de | https://www.contactcars.com/en/new-cars/bmw-320i/3da5612cb6ce"
+            },
+            {
+              "value": "500",
+              "unit": "",
+              "applicability": "market trim pages: xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-340i/8cc5fe2f0266"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages:  Luxury Ultimate, M Sport Ultimate, xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-320i/2315945377de | https://www.contactcars.com/en/new-cars/bmw-320i/3da5612cb6ce | https://www.contactcars.com/en/new-cars/bmw-340i/8cc5fe2f0266"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2851",
+              "unit": "",
+              "applicability": "market trim pages:  Luxury Ultimate, M Sport Ultimate, xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-320i/2315945377de | https://www.contactcars.com/en/new-cars/bmw-320i/3da5612cb6ce | https://www.contactcars.com/en/new-cars/bmw-340i/8cc5fe2f0266"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1827",
+              "unit": "",
+              "applicability": "market trim pages:  Luxury Ultimate, M Sport Ultimate",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-320i/2315945377de | https://www.contactcars.com/en/new-cars/bmw-320i/3da5612cb6ce"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "5 years / 200000 km",
+            "unit": "",
+            "applicability": "market trim pages: model",
+            "issuer": "ContactCars+Hatla2ee",
+            "source": "https://www.contactcars.com/en/new-cars/bmw-320i/2315945377de | https://www.contactcars.com/en/new-cars/bmw-320i/3da5612cb6ce | https://www.contactcars.com/en/new-cars/bmw-340i/8cc5fe2f0266"
+          }
+        ],
         "brochures": [],
         "logo": {
           "src": "/media/p2/brands/bmw.png",
@@ -50683,10 +51053,8 @@
         "conflicts": []
       },
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ]
     },
@@ -50760,8 +51128,125 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
-        "warranty": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "2461",
+              "unit": "",
+              "applicability": "market trim pages: HEV Topline 8 Seats",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kia-carnival/bdf72ee7062d"
+            }
+          ],
+          "drive": [
+            {
+              "value": "FWD",
+              "unit": "",
+              "applicability": "market trim pages: HEV Topline 8 Seats",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kia-carnival/bdf72ee7062d"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "1600",
+              "unit": "",
+              "applicability": "market trim pages: HEV Topline 8 Seats",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kia-carnival/bdf72ee7062d"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "172",
+              "unit": "",
+              "applicability": "market trim pages: HEV Topline 8 Seats",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kia-carnival/bdf72ee7062d"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1775",
+              "unit": "",
+              "applicability": "market trim pages: HEV Topline 8 Seats",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kia-carnival/bdf72ee7062d"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "5155",
+              "unit": "",
+              "applicability": "market trim pages: HEV Topline 8 Seats",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kia-carnival/bdf72ee7062d"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Hybrid",
+              "unit": "",
+              "applicability": "market trim pages: HEV Topline 8 Seats",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kia-carnival/bdf72ee7062d"
+            }
+          ],
+          "seats": [
+            {
+              "value": "8",
+              "unit": "",
+              "applicability": "market trim pages: HEV Topline 8 Seats",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kia-carnival/bdf72ee7062d"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "366",
+              "unit": "",
+              "applicability": "market trim pages: HEV Topline 8 Seats",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kia-carnival/bdf72ee7062d"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: HEV Topline 8 Seats",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kia-carnival/bdf72ee7062d"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "3090",
+              "unit": "",
+              "applicability": "market trim pages: HEV Topline 8 Seats",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kia-carnival/bdf72ee7062d"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1760",
+              "unit": "",
+              "applicability": "market trim pages: HEV Topline 8 Seats",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kia-carnival/bdf72ee7062d"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "5 years / 100000 km",
+            "unit": "",
+            "applicability": "market trim pages: model",
+            "issuer": "ContactCars+Hatla2ee",
+            "source": "https://www.contactcars.com/en/new-cars/kia-carnival/bdf72ee7062d"
+          }
+        ],
         "brochures": [],
         "logo": {
           "src": "/media/p2/brands/kia.png",
@@ -50782,10 +51267,8 @@
       },
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ]
     },
@@ -50810,8 +51293,162 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
-        "warranty": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "570",
+              "unit": "",
+              "applicability": "market trim pages: 20 ­- xLine, 30 xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-x3/9c47986373a4 | https://www.contactcars.com/en/new-cars/bmw-x3/f32cbe74944d"
+            }
+          ],
+          "drive": [
+            {
+              "value": "RWD",
+              "unit": "",
+              "applicability": "market trim pages: 20 ­- xLine",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-x3/f32cbe74944d"
+            },
+            {
+              "value": "AWD/4WD",
+              "unit": "",
+              "applicability": "market trim pages: 30 xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-x3/9c47986373a4"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "1600",
+              "unit": "",
+              "applicability": "market trim pages: 20 ­- xLine",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-x3/f32cbe74944d"
+            },
+            {
+              "value": "2000",
+              "unit": "",
+              "applicability": "market trim pages: 30 xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-x3/9c47986373a4"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "65",
+              "unit": "",
+              "applicability": "market trim pages: 20 ­- xLine, 30 xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-x3/9c47986373a4 | https://www.contactcars.com/en/new-cars/bmw-x3/f32cbe74944d"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1660",
+              "unit": "",
+              "applicability": "market trim pages: 20 ­- xLine, 30 xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-x3/9c47986373a4 | https://www.contactcars.com/en/new-cars/bmw-x3/f32cbe74944d"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4755",
+              "unit": "",
+              "applicability": "market trim pages: 20 ­- xLine, 30 xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-x3/9c47986373a4 | https://www.contactcars.com/en/new-cars/bmw-x3/f32cbe74944d"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "190",
+              "unit": "",
+              "applicability": "market trim pages: 20 ­- xLine",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-x3/f32cbe74944d"
+            },
+            {
+              "value": "258",
+              "unit": "",
+              "applicability": "market trim pages: 30 xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-x3/9c47986373a4"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages: 20 ­- xLine, 30 xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-x3/9c47986373a4 | https://www.contactcars.com/en/new-cars/bmw-x3/f32cbe74944d"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "market trim pages: 20 ­- xLine, 30 xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-x3/9c47986373a4 | https://www.contactcars.com/en/new-cars/bmw-x3/f32cbe74944d"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "310",
+              "unit": "",
+              "applicability": "market trim pages: 20 ­- xLine",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-x3/f32cbe74944d"
+            },
+            {
+              "value": "400",
+              "unit": "",
+              "applicability": "market trim pages: 30 xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-x3/9c47986373a4"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: 20 ­- xLine, 30 xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-x3/9c47986373a4 | https://www.contactcars.com/en/new-cars/bmw-x3/f32cbe74944d"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2865",
+              "unit": "",
+              "applicability": "market trim pages: 20 ­- xLine, 30 xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-x3/9c47986373a4 | https://www.contactcars.com/en/new-cars/bmw-x3/f32cbe74944d"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1920",
+              "unit": "",
+              "applicability": "market trim pages: 20 ­- xLine, 30 xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-x3/9c47986373a4 | https://www.contactcars.com/en/new-cars/bmw-x3/f32cbe74944d"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "5 years / 200000 km",
+            "unit": "",
+            "applicability": "market trim pages: model",
+            "issuer": "ContactCars+Hatla2ee",
+            "source": "https://www.contactcars.com/en/new-cars/bmw-x3/9c47986373a4 | https://www.contactcars.com/en/new-cars/bmw-x3/f32cbe74944d"
+          }
+        ],
         "brochures": [],
         "logo": {
           "src": "/media/p2/brands/bmw.png",
@@ -50829,10 +51466,8 @@
       },
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ]
     },
@@ -51340,8 +51975,107 @@
             }
           ]
         },
-        "specs": null,
-        "warranty": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "230",
+              "unit": "",
+              "applicability": "market trim pages: EV",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/byd-dolphin_surf/fda22ba5e334"
+            }
+          ],
+          "drive": [
+            {
+              "value": "FWD",
+              "unit": "",
+              "applicability": "market trim pages: EV",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/byd-dolphin_surf/fda22ba5e334"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "135",
+              "unit": "",
+              "applicability": "market trim pages: EV",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/byd-dolphin_surf/fda22ba5e334"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1580",
+              "unit": "",
+              "applicability": "market trim pages: EV",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/byd-dolphin_surf/fda22ba5e334"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "3780",
+              "unit": "",
+              "applicability": "market trim pages: EV",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/byd-dolphin_surf/fda22ba5e334"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Electric",
+              "unit": "",
+              "applicability": "market trim pages: EV",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/byd-dolphin_surf/fda22ba5e334"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "135",
+              "unit": "",
+              "applicability": "market trim pages: EV",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/byd-dolphin_surf/fda22ba5e334"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: EV",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/byd-dolphin_surf/fda22ba5e334"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2500",
+              "unit": "",
+              "applicability": "market trim pages: EV",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/byd-dolphin_surf/fda22ba5e334"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1715",
+              "unit": "",
+              "applicability": "market trim pages: EV",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/byd-dolphin_surf/fda22ba5e334"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "6 years / 150000 km",
+            "unit": "",
+            "applicability": "market trim pages: model",
+            "issuer": "ContactCars+Hatla2ee",
+            "source": "https://www.contactcars.com/en/new-cars/byd-dolphin_surf/fda22ba5e334"
+          }
+        ],
         "brochures": [],
         "logo": {
           "src": "/media/p2/brands/byd.png",
@@ -51358,10 +52092,8 @@
         "conflicts": []
       },
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ]
     },
@@ -51406,7 +52138,98 @@
             }
           ]
         },
-        "specs": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "450",
+              "unit": "",
+              "applicability": "market trim pages: لاكشري",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/byd-atto_2/3622097658a8"
+            }
+          ],
+          "drive": [
+            {
+              "value": "FWD",
+              "unit": "",
+              "applicability": "market trim pages: لاكشري",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/byd-atto_2/3622097658a8"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1675",
+              "unit": "",
+              "applicability": "market trim pages: لاكشري",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/byd-atto_2/3622097658a8"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4310",
+              "unit": "",
+              "applicability": "market trim pages: لاكشري",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/byd-atto_2/3622097658a8"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "200",
+              "unit": "",
+              "applicability": "market trim pages: لاكشري",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/byd-atto_2/3622097658a8"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Electric",
+              "unit": "",
+              "applicability": "market trim pages: لاكشري",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/byd-atto_2/3622097658a8"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "310",
+              "unit": "",
+              "applicability": "market trim pages: لاكشري",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/byd-atto_2/3622097658a8"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: لاكشري",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/byd-atto_2/3622097658a8"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2620",
+              "unit": "",
+              "applicability": "market trim pages: لاكشري",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/byd-atto_2/3622097658a8"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1830",
+              "unit": "",
+              "applicability": "market trim pages: لاكشري",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/byd-atto_2/3622097658a8"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -51426,7 +52249,6 @@
         ]
       },
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
@@ -51615,7 +52437,89 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "490",
+              "unit": "",
+              "applicability": "market trim pages: eDrive40 M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-i5/248a52e2c7a3"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1515",
+              "unit": "",
+              "applicability": "market trim pages: eDrive40 M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-i5/248a52e2c7a3"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "5060",
+              "unit": "",
+              "applicability": "market trim pages: eDrive40 M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-i5/248a52e2c7a3"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "340",
+              "unit": "",
+              "applicability": "market trim pages: eDrive40 M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-i5/248a52e2c7a3"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Electric",
+              "unit": "",
+              "applicability": "market trim pages: eDrive40 M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-i5/248a52e2c7a3"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "market trim pages: eDrive40 M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-i5/248a52e2c7a3"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "400",
+              "unit": "",
+              "applicability": "market trim pages: eDrive40 M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-i5/248a52e2c7a3"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: eDrive40 M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-i5/248a52e2c7a3"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1900",
+              "unit": "",
+              "applicability": "market trim pages: eDrive40 M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-i5/248a52e2c7a3"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -51634,7 +52538,6 @@
       },
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
@@ -51662,8 +52565,116 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
-        "warranty": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "540",
+              "unit": "",
+              "applicability": "market trim pages:  Pure Excellence,  xDrive M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-740i/2e258f1682dd | https://www.contactcars.com/en/new-cars/bmw-760i/2324a09a352b"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "3000",
+              "unit": "",
+              "applicability": "market trim pages:  Pure Excellence",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-740i/2e258f1682dd"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "74",
+              "unit": "",
+              "applicability": "market trim pages:  Pure Excellence,  xDrive M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-740i/2e258f1682dd | https://www.contactcars.com/en/new-cars/bmw-760i/2324a09a352b"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1544",
+              "unit": "",
+              "applicability": "market trim pages:  Pure Excellence,  xDrive M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-740i/2e258f1682dd | https://www.contactcars.com/en/new-cars/bmw-760i/2324a09a352b"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "5391",
+              "unit": "",
+              "applicability": "market trim pages:  Pure Excellence,  xDrive M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-740i/2e258f1682dd | https://www.contactcars.com/en/new-cars/bmw-760i/2324a09a352b"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "544",
+              "unit": "",
+              "applicability": "market trim pages:  xDrive M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-760i/2324a09a352b"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages:  Pure Excellence,  xDrive M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-740i/2e258f1682dd | https://www.contactcars.com/en/new-cars/bmw-760i/2324a09a352b"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "520",
+              "unit": "",
+              "applicability": "market trim pages:  Pure Excellence",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-740i/2e258f1682dd"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages:  Pure Excellence,  xDrive M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-740i/2e258f1682dd | https://www.contactcars.com/en/new-cars/bmw-760i/2324a09a352b"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "3215",
+              "unit": "",
+              "applicability": "market trim pages:  Pure Excellence,  xDrive M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-740i/2e258f1682dd | https://www.contactcars.com/en/new-cars/bmw-760i/2324a09a352b"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1950",
+              "unit": "",
+              "applicability": "market trim pages:  Pure Excellence,  xDrive M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-740i/2e258f1682dd | https://www.contactcars.com/en/new-cars/bmw-760i/2324a09a352b"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "5 years / 200000 km",
+            "unit": "",
+            "applicability": "market trim pages: model",
+            "issuer": "ContactCars+Hatla2ee",
+            "source": "https://www.contactcars.com/en/new-cars/bmw-740i/2e258f1682dd | https://www.contactcars.com/en/new-cars/bmw-760i/2324a09a352b"
+          }
+        ],
         "brochures": [],
         "logo": {
           "src": "/media/p2/brands/bmw.png",
@@ -51681,10 +52692,8 @@
       },
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ]
     },
@@ -51710,8 +52719,125 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
-        "warranty": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "380",
+              "unit": "",
+              "applicability": "market trim pages: M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-118i/bce8adde46ce"
+            }
+          ],
+          "drive": [
+            {
+              "value": "FWD",
+              "unit": "",
+              "applicability": "market trim pages: M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-118i/bce8adde46ce"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "1500",
+              "unit": "",
+              "applicability": "market trim pages: M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-118i/bce8adde46ce"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "156",
+              "unit": "",
+              "applicability": "market trim pages: M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-118i/bce8adde46ce"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1459",
+              "unit": "",
+              "applicability": "market trim pages: M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-118i/bce8adde46ce"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4361",
+              "unit": "",
+              "applicability": "market trim pages: M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-118i/bce8adde46ce"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "156",
+              "unit": "",
+              "applicability": "market trim pages: M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-118i/bce8adde46ce"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages: M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-118i/bce8adde46ce"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "market trim pages: M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-118i/bce8adde46ce"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "230",
+              "unit": "",
+              "applicability": "market trim pages: M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-118i/bce8adde46ce"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2670",
+              "unit": "",
+              "applicability": "market trim pages: M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-118i/bce8adde46ce"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1800",
+              "unit": "",
+              "applicability": "market trim pages: M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-118i/bce8adde46ce"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "5 years / 200000 km",
+            "unit": "",
+            "applicability": "market trim pages: model",
+            "issuer": "ContactCars+Hatla2ee",
+            "source": "https://www.contactcars.com/en/new-cars/bmw-118i/bce8adde46ce"
+          }
+        ],
         "brochures": [],
         "logo": {
           "src": "/media/p2/brands/bmw.png",
@@ -51729,10 +52855,8 @@
       },
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ]
     },
@@ -51796,8 +52920,134 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
-        "warranty": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "300",
+              "unit": "",
+              "applicability": "market trim pages: M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-420i_convertible/6ed82f569dca"
+            }
+          ],
+          "drive": [
+            {
+              "value": "RWD",
+              "unit": "",
+              "applicability": "market trim pages:  Gran Coupe - M Sport, M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-420i_convertible/6ed82f569dca | https://www.contactcars.com/en/new-cars/bmw-420i_gran_coupe/3442e838f8ae"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "2000",
+              "unit": "",
+              "applicability": "market trim pages:  Gran Coupe - M Sport, M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-420i_convertible/6ed82f569dca | https://www.contactcars.com/en/new-cars/bmw-420i_gran_coupe/3442e838f8ae"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "59",
+              "unit": "",
+              "applicability": "market trim pages:  Gran Coupe - M Sport, M Sport, xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-420i_convertible/6ed82f569dca | https://www.contactcars.com/en/new-cars/bmw-420i_gran_coupe/3442e838f8ae | https://www.contactcars.com/en/new-cars/bmw-440i_coupe/2ebe7ab6736d"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "124",
+              "unit": "",
+              "applicability": "market trim pages: M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-420i_convertible/6ed82f569dca"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4768",
+              "unit": "",
+              "applicability": "market trim pages: xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-440i_coupe/2ebe7ab6736d"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "184",
+              "unit": "",
+              "applicability": "market trim pages:  Gran Coupe - M Sport, M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-420i_convertible/6ed82f569dca | https://www.contactcars.com/en/new-cars/bmw-420i_gran_coupe/3442e838f8ae"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages:  Gran Coupe - M Sport, M Sport, xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-420i_convertible/6ed82f569dca | https://www.contactcars.com/en/new-cars/bmw-420i_gran_coupe/3442e838f8ae | https://www.contactcars.com/en/new-cars/bmw-440i_coupe/2ebe7ab6736d"
+            }
+          ],
+          "seats": [
+            {
+              "value": "4",
+              "unit": "",
+              "applicability": "market trim pages: M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-420i_convertible/6ed82f569dca"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "300",
+              "unit": "",
+              "applicability": "market trim pages:  Gran Coupe - M Sport, M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-420i_convertible/6ed82f569dca | https://www.contactcars.com/en/new-cars/bmw-420i_gran_coupe/3442e838f8ae"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages:  Gran Coupe - M Sport, M Sport, xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-420i_convertible/6ed82f569dca | https://www.contactcars.com/en/new-cars/bmw-420i_gran_coupe/3442e838f8ae | https://www.contactcars.com/en/new-cars/bmw-440i_coupe/2ebe7ab6736d"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2851",
+              "unit": "",
+              "applicability": "market trim pages: xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-440i_coupe/2ebe7ab6736d"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1852",
+              "unit": "",
+              "applicability": "market trim pages:  Gran Coupe - M Sport, M Sport, xDrive",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-420i_convertible/6ed82f569dca | https://www.contactcars.com/en/new-cars/bmw-420i_gran_coupe/3442e838f8ae | https://www.contactcars.com/en/new-cars/bmw-440i_coupe/2ebe7ab6736d"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "5 years / 200000 km",
+            "unit": "",
+            "applicability": "market trim pages: model",
+            "issuer": "ContactCars+Hatla2ee",
+            "source": "https://www.contactcars.com/en/new-cars/bmw-420i_convertible/6ed82f569dca | https://www.contactcars.com/en/new-cars/bmw-420i_gran_coupe/3442e838f8ae | https://www.contactcars.com/en/new-cars/bmw-440i_coupe/2ebe7ab6736d"
+          }
+        ],
         "brochures": [],
         "logo": {
           "src": "/media/p2/brands/bmw.png",
@@ -51815,10 +53065,8 @@
       },
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ]
     },
@@ -51843,7 +53091,35 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
+        "specs": {
+          "power_hp": [
+            {
+              "value": "340",
+              "unit": "",
+              "applicability": "market trim pages: eDrive40 M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-i4/74fd0fd8453c"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Electric",
+              "unit": "",
+              "applicability": "market trim pages: eDrive40 M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-i4/74fd0fd8453c"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: eDrive40 M Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/bmw-i4/74fd0fd8453c"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -52215,7 +53491,71 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
+        "specs": {
+          "drive": [
+            {
+              "value": "AWD/4WD",
+              "unit": "",
+              "applicability": "market trim pages: 4M SALOON LONG",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-s450/d65c9b5d9f9b"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "3000",
+              "unit": "",
+              "applicability": "market trim pages: 4M SALOON LONG",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-s450/d65c9b5d9f9b"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1503",
+              "unit": "",
+              "applicability": "market trim pages: 4M SALOON LONG",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-s450/d65c9b5d9f9b"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages: 4M SALOON LONG",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-s450/d65c9b5d9f9b"
+            }
+          ],
+          "seats": [
+            {
+              "value": "4",
+              "unit": "",
+              "applicability": "market trim pages: 4M SALOON LONG",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-s450/d65c9b5d9f9b"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: 4M SALOON LONG",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-s450/d65c9b5d9f9b"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "3216",
+              "unit": "",
+              "applicability": "market trim pages: 4M SALOON LONG",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-s450/d65c9b5d9f9b"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -52237,7 +53577,6 @@
       },
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
@@ -52265,7 +53604,107 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "505",
+              "unit": "",
+              "applicability": "market trim pages: 4M SALOON",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-maybach_s_580/7cb5dd2ecea7"
+            }
+          ],
+          "drive": [
+            {
+              "value": "AWD/4WD",
+              "unit": "",
+              "applicability": "market trim pages: 4M SALOON",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-maybach_s_580/7cb5dd2ecea7"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "4000",
+              "unit": "",
+              "applicability": "market trim pages: 4M SALOON",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-maybach_s_580/7cb5dd2ecea7"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "76",
+              "unit": "",
+              "applicability": "market trim pages: 4M SALOON",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-maybach_s_580/7cb5dd2ecea7"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1510",
+              "unit": "",
+              "applicability": "market trim pages: 4M SALOON",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-maybach_s_580/7cb5dd2ecea7"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "5469",
+              "unit": "",
+              "applicability": "market trim pages: 4M SALOON",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-maybach_s_580/7cb5dd2ecea7"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "503",
+              "unit": "",
+              "applicability": "market trim pages: 4M SALOON",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-maybach_s_580/7cb5dd2ecea7"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages: 4M SALOON",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-maybach_s_580/7cb5dd2ecea7"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: 4M SALOON",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-maybach_s_580/7cb5dd2ecea7"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "3396",
+              "unit": "",
+              "applicability": "market trim pages: 4M SALOON",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-maybach_s_580/7cb5dd2ecea7"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "2109",
+              "unit": "",
+              "applicability": "market trim pages: 4M SALOON",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-maybach_s_580/7cb5dd2ecea7"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -52284,7 +53723,6 @@
       },
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
@@ -52493,7 +53931,35 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
+        "specs": {
+          "engine_cc": [
+            {
+              "value": "2000",
+              "unit": "",
+              "applicability": "market trim pages: Sport - Cabriolet, Sport - Coupe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-cle_200/73d8b66eabfd | https://www.contactcars.com/en/new-cars/mercedes-cle_200/a2e220a94b3a"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages: Sport - Cabriolet, Sport - Coupe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-cle_200/73d8b66eabfd | https://www.contactcars.com/en/new-cars/mercedes-cle_200/a2e220a94b3a"
+            }
+          ],
+          "seats": [
+            {
+              "value": "4",
+              "unit": "",
+              "applicability": "market trim pages: Sport - Cabriolet, Sport - Coupe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-cle_200/73d8b66eabfd | https://www.contactcars.com/en/new-cars/mercedes-cle_200/a2e220a94b3a"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -52541,7 +54007,26 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
+        "specs": {
+          "engine_cc": [
+            {
+              "value": "4000",
+              "unit": "",
+              "applicability": "market trim pages: AMG",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-sl55_amg/027865293748"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages: AMG",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-sl55_amg/027865293748"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -52587,7 +54072,35 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
+        "specs": {
+          "drive": [
+            {
+              "value": "AWD/4WD",
+              "unit": "",
+              "applicability": "market trim pages: AMG GT 63 4M+ Coupe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-amg_gt/ec6e9ebca123"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "4000",
+              "unit": "",
+              "applicability": "market trim pages: AMG GT 63 4M+ Coupe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-amg_gt/ec6e9ebca123"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages: AMG GT 63 4M+ Coupe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-amg_gt/ec6e9ebca123"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -52635,7 +54148,35 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
+        "specs": {
+          "engine_cc": [
+            {
+              "value": "4000",
+              "unit": "",
+              "applicability": "market trim pages: AMG NIGHT EDITION, AMG Night Edition",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-g_500/1da938ef5e45 | https://www.contactcars.com/en/new-cars/mercedes-g_63/18d320638a5e"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages: AMG NIGHT EDITION, AMG Night Edition",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-g_500/1da938ef5e45 | https://www.contactcars.com/en/new-cars/mercedes-g_63/18d320638a5e"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "market trim pages: AMG NIGHT EDITION, AMG Night Edition",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mercedes-g_500/1da938ef5e45 | https://www.contactcars.com/en/new-cars/mercedes-g_63/18d320638a5e"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -52770,7 +54311,35 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
+        "specs": {
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages: 992.2",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/porsche-911_gt3/80d549a01893"
+            }
+          ],
+          "seats": [
+            {
+              "value": "2",
+              "unit": "",
+              "applicability": "market trim pages: 992.2",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/porsche-911_gt3/80d549a01893"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "450",
+              "unit": "",
+              "applicability": "market trim pages: 992.2",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/porsche-911_gt3/80d549a01893"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -53157,7 +54726,17 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
+        "specs": {
+          "powertrain_class": [
+            {
+              "value": "Electric",
+              "unit": "",
+              "applicability": "market trim pages: Emeya, Emeya R, Emeya S",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/lotus-emeya/2963aeb60d58 | https://www.contactcars.com/en/new-cars/lotus-emeya/40536d0f32e5 | https://www.contactcars.com/en/new-cars/lotus-emeya/43f4f6fd0b0a"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": null,
@@ -53253,7 +54832,80 @@
             }
           ]
         },
-        "specs": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "313",
+              "unit": "",
+              "applicability": "market trim pages: Brabus",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_1/65171d139f99 | https://www.contactcars.com/en/new-cars/smart-hashtag_1/941f5717b31b"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1636",
+              "unit": "",
+              "applicability": "market trim pages: Brabus, Premium, Pro+, Pure+",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_1/4289f3b625b6 | https://www.contactcars.com/en/new-cars/smart-hashtag_1/65171d139f99 | https://www.contactcars.com/en/new-cars/smart-hashtag_1/941f5717b31b | https://www.contactcars.com/en/new-cars/smart-hashtag_1/bb96432e25cb | https://www.cont"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4270",
+              "unit": "",
+              "applicability": "market trim pages: Brabus, Premium, Pro+, Pure+",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_1/4289f3b625b6 | https://www.contactcars.com/en/new-cars/smart-hashtag_1/65171d139f99 | https://www.contactcars.com/en/new-cars/smart-hashtag_1/941f5717b31b | https://www.contactcars.com/en/new-cars/smart-hashtag_1/bb96432e25cb | https://www.cont"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Electric",
+              "unit": "",
+              "applicability": "market trim pages: Brabus, Premium, Pro+, Pure+",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_1/4289f3b625b6 | https://www.contactcars.com/en/new-cars/smart-hashtag_1/65171d139f99 | https://www.contactcars.com/en/new-cars/smart-hashtag_1/941f5717b31b | https://www.contactcars.com/en/new-cars/smart-hashtag_1/bb96432e25cb | https://www.cont"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "market trim pages: Brabus, Premium, Pro+, Pure+",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_1/4289f3b625b6 | https://www.contactcars.com/en/new-cars/smart-hashtag_1/65171d139f99 | https://www.contactcars.com/en/new-cars/smart-hashtag_1/941f5717b31b | https://www.contactcars.com/en/new-cars/smart-hashtag_1/bb96432e25cb | https://www.cont"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: Brabus, Premium, Pro+, Pure+",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_1/4289f3b625b6 | https://www.contactcars.com/en/new-cars/smart-hashtag_1/65171d139f99 | https://www.contactcars.com/en/new-cars/smart-hashtag_1/941f5717b31b | https://www.contactcars.com/en/new-cars/smart-hashtag_1/bb96432e25cb | https://www.cont"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2750",
+              "unit": "",
+              "applicability": "market trim pages: Brabus, Premium, Pro+, Pure+",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_1/4289f3b625b6 | https://www.contactcars.com/en/new-cars/smart-hashtag_1/65171d139f99 | https://www.contactcars.com/en/new-cars/smart-hashtag_1/941f5717b31b | https://www.contactcars.com/en/new-cars/smart-hashtag_1/bb96432e25cb | https://www.cont"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1822",
+              "unit": "",
+              "applicability": "market trim pages: Brabus, Premium, Pro+, Pure+",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_1/4289f3b625b6 | https://www.contactcars.com/en/new-cars/smart-hashtag_1/65171d139f99 | https://www.contactcars.com/en/new-cars/smart-hashtag_1/941f5717b31b | https://www.contactcars.com/en/new-cars/smart-hashtag_1/bb96432e25cb | https://www.cont"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": null,
@@ -53266,7 +54918,6 @@
         ]
       },
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -53341,7 +54992,71 @@
             }
           ]
         },
-        "specs": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "370",
+              "unit": "",
+              "applicability": "market trim pages: Brabus, Premium, Pro+",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_3/0b73920afceb | https://www.contactcars.com/en/new-cars/smart-hashtag_3/64958f98e7e5 | https://www.contactcars.com/en/new-cars/smart-hashtag_3/6abc2773b7c7 | https://www.contactcars.com/en/new-cars/smart-hashtag_3/8b4defd9df35 | https://www.cont"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1556",
+              "unit": "",
+              "applicability": "market trim pages: Pro+",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_3/64958f98e7e5 | https://www.contactcars.com/en/new-cars/smart-hashtag_3/8b4defd9df35"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4400",
+              "unit": "",
+              "applicability": "market trim pages: Brabus, Premium, Pro+",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_3/0b73920afceb | https://www.contactcars.com/en/new-cars/smart-hashtag_3/64958f98e7e5 | https://www.contactcars.com/en/new-cars/smart-hashtag_3/6abc2773b7c7 | https://www.contactcars.com/en/new-cars/smart-hashtag_3/8b4defd9df35 | https://www.cont"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "market trim pages: Brabus, Premium, Pro+",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_3/0b73920afceb | https://www.contactcars.com/en/new-cars/smart-hashtag_3/64958f98e7e5 | https://www.contactcars.com/en/new-cars/smart-hashtag_3/6abc2773b7c7 | https://www.contactcars.com/en/new-cars/smart-hashtag_3/8b4defd9df35 | https://www.cont"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: Brabus, Premium, Pro+",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_3/0b73920afceb | https://www.contactcars.com/en/new-cars/smart-hashtag_3/64958f98e7e5 | https://www.contactcars.com/en/new-cars/smart-hashtag_3/6abc2773b7c7 | https://www.contactcars.com/en/new-cars/smart-hashtag_3/8b4defd9df35 | https://www.cont"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2785",
+              "unit": "",
+              "applicability": "market trim pages: Pro+",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_3/64958f98e7e5 | https://www.contactcars.com/en/new-cars/smart-hashtag_3/8b4defd9df35"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1844",
+              "unit": "",
+              "applicability": "market trim pages: Brabus, Premium, Pro+",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_3/0b73920afceb | https://www.contactcars.com/en/new-cars/smart-hashtag_3/64958f98e7e5 | https://www.contactcars.com/en/new-cars/smart-hashtag_3/6abc2773b7c7 | https://www.contactcars.com/en/new-cars/smart-hashtag_3/8b4defd9df35 | https://www.cont"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": null,
@@ -53354,7 +55069,6 @@
         ]
       },
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -53428,8 +55142,105 @@
             }
           ]
         },
-        "specs": null,
-        "warranty": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "630",
+              "unit": "",
+              "applicability": "market trim pages: BRABUS, PREMIUM, PRO+",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_5/2b32531bea78 | https://www.contactcars.com/en/new-cars/smart-hashtag_5/7b55c75ea12e | https://www.contactcars.com/en/new-cars/smart-hashtag_5/b5b81b83530d"
+            }
+          ],
+          "drive": [
+            {
+              "value": "RWD",
+              "unit": "",
+              "applicability": "market trim pages: BRABUS, PREMIUM, PRO+",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_5/2b32531bea78 | https://www.contactcars.com/en/new-cars/smart-hashtag_5/7b55c75ea12e | https://www.contactcars.com/en/new-cars/smart-hashtag_5/b5b81b83530d"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1705",
+              "unit": "",
+              "applicability": "market trim pages: BRABUS, PREMIUM, PRO+",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_5/2b32531bea78 | https://www.contactcars.com/en/new-cars/smart-hashtag_5/7b55c75ea12e | https://www.contactcars.com/en/new-cars/smart-hashtag_5/b5b81b83530d"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Electric",
+              "unit": "",
+              "applicability": "market trim pages: BRABUS, PREMIUM, PRO+",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_5/2b32531bea78 | https://www.contactcars.com/en/new-cars/smart-hashtag_5/7b55c75ea12e | https://www.contactcars.com/en/new-cars/smart-hashtag_5/b5b81b83530d"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "market trim pages: BRABUS, PREMIUM, PRO+",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_5/2b32531bea78 | https://www.contactcars.com/en/new-cars/smart-hashtag_5/7b55c75ea12e | https://www.contactcars.com/en/new-cars/smart-hashtag_5/b5b81b83530d"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "710",
+              "unit": "",
+              "applicability": "market trim pages: BRABUS",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_5/2b32531bea78"
+            },
+            {
+              "value": "373",
+              "unit": "",
+              "applicability": "market trim pages: PREMIUM, PRO+",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_5/7b55c75ea12e | https://www.contactcars.com/en/new-cars/smart-hashtag_5/b5b81b83530d"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: BRABUS, PREMIUM, PRO+",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_5/2b32531bea78 | https://www.contactcars.com/en/new-cars/smart-hashtag_5/7b55c75ea12e | https://www.contactcars.com/en/new-cars/smart-hashtag_5/b5b81b83530d"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2900",
+              "unit": "",
+              "applicability": "market trim pages: BRABUS, PREMIUM, PRO+",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_5/2b32531bea78 | https://www.contactcars.com/en/new-cars/smart-hashtag_5/7b55c75ea12e | https://www.contactcars.com/en/new-cars/smart-hashtag_5/b5b81b83530d"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1920",
+              "unit": "",
+              "applicability": "market trim pages: BRABUS, PREMIUM, PRO+",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_5/2b32531bea78 | https://www.contactcars.com/en/new-cars/smart-hashtag_5/7b55c75ea12e | https://www.contactcars.com/en/new-cars/smart-hashtag_5/b5b81b83530d"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "5 years / 150000 km",
+            "unit": "",
+            "applicability": "market trim pages: model",
+            "issuer": "ContactCars+Hatla2ee",
+            "source": "https://www.contactcars.com/en/new-cars/smart-hashtag_5/2b32531bea78 | https://www.contactcars.com/en/new-cars/smart-hashtag_5/7b55c75ea12e | https://www.contactcars.com/en/new-cars/smart-hashtag_5/b5b81b83530d"
+          }
+        ],
         "brochures": [],
         "logo": null,
         "hero_image": null,
@@ -53437,11 +55248,9 @@
         "conflicts": []
       },
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ]
     },
@@ -53521,7 +55330,98 @@
             }
           ]
         },
-        "specs": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "1030",
+              "unit": "",
+              "applicability": "market trim pages: Opulent 22\" wheels, Ultra 21” Wheels ",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/im_motors-ls9/0f97a62441d9 | https://www.contactcars.com/en/new-cars/im_motors-ls9/359f040e29f4"
+            }
+          ],
+          "drive": [
+            {
+              "value": "AWD/4WD",
+              "unit": "",
+              "applicability": "market trim pages: Opulent 22\" wheels, Ultra 21” Wheels ",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/im_motors-ls9/0f97a62441d9 | https://www.contactcars.com/en/new-cars/im_motors-ls9/359f040e29f4"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "1500",
+              "unit": "",
+              "applicability": "market trim pages: Opulent 22\" wheels, Ultra 21” Wheels ",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/im_motors-ls9/0f97a62441d9 | https://www.contactcars.com/en/new-cars/im_motors-ls9/359f040e29f4"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1806",
+              "unit": "",
+              "applicability": "market trim pages: Opulent 22\" wheels, Ultra 21” Wheels ",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/im_motors-ls9/0f97a62441d9 | https://www.contactcars.com/en/new-cars/im_motors-ls9/359f040e29f4"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "5279",
+              "unit": "",
+              "applicability": "market trim pages: Opulent 22\" wheels, Ultra 21” Wheels ",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/im_motors-ls9/0f97a62441d9 | https://www.contactcars.com/en/new-cars/im_motors-ls9/359f040e29f4"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "510",
+              "unit": "",
+              "applicability": "market trim pages: Opulent 22\" wheels, Ultra 21” Wheels ",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/im_motors-ls9/0f97a62441d9 | https://www.contactcars.com/en/new-cars/im_motors-ls9/359f040e29f4"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "670",
+              "unit": "",
+              "applicability": "market trim pages: Opulent 22\" wheels, Ultra 21” Wheels ",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/im_motors-ls9/0f97a62441d9 | https://www.contactcars.com/en/new-cars/im_motors-ls9/359f040e29f4"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: Opulent 22\" wheels, Ultra 21” Wheels ",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/im_motors-ls9/0f97a62441d9 | https://www.contactcars.com/en/new-cars/im_motors-ls9/359f040e29f4"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "3160",
+              "unit": "",
+              "applicability": "market trim pages: Opulent 22\" wheels, Ultra 21” Wheels ",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/im_motors-ls9/0f97a62441d9 | https://www.contactcars.com/en/new-cars/im_motors-ls9/359f040e29f4"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "2000",
+              "unit": "",
+              "applicability": "market trim pages: Opulent 22\" wheels, Ultra 21” Wheels ",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/im_motors-ls9/0f97a62441d9 | https://www.contactcars.com/en/new-cars/im_motors-ls9/359f040e29f4"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -53539,7 +55439,6 @@
         "conflicts": []
       },
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
@@ -53672,7 +55571,98 @@
             }
           ]
         },
-        "specs": null,
+        "specs": {
+          "drive": [
+            {
+              "value": "AWD/4WD",
+              "unit": "",
+              "applicability": "market trim pages: Signature",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/m_hero-1_917/1b3c0cbb5f08"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "1500",
+              "unit": "",
+              "applicability": "market trim pages: Signature",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/m_hero-1_917/1b3c0cbb5f08"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1935",
+              "unit": "",
+              "applicability": "market trim pages: Signature",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/m_hero-1_917/1b3c0cbb5f08"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4987",
+              "unit": "",
+              "applicability": "market trim pages: Signature",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/m_hero-1_917/1b3c0cbb5f08"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "804",
+              "unit": "",
+              "applicability": "market trim pages: Signature",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/m_hero-1_917/1b3c0cbb5f08"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "market trim pages: Signature",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/m_hero-1_917/1b3c0cbb5f08"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "1050",
+              "unit": "",
+              "applicability": "market trim pages: Signature",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/m_hero-1_917/1b3c0cbb5f08"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: Signature",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/m_hero-1_917/1b3c0cbb5f08"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2950",
+              "unit": "",
+              "applicability": "market trim pages: Signature",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/m_hero-1_917/1b3c0cbb5f08"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "2080",
+              "unit": "",
+              "applicability": "market trim pages: Signature",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/m_hero-1_917/1b3c0cbb5f08"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": null,
@@ -53681,7 +55671,6 @@
         "conflicts": []
       },
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -53711,7 +55700,98 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "410",
+              "unit": "",
+              "applicability": "market trim pages: Air, Pro",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/arcfox-koala_s/0ef72ca8ce43 | https://www.contactcars.com/en/new-cars/arcfox-koala_s/5dac3b9fa3df"
+            }
+          ],
+          "drive": [
+            {
+              "value": "FWD",
+              "unit": "",
+              "applicability": "market trim pages: Air, Pro",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/arcfox-koala_s/0ef72ca8ce43 | https://www.contactcars.com/en/new-cars/arcfox-koala_s/5dac3b9fa3df"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1655",
+              "unit": "",
+              "applicability": "market trim pages: Air, Pro",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/arcfox-koala_s/0ef72ca8ce43 | https://www.contactcars.com/en/new-cars/arcfox-koala_s/5dac3b9fa3df"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4500",
+              "unit": "",
+              "applicability": "market trim pages: Air, Pro",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/arcfox-koala_s/0ef72ca8ce43 | https://www.contactcars.com/en/new-cars/arcfox-koala_s/5dac3b9fa3df"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "161",
+              "unit": "",
+              "applicability": "market trim pages: Air, Pro",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/arcfox-koala_s/0ef72ca8ce43 | https://www.contactcars.com/en/new-cars/arcfox-koala_s/5dac3b9fa3df"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Electric",
+              "unit": "",
+              "applicability": "market trim pages: Air, Pro",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/arcfox-koala_s/0ef72ca8ce43 | https://www.contactcars.com/en/new-cars/arcfox-koala_s/5dac3b9fa3df"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "240",
+              "unit": "",
+              "applicability": "market trim pages: Air, Pro",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/arcfox-koala_s/0ef72ca8ce43 | https://www.contactcars.com/en/new-cars/arcfox-koala_s/5dac3b9fa3df"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: Air, Pro",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/arcfox-koala_s/0ef72ca8ce43 | https://www.contactcars.com/en/new-cars/arcfox-koala_s/5dac3b9fa3df"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2820",
+              "unit": "",
+              "applicability": "market trim pages: Air, Pro",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/arcfox-koala_s/0ef72ca8ce43 | https://www.contactcars.com/en/new-cars/arcfox-koala_s/5dac3b9fa3df"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1870",
+              "unit": "",
+              "applicability": "market trim pages: Air, Pro",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/arcfox-koala_s/0ef72ca8ce43 | https://www.contactcars.com/en/new-cars/arcfox-koala_s/5dac3b9fa3df"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -53735,7 +55815,6 @@
       },
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
@@ -53786,7 +55865,62 @@
             }
           ]
         },
-        "specs": null,
+        "specs": {
+          "drive": [
+            {
+              "value": "AWD/4WD",
+              "unit": "",
+              "applicability": "market trim pages: S-Line",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/audi-rs_e_tron_gt/0592500ce75b"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1414",
+              "unit": "",
+              "applicability": "market trim pages: S-Line",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/audi-rs_e_tron_gt/0592500ce75b"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4989",
+              "unit": "",
+              "applicability": "market trim pages: S-Line",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/audi-rs_e_tron_gt/0592500ce75b"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Electric",
+              "unit": "",
+              "applicability": "market trim pages: S-Line",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/audi-rs_e_tron_gt/0592500ce75b"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: S-Line",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/audi-rs_e_tron_gt/0592500ce75b"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2900",
+              "unit": "",
+              "applicability": "market trim pages: S-Line",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/audi-rs_e_tron_gt/0592500ce75b"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -53804,7 +55938,6 @@
         "conflicts": []
       },
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
@@ -53915,8 +56048,107 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
-        "warranty": null,
+        "specs": {
+          "drive": [
+            {
+              "value": "AWD/4WD",
+              "unit": "",
+              "applicability": "market trim pages: Signature Luxury AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/cadillac-lyriq/d1201fcf947f"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "178",
+              "unit": "",
+              "applicability": "market trim pages: Signature Luxury AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/cadillac-lyriq/d1201fcf947f"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1622",
+              "unit": "",
+              "applicability": "market trim pages: Signature Luxury AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/cadillac-lyriq/d1201fcf947f"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4994",
+              "unit": "",
+              "applicability": "market trim pages: Signature Luxury AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/cadillac-lyriq/d1201fcf947f"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "515",
+              "unit": "",
+              "applicability": "market trim pages: Signature Luxury AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/cadillac-lyriq/d1201fcf947f"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Electric",
+              "unit": "",
+              "applicability": "market trim pages: Signature Luxury AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/cadillac-lyriq/d1201fcf947f"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "610",
+              "unit": "",
+              "applicability": "market trim pages: Signature Luxury AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/cadillac-lyriq/d1201fcf947f"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: Signature Luxury AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/cadillac-lyriq/d1201fcf947f"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "3094",
+              "unit": "",
+              "applicability": "market trim pages: Signature Luxury AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/cadillac-lyriq/d1201fcf947f"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1976",
+              "unit": "",
+              "applicability": "market trim pages: Signature Luxury AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/cadillac-lyriq/d1201fcf947f"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "6 years / 250000 km",
+            "unit": "",
+            "applicability": "market trim pages: model",
+            "issuer": "ContactCars+Hatla2ee",
+            "source": "https://www.contactcars.com/en/new-cars/cadillac-lyriq/d1201fcf947f"
+          }
+        ],
         "brochures": [],
         "logo": {
           "src": "/media/p2/brands/cadillac.png",
@@ -53934,10 +56166,8 @@
       },
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ]
     },
@@ -53961,8 +56191,80 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
-        "warranty": null,
+        "specs": {
+          "drive": [
+            {
+              "value": "AWD/4WD",
+              "unit": "",
+              "applicability": "market trim pages: Premium Luxury AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/cadillac-optiq/9ee163e92d81"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "152",
+              "unit": "",
+              "applicability": "market trim pages: Premium Luxury AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/cadillac-optiq/9ee163e92d81"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1642",
+              "unit": "",
+              "applicability": "market trim pages: Premium Luxury AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/cadillac-optiq/9ee163e92d81"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4822",
+              "unit": "",
+              "applicability": "market trim pages: Premium Luxury AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/cadillac-optiq/9ee163e92d81"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Electric",
+              "unit": "",
+              "applicability": "market trim pages: Premium Luxury AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/cadillac-optiq/9ee163e92d81"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: Premium Luxury AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/cadillac-optiq/9ee163e92d81"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2954",
+              "unit": "",
+              "applicability": "market trim pages: Premium Luxury AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/cadillac-optiq/9ee163e92d81"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "6 years / 250000 km",
+            "unit": "",
+            "applicability": "market trim pages: model",
+            "issuer": "ContactCars+Hatla2ee",
+            "source": "https://www.contactcars.com/en/new-cars/cadillac-optiq/9ee163e92d81"
+          }
+        ],
         "brochures": [],
         "logo": {
           "src": "/media/p2/brands/cadillac.png",
@@ -53980,10 +56282,8 @@
       },
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ]
     },
@@ -54053,6 +56353,24 @@
           ]
         },
         "specs": {
+          "boot_l": [
+            {
+              "value": "475",
+              "unit": "",
+              "applicability": "market trim pages: COMFORT, Comfort, LUXURY, Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/0325157587c1 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/93d9db2ca562 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/cd3978235947 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/e9111fe"
+            }
+          ],
+          "drive": [
+            {
+              "value": "FWD",
+              "unit": "",
+              "applicability": "market trim pages: COMFORT, Comfort, LUXURY, Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/0325157587c1 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/93d9db2ca562 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/cd3978235947 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/e9111fe"
+            }
+          ],
           "engine": [
             {
               "value": "1.5L Turbo",
@@ -54062,7 +56380,23 @@
               "source": "https://www.chery-eg.com/en/car/tiggo-7-pro-max"
             }
           ],
+          "engine_cc": [
+            {
+              "value": "1500",
+              "unit": "",
+              "applicability": "market trim pages: COMFORT, Comfort, LUXURY, Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/0325157587c1 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/93d9db2ca562 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/cd3978235947 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/e9111fe"
+            }
+          ],
           "fuel_tank_l": [
+            {
+              "value": "51",
+              "unit": "",
+              "applicability": "market trim pages: COMFORT, Comfort, LUXURY, Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/0325157587c1 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/93d9db2ca562 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/cd3978235947 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/e9111fe"
+            },
             {
               "value": "51",
               "unit": "l",
@@ -54071,7 +56405,23 @@
               "source": "https://www.chery-eg.com/en/car/tiggo-7-pro-max"
             }
           ],
+          "height_mm": [
+            {
+              "value": "1696",
+              "unit": "",
+              "applicability": "market trim pages: COMFORT, Comfort, LUXURY, Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/0325157587c1 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/93d9db2ca562 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/cd3978235947 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/e9111fe"
+            }
+          ],
           "length_mm": [
+            {
+              "value": "4553",
+              "unit": "",
+              "applicability": "market trim pages: COMFORT, Comfort, LUXURY, Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/0325157587c1 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/93d9db2ca562 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/cd3978235947 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/e9111fe"
+            },
             {
               "value": "4553",
               "unit": "mm",
@@ -54082,6 +56432,13 @@
           ],
           "power_hp": [
             {
+              "value": "145",
+              "unit": "",
+              "applicability": "market trim pages: COMFORT, Comfort, LUXURY, Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/0325157587c1 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/93d9db2ca562 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/cd3978235947 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/e9111fe"
+            },
+            {
               "value": "145/5500",
               "unit": "hp",
               "applicability": "model page",
@@ -54089,7 +56446,41 @@
               "source": "https://www.chery-eg.com/en/car/tiggo-7-pro-max"
             }
           ],
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages: COMFORT, Comfort, LUXURY, Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/0325157587c1 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/93d9db2ca562 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/cd3978235947 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/e9111fe"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "210",
+              "unit": "",
+              "applicability": "market trim pages: COMFORT, Comfort, LUXURY, Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/0325157587c1 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/93d9db2ca562 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/cd3978235947 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/e9111fe"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "DCT",
+              "unit": "",
+              "applicability": "market trim pages: COMFORT, Comfort, LUXURY, Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/0325157587c1 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/93d9db2ca562 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/cd3978235947 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/e9111fe"
+            }
+          ],
           "wheelbase_mm": [
+            {
+              "value": "2670",
+              "unit": "",
+              "applicability": "market trim pages: COMFORT, Comfort, LUXURY, Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/0325157587c1 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/93d9db2ca562 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/cd3978235947 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/e9111fe"
+            },
             {
               "value": "2,670",
               "unit": "mm",
@@ -54097,9 +56488,26 @@
               "issuer": "chery_eg_web",
               "source": "https://www.chery-eg.com/en/car/tiggo-7-pro-max"
             }
+          ],
+          "width_mm": [
+            {
+              "value": "1862",
+              "unit": "",
+              "applicability": "market trim pages: COMFORT, Comfort, LUXURY, Luxury",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/0325157587c1 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/93d9db2ca562 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/cd3978235947 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/e9111fe"
+            }
           ]
         },
-        "warranty": null,
+        "warranty": [
+          {
+            "value": "6 years / 150000 km",
+            "unit": "",
+            "applicability": "market trim pages: model",
+            "issuer": "ContactCars+Hatla2ee",
+            "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/0325157587c1 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/93d9db2ca562 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/cd3978235947 | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max/e9111fe"
+          }
+        ],
         "brochures": [],
         "logo": {
           "src": "/media/p2/brands/chery.png",
@@ -54118,7 +56526,6 @@
       "missing_evidence": [
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ]
     },
@@ -54144,8 +56551,53 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
-        "warranty": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "428",
+              "unit": "",
+              "applicability": "market trim pages: ACTIV",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/chevrolet-spark_euv/8534f24f9ed6"
+            }
+          ],
+          "drive": [
+            {
+              "value": "FWD",
+              "unit": "",
+              "applicability": "market trim pages: ACTIV",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/chevrolet-spark_euv/8534f24f9ed6"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Electric",
+              "unit": "",
+              "applicability": "market trim pages: ACTIV",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/chevrolet-spark_euv/8534f24f9ed6"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: ACTIV",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/chevrolet-spark_euv/8534f24f9ed6"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "5 years / 150000 km",
+            "unit": "",
+            "applicability": "market trim pages: model",
+            "issuer": "ContactCars+Hatla2ee",
+            "source": "https://www.contactcars.com/en/new-cars/chevrolet-spark_euv/8534f24f9ed6"
+          }
+        ],
         "brochures": [],
         "logo": {
           "src": "/media/p2/brands/chevrolet.png",
@@ -54166,10 +56618,8 @@
       },
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ]
     },
@@ -54272,8 +56722,139 @@
             }
           ]
         },
-        "specs": null,
-        "warranty": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "454",
+              "unit": "",
+              "applicability": "market trim pages: Advance, Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/dongfeng-shine/69379fdf174b | https://www.contactcars.com/en/new-cars/dongfeng-shine/ec5b0c21f867"
+            }
+          ],
+          "drive": [
+            {
+              "value": "FWD",
+              "unit": "",
+              "applicability": "market trim pages: Advance, Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/dongfeng-shine/69379fdf174b | https://www.contactcars.com/en/new-cars/dongfeng-shine/ec5b0c21f867"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "1500",
+              "unit": "",
+              "applicability": "market trim pages: Advance, Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/dongfeng-shine/69379fdf174b | https://www.contactcars.com/en/new-cars/dongfeng-shine/ec5b0c21f867"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1490",
+              "unit": "",
+              "applicability": "market trim pages: Advance, Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/dongfeng-shine/69379fdf174b | https://www.contactcars.com/en/new-cars/dongfeng-shine/ec5b0c21f867"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4670",
+              "unit": "",
+              "applicability": "market trim pages: Advance, Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/dongfeng-shine/69379fdf174b | https://www.contactcars.com/en/new-cars/dongfeng-shine/ec5b0c21f867"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "125",
+              "unit": "",
+              "applicability": "market trim pages: Advance",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/dongfeng-shine/ec5b0c21f867"
+            },
+            {
+              "value": "197",
+              "unit": "",
+              "applicability": "market trim pages: Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/dongfeng-shine/69379fdf174b"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages: Advance, Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/dongfeng-shine/69379fdf174b | https://www.contactcars.com/en/new-cars/dongfeng-shine/ec5b0c21f867"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "market trim pages: Advance, Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/dongfeng-shine/69379fdf174b | https://www.contactcars.com/en/new-cars/dongfeng-shine/ec5b0c21f867"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "158",
+              "unit": "",
+              "applicability": "market trim pages: Advance",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/dongfeng-shine/ec5b0c21f867"
+            },
+            {
+              "value": "300",
+              "unit": "",
+              "applicability": "market trim pages: Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/dongfeng-shine/69379fdf174b"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "DCT",
+              "unit": "",
+              "applicability": "market trim pages: Advance, Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/dongfeng-shine/69379fdf174b | https://www.contactcars.com/en/new-cars/dongfeng-shine/ec5b0c21f867"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2680",
+              "unit": "",
+              "applicability": "market trim pages: Advance, Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/dongfeng-shine/69379fdf174b | https://www.contactcars.com/en/new-cars/dongfeng-shine/ec5b0c21f867"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1812",
+              "unit": "",
+              "applicability": "market trim pages: Advance, Sport",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/dongfeng-shine/69379fdf174b | https://www.contactcars.com/en/new-cars/dongfeng-shine/ec5b0c21f867"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "6 years / 200000 km",
+            "unit": "",
+            "applicability": "market trim pages: model",
+            "issuer": "ContactCars+Hatla2ee",
+            "source": "https://www.contactcars.com/en/new-cars/dongfeng-shine/69379fdf174b | https://www.contactcars.com/en/new-cars/dongfeng-shine/ec5b0c21f867"
+          }
+        ],
         "brochures": [],
         "logo": {
           "src": "/media/p2/brands/dongfeng.png",
@@ -54290,10 +56871,8 @@
         "conflicts": []
       },
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ]
     },
@@ -54584,8 +57163,134 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
-        "warranty": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "500",
+              "unit": "",
+              "applicability": "market trim pages: Comfort, Premium",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/geely-emgrand/56bac11edf63 | https://www.contactcars.com/en/new-cars/geely-emgrand/7a3396ee19bf"
+            }
+          ],
+          "drive": [
+            {
+              "value": "FWD",
+              "unit": "",
+              "applicability": "market trim pages: Comfort, Premium",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/geely-emgrand/56bac11edf63 | https://www.contactcars.com/en/new-cars/geely-emgrand/7a3396ee19bf"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "1500",
+              "unit": "",
+              "applicability": "market trim pages: Comfort, Premium",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/geely-emgrand/56bac11edf63 | https://www.contactcars.com/en/new-cars/geely-emgrand/7a3396ee19bf"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "50",
+              "unit": "",
+              "applicability": "market trim pages: Comfort, Premium",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/geely-emgrand/56bac11edf63 | https://www.contactcars.com/en/new-cars/geely-emgrand/7a3396ee19bf"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1460",
+              "unit": "",
+              "applicability": "market trim pages: Comfort, Premium",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/geely-emgrand/56bac11edf63 | https://www.contactcars.com/en/new-cars/geely-emgrand/7a3396ee19bf"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4638",
+              "unit": "",
+              "applicability": "market trim pages: Comfort, Premium",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/geely-emgrand/56bac11edf63 | https://www.contactcars.com/en/new-cars/geely-emgrand/7a3396ee19bf"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "120",
+              "unit": "",
+              "applicability": "market trim pages: Comfort, Premium",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/geely-emgrand/56bac11edf63 | https://www.contactcars.com/en/new-cars/geely-emgrand/7a3396ee19bf"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages: Comfort, Premium",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/geely-emgrand/56bac11edf63 | https://www.contactcars.com/en/new-cars/geely-emgrand/7a3396ee19bf"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "market trim pages: Comfort, Premium",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/geely-emgrand/56bac11edf63 | https://www.contactcars.com/en/new-cars/geely-emgrand/7a3396ee19bf"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "152",
+              "unit": "",
+              "applicability": "market trim pages: Comfort, Premium",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/geely-emgrand/56bac11edf63 | https://www.contactcars.com/en/new-cars/geely-emgrand/7a3396ee19bf"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: Comfort, Premium",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/geely-emgrand/56bac11edf63 | https://www.contactcars.com/en/new-cars/geely-emgrand/7a3396ee19bf"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2650",
+              "unit": "",
+              "applicability": "market trim pages: Comfort, Premium",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/geely-emgrand/56bac11edf63 | https://www.contactcars.com/en/new-cars/geely-emgrand/7a3396ee19bf"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1822",
+              "unit": "",
+              "applicability": "market trim pages: Comfort, Premium",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/geely-emgrand/56bac11edf63 | https://www.contactcars.com/en/new-cars/geely-emgrand/7a3396ee19bf"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "6 years / 200000 km",
+            "unit": "",
+            "applicability": "market trim pages: model",
+            "issuer": "ContactCars+Hatla2ee",
+            "source": "https://www.contactcars.com/en/new-cars/geely-emgrand/56bac11edf63 | https://www.contactcars.com/en/new-cars/geely-emgrand/7a3396ee19bf"
+          }
+        ],
         "brochures": [],
         "logo": {
           "src": "/media/p2/brands/geely.png",
@@ -54603,10 +57308,8 @@
       },
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ]
     },
@@ -54755,7 +57458,80 @@
             }
           ]
         },
-        "specs": null,
+        "specs": {
+          "engine_cc": [
+            {
+              "value": "1500",
+              "unit": "",
+              "applicability": "market trim pages: High Deluxe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-h6_hev/1ee73ecc9c7d"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1730",
+              "unit": "",
+              "applicability": "market trim pages: High Deluxe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-h6_hev/1ee73ecc9c7d"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4683",
+              "unit": "",
+              "applicability": "market trim pages: High Deluxe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-h6_hev/1ee73ecc9c7d"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Hybrid",
+              "unit": "",
+              "applicability": "market trim pages: High Deluxe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-h6_hev/1ee73ecc9c7d"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "market trim pages: High Deluxe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-h6_hev/1ee73ecc9c7d"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "DCT",
+              "unit": "",
+              "applicability": "market trim pages: High Deluxe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-h6_hev/1ee73ecc9c7d"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2738",
+              "unit": "",
+              "applicability": "market trim pages: High Deluxe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-h6_hev/1ee73ecc9c7d"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1886",
+              "unit": "",
+              "applicability": "market trim pages: High Deluxe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-h6_hev/1ee73ecc9c7d"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -54773,7 +57549,6 @@
         "conflicts": []
       },
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
@@ -54822,7 +57597,107 @@
             }
           ]
         },
-        "specs": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "291",
+              "unit": "",
+              "applicability": "market trim pages: High Deluxe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-jolion_pro/fbfffcc7e868"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "1500",
+              "unit": "",
+              "applicability": "market trim pages: High Deluxe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-jolion_pro/fbfffcc7e868"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1625",
+              "unit": "",
+              "applicability": "market trim pages: High Deluxe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-jolion_pro/fbfffcc7e868"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4470",
+              "unit": "",
+              "applicability": "market trim pages: High Deluxe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-jolion_pro/fbfffcc7e868"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "148",
+              "unit": "",
+              "applicability": "market trim pages: High Deluxe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-jolion_pro/fbfffcc7e868"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages: High Deluxe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-jolion_pro/fbfffcc7e868"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "market trim pages: High Deluxe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-jolion_pro/fbfffcc7e868"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "220",
+              "unit": "",
+              "applicability": "market trim pages: High Deluxe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-jolion_pro/fbfffcc7e868"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "DCT",
+              "unit": "",
+              "applicability": "market trim pages: High Deluxe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-jolion_pro/fbfffcc7e868"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2700",
+              "unit": "",
+              "applicability": "market trim pages: High Deluxe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-jolion_pro/fbfffcc7e868"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1898",
+              "unit": "",
+              "applicability": "market trim pages: High Deluxe",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-jolion_pro/fbfffcc7e868"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -54842,7 +57717,6 @@
         ]
       },
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
@@ -54902,8 +57776,162 @@
             }
           ]
         },
-        "specs": null,
-        "warranty": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "586",
+              "unit": "",
+              "applicability": "market trim pages: Hybrid FWD, Plug-in hybrid AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-v7/1f1af0fedb62 | https://www.contactcars.com/en/new-cars/haval-v7/507d2db8ace4"
+            }
+          ],
+          "drive": [
+            {
+              "value": "FWD",
+              "unit": "",
+              "applicability": "market trim pages: Hybrid FWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-v7/507d2db8ace4"
+            },
+            {
+              "value": "AWD/4WD",
+              "unit": "",
+              "applicability": "market trim pages: Plug-in hybrid AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-v7/1f1af0fedb62"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "1500",
+              "unit": "",
+              "applicability": "market trim pages: Hybrid FWD, Plug-in hybrid AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-v7/1f1af0fedb62 | https://www.contactcars.com/en/new-cars/haval-v7/507d2db8ace4"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "55",
+              "unit": "",
+              "applicability": "market trim pages: Hybrid FWD, Plug-in hybrid AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-v7/1f1af0fedb62 | https://www.contactcars.com/en/new-cars/haval-v7/507d2db8ace4"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1822",
+              "unit": "",
+              "applicability": "market trim pages: Hybrid FWD, Plug-in hybrid AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-v7/1f1af0fedb62 | https://www.contactcars.com/en/new-cars/haval-v7/507d2db8ace4"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4800",
+              "unit": "",
+              "applicability": "market trim pages: Hybrid FWD, Plug-in hybrid AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-v7/1f1af0fedb62 | https://www.contactcars.com/en/new-cars/haval-v7/507d2db8ace4"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "244",
+              "unit": "",
+              "applicability": "market trim pages: Hybrid FWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-v7/507d2db8ace4"
+            },
+            {
+              "value": "360",
+              "unit": "",
+              "applicability": "market trim pages: Plug-in hybrid AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-v7/1f1af0fedb62"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Hybrid",
+              "unit": "",
+              "applicability": "market trim pages: Hybrid FWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-v7/507d2db8ace4"
+            },
+            {
+              "value": "Plug-in hybrid",
+              "unit": "",
+              "applicability": "market trim pages: Plug-in hybrid AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-v7/1f1af0fedb62"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "market trim pages: Hybrid FWD, Plug-in hybrid AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-v7/1f1af0fedb62 | https://www.contactcars.com/en/new-cars/haval-v7/507d2db8ace4"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "540",
+              "unit": "",
+              "applicability": "market trim pages: Hybrid FWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-v7/507d2db8ace4"
+            },
+            {
+              "value": "760",
+              "unit": "",
+              "applicability": "market trim pages: Plug-in hybrid AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-v7/1f1af0fedb62"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: Hybrid FWD, Plug-in hybrid AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-v7/1f1af0fedb62 | https://www.contactcars.com/en/new-cars/haval-v7/507d2db8ace4"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2738",
+              "unit": "",
+              "applicability": "market trim pages: Hybrid FWD, Plug-in hybrid AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-v7/1f1af0fedb62 | https://www.contactcars.com/en/new-cars/haval-v7/507d2db8ace4"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1950",
+              "unit": "",
+              "applicability": "market trim pages: Hybrid FWD, Plug-in hybrid AWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/haval-v7/1f1af0fedb62 | https://www.contactcars.com/en/new-cars/haval-v7/507d2db8ace4"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "5 years / 150000 km",
+            "unit": "",
+            "applicability": "market trim pages: model",
+            "issuer": "ContactCars+Hatla2ee",
+            "source": "https://www.contactcars.com/en/new-cars/haval-v7/1f1af0fedb62 | https://www.contactcars.com/en/new-cars/haval-v7/507d2db8ace4"
+          }
+        ],
         "brochures": [],
         "logo": {
           "src": "/media/p2/brands/haval.png",
@@ -54920,10 +57948,8 @@
         "conflicts": []
       },
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ]
     },
@@ -55150,6 +58176,15 @@
           ]
         },
         "specs": {
+          "drive": [
+            {
+              "value": "FWD",
+              "unit": "",
+              "applicability": "market trim pages: 1.6 Blaze, 1.6 Redline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/hyundai-venue/632b6715b74a | https://www.contactcars.com/en/new-cars/hyundai-venue/b62a43a79bf4"
+            }
+          ],
           "engine": [
             {
               "value": "1.6L MPI",
@@ -55159,6 +58194,33 @@
               "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1"
             }
           ],
+          "engine_cc": [
+            {
+              "value": "1600",
+              "unit": "",
+              "applicability": "market trim pages: 1.6 Blaze, 1.6 Redline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/hyundai-venue/632b6715b74a | https://www.contactcars.com/en/new-cars/hyundai-venue/b62a43a79bf4"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "51",
+              "unit": "",
+              "applicability": "market trim pages: 1.6 Redline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/hyundai-venue/b62a43a79bf4"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "170",
+              "unit": "",
+              "applicability": "market trim pages: 1.6 Blaze, 1.6 Redline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/hyundai-venue/632b6715b74a | https://www.contactcars.com/en/new-cars/hyundai-venue/b62a43a79bf4"
+            }
+          ],
           "height_mm": [
             {
               "value": "1590",
@@ -55166,6 +58228,13 @@
               "applicability": "Venue 1.6 MPI (GB Auto brochure Sep 2026)",
               "issuer": "GB Auto (Hyundai Egypt)",
               "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1"
+            },
+            {
+              "value": "1590",
+              "unit": "",
+              "applicability": "market trim pages: 1.6 Blaze, 1.6 Redline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/hyundai-venue/632b6715b74a | https://www.contactcars.com/en/new-cars/hyundai-venue/b62a43a79bf4"
             }
           ],
           "length_mm": [
@@ -55175,6 +58244,13 @@
               "applicability": "Venue 1.6 MPI (GB Auto brochure Sep 2026)",
               "issuer": "GB Auto (Hyundai Egypt)",
               "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1"
+            },
+            {
+              "value": "4040",
+              "unit": "",
+              "applicability": "market trim pages: 1.6 Blaze, 1.6 Redline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/hyundai-venue/632b6715b74a | https://www.contactcars.com/en/new-cars/hyundai-venue/b62a43a79bf4"
             }
           ],
           "power_hp": [
@@ -55184,6 +58260,40 @@
               "applicability": "Venue 1.6 MPI (GB Auto brochure Sep 2026)",
               "issuer": "GB Auto (Hyundai Egypt)",
               "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1"
+            },
+            {
+              "value": "123",
+              "unit": "",
+              "applicability": "market trim pages: 1.6 Blaze, 1.6 Redline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/hyundai-venue/632b6715b74a | https://www.contactcars.com/en/new-cars/hyundai-venue/b62a43a79bf4"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages: 1.6 Blaze, 1.6 Redline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/hyundai-venue/632b6715b74a | https://www.contactcars.com/en/new-cars/hyundai-venue/b62a43a79bf4"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "market trim pages: 1.6 Blaze, 1.6 Redline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/hyundai-venue/632b6715b74a | https://www.contactcars.com/en/new-cars/hyundai-venue/b62a43a79bf4"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "151",
+              "unit": "",
+              "applicability": "market trim pages: 1.6 Blaze, 1.6 Redline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/hyundai-venue/632b6715b74a | https://www.contactcars.com/en/new-cars/hyundai-venue/b62a43a79bf4"
             }
           ],
           "transmission": [
@@ -55193,6 +58303,13 @@
               "applicability": "Venue 1.6 MPI (GB Auto brochure Sep 2026)",
               "issuer": "GB Auto (Hyundai Egypt)",
               "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1"
+            },
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: 1.6 Blaze, 1.6 Redline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/hyundai-venue/632b6715b74a | https://www.contactcars.com/en/new-cars/hyundai-venue/b62a43a79bf4"
             }
           ],
           "wheelbase_mm": [
@@ -55202,6 +58319,13 @@
               "applicability": "Venue 1.6 MPI (GB Auto brochure Sep 2026)",
               "issuer": "GB Auto (Hyundai Egypt)",
               "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1"
+            },
+            {
+              "value": "2520",
+              "unit": "",
+              "applicability": "market trim pages: 1.6 Blaze, 1.6 Redline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/hyundai-venue/632b6715b74a | https://www.contactcars.com/en/new-cars/hyundai-venue/b62a43a79bf4"
             }
           ],
           "width_mm": [
@@ -55211,6 +58335,13 @@
               "applicability": "Venue 1.6 MPI (GB Auto brochure Sep 2026)",
               "issuer": "GB Auto (Hyundai Egypt)",
               "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1"
+            },
+            {
+              "value": "1770",
+              "unit": "",
+              "applicability": "market trim pages: 1.6 Blaze, 1.6 Redline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/hyundai-venue/632b6715b74a | https://www.contactcars.com/en/new-cars/hyundai-venue/b62a43a79bf4"
             }
           ]
         },
@@ -55221,6 +58352,13 @@
             "applicability": "Venue 1.6 MPI (GB Auto brochure Sep 2026)",
             "issuer": "GB Auto (Hyundai Egypt)",
             "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1"
+          },
+          {
+            "value": "5 years / 100000 km",
+            "unit": "",
+            "applicability": "market trim pages: model",
+            "issuer": "ContactCars+Hatla2ee",
+            "source": "https://www.contactcars.com/en/new-cars/hyundai-venue/632b6715b74a | https://www.contactcars.com/en/new-cars/hyundai-venue/b62a43a79bf4"
           }
         ],
         "brochures": [],
@@ -55297,7 +58435,96 @@
             }
           ]
         },
-        "specs": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "715",
+              "unit": "",
+              "applicability": "market trim pages: Play, Wild",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/icaur-v27/42849ca8b376 | https://www.contactcars.com/en/new-cars/icaur-v27/895a2f18ae7c"
+            }
+          ],
+          "drive": [
+            {
+              "value": "AWD/4WD",
+              "unit": "",
+              "applicability": "market trim pages: Wild",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/icaur-v27/895a2f18ae7c"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "1500",
+              "unit": "",
+              "applicability": "market trim pages: Play, Wild",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/icaur-v27/42849ca8b376 | https://www.contactcars.com/en/new-cars/icaur-v27/895a2f18ae7c"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "60",
+              "unit": "",
+              "applicability": "market trim pages: Play, Wild",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/icaur-v27/42849ca8b376 | https://www.contactcars.com/en/new-cars/icaur-v27/895a2f18ae7c"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1894",
+              "unit": "",
+              "applicability": "market trim pages: Play, Wild",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/icaur-v27/42849ca8b376 | https://www.contactcars.com/en/new-cars/icaur-v27/895a2f18ae7c"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "market trim pages: Play, Wild",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/icaur-v27/42849ca8b376 | https://www.contactcars.com/en/new-cars/icaur-v27/895a2f18ae7c"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "300",
+              "unit": "",
+              "applicability": "market trim pages: Play",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/icaur-v27/42849ca8b376"
+            },
+            {
+              "value": "505",
+              "unit": "",
+              "applicability": "market trim pages: Wild",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/icaur-v27/895a2f18ae7c"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: Play, Wild",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/icaur-v27/42849ca8b376 | https://www.contactcars.com/en/new-cars/icaur-v27/895a2f18ae7c"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1976",
+              "unit": "",
+              "applicability": "market trim pages: Play, Wild",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/icaur-v27/42849ca8b376 | https://www.contactcars.com/en/new-cars/icaur-v27/895a2f18ae7c"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": null,
@@ -55306,7 +58533,6 @@
         "conflicts": []
       },
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -55505,7 +58731,141 @@
             }
           ]
         },
-        "specs": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "360",
+              "unit": "",
+              "applicability": "market trim pages: Flagship, Topline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/c1528cc8131e | https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/de56a65da94b"
+            }
+          ],
+          "drive": [
+            {
+              "value": "FWD",
+              "unit": "",
+              "applicability": "market trim pages: Flagship, Topline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/c1528cc8131e | https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/de56a65da94b"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "1500",
+              "unit": "",
+              "applicability": "market trim pages: Flagship, Topline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/c1528cc8131e | https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/de56a65da94b"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "51",
+              "unit": "",
+              "applicability": "market trim pages: Flagship, Topline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/c1528cc8131e | https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/de56a65da94b"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "158",
+              "unit": "",
+              "applicability": "market trim pages: Flagship, Topline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/c1528cc8131e | https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/de56a65da94b"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1653",
+              "unit": "",
+              "applicability": "market trim pages: Flagship, Topline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/c1528cc8131e | https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/de56a65da94b"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4400",
+              "unit": "",
+              "applicability": "market trim pages: Flagship, Topline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/c1528cc8131e | https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/de56a65da94b"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "156",
+              "unit": "",
+              "applicability": "market trim pages: Flagship, Topline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/c1528cc8131e | https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/de56a65da94b"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages: Flagship, Topline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/c1528cc8131e | https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/de56a65da94b"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "market trim pages: Flagship, Topline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/c1528cc8131e | https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/de56a65da94b"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "230",
+              "unit": "",
+              "applicability": "market trim pages: Flagship, Topline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/c1528cc8131e | https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/de56a65da94b"
+            },
+            {
+              "value": "143",
+              "unit": "",
+              "applicability": "market trim pages: Topline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/de56a65da94b"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "CVT",
+              "unit": "",
+              "applicability": "market trim pages: Flagship, Topline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/c1528cc8131e | https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/de56a65da94b"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2632",
+              "unit": "",
+              "applicability": "market trim pages: Flagship, Topline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/c1528cc8131e | https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/de56a65da94b"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1831",
+              "unit": "",
+              "applicability": "market trim pages: Flagship, Topline",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/c1528cc8131e | https://www.contactcars.com/en/new-cars/kaiyi-x3_pro/de56a65da94b"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -55523,7 +58883,6 @@
         "conflicts": []
       },
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
@@ -55752,7 +59111,105 @@
             }
           ]
         },
-        "specs": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "350",
+              "unit": "",
+              "applicability": "market trim pages: Luxury , Standard ",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-4/756e6bcf59a1 | https://www.contactcars.com/en/new-cars/mg-4/cae6c926f6d4"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1504",
+              "unit": "",
+              "applicability": "market trim pages: Luxury , Standard ",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-4/756e6bcf59a1 | https://www.contactcars.com/en/new-cars/mg-4/cae6c926f6d4"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4287",
+              "unit": "",
+              "applicability": "market trim pages: Luxury , Standard ",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-4/756e6bcf59a1 | https://www.contactcars.com/en/new-cars/mg-4/cae6c926f6d4"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "200",
+              "unit": "",
+              "applicability": "market trim pages: Luxury ",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-4/cae6c926f6d4"
+            },
+            {
+              "value": "168",
+              "unit": "",
+              "applicability": "market trim pages: Standard ",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-4/756e6bcf59a1"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Electric",
+              "unit": "",
+              "applicability": "market trim pages: Luxury , Standard ",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-4/756e6bcf59a1 | https://www.contactcars.com/en/new-cars/mg-4/cae6c926f6d4"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "market trim pages: Luxury , Standard ",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-4/756e6bcf59a1 | https://www.contactcars.com/en/new-cars/mg-4/cae6c926f6d4"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "250",
+              "unit": "",
+              "applicability": "market trim pages: Luxury , Standard ",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-4/756e6bcf59a1 | https://www.contactcars.com/en/new-cars/mg-4/cae6c926f6d4"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: Luxury , Standard ",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-4/756e6bcf59a1 | https://www.contactcars.com/en/new-cars/mg-4/cae6c926f6d4"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2705",
+              "unit": "",
+              "applicability": "market trim pages: Luxury , Standard ",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-4/756e6bcf59a1 | https://www.contactcars.com/en/new-cars/mg-4/cae6c926f6d4"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1836",
+              "unit": "",
+              "applicability": "market trim pages: Luxury , Standard ",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-4/756e6bcf59a1 | https://www.contactcars.com/en/new-cars/mg-4/cae6c926f6d4"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -55770,7 +59227,6 @@
         "conflicts": []
       },
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
@@ -55799,8 +59255,107 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
-        "warranty": null,
+        "specs": {
+          "drive": [
+            {
+              "value": "RWD",
+              "unit": "",
+              "applicability": "market trim pages: Trophy RWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-cyberster/2fc1309b896c"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1329",
+              "unit": "",
+              "applicability": "market trim pages: Trophy RWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-cyberster/2fc1309b896c"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4535",
+              "unit": "",
+              "applicability": "market trim pages: Trophy RWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-cyberster/2fc1309b896c"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "340",
+              "unit": "",
+              "applicability": "market trim pages: Trophy RWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-cyberster/2fc1309b896c"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Electric",
+              "unit": "",
+              "applicability": "market trim pages: Trophy RWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-cyberster/2fc1309b896c"
+            }
+          ],
+          "seats": [
+            {
+              "value": "2",
+              "unit": "",
+              "applicability": "market trim pages: Trophy RWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-cyberster/2fc1309b896c"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "475",
+              "unit": "",
+              "applicability": "market trim pages: Trophy RWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-cyberster/2fc1309b896c"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: Trophy RWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-cyberster/2fc1309b896c"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2690",
+              "unit": "",
+              "applicability": "market trim pages: Trophy RWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-cyberster/2fc1309b896c"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1913",
+              "unit": "",
+              "applicability": "market trim pages: Trophy RWD",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mg-cyberster/2fc1309b896c"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "7 years / 150000 km",
+            "unit": "",
+            "applicability": "market trim pages: model",
+            "issuer": "ContactCars+Hatla2ee",
+            "source": "https://www.contactcars.com/en/new-cars/mg-cyberster/2fc1309b896c"
+          }
+        ],
         "brochures": [],
         "logo": {
           "src": "/media/p2/brands/mg.png",
@@ -55818,10 +59373,8 @@
       },
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ]
     },
@@ -55864,7 +59417,108 @@
             }
           ]
         },
-        "specs": null,
+        "specs": {
+          "drive": [
+            {
+              "value": "FWD",
+              "unit": "",
+              "applicability": "market trim pages: 2.0 A/T C - JCW Cabrio",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mini-cooper/00aa821768ed"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "1500",
+              "unit": "",
+              "applicability": "market trim pages: 1.5 A/T C - Classic , 1.5 A/T C - JCW, 1.5 A/T C 5 Drs - Classic ",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mini-cooper/799efab1b002 | https://www.contactcars.com/en/new-cars/mini-cooper/ca373e1e4154 | https://www.contactcars.com/en/new-cars/mini-cooper/dd418b0ee462"
+            },
+            {
+              "value": "2000",
+              "unit": "",
+              "applicability": "market trim pages: 2.0 A/T C - JCW Cabrio, 2.0 A/T S - JCW\t",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mini-cooper/00aa821768ed | https://www.contactcars.com/en/new-cars/mini-cooper/d1de06d42e17"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "156",
+              "unit": "",
+              "applicability": "market trim pages: 1.5 A/T C - Classic , 1.5 A/T C - JCW, 1.5 A/T C 5 Drs - Classic , 2.0 A/T C - JCW Cabrio",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mini-cooper/00aa821768ed | https://www.contactcars.com/en/new-cars/mini-cooper/799efab1b002 | https://www.contactcars.com/en/new-cars/mini-cooper/ca373e1e4154 | https://www.contactcars.com/en/new-cars/mini-cooper/dd418b0ee462"
+            },
+            {
+              "value": "163",
+              "unit": "",
+              "applicability": "market trim pages: 2.0 A/T C - JCW Cabrio",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mini-cooper/00aa821768ed"
+            },
+            {
+              "value": "204",
+              "unit": "",
+              "applicability": "market trim pages: 2.0 A/T S - JCW\t",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mini-cooper/d1de06d42e17"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages: 1.5 A/T C - Classic , 1.5 A/T C - JCW, 1.5 A/T C 5 Drs - Classic , 2.0 A/T C - JCW Cabrio, 2.0 A/T S - JCW\t",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mini-cooper/00aa821768ed | https://www.contactcars.com/en/new-cars/mini-cooper/799efab1b002 | https://www.contactcars.com/en/new-cars/mini-cooper/ca373e1e4154 | https://www.contactcars.com/en/new-cars/mini-cooper/d1de06d42e17 | https://www.contactcars.com/en/n"
+            }
+          ],
+          "seats": [
+            {
+              "value": "4",
+              "unit": "",
+              "applicability": "market trim pages: 2.0 A/T C - JCW Cabrio",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mini-cooper/00aa821768ed"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "250",
+              "unit": "",
+              "applicability": "market trim pages: 2.0 A/T C - JCW Cabrio",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mini-cooper/00aa821768ed"
+            },
+            {
+              "value": "300",
+              "unit": "",
+              "applicability": "market trim pages: 2.0 A/T S - JCW\t",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mini-cooper/d1de06d42e17"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "DCT",
+              "unit": "",
+              "applicability": "market trim pages: 1.5 A/T C - Classic , 1.5 A/T C - JCW, 1.5 A/T C 5 Drs - Classic , 2.0 A/T C - JCW Cabrio, 2.0 A/T S - JCW\t",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mini-cooper/00aa821768ed | https://www.contactcars.com/en/new-cars/mini-cooper/799efab1b002 | https://www.contactcars.com/en/new-cars/mini-cooper/ca373e1e4154 | https://www.contactcars.com/en/new-cars/mini-cooper/d1de06d42e17 | https://www.contactcars.com/en/n"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2495",
+              "unit": "",
+              "applicability": "market trim pages: 2.0 A/T C - JCW Cabrio",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mini-cooper/00aa821768ed"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -55882,7 +59536,6 @@
         "conflicts": []
       },
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
@@ -55954,7 +59607,71 @@
             }
           ]
         },
-        "specs": null,
+        "specs": {
+          "drive": [
+            {
+              "value": "FWD",
+              "unit": "",
+              "applicability": "market trim pages: Premium Line, Spark High Line",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mitsubishi-outlander_sport/40f200dd6219 | https://www.contactcars.com/en/new-cars/mitsubishi-outlander_sport/a75209ecebcf"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "1500",
+              "unit": "",
+              "applicability": "market trim pages: Premium Line, Spark High Line",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mitsubishi-outlander_sport/40f200dd6219 | https://www.contactcars.com/en/new-cars/mitsubishi-outlander_sport/a75209ecebcf"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4390",
+              "unit": "",
+              "applicability": "market trim pages: Premium Line, Spark High Line",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mitsubishi-outlander_sport/40f200dd6219 | https://www.contactcars.com/en/new-cars/mitsubishi-outlander_sport/a75209ecebcf"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "103",
+              "unit": "",
+              "applicability": "market trim pages: Premium Line, Spark High Line",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mitsubishi-outlander_sport/40f200dd6219 | https://www.contactcars.com/en/new-cars/mitsubishi-outlander_sport/a75209ecebcf"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages: Premium Line, Spark High Line",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mitsubishi-outlander_sport/40f200dd6219 | https://www.contactcars.com/en/new-cars/mitsubishi-outlander_sport/a75209ecebcf"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "141",
+              "unit": "",
+              "applicability": "market trim pages: Premium Line, Spark High Line",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mitsubishi-outlander_sport/40f200dd6219 | https://www.contactcars.com/en/new-cars/mitsubishi-outlander_sport/a75209ecebcf"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "CVT",
+              "unit": "",
+              "applicability": "market trim pages: Premium Line, Spark High Line",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/mitsubishi-outlander_sport/40f200dd6219 | https://www.contactcars.com/en/new-cars/mitsubishi-outlander_sport/a75209ecebcf"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -55972,7 +59689,6 @@
         "conflicts": []
       },
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
@@ -56150,7 +59866,89 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
+        "specs": {
+          "engine_cc": [
+            {
+              "value": "2000",
+              "unit": "",
+              "applicability": "market trim pages: R-Line",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/volkswagen-touareg/8b4e65745349"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1720",
+              "unit": "",
+              "applicability": "market trim pages: R-Line",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/volkswagen-touareg/8b4e65745349"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4878",
+              "unit": "",
+              "applicability": "market trim pages: R-Line",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/volkswagen-touareg/8b4e65745349"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "250",
+              "unit": "",
+              "applicability": "market trim pages: R-Line",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/volkswagen-touareg/8b4e65745349"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages: R-Line",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/volkswagen-touareg/8b4e65745349"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "market trim pages: R-Line",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/volkswagen-touareg/8b4e65745349"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "370",
+              "unit": "",
+              "applicability": "market trim pages: R-Line",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/volkswagen-touareg/8b4e65745349"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2894",
+              "unit": "",
+              "applicability": "market trim pages: R-Line",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/volkswagen-touareg/8b4e65745349"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1984",
+              "unit": "",
+              "applicability": "market trim pages: R-Line",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/volkswagen-touareg/8b4e65745349"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -56169,7 +59967,6 @@
       },
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
@@ -56424,7 +60221,78 @@
             }
           ]
         },
-        "specs": null,
+        "specs": {
+          "drive": [
+            {
+              "value": "AWD/4WD",
+              "unit": "",
+              "applicability": "market trim pages: Flagship, Performance",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/zeekr-001/3a8d291b7970 | https://www.contactcars.com/en/new-cars/zeekr-001/c6deb8c70fcc"
+            },
+            {
+              "value": "RWD",
+              "unit": "",
+              "applicability": "market trim pages: Long Range",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/zeekr-001/37768f9a1a97"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1560",
+              "unit": "",
+              "applicability": "market trim pages: Flagship, Long Range, Performance",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/zeekr-001/37768f9a1a97 | https://www.contactcars.com/en/new-cars/zeekr-001/3a8d291b7970 | https://www.contactcars.com/en/new-cars/zeekr-001/c6deb8c70fcc"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4955",
+              "unit": "",
+              "applicability": "market trim pages: Flagship, Long Range, Performance",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/zeekr-001/37768f9a1a97 | https://www.contactcars.com/en/new-cars/zeekr-001/3a8d291b7970 | https://www.contactcars.com/en/new-cars/zeekr-001/c6deb8c70fcc"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Electric",
+              "unit": "",
+              "applicability": "market trim pages: Flagship, Long Range, Performance",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/zeekr-001/37768f9a1a97 | https://www.contactcars.com/en/new-cars/zeekr-001/3a8d291b7970 | https://www.contactcars.com/en/new-cars/zeekr-001/c6deb8c70fcc"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: Flagship, Long Range, Performance",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/zeekr-001/37768f9a1a97 | https://www.contactcars.com/en/new-cars/zeekr-001/3a8d291b7970 | https://www.contactcars.com/en/new-cars/zeekr-001/c6deb8c70fcc"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2999",
+              "unit": "",
+              "applicability": "market trim pages: Flagship, Long Range, Performance",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/zeekr-001/37768f9a1a97 | https://www.contactcars.com/en/new-cars/zeekr-001/3a8d291b7970 | https://www.contactcars.com/en/new-cars/zeekr-001/c6deb8c70fcc"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1999",
+              "unit": "",
+              "applicability": "market trim pages: Flagship, Long Range, Performance",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/zeekr-001/37768f9a1a97 | https://www.contactcars.com/en/new-cars/zeekr-001/3a8d291b7970 | https://www.contactcars.com/en/new-cars/zeekr-001/c6deb8c70fcc"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -56442,7 +60310,6 @@
         "conflicts": []
       },
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
@@ -56548,7 +60415,96 @@
             }
           ]
         },
-        "specs": null,
+        "specs": {
+          "drive": [
+            {
+              "value": "AWD/4WD",
+              "unit": "",
+              "applicability": "market trim pages: AWD Performance",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/zeekr-7x/85a846963ddf"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1650",
+              "unit": "",
+              "applicability": "market trim pages: AWD Performance, RWD Long Range, RWD Standard",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/zeekr-7x/0a6e674eabac | https://www.contactcars.com/en/new-cars/zeekr-7x/3dfc182877bf | https://www.contactcars.com/en/new-cars/zeekr-7x/85a846963ddf"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4787",
+              "unit": "",
+              "applicability": "market trim pages: AWD Performance, RWD Long Range, RWD Standard",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/zeekr-7x/0a6e674eabac | https://www.contactcars.com/en/new-cars/zeekr-7x/3dfc182877bf | https://www.contactcars.com/en/new-cars/zeekr-7x/85a846963ddf"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Electric",
+              "unit": "",
+              "applicability": "market trim pages: AWD Performance, RWD Long Range, RWD Standard",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/zeekr-7x/0a6e674eabac | https://www.contactcars.com/en/new-cars/zeekr-7x/3dfc182877bf | https://www.contactcars.com/en/new-cars/zeekr-7x/85a846963ddf"
+            }
+          ],
+          "seats": [
+            {
+              "value": "5",
+              "unit": "",
+              "applicability": "market trim pages: AWD Performance, RWD Long Range, RWD Standard",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/zeekr-7x/0a6e674eabac | https://www.contactcars.com/en/new-cars/zeekr-7x/3dfc182877bf | https://www.contactcars.com/en/new-cars/zeekr-7x/85a846963ddf"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "710",
+              "unit": "",
+              "applicability": "market trim pages: AWD Performance",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/zeekr-7x/85a846963ddf"
+            },
+            {
+              "value": "440",
+              "unit": "",
+              "applicability": "market trim pages: RWD Long Range, RWD Standard",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/zeekr-7x/0a6e674eabac | https://www.contactcars.com/en/new-cars/zeekr-7x/3dfc182877bf"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: AWD Performance, RWD Long Range, RWD Standard",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/zeekr-7x/0a6e674eabac | https://www.contactcars.com/en/new-cars/zeekr-7x/3dfc182877bf | https://www.contactcars.com/en/new-cars/zeekr-7x/85a846963ddf"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2900",
+              "unit": "",
+              "applicability": "market trim pages: AWD Performance, RWD Long Range, RWD Standard",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/zeekr-7x/0a6e674eabac | https://www.contactcars.com/en/new-cars/zeekr-7x/3dfc182877bf | https://www.contactcars.com/en/new-cars/zeekr-7x/85a846963ddf"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1930",
+              "unit": "",
+              "applicability": "market trim pages: AWD Performance, RWD Long Range, RWD Standard",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/zeekr-7x/0a6e674eabac | https://www.contactcars.com/en/new-cars/zeekr-7x/3dfc182877bf | https://www.contactcars.com/en/new-cars/zeekr-7x/85a846963ddf"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -56566,7 +60522,6 @@
         "conflicts": []
       },
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
