@@ -14,6 +14,22 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"}
 
 
+def commons_unchanged(r):
+    """Commons re-renders thumbnails, so thumb bytes drift while the original file is unchanged. The reviewed image is
+    still the one served only if the File page's latest upload predates the review day. Returns (ok, sha1, timestamp)."""
+    import requests, urllib.parse
+    if "wikimedia.org" not in r["url"] or "/wiki/File:" not in r.get("page", ""):
+        return False, "", ""
+    title = urllib.parse.unquote(r["page"].split("/wiki/", 1)[1]).replace("_", " ")
+    try:
+        j = requests.get("https://commons.wikimedia.org/w/api.php", params=dict(action="query", titles=title, prop="imageinfo",
+                         iiprop="timestamp|sha1", format="json"), headers={"User-Agent": "CarIndexP2/1.0 (github.com/KingMega1/scratch)"}, timeout=60).json()
+        ii = next(iter(j["query"]["pages"].values()))["imageinfo"][0]
+    except Exception:
+        return False, "", ""
+    return ii["timestamp"][:10] < r["verified_at"], ii["sha1"], ii["timestamp"]
+
+
 def main():
     import requests
     from PIL import Image, ImageDraw
@@ -38,7 +54,13 @@ def main():
             b = resp.content
             h = hashlib.sha256(b).hexdigest()
             res.update(http=resp.status_code, sha256=h, sha_match=h == r["sha256"])
-            if resp.status_code == 200 and h == r["sha256"]:
+            ok = h == r["sha256"]
+            if resp.status_code == 200 and not ok:
+                ok, sha1, ts = commons_unchanged(r)
+                res.update(basis="COMMONS_ORIGINAL_UNCHANGED" if ok else "", commons_sha1=sha1, commons_upload=ts)
+            elif ok:
+                res.update(basis="SHA256_MATCH")
+            if resp.status_code == 200 and ok:
                 if r["url"].lower().split("?")[0].endswith(".svg") or b[:200].lstrip().startswith((b"<svg", b"<?xml")):
                     import cairosvg  # official-site SVG logos: render at the reviewed width
                     b = cairosvg.svg2png(bytestring=b, output_width=int(r["width"]))
@@ -65,8 +87,8 @@ def main():
             res.update(written=False, error=str(x)[:200])
         out.append(res)
         time.sleep(0.3)
-    cols = ["asset_id", "owner", "kind", "local_path", "url", "http", "sha256", "sha_match", "written", "out_width",
-            "out_height", "out_bytes", "error"]
+    cols = ["asset_id", "owner", "kind", "local_path", "url", "http", "sha256", "sha_match", "basis", "commons_sha1",
+            "commons_upload", "written", "out_width", "out_height", "out_bytes", "error"]
     with open(os.path.join(a.report, "materialize.csv"), "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore", lineterminator="\n")
         w.writeheader()
