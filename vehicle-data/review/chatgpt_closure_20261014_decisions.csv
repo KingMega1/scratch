@@ -1,0 +1,26 @@
+model_id,p1_id,item,decision,reason
+m_000373,geely/ex5-em-i,images,ACCEPT,hero 4000x2250 + 3 gallery; official geelyeg.com EX5 EM-i asset set; P2 visual QA; bytes sha256-identical in snapshots/MH_2026-10-14_38576320947
+m_000373,geely/ex5-em-i,"specs (PHEV, NEDC 1000/105 km, 4.3 L/100 km, 0-100 8.1 s)",HOLD,"official page is JS-rendered: P2 probe P_2026-10-14_38574070906 got 1,777 bytes without facts; brochure fetched but text not extractable; ChatGPT scope itself marks trim/test conditions pending"
+m_000373,geely/ex5-em-i,price,HOLD,no price staged; P1 not_on_sale unchanged
+m_000201,mercedes/glc,"specs (204 hp, 1999 cc, 9G-TRONIC, AWD, 5 seats, 620 L)",HOLD,mercedes-benz.com.eg timed out from P2 CI (probe P_2026-10-14_38574070906); canonical already has 204 hp / 5 seats from SP-2; official MY27 vs accepted MY26 price scope unreconciled
+m_000201,mercedes/glc,warranty 2 years,HOLD,ChatGPT marks P2_REWORK_SCOPE (EU boilerplate on Egypt page); page not reachable from P2 CI
+m_000200,mercedes/gla,images (2),HOLD,not reproducible: mercedes-benz.com.eg read timeout in CI run 38576320947
+m_000200,mercedes/gla,warranty 2 years,HOLD,as GLC
+m_000202,mercedes/gle,images (2),HOLD,not reproducible: mercedes-benz.com.eg read timeout in CI run 38576320947
+m_000202,mercedes/gle,warranty 2 years,HOLD,as GLC
+m_000261,toyota/corolla,record,NO_CHANGE,no new facts/images; powertrain already resolved by Corolla Hybrid split + per-version powertrain (e8facde)
+m_000180,kia/k4,price,ALREADY_ACCEPTED,"EIT list values 1,519,900/1,719,900/1,859,900 = canonical (PB-M); printed effective date 2026-10-13 added to evidence (CEO-supplied list image sha f316e36f..., transcribed by ChatGPT Work; image not in P2-accessible Drive)"
+m_000180,kia/k4,image,ALREADY_ACCEPTED,hero aec257b6969a already in registry
+m_000130,gac/gs4-max,images,ACCEPT,hero 2000x1125 + 3 gallery 1280x720; official gacmotoreg.com; P2 visual QA; bytes sha256-identical in snapshots/MH_2026-10-14_38576320947
+m_000130,gac/gs4-max,"specs (1.5T, 7WDCT, 174 hp, 270 Nm)",NO_CHANGE,"identical values already accepted (SP-2); official page not reachable from P2 sandbox, not probed"
+m_000252,suzuki/baleno,images,ACCEPT,hero 3839x2159 + 3 gallery; globalsuzuki.com current-generation Baleno; P2 visual QA; bytes sha256-identical in snapshots/MH_2026-10-14_38576320947
+m_000069,byd/ti-7,images,ACCEPT,hero 2880x1700 + 2 gallery; byd.com Ti7; P2 visual QA; bytes sha256-identical in snapshots/MH_2026-10-14_38576320947
+m_000102,deepal/g318,images,ACCEPT,hero 1920x980 + 2 gallery; official deepal-eg.com; P2 visual QA; bytes sha256-identical in snapshots/MH_2026-10-14_38576320947
+m_000207,mg/g50-plus,image,ALREADY_ACCEPTED,hero 49add55661e9 accepted in milestone 04
+m_000053,bmw/5-series,images,REJECTED_BY_SOURCE,ChatGPT REWORK: render on G60 page shows G30 body (generation mismatch); no asset submitted
+m_000216,mitsubishi/outlander,images,MISSING,ChatGPT MISSING: only a concept sketch found; no asset submitted
+m_000120,fiat/tipo,images,REJECTED_BY_SOURCE,ChatGPT REWORK: only 690x458 Drive archive image; no new asset submitted
+m_000190,mazda/3,price,ACCEPT,"MY2027 1,609,000 sedan / 1,619,000 hatch: Hatla2ee (stated 2026-10-12) + CEO-supplied GB Auto list (sha 7f58c9cc...) identical; PB-M Tier B"
+m_000191,mazda/cx-3,price,ACCEPT,"MY2027 1,355,000: ContactCars + GB Auto list identical; Hatla2ee 1,335,000 equals list MY2026 value (superseded); PB-M Tier B; effective date not stated"
+,kia/pv5,price,HOLD,"2,500,000 Elite on EIT list; no P2 identity; seating unverified"
+"m_000178,m_000245,m_000244,m_000246,kia/seltos",kia/ev6 skoda/* kia/seltos,price,ALREADY_ACCEPTED,list values equal canonical; no change

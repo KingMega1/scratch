@@ -18,19 +18,19 @@
     "counts": {
       "models": 283,
       "id_accepted": 283,
-      "price_accepted": 193,
+      "price_accepted": 195,
       "price_tier_a": 25,
-      "price_source_dated": 153,
+      "price_source_dated": 154,
       "market_status_official": 37,
       "specs_accepted": 199,
       "warranty_accepted": 100,
       "brochure_accepted": 81,
-      "hero_accepted": 53,
-      "hero_accepted_hq": 49,
-      "hero_limited_archive": 149,
-      "gallery_models": 46,
+      "hero_accepted": 57,
+      "hero_accepted_hq": 53,
+      "hero_limited_archive": 145,
+      "gallery_models": 50,
       "logo_accepted": 248,
-      "fully_enriched": 32
+      "fully_enriched": 34
     }
   },
   "relation": "Website on-sale set equals pinned U11 on-sale set (283). 'accepted' carries only P2-ACCEPTED values; absent means UNKNOWN. P1 recommendation semantics unchanged.",
@@ -39,7 +39,7 @@
     "p2_evidence": 21,
     "identity_only": 262,
     "excluded": 3,
-    "price_accepted": 193,
+    "price_accepted": 195,
     "id_accepted": 283
   },
   "entries": [
@@ -7051,7 +7051,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -7254,9 +7253,57 @@
           "quality_class": "HQ",
           "sha256": "2b8ca934df800f3a3da8088817de44d971068ef7e55353495ff355fa401a5e9a"
         },
-        "hero_image": null,
-        "hero_image_limited": null,
-        "gallery": [],
+        "hero_image": {
+          "src": "/media/p2/models/byd-ti-7.webp",
+          "credit": "BYD",
+          "source_url": "https://www.byd.com/en-qa/car/ti-7",
+          "image_url": "https://www.byd.com/material/byd-site/en-ae/product/ti7/e-banner-pc-1.webp",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "HQ",
+          "sha256": "6e82a9cfb8078e5ba07e2ccf4b289789880c9d8c7a44f4b155d81d13ee5d27e8"
+        },
+        "hero_image_limited": {
+          "src": "/media/p2/models/byd-ti-7.webp",
+          "credit": "CarIndex archive",
+          "source_url": "https://drive.google.com/file/d/13GMl0JaTfUJlly1zugWMAkIIEL0CAnGQ/view?usp=drivesdk",
+          "image_url": "https://drive.google.com/file/d/13GMl0JaTfUJlly1zugWMAkIIEL0CAnGQ/view?usp=drivesdk",
+          "flags": [
+            "PHOTO_NEEDS_ENRICHMENT",
+            "ORIGIN_UNVERIFIED"
+          ],
+          "status": "ACCEPT_LIMITED",
+          "quality_class": "COMPACT_ONLY",
+          "sha256": "0f82081e8e611d68d0eae2a8e3724271a73a3aae5d97ea2b271134cb669eaf48"
+        },
+        "gallery": [
+          {
+            "asset_id": "b3ab873e7480",
+            "sha256": "b3ab873e7480ad667e963eca72ec6647dfda4576c011b7d99c7dcbc834074387",
+            "width": "2880",
+            "height": "1700",
+            "quality_class": "HQ",
+            "url": "https://www.byd.com/material/byd-site/en-ae/product/ti7/b-2-pc1.webp",
+            "page": "https://www.byd.com/en-qa/car/ti-7",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/byd-ti-7/01.webp",
+            "credit": "BYD"
+          },
+          {
+            "asset_id": "6ef87442a68d",
+            "sha256": "6ef87442a68dcdb8a74d1f9d90b6d96e9438d5d3cd000b2aa486ccd38c3784d7",
+            "width": "2880",
+            "height": "1700",
+            "quality_class": "HQ",
+            "url": "https://www.byd.com/material/byd-site/en-ae/product/ti7/e-pc.webp",
+            "page": "https://www.byd.com/en-qa/car/ti-7",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/byd-ti-7/02.webp",
+            "credit": "BYD"
+          }
+        ],
         "conflicts": []
       }
     },
@@ -15581,7 +15628,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -15919,9 +15965,57 @@
           "quality_class": "HQ",
           "sha256": "8155c1b99153df402772fc261f3d68eb92fd10b5e7fcacf8b54705427780bb1c"
         },
-        "hero_image": null,
-        "hero_image_limited": null,
-        "gallery": [],
+        "hero_image": {
+          "src": "/media/p2/models/deepal-g318.webp",
+          "credit": "Deepal Egypt",
+          "source_url": "https://www.deepal-eg.com/en/models/deepal-g318/",
+          "image_url": "https://www.deepal-eg.com/media/products/main_banner__car_page_1920___980__eItcJgM.png",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "HQ",
+          "sha256": "226edded9ca8023193d736377e6fde58451e46b4f3c45db5bd7915b635da94c5"
+        },
+        "hero_image_limited": {
+          "src": "/media/p2/models/deepal-g318.webp",
+          "credit": "CarIndex archive",
+          "source_url": "https://drive.google.com/file/d/1xhCPZehQoW_z98goBe3cNNAmItBXWVsE/view?usp=drivesdk",
+          "image_url": "https://drive.google.com/file/d/1xhCPZehQoW_z98goBe3cNNAmItBXWVsE/view?usp=drivesdk",
+          "flags": [
+            "PHOTO_NEEDS_ENRICHMENT",
+            "ORIGIN_UNVERIFIED"
+          ],
+          "status": "ACCEPT_LIMITED",
+          "quality_class": "COMPACT_ONLY",
+          "sha256": "c89da15e4696a14cfb6da5ad9fd6cf19d267ac88ea865d7ceabdde14f5935477"
+        },
+        "gallery": [
+          {
+            "asset_id": "fc0897ef6eaf",
+            "sha256": "fc0897ef6eafdb8eb45abd6a335d070d9f6c8bab35113cd9578de09b3dab56bc",
+            "width": "1138",
+            "height": "758",
+            "quality_class": "WEB",
+            "url": "https://www.deepal-eg.com/media/car_models/performance/gallery/mobile/interior_cards_1138_758_3.png",
+            "page": "https://www.deepal-eg.com/en/models/deepal-g318/",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/deepal-g318/01.webp",
+            "credit": "Deepal Egypt"
+          },
+          {
+            "asset_id": "3bdb33ef1691",
+            "sha256": "3bdb33ef169189f9670c49379709e37be7e96ed2c29991d1e1c852fac213f670",
+            "width": "1902",
+            "height": "1080",
+            "quality_class": "HQ",
+            "url": "https://www.deepal-eg.com/media/products/interior_interactive_1980x1080_7BIPH9R.png",
+            "page": "https://www.deepal-eg.com/en/models/deepal-g318/",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/deepal-g318/02.webp",
+            "credit": "Deepal Egypt"
+          }
+        ],
         "conflicts": [
           "PB-2 CONFLICT: EgyCar=2050000;Hatla2ee=2050000",
           "PB-2 CONFLICT: EgyCar=2200000;Hatla2ee=2200000"
@@ -20558,7 +20652,6 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_OFFICIAL_BROCHURE",
-        "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -20723,9 +20816,70 @@
           "quality_class": "WEB",
           "sha256": "1c3b471a5fa6d7c93fae99f011a0545f460d75beff1d40b2cf15ed3c214e3ca5"
         },
-        "hero_image": null,
-        "hero_image_limited": null,
-        "gallery": [],
+        "hero_image": {
+          "src": "/media/p2/models/gac-gs4-max.webp",
+          "credit": "GAC Motor Egypt",
+          "source_url": "https://gacmotoreg.com/models/gs4-max",
+          "image_url": "https://media.gacmotoreg.com/media/613/XFVPcMgrjRCdlhFrroHbDWPfP.webp",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "HQ",
+          "sha256": "f1d86bb916dcab44de35a67f3a8853172386812b3198c352c3e84f1e1852511d"
+        },
+        "hero_image_limited": {
+          "src": "/media/p2/models/gac-gs4-max.webp",
+          "credit": "CarIndex archive",
+          "source_url": "https://drive.google.com/file/d/1bPG8scwDLCxebOQtID_NN-koebdwIT4k/view?usp=drivesdk",
+          "image_url": "https://drive.google.com/file/d/1bPG8scwDLCxebOQtID_NN-koebdwIT4k/view?usp=drivesdk",
+          "flags": [
+            "PHOTO_NEEDS_ENRICHMENT",
+            "ORIGIN_UNVERIFIED"
+          ],
+          "status": "ACCEPT_LIMITED",
+          "quality_class": "COMPACT_ONLY",
+          "sha256": "b100004845b19d0f9d2c9fc44d0d7cfc073ef38fd0892d63bbbbcb131c715eea"
+        },
+        "gallery": [
+          {
+            "asset_id": "b660056736fe",
+            "sha256": "b660056736fe53873ff4401fdc467509c22e05c2e0dce23815b9deb7f8aaa6f7",
+            "width": "1280",
+            "height": "720",
+            "quality_class": "WEB",
+            "url": "https://media.gacmotoreg.com/media/255/1.jpg",
+            "page": "https://gacmotoreg.com/models/gs4-max",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/gac-gs4-max/01.webp",
+            "credit": "GAC Motor Egypt"
+          },
+          {
+            "asset_id": "f4d4a7134f25",
+            "sha256": "f4d4a7134f25099e29a18d53c9058d711ce55174ba7479defd30b7a8f50d7fbb",
+            "width": "1280",
+            "height": "720",
+            "quality_class": "WEB",
+            "url": "https://media.gacmotoreg.com/media/256/2.jpg",
+            "page": "https://gacmotoreg.com/models/gs4-max",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/gac-gs4-max/02.webp",
+            "credit": "GAC Motor Egypt"
+          },
+          {
+            "asset_id": "5719a7a77948",
+            "sha256": "5719a7a77948bd7bdae1c9394c520381f6bdb8c526bbe41fc496e2327274959d",
+            "width": "1280",
+            "height": "720",
+            "quality_class": "WEB",
+            "url": "https://media.gacmotoreg.com/media/257/3.jpg",
+            "page": "https://gacmotoreg.com/models/gs4-max",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/gac-gs4-max/03.webp",
+            "credit": "GAC Motor Egypt"
+          }
+        ],
         "conflicts": []
       }
     },
@@ -30122,8 +30276,8 @@
           "effective_date": "2026-10-13",
           "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-14",
-          "issuer": "EIT (Kia Egypt distributor) as reported",
-          "evidence_url": "https://eg.hatla2ee.com/en/new-car/kia/KIA-K4 | https://sayaratelyoum.com/kia-2027-prices-egypt-increases | https://misrcars.com/أسعار-سيارات-كيا-في-مصر-طرح-موديلات-2027-من/",
+          "issuer": "EIT (Kia Egypt distributor)",
+          "evidence_url": "https://eg.hatla2ee.com/en/new-car/kia/KIA-K4 | https://sayaratelyoum.com/kia-2027-prices-egypt-increases | https://misrcars.com/أسعار-سيارات-كيا-في-مصر-طرح-موديلات-2027-من/ | ceo-supplied://EIT-price-list/57142E94-B8CE-4A8E-B7CB-3E829CECE9C8_1_105_c.jpeg",
           "trims": [
             {
               "model_year": 2027,
@@ -30133,8 +30287,8 @@
               "effective_date": "2026-10-13",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-14",
-              "issuer": "EIT (Kia Egypt distributor) as reported",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/kia/KIA-K4 | https://sayaratelyoum.com/kia-2027-prices-egypt-increases | https://misrcars.com/أسعار-سيارات-كيا-في-مصر-طرح-موديلات-2027-من/",
+              "issuer": "EIT (Kia Egypt distributor)",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/kia/KIA-K4 | https://sayaratelyoum.com/kia-2027-prices-egypt-increases | https://misrcars.com/أسعار-سيارات-كيا-في-مصر-طرح-موديلات-2027-من/ | ceo-supplied://EIT-price-list/57142E94-B8CE-4A8E-B7CB-3E829CECE9C8_1_105_c.jpeg",
               "powertrain": "Petrol"
             },
             {
@@ -30145,8 +30299,8 @@
               "effective_date": "2026-10-13",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-14",
-              "issuer": "EIT (Kia Egypt distributor) as reported",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/kia/KIA-K4 | https://sayaratelyoum.com/kia-2027-prices-egypt-increases | https://misrcars.com/أسعار-سيارات-كيا-في-مصر-طرح-موديلات-2027-من/",
+              "issuer": "EIT (Kia Egypt distributor)",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/kia/KIA-K4 | https://sayaratelyoum.com/kia-2027-prices-egypt-increases | https://misrcars.com/أسعار-سيارات-كيا-في-مصر-طرح-موديلات-2027-من/ | ceo-supplied://EIT-price-list/57142E94-B8CE-4A8E-B7CB-3E829CECE9C8_1_105_c.jpeg",
               "powertrain": "Petrol"
             },
             {
@@ -30157,8 +30311,8 @@
               "effective_date": "2026-10-13",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-14",
-              "issuer": "EIT (Kia Egypt distributor) as reported",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/kia/KIA-K4 | https://sayaratelyoum.com/kia-2027-prices-egypt-increases | https://misrcars.com/أسعار-سيارات-كيا-في-مصر-طرح-موديلات-2027-من/",
+              "issuer": "EIT (Kia Egypt distributor)",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/kia/KIA-K4 | https://sayaratelyoum.com/kia-2027-prices-egypt-increases | https://misrcars.com/أسعار-سيارات-كيا-في-مصر-طرح-موديلات-2027-من/ | ceo-supplied://EIT-price-list/57142E94-B8CE-4A8E-B7CB-3E829CECE9C8_1_105_c.jpeg",
               "powertrain": "Petrol"
             }
           ],
@@ -32280,10 +32434,9 @@
       },
       "p2_evidence": false,
       "evidence_state": "U11_IDENTITY_ONLY",
-      "price_status": "UNKNOWN",
+      "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_PRICE",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
@@ -32296,7 +32449,43 @@
           "basis": "registration segment, last 12 months (31 registrations)",
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
-        "price": null,
+        "price": {
+          "price_from": 1609000,
+          "model_year": 2027,
+          "tier": "B",
+          "effective_date": "2026-10-12",
+          "date_basis": "SOURCE_STATED",
+          "as_of": "2026-10-14",
+          "issuer": "GB Auto (Mazda Egypt distributor) as listed",
+          "evidence_url": "https://eg.hatla2ee.com/en/new-car/mazda/mazda-3 | ceo-supplied://GB-Auto-Mazda-price-list/CF792FDF-5384-472A-8EDC-EDBDD83F1658.jpeg",
+          "trims": [
+            {
+              "model_year": 2027,
+              "label": "Highline 1.5L SKYACTIV AT Sedan",
+              "price_egp": 1609000,
+              "tier": "B",
+              "effective_date": "2026-10-12",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-14",
+              "issuer": "GB Auto (Mazda Egypt distributor) as listed",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/mazda/mazda-3 | ceo-supplied://GB-Auto-Mazda-price-list/CF792FDF-5384-472A-8EDC-EDBDD83F1658.jpeg",
+              "powertrain": "Petrol"
+            },
+            {
+              "model_year": 2027,
+              "label": "Highline 1.5L SKYACTIV AT Hatchback",
+              "price_egp": 1619000,
+              "tier": "B",
+              "effective_date": "2026-10-12",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-14",
+              "issuer": "GB Auto (Mazda Egypt distributor) as listed",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/mazda/mazda-3 | ceo-supplied://GB-Auto-Mazda-price-list/CF792FDF-5384-472A-8EDC-EDBDD83F1658.jpeg",
+              "powertrain": "Petrol"
+            }
+          ],
+          "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
+        },
         "specs": {
           "boot_l": [
             {
@@ -32472,10 +32661,9 @@
       },
       "p2_evidence": false,
       "evidence_state": "U11_IDENTITY_ONLY",
-      "price_status": "UNKNOWN",
+      "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_PRICE",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
@@ -32488,7 +32676,31 @@
           "basis": "registration segment, last 12 months (8 registrations)",
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
-        "price": null,
+        "price": {
+          "price_from": 1355000,
+          "model_year": 2027,
+          "tier": "B",
+          "effective_date": null,
+          "date_basis": "OBSERVED",
+          "as_of": "2026-10-14",
+          "issuer": "GB Auto (Mazda Egypt distributor) as listed",
+          "evidence_url": "https://www.contactcars.com/en/new-cars/mazda-cx_3/year-2027 | ceo-supplied://GB-Auto-Mazda-price-list/CF792FDF-5384-472A-8EDC-EDBDD83F1658.jpeg",
+          "trims": [
+            {
+              "model_year": 2027,
+              "label": "Highline 1.5L SKYACTIV AT",
+              "price_egp": 1355000,
+              "tier": "B",
+              "effective_date": null,
+              "date_basis": "OBSERVED",
+              "as_of": "2026-10-14",
+              "issuer": "GB Auto (Mazda Egypt distributor) as listed",
+              "evidence_url": "https://www.contactcars.com/en/new-cars/mazda-cx_3/year-2027 | ceo-supplied://GB-Auto-Mazda-price-list/CF792FDF-5384-472A-8EDC-EDBDD83F1658.jpeg",
+              "powertrain": "Petrol"
+            }
+          ],
+          "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
+        },
         "specs": {
           "drive": [
             {
@@ -46621,7 +46833,6 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_OFFICIAL_BROCHURE",
-        "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
@@ -46770,9 +46981,70 @@
           "quality_class": "HQ",
           "sha256": "bbc247ac9d034a077568791c75c264c88ac1239b7de96f3bb90b5e05ae5b6cf3"
         },
-        "hero_image": null,
-        "hero_image_limited": null,
-        "gallery": [],
+        "hero_image": {
+          "src": "/media/p2/models/suzuki-baleno.webp",
+          "credit": "Suzuki Motor Corporation",
+          "source_url": "https://www.globalsuzuki.com/automobile/lineup/baleno/",
+          "image_url": "https://www.globalsuzuki.com/automobile/lineup/baleno/img/slide/key_img01.jpg",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "HQ",
+          "sha256": "ffd7541d46b09ff8cf25e2a93dfa39d2cba1f53215ecc51333fe119cec9ab205"
+        },
+        "hero_image_limited": {
+          "src": "/media/p2/models/suzuki-baleno.webp",
+          "credit": "CarIndex archive",
+          "source_url": "https://drive.google.com/file/d/1UF1wCtUu04YDkJt_pvgyG-G0picrmxA3/view?usp=drivesdk",
+          "image_url": "https://drive.google.com/file/d/1UF1wCtUu04YDkJt_pvgyG-G0picrmxA3/view?usp=drivesdk",
+          "flags": [
+            "PHOTO_NEEDS_ENRICHMENT",
+            "ORIGIN_UNVERIFIED"
+          ],
+          "status": "ACCEPT_LIMITED",
+          "quality_class": "COMPACT_ONLY",
+          "sha256": "ff1172ee9028f72793dfb0a904e3ac888b9ab19971d7a04737ae533a868f8fcd"
+        },
+        "gallery": [
+          {
+            "asset_id": "261d6955ebbc",
+            "sha256": "261d6955ebbc9bfa4f437e6b14b181c440384f6f45eed0a8061a96af21f22fec",
+            "width": "3840",
+            "height": "2160",
+            "quality_class": "HQ",
+            "url": "https://www.globalsuzuki.com/automobile/lineup/baleno/img/sa_bg.jpg",
+            "page": "https://www.globalsuzuki.com/automobile/lineup/baleno/",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/suzuki-baleno/01.webp",
+            "credit": "Suzuki Motor Corporation"
+          },
+          {
+            "asset_id": "3707b607a1b4",
+            "sha256": "3707b607a1b44e510d769d1bed764a8ce0eab97fa0af2cb1c1a710d43eda9a2e",
+            "width": "3840",
+            "height": "2160",
+            "quality_class": "HQ",
+            "url": "https://www.globalsuzuki.com/automobile/lineup/baleno/img/slide/key_img03.jpg",
+            "page": "https://www.globalsuzuki.com/automobile/lineup/baleno/",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/suzuki-baleno/02.webp",
+            "credit": "Suzuki Motor Corporation"
+          },
+          {
+            "asset_id": "f8a2ab23c059",
+            "sha256": "f8a2ab23c059a3c0a8041ee3f40def011fcb30bb0c1c4de8c035609d1f476569",
+            "width": "3840",
+            "height": "2159",
+            "quality_class": "HQ",
+            "url": "https://www.globalsuzuki.com/automobile/lineup/baleno/img/in_bg.jpg",
+            "page": "https://www.globalsuzuki.com/automobile/lineup/baleno/",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/suzuki-baleno/03.webp",
+            "credit": "Suzuki Motor Corporation"
+          }
+        ],
         "conflicts": []
       }
     },
@@ -60017,15 +60289,63 @@
           "quality_class": "HQ",
           "sha256": "12acee9162bf8c7ef3799d9c5e8100583f3fea8f89b772d4be51efd5e4ab64e7"
         },
-        "hero_image": null,
-        "gallery": [],
+        "hero_image": {
+          "src": "/media/p2/models/geely-ex5-em-i.webp",
+          "credit": "Geely Egypt",
+          "source_url": "https://geelyeg.com/models/ex5-emi",
+          "image_url": "https://geelyeg.com/assets/ex5-emi-model-page/herosection.webp",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "HQ",
+          "sha256": "06abbc1011016e3aabede801b2fff2207b3dae913782ffd5eb5aa48f638f237d"
+        },
+        "gallery": [
+          {
+            "asset_id": "8f811c069db9",
+            "sha256": "8f811c069db99a6fcf750d1fd60af8006b278815d224bc86960be5ff1b72c40f",
+            "width": "1920",
+            "height": "1200",
+            "quality_class": "HQ",
+            "url": "https://geelyeg.com/assets/ex5-emi-model-page/intro.webp",
+            "page": "https://geelyeg.com/models/ex5-emi",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/geely-ex5-em-i/01.webp",
+            "credit": "Geely Egypt"
+          },
+          {
+            "asset_id": "89889c73f506",
+            "sha256": "89889c73f5062e16e029bf73faee1d87fca68d4a3cbfa4042cfa333511064168",
+            "width": "1200",
+            "height": "750",
+            "quality_class": "WEB",
+            "url": "https://geelyeg.com/assets/ex5-emi-model-page/lifestyle-media/GEELY%20EX5%20EM-i(4).webp",
+            "page": "https://geelyeg.com/models/ex5-emi",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/geely-ex5-em-i/02.webp",
+            "credit": "Geely Egypt"
+          },
+          {
+            "asset_id": "5482c11c7285",
+            "sha256": "5482c11c728595dabb70dd4744393e5ebe3a5528ce57ff73b6048b288b703b56",
+            "width": "1200",
+            "height": "750",
+            "quality_class": "WEB",
+            "url": "https://geelyeg.com/assets/ex5-emi-model-page/lifestyle-media/GEELY%20EX5%20EM-i(11).webp",
+            "page": "https://geelyeg.com/models/ex5-emi",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/geely-ex5-em-i/03.webp",
+            "credit": "Geely Egypt"
+          }
+        ],
         "conflicts": []
       },
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
         "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
-        "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ]

@@ -2,7 +2,9 @@
 
 | File | For | Status |
 |---|---|---|
-| `p5-release-20261014b.json` | P5 | Current. Uses P5's own route (a6d3f0b). Lists the release sha256, the 309 served files with sha256, and the P5 verification result. |
+| `p5-release-20261014c.json` | P5 | Current. Release sha256 4770fbd5…, 327 served files (58 heroes, 54 logos, 215 gallery) with sha256. Verified against P5 f131fdc in a disposable worktree: typecheck pass, unit tests 74/74. P5 has not ingested it yet (P5 still serves 559c718, sha a0032612…). |
+| `p5-release-20261014b.json` | P5 | Superseded by `c`. |
+| `chatgpt-closure-20261014-selections.json` | P2 | ChatGPT Work priority-record closure: 22 new images. 18 reproduced sha256-identical in CI run 38576320947 and accepted; 4 Mercedes images not reproducible (site timeout). Decisions: `review/chatgpt_closure_20261014_decisions.csv`. |
 | `parallel-allocation-20261014.csv` | Claude Code Cloud, ChatGPT Work | Non-overlapping work split, generated from `review/u11_coverage.csv`. |
 | `chatgpt-milestone-04-selections.json` | P2 | ChatGPT Work milestone-04 selections. Bytes were reproduced sha256-identical in CI run 38530437824. |
 
