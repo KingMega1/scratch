@@ -12,7 +12,7 @@ for(const locale of ['en','ar']){
   }
   await page.goto('/'+locale+'/cars/nissan-magnite');
   await expect(page.locator('#brochure-h')).toBeVisible();
-  await expect(page.locator('[data-brochure-model-id="nissan/magnite"]')).toContainText(locale==='ar'?'تاريخ سريان الكتالوج غير مذكور':'does not state an effective date');
+  await expect(page.locator('[data-brochure-model-id="nissan/magnite"]')).toContainText(locale==='ar'?'التواريخ والفئات زي ما هي مذكورة':'Dates and trim coverage are as stated');
   await page.goto('/'+locale+'/cars/alfa-romeo-giulia');await expect(page.locator('#brochure-h')).toHaveCount(0);
  });
 }

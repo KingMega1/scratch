@@ -35,10 +35,10 @@ test('every package TTF has a subset WOFF2 sibling and fonts.css prefers it', ()
   }
 });
 
-test('served P2 brand logos are visible on light tiles (white-only marks are listed and not served)', async () => {
+test('white-only P2 brand logos are exactly the dark-tile list (shown unchanged on ink, never recoloured)', async () => {
   const { execFileSync } = await import('node:child_process');
   const src = readFileSync('src/server/vehicles/read-model.ts', 'utf8');
-  const listed = new Set([...src.match(/LIGHT_ONLY_LOGOS = new Set\(\[([^\]]*)\]/)[1].matchAll(/'([^']+)'/g)].map(m => m[1]));
+  const listed = new Set([...src.match(/DARK_TILE_LOGOS = new Set\(\[([^\]]*)\]/)[1].matchAll(/'([^']+)'/g)].map(m => m[1]));
   const release = JSON.parse(readFileSync('data/registry/catalogue-serving.release.json', 'utf8'));
   const logos = [...new Set(release.entries.map(e => e.accepted?.logo?.src).filter(Boolean))];
   // mean luminance of opaque pixels (python3 + Pillow are available wherever the P2 media toolchain runs)

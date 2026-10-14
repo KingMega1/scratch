@@ -9,8 +9,8 @@ const bid = (s: string) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u0
 // Served images: P2-accepted hero (serving release) first, else the P5 verified media registry.
 const served = new Map<string, string>(media.entries.map(m => [m.site_slug, m.src]));
 for (const e of release.entries) if (e.accepted?.hero_image?.src) served.set(e.site_slug, e.accepted.hero_image.src);
-const lightOnly = new Set([...(readFileSync('src/server/vehicles/read-model.ts', 'utf8').match(/LIGHT_ONLY_LOGOS = new Set\(\[([^\]]*)\]/)![1].matchAll(/'([^']+)'/g))].map(m => m[1]));
-const p2Logo = new Map<string, string>(); for (const e of release.entries) if (e.accepted?.logo?.src && !lightOnly.has(e.accepted.logo.src) && !p2Logo.has(bid(e.brand))) p2Logo.set(bid(e.brand), e.accepted.logo.src);
+const darkTile = new Set([...(readFileSync('src/server/vehicles/read-model.ts', 'utf8').match(/DARK_TILE_LOGOS = new Set\(\[([^\]]*)\]/)![1].matchAll(/'([^']+)'/g))].map(m => m[1]));
+const p2Logo = new Map<string, string>(); for (const e of release.entries) if (e.accepted?.logo?.src && !p2Logo.has(bid(e.brand))) p2Logo.set(bid(e.brand), e.accepted.logo.src);
 const siteBrands = new Set(release.entries.map(e => bid(e.brand)));
 const logoIds = [...siteBrands].filter(id => (logos.brands as Record<string, unknown>)[id] || p2Logo.has(id));
 
@@ -44,6 +44,10 @@ for (const l of ['en', 'ar'] as const) {
     expect(shown.length).toBe(logoIds.length); // ink emblem (simple-icons) or the P2-accepted official logo; never guessed
     for (const id of shown) expect(logoIds).toContain(id);
     for (const src of await page.locator('.brand-grid img').evaluateAll(els => els.map(e => e.getAttribute('src') || ''))) expect(src).toMatch(/^\/media\/p2\/brands\/[\w-]+\.png$/);
+    // white-only official marks (e.g. BYD) are served unchanged on an ink tile
+    for (const [src, tile] of await page.locator('.brand-grid img').evaluateAll(els => els.map(e => [e.getAttribute('src') || '', e.getAttribute('data-logo-tile')])))
+      expect(tile, src).toBe(darkTile.has(src) ? 'dark' : 'light');
+    expect(darkTile.has('/media/p2/brands/byd.png')).toBe(true);
     const strip = await page.goto(`/${l}`).then(() => page.locator('.brand-strip b').allTextContents());
     expect(strip).toEqual([...strip].sort((a, b) => col.compare(a, b)));
   });

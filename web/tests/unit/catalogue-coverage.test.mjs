@@ -44,7 +44,11 @@ function runtime(path, dependencies){
  },module,module.exports);
  return module.exports;
 }
-const V=runtime('src/server/vehicles/read-model.ts',{
+// P2 content module + its data inputs (P5 content completion)
+const P2DEPS={'./p2-content':runtime('src/server/vehicles/p2-content.ts',{}),
+ '@data/registry/p2-import.manifest.json':JSON.parse(readFileSync('data/registry/p2-import.manifest.json','utf8')),
+ '@data/registry/brochure-drive-public.json':JSON.parse(readFileSync('data/registry/brochure-drive-public.json','utf8'))};
+const V=runtime('src/server/vehicles/read-model.ts',{...P2DEPS,
  '@data/registry/universe.snapshot.json':snap,'@data/registry/display-crosswalk.TEMP.json':cw,
  '@data/registry/catalogue-serving.release.json':release,'@data/registry/media-verified.json':JSON.parse(readFileSync('data/registry/media-verified.json','utf8')),
 });
@@ -84,7 +88,7 @@ test('P2 media contract: accepted same-origin hero images are served automatical
  rel2.entries.find(e=>e.site_slug==='kia-sportage').accepted={hero_image:{src:'/media/models/kia-sportage.webp',credit:'Kia Egypt',source_url:'https://example.test/kia'}};
  rel2.entries.find(e=>e.site_slug==='hyundai-tucson').accepted={hero_image:{src:'https://cdn.example.test/tucson.jpg'}};
  rel2.entries.find(e=>e.site_slug==='mg-hs').hero_image={src:'/media/../secret.webp'};
- const V2=runtime('src/server/vehicles/read-model.ts',{
+ const V2=runtime('src/server/vehicles/read-model.ts',{...P2DEPS,
   '@data/registry/universe.snapshot.json':snap,'@data/registry/display-crosswalk.TEMP.json':cw,
   '@data/registry/catalogue-serving.release.json':rel2,'@data/registry/media-verified.json':{entries:[]},
  });

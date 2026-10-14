@@ -496,3 +496,21 @@ table.t th.t-num { text-align: end; }
 .brand-strip .body-tile { min-height: 116px; align-content: center; }
 .mc.has-photo { padding-block-start: 0; overflow: hidden; }
 .mc-photo { display: block; width: calc(100% + 32px); margin-inline: -16px; aspect-ratio: 16 / 9; object-fit: cover; background: var(--ci-color-fog); margin-block-end: 6px; }
+
+/* P5 content completion (2026-10-14): P2-accepted specs, warranty, gallery, brochures, dark-tile logos. */
+table.spec-t th[scope="row"] { font-size: 14px; font-weight: 700; color: var(--ci-color-ink); white-space: normal; vertical-align: top; min-width: 150px; border-block-end: 1px solid var(--ci-color-line); }
+table.spec-t th[scope="row"] .state { margin-block-start: 6px; }
+table.spec-t td { vertical-align: top; }
+table.spec-t .spec-v { font-weight: 700; min-width: 90px; }
+.card.warranty h3 { margin: 0 0 4px; font-size: 16px; }
+.card.warranty .cd-price { font-size: 22px; }
+.gallery { list-style: none; margin: 0; padding: 0 0 8px; display: flex; gap: 12px; width: max-content; }
+.gallery li { flex: 0 0 auto; width: min(85vw, 440px); scroll-snap-align: start; }
+.gallery figure { margin: 0; }
+.gallery img { display: block; width: 100%; height: auto; border-radius: var(--radius-card); background: var(--ci-color-fog); }
+.gallery figcaption { margin-block-start: 4px; }
+.gallery-scroll { overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; }
+.gallery-scroll:focus-visible { outline: 2px solid var(--ci-color-ink); outline-offset: 2px; }
+.brochures { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.brochures .btn { white-space: normal; text-align: start; }
+.brand-mark-img.brand-mark-dark { background: var(--ci-color-ink); border-radius: 6px; padding: 4px 6px; box-sizing: border-box; }

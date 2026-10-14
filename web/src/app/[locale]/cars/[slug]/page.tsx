@@ -10,7 +10,7 @@ import { alternatives } from '@/server/vehicles/query';
 import { takes } from '@/server/take/provider';
 import { content } from '@/server/cms/provider';
 import { CarCard, CarMedia, CarName, OfficialFigure, PriceFrom, PriceState, carNameText } from '@/components/car';
-import brochures from '@data/registry/brochure-serving.release.json';
+import { Brochures, Gallery, SpecTable, WarrantyBlock } from '@/components/p2-content';
 import TrackOnMount from '@/components/TrackOnMount';
 import type { PublicTrim } from '@/lib/vehicles/types';
 
@@ -58,7 +58,6 @@ export default async function CarDetail({ params }: P) {
   if (!car) notFound();
   const t = dict(locale), c = t.car, v2 = t.v2;
   const meta = vehicles().meta();
-  const brochure = brochures.entries.find(b => b.p1_id === car.p1Id);
   const take = await takes().forModel(car.id);
   const alts = alternatives(car);
   const related = (await content().relatedTo(car.id)).slice(0, 3);
@@ -82,7 +81,9 @@ export default async function CarDetail({ params }: P) {
     GENERATION_UNKNOWN: ar ? 'جيل الموديل لم يتم تأكيده بعد.' : 'Model generation has not been confirmed yet.',
     P2_ID_PENDING: ar ? 'بيانات الموديل التفصيلية قيد المراجعة.' : 'Detailed model evidence is under review.',
   };
-  const gapItems = [...new Map(car.gaps.map(g => [GAP[g] ?? v2.gaps[g], g] as const).filter(([l]) => l).map(([l, g]) => [l, [g, l] as const])).values()];
+  // A gap is no longer shown once P2 has accepted that content for this model.
+  const filled = new Set([...(car.p2Specs?.length ? ['NO_VERIFIED_SPECS', 'NO_ACCEPTED_SPECS'] : []), ...(car.warranty?.length ? ['NO_VERIFIED_WARRANTY'] : [])]);
+  const gapItems = [...new Map(car.gaps.filter(g => !filled.has(g)).map(g => [GAP[g] ?? v2.gaps[g], g] as const).filter(([l]) => l).map(([l, g]) => [l, [g, l] as const])).values()];
 
   return (
     <div className="wrap section" style={{ paddingBlockStart: 24 }} data-model-id={car.id}>
@@ -159,17 +160,23 @@ export default async function CarDetail({ params }: P) {
 
       <section className="cd-section" aria-labelledby="specs-h">
         <h2 id="specs-h" className="h-section">{c.specsH}</h2>
-        {car.evidenceState === 'U11_IDENTITY_ONLY' ? <p className="slot-empty">{locale === 'ar' ? 'المواصفات لم يتم التحقق منها بعد.' : 'Specifications have not been verified yet.'}</p> : null}
-        <div className="spec-grid">{specRows.map(([k, v]) => <div className="spec" key={k}><div className="k">{k}</div><div className="v">{v}</div></div>)}</div>
+        {car.p2Specs?.length ? (
+          <>
+            <div className="spec-grid" style={{ marginBlockEnd: 12 }}><div className="spec"><div className="k">{c.spec.powertrain}</div><div className="v">{specRows[0][1]}</div></div></div>
+            <SpecTable rows={car.p2Specs} locale={locale} />
+          </>
+        ) : (
+          <>
+            {car.evidenceState === 'U11_IDENTITY_ONLY' ? <p className="slot-empty">{locale === 'ar' ? 'المواصفات لم يتم التحقق منها بعد.' : 'Specifications have not been verified yet.'}</p> : null}
+            <div className="spec-grid">{specRows.map(([k, v]) => <div className="spec" key={k}><div className="k">{k}</div><div className="v">{v}</div></div>)}</div>
+          </>
+        )}
       </section>
 
-      {brochure ? (
-        <section className="cd-section" aria-labelledby="brochure-h" data-brochure-model-id={brochure.p1_id}>
-          <h2 id="brochure-h" className="h-section">{locale === 'ar' ? 'كتالوج الموديل من نيسان مصر' : 'Model brochure from Nissan Egypt'}</h2>
-          <a className="btn btn-ghost" href={brochure.url} target="_blank" rel="noopener noreferrer">{locale === 'ar' ? 'افتح الكتالوج الرسمي (PDF)' : 'Open official brochure (PDF)'}</a>
-          <p className="small">{brochure.document_year ? (locale === 'ar' ? 'سنة الموديل في الكتالوج: ' : 'Model year stated in the brochure: ') + brochure.document_year + '. ' : ''}{locale === 'ar' ? 'تاريخ سريان الكتالوج غير مذكور. التجهيزات تختلف حسب الفئة؛ راجع جدول الفئات في الكتالوج.' : 'The brochure does not state an effective date. Equipment varies by grade; refer to its grade table.'}</p>
-        </section>
-      ) : null}
+      {car.warranty?.length ? <WarrantyBlock items={car.warranty} locale={locale} /> : null}
+      {car.gallery?.length ? <Gallery images={car.gallery} name={carNameText(car, locale)} locale={locale} /> : null}
+
+      {car.brochures?.length ? <Brochures items={car.brochures} modelId={car.p1Id ?? car.id} locale={locale} /> : null}
 
       <section className="cd-section" aria-labelledby="mkt-h">
         <h2 id="mkt-h" className="h-section">{c.marketH}</h2>
@@ -184,7 +191,7 @@ export default async function CarDetail({ params }: P) {
               {r.firstSeen ? <div className="small">{v2.firstSeen}: {monthLabel(r.firstSeen, locale)}</div> : null}
               <p className="small" style={{ marginBlockEnd: 0 }}>{v2.regsNote}{r.monthsMissing.length ? ` ${v2.monthsMissing(r.monthsMissing.map(m => monthLabel(m, locale)).join(', '))}` : ''}</p>
             </div>
-            <div className="card" aria-label={locale === 'ar' ? 'التسجيلات الشهرية' : 'Monthly registrations'}>
+            <div className="card" role="group" aria-label={locale === 'ar' ? 'التسجيلات الشهرية' : 'Monthly registrations'}>
               <div className="bars">{monthly.map(m => (
                 <div className="b" key={m.month}><i style={{ height: `${Math.max(3, (m.count / maxM) * 80)}px` }} title={`${m.month}: ${m.count}`} /><span className="tnum" style={{ fontSize: 10 }}>{m.month.slice(5)}</span></div>
               ))}</div>

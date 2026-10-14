@@ -24,7 +24,15 @@ for(const locale of ['en','ar']){
   await page.goto('/'+locale+'/cars/'+unpriced.site_slug);
   await expect(page.locator('.cd-info .price-na, .cd-info .state-unknown').first()).toBeVisible();
   await expect(page.locator('.cd-info .bracket')).toHaveCount(0);
+  // specs: "not verified" only where P2 has accepted none; accepted specs replace that line
+  const nospec=release.entries.find((e:any)=>!e.p2_evidence&&!Object.keys(e.accepted?.specs??{}).length);
+  await page.goto('/'+locale+'/cars/'+nospec.site_slug);
   await expect(page.locator('#specs-h').locator('..')).toContainText(locale==='ar'?'المواصفات لم يتم التحقق منها بعد.':'Specifications have not been verified yet.');
+  await page.goto('/'+locale+'/cars/'+unpriced.site_slug);
+  if(Object.keys(unpriced.accepted?.specs??{}).length){
+   await expect(page.locator('table.spec-t')).toBeVisible();
+   await expect(page.locator('#specs-h').locator('..')).not.toContainText(locale==='ar'?'المواصفات لم يتم التحقق منها بعد.':'Specifications have not been verified yet.');
+  }
   expect(await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
  });
  test(locale+' brand filters and unknown-price exclusion',async({page})=>{

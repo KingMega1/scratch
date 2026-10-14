@@ -1,0 +1,140 @@
+{
+ "tool": "lighthouse 12.8.2, Chromium 1194 headless, local next start (CI_ENV=preview), 2026-10-14",
+ "note": "SEO <100 is only is-crawlable: preview builds are noindex by design. Baseline = a6d3f0b, same machine and method.",
+ "new": {
+  "ar-cars-mg-hs-desktop": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 69,
+   "lcp_s": 0.8,
+   "tbt_ms": 0,
+   "cls": 0.001,
+   "url": "/ar/cars/mg-hs"
+  },
+  "ar-cars-mg-hs-mobile-run1": {
+   "performance": 90,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 69,
+   "lcp_s": 3.4,
+   "tbt_ms": 75,
+   "cls": 0.0,
+   "url": "/ar/cars/mg-hs"
+  },
+  "ar-cars-mg-hs-mobile-run2": {
+   "performance": 84,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 69,
+   "lcp_s": 4.0,
+   "tbt_ms": 87,
+   "cls": 0,
+   "url": "/ar/cars/mg-hs"
+  },
+  "en-cars-changan-cs35-plus-desktop": {
+   "performance": 100,
+   "accessibility": 96,
+   "best-practices": 100,
+   "seo": 69,
+   "lcp_s": 0.7,
+   "tbt_ms": 0,
+   "cls": 0.0,
+   "url": "/en/cars/changan-cs35-plus"
+  },
+  "en-cars-changan-cs35-plus-mobile-run1": {
+   "performance": 92,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 69,
+   "lcp_s": 3.3,
+   "tbt_ms": 48,
+   "cls": 0.0,
+   "url": "/en/cars/changan-cs35-plus"
+  },
+  "en-cars-changan-cs35-plus-mobile-run2": {
+   "performance": 93,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 69,
+   "lcp_s": 3.2,
+   "tbt_ms": 42,
+   "cls": 0.0,
+   "url": "/en/cars/changan-cs35-plus"
+  },
+  "en-desktop": {
+   "performance": 100,
+   "accessibility": 99,
+   "best-practices": 100,
+   "seo": 69,
+   "lcp_s": 0.8,
+   "tbt_ms": 1,
+   "cls": 0.0,
+   "url": "/en"
+  },
+  "en-mobile-run1": {
+   "performance": 90,
+   "accessibility": 99,
+   "best-practices": 100,
+   "seo": 69,
+   "lcp_s": 3.6,
+   "tbt_ms": 54,
+   "cls": 0.0,
+   "url": "/en"
+  },
+  "en-mobile-run2": {
+   "performance": 93,
+   "accessibility": 99,
+   "best-practices": 100,
+   "seo": 69,
+   "lcp_s": 3.1,
+   "tbt_ms": 68,
+   "cls": 0.0,
+   "url": "/en"
+  }
+ },
+ "baseline_a6d3f0b_mobile": {
+  "en/cars/changan-cs35-plus": [
+   {
+    "performance": 91,
+    "accessibility": 97,
+    "lcp_s": 3.4,
+    "tbt_ms": 60
+   },
+   {
+    "performance": 93,
+    "accessibility": 97,
+    "lcp_s": 3.3,
+    "tbt_ms": 40
+   }
+  ],
+  "ar/cars/mg-hs": [
+   {
+    "performance": 89,
+    "accessibility": 100,
+    "lcp_s": 3.5,
+    "tbt_ms": 90
+   },
+   {
+    "performance": 91,
+    "accessibility": 100,
+    "lcp_s": 3.4,
+    "tbt_ms": 80
+   }
+  ],
+  "en": [
+   {
+    "performance": 87,
+    "accessibility": 99,
+    "lcp_s": 3.5,
+    "tbt_ms": 220
+   },
+   {
+    "performance": 90,
+    "accessibility": 99,
+    "lcp_s": 3.6,
+    "tbt_ms": 50
+   }
+  ]
+ }
+}

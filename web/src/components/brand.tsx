@@ -25,8 +25,9 @@ export function BrandMark({ id, label, size = 32 }: { id: string; label: string;
     const p2 = brandLogos[id];
     if (!p2) return null;
     const u = (w: number) => `/_next/image?url=${encodeURIComponent(p2.src)}&w=${w}&q=85`;
-    return <img className="brand-mark brand-mark-img" src={p2.src} srcSet={`${u(128)} 1x, ${u(256)} 2x`} alt={label} height={size} width={Math.round(size * 1.75)}
-      loading="lazy" decoding="async" data-brand-logo={id} data-logo-source="p2" />;
+    // White-only official marks sit on an ink tile, unchanged (no recolouring).
+    return <img className={`brand-mark brand-mark-img${p2.onDark ? ' brand-mark-dark' : ''}`} src={p2.src} srcSet={`${u(128)} 1x, ${u(256)} 2x`} alt={label} height={size} width={Math.round(size * 1.75)}
+      loading="lazy" decoding="async" data-brand-logo={id} data-logo-source="p2" data-logo-tile={p2.onDark ? 'dark' : 'light'} />;
   }
   return (
     <svg className="brand-mark" width={size} height={size} viewBox="0 0 24 24" role="img" aria-label={label} data-brand-logo={id}>

@@ -33,6 +33,11 @@ for (const src of [...files].sort()) {
   if (sha(b) !== sha(readFileSync(from))) throw Error('copy mismatch: ' + src);
   copied.push({ src, bytes: b.length, sha256: sha(b) });
 }
+// Served pixel sizes (gallery aspect ratios come from the actual files, not from the upstream page's numbers).
+const { execFileSync } = await import('node:child_process');
+const dims = JSON.parse(execFileSync('python3', ['-c', 'import sys,json\nfrom PIL import Image\nprint(json.dumps([Image.open(f).size for f in sys.argv[1:]]))',
+  ...copied.map(f => join('public', f.src))], { encoding: 'utf8' }));
+copied.forEach((f, i) => { [f.width, f.height] = dims[i]; });
 writeFileSync('data/registry/catalogue-serving.release.json', text);
 const manifest = { p2_branch: 'claude/carindex-buyer-vehicle-data-97yinp', p2_commit: commit, release_id: release.release_id,
   release_sha256_as_served: sha(text), release_sha256_p2: sha(raw), path_rewrite: '/media/{models,brands}/ -> /media/p2/{models,brands}/',

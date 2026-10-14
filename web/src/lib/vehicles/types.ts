@@ -1,3 +1,5 @@
+import type { BrochureLink, GalleryImage, SpecRow, WarrantyItem } from '@/server/vehicles/p2-content';
+
 /* Public (customer-facing) vehicle shape, adapted from the canonical carindex.p1.buyer_view/v2.
    Only this shape reaches the browser. Internal machinery (confidence grades, row refs, QA queues) stays server-side;
    customer-facing evidence (source name, date, link) is kept because every figure must carry it. */
@@ -67,6 +69,10 @@ export interface PublicCar {
   conflicts: number;
   lastObserved: string | null;
   image: PublicImage | null;
+  p2Specs?: SpecRow[];        // P2-accepted specifications, per value with trim scope and named source
+  warranty?: WarrantyItem[];  // P2-accepted warranty terms, typed (vehicle / battery / ...), never generalised across trims
+  gallery?: GalleryImage[];   // P2-accepted gallery (served from /media/p2/), excluding the hero
+  brochures?: BrochureLink[]; // P2-accepted official brochures that are publicly reachable
 }
 
 export interface RegistryMeta {

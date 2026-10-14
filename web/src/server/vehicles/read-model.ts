@@ -3,6 +3,9 @@ import snapshot from '@data/registry/universe.snapshot.json';
 import crosswalk from '@data/registry/display-crosswalk.TEMP.json';
 import serving from '@data/registry/catalogue-serving.release.json';
 import media from '@data/registry/media-verified.json';
+import p2Import from '@data/registry/p2-import.manifest.json';
+import drivePublic from '@data/registry/brochure-drive-public.json';
+import { brochureLinks, galleryImages, specRows, warrantyItems } from './p2-content';
 import type { AssetFlag, BrandSummary, OfficialPrice, PriceChange, PriceState, Powertrain, PublicCar, PublicImage, PublicTrim, RegistryMeta, SpecValue } from '@/lib/vehicles/types';
 
 /* Serving read model.
@@ -133,19 +136,23 @@ export function p2Price(e: Raw): { priceFrom: PublicCar['priceFrom']; trims: Pub
   };
 }
 
-/* P2 accepted brand logos (RC2 accepted.logo), same-origin files only. Keyed by the website brand id.
-   White-on-transparent marks (made for dark backgrounds) are invisible on light tiles and may not be recoloured (Brand V2),
-   so they are not served until P2 supplies a dark/colour variant (tests/unit/brand.test.mjs keeps this list exact). */
-export const LIGHT_ONLY_LOGOS = new Set(['/media/p2/brands/byd.png', '/media/p2/brands/nissan.png']);
-export function p2Logos(entries: Raw[]): Record<string, { src: string; credit: string | null }> {
-  const out: Record<string, { src: string; credit: string | null }> = {};
+/* P2 accepted brand logos (accepted.logo), same-origin files only. Keyed by the website brand id.
+   White-on-transparent marks (made for dark backgrounds) are shown unchanged on an ink tile: never recoloured (Brand V2).
+   tests/unit/brand.test.mjs keeps this list equal to the logos whose opaque pixels are white. */
+export const DARK_TILE_LOGOS = new Set(['/media/p2/brands/byd.png', '/media/p2/brands/nissan.png']);
+export function p2Logos(entries: Raw[]): Record<string, { src: string; credit: string | null; onDark: boolean }> {
+  const out: Record<string, { src: string; credit: string | null; onDark: boolean }> = {};
   for (const e of entries) {
     const l = e?.accepted?.logo, id = brandId(e.brand);
-    if (out[id] || !l || typeof l.src !== 'string' || LIGHT_ONLY_LOGOS.has(l.src) || !/^\/media\/[\w./-]+\.(png|svg|webp)$/i.test(l.src) || l.src.includes('..')) continue;
-    out[id] = { src: l.src, credit: l.credit ?? null };
+    if (out[id] || !l || typeof l.src !== 'string' || !/^\/media\/[\w./-]+\.(png|svg|webp)$/i.test(l.src) || l.src.includes('..')) continue;
+    out[id] = { src: l.src, credit: l.credit ?? null, onDark: DARK_TILE_LOGOS.has(l.src) };
   }
   return out;
 }
+
+/* Served pixel size of every imported P2 file (data/registry/p2-import.manifest.json), for gallery aspect ratios. */
+const p2Sizes = new Map<string, [number, number]>((p2Import.files as Raw[]).map(f => [f.src, [f.width, f.height]]));
+const publicDrive = new Set<string>((drivePublic.public_urls ?? []) as string[]);
 
 function shape(m: Raw): PublicCar {
   const cohorts: Raw[] = m.price?.cohorts ?? [];
@@ -204,6 +211,11 @@ class JsonSnapshotReadModel implements VehicleReadModel {
       car.evidenceState = e.evidence_state;
       const hero = p2Hero(e as Raw);
       if (hero) car.image = hero; // P2-accepted hero (catalogue serving release) takes precedence over the P5 media registry
+      const acc = (e as Raw).accepted;
+      car.p2Specs = specRows(acc, e.brand);
+      car.warranty = warrantyItems(acc, e.brand);
+      car.gallery = galleryImages(acc, p2Sizes).filter(g => g.src !== car.image?.src);
+      car.brochures = brochureLinks(acc, publicDrive);
       const pp = p2Price(e as Raw);
       if (pp) {
         // P2-accepted price is canonical: it replaces the S6 view figure and clears price gaps that no longer apply.

@@ -33,6 +33,9 @@ jobs:
       - run: npm run test:unit
       - run: npm run audit:deps
       - run: npm run build
+      - name: Brochure link reachability (report only; Drive copies linked only after review)
+        continue-on-error: true
+        run: node scripts/check-brochure-links.mjs
       - run: npx playwright install --with-deps chromium
       - run: SMOKE_SCREENSHOTS=1 npm run test:smoke
       - run: cp test-results/smoke.json test-results/smoke-preview.json
