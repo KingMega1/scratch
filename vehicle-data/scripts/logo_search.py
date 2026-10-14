@@ -16,14 +16,15 @@ CM = "https://commons.wikimedia.org/w/api.php"
 
 def get(params):
     import requests
-    for i in range(3):
+    for i in range(5):  # Commons rate-limits bursts (429): back off instead of silently returning nothing
         try:
             r = requests.get(CM, params=params, headers=UA, timeout=60)
             if r.status_code == 200:
                 return r.json()
-        except Exception:
-            pass
-        time.sleep(3 * (i + 1))
+            print("commons", r.status_code, params.get("srsearch") or params.get("titles", "")[:60], flush=True)
+        except Exception as x:
+            print("commons error", str(x)[:100], flush=True)
+        time.sleep(15 * (i + 1))
     return {}
 
 
@@ -59,7 +60,7 @@ def main():
                 t = h["title"]
                 if t not in titles and re.search(r"\.(svg|png)$", t, re.I) and (fold(b)[:5] in fold(t) or any(fold(w)[:5] in fold(t) for w in " ".join(Q.get(b, [])).split()[:2] if len(w) > 2)):
                     titles.append(t)
-            time.sleep(0.5)
+            time.sleep(2)
         titles = titles[:a.per_brand]
         if not titles:
             continue
@@ -73,6 +74,9 @@ def main():
                 continue
             try:
                 r = requests.get(u, headers=UA, timeout=60)
+                if r.status_code == 429:
+                    time.sleep(30)
+                    r = requests.get(u, headers=UA, timeout=60)
                 im = Image.open(io.BytesIO(r.content))
                 im.load()
             except Exception:
@@ -83,7 +87,7 @@ def main():
                              license=md.get("LicenseShortName"), artist=re.sub(r"<[^>]+>", "", md.get("Artist") or "")[:120],
                              restrictions=md.get("Restrictions") or ""))
             groups.setdefault(b, []).append((h[:12], im, p["title"][5:60]))
-            time.sleep(0.4)
+            time.sleep(1.5)
     for site in csv.DictReader(open(os.path.join(ROOT, "registry", "logo_sites.csv"))):  # official Egypt-site header logos
         b = site["brand"]
         if b not in brands:

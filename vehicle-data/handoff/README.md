@@ -28,3 +28,7 @@
   - Delivers original-resolution official images with source page, image URL, dimensions and exact model/generation notes.
   - No canonical changes, no price research.
 - P2 accepts candidates into `registry/*.csv` after verification. Columns already accepted are not re-researched.
+
+## Worker note (2026-10-14)
+- `.github/workflows/vehicle-refresh.yml` has a mode allow-list (`case "$MODE" in ...`). An unknown mode silently falls back to `full`, so a new mode must be added there.
+- Yallamotor answers 403 to automated requests (probe run 38522693528). Do not use it, and do not try to evade the block.
