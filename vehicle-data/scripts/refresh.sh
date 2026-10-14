@@ -41,6 +41,11 @@ if [ "$MODE" = "x1" ]; then   # Claude Cloud extraction lane: official Egypt OEM
   python3 scripts/extract_official.py harvest --out "snapshots/X_${DATE}_${GITHUB_RUN_ID:-local}"
   exit 0
 fi
+if [ "$MODE" = "x2" ]; then   # Claude Cloud extraction lane, targeted: explicit official URLs (inputs/x2_targets.csv) -> candidates only
+  pip install --quiet pypdf
+  python3 scripts/extract_official.py harvest --targets inputs/x2_targets.csv --out "snapshots/X_${DATE}_${GITHUB_RUN_ID:-local}"
+  exit 0
+fi
 if [ "$MODE" = "materialize" ]; then   # accepted media -> P5-servable WebP (sha256-verified) + canonical rebuild
   python3 scripts/media_materialize.py --report "snapshots/MM_${DATE}_${GITHUB_RUN_ID:-local}"
   python3 scripts/canonical.py

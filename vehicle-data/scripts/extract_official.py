@@ -53,6 +53,7 @@ SEEDS = {
     "Opel": (["https://www.opelegypt.net/"], "KNOWN"),
 }
 MAX_PAGES_PER_HOST = 70
+MAX_TARGET_PAGES = 20
 MAX_PDFS = 160
 MAX_PDF_BYTES = 40_000_000
 KEYWORDS = re.compile(r"spec|warrant|brochure|download|catalog|technical|ضمان|المواصفات|مواصفات|كتيب|بروشور", re.I)
@@ -170,16 +171,27 @@ def page_evidence(url, final_url, html):
     return dict(title=title, lines=lines[:6000], tables=tables, links=links, scripts=scripts[:12])
 
 
-def harvest(out):
+def harvest(out, targets=None):
+    """targets: CSV (p1_id,url,note) -> fetch only those seeds (TARGET status), no sitemap crawl, MAX_TARGET_PAGES per host."""
     import requests
     os.makedirs(os.path.join(out, "raw"), exist_ok=True)
     sess = requests.Session()
     robots = Robots(sess)
     rows = alloc_rows()
+    tg = list(csv.DictReader(open(targets))) if targets else []
+    if tg:
+        ids = {t["p1_id"] for t in tg}
+        rows = [r for r in rows if r["p1_id"] in ids]
     by_brand = {}
     for r in rows:
         by_brand.setdefault(r["brand"], []).append(r)
     hosts = brand_hosts()
+    if tg:
+        b_of = {r["p1_id"]: r["brand"] for r in rows}
+        hosts = {}
+        for t in tg:
+            hosts.setdefault(b_of[t["p1_id"]], []).append((t["url"], "TARGET"))
+    cap = MAX_TARGET_PAGES if tg else MAX_PAGES_PER_HOST
     ev_f = gzip.open(os.path.join(out, "evidence.jsonl.gz"), "wt")
     pdf_f = gzip.open(os.path.join(out, "pdfs.jsonl.gz"), "wt")
     manifest, pdf_queue, seen = [], {}, set()
@@ -228,7 +240,7 @@ def harvest(out):
         per_host = {}
         frontier = [(u, st, 0) for u, st in seeds]
         # sitemap URLs per seed host (robots Sitemap: lines + /sitemap.xml), filtered to allocated model tokens
-        for u, st in seeds:
+        for u, st in ([] if tg else seeds):
             p = urlparse(u)
             key = f"{p.scheme}://{p.netloc}"
             robots.allowed(u)
@@ -243,11 +255,11 @@ def harvest(out):
                 pdf_queue.setdefault(u, dict(brand=brand, host_status=st, source_page="", anchor="sitemap/seed"))
                 continue
             h = urlparse(u).netloc
-            if per_host.get(h, 0) >= MAX_PAGES_PER_HOST:
+            if per_host.get(h, 0) >= cap:
                 continue
             per_host[h] = per_host.get(h, 0) + 1
             e = get(u, brand, "page", st, d)
-            if not e or d >= 2:
+            if not e or d >= (1 if tg else 2):
                 continue
             for link, text in e["links"]:
                 lp = urlparse(link)
@@ -306,7 +318,7 @@ def harvest(out):
     json.dump(manifest, open(os.path.join(out, "fetch_manifest.json"), "w"), indent=1)
     json.dump(robots_log, open(os.path.join(out, "robots_status.json"), "w"), indent=1)
     ok = [m for m in manifest if m.get("status") == 200]
-    rep = dict(snapshot=out, mode="x1", seconds=int(time.time() - t0), requests=len(manifest), ok=len(ok),
+    rep = dict(snapshot=out, mode="x2" if tg else "x1", seconds=int(time.time() - t0), requests=len(manifest), ok=len(ok),
                pdfs_ok=sum(1 for m in ok if m["kind"] == "pdf"), skipped=sum(1 for m in manifest if m.get("skipped")),
                bytes=sum(m.get("bytes", 0) for m in ok), llm_calls=0)
     json.dump(rep, open(os.path.join(out, "run_report.json"), "w"), indent=1)
@@ -345,10 +357,11 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("cmd", choices=["harvest", "extract"])
     ap.add_argument("--out", required=True)
+    ap.add_argument("--targets", help="harvest: CSV p1_id,url,note; restrict the crawl to these seeds")
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     if a.cmd == "harvest":
-        harvest(a.out)
+        harvest(a.out, a.targets)
     else:
         import extract_rules  # offline rules, written against the harvested evidence
         extract_rules.run(a.out, load_jsonl(os.path.join(a.out, "evidence.jsonl.gz")),
