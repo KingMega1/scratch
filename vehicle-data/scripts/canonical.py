@@ -470,8 +470,8 @@ def main():
     bro = collections.defaultdict(list)
     for r in read(os.path.join(ROOT, "registry", "brochures.csv")):
         if r["status"] == "ACCEPT":
-            bro[r["p1_id"]].append(dict(drive_id=r["drive_id"], title=r["title"], issuer=r["issuer"], scope=r["variant_scope"],
-                                        url=f'https://drive.google.com/file/d/{r["drive_id"]}/view'))
+            bro[r["p1_id"]].append(dict(drive_id=r["drive_id"] or None, title=r["title"], issuer=r["issuer"], scope=r["variant_scope"],
+                                        url=r.get("url") or f'https://drive.google.com/file/d/{r["drive_id"]}/view'))
     med = collections.defaultdict(list)
     for r in media_accepted():
         med[r["owner"]].append(r)

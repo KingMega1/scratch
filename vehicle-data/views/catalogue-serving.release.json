@@ -22,15 +22,15 @@
       "price_tier_a": 26,
       "price_source_dated": 149,
       "market_status_official": 37,
-      "specs_accepted": 188,
-      "warranty_accepted": 74,
-      "brochure_accepted": 17,
+      "specs_accepted": 191,
+      "warranty_accepted": 89,
+      "brochure_accepted": 63,
       "hero_accepted": 40,
       "hero_accepted_hq": 37,
       "hero_limited_archive": 150,
       "gallery_models": 35,
       "logo_accepted": 248,
-      "fully_enriched": 1
+      "fully_enriched": 17
     }
   },
   "relation": "Website on-sale set equals pinned U11 on-sale set (283). 'accepted' carries only P2-ACCEPTED values; absent means UNKNOWN. P1 recommendation semantics unchanged.",
@@ -4966,7 +4966,6 @@
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -5136,6 +5135,15 @@
               "source": "drive:1McudK_l0dYvIGO7wLpZjgbkllnZkj56s"
             }
           ],
+          "warranty_battery": [
+            {
+              "value": "8 years / 200000 km",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "byd-egypt.com",
+              "source": "https://byd-egypt.com/atto-8"
+            }
+          ],
           "wheelbase_mm": [
             {
               "value": "2950",
@@ -5169,7 +5177,15 @@
             }
           ]
         },
-        "warranty": null,
+        "warranty": [
+          {
+            "value": "6 years / 150000 km",
+            "unit": "",
+            "applicability": "model page",
+            "issuer": "byd-egypt.com",
+            "source": "https://byd-egypt.com/atto-8"
+          }
+        ],
         "brochures": [
           {
             "drive_id": "1McudK_l0dYvIGO7wLpZjgbkllnZkj56s",
@@ -5651,7 +5667,6 @@
       "missing_evidence": [
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -5767,6 +5782,15 @@
               "source": "https://www.contactcars.com/en/new-cars/byd-sealion_5/25643d66b398 | https://www.contactcars.com/en/new-cars/byd-sealion_5/7b988aca571c | https://www.contactcars.com/en/new-cars/byd-sealion_5/8defd8de89b7 | https://www.contactcars.com/en/new-cars/byd-sealion_5/c98f3425ac8f"
             }
           ],
+          "warranty_battery": [
+            {
+              "value": "8 years / 200000 km",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "byd-egypt.com",
+              "source": "https://byd-egypt.com/sealion-5"
+            }
+          ],
           "wheelbase_mm": [
             {
               "value": "2712",
@@ -5786,7 +5810,15 @@
             }
           ]
         },
-        "warranty": null,
+        "warranty": [
+          {
+            "value": "6 years / 150000 km",
+            "unit": "",
+            "applicability": "model page",
+            "issuer": "byd-egypt.com",
+            "source": "https://byd-egypt.com/sealion-5"
+          }
+        ],
         "brochures": [],
         "logo": {
           "src": "/media/brands/byd.png",
@@ -7170,7 +7202,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -7405,7 +7436,15 @@
             "source": "https://www.contactcars.com/en/new-cars/changan-cs55_plus/77d013c47faf | https://www.contactcars.com/en/new-cars/changan-cs55_plus/9048e8cd589b"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "CS55-Plus-CKD-2p-High-res.pdf",
+            "issuer": "Changan Egypt official site (changan.com.eg)",
+            "scope": "Download Brochure",
+            "url": "https://changan.com.eg/wp-content/uploads/2022/08/CS55-Plus-CKD-2p-High-res.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/changan.png",
           "credit": "Logo: Wikimedia Commons (CC BY-SA 4.0)",
@@ -7578,7 +7617,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -7791,7 +7829,15 @@
             "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "CS75-plus-Brochure.pdf",
+            "issuer": "Changan Egypt official site (changan.com.eg)",
+            "scope": "Download Brochure",
+            "url": "https://changan.com.eg/wp-content/uploads/2026/02/CS75-plus-Brochure.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/changan.png",
           "credit": "Logo: Wikimedia Commons (CC BY-SA 4.0)",
@@ -7980,7 +8026,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -8175,7 +8220,15 @@
             "source": "https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "EADO-Brochure.pdf",
+            "issuer": "Changan Egypt official site (changan.com.eg)",
+            "scope": "Download Brochure",
+            "url": "https://changan.com.eg/wp-content/uploads/2026/02/EADO-Brochure.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/changan.png",
           "credit": "Logo: Wikimedia Commons (CC BY-SA 4.0)",
@@ -8348,7 +8401,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -8547,7 +8599,15 @@
             "source": "https://www.contactcars.com/en/new-cars/changan-eado_plus/8ad2cc92df5d | https://www.contactcars.com/en/new-cars/changan-eado_plus/a9b14fac93dc | https://www.contactcars.com/en/new-cars/changan-eado_plus/af1ce14bbd16"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "Eado-Plus-Brochure01.pdf",
+            "issuer": "Changan Egypt official site (changan.com.eg)",
+            "scope": "Download Brochure",
+            "url": "https://changan.com.eg/wp-content/uploads/2025/06/Eado-Plus-Brochure01.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/changan.png",
           "credit": "Logo: Wikimedia Commons (CC BY-SA 4.0)",
@@ -8602,7 +8662,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
@@ -8782,7 +8841,15 @@
             "source": "https://www.contactcars.com/en/new-cars/changan-uni_t/42ecaff78b50 | https://www.contactcars.com/en/new-cars/changan-uni_t/cbc5cefd9271"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "UNI-T-Brochure-V3.pdf",
+            "issuer": "Changan Egypt official site (changan.com.eg)",
+            "scope": "Download Brochure",
+            "url": "https://changan.com.eg/wp-content/uploads/2023/10/UNI-T-Brochure-V3.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/changan.png",
           "credit": "Logo: Wikimedia Commons (CC BY-SA 4.0)",
@@ -8828,7 +8895,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
@@ -8989,7 +9055,15 @@
           ]
         },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "Uni-V.pdf",
+            "issuer": "Changan Egypt official site (changan.com.eg)",
+            "scope": "Download Brochure",
+            "url": "https://changan.com.eg/wp-content/uploads/2025/06/Uni-V.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/changan.png",
           "credit": "Logo: Wikimedia Commons (CC BY-SA 4.0)",
@@ -9151,7 +9225,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
@@ -9316,7 +9389,15 @@
           ]
         },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "ARRIZO_5brochure_2025-08-26_120912.728777.pdf",
+            "issuer": "Chery Egypt official site (www.chery-eg.com)",
+            "scope": "Download Brochure",
+            "url": "https://www.chery-eg.com/media/files/ARRIZO_5brochure_2025-08-26_120912.728777.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/chery.png",
           "credit": "chery-eg.com",
@@ -9385,7 +9466,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -9539,7 +9619,15 @@
             "source": "https://www.contactcars.com/en/new-cars/chery-arrizo_6_gt/f430539f6832 | https://www.contactcars.com/en/new-cars/chery-arrizo_6_gt/fcdbe1678c8d"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "Arrizo_6_GTbrochure_2026-02-05_130351.853106.pdf",
+            "issuer": "Chery Egypt official site (www.chery-eg.com)",
+            "scope": "Download Brochure",
+            "url": "https://www.chery-eg.com/media/files/Arrizo_6_GTbrochure_2026-02-05_130351.853106.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/chery.png",
           "credit": "chery-eg.com",
@@ -9634,8 +9722,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -9770,6 +9856,15 @@
               "source": "https://www.chery-eg.com/en/car/arrizo-8"
             }
           ],
+          "warranty_battery": [
+            {
+              "value": "8 years / 150000 km",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "www.chery-eg.com",
+              "source": "https://www.chery-eg.com/media/files/ARRIZO_8brochure_2025-07-31_102846.119434.pdf"
+            }
+          ],
           "wheelbase_mm": [
             {
               "value": "2770",
@@ -9789,8 +9884,24 @@
             }
           ]
         },
-        "warranty": null,
-        "brochures": [],
+        "warranty": [
+          {
+            "value": "6 years / 150000 km",
+            "unit": "",
+            "applicability": "model page",
+            "issuer": "www.chery-eg.com",
+            "source": "https://www.chery-eg.com/media/files/ARRIZO_8brochure_2025-07-31_102846.119434.pdf"
+          }
+        ],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "ARRIZO_8brochure_2025-07-31_102846.119434.pdf",
+            "issuer": "Chery Egypt official site (www.chery-eg.com)",
+            "scope": "Download Brochure",
+            "url": "https://www.chery-eg.com/media/files/ARRIZO_8brochure_2025-07-31_102846.119434.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/chery.png",
           "credit": "chery-eg.com",
@@ -9859,7 +9970,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
@@ -9963,7 +10073,15 @@
           ]
         },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "eQ7brochure_2024-09-12_123035.779724.pdf",
+            "issuer": "Chery Egypt official site (www.chery-eg.com)",
+            "scope": "Download Brochure",
+            "url": "https://www.chery-eg.com/media/files/eQ7brochure_2024-09-12_123035.779724.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/chery.png",
           "credit": "chery-eg.com",
@@ -10045,7 +10163,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
@@ -10254,7 +10371,15 @@
           ]
         },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "TIGGO_4_PRObrochure_2024-09-12_123606.135147.pdf",
+            "issuer": "Chery Egypt official site (www.chery-eg.com)",
+            "scope": "Download Brochure",
+            "url": "https://www.chery-eg.com/media/files/TIGGO_4_PRObrochure_2024-09-12_123606.135147.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/chery.png",
           "credit": "chery-eg.com",
@@ -10523,7 +10648,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
@@ -10728,7 +10852,15 @@
             "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro/9f04d2ce6c8b | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro/ee4d1d933c6d"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "TIGGO_7_PRObrochure_2026-08-24_192745.742095.pdf",
+            "issuer": "Chery Egypt official site (www.chery-eg.com)",
+            "scope": "Download Brochure",
+            "url": "https://www.chery-eg.com/media/files/TIGGO_7_PRObrochure_2026-08-24_192745.742095.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/chery.png",
           "credit": "chery-eg.com",
@@ -10881,7 +11013,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
@@ -11065,7 +11196,15 @@
           ]
         },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "TIGGO_8brochure_2024-10-28_170320.927337.pdf",
+            "issuer": "Chery Egypt official site (www.chery-eg.com)",
+            "scope": "Download Brochure",
+            "url": "https://www.chery-eg.com/media/files/TIGGO_8brochure_2024-10-28_170320.927337.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/chery.png",
           "credit": "chery-eg.com",
@@ -11307,7 +11446,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -11484,7 +11622,15 @@
             "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro_max/33feabfcd443 | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro_max/3b30f2ee5347 | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro_max/9ade8c2f410d | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro_max/b17ce20"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "TIGGO_8_PRO_MAXbrochure_2025-07-30_121132.684057.pdf",
+            "issuer": "Chery Egypt official site (www.chery-eg.com)",
+            "scope": "Download Brochure",
+            "url": "https://www.chery-eg.com/media/files/TIGGO_8_PRO_MAXbrochure_2025-07-30_121132.684057.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/chery.png",
           "credit": "chery-eg.com",
@@ -11559,8 +11705,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -11675,6 +11819,15 @@
               "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_9/4bf2571de0e7"
             }
           ],
+          "warranty_battery": [
+            {
+              "value": "8 years / 150000 km",
+              "unit": "",
+              "applicability": "model page",
+              "issuer": "www.chery-eg.com",
+              "source": "https://www.chery-eg.com/media/files/TIGGO_9brochure_2025-09-22_122142.211204.pdf"
+            }
+          ],
           "wheelbase_mm": [
             {
               "value": "2800",
@@ -11701,8 +11854,24 @@
             }
           ]
         },
-        "warranty": null,
-        "brochures": [],
+        "warranty": [
+          {
+            "value": "6 years / 150000 km",
+            "unit": "",
+            "applicability": "model page",
+            "issuer": "www.chery-eg.com",
+            "source": "https://www.chery-eg.com/media/files/TIGGO_9brochure_2025-09-22_122142.211204.pdf"
+          }
+        ],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "TIGGO_9brochure_2025-09-22_122142.211204.pdf",
+            "issuer": "Chery Egypt official site (www.chery-eg.com)",
+            "scope": "Download Brochure",
+            "url": "https://www.chery-eg.com/media/files/TIGGO_9brochure_2025-09-22_122142.211204.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/chery.png",
           "credit": "chery-eg.com",
@@ -11784,7 +11953,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
@@ -11877,7 +12045,15 @@
           ]
         },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "Captiva-brochure-2026.pdf",
+            "issuer": "Chevrolet Egypt official site (www.chevroletarabia.com)",
+            "scope": "تحميل الكتيب",
+            "url": "https://www.chevroletarabia.com/content/dam/chevrolet/middle-east/egypt/english/index/cars/2026-captiva/Captiva-brochure-2026.pdf"
+          }
+        ],
         "logo": null,
         "hero_image": null,
         "hero_image_limited": null,
@@ -12233,7 +12409,6 @@
       "missing_evidence": [
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -12399,7 +12574,15 @@
             }
           ]
         },
-        "warranty": null,
+        "warranty": [
+          {
+            "value": "5 years / 150000 km",
+            "unit": "",
+            "applicability": "model page",
+            "issuer": "www.chevroletarabia.com",
+            "source": "https://www.chevroletarabia.com/eg-ar/cars/optra"
+          }
+        ],
         "brochures": [],
         "logo": null,
         "hero_image": null,
@@ -13993,7 +14176,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
@@ -14116,7 +14298,22 @@
             "source": "https://www.contactcars.com/en/new-cars/deepal-s05/0ce4d3799765 | https://www.contactcars.com/en/new-cars/deepal-s05/904e96d0417e"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "Deepal_s05_BEV_1_Dg1kzMo.pdf",
+            "issuer": "Deepal Egypt official site (www.deepal-eg.com)",
+            "scope": "Download BEV",
+            "url": "https://www.deepal-eg.com/media/products/Deepal_s05_BEV_1_Dg1kzMo.pdf"
+          },
+          {
+            "drive_id": null,
+            "title": "Deepal_s05_REEV_1_2yxB5f0.pdf",
+            "issuer": "Deepal Egypt official site (www.deepal-eg.com)",
+            "scope": "Download REEV",
+            "url": "https://www.deepal-eg.com/media/products/Deepal_s05_REEV_1_2yxB5f0.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/deepal.png",
           "credit": "commons.wikimedia.org",
@@ -14166,7 +14363,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
@@ -14294,7 +14490,15 @@
             "source": "https://www.contactcars.com/en/new-cars/deepal-s07/60c7541fc4d1 | https://www.contactcars.com/en/new-cars/deepal-s07/97aeea524a2f"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "Deepal_s07_BEV.pdf",
+            "issuer": "Deepal Egypt official site (www.deepal-eg.com)",
+            "scope": "Download BEV",
+            "url": "https://www.deepal-eg.com/media/products/Deepal_s07_BEV.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/deepal.png",
           "credit": "commons.wikimedia.org",
@@ -16804,7 +17008,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
         "GENERATION_UNKNOWN"
@@ -16946,7 +17149,15 @@
             "source": "https://www.contactcars.com/en/new-cars/forthing-s7/0d6041f22452"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "S7-EV-Brochure.pdf",
+            "issuer": "Forthing Egypt official site (forthing-egypt.com)",
+            "scope": "Download Brochure",
+            "url": "https://forthing-egypt.com/brochure/S7-EV-Brochure.pdf"
+          }
+        ],
         "logo": null,
         "hero_image": null,
         "hero_image_limited": null,
@@ -17038,18 +17249,32 @@
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
         "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
         "market_status": "unverified",
         "price": null,
         "specs": null,
-        "warranty": null,
-        "brochures": [],
+        "warranty": [
+          {
+            "value": "5 years / 150000 km",
+            "unit": "",
+            "applicability": "model page",
+            "issuer": "forthing-egypt.com",
+            "source": "https://forthing-egypt.com/brochure/T5-EVO-Brochure.pdf"
+          }
+        ],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "T5-EVO-Brochure.pdf",
+            "issuer": "Forthing Egypt official site (forthing-egypt.com)",
+            "scope": "Download Brochure",
+            "url": "https://forthing-egypt.com/brochure/T5-EVO-Brochure.pdf"
+          }
+        ],
         "logo": null,
         "hero_image": null,
         "hero_image_limited": null,
@@ -22728,7 +22953,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -22880,7 +23104,15 @@
             "source": "https://www.contactcars.com/en/new-cars/jetour-dashing/05fc20afadbd | https://www.contactcars.com/en/new-cars/jetour-dashing/9504e286735c"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "Jetour-Dashing.pdf",
+            "issuer": "Jetour Egypt official site (jetouregypt.com)",
+            "scope": "Download Brochure",
+            "url": "https://jetouregypt.com/uploads/models/brochures/Jetour-Dashing.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/jetour.png",
           "credit": "Logo: Wikimedia Commons (Public domain)",
@@ -22962,7 +23194,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
@@ -23083,7 +23314,15 @@
           ]
         },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "T1-Product-072026.pdf",
+            "issuer": "Jetour Egypt official site (jetouregypt.com)",
+            "scope": "Download brochure",
+            "url": "https://jetouregypt.com/uploads/models/brochures/2026/T1-Product-072026.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/jetour.png",
           "credit": "Logo: Wikimedia Commons (Public domain)",
@@ -23130,7 +23369,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -23287,7 +23525,22 @@
             "source": "https://www.contactcars.com/en/new-cars/jetour-t2/85762aa68bbd | https://www.contactcars.com/en/new-cars/jetour-t2/8b5111622905 | https://www.contactcars.com/en/new-cars/jetour-t2/df25efea26ee"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "Jetour-T2-2.0L-Turbo.pdf",
+            "issuer": "Jetour Egypt official site (jetouregypt.com)",
+            "scope": "Download brochure",
+            "url": "https://jetouregypt.com/uploads/models/brochures/Jetour-T2-2.0L-Turbo.pdf"
+          },
+          {
+            "drive_id": null,
+            "title": "Jetour-T2-1.5L-Turbo.pdf",
+            "issuer": "Jetour Egypt official site (jetouregypt.com)",
+            "scope": "Download brochure",
+            "url": "https://jetouregypt.com/uploads/models/brochures/Jetour-T2-1.5L-Turbo.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/jetour.png",
           "credit": "Logo: Wikimedia Commons (Public domain)",
@@ -23356,7 +23609,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -23518,7 +23770,15 @@
             "source": "https://www.contactcars.com/en/new-cars/jetour-x70___facelift/0b4092ed0cba | https://www.contactcars.com/en/new-cars/jetour-x70___facelift/3dbbfd3aa353"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "X70-4-Spreads.pdf",
+            "issuer": "Jetour Egypt official site (jetouregypt.com)",
+            "scope": "Download Brochure",
+            "url": "https://jetouregypt.com/uploads/models/brochures/X70-4-Spreads.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/jetour.png",
           "credit": "Logo: Wikimedia Commons (Public domain)",
@@ -24628,8 +24888,6 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -24708,8 +24966,24 @@
             }
           ]
         },
-        "warranty": null,
-        "brochures": [],
+        "warranty": [
+          {
+            "value": "5 years",
+            "unit": "",
+            "applicability": "model page",
+            "issuer": "kia.com.eg",
+            "source": "https://kia.com.eg/kia-ev3"
+          }
+        ],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "EV3.pdf",
+            "issuer": "Kia Egypt official site (kia.com.eg)",
+            "scope": "BROCHURE",
+            "url": "https://kia.com.eg/uploads/models/EV3.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/kia.png",
           "credit": "kia.com.eg",
@@ -24843,8 +25117,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -24941,8 +25213,24 @@
             }
           ]
         },
-        "warranty": null,
-        "brochures": [],
+        "warranty": [
+          {
+            "value": "5 years",
+            "unit": "",
+            "applicability": "model page",
+            "issuer": "kia.com.eg",
+            "source": "https://kia.com.eg/kia-ev5"
+          }
+        ],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "EV5.pdf",
+            "issuer": "Kia Egypt official site (kia.com.eg)",
+            "scope": "BROCHURE",
+            "url": "https://kia.com.eg/uploads/models/EV5.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/kia.png",
           "credit": "kia.com.eg",
@@ -25050,8 +25338,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -25148,8 +25434,24 @@
             }
           ]
         },
-        "warranty": null,
-        "brochures": [],
+        "warranty": [
+          {
+            "value": "5 years",
+            "unit": "",
+            "applicability": "model page",
+            "issuer": "kia.com.eg",
+            "source": "https://kia.com.eg/kia-ev6"
+          }
+        ],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "EV6.pdf",
+            "issuer": "Kia Egypt official site (kia.com.eg)",
+            "scope": "BROCHURE",
+            "url": "https://kia.com.eg/uploads/models/EV6.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/kia.png",
           "credit": "kia.com.eg",
@@ -25296,8 +25598,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -25401,8 +25701,24 @@
             }
           ]
         },
-        "warranty": null,
-        "brochures": [],
+        "warranty": [
+          {
+            "value": "5 years",
+            "unit": "",
+            "applicability": "model page",
+            "issuer": "kia.com.eg",
+            "source": "https://kia.com.eg/kia-ev9"
+          }
+        ],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "EV9.pdf",
+            "issuer": "Kia Egypt official site (kia.com.eg)",
+            "scope": "BROCHURE",
+            "url": "https://kia.com.eg/uploads/models/EV9.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/kia.png",
           "credit": "kia.com.eg",
@@ -25524,7 +25840,6 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_OFFICIAL_BROCHURE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -25689,7 +26004,15 @@
             }
           ]
         },
-        "warranty": null,
+        "warranty": [
+          {
+            "value": "5 years / 100000 km",
+            "unit": "",
+            "applicability": "model page",
+            "issuer": "kia.com.eg",
+            "source": "https://kia.com.eg/models/The_K4"
+          }
+        ],
         "brochures": [],
         "logo": {
           "src": "/media/brands/kia.png",
@@ -29169,7 +29492,6 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
@@ -29349,7 +29671,15 @@
           ]
         },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "V2-MG5-Amended-Brochure-FINAL.pdf",
+            "issuer": "MG Egypt official site (www.mgmotor.com.eg)",
+            "scope": "View Brochure",
+            "url": "https://www.mgmotor.com.eg/wp-content/uploads/2025/10/V2-MG5-Amended-Brochure-FINAL.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/mg.png",
           "credit": "Logo: Wikimedia Commons (Public domain)",
@@ -29485,9 +29815,7 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -29635,8 +29963,24 @@
             }
           ]
         },
-        "warranty": null,
-        "brochures": [],
+        "warranty": [
+          {
+            "value": "6 years / 150000 km",
+            "unit": "",
+            "applicability": "model page",
+            "issuer": "www.mgmotor.com.eg",
+            "source": "https://www.mgmotor.com.eg/wp-content/uploads/2025/08/MG7-Brochure-Jul-25-Amended.pdf"
+          }
+        ],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "MG7-Brochure-Jul-25-Amended.pdf",
+            "issuer": "MG Egypt official site (www.mgmotor.com.eg)",
+            "scope": "View Brochure",
+            "url": "https://www.mgmotor.com.eg/wp-content/uploads/2025/08/MG7-Brochure-Jul-25-Amended.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/mg.png",
           "credit": "Logo: Wikimedia Commons (Public domain)",
@@ -29815,9 +30159,7 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -29940,8 +30282,24 @@
             }
           ]
         },
-        "warranty": null,
-        "brochures": [],
+        "warranty": [
+          {
+            "value": "6 years / 150000 km",
+            "unit": "",
+            "applicability": "model page",
+            "issuer": "www.mgmotor.com.eg",
+            "source": "https://www.mgmotor.com.eg/wp-content/uploads/2025/12/MG-GT-Brochure-Compressed.pdf"
+          }
+        ],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "MG-GT-Brochure-Compressed.pdf",
+            "issuer": "MG Egypt official site (www.mgmotor.com.eg)",
+            "scope": "View Brochure",
+            "url": "https://www.mgmotor.com.eg/wp-content/uploads/2025/12/MG-GT-Brochure-Compressed.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/mg.png",
           "credit": "Logo: Wikimedia Commons (Public domain)",
@@ -29988,9 +30346,7 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -30199,8 +30555,24 @@
             }
           ]
         },
-        "warranty": null,
-        "brochures": [],
+        "warranty": [
+          {
+            "value": "6 years / 150000 km",
+            "unit": "",
+            "applicability": "model page",
+            "issuer": "www.mgmotor.com.eg",
+            "source": "https://www.mgmotor.com.eg/wp-content/uploads/2025/08/New-MG-HS-Brochure-RTP-1.pdf"
+          }
+        ],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "New-MG-HS-Brochure-RTP-1.pdf",
+            "issuer": "MG Egypt official site (www.mgmotor.com.eg)",
+            "scope": "View Brochure",
+            "url": "https://www.mgmotor.com.eg/wp-content/uploads/2025/08/New-MG-HS-Brochure-RTP-1.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/mg.png",
           "credit": "Logo: Wikimedia Commons (Public domain)",
@@ -30248,9 +30620,7 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -30387,8 +30757,24 @@
             }
           ]
         },
-        "warranty": null,
-        "brochures": [],
+        "warranty": [
+          {
+            "value": "6 years / 150000 km",
+            "unit": "",
+            "applicability": "model page",
+            "issuer": "www.mgmotor.com.eg",
+            "source": "https://www.mgmotor.com.eg/wp-content/uploads/2026/09/MG-one-Brochure-luxury-1-compressed.pdf"
+          }
+        ],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "MG-one-Brochure-luxury-1-compressed.pdf",
+            "issuer": "MG Egypt official site (www.mgmotor.com.eg)",
+            "scope": "Download Brochure",
+            "url": "https://www.mgmotor.com.eg/wp-content/uploads/2026/09/MG-one-Brochure-luxury-1-compressed.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/mg.png",
           "credit": "Logo: Wikimedia Commons (Public domain)",
@@ -30655,7 +31041,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
@@ -30851,7 +31236,15 @@
           ]
         },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "ZS-Brochure_compressed.pdf",
+            "issuer": "MG Egypt official site (www.mgmotor.com.eg)",
+            "scope": "View Brochure",
+            "url": "https://www.mgmotor.com.eg/wp-content/uploads/2026/10/ZS-Brochure_compressed.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/mg.png",
           "credit": "Logo: Wikimedia Commons (Public domain)",
@@ -31205,8 +31598,6 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
@@ -31214,9 +31605,63 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
+        "specs": {
+          "engine_l": [
+            {
+              "value": "1.5",
+              "unit": "L",
+              "applicability": "ALL listed grades (GLX-2WD GLS 2WD GLS 4WD(S-AWC)); single value printed",
+              "issuer": "www.mitsubishimotors-eg.com",
+              "source": "https://www.mitsubishimotors-eg.com/content/dam/mitsubishi-motors-eg/brouchers-26-/Eclipse%20Cross%20Brochure%203%20FEB.pdf"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "180",
+              "unit": "mm",
+              "applicability": "ALL listed grades (GLX-2WD GLS 2WD GLS 4WD(S-AWC)); single value printed",
+              "issuer": "www.mitsubishimotors-eg.com",
+              "source": "https://www.mitsubishimotors-eg.com/content/dam/mitsubishi-motors-eg/brouchers-26-/Eclipse%20Cross%20Brochure%203%20FEB.pdf"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "150",
+              "unit": "hp",
+              "applicability": "ALL listed grades (GLX-2WD GLS 2WD GLS 4WD(S-AWC)); single value printed",
+              "issuer": "www.mitsubishimotors-eg.com",
+              "source": "https://www.mitsubishimotors-eg.com/content/dam/mitsubishi-motors-eg/brouchers-26-/Eclipse%20Cross%20Brochure%203%20FEB.pdf"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "250",
+              "unit": "Nm",
+              "applicability": "ALL listed grades (GLX-2WD GLS 2WD GLS 4WD(S-AWC)); single value printed",
+              "issuer": "www.mitsubishimotors-eg.com",
+              "source": "https://www.mitsubishimotors-eg.com/content/dam/mitsubishi-motors-eg/brouchers-26-/Eclipse%20Cross%20Brochure%203%20FEB.pdf"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "CVT-Sport mode 8 speed ( with Oil Cooler)",
+              "unit": "",
+              "applicability": "ALL listed grades (GLX-2WD GLS 2WD GLS 4WD(S-AWC)); single value printed",
+              "issuer": "www.mitsubishimotors-eg.com",
+              "source": "https://www.mitsubishimotors-eg.com/content/dam/mitsubishi-motors-eg/brouchers-26-/Eclipse%20Cross%20Brochure%203%20FEB.pdf"
+            }
+          ]
+        },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "Eclipse%20Cross%20Brochure%203%20FEB.pdf",
+            "issuer": "Mitsubishi Egypt official site (www.mitsubishimotors-eg.com)",
+            "scope": "Download PDF (2.4 MB)",
+            "url": "https://www.mitsubishimotors-eg.com/content/dam/mitsubishi-motors-eg/brouchers-26-/Eclipse%20Cross%20Brochure%203%20FEB.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/mitsubishi.png",
           "credit": "Logo: Wikimedia Commons (Public domain)",
@@ -31867,7 +32312,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -32098,7 +32542,15 @@
             "source": "https://www.contactcars.com/en/new-cars/nissan-magnite/2528862f5cb9 | https://www.contactcars.com/en/new-cars/nissan-magnite/2a1e39f52c6e | https://www.contactcars.com/en/new-cars/nissan-magnite/4056faeab047 | https://www.contactcars.com/en/new-cars/nissan-magnite/77d6e652b679"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "NISSAN_EGYPT_MAGNITE-EN.pdf",
+            "issuer": "Nissan Egypt official site (en.nissan.com.eg)",
+            "scope": "DOWNLOAD BROCHURE",
+            "url": "https://www-europe.nissan-cdn.net/content/dam/Nissan/nissan_middle_east/brochures/LIB/NISSAN_EGYPT_MAGNITE-EN.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/nissan.png",
           "credit": "Logo: Nissan Egypt official site",
@@ -32323,7 +32775,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
@@ -32568,7 +33019,15 @@
           ]
         },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "ALL-NEW-NISSAN-PATROL-EGP.pdf",
+            "issuer": "Nissan Egypt official site (en.nissan.com.eg)",
+            "scope": "DOWNLOAD BROCHURE",
+            "url": "https://www-europe.nissan-cdn.net/content/dam/Nissan/eg/brochures/ALL-NEW-NISSAN-PATROL-EGP.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/nissan.png",
           "credit": "Logo: Nissan Egypt official site",
@@ -32768,8 +33227,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
@@ -32831,9 +33288,399 @@
             }
           ]
         },
-        "specs": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "404",
+              "unit": "L",
+              "applicability": "Qashqai N-Design e-PWR",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "504",
+              "unit": "L",
+              "applicability": "Qashqai N-connecta",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "479",
+              "unit": "L",
+              "applicability": "Qashqai N-connecta Plus",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "479",
+              "unit": "L",
+              "applicability": "Qashqai Tekna",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "455",
+              "unit": "L",
+              "applicability": "Qashqai Tekna Plus 4WD",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            }
+          ],
+          "cylinders": [
+            {
+              "value": "4, in line",
+              "unit": "",
+              "applicability": "Qashqai N-connecta",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "4, in line",
+              "unit": "",
+              "applicability": "Qashqai N-connecta Plus",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "4, in line",
+              "unit": "",
+              "applicability": "Qashqai Tekna",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "4, in line",
+              "unit": "",
+              "applicability": "Qashqai Tekna Plus 4WD",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "1332",
+              "unit": "cc",
+              "applicability": "Qashqai N-connecta",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "1332",
+              "unit": "cc",
+              "applicability": "Qashqai N-connecta Plus",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "1332",
+              "unit": "cc",
+              "applicability": "Qashqai Tekna",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "1332",
+              "unit": "cc",
+              "applicability": "Qashqai Tekna Plus 4WD",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            }
+          ],
+          "fuel": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "Qashqai N-Design e-PWR",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "Qashqai N-connecta",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "Qashqai N-connecta Plus",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "Qashqai Tekna",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "Qashqai Tekna Plus 4WD",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "55",
+              "unit": "L",
+              "applicability": "Qashqai N-Design e-PWR",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "55",
+              "unit": "L",
+              "applicability": "Qashqai N-connecta",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "55",
+              "unit": "L",
+              "applicability": "Qashqai N-connecta Plus",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "55",
+              "unit": "L",
+              "applicability": "Qashqai Tekna",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "55",
+              "unit": "L",
+              "applicability": "Qashqai Tekna Plus 4WD",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1625",
+              "unit": "mm",
+              "applicability": "Qashqai N-Design e-PWR",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "1625",
+              "unit": "mm",
+              "applicability": "Qashqai N-connecta",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "1625",
+              "unit": "mm",
+              "applicability": "Qashqai N-connecta Plus",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "1625",
+              "unit": "mm",
+              "applicability": "Qashqai Tekna",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "1625",
+              "unit": "mm",
+              "applicability": "Qashqai Tekna Plus 4WD",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            }
+          ],
+          "kerb_weight_kg": [
+            {
+              "value": "1331",
+              "unit": "kg",
+              "applicability": "Qashqai N-connecta",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4425",
+              "unit": "mm",
+              "applicability": "Qashqai N-Design e-PWR",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "4425",
+              "unit": "mm",
+              "applicability": "Qashqai N-connecta",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "4425",
+              "unit": "mm",
+              "applicability": "Qashqai N-connecta Plus",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "4425",
+              "unit": "mm",
+              "applicability": "Qashqai Tekna",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "4425",
+              "unit": "mm",
+              "applicability": "Qashqai Tekna Plus 4WD",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "148",
+              "unit": "hp",
+              "applicability": "Qashqai N-connecta",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "148",
+              "unit": "hp",
+              "applicability": "Qashqai N-connecta Plus",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "148",
+              "unit": "hp",
+              "applicability": "Qashqai Tekna",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "148",
+              "unit": "hp",
+              "applicability": "Qashqai Tekna Plus 4WD",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "250",
+              "unit": "Nm",
+              "applicability": "Qashqai N-connecta",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "250",
+              "unit": "Nm",
+              "applicability": "Qashqai N-connecta Plus",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "250",
+              "unit": "Nm",
+              "applicability": "Qashqai Tekna",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "250",
+              "unit": "Nm",
+              "applicability": "Qashqai Tekna Plus 4WD",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Xtronic CVT®",
+              "unit": "",
+              "applicability": "Qashqai N-connecta",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "Xtronic CVT®",
+              "unit": "",
+              "applicability": "Qashqai N-connecta Plus",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "Xtronic CVT®",
+              "unit": "",
+              "applicability": "Qashqai Tekna",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "Xtronic CVT®",
+              "unit": "",
+              "applicability": "Qashqai Tekna Plus 4WD",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2665",
+              "unit": "mm",
+              "applicability": "Qashqai N-Design e-PWR",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "2665",
+              "unit": "mm",
+              "applicability": "Qashqai N-connecta",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "2665",
+              "unit": "mm",
+              "applicability": "Qashqai N-connecta Plus",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "2665",
+              "unit": "mm",
+              "applicability": "Qashqai Tekna",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            },
+            {
+              "value": "2665",
+              "unit": "mm",
+              "applicability": "Qashqai Tekna Plus 4WD",
+              "issuer": "en.nissan.com.eg",
+              "source": "https://en.nissan.com.eg/vehicles/new/qashqai/versions-and-specs.html"
+            }
+          ]
+        },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "NEW-NISSAN-QASHQAI-EGP.pdf",
+            "issuer": "Nissan Egypt official site (en.nissan.com.eg)",
+            "scope": "DOWNLOAD BROCHURE",
+            "url": "https://www-europe.nissan-cdn.net/content/dam/Nissan/eg/brochures/NEW-NISSAN-QASHQAI-EGP.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/nissan.png",
           "credit": "Logo: Nissan Egypt official site",
@@ -32943,7 +33790,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
@@ -33074,7 +33920,15 @@
           ]
         },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "SENTRA.pdf",
+            "issuer": "Nissan Egypt official site (en.nissan.com.eg)",
+            "scope": "Download Brochure",
+            "url": "https://www-europe.nissan-cdn.net/content/dam/Nissan/eg/brochures/SENTRA.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/nissan.png",
           "credit": "Logo: Nissan Egypt official site",
@@ -33195,7 +34049,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
@@ -33331,7 +34184,15 @@
           ]
         },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "Sunny.pdf",
+            "issuer": "Nissan Egypt official site (en.nissan.com.eg)",
+            "scope": "Download Brochure",
+            "url": "https://www-europe.nissan-cdn.net/content/dam/Nissan/eg/brochures/Sunny.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/nissan.png",
           "credit": "Logo: Nissan Egypt official site",
@@ -33418,7 +34279,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -33586,7 +34446,15 @@
             "source": "https://www.contactcars.com/en/new-cars/nissan-x_trail/aea663689509 | https://www.contactcars.com/en/new-cars/nissan-x_trail/c6449596621e | https://www.contactcars.com/en/new-cars/nissan-x_trail/e4b238f7cc7a"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "ALL-NEW-NISSAN-X-TRAIL-EGP.pdf",
+            "issuer": "Nissan Egypt official site (en.nissan.com.eg)",
+            "scope": "DOWNLOAD BROCHURE",
+            "url": "https://www-europe.nissan-cdn.net/content/dam/Nissan/eg/brochures/ALL-NEW-NISSAN-X-TRAIL-EGP.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/nissan.png",
           "credit": "Logo: Nissan Egypt official site",
@@ -35420,7 +36288,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
@@ -35543,7 +36410,15 @@
           ]
         },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "Austral-Brochure.pdf",
+            "issuer": "Renault Egypt official site (renault.com.eg)",
+            "scope": "download brochure",
+            "url": "https://renault.com.eg/CountriesData/Egypt/images/brochure2026/Austral-Brochure.pdf"
+          }
+        ],
         "logo": null,
         "hero_image": null,
         "hero_image_limited": null,
@@ -35588,7 +36463,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
@@ -35742,7 +36616,15 @@
           ]
         },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "Duster-Brochure.pdf",
+            "issuer": "Renault Egypt official site (renault.com.eg)",
+            "scope": "download brochure",
+            "url": "https://renault.com.eg/CountriesData/Egypt/images/brochure2026/Duster-Brochure.pdf"
+          }
+        ],
         "logo": null,
         "hero_image": null,
         "hero_image_limited": null,
@@ -35779,7 +36661,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
@@ -35914,7 +36795,15 @@
           ]
         },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "Kardian-Brochure.pdf",
+            "issuer": "Renault Egypt official site (renault.com.eg)",
+            "scope": "as published",
+            "url": "https://renault.com.eg/CountriesData/Egypt/images/brochure2026/Kardian-Brochure.pdf"
+          }
+        ],
         "logo": null,
         "hero_image": {
           "src": "/media/models/renault-kardian.webp",
@@ -35960,7 +36849,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
@@ -36115,7 +37003,15 @@
             "source": "https://www.contactcars.com/en/new-cars/renault-megane/174e9dfd6f34 | https://www.contactcars.com/en/new-cars/renault-megane/a1e7892e81cf | https://www.contactcars.com/en/new-cars/renault-megane/ba7691afe30c"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "Megane-Brochure-Updated.pdf",
+            "issuer": "Renault Egypt official site (renault.com.eg)",
+            "scope": "download brochure",
+            "url": "https://renault.com.eg/CountriesData/Egypt/images/brochure2026/Megane-Brochure-Updated.pdf"
+          }
+        ],
         "logo": null,
         "hero_image": null,
         "hero_image_limited": null,
@@ -36152,8 +37048,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
@@ -36194,9 +37088,72 @@
             }
           ]
         },
-        "specs": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "528",
+              "unit": "L",
+              "applicability": "ALL (source table has no trim split)",
+              "issuer": "renault.com.eg",
+              "source": "https://renault.com.eg/cars/taliant-ljf-ph1/dimensions-engines.html"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "50",
+              "unit": "L",
+              "applicability": "ALL (source table has no trim split)",
+              "issuer": "renault.com.eg",
+              "source": "https://renault.com.eg/cars/taliant-ljf-ph1/dimensions-engines.html"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "161",
+              "unit": "mm",
+              "applicability": "ALL (source table has no trim split)",
+              "issuer": "renault.com.eg",
+              "source": "https://renault.com.eg/cars/taliant-ljf-ph1/dimensions-engines.html"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1501",
+              "unit": "mm",
+              "applicability": "ALL (source table has no trim split)",
+              "issuer": "renault.com.eg",
+              "source": "https://renault.com.eg/cars/taliant-ljf-ph1/dimensions-engines.html"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4396",
+              "unit": "mm",
+              "applicability": "ALL (source table has no trim split)",
+              "issuer": "renault.com.eg",
+              "source": "https://renault.com.eg/cars/taliant-ljf-ph1/dimensions-engines.html"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2649",
+              "unit": "mm",
+              "applicability": "ALL (source table has no trim split)",
+              "issuer": "renault.com.eg",
+              "source": "https://renault.com.eg/cars/taliant-ljf-ph1/dimensions-engines.html"
+            }
+          ]
+        },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "Taliant-Brochure.pdf",
+            "issuer": "Renault Egypt official site (renault.com.eg)",
+            "scope": "download brochure",
+            "url": "https://renault.com.eg/CountriesData/Egypt/images/brochure2026/Taliant-Brochure.pdf"
+          }
+        ],
         "logo": null,
         "hero_image": null,
         "hero_image_limited": null,
