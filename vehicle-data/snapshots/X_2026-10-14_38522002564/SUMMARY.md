@@ -2,7 +2,7 @@
 
 Produced by `scripts/extract_official.py harvest` (GitHub Actions run 38522002564, mode `x1`) and `scripts/extract_official.py extract` (offline, deterministic, rules in `scripts/extract_rules.py`). No LLM calls. Nothing here is accepted; P2 verifies and accepts into `registry/`.
 
-Batch 1. Re-extracted after rule fixes (Arabic month-based booklet statements, CKD suffix, Kia hashed PDFs, 'brouchers' path); supersedes the first commit of these CSVs.
+Batch 1. Re-extracted with the current rules (booklets, Arabic months, CKD suffix, Kia hashed PDFs, 'brouchers' path, site-wide text marker); supersedes earlier commits of these CSVs.
 
 ## Run
 - Requests 934, HTTP 200 874 (PDFs 159), skipped 39 (robots.txt disallow/unreachable or blocked source), 763 MB, 1412s.
@@ -15,7 +15,7 @@ Batch 1. Re-extracted after rule fixes (Arabic month-based booklet statements, C
 | warranty_candidates.csv | 37 | 20 |
 | brochure_candidates.csv | 55 | 52 |
 | brochure_sources.csv (page + anchor each brochure was linked from) | 55 | |
-| brand_statements.csv (brand-wide warranty text; NOT fanned out to models) | 17 | 7 brands |
+| brand_statements.csv (brand-wide warranty text; NOT fanned out to models) | 16 | 7 brands |
 
 ## Models covered (57 of 272 allocated)
 - nissan/sunny (18124): brochure (allocated: warranty+brochure)
@@ -107,7 +107,7 @@ Batch 1. Re-extracted after rule fixes (Arabic month-based booklet statements, C
   upload folders (`/2026/02/`) are upload dates, not model years. Blank = not stated by the source.
 - Warranty: years+km from one statement (English/Arabic, Arabic digits, tatweel, `ألف`, months divisible by 12), up
   to 3 rendered lines; extended/paid warranties and service packages excluded. `scope` = page|brochure|warranty
-  booklet + component (vehicle / battery / engine / transmission / paint / commercial use / other). Booklet
+  booklet + component; "(same text on N pages of this site)" marks site-wide text that the model page also carries (vehicle / battery / engine / transmission / paint / commercial use / other). Booklet
   "battery" rows may be the 12 V battery: read the quote. km blank = the source states no km.
 - Specs: exact grade blocks on en.nissan.com.eg (a field with two values inside one grade block is omitted);
   renault.com.eg dimension tables have no trim split -> trim `ALL (source table has no trim split)`; PDF single-line

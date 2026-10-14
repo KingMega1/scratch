@@ -21,7 +21,7 @@ RULES = """## Rules applied (what P2 should know)
   upload folders (`/2026/02/`) are upload dates, not model years. Blank = not stated by the source.
 - Warranty: years+km from one statement (English/Arabic, Arabic digits, tatweel, `ألف`, months divisible by 12), up
   to 3 rendered lines; extended/paid warranties and service packages excluded. `scope` = page|brochure|warranty
-  booklet + component (vehicle / battery / engine / transmission / paint / commercial use / other). Booklet
+  booklet + component; "(same text on N pages of this site)" marks site-wide text that the model page also carries (vehicle / battery / engine / transmission / paint / commercial use / other). Booklet
   "battery" rows may be the 12 V battery: read the quote. km blank = the source states no km.
 - Specs: exact grade blocks on en.nissan.com.eg (a field with two values inside one grade block is omitted);
   renault.com.eg dimension tables have no trim split -> trim `ALL (source table has no trim split)`; PDF single-line

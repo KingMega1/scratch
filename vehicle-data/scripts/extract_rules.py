@@ -169,7 +169,7 @@ def warranty_hits(text):
             seen.add((hit[0], hit[1]))
             # component from the clause holding the matched figure, then from a "heading:" line just above
             kstr = [f"{hit[1]:,}", str(hit[1]), f"{hit[1] // 1000}"] if hit[1] != "" else [str(hit[0])]
-            clauses = re.split(r"\+|،|;| and | AND ", hit[2])
+            clauses = re.split(r"\+|،|;| and | AND |\.\s|\.$", hit[2])
             clause = next((c for c in clauses if any(k in c for k in kstr)), hit[2])
             comp = component(clause)
             if comp == "vehicle (as stated)" and i and len(raw[i - 1]) < 40 and raw[i - 1].rstrip().endswith(":"):
@@ -304,6 +304,13 @@ def run(out, pages, pdfs, alloc):
         if p["host_status"] == "KNOWN" or (OWNER_PROOF.search(txt) and re.search(re.escape(p["brand"].split()[0]), txt, re.I)):
             owner_ok[h] = owner_ok.get(h) or p["host_status"]
     W, B, S, BS, BSRC = [], [], [], [], []
+    # boilerplate: the same warranty statement on >=3 distinct model pages of one host is a brand-wide statement
+    qpages = {}
+    for p in pages:
+        if urlparse(p["final_url"]).netloc in owner_ok:
+            for y, k, q, comp in warranty_hits("\n".join(p["lines"])):
+                qpages.setdefault((urlparse(p["final_url"]).netloc, q), set()).add(p["final_url"])
+    boiler = {k for k, v in qpages.items() if len(v) >= 3}
 
     for p in pages:
         h = urlparse(p["final_url"]).netloc
@@ -314,7 +321,9 @@ def run(out, pages, pdfs, alloc):
         iss = issuer_for(h, p["brand"])
         for y, k, q, comp in warranty_hits("\n".join(p["lines"])):
             if pid and "warranty" in want.get(pid, ""):
-                W.append(dict(p1_id=pid, years=y, km=k, scope="model page; " + comp, source_url=p["final_url"],
+                where = (f"model page (same text on {len(qpages[(h, q)])} pages of this site)" if (h, q) in boiler
+                         else "model page")
+                W.append(dict(p1_id=pid, years=y, km=k, scope=f"{where}; " + comp, source_url=p["final_url"],
                               issuer=iss, retrieved_at=p["retrieved_at"], quote=q))
             elif not pid:
                 BS.append(dict(brand=p["brand"], kind="warranty", years=y, km=k, source_url=p["final_url"],
@@ -441,7 +450,7 @@ def run(out, pages, pdfs, alloc):
         "specs_candidates.csv": (dedup(S, ["p1_id", "model_year", "trim", "field", "source_url"]),
                                  ["p1_id", "model_year", "trim", "field", "value", "unit", "source_url", "issuer", "retrieved_at", "quote"]),
         "brochure_sources.csv": (dedup(BSRC, ["p1_id", "sha256"]), ["p1_id", "sha256", "url", "source_page", "anchor", "attribution"]),
-        "brand_statements.csv": (dedup(BS, ["brand", "years", "km", "source_url"]),
+        "brand_statements.csv": (dedup(BS, ["brand", "years", "km", "quote"]),
                                  ["brand", "kind", "years", "km", "source_url", "retrieved_at", "quote"]),
     }
     for fn, (rows, cols) in files.items():
