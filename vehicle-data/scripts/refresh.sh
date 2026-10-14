@@ -53,6 +53,24 @@ if [ "$MODE" = "sheets" ]; then   # download media candidates, measure, build co
   python3 scripts/media_sheets.py --out "snapshots/MS_${DATE}_${GITHUB_RUN_ID:-local}" --max-oem 0
   exit 0
 fi
+if [ "$MODE" = "audit" ]; then    # universe audit: every market-site new-car page NOT mapped to the 283 (latest S* sitemap) -> years + prices
+  SNAP="snapshots/UA_${DATE}_${GITHUB_RUN_ID:-local}"
+  mkdir -p "$SNAP"
+  S=$(ls -d snapshots/S*_*/ | sort -t_ -k2,2 | tail -1)
+  python3 - "$S/model_urls.csv" inputs/u11/u11_source_urls.csv > "$SNAP/urls.txt" <<'PY'
+import csv, sys
+mapped = {r["url"] for r in csv.DictReader(open(sys.argv[2]))}
+print("\n".join(sorted({r["url"] for r in csv.DictReader(open(sys.argv[1])) if r["url"] not in mapped})))
+PY
+  python3 scripts/fetch_snapshot.py fetch --urls "$SNAP/urls.txt" --out "$SNAP" --kind model
+  python3 scripts/fetch_snapshot.py evidence --out "$SNAP"
+  python3 scripts/fetch_snapshot.py yearlinks --out "$SNAP"
+  python3 scripts/fetch_snapshot.py fetch --urls "$SNAP/year_urls.txt" --out "$SNAP" --kind model
+  python3 scripts/fetch_snapshot.py evidence --out "$SNAP"
+  python3 scripts/fetch_snapshot.py parse --out "$SNAP"
+  echo "{\"snapshot\": \"$SNAP\", \"mode\": \"audit\", \"urls\": $(wc -l < "$SNAP/urls.txt"), \"llm_calls\": 0}" > "$SNAP/run_report.json"
+  exit 0
+fi
 if [ "$MODE" = "u11" ]; then      # all 283 U11 on-sale models: market model pages + linked model-year pages (prices only)
   SNAP="snapshots/U_${DATE}_${GITHUB_RUN_ID:-local}"
   mkdir -p "$SNAP"
