@@ -73,7 +73,7 @@ export function P2Specs({ c, locale, lead }: { c: P2Content; locale: Locale; lea
           <div className="spec" key={s.key} data-spec={s.key}>
             <div className="k">{LABEL[s.key][ar ? 1 : 0]}</div>
             <div className="v">{s.facts.map((f, i) => (
-              <div key={i} className="fact"><Value k={s.key} f={f} locale={locale} />{s.facts.length > 1 || f.scope ? <div><Meta f={f} locale={locale} /></div> : null}</div>
+              <div key={i} className="fact"><Value k={s.key} f={f} locale={locale} /><div><Meta f={f} locale={locale} /></div></div>
             ))}</div>
           </div>
         ))}

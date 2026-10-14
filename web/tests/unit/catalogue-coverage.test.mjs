@@ -101,7 +101,7 @@ test('P2 specs, warranty, gallery and brochures are served as accepted, with sco
  let specs=0,warr=0,gal=0,bro=0,driveHidden=0;
  for(const e of release.entries){
   const a=e.accepted??{}, car=V.vehicles().get(e.site_slug), c=car.p2;
-  for(const s of c?.specs??[]){specs++;assert.deepEqual(new Set(s.facts.map(f=>f.value)),new Set(a.specs[s.key].map(x=>String(x.value).trim()))); // identical values from several sources are merged, never dropped
+  for(const s of c?.specs??[]){specs++;assert.deepEqual(new Set(s.facts.map(f=>f.value)),new Set(a.specs[s.key].map(x=>{const t=String(x.value).trim();return /^\d{1,3}(,\d{3})+(\.\d+)?$/.test(t)?t.replace(/,/g,''):t;}))); // identical values from several sources are merged, never dropped
    for(const f of s.facts){assert.ok(f.issuer,e.site_slug);assert.ok(!/U11|conflict/i.test(f.unit));}}
   const wv=(a.warranty??[]).flatMap(w=>String(w.value).split(';').map(x=>x.trim()).filter(Boolean)).length+(a.specs?.warranty_battery??[]).length;
   assert.equal(c?.warranty.length??0,wv,e.site_slug); warr+=wv;

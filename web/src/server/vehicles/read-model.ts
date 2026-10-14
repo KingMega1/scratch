@@ -148,8 +148,9 @@ function scopeOf(a: string): string | null {
 }
 // Plain unit tokens are implied by the spec key (shown localised); only qualifiers such as "km WLTP combined" are kept.
 const PLAIN_UNIT = new Set(['', 'mm', 'hp', 'l', 'nm', 'count', 'kg', 'cc', 'kw', 's', 'km/h', 'in', 'kwh', 'km']);
+const normValue = (v: unknown) => { const t = String(v).trim(); return /^\d{1,3}(,\d{3})+(\.\d+)?$/.test(t) ? t.replace(/,/g, '') : t; }; // "4,770" == "4770"
 const fact = (x: Raw, brand: string): P2Fact => ({
-  value: String(x.value).trim(), unit: /U11|conflict/i.test(x.unit ?? '') || PLAIN_UNIT.has(String(x.unit ?? '').trim().toLowerCase()) ? '' : String(x.unit ?? '').trim(),
+  value: normValue(x.value), unit: /U11|conflict/i.test(x.unit ?? '') || PLAIN_UNIT.has(String(x.unit ?? '').trim().toLowerCase()) ? '' : String(x.unit ?? '').trim(),
   scope: scopeOf(x.applicability), issuer: issuerNames(String(x.issuer ?? ''), brand).join(' + '), sourceUrl: firstUrl(x.source),
 });
 export function p2Content(e: Raw): P2Content | null {
