@@ -208,8 +208,9 @@ def market_obs_one(snap):
         p1 = owner_of(own, r["source_url"])
         p1 = split_of(p1, r.get("trim_raw", "")) if p1 else p1
         v, _ = b.parse_price(r["new_price"])
+        ov, _ = b.parse_price(r.get("old_price", ""))
         if p1 and v:
-            stated.append(dict(p1_id=p1, model_year=r["model_year"], trim_key=b.trim_key(r["trim_raw"]), price_egp=v,
+            stated.append(dict(p1_id=p1, model_year=r["model_year"], trim_key=b.trim_key(r["trim_raw"]), price_egp=v, old_price=ov,
                                effective_date=r["effective_date"], url=r["source_url"]))
     return out, stated
 
@@ -294,6 +295,10 @@ def tier_a(market, stated=()):
                 status, reason = "REWORK", "PA-1 same value on >=3 trims (parser-suspect)"
             elif m and not ((1 - DIVERGENCE) * min(m) <= v <= (1 + DIVERGENCE) * max(m)):
                 status, reason = "REWORK", f"PA-1 outside +/-25% of market official range {min(m)}-{max(m)}"
+            later = sorted((x["effective_date"], x["price_egp"]) for x in stated if x["p1_id"] == p1 and x.get("old_price") == v
+                           and x["price_egp"] != v and x["effective_date"] >= r["fetched_at"][:10])
+            if status == "ACCEPT" and later:  # PA-2: the official value is the pre-change price of a stated, dated change
+                status, reason = "REWORK", f"PA-2 market source states change {v} -> {later[-1][1]} effective {later[-1][0]} (official page observed {r['fetched_at'][:10]})"
             rows.append(dict(p1_id=p1, model_year=r["model_year"], trim_label=r["trim_raw"] or "(from price)",
                              trim_key=b.trim_key(r["trim_raw"]) if r["trim_raw"] else "_from", price_egp=v,
                              effective_date=r["effective_date"], date_basis="SOURCE_STATED" if r["effective_date"] else "OBSERVED",
@@ -403,6 +408,19 @@ SP2_FIELDS = {"horsepower": "power_hp", "torque": "torque_nm", "engine_cc": "eng
               "trunk": "boot_l", "fuel_tank": "fuel_tank_l", "battery_capacity": "battery_kwh"}
 
 
+SP2_CATEGORICAL = {  # (site, label) -> (attribute, {site wording (lower) -> shared class})
+    ("ContactCars", "vehicleTransmission"): ("transmission", {"automatic": "Automatic", "dual clutch": "DCT", "cvt": "CVT", "manual": "Manual"}),
+    ("Hatla2ee", "Transmission"): ("transmission", {"automatic": "Automatic", "dsg": "DCT", "cvt": "CVT", "manual": "Manual"}),
+    ("ContactCars", "Drivetrain Type"): ("drive", {"fwd (front-wheel drive)": "FWD", "rwd (rear-wheel drive)": "RWD",
+                                                  "awd (all-wheel drive)": "AWD/4WD", "4wd (four-wheel drive)": "AWD/4WD"}),
+    ("Hatla2ee", "Traction Type"): ("drive", {"front traction": "FWD", "back traction": "RWD", "four-wheel drive": "AWD/4WD"}),
+    ("ContactCars", "fuelType"): ("powertrain_class", {"gas": "Petrol", "diesel": "Diesel", "electric": "Electric", "hybrid": "Hybrid",
+                                                       "plug-in hybrid": "Plug-in hybrid"}),
+    ("Hatla2ee", "Fuel Type"): ("powertrain_class", {"gas": "Petrol", "electric": "Electric", "hybrid": "Hybrid", "plug-in hybrid": "Plug-in hybrid",
+                                                     "phev": "Plug-in hybrid"}),
+}
+
+
 def market_spec_facts():
     """SP-2: a numeric spec value is accepted for a model only when ContactCars AND Hatla2ee trim pages of the same model
     (latest U11 spec snapshot) state the identical value; one-site values are not promoted. Applicability = the trims
@@ -410,6 +428,12 @@ def market_spec_facts():
     snaps = sorted(glob.glob(os.path.join(ROOT, "snapshots", "US_*")))
     if not snaps:
         return []
+    sa = sorted(glob.glob(os.path.join(ROOT, "snapshots", "USA_*")))  # universe-audit trim pages (models beyond the 283)
+    return [f for s in [snaps[-1]] + sa[-1:] for f in market_spec_facts_one(s)]
+
+
+def market_spec_facts_one(snap):
+    snaps = [snap]
     own = url_owner()
     attr = {(r["source"], r["spec_label"]): r["attribute"] for r in read(os.path.join(ROOT, "crosswalk", "spec_fields.csv"))}
     vals = collections.defaultdict(lambda: collections.defaultdict(set))
@@ -426,6 +450,18 @@ def market_spec_facts():
         vals[(p1, a, v)][r["source"]].add(u)
         if r["source"] == "ContactCars" and r.get("trim_raw"):
             trims[(p1, a, v)].add(r["trim_raw"])
+    # categorical SP-2: each site's wording normalized to one class; accepted only when both sites state the same class
+    for r in read(os.path.join(snaps[-1], "specs_parsed.csv")):
+        nz = SP2_CATEGORICAL.get((r["source"], r["spec_label"]))
+        if not nz:
+            continue
+        u = r["trim_url"]
+        p1 = owner_of(own, u) if "contactcars" in u else own.get(u.rsplit("/", 1)[0])
+        v = nz[1].get((r["value"] or "").strip().lower())
+        if p1 and v:
+            vals[(p1, nz[0], v)][r["source"]].add(u)
+            if r["source"] == "ContactCars" and r.get("trim_raw"):
+                trims[(p1, nz[0], v)].add(r["trim_raw"])
     # warranty: ContactCars 'Basic Vehicle Warranty' text vs Hatla2ee years + km on trim pages of the same model
     words = {"two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8, "ten": 10}
     hy, hk = {}, {}

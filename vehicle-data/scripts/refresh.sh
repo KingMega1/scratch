@@ -32,6 +32,18 @@ if [ "$MODE" = "logos" ]; then     # Commons logo search for brands without an a
   python3 scripts/logo_search.py --out "snapshots/ML_${DATE}_${GITHUB_RUN_ID:-local}"
   exit 0
 fi
+if [ "$MODE" = "auditspecs" ]; then   # trim-detail pages linked from the latest universe-audit snapshot (models beyond the 283)
+  U=$(ls -d snapshots/UA_* | sort | tail -1)
+  SNAP="snapshots/USA_${DATE}_${GITHUB_RUN_ID:-local}"
+  mkdir -p "$SNAP" && cp "$U/evidence.jsonl.gz" "$SNAP/"
+  python3 scripts/fetch_snapshot.py links --out "$SNAP"
+  rm "$SNAP/evidence.jsonl.gz"
+  python3 scripts/fetch_snapshot.py fetch --urls "$SNAP/trim_urls.txt" --out "$SNAP" --kind trim
+  python3 scripts/fetch_snapshot.py evidence --out "$SNAP"
+  python3 scripts/fetch_snapshot.py specs --out "$SNAP"
+  echo "{\"snapshot\": \"$SNAP\", \"from\": \"$U\", \"mode\": \"auditspecs\", \"llm_calls\": 0}" > "$SNAP/run_report.json"
+  exit 0
+fi
 if [ "$MODE" = "u11specs" ]; then   # trim-detail pages linked from the latest U11 market snapshot -> specs_parsed.csv
   U=$(ls -d snapshots/U_* | sort | tail -1)
   SNAP="snapshots/US_${DATE}_${GITHUB_RUN_ID:-local}"
