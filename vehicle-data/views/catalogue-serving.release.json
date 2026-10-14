@@ -22,15 +22,15 @@
       "price_tier_a": 26,
       "price_source_dated": 149,
       "market_status_official": 37,
-      "specs_accepted": 191,
-      "warranty_accepted": 89,
-      "brochure_accepted": 63,
+      "specs_accepted": 193,
+      "warranty_accepted": 95,
+      "brochure_accepted": 82,
       "hero_accepted": 53,
       "hero_accepted_hq": 49,
       "hero_limited_archive": 149,
       "gallery_models": 46,
       "logo_accepted": 248,
-      "fully_enriched": 22
+      "fully_enriched": 26
     }
   },
   "relation": "Website on-sale set equals pinned U11 on-sale set (283). 'accepted' carries only P2-ACCEPTED values; absent means UNKNOWN. P1 recommendation semantics unchanged.",
@@ -2595,7 +2595,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
         "NO_VERIFIED_WARRANTY",
@@ -2719,7 +2718,15 @@
           ]
         },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "BAIC-U5-Plus-Catalog-Final.pdf",
+            "issuer": "BAIC Egypt official site (baic-egypt.com)",
+            "scope": "Download Brochure",
+            "url": "https://baic-egypt.com/brochures/BAIC-U5-Plus-Catalog-Final.pdf"
+          }
+        ],
         "logo": null,
         "hero_image": null,
         "hero_image_limited": null,
@@ -5665,7 +5672,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
@@ -5819,7 +5825,15 @@
             "source": "https://byd-egypt.com/sealion-5"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "BYD%20SEALION%205%20DMi%20MY27%20-%20Brochure.pdf",
+            "issuer": "BYD Egypt official site (byd-egypt.com)",
+            "scope": "Download Brochure",
+            "url": "https://byd-egypt.com/front-assets/pdf/new/BYD%20SEALION%205%20DMi%20MY27%20-%20Brochure.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/byd.png",
           "credit": "Logo: BYD Egypt official site",
@@ -6306,7 +6320,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
@@ -6461,7 +6474,15 @@
             "source": "https://www.contactcars.com/en/new-cars/byd-ti7/72cd20acab13 | https://www.contactcars.com/en/new-cars/byd-ti7/bc320e3b3af8"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "BYD%20Ti7%20MY27%20-%20Brochure%20.pdf",
+            "issuer": "BYD Egypt official site (byd-egypt.com)",
+            "scope": "Download Brochure",
+            "url": "https://byd-egypt.com/front-assets/pdf/new/BYD%20Ti7%20MY27%20-%20Brochure%20.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/byd.png",
           "credit": "Logo: BYD Egypt official site",
@@ -15119,9 +15140,7 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -15232,8 +15251,24 @@
             }
           ]
         },
-        "warranty": null,
-        "brochures": [],
+        "warranty": [
+          {
+            "value": "7 years / 300000 km",
+            "unit": "",
+            "applicability": "model page",
+            "issuer": "dongfeng-egypt.com",
+            "source": "https://dongfeng-egypt.com/models/007"
+          }
+        ],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "007-brochure.pdf",
+            "issuer": "Dongfeng Egypt official site (dongfeng-egypt.com)",
+            "scope": "Download Brochure (PDF)",
+            "url": "https://dongfeng-egypt.com/__l5e/assets-v1/cb96c523-c395-46ef-8139-468c9ed49596/007-brochure.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/dongfeng.png",
           "credit": "Logo: Wikimedia Commons (Public domain)",
@@ -15280,9 +15315,7 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -15362,8 +15395,24 @@
             }
           ]
         },
-        "warranty": null,
-        "brochures": [],
+        "warranty": [
+          {
+            "value": "7 years / 300000 km",
+            "unit": "",
+            "applicability": "model page",
+            "issuer": "dongfeng-egypt.com",
+            "source": "https://dongfeng-egypt.com/models/008"
+          }
+        ],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "008-brochure.pdf",
+            "issuer": "Dongfeng Egypt official site (dongfeng-egypt.com)",
+            "scope": "Download Brochure (PDF)",
+            "url": "https://dongfeng-egypt.com/__l5e/assets-v1/58938c4a-6e4f-4f1a-9c84-6866fc46d770/008-brochure.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/dongfeng.png",
           "credit": "Logo: Wikimedia Commons (Public domain)",
@@ -15410,7 +15459,6 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
@@ -15497,7 +15545,15 @@
             "source": "https://www.contactcars.com/en/new-cars/dongfeng-box/a46b2dc3e5ee | https://www.contactcars.com/en/new-cars/dongfeng-box/c8225a6c63eb"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "box-brochure.pdf",
+            "issuer": "Dongfeng Egypt official site (dongfeng-egypt.com)",
+            "scope": "Download Brochure (PDF)",
+            "url": "https://dongfeng-egypt.com/__l5e/assets-v1/92de1fbe-9f60-4e9c-bcae-5d97b0508f86/box-brochure.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/dongfeng.png",
           "credit": "Logo: Wikimedia Commons (Public domain)",
@@ -15543,7 +15599,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
@@ -15666,7 +15721,15 @@
             "source": "https://www.contactcars.com/en/new-cars/dongfeng-mage/0f4750a9488b | https://www.contactcars.com/en/new-cars/dongfeng-mage/afc8c075891a"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "mage-brochure.pdf",
+            "issuer": "Dongfeng Egypt official site (dongfeng-egypt.com)",
+            "scope": "Download Brochure (PDF)",
+            "url": "https://dongfeng-egypt.com/__l5e/assets-v1/56ee7722-6a41-4bbc-8c52-3b38a741a7f3/mage-brochure.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/dongfeng.png",
           "credit": "Logo: Wikimedia Commons (Public domain)",
@@ -17395,7 +17458,6 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
         "GENERATION_UNKNOWN"
@@ -17403,7 +17465,116 @@
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
+        "specs": {
+          "drive": [
+            {
+              "value": "Front Wheel Drive",
+              "unit": "",
+              "applicability": "ALL listed grades (1.5T/7DCT Luxury, 1.5T/7DCT Exclusive); single value printed",
+              "issuer": "forthing-egypt.com",
+              "source": "https://forthing-egypt.com/brochure/T5-EVO-Brochure.pdf"
+            }
+          ],
+          "engine": [
+            {
+              "value": "4A95TD 1.5 L turbocharged petrol, DVVT+GDI, direct injection",
+              "unit": "",
+              "applicability": "ALL listed grades (1.5T/7DCT Luxury, 1.5T/7DCT Exclusive); single value printed",
+              "issuer": "forthing-egypt.com",
+              "source": "https://forthing-egypt.com/brochure/T5-EVO-Brochure.pdf"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "55",
+              "unit": "",
+              "applicability": "ALL listed grades (1.5T/7DCT Luxury, 1.5T/7DCT Exclusive); single value printed",
+              "issuer": "forthing-egypt.com",
+              "source": "https://forthing-egypt.com/brochure/T5-EVO-Brochure.pdf"
+            }
+          ],
+          "fuel_type": [
+            {
+              "value": "Gasoline, octane 92 and above",
+              "unit": "",
+              "applicability": "ALL listed grades (1.5T/7DCT Luxury, 1.5T/7DCT Exclusive); single value printed",
+              "issuer": "forthing-egypt.com",
+              "source": "https://forthing-egypt.com/brochure/T5-EVO-Brochure.pdf"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1690",
+              "unit": "",
+              "applicability": "ALL listed grades (1.5T/7DCT Luxury, 1.5T/7DCT Exclusive); single value printed",
+              "issuer": "forthing-egypt.com",
+              "source": "https://forthing-egypt.com/brochure/T5-EVO-Brochure.pdf"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4565",
+              "unit": "",
+              "applicability": "ALL listed grades (1.5T/7DCT Luxury, 1.5T/7DCT Exclusive); single value printed",
+              "issuer": "forthing-egypt.com",
+              "source": "https://forthing-egypt.com/brochure/T5-EVO-Brochure.pdf"
+            }
+          ],
+          "power_kw": [
+            {
+              "value": "145",
+              "unit": "",
+              "applicability": "ALL listed grades (1.5T/7DCT Luxury, 1.5T/7DCT Exclusive); single value printed",
+              "issuer": "forthing-egypt.com",
+              "source": "https://forthing-egypt.com/brochure/T5-EVO-Brochure.pdf"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "285",
+              "unit": "",
+              "applicability": "ALL listed grades (1.5T/7DCT Luxury, 1.5T/7DCT Exclusive); single value printed",
+              "issuer": "forthing-egypt.com",
+              "source": "https://forthing-egypt.com/brochure/T5-EVO-Brochure.pdf"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "7-speed wet dual-clutch (WDCT)",
+              "unit": "",
+              "applicability": "ALL listed grades (1.5T/7DCT Luxury, 1.5T/7DCT Exclusive); single value printed",
+              "issuer": "forthing-egypt.com",
+              "source": "https://forthing-egypt.com/brochure/T5-EVO-Brochure.pdf"
+            }
+          ],
+          "tyres": [
+            {
+              "value": "235/55R19",
+              "unit": "",
+              "applicability": "ALL listed grades (1.5T/7DCT Luxury, 1.5T/7DCT Exclusive); single value printed",
+              "issuer": "forthing-egypt.com",
+              "source": "https://forthing-egypt.com/brochure/T5-EVO-Brochure.pdf"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2715",
+              "unit": "",
+              "applicability": "ALL listed grades (1.5T/7DCT Luxury, 1.5T/7DCT Exclusive); single value printed",
+              "issuer": "forthing-egypt.com",
+              "source": "https://forthing-egypt.com/brochure/T5-EVO-Brochure.pdf"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1860",
+              "unit": "",
+              "applicability": "ALL listed grades (1.5T/7DCT Luxury, 1.5T/7DCT Exclusive); single value printed",
+              "issuer": "forthing-egypt.com",
+              "source": "https://forthing-egypt.com/brochure/T5-EVO-Brochure.pdf"
+            }
+          ]
+        },
         "warranty": [
           {
             "value": "5 years / 150000 km",
@@ -18308,9 +18479,7 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -18461,8 +18630,24 @@
             }
           ]
         },
-        "warranty": null,
-        "brochures": [],
+        "warranty": [
+          {
+            "value": "5 years / 150000 km",
+            "unit": "",
+            "applicability": "model page",
+            "issuer": "www.geely.com.eg",
+            "source": "https://www.geely.com.eg/models/cityray"
+          }
+        ],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "CITYRAY-Brochure.pdf",
+            "issuer": "Geely Egypt official site (www.geely.com.eg)",
+            "scope": "GET BROCHURE",
+            "url": "https://www.geely.com.eg/uploads/brochures/CITYRAY-Brochure.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/geely.png",
           "credit": "commons.wikimedia.org",
@@ -18509,9 +18694,7 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -18562,8 +18745,24 @@
           ]
         },
         "specs": null,
-        "warranty": null,
-        "brochures": [],
+        "warranty": [
+          {
+            "value": "5 years / 150000 km",
+            "unit": "",
+            "applicability": "model page",
+            "issuer": "www.geely.com.eg",
+            "source": "https://www.geely.com.eg/models/coolray"
+          }
+        ],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "COOLRAY-Brochure.pdf",
+            "issuer": "Geely Egypt official site (www.geely.com.eg)",
+            "scope": "GET BROCHURE",
+            "url": "https://www.geely.com.eg/uploads/brochures/COOLRAY-Brochure.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/geely.png",
           "credit": "commons.wikimedia.org",
@@ -19256,7 +19455,6 @@
         "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -19285,7 +19483,15 @@
           ]
         },
         "specs": null,
-        "warranty": null,
+        "warranty": [
+          {
+            "value": "5 years / 150000 km",
+            "unit": "",
+            "applicability": "model page",
+            "issuer": "www.geely.com.eg",
+            "source": "https://www.geely.com.eg/models/gx3-pro"
+          }
+        ],
         "brochures": [],
         "logo": {
           "src": "/media/brands/geely.png",
@@ -19546,7 +19752,6 @@
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
         "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
@@ -19573,7 +19778,15 @@
             "source": "https://www.contactcars.com/en/new-cars/geely-starray/263c3b4024fa | https://www.contactcars.com/en/new-cars/geely-starray/b74318c338fd | https://www.contactcars.com/en/new-cars/geely-starray/f309335d66a9 | https://www.contactcars.com/en/new-cars/geely-starray/feb663b9b3ba"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "STARRAY-Brochure.pdf",
+            "issuer": "Geely Egypt official site (www.geely.com.eg)",
+            "scope": "GET BROCHURE",
+            "url": "https://www.geely.com.eg/uploads/brochures/STARRAY-Brochure.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/geely.png",
           "credit": "commons.wikimedia.org",
@@ -20314,7 +20527,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
@@ -20457,7 +20669,15 @@
             "source": "https://www.contactcars.com/en/new-cars/haval-jolion/3491c59e6adb | https://www.contactcars.com/en/new-cars/haval-jolion/807eec2131bb | https://www.contactcars.com/en/new-cars/haval-jolion/9050881a7249"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "Jolion_Faceliftbrochure_2026-05-12_194743.088384.pdf",
+            "issuer": "Haval Egypt official site (greatwall.eg)",
+            "scope": "Download Brochure",
+            "url": "https://greatwall.eg/media/files/Jolion_Faceliftbrochure_2026-05-12_194743.088384.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/haval.png",
           "credit": "commons.wikimedia.org",
@@ -24151,17 +24371,139 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
-        "NO_OFFICIAL_BROCHURE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
         "market_status": "unverified",
         "price": null,
-        "specs": null,
-        "warranty": null,
-        "brochures": [],
+        "specs": {
+          "drive": [
+            {
+              "value": "FF (front engine, front-wheel drive)",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "jetouregypt.com",
+              "source": "https://jetouregypt.com/uploads/models/brochures/X70-plus.pdf"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "1498",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "jetouregypt.com",
+              "source": "https://jetouregypt.com/uploads/models/brochures/X70-plus.pdf"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "57",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "jetouregypt.com",
+              "source": "https://jetouregypt.com/uploads/models/brochures/X70-plus.pdf"
+            }
+          ],
+          "height_mm": [
+            {
+              "value": "1720",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "jetouregypt.com",
+              "source": "https://jetouregypt.com/uploads/models/brochures/X70-plus.pdf"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "4749",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "jetouregypt.com",
+              "source": "https://jetouregypt.com/uploads/models/brochures/X70-plus.pdf"
+            }
+          ],
+          "power_ps": [
+            {
+              "value": "156",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "jetouregypt.com",
+              "source": "https://jetouregypt.com/uploads/models/brochures/X70-plus.pdf"
+            }
+          ],
+          "seats": [
+            {
+              "value": "7",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "jetouregypt.com",
+              "source": "https://jetouregypt.com/uploads/models/brochures/X70-plus.pdf"
+            }
+          ],
+          "top_speed_kmh": [
+            {
+              "value": "180",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "jetouregypt.com",
+              "source": "https://jetouregypt.com/uploads/models/brochures/X70-plus.pdf"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "230",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "jetouregypt.com",
+              "source": "https://jetouregypt.com/uploads/models/brochures/X70-plus.pdf"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "6-speed wet DCT",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "jetouregypt.com",
+              "source": "https://jetouregypt.com/uploads/models/brochures/X70-plus.pdf"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2720",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "jetouregypt.com",
+              "source": "https://jetouregypt.com/uploads/models/brochures/X70-plus.pdf"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1900",
+              "unit": "",
+              "applicability": "Luxury",
+              "issuer": "jetouregypt.com",
+              "source": "https://jetouregypt.com/uploads/models/brochures/X70-plus.pdf"
+            }
+          ]
+        },
+        "warranty": [
+          {
+            "value": "6 years / 150000 km",
+            "unit": "",
+            "applicability": "model page",
+            "issuer": "jetouregypt.com",
+            "source": "https://jetouregypt.com/uploads/models/brochures/X70-plus.pdf"
+          }
+        ],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "X70-plus.pdf",
+            "issuer": "Jetour Egypt official site (jetouregypt.com)",
+            "scope": "linked from https://jetouregypt.com/models/x70plus/ ('Downlo",
+            "url": "https://jetouregypt.com/uploads/models/brochures/X70-plus.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/jetour.png",
           "credit": "Logo: Wikimedia Commons (Public domain)",
@@ -26190,7 +26532,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -26364,7 +26705,15 @@
             "source": "https://kia.com.eg/models/The_K4"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "690200c0379ce1761738944.pdf",
+            "issuer": "Kia Egypt official site (kia.com.eg)",
+            "scope": "BROCHURE",
+            "url": "https://kia.com.eg/uploads/models/690200c0379ce1761738944.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/kia.png",
           "credit": "kia.com.eg",
@@ -26785,7 +27134,6 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_OFFICIAL_BROCHURE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -26901,7 +27249,15 @@
             "source": "https://www.contactcars.com/en/new-cars/kia-sorento/272f0f849309"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "69020120471061761739040.pdf",
+            "issuer": "Kia Egypt official site (kia.com.eg)",
+            "scope": "BROCHURE",
+            "url": "https://kia.com.eg/uploads/models/69020120471061761739040.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/kia.png",
           "credit": "kia.com.eg",
@@ -27048,7 +27404,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -27212,7 +27567,15 @@
             "source": "https://www.contactcars.com/en/new-cars/kia-sportage/10551a66837e | https://www.contactcars.com/en/new-cars/kia-sportage/1356a8313eac | https://www.contactcars.com/en/new-cars/kia-sportage/29efd96c8bed | https://www.contactcars.com/en/new-cars/kia-sportage/87e4907ffdaa | https://www.contactcars.com/"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "6902014ecd8991761739086.pdf",
+            "issuer": "Kia Egypt official site (kia.com.eg)",
+            "scope": "BROCHURE",
+            "url": "https://kia.com.eg/uploads/models/6902014ecd8991761739086.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/kia.png",
           "credit": "kia.com.eg",
@@ -32451,7 +32814,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
@@ -32603,7 +32965,15 @@
           ]
         },
         "warranty": null,
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "Xpander%20M27.pdf",
+            "issuer": "Mitsubishi Egypt official site (www.mitsubishimotors-eg.com)",
+            "scope": "Download PDF (3.5 MB)",
+            "url": "https://www.mitsubishimotors-eg.com/content/dam/mitsubishi-motors-eg/brouchers-26-/Xpander%20M27.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/mitsubishi.png",
           "credit": "Logo: Wikimedia Commons (Public domain)",
@@ -41488,7 +41858,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -41590,7 +41959,15 @@
             "source": "https://www.contactcars.com/en/new-cars/toyota-bz4x/270ce3763c34 | https://www.contactcars.com/en/new-cars/toyota-bz4x/a767df779f46"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "Bz4x-Digital-Brochure2026.pdf",
+            "issuer": "Toyota Egypt official site (toyota.com.eg)",
+            "scope": "raw-html pdf",
+            "url": "https://toyota.com.eg/storage/52784/Bz4x-Digital-Brochure2026.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/toyota.png",
           "credit": "Logo: Wikimedia Commons (Public domain)",
@@ -41649,7 +42026,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -41827,7 +42203,15 @@
             "source": "https://www.contactcars.com/en/new-cars/toyota-corolla/0977e0f927a1 | https://www.contactcars.com/en/new-cars/toyota-corolla/3c706eba9fb1 | https://www.contactcars.com/en/new-cars/toyota-corolla/7153d54a7be9 | https://www.contactcars.com/en/new-cars/toyota-corolla/93109c3fa6c8 | https://www.contactc"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "Corolla-Brochure-2026.pdf",
+            "issuer": "Toyota Egypt official site (toyota.com.eg)",
+            "scope": "raw-html pdf",
+            "url": "https://toyota.com.eg/storage/52783/Corolla-Brochure-2026.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/toyota.png",
           "credit": "Logo: Wikimedia Commons (Public domain)",
@@ -41882,7 +42266,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
@@ -42003,7 +42386,15 @@
             "source": "https://www.contactcars.com/en/new-cars/toyota-fortuner/a65a790d6b33"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": null,
+            "title": "Fortuner-Brochure-2026-digital.pdf",
+            "issuer": "Toyota Egypt official site (toyota.com.eg)",
+            "scope": "raw-html pdf",
+            "url": "https://toyota.com.eg/storage/54452/Fortuner-Brochure-2026-digital.pdf"
+          }
+        ],
         "logo": {
           "src": "/media/brands/toyota.png",
           "credit": "Logo: Wikimedia Commons (Public domain)",
