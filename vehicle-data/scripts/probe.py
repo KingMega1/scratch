@@ -27,6 +27,14 @@ def main():
             b = x.content
             ext = "xml" if "xml" in x.headers.get("content-type", "") else "txt" if u.endswith(".txt") else "html"
             open(os.path.join(a.out, "raw", f"{i:03d}.{ext}.gz"), "wb").write(gzip.compress(b))
+            if b[:5] == b"%PDF-":  # PDF text (per page) as committed evidence
+                try:
+                    import fitz
+                    doc = fitz.open(stream=b, filetype="pdf")
+                    os.makedirs(os.path.join(a.out, "text"), exist_ok=True)
+                    open(os.path.join(a.out, "text", f"{i:03d}.txt"), "w").write(u + "\n" + "\n".join(f"--- page {k + 1}\n" + pg.get_text() for k, pg in enumerate(doc))[:a.text_chars])
+                except Exception as x:
+                    r["pdf_error"] = str(x)[:100]
             if ext == "html":  # committed evidence: visible text + links (raw/ is not committed)
                 import html as H, re
                 t = re.sub(r"(?is)<(script|style|noscript)[^>]*>.*?</\1>", " ", b.decode("utf-8", "replace"))

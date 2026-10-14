@@ -18,9 +18,9 @@
     "counts": {
       "models": 283,
       "id_accepted": 283,
-      "price_accepted": 192,
+      "price_accepted": 193,
       "price_tier_a": 25,
-      "price_source_dated": 152,
+      "price_source_dated": 153,
       "market_status_official": 37,
       "specs_accepted": 199,
       "warranty_accepted": 95,
@@ -30,7 +30,7 @@
       "hero_limited_archive": 149,
       "gallery_models": 46,
       "logo_accepted": 248,
-      "fully_enriched": 27
+      "fully_enriched": 28
     }
   },
   "relation": "Website on-sale set equals pinned U11 on-sale set (283). 'accepted' carries only P2-ACCEPTED values; absent means UNKNOWN. P1 recommendation semantics unchanged.",
@@ -39,7 +39,7 @@
     "p2_evidence": 21,
     "identity_only": 262,
     "excluded": 3,
-    "price_accepted": 192,
+    "price_accepted": 193,
     "id_accepted": 283
   },
   "entries": [
@@ -29836,10 +29836,9 @@
       },
       "p2_evidence": false,
       "evidence_state": "U11_IDENTITY_ONLY",
-      "price_status": "UNKNOWN",
+      "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_PRICE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -29849,7 +29848,51 @@
           "basis": "registration segment, last 12 months (445 registrations)",
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
-        "price": null,
+        "price": {
+          "price_from": 1519900,
+          "model_year": 2027,
+          "tier": "B",
+          "effective_date": "2026-10-13",
+          "date_basis": "SOURCE_STATED",
+          "as_of": "2026-10-14",
+          "issuer": "EIT (Kia Egypt distributor) as reported",
+          "evidence_url": "https://eg.hatla2ee.com/en/new-car/kia/KIA-K4 | https://sayaratelyoum.com/kia-2027-prices-egypt-increases | https://misrcars.com/أسعار-سيارات-كيا-في-مصر-طرح-موديلات-2027-من/",
+          "trims": [
+            {
+              "model_year": 2027,
+              "label": "Highline",
+              "price_egp": 1519900,
+              "tier": "B",
+              "effective_date": "2026-10-13",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-14",
+              "issuer": "EIT (Kia Egypt distributor) as reported",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/kia/KIA-K4 | https://sayaratelyoum.com/kia-2027-prices-egypt-increases | https://misrcars.com/أسعار-سيارات-كيا-في-مصر-طرح-موديلات-2027-من/"
+            },
+            {
+              "model_year": 2027,
+              "label": "GT-line",
+              "price_egp": 1719900,
+              "tier": "B",
+              "effective_date": "2026-10-13",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-14",
+              "issuer": "EIT (Kia Egypt distributor) as reported",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/kia/KIA-K4 | https://sayaratelyoum.com/kia-2027-prices-egypt-increases | https://misrcars.com/أسعار-سيارات-كيا-في-مصر-طرح-موديلات-2027-من/"
+            },
+            {
+              "model_year": 2027,
+              "label": "GT-line Black Edition",
+              "price_egp": 1859900,
+              "tier": "B",
+              "effective_date": "2026-10-13",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-14",
+              "issuer": "EIT (Kia Egypt distributor) as reported",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/kia/KIA-K4 | https://sayaratelyoum.com/kia-2027-prices-egypt-increases | https://misrcars.com/أسعار-سيارات-كيا-في-مصر-طرح-موديلات-2027-من/"
+            }
+          ]
+        },
         "specs": {
           "boot_l": [
             {

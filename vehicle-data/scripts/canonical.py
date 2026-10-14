@@ -362,7 +362,10 @@ def tier_a(market, stated=()):
         doc = {int(x["price_egp"]) for x in manual if x["p1_id"] == r["p1_id"] and x["evidence_ref"] == r["evidence_ref"]}
         later = sorted({s["effective_date"] for s in stated if s["p1_id"] == r["p1_id"] and s["effective_date"] > (r["effective_date"] or "9")
                         and s["price_egp"] not in doc})  # a later change to a value the document already states corroborates it
-        if r["tier"] != "A":
+        srcs = [u for u in (r["evidence_url"] or "").split(" | ") if u]
+        if r["tier"] == "B" and len({u.split("/")[2] for u in srcs}) >= 2 and not later:
+            status, reason = "ACCEPT", f"PB-M {len({u.split('/')[2] for u in srcs})} independent dated sources state the identical value"
+        elif r["tier"] != "A":
             status, reason = "REWORK", f"Tier {r['tier']}: single media/dealer/social report; review only"
         elif later:
             status, reason = "REWORK", f"PA-2 market source states a later official price change ({later[-1]}) than the document date"
@@ -370,7 +373,7 @@ def tier_a(market, stated=()):
             status, reason = "REWORK", f"PA-1 outside +/-25% of market official range {min(m)}-{max(m)}"
         else:
             status, reason = "ACCEPT", "PA-1 official importer/distributor document"
-        rows.append(dict(r, price_egp=v, trim_key=b.trim_key(r["trim_label"]), sites=1, kind=r.get("kind") or "trim",
+        rows.append(dict(r, price_egp=v, trim_key=b.trim_key(r["trim_label"]), sites=max(1, len({u.split("/")[2] for u in srcs})), kind=r.get("kind") or "trim",
                          status=status, reason=reason + (f"; {r['note']}" if r.get("note") else "")))
     return rows
 

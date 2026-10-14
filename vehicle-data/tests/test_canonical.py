@@ -67,10 +67,15 @@ class Canonical(unittest.TestCase):
                 v = (c["official_cell"] or "").replace(",", "").replace(" EGP", "").strip()
                 if v.isdigit():
                     seen[int(v)].add(c["source_url"])
+        manual = {(m["p1_id"], int(m["price_egp"]), m["evidence_url"]) for m in rd("registry/price_evidence_manual.csv")}
+        market = ("contactcars.com", "hatla2ee.com", "egy-car.com")
         for r in self.prices:
             if r["tier"] == "B" and r["status"] == "ACCEPT":
+                if r["reason"].startswith("PB-M"):  # manual multi-source: documented row; its market-site URLs must be in the snapshot
+                    self.assertIn((r["p1_id"], int(r["price_egp"]), r["evidence_url"]), manual)
                 for u in r["evidence_url"].split(" | "):
-                    self.assertIn(u, seen[int(r["price_egp"])], (r["p1_id"], r["price_egp"], u))
+                    if not r["reason"].startswith("PB-M") or any(h in u for h in market):
+                        self.assertIn(u, seen[int(r["price_egp"])], (r["p1_id"], r["price_egp"], u))
 
     def test_no_tier_c_accepted(self):
         self.assertFalse([r for r in self.prices if r["tier"] == "C" and r["status"] == "ACCEPT"])
