@@ -25,12 +25,12 @@
       "specs_accepted": 191,
       "warranty_accepted": 89,
       "brochure_accepted": 63,
-      "hero_accepted": 40,
-      "hero_accepted_hq": 37,
-      "hero_limited_archive": 150,
-      "gallery_models": 35,
+      "hero_accepted": 45,
+      "hero_accepted_hq": 42,
+      "hero_limited_archive": 149,
+      "gallery_models": 38,
       "logo_accepted": 248,
-      "fully_enriched": 17
+      "fully_enriched": 18
     }
   },
   "relation": "Website on-sale set equals pinned U11 on-sale set (283). 'accepted' carries only P2-ACCEPTED values; absent means UNKNOWN. P1 recommendation semantics unchanged.",
@@ -8662,7 +8662,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -8860,9 +8859,58 @@
           "quality_class": "HQ",
           "sha256": "cd991f197a9ddd65e586cf99ac97337c77b117a0bd25634f1be6aec344b3a78b"
         },
-        "hero_image": null,
+        "hero_image": {
+          "src": "/media/models/changan-uni-t.webp",
+          "credit": "Changan Egypt / official issuer",
+          "source_url": "https://changan.com.eg/en/model/uni-t/",
+          "image_url": "https://changan.com.eg/wp-content/uploads/2023/10/Frame-38759-1.webp",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "HQ",
+          "sha256": "28b5f0fce4c02dd623b58d2b265b6ba5e26ff6787d6cec9af34a78f2a5d5ed3a"
+        },
         "hero_image_limited": null,
-        "gallery": [],
+        "gallery": [
+          {
+            "asset_id": "b19f01b06d7c",
+            "sha256": "b19f01b06d7ce16144d5ee8306cf93ba786ebec1ce6f3b2a3120b523df4ccf2b",
+            "width": "1960",
+            "height": "960",
+            "quality_class": "HQ",
+            "url": "https://changan.com.eg/wp-content/uploads/2023/10/Frame-38759-3.webp",
+            "page": "https://changan.com.eg/en/model/uni-t/",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/models/changan-uni-t/01.webp",
+            "credit": "Changan Egypt / official issuer"
+          },
+          {
+            "asset_id": "76f324edb0da",
+            "sha256": "76f324edb0da0ec73c0eaeb851df832c165216a585667efca5e632b2c3b15cd9",
+            "width": "1960",
+            "height": "960",
+            "quality_class": "HQ",
+            "url": "https://changan.com.eg/wp-content/uploads/2023/10/Frame-38759-_1_-1.webp",
+            "page": "https://changan.com.eg/en/model/uni-t/",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/models/changan-uni-t/02.webp",
+            "credit": "Changan Egypt / official issuer"
+          },
+          {
+            "asset_id": "518b17b8d8bb",
+            "sha256": "518b17b8d8bb990ec5aa635c9ba77567a1137bbfc64f7a9781238512b93db9af",
+            "width": "1960",
+            "height": "960",
+            "quality_class": "HQ",
+            "url": "https://changan.com.eg/wp-content/uploads/2023/10/Frame-38759.webp",
+            "page": "https://changan.com.eg/en/model/uni-t/",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/models/changan-uni-t/03.webp",
+            "credit": "Changan Egypt / official issuer"
+          }
+        ],
         "conflicts": []
       }
     },
@@ -9100,19 +9148,6 @@
             "credit": "changan.com.eg"
           },
           {
-            "asset_id": "b3da2de5d083",
-            "sha256": "b3da2de5d083b56cb821f0071bfa02add5ce88ebb2528da779c70ef166e4b274",
-            "width": "1135",
-            "height": "534",
-            "quality_class": "WEB",
-            "url": "https://changan.com.eg/wp-content/uploads/2025/06/Rectangle-100-copy.webp",
-            "page": "https://changan.com.eg/en/model/uni-v/",
-            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
-            "status": "ACCEPT",
-            "src": "/media/models/changan-uni-v/02.webp",
-            "credit": "changan.com.eg"
-          },
-          {
             "asset_id": "9858be92f4fe",
             "sha256": "9858be92f4fe0e834035810ade15dac396f144f885d53a29bbcf9561aa172e9d",
             "width": "1919",
@@ -9188,6 +9223,19 @@
             "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
             "status": "ACCEPT",
             "src": "/media/models/changan-uni-v/08.webp",
+            "credit": "changan.com.eg"
+          },
+          {
+            "asset_id": "6b7bf3e44e3d",
+            "sha256": "6b7bf3e44e3d43464e2e487a7835c4bfd6609a279443282fec33c60bc34025f5",
+            "width": "1654",
+            "height": "583",
+            "quality_class": "WEB",
+            "url": "https://changan.com.eg/wp-content/uploads/2025/06/Uni-V.pdf#page=5",
+            "page": "https://changan.com.eg/wp-content/uploads/2025/06/Uni-V.pdf",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/models/changan-uni-v/09.webp",
             "credit": "changan.com.eg"
           }
         ],
@@ -23374,7 +23422,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
@@ -23513,9 +23560,58 @@
           "quality_class": "HQ",
           "sha256": "a00d73cd876e6bae3499624133863fbb8a12b0d70219d75c79b8af9bb828e46b"
         },
-        "hero_image": null,
+        "hero_image": {
+          "src": "/media/models/jetour-t1.webp",
+          "credit": "Jetour Egypt / official issuer",
+          "source_url": "https://jetouregypt.com/models/T1/",
+          "image_url": "https://jetouregypt.com/models/T1/t2_assets/images/carModel/t2/3-1.jpg",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "HQ",
+          "sha256": "866258f97c239871121da81b14b70e57ca25b2d769b22f6b7204ecef3bf7a735"
+        },
         "hero_image_limited": null,
-        "gallery": [],
+        "gallery": [
+          {
+            "asset_id": "98251a2fddf2",
+            "sha256": "98251a2fddf2e195d88c00108a6631a983fa6cfc2b6f3b919bea2639dc76301a",
+            "width": "1920",
+            "height": "1036",
+            "quality_class": "HQ",
+            "url": "https://jetouregypt.com/models/T1/new_assets/images/carModel/t1/5-3.jpg",
+            "page": "https://jetouregypt.com/models/T1/",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/models/jetour-t1/01.webp",
+            "credit": "Jetour Egypt / official issuer"
+          },
+          {
+            "asset_id": "d3d8d6f37a0e",
+            "sha256": "d3d8d6f37a0efa379958001e91dba61ec823181b1c618d4a37235bba7ddb928f",
+            "width": "1920",
+            "height": "1080",
+            "quality_class": "HQ",
+            "url": "https://jetouregypt.com/models/T1/t2_assets/images/carModel/t2/3-4.jpg",
+            "page": "https://jetouregypt.com/models/T1/",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/models/jetour-t1/02.webp",
+            "credit": "Jetour Egypt / official issuer"
+          },
+          {
+            "asset_id": "888717f93b17",
+            "sha256": "888717f93b176df1c8de44022725cd1a4bfee4ed090522d97eed19dcc6811b70",
+            "width": "1920",
+            "height": "1080",
+            "quality_class": "HQ",
+            "url": "https://jetouregypt.com/models/T1/t2_assets/images/carModel/t2/3-2.jpg",
+            "page": "https://jetouregypt.com/models/T1/",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/models/jetour-t1/03.webp",
+            "credit": "Jetour Egypt / official issuer"
+          }
+        ],
         "conflicts": []
       }
     },
@@ -24030,7 +24126,6 @@
         "NO_ACCEPTED_PRICE",
         "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
-        "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
@@ -24050,9 +24145,58 @@
           "quality_class": "HQ",
           "sha256": "a00d73cd876e6bae3499624133863fbb8a12b0d70219d75c79b8af9bb828e46b"
         },
-        "hero_image": null,
+        "hero_image": {
+          "src": "/media/models/jetour-x70-plus-ckd.webp",
+          "credit": "Jetour Egypt / official issuer",
+          "source_url": "https://jetouregypt.com/models/x70plus/",
+          "image_url": "https://jetouregypt.com/img/vehicle-overview/x70plus/banner.jpg",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "HQ",
+          "sha256": "88e43a96b5e06187fedad36e7d44fc94e5b8e00f685c96021ad4960bff83675e"
+        },
         "hero_image_limited": null,
-        "gallery": [],
+        "gallery": [
+          {
+            "asset_id": "ddca105437d8",
+            "sha256": "ddca105437d85cdfee0fdee9573a8a3a751799c03f5b2a9cce16586da440006c",
+            "width": "1186",
+            "height": "893",
+            "quality_class": "WEB",
+            "url": "https://jetouregypt.com/img/vehicle-overview/x70plus/exterior.jpg",
+            "page": "https://jetouregypt.com/models/x70plus/",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/models/jetour-x70-plus-ckd/01.webp",
+            "credit": "Jetour Egypt / official issuer"
+          },
+          {
+            "asset_id": "f2c1f3dd1c19",
+            "sha256": "f2c1f3dd1c19d7db576335e4a53e41c444338cded071fdfe7672a9b1a8e10d8c",
+            "width": "1280",
+            "height": "500",
+            "quality_class": "WEB",
+            "url": "https://jetouregypt.com/img/vehicle-overview/x70plus/generous.jpg",
+            "page": "https://jetouregypt.com/models/x70plus/",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/models/jetour-x70-plus-ckd/02.webp",
+            "credit": "Jetour Egypt / official issuer"
+          },
+          {
+            "asset_id": "b9159c752006",
+            "sha256": "b9159c752006e6ebf0fd0d76963c0f4ac823d3a45b2d996c459a54ccb8c2c7cb",
+            "width": "1186",
+            "height": "893",
+            "quality_class": "WEB",
+            "url": "https://jetouregypt.com/img/vehicle-overview/x70plus/interior.jpg",
+            "page": "https://jetouregypt.com/models/x70plus/",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/models/jetour-x70-plus-ckd/03.webp",
+            "credit": "Jetour Egypt / official issuer"
+          }
+        ],
         "conflicts": []
       }
     },
@@ -38891,7 +39035,6 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_OFFICIAL_BROCHURE",
-        "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -39077,7 +39220,16 @@
           "quality_class": "HQ",
           "sha256": "cac3fd947b158988698c441af390f98774c08e416031cde6c5546648e120f6c7"
         },
-        "hero_image": null,
+        "hero_image": {
+          "src": "/media/models/skoda-octavia.webp",
+          "credit": "Skoda Egypt / official issuer",
+          "source_url": "https://www.skoda-egypt.com/models/octavia/octavia",
+          "image_url": "https://k2ngtoolsfrontdoorprodfde-gpgketbpfhacepaz.a03.azurefd.net/mdmstorage/images/CXPINRJLDX657A3KUTIYNRUNSI%3D%3D%3D%3D%3D%3D.png",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "HQ",
+          "sha256": "d08e116f716ab6976d72397f4ed75f61f29f320c2bba443b9671d986740bda82"
+        },
         "hero_image_limited": null,
         "gallery": [],
         "conflicts": []
@@ -41096,7 +41248,6 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_OFFICIAL_BROCHURE",
-        "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -41209,7 +41360,16 @@
           "quality_class": "HQ",
           "sha256": "609f54bc1ff7301e0d7dcfeb0cf65cbd67cc1c351b020c64dc98144c4a9256dc"
         },
-        "hero_image": null,
+        "hero_image": {
+          "src": "/media/models/toyota-bz4x.webp",
+          "credit": "Toyota Egypt / official issuer",
+          "source_url": "https://toyota.com.eg/en/models/toyota-b-z-4-x",
+          "image_url": "https://toyota.com.eg/storage/52224/conversions/2024-Toyota-bZ4X-optimized.png",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "HQ",
+          "sha256": "de8a95a9b1640b860465021a627f2e21d599a4570e13bf2208f32ce5628e3a5a"
+        },
         "hero_image_limited": null,
         "gallery": [],
         "conflicts": [
