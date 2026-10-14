@@ -119,6 +119,47 @@
    "note": "Powertrain conflation: BEV separated; byd/sealion-6 keeps DM-i (brochure, P1 ID). EgyCar \"Comfort\" trim stays with parent (powertrain not stated) and is held by price rules."
   },
   {
+   "id": "toyota/corolla-hybrid",
+   "decision": "SPLIT",
+   "brand": "Toyota",
+   "model": "Corolla Hybrid",
+   "body": "sedan",
+   "powertrains": [
+    "hybrid"
+   ],
+   "u11_id": "",
+   "urls": [],
+   "match": [],
+   "evidence": [
+    "Official Egypt model page: https://toyota.com.eg/en/models/toyota-corolla-hybrid",
+    "Corolla market page lists a \"Hybrid\" trim (ContactCars 2026: 2,000,000) alongside petrol trims"
+   ],
+   "audit_keys": [
+    "toyota/corollahybrid"
+   ],
+   "note": "Powertrain conflation: Corolla Hybrid (separate Toyota Egypt model page) separated from petrol Corolla; hybrid trims on the Corolla page belong to it.",
+   "parent": "toyota/corolla",
+   "trim_regex": "hybrid"
+  },
+  {
+   "id": "mercedes/glc-eq",
+   "decision": "SPLIT",
+   "parent": "mercedes/glc",
+   "brand": "Mercedes-Benz",
+   "model": "GLC with EQ Technology",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "trim_regex": "\\bEQ\\b",
+   "urls": [],
+   "match": [],
+   "evidence": [
+    "ContactCars GLC page 2027 trim \"4M EQ - AMG Line\" EGP 4,900,000 (electric GLC, new generation) next to petrol GLC trims (U_2026-10-14_38515094601)"
+   ],
+   "note": "Powertrain/generation conflation: electric GLC separated from petrol GLC 4MATIC."
+  },
+  {
    "id": "mg/rx5",
    "decision": "ADDITION",
    "brand": "MG",
@@ -1262,13 +1303,11 @@
     "Mercedes|CLE"
    ],
    "evidence": [
-    "Market new-car pages with priced model years 2025 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
-    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Cabriolet-Coupe+no_sale_evidence (P1 eligibility unchanged)",
-    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+    "Market new-car pages with priced model years 2025 2026 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Cabriolet-Coupe+no_sale_evidence (P1 eligibility unchanged)"
    ],
    "audit_keys": [
-    "mercedes/cle-200",
-    "mercedesbenz/mercedesbenzcle200"
+    "mercedes/cle-200"
    ],
    "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
   },
@@ -1349,14 +1388,12 @@
    "evidence": [
     "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
     "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)",
-    "Market new-car pages with priced model years 2025 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
-    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)",
-    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+    "Market new-car pages with priced model years 2025 2026 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
    ],
    "audit_keys": [
     "mercedes/g-500",
-    "mercedes/g-63",
-    "mercedesbenz/mercedesbenzg63"
+    "mercedes/g-63"
    ],
    "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
   },
@@ -3369,26 +3406,6 @@
    "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
   },
   {
-   "id": "toyota/corolla-hybrid",
-   "decision": "ADDITION",
-   "brand": "Toyota",
-   "model": "Corolla Hybrid",
-   "body": "sedan",
-   "powertrains": [
-    "hybrid"
-   ],
-   "u11_id": "",
-   "urls": [],
-   "match": [],
-   "evidence": [
-    "Official Egypt model page: https://toyota.com.eg/en/models/toyota-corolla-hybrid"
-   ],
-   "audit_keys": [
-    "toyota/corollahybrid"
-   ],
-   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
-  },
-  {
    "id": "chevrolet/dababbah",
    "decision": "OUT_OF_SCOPE",
    "brand": "chevrolet",
@@ -3802,40 +3819,6 @@
    ],
    "evidence": [
     "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
-   ],
-   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
-  },
-  {
-   "id": "mercedes/gla",
-   "decision": "SOURCE_ALIAS",
-   "brand": "mercedes",
-   "model": "mercedes benz gla 200",
-   "alias_of_audit_key": "mercedesbenz/mercedesbenzgla200",
-   "audit_keys": [
-    "mercedesbenz/mercedesbenzgla200"
-   ],
-   "urls": [
-    "https://eg.hatla2ee.com/en/new-car/mercedes/mercedes-benz-gla-200"
-   ],
-   "evidence": [
-    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
-   ],
-   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
-  },
-  {
-   "id": "mercedes/glc",
-   "decision": "SOURCE_ALIAS",
-   "brand": "mercedes",
-   "model": "mercedes benz glc 43",
-   "alias_of_audit_key": "mercedesbenz/mercedesbenzglc43",
-   "audit_keys": [
-    "mercedesbenz/mercedesbenzglc43"
-   ],
-   "urls": [
-    "https://eg.hatla2ee.com/en/new-car/mercedes/mercedes-benz-glc-43"
-   ],
-   "evidence": [
-    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
    ],
    "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
   },

@@ -14,6 +14,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--urls", required=True)
     ap.add_argument("--out", required=True)
+    ap.add_argument("--text-chars", type=int, default=200000)
+    ap.add_argument("--delay", type=float, default=1.5)
     a = ap.parse_args()
     os.makedirs(os.path.join(a.out, "raw"), exist_ok=True)
     man = []
@@ -31,14 +33,14 @@ def main():
                 links = sorted(set(re.findall(r'href="([^"#]+)"', t)))
                 txt = re.sub(r"\s+", " ", H.unescape(re.sub(r"<[^>]+>", " ", t))).strip()
                 os.makedirs(os.path.join(a.out, "text"), exist_ok=True)
-                open(os.path.join(a.out, "text", f"{i:03d}.txt"), "w").write(u + "\n" + txt[:200000])
+                open(os.path.join(a.out, "text", f"{i:03d}.txt"), "w").write(u + "\n" + txt[:a.text_chars])
                 json.dump(links, open(os.path.join(a.out, "text", f"{i:03d}.links.json"), "w"))
             r.update(status=x.status_code, final_url=x.url, content_type=x.headers.get("content-type"), bytes=len(b),
                      sha256=hashlib.sha256(b).hexdigest())
         except Exception as e:
             r.update(status=None, error=str(e)[:200])
         man.append(r)
-        time.sleep(1.5)
+        time.sleep(a.delay)
     json.dump(man, open(os.path.join(a.out, "manifest.json"), "w"), indent=1)
     print(json.dumps([(m["n"], m.get("status"), m.get("bytes")) for m in man]))
 

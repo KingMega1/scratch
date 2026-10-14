@@ -24,6 +24,10 @@ if [ "$MODE" = "handoff" ]; then   # reproduce byte-identical images of a review
   python3 scripts/handoff_fetch.py --sel "$(awk 'NR==1{print $1}' handoff.request)" --out "snapshots/MH_${DATE}_${GITHUB_RUN_ID:-local}"
   exit 0
 fi
+if [ "$MODE" = "arnames" ]; then   # Arabic market pages (header text only) for verified Arabic model names
+  python3 scripts/probe.py --urls arnames.urls --out "snapshots/AR_${DATE}_${GITHUB_RUN_ID:-local}" --text-chars 4000 --delay 0.8
+  exit 0
+fi
 if [ "$MODE" = "probe" ]; then     # raw pages for offline parser development (probe.urls); nothing parsed or accepted
   python3 scripts/probe.py --urls probe.urls --out "snapshots/P_${DATE}_${GITHUB_RUN_ID:-local}"
   exit 0

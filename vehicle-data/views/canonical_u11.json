@@ -23,10 +23,10 @@
   "hero_accepted": 53,
   "hero_accepted_hq": 49,
   "hero_limited_archive": 149,
-  "id_accepted": 415,
-  "logo_accepted": 346,
+  "id_accepted": 416,
+  "logo_accepted": 347,
   "market_status_official": 38,
-  "models": 415,
+  "models": 416,
   "price_accepted": 220,
   "price_source_dated": 175,
   "price_tier_a": 25,
@@ -115,6 +115,11 @@
    },
    "rework_price_rows": 4,
    "site_slug": "alfa-romeo-giulia",
+   "size_class": {
+    "basis": "registration segment, last 12 months (65 registrations)",
+    "segment": "Luxury Car-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -191,6 +196,11 @@
    },
    "rework_price_rows": 3,
    "site_slug": "alfa-romeo-stelvio",
+   "size_class": {
+    "basis": "registration segment, last 12 months (48 registrations)",
+    "segment": "Luxury SUV-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -278,6 +288,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "alfa-romeo-tonale",
+   "size_class": {
+    "basis": "registration segment, last 12 months (56 registrations)",
+    "segment": "Luxury SUV-2",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -337,6 +352,11 @@
    "price": null,
    "rework_price_rows": 7,
    "site_slug": "arcfox-alpha-s5",
+   "size_class": {
+    "basis": "registration segment, last 12 months (25 registrations)",
+    "segment": "Car-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -487,6 +507,11 @@
    "price": null,
    "rework_price_rows": 6,
    "site_slug": "arcfox-alpha-t5",
+   "size_class": {
+    "basis": "registration segment, last 12 months (20 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -628,6 +653,11 @@
    "price": null,
    "rework_price_rows": 5,
    "site_slug": "arcfox-t1",
+   "size_class": {
+    "basis": "registration segment, last 12 months (198 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -790,6 +820,11 @@
    "price": null,
    "rework_price_rows": 8,
    "site_slug": "audi-a3",
+   "size_class": {
+    "basis": "registration segment, last 12 months (451 registrations)",
+    "segment": "Luxury Car-2",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -984,6 +1019,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "audi-a5",
+   "size_class": {
+    "basis": "registration segment, last 12 months (303 registrations)",
+    "segment": "Luxury Car-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -1126,6 +1166,11 @@
    },
    "rework_price_rows": 3,
    "site_slug": "audi-a6",
+   "size_class": {
+    "basis": "registration segment, last 12 months (22 registrations)",
+    "segment": "Luxury Car-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -1239,6 +1284,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "audi-a8",
+   "size_class": {
+    "basis": "registration segment, last 12 months (2 registrations)",
+    "segment": "Luxury Car-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -1314,6 +1364,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "audi-q2",
+   "size_class": {
+    "basis": "registration segment, last 12 months (54 registrations)",
+    "segment": "Luxury SUV-2",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -1471,6 +1526,11 @@
    },
    "rework_price_rows": 13,
    "site_slug": "audi-q3",
+   "size_class": {
+    "basis": "registration segment, last 12 months (556 registrations)",
+    "segment": "Luxury SUV-2",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -1587,6 +1647,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "audi-q4-e-tron",
+   "size_class": {
+    "basis": "registration segment, last 12 months (12 registrations)",
+    "segment": "Luxury SUV-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -1630,6 +1695,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "audi-q5",
+   "size_class": {
+    "basis": "registration segment, last 12 months (6 registrations)",
+    "segment": "Luxury SUV-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -1721,6 +1791,11 @@
    },
    "rework_price_rows": 7,
    "site_slug": "audi-q7",
+   "size_class": {
+    "basis": "registration segment, last 12 months (165 registrations)",
+    "segment": "Luxury SUV-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -1874,6 +1949,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "audi-q8",
+   "size_class": {
+    "basis": "registration segment, last 12 months (83 registrations)",
+    "segment": "Luxury SUV-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -1999,6 +2079,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "avatr-07",
+   "size_class": {
+    "basis": "registration segment, last 12 months (222 registrations)",
+    "segment": "Luxury SUV-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -2197,6 +2282,11 @@
    },
    "rework_price_rows": 6,
    "site_slug": "avatr-11",
+   "size_class": {
+    "basis": "registration segment, last 12 months (143 registrations)",
+    "segment": "Luxury SUV-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -2440,6 +2530,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "avatr-12",
+   "size_class": {
+    "basis": "registration segment, last 12 months (298 registrations)",
+    "segment": "Luxury Car-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -2635,6 +2730,11 @@
    },
    "rework_price_rows": 4,
    "site_slug": "baic-bj30",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1528 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -2852,6 +2952,11 @@
    },
    "rework_price_rows": 4,
    "site_slug": "baic-u5-plus",
+   "size_class": {
+    "basis": "registration segment, last 12 months (3609 registrations)",
+    "segment": "Car-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -3009,6 +3114,11 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "baic-x3",
+   "size_class": {
+    "basis": "registration segment, last 12 months (2 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -3041,6 +3151,11 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "baic-x35",
+   "size_class": {
+    "basis": "registration segment, last 12 months (287 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -3078,6 +3193,11 @@
    "price": null,
    "rework_price_rows": 7,
    "site_slug": "baic-x55",
+   "size_class": {
+    "basis": "registration segment, last 12 months (249 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -3218,6 +3338,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "baic-x7",
+   "size_class": {
+    "basis": "registration segment, last 12 months (150 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -3293,6 +3418,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "baw-m7",
+   "size_class": {
+    "basis": "registration segment, last 12 months (30 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -3440,6 +3570,11 @@
    "price": null,
    "rework_price_rows": 5,
    "site_slug": "bestune-b70",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -3484,6 +3619,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "bestune-b70s",
+   "size_class": {
+    "basis": "registration segment, last 12 months (5 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -3549,6 +3689,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "bestune-t55",
+   "size_class": {
+    "basis": "registration segment, last 12 months (16 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -3624,6 +3769,11 @@
    },
    "rework_price_rows": 11,
    "site_slug": "bmw-5-series",
+   "size_class": {
+    "basis": "registration segment, last 12 months (533 registrations)",
+    "segment": "Luxury Car-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -3688,6 +3838,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "bmw-i7",
+   "size_class": {
+    "basis": "registration segment, last 12 months (17 registrations)",
+    "segment": "Luxury Car-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -3752,6 +3907,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "bmw-ix",
+   "size_class": {
+    "basis": "registration segment, last 12 months (10 registrations)",
+    "segment": "Luxury SUV-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -3816,6 +3976,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "bmw-ix1",
+   "size_class": {
+    "basis": "registration segment, last 12 months (70 registrations)",
+    "segment": "Luxury SUV-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "powertrain_class": [
      {
@@ -3876,6 +4041,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "bmw-ix2",
+   "size_class": {
+    "basis": "registration segment, last 12 months (11 registrations)",
+    "segment": "Luxury SUV-2",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -4035,6 +4205,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "bmw-ix3",
+   "size_class": {
+    "basis": "registration segment, last 12 months (64 registrations)",
+    "segment": "Luxury SUV-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "accel_0_100_s": [
      {
@@ -4243,6 +4418,11 @@
    },
    "rework_price_rows": 5,
    "site_slug": "bmw-x1",
+   "size_class": {
+    "basis": "registration segment, last 12 months (384 registrations)",
+    "segment": "Luxury SUV-2",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -4394,6 +4574,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "bmw-x2",
+   "size_class": {
+    "basis": "registration segment, last 12 months (144 registrations)",
+    "segment": "Luxury SUV-2",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -4537,6 +4722,11 @@
    },
    "rework_price_rows": 6,
    "site_slug": "bmw-x5",
+   "size_class": {
+    "basis": "registration segment, last 12 months (165 registrations)",
+    "segment": "Luxury SUV-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -4755,6 +4945,11 @@
    },
    "rework_price_rows": 6,
    "site_slug": "bmw-x6",
+   "size_class": {
+    "basis": "registration segment, last 12 months (160 registrations)",
+    "segment": "Luxury SUV-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -4975,6 +5170,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "bmw-x7",
+   "size_class": {
+    "basis": "registration segment, last 12 months (57 registrations)",
+    "segment": "Luxury SUV-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -5038,6 +5238,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "byd-atto-8",
+   "size_class": {
+    "basis": "registration segment, last 12 months (38 registrations)",
+    "segment": "Luxury SUV-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "airbags": [
      {
@@ -5354,6 +5559,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "byd-f3",
+   "size_class": {
+    "basis": "registration segment, last 12 months (363 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -5420,6 +5630,11 @@
    "price": null,
    "rework_price_rows": 6,
    "site_slug": "byd-m9",
+   "size_class": {
+    "basis": "registration segment, last 12 months (10 registrations)",
+    "segment": "MPV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "airbags": [
      {
@@ -5684,6 +5899,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "byd-seagull",
+   "size_class": {
+    "basis": "registration segment, last 12 months (265 registrations)",
+    "segment": "Car HB-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -5798,6 +6018,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "byd-sealion-5",
+   "size_class": {
+    "basis": "registration segment, last 12 months (203 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -6014,6 +6239,11 @@
    },
    "rework_price_rows": 3,
    "site_slug": "byd-sealion-6",
+   "size_class": {
+    "basis": "registration segment, last 12 months (767 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "airbags": [
      {
@@ -6427,6 +6657,11 @@
    },
    "rework_price_rows": 4,
    "site_slug": "byd-ti-7",
+   "size_class": {
+    "basis": "registration segment, last 12 months (476 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -6620,6 +6855,11 @@
    "price": null,
    "rework_price_rows": 4,
    "site_slug": "cadillac-escalade",
+   "size_class": {
+    "basis": "registration segment, last 12 months (102 registrations)",
+    "segment": "Luxury SUV-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -6663,6 +6903,11 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "cadillac-escalade-iq",
+   "size_class": {
+    "basis": "registration segment, last 12 months (11 registrations)",
+    "segment": "Luxury SUV-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -6737,6 +6982,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "cadillac-vistiq",
+   "size_class": {
+    "basis": "registration segment, last 12 months (2 registrations)",
+    "segment": "Luxury SUV-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -7049,6 +7299,11 @@
    },
    "rework_price_rows": 9,
    "site_slug": "changan-cs35-plus",
+   "size_class": {
+    "basis": "registration segment, last 12 months (112 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -7254,6 +7509,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "changan-cs55",
+   "size_class": {
+    "basis": "registration segment, last 12 months (628 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -7496,6 +7756,11 @@
    },
    "rework_price_rows": 9,
    "site_slug": "changan-cs55-plus",
+   "size_class": {
+    "basis": "registration segment, last 12 months (4263 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -7918,6 +8183,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "changan-cs75-plus",
+   "size_class": {
+    "basis": "registration segment, last 12 months (299 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -8313,6 +8583,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "changan-eado",
+   "size_class": {
+    "basis": "registration segment, last 12 months (127 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -8594,6 +8869,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "changan-eado-plus",
+   "size_class": {
+    "basis": "registration segment, last 12 months (693 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -8897,6 +9177,11 @@
    },
    "rework_price_rows": 10,
    "site_slug": "changan-uni-t",
+   "size_class": {
+    "basis": "registration segment, last 12 months (131 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -9239,6 +9524,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "changan-uni-v",
+   "size_class": {
+    "basis": "registration segment, last 12 months (323 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -9477,6 +9767,11 @@
    },
    "rework_price_rows": 15,
    "site_slug": "chery-arrizo-5",
+   "size_class": {
+    "basis": "registration segment, last 12 months (4438 registrations)",
+    "segment": "Car-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -9763,6 +10058,11 @@
    },
    "rework_price_rows": 8,
    "site_slug": "chery-arrizo-6-gt",
+   "size_class": {
+    "basis": "registration segment, last 12 months (640 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -10029,6 +10329,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "chery-arrizo-8",
+   "size_class": {
+    "basis": "registration segment, last 12 months (132 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -10281,6 +10586,11 @@
    },
    "rework_price_rows": 3,
    "site_slug": "chery-eq7",
+   "size_class": {
+    "basis": "registration segment, last 12 months (10 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "battery_kwh": [
      {
@@ -10490,6 +10800,11 @@
    },
    "rework_price_rows": 5,
    "site_slug": "chery-tiggo-4-pro",
+   "size_class": {
+    "basis": "registration segment, last 12 months (3338 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -10767,6 +11082,11 @@
    },
    "rework_price_rows": 5,
    "site_slug": "chery-tiggo-7",
+   "size_class": {
+    "basis": "registration segment, last 12 months (3571 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -11081,6 +11401,11 @@
    },
    "rework_price_rows": 5,
    "site_slug": "chery-tiggo-7-pro",
+   "size_class": {
+    "basis": "registration segment, last 12 months (2074 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -11364,6 +11689,11 @@
    },
    "rework_price_rows": 9,
    "site_slug": "chery-tiggo-8",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1789 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -11616,6 +11946,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "chery-tiggo-8-pro",
+   "size_class": {
+    "basis": "registration segment, last 12 months (239 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -11834,6 +12169,11 @@
    },
    "rework_price_rows": 4,
    "site_slug": "chery-tiggo-8-pro-max",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1009 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -12102,6 +12442,12 @@
    },
    "rework_price_rows": 1,
    "site_slug": "chery-tiggo-9",
+   "size_class": {
+    "basis": "length_mm accepted (see specs)",
+    "confidence": "HIGH",
+    "length_mm": "4810",
+    "segment": null
+   },
    "specs": {
     "battery_kwh": [
      {
@@ -12301,6 +12647,11 @@
    },
    "rework_price_rows": 3,
    "site_slug": "chevrolet-captiva",
+   "size_class": {
+    "basis": "registration segment, last 12 months (686 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -12659,6 +13010,12 @@
    },
    "rework_price_rows": 2,
    "site_slug": "chevrolet-captiva-ev",
+   "size_class": {
+    "basis": "length_mm accepted (see specs)",
+    "confidence": "HIGH",
+    "length_mm": "4745",
+    "segment": null
+   },
    "specs": {
     "boot_l": [
      {
@@ -12834,6 +13191,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "chevrolet-optra",
+   "size_class": {
+    "basis": "registration segment, last 12 months (6427 registrations)",
+    "segment": "Car-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -13049,6 +13411,11 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "citroen-c3",
+   "size_class": {
+    "basis": "registration segment, last 12 months (192 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -13112,6 +13479,11 @@
    "price": null,
    "rework_price_rows": 4,
    "site_slug": "citroen-c3-aircross",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "airbags": [
      {
@@ -13420,6 +13792,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "citroen-c4",
+   "size_class": {
+    "basis": "registration segment, last 12 months (404 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -13510,6 +13887,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "citroen-c4-x",
+   "size_class": {
+    "basis": "registration segment, last 12 months (695 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -13553,6 +13935,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "citroen-c5",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1581 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -13645,6 +14032,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "cupra-formentor",
+   "size_class": {
+    "basis": "registration segment, last 12 months (739 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "accel_0_100_s": [
      {
@@ -13951,6 +14343,12 @@
    },
    "rework_price_rows": 2,
    "site_slug": "cupra-leon",
+   "size_class": {
+    "basis": "length_mm accepted (see specs)",
+    "confidence": "HIGH",
+    "length_mm": "4398",
+    "segment": null
+   },
    "specs": {
     "boot_l": [
      {
@@ -14178,6 +14576,11 @@
    },
    "rework_price_rows": 4,
    "site_slug": "cupra-terramar",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1895 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -14406,6 +14809,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "deepal-g318",
+   "size_class": {
+    "basis": "registration segment, last 12 months (430 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "airbags": [
      {
@@ -14769,6 +15177,11 @@
    },
    "rework_price_rows": 4,
    "site_slug": "deepal-s05",
+   "size_class": {
+    "basis": "registration segment, last 12 months (600 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -14953,6 +15366,11 @@
    },
    "rework_price_rows": 4,
    "site_slug": "deepal-s-07",
+   "size_class": {
+    "basis": "registration segment, last 12 months (179 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -15131,6 +15549,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "dfsk-600",
+   "size_class": {
+    "basis": "registration segment, last 12 months (59 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -15293,6 +15716,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "dfsk-e5",
+   "size_class": {
+    "basis": "registration segment, last 12 months (371 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -15446,6 +15874,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "dfsk-e5-plus",
+   "size_class": {
+    "basis": "registration segment, last 12 months (573 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -15617,6 +16050,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "dongfeng-007",
+   "size_class": {
+    "basis": "registration segment, last 12 months (93 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -15785,6 +16223,11 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "dongfeng-008",
+   "size_class": {
+    "basis": "registration segment, last 12 months (114 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -15976,6 +16419,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "dongfeng-box",
+   "size_class": {
+    "basis": "registration segment, last 12 months (217 registrations)",
+    "segment": "Car HB-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -16140,6 +16588,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "dongfeng-mage",
+   "size_class": {
+    "basis": "registration segment, last 12 months (190 registrations)",
+    "segment": "Car-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -16294,6 +16747,11 @@
    "price": null,
    "rework_price_rows": 4,
    "site_slug": "ds-ds4",
+   "size_class": {
+    "basis": "registration segment, last 12 months (18 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -16348,6 +16806,11 @@
    "price": null,
    "rework_price_rows": 5,
    "site_slug": "ds-ds7",
+   "size_class": {
+    "basis": "registration segment, last 12 months (260 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -16552,6 +17015,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "exeed-es",
+   "size_class": {
+    "basis": "registration segment, last 12 months (18 registrations)",
+    "segment": "Car-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -16734,6 +17202,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "exeed-et",
+   "size_class": {
+    "basis": "registration segment, last 12 months (33 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -16925,6 +17398,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "exeed-lx",
+   "size_class": {
+    "basis": "registration segment, last 12 months (2 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -17222,6 +17700,11 @@
    },
    "rework_price_rows": 3,
    "site_slug": "exeed-rx",
+   "size_class": {
+    "basis": "registration segment, last 12 months (187 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -17390,6 +17873,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "exeed-vx",
+   "size_class": {
+    "basis": "registration segment, last 12 months (106 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -17529,6 +18017,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "fiat-500",
+   "size_class": {
+    "basis": "registration segment, last 12 months (4 registrations)",
+    "segment": "Car HB-A",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -17583,6 +18076,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "fiat-500x",
+   "size_class": {
+    "basis": "registration segment, last 12 months (2240 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -17692,6 +18190,11 @@
    "price": null,
    "rework_price_rows": 5,
    "site_slug": "fiat-tipo",
+   "size_class": {
+    "basis": "registration segment, last 12 months (483 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -17873,6 +18376,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "forthing-s7",
+   "size_class": {
+    "basis": "registration segment, last 12 months (151 registrations)",
+    "segment": "Car-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -18031,6 +18539,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "forthing-t5",
+   "size_class": {
+    "basis": "registration segment, last 12 months (74 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -18068,6 +18581,11 @@
    "price": null,
    "rework_price_rows": 4,
    "site_slug": "forthing-t5-evo",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1172 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -18249,6 +18767,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "forthing-u-tour",
+   "size_class": {
+    "basis": "registration segment, last 12 months (11 registrations)",
+    "segment": "MPV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -18404,6 +18927,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "forthing-v9",
+   "size_class": {
+    "basis": "registration segment, last 12 months (8 registrations)",
+    "segment": "MPV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -18550,6 +19078,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "gac-emkoo",
+   "size_class": {
+    "basis": "registration segment, last 12 months (42 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -18657,6 +19190,11 @@
    },
    "rework_price_rows": 8,
    "site_slug": "gac-empow",
+   "size_class": {
+    "basis": "registration segment, last 12 months (826 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -18829,6 +19367,11 @@
    "price": null,
    "rework_price_rows": 8,
    "site_slug": "gac-emzoom",
+   "size_class": {
+    "basis": "registration segment, last 12 months (842 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -18916,6 +19459,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "gac-gs4",
+   "size_class": {
+    "basis": "registration segment, last 12 months (54 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -18990,6 +19538,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "gac-gs4-max",
+   "size_class": {
+    "basis": "registration segment, last 12 months (551 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -19210,6 +19763,11 @@
    },
    "rework_price_rows": 3,
    "site_slug": "geely-city-ray",
+   "size_class": {
+    "basis": "registration segment, last 12 months (392 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -19449,6 +20007,11 @@
    },
    "rework_price_rows": 11,
    "site_slug": "geely-cool-ray",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1453 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -19512,6 +20075,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "geely-emgrand-7",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1827 registrations)",
+    "segment": "Car-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -19597,6 +20165,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "geely-ex2",
+   "size_class": {
+    "basis": "registration segment, last 12 months (328 registrations)",
+    "segment": "Car HB-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "airbags": [
      {
@@ -19925,6 +20498,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "geely-ex5",
+   "size_class": {
+    "basis": "registration segment, last 12 months (121 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "accel_0_100_s": [
      {
@@ -20214,6 +20792,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "geely-gx3-pro",
+   "size_class": {
+    "basis": "registration segment, last 12 months (160 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -20297,6 +20880,11 @@
    },
    "rework_price_rows": 10,
    "site_slug": "geely-monjaro",
+   "size_class": {
+    "basis": "registration segment, last 12 months (2 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -20464,6 +21052,11 @@
    "price": null,
    "rework_price_rows": 4,
    "site_slug": "geely-okavango",
+   "size_class": {
+    "basis": "registration segment, last 12 months (31 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -20524,6 +21117,11 @@
    "price": null,
    "rework_price_rows": 16,
    "site_slug": "geely-starray",
+   "size_class": {
+    "basis": "registration segment, last 12 months (172 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -20624,6 +21222,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "genesis-g80",
+   "size_class": {
+    "basis": "registration segment, last 12 months (6 registrations)",
+    "segment": "Luxury Car-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -20678,6 +21281,11 @@
    "price": null,
    "rework_price_rows": 6,
    "site_slug": "genesis-gv60",
+   "size_class": {
+    "basis": "registration segment, last 12 months (4 registrations)",
+    "segment": "Luxury SUV-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -20803,6 +21411,11 @@
    "price": null,
    "rework_price_rows": 4,
    "site_slug": "genesis-gv70",
+   "size_class": {
+    "basis": "registration segment, last 12 months (15 registrations)",
+    "segment": "Luxury SUV-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -20919,6 +21532,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "gmc-terrain",
+   "size_class": {
+    "basis": "registration segment, last 12 months (54 registrations)",
+    "segment": "Luxury SUV-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -20962,6 +21580,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "gmc-yukon",
+   "size_class": {
+    "basis": "registration segment, last 12 months (29 registrations)",
+    "segment": "Luxury SUV-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -21048,6 +21671,11 @@
    },
    "rework_price_rows": 4,
    "site_slug": "haval-h6",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1285 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -21205,6 +21833,11 @@
    },
    "rework_price_rows": 3,
    "site_slug": "haval-h7",
+   "size_class": {
+    "basis": "registration segment, last 12 months (553 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -21426,6 +22059,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "haval-jolion",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1096 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -21598,6 +22236,11 @@
    "price": null,
    "rework_price_rows": 4,
    "site_slug": "honda-zr-v",
+   "size_class": {
+    "basis": "registration segment, last 12 months (348 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -21662,6 +22305,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "hongqi-e-hs9",
+   "size_class": {
+    "basis": "registration segment, last 12 months (12 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -21781,6 +22429,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "hongqi-hs3",
+   "size_class": {
+    "basis": "registration segment, last 12 months (29 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -21909,6 +22562,11 @@
    },
    "rework_price_rows": 3,
    "site_slug": "hongqi-ousado",
+   "size_class": {
+    "basis": "registration segment, last 12 months (11 registrations)",
+    "segment": "Car-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -22076,6 +22734,11 @@
    },
    "rework_price_rows": 9,
    "site_slug": "hyundai-accent-rb",
+   "size_class": {
+    "basis": "registration segment, last 12 months (2021 registrations)",
+    "segment": "Car-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -22252,6 +22915,11 @@
    },
    "rework_price_rows": 11,
    "site_slug": "hyundai-elantra",
+   "size_class": {
+    "basis": "registration segment, last 12 months (8511 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -22505,6 +23173,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "hyundai-i30",
+   "size_class": {
+    "basis": "registration segment, last 12 months (664 registrations)",
+    "segment": "Car HB-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -22703,6 +23376,11 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "hyundai-ioniq",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -22746,6 +23424,11 @@
    "price": null,
    "rework_price_rows": 12,
    "site_slug": "hyundai-ioniq-5",
+   "size_class": {
+    "basis": "registration segment, last 12 months (17 registrations)",
+    "segment": "Car HB-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -22816,6 +23499,11 @@
    "price": null,
    "rework_price_rows": 9,
    "site_slug": "hyundai-ioniq-6",
+   "size_class": {
+    "basis": "registration segment, last 12 months (2 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -22974,6 +23662,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "hyundai-ioniq-9",
+   "size_class": {
+    "basis": "registration segment, last 12 months (6 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -23150,6 +23843,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "hyundai-santa-fe",
+   "size_class": {
+    "basis": "registration segment, last 12 months (112 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -23349,6 +24047,11 @@
    "price": null,
    "rework_price_rows": 32,
    "site_slug": "hyundai-tucson",
+   "size_class": {
+    "basis": "registration segment, last 12 months (5212 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -23640,6 +24343,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "im-im-5",
+   "size_class": {
+    "basis": "registration segment, last 12 months (61 registrations)",
+    "segment": "Luxury Car-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -23695,6 +24403,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "im-im-6",
+   "size_class": {
+    "basis": "registration segment, last 12 months (137 registrations)",
+    "segment": "Luxury SUV-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -23771,6 +24484,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "im-ls7",
+   "size_class": {
+    "basis": "registration segment, last 12 months (148 registrations)",
+    "segment": "Luxury SUV-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -23826,6 +24544,11 @@
    "price": null,
    "rework_price_rows": 5,
    "site_slug": "jac-j7",
+   "size_class": {
+    "basis": "registration segment, last 12 months (128 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -23912,6 +24635,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "jac-js6",
+   "size_class": {
+    "basis": "registration segment, last 12 months (107 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -24071,6 +24799,11 @@
    "price": null,
    "rework_price_rows": 5,
    "site_slug": "jac-js8-pro",
+   "size_class": {
+    "basis": "registration segment, last 12 months (206 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -24244,6 +24977,11 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "jac-s2",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1243 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -24308,6 +25046,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "jeep-grand-cherokee",
+   "size_class": {
+    "basis": "registration segment, last 12 months (255 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -24426,6 +25169,11 @@
    },
    "rework_price_rows": 4,
    "site_slug": "jetour-dashing",
+   "size_class": {
+    "basis": "registration segment, last 12 months (2997 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -24685,6 +25433,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "jetour-t1",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1553 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -24902,6 +25655,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "jetour-t2",
+   "size_class": {
+    "basis": "registration segment, last 12 months (3470 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -25169,6 +25927,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "jetour-x70",
+   "size_class": {
+    "basis": "registration segment, last 12 months (2856 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -25426,6 +26189,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "jetour-x70-plus-ckd",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1168 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -25708,6 +26476,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "jetour-x90-plus",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1172 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -25900,6 +26673,11 @@
    },
    "rework_price_rows": 4,
    "site_slug": "kaiyi-e5",
+   "size_class": {
+    "basis": "registration segment, last 12 months (112 registrations)",
+    "segment": "Car-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -26007,6 +26785,11 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "kaiyi-x3",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1064 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -26084,6 +26867,11 @@
    },
    "rework_price_rows": 4,
    "site_slug": "kaiyi-x7",
+   "size_class": {
+    "basis": "registration segment, last 12 months (317 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -26277,6 +27065,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "kgm-actyon",
+   "size_class": {
+    "basis": "registration segment, last 12 months (307 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -26471,6 +27264,11 @@
    },
    "rework_price_rows": 8,
    "site_slug": "kgm-torres",
+   "size_class": {
+    "basis": "registration segment, last 12 months (793 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -26577,6 +27375,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "kia-carens",
+   "size_class": {
+    "basis": "registration segment, last 12 months (157 registrations)",
+    "segment": "MPV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -26758,6 +27561,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "kia-ev3",
+   "size_class": {
+    "basis": "registration segment, last 12 months (23 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -26976,6 +27784,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "kia-ev5",
+   "size_class": {
+    "basis": "registration segment, last 12 months (20 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -27251,6 +28064,11 @@
    },
    "rework_price_rows": 7,
    "site_slug": "kia-ev6",
+   "size_class": {
+    "basis": "registration segment, last 12 months (11 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "height_mm": [
      {
@@ -27491,6 +28309,11 @@
    },
    "rework_price_rows": 9,
    "site_slug": "kia-ev9",
+   "size_class": {
+    "basis": "registration segment, last 12 months (3 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -27665,6 +28488,11 @@
    "price": null,
    "rework_price_rows": 15,
    "site_slug": "kia-k4",
+   "size_class": {
+    "basis": "registration segment, last 12 months (445 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -27930,6 +28758,11 @@
    },
    "rework_price_rows": 6,
    "site_slug": "kia-seltos",
+   "size_class": {
+    "basis": "registration segment, last 12 months (797 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -28307,6 +29140,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "kia-sorento",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1175 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -28591,6 +29429,11 @@
    },
    "rework_price_rows": 20,
    "site_slug": "kia-sportage",
+   "size_class": {
+    "basis": "registration segment, last 12 months (6345 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -28751,6 +29594,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "lexus-lx600",
+   "size_class": {
+    "basis": "registration segment, last 12 months (11 registrations)",
+    "segment": "Luxury SUV-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -28794,6 +29642,11 @@
    "price": null,
    "rework_price_rows": 4,
    "site_slug": "lexus-rz",
+   "size_class": {
+    "basis": "registration segment, last 12 months (3 registrations)",
+    "segment": "Luxury SUV-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -28869,6 +29722,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "li-auto-l6",
+   "size_class": {
+    "basis": "registration segment, last 12 months (107 registrations)",
+    "segment": "Luxury SUV-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -29023,6 +29881,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "li-auto-l7",
+   "size_class": {
+    "basis": "registration segment, last 12 months (71 registrations)",
+    "segment": "Luxury SUV-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -29180,6 +30043,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "li-auto-l9",
+   "size_class": {
+    "basis": "registration segment, last 12 months (70 registrations)",
+    "segment": "Luxury SUV-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -29360,6 +30228,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "lynk-co-06",
+   "size_class": {
+    "basis": "registration segment, last 12 months (212 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -29447,6 +30320,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "lynk-co-08",
+   "size_class": {
+    "basis": "registration segment, last 12 months (109 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -29523,6 +30401,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "lynk-co-900",
+   "size_class": {
+    "basis": "registration segment, last 12 months (320 registrations)",
+    "segment": "Luxury SUV-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -29577,6 +30460,11 @@
    "price": null,
    "rework_price_rows": 6,
    "site_slug": "mazda-3",
+   "size_class": {
+    "basis": "registration segment, last 12 months (31 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -29764,6 +30652,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "mazda-cx-3",
+   "size_class": {
+    "basis": "registration segment, last 12 months (8 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -29909,6 +30802,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "mercedes-a-class",
+   "size_class": {
+    "basis": "registration segment, last 12 months (94 registrations)",
+    "segment": "Luxury HB",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -30072,6 +30970,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "mercedes-b-class",
+   "size_class": {
+    "basis": "registration segment, last 12 months (22 registrations)",
+    "segment": "Luxury HB",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -30217,6 +31120,11 @@
    "price": null,
    "rework_price_rows": 14,
    "site_slug": "mercedes-c-class",
+   "size_class": {
+    "basis": "registration segment, last 12 months (2630 registrations)",
+    "segment": "Luxury Car-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -30360,6 +31268,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "mercedes-cla",
+   "size_class": {
+    "basis": "registration segment, last 12 months (389 registrations)",
+    "segment": "Luxury Car-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -30568,6 +31481,11 @@
    },
    "rework_price_rows": 4,
    "site_slug": "mercedes-e-class",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1429 registrations)",
+    "segment": "Luxury Car-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -30735,6 +31653,11 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "mercedes-eqa",
+   "size_class": {
+    "basis": "registration segment, last 12 months (177 registrations)",
+    "segment": "Luxury SUV-2",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -30833,6 +31756,11 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "mercedes-eqb",
+   "size_class": {
+    "basis": "registration segment, last 12 months (38 registrations)",
+    "segment": "Luxury SUV-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -30876,6 +31804,11 @@
    "price": null,
    "rework_price_rows": 4,
    "site_slug": "mercedes-eqs-suv",
+   "size_class": {
+    "basis": "registration segment, last 12 months (17 registrations)",
+    "segment": "Luxury SUV-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -30939,6 +31872,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "mercedes-gla",
+   "size_class": {
+    "basis": "registration segment, last 12 months (485 registrations)",
+    "segment": "Luxury SUV-2",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -31088,8 +32026,13 @@
      }
     ]
    },
-   "rework_price_rows": 8,
+   "rework_price_rows": 7,
    "site_slug": "mercedes-glc",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1801 registrations)",
+    "segment": "Luxury SUV-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -31156,9 +32099,9 @@
     ],
     "seats": [
      {
-      "applicability": "market trim pages: 4M COUPE - AMG , 4M Coupe - Sport, 4M EQ - AMG Line, 4M SUV - Sport",
+      "applicability": "market trim pages: 4M COUPE - AMG , 4M Coupe - Sport, 4M SUV - Sport",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/mercedes-glc_200/b1ac1fd12f75 | https://www.contactcars.com/en/new-cars/mercedes-glc_200/f63738bbccd6 | https://www.contactcars.com/en/new-cars/mercedes-glc_400/cd34a2480bba | https://www.contactcars.com/en/new-cars/mercedes-glc_43/f142c273274f",
+      "source": "https://www.contactcars.com/en/new-cars/mercedes-glc_200/b1ac1fd12f75 | https://www.contactcars.com/en/new-cars/mercedes-glc_200/f63738bbccd6 | https://www.contactcars.com/en/new-cars/mercedes-glc_43/f142c273274f",
       "unit": "",
       "value": "5"
      }
@@ -31174,9 +32117,9 @@
     ],
     "transmission": [
      {
-      "applicability": "market trim pages: 4M Coupe Avantgarde, 4M EQ - AMG Line, 4M SUV - Avantgarde",
+      "applicability": "market trim pages: 4M Coupe Avantgarde, 4M SUV - Avantgarde",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/mercedes-glc_200/3f9a207b4bbe | https://www.contactcars.com/en/new-cars/mercedes-glc_200/83e22e187d9e | https://www.contactcars.com/en/new-cars/mercedes-glc_400/cd34a2480bba",
+      "source": "https://www.contactcars.com/en/new-cars/mercedes-glc_200/3f9a207b4bbe | https://www.contactcars.com/en/new-cars/mercedes-glc_200/83e22e187d9e",
       "unit": "",
       "value": "Automatic"
      }
@@ -31242,6 +32185,11 @@
    "price": null,
    "rework_price_rows": 5,
    "site_slug": "mercedes-gle",
+   "size_class": {
+    "basis": "registration segment, last 12 months (538 registrations)",
+    "segment": "Luxury SUV-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -31312,6 +32260,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "mercedes-gls",
+   "size_class": {
+    "basis": "registration segment, last 12 months (229 registrations)",
+    "segment": "Luxury SUV-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -31489,6 +32442,11 @@
    },
    "rework_price_rows": 4,
    "site_slug": "mg-5",
+   "size_class": {
+    "basis": "registration segment, last 12 months (4472 registrations)",
+    "segment": "Car-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "airbags": [
      {
@@ -31746,6 +32704,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "mg-6",
+   "size_class": {
+    "basis": "registration segment, last 12 months (15 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -31864,6 +32827,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "mg-7",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1147 registrations)",
+    "segment": "Car-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "airbags": [
      {
@@ -32054,6 +33022,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "mg-g50-plus",
+   "size_class": {
+    "basis": "registration segment, last 12 months (507 registrations)",
+    "segment": "MPV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine": [
      {
@@ -32214,6 +33187,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "mg-gt",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1665 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine": [
      {
@@ -32425,6 +33403,11 @@
    },
    "rework_price_rows": 3,
    "site_slug": "mg-hs",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1338 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "airbags": [
      {
@@ -32696,6 +33679,11 @@
    },
    "rework_price_rows": 4,
    "site_slug": "mg-one",
+   "size_class": {
+    "basis": "registration segment, last 12 months (2464 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "airbags": [
      {
@@ -32914,6 +33902,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "mg-rx9",
+   "size_class": {
+    "basis": "registration segment, last 12 months (72 registrations)",
+    "segment": "(Unspecified)",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "battery_kwh": [
      {
@@ -33178,6 +34171,11 @@
    },
    "rework_price_rows": 5,
    "site_slug": "mg-zs",
+   "size_class": {
+    "basis": "registration segment, last 12 months (6861 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "airbags": [
      {
@@ -33397,6 +34395,11 @@
    "price": null,
    "rework_price_rows": 29,
    "site_slug": "mini-countryman",
+   "size_class": {
+    "basis": "registration segment, last 12 months (205 registrations)",
+    "segment": "Luxury HB",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -33452,6 +34455,11 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "mitsubishi-attrage",
+   "size_class": {
+    "basis": "registration segment, last 12 months (109 registrations)",
+    "segment": "Car-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -33549,6 +34557,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "mitsubishi-destinator",
+   "size_class": {
+    "basis": "registration segment, last 12 months (239 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -33728,6 +34741,11 @@
    "price": null,
    "rework_price_rows": 14,
    "site_slug": "mitsubishi-eclipse-cross",
+   "size_class": {
+    "basis": "registration segment, last 12 months (2269 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_l": [
      {
@@ -33829,6 +34847,11 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "mitsubishi-mirage",
+   "size_class": {
+    "basis": "registration segment, last 12 months (42 registrations)",
+    "segment": "Car HB-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -33872,6 +34895,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "mitsubishi-outlander",
+   "size_class": {
+    "basis": "registration segment, last 12 months (532 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -33976,6 +35004,11 @@
    },
    "rework_price_rows": 8,
    "site_slug": "mitsubishi-xpander",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1507 registrations)",
+    "segment": "MPV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -34240,6 +35273,11 @@
    },
    "rework_price_rows": 21,
    "site_slug": "nissan-juke",
+   "size_class": {
+    "basis": "registration segment, last 12 months (975 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -34688,6 +35726,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "nissan-magnite",
+   "size_class": {
+    "basis": "registration segment, last 12 months (524 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -35183,6 +36226,11 @@
    },
    "rework_price_rows": 16,
    "site_slug": "nissan-patrol",
+   "size_class": {
+    "basis": "registration segment, last 12 months (71 registrations)",
+    "segment": "SUV-E",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -35507,6 +36555,11 @@
    },
    "rework_price_rows": 11,
    "site_slug": "nissan-qashqai",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1694 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -36036,6 +37089,11 @@
    },
    "rework_price_rows": 3,
    "site_slug": "nissan-sentra",
+   "size_class": {
+    "basis": "registration segment, last 12 months (3687 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -36286,6 +37344,11 @@
    },
    "rework_price_rows": 7,
    "site_slug": "nissan-sunny",
+   "size_class": {
+    "basis": "registration segment, last 12 months (18124 registrations)",
+    "segment": "Car-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -36617,6 +37680,11 @@
    },
    "rework_price_rows": 9,
    "site_slug": "nissan-x-trail",
+   "size_class": {
+    "basis": "registration segment, last 12 months (409 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -36834,6 +37902,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "opel-corsa",
+   "size_class": {
+    "basis": "registration segment, last 12 months (231 registrations)",
+    "segment": "Car HB-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -37006,6 +38079,11 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "opel-crossland",
+   "size_class": {
+    "basis": "registration segment, last 12 months (23 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -37088,6 +38166,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "opel-frontera",
+   "size_class": {
+    "basis": "registration segment, last 12 months (99 registrations)",
+    "segment": "(Unspecified)",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "airbags": [
      {
@@ -37388,6 +38471,11 @@
    },
    "rework_price_rows": 10,
    "site_slug": "opel-grandland",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1688 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -37581,6 +38669,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "opel-mokka",
+   "size_class": {
+    "basis": "registration segment, last 12 months (290 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -37656,6 +38749,11 @@
    },
    "rework_price_rows": 5,
    "site_slug": "peugeot-2008",
+   "size_class": {
+    "basis": "registration segment, last 12 months (392 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -37859,6 +38957,11 @@
    },
    "rework_price_rows": 4,
    "site_slug": "peugeot-3008",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1927 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -38077,6 +39180,11 @@
    },
    "rework_price_rows": 7,
    "site_slug": "peugeot-408",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1283 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "airbags": [
      {
@@ -38370,6 +39478,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "peugeot-5008",
+   "size_class": {
+    "basis": "registration segment, last 12 months (906 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -38425,6 +39538,11 @@
    "price": null,
    "rework_price_rows": 7,
    "site_slug": "porsche-cayenne",
+   "size_class": {
+    "basis": "registration segment, last 12 months (184 registrations)",
+    "segment": "Luxury SUV-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -38480,6 +39598,11 @@
    "price": null,
    "rework_price_rows": 7,
    "site_slug": "porsche-macan",
+   "size_class": {
+    "basis": "registration segment, last 12 months (205 registrations)",
+    "segment": "Luxury SUV-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -38526,6 +39649,11 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "proton-saga",
+   "size_class": {
+    "basis": "registration segment, last 12 months (2467 registrations)",
+    "segment": "Car-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -38796,6 +39924,11 @@
    },
    "rework_price_rows": 10,
    "site_slug": "renault-austral",
+   "size_class": {
+    "basis": "registration segment, last 12 months (964 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -39006,6 +40139,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "renault-duster",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1721 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -39236,6 +40374,11 @@
    },
    "rework_price_rows": 3,
    "site_slug": "renault-kardian",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1023 registrations)",
+    "segment": "Car HB-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -39425,6 +40568,11 @@
    },
    "rework_price_rows": 3,
    "site_slug": "renault-megane",
+   "size_class": {
+    "basis": "registration segment, last 12 months (978 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -39644,6 +40792,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "renault-taliant",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1380 registrations)",
+    "segment": "Car-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -39773,6 +40926,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "rox-01",
+   "size_class": {
+    "basis": "registration segment, last 12 months (804 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -39919,6 +41077,11 @@
    "price": null,
    "rework_price_rows": 6,
    "site_slug": "rox-adamas",
+   "size_class": {
+    "basis": "registration segment, last 12 months (142 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -40055,6 +41218,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "seat-arona",
+   "size_class": {
+    "basis": "registration segment, last 12 months (372 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -40248,6 +41416,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "seat-ateca",
+   "size_class": {
+    "basis": "registration segment, last 12 months (303 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -40340,6 +41513,11 @@
    },
    "rework_price_rows": 5,
    "site_slug": "seat-ibiza",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1165 registrations)",
+    "segment": "Car HB-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "accel_0_100_s": [
      {
@@ -40643,6 +41821,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "seat-leon",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1662 registrations)",
+    "segment": "Car HB-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -40830,6 +42013,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "skoda-karoq",
+   "size_class": {
+    "basis": "registration segment, last 12 months (221 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -41043,6 +42231,11 @@
    },
    "rework_price_rows": 6,
    "site_slug": "skoda-kodiaq",
+   "size_class": {
+    "basis": "registration segment, last 12 months (4335 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -41243,6 +42436,11 @@
    },
    "rework_price_rows": 9,
    "site_slug": "skoda-octavia",
+   "size_class": {
+    "basis": "registration segment, last 12 months (2599 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -41446,6 +42644,11 @@
    },
    "rework_price_rows": 3,
    "site_slug": "skoda-superb",
+   "size_class": {
+    "basis": "registration segment, last 12 months (352 registrations)",
+    "segment": "Car-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -41642,6 +42845,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "soueast-s-05",
+   "size_class": {
+    "basis": "registration segment, last 12 months (4369 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -41851,6 +43059,11 @@
    },
    "rework_price_rows": 5,
    "site_slug": "soueast-s06",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1755 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -42130,6 +43343,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "soueast-s-07",
+   "size_class": {
+    "basis": "registration segment, last 12 months (2475 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -42300,6 +43518,11 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "soueast-s-08-dm",
+   "size_class": {
+    "basis": "registration segment, last 12 months (43 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -42363,6 +43586,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "soueast-s09",
+   "size_class": {
+    "basis": "registration segment, last 12 months (914 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -42512,6 +43740,11 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "soueast-s08",
+   "size_class": {
+    "basis": "registration segment, last 12 months (54 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -42566,6 +43799,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "suzuki-alto",
+   "size_class": {
+    "basis": "registration segment, last 12 months (29 registrations)",
+    "segment": "Car HB-A",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -42750,6 +43988,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "suzuki-baleno",
+   "size_class": {
+    "basis": "registration segment, last 12 months (528 registrations)",
+    "segment": "Car HB-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -42905,6 +44148,11 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "suzuki-ertiga",
+   "size_class": {
+    "basis": "registration segment, last 12 months (62 registrations)",
+    "segment": "MPV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -42960,6 +44208,11 @@
    "price": null,
    "rework_price_rows": 5,
    "site_slug": "suzuki-fronx",
+   "size_class": {
+    "basis": "registration segment, last 12 months (163 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -43014,6 +44267,11 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "suzuki-jimny",
+   "size_class": {
+    "basis": "registration segment, last 12 months (21 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -43141,6 +44399,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "suzuki-s-presso",
+   "size_class": {
+    "basis": "registration segment, last 12 months (104 registrations)",
+    "segment": "Car HB-A",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -43304,6 +44567,11 @@
    "price": null,
    "rework_price_rows": 5,
    "site_slug": "suzuki-swift",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1377 registrations)",
+    "segment": "Car HB-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -43489,6 +44757,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "suzuki-swift-dzire",
+   "size_class": {
+    "basis": "registration segment, last 12 months (166 registrations)",
+    "segment": "Car-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -43532,6 +44805,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "tesla-model-y",
+   "size_class": {
+    "basis": "registration segment, last 12 months (31 registrations)",
+    "segment": "Luxury SUV-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -43615,6 +44893,11 @@
    },
    "rework_price_rows": 5,
    "site_slug": "toyota-bz4x",
+   "size_class": {
+    "basis": "registration segment, last 12 months (8 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -43843,23 +45126,28 @@
      }
     ]
    },
-   "rework_price_rows": 6,
+   "rework_price_rows": 5,
    "site_slug": "toyota-corolla",
+   "size_class": {
+    "basis": "registration segment, last 12 months (5598 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
-      "applicability": "market trim pages: Active\t, Comfort, Elegance, Hybrid, Smart, Smart with Sunroof",
+      "applicability": "market trim pages: Active\t, Comfort, Elegance, Smart, Smart with Sunroof",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/toyota-corolla/0977e0f927a1 | https://www.contactcars.com/en/new-cars/toyota-corolla/3c706eba9fb1 | https://www.contactcars.com/en/new-cars/toyota-corolla/7153d54a7be9 | https://www.contactcars.com/en/new-cars/toyota-corolla/93109c3fa6c8 | https://www.contactc",
+      "source": "https://www.contactcars.com/en/new-cars/toyota-corolla/0977e0f927a1 | https://www.contactcars.com/en/new-cars/toyota-corolla/3c706eba9fb1 | https://www.contactcars.com/en/new-cars/toyota-corolla/93109c3fa6c8 | https://www.contactcars.com/en/new-cars/toyota-corolla/a47905bb45bb | https://www.contactc",
       "unit": "",
       "value": "470"
      }
     ],
     "drive": [
      {
-      "applicability": "market trim pages: Active\t, Comfort, Elegance, Hybrid, Smart, Smart with Sunroof",
+      "applicability": "market trim pages: Active\t, Comfort, Elegance, Smart, Smart with Sunroof",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/toyota-corolla/0977e0f927a1 | https://www.contactcars.com/en/new-cars/toyota-corolla/3c706eba9fb1 | https://www.contactcars.com/en/new-cars/toyota-corolla/7153d54a7be9 | https://www.contactcars.com/en/new-cars/toyota-corolla/93109c3fa6c8 | https://www.contactc",
+      "source": "https://www.contactcars.com/en/new-cars/toyota-corolla/0977e0f927a1 | https://www.contactcars.com/en/new-cars/toyota-corolla/3c706eba9fb1 | https://www.contactcars.com/en/new-cars/toyota-corolla/93109c3fa6c8 | https://www.contactcars.com/en/new-cars/toyota-corolla/a47905bb45bb | https://www.contactc",
       "unit": "",
       "value": "FWD"
      }
@@ -43884,9 +45172,9 @@
     ],
     "length_mm": [
      {
-      "applicability": "market trim pages: Active\t, Comfort, Elegance, Hybrid, Smart, Smart with Sunroof",
+      "applicability": "market trim pages: Active\t, Comfort, Elegance, Smart, Smart with Sunroof",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/toyota-corolla/0977e0f927a1 | https://www.contactcars.com/en/new-cars/toyota-corolla/3c706eba9fb1 | https://www.contactcars.com/en/new-cars/toyota-corolla/7153d54a7be9 | https://www.contactcars.com/en/new-cars/toyota-corolla/93109c3fa6c8 | https://www.contactc",
+      "source": "https://www.contactcars.com/en/new-cars/toyota-corolla/0977e0f927a1 | https://www.contactcars.com/en/new-cars/toyota-corolla/3c706eba9fb1 | https://www.contactcars.com/en/new-cars/toyota-corolla/93109c3fa6c8 | https://www.contactcars.com/en/new-cars/toyota-corolla/a47905bb45bb | https://www.contactc",
       "unit": "",
       "value": "4630"
      }
@@ -43925,9 +45213,9 @@
     ],
     "seats": [
      {
-      "applicability": "market trim pages: Active\t, Comfort, Elegance, Hybrid, Smart, Smart with Sunroof",
+      "applicability": "market trim pages: Active\t, Comfort, Elegance, Smart, Smart with Sunroof",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/toyota-corolla/0977e0f927a1 | https://www.contactcars.com/en/new-cars/toyota-corolla/3c706eba9fb1 | https://www.contactcars.com/en/new-cars/toyota-corolla/7153d54a7be9 | https://www.contactcars.com/en/new-cars/toyota-corolla/93109c3fa6c8 | https://www.contactc",
+      "source": "https://www.contactcars.com/en/new-cars/toyota-corolla/0977e0f927a1 | https://www.contactcars.com/en/new-cars/toyota-corolla/3c706eba9fb1 | https://www.contactcars.com/en/new-cars/toyota-corolla/93109c3fa6c8 | https://www.contactcars.com/en/new-cars/toyota-corolla/a47905bb45bb | https://www.contactc",
       "unit": "",
       "value": "5"
      }
@@ -43941,29 +45229,20 @@
       "value": "154"
      }
     ],
-    "transmission": [
-     {
-      "applicability": "market trim pages: Hybrid",
-      "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/toyota-corolla/7153d54a7be9",
-      "unit": "",
-      "value": "CVT"
-     }
-    ],
     "wheelbase_mm": [
      {
-      "applicability": "market trim pages: Active\t, Comfort, Elegance, Hybrid, Smart, Smart with Sunroof",
+      "applicability": "market trim pages: Active\t, Comfort, Elegance, Smart, Smart with Sunroof",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/toyota-corolla/0977e0f927a1 | https://www.contactcars.com/en/new-cars/toyota-corolla/3c706eba9fb1 | https://www.contactcars.com/en/new-cars/toyota-corolla/7153d54a7be9 | https://www.contactcars.com/en/new-cars/toyota-corolla/93109c3fa6c8 | https://www.contactc",
+      "source": "https://www.contactcars.com/en/new-cars/toyota-corolla/0977e0f927a1 | https://www.contactcars.com/en/new-cars/toyota-corolla/3c706eba9fb1 | https://www.contactcars.com/en/new-cars/toyota-corolla/93109c3fa6c8 | https://www.contactcars.com/en/new-cars/toyota-corolla/a47905bb45bb | https://www.contactc",
       "unit": "",
       "value": "2700"
      }
     ],
     "width_mm": [
      {
-      "applicability": "market trim pages: Active\t, Comfort, Elegance, Hybrid, Smart, Smart with Sunroof",
+      "applicability": "market trim pages: Active\t, Comfort, Elegance, Smart, Smart with Sunroof",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/toyota-corolla/0977e0f927a1 | https://www.contactcars.com/en/new-cars/toyota-corolla/3c706eba9fb1 | https://www.contactcars.com/en/new-cars/toyota-corolla/7153d54a7be9 | https://www.contactcars.com/en/new-cars/toyota-corolla/93109c3fa6c8 | https://www.contactc",
+      "source": "https://www.contactcars.com/en/new-cars/toyota-corolla/0977e0f927a1 | https://www.contactcars.com/en/new-cars/toyota-corolla/3c706eba9fb1 | https://www.contactcars.com/en/new-cars/toyota-corolla/93109c3fa6c8 | https://www.contactcars.com/en/new-cars/toyota-corolla/a47905bb45bb | https://www.contactc",
       "unit": "",
       "value": "1780"
      }
@@ -44045,6 +45324,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "toyota-fortuner",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1093 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -44247,6 +45531,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "toyota-urban-cruiser",
+   "size_class": {
+    "basis": "registration segment, last 12 months (900 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -44428,6 +45717,12 @@
    "price": null,
    "rework_price_rows": 5,
    "site_slug": "vgv-u70p-plus",
+   "size_class": {
+    "basis": "length_mm accepted (see specs)",
+    "confidence": "HIGH",
+    "length_mm": "4825",
+    "segment": null
+   },
    "specs": {
     "engine_cc": [
      {
@@ -44593,6 +45888,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "volkswagen-golf",
+   "size_class": {
+    "basis": "registration segment, last 12 months (110 registrations)",
+    "segment": "Car HB-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -44721,6 +46021,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "volkswagen-passat",
+   "size_class": {
+    "basis": "registration segment, last 12 months (126 registrations)",
+    "segment": "Car-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -44784,6 +46089,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "volkswagen-t-roc",
+   "size_class": {
+    "basis": "registration segment, last 12 months (287 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -44951,6 +46261,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "volkswagen-tayron",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1325 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -45100,6 +46415,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "volkswagen-tiguan",
+   "size_class": {
+    "basis": "registration segment, last 12 months (4280 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -45284,6 +46604,12 @@
    },
    "rework_price_rows": 0,
    "site_slug": "volvo-es90",
+   "size_class": {
+    "basis": "length_mm accepted (see specs)",
+    "confidence": "HIGH",
+    "length_mm": "5000",
+    "segment": null
+   },
    "specs": {
     "drive": [
      {
@@ -45420,6 +46746,11 @@
    "price": null,
    "rework_price_rows": 8,
    "site_slug": "volvo-ex30",
+   "size_class": {
+    "basis": "registration segment, last 12 months (132 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -45588,6 +46919,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "volvo-ex90",
+   "size_class": {
+    "basis": "registration segment, last 12 months (2 registrations)",
+    "segment": "(Unspecified)",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -45749,6 +47085,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "volvo-xc-40",
+   "size_class": {
+    "basis": "registration segment, last 12 months (177 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -45930,6 +47271,11 @@
    },
    "rework_price_rows": 6,
    "site_slug": "volvo-xc60",
+   "size_class": {
+    "basis": "registration segment, last 12 months (172 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -46096,6 +47442,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "volvo-xc90",
+   "size_class": {
+    "basis": "registration segment, last 12 months (214 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -46215,6 +47566,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "voyah-dream",
+   "size_class": {
+    "basis": "registration segment, last 12 months (10 registrations)",
+    "segment": "Luxury MPV",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -46361,6 +47717,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "voyah-free",
+   "size_class": {
+    "basis": "registration segment, last 12 months (10 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -46524,6 +47885,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "xiaomi-su7",
+   "size_class": {
+    "basis": "registration segment, last 12 months (123 registrations)",
+    "segment": "Luxury Car-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -46567,6 +47933,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "xiaomi-yu7",
+   "size_class": {
+    "basis": "registration segment, last 12 months (76 registrations)",
+    "segment": "Luxury Car-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -46642,6 +48013,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "xpeng-g6",
+   "size_class": {
+    "basis": "registration segment, last 12 months (140 registrations)",
+    "segment": "Luxury SUV-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -46778,6 +48154,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "xpeng-g7",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1 registrations)",
+    "segment": "Luxury SUV-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -47008,6 +48389,11 @@
    },
    "rework_price_rows": 4,
    "site_slug": "xpeng-g9",
+   "size_class": {
+    "basis": "registration segment, last 12 months (159 registrations)",
+    "segment": "Luxury SUV-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -47152,6 +48538,11 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "xpeng-m03",
+   "size_class": {
+    "basis": "registration segment, last 12 months (263 registrations)",
+    "segment": "Luxury Car-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -47195,6 +48586,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "xpeng-p7",
+   "size_class": {
+    "basis": "registration segment, last 12 months (25 registrations)",
+    "segment": "Luxury Car-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -47238,6 +48634,11 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "xpeng-x9",
+   "size_class": {
+    "basis": "registration segment, last 12 months (23 registrations)",
+    "segment": "Luxury MPV",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -47281,6 +48682,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "zeekr-9x",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1 registrations)",
+    "segment": "(Unspecified)",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
@@ -47367,6 +48773,11 @@
    },
    "rework_price_rows": 2,
    "site_slug": "zeekr-x",
+   "size_class": {
+    "basis": "registration segment, last 12 months (47 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -47538,6 +48949,12 @@
    },
    "rework_price_rows": 5,
    "site_slug": "citroen-c5-aircross",
+   "size_class": {
+    "basis": "length_mm accepted (see specs)",
+    "confidence": "HIGH",
+    "length_mm": "4652",
+    "segment": null
+   },
    "specs": {
     "boot_l": [
      {
@@ -47741,6 +49158,11 @@
    },
    "rework_price_rows": 3,
    "site_slug": "hyundai-elantra-cn7",
+   "size_class": {
+    "basis": "registration segment, last 12 months (161 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_SPLIT",
@@ -47778,6 +49200,12 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "baic-x55e",
+   "size_class": {
+    "basis": "length_mm accepted (see specs)",
+    "confidence": "HIGH",
+    "length_mm": "4620",
+    "segment": null
+   },
    "specs": {
     "airbags": [
      {
@@ -47974,6 +49402,11 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "kaiyi-x7-phev",
+   "size_class": {
+    "basis": "registration segment, last 12 months (14 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -48026,6 +49459,11 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "jetour-t2-i-dm",
+   "size_class": {
+    "basis": "registration segment, last 12 months (250 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -48174,6 +49612,12 @@
    },
    "rework_price_rows": 3,
    "site_slug": "byd-sealion-6-ev",
+   "size_class": {
+    "basis": "single market source, 3 trim page(s) agree (ContactCars)",
+    "confidence": "MEDIUM_SINGLE_SOURCE",
+    "length_mm": "4775",
+    "segment": null
+   },
    "specs": {
     "boot_l": [
      {
@@ -48262,6 +49706,104 @@
    "warranty": null
   },
   {
+   "brand": "Toyota",
+   "brochures": [],
+   "conflicts": [],
+   "gallery": [],
+   "gaps": [
+    "NO_ACCEPTED_PRICE",
+    "NO_ACCEPTED_SPECS",
+    "NO_OFFICIAL_BROCHURE",
+    "NO_VERIFIED_HERO_IMAGE",
+    "NO_VERIFIED_WARRANTY",
+    "GENERATION_UNKNOWN"
+   ],
+   "generation": null,
+   "hero_image": null,
+   "hero_image_limited": null,
+   "id_status": "ACCEPTED",
+   "logo": {
+    "asset_id": "609f54bc1ff7",
+    "credit": "Logo: Wikimedia Commons (Public domain)",
+    "height": "925",
+    "page": "https://commons.wikimedia.org/wiki/File:Toyota_Logo.svg",
+    "quality_class": "HQ",
+    "rights_basis": "Wikimedia Commons (Public domain); trademark of brand owner",
+    "sha256": "609f54bc1ff7301e0d7dcfeb0cf65cbd67cc1c351b020c64dc98144c4a9256dc",
+    "src": "/media/p2/brands/toyota.png",
+    "status": "ACCEPT",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Toyota_Logo.svg/1280px-Toyota_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": "1280"
+   },
+   "market_status": "unverified",
+   "market_status_basis": "P2 market-universe decision (config/market_universe.json); see review/market_universe_audit.csv",
+   "model": "Corolla Hybrid",
+   "model_id": "m_000413",
+   "p1_id": "toyota/corolla-hybrid",
+   "price": null,
+   "rework_price_rows": 1,
+   "site_slug": "toyota-corolla-hybrid",
+   "size_class": {
+    "basis": "single market source, 1 trim page(s) agree (ContactCars)",
+    "confidence": "MEDIUM_SINGLE_SOURCE",
+    "length_mm": "4630",
+    "segment": null
+   },
+   "specs": null,
+   "specs_accepted": false,
+   "universe": "P2_SPLIT",
+   "warranty": null
+  },
+  {
+   "brand": "Mercedes-Benz",
+   "brochures": [],
+   "conflicts": [],
+   "gallery": [],
+   "gaps": [
+    "NO_ACCEPTED_PRICE",
+    "NO_ACCEPTED_SPECS",
+    "NO_OFFICIAL_BROCHURE",
+    "NO_VERIFIED_HERO_IMAGE",
+    "NO_VERIFIED_WARRANTY",
+    "GENERATION_UNKNOWN"
+   ],
+   "generation": null,
+   "hero_image": null,
+   "hero_image_limited": null,
+   "id_status": "ACCEPTED",
+   "logo": {
+    "asset_id": "411367c080b2",
+    "credit": "Logo: Wikimedia Commons (Public domain)",
+    "height": "325",
+    "page": "https://commons.wikimedia.org/wiki/File:Mercedes-Benz_Logo_2010.svg",
+    "quality_class": "HQ",
+    "rights_basis": "Wikimedia Commons (Public domain); trademark of brand owner",
+    "sha256": "411367c080b22e381670086290144978adf4d9c725b01ceea917401b219de916",
+    "src": "/media/p2/brands/mercedes-benz.png",
+    "status": "ACCEPT",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Mercedes-Benz_Logo_2010.svg/1280px-Mercedes-Benz_Logo_2010.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": "1280"
+   },
+   "market_status": "unverified",
+   "market_status_basis": "P2 market-universe decision (config/market_universe.json); see review/market_universe_audit.csv",
+   "model": "GLC with EQ Technology",
+   "model_id": "m_000418",
+   "p1_id": "mercedes/glc-eq",
+   "price": null,
+   "rework_price_rows": 1,
+   "site_slug": "mercedes-glc-eq",
+   "size_class": {
+    "basis": "single market source, 1 trim page(s) agree (ContactCars)",
+    "confidence": "MEDIUM_SINGLE_SOURCE",
+    "length_mm": "4845",
+    "segment": null
+   },
+   "specs": null,
+   "specs_accepted": false,
+   "universe": "P2_SPLIT",
+   "warranty": null
+  },
+  {
    "brand": "MG",
    "brochures": [],
    "conflicts": [],
@@ -48297,6 +49839,11 @@
    "price": null,
    "rework_price_rows": 5,
    "site_slug": "mg-rx5",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1491 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -48466,6 +50013,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "byd-song-l",
+   "size_class": {
+    "basis": "registration segment, last 12 months (648 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -48528,6 +50080,11 @@
    },
    "rework_price_rows": 10,
    "site_slug": "bmw-3-series",
+   "size_class": {
+    "basis": "registration segment, last 12 months (562 registrations)",
+    "segment": "Luxury Car-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -48702,6 +50259,11 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "honda-cr-v",
+   "size_class": {
+    "basis": "registration segment, last 12 months (315 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -48746,6 +50308,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "kia-carnival",
+   "size_class": {
+    "basis": "registration segment, last 12 months (287 registrations)",
+    "segment": "MPV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -48904,6 +50471,11 @@
    "price": null,
    "rework_price_rows": 6,
    "site_slug": "bmw-x3",
+   "size_class": {
+    "basis": "registration segment, last 12 months (282 registrations)",
+    "segment": "Luxury SUV-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -49101,6 +50673,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "toyota-land-cruiser",
+   "size_class": {
+    "basis": "registration segment, last 12 months (307 registrations)",
+    "segment": "SUV-E",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -49144,6 +50721,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "byd-tang-l",
+   "size_class": {
+    "basis": "registration segment, last 12 months (251 registrations)",
+    "segment": "Luxury SUV-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -49176,6 +50758,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "land-rover-range-rover",
+   "size_class": {
+    "basis": "registration segment, last 12 months (171 registrations)",
+    "segment": "Luxury SUV-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -49208,6 +50795,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "land-rover-range-rover-vogue",
+   "size_class": {
+    "basis": "registration segment, last 12 months (10 registrations)",
+    "segment": "Luxury SUV-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -49240,6 +50832,7 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "land-rover-range-rover-sport",
+   "size_class": null,
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -49272,6 +50865,11 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "land-rover-range-rover-evoque",
+   "size_class": {
+    "basis": "registration segment, last 12 months (118 registrations)",
+    "segment": "Luxury SUV-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -49304,6 +50902,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "land-rover-velar",
+   "size_class": {
+    "basis": "registration segment, last 12 months (83 registrations)",
+    "segment": "Luxury SUV-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -49336,6 +50939,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "land-rover-defender",
+   "size_class": {
+    "basis": "registration segment, last 12 months (14 registrations)",
+    "segment": "Luxury SUV-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -49368,6 +50976,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "jaguar-f-pace",
+   "size_class": {
+    "basis": "registration segment, last 12 months (54 registrations)",
+    "segment": "Luxury SUV-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -49411,6 +51024,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "nissan-n7",
+   "size_class": {
+    "basis": "registration segment, last 12 months (158 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -49454,6 +51072,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "nissan-armada",
+   "size_class": {
+    "basis": "registration segment, last 12 months (11 registrations)",
+    "segment": "SUV-E",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -49516,6 +51139,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "byd-dolphin-surf",
+   "size_class": {
+    "basis": "registration segment, last 12 months (102 registrations)",
+    "segment": "Car HB-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -49680,6 +51308,12 @@
    },
    "rework_price_rows": 1,
    "site_slug": "byd-atto-2",
+   "size_class": {
+    "basis": "length_mm accepted (see specs)",
+    "confidence": "HIGH",
+    "length_mm": "4310",
+    "segment": null
+   },
    "specs": {
     "boot_l": [
      {
@@ -49814,6 +51448,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "byd-seal",
+   "size_class": {
+    "basis": "registration segment, last 12 months (3 registrations)",
+    "segment": "Luxury Sport",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -49857,6 +51496,7 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "byd-leopard-8",
+   "size_class": null,
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -49921,6 +51561,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "bmw-x4",
+   "size_class": {
+    "basis": "registration segment, last 12 months (86 registrations)",
+    "segment": "Luxury SUV-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -49963,6 +51608,11 @@
    "price": null,
    "rework_price_rows": 5,
    "site_slug": "bmw-i5",
+   "size_class": {
+    "basis": "registration segment, last 12 months (63 registrations)",
+    "segment": "Luxury Car-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -50086,6 +51736,11 @@
    "price": null,
    "rework_price_rows": 5,
    "site_slug": "bmw-7-series",
+   "size_class": {
+    "basis": "registration segment, last 12 months (49 registrations)",
+    "segment": "Luxury Car-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -50235,6 +51890,11 @@
    "price": null,
    "rework_price_rows": 4,
    "site_slug": "bmw-1-series",
+   "size_class": {
+    "basis": "registration segment, last 12 months (28 registrations)",
+    "segment": "Luxury HB",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -50395,6 +52055,11 @@
    "price": null,
    "rework_price_rows": 4,
    "site_slug": "bmw-2-series-gran-coupe",
+   "size_class": {
+    "basis": "registration segment, last 12 months (68 registrations)",
+    "segment": "Luxury Car-2",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -50436,6 +52101,11 @@
    "price": null,
    "rework_price_rows": 7,
    "site_slug": "bmw-4-series",
+   "size_class": {
+    "basis": "registration segment, last 12 months (37 registrations)",
+    "segment": "Luxury Car-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -50605,6 +52275,11 @@
    "price": null,
    "rework_price_rows": 4,
    "site_slug": "bmw-i4",
+   "size_class": {
+    "basis": "registration segment, last 12 months (5 registrations)",
+    "segment": "Luxury Car-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "power_hp": [
      {
@@ -50676,6 +52351,7 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "bmw-i3-sedan",
+   "size_class": null,
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -50719,6 +52395,12 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "bmw-ix3-neue-klasse",
+   "size_class": {
+    "basis": "single market source, 1 trim page(s) agree (ContactCars)",
+    "confidence": "MEDIUM_SINGLE_SOURCE",
+    "length_mm": "4782",
+    "segment": null
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -50762,6 +52444,11 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "bmw-m3",
+   "size_class": {
+    "basis": "registration segment, last 12 months (18 registrations)",
+    "segment": "Luxury Car-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -50805,6 +52492,11 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "bmw-m4",
+   "size_class": {
+    "basis": "registration segment, last 12 months (18 registrations)",
+    "segment": "Luxury Car-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -50848,6 +52540,11 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "bmw-m5",
+   "size_class": {
+    "basis": "registration segment, last 12 months (9 registrations)",
+    "segment": "Luxury Car-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -50891,6 +52588,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "bmw-m8",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1 registrations)",
+    "segment": "Luxury Car-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -50934,6 +52636,7 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "bmw-z4",
+   "size_class": null,
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -50979,6 +52682,11 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "mercedes-s-class",
+   "size_class": {
+    "basis": "registration segment, last 12 months (75 registrations)",
+    "segment": "Luxury Car-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -51085,6 +52793,12 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "mercedes-maybach-s-580",
+   "size_class": {
+    "basis": "length_mm accepted (see specs)",
+    "confidence": "HIGH",
+    "length_mm": "5469",
+    "segment": null
+   },
    "specs": {
     "boot_l": [
      {
@@ -51228,6 +52942,7 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "mercedes-maybach-eqs-680",
+   "size_class": null,
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -51271,6 +52986,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "mercedes-eqs",
+   "size_class": {
+    "basis": "registration segment, last 12 months (48 registrations)",
+    "segment": "Luxury Car-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -51314,6 +53034,11 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "mercedes-eqe",
+   "size_class": {
+    "basis": "registration segment, last 12 months (96 registrations)",
+    "segment": "Luxury Car-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -51357,6 +53082,7 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "mercedes-eqe-suv",
+   "size_class": null,
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -51400,6 +53126,11 @@
    "price": null,
    "rework_price_rows": 4,
    "site_slug": "mercedes-cle",
+   "size_class": {
+    "basis": "registration segment, last 12 months (76 registrations)",
+    "segment": "Luxury Car-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -51471,6 +53202,11 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "mercedes-sl",
+   "size_class": {
+    "basis": "registration segment, last 12 months (19 registrations)",
+    "segment": "Luxury Sport",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -51533,6 +53269,11 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "mercedes-amg-gt",
+   "size_class": {
+    "basis": "registration segment, last 12 months (67 registrations)",
+    "segment": "Luxury Sport",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -51604,6 +53345,11 @@
    "price": null,
    "rework_price_rows": 6,
    "site_slug": "mercedes-g-class",
+   "size_class": {
+    "basis": "registration segment, last 12 months (35 registrations)",
+    "segment": "Luxury SUV-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -51675,6 +53421,12 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "mercedes-g-580-eq",
+   "size_class": {
+    "basis": "single market source, 1 trim page(s) agree (ContactCars)",
+    "confidence": "MEDIUM_SINGLE_SOURCE",
+    "length_mm": "4624",
+    "segment": null
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -51718,6 +53470,7 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "mercedes-v-class",
+   "size_class": null,
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -51761,6 +53514,11 @@
    "price": null,
    "rework_price_rows": 11,
    "site_slug": "porsche-911",
+   "size_class": {
+    "basis": "registration segment, last 12 months (45 registrations)",
+    "segment": "Luxury Sport",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "powertrain_class": [
      {
@@ -51832,6 +53590,11 @@
    "price": null,
    "rework_price_rows": 10,
    "site_slug": "porsche-718",
+   "size_class": {
+    "basis": "registration segment, last 12 months (22 registrations)",
+    "segment": "Luxury Sport",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -51875,6 +53638,11 @@
    "price": null,
    "rework_price_rows": 17,
    "site_slug": "porsche-taycan",
+   "size_class": {
+    "basis": "registration segment, last 12 months (18 registrations)",
+    "segment": "Luxury Car-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -51918,6 +53686,11 @@
    "price": null,
    "rework_price_rows": 8,
    "site_slug": "porsche-panamera",
+   "size_class": {
+    "basis": "registration segment, last 12 months (3 registrations)",
+    "segment": "Luxury Car-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -51961,6 +53734,7 @@
    "price": null,
    "rework_price_rows": 4,
    "site_slug": "porsche-macan-electric",
+   "size_class": null,
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -51993,6 +53767,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "rolls-royce-cullinan",
+   "size_class": {
+    "basis": "registration segment, last 12 months (24 registrations)",
+    "segment": "Luxury Car-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -52025,6 +53804,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "rolls-royce-spectre",
+   "size_class": {
+    "basis": "registration segment, last 12 months (8 registrations)",
+    "segment": "Luxury Car-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -52057,6 +53841,11 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "maserati-grecale",
+   "size_class": {
+    "basis": "registration segment, last 12 months (21 registrations)",
+    "segment": "Luxury SUV-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -52089,6 +53878,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "maserati-ghibli",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1 registrations)",
+    "segment": "Luxury Sport",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -52121,6 +53915,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "lotus-emeya",
+   "size_class": {
+    "basis": "registration segment, last 12 months (7 registrations)",
+    "segment": "Luxury Sport",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "powertrain_class": [
      {
@@ -52220,6 +54019,11 @@
    },
    "rework_price_rows": 5,
    "site_slug": "smart-1",
+   "size_class": {
+    "basis": "registration segment, last 12 months (37 registrations)",
+    "segment": "Luxury HB",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -52371,6 +54175,11 @@
    },
    "rework_price_rows": 9,
    "site_slug": "smart-3",
+   "size_class": {
+    "basis": "registration segment, last 12 months (42 registrations)",
+    "segment": "Luxury SUV-2",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -52508,6 +54317,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "smart-5",
+   "size_class": {
+    "basis": "registration segment, last 12 months (16 registrations)",
+    "segment": "Luxury SUV-3",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -52701,6 +54515,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "im-ls9",
+   "size_class": {
+    "basis": "registration segment, last 12 months (15 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -52824,6 +54643,11 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "vgv-u70-pro",
+   "size_class": {
+    "basis": "registration segment, last 12 months (17 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -52859,6 +54683,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "bestune-t77-pro",
+   "size_class": {
+    "basis": "registration segment, last 12 months (9 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -52911,6 +54740,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "mhero-1",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1 registrations)",
+    "segment": "(Unspecified)",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -53049,6 +54883,11 @@
    "price": null,
    "rework_price_rows": 4,
    "site_slug": "arcfox-kaola-s",
+   "size_class": {
+    "basis": "registration segment, last 12 months (18 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -53203,6 +55042,12 @@
    },
    "rework_price_rows": 1,
    "site_slug": "audi-rs-e-tron-gt",
+   "size_class": {
+    "basis": "length_mm accepted (see specs)",
+    "confidence": "HIGH",
+    "length_mm": "4989",
+    "segment": null
+   },
    "specs": {
     "drive": [
      {
@@ -53301,6 +55146,7 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "avatr-06",
+   "size_class": null,
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -53333,6 +55179,7 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "baic-beijing-x7",
+   "size_class": null,
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -53374,6 +55221,12 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "cadillac-lyriq",
+   "size_class": {
+    "basis": "length_mm accepted (see specs)",
+    "confidence": "HIGH",
+    "length_mm": "4994",
+    "segment": null
+   },
    "specs": {
     "drive": [
      {
@@ -53514,6 +55367,12 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "cadillac-optiq",
+   "size_class": {
+    "basis": "length_mm accepted (see specs)",
+    "confidence": "HIGH",
+    "length_mm": "4822",
+    "segment": null
+   },
    "specs": {
     "drive": [
      {
@@ -53670,6 +55529,12 @@
    },
    "rework_price_rows": 4,
    "site_slug": "chery-tiggo-7-pro-max",
+   "size_class": {
+    "basis": "length_mm accepted (see specs)",
+    "confidence": "HIGH",
+    "length_mm": "4553",
+    "segment": null
+   },
    "specs": {
     "boot_l": [
      {
@@ -53868,6 +55733,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "chevrolet-spark-euv",
+   "size_class": {
+    "basis": "registration segment, last 12 months (62 registrations)",
+    "segment": "Car HB-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -53956,6 +55826,11 @@
    "price": null,
    "rework_price_rows": 4,
    "site_slug": "dongfeng-huge",
+   "size_class": {
+    "basis": "registration segment, last 12 months (60 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -54029,6 +55904,12 @@
    },
    "rework_price_rows": 0,
    "site_slug": "dongfeng-shine",
+   "size_class": {
+    "basis": "length_mm accepted (see specs)",
+    "confidence": "HIGH",
+    "length_mm": "4670",
+    "segment": null
+   },
    "specs": {
     "boot_l": [
      {
@@ -54203,6 +56084,7 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "dongfeng-l7",
+   "size_class": null,
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -54246,6 +56128,12 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "fiat-e-ulysse",
+   "size_class": {
+    "basis": "single market source, 1 trim page(s) agree (ContactCars)",
+    "confidence": "MEDIUM_SINGLE_SOURCE",
+    "length_mm": "4956",
+    "segment": null
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -54278,6 +56166,12 @@
    "price": null,
    "rework_price_rows": 4,
    "site_slug": "forthing-friday",
+   "size_class": {
+    "basis": "single market source, 2 trim page(s) agree (ContactCars)",
+    "confidence": "MEDIUM_SINGLE_SOURCE",
+    "length_mm": "4600",
+    "segment": null
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -54321,6 +56215,11 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "gac-aion-y",
+   "size_class": {
+    "basis": "registration segment, last 12 months (10 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -54364,6 +56263,7 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "gac-aion-lx",
+   "size_class": null,
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -54407,6 +56307,7 @@
    "price": null,
    "rework_price_rows": 4,
    "site_slug": "gac-gs3-emzoom",
+   "size_class": null,
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -54448,6 +56349,12 @@
    "price": null,
    "rework_price_rows": 10,
    "site_slug": "geely-emgrand",
+   "size_class": {
+    "basis": "length_mm accepted (see specs)",
+    "confidence": "HIGH",
+    "length_mm": "4638",
+    "segment": null
+   },
    "specs": {
     "boot_l": [
      {
@@ -54617,6 +56524,12 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "geely-ex5-em-i",
+   "size_class": {
+    "basis": "single market source, 2 trim page(s) agree (ContactCars)",
+    "confidence": "MEDIUM_SINGLE_SOURCE",
+    "length_mm": "4740",
+    "segment": null
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -54660,6 +56573,12 @@
    "price": null,
    "rework_price_rows": 6,
    "site_slug": "genesis-electrified-g80",
+   "size_class": {
+    "basis": "single market source, 3 trim page(s) agree (ContactCars)",
+    "confidence": "MEDIUM_SINGLE_SOURCE",
+    "length_mm": "5135",
+    "segment": null
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -54734,6 +56653,12 @@
    },
    "rework_price_rows": 1,
    "site_slug": "haval-h6-hev",
+   "size_class": {
+    "basis": "length_mm accepted (see specs)",
+    "confidence": "HIGH",
+    "length_mm": "4683",
+    "segment": null
+   },
    "specs": {
     "engine_cc": [
      {
@@ -54872,6 +56797,12 @@
    },
    "rework_price_rows": 2,
    "site_slug": "haval-jolion-pro",
+   "size_class": {
+    "basis": "length_mm accepted (see specs)",
+    "confidence": "HIGH",
+    "length_mm": "4470",
+    "segment": null
+   },
    "specs": {
     "boot_l": [
      {
@@ -55045,6 +56976,12 @@
    },
    "rework_price_rows": 0,
    "site_slug": "haval-v7",
+   "size_class": {
+    "basis": "length_mm accepted (see specs)",
+    "confidence": "HIGH",
+    "length_mm": "4800",
+    "segment": null
+   },
    "specs": {
     "boot_l": [
      {
@@ -55231,6 +57168,12 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "hongqi-eh7",
+   "size_class": {
+    "basis": "single market source, 1 trim page(s) agree (ContactCars)",
+    "confidence": "MEDIUM_SINGLE_SOURCE",
+    "length_mm": "4980",
+    "segment": null
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -55263,6 +57206,12 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "hongqi-ehs7",
+   "size_class": {
+    "basis": "single market source, 1 trim page(s) agree (ContactCars)",
+    "confidence": "MEDIUM_SINGLE_SOURCE",
+    "length_mm": "4925",
+    "segment": null
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -55306,6 +57255,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "gmc-hummer-ev",
+   "size_class": {
+    "basis": "registration segment, last 12 months (16 registrations)",
+    "segment": "Luxury SUV-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -55349,6 +57303,12 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "hyundai-staria",
+   "size_class": {
+    "basis": "single market source, 1 trim page(s) agree (ContactCars)",
+    "confidence": "MEDIUM_SINGLE_SOURCE",
+    "length_mm": "5255",
+    "segment": null
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -55422,6 +57382,11 @@
    },
    "rework_price_rows": 1,
    "site_slug": "hyundai-venue",
+   "size_class": {
+    "basis": "registration segment, last 12 months (2 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -55669,6 +57634,12 @@
    },
    "rework_price_rows": 0,
    "site_slug": "icaur-v27",
+   "size_class": {
+    "basis": "single market source, 2 trim page(s) agree (ContactCars)",
+    "confidence": "MEDIUM_SINGLE_SOURCE",
+    "length_mm": "5055",
+    "segment": null
+   },
    "specs": {
     "boot_l": [
      {
@@ -55801,6 +57772,7 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "jac-js2",
+   "size_class": null,
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -55844,6 +57816,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "jac-js4",
+   "size_class": {
+    "basis": "registration segment, last 12 months (126 registrations)",
+    "segment": "Car-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -55887,6 +57864,7 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "jeep-grand-cherokee-l",
+   "size_class": null,
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -55961,6 +57939,12 @@
    },
    "rework_price_rows": 4,
    "site_slug": "kaiyi-x3-pro",
+   "size_class": {
+    "basis": "length_mm accepted (see specs)",
+    "confidence": "HIGH",
+    "length_mm": "4400",
+    "segment": null
+   },
    "specs": {
     "boot_l": [
      {
@@ -56138,6 +58122,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "kia-k3",
+   "size_class": {
+    "basis": "registration segment, last 12 months (526 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -56181,6 +58170,11 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "lynk-co-02",
+   "size_class": {
+    "basis": "registration segment, last 12 months (52 registrations)",
+    "segment": "SUV-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -56256,6 +58250,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "lynk-co-03",
+   "size_class": {
+    "basis": "registration segment, last 12 months (13 registrations)",
+    "segment": "Car-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -56330,6 +58329,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "mg-4",
+   "size_class": {
+    "basis": "registration segment, last 12 months (45 registrations)",
+    "segment": "Car HB-B",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "boot_l": [
      {
@@ -56469,6 +58473,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "mg-cyberster",
+   "size_class": {
+    "basis": "registration segment, last 12 months (3 registrations)",
+    "segment": "Luxury Sport",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -56631,6 +58640,11 @@
    },
    "rework_price_rows": 11,
    "site_slug": "mini-cooper",
+   "size_class": {
+    "basis": "registration segment, last 12 months (35 registrations)",
+    "segment": "Luxury HB",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -56817,6 +58831,12 @@
    },
    "rework_price_rows": 2,
    "site_slug": "mitsubishi-outlander-sport",
+   "size_class": {
+    "basis": "length_mm accepted (see specs)",
+    "confidence": "HIGH",
+    "length_mm": "4390",
+    "segment": null
+   },
    "specs": {
     "drive": [
      {
@@ -56913,6 +58933,11 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "rehigh-rh6",
+   "size_class": {
+    "basis": "registration segment, last 12 months (8 registrations)",
+    "segment": "Car-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -56945,6 +58970,11 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "rehigh-rh8",
+   "size_class": {
+    "basis": "registration segment, last 12 months (10 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -56977,6 +59007,12 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "rely-r8",
+   "size_class": {
+    "basis": "single market source, 2 trim page(s) agree (ContactCars)",
+    "confidence": "MEDIUM_SINGLE_SOURCE",
+    "length_mm": "5370",
+    "segment": null
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -57009,6 +59045,11 @@
    "price": null,
    "rework_price_rows": 1,
    "site_slug": "subaru-crosstrek",
+   "size_class": {
+    "basis": "registration segment, last 12 months (40 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -57051,6 +59092,11 @@
    "price": null,
    "rework_price_rows": 3,
    "site_slug": "volkswagen-touareg",
+   "size_class": {
+    "basis": "registration segment, last 12 months (66 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "engine_cc": [
      {
@@ -57176,6 +59222,7 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "volkswagen-id-era-9x",
+   "size_class": null,
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -57219,6 +59266,7 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "xpeng-gx",
+   "size_class": null,
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -57262,6 +59310,12 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "xpeng-mona-m03",
+   "size_class": {
+    "basis": "single market source, 2 trim page(s) agree (ContactCars)",
+    "confidence": "MEDIUM_SINGLE_SOURCE",
+    "length_mm": "4780",
+    "segment": null
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -57305,6 +59359,12 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "xpeng-p7-plus",
+   "size_class": {
+    "basis": "single market source, 3 trim page(s) agree (ContactCars)",
+    "confidence": "MEDIUM_SINGLE_SOURCE",
+    "length_mm": "5017",
+    "segment": null
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -57390,6 +59450,11 @@
    },
    "rework_price_rows": 3,
    "site_slug": "zeekr-001",
+   "size_class": {
+    "basis": "registration segment, last 12 months (160 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -57504,6 +59569,7 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "zeekr-007",
+   "size_class": null,
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -57578,6 +59644,11 @@
    },
    "rework_price_rows": 8,
    "site_slug": "zeekr-7x",
+   "size_class": {
+    "basis": "registration segment, last 12 months (480 registrations)",
+    "segment": "Car-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": {
     "drive": [
      {
@@ -57699,6 +59770,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "ford-mustang",
+   "size_class": {
+    "basis": "registration segment, last 12 months (2 registrations)",
+    "segment": "Luxury Sport",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -57731,6 +59807,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "dodge-charger",
+   "size_class": {
+    "basis": "registration segment, last 12 months (1 registrations)",
+    "segment": "(Unspecified)",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -57774,6 +59855,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "changan-cs35",
+   "size_class": {
+    "basis": "registration segment, last 12 months (11 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -57817,6 +59903,7 @@
    "price": null,
    "rework_price_rows": 2,
    "site_slug": "toyota-camry",
+   "size_class": null,
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -57881,6 +59968,11 @@
    },
    "rework_price_rows": 0,
    "site_slug": "toyota-rav4",
+   "size_class": {
+    "basis": "registration segment, last 12 months (4 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -57924,49 +60016,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "toyota-land-cruiser-prado",
-   "specs": null,
-   "specs_accepted": false,
-   "universe": "P2_ADDITION",
-   "warranty": null
-  },
-  {
-   "brand": "Toyota",
-   "brochures": [],
-   "conflicts": [],
-   "gallery": [],
-   "gaps": [
-    "NO_ACCEPTED_PRICE",
-    "NO_ACCEPTED_SPECS",
-    "NO_OFFICIAL_BROCHURE",
-    "NO_VERIFIED_HERO_IMAGE",
-    "NO_VERIFIED_WARRANTY",
-    "GENERATION_UNKNOWN"
-   ],
-   "generation": null,
-   "hero_image": null,
-   "hero_image_limited": null,
-   "id_status": "ACCEPTED",
-   "logo": {
-    "asset_id": "609f54bc1ff7",
-    "credit": "Logo: Wikimedia Commons (Public domain)",
-    "height": "925",
-    "page": "https://commons.wikimedia.org/wiki/File:Toyota_Logo.svg",
-    "quality_class": "HQ",
-    "rights_basis": "Wikimedia Commons (Public domain); trademark of brand owner",
-    "sha256": "609f54bc1ff7301e0d7dcfeb0cf65cbd67cc1c351b020c64dc98144c4a9256dc",
-    "src": "/media/p2/brands/toyota.png",
-    "status": "ACCEPT",
-    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Toyota_Logo.svg/1280px-Toyota_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-    "width": "1280"
+   "size_class": {
+    "basis": "registration segment, last 12 months (51 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
    },
-   "market_status": "unverified",
-   "market_status_basis": "P2 market-universe decision (config/market_universe.json); see review/market_universe_audit.csv",
-   "model": "Corolla Hybrid",
-   "model_id": "m_000413",
-   "p1_id": "toyota/corolla-hybrid",
-   "price": null,
-   "rework_price_rows": 0,
-   "site_slug": "toyota-corolla-hybrid",
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -57999,6 +60053,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "venucia-v-online",
+   "size_class": {
+    "basis": "registration segment, last 12 months (30 registrations)",
+    "segment": "SUV-C",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -58031,6 +60090,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "denza-b3",
+   "size_class": {
+    "basis": "registration segment, last 12 months (111 registrations)",
+    "segment": "Luxury SUV-2",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -58063,6 +60127,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "denza-b5",
+   "size_class": {
+    "basis": "registration segment, last 12 months (138 registrations)",
+    "segment": "Luxury SUV-4",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
@@ -58095,6 +60164,11 @@
    "price": null,
    "rework_price_rows": 0,
    "site_slug": "denza-b8",
+   "size_class": {
+    "basis": "registration segment, last 12 months (61 registrations)",
+    "segment": "Luxury SUV-5",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",

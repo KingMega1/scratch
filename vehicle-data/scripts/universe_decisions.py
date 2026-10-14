@@ -143,7 +143,6 @@ ADD=[
  ('toyota/camry','Toyota','Camry','sedan',['hybrid'],['toyota/camry'],[]),
  ('toyota/rav4','Toyota','RAV4','suv',['hybrid','petrol'],['toyota/rav4'],[]),
  ('toyota/land-cruiser-prado','Toyota','Land Cruiser Prado','suv',['petrol'],['toyota/landcruiserprado'],['Toyota|Prado']),
- ('toyota/corolla-hybrid','Toyota','Corolla Hybrid','sedan',['hybrid'],['toyota/corollahybrid'],[]),
 ]
 OUT=['chevrolet/dababbah','chevrolet/jumbo','chevrolet/jumbo-npr','chevrolet/n300','chevrolet/nkr','chevrolet/nqr','chevrolet/s10-max','chevrolet/tfr','isuzu/dmax','isuzu/npr','isuzu/rbc',
      'toyota/hiace','toyota/hilux','toyota/tamaraw','nissan/navara','gmc/sierra','sandstorm/s24','tesla/cybertruck','byd/shark-6-dmo','jmc/boarding','kyc/v3','shineray/x30',
@@ -157,6 +156,7 @@ ALIAS_283={'mercedesbenz/mercedesbenzc43':'mercedes/c-class','mercedesbenz/cla25
 c=json.load(open('config/market_universe.json'))
 U283={m['id'] for m in json.load(open('inputs/u11/p11_universe.json'))['models'] if m['in_universe']}
 ids=[d for d in c['identities'] if d['decision']=='SPLIT']
+U283|={d['parent'] for d in ids}
 for i,b,m,body,pt,keys,regs in ADD:
   keys=[k for k in keys if k in A]
   if any(A[k]['audit_class']=='IN_283' for k in keys) or i in U283:

@@ -30,7 +30,8 @@ def main():
     a = ap.parse_args()
     canon = json.load(open(os.path.join(ROOT, "views", "canonical_u11.json")))
     audit = {r["identity"]: r for r in read(os.path.join(ROOT, "review", "market_universe_audit.csv"))}
-    mu = {d["id"]: d for d in json.load(open(os.path.join(ROOT, "config", "market_universe.json")))["identities"]}
+    mu = {d["id"]: d for d in sorted(json.load(open(os.path.join(ROOT, "config", "market_universe.json")))["identities"],
+                                     key=lambda d: d["decision"] in ("ADDITION", "SPLIT"))}  # additions win over same-id aliases
     ids = {r["p1_id"]: r for r in read(os.path.join(ROOT, "registry", "u11_models.csv"))}
     prices = collections.defaultdict(list)
     for r in read(os.path.join(ROOT, "registry", "u11_prices.csv")):

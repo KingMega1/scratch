@@ -70,6 +70,49 @@ def in_catalogue(r):
     return r["on_sale_u11"] == "true" or r.get("universe") in ("P2_ADDITION", "P2_SPLIT")
 
 
+@functools.lru_cache(maxsize=None)
+def single_length():
+    """Length (mm) stated identically on every market trim page of an identity (one site allowed): size-class input only."""
+    own = url_owner()
+    attr = {(r["source"], r["spec_label"]): r["attribute"] for r in read(os.path.join(ROOT, "crosswalk", "spec_fields.csv"))}
+    vals = collections.defaultdict(collections.Counter)
+    srcs = collections.defaultdict(set)
+    for snap in [sorted(glob.glob(os.path.join(ROOT, "snapshots", x)))[-1:] for x in ("US_*", "USA_*")]:
+        for s_ in snap:
+            for r in read(os.path.join(s_, "specs_parsed.csv")):
+                if attr.get((r["source"], r["spec_label"])) != "length" and r["spec_label"] != "Length (mm)":
+                    continue
+                u = r["trim_url"]
+                p1 = owner_of(own, u) if "contactcars" in u else own.get(u.rsplit("/", 1)[0])
+                p1 = split_of(p1, r.get("trim_raw") or r.get("title", "")) if p1 else p1
+                m = re.search(r"\d{4}", r["value"] or "")
+                if p1 and m and 3000 <= int(m.group(0)) <= 6500:
+                    vals[p1][m.group(0)] += 1
+                    srcs[p1].add(r["source"])
+    return {p: (next(iter(c)), sum(c.values()), "+".join(sorted(srcs[p]))) for p, c in vals.items() if len(c) == 1}
+
+
+@functools.lru_cache(maxsize=None)
+def size_class():
+    """Size class = dominant passenger registration segment (CEO registration explorer, last 12 months) of the
+    registration names the universe audit assigned to the identity."""
+    reg = {(r["reg_brand"], r["reg_model"]): r for r in read(os.path.join(ROOT, "inputs", "registration_models.csv"))}
+    ap = os.path.join(ROOT, "review", "market_universe_audit.csv")
+    out = {}
+    for r in (read(ap) if os.path.exists(ap) else []):
+        seg = collections.Counter()
+        for n in filter(None, (x.strip() for x in r["reg_names"].split(";"))):
+            b_, _, m_ = n.partition("|")
+            x = reg.get((b_, m_))
+            if x and x["segment_last12"]:
+                seg[x["segment_last12"]] += int(x["last12"])
+        if seg:
+            s_, v = seg.most_common(1)[0]
+            out[r["identity"]] = dict(segment=s_, basis=f"registration segment, last 12 months ({v} registrations)",
+                                      source="inputs/registration_models.csv (Vehicle_Registration_Explorer)")
+    return out
+
+
 def identity():
     U = [m for m in json.load(open(os.path.join(IN, "p11_universe.json")))["models"] if m.get("in_universe")]
     rc1 = json.load(open(os.path.join(IN, "catalogue-serving.RC1.json")))
@@ -615,7 +658,13 @@ def main():
         gaps = [g for g, ok in (("NO_ACCEPTED_PRICE", pv), ("NO_ACCEPTED_SPECS", spec_ok), ("NO_OFFICIAL_BROCHURE", bro.get(m["p1_id"])),
                                 ("NO_VERIFIED_HERO_IMAGE", hero), ("NO_OFFICIAL_LOGO", logo), ("NO_VERIFIED_WARRANTY", warranty),
                                 ("GENERATION_UNKNOWN", False)) if not ok]
-        rec = dict(model_id=m["model_id"], p1_id=m["p1_id"], site_slug=m["site_slug"], brand=m["brand"], model=m["model"],
+        sc = size_class().get(m["p1_id"])
+        if not sc and "length_mm" in specs:  # accepted length when no registration segment exists
+            sc = dict(segment=None, length_mm=specs["length_mm"][0]["value"], basis="length_mm accepted (see specs)", confidence="HIGH")
+        if not sc and single_length().get(m["p1_id"]):  # classification input only; never promoted to specs
+            v, n, src = single_length()[m["p1_id"]]
+            sc = dict(segment=None, length_mm=v, basis=f"single market source, {n} trim page(s) agree ({src})", confidence="MEDIUM_SINGLE_SOURCE")
+        rec = dict(model_id=m["model_id"], p1_id=m["p1_id"], site_slug=m["site_slug"], brand=m["brand"], model=m["model"], size_class=sc,
                    id_status=m["id_status"], generation=None, market_status="official" if m["p1_id"] in official_models else "unverified",
                    market_status_basis="model listed on official Egypt OEM/importer page (O4)" if m["p1_id"] in official_models
                    else ("U11 on-sale (registrations + market listings); no official Egypt page captured yet" if m["universe"] == "U11_283"
@@ -656,7 +705,7 @@ def serving(canon):
     """Same contract as P5 RC1 (all RC1 entry fields kept, same order); accepted P2 data added as optional fields."""
     rc1 = json.load(open(os.path.join(IN, "catalogue-serving.RC1.json")))
     by = {m["p1_id"]: m for m in canon["models"]}
-    mu = {d["id"]: d for d in market_universe()["identities"]}
+    mu = {d["id"]: d for d in sorted(market_universe()["identities"], key=lambda d: d["decision"] in ("ADDITION", "SPLIT"))}
 
     def pub(h, flags):  # P5 read-model p2Hero(): {src:'/media/...', credit, source_url}; it ignores flags
         return dict(src=h["src"], credit=h["credit"], source_url=h["page"] or h["url"], image_url=h["url"], flags=flags,
@@ -667,7 +716,7 @@ def serving(canon):
         e = dict(e, p2_model_id=c["model_id"], id_status="P2_ACCEPTED" if c["id_status"] == "ACCEPTED" else "P2_REWORK",
                  price_status="ACCEPTED" if c["price"] else e["price_status"] if e["evidence_state"] == "P2_S6_EVIDENCE" else "UNKNOWN",
                  missing_evidence=[g for g in c["gaps"]] + ([] if c["id_status"] == "ACCEPTED" else ["P2_ID_PENDING"]))
-        e["accepted"] = dict(market_status=c["market_status"], price=c["price"], specs=c["specs"], warranty=c["warranty"],
+        e["accepted"] = dict(market_status=c["market_status"], size_class=c["size_class"], price=c["price"], specs=c["specs"], warranty=c["warranty"],
                              brochures=c["brochures"], logo=pub(c["logo"], []),
                              hero_image=pub(c["hero_image"], []),
                              hero_image_limited=pub(c["hero_image_limited"], ["PHOTO_NEEDS_ENRICHMENT", "ORIGIN_UNVERIFIED"]),
@@ -686,7 +735,7 @@ def serving(canon):
                                       model=c["model"], universe=c["universe"], parent=mu.get(c["p1_id"], {}).get("parent"),
                                       body=mu.get(c["p1_id"], {}).get("body"), powertrains=mu.get(c["p1_id"], {}).get("powertrains", []),
                                       evidence=mu.get(c["p1_id"], {}).get("evidence", []),
-                                      accepted=dict(market_status=c["market_status"], price=c["price"], specs=c["specs"],
+                                      accepted=dict(market_status=c["market_status"], size_class=c["size_class"], price=c["price"], specs=c["specs"],
                                                     warranty=c["warranty"], brochures=c["brochures"], logo=pub(c["logo"], []),
                                                     hero_image=pub(c["hero_image"], []), gallery=[g for g in c["gallery"] if g["src"]],
                                                     conflicts=c["conflicts"]),
