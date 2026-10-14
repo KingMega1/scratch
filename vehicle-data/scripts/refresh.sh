@@ -36,6 +36,11 @@ if [ "$MODE" = "u11specs" ]; then   # trim-detail pages linked from the latest U
   echo "{\"snapshot\": \"$SNAP\", \"from\": \"$U\", \"mode\": \"u11specs\", \"llm_calls\": 0}" > "$SNAP/run_report.json"
   exit 0
 fi
+if [ "$MODE" = "x1" ]; then   # Claude Cloud extraction lane: official Egypt OEM pages + brochure PDFs -> candidates only
+  pip install --quiet pypdf
+  python3 scripts/extract_official.py harvest --out "snapshots/X_${DATE}_${GITHUB_RUN_ID:-local}"
+  exit 0
+fi
 if [ "$MODE" = "materialize" ]; then   # accepted media -> P5-servable WebP (sha256-verified) + canonical rebuild
   python3 scripts/media_materialize.py --report "snapshots/MM_${DATE}_${GITHUB_RUN_ID:-local}"
   python3 scripts/canonical.py
