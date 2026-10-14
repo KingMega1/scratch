@@ -1,0 +1,47 @@
+[
+ {
+  "n": 0,
+  "url": "https://www.mercedes-benz.com.eg/en/passengercars/models/suv/glc/overview.html",
+  "status": null,
+  "error": "HTTPSConnectionPool(host='www.mercedes-benz.com.eg', port=443): Read timed out. (read timeout=60)"
+ },
+ {
+  "n": 1,
+  "url": "https://www.mercedes-benz.com.eg/en/passengercars/models/suv/glc/technical-data.html",
+  "status": null,
+  "error": "HTTPSConnectionPool(host='www.mercedes-benz.com.eg', port=443): Read timed out. (read timeout=60)"
+ },
+ {
+  "n": 2,
+  "url": "https://geelyeg.com/models/ex5-emi",
+  "status": 200,
+  "final_url": "https://geelyeg.com/models/ex5-emi",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 1777,
+  "sha256": "b79fe68f618ec8a351d2bce6292de457af4a33c68bc8766dcd996b3f6e59dfca"
+ },
+ {
+  "n": 3,
+  "url": "https://geelyeg.com/assets/brochures/ex5-emi-brochure.pdf",
+  "status": 200,
+  "final_url": "https://geelyeg.com/assets/brochures/ex5-emi-brochure.pdf",
+  "content_type": "application/pdf",
+  "bytes": 2695349,
+  "sha256": "a84afb3f8fa6348167f5c5a60ba7a2130ab36378d8f088da773280ae7f314707"
+ },
+ {
+  "n": 4,
+  "url": "https://geelyeg.com/",
+  "status": 200,
+  "final_url": "https://geelyeg.com/",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 1777,
+  "sha256": "b79fe68f618ec8a351d2bce6292de457af4a33c68bc8766dcd996b3f6e59dfca"
+ },
+ {
+  "n": 5,
+  "url": "https://www.mercedes-benz.com.eg/en/passengercars/services/warranty.html",
+  "status": null,
+  "error": "HTTPSConnectionPool(host='www.mercedes-benz.com.eg', port=443): Read timed out. (read timeout=60)"
+ }
+]
