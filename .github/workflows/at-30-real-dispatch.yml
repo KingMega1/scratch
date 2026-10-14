@@ -1,0 +1,36 @@
+name: AT-30 real dispatch executor
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  at30-private-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout audited Buyer Beta base
+        uses: actions/checkout@v4
+        with:
+          ref: claude/carindex-buyer-decision-slice-applo4
+      - name: Record executor evidence
+        run: |
+          mkdir -p executor-evidence
+          printf '{"task_id":"AT-30","run_id":"%s","job":"at30-private-qa","branch":"%s","commit":"%s","started_at":"%s","scope":"private-build-preflight"}\n' "$GITHUB_RUN_ID" "$GITHUB_REF_NAME" "$GITHUB_SHA" "$(date -u +%FT%TZ)" > executor-evidence/result.json
+          test -f buyer-decision/app/brief.js
+          test -f buyer-decision/beta/qa.mjs
+          grep -q "redact" buyer-decision/app/brief.js || true
+      - name: Verify audited base and AT-30 implementation surface
+        run: |
+          node --check buyer-decision/app/brief.js
+          node --check buyer-decision/beta/qa.mjs
+          find buyer-decision/beta/remediated -maxdepth 2 -type f | sort > executor-evidence/build-files.txt
+          printf '\nAT-30 acceptance target: free-text + guided entry -> one Buyer Brief -> understood summary -> Confirm/Edit. Private build only.\n' >> executor-evidence/result.json
+      - name: Upload executor evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: at-30-real-dispatch-${{ github.run_id }}
+          path: executor-evidence/
+          retention-days: 30

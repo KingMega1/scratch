@@ -1,0 +1,25 @@
+{
+ "schema": "ci.dataset.v1",
+ "dataset_id": "U11-2026-09-26/recommendation_view",
+ "universe_version": "U11-2026-09-26",
+ "kind": "accepted recommendation view (pinned launch snapshot)",
+ "file": "recommendation_view.json",
+ "sha256": "148c28900733fd972c325c43b3959ac5c4c8b646d8287f057f792dbf9ced1209",
+ "content_sha256": "5348da5721f049d3befb1e6c8159ecdf0bfd8ed273916da95ee158ba804934e2",
+ "published_view_js_sha256": "d7d1ee55f3bc9241cbbdcc2c8036a49c4d6e5ae9c8b15c16ed5b1eca299a5414",
+ "models": 393,
+ "models_in_universe": 283,
+ "registry": {
+  "snapshot_id": null,
+  "registration_months": [
+   "2021-02",
+   "2026-08"
+  ],
+  "last12_window": [
+   "2025-09",
+   "2026-08"
+  ],
+  "note": "registration figures are embedded in this snapshot; no separate registry snapshot id exists for U11"
+ },
+ "derived_from": "data/p11_client.js via tools/build_public.py sanitize() — byte-identical content to the published data/view.js"
+}

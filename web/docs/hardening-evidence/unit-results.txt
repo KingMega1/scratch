@@ -1,0 +1,68 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> carindex-web@0.1.0 test:unit
+> node --test tests/unit/*.mjs
+
+✔ self-hosted fonts match Brand V2 package sizes (1.035103ms)
+✔ tokens CSS is the generated v2.0-draft.10 file (0.297186ms)
+✔ no JetBrains Mono, no Google Fonts, no V1.5 references in source (3.343014ms)
+✔ every package TTF has a WOFF2 sibling and fonts.css prefers it (0.680318ms)
+✔ contrast body text #0B1620 on #FFFFFF (1.269953ms)
+✔ contrast secondary text #5B6670 on #FFFFFF (0.141974ms)
+✔ contrast secondary on fog #5B6670 on #EEF0F2 (0.103646ms)
+✔ contrast link #1D4FB8 on #FFFFFF (0.090552ms)
+✔ contrast link on fog #1D4FB8 on #EEF0F2 (0.125826ms)
+✔ contrast primary button #0B1620 on #FFD12A (0.074658ms)
+✔ contrast footer secondary #A9B2BA on #0B1620 (0.106616ms)
+✔ contrast footer link #FFFFFF on #0B1620 (0.079392ms)
+✔ contrast hero kicker #FFD12A on #0B1620 (0.096815ms)
+✔ contrast official state #1F7A4D on #E4F2E8 (0.15406ms)
+✔ contrast listing state #0B1620 on #EEF0F2 (0.08576ms)
+✔ contrast unknown state #5B6670 on #EEF0F2 (1.129365ms)
+✔ contrast draft tag #0B1620 on #FFF4DC (0.094223ms)
+✔ contrast gated notice #0B1620 on #FFF4DC (0.081068ms)
+✔ contrast path card dark k #A9B2BA on #0B1620 (0.065878ms)
+✔ contrast disabled button #5B6670 on #EEF0F2 (0.043864ms)
+✔ contrast preview bar #FFFFFF on #0B1620 (0.057934ms)
+✔ mist on white is not used as text colour (0.091434ms)
+✔ snapshot carries canonical source repo/branch/path, commit, sha256, registry_version, snapshot_id; manifest has synced_at (1.427072ms)
+✔ embedded view hashes to the recorded sha256 is not required (re-serialised), but model count matches (0.310384ms)
+✔ stable unique slugs; no averaged prices (CONFLICT has null value) (0.194765ms)
+✔ temporary display crosswalk is labelled non-canonical and covers only known slugs (0.274738ms)
+✔ P1 vendored sources match manifest hashes (2.623727ms)
+✔ non-production fixture is labelled and has no fit tiers / no single winner (0.469621ms)
+(node:34) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/scratch/ade4f0c4e352/carindex-repo/web/src/lib/deploy-env.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/scratch/ade4f0c4e352/carindex-repo/web/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ Vercel production without CI_ENV is production (indexable, no drafts) (0.861068ms)
+✔ explicit CI_ENV wins; preview shows drafts (0.219784ms)
+✔ no env => local (0.273761ms)
+✔ production canonical origin never falls back to the per-deployment URL (0.282979ms)
+✔ NEXT_PUBLIC_SITE_URL wins and is normalised (0.215283ms)
+✔ Western numerals and EGP placement (1.17088ms)
+(node:46) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///workspace/scratch/ade4f0c4e352/carindex-repo/web/src/lib/deploy-env.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /workspace/scratch/ade4f0c4e352/carindex-repo/web/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ CMS blocks production drafts even when caller requests them, including related links (140.685208ms)
+✔ UTF-8 Basic authentication validates both fields, malformed headers and prefix mismatches (65.281681ms)
+✔ EV3 drops PII keys and nested payloads; array strings are re-redacted (86.555552ms)
+✔ EV negation: I don't want a fully electric car (52.275763ms)
+✔ EV negation: مش عايز عربية كهربا (55.281888ms)
+✔ comparative brand remains unresolved / Not Applied: better than Hyundai (15.463378ms)
+✔ comparative brand remains unresolved / Not Applied: أحسن من هيونداي (2.814415ms)
+✔ maximum / around / earned stretch retain settled ceilings and continuous budget curve (4.83635ms)
+✔ tie / lean confidence contract and deterministic outcomes across a brief matrix (138.437266ms)
+✔ EN/AR negation and comparative brand have equivalent applied inputs (9.267052ms)
+✔ share-safe result schema requires an opaque UUID and excludes free text (3.084077ms)
+✔ prepared adapter cannot execute without exact P1 RELEASE for P3 Version 5 (0.811363ms)
+✔ P5 preserves engine-supplied tie/lean and stale official price metadata (2.021068ms)
+ℹ tests 47
+ℹ suites 0
+ℹ pass 47
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1619.891894

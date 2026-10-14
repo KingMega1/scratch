@@ -1,0 +1,61 @@
+name: web-ci
+# CarIndex website (WEB-LAUNCH-01): typecheck, unit, build, dependency scan, smoke (desktop + mobile).
+on:
+  push:
+    paths: ['web/**', '.github/workflows/web-ci.yml']
+  pull_request:
+    paths: ['web/**', '.github/workflows/web-ci.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: web
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      CI_ENV: preview
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run verify:p1
+      - run: npm run test:unit
+      - run: npm run audit:deps
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: SMOKE_SCREENSHOTS=1 npm run test:smoke
+      - run: cp test-results/smoke.json test-results/smoke-preview.json
+      - name: Preserve preview screenshots for independent Brand V2 QA
+        run: |
+          mkdir -p ci-evidence
+          cp -a test-results/screens ci-evidence/screens
+          cp test-results/smoke-preview.json ci-evidence/smoke-preview.json
+      - name: Targeted FMC / P1 integration (P1-RELEASE-T1) against the built app
+        run: |
+          mkdir -p test-results
+          npx next start -p 3200 > test-results/fmc-server.log 2>&1 &
+          for i in $(seq 1 60); do curl -sf http://localhost:3200/api/health >/dev/null && break; sleep 1; done
+          FMC_BASE_URL=http://localhost:3200 FMC_SERVER_LOG=test-results/fmc-server.log npm run test:fmc
+      - name: Build local production-mode boundary fixture (never deployed)
+        run: CI_ENV=production NEXT_PUBLIC_SITE_URL=https://carindex.example npm run build
+      - name: Production draft, indexing and browser-buffer guards
+        run: CI_ENV=production SMOKE_PRODUCTION=1 SMOKE_PORT=3278 npm run test:smoke -- --grep production-only
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: smoke-evidence
+          path: |
+            web/test-results/
+            web/ci-evidence/
+          retention-days: 14

@@ -1,0 +1,50 @@
+name: AT-40 social rebuild executor
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  social-rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Create bounded AT-40 execution artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p at40-output
+          cat > at40-output/brief.md <<'EOF'
+          # AT-40 — P4/P3 Social Rebuild Execution Packet
+
+          Status: EXECUTOR_STARTED
+          Canonical source: CarIndex Brand System V1.5 Reviewed/Amended PDF + matching PPTX.
+          Additional input: CarIndex V1.5 Real Content Stress Test.
+          Negative reference: prior rejected social package only; do not reproduce its visual/copy structure.
+
+          Required production outputs:
+          1. Desire execution — real buyer tension; finished carousel copy + storyboard.
+          2. Decision execution — real buyer tension; finished carousel copy + storyboard.
+          3. Proof execution — real buyer tension; real-Reel storyboard + script.
+          4. Evidence dossier with explicit source for every factual claim.
+          5. P3 brand audit: PASS/PARTIAL/FAIL before publishing.
+
+          Guardrails:
+          - Internal draft/research only; no publishing or paid media.
+          - Use only P2-verified factual claims; unknown remains unknown.
+          - Must feel materially distinct, not a repeated AI template.
+          - Brand V1.5 remains canonical until successor is explicitly accepted.
+
+          Handoff: ChatGPT Work creative/research factory -> P3 brand review -> P4/G1.
+          EOF
+          cat > at40-output/executor.json <<EOF
+          {"task_id":"AT-40","executor":"github-actions-bounded-fallback","run_id":"${GITHUB_RUN_ID}","job":"social-rebuild","branch":"${GITHUB_REF_NAME}","commit":"${GITHUB_SHA}","started_at":"$(date -u +%FT%TZ)","state":"EXECUTOR_STARTED","acceptance":"PENDING_P3_REVIEW"}
+          EOF
+      - name: Upload executor evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: at-40-social-rebuild-${{ github.run_id }}
+          path: at40-output/
+          retention-days: 30
