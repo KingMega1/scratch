@@ -20,6 +20,10 @@ if [ "$MODE" = "media" ]; then    # brand-logo / model-image candidates with lic
   python3 scripts/media_candidates.py --out "snapshots/M_${DATE}_${GITHUB_RUN_ID:-local}"
   exit 0
 fi
+if [ "$MODE" = "probe" ]; then     # raw pages for offline parser development (probe.urls); nothing parsed or accepted
+  python3 scripts/probe.py --urls probe.urls --out "snapshots/P_${DATE}_${GITHUB_RUN_ID:-local}"
+  exit 0
+fi
 if [ "$MODE" = "logos" ]; then     # Commons logo search for brands without an accepted logo -> contact sheets
   python3 scripts/logo_search.py --out "snapshots/ML_${DATE}_${GITHUB_RUN_ID:-local}"
   exit 0

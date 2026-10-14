@@ -10,7 +10,7 @@ on:
         description: "prices = model pages only; full = also trim pages (specs)"
         default: full
         type: choice
-        options: [full, prices, triage, u11, media, sheets, materialize, u11specs, logos]
+        options: [full, prices, triage, u11, media, sheets, materialize, u11specs, logos, probe]
   push:
     paths: ["vehicle-data/refresh.request"]
   # schedule:
