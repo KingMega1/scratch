@@ -654,6 +654,13 @@ def main():
                 policy_conflict = [f'warranty: brand policy {wpol[0]["value"]} ({wpol[0]["issuer"]}) differs from model-specific {", ".join(sorted({w["value"] for w in wown}))}']
             warranty = wown
         spec_ok = len(CORE_SPECS & set(specs)) >= 3
+        pts = {x["value"] for x in specs.get("powertrain_class", [])}
+        if not pts:
+            cfg = {d["id"]: d for d in market_universe()["identities"] if d["decision"] in ("ADDITION", "SPLIT")}.get(m["p1_id"], {})
+            pts = set(cfg.get("powertrains", [])) if len(cfg.get("powertrains", [])) == 1 else set()
+        if pv and len(pts) == 1:  # per-version powertrain: the model has one accepted powertrain (splits separate the others)
+            pv = dict(pv, trims=[dict(t, powertrain=next(iter(pts))) for t in pv.get("trims", [])], powertrain_basis=
+                      "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)")
         def asset(x):  # IM-1: P5 serves local files only; src is set once the verified bytes are materialized
             d = {k: x[k] for k in ("asset_id", "sha256", "width", "height", "quality_class", "url", "page", "rights_basis", "status")}
             d["src"] = SERVE_PREFIX + x["local_path"].split("media/", 1)[1] if x.get("local_path") and os.path.exists(os.path.join(ROOT, x["local_path"])) else None
