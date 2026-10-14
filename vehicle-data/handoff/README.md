@@ -36,3 +36,9 @@ White-only logos (BYD, Nissan) have no dark variant yet.
 ## Worker note (2026-10-14)
 - `.github/workflows/vehicle-refresh.yml` has a mode allow-list (`case "$MODE" in ...`). An unknown mode silently falls back to `full`, so a new mode must be added there.
 - Yallamotor answers 403 to automated requests (probe run 38522693528). Do not use it, and do not try to evade the block.
+
+## Google Sheets sync (2026-10-14)
+Review sheet `1TUlGhEYzrOQrYdgMgyVhHwdw_ABGZSk9OhohYnvbZVg` (CarIndex P2 Data Completion Review), via the Google Sheets connection authorised 2026-10-14.
+- `P2 Canonical Sync`: read-only mirror of `review/coverage_matrix.csv` at 801acdd (416 models × 28 columns). Read back after writing: 0 text mismatches.
+- `P2 ChatGPT Closure 2026-10-14`: mirror of `review/chatgpt_closure_20261014_decisions.csv`.
+- Existing tabs (CEO Review, CEO Decisions, Model Completeness, etc.) were not modified.
