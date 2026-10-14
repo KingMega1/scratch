@@ -8,7 +8,7 @@
 // Prices: P2-accepted trims update U11 versions with the same (normalised) name and are added otherwise; versions P2 has
 //   not accepted stay (absent in P2 means UNKNOWN, not discontinued). The engine already uses the latest model year only.
 // Seats / drive: P2-accepted (seats unioned with U11; drive AWD/4WD -> true, 2WD only -> false).
-// Size class: U11 segment, else the registration segment P2 matched to the identity (registration_models.csv).
+// Size class: U11 segment, else P2's accepted size_class segment, else the registration segment P2 matched (registration_models.csv).
 // Brand facts (origin, chinese, Arabic brand names) for new identities: from the same brand's records in U11.
 // In the universe when: passenger body (suv/sedan/hatch/mpv) AND priced current versions AND (model year >= 2025 OR
 //   registrations in the last 12 months) AND size class known. Without a size class a car is HELD (not excluded for good):
@@ -82,6 +82,10 @@ for (const r of recs) {
     if (awd !== null && m.awd !== awd) { log.awd.push(`${m.id}:${m.awd}->${awd}`); m.awd = awd; } }
   // size class + registrations for new identities (P2's registration match)
   const match = (idn.match || []).map(k => REG[k]).filter(Boolean);
+  // P2-accepted size class (catalogue-serving accepted.size_class.segment, P2 b9fa5eb+); a length-only class is not mapped
+  // to a segment here (that would be a new P1 size rule): the car stays held for size
+  const psc = a.accepted && a.accepted.size_class;
+  if (!m.segment && psc && SEG.has(psc.segment)) m.segment = psc.segment;
   if (!m.segment) { const s = match.map(x => x.segment_last12).find(x => SEG.has(x)); if (s) m.segment = s; }
   if (match.length && !((m.reg && m.reg.last12) > 0)) { const l12 = match.reduce((s, x) => s + (+x.last12 || 0), 0), all = match.reduce((s, x) => s + (+x.since_2021 || 0), 0); if (all) m.reg = { since_2021: all, last12: l12 }; }
   m.model_year = Math.max(0, ...m.trims.map(t => t.year || 0)) || null;
