@@ -24,7 +24,7 @@ Acceptance rules (AT-39 price evidence policy; conflicts -> REWORK, nothing infe
   PB-2   same model/year/trim with different values across sites -> REWORK (CONFLICT); single site -> Tier C REWORK.
   PS-1   when a model has accepted Tier A trim prices, Tier B rows are kept as CORROBORATES / SUPERSEDED_BY_TIER_A.
 """
-import argparse, collections, csv, glob, hashlib, importlib.util, json, os, re
+import argparse, collections, functools, csv, glob, hashlib, importlib.util, json, os, re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -60,6 +60,7 @@ def day(http_date):
 
 # ------------------------------------------------------------------ identity
 
+@functools.lru_cache(maxsize=None)
 def market_universe():
     p = os.path.join(ROOT, "config", "market_universe.json")
     return json.load(open(p)) if os.path.exists(p) else {"identities": []}
@@ -211,7 +212,7 @@ def market_obs_one(snap):
     stated = []
     for r in read(os.path.join(snap, "price_changes_stated.csv")):
         p1 = owner_of(own, r["source_url"])
-        p1 = split_of(p1, r.get("trim_raw", "")) if p1 else p1
+        p1 = split_of(p1, r.get("trim_raw") or r.get("title", "")) if p1 else p1
         v, _ = b.parse_price(r["new_price"])
         ov, _ = b.parse_price(r.get("old_price", ""))
         if p1 and v:
@@ -446,6 +447,7 @@ def market_spec_facts_one(snap):
     for r in read(os.path.join(snaps[-1], "specs_parsed.csv")):
         u = r["trim_url"]
         p1 = owner_of(own, u) if "contactcars" in u else own.get(u.rsplit("/", 1)[0])
+        p1 = split_of(p1, r.get("trim_raw") or r.get("title", "")) if p1 else p1  # split identities take the trims they own (Hatla2ee: trim in title)
         a = SP2_FIELDS.get(attr.get((r["source"], r["spec_label"])))
         m = re.search(r"\d[\d,]*(\.\d+)?", r["value"] or "")
         if not (p1 and a and m):
@@ -462,6 +464,7 @@ def market_spec_facts_one(snap):
             continue
         u = r["trim_url"]
         p1 = owner_of(own, u) if "contactcars" in u else own.get(u.rsplit("/", 1)[0])
+        p1 = split_of(p1, r.get("trim_raw") or r.get("title", "")) if p1 else p1
         v = nz[1].get((r["value"] or "").strip().lower())
         if p1 and v:
             vals[(p1, nz[0], v)][r["source"]].add(u)

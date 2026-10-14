@@ -107,11 +107,14 @@
    ],
    "trim_regex": "\\bEV\\b",
    "urls": [],
-   "match": [],
+   "match": [
+    "BYD|Sealion 6 EV"
+   ],
    "evidence": [
     "Market pages list EV and DM-i trims on the same Sealion 6 page (ContactCars 2026: EV 1,700,000 / DM-i Ultra 1,900,000; 2027: EV Ultra 1,749,900 / DMi Ultra 1,949,900)",
     "Registrations BYD|Sealion 06: BEV 455, Hybrid 312 (last 12 months)",
-    "Accepted BYD Egypt brochure on byd/sealion-6 is the DM-i (SEALION 6 DMi)"
+    "Accepted BYD Egypt brochure on byd/sealion-6 is the DM-i (SEALION 6 DMi)",
+    "BYD Egypt official separate model page https://byd-egypt.com/sealion-6-ev (probe P_2026-10-14_38550357409)"
    ],
    "note": "Powertrain conflation: BEV separated; byd/sealion-6 keeps DM-i (brochure, P1 ID). EgyCar \"Comfort\" trim stays with parent (powertrain not stated) and is held by price rules."
   },
@@ -614,6 +617,7 @@
    ],
    "evidence": [
     "Market new-car pages with priced model years 2027 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "Official Egypt model page: https://byd-egypt.com/dolphin-surf",
     "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)",
     "Registrations last 12m 102 / last 6m 95 (BYD|Dolphin; BEV:102)",
     "Market new-car pages with priced model years 2027 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
@@ -1258,11 +1262,13 @@
     "Mercedes|CLE"
    ],
    "evidence": [
-    "Market new-car pages with priced model years 2025 2026 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
-    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Cabriolet-Coupe+no_sale_evidence (P1 eligibility unchanged)"
+    "Market new-car pages with priced model years 2025 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Cabriolet-Coupe+no_sale_evidence (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
    ],
    "audit_keys": [
-    "mercedes/cle-200"
+    "mercedes/cle-200",
+    "mercedesbenz/mercedesbenzcle200"
    ],
    "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
   },
@@ -1343,12 +1349,14 @@
    "evidence": [
     "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
     "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)",
-    "Market new-car pages with priced model years 2025 2026 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
-    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+    "Market new-car pages with priced model years 2025 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
    ],
    "audit_keys": [
     "mercedes/g-500",
-    "mercedes/g-63"
+    "mercedes/g-63",
+    "mercedesbenz/mercedesbenzg63"
    ],
    "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
   },
@@ -2095,6 +2103,7 @@
    ],
    "evidence": [
     "Market new-car pages with priced model years 2026 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "Official Egypt model page: https://www.chevroletarabia.com/eg-ar/electric/spark-euv",
     "P1 U11 reference id kept; P1 exclusion: body_not_passenger:?+no_sale_evidence (P1 eligibility unchanged)",
     "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
     "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
@@ -2172,6 +2181,7 @@
    "match": [],
    "evidence": [
     "Market new-car pages with priced model years 2026 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "Official Egypt model page: https://dongfeng-egypt.com/models/shine",
     "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
    ],
    "audit_keys": [
@@ -2336,6 +2346,7 @@
    "match": [],
    "evidence": [
     "Market new-car pages with priced model years 2025 2026 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "Official Egypt model page: https://www.geely.com.eg/models/emgrand",
     "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)",
     "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
    ],
@@ -3795,6 +3806,40 @@
    "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
   },
   {
+   "id": "mercedes/gla",
+   "decision": "SOURCE_ALIAS",
+   "brand": "mercedes",
+   "model": "mercedes benz gla 200",
+   "alias_of_audit_key": "mercedesbenz/mercedesbenzgla200",
+   "audit_keys": [
+    "mercedesbenz/mercedesbenzgla200"
+   ],
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/mercedes/mercedes-benz-gla-200"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
+  },
+  {
+   "id": "mercedes/glc",
+   "decision": "SOURCE_ALIAS",
+   "brand": "mercedes",
+   "model": "mercedes benz glc 43",
+   "alias_of_audit_key": "mercedesbenz/mercedesbenzglc43",
+   "audit_keys": [
+    "mercedesbenz/mercedesbenzglc43"
+   ],
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/mercedes/mercedes-benz-glc-43"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
+  },
+  {
    "id": "mini/countryman",
    "decision": "SOURCE_ALIAS",
    "brand": "mini",
@@ -4291,48 +4336,75 @@
   },
   {
    "id": "denza/b3",
-   "decision": "NOT_ON_SALE",
+   "decision": "ADDITION",
    "brand": "Denza",
    "model": "B3",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "",
+   "channel": "GREY_IMPORT",
    "audit_keys": [
     "denza/b3"
    ],
    "urls": [],
+   "match": [
+    "Denza|B3"
+   ],
    "evidence": [
     "Registrations last 12m 111 / last 6m 48 (Denza|B3; BEV:111)",
-    "CEO statement 2026-10-14: Denza is not launched in Egypt yet"
+    "CEO statement 2026-10-14: Denza is grey-imported and sold in the Egyptian market; official distributorship with Mansour has not started"
    ],
-   "note": "NOT_LAUNCHED: registrations are pre-launch/parallel imports; no Egyptian distributor sale."
+   "note": "On sale via grey import (no official Egyptian distributor yet): no official price or warranty can be accepted until the official launch."
   },
   {
    "id": "denza/b5",
-   "decision": "NOT_ON_SALE",
+   "decision": "ADDITION",
    "brand": "Denza",
    "model": "B5",
+   "body": "suv",
+   "powertrains": [
+    "phev"
+   ],
+   "u11_id": "",
+   "channel": "GREY_IMPORT",
    "audit_keys": [
     "denza/b5"
    ],
    "urls": [],
+   "match": [
+    "Denza|B5"
+   ],
    "evidence": [
     "Registrations last 12m 138 / last 6m 49 (Denza|B5; Hybrid:138)",
-    "CEO statement 2026-10-14: Denza is not launched in Egypt yet"
+    "CEO statement 2026-10-14: Denza is grey-imported and sold in the Egyptian market; official distributorship with Mansour has not started"
    ],
-   "note": "NOT_LAUNCHED: registrations are pre-launch/parallel imports; no Egyptian distributor sale."
+   "note": "On sale via grey import (no official Egyptian distributor yet): no official price or warranty can be accepted until the official launch."
   },
   {
    "id": "denza/b8",
-   "decision": "NOT_ON_SALE",
+   "decision": "ADDITION",
    "brand": "Denza",
    "model": "B8",
+   "body": "suv",
+   "powertrains": [
+    "phev"
+   ],
+   "u11_id": "",
+   "channel": "GREY_IMPORT",
    "audit_keys": [
     "denza/b8"
    ],
    "urls": [],
+   "match": [
+    "Denza|B8"
+   ],
    "evidence": [
     "Registrations last 12m 61 / last 6m 58 (Denza|B8; Hybrid:61)",
-    "CEO statement 2026-10-14: Denza is not launched in Egypt yet"
+    "CEO statement 2026-10-14: Denza is grey-imported and sold in the Egyptian market; official distributorship with Mansour has not started"
    ],
-   "note": "NOT_LAUNCHED: registrations are pre-launch/parallel imports; no Egyptian distributor sale."
+   "note": "On sale via grey import (no official Egyptian distributor yet): no official price or warranty can be accepted until the official launch."
   }
  ],
  "aliases": []

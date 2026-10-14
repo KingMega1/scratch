@@ -2,10 +2,10 @@
  "schema": "carindex.p2.p5-release-handoff/v1",
  "release_id": "P2-CATALOGUE-U11-2026-10-14-RC2",
  "route": "P5 a6d3f0b: copy vehicle-data/views/catalogue-serving.release.json verbatim to web/data/registry/catalogue-serving.release.json; copy each file below to web/public<src>",
- "release_sha256": "abf5f9051c1df5019dfe175d2c24ab92e3fec48049e947ad90cf4c2fb56579a9",
+ "release_sha256": "a00326125e22678d4bf13428015471564485f0139b8819d0c356ac3a028de9d4",
  "counts": {
   "brochure_accepted": 81,
-  "fully_enriched": 26,
+  "fully_enriched": 27,
   "gallery_models": 46,
   "hero_accepted": 53,
   "hero_accepted_hq": 49,
@@ -14,10 +14,10 @@
   "logo_accepted": 248,
   "market_status_official": 37,
   "models": 283,
-  "price_accepted": 189,
-  "price_source_dated": 149,
-  "price_tier_a": 26,
-  "specs_accepted": 193,
+  "price_accepted": 192,
+  "price_source_dated": 152,
+  "price_tier_a": 25,
+  "specs_accepted": 199,
   "warranty_accepted": 95
  },
  "served": {
@@ -1581,20 +1581,20 @@
  },
  "counts_market_universe": {
   "brochure_accepted": 82,
-  "fully_enriched": 26,
+  "fully_enriched": 27,
   "gallery_models": 46,
   "hero_accepted": 53,
   "hero_accepted_hq": 49,
   "hero_limited_archive": 149,
-  "id_accepted": 412,
+  "id_accepted": 415,
   "logo_accepted": 346,
   "market_status_official": 38,
-  "models": 412,
-  "price_accepted": 217,
-  "price_source_dated": 172,
-  "price_tier_a": 26,
-  "specs_accepted": 196,
-  "warranty_accepted": 97
+  "models": 415,
+  "price_accepted": 220,
+  "price_source_dated": 175,
+  "price_tier_a": 25,
+  "specs_accepted": 241,
+  "warranty_accepted": 115
  },
- "market_additions": 129
+ "market_additions": 132
 }

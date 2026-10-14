@@ -191,9 +191,12 @@ if 'venucia/v' in A:
     evidence=ev(['venucia/v','venucia/vonline'])+['Distributor launch news: NDS Group (Venucia Egypt distributor) launched V-Online, single trim, official price EGP 1,350,000 (Shift-EG https://www.shift-eg.com/news/local-news/details/26647/ ; publication date not captured) -> price NOT accepted (no dated Egyptian listing)',
       'ContactCars article: NDS (Nour El-Din El-Sherif) named Venucia distributor https://www.contactcars.com/ar/media/articles/0a812810b974'],
     note='Omission named by CEO: registered and launched by an Egyptian distributor; no market/official listing captured yet (source gap).'))
-for k in ['denza/b3','denza/b5','denza/b8']:  # CEO statement 2026-10-14: Denza not launched in Egypt yet
-  if k in A: ids.append(dict(id=k,decision='NOT_ON_SALE',brand='Denza',model=A[k]['model'],audit_keys=[k],urls=[],evidence=ev([k])+['CEO statement 2026-10-14: Denza is not launched in Egypt yet'],
-    note='NOT_LAUNCHED: registrations are pre-launch/parallel imports; no Egyptian distributor sale.'))
+DENZA={'denza/b3':('B3','suv',['ev']),'denza/b5':('B5','suv',['phev']),'denza/b8':('B8','suv',['phev'])}
+for k,(mdl,body,pt) in DENZA.items():  # CEO 2026-10-14: sold in Egypt via grey import; official distributorship (Mansour) not started yet
+  if k in A: ids.append(dict(id=k,decision='ADDITION',brand='Denza',model=mdl,body=body,powertrains=pt,u11_id='',channel='GREY_IMPORT',audit_keys=[k],urls=[],
+    match=[n.strip() for n in A[k]['reg_names'].split(';') if n.strip()],
+    evidence=ev([k])+['CEO statement 2026-10-14: Denza is grey-imported and sold in the Egyptian market; official distributorship with Mansour has not started'],
+    note='On sale via grey import (no official Egyptian distributor yet): no official price or warranty can be accepted until the official launch.'))
 c['identities']=ids
 json.dump(c,open('config/market_universe.json','w'),indent=1,ensure_ascii=False)
 import collections;print(collections.Counter(d['decision'] for d in ids))
