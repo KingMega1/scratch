@@ -11,7 +11,7 @@
   - `buildCatalogue(snap,u,cw,p2)` merges it and fails closed if a route is unknown or a p1_id does not match.
 - Files:
   - 40 heroes at `/media/models/<site_slug>.webp`, which replaces 5 P5 Nissan photos in place with the same models at 2400 px;
-  - 37 logos at `/media/brands/<brand>.png`.
+  - 54 logos at `/media/brands/<brand>.png`.
 - Rendering is unchanged. Only `accepted.hero_image` is consumed today, through `p2Hero()`.
   - Prices and logos are delivered as data for P5 to adopt.
   - The BYD and Nissan logos are white on a transparent background, so they need a dark surface.
