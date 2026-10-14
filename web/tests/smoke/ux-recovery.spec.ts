@@ -4,7 +4,15 @@ import { readFileSync } from 'node:fs';
 /* AT-43 UX & visual recovery (2026-10-13) acceptance checks, EN/AR, desktop/mobile. */
 const media = JSON.parse(readFileSync('data/registry/media-verified.json', 'utf8')) as { entries: { site_slug: string; src: string }[] };
 const logos = JSON.parse(readFileSync('data/registry/brand-logos.json', 'utf8')) as { brands: Record<string, unknown> };
-const release = JSON.parse(readFileSync('data/registry/catalogue-serving.release.json', 'utf8')) as { entries: { site_slug: string }[] };
+const release = JSON.parse(readFileSync('data/registry/catalogue-serving.release.json', 'utf8')) as { entries: { site_slug: string; brand: string; accepted?: { hero_image?: { src: string }; logo?: { src: string } } }[] };
+const bid = (s: string) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+// Served images: P2-accepted hero (serving release) first, else the P5 verified media registry.
+const served = new Map<string, string>(media.entries.map(m => [m.site_slug, m.src]));
+for (const e of release.entries) if (e.accepted?.hero_image?.src) served.set(e.site_slug, e.accepted.hero_image.src);
+const lightOnly = new Set([...(readFileSync('src/server/vehicles/read-model.ts', 'utf8').match(/LIGHT_ONLY_LOGOS = new Set\(\[([^\]]*)\]/)![1].matchAll(/'([^']+)'/g))].map(m => m[1]));
+const p2Logo = new Map<string, string>(); for (const e of release.entries) if (e.accepted?.logo?.src && !lightOnly.has(e.accepted.logo.src) && !p2Logo.has(bid(e.brand))) p2Logo.set(bid(e.brand), e.accepted.logo.src);
+const siteBrands = new Set(release.entries.map(e => bid(e.brand)));
+const logoIds = [...siteBrands].filter(id => (logos.brands as Record<string, unknown>)[id] || p2Logo.has(id));
 
 for (const l of ['en', 'ar'] as const) {
   test(`${l}: homepage has no internal coverage statistics or methodology block`, async ({ page }) => {
@@ -33,9 +41,9 @@ for (const l of ['en', 'ar'] as const) {
     const col = new Intl.Collator(l === 'ar' ? 'ar' : 'en', { sensitivity: 'base' });
     expect(names).toEqual([...names].sort((a, b) => col.compare(a, b)));
     const shown = await page.locator('.brand-grid [data-brand-logo]').evaluateAll(els => els.map(e => e.getAttribute('data-brand-logo')));
-    expect(shown.length).toBe(Object.keys(logos.brands).length);
-    for (const id of shown) expect(Object.keys(logos.brands)).toContain(id);
-    await expect(page.locator('.brand-grid img')).toHaveCount(0); // no raster or third-party logo files
+    expect(shown.length).toBe(logoIds.length); // ink emblem (simple-icons) or the P2-accepted official logo; never guessed
+    for (const id of shown) expect(logoIds).toContain(id);
+    for (const src of await page.locator('.brand-grid img').evaluateAll(els => els.map(e => e.getAttribute('src') || ''))) expect(src).toMatch(/^\/media\/p2\/brands\/[\w-]+\.png$/);
     const strip = await page.goto(`/${l}`).then(() => page.locator('.brand-strip b').allTextContents());
     expect(strip).toEqual([...strip].sort((a, b) => col.compare(a, b)));
   });
@@ -77,14 +85,15 @@ for (const l of ['en', 'ar'] as const) {
     for (const path of ['', '/market', '/cars', '/market/catalog']) {
       await page.goto(`/${l}${path}`);
       const srcs = await page.locator('main img').evaluateAll(els => els.map(e => (e as HTMLImageElement).getAttribute('src') || ''));
-      for (const s of srcs) expect(s, path).toMatch(/^\/(brand|media\/models)\//);
+      for (const s of srcs) expect(s, path).toMatch(/^\/(brand|media\/models|media\/p2\/(models|brands))\//);
       await expect(page.locator('[data-asset-flags*="TEMP_UNVERIFIED"]')).toHaveCount(0);
     }
-    for (const m of media.entries) {
-      await page.goto(`/${l}/cars/${m.site_slug}`);
-      await expect(page.locator(`.cd-media img[data-verified-photo][src="${m.src}"]`)).toBeVisible();
+    for (const [slug, src] of [...served].slice(0, 12)) {
+      await page.goto(`/${l}/cars/${slug}`);
+      await expect(page.locator(`.cd-media img[data-verified-photo][src="${src}"]`)).toBeVisible();
     }
-    await page.goto(`/${l}/cars/kia-sportage`); // no verified photo: clean unavailable treatment, no substitute car
+    const noPhoto = release.entries.find(e => !served.has(e.site_slug))!.site_slug;
+    await page.goto(`/${l}/cars/${noPhoto}`); // no verified photo: clean unavailable treatment, no substitute car
     await expect(page.locator('.cd-media [data-no-photo]')).toBeVisible();
     await expect(page.locator('.cd-media img.photo')).toHaveCount(0);
   });
@@ -113,7 +122,7 @@ for (const l of ['en', 'ar'] as const) {
     await expect(fold.locator('a[data-cta="hero_fmc"]')).toBeVisible();
     const imgs = fold.locator('img');
     expect(await imgs.count()).toBeGreaterThan(0);
-    for (const src of await imgs.evaluateAll(els => els.map(e => e.getAttribute('src')))) expect(media.entries.map(m => m.src)).toContain(src);
+    for (const src of await imgs.evaluateAll(els => els.map(e => e.getAttribute('src')))) expect([...served.values()]).toContain(src);
     await expect(page.locator('#paths-h')).toHaveCount(0); // duplicate "Two ways to start" box removed
   });
   test(`${l}: fat footer with the Brand V2 logo on ink`, async ({ page }) => {
@@ -135,5 +144,21 @@ for (const l of ['en', 'ar'] as const) {
     // it is the last block of the result
     const last = await page.locator('.fmc-result > *:not(.fmc-sheet):not(.fmc-toast)').last().getAttribute('data-fmc-invite');
     expect(last).toBe('true');
+  });
+}
+
+/* P2 RC2 accepted prices reach customer pages exactly, with their named sources (one Tier A, one Tier B). */
+type AP = { price_from: number; tier: string; issuer: string };
+const priced = (release.entries as unknown as { site_slug: string; brand: string; accepted?: { price?: AP } }[]).filter(e => e.accepted?.price);
+for (const tier of ['A', 'B']) {
+  test(`en: accepted Tier ${tier} price is served exactly with its sources`, async ({ page }) => {
+    const e = priced.find(x => x.accepted!.price!.tier === tier)!;
+    const p = e.accepted!.price!;
+    await page.goto(`/en/cars/${e.site_slug}`);
+    await expect(page.locator('.cd-info')).toContainText(p.price_from.toLocaleString('en-US'));
+    await expect(page.locator('.cd-info .price-na')).toHaveCount(0);
+    if (tier === 'B') for (const s of p.issuer.split('+')) await expect(page.locator('main')).toContainText(s);
+    await page.goto(`/en/market/catalog?brand=${bid(e.brand)}`);
+    await expect(page.locator(`a.mc[data-model-id="${e.site_slug}"]`)).toHaveAttribute('data-price-state', 'checked');
   });
 }

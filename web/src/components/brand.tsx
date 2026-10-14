@@ -3,10 +3,11 @@ import type { Locale } from '@/lib/i18n/config';
 import { dict } from '@/lib/i18n/dictionaries';
 import logos from '@data/registry/brand-logos.json';
 import type { BrandSummary } from '@/lib/vehicles/types';
+import { brandLogos } from '@/server/vehicles/read-model';
 
 type Logo = { title: string; path: string };
 const LOGOS = logos.brands as Record<string, Logo>;
-export const hasLogo = (id: string) => Boolean(LOGOS[id]);
+export const hasLogo = (id: string) => Boolean(LOGOS[id] || brandLogos[id]);
 export const brandName = (b: Pick<BrandSummary, 'en' | 'ar'>, locale: Locale) => (locale === 'ar' ? b.ar ?? b.en : b.en);
 
 /* Alphabetical brand order: English A–Z; Arabic by Arabic collation of the Arabic name (Latin-only names follow). */
@@ -15,11 +16,18 @@ export function sortBrands<T extends Pick<BrandSummary, 'en' | 'ar'>>(list: T[],
   return [...list].sort((a, b) => col.compare(brandName(a, locale), brandName(b, locale)) || a.en.localeCompare(b.en));
 }
 
-/* Verified brand mark (simple-icons, CC0 path data; see data/registry/brand-logos.json) in ink. Brands without a
-   verified mark show their name only: no guessed, recoloured or initial-letter logos. */
+/* Brand mark: the verified ink emblem (simple-icons, CC0; data/registry/brand-logos.json) where one exists, otherwise the
+   P2-accepted official logo file (catalogue serving release accepted.logo). Brands with neither show their name only:
+   no guessed, recoloured or initial-letter logos. */
 export function BrandMark({ id, label, size = 32 }: { id: string; label: string; size?: number }) {
   const logo = LOGOS[id];
-  if (!logo) return null;
+  if (!logo) {
+    const p2 = brandLogos[id];
+    if (!p2) return null;
+    const u = (w: number) => `/_next/image?url=${encodeURIComponent(p2.src)}&w=${w}&q=85`;
+    return <img className="brand-mark brand-mark-img" src={p2.src} srcSet={`${u(128)} 1x, ${u(256)} 2x`} alt={label} height={size} width={Math.round(size * 1.75)}
+      loading="lazy" decoding="async" data-brand-logo={id} data-logo-source="p2" />;
+  }
   return (
     <svg className="brand-mark" width={size} height={size} viewBox="0 0 24 24" role="img" aria-label={label} data-brand-logo={id}>
       <path d={logo.path} fill="currentColor" />

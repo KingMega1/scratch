@@ -4,18 +4,25 @@ import {readFileSync} from 'node:fs';
 import ts from 'typescript';
 import {buildCatalogue,loadInputs} from '../../scripts/build-catalogue-release.mjs';
 const [snap,u,cw]=loadInputs(), release=JSON.parse(readFileSync('data/registry/catalogue-serving.release.json','utf8'));
-test('release reproducible; all 283 exact on-sale U11 IDs with unique routes',()=>{
- assert.deepEqual(buildCatalogue(snap,u,cw),release);
+// The served release is P2's RC2 (canonical; P5 never regenerates it). Its website identity layer must stay identical
+// to the pinned P5 projection: same 283 IDs, routes, names, Arabic names, body, powertrains and exclusions.
+const IDKEYS=['p1_id','site_slug','brand','model','ar','on_sale','body','powertrains','registration','p2_evidence','evidence_state'];
+const pick=e=>Object.fromEntries(IDKEYS.map(k=>[k,e[k]]));
+test('RC2 keeps the pinned website identities; all 283 exact on-sale U11 IDs with unique routes',()=>{
+ const built=buildCatalogue(snap,u,cw);
+ assert.deepEqual(release.entries.map(pick),built.entries.map(pick));
+ assert.deepEqual(release.excluded,built.excluded);
  assert.equal(release.entries.length,283);
  assert.equal(new Set(release.entries.map(e=>e.p1_id)).size,283);
  assert.equal(new Set(release.entries.map(e=>e.site_slug)).size,283);
  assert.deepEqual(new Set(release.entries.map(e=>e.p1_id)),new Set(u.models.filter(m=>m.u===true).map(m=>m.id)));
 });
-test('21 P2 evidence rows preserved, 262 unknown-only, 3 off-sale exclusions',()=>{
- assert.deepEqual(release.counts,{catalogue:283,p2_evidence:21,identity_only:262,excluded:3});
- for(const e of release.entries.filter(e=>!e.p2_evidence)){
-   assert.equal(e.p2_model_id,null);assert.equal(e.price_status,'UNKNOWN');assert.equal(e.conflicts.length,0);
-   assert.ok(e.missing_evidence.includes('NO_VERIFIED_PRICE'));assert.ok(e.missing_evidence.includes('NO_VERIFIED_SPECS'));
+test('21 P2 S6 evidence rows, 262 identity rows, 3 off-sale exclusions; accepted fields only where P2 accepted them',()=>{
+ for(const k of ['catalogue','p2_evidence','identity_only','excluded'])assert.equal(release.counts[k],{catalogue:283,p2_evidence:21,identity_only:262,excluded:3}[k]);
+ for(const e of release.entries){
+   const p=e.accepted?.price;
+   if(p){assert.ok(p.price_from>0);assert.ok(['A','B'].includes(p.tier));assert.ok(!e.missing_evidence.includes('NO_ACCEPTED_PRICE'));}
+   else assert.ok(e.p2_evidence||e.missing_evidence.includes('NO_ACCEPTED_PRICE'),e.site_slug);
  }
  for(const e of release.excluded)assert.equal(u.models.find(m=>m.id===e.p1_id).u,false);
 });
@@ -47,11 +54,18 @@ test('actual website read-model: all 283 gettable, 283 recommendation bridges, 3
  for(const e of release.entries){
   assert.equal(V.p1DisplaySlug(e.p1_id),e.site_slug);
   const car=V.vehicles().get(e.site_slug);assert.ok(car);assert.equal(car.p1Id,e.p1_id);
-  if(!e.p2_evidence){assert.equal(car.priceFrom.value,null);assert.equal(car.priceFrom.sortValue,null);
-   assert.equal(car.priceFrom.state,'unknown');assert.deepEqual(car.specs,{});assert.deepEqual(car.trims,[]);
-   // images only from the verified media registry, never copied or inferred from U11
-   const vm=JSON.parse(readFileSync('data/registry/media-verified.json','utf8')).entries.find(x=>x.site_slug===car.id);
-   assert.equal(car.image?.src??null, vm?vm.src:null);}
+  const ap=e.accepted?.price;
+  if(ap){ // P2-accepted price is served exactly, as the official figure, with every named source and date
+   assert.equal(car.priceFrom.state,'checked');assert.equal(car.priceFrom.value,ap.price_from);assert.equal(car.priceFrom.sortValue,ap.price_from);
+   const served=[...car.trims,...car.otherCohorts.flatMap(c=>c.trims)].map(t=>t.official.value).sort((a,b)=>a-b);
+   assert.deepEqual(served,ap.trims.map(t=>t.price_egp).sort((a,b)=>a-b));
+   for(const t of car.trims)assert.ok(t.official.sources.length>=1&&t.official.sources.every(x=>x.name&&x.observedAt));
+  } else if(!e.p2_evidence){assert.equal(car.priceFrom.value,null);assert.equal(car.priceFrom.sortValue,null);
+   assert.equal(car.priceFrom.state,'unknown');assert.deepEqual(car.trims,[]);}
+  if(!e.p2_evidence)assert.deepEqual(car.specs,{});
+  // images: P2-accepted hero, else the P5 verified media registry, else none; never copied or inferred from U11
+  const vm=JSON.parse(readFileSync('data/registry/media-verified.json','utf8')).entries.find(x=>x.site_slug===car.id);
+  assert.equal(car.image?.src??null, e.accepted?.hero_image?.src ?? (vm?vm.src:null));
  }
  for(const e of release.excluded){assert.equal(V.vehicles().get(e.site_slug),null);assert.equal(V.p1DisplaySlug(e.p1_id),null);}
  assert.equal(V.vehicles().get('invented-model'),null);

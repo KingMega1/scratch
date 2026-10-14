@@ -434,10 +434,11 @@ table.t th.t-num { text-align: end; }
 .cd-media .no-photo img.icon { width: 160px; }
 .price-na { font-size: 14px; color: var(--ci-semantic-text-secondary); }
 .brand-grid { list-style: none; padding: 0; margin: 16px 0 0; }
-.brand-chip { display: grid; grid-template-columns: 36px 1fr; grid-template-rows: auto auto; column-gap: 10px; align-items: center; min-height: 64px; }
+.brand-chip { display: grid; grid-template-columns: 56px 1fr; grid-template-rows: auto auto; column-gap: 10px; align-items: center; min-height: 64px; }
 .brand-chip .brand-mark { grid-row: 1 / span 2; }
 .brand-chip:hover, .brand-chip:focus-visible { border-color: var(--ci-color-ink); }
 .brand-mark { width: 32px; height: 32px; color: var(--ci-color-ink); flex: none; }
+.brand-mark-img { width: 56px; object-fit: contain; object-position: center; }
 .brand-mark-text { display: grid; place-items: center; border: 1.5px solid var(--ci-color-line); border-radius: 50%; font-size: 12px; font-weight: 700; letter-spacing: .02em; color: var(--ci-semantic-text-secondary); }
 .catalog .cat-controls { display: grid; gap: 10px; margin-block: 8px 20px; }
 .catalog .filter-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
@@ -448,6 +449,8 @@ table.t th.t-num { text-align: end; }
 .cat-brand-head { display: flex; align-items: center; gap: 12px; margin-block-end: 12px; }
 .cat-brand-head h2 { margin: 0; font-size: 22px; }
 .cat-brand-head .brand-mark { width: 36px; height: 36px; }
+.cat-brand-head .brand-mark-img { width: 72px; }
+.brand-chip .brand-mark { justify-self: center; }
 .mc-grid { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; grid-template-columns: 1fr; }
 @media (min-width: 640px) { .mc-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .mc-grid { grid-template-columns: repeat(3, 1fr); } }

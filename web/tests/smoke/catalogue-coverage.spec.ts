@@ -19,7 +19,9 @@ for(const locale of ['en','ar']){
    }));
   }
   for(const e of release.excluded)expect((await request.get('/'+locale+'/cars/'+e.site_slug)).status()).toBe(404);
-  await page.goto('/'+locale+'/cars/alfa-romeo-giulia');
+  // a model with no P2-accepted price and no S6 evidence: explicit unknown, never a number
+  const unpriced=release.entries.find((e:any)=>!e.p2_evidence&&!e.accepted?.price&&!(e.accepted?.conflicts??[]).length);
+  await page.goto('/'+locale+'/cars/'+unpriced.site_slug);
   await expect(page.locator('.cd-info .price-na, .cd-info .state-unknown').first()).toBeVisible();
   await expect(page.locator('.cd-info .bracket')).toHaveCount(0);
   await expect(page.locator('#specs-h').locator('..')).toContainText(locale==='ar'?'المواصفات لم يتم التحقق منها بعد.':'Specifications have not been verified yet.');

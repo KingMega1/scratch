@@ -22,6 +22,7 @@ export interface VehicleReadModel {
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type Raw = any;
 
+const brandId = (s: string) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const SOURCE_NAME: Record<string, string> = { contactcars: 'ContactCars', egycar: 'EgyCar', hatla2ee: 'Hatla2ee' };
 const srcName = (s: string) => SOURCE_NAME[s?.toLowerCase?.()] ?? s;
 const PT: Record<string, Powertrain> = { ICE: 'ice', Hybrid: 'hybrid', HEV: 'hybrid', PHEV: 'phev', REEV: 'reev', BEV: 'ev' };
@@ -101,6 +102,51 @@ export function p2Hero(e: Raw): PublicImage | null {
   return { src: h.src, credit: h.credit ?? h.issuer ?? null, sourcePage: h.source_url ?? h.source_page ?? null, flags: [] as AssetFlag[] };
 }
 
+/* P2 accepted price (RC2 accepted.price). Tier A = official Egypt OEM/importer source; Tier B = the same official EGP list
+   price reported by >=2 independent sites (P2 rule PB-1). Shown as the official figure with every named source and its
+   date; nothing is averaged, inferred or carried over from another model. */
+const PRICE_GAPS = new Set(['NO_VERIFIED_PRICE', 'NO_ACCEPTED_PRICE', 'NO_OFFICIAL_PRICE', 'SINGLE_SOURCE_MODEL', 'FROM_PRICE_IN_CONFLICT', 'PRICE_RULE_NOT_MET', 'UNRESOLVED_TRIMS_IN_PRICED_COHORT']);
+function issuerNames(issuer: string, brand: string): string[] {
+  return issuer.split('+').map(x => x.trim()).filter(Boolean).map(x => (/_eg_web$/i.test(x) ? `${brand} Egypt` : srcName(x)));
+}
+function p2Official(price: number, issuer: string, evidence: string, asOf: string, eff: string | null, basis: string, brand: string): OfficialPrice {
+  const urls = (evidence || '').split('|').map(u => u.trim()).filter(u => /^https?:\/\//.test(u));
+  const names = issuerNames(issuer, brand);
+  const raw = issuer.split('+').map(x => x.trim().toLowerCase().replace(/_eg_web$/, '').replace(/[^a-z0-9]/g, ''));
+  const sources = names.map((name, i) => ({ name, url: urls.find(u => raw[i] && u.toLowerCase().replace(/[^a-z0-9]/g, '').includes(raw[i])) ?? urls[0] ?? null,
+    observedAt: asOf, effectiveDate: basis === 'SOURCE_STATED' ? eff : null }));
+  return { state: 'checked', value: price, min: null, max: null, values: [], agreedBySources: names.length, sources };
+}
+export function p2Price(e: Raw): { priceFrom: PublicCar['priceFrom']; trims: PublicTrim[]; otherCohorts: PublicCar['otherCohorts']; asOf: string } | null {
+  const p = e?.accepted?.price;
+  if (!p || typeof p.price_from !== 'number' || p.price_from <= 0) return null;
+  const toTrim = (t: Raw): PublicTrim => ({ key: `${t.model_year ?? ''}-${t.label}`, label: String(t.label), modelYear: t.model_year ?? null,
+    official: p2Official(t.price_egp, t.issuer, t.evidence_url, t.as_of, t.effective_date ?? null, t.date_basis, e.brand), market: null });
+  const all: PublicTrim[] = (p.trims ?? []).filter((t: Raw) => typeof t.price_egp === 'number').map(toTrim);
+  const years = [...new Set(all.map(t => t.modelYear))].sort((a, b) => (b ?? 0) - (a ?? 0));
+  const latest = p.model_year ?? years[0] ?? null;
+  return {
+    priceFrom: { state: 'checked', value: p.price_from, min: null, max: null, sortValue: p.price_from, modelYear: p.model_year ?? null },
+    trims: all.filter(t => t.modelYear === latest).sort(trimSort),
+    otherCohorts: years.filter(y => y !== latest).map(y => ({ modelYear: y, trims: all.filter(t => t.modelYear === y).sort(trimSort) })),
+    asOf: p.as_of,
+  };
+}
+
+/* P2 accepted brand logos (RC2 accepted.logo), same-origin files only. Keyed by the website brand id.
+   White-on-transparent marks (made for dark backgrounds) are invisible on light tiles and may not be recoloured (Brand V2),
+   so they are not served until P2 supplies a dark/colour variant (tests/unit/brand.test.mjs keeps this list exact). */
+export const LIGHT_ONLY_LOGOS = new Set(['/media/p2/brands/byd.png', '/media/p2/brands/nissan.png']);
+export function p2Logos(entries: Raw[]): Record<string, { src: string; credit: string | null }> {
+  const out: Record<string, { src: string; credit: string | null }> = {};
+  for (const e of entries) {
+    const l = e?.accepted?.logo, id = brandId(e.brand);
+    if (out[id] || !l || typeof l.src !== 'string' || LIGHT_ONLY_LOGOS.has(l.src) || !/^\/media\/[\w./-]+\.(png|svg|webp)$/i.test(l.src) || l.src.includes('..')) continue;
+    out[id] = { src: l.src, credit: l.credit ?? null };
+  }
+  return out;
+}
+
 function shape(m: Raw): PublicCar {
   const cohorts: Raw[] = m.price?.cohorts ?? [];
   const latestYear = m.price?.latest_priced_cohort ?? null;
@@ -139,8 +185,6 @@ function shape(m: Raw): PublicCar {
   };
 }
 
-const brandId = (s: string) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-
 class JsonSnapshotReadModel implements VehicleReadModel {
   private cars: PublicCar[];
   private byId: Map<string, PublicCar>;
@@ -160,6 +204,14 @@ class JsonSnapshotReadModel implements VehicleReadModel {
       car.evidenceState = e.evidence_state;
       const hero = p2Hero(e as Raw);
       if (hero) car.image = hero; // P2-accepted hero (catalogue serving release) takes precedence over the P5 media registry
+      const pp = p2Price(e as Raw);
+      if (pp) {
+        // P2-accepted price is canonical: it replaces the S6 view figure and clears price gaps that no longer apply.
+        car.priceFrom = pp.priceFrom; car.trims = pp.trims; car.otherCohorts = pp.otherCohorts; car.lastObserved = pp.asOf;
+        car.gaps = car.gaps.filter(g => !PRICE_GAPS.has(g));
+      } else if (((e as Raw).accepted?.conflicts ?? []).length && car.priceFrom.state === 'unknown') {
+        car.gaps = [...new Set([...car.gaps, 'FROM_PRICE_IN_CONFLICT'])]; // sources disagree: say so, show no number
+      }
       if (raw) {
         // S6 registrations say only "ICE"; name the fuel only when the pinned U11 identity states it unambiguously.
         const fuels = ['petrol', 'diesel'].filter(f => (e.powertrains as string[]).includes(f)) as Powertrain[];
@@ -205,4 +257,5 @@ export function vehicles(): VehicleReadModel {
 const p1DisplaySlugs = new Map(serving.entries.map(row => [row.p1_id, row.site_slug]));
 export const p1DisplaySlug = (p1Id: string): string | null => p1DisplaySlugs.get(p1Id) ?? null;
 export const brandSlug = brandId;
+export const brandLogos = p2Logos(serving.entries as Raw[]);
 export type { PriceState };

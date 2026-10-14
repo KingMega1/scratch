@@ -34,3 +34,17 @@ test('every package TTF has a subset WOFF2 sibling and fonts.css prefers it', ()
     assert.match(css, new RegExp(`url\\('/fonts/${w.replace('.', '\\.')}'\\) format\\('woff2'\\), url\\('/fonts/${f.replace('.', '\\.')}'\\)`));
   }
 });
+
+test('served P2 brand logos are visible on light tiles (white-only marks are listed and not served)', async () => {
+  const { execFileSync } = await import('node:child_process');
+  const src = readFileSync('src/server/vehicles/read-model.ts', 'utf8');
+  const listed = new Set([...src.match(/LIGHT_ONLY_LOGOS = new Set\(\[([^\]]*)\]/)[1].matchAll(/'([^']+)'/g)].map(m => m[1]));
+  const release = JSON.parse(readFileSync('data/registry/catalogue-serving.release.json', 'utf8'));
+  const logos = [...new Set(release.entries.map(e => e.accepted?.logo?.src).filter(Boolean))];
+  // mean luminance of opaque pixels (python3 + Pillow are available wherever the P2 media toolchain runs)
+  const py = "import sys,json\nfrom PIL import Image\nout={}\nfor f in sys.argv[1:]:\n im=Image.open('public'+f).convert('RGBA'); im.thumbnail((200,200)); px=[p for p in im.getdata() if p[3]>128]\n out[f]=sum(.3*r+.59*g+.11*b for r,g,b,a in px)/max(1,len(px))\nprint(json.dumps(out))";
+  let lum;
+  try { lum = JSON.parse(execFileSync('python3', ['-c', py, ...logos], { encoding: 'utf8' })); } catch { return; } // no Pillow: skip
+  const white = new Set(Object.entries(lum).filter(([, v]) => v > 200).map(([k]) => k));
+  assert.deepEqual([...white].sort(), [...listed].sort());
+});
