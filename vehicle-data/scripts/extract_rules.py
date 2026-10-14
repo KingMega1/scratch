@@ -14,9 +14,10 @@ YRS = r"(\d{1,2}|one|two|three|four|five|six|seven|eight|ten)[\s-]*(?:\(\d+\)\s*
 KM = r"(\d{1,3}(?:[,.\s]\d{3})+|\d{2,7}|1\s*million|1\s*m)\s*(?:km|kilomet(?:er|re)s?|k\.m)"
 W_EN = [re.compile(YRS + r"[^.\n]{0,40}?" + KM, re.I), re.compile(KM + r"[^.\n]{0,40}?" + YRS, re.I)]
 W_EN_YONLY = re.compile(YRS + r"[^.\n]{0,25}warrant|warrant[^.\n]{0,40}?" + YRS, re.I)
-AR_Y = r"(\d{1,2}|سنتين|ثلاث|خمس|سبع|ست|أربع|اربع|عشر)\s*(?:سنوات|سنة|سنين|أعوام|اعوام|عام)?"
+AR_Y = r"(\d{1,2}\s*(?=سنوات|سنة|سنين|أعوام|اعوام|عام)|سنتين|ثلاث(?=\s*سنوات)|خمس(?=\s*سنوات)|سبع(?=\s*سنوات)|ست(?=\s*سنوات)|أربع(?=\s*سنوات)|اربع(?=\s*سنوات)|عشر(?=\s*سنوات))\s*(?:سنوات|سنة|سنين|أعوام|اعوام|عام)?"
 AR_KM = r"(\d{1,3}(?:[,.\s]\d{3})+|\d{2,7})\s*(?:ألف\s*)?(?:كم|كيلو)"
 W_AR = [re.compile(AR_Y + r"[^.\n]{0,40}?" + AR_KM), re.compile(AR_KM + r"[^.\n]{0,40}?" + AR_Y)]
+MONTHS = re.compile(r"(\d{2,3})\s*(?:months?|شهور|شهر[اًا]*)[^\n]{0,60}?(\d{1,3}(?:[,.]\d{3})+|\d{4,7})\s*(?:km|كيلو|كم)", re.I)
 AR_WORD = {"سنتين": 2, "ثلاث": 3, "أربع": 4, "اربع": 4, "خمس": 5, "ست": 6, "سبع": 7, "عشر": 10}
 OWNER_PROOF = re.compile(r"egypt|مصر|\.eg\b", re.I)
 SPEC_FIELDS = [  # (field, unit, label regex)  -- only labels that are unambiguous
@@ -83,6 +84,7 @@ def url_segments(u):
         out.append(base)
         out.append(re.split(r"[-_ ]*(?:brochure|catalog)", s, flags=re.I)[0])            # "Eclipse Cross Brochure 3 FEB"
         out.append(re.sub(r"[-_ ]+M\d\d$", "", base))                                    # "Xpander M27"
+        out.append(re.sub(r"[-_ ]+(ckd|cbu)$", "", base, flags=re.I))                     # "Tiggo_4_Pro-CKD" (a *-ckd p1_id still wins: longest token)
         if "deepal" in u.lower():  # Deepal S05/S07 are sold as BEV and REEV under one model name
             out.append(re.sub(r"[_-](bev|reev)([_-].*)?$", "", base, flags=re.I))      # "Deepal_s05_BEV_1_x"
         out.append(re.sub(r"-(ljf|p\d{3,}|xhn)(-.*)?$", "", s, flags=re.I))               # renault.com.eg "taliant-ljf-ph1"
@@ -96,7 +98,7 @@ def num(s):
 
 
 def yrs(s):
-    s = s.lower()
+    s = s.lower().strip()
     return WORD_NUM.get(s) or AR_WORD.get(s) or int(s)
 
 
@@ -120,10 +122,19 @@ def _match_km(line, tail=""):
     return None
 
 
+def _match_months(line):
+    m = MONTHS.search(line)
+    if m and int(m.group(1)) % 12 == 0 and not re.search(r"service|package|maintenance|صيانة", line[m.start():m.end()], re.I):
+        y, k = int(m.group(1)) // 12, num(m.group(2))
+        if 1 <= y <= 10 and 10_000 <= k <= 1_000_000:
+            return y, k
+    return None
+
+
 def warranty_hits(text):
     """(years, km|'', quote) per distinct statement. A statement may span up to 3 rendered lines;
     extended (paid) warranty lines are skipped."""
-    t = text.translate(AR_DIG)
+    t = text.translate(AR_DIG).replace("ـ", "")  # Arabic digits, tatweel
     raw = [" ".join(x.split()) for x in re.split(r"[\n•|]+", t) if x.strip()]
     out, seen = [], set()
     for i in range(len(raw)):
@@ -144,6 +155,10 @@ def warranty_hits(text):
             if yk:
                 hit = (yk[0], yk[1], ctx[:300])
                 break
+            yk = _match_months(line) if re.search(r"warrant|ضمان", line, re.I) else None
+            if yk:
+                hit = (yk[0], yk[1], line[:300])
+                break
         if not hit and re.search(r"warrant|ضمان", raw[i], re.I) and not re.search(r"extended|تمديد|ممتد", raw[i], re.I):
             m = W_EN_YONLY.search(raw[i])
             if m:
@@ -152,18 +167,31 @@ def warranty_hits(text):
                     hit = (y, "", raw[i][:300])
         if hit and (hit[0], hit[1]) not in seen:
             seen.add((hit[0], hit[1]))
-            out.append(hit)
+            # component from the clause holding the matched figure, then from a "heading:" line just above
+            kstr = [f"{hit[1]:,}", str(hit[1]), f"{hit[1] // 1000}"] if hit[1] != "" else [str(hit[0])]
+            clauses = re.split(r"\+|،|;| and | AND ", hit[2])
+            clause = next((c for c in clauses if any(k in c for k in kstr)), hit[2])
+            comp = component(clause)
+            if comp == "vehicle (as stated)" and i and len(raw[i - 1]) < 40 and raw[i - 1].rstrip().endswith(":"):
+                comp = component(raw[i - 1])
+            out.append((hit[0], hit[1], hit[2], comp))
     # a years-only statement duplicated by a years+km statement is dropped
-    return [h for h in out if h[1] != "" or not any(o[0] == h[0] and o[1] != "" for o in out)]
+    return [h for h in out if h[1] != "" or not any(o[0] == h[0] and o[1] != "" for o in out)]  # (y, km, quote, component)
 
 
 def component(q):
+    if re.search(r"commercial|taxi|تجارية|تاكس", q, re.I):
+        return "commercial use"
     if re.search(r"batter|بطاري", q, re.I):
         return "battery"
     if re.search(r"engine|powertrain|motor|المحرك", q, re.I):
         return "engine/powertrain"
-    if re.search(r"paint|corrosion|rust|الصدأ|الدهان", q, re.I):
+    if re.search(r"transmission|gearbox|ناقل|الفتيس", q, re.I):
+        return "transmission"
+    if re.search(r"paint|corrosion|rust|الصدأ|الدهان|الطلاء", q, re.I):
         return "paint/corrosion"
+    if re.search(r"cassette|audio|الكاسيت|الأقراص|تجميع|assembly|قطع ?الغيار|قطعة ?غيار|spare part", q, re.I):
+        return "other (see quote)"
     return "vehicle (as stated)"
 
 
@@ -222,8 +250,12 @@ def text_attribute(text, by_brand, brand):
         n = len(re.findall(r"(?<![A-Za-z0-9])" + re.escape(r["model"]) + r"(?![A-Za-z0-9])", full, re.I))
         if n:
             counts[r["p1_id"]] = n
-    hits = [k for k, v in counts.items() if v >= 3]
-    return hits[0] if len(hits) == 1 and len(counts) == 1 else None
+    if len(counts) != 1:
+        return None
+    pid, n = next(iter(counts.items()))
+    model = next(r["model"] for r in by_brand[brand] if r["p1_id"] == pid)
+    title = (text[0] if text else "")[:120]
+    return pid if n >= 3 or re.search(r"(?<![A-Za-z0-9])" + re.escape(model) + r"(?![A-Za-z0-9])", title, re.I) else None
 
 
 def nissan_specs(p):
@@ -280,9 +312,9 @@ def run(out, pages, pdfs, alloc):
         rows = by_brand.get(p["brand"], [])
         pid = attribute(url_segments(p["final_url"]), rows)
         iss = issuer_for(h, p["brand"])
-        for y, k, q in warranty_hits("\n".join(p["lines"])):
+        for y, k, q, comp in warranty_hits("\n".join(p["lines"])):
             if pid and "warranty" in want.get(pid, ""):
-                W.append(dict(p1_id=pid, years=y, km=k, scope="model page; " + component(q), source_url=p["final_url"],
+                W.append(dict(p1_id=pid, years=y, km=k, scope="model page; " + comp, source_url=p["final_url"],
                               issuer=iss, retrieved_at=p["retrieved_at"], quote=q))
             elif not pid:
                 BS.append(dict(brand=p["brand"], kind="warranty", years=y, km=k, source_url=p["final_url"],
@@ -340,8 +372,8 @@ def run(out, pages, pdfs, alloc):
                              anchor=d.get("anchor", ""), attribution="file name" if attribute(segs, rows) == pid else "source page/text"))
         if (is_brochure or is_warranty_doc) and "warranty" in want.get(pid, ""):
             kind = "warranty booklet" if is_warranty_doc else "brochure"
-            for y, k, q in warranty_hits("\n".join(text)):
-                W.append(dict(p1_id=pid, years=y, km=k, scope=f"{kind}; " + component(q), source_url=d["final_url"],
+            for y, k, q, comp in warranty_hits("\n".join(text)):
+                W.append(dict(p1_id=pid, years=y, km=k, scope=f"{kind}; " + comp, source_url=d["final_url"],
                               issuer=iss, retrieved_at=d["retrieved_at"], quote=q))
         if is_brochure and "specs" in want.get(pid, ""):
             for t in text:
