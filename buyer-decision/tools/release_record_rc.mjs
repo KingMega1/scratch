@@ -13,9 +13,10 @@ const h = b => crypto.createHash('sha256').update(b).digest('hex');
 const at = (f, commit = sc) => { const b = blob(commit, f); return { path: `buyer-decision/${f}`, sha256: h(b), bytes: b.length }; };
 const T = require(path.join(ROOT, 'transport/reco.js'));
 const man = JSON.parse(blob(sc, `${DS}/manifest.json`));
-const T1 = 'dcbe9dbaa2f93f99dfb162745b11ef315e52a5f6';
-const changed = ['app/engine.js', 'app/brief.js', 'app/i18n.js', 'app/app.js', 'app/present.js', 'app/redact.js', 'app/track.js', 'transport/reco.js']
-  .filter(f => { try { return at(f).sha256 !== at(f, T1).sha256; } catch { return true; } });
+// compare against the production record (P1-RELEASE-T1), not a commit: T1 files span dcbe9db + the transport commits
+const T1 = JSON.parse(fs.readFileSync(path.join(ROOT, 'release/P1-RELEASE-T1.json'), 'utf8'));
+const changed = Object.values(T1.files).filter(f => f.path.startsWith('buyer-decision/app/') || f.path.startsWith('buyer-decision/transport/'))
+  .map(f => f.path.replace('buyer-decision/', '')).filter(f => fs.existsSync(path.join(ROOT, f)) && at(f).sha256 !== T1.files[Object.keys(T1.files).find(k => T1.files[k].path === 'buyer-decision/' + f)].sha256);
 const rec = {
   record: 'P1-RELEASE-U12C2-RC1', status: 'CANDIDATE — not released', created: new Date().toISOString().slice(0, 10), owner: 'P1', task: 'P1-READINESS-02',
   repo: 'KingMega1/scratch', branch: 'claude/carindex-buyer-decision-slice-applo4', source_commit: git('rev-parse', sc),

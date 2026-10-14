@@ -6,7 +6,7 @@
  "task": "P1-READINESS-02",
  "repo": "KingMega1/scratch",
  "branch": "claude/carindex-buyer-decision-slice-applo4",
- "source_commit": "39be116cb919efe07f7b05f513df87763d3d40b9",
+ "source_commit": "edbd75d82c6b5e650bd2317e6d0951c630e21cac",
  "production_binding_unchanged": "P1-RELEASE-T1 (engine E6-2026-09-28, U11-2026-09-26) stays bound until this candidate is accepted",
  "release_gates_open": [
   "P3 approval of DRAFT copy keys in app/i18n.js (conflict_h, conflict.unknown_price, conflict.unknown_size, conflict.scope, sl_out.unknown_size, sl_out.scope) — see datasets/U12C2-RC1-2026-10-14/P3-COPY-REQUEST.md",
@@ -54,9 +54,7 @@
  "files_changed_vs_T1": [
   "app/engine.js",
   "app/brief.js",
-  "app/i18n.js",
-  "app/present.js",
-  "transport/reco.js"
+  "app/i18n.js"
  ],
  "files": {
   "engine": {
