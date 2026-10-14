@@ -1,0 +1,12 @@
+{
+ "milestone": "M01",
+ "lane": "claude_cloud_extraction",
+ "date": "2026-10-14",
+ "models_processed": 20,
+ "results": {"SUCCESS": 2, "SUCCESS_IDENTITY_FLAG": 1, "PARTIAL_IDENTITY_HOLD": 1, "PARTIAL": 1, "FAIL_IDENTITY_QUESTION": 1, "FAIL": 14},
+ "candidates": {"specs": 48, "warranty": 5, "brochure": 3, "brand_statements": 1, "conflicts": 10},
+ "quotes_verified": 56,
+ "evidence_reused": "snapshots/X_2026-10-14_38522002564 (batch 1, no re-download)",
+ "new_harvest": {"snapshot": "snapshots/X_2026-10-14_38525999365", "github_run": 38525999365, "requests": 10, "http_200": 8, "pdfs": 2, "seconds": 18, "billable_ms": 0},
+ "llm_calls_in_pipeline": 0
+}
