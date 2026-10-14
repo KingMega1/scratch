@@ -23,14 +23,14 @@
       "price_source_dated": 153,
       "market_status_official": 37,
       "specs_accepted": 199,
-      "warranty_accepted": 95,
+      "warranty_accepted": 100,
       "brochure_accepted": 81,
       "hero_accepted": 53,
       "hero_accepted_hq": 49,
       "hero_limited_archive": 149,
       "gallery_models": 46,
       "logo_accepted": 248,
-      "fully_enriched": 28
+      "fully_enriched": 32
     }
   },
   "relation": "Website on-sale set equals pinned U11 on-sale set (283). 'accepted' carries only P2-ACCEPTED values; absent means UNKNOWN. P1 recommendation semantics unchanged.",
@@ -15726,6 +15726,15 @@
               "source": "https://www.contactcars.com/en/new-cars/deepal-g318/719d5f1cd642 | https://www.contactcars.com/en/new-cars/deepal-g318/85b6fa3af309"
             }
           ],
+          "warranty_battery": [
+            {
+              "value": "8 years / 250000 km",
+              "unit": "",
+              "applicability": "official brand warranty policy",
+              "issuer": "www.deepal-eg.com",
+              "source": "https://www.deepal-eg.com/en/maintenance/"
+            }
+          ],
           "wheelbase_mm": [
             {
               "value": "2880",
@@ -15950,6 +15959,15 @@
               "source": "https://www.contactcars.com/en/new-cars/deepal-s05/0ce4d3799765 | https://www.contactcars.com/en/new-cars/deepal-s05/904e96d0417e"
             }
           ],
+          "warranty_battery": [
+            {
+              "value": "8 years / 250000 km",
+              "unit": "",
+              "applicability": "official brand warranty policy",
+              "issuer": "www.deepal-eg.com",
+              "source": "https://www.deepal-eg.com/en/maintenance/"
+            }
+          ],
           "wheelbase_mm": [
             {
               "value": "2880",
@@ -16163,6 +16181,15 @@
               "applicability": "market trim pages: BEV, REEV",
               "issuer": "ContactCars+Hatla2ee",
               "source": "https://www.contactcars.com/en/new-cars/deepal-s07/60c7541fc4d1 | https://www.contactcars.com/en/new-cars/deepal-s07/97aeea524a2f"
+            }
+          ],
+          "warranty_battery": [
+            {
+              "value": "8 years / 250000 km",
+              "unit": "",
+              "applicability": "official brand warranty policy",
+              "issuer": "www.deepal-eg.com",
+              "source": "https://www.deepal-eg.com/en/maintenance/"
             }
           ],
           "wheelbase_mm": [
@@ -22086,7 +22113,9 @@
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
-        "conflicts": []
+        "conflicts": [
+          "warranty: brand policy 5 years / 150000 km (www.geely.com.eg) differs from model-specific 7 years / 250000 km"
+        ]
       }
     },
     {
@@ -26594,7 +26623,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -26744,7 +26772,15 @@
             }
           ]
         },
-        "warranty": null,
+        "warranty": [
+          {
+            "value": "6 years / 150000 km",
+            "unit": "",
+            "applicability": "official brand warranty policy",
+            "issuer": "jetouregypt.com",
+            "source": "https://jetouregypt.com/after-sales-services/warranty/"
+          }
+        ],
         "brochures": [
           {
             "drive_id": null,
@@ -37862,7 +37898,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -38128,7 +38163,15 @@
             }
           ]
         },
-        "warranty": null,
+        "warranty": [
+          {
+            "value": "5 years / 150000 km",
+            "unit": "",
+            "applicability": "official brand warranty policy",
+            "issuer": "en.nissan.com.eg",
+            "source": "https://en.nissan.com.eg/owners/peace-of-mind/warranty.html"
+          }
+        ],
         "brochures": [
           {
             "drive_id": null,
@@ -38337,7 +38380,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -38786,7 +38828,15 @@
             }
           ]
         },
-        "warranty": null,
+        "warranty": [
+          {
+            "value": "5 years / 150000 km",
+            "unit": "",
+            "applicability": "official brand warranty policy",
+            "issuer": "en.nissan.com.eg",
+            "source": "https://en.nissan.com.eg/owners/peace-of-mind/warranty.html"
+          }
+        ],
         "brochures": [
           {
             "drive_id": null,
@@ -38905,7 +38955,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -39057,7 +39106,15 @@
             }
           ]
         },
-        "warranty": null,
+        "warranty": [
+          {
+            "value": "5 years / 150000 km",
+            "unit": "",
+            "applicability": "official brand warranty policy",
+            "issuer": "en.nissan.com.eg",
+            "source": "https://en.nissan.com.eg/owners/peace-of-mind/warranty.html"
+          }
+        ],
         "brochures": [
           {
             "drive_id": null,
@@ -39188,7 +39245,6 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -39353,7 +39409,15 @@
             }
           ]
         },
-        "warranty": null,
+        "warranty": [
+          {
+            "value": "5 years / 150000 km",
+            "unit": "",
+            "applicability": "official brand warranty policy",
+            "issuer": "en.nissan.com.eg",
+            "source": "https://en.nissan.com.eg/owners/peace-of-mind/warranty.html"
+          }
+        ],
         "brochures": [
           {
             "drive_id": null,
@@ -52090,7 +52154,15 @@
             }
           ]
         },
-        "warranty": null,
+        "warranty": [
+          {
+            "value": "6 years / 150000 km",
+            "unit": "",
+            "applicability": "official brand warranty policy",
+            "issuer": "jetouregypt.com",
+            "source": "https://jetouregypt.com/after-sales-services/warranty/"
+          }
+        ],
         "brochures": [],
         "logo": {
           "src": "/media/p2/brands/jetour.png",
@@ -52110,7 +52182,6 @@
         "NO_ACCEPTED_PRICE",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ]
     },
@@ -59438,7 +59509,9 @@
         },
         "hero_image": null,
         "gallery": [],
-        "conflicts": []
+        "conflicts": [
+          "warranty: brand policy 5 years / 150000 km (www.geely.com.eg) differs from model-specific 6 years / 200000 km"
+        ]
       },
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",

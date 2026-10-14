@@ -1,7 +1,7 @@
 {
  "counts": {
   "brochure_accepted": 81,
-  "fully_enriched": 28,
+  "fully_enriched": 32,
   "gallery_models": 46,
   "hero_accepted": 53,
   "hero_accepted_hq": 49,
@@ -14,11 +14,11 @@
   "price_source_dated": 153,
   "price_tier_a": 25,
   "specs_accepted": 199,
-  "warranty_accepted": 95
+  "warranty_accepted": 100
  },
  "counts_market_universe": {
   "brochure_accepted": 82,
-  "fully_enriched": 28,
+  "fully_enriched": 32,
   "gallery_models": 46,
   "hero_accepted": 53,
   "hero_accepted_hq": 49,
@@ -31,7 +31,7 @@
   "price_source_dated": 176,
   "price_tier_a": 25,
   "specs_accepted": 241,
-  "warranty_accepted": 115
+  "warranty_accepted": 121
  },
  "generated_as_of": "2026-10-14",
  "inputs": {
@@ -44,6 +44,7 @@
   "inputs/u11/official/O4_2026-10-12_38371221478.run_report.json": "9954ffb392ab19717ef5eeed6844861a9c553b935e11bcf4179d4b511b72b3f2",
   "inputs/u11/official/X1_2026-10-14_38522002564.official_observations.csv": "e7e079230b6744fbc44edbf04eef52ad1e15ed846229702fb30b498657c878bf",
   "inputs/u11/official/X2_2026-10-14_batch2-M01.official_observations.csv": "d84244aa71ffe2d0cf42c7668910565fd65d2cf572dd863fa8de689fc919d211",
+  "inputs/u11/official/X3_2026-10-14_brand-warranty-policy.official_observations.csv": "3cd1dde49cc19d52d29b42ee6aaa2d586c36da8fbeeb6d9a16c6202dc55a31d8",
   "inputs/u11/official/official_sources.json": "0c178a99eec7442667dce758a0585c8a263b1dd226b53388eeba9344ccdc278d",
   "inputs/u11/p11_universe.json": "f73fbab71ea320a41d6277375eafaa47946ba7be6014c97350d12fe58a6684ff",
   "inputs/u11/s0_urls.csv": "0fe3f54676ca73bfc6e00ccf854f67194dbced9b8cae3cf44a8191b826a2c24f",
@@ -15028,6 +15029,15 @@
       "value": "Automatic"
      }
     ],
+    "warranty_battery": [
+     {
+      "applicability": "official brand warranty policy",
+      "issuer": "www.deepal-eg.com",
+      "source": "https://www.deepal-eg.com/en/maintenance/",
+      "unit": "",
+      "value": "8 years / 250000 km"
+     }
+    ],
     "wheelbase_mm": [
      {
       "applicability": "G318 REEV 4WD (Adventure and Premium)",
@@ -15255,6 +15265,15 @@
       "value": "Automatic"
      }
     ],
+    "warranty_battery": [
+     {
+      "applicability": "official brand warranty policy",
+      "issuer": "www.deepal-eg.com",
+      "source": "https://www.deepal-eg.com/en/maintenance/",
+      "unit": "",
+      "value": "8 years / 250000 km"
+     }
+    ],
     "wheelbase_mm": [
      {
       "applicability": "market trim pages: BEV, REEV",
@@ -15458,6 +15477,15 @@
       "source": "https://www.contactcars.com/en/new-cars/deepal-s07/60c7541fc4d1 | https://www.contactcars.com/en/new-cars/deepal-s07/97aeea524a2f",
       "unit": "",
       "value": "Automatic"
+     }
+    ],
+    "warranty_battery": [
+     {
+      "applicability": "official brand warranty policy",
+      "issuer": "www.deepal-eg.com",
+      "source": "https://www.deepal-eg.com/en/maintenance/",
+      "unit": "",
+      "value": "8 years / 250000 km"
      }
     ],
     "wheelbase_mm": [
@@ -21073,7 +21101,9 @@
      "url": "https://www.geely.com.eg/uploads/brochures/STARRAY-Brochure.pdf"
     }
    ],
-   "conflicts": [],
+   "conflicts": [
+    "warranty: brand policy 5 years / 150000 km (www.geely.com.eg) differs from model-specific 7 years / 250000 km"
+   ],
    "gallery": [],
    "gaps": [
     "NO_ACCEPTED_PRICE",
@@ -25371,7 +25401,6 @@
     }
    ],
    "gaps": [
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -25557,7 +25586,15 @@
    },
    "specs_accepted": true,
    "universe": "U11_283",
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "official brand warranty policy",
+     "issuer": "jetouregypt.com",
+     "source": "https://jetouregypt.com/after-sales-services/warranty/",
+     "unit": "",
+     "value": "6 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Jetour",
@@ -36146,7 +36183,6 @@
     }
    ],
    "gaps": [
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -36448,7 +36484,15 @@
    },
    "specs_accepted": true,
    "universe": "U11_283",
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "official brand warranty policy",
+     "issuer": "en.nissan.com.eg",
+     "source": "https://en.nissan.com.eg/owners/peace-of-mind/warranty.html",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Nissan",
@@ -36519,7 +36563,6 @@
     }
    ],
    "gaps": [
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -37004,7 +37047,15 @@
    },
    "specs_accepted": true,
    "universe": "U11_283",
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "official brand warranty policy",
+     "issuer": "en.nissan.com.eg",
+     "source": "https://en.nissan.com.eg/owners/peace-of-mind/warranty.html",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Nissan",
@@ -37086,7 +37137,6 @@
     }
    ],
    "gaps": [
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -37274,7 +37324,15 @@
    },
    "specs_accepted": true,
    "universe": "U11_283",
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "official brand warranty policy",
+     "issuer": "en.nissan.com.eg",
+     "source": "https://en.nissan.com.eg/owners/peace-of-mind/warranty.html",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Nissan",
@@ -37331,7 +37389,6 @@
    ],
    "gaps": [
     "NO_VERIFIED_HERO_IMAGE",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -37520,7 +37577,15 @@
    },
    "specs_accepted": true,
    "universe": "U11_283",
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "official brand warranty policy",
+     "issuer": "en.nissan.com.eg",
+     "source": "https://en.nissan.com.eg/owners/peace-of-mind/warranty.html",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Nissan",
@@ -49497,7 +49562,6 @@
     "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -49615,7 +49679,15 @@
    },
    "specs_accepted": true,
    "universe": "P2_SPLIT",
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "official brand warranty policy",
+     "issuer": "jetouregypt.com",
+     "source": "https://jetouregypt.com/after-sales-services/warranty/",
+     "unit": "",
+     "value": "6 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "BYD",
@@ -56382,7 +56454,9 @@
   {
    "brand": "Geely",
    "brochures": [],
-   "conflicts": [],
+   "conflicts": [
+    "warranty: brand policy 5 years / 150000 km (www.geely.com.eg) differs from model-specific 6 years / 200000 km"
+   ],
    "gallery": [],
    "gaps": [
     "NO_ACCEPTED_PRICE",

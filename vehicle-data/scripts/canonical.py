@@ -645,6 +645,14 @@ def main():
             specs.setdefault(x["field"], []).append(dict(value=x["value"], unit=x["unit"], applicability=x["applicability"],
                                                          issuer=x["issuer"], source=x["source"]))
         warranty = specs.pop("warranty", None)
+        wpol = [w for w in (warranty or []) if w["applicability"] == "official brand warranty policy"]
+        wown = [w for w in (warranty or []) if w["applicability"] != "official brand warranty policy"]
+        policy_conflict = []
+        if wpol and wown:  # brand policy only fills a gap; a differing model-specific term is a documented conflict
+            if {w["value"].split(" / ")[0] for w in wpol} != {w["value"].split(" / ")[0] for w in wown} or \
+               any("km" in w["value"] for w in wown) and {w["value"] for w in wpol} - {w["value"] for w in wown}:
+                policy_conflict = [f'warranty: brand policy {wpol[0]["value"]} ({wpol[0]["issuer"]}) differs from model-specific {", ".join(sorted({w["value"] for w in wown}))}']
+            warranty = wown
         spec_ok = len(CORE_SPECS & set(specs)) >= 3
         def asset(x):  # IM-1: P5 serves local files only; src is set once the verified bytes are materialized
             d = {k: x[k] for k in ("asset_id", "sha256", "width", "height", "quality_class", "url", "page", "rights_basis", "status")}
@@ -656,7 +664,7 @@ def main():
         hero = next((asset(x) for x in med.get(m["p1_id"], []) if x["kind"] == "hero" and x["status"] == "ACCEPT"), None)
         hero_limited = next((asset(x) for x in med.get(m["p1_id"], []) if x["kind"] == "hero" and x["status"] == "ACCEPT_LIMITED"), None)
         gallery = [asset(x) for x in med.get(m["p1_id"], []) if x["kind"] == "gallery" and x["status"] == "ACCEPT"]
-        conflicts = sorted({r["reason"] for r in pr if r["status"] == "REWORK" and "CONFLICT" in r["reason"]} |
+        conflicts = sorted(set(policy_conflict) | {r["reason"] for r in pr if r["status"] == "REWORK" and "CONFLICT" in r["reason"]} |
                            {f'{x["field"]}: {x["reason"]}' for x in fx if "CONFLICT" in x["reason"]})
         gaps = [g for g, ok in (("NO_ACCEPTED_PRICE", pv), ("NO_ACCEPTED_SPECS", spec_ok), ("NO_OFFICIAL_BROCHURE", bro.get(m["p1_id"])),
                                 ("NO_VERIFIED_HERO_IMAGE", hero), ("NO_OFFICIAL_LOGO", logo), ("NO_VERIFIED_WARRANTY", warranty),
