@@ -37,20 +37,27 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", required=True)
     ap.add_argument("--per-brand", type=int, default=4)
+    ap.add_argument("--queries", default=os.path.join(ROOT, "config", "logo_queries.csv"))  # brand-specific search terms
     a = ap.parse_args()
     os.makedirs(os.path.join(a.out, "sheets"), exist_ok=True)
     acc = {r["owner"] for r in csv.DictReader(open(os.path.join(ROOT, "registry", "media_accepted.csv")))
            if r["kind"] == "logo" and r["status"] == "ACCEPT"}
     brands = sorted({r["brand"] for r in csv.DictReader(open(os.path.join(ROOT, "registry", "u11_models.csv")))
                      if r["on_sale_u11"] == "true"} - acc)
+    Q = {}
+    if os.path.exists(a.queries):
+        for r in csv.DictReader(open(a.queries)):
+            Q.setdefault(r["brand"], []).append(r["query"])
+    if Q:  # targeted pass: only brands with explicit terms, more candidates each
+        brands, a.per_brand = [b for b in brands if b in Q], max(a.per_brand, 8)
     rows, groups = [], {}
     for b in brands:
         titles = []
-        for q in (f"{b} logo", f"{b} car logo"):
+        for q in Q.get(b) or (f"{b} logo", f"{b} car logo"):
             j = get(dict(action="query", list="search", srnamespace=6, srsearch=q, srlimit=12, format="json"))
             for h in j.get("query", {}).get("search", []):
                 t = h["title"]
-                if t not in titles and re.search(r"\.(svg|png)$", t, re.I) and fold(b)[:5] in fold(t):
+                if t not in titles and re.search(r"\.(svg|png)$", t, re.I) and (fold(b)[:5] in fold(t) or any(fold(w)[:5] in fold(t) for w in " ".join(Q.get(b, [])).split()[:2] if len(w) > 2)):
                     titles.append(t)
             time.sleep(0.5)
         titles = titles[:a.per_brand]
@@ -79,6 +86,8 @@ def main():
             time.sleep(0.4)
     for site in csv.DictReader(open(os.path.join(ROOT, "registry", "logo_sites.csv"))):  # official Egypt-site header logos
         b = site["brand"]
+        if b not in brands:
+            continue
         try:
             html = requests.get(site["homepage"], headers=dict(UA, **{"User-Agent": "Mozilla/5.0"}), timeout=60).text
         except Exception:
@@ -111,19 +120,19 @@ def main():
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys()), lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
-    W, H, cols = 320, 200, 4
+    W, H, cols = 320, 200, 8
     items = sorted(groups.items())
     for i in range(0, len(items), 5):  # 5 brands per sheet, one row each
         chunk = items[i:i + 5]
         S = Image.new("RGB", (W * cols, H * len(chunk)), (205, 205, 205))
         d = ImageDraw.Draw(S)
         for rI, (b, v) in enumerate(chunk):
-            for k, (aid, im, t) in enumerate(v[:cols]):
+            for k, (aid, im, t) in enumerate(v[:cols]):  # dims shown so low-res marks are visible
                 th = im.convert("RGBA")
                 th.thumbnail((W - 10, H - 40))
                 x, y = k * W, rI * H
                 S.paste(th, (x + 5, y + 5), th)
-                d.text((x + 5, y + H - 32), f"{b} | {aid}", fill="black")
+                d.text((x + 5, y + H - 32), f"{b} | {aid} {im.width}x{im.height}", fill="black")
                 d.text((x + 5, y + H - 18), t[:48], fill=(60, 60, 60))
         S.save(os.path.join(a.out, "sheets", f"logos_{i // 5:02d}.jpg"), "JPEG", quality=75)
     print(json.dumps(dict(brands_searched=len(brands), brands_with_candidates=len(groups), candidates=len(rows))))
