@@ -1,0 +1,20 @@
+{
+ "snapshot": "snapshots/S7_2026-10-14",
+ "mode": "full",
+ "seconds": 458,
+ "pages_fetched": 226,
+ "pages_ok": 226,
+ "bytes_downloaded": 196302257,
+ "price_rows": 198,
+ "spec_rows": 7097,
+ "discovery_events": 20,
+ "triaged": 12,
+ "change_events": {
+  "NEW_TRIM": 3,
+  "PRICE_CHANGE": 17,
+  "SOURCE_STATED_PRICE_CHANGE": 3,
+  "TRIM_MISSING": 3
+ },
+ "review_items": 14,
+ "llm_calls": 0
+}

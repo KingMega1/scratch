@@ -1,0 +1,27 @@
+event_id,event,snapshot,prev_snapshot,url,model_year,trim_key,label,price_type,spec_id,old,new,delta_egp,delta_pct,material,confidence,detail
+829c69a25ea9af1e,TRIM_MISSING,S7_2026-10-14,S6_2026-09-30,https://eg.hatla2ee.com/en/new-car/kia/Seltos,2025,ex,A/T / EX,official,,[1349900],,,,,MEDIUM,missing in one healthy run; DISCONTINUED needs k consecutive misses + review (D6)
+90da661addfc8459,TRIM_MISSING,S7_2026-10-14,S6_2026-09-30,https://eg.hatla2ee.com/en/new-car/kia/Seltos,2025,highline,A/T / Highline,official,,[1499900],,,,,MEDIUM,missing in one healthy run; DISCONTINUED needs k consecutive misses + review (D6)
+0311dd00331d60d6,TRIM_MISSING,S7_2026-10-14,S6_2026-09-30,https://eg.hatla2ee.com/en/new-car/kia/Seltos,2025,topline,A/T / Top Line,official,,[1624900],,,,,MEDIUM,missing in one healthy run; DISCONTINUED needs k consecutive misses + review (D6)
+f3fe70f4e53a05da,NEW_TRIM,S7_2026-10-14,S6_2026-09-30,https://eg.hatla2ee.com/en/new-car/kia/Seltos,2027,ex,A/T / EX,official,,,[1369900],,,,MEDIUM,
+f3915cf9698ae5d9,NEW_TRIM,S7_2026-10-14,S6_2026-09-30,https://eg.hatla2ee.com/en/new-car/kia/Seltos,2027,highline,A/T / Highline,official,,,[1524900],,,,MEDIUM,
+7307647169a0844a,NEW_TRIM,S7_2026-10-14,S6_2026-09-30,https://eg.hatla2ee.com/en/new-car/kia/Seltos,2027,topline,A/T / Top Line,official,,,[1674900],,,,MEDIUM,
+4f01d291e7d78829,PRICE_CHANGE,S7_2026-10-14,S6_2026-09-30,https://www.contactcars.com/en/new-cars/baic-bj30/year-2026,2026,ultrahybrid,Ultra - Hybrid,market,,1675000,1680000,5000,0.003,False,MEDIUM,
+0dbd42d86529609c,PRICE_CHANGE,S7_2026-10-14,S6_2026-09-30,https://www.contactcars.com/en/new-cars/hyundai-tucson/year-2026,2026,redline,REDLINE,market,,1950000,1980000,30000,0.0154,True,MEDIUM,
+dc7e86672e77ce37,PRICE_CHANGE,S7_2026-10-14,S6_2026-09-30,https://www.contactcars.com/en/new-cars/hyundai-tucson/year-2026,2026,shadow,SHADOW,market,,1780000,1840000,60000,0.0337,True,MEDIUM,
+8a764bfd6b764638,PRICE_CHANGE,S7_2026-10-14,S6_2026-09-30,https://www.contactcars.com/en/new-cars/hyundai-tucson/year-2027,2027,redline,REDLINE,market,,2160000,2200000,40000,0.0185,True,MEDIUM,
+cf066972e5d7f49c,PRICE_CHANGE,S7_2026-10-14,S6_2026-09-30,https://www.contactcars.com/en/new-cars/jetour-t2/year-2027,2027,idm,i-DM,market,,2320000,2220000,-100000,-0.0431,True,MEDIUM,
+6cf317d80792ff10,PRICE_CHANGE,S7_2026-10-14,S6_2026-09-30,https://www.contactcars.com/en/new-cars/kia-sportage/year-2026,2026,lx,LX,market,,1820000,1860000,40000,0.022,True,MEDIUM,
+f9d37a9ebc420c93,PRICE_CHANGE,S7_2026-10-14,S6_2026-09-30,https://www.contactcars.com/en/new-cars/kia-sportage/year-2027,2027,lx,LX,market,,1860000,1880000,20000,0.0108,True,MEDIUM,
+1885ae0908c36c08,PRICE_CHANGE,S7_2026-10-14,S6_2026-09-30,https://www.contactcars.com/en/new-cars/nissan-qashqai/year-2027,2027,nconnectaplus,N-connecta Plus,market,,1760000,1757000,-3000,-0.0017,False,MEDIUM,
+efd6bdd6f595bbcb,PRICE_CHANGE,S7_2026-10-14,S6_2026-09-30,https://www.contactcars.com/en/new-cars/nissan-qashqai/year-2027,2027,nconnectaplus2t,N-connecta+ 2T,market,,1800000,1780000,-20000,-0.0111,True,MEDIUM,
+362ae0ff8b3e88fc,PRICE_CHANGE,S7_2026-10-14,S6_2026-09-30,https://www.contactcars.com/en/new-cars/peugeot-3008/year-2027,2027,allure,Allure,market,,2200000,2100000,-100000,-0.0455,True,MEDIUM,
+61bedd85b3df003e,PRICE_CHANGE,S7_2026-10-14,S6_2026-09-30,https://www.contactcars.com/en/new-cars/peugeot-3008/year-2027,2027,gt,GT,market,,2420000,2400000,-20000,-0.0083,True,MEDIUM,
+a987586c625ccfba,PRICE_CHANGE,S7_2026-10-14,S6_2026-09-30,https://www.contactcars.com/en/new-cars/renault-austral/year-2026,2026,technofacelift,Techno Facelift,market,,1690000,1720000,30000,0.0178,True,MEDIUM,
+6870807075788623,PRICE_CHANGE,S7_2026-10-14,S6_2026-09-30,https://www.contactcars.com/en/new-cars/soueast-s_06/year-2027,2027,dm,DM,market,,1700000,1680000,-20000,-0.0118,True,MEDIUM,
+a45d318b869847e6,PRICE_CHANGE,S7_2026-10-14,S6_2026-09-30,https://www.contactcars.com/en/new-cars/volkswagen-tiguan/year-2026,2026,rline,R-Line,market,,2620000,2600000,-20000,-0.0076,True,MEDIUM,
+66622d14538af4d9,PRICE_CHANGE,S7_2026-10-14,S6_2026-09-30,https://www.egy-car.com/kia-seltos,,ex,EX,official,,1350000,1370000,20000,0.0148,True,MEDIUM,
+0092a48200ec60ba,PRICE_CHANGE,S7_2026-10-14,S6_2026-09-30,https://www.egy-car.com/kia-seltos,,highlineturbo,Highline Turbo,official,,1500000,1525000,25000,0.0167,True,MEDIUM,
+27c56f986c57f005,PRICE_CHANGE,S7_2026-10-14,S6_2026-09-30,https://www.egy-car.com/kia-seltos,,toplineturbo,Topline Turbo,official,,1625000,1675000,50000,0.0308,True,MEDIUM,
+75ce299bad28c455,SOURCE_STATED_PRICE_CHANGE,S7_2026-10-14,S6_2026-09-30,https://eg.hatla2ee.com/en/new-car/kia/Seltos,2027,,Kia Seltos A/T / Top Line,official,,"1,624,900","1,674,900",,,,MEDIUM,source effective_date 2026-10-13
+35cbd92a42930657,SOURCE_STATED_PRICE_CHANGE,S7_2026-10-14,S6_2026-09-30,https://eg.hatla2ee.com/en/new-car/kia/Seltos,2027,,Kia Seltos A/T / Highline,official,,"1,499,900","1,524,900",,,,MEDIUM,source effective_date 2026-10-13
+36d4f862f4a4dab0,SOURCE_STATED_PRICE_CHANGE,S7_2026-10-14,S6_2026-09-30,https://eg.hatla2ee.com/en/new-car/kia/Seltos,2027,,Kia Seltos A/T / EX,official,,"1,349,900","1,369,900",,,,MEDIUM,source effective_date 2026-10-13
