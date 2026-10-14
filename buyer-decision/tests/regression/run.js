@@ -8,6 +8,9 @@
 const fs = require('fs'), path = require('path');
 global.window = {};
 eval(fs.readFileSync(path.join(__dirname, '../../data/p11_client.js'), 'utf8'));
+// CI_DATASET=<recommendation_view.json>: run the same corpus + invariants on another accepted/candidate dataset (no snapshot/report writes)
+const DATASET = process.env.CI_DATASET;
+if (DATASET) window.CI_UNIVERSE = JSON.parse(fs.readFileSync(DATASET, 'utf8'));
 const P = require('../../app/brief.js'), E = require('../../app/engine.js'), C = require('../../app/contracts.js');
 // market-status dataset from P2 (none yet). The gate is never applied here; placement is reported in shadow only.
 const MARKET = null;
@@ -191,10 +194,10 @@ if (understanding.length) { L.push('', '## Understanding failures', ''); underst
 if (parity.length) { L.push('', '## EN/AR brief parity', ''); parity.forEach(p => L.push('- ' + p)); }
 if (changes.length) { L.push('', '## Changes vs snapshot', ''); changes.forEach(x => L.push(`- ${x.id}: ${JSON.stringify(x.before)} → ${JSON.stringify(x.after)}`)); }
 if (failures.length) { L.push('', '## Invariant failures', ''); failures.forEach(f => L.push('- ' + f)); }
-fs.writeFileSync(REPORT, L.join('\n') + '\n');
+if (DATASET) fs.writeFileSync(path.join(path.dirname(DATASET), 'REGRESSION_REPORT.md'), L.join('\n') + '\n'); else fs.writeFileSync(REPORT, L.join('\n') + '\n');
 // the consulted briefs, for the transport equivalence tests (tests/transport/*): same inputs the regression judges
-fs.writeFileSync(path.join(__dirname, 'corpus.json'), JSON.stringify(corpus) + '\n');
-if (UPDATE || !fs.existsSync(SNAP)) fs.writeFileSync(SNAP, JSON.stringify(newSnap, null, 1) + '\n');
+if (!DATASET) fs.writeFileSync(path.join(__dirname, 'corpus.json'), JSON.stringify(corpus) + '\n');
+if (!DATASET && (UPDATE || !fs.existsSync(SNAP))) fs.writeFileSync(SNAP, JSON.stringify(newSnap, null, 1) + '\n');
 
 console.log(`cases ${CASES.length} + ${UNDERSTANDING.length} parse checks · understanding failures ${understanding.length} · invariants ${checks - fails}/${checks} pass · changes vs snapshot ${changes.length}`);
 Object.entries(diagCount).sort().forEach(([k, v]) => console.log(`  ${k}: ${v}`));

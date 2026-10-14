@@ -25,7 +25,7 @@ def sanitize(u):
     return {"meta": {k: u["meta"][k] for k in META_KEYS}, "models": models}
 
 
-def main(out, endpoint=""):
+def main(out, endpoint="", dataset=None):
     if os.path.exists(out):
         # never wipe a git checkout (the public repo): build elsewhere and copy the files in
         if os.path.exists(os.path.join(out, ".git")):
@@ -33,8 +33,11 @@ def main(out, endpoint=""):
         shutil.rmtree(out)
     os.makedirs(os.path.join(out, "app"))
     os.makedirs(os.path.join(out, "data"))
-    raw = open(os.path.join(ROOT, "data", "p11_client.js"), encoding="utf-8").read()
-    u = json.loads(raw[raw.index("=") + 1:].strip().rstrip(";"))
+    if dataset:  # an accepted/candidate recommendation view (datasets/<version>/recommendation_view.json)
+        u = json.load(open(dataset, encoding="utf-8"))
+    else:
+        raw = open(os.path.join(ROOT, "data", "p11_client.js"), encoding="utf-8").read()
+        u = json.loads(raw[raw.index("=") + 1:].strip().rstrip(";"))
     open(os.path.join(out, "data", "view.js"), "w", encoding="utf-8").write(
         "window.CI_UNIVERSE = " + json.dumps(sanitize(u), ensure_ascii=False, separators=(",", ":")) + ";\n")
     for f in ("styles.css", "i18n.js", "brief.js", "engine.js", "redact.js", "track.js", "app.js"):
@@ -60,4 +63,6 @@ def main(out, endpoint=""):
 if __name__ == "__main__":
     # optional: --endpoint <Apps Script /exec URL> sends funnel + feedback events to the test Sheet (tools/sheet_collector.gs)
     ep = sys.argv[sys.argv.index("--endpoint") + 1] if "--endpoint" in sys.argv else ""
-    main(sys.argv[1], ep)
+    # optional: --dataset <recommendation_view.json> builds on that dataset instead of data/p11_client.js (U11)
+    dsp = sys.argv[sys.argv.index("--dataset") + 1] if "--dataset" in sys.argv else None
+    main(sys.argv[1], ep, dsp)
