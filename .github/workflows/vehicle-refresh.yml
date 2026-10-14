@@ -20,7 +20,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: vehicle-refresh
+  group: vehicle-refresh-${{ github.ref }}  # per branch: parallel workers never cancel or block the canonical branch
   cancel-in-progress: false
 
 jobs:

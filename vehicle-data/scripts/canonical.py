@@ -302,7 +302,7 @@ def supersede(a_rows, b_rows):
 
 # ------------------------------------------------------------------ specs, warranty, brochures, media
 
-SERVE_PREFIX = "/media/p2/"  # P5 serves web/public/media/p2/<models|brands>/... (same-origin; no clash with P5's own /media/models/)
+SERVE_PREFIX = "/media/"  # P5 contract (read-model.ts p2Hero): /media/models/<site_slug>.webp; logos /media/brands/<brand>.png
 
 KNOWN_CONFLICTS = {  # evidence-level conflicts recorded in AT-51; never promoted until resolved
     ("mg/hs", "power_hp"): "SP-1 CONFLICT: MG Egypt HS page prose 221 hp vs spec table 200 hp (hybrid)",
