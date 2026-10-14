@@ -60,6 +60,15 @@ def day(http_date):
 
 # ------------------------------------------------------------------ identity
 
+def market_universe():
+    p = os.path.join(ROOT, "config", "market_universe.json")
+    return json.load(open(p)) if os.path.exists(p) else {"identities": []}
+
+
+def in_catalogue(r):
+    return r["on_sale_u11"] == "true" or r.get("universe") in ("P2_ADDITION", "P2_SPLIT")
+
+
 def identity():
     U = [m for m in json.load(open(os.path.join(IN, "p11_universe.json")))["models"] if m.get("in_universe")]
     rc1 = json.load(open(os.path.join(IN, "catalogue-serving.RC1.json")))
@@ -90,6 +99,22 @@ def identity():
         rows.append(dict(model_id=x["p2_model_id"], p1_id=x["p1_id"], site_slug=x["site_slug"],
                          brand=reg.get(x["p2_model_id"], {}).get("brand", ""), model=reg.get(x["p2_model_id"], {}).get("model_name", ""),
                          on_sale_u11="false", generation="UNKNOWN", identity_checks="U11_OFF_SALE"))
+    for r in rows:
+        r["universe"] = "U11_283" if r["on_sale_u11"] == "true" else "RETAINED_OFF_SALE"
+    for d in market_universe()["identities"]:  # P2 market-universe decisions (config/market_universe.json); P1 untouched
+        if d["decision"] not in ("ADDITION", "SPLIT"):
+            continue
+        old = next((r for r in rows if r["p1_id"] == d["id"]), None)
+        if old:  # retained off-sale P2 record found on sale again: reinstate it, keeping its model_id
+            old.update(universe="P2_" + d["decision"], identity_checks="", brand=d["brand"], model=d["model"], body=d.get("body", ""))
+            continue
+        mid = (prev.get(d["id"]) or {}).get("model_id")
+        if not mid:
+            mid = f"m_{nxt:06d}"
+            nxt += 1
+        rows.append(dict(model_id=mid, p1_id=d["id"], site_slug=d["id"].replace("/", "-"), brand=d["brand"], model=d["model"],
+                         brand_ar="", model_ar="", body=d.get("body", ""), on_sale_u11="false", generation="UNKNOWN",
+                         identity_checks="", universe="P2_" + d["decision"]))
     for k in ("model_id", "p1_id", "site_slug"):
         c = collections.Counter(r[k] for r in rows)
         for r in rows:
@@ -114,7 +139,20 @@ def url_owner():
         own[r["url"]] = r["p1_id"]
         if "contactcars" in r["url"]:  # model-year pages of the same ContactCars slug
             own["cc:" + r["url"].split("/")[5]] = r["p1_id"]
+    for d in market_universe()["identities"]:  # additions own their pages; splits take theirs from the parent
+        for u in d.get("urls", []):
+            own[u] = d["id"]
+            if "contactcars" in u:
+                own["cc:" + u.split("/")[5]] = d["id"]
     return own
+
+
+def split_of(p1, trim):
+    """SPLIT identities that share a page with their parent: trims matching trim_regex belong to the split."""
+    for d in market_universe()["identities"]:
+        if d["decision"] == "SPLIT" and d["parent"] == p1 and d.get("trim_regex") and re.search(d["trim_regex"], trim or "", re.I):
+            return d["id"]
+    return p1
 
 
 def owner_of(own, url):
@@ -125,7 +163,16 @@ def owner_of(own, url):
     return None
 
 
-def market_obs(snap):
+def market_obs(snaps):
+    out, stated = [], []
+    for snap in snaps:
+        o, st = market_obs_one(snap)
+        out += o
+        stated += st
+    return out, stated
+
+
+def market_obs_one(snap):
     if not snap:
         return [], []
     own = url_owner()
@@ -133,6 +180,7 @@ def market_obs(snap):
     out = []
     for r in read(os.path.join(snap, "observations_parsed.csv")):
         p1 = owner_of(own, r["source_url"])
+        p1 = split_of(p1, r["trim_raw"]) if p1 else p1
         if not p1 or r["source"] not in SITE:
             continue
         r = b.normalize_title(r)
@@ -158,6 +206,7 @@ def market_obs(snap):
     stated = []
     for r in read(os.path.join(snap, "price_changes_stated.csv")):
         p1 = owner_of(own, r["source_url"])
+        p1 = split_of(p1, r.get("trim_raw", "")) if p1 else p1
         v, _ = b.parse_price(r["new_price"])
         if p1 and v:
             stated.append(dict(p1_id=p1, model_year=r["model_year"], trim_key=b.trim_key(r["trim_raw"]), price_egp=v,
@@ -434,6 +483,24 @@ def price_view(rows):
                        for r in sorted(trims, key=lambda r: (str(r["model_year"]), r["price_egp"]))])
 
 
+def counts(models):
+    return dict(models=len(models), id_accepted=sum(m["id_status"] == "ACCEPTED" for m in models),
+                price_accepted=sum(bool(m["price"]) for m in models),
+                price_tier_a=sum(bool(m["price"]) and m["price"]["tier"] == "A" for m in models),
+                price_source_dated=sum(bool(m["price"]) and m["price"]["date_basis"] == "SOURCE_STATED" for m in models),
+                market_status_official=sum(m["market_status"] == "official" for m in models),
+                specs_accepted=sum(m["specs_accepted"] for m in models),
+                warranty_accepted=sum(bool(m["warranty"]) for m in models),
+                brochure_accepted=sum(bool(m["brochures"]) for m in models),
+                hero_accepted=sum(bool(m["hero_image"]) for m in models),
+                hero_accepted_hq=sum(bool(m["hero_image"]) and m["hero_image"]["quality_class"] == "HQ" for m in models),
+                hero_limited_archive=sum(bool(m["hero_image_limited"]) and not m["hero_image"] for m in models),
+                gallery_models=sum(bool(m["gallery"]) for m in models),
+                logo_accepted=sum(bool(m["logo"]) for m in models),
+                fully_enriched=sum(bool(m["price"] and m["specs_accepted"] and m["warranty"] and m["brochures"]
+                                        and m["hero_image"] and m["logo"]) for m in models))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--snap", default=None)
@@ -443,8 +510,10 @@ def main():
     ids, U = identity()
     write(os.path.join(ROOT, "registry", "u11_models.csv"),
           ["model_id", "p1_id", "site_slug", "brand", "model", "brand_ar", "model_ar", "body", "on_sale_u11", "generation",
-           "id_status", "id_rule", "identity_checks"], ids)
-    mobs, stated = market_obs(snap)
+           "id_status", "id_rule", "identity_checks", "universe"], ids)
+    ua = sorted(glob.glob(os.path.join(ROOT, "snapshots", "UA_*")))  # universe-audit pages (models beyond the 283)
+    snaps = [x for x in (snap, ua[-1] if ua else None) if x]
+    mobs, stated = market_obs(snaps)
     a_rows = tier_a(mobs, stated)
     rows = supersede(a_rows, tier_b(mobs, stated))
     byid = {r["p1_id"]: r for r in ids}
@@ -476,7 +545,7 @@ def main():
     for r in media_accepted():
         med[r["owner"]].append(r)
     models, cov = [], []
-    for m in [r for r in ids if r["on_sale_u11"] == "true"]:
+    for m in [r for r in ids if in_catalogue(r)]:
         pr = per.get(m["p1_id"], [])
         pv = price_view(pr)
         fx = fby.get(m["p1_id"], [])
@@ -505,12 +574,14 @@ def main():
         rec = dict(model_id=m["model_id"], p1_id=m["p1_id"], site_slug=m["site_slug"], brand=m["brand"], model=m["model"],
                    id_status=m["id_status"], generation=None, market_status="official" if m["p1_id"] in official_models else "unverified",
                    market_status_basis="model listed on official Egypt OEM/importer page (O4)" if m["p1_id"] in official_models
-                   else "U11 on-sale (registrations + market listings); no official Egypt page captured yet",
+                   else ("U11 on-sale (registrations + market listings); no official Egypt page captured yet" if m["universe"] == "U11_283"
+                         else "P2 market-universe decision (config/market_universe.json); see review/market_universe_audit.csv"),
+                   universe=m["universe"],
                    price=pv, specs=specs or None, specs_accepted=spec_ok, warranty=warranty, brochures=bro.get(m["p1_id"], []),
                    logo=logo, hero_image=hero, hero_image_limited=hero_limited, gallery=gallery,
                    conflicts=conflicts, gaps=gaps, rework_price_rows=sum(r["status"] == "REWORK" for r in pr))
         models.append(rec)
-        cov.append(dict(model_id=m["model_id"], p1_id=m["p1_id"], brand=m["brand"], model=m["model"], id_status=m["id_status"],
+        cov.append(dict(model_id=m["model_id"], p1_id=m["p1_id"], brand=m["brand"], model=m["model"], universe=m["universe"], id_status=m["id_status"],
                         market_status=rec["market_status"],
                         price_status="ACCEPTED" if pv else ("REWORK" if pr else "NO_EVIDENCE"),
                         price_from_egp=pv["price_from"] if pv else "", price_model_year=(pv or {}).get("model_year") or "",
@@ -527,21 +598,9 @@ def main():
                  rules=__doc__.split("Acceptance rules")[1].strip(),
                  inputs={os.path.relpath(p, ROOT): sha(p) for p in sorted(glob.glob(os.path.join(IN, "**", "*.*"), recursive=True))
                          if not p.endswith(".md")},
-                 counts=dict(models=len(models), id_accepted=sum(m["id_status"] == "ACCEPTED" for m in models),
-                             price_accepted=sum(bool(m["price"]) for m in models),
-                             price_tier_a=sum(bool(m["price"]) and m["price"]["tier"] == "A" for m in models),
-                             price_source_dated=sum(bool(m["price"]) and m["price"]["date_basis"] == "SOURCE_STATED" for m in models),
-                             market_status_official=sum(m["market_status"] == "official" for m in models),
-                             specs_accepted=sum(m["specs_accepted"] for m in models),
-                             warranty_accepted=sum(bool(m["warranty"]) for m in models),
-                             brochure_accepted=sum(bool(m["brochures"]) for m in models),
-                             hero_accepted=sum(bool(m["hero_image"]) for m in models),
-                             hero_accepted_hq=sum(bool(m["hero_image"]) and m["hero_image"]["quality_class"] == "HQ" for m in models),
-                             hero_limited_archive=sum(bool(m["hero_image_limited"]) and not m["hero_image"] for m in models),
-                             gallery_models=sum(bool(m["gallery"]) for m in models),
-                             logo_accepted=sum(bool(m["logo"]) for m in models),
-                             fully_enriched=sum(bool(m["price"] and m["specs_accepted"] and m["warranty"] and m["brochures"]
-                                                     and m["hero_image"] and m["logo"]) for m in models)),
+                 counts=counts([m for m in models if m["universe"] == "U11_283"]),
+                 counts_market_universe=counts(models),
+                 market_snapshots=[os.path.relpath(x, ROOT) for x in snaps],
                  models=models)
     json.dump(canon, open(os.path.join(ROOT, "views", "canonical_u11.json"), "w"), indent=1, ensure_ascii=False, sort_keys=True)
     write(os.path.join(ROOT, "review", "u11_coverage.csv"), list(cov[0].keys()), cov)
@@ -553,15 +612,17 @@ def serving(canon):
     """Same contract as P5 RC1 (all RC1 entry fields kept, same order); accepted P2 data added as optional fields."""
     rc1 = json.load(open(os.path.join(IN, "catalogue-serving.RC1.json")))
     by = {m["p1_id"]: m for m in canon["models"]}
+    mu = {d["id"]: d for d in market_universe()["identities"]}
+
+    def pub(h, flags):  # P5 read-model p2Hero(): {src:'/media/...', credit, source_url}; it ignores flags
+        return dict(src=h["src"], credit=h["credit"], source_url=h["page"] or h["url"], image_url=h["url"], flags=flags,
+                    status=h["status"], quality_class=h["quality_class"], sha256=h["sha256"]) if h and h["src"] else None
     entries = []
     for e in rc1["entries"]:
         c = by[e["p1_id"]]
         e = dict(e, p2_model_id=c["model_id"], id_status="P2_ACCEPTED" if c["id_status"] == "ACCEPTED" else "P2_REWORK",
                  price_status="ACCEPTED" if c["price"] else e["price_status"] if e["evidence_state"] == "P2_S6_EVIDENCE" else "UNKNOWN",
                  missing_evidence=[g for g in c["gaps"]] + ([] if c["id_status"] == "ACCEPTED" else ["P2_ID_PENDING"]))
-        def pub(h, flags):  # P5 read-model p2Hero(): {src:'/media/...', credit, source_url}; it ignores flags
-            return dict(src=h["src"], credit=h["credit"], source_url=h["page"] or h["url"], image_url=h["url"], flags=flags,
-                        status=h["status"], quality_class=h["quality_class"], sha256=h["sha256"]) if h and h["src"] else None
         e["accepted"] = dict(market_status=c["market_status"], price=c["price"], specs=c["specs"], warranty=c["warranty"],
                              brochures=c["brochures"], logo=pub(c["logo"], []),
                              hero_image=pub(c["hero_image"], []),
@@ -576,7 +637,17 @@ def serving(canon):
                relation="Website on-sale set equals pinned U11 on-sale set (283). 'accepted' carries only P2-ACCEPTED values; "
                         "absent means UNKNOWN. P1 recommendation semantics unchanged.",
                counts=dict(rc1["counts"], price_accepted=canon["counts"]["price_accepted"], id_accepted=canon["counts"]["id_accepted"]),
-               entries=entries)
+               entries=entries,
+               market_additions=[dict(p1_id=None, p2_model_id=c["model_id"], identity=c["p1_id"], site_slug=c["site_slug"], brand=c["brand"],
+                                      model=c["model"], universe=c["universe"], parent=mu.get(c["p1_id"], {}).get("parent"),
+                                      body=mu.get(c["p1_id"], {}).get("body"), powertrains=mu.get(c["p1_id"], {}).get("powertrains", []),
+                                      evidence=mu.get(c["p1_id"], {}).get("evidence", []),
+                                      accepted=dict(market_status=c["market_status"], price=c["price"], specs=c["specs"],
+                                                    warranty=c["warranty"], brochures=c["brochures"], logo=pub(c["logo"], []),
+                                                    hero_image=pub(c["hero_image"], []), gallery=[g for g in c["gallery"] if g["src"]],
+                                                    conflicts=c["conflicts"]),
+                                      missing_evidence=c["gaps"])
+                                 for c in canon["models"] if c["universe"] != "U11_283"])
     json.dump(rel, open(os.path.join(ROOT, "views", "catalogue-serving.release.json"), "w"), indent=2, ensure_ascii=False)
 
 

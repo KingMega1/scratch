@@ -1,0 +1,4332 @@
+{
+ "schema": "carindex.p2.market-universe/v1",
+ "note": "P2 identity decisions beyond the P1 U11 universe (283). Existing IDs never change; P1 eligibility is untouched. Evidence per decision; review/market_universe_audit.csv is the systematic audit.",
+ "identities": [
+  {
+   "id": "hyundai/elantra-cn7",
+   "decision": "SPLIT",
+   "parent": "hyundai/elantra",
+   "brand": "Hyundai",
+   "model": "Elantra CN7",
+   "body": "sedan",
+   "powertrains": [
+    "petrol"
+   ],
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/hyundai-elantra_cn7",
+    "https://www.contactcars.com/en/new-cars/hyundai-elantra_cn7/year-2025",
+    "https://www.egy-car.com/hyundai-elantra-cn7",
+    "https://eg.hatla2ee.com/en/new-car/hyundai/Elantra-CN7"
+   ],
+   "match": [
+    "Hyundai|Elantra (CN7)",
+    "Hyundai|Elantra CN7"
+   ],
+   "evidence": [
+    "Separate Elantra AD and Elantra CN7 new-car pages on ContactCars, Hatla2ee and EgyCar (S7 sitemap), both previously mapped to hyundai/elantra",
+    "Registrations: Hyundai|Elantra AD 7,277 vs Hyundai|Elantra (CN7) 161 (last 12 months; CEO registration explorer)",
+    "Hyundai Egypt official model page https://hyundai-egypt.net/models/elantra-ad/ (worker harvest X_2026-10-14_38522002564)"
+   ],
+   "note": "Generation conflation: AD (CKD, volume) keeps hyundai/elantra (P1 ID, its price band and registrations); CN7 separated."
+  },
+  {
+   "id": "baic/x55e",
+   "decision": "SPLIT",
+   "parent": "baic/x55",
+   "brand": "BAIC",
+   "model": "X55e",
+   "body": "suv",
+   "powertrains": [
+    "hybrid"
+   ],
+   "trim_regex": "x55e|\\bDHT\\b|hybrid",
+   "urls": [],
+   "match": [
+    "Baic|X55e",
+    "Baic|X55 e"
+   ],
+   "evidence": [
+    "Al-Kan Auto (BAIC Egypt distributor) X55e brochure, Drive 1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta: X55e Topline DHT hybrid",
+    "U11 baic/x55 lists petrol only; registrations Baic|X55 are ICE only"
+   ],
+   "note": "Powertrain conflation: X55e DHT hybrid separated from petrol X55."
+  },
+  {
+   "id": "kaiyi/x7-phev",
+   "decision": "SPLIT",
+   "parent": "kaiyi/x7",
+   "brand": "Kaiyi",
+   "model": "X7 PHEV",
+   "body": "suv",
+   "powertrains": [
+    "phev"
+   ],
+   "trim_regex": "PHEV",
+   "urls": [],
+   "match": [
+    "Kaiyi|X7 PHEV"
+   ],
+   "evidence": [
+    "Market pages list PHEV trims on the Kaiyi X7 page: ContactCars \"PHEV\" 1,600,000; Hatla2ee \"Flagship (PHEV)\" 1,649,900",
+    "Registrations: Kaiyi|X7 PHEV 14 (Hybrid) separate from Kaiyi|X7 317 (ICE)"
+   ],
+   "note": "Powertrain conflation: PHEV separated from petrol X7."
+  },
+  {
+   "id": "jetour/t2-i-dm",
+   "decision": "SPLIT",
+   "parent": "jetour/t2",
+   "brand": "Jetour",
+   "model": "T2 i-DM",
+   "body": "suv",
+   "powertrains": [
+    "phev"
+   ],
+   "trim_regex": "i-?DM\\b",
+   "urls": [],
+   "match": [
+    "Jetour|T2 DM",
+    "Jetour|T2 i-DM"
+   ],
+   "evidence": [
+    "Jetour Egypt official page https://jetouregypt.com/models/T2-i-DM/ (worker harvest)",
+    "Market pages list i-DM trims on the T2 page: ContactCars \"i-DM\" 2,150,000; Hatla2ee \"Luxury (i-DM)\" 2,150,000",
+    "Registrations: Jetour|T2 DM 250 (Hybrid) vs Jetour|T2 3,470 (ICE)"
+   ],
+   "note": "Powertrain conflation: i-DM plug-in hybrid separated from petrol T2."
+  },
+  {
+   "id": "byd/sealion-6-ev",
+   "decision": "SPLIT",
+   "parent": "byd/sealion-6",
+   "brand": "BYD",
+   "model": "Sealion 6 EV",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "trim_regex": "\\bEV\\b",
+   "urls": [],
+   "match": [],
+   "evidence": [
+    "Market pages list EV and DM-i trims on the same Sealion 6 page (ContactCars 2026: EV 1,700,000 / DM-i Ultra 1,900,000; 2027: EV Ultra 1,749,900 / DMi Ultra 1,949,900)",
+    "Registrations BYD|Sealion 06: BEV 455, Hybrid 312 (last 12 months)",
+    "Accepted BYD Egypt brochure on byd/sealion-6 is the DM-i (SEALION 6 DMi)"
+   ],
+   "note": "Powertrain conflation: BEV separated; byd/sealion-6 keeps DM-i (brochure, P1 ID). EgyCar \"Comfort\" trim stays with parent (powertrain not stated) and is held by price rules."
+  },
+  {
+   "id": "mg/rx5",
+   "decision": "ADDITION",
+   "brand": "MG",
+   "model": "RX5 Plus",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "mg/rx5",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/moris-garage/RX5-Plus",
+    "https://www.contactcars.com/en/new-cars/mg-rx5",
+    "https://www.contactcars.com/en/new-cars/mg-rx5_plus",
+    "https://www.egy-car.com/mg-rx5"
+   ],
+   "match": [
+    "MG|RX5"
+   ],
+   "evidence": [
+    "Registrations last 12m 1491 / last 6m 716 (MG|RX5; ICE:1491)",
+    "Market new-car pages with priced model years 2025 2026 2027 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_price (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2025 2026 2027 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "Official Egypt model page: https://www.mgmotor.com.eg/model/rx5-plus",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "mg/rx5",
+    "mg/rx5-plus"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "byd/song-l",
+   "decision": "ADDITION",
+   "brand": "BYD",
+   "model": "Song L",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "byd/song-l",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/byd/byd-song-l",
+    "https://www.contactcars.com/en/new-cars/byd-song_l"
+   ],
+   "match": [
+    "BYD|Song L"
+   ],
+   "evidence": [
+    "Registrations last 12m 648 / last 6m 210 (BYD|Song L; BEV:648)",
+    "Market new-car pages with priced model years 2025 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_price (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "byd/song-l"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "bmw/3-series",
+   "decision": "ADDITION",
+   "brand": "BMW",
+   "model": "3 Series",
+   "body": "sedan",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "bmw/3-series",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/bmw/320",
+    "https://www.contactcars.com/en/new-cars/bmw-320i",
+    "https://www.contactcars.com/en/new-cars/bmw-340i",
+    "https://www.egy-car.com/bmw-320",
+    "https://www.egy-car.com/bmw-330i"
+   ],
+   "match": [
+    "BMW|3-Series"
+   ],
+   "evidence": [
+    "Registrations last 12m 562 / last 6m 243 (BMW|3-Series; ICE:562)",
+    "Market new-car pages with priced model years 2026 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: stale_model_year (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2027 (2 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "bmw/3-series",
+    "bmw/320"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "honda/cr-v",
+   "decision": "ADDITION",
+   "brand": "Honda",
+   "model": "CR-V",
+   "body": "suv",
+   "powertrains": [
+    "petrol",
+    "hybrid"
+   ],
+   "u11_id": "honda/cr-v",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/honda/crv",
+    "https://www.contactcars.com/en/new-cars/honda-cr_v",
+    "https://www.egy-car.com/honda-crv"
+   ],
+   "match": [
+    "Honda|CR-V"
+   ],
+   "evidence": [
+    "Registrations last 12m 315 / last 6m 212 (Honda|CR-V; ICE:315)",
+    "Market new-car pages with priced model years 2025 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: stale_model_year (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "honda/cr-v"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "kia/carnival",
+   "decision": "ADDITION",
+   "brand": "Kia",
+   "model": "Carnival",
+   "body": "mpv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "kia/carnival",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/kia/carnival",
+    "https://www.contactcars.com/en/new-cars/kia-carnival",
+    "https://www.egy-car.com/kia-carnival"
+   ],
+   "match": [
+    "Kia|Carnival"
+   ],
+   "evidence": [
+    "Registrations last 12m 287 / last 6m 137 (Kia|Carnival; ICE:287)",
+    "Market new-car pages with priced model years 2025 2026 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "Official Egypt model page: https://kia.com.eg/models/The_Carnival",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Van (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "kia/carnival"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "bmw/x3",
+   "decision": "ADDITION",
+   "brand": "BMW",
+   "model": "X3",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "bmw/x3",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/bmw/x3",
+    "https://www.contactcars.com/en/new-cars/bmw-x3",
+    "https://www.egy-car.com/bmw-x3"
+   ],
+   "match": [
+    "BMW|X3"
+   ],
+   "evidence": [
+    "Registrations last 12m 282 / last 6m 255 (BMW|X3; ICE:282)",
+    "Market new-car pages with priced model years 2026 2027 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: stale_model_year (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "bmw/x3"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "toyota/land-cruiser",
+   "decision": "ADDITION",
+   "brand": "Toyota",
+   "model": "Land Cruiser",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "toyota/land-cruiser",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/toyota/land-cruiser",
+    "https://www.contactcars.com/en/new-cars/toyota-land_cruiser"
+   ],
+   "match": [
+    "Toyota|Land Cruiser"
+   ],
+   "evidence": [
+    "Registrations last 12m 281 / last 6m 132 (Toyota|Land Cruiser; ICE:281)",
+    "Market new-car pages with priced model years 2025 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_price (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "toyota/land-cruiser"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "byd/tang-l",
+   "decision": "ADDITION",
+   "brand": "BYD",
+   "model": "Tang L",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/byd-tang_l"
+   ],
+   "match": [
+    "BYD|Tang L"
+   ],
+   "evidence": [
+    "Registrations last 12m 251 / last 6m 80 (BYD|Tang L; BEV:250|Hybrid:1)",
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "byd/tangl"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "land-rover/range-rover",
+   "decision": "ADDITION",
+   "brand": "Land Rover",
+   "model": "Range Rover",
+   "body": "suv",
+   "powertrains": [
+    "petrol",
+    "hybrid"
+   ],
+   "u11_id": "land-rover/range-rover",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/land-rover/range-rover",
+    "https://www.contactcars.com/en/new-cars/land_rover-new_range_rover",
+    "https://www.contactcars.com/en/new-cars/land_rover-range_rover"
+   ],
+   "match": [
+    "Land Rover|Range Rover"
+   ],
+   "evidence": [
+    "Registrations last 12m 171 / last 6m 85 (Land Rover|Range Rover; ICE:170|Hybrid:1)",
+    "Market new-car pages with priced model years 2027 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_price (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_price+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "land-rover/range-rover",
+    "land-rover/new-range-rover"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "land-rover/range-rover-vogue",
+   "decision": "ADDITION",
+   "brand": "Land Rover",
+   "model": "Range Rover Vogue",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/land-rover/vogue",
+    "https://www.contactcars.com/en/new-cars/range_rover-vogue"
+   ],
+   "match": [
+    "Land Rover|Vogue"
+   ],
+   "evidence": [
+    "Registrations last 12m 10 / last 6m 2 (Land Rover|Vogue; ICE:10)",
+    "Market new-car pages with priced model years 2025 2026 (2 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "landrover/vogue"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "land-rover/range-rover-sport",
+   "decision": "ADDITION",
+   "brand": "Land Rover",
+   "model": "Range Rover Sport",
+   "body": "suv",
+   "powertrains": [
+    "petrol",
+    "hybrid"
+   ],
+   "u11_id": "",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/land-rover/sport",
+    "https://www.contactcars.com/en/new-cars/range_rover-sport"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 2026 (2 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "landrover/sport"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "land-rover/range-rover-evoque",
+   "decision": "ADDITION",
+   "brand": "Land Rover",
+   "model": "Range Rover Evoque",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "land-rover/range-rover-evoque",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/land-rover/evoque",
+    "https://www.contactcars.com/en/new-cars/land_rover-range_rover_evoque",
+    "https://www.contactcars.com/en/new-cars/range_rover-evoque",
+    "https://www.egy-car.com/landrover-rangerover-evoque"
+   ],
+   "match": [
+    "Land Rover|Evoque"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_price (P1 eligibility unchanged)",
+    "Registrations last 12m 118 / last 6m 54 (Land Rover|Evoque; ICE:118)",
+    "Market new-car pages with priced model years 2026 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: stale_model_year+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "land-rover/range-rover-evoque",
+    "range-rover/evoque"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "land-rover/velar",
+   "decision": "ADDITION",
+   "brand": "Land Rover",
+   "model": "Range Rover Velar",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "land-rover/velar",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/land-rover/Velar",
+    "https://www.contactcars.com/en/new-cars/range_rover-velar"
+   ],
+   "match": [
+    "Land Rover|Velar"
+   ],
+   "evidence": [
+    "Registrations last 12m 83 / last 6m 40 (Land Rover|Velar; ICE:83)",
+    "Market new-car pages with priced model years 2025 2026 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_price (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "land-rover/velar"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "land-rover/defender",
+   "decision": "ADDITION",
+   "brand": "Land Rover",
+   "model": "Defender",
+   "body": "suv",
+   "powertrains": [
+    "petrol",
+    "hybrid"
+   ],
+   "u11_id": "land-rover/defender",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/land-rover/defender",
+    "https://www.contactcars.com/en/new-cars/land_rover-defender",
+    "https://www.egy-car.com/landrover-defender"
+   ],
+   "match": [
+    "Land Rover|Defender"
+   ],
+   "evidence": [
+    "Registrations last 12m 14 / last 6m 6 (Land Rover|Defender; ICE:12|Hybrid:2)",
+    "Market new-car pages with priced model years 2026 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_price (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "land-rover/defender"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "jaguar/f-pace",
+   "decision": "ADDITION",
+   "brand": "Jaguar",
+   "model": "F-Pace",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "jaguar/f-pace",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/jaguar-f_pace",
+    "https://www.egy-car.com/jaguar-f-pace"
+   ],
+   "match": [
+    "Jaguar|F-PACE"
+   ],
+   "evidence": [
+    "Registrations last 12m 54 / last 6m 42 (Jaguar|F-PACE; ICE:54)",
+    "Market new-car pages with priced model years 2025 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_price (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "jaguar/f-pace"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "nissan/n7",
+   "decision": "ADDITION",
+   "brand": "Nissan",
+   "model": "N7",
+   "body": "sedan",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "nissan/n7",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/nissan-n7"
+   ],
+   "match": [
+    "Nissan|N7"
+   ],
+   "evidence": [
+    "Registrations last 12m 158 / last 6m 124 (Nissan|N7; BEV:158)",
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_price (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "nissan/n7"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "nissan/armada",
+   "decision": "ADDITION",
+   "brand": "Nissan",
+   "model": "Armada",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "nissan/armada",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/nissan-armada"
+   ],
+   "match": [
+    "Nissan|Armada"
+   ],
+   "evidence": [
+    "Registrations last 12m 11 / last 6m 10 (Nissan|Armada; ICE:11)",
+    "Market new-car pages with priced model years 2025 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_price (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "nissan/armada"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "byd/dolphin-surf",
+   "decision": "ADDITION",
+   "brand": "BYD",
+   "model": "Dolphin Surf",
+   "body": "hatchback",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "byd/dolphin-surf",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/byd/Dolphin",
+    "https://www.contactcars.com/en/new-cars/byd-dolphin_surf",
+    "https://www.egy-car.com/byd-dolphin-surf"
+   ],
+   "match": [
+    "BYD|Dolphin"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2027 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)",
+    "Registrations last 12m 102 / last 6m 95 (BYD|Dolphin; BEV:102)",
+    "Market new-car pages with priced model years 2027 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "byd/dolphin-surf",
+    "byd/dolphin"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "byd/atto-2",
+   "decision": "ADDITION",
+   "brand": "BYD",
+   "model": "Atto 2",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/byd/atto-2",
+    "https://www.contactcars.com/en/new-cars/byd-atto_2",
+    "https://www.egy-car.com/byd-atto-2"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2027 (3 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "byd/atto2"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "byd/seal",
+   "decision": "ADDITION",
+   "brand": "BYD",
+   "model": "Seal",
+   "body": "sedan",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "byd/seal",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/byd-seal"
+   ],
+   "match": [
+    "BYD|Seal"
+   ],
+   "evidence": [
+    "Registrations last 12m 3 / last 6m 2 (BYD|Seal; BEV:3)",
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_price+body_not_passenger:? (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "byd/seal"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "byd/leopard-8",
+   "decision": "ADDITION",
+   "brand": "BYD",
+   "model": "Leopard 8",
+   "body": "suv",
+   "powertrains": [
+    "phev"
+   ],
+   "u11_id": "byd/leopard-8",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/byd-leopard_8"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "byd/leopard-8"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "bmw/x4",
+   "decision": "ADDITION",
+   "brand": "BMW",
+   "model": "X4",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "bmw/x4",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/bmw/x4",
+    "https://www.contactcars.com/en/new-cars/bmw-x4",
+    "https://www.egy-car.com/bmw-x4"
+   ],
+   "match": [
+    "BMW|X4"
+   ],
+   "evidence": [
+    "Registrations last 12m 86 / last 6m 36 (BMW|X4; ICE:86)",
+    "Market new-car pages with priced model years 2025 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: stale_model_year (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "bmw/x4"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "bmw/i5",
+   "decision": "ADDITION",
+   "brand": "BMW",
+   "model": "i5",
+   "body": "sedan",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "bmw/i5",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/bmw/I5",
+    "https://www.contactcars.com/en/new-cars/bmw-i5",
+    "https://www.egy-car.com/bmw-i5"
+   ],
+   "match": [
+    "BMW|i5"
+   ],
+   "evidence": [
+    "Registrations last 12m 63 / last 6m 7 (BMW|i5; BEV:63)",
+    "Market new-car pages with priced model years 2025 2026 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: stale_model_year (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "bmw/i5"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "bmw/7-series",
+   "decision": "ADDITION",
+   "brand": "BMW",
+   "model": "7 Series",
+   "body": "sedan",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "bmw/7-series",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/bmw/7-series",
+    "https://www.contactcars.com/en/new-cars/bmw-740i",
+    "https://www.contactcars.com/en/new-cars/bmw-750li",
+    "https://www.contactcars.com/en/new-cars/bmw-760i",
+    "https://www.egy-car.com/bmw-760i"
+   ],
+   "match": [
+    "BMW|7-Series"
+   ],
+   "evidence": [
+    "Registrations last 12m 49 / last 6m 16 (BMW|7-Series; ICE:49)",
+    "Market new-car pages with priced model years 2026 2027 (5 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "bmw/7-series"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "bmw/1-series",
+   "decision": "ADDITION",
+   "brand": "BMW",
+   "model": "1 Series",
+   "body": "hatchback",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "bmw/1-series",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/bmw/118",
+    "https://www.contactcars.com/en/new-cars/bmw-118i",
+    "https://www.egy-car.com/bmw-118"
+   ],
+   "match": [
+    "BMW|1-Series"
+   ],
+   "evidence": [
+    "Registrations last 12m 28 / last 6m 14 (BMW|1-Series; ICE:28)",
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: stale_model_year+no_sale_evidence (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2027 (2 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "bmw/1-series",
+    "bmw/118"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "bmw/2-series-gran-coupe",
+   "decision": "ADDITION",
+   "brand": "BMW",
+   "model": "2 Series Gran Coupe",
+   "body": "sedan",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "bmw/218i",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/bmw/218-i",
+    "https://www.contactcars.com/en/new-cars/bmw-218i",
+    "https://www.egy-car.com/bmw-218i"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 2027 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Gran Coupe+stale_model_year+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "bmw/218i"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "bmw/4-series",
+   "decision": "ADDITION",
+   "brand": "BMW",
+   "model": "4 Series",
+   "body": "coupe",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "bmw/420i-gran-coupe",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/bmw/420",
+    "https://www.contactcars.com/en/new-cars/bmw-420i_convertible",
+    "https://www.contactcars.com/en/new-cars/bmw-420i_gran_coupe",
+    "https://www.contactcars.com/en/new-cars/bmw-440i_coupe"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2027 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "Market new-car pages with priced model years 2025 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Gran Coupe+no_sale_evidence (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2025 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Convertible+no_sale_evidence (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Coupe+stale_model_year+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "bmw/420",
+    "bmw/420i-gran-coupe",
+    "bmw/420i-convertible",
+    "bmw/440i-coupe"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "bmw/i4",
+   "decision": "ADDITION",
+   "brand": "BMW",
+   "model": "i4",
+   "body": "sedan",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "bmw/i4",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/bmw/BMW-I4",
+    "https://www.contactcars.com/en/new-cars/bmw-i4",
+    "https://www.egy-car.com/bmw-i4"
+   ],
+   "match": [
+    "BMW|i4"
+   ],
+   "evidence": [
+    "Registrations last 12m 5 / last 6m 0 (BMW|i4; BEV:5)",
+    "Market new-car pages with priced model years 2025 2026 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Gran Coupe+stale_model_year (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "bmw/i4"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "bmw/i3-sedan",
+   "decision": "ADDITION",
+   "brand": "BMW",
+   "model": "i3 (sedan)",
+   "body": "sedan",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/bmw-i3_sedan"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "bmw/i3sedan"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "bmw/ix3-neue-klasse",
+   "decision": "ADDITION",
+   "brand": "BMW",
+   "model": "iX3 (Neue Klasse)",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "bmw/ix3-neue-klasse",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/bmw-ix3_neue_klasse"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 2027 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "bmw/ix3-neue-klasse"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "bmw/x7",
+   "decision": "SOURCE_ALIAS",
+   "brand": "BMW",
+   "model": "X7",
+   "audit_keys": [],
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/bmw/BMW-X7",
+    "https://www.contactcars.com/en/new-cars/bmw-x7",
+    "https://www.egy-car.com/bmw-x7"
+   ],
+   "evidence": [
+    "Registrations last 12m 57 / last 6m 24 (BMW|X7; ICE:57)",
+    "Market new-car pages with priced model years 2026 2027 (3 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "note": "Existing 283 identity; additional official/market source pages now owned by it."
+  },
+  {
+   "id": "bmw/m3",
+   "decision": "ADDITION",
+   "brand": "BMW",
+   "model": "M3",
+   "body": "sedan",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "bmw/m3",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/bmw-m3"
+   ],
+   "match": [
+    "BMW|M3"
+   ],
+   "evidence": [
+    "Registrations last 12m 18 / last 6m 8 (BMW|M3; ICE:18)",
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: stale_model_year (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "bmw/m3"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "bmw/m4",
+   "decision": "ADDITION",
+   "brand": "BMW",
+   "model": "M4",
+   "body": "coupe",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "bmw/m4",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/bmw-m4"
+   ],
+   "match": [
+    "BMW|M4"
+   ],
+   "evidence": [
+    "Registrations last 12m 18 / last 6m 7 (BMW|M4; ICE:18)",
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Coupe+stale_model_year (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "bmw/m4"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "bmw/m5",
+   "decision": "ADDITION",
+   "brand": "BMW",
+   "model": "M5",
+   "body": "sedan",
+   "powertrains": [
+    "hybrid"
+   ],
+   "u11_id": "bmw/m5",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/bmw-m5"
+   ],
+   "match": [
+    "BMW|M5"
+   ],
+   "evidence": [
+    "Registrations last 12m 9 / last 6m 6 (BMW|M5; ICE:9)",
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: stale_model_year (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "bmw/m5"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "bmw/m8",
+   "decision": "ADDITION",
+   "brand": "BMW",
+   "model": "M8 Gran Coupe",
+   "body": "sedan",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "bmw/m8",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/bmw-m8"
+   ],
+   "match": [
+    "BMW|M8"
+   ],
+   "evidence": [
+    "Registrations last 12m 1 / last 6m 0 (BMW|M8; ICE:1)",
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Gran Coupe+stale_model_year (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "bmw/m8"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "bmw/z4",
+   "decision": "ADDITION",
+   "brand": "BMW",
+   "model": "Z4",
+   "body": "convertible",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "bmw/z4",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/bmw-z4",
+    "https://www.egy-car.com/bmw-z4"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Convertible+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "bmw/z4"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "mercedes/s-class",
+   "decision": "ADDITION",
+   "brand": "Mercedes-Benz",
+   "model": "S-Class",
+   "body": "sedan",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "mercedes/s-class",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/mercedes/s-500",
+    "https://www.contactcars.com/en/new-cars/mercedes-s450",
+    "https://www.contactcars.com/en/new-cars/mercedes-s500",
+    "https://www.contactcars.com/en/new-cars/mercedes-s580",
+    "https://www.contactcars.com/en/new-cars/mercedes-s63"
+   ],
+   "match": [
+    "Mercedes|S-Class"
+   ],
+   "evidence": [
+    "Registrations last 12m 75 / last 6m 18 (Mercedes|S-Class; ICE:75)",
+    "Market new-car pages with priced model years 2025 2026 (5 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "mercedes/s-class"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "mercedes/maybach-s-580",
+   "decision": "ADDITION",
+   "brand": "Mercedes-Benz",
+   "model": "Maybach S-Class",
+   "body": "sedan",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "mercedes/maybach-s-580",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/mercedes/Maybach",
+    "https://www.contactcars.com/en/new-cars/mercedes-maybach_s_580"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 2027 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "mercedes/maybach-s-580",
+    "mercedesbenz/maybach"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "mercedes/maybach-eqs-680",
+   "decision": "ADDITION",
+   "brand": "Mercedes-Benz",
+   "model": "Maybach EQS 680 SUV",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/mercedes/EQS+680"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "mercedesbenz/eqsplus680"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "mercedes/eqs",
+   "decision": "ADDITION",
+   "brand": "Mercedes-Benz",
+   "model": "EQS",
+   "body": "sedan",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/mercedes/EQS"
+   ],
+   "match": [
+    "Mercedes|EQS"
+   ],
+   "evidence": [
+    "Registrations last 12m 48 / last 6m 22 (Mercedes|EQS; BEV:48)",
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "mercedesbenz/eqs"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "mercedes/eqe",
+   "decision": "ADDITION",
+   "brand": "Mercedes-Benz",
+   "model": "EQE",
+   "body": "sedan",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/mercedes/mercedes-benz-eqe-350"
+   ],
+   "match": [
+    "Mercedes|EQE"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "mercedesbenz/mercedesbenzeqe350"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "mercedes/eqe-suv",
+   "decision": "ADDITION",
+   "brand": "Mercedes-Benz",
+   "model": "EQE SUV",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "mercedes/eqe-suv",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/mercedes-eqe_suv"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "mercedes/eqe-suv"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "mercedes/cle",
+   "decision": "ADDITION",
+   "brand": "Mercedes-Benz",
+   "model": "CLE",
+   "body": "coupe",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "mercedes/cle-200",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/mercedes/mercedes-benz-cle-200",
+    "https://www.contactcars.com/en/new-cars/mercedes-cle_200"
+   ],
+   "match": [
+    "Mercedes|CLE"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Cabriolet-Coupe+no_sale_evidence (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "mercedes/cle-200",
+    "mercedesbenz/mercedesbenzcle200"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "mercedes/sl",
+   "decision": "ADDITION",
+   "brand": "Mercedes-Benz",
+   "model": "SL",
+   "body": "convertible",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "mercedes/sl55-amg",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/mercedes/sl-class",
+    "https://www.contactcars.com/en/new-cars/mercedes-sl55_amg"
+   ],
+   "match": [
+    "Mercedes|SL-Class"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Convertible+no_sale_evidence (P1 eligibility unchanged)",
+    "Registrations last 12m 19 / last 6m 6 (Mercedes|SL-Class; ICE:19)",
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "mercedes/sl55-amg",
+    "mercedesbenz/slclass"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "mercedes/amg-gt",
+   "decision": "ADDITION",
+   "brand": "Mercedes-Benz",
+   "model": "AMG GT",
+   "body": "coupe",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "mercedes/amg-gt",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/mercedes/AMG-GT",
+    "https://www.contactcars.com/en/new-cars/mercedes-amg_gt"
+   ],
+   "match": [
+    "Mercedes|GT"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 2026 2027 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Coupe+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "mercedes/amg-gt"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "mercedes/g-class",
+   "decision": "ADDITION",
+   "brand": "Mercedes-Benz",
+   "model": "G-Class",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "mercedes/g-500",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/mercedes/mercedes-benz-g63",
+    "https://www.contactcars.com/en/new-cars/mercedes-g_500",
+    "https://www.contactcars.com/en/new-cars/mercedes-g_63"
+   ],
+   "match": [
+    "Mercedes|AMG G63",
+    "Mercedes|G-Class"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2025 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "mercedes/g-500",
+    "mercedes/g-63",
+    "mercedesbenz/mercedesbenzg63"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "mercedes/g-580-eq",
+   "decision": "ADDITION",
+   "brand": "Mercedes-Benz",
+   "model": "G 580 with EQ Technology",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "mercedes/g580-with-eq-technology",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/mercedes-g580_with_eq_technology"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "mercedes/g580-with-eq-technology"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "mercedes/v-class",
+   "decision": "ADDITION",
+   "brand": "Mercedes-Benz",
+   "model": "V-Class",
+   "body": "mpv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "mercedes/v-class",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/mercedes-v300"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Van/MPV+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "mercedes/v-class"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "porsche/911",
+   "decision": "ADDITION",
+   "brand": "Porsche",
+   "model": "911",
+   "body": "coupe",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "porsche/911",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/porsche/911",
+    "https://www.contactcars.com/en/new-cars/porsche-911_carrera",
+    "https://www.contactcars.com/en/new-cars/porsche-911_gt3",
+    "https://www.contactcars.com/en/new-cars/porsche-911_turbo",
+    "https://www.egy-car.com/porsche-911-carrera",
+    "https://www.egy-car.com/porsche-911-turbo"
+   ],
+   "match": [
+    "Porche|911"
+   ],
+   "evidence": [
+    "Registrations last 12m 23 / last 6m 12 (Porche|911; ICE:23)",
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Coupe+no_sale_evidence (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2025 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Coupe+stale_model_year+no_sale_evidence (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2027 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Coupe+stale_model_year+no_sale_evidence (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2027 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Coupe+stale_model_year+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "porsche/911",
+    "porsche/911-carrera",
+    "porsche/911-gt3",
+    "porsche/911-turbo"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "porsche/718",
+   "decision": "ADDITION",
+   "brand": "Porsche",
+   "model": "718",
+   "body": "coupe",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "porsche/718",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/porsche/718",
+    "https://www.contactcars.com/en/new-cars/porsche-718"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Coupe+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "porsche/718"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "porsche/taycan",
+   "decision": "ADDITION",
+   "brand": "Porsche",
+   "model": "Taycan",
+   "body": "sedan",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "porsche/taycan",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/porsche/Taycan",
+    "https://www.contactcars.com/en/new-cars/porsche-taycan",
+    "https://www.egy-car.com/porsche-taycan"
+   ],
+   "match": [
+    "Porche|Taycan"
+   ],
+   "evidence": [
+    "Registrations last 12m 18 / last 6m 4 (Porche|Taycan; BEV:18)",
+    "Market new-car pages with priced model years 2025 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "porsche/taycan"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "porsche/panamera",
+   "decision": "ADDITION",
+   "brand": "Porsche",
+   "model": "Panamera",
+   "body": "sedan",
+   "powertrains": [
+    "petrol",
+    "hybrid"
+   ],
+   "u11_id": "porsche/panamera",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/porsche/panamera"
+   ],
+   "match": [
+    "Porche|Panamera"
+   ],
+   "evidence": [
+    "Registrations last 12m 3 / last 6m 1 (Porche|Panamera; ICE:3)",
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "porsche/panamera"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "porsche/macan-electric",
+   "decision": "ADDITION",
+   "brand": "Porsche",
+   "model": "Macan Electric",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "porsche/macan-electric",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/porsche/Macan-Electric"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "porsche/macan-electric"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "rolls-royce/cullinan",
+   "decision": "ADDITION",
+   "brand": "Rolls-Royce",
+   "model": "Cullinan",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "rolls-royce/cullinan",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/rolls_royce-cullinan"
+   ],
+   "match": [
+    "Rolls Royce|CULLINAN"
+   ],
+   "evidence": [
+    "Registrations last 12m 24 / last 6m 17 (Rolls Royce|CULLINAN; ICE:24)",
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: stale_model_year (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "rolls-royce/cullinan"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "rolls-royce/spectre",
+   "decision": "ADDITION",
+   "brand": "Rolls-Royce",
+   "model": "Spectre",
+   "body": "coupe",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "rolls-royce/spectre",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/rolls_royce-spectre"
+   ],
+   "match": [
+    "Rolls Royce|Spectre"
+   ],
+   "evidence": [
+    "Registrations last 12m 8 / last 6m 5 (Rolls Royce|Spectre; ICE:8)",
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Coupe (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "rolls-royce/spectre"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "maserati/grecale",
+   "decision": "ADDITION",
+   "brand": "Maserati",
+   "model": "Grecale",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "maserati/grecale",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/maserati/Grecale",
+    "https://www.contactcars.com/en/new-cars/maserati-grecale"
+   ],
+   "match": [
+    "Mazarati|Grecale"
+   ],
+   "evidence": [
+    "Registrations last 12m 21 / last 6m 7 (Mazarati|Grecale; ICE:21)",
+    "Market new-car pages with priced model years 2025 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "maserati/grecale"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "maserati/ghibli",
+   "decision": "ADDITION",
+   "brand": "Maserati",
+   "model": "Ghibli",
+   "body": "sedan",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "maserati/ghibli",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/maserati-ghibli",
+    "https://www.egy-car.com/maserati-ghibli"
+   ],
+   "match": [
+    "Mazarati|Ghibli"
+   ],
+   "evidence": [
+    "Registrations last 12m 1 / last 6m 0 (Mazarati|Ghibli; ICE:1)",
+    "Market new-car pages with priced model years 2025 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_price+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "maserati/ghibli"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "lotus/emeya",
+   "decision": "ADDITION",
+   "brand": "Lotus",
+   "model": "Emeya",
+   "body": "sedan",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "lotus/emeya",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/lotus/Emeya",
+    "https://www.contactcars.com/en/new-cars/lotus-emeya"
+   ],
+   "match": [
+    "Lotus|Emeya"
+   ],
+   "evidence": [
+    "Registrations last 12m 7 / last 6m 5 (Lotus|Emeya; ICE:7)",
+    "Market new-car pages with priced model years 2025 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_price (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "lotus/emeya"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "smart/1",
+   "decision": "ADDITION",
+   "brand": "Smart",
+   "model": "#1",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "smart/1",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/smart/smart-1",
+    "https://www.contactcars.com/en/new-cars/smart-hashtag_1",
+    "https://www.egy-car.com/smart-1"
+   ],
+   "match": [
+    "Smart|#1"
+   ],
+   "evidence": [
+    "Registrations last 12m 37 / last 6m 7 (Smart|#1; BEV:37)",
+    "Market new-car pages with priced model years 2025 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2025 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "smart/1",
+    "smart/hashtag-1"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "smart/3",
+   "decision": "ADDITION",
+   "brand": "Smart",
+   "model": "#3",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "smart/3",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/smart/smart-3",
+    "https://www.contactcars.com/en/new-cars/smart-hashtag_3",
+    "https://www.egy-car.com/smart-3"
+   ],
+   "match": [
+    "Smart|#3"
+   ],
+   "evidence": [
+    "Registrations last 12m 42 / last 6m 21 (Smart|#3; BEV:42)",
+    "Market new-car pages with priced model years 2025 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2025 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "smart/3",
+    "smart/hashtag-3"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "smart/5",
+   "decision": "ADDITION",
+   "brand": "Smart",
+   "model": "#5",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "smart/5",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/smart/5",
+    "https://www.contactcars.com/en/new-cars/smart-hashtag_5",
+    "https://www.egy-car.com/smart-5"
+   ],
+   "match": [
+    "Smart|#5"
+   ],
+   "evidence": [
+    "Registrations last 12m 16 / last 6m 16 (Smart|#5; BEV:16)",
+    "Market new-car pages with priced model years 2026 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "smart/5",
+    "smart/hashtag5"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "im/ls9",
+   "decision": "ADDITION",
+   "brand": "IM",
+   "model": "LS9",
+   "body": "suv",
+   "powertrains": [
+    "reev"
+   ],
+   "u11_id": "im/ls9",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/IM/ls9",
+    "https://www.contactcars.com/en/new-cars/im_motors-ls9",
+    "https://www.egy-car.com/im-ls9"
+   ],
+   "match": [
+    "IM Motors|LS9"
+   ],
+   "evidence": [
+    "Registrations last 12m 15 / last 6m 15 (IM Motors|LS9; BEV:15)",
+    "Market new-car pages with priced model years 2027 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "im/ls9"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "vgv/u70-pro",
+   "decision": "ADDITION",
+   "brand": "VGV",
+   "model": "U70 Pro",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "vgv/u70-pro",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/vgv/U70-Pro"
+   ],
+   "match": [
+    "VGV|U70 PRO"
+   ],
+   "evidence": [
+    "Registrations last 12m 17 / last 6m 2 (VGV|U70 PRO; ICE:17)",
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "vgv/u70-pro"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "bestune/t77-pro",
+   "decision": "ADDITION",
+   "brand": "Bestune",
+   "model": "T77 Pro",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "bestune/t77-pro",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/bestune/T77-Pro",
+    "https://www.contactcars.com/en/new-cars/bestune-t77",
+    "https://www.egy-car.com/bestune-t77-pro"
+   ],
+   "match": [
+    "Bestune|T77"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)",
+    "Registrations last 12m 9 / last 6m 3 (Bestune|T77; ICE:9)",
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "bestune/t77-pro",
+    "bestune/t77"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "mhero/1",
+   "decision": "ADDITION",
+   "brand": "M-Hero",
+   "model": "917",
+   "body": "suv",
+   "powertrains": [
+    "reev"
+   ],
+   "u11_id": "mhero/1",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/m-hero/1",
+    "https://www.contactcars.com/en/new-cars/m_hero-1_917"
+   ],
+   "match": [
+    "M-Hero|1"
+   ],
+   "evidence": [
+    "Registrations last 12m 1 / last 6m 1 (M-Hero|1; BEV:1)",
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "mhero/1",
+    "mhero/1917"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "arcfox/kaola-s",
+   "decision": "ADDITION",
+   "brand": "Arcfox",
+   "model": "Kaola S",
+   "body": "mpv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "arcfox/kaola-s",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/arcfox/kaola-s",
+    "https://www.contactcars.com/en/new-cars/arcfox-koala_s"
+   ],
+   "match": [
+    "Arcfox|Kaola"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "arcfox/kaola-s",
+    "arcfox/koala-s"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "audi/rs-e-tron-gt",
+   "decision": "ADDITION",
+   "brand": "Audi",
+   "model": "RS e-tron GT",
+   "body": "sedan",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "audi/rs-e-tron-gt",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/audi/RS-e-Tron",
+    "https://www.contactcars.com/en/new-cars/audi-rs_e_tron_gt",
+    "https://www.egy-car.com/audi-rs-e-tron"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2025 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "audi/rs-e-tron-gt",
+    "audi/rs-e-tron"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "avatr/06",
+   "decision": "ADDITION",
+   "brand": "Avatr",
+   "model": "06",
+   "body": "sedan",
+   "powertrains": [
+    "ev",
+    "reev"
+   ],
+   "u11_id": "avatr/06",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/avatr/06",
+    "https://www.contactcars.com/en/new-cars/avatr-06"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "avatr/06"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "baic/beijing-x7",
+   "decision": "ADDITION",
+   "brand": "BAIC",
+   "model": "Beijing X7",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/baic/BEIJING-X7"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "baic/beijingx7"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "cadillac/lyriq",
+   "decision": "ADDITION",
+   "brand": "Cadillac",
+   "model": "Lyriq",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "cadillac/lyriq",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/cadillac/cadillac-lyriq",
+    "https://www.contactcars.com/en/new-cars/cadillac-lyriq",
+    "https://www.egy-car.com/cadillac-lyriq"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "cadillac/lyriq"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "cadillac/optiq",
+   "decision": "ADDITION",
+   "brand": "Cadillac",
+   "model": "Optiq",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "cadillac/optiq",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/cadillac/optiq",
+    "https://www.contactcars.com/en/new-cars/cadillac-optiq",
+    "https://www.egy-car.com/cadillac-optiq"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "cadillac/optiq"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "cadillac/escalade-iq",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Cadillac",
+   "model": "Escalade IQL",
+   "audit_keys": [
+    "cadillac/escalade-iql"
+   ],
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/cadillac-escalade_iql"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "note": "Existing 283 identity; additional official/market source pages now owned by it."
+  },
+  {
+   "id": "chery/tiggo-7-pro-max",
+   "decision": "ADDITION",
+   "brand": "Chery",
+   "model": "Tiggo 7 Pro Max",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "chery/tiggo-7-pro-max",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/chery/Tiggo-7-pro-max",
+    "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro_max",
+    "https://www.egy-car.com/chery-tiggo-7-pro-max"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 2027 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "Official Egypt model page: https://chery-eg.com/en/car/tiggo-7-pro-max",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "chery/tiggo-7-pro-max"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "chevrolet/spark-euv",
+   "decision": "ADDITION",
+   "brand": "Chevrolet",
+   "model": "Spark EUV",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "chevrolet/spark-euv",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/chevrolet/Spark-EV",
+    "https://www.contactcars.com/en/new-cars/chevrolet-spark_euv",
+    "https://www.egy-car.com/chevrolet-spark-euv"
+   ],
+   "match": [
+    "Chevrolet|Spark"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:?+no_sale_evidence (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "chevrolet/spark-euv",
+    "chevrolet/spark-ev"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "citroen/c5-aircross",
+   "decision": "ADDITION",
+   "brand": "Citroën",
+   "model": "C5 Aircross",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "citroen/c5-aircross",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/citroen/C5-Aircross",
+    "https://www.contactcars.com/en/new-cars/citroen-c5_aircross",
+    "https://www.egy-car.com/citroen-c5-aircross"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 2026 2027 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "citroen/c5-aircross"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "dongfeng/huge",
+   "decision": "ADDITION",
+   "brand": "Dongfeng",
+   "model": "Aeolus Huge",
+   "body": "suv",
+   "powertrains": [
+    "hybrid"
+   ],
+   "u11_id": "dongfeng/huge-hybrid",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/dongfeng_aeolus-huge_hybrid"
+   ],
+   "match": [
+    "Dongfeng|Huge"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: stale_model_year+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "dongfeng/huge-hybrid"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "dongfeng/shine",
+   "decision": "ADDITION",
+   "brand": "Dongfeng",
+   "model": "Aeolus Shine",
+   "body": "sedan",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "dongfeng/shine",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/dfm/Shine",
+    "https://www.contactcars.com/en/new-cars/dongfeng-shine"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "dongfeng/shine"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "dongfeng/l7",
+   "decision": "ADDITION",
+   "brand": "Dongfeng",
+   "model": "Aeolus L7",
+   "body": "suv",
+   "powertrains": [
+    "phev"
+   ],
+   "u11_id": "",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/dongfeng-l7"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "dongfeng/l7"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "fiat/e-ulysse",
+   "decision": "ADDITION",
+   "brand": "Fiat",
+   "model": "E-Ulysse",
+   "body": "mpv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "fiat/e-ulysee",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/fiat-e_ulysee"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Van+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "fiat/e-ulysee"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "forthing/friday",
+   "decision": "ADDITION",
+   "brand": "Forthing",
+   "model": "Friday",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "forthing/t5-friday",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/forthing-t5_friday"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 2027 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "forthing/t5-friday"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "gac/aion-y",
+   "decision": "ADDITION",
+   "brand": "GAC",
+   "model": "Aion Y Plus",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "gac/aion-y",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/gac-aion_y",
+    "https://www.egy-car.com/gac-aion-y"
+   ],
+   "match": [
+    "GAC|AION Y PLUS"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "gac/aion-y"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "gac/aion-lx",
+   "decision": "ADDITION",
+   "brand": "GAC",
+   "model": "Aion LX",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "gac/aion-lx",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/gac/gac-aion-lx"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "gac/aion-lx"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "gac/gs3-emzoom",
+   "decision": "ADDITION",
+   "brand": "GAC",
+   "model": "GS3 Emzoom",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "gac/gs3-emzoom",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/gac/GS3++Emzoom"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2027 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "gac/gs3plusplusemzoom"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "geely/emgrand",
+   "decision": "ADDITION",
+   "brand": "Geely",
+   "model": "Emgrand",
+   "body": "sedan",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "geely/emgrand",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/geely/Gelly-Emgrand",
+    "https://www.contactcars.com/en/new-cars/geely-emgrand",
+    "https://www.egy-car.com/geely-emgrand"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 2026 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "geely/emgrand",
+    "geely/gellyemgrand"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "geely/ex5-em-i",
+   "decision": "ADDITION",
+   "brand": "Geely",
+   "model": "EX5 EM-i",
+   "body": "suv",
+   "powertrains": [
+    "phev"
+   ],
+   "u11_id": "geely/ex5-em-i",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/geely/ex5-em-i",
+    "https://www.contactcars.com/en/new-cars/geely-ex5_em_i"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 2027 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "geely/ex5-em-i"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "genesis/electrified-g80",
+   "decision": "ADDITION",
+   "brand": "Genesis",
+   "model": "Electrified G80",
+   "body": "sedan",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "genesis/electrified-g80",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/genesis-electrified_g80"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 2027 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "genesis/electrified-g80"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "haval/h6-hev",
+   "decision": "ADDITION",
+   "brand": "Haval",
+   "model": "H6 HEV",
+   "body": "suv",
+   "powertrains": [
+    "hybrid"
+   ],
+   "u11_id": "haval/h6-hev",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/haval/H6-HEV",
+    "https://www.contactcars.com/en/new-cars/haval-h6_hev",
+    "https://www.egy-car.com/haval-h6-hev"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 2026 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "haval/h6-hev"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "haval/jolion-pro",
+   "decision": "ADDITION",
+   "brand": "Haval",
+   "model": "Jolion Pro",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "haval/jolion-pro",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/haval/Jolion-Pro",
+    "https://www.contactcars.com/en/new-cars/haval-jolion_pro",
+    "https://www.egy-car.com/haval-jolion-pro"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "haval/jolion-pro"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "haval/v7",
+   "decision": "ADDITION",
+   "brand": "Haval",
+   "model": "V7",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "haval/v7",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/haval/v7",
+    "https://www.contactcars.com/en/new-cars/haval-v7",
+    "https://www.egy-car.com/haval-v7"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2027 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "haval/v7"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "hongqi/eh7",
+   "decision": "ADDITION",
+   "brand": "Hongqi",
+   "model": "EH7",
+   "body": "sedan",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "hongqi/eh7",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/hongqi-eh7"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "hongqi/eh7"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "hongqi/ehs7",
+   "decision": "ADDITION",
+   "brand": "Hongqi",
+   "model": "EHS7",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "hongqi/ehs7",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/hongqi-ehs7"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "hongqi/ehs7"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "gmc/hummer-ev",
+   "decision": "ADDITION",
+   "brand": "GMC",
+   "model": "Hummer EV SUV",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "hummer/hummer-ev-suv",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/hummer-hummer_ev_suv"
+   ],
+   "match": [
+    "GMC|Hummer"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "hummer/hummer-ev-suv"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "hyundai/staria",
+   "decision": "ADDITION",
+   "brand": "Hyundai",
+   "model": "Staria",
+   "body": "mpv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "hyundai/staria",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/hyundai-staria"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Van+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "hyundai/staria"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "hyundai/venue",
+   "decision": "ADDITION",
+   "brand": "Hyundai",
+   "model": "Venue",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "hyundai/venue",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/hyundai/Venue",
+    "https://www.contactcars.com/en/new-cars/hyundai-venue",
+    "https://www.egy-car.com/hyundai-venue"
+   ],
+   "match": [
+    "Hyundai|Venue"
+   ],
+   "evidence": [
+    "Registrations last 12m 2 / last 6m 0 (Hyundai|Venue; ICE:2)",
+    "Market new-car pages with priced model years 2027 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_price (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "hyundai/venue"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "hyundai/i30",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Hyundai",
+   "model": "i30",
+   "audit_keys": [
+    "hyundai/i30fb2",
+    "hyundai/i30hb",
+    "hyundai/i30stationwagon"
+   ],
+   "urls": [],
+   "evidence": [
+    "Official Egypt model page: https://hyundai-egypt.net/models/i30-fb-2",
+    "Official Egypt model page: https://hyundai-egypt.net/models/i30-hb",
+    "Official Egypt model page: https://hyundai-egypt.net/models/i30-station-wagon"
+   ],
+   "note": "Existing 283 identity; additional official/market source pages now owned by it."
+  },
+  {
+   "id": "icaur/v27",
+   "decision": "ADDITION",
+   "brand": "iCAUR",
+   "model": "V27",
+   "body": "suv",
+   "powertrains": [
+    "reev"
+   ],
+   "u11_id": "icaur/v27",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/icaur/v27",
+    "https://www.contactcars.com/en/new-cars/icaur-v27",
+    "https://www.egy-car.com/icaur-v27"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2027 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "icaur/v27"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "jac/js2",
+   "decision": "ADDITION",
+   "brand": "JAC",
+   "model": "JS2",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "jac/js2",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/jac-js2",
+    "https://www.egy-car.com/jac-js2"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 2026 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "jac/js2"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "jac/js4",
+   "decision": "ADDITION",
+   "brand": "JAC",
+   "model": "JS4",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "jac/js4",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/jac/JS4",
+    "https://www.contactcars.com/en/new-cars/jac-js4",
+    "https://www.egy-car.com/jac-js4"
+   ],
+   "match": [
+    "JAC|J4"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 2026 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "jac/js4"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "jeep/grand-cherokee-l",
+   "decision": "ADDITION",
+   "brand": "Jeep",
+   "model": "Grand Cherokee L",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "jeep/grand-cherokee-l",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/jeep/Grand-Cherokee-L"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "jeep/grand-cherokee-l"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "kaiyi/x3-pro",
+   "decision": "ADDITION",
+   "brand": "Kaiyi",
+   "model": "X3 Pro",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "kaiyi/x3-pro",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/Kaiyi/KAIYI-X3-PRO",
+    "https://www.contactcars.com/en/new-cars/kaiyi-x3_pro",
+    "https://www.egy-car.com/kaiyi-x3-pro"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 2026 2027 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "kaiyi/x3-pro"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "kia/k3",
+   "decision": "ADDITION",
+   "brand": "Kia",
+   "model": "K3 (Cerato)",
+   "body": "sedan",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "kia/k3",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/kia-k3"
+   ],
+   "match": [
+    "Kia|Cerato"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: stale_model_year+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "kia/k3"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "lynk-co/02",
+   "decision": "ADDITION",
+   "brand": "Lynk & Co",
+   "model": "02",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "lynk-co/02",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/lynkco/lynko-02"
+   ],
+   "match": [
+    "Lynk & Co|2"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "lynkco/lynko02"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "lynk-co/03",
+   "decision": "ADDITION",
+   "brand": "Lynk & Co",
+   "model": "03",
+   "body": "sedan",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "lynk-co/03",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/lynkco/03",
+    "https://www.egy-car.com/lynk-co-03"
+   ],
+   "match": [
+    "Lynk & Co|3"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (2 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "lynk-co/03"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "mg/4",
+   "decision": "ADDITION",
+   "brand": "MG",
+   "model": "4 EV",
+   "body": "hatchback",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "mg/4",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/moris-garage/MG-4",
+    "https://www.contactcars.com/en/new-cars/mg-4",
+    "https://www.egy-car.com/mg-4"
+   ],
+   "match": [
+    "MG|MG4 EV"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "mg/4"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "mg/cyberster",
+   "decision": "ADDITION",
+   "brand": "MG",
+   "model": "Cyberster",
+   "body": "convertible",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "mg/cyberster",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/moris-garage/mg-cyberster",
+    "https://www.contactcars.com/en/new-cars/mg-cyberster",
+    "https://www.egy-car.com/mg-cyberster"
+   ],
+   "match": [
+    "MG|Cyberster"
+   ],
+   "evidence": [
+    "Registrations last 12m 3 / last 6m 3 (MG|Cyberster; BEV:3)",
+    "Market new-car pages with priced model years 2026 2027 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "Official Egypt model page: https://www.mgmotor.com.eg/model/mg-cyberster",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Cabriolet (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "mg/cyberster"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "mini/cooper",
+   "decision": "ADDITION",
+   "brand": "MINI",
+   "model": "Cooper",
+   "body": "hatchback",
+   "powertrains": [
+    "petrol",
+    "ev"
+   ],
+   "u11_id": "mini/cooper",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/mini/cooper",
+    "https://www.contactcars.com/en/new-cars/mini-cooper",
+    "https://www.egy-car.com/mini-cooper"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 2027 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "mini/cooper"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "mitsubishi/outlander-sport",
+   "decision": "ADDITION",
+   "brand": "Mitsubishi",
+   "model": "Outlander Sport",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "mitsubishi/outlander-sport",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/mitsubishi/Outlander-Sport",
+    "https://www.contactcars.com/en/new-cars/mitsubishi-outlander_sport",
+    "https://www.egy-car.com/mitsubishi-outlander-sport"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 2026 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "Official Egypt model page: https://www.mitsubishimotors-eg.com/en/cars/outlander-sport",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "mitsubishi/outlander-sport"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "rehigh/rh6",
+   "decision": "ADDITION",
+   "brand": "Rehigh",
+   "model": "RH6",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "rehigh/rh6",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/rehigh-rh6"
+   ],
+   "match": [
+    "Dayun|Rehigh RH6"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "rehigh/rh6"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "rehigh/rh8",
+   "decision": "ADDITION",
+   "brand": "Rehigh",
+   "model": "RH8",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/rehigh-rh8"
+   ],
+   "match": [
+    "Dayun|Rehigh RH8"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "rehigh/rh8"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "rely/r8",
+   "decision": "ADDITION",
+   "brand": "Rely",
+   "model": "R8",
+   "body": "suv",
+   "powertrains": [
+    "phev"
+   ],
+   "u11_id": "rely/r8",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/rely-r8"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "rely/r8"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "subaru/crosstrek",
+   "decision": "ADDITION",
+   "brand": "Subaru",
+   "model": "Crosstrek",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "subaru/crosstrek",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/subaru/XV-Crosstrek"
+   ],
+   "match": [
+    "Subaru|Crosstrek"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "subaru/xv-crosstrek"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "volkswagen/touareg",
+   "decision": "ADDITION",
+   "brand": "Volkswagen",
+   "model": "Touareg",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "volkswagen/touareg",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/volks-wagen/touareg",
+    "https://www.contactcars.com/en/new-cars/volkswagen-touareg",
+    "https://www.egy-car.com/volkswagen-touareg"
+   ],
+   "match": [
+    "Volkswagen|Tourag"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 2026 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "volkswagen/touareg"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "volkswagen/id-era-9x",
+   "decision": "ADDITION",
+   "brand": "Volkswagen",
+   "model": "ID. ERA 9X",
+   "body": "suv",
+   "powertrains": [
+    "reev"
+   ],
+   "u11_id": "volkswagen/id-era-9x",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/volkswagen-id_era_9x"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_price+body_not_passenger:SUV (Electric, classified)+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "volkswagen/id-era-9x"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "xpeng/gx",
+   "decision": "ADDITION",
+   "brand": "XPeng",
+   "model": "GX",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "xpeng/gx",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/xpeng-gx"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "xpeng/gx"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "xpeng/mona-m03",
+   "decision": "ADDITION",
+   "brand": "XPeng",
+   "model": "Mona M03",
+   "body": "sedan",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "xpeng/mona-l03",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/xpeng-mona_l03",
+    "https://www.contactcars.com/en/new-cars/xpeng-mona_mo3"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)",
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "xpeng/mona-l03",
+    "xpeng/monamo3"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "xpeng/p7-plus",
+   "decision": "ADDITION",
+   "brand": "XPeng",
+   "model": "Next P7",
+   "body": "sedan",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/xpeng-next_p7"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "xpeng/nextp7"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "zeekr/001",
+   "decision": "ADDITION",
+   "brand": "Zeekr",
+   "model": "001",
+   "body": "sedan",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "zeekr/001",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/zeekr/001",
+    "https://www.contactcars.com/en/new-cars/zeekr-001",
+    "https://www.egy-car.com/zeekr-001"
+   ],
+   "match": [
+    "Zeekr|1"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 2026 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "zeekr/001"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "zeekr/007",
+   "decision": "ADDITION",
+   "brand": "Zeekr",
+   "model": "007",
+   "body": "sedan",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "zeekr/007",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/zeekr-007"
+   ],
+   "match": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "zeekr/007"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "zeekr/7x",
+   "decision": "ADDITION",
+   "brand": "Zeekr",
+   "model": "7X",
+   "body": "suv",
+   "powertrains": [
+    "ev"
+   ],
+   "u11_id": "zeekr/7x",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/zeekr/zeekr-7x",
+    "https://www.contactcars.com/en/new-cars/zeekr-7x",
+    "https://www.egy-car.com/zeekr-7x"
+   ],
+   "match": [
+    "Zeekr|7"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 2026 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "zeekr/7x"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "ford/mustang",
+   "decision": "ADDITION",
+   "brand": "Ford",
+   "model": "Mustang",
+   "body": "coupe",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "ford/mustang",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/ford-mustang"
+   ],
+   "match": [
+    "Ford|Mustang"
+   ],
+   "evidence": [
+    "Registrations last 12m 2 / last 6m 1 (Ford|Mustang; ICE:2)",
+    "Market new-car pages with priced model years 2025 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Coupe (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "ford/mustang"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "dodge/charger",
+   "decision": "ADDITION",
+   "brand": "Dodge",
+   "model": "Charger",
+   "body": "coupe",
+   "powertrains": [
+    "ev",
+    "petrol"
+   ],
+   "u11_id": "dodge/charger",
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/dodge-charger"
+   ],
+   "match": [
+    "Dodge|Charger"
+   ],
+   "evidence": [
+    "Registrations last 12m 1 / last 6m 1 (Dodge|Charger; ICE:1)",
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Coupe (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "dodge/charger"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "changan/cs35",
+   "decision": "ADDITION",
+   "brand": "Changan",
+   "model": "CS35",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "",
+   "urls": [],
+   "match": [
+    "Changan|CS35"
+   ],
+   "evidence": [
+    "Registrations last 12m 11 / last 6m 4 (Changan|CS35; ICE:11)",
+    "Official Egypt model page: https://changan.com.eg/en/model/cs35"
+   ],
+   "audit_keys": [
+    "changan/cs35"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "toyota/camry",
+   "decision": "ADDITION",
+   "brand": "Toyota",
+   "model": "Camry",
+   "body": "sedan",
+   "powertrains": [
+    "hybrid"
+   ],
+   "u11_id": "",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/toyota/camry",
+    "https://www.egy-car.com/toyota-camry"
+   ],
+   "match": [],
+   "evidence": [
+    "Official Egypt model page: https://toyota.com.eg/en/models/toyota-camry"
+   ],
+   "audit_keys": [
+    "toyota/camry"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "toyota/rav4",
+   "decision": "ADDITION",
+   "brand": "Toyota",
+   "model": "RAV4",
+   "body": "suv",
+   "powertrains": [
+    "hybrid",
+    "petrol"
+   ],
+   "u11_id": "",
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/toyota/rav4",
+    "https://www.egy-car.com/toyota-rav-4"
+   ],
+   "match": [
+    "Toyota|Rav 4"
+   ],
+   "evidence": [
+    "Registrations last 12m 4 / last 6m 2 (Toyota|Rav 4; ICE:4)",
+    "Official Egypt model page: https://toyota.com.eg/en/models/toyota-rav4"
+   ],
+   "audit_keys": [
+    "toyota/rav4"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "toyota/land-cruiser-prado",
+   "decision": "ADDITION",
+   "brand": "Toyota",
+   "model": "Land Cruiser Prado",
+   "body": "suv",
+   "powertrains": [
+    "petrol"
+   ],
+   "u11_id": "",
+   "urls": [],
+   "match": [
+    "Toyota|Prado"
+   ],
+   "evidence": [
+    "Official Egypt model page: https://toyota.com.eg/en/models/toyota-landcruiser-prado"
+   ],
+   "audit_keys": [
+    "toyota/landcruiserprado"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "toyota/corolla-hybrid",
+   "decision": "ADDITION",
+   "brand": "Toyota",
+   "model": "Corolla Hybrid",
+   "body": "sedan",
+   "powertrains": [
+    "hybrid"
+   ],
+   "u11_id": "",
+   "urls": [],
+   "match": [],
+   "evidence": [
+    "Official Egypt model page: https://toyota.com.eg/en/models/toyota-corolla-hybrid"
+   ],
+   "audit_keys": [
+    "toyota/corollahybrid"
+   ],
+   "note": "Omission: on sale in Egypt (official page and/or current priced market pages) but outside the P1 U11 283."
+  },
+  {
+   "id": "chevrolet/dababbah",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "chevrolet",
+   "model": "dababbah",
+   "evidence": [
+    "Market new-car pages with priced model years 2027 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "chevrolet/dababbah"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "chevrolet/jumbo",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "chevrolet",
+   "model": "jumbo",
+   "evidence": [
+    "Market new-car pages with priced model years 2027 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "chevrolet/jumbo"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "chevrolet/jumbo-npr",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "Chevrolet",
+   "model": "Jumbo NPR",
+   "evidence": [
+    "Market new-car pages with priced model years 2025 2026 2027 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:?+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "chevrolet/jumbo-npr"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "chevrolet/n300",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "Chevrolet",
+   "model": "N300",
+   "evidence": [
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:?+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "chevrolet/n300"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "chevrolet/nkr",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "chevrolet",
+   "model": "nkr",
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "chevrolet/nkr"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "chevrolet/nqr",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "Chevrolet",
+   "model": "NQR",
+   "evidence": [
+    "Market new-car pages with priced model years 2025 2026 2027 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:?+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "chevrolet/nqr"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "chevrolet/s10-max",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "Chevrolet",
+   "model": "S10 Max",
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:?+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "chevrolet/s10-max"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "chevrolet/tfr",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "Chevrolet",
+   "model": "TFR",
+   "evidence": [
+    "Market new-car pages with priced model years 2025 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:?+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "chevrolet/tfr"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "isuzu/dmax",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "Isuzu",
+   "model": "Dmax",
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Pickup+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "isuzu/dmax"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "isuzu/npr",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "isuzu",
+   "model": "npr",
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "isuzu/npr"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "isuzu/rbc",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "isuzu",
+   "model": "rbc",
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "isuzu/rbc"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "toyota/hiace",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "Toyota",
+   "model": "Hiace",
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_price+body_not_passenger:?+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "toyota/hiace"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "toyota/hilux",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "Toyota",
+   "model": "Hilux",
+   "evidence": [
+    "Market new-car pages with priced model years 2025 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Pickup (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "toyota/hilux"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "toyota/tamaraw",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "Toyota",
+   "model": "Tamaraw",
+   "evidence": [
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_price+body_not_passenger:?+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "toyota/tamaraw"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "nissan/navara",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "Nissan",
+   "model": "Navara",
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Pickup+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "nissan/navara"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "gmc/sierra",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "GMC",
+   "model": "Sierra",
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Pickup+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "gmc/sierra"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "sandstorm/s24",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "Sandstorm",
+   "model": "S24",
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Pickup+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "sandstorm/s24"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "tesla/cybertruck",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "Tesla",
+   "model": "Cybertruck",
+   "evidence": [
+    "Registrations last 12m 5 / last 6m 3 (Tesla|CYBERTRUCK; BEV:5)",
+    "Market new-car pages with priced model years 2025 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Pickup (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "tesla/cybertruck"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "byd/shark-6-dmo",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "BYD",
+   "model": "Shark 6 DMO",
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_price+body_not_passenger:?+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "byd/shark-6-dmo"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "jmc/boarding",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "JMC",
+   "model": "Boarding",
+   "evidence": [
+    "Market new-car pages with priced model years 2025 2026 2027 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Van+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "jmc/boarding"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "kyc/v3",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "KYC",
+   "model": "V3",
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Other+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "kyc/v3"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "shineray/x30",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "Shineray",
+   "model": "X30",
+   "evidence": [
+    "Market new-car pages with priced model years 2026 2027 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Other+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "shineray/x30"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "suzuki/supercarry",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "suzuki",
+   "model": "supercarry",
+   "evidence": [
+    "Market new-car pages with priced model years 2026 2027 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "suzuki/supercarry"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "suzuki/van",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "suzuki",
+   "model": "van",
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "suzuki/van"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "golf-car/club-car",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "Golf-Car",
+   "model": "Club Car",
+   "evidence": [
+    "Market new-car pages with priced model years 2025 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:Other/Golf Cart+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "audit_keys": [
+    "golf-car/club-car"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "riddara/rd6",
+   "decision": "OUT_OF_SCOPE",
+   "brand": "riddara",
+   "model": "rd6",
+   "evidence": [
+    "Market new-car pages with priced model years 2027 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "audit_keys": [
+    "riddara/rd6"
+   ],
+   "note": "Commercial vehicle (pickup, truck, cargo van, microbus or golf cart): outside the passenger-car universe.",
+   "urls": []
+  },
+  {
+   "id": "mercedes/c-class",
+   "decision": "SOURCE_ALIAS",
+   "brand": "mercedes",
+   "model": "mercedes benz c43",
+   "alias_of_audit_key": "mercedesbenz/mercedesbenzc43",
+   "audit_keys": [
+    "mercedesbenz/mercedesbenzc43"
+   ],
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/mercedes/mercedes-benz-c43"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
+  },
+  {
+   "id": "mercedes/cla",
+   "decision": "SOURCE_ALIAS",
+   "brand": "mercedes",
+   "model": "cla 250e",
+   "alias_of_audit_key": "mercedesbenz/cla250e",
+   "audit_keys": [
+    "mercedesbenz/cla250e"
+   ],
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/mercedes-cla_250e"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
+  },
+  {
+   "id": "mercedes/gla",
+   "decision": "SOURCE_ALIAS",
+   "brand": "mercedes",
+   "model": "mercedes benz gla 200",
+   "alias_of_audit_key": "mercedesbenz/mercedesbenzgla200",
+   "audit_keys": [
+    "mercedesbenz/mercedesbenzgla200"
+   ],
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/mercedes/mercedes-benz-gla-200"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
+  },
+  {
+   "id": "mercedes/glc",
+   "decision": "SOURCE_ALIAS",
+   "brand": "mercedes",
+   "model": "mercedes benz glc 43",
+   "alias_of_audit_key": "mercedesbenz/mercedesbenzglc43",
+   "audit_keys": [
+    "mercedesbenz/mercedesbenzglc43"
+   ],
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/mercedes/mercedes-benz-glc-43"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
+  },
+  {
+   "id": "mini/countryman",
+   "decision": "SOURCE_ALIAS",
+   "brand": "mini",
+   "model": "cooper countryman",
+   "alias_of_audit_key": "mini/coopercountryman",
+   "audit_keys": [
+    "mini/coopercountryman"
+   ],
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/mini-cooper_countryman"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
+  },
+  {
+   "id": "porsche/cayenne",
+   "decision": "SOURCE_ALIAS",
+   "brand": "porsche",
+   "model": "cayenne s",
+   "alias_of_audit_key": "porsche/cayennes",
+   "audit_keys": [
+    "porsche/cayennes"
+   ],
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/porsche-cayenne_s"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
+  },
+  {
+   "id": "citroen/c4",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Citroën",
+   "model": "C4 Facelift",
+   "alias_of_audit_key": "citroen/c4-facelift",
+   "audit_keys": [
+    "citroen/c4-facelift"
+   ],
+   "urls": [
+    "https://www.contactcars.com/en/new-cars/citroen-c4_facelift"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
+  },
+  {
+   "id": "mg/one",
+   "decision": "SOURCE_ALIAS",
+   "brand": "moris-garage",
+   "model": "MG+One",
+   "alias_of_audit_key": "mg/mgplusone",
+   "audit_keys": [
+    "mg/mgplusone"
+   ],
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/moris-garage/MG+One"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2027 (1 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
+  },
+  {
+   "id": "vgv/u70p-plus",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Vgv",
+   "model": "U70Pro Plus",
+   "alias_of_audit_key": "vgv/u70pro-plus",
+   "audit_keys": [
+    "vgv/u70pro-plus"
+   ],
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/vgv/U70Pro-Plus"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2025 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
+  },
+  {
+   "id": "changan/eado",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Changan",
+   "model": "eado-2",
+   "alias_of_audit_key": "changan/eado2",
+   "audit_keys": [
+    "changan/eado2"
+   ],
+   "urls": [],
+   "evidence": [
+    "Official Egypt model page: https://changan.com.eg/en/model/eado-2"
+   ],
+   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
+  },
+  {
+   "id": "jetour/x70",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Jetour",
+   "model": "jetour-x70-fl",
+   "alias_of_audit_key": "jetour/jetourx70fl",
+   "audit_keys": [
+    "jetour/jetourx70fl"
+   ],
+   "urls": [],
+   "evidence": [
+    "Official Egypt model page: https://jetouregypt.com/models/jetour-x70-fl"
+   ],
+   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
+  },
+  {
+   "id": "jetour/x90-plus",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Jetour",
+   "model": "x90-plus-1-6t",
+   "alias_of_audit_key": "jetour/x90plus16t",
+   "audit_keys": [
+    "jetour/x90plus16t"
+   ],
+   "urls": [],
+   "evidence": [
+    "Official Egypt model page: https://jetouregypt.com/models/x90-plus-1-6t"
+   ],
+   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
+  },
+  {
+   "id": "nissan/patrol",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Nissan",
+   "model": "newpatrol",
+   "alias_of_audit_key": "nissan/newpatrol",
+   "audit_keys": [
+    "nissan/newpatrol"
+   ],
+   "urls": [],
+   "evidence": [
+    "Official Egypt model page: https://en.nissan.com.eg/vehicles/new/allnewpatrol.html"
+   ],
+   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
+  },
+  {
+   "id": "renault/austral",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Renault",
+   "model": "austral-xhn-order-opening",
+   "alias_of_audit_key": "renault/australxhnorderopening",
+   "audit_keys": [
+    "renault/australxhnorderopening"
+   ],
+   "urls": [],
+   "evidence": [
+    "Official Egypt model page: http://www.renault.com.eg/cars/austral-xhn-order-opening-en/overview.html"
+   ],
+   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
+  },
+  {
+   "id": "renault/duster",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Renault",
+   "model": "duster-p1311",
+   "alias_of_audit_key": "renault/dusterp1311",
+   "audit_keys": [
+    "renault/dusterp1311"
+   ],
+   "urls": [],
+   "evidence": [
+    "Official Egypt model page: http://www.renault.com.eg/cars/duster-p1311-ph1-en/overview.html"
+   ],
+   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
+  },
+  {
+   "id": "renault/taliant",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Renault",
+   "model": "taliant-ljf",
+   "alias_of_audit_key": "renault/taliantljf",
+   "audit_keys": [
+    "renault/taliantljf"
+   ],
+   "urls": [],
+   "evidence": [
+    "Official Egypt model page: http://www.renault.com.eg/cars/taliant-ljf-ph1/overview.html"
+   ],
+   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
+  },
+  {
+   "id": "hyundai/ioniq-5",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Hyundai",
+   "model": "ioniq-5-n",
+   "alias_of_audit_key": "hyundai/ioniq5n",
+   "audit_keys": [
+    "hyundai/ioniq5n"
+   ],
+   "urls": [],
+   "evidence": [
+    "Official Egypt model page: https://hyundai-egypt.net/models/ioniq-5-n"
+   ],
+   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
+  },
+  {
+   "id": "bmw/5-series",
+   "decision": "SOURCE_ALIAS",
+   "brand": "bmw",
+   "model": "520",
+   "alias_of_audit_key": "bmw/520",
+   "audit_keys": [
+    "bmw/520"
+   ],
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/bmw/520",
+    "https://www.egy-car.com/bmw-520"
+   ],
+   "evidence": [
+    "Market new-car pages with priced model years 2027 (2 page(s); snapshots/UA_2026-10-14_38545206122)"
+   ],
+   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
+  },
+  {
+   "id": "nissan/patrol",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Nissan",
+   "model": "patrol-my20",
+   "alias_of_audit_key": "nissan/patrolmy20",
+   "audit_keys": [
+    "nissan/patrolmy20"
+   ],
+   "urls": [],
+   "evidence": [
+    "Official Egypt model page: https://en.nissan.com.eg/vehicles/new/patrol-my20.html"
+   ],
+   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
+  },
+  {
+   "id": "chery/qq",
+   "decision": "REVIEW",
+   "brand": "Chery",
+   "model": "QQ",
+   "audit_keys": [
+    "chery/qq"
+   ],
+   "urls": [],
+   "evidence": [
+    "Market new-car pages with priced model years 2027 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
+    "P1 U11 reference id kept; P1 exclusion: body_not_passenger:?+no_sale_evidence (P1 eligibility unchanged)"
+   ],
+   "note": "Listed at EGP 2,180,000 (2027) on one site; price inconsistent with the Chery QQ; identity unverified"
+  },
+  {
+   "id": "renault/hjfsomaca",
+   "decision": "REVIEW",
+   "brand": "Renault",
+   "model": "hjf-somaca",
+   "audit_keys": [
+    "renault/hjfsomaca"
+   ],
+   "urls": [],
+   "evidence": [
+    "Official Egypt model page: https://www.renault.com.eg/cars/hjf-ph1-somaca-en/overview.html"
+   ],
+   "note": "Renault Egypt page code hjf-ph1-somaca: model name not stated in the slug; identity unverified"
+  },
+  {
+   "id": "mercedes/gla",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Mercedes-Benz",
+   "model": "GLA",
+   "alias_of_audit_key": "mercedesbenz/mercedesbenzgla200",
+   "audit_keys": [
+    "mercedesbenz/mercedesbenzgla200"
+   ],
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/mercedes/mercedes-benz-gla-200"
+   ],
+   "evidence": [
+    "Hatla2ee engine-variant page of an existing 283 family (P1 families.csv)"
+   ],
+   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
+  },
+  {
+   "id": "mercedes/glc",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Mercedes-Benz",
+   "model": "GLC",
+   "alias_of_audit_key": "mercedesbenz/mercedesbenzglc43",
+   "audit_keys": [
+    "mercedesbenz/mercedesbenzglc43"
+   ],
+   "urls": [
+    "https://eg.hatla2ee.com/en/new-car/mercedes/mercedes-benz-glc-43"
+   ],
+   "evidence": [
+    "Hatla2ee engine-variant page of an existing 283 family (P1 families.csv)"
+   ],
+   "note": "Same model as an existing 283 identity; unmapped source page now owned by it."
+  },
+  {
+   "id": "arcfox/alpha-s5",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Arcfox",
+   "model": "aS5",
+   "alias_of_audit_key": "arcfox/as5",
+   "audit_keys": [
+    "arcfox/as5"
+   ],
+   "urls": [],
+   "evidence": [
+    "Registrations last 12m 25 / last 6m 24 (Arcfox|aS5; BEV:25)"
+   ],
+   "note": "Registration spelling of an existing identity."
+  },
+  {
+   "id": "arcfox/alpha-t5",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Arcfox",
+   "model": "T5",
+   "alias_of_audit_key": "arcfox/t5",
+   "audit_keys": [
+    "arcfox/t5"
+   ],
+   "urls": [],
+   "evidence": [
+    "Registrations last 12m 20 / last 6m 20 (Arcfox|T5; BEV:20)"
+   ],
+   "note": "Registration spelling of an existing identity."
+  },
+  {
+   "id": "bmw/2-series-gran-coupe",
+   "decision": "SOURCE_ALIAS",
+   "brand": "BMW",
+   "model": "2-Series",
+   "alias_of_audit_key": "bmw/2series",
+   "audit_keys": [
+    "bmw/2series"
+   ],
+   "urls": [],
+   "evidence": [
+    "Registrations last 12m 68 / last 6m 28 (BMW|2-Series; ICE:68)"
+   ],
+   "note": "Registration spelling of an existing identity."
+  },
+  {
+   "id": "bmw/4-series",
+   "decision": "SOURCE_ALIAS",
+   "brand": "BMW",
+   "model": "4-Series",
+   "alias_of_audit_key": "bmw/4series",
+   "audit_keys": [
+    "bmw/4series"
+   ],
+   "urls": [],
+   "evidence": [
+    "Registrations last 12m 37 / last 6m 15 (BMW|4-Series; ICE:37)"
+   ],
+   "note": "Registration spelling of an existing identity."
+  },
+  {
+   "id": "porsche/911",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Porche",
+   "model": "Carrera",
+   "alias_of_audit_key": "porsche/carrera",
+   "audit_keys": [
+    "porsche/carrera"
+   ],
+   "urls": [],
+   "evidence": [
+    "Registrations last 12m 22 / last 6m 9 (Porche|Carrera; ICE:22)"
+   ],
+   "note": "Registration spelling of an existing identity."
+  },
+  {
+   "id": "porsche/718",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Porche",
+   "model": "Boxter",
+   "alias_of_audit_key": "porsche/boxter",
+   "audit_keys": [
+    "porsche/boxter"
+   ],
+   "urls": [],
+   "evidence": [
+    "Registrations last 12m 15 / last 6m 4 (Porche|Boxter; ICE:15)"
+   ],
+   "note": "Registration spelling of an existing identity."
+  },
+  {
+   "id": "porsche/718",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Porche",
+   "model": "Cayman",
+   "alias_of_audit_key": "porsche/cayman",
+   "audit_keys": [
+    "porsche/cayman"
+   ],
+   "urls": [],
+   "evidence": [
+    "Registrations last 12m 7 / last 6m 2 (Porche|Cayman; ICE:7)"
+   ],
+   "note": "Registration spelling of an existing identity."
+  },
+  {
+   "id": "mini/cooper",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Mini Coper",
+   "model": "S",
+   "alias_of_audit_key": "mini/s",
+   "audit_keys": [
+    "mini/s"
+   ],
+   "urls": [],
+   "evidence": [
+    "Registrations last 12m 22 / last 6m 9 (Mini Coper|S; ICE:22)"
+   ],
+   "note": "Registration spelling of an existing identity."
+  },
+  {
+   "id": "mini/cooper",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Mini Coper",
+   "model": "Coper",
+   "alias_of_audit_key": "mini/coper",
+   "audit_keys": [
+    "mini/coper"
+   ],
+   "urls": [],
+   "evidence": [
+    "Registrations last 12m 13 / last 6m 2 (Mini Coper|Coper; ICE:13)"
+   ],
+   "note": "Registration spelling of an existing identity."
+  },
+  {
+   "id": "toyota/land-cruiser",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Toyota",
+   "model": "Landr Cruiser",
+   "alias_of_audit_key": "toyota/landrcruiser",
+   "audit_keys": [
+    "toyota/landrcruiser"
+   ],
+   "urls": [],
+   "evidence": [
+    "Registrations last 12m 26 / last 6m 9 (Toyota|Landr Cruiser; ICE:26)"
+   ],
+   "note": "Registration spelling of an existing identity."
+  },
+  {
+   "id": "mercedes/e-class",
+   "decision": "SOURCE_ALIAS",
+   "brand": "Mercedes",
+   "model": "E-Class e",
+   "alias_of_audit_key": "mercedesbenz/eclasse",
+   "audit_keys": [
+    "mercedesbenz/eclasse"
+   ],
+   "urls": [],
+   "evidence": [
+    "Registrations last 12m 20 / last 6m 9 (Mercedes|E-Class e; Hybrid:20)"
+   ],
+   "note": "Registration spelling of an existing identity."
+  },
+  {
+   "id": "venucia/v-online",
+   "decision": "ADDITION",
+   "brand": "Venucia",
+   "model": "V-Online",
+   "body": "suv",
+   "powertrains": [
+    "hybrid"
+   ],
+   "u11_id": "",
+   "audit_keys": [
+    "venucia/v",
+    "venucia/vonline"
+   ],
+   "urls": [],
+   "match": [
+    "Venucia|V",
+    "Venucia|vonline"
+   ],
+   "evidence": [
+    "Registrations last 12m 30 / last 6m 27 (Venucia|V; Hybrid:30)",
+    "Registrations last 12m 3 / last 6m 3 (Venucia|vonline; ICE:3)",
+    "Distributor launch news: NDS Group (Venucia Egypt distributor) launched V-Online, single trim, official price EGP 1,350,000 (Shift-EG https://www.shift-eg.com/news/local-news/details/26647/ ; publication date not captured) -> price NOT accepted (no dated Egyptian listing)",
+    "ContactCars article: NDS (Nour El-Din El-Sherif) named Venucia distributor https://www.contactcars.com/ar/media/articles/0a812810b974"
+   ],
+   "note": "Omission named by CEO: registered and launched by an Egyptian distributor; no market/official listing captured yet (source gap)."
+  }
+ ],
+ "aliases": []
+}

@@ -2,23 +2,23 @@
  "schema": "carindex.p2.p5-release-handoff/v1",
  "release_id": "P2-CATALOGUE-U11-2026-10-14-RC2",
  "route": "P5 a6d3f0b: copy vehicle-data/views/catalogue-serving.release.json verbatim to web/data/registry/catalogue-serving.release.json; copy each file below to web/public<src>",
- "release_sha256": "4a2fa6bc040edb6557ff3d564d4a8e10ce9e03b2d246669bd3d6b0be4dbd2e13",
+ "release_sha256": "abf5f9051c1df5019dfe175d2c24ab92e3fec48049e947ad90cf4c2fb56579a9",
  "counts": {
-  "models": 283,
-  "id_accepted": 283,
-  "price_accepted": 189,
-  "price_tier_a": 26,
-  "price_source_dated": 149,
-  "market_status_official": 37,
-  "specs_accepted": 193,
-  "warranty_accepted": 95,
-  "brochure_accepted": 82,
+  "brochure_accepted": 81,
+  "fully_enriched": 26,
+  "gallery_models": 46,
   "hero_accepted": 53,
   "hero_accepted_hq": 49,
   "hero_limited_archive": 149,
-  "gallery_models": 46,
+  "id_accepted": 283,
   "logo_accepted": 248,
-  "fully_enriched": 26
+  "market_status_official": 37,
+  "models": 283,
+  "price_accepted": 189,
+  "price_source_dated": 149,
+  "price_tier_a": 26,
+  "specs_accepted": 193,
+  "warranty_accepted": 95
  },
  "served": {
   "heroes": 53,
@@ -27,7 +27,7 @@
   "files": 309
  },
  "p5_verification": {
-  "base": "origin/claude/vigilant-cori-ce710x a6d3f0b",
+  "base": "origin/claude/vigilant-cori-ce710x a6d3f0b (release with market_additions)",
   "typecheck": "pass",
   "unit_tests": "61/62 pass",
   "failing": "catalogue-coverage.test.mjs:82 fixture uses mg-hs as a model without an accepted hero; RC2 now accepts an MG HS hero, so the read-model serves it. P5 to switch the fixture to a model without an accepted hero (no read-model change needed)."
@@ -1578,5 +1578,23 @@
    "sha256": "ce486ccf73fadaa48b089b33bf1e16dd829ec0a29e93d0f10f953faa61ced868",
    "bytes": 334640
   }
- }
+ },
+ "counts_market_universe": {
+  "brochure_accepted": 82,
+  "fully_enriched": 26,
+  "gallery_models": 46,
+  "hero_accepted": 53,
+  "hero_accepted_hq": 49,
+  "hero_limited_archive": 149,
+  "id_accepted": 412,
+  "logo_accepted": 346,
+  "market_status_official": 38,
+  "models": 412,
+  "price_accepted": 217,
+  "price_source_dated": 172,
+  "price_tier_a": 26,
+  "specs_accepted": 196,
+  "warranty_accepted": 97
+ },
+ "market_additions": 129
 }

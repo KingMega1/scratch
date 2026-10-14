@@ -1,287 +1,415 @@
-model_id,p1_id,site_slug,brand,model,brand_ar,model_ar,body,on_sale_u11,generation,id_status,id_rule,identity_checks
-m_000025,alfa-romeo/giulia,alfa-romeo-giulia,Alfa Romeo,Giulia,ألفا روميو,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000026,alfa-romeo/stelvio,alfa-romeo-stelvio,Alfa Romeo,Stelvio,ألفا روميو,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000027,alfa-romeo/tonale,alfa-romeo-tonale,Alfa Romeo,Tonale,ألفا روميو,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000028,arcfox/alpha-s5,arcfox-alpha-s5,Arcfox,Alpha S5,,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000029,arcfox/alpha-t5,arcfox-alpha-t5,Arcfox,Alpha T5,,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000030,arcfox/t1,arcfox-t1,Arcfox,T1,,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000031,audi/a3,audi-a3,Audi,A3,أودي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000032,audi/a5,audi-a5,Audi,A5,أودي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000033,audi/a6,audi-a6,Audi,A6,أودي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000034,audi/a8,audi-a8,Audi,A8,أودي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000035,audi/q2,audi-q2,Audi,Q2,أودي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000036,audi/q3,audi-q3,Audi,Q3,أودي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000037,audi/q4-e-tron,audi-q4-e-tron,Audi,Q4 e-Tron,أودي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000038,audi/q5,audi-q5,Audi,Q5,أودي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000039,audi/q7,audi-q7,Audi,Q7,أودي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000040,audi/q8,audi-q8,Audi,Q8,أودي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000041,avatr/07,avatr-07,Avatr,07,افاتار,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000042,avatr/11,avatr-11,Avatr,11,افاتار,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000043,avatr/12,avatr-12,Avatr,12,افاتار,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000023,baic/bj30,baic-bj30,BAIC,BJ30,بايك,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000044,baic/u5-plus,baic-u5-plus,BAIC,U5 Plus,بايك,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000045,baic/x3,baic-x3,BAIC,X3,بايك,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000046,baic/x35,baic-x35,BAIC,X35,بايك,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000047,baic/x55,baic-x55,BAIC,X55,بايك,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000048,baic/x7,baic-x7,BAIC,X7,بايك,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000049,baw/m7,baw-m7,BAW,M7,,,mpv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000050,bestune/b70,bestune-b70,Bestune,B70,بستيون,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000051,bestune/b70s,bestune-b70s,Bestune,B70S,بستيون,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000052,bestune/t55,bestune-t55,Bestune,T55,بستيون,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000053,bmw/5-series,bmw-5-series,BMW,5 Series,بي ام دبليو,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000054,bmw/i7,bmw-i7,BMW,i7,بي ام دبليو,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000055,bmw/ix,bmw-ix,BMW,iX,بي ام دبليو,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000056,bmw/ix1,bmw-ix1,BMW,iX1,بي ام دبليو,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000057,bmw/ix2,bmw-ix2,BMW,iX2,بي ام دبليو,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000058,bmw/ix3,bmw-ix3,BMW,iX3,بي ام دبليو,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000059,bmw/x1,bmw-x1,BMW,X1,بي ام دبليو,اكس 1,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000060,bmw/x2,bmw-x2,BMW,X2,بي ام دبليو,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000061,bmw/x5,bmw-x5,BMW,X5,بي ام دبليو,اكس 5,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000062,bmw/x6,bmw-x6,BMW,X6,بي ام دبليو,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000063,bmw/x7,bmw-x7,BMW,X7,بي ام دبليو,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000064,byd/atto-8,byd-atto-8,BYD,Atto 8,بي واي دي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000065,byd/f3,byd-f3,BYD,F3,بي واي دي,اف 3,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000066,byd/m9,byd-m9,BYD,M9,بي واي دي,,mpv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000067,byd/seagull,byd-seagull,BYD,Seagull,بي واي دي,,hatch,true,UNKNOWN,ACCEPTED,ID-1,
-m_000068,byd/sealion-5,byd-sealion-5,BYD,Sealion 5,بي واي دي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000018,byd/sealion-6,byd-sealion-6,BYD,Sealion 6,بي واي دي,سيليون 6,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000069,byd/ti-7,byd-ti-7,BYD,TI 7,بي واي دي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000070,cadillac/escalade,cadillac-escalade,Cadillac,Escalade,كاديلاك,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000071,cadillac/escalade-iq,cadillac-escalade-iq,Cadillac,Escalade IQ,كاديلاك,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000072,cadillac/vistiq,cadillac-vistiq,Cadillac,Vistiq,كاديلاك,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000073,changan/cs35-plus,changan-cs35-plus,Changan,CS35 PLUS,شانجان,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000074,changan/cs55,changan-cs55,Changan,CS55,شانجان,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000075,changan/cs55-plus,changan-cs55-plus,Changan,CS55-Plus,شانجان,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000076,changan/cs75-plus,changan-cs75-plus,Changan,CS75 Plus,شانجان,سي اس 75,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000077,changan/eado,changan-eado,Changan,EADO,شانجان,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000078,changan/eado-plus,changan-eado-plus,Changan,Eado Plus,شانجان,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000079,changan/uni-t,changan-uni-t,Changan,UNI-T,شانجان,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000080,changan/uni-v,changan-uni-v,Changan,UNI-V,شانجان,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000081,chery/arrizo-5,chery-arrizo-5,Chery,Arrizo 5,شيري,أريزو 5,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000082,chery/arrizo-6-gt,chery-arrizo-6-gt,Chery,Arrizo 6 GT,شيري,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000083,chery/arrizo-8,chery-arrizo-8,Chery,Arrizo 8,شيري,أريزو 8,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000084,chery/eq7,chery-eq7,Chery,eQ7,شيري,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000085,chery/tiggo-4-pro,chery-tiggo-4-pro,Chery,Tiggo 4 Pro,شيري,تيجو 4,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000086,chery/tiggo-7,chery-tiggo-7,Chery,Tiggo 7,شيري,تيجو 7,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000087,chery/tiggo-7-pro,chery-tiggo-7-pro,Chery,Tiggo 7 Pro,شيري,تيجو 7 برو,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000088,chery/tiggo-8,chery-tiggo-8,Chery,Tiggo 8,شيري,تيجو 8,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000089,chery/tiggo-8-pro,chery-tiggo-8-pro,Chery,Tiggo 8 Pro,شيري,تيجو 8 برو,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000011,chery/tiggo-8-pro-max,chery-tiggo-8-pro-max,Chery,Tiggo 8 Pro Max,شيري,تيجو 8 برو ماكس,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000090,chery/tiggo-9,chery-tiggo-9,Chery,Tiggo 9,شيري,تيجو 9,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000091,chevrolet/captiva,chevrolet-captiva,Chevrolet,Captiva,شيفروليه,كابتيفا,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000092,chevrolet/captiva-ev,chevrolet-captiva-ev,Chevrolet,Captiva EV,شيفروليه,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000093,chevrolet/optra,chevrolet-optra,Chevrolet,Optra,شيفروليه,أوبترا,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000094,citroen/c3,citroen-c3,Citroën,C3,ستروين,,hatch,true,UNKNOWN,ACCEPTED,ID-1,
-m_000095,citroen/c3-aircross,citroen-c3-aircross,Citroën,C3 Aircross,ستروين,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000096,citroen/c4,citroen-c4,Citroën,C4,ستروين,سي 4,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000097,citroen/c4-x,citroen-c4-x,Citroën,C4 X,ستروين,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000098,citroen/c5,citroen-c5,Citroën,C5,ستروين,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000099,cupra/formentor,cupra-formentor,CUPRA,Formentor,كوبرا,فورمنتور,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000100,cupra/leon,cupra-leon,CUPRA,Leon,كوبرا,,hatch,true,UNKNOWN,ACCEPTED,ID-1,
-m_000101,cupra/terramar,cupra-terramar,CUPRA,Terramar,كوبرا,تيرامار,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000102,deepal/g318,deepal-g318,Deepal,G318,ديبال,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000021,deepal/s-05,deepal-s05,Deepal,S 05,ديبال,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000103,deepal/s-07,deepal-s-07,Deepal,S 07,ديبال,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000104,dfsk/600,dfsk-600,DFSK,600,,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000105,dfsk/e5,dfsk-e5,DFSK,E5,,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000106,dfsk/e5-plus,dfsk-e5-plus,DFSK,E5 Plus,,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000107,dongfeng/007,dongfeng-007,Dongfeng,007,دونج فينج,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000108,dongfeng/008,dongfeng-008,Dongfeng,008,دونج فينج,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000109,dongfeng/box,dongfeng-box,Dongfeng,Box,دونج فينج,,hatch,true,UNKNOWN,ACCEPTED,ID-1,
-m_000110,dongfeng/mage,dongfeng-mage,Dongfeng,Mage,دونج فينج,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000111,ds/ds4,ds-ds4,DS,Ds4,دي اس,,hatch,true,UNKNOWN,ACCEPTED,ID-1,
-m_000112,ds/ds7,ds-ds7,DS,DS7,دي اس,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000113,exeed/es,exeed-es,Exeed,ES,اكسيد,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000114,exeed/et,exeed-et,Exeed,ET,اكسيد,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000115,exeed/lx,exeed-lx,Exeed,LX,اكسيد,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000116,exeed/rx,exeed-rx,Exeed,RX,اكسيد,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000117,exeed/vx,exeed-vx,Exeed,VX,اكسيد,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000118,fiat/500,fiat-500,Fiat,500,فيات,,hatch,true,UNKNOWN,ACCEPTED,ID-1,
-m_000119,fiat/500x,fiat-500x,Fiat,500X,فيات,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000120,fiat/tipo,fiat-tipo,Fiat,Tipo,فيات,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000121,forthing/s7,forthing-s7,Forthing,S7,فورثينج,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000122,forthing/t5,forthing-t5,Forthing,T5,فورثينج,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000123,forthing/t5-evo,forthing-t5-evo,Forthing,T5 Evo,فورثينج,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000124,forthing/u-tour,forthing-u-tour,Forthing,U-Tour,فورثينج,,mpv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000125,forthing/v9,forthing-v9,Forthing,V9,فورثينج,,mpv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000126,gac/emkoo,gac-emkoo,GAC,Emkoo,جي ايه سي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000127,gac/empow,gac-empow,GAC,Empow,جي ايه سي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000128,gac/emzoom,gac-emzoom,GAC,EMZOOM,جي ايه سي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000129,gac/gs4,gac-gs4,GAC,GS4,جي ايه سي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000130,gac/gs4-max,gac-gs4-max,GAC,GS4 Max,جي ايه سي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000131,geely/city-ray,geely-city-ray,Geely,City Ray,جيلي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000132,geely/cool-ray,geely-cool-ray,Geely,Cool Ray,جيلي,كولراي,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000133,geely/emgrand-7,geely-emgrand-7,Geely,Emgrand 7,جيلي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000134,geely/ex2,geely-ex2,Geely,EX2,جيلي,,hatch,true,UNKNOWN,ACCEPTED,ID-1,
-m_000135,geely/ex5,geely-ex5,Geely,EX5,جيلي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000136,geely/gx3-pro,geely-gx3-pro,Geely,GX3 Pro,جيلي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000137,geely/monjaro,geely-monjaro,Geely,Monjaro,جيلي,مونجارو,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000138,geely/okavango,geely-okavango,Geely,Okavango,جيلي,أوكافانجو,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000139,geely/starray,geely-starray,Geely,Starray,جيلي,ستاراي,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000140,genesis/g80,genesis-g80,Genesis,G80,جينيسيس,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000141,genesis/gv60,genesis-gv60,Genesis,GV60,جينيسيس,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000142,genesis/gv70,genesis-gv70,Genesis,GV70,جينيسيس,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000143,gmc/terrain,gmc-terrain,GMC,Terrain,جي ام سي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000144,gmc/yukon,gmc-yukon,GMC,Yukon,جي ام سي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000145,haval/h6,haval-h6,Haval,H6,هافال,اتش 6,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000022,haval/h7,haval-h7,Haval,H7,هافال,اتش 7,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000146,haval/jolion,haval-jolion,Haval,Jolion,هافال,جوليون,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000147,honda/zr-v,honda-zr-v,Honda,ZR-V,هوندا,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000148,hongqi/e-hs9,hongqi-e-hs9,Hongqi,E-HS9,هونشي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000149,hongqi/hs3,hongqi-hs3,Hongqi,HS3,هونشي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000150,hongqi/ousado,hongqi-ousado,Hongqi,Ousado,هونشي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000151,hyundai/accent-rb,hyundai-accent-rb,Hyundai,Accent RB,هيونداي,أكسنت,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000152,hyundai/elantra,hyundai-elantra,Hyundai,Elantra,هيونداي,النترا,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000153,hyundai/i30,hyundai-i30,Hyundai,i30,هيونداي,,hatch,true,UNKNOWN,ACCEPTED,ID-1,
-m_000154,hyundai/ioniq,hyundai-ioniq,Hyundai,Ioniq,هيونداي,,hatch,true,UNKNOWN,ACCEPTED,ID-1,
-m_000155,hyundai/ioniq-5,hyundai-ioniq-5,Hyundai,IONIQ 5,هيونداي,,hatch,true,UNKNOWN,ACCEPTED,ID-1,
-m_000156,hyundai/ioniq-6,hyundai-ioniq-6,Hyundai,IONIQ 6,هيونداي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000157,hyundai/ioniq-9,hyundai-ioniq-9,Hyundai,IONIQ 9,هيونداي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000158,hyundai/santa-fe,hyundai-santa-fe,Hyundai,Santa Fe,هيونداي,سانتافي,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000002,hyundai/tucson,hyundai-tucson,Hyundai,Tucson,هيونداي,توسان,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000159,im/im-5,im-im-5,IM,IM 5,,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000160,im/im-6,im-im-6,IM,IM 6,,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000161,im/ls7,im-ls7,IM,LS7,,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000162,jac/j7,jac-j7,JAC,J7,جاك,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000163,jac/js6,jac-js6,JAC,JS6,جاك,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000164,jac/js8-pro,jac-js8-pro,JAC,JS8 PRO,جاك,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000165,jac/s2,jac-s2,JAC,S2,جاك,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000166,jeep/grand-cherokee,jeep-grand-cherokee,Jeep,Grand Cherokee,جيب,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000167,jetour/dashing,jetour-dashing,Jetour,Dashing,جيتور,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000009,jetour/t1,jetour-t1,Jetour,T1,جيتور,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000004,jetour/t2,jetour-t2,Jetour,T2,جيتور,تي 2,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000168,jetour/x70,jetour-x70,Jetour,X70,جيتور,اكس 70,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000169,jetour/x70-plus-ckd,jetour-x70-plus-ckd,Jetour,X70 Plus CKD,جيتور,اكس 70 بلس,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000170,jetour/x90-plus,jetour-x90-plus,Jetour,X90 Plus,جيتور,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000171,kaiyi/e5,kaiyi-e5,Kaiyi,E5,كايي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000172,kaiyi/x3,kaiyi-x3,Kaiyi,X3,كايي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000173,kaiyi/x7,kaiyi-x7,Kaiyi,X7,كايي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000174,kgm/actyon,kgm-actyon,KGM,Actyon,كي جي ام,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000017,kgm/torres,kgm-torres,KGM,Torres,كي جي ام,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000175,kia/carens,kia-carens,Kia,Carens,كيا,,mpv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000176,kia/ev3,kia-ev3,Kia,EV3,كيا,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000177,kia/ev5,kia-ev5,Kia,EV5,كيا,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000178,kia/ev6,kia-ev6,Kia,EV6,كيا,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000179,kia/ev9,kia-ev9,Kia,EV9,كيا,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000180,kia/k4,kia-k4,Kia,K4,كيا,كي 4,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000016,kia/seltos,kia-seltos,Kia,Seltos,كيا,سيلتوس,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000181,kia/sorento,kia-sorento,Kia,Sorento,كيا,سورينتو,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000001,kia/sportage,kia-sportage,Kia,Sportage,كيا,سبورتاج,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000182,lexus/lx600,lexus-lx600,Lexus,LX600,لكزس,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000183,lexus/rz,lexus-rz,Lexus,RZ,لكزس,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000184,li-auto/l6,li-auto-l6,Li Auto,L6,,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000185,li-auto/l7,li-auto-l7,Li Auto,L7,,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000186,li-auto/l9,li-auto-l9,Li Auto,L9,,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000187,lynk-co/06,lynk-co-06,Lynk & Co,06,لينك,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000188,lynk-co/08,lynk-co-08,Lynk & Co,08,لينك,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000189,lynk-co/900,lynk-co-900,Lynk & Co,900,لينك,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000190,mazda/3,mazda-3,Mazda,3,مازدا,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000191,mazda/cx-3,mazda-cx-3,Mazda,CX-3,مازدا,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000192,mercedes/a-class,mercedes-a-class,Mercedes-Benz,A-Class,مرسيدس,,hatch,true,UNKNOWN,ACCEPTED,ID-1,
-m_000193,mercedes/b-class,mercedes-b-class,Mercedes-Benz,B-Class,مرسيدس,,mpv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000194,mercedes/c-class,mercedes-c-class,Mercedes-Benz,C-Class,مرسيدس,سي كلاس,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000195,mercedes/cla,mercedes-cla,Mercedes-Benz,CLA,مرسيدس,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000196,mercedes/e-class,mercedes-e-class,Mercedes-Benz,E-Class,مرسيدس,إي كلاس,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000197,mercedes/eqa,mercedes-eqa,Mercedes-Benz,EQA,مرسيدس,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000198,mercedes/eqb,mercedes-eqb,Mercedes-Benz,EQB,مرسيدس,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000199,mercedes/eqs-suv,mercedes-eqs-suv,Mercedes-Benz,EQS SUV,مرسيدس,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000200,mercedes/gla,mercedes-gla,Mercedes-Benz,GLA,مرسيدس,جي ال ايه,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000201,mercedes/glc,mercedes-glc,Mercedes-Benz,GLC,مرسيدس,جي ال سي,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000202,mercedes/gle,mercedes-gle,Mercedes-Benz,GLE,مرسيدس,جي ال اي,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000203,mercedes/gls,mercedes-gls,Mercedes-Benz,GLS,مرسيدس,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000204,mg/5,mg-5,MG,5,ام جي,ام جي 5,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000205,mg/6,mg-6,MG,6,ام جي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000206,mg/7,mg-7,MG,7,ام جي,ام جي 7,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000207,mg/g50-plus,mg-g50-plus,MG,G50 Plus,ام جي,,mpv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000208,mg/gt,mg-gt,MG,GT,ام جي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000020,mg/hs,mg-hs,MG,HS,ام جي,اتش اس,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000209,mg/one,mg-one,MG,One,ام جي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000210,mg/rx9,mg-rx9,MG,RX9,ام جي,ار اكس 9,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000211,mg/zs,mg-zs,MG,ZS,ام جي,زد اس,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000212,mini/countryman,mini-countryman,MINI,Countryman,ميني,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000213,mitsubishi/attrage,mitsubishi-attrage,Mitsubishi,Attrage,ميتسوبيشي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000214,mitsubishi/destinator,mitsubishi-destinator,Mitsubishi,Destinator,ميتسوبيشي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000015,mitsubishi/eclipse-cross,mitsubishi-eclipse-cross,Mitsubishi,Eclipse Cross,ميتسوبيشي,إكليبس كروس,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000215,mitsubishi/mirage,mitsubishi-mirage,Mitsubishi,Mirage,ميتسوبيشي,,hatch,true,UNKNOWN,ACCEPTED,ID-1,
-m_000216,mitsubishi/outlander,mitsubishi-outlander,Mitsubishi,Outlander,ميتسوبيشي,أوتلاندر,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000217,mitsubishi/xpander,mitsubishi-xpander,Mitsubishi,Xpander,ميتسوبيشي,اكسباندر,mpv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000218,nissan/juke,nissan-juke,Nissan,Juke,نيسان,جوك,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000219,nissan/magnite,nissan-magnite,Nissan,Magnite,نيسان,ماجنايت,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000220,nissan/patrol,nissan-patrol,Nissan,Patrol,نيسان,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000006,nissan/qashqai,nissan-qashqai,Nissan,Qashqai,نيسان,قشقاي,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000221,nissan/sentra,nissan-sentra,Nissan,Sentra,نيسان,سنترا,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000222,nissan/sunny,nissan-sunny,Nissan,Sunny,نيسان,صني,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000223,nissan/x-trail,nissan-x-trail,Nissan,X-Trail,نيسان,إكس تريل,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000224,opel/corsa,opel-corsa,Opel,Corsa,أوبل,,hatch,true,UNKNOWN,ACCEPTED,ID-1,
-m_000225,opel/crossland,opel-crossland,Opel,Crossland,أوبل,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000226,opel/frontera,opel-frontera,Opel,Frontera,أوبل,فرونتيرا,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000007,opel/grandland,opel-grandland,Opel,Grandland,أوبل,جراند لاند,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000227,opel/mokka,opel-mokka,Opel,Mokka,أوبل,موكا,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000228,peugeot/2008,peugeot-2008,Peugeot,2008,بيجو,2008,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000005,peugeot/3008,peugeot-3008,Peugeot,3008,بيجو,3008,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000229,peugeot/408,peugeot-408,Peugeot,408,بيجو,408,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000014,peugeot/5008,peugeot-5008,Peugeot,5008,بيجو,5008,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000230,porsche/cayenne,porsche-cayenne,Porsche,Cayenne,بورش,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000231,porsche/macan,porsche-macan,Porsche,Macan,بورش,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000232,proton/saga,proton-saga,Proton,Saga,بروتون,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000012,renault/austral,renault-austral,Renault,Austral,رينو,أوسترال,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000233,renault/duster,renault-duster,Renault,Duster,رينو,داستر,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000234,renault/kardian,renault-kardian,Renault,Kardian,رينو,كارديان,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000235,renault/megane,renault-megane,Renault,Megane,رينو,ميجان,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000236,renault/taliant,renault-taliant,Renault,Taliant,رينو,تاليانت,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000237,rox/01,rox-01,ROX,01,,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000238,rox/adamas,rox-adamas,ROX,Adamas,,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000239,seat/arona,seat-arona,SEAT,Arona,سيات,أرونا,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000240,seat/ateca,seat-ateca,SEAT,Ateca,سيات,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000241,seat/ibiza,seat-ibiza,SEAT,Ibiza,سيات,إبيزا,hatch,true,UNKNOWN,ACCEPTED,ID-1,
-m_000242,seat/leon,seat-leon,SEAT,Leon,سيات,ليون,hatch,true,UNKNOWN,ACCEPTED,ID-1,
-m_000243,skoda/karoq,skoda-karoq,Skoda,KAROQ,سكودا,كاروك,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000244,skoda/kodiaq,skoda-kodiaq,Skoda,KODIAQ,سكودا,كودياك,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000245,skoda/octavia,skoda-octavia,Skoda,Octavia,سكودا,أوكتافيا,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000246,skoda/superb,skoda-superb,Skoda,Superb,سكودا,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000247,soueast/s-05,soueast-s-05,Soueast,S 05,سوايست,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000019,soueast/s-06,soueast-s06,Soueast,S 06,سوايست,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000248,soueast/s-07,soueast-s-07,Soueast,S 07,سوايست,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000249,soueast/s-08-dm,soueast-s-08-dm,Soueast,S 08 DM,سوايست,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000013,soueast/s-09,soueast-s09,Soueast,S 09,سوايست,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000250,soueast/s08,soueast-s08,Soueast,S08,سوايست,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000251,suzuki/alto,suzuki-alto,Suzuki,Alto,سوزوكي,,hatch,true,UNKNOWN,ACCEPTED,ID-1,
-m_000252,suzuki/baleno,suzuki-baleno,Suzuki,Baleno,سوزوكي,,hatch,true,UNKNOWN,ACCEPTED,ID-1,
-m_000253,suzuki/ertiga,suzuki-ertiga,Suzuki,Ertiga,سوزوكي,ارتيجا,mpv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000254,suzuki/fronx,suzuki-fronx,Suzuki,Fronx,سوزوكي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000255,suzuki/jimny,suzuki-jimny,Suzuki,Jimny,سوزوكي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000256,suzuki/s-presso,suzuki-s-presso,Suzuki,S-Presso,سوزوكي,,hatch,true,UNKNOWN,ACCEPTED,ID-1,
-m_000257,suzuki/swift,suzuki-swift,Suzuki,Swift,سوزوكي,سويفت,hatch,true,UNKNOWN,ACCEPTED,ID-1,
-m_000258,suzuki/swift-dzire,suzuki-swift-dzire,Suzuki,Swift Dzire,سوزوكي,ديزاير,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000259,tesla/model-y,tesla-model-y,Tesla,Model Y,تيسلا,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000260,toyota/bz4x,toyota-bz4x,Toyota,bZ4X,تويوتا,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000261,toyota/corolla,toyota-corolla,Toyota,Corolla,تويوتا,كورولا,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000262,toyota/fortuner,toyota-fortuner,Toyota,Fortuner,تويوتا,فورتشنر,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000263,toyota/urban-cruiser,toyota-urban-cruiser,Toyota,Urban Cruiser,تويوتا,أوربان كروزر,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000264,vgv/u70p-plus,vgv-u70p-plus,Vgv,U70P Plus,,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000265,volkswagen/golf,volkswagen-golf,Volkswagen,Golf,فولكس,جولف,hatch,true,UNKNOWN,ACCEPTED,ID-1,
-m_000266,volkswagen/passat,volkswagen-passat,Volkswagen,Passat,فولكس,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000267,volkswagen/t-roc,volkswagen-t-roc,Volkswagen,T-Roc,فولكس,تي روك,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000268,volkswagen/tayron,volkswagen-tayron,Volkswagen,Tayron,فولكس,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000003,volkswagen/tiguan,volkswagen-tiguan,Volkswagen,Tiguan,فولكس,تيجوان,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000269,volvo/es90,volvo-es90,Volvo,ES90,فولفو,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000270,volvo/ex30,volvo-ex30,Volvo,EX30,فولفو,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000271,volvo/ex90,volvo-ex90,Volvo,EX90,فولفو,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000272,volvo/xc-40,volvo-xc-40,Volvo,XC 40,فولفو,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000273,volvo/xc60,volvo-xc60,Volvo,XC60,فولفو,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000274,volvo/xc90,volvo-xc90,Volvo,XC90,فولفو,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000275,voyah/dream,voyah-dream,Voyah,Dream,,,mpv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000276,voyah/free,voyah-free,Voyah,Free,,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000277,xiaomi/su7,xiaomi-su7,Xiaomi,SU7,شاومي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000278,xiaomi/yu7,xiaomi-yu7,Xiaomi,YU7,شاومي,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000279,xpeng/g6,xpeng-g6,XPeng,G6,,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000280,xpeng/g7,xpeng-g7,XPeng,G7,,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000281,xpeng/g9,xpeng-g9,XPeng,G9,,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000282,xpeng/m03,xpeng-m03,XPeng,M03,,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000283,xpeng/p7,xpeng-p7,XPeng,P7,,,sedan,true,UNKNOWN,ACCEPTED,ID-1,
-m_000284,xpeng/x9,xpeng-x9,XPeng,X9,,,mpv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000285,zeekr/9x,zeekr-9x,Zeekr,9X,زيكر,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000286,zeekr/x,zeekr-x,Zeekr,X,زيكر,,suv,true,UNKNOWN,ACCEPTED,ID-1,
-m_000010,byd/song-plus,byd-song-plus,BYD,Song Plus,,,,false,UNKNOWN,RETAINED_OFF_SALE,ID-1,U11_OFF_SALE
-m_000008,citroen/c5-aircross,citroen-c5-aircross,Citroën,C5 Aircross,,,,false,UNKNOWN,RETAINED_OFF_SALE,ID-1,U11_OFF_SALE
-m_000024,byd/song-l-dm-i,byd-song-l-dm-i,BYD,Song L DM-i,,,,false,UNKNOWN,RETAINED_OFF_SALE,ID-1,U11_OFF_SALE
+model_id,p1_id,site_slug,brand,model,brand_ar,model_ar,body,on_sale_u11,generation,id_status,id_rule,identity_checks,universe
+m_000025,alfa-romeo/giulia,alfa-romeo-giulia,Alfa Romeo,Giulia,ألفا روميو,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000026,alfa-romeo/stelvio,alfa-romeo-stelvio,Alfa Romeo,Stelvio,ألفا روميو,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000027,alfa-romeo/tonale,alfa-romeo-tonale,Alfa Romeo,Tonale,ألفا روميو,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000028,arcfox/alpha-s5,arcfox-alpha-s5,Arcfox,Alpha S5,,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000029,arcfox/alpha-t5,arcfox-alpha-t5,Arcfox,Alpha T5,,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000030,arcfox/t1,arcfox-t1,Arcfox,T1,,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000031,audi/a3,audi-a3,Audi,A3,أودي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000032,audi/a5,audi-a5,Audi,A5,أودي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000033,audi/a6,audi-a6,Audi,A6,أودي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000034,audi/a8,audi-a8,Audi,A8,أودي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000035,audi/q2,audi-q2,Audi,Q2,أودي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000036,audi/q3,audi-q3,Audi,Q3,أودي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000037,audi/q4-e-tron,audi-q4-e-tron,Audi,Q4 e-Tron,أودي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000038,audi/q5,audi-q5,Audi,Q5,أودي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000039,audi/q7,audi-q7,Audi,Q7,أودي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000040,audi/q8,audi-q8,Audi,Q8,أودي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000041,avatr/07,avatr-07,Avatr,07,افاتار,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000042,avatr/11,avatr-11,Avatr,11,افاتار,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000043,avatr/12,avatr-12,Avatr,12,افاتار,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000023,baic/bj30,baic-bj30,BAIC,BJ30,بايك,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000044,baic/u5-plus,baic-u5-plus,BAIC,U5 Plus,بايك,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000045,baic/x3,baic-x3,BAIC,X3,بايك,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000046,baic/x35,baic-x35,BAIC,X35,بايك,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000047,baic/x55,baic-x55,BAIC,X55,بايك,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000048,baic/x7,baic-x7,BAIC,X7,بايك,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000049,baw/m7,baw-m7,BAW,M7,,,mpv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000050,bestune/b70,bestune-b70,Bestune,B70,بستيون,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000051,bestune/b70s,bestune-b70s,Bestune,B70S,بستيون,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000052,bestune/t55,bestune-t55,Bestune,T55,بستيون,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000053,bmw/5-series,bmw-5-series,BMW,5 Series,بي ام دبليو,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000054,bmw/i7,bmw-i7,BMW,i7,بي ام دبليو,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000055,bmw/ix,bmw-ix,BMW,iX,بي ام دبليو,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000056,bmw/ix1,bmw-ix1,BMW,iX1,بي ام دبليو,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000057,bmw/ix2,bmw-ix2,BMW,iX2,بي ام دبليو,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000058,bmw/ix3,bmw-ix3,BMW,iX3,بي ام دبليو,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000059,bmw/x1,bmw-x1,BMW,X1,بي ام دبليو,اكس 1,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000060,bmw/x2,bmw-x2,BMW,X2,بي ام دبليو,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000061,bmw/x5,bmw-x5,BMW,X5,بي ام دبليو,اكس 5,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000062,bmw/x6,bmw-x6,BMW,X6,بي ام دبليو,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000063,bmw/x7,bmw-x7,BMW,X7,بي ام دبليو,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000064,byd/atto-8,byd-atto-8,BYD,Atto 8,بي واي دي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000065,byd/f3,byd-f3,BYD,F3,بي واي دي,اف 3,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000066,byd/m9,byd-m9,BYD,M9,بي واي دي,,mpv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000067,byd/seagull,byd-seagull,BYD,Seagull,بي واي دي,,hatch,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000068,byd/sealion-5,byd-sealion-5,BYD,Sealion 5,بي واي دي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000018,byd/sealion-6,byd-sealion-6,BYD,Sealion 6,بي واي دي,سيليون 6,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000069,byd/ti-7,byd-ti-7,BYD,TI 7,بي واي دي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000070,cadillac/escalade,cadillac-escalade,Cadillac,Escalade,كاديلاك,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000071,cadillac/escalade-iq,cadillac-escalade-iq,Cadillac,Escalade IQ,كاديلاك,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000072,cadillac/vistiq,cadillac-vistiq,Cadillac,Vistiq,كاديلاك,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000073,changan/cs35-plus,changan-cs35-plus,Changan,CS35 PLUS,شانجان,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000074,changan/cs55,changan-cs55,Changan,CS55,شانجان,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000075,changan/cs55-plus,changan-cs55-plus,Changan,CS55-Plus,شانجان,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000076,changan/cs75-plus,changan-cs75-plus,Changan,CS75 Plus,شانجان,سي اس 75,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000077,changan/eado,changan-eado,Changan,EADO,شانجان,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000078,changan/eado-plus,changan-eado-plus,Changan,Eado Plus,شانجان,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000079,changan/uni-t,changan-uni-t,Changan,UNI-T,شانجان,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000080,changan/uni-v,changan-uni-v,Changan,UNI-V,شانجان,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000081,chery/arrizo-5,chery-arrizo-5,Chery,Arrizo 5,شيري,أريزو 5,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000082,chery/arrizo-6-gt,chery-arrizo-6-gt,Chery,Arrizo 6 GT,شيري,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000083,chery/arrizo-8,chery-arrizo-8,Chery,Arrizo 8,شيري,أريزو 8,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000084,chery/eq7,chery-eq7,Chery,eQ7,شيري,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000085,chery/tiggo-4-pro,chery-tiggo-4-pro,Chery,Tiggo 4 Pro,شيري,تيجو 4,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000086,chery/tiggo-7,chery-tiggo-7,Chery,Tiggo 7,شيري,تيجو 7,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000087,chery/tiggo-7-pro,chery-tiggo-7-pro,Chery,Tiggo 7 Pro,شيري,تيجو 7 برو,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000088,chery/tiggo-8,chery-tiggo-8,Chery,Tiggo 8,شيري,تيجو 8,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000089,chery/tiggo-8-pro,chery-tiggo-8-pro,Chery,Tiggo 8 Pro,شيري,تيجو 8 برو,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000011,chery/tiggo-8-pro-max,chery-tiggo-8-pro-max,Chery,Tiggo 8 Pro Max,شيري,تيجو 8 برو ماكس,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000090,chery/tiggo-9,chery-tiggo-9,Chery,Tiggo 9,شيري,تيجو 9,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000091,chevrolet/captiva,chevrolet-captiva,Chevrolet,Captiva,شيفروليه,كابتيفا,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000092,chevrolet/captiva-ev,chevrolet-captiva-ev,Chevrolet,Captiva EV,شيفروليه,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000093,chevrolet/optra,chevrolet-optra,Chevrolet,Optra,شيفروليه,أوبترا,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000094,citroen/c3,citroen-c3,Citroën,C3,ستروين,,hatch,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000095,citroen/c3-aircross,citroen-c3-aircross,Citroën,C3 Aircross,ستروين,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000096,citroen/c4,citroen-c4,Citroën,C4,ستروين,سي 4,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000097,citroen/c4-x,citroen-c4-x,Citroën,C4 X,ستروين,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000098,citroen/c5,citroen-c5,Citroën,C5,ستروين,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000099,cupra/formentor,cupra-formentor,CUPRA,Formentor,كوبرا,فورمنتور,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000100,cupra/leon,cupra-leon,CUPRA,Leon,كوبرا,,hatch,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000101,cupra/terramar,cupra-terramar,CUPRA,Terramar,كوبرا,تيرامار,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000102,deepal/g318,deepal-g318,Deepal,G318,ديبال,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000021,deepal/s-05,deepal-s05,Deepal,S 05,ديبال,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000103,deepal/s-07,deepal-s-07,Deepal,S 07,ديبال,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000104,dfsk/600,dfsk-600,DFSK,600,,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000105,dfsk/e5,dfsk-e5,DFSK,E5,,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000106,dfsk/e5-plus,dfsk-e5-plus,DFSK,E5 Plus,,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000107,dongfeng/007,dongfeng-007,Dongfeng,007,دونج فينج,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000108,dongfeng/008,dongfeng-008,Dongfeng,008,دونج فينج,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000109,dongfeng/box,dongfeng-box,Dongfeng,Box,دونج فينج,,hatch,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000110,dongfeng/mage,dongfeng-mage,Dongfeng,Mage,دونج فينج,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000111,ds/ds4,ds-ds4,DS,Ds4,دي اس,,hatch,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000112,ds/ds7,ds-ds7,DS,DS7,دي اس,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000113,exeed/es,exeed-es,Exeed,ES,اكسيد,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000114,exeed/et,exeed-et,Exeed,ET,اكسيد,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000115,exeed/lx,exeed-lx,Exeed,LX,اكسيد,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000116,exeed/rx,exeed-rx,Exeed,RX,اكسيد,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000117,exeed/vx,exeed-vx,Exeed,VX,اكسيد,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000118,fiat/500,fiat-500,Fiat,500,فيات,,hatch,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000119,fiat/500x,fiat-500x,Fiat,500X,فيات,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000120,fiat/tipo,fiat-tipo,Fiat,Tipo,فيات,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000121,forthing/s7,forthing-s7,Forthing,S7,فورثينج,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000122,forthing/t5,forthing-t5,Forthing,T5,فورثينج,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000123,forthing/t5-evo,forthing-t5-evo,Forthing,T5 Evo,فورثينج,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000124,forthing/u-tour,forthing-u-tour,Forthing,U-Tour,فورثينج,,mpv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000125,forthing/v9,forthing-v9,Forthing,V9,فورثينج,,mpv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000126,gac/emkoo,gac-emkoo,GAC,Emkoo,جي ايه سي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000127,gac/empow,gac-empow,GAC,Empow,جي ايه سي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000128,gac/emzoom,gac-emzoom,GAC,EMZOOM,جي ايه سي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000129,gac/gs4,gac-gs4,GAC,GS4,جي ايه سي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000130,gac/gs4-max,gac-gs4-max,GAC,GS4 Max,جي ايه سي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000131,geely/city-ray,geely-city-ray,Geely,City Ray,جيلي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000132,geely/cool-ray,geely-cool-ray,Geely,Cool Ray,جيلي,كولراي,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000133,geely/emgrand-7,geely-emgrand-7,Geely,Emgrand 7,جيلي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000134,geely/ex2,geely-ex2,Geely,EX2,جيلي,,hatch,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000135,geely/ex5,geely-ex5,Geely,EX5,جيلي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000136,geely/gx3-pro,geely-gx3-pro,Geely,GX3 Pro,جيلي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000137,geely/monjaro,geely-monjaro,Geely,Monjaro,جيلي,مونجارو,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000138,geely/okavango,geely-okavango,Geely,Okavango,جيلي,أوكافانجو,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000139,geely/starray,geely-starray,Geely,Starray,جيلي,ستاراي,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000140,genesis/g80,genesis-g80,Genesis,G80,جينيسيس,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000141,genesis/gv60,genesis-gv60,Genesis,GV60,جينيسيس,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000142,genesis/gv70,genesis-gv70,Genesis,GV70,جينيسيس,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000143,gmc/terrain,gmc-terrain,GMC,Terrain,جي ام سي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000144,gmc/yukon,gmc-yukon,GMC,Yukon,جي ام سي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000145,haval/h6,haval-h6,Haval,H6,هافال,اتش 6,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000022,haval/h7,haval-h7,Haval,H7,هافال,اتش 7,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000146,haval/jolion,haval-jolion,Haval,Jolion,هافال,جوليون,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000147,honda/zr-v,honda-zr-v,Honda,ZR-V,هوندا,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000148,hongqi/e-hs9,hongqi-e-hs9,Hongqi,E-HS9,هونشي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000149,hongqi/hs3,hongqi-hs3,Hongqi,HS3,هونشي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000150,hongqi/ousado,hongqi-ousado,Hongqi,Ousado,هونشي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000151,hyundai/accent-rb,hyundai-accent-rb,Hyundai,Accent RB,هيونداي,أكسنت,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000152,hyundai/elantra,hyundai-elantra,Hyundai,Elantra,هيونداي,النترا,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000153,hyundai/i30,hyundai-i30,Hyundai,i30,هيونداي,,hatch,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000154,hyundai/ioniq,hyundai-ioniq,Hyundai,Ioniq,هيونداي,,hatch,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000155,hyundai/ioniq-5,hyundai-ioniq-5,Hyundai,IONIQ 5,هيونداي,,hatch,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000156,hyundai/ioniq-6,hyundai-ioniq-6,Hyundai,IONIQ 6,هيونداي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000157,hyundai/ioniq-9,hyundai-ioniq-9,Hyundai,IONIQ 9,هيونداي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000158,hyundai/santa-fe,hyundai-santa-fe,Hyundai,Santa Fe,هيونداي,سانتافي,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000002,hyundai/tucson,hyundai-tucson,Hyundai,Tucson,هيونداي,توسان,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000159,im/im-5,im-im-5,IM,IM 5,,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000160,im/im-6,im-im-6,IM,IM 6,,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000161,im/ls7,im-ls7,IM,LS7,,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000162,jac/j7,jac-j7,JAC,J7,جاك,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000163,jac/js6,jac-js6,JAC,JS6,جاك,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000164,jac/js8-pro,jac-js8-pro,JAC,JS8 PRO,جاك,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000165,jac/s2,jac-s2,JAC,S2,جاك,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000166,jeep/grand-cherokee,jeep-grand-cherokee,Jeep,Grand Cherokee,جيب,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000167,jetour/dashing,jetour-dashing,Jetour,Dashing,جيتور,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000009,jetour/t1,jetour-t1,Jetour,T1,جيتور,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000004,jetour/t2,jetour-t2,Jetour,T2,جيتور,تي 2,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000168,jetour/x70,jetour-x70,Jetour,X70,جيتور,اكس 70,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000169,jetour/x70-plus-ckd,jetour-x70-plus-ckd,Jetour,X70 Plus CKD,جيتور,اكس 70 بلس,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000170,jetour/x90-plus,jetour-x90-plus,Jetour,X90 Plus,جيتور,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000171,kaiyi/e5,kaiyi-e5,Kaiyi,E5,كايي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000172,kaiyi/x3,kaiyi-x3,Kaiyi,X3,كايي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000173,kaiyi/x7,kaiyi-x7,Kaiyi,X7,كايي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000174,kgm/actyon,kgm-actyon,KGM,Actyon,كي جي ام,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000017,kgm/torres,kgm-torres,KGM,Torres,كي جي ام,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000175,kia/carens,kia-carens,Kia,Carens,كيا,,mpv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000176,kia/ev3,kia-ev3,Kia,EV3,كيا,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000177,kia/ev5,kia-ev5,Kia,EV5,كيا,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000178,kia/ev6,kia-ev6,Kia,EV6,كيا,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000179,kia/ev9,kia-ev9,Kia,EV9,كيا,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000180,kia/k4,kia-k4,Kia,K4,كيا,كي 4,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000016,kia/seltos,kia-seltos,Kia,Seltos,كيا,سيلتوس,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000181,kia/sorento,kia-sorento,Kia,Sorento,كيا,سورينتو,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000001,kia/sportage,kia-sportage,Kia,Sportage,كيا,سبورتاج,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000182,lexus/lx600,lexus-lx600,Lexus,LX600,لكزس,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000183,lexus/rz,lexus-rz,Lexus,RZ,لكزس,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000184,li-auto/l6,li-auto-l6,Li Auto,L6,,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000185,li-auto/l7,li-auto-l7,Li Auto,L7,,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000186,li-auto/l9,li-auto-l9,Li Auto,L9,,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000187,lynk-co/06,lynk-co-06,Lynk & Co,06,لينك,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000188,lynk-co/08,lynk-co-08,Lynk & Co,08,لينك,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000189,lynk-co/900,lynk-co-900,Lynk & Co,900,لينك,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000190,mazda/3,mazda-3,Mazda,3,مازدا,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000191,mazda/cx-3,mazda-cx-3,Mazda,CX-3,مازدا,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000192,mercedes/a-class,mercedes-a-class,Mercedes-Benz,A-Class,مرسيدس,,hatch,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000193,mercedes/b-class,mercedes-b-class,Mercedes-Benz,B-Class,مرسيدس,,mpv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000194,mercedes/c-class,mercedes-c-class,Mercedes-Benz,C-Class,مرسيدس,سي كلاس,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000195,mercedes/cla,mercedes-cla,Mercedes-Benz,CLA,مرسيدس,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000196,mercedes/e-class,mercedes-e-class,Mercedes-Benz,E-Class,مرسيدس,إي كلاس,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000197,mercedes/eqa,mercedes-eqa,Mercedes-Benz,EQA,مرسيدس,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000198,mercedes/eqb,mercedes-eqb,Mercedes-Benz,EQB,مرسيدس,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000199,mercedes/eqs-suv,mercedes-eqs-suv,Mercedes-Benz,EQS SUV,مرسيدس,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000200,mercedes/gla,mercedes-gla,Mercedes-Benz,GLA,مرسيدس,جي ال ايه,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000201,mercedes/glc,mercedes-glc,Mercedes-Benz,GLC,مرسيدس,جي ال سي,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000202,mercedes/gle,mercedes-gle,Mercedes-Benz,GLE,مرسيدس,جي ال اي,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000203,mercedes/gls,mercedes-gls,Mercedes-Benz,GLS,مرسيدس,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000204,mg/5,mg-5,MG,5,ام جي,ام جي 5,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000205,mg/6,mg-6,MG,6,ام جي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000206,mg/7,mg-7,MG,7,ام جي,ام جي 7,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000207,mg/g50-plus,mg-g50-plus,MG,G50 Plus,ام جي,,mpv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000208,mg/gt,mg-gt,MG,GT,ام جي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000020,mg/hs,mg-hs,MG,HS,ام جي,اتش اس,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000209,mg/one,mg-one,MG,One,ام جي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000210,mg/rx9,mg-rx9,MG,RX9,ام جي,ار اكس 9,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000211,mg/zs,mg-zs,MG,ZS,ام جي,زد اس,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000212,mini/countryman,mini-countryman,MINI,Countryman,ميني,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000213,mitsubishi/attrage,mitsubishi-attrage,Mitsubishi,Attrage,ميتسوبيشي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000214,mitsubishi/destinator,mitsubishi-destinator,Mitsubishi,Destinator,ميتسوبيشي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000015,mitsubishi/eclipse-cross,mitsubishi-eclipse-cross,Mitsubishi,Eclipse Cross,ميتسوبيشي,إكليبس كروس,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000215,mitsubishi/mirage,mitsubishi-mirage,Mitsubishi,Mirage,ميتسوبيشي,,hatch,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000216,mitsubishi/outlander,mitsubishi-outlander,Mitsubishi,Outlander,ميتسوبيشي,أوتلاندر,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000217,mitsubishi/xpander,mitsubishi-xpander,Mitsubishi,Xpander,ميتسوبيشي,اكسباندر,mpv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000218,nissan/juke,nissan-juke,Nissan,Juke,نيسان,جوك,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000219,nissan/magnite,nissan-magnite,Nissan,Magnite,نيسان,ماجنايت,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000220,nissan/patrol,nissan-patrol,Nissan,Patrol,نيسان,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000006,nissan/qashqai,nissan-qashqai,Nissan,Qashqai,نيسان,قشقاي,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000221,nissan/sentra,nissan-sentra,Nissan,Sentra,نيسان,سنترا,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000222,nissan/sunny,nissan-sunny,Nissan,Sunny,نيسان,صني,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000223,nissan/x-trail,nissan-x-trail,Nissan,X-Trail,نيسان,إكس تريل,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000224,opel/corsa,opel-corsa,Opel,Corsa,أوبل,,hatch,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000225,opel/crossland,opel-crossland,Opel,Crossland,أوبل,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000226,opel/frontera,opel-frontera,Opel,Frontera,أوبل,فرونتيرا,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000007,opel/grandland,opel-grandland,Opel,Grandland,أوبل,جراند لاند,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000227,opel/mokka,opel-mokka,Opel,Mokka,أوبل,موكا,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000228,peugeot/2008,peugeot-2008,Peugeot,2008,بيجو,2008,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000005,peugeot/3008,peugeot-3008,Peugeot,3008,بيجو,3008,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000229,peugeot/408,peugeot-408,Peugeot,408,بيجو,408,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000014,peugeot/5008,peugeot-5008,Peugeot,5008,بيجو,5008,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000230,porsche/cayenne,porsche-cayenne,Porsche,Cayenne,بورش,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000231,porsche/macan,porsche-macan,Porsche,Macan,بورش,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000232,proton/saga,proton-saga,Proton,Saga,بروتون,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000012,renault/austral,renault-austral,Renault,Austral,رينو,أوسترال,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000233,renault/duster,renault-duster,Renault,Duster,رينو,داستر,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000234,renault/kardian,renault-kardian,Renault,Kardian,رينو,كارديان,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000235,renault/megane,renault-megane,Renault,Megane,رينو,ميجان,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000236,renault/taliant,renault-taliant,Renault,Taliant,رينو,تاليانت,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000237,rox/01,rox-01,ROX,01,,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000238,rox/adamas,rox-adamas,ROX,Adamas,,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000239,seat/arona,seat-arona,SEAT,Arona,سيات,أرونا,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000240,seat/ateca,seat-ateca,SEAT,Ateca,سيات,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000241,seat/ibiza,seat-ibiza,SEAT,Ibiza,سيات,إبيزا,hatch,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000242,seat/leon,seat-leon,SEAT,Leon,سيات,ليون,hatch,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000243,skoda/karoq,skoda-karoq,Skoda,KAROQ,سكودا,كاروك,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000244,skoda/kodiaq,skoda-kodiaq,Skoda,KODIAQ,سكودا,كودياك,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000245,skoda/octavia,skoda-octavia,Skoda,Octavia,سكودا,أوكتافيا,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000246,skoda/superb,skoda-superb,Skoda,Superb,سكودا,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000247,soueast/s-05,soueast-s-05,Soueast,S 05,سوايست,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000019,soueast/s-06,soueast-s06,Soueast,S 06,سوايست,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000248,soueast/s-07,soueast-s-07,Soueast,S 07,سوايست,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000249,soueast/s-08-dm,soueast-s-08-dm,Soueast,S 08 DM,سوايست,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000013,soueast/s-09,soueast-s09,Soueast,S 09,سوايست,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000250,soueast/s08,soueast-s08,Soueast,S08,سوايست,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000251,suzuki/alto,suzuki-alto,Suzuki,Alto,سوزوكي,,hatch,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000252,suzuki/baleno,suzuki-baleno,Suzuki,Baleno,سوزوكي,,hatch,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000253,suzuki/ertiga,suzuki-ertiga,Suzuki,Ertiga,سوزوكي,ارتيجا,mpv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000254,suzuki/fronx,suzuki-fronx,Suzuki,Fronx,سوزوكي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000255,suzuki/jimny,suzuki-jimny,Suzuki,Jimny,سوزوكي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000256,suzuki/s-presso,suzuki-s-presso,Suzuki,S-Presso,سوزوكي,,hatch,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000257,suzuki/swift,suzuki-swift,Suzuki,Swift,سوزوكي,سويفت,hatch,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000258,suzuki/swift-dzire,suzuki-swift-dzire,Suzuki,Swift Dzire,سوزوكي,ديزاير,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000259,tesla/model-y,tesla-model-y,Tesla,Model Y,تيسلا,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000260,toyota/bz4x,toyota-bz4x,Toyota,bZ4X,تويوتا,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000261,toyota/corolla,toyota-corolla,Toyota,Corolla,تويوتا,كورولا,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000262,toyota/fortuner,toyota-fortuner,Toyota,Fortuner,تويوتا,فورتشنر,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000263,toyota/urban-cruiser,toyota-urban-cruiser,Toyota,Urban Cruiser,تويوتا,أوربان كروزر,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000264,vgv/u70p-plus,vgv-u70p-plus,Vgv,U70P Plus,,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000265,volkswagen/golf,volkswagen-golf,Volkswagen,Golf,فولكس,جولف,hatch,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000266,volkswagen/passat,volkswagen-passat,Volkswagen,Passat,فولكس,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000267,volkswagen/t-roc,volkswagen-t-roc,Volkswagen,T-Roc,فولكس,تي روك,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000268,volkswagen/tayron,volkswagen-tayron,Volkswagen,Tayron,فولكس,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000003,volkswagen/tiguan,volkswagen-tiguan,Volkswagen,Tiguan,فولكس,تيجوان,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000269,volvo/es90,volvo-es90,Volvo,ES90,فولفو,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000270,volvo/ex30,volvo-ex30,Volvo,EX30,فولفو,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000271,volvo/ex90,volvo-ex90,Volvo,EX90,فولفو,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000272,volvo/xc-40,volvo-xc-40,Volvo,XC 40,فولفو,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000273,volvo/xc60,volvo-xc60,Volvo,XC60,فولفو,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000274,volvo/xc90,volvo-xc90,Volvo,XC90,فولفو,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000275,voyah/dream,voyah-dream,Voyah,Dream,,,mpv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000276,voyah/free,voyah-free,Voyah,Free,,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000277,xiaomi/su7,xiaomi-su7,Xiaomi,SU7,شاومي,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000278,xiaomi/yu7,xiaomi-yu7,Xiaomi,YU7,شاومي,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000279,xpeng/g6,xpeng-g6,XPeng,G6,,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000280,xpeng/g7,xpeng-g7,XPeng,G7,,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000281,xpeng/g9,xpeng-g9,XPeng,G9,,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000282,xpeng/m03,xpeng-m03,XPeng,M03,,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000283,xpeng/p7,xpeng-p7,XPeng,P7,,,sedan,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000284,xpeng/x9,xpeng-x9,XPeng,X9,,,mpv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000285,zeekr/9x,zeekr-9x,Zeekr,9X,زيكر,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000286,zeekr/x,zeekr-x,Zeekr,X,زيكر,,suv,true,UNKNOWN,ACCEPTED,ID-1,,U11_283
+m_000010,byd/song-plus,byd-song-plus,BYD,Song Plus,,,,false,UNKNOWN,RETAINED_OFF_SALE,ID-1,U11_OFF_SALE,RETAINED_OFF_SALE
+m_000008,citroen/c5-aircross,citroen-c5-aircross,Citroën,C5 Aircross,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000024,byd/song-l-dm-i,byd-song-l-dm-i,BYD,Song L DM-i,,,,false,UNKNOWN,RETAINED_OFF_SALE,ID-1,U11_OFF_SALE,RETAINED_OFF_SALE
+m_000287,hyundai/elantra-cn7,hyundai-elantra-cn7,Hyundai,Elantra CN7,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_SPLIT
+m_000288,baic/x55e,baic-x55e,BAIC,X55e,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_SPLIT
+m_000289,kaiyi/x7-phev,kaiyi-x7-phev,Kaiyi,X7 PHEV,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_SPLIT
+m_000290,jetour/t2-i-dm,jetour-t2-i-dm,Jetour,T2 i-DM,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_SPLIT
+m_000291,byd/sealion-6-ev,byd-sealion-6-ev,BYD,Sealion 6 EV,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_SPLIT
+m_000292,mg/rx5,mg-rx5,MG,RX5 Plus,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000293,byd/song-l,byd-song-l,BYD,Song L,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000294,bmw/3-series,bmw-3-series,BMW,3 Series,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000295,honda/cr-v,honda-cr-v,Honda,CR-V,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000296,kia/carnival,kia-carnival,Kia,Carnival,,,mpv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000297,bmw/x3,bmw-x3,BMW,X3,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000298,toyota/land-cruiser,toyota-land-cruiser,Toyota,Land Cruiser,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000299,byd/tang-l,byd-tang-l,BYD,Tang L,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000300,land-rover/range-rover,land-rover-range-rover,Land Rover,Range Rover,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000301,land-rover/range-rover-vogue,land-rover-range-rover-vogue,Land Rover,Range Rover Vogue,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000302,land-rover/range-rover-sport,land-rover-range-rover-sport,Land Rover,Range Rover Sport,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000303,land-rover/range-rover-evoque,land-rover-range-rover-evoque,Land Rover,Range Rover Evoque,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000304,land-rover/velar,land-rover-velar,Land Rover,Range Rover Velar,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000305,land-rover/defender,land-rover-defender,Land Rover,Defender,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000306,jaguar/f-pace,jaguar-f-pace,Jaguar,F-Pace,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000307,nissan/n7,nissan-n7,Nissan,N7,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000308,nissan/armada,nissan-armada,Nissan,Armada,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000309,byd/dolphin-surf,byd-dolphin-surf,BYD,Dolphin Surf,,,hatchback,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000310,byd/atto-2,byd-atto-2,BYD,Atto 2,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000311,byd/seal,byd-seal,BYD,Seal,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000312,byd/leopard-8,byd-leopard-8,BYD,Leopard 8,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000313,bmw/x4,bmw-x4,BMW,X4,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000314,bmw/i5,bmw-i5,BMW,i5,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000315,bmw/7-series,bmw-7-series,BMW,7 Series,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000316,bmw/1-series,bmw-1-series,BMW,1 Series,,,hatchback,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000317,bmw/2-series-gran-coupe,bmw-2-series-gran-coupe,BMW,2 Series Gran Coupe,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000318,bmw/4-series,bmw-4-series,BMW,4 Series,,,coupe,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000319,bmw/i4,bmw-i4,BMW,i4,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000320,bmw/i3-sedan,bmw-i3-sedan,BMW,i3 (sedan),,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000321,bmw/ix3-neue-klasse,bmw-ix3-neue-klasse,BMW,iX3 (Neue Klasse),,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000322,bmw/m3,bmw-m3,BMW,M3,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000323,bmw/m4,bmw-m4,BMW,M4,,,coupe,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000324,bmw/m5,bmw-m5,BMW,M5,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000325,bmw/m8,bmw-m8,BMW,M8 Gran Coupe,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000326,bmw/z4,bmw-z4,BMW,Z4,,,convertible,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000327,mercedes/s-class,mercedes-s-class,Mercedes-Benz,S-Class,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000328,mercedes/maybach-s-580,mercedes-maybach-s-580,Mercedes-Benz,Maybach S-Class,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000329,mercedes/maybach-eqs-680,mercedes-maybach-eqs-680,Mercedes-Benz,Maybach EQS 680 SUV,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000330,mercedes/eqs,mercedes-eqs,Mercedes-Benz,EQS,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000331,mercedes/eqe,mercedes-eqe,Mercedes-Benz,EQE,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000332,mercedes/eqe-suv,mercedes-eqe-suv,Mercedes-Benz,EQE SUV,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000333,mercedes/cle,mercedes-cle,Mercedes-Benz,CLE,,,coupe,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000334,mercedes/sl,mercedes-sl,Mercedes-Benz,SL,,,convertible,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000335,mercedes/amg-gt,mercedes-amg-gt,Mercedes-Benz,AMG GT,,,coupe,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000336,mercedes/g-class,mercedes-g-class,Mercedes-Benz,G-Class,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000337,mercedes/g-580-eq,mercedes-g-580-eq,Mercedes-Benz,G 580 with EQ Technology,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000338,mercedes/v-class,mercedes-v-class,Mercedes-Benz,V-Class,,,mpv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000339,porsche/911,porsche-911,Porsche,911,,,coupe,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000340,porsche/718,porsche-718,Porsche,718,,,coupe,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000341,porsche/taycan,porsche-taycan,Porsche,Taycan,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000342,porsche/panamera,porsche-panamera,Porsche,Panamera,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000343,porsche/macan-electric,porsche-macan-electric,Porsche,Macan Electric,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000344,rolls-royce/cullinan,rolls-royce-cullinan,Rolls-Royce,Cullinan,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000345,rolls-royce/spectre,rolls-royce-spectre,Rolls-Royce,Spectre,,,coupe,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000346,maserati/grecale,maserati-grecale,Maserati,Grecale,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000347,maserati/ghibli,maserati-ghibli,Maserati,Ghibli,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000348,lotus/emeya,lotus-emeya,Lotus,Emeya,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000349,smart/1,smart-1,Smart,#1,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000350,smart/3,smart-3,Smart,#3,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000351,smart/5,smart-5,Smart,#5,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000352,im/ls9,im-ls9,IM,LS9,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000353,vgv/u70-pro,vgv-u70-pro,VGV,U70 Pro,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000354,bestune/t77-pro,bestune-t77-pro,Bestune,T77 Pro,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000355,mhero/1,mhero-1,M-Hero,917,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000356,arcfox/kaola-s,arcfox-kaola-s,Arcfox,Kaola S,,,mpv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000357,audi/rs-e-tron-gt,audi-rs-e-tron-gt,Audi,RS e-tron GT,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000358,avatr/06,avatr-06,Avatr,06,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000359,baic/beijing-x7,baic-beijing-x7,BAIC,Beijing X7,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000360,cadillac/lyriq,cadillac-lyriq,Cadillac,Lyriq,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000361,cadillac/optiq,cadillac-optiq,Cadillac,Optiq,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000362,chery/tiggo-7-pro-max,chery-tiggo-7-pro-max,Chery,Tiggo 7 Pro Max,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000363,chevrolet/spark-euv,chevrolet-spark-euv,Chevrolet,Spark EUV,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000364,dongfeng/huge,dongfeng-huge,Dongfeng,Aeolus Huge,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000365,dongfeng/shine,dongfeng-shine,Dongfeng,Aeolus Shine,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000366,dongfeng/l7,dongfeng-l7,Dongfeng,Aeolus L7,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000367,fiat/e-ulysse,fiat-e-ulysse,Fiat,E-Ulysse,,,mpv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000368,forthing/friday,forthing-friday,Forthing,Friday,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000369,gac/aion-y,gac-aion-y,GAC,Aion Y Plus,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000370,gac/aion-lx,gac-aion-lx,GAC,Aion LX,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000371,gac/gs3-emzoom,gac-gs3-emzoom,GAC,GS3 Emzoom,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000372,geely/emgrand,geely-emgrand,Geely,Emgrand,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000373,geely/ex5-em-i,geely-ex5-em-i,Geely,EX5 EM-i,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000374,genesis/electrified-g80,genesis-electrified-g80,Genesis,Electrified G80,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000375,haval/h6-hev,haval-h6-hev,Haval,H6 HEV,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000376,haval/jolion-pro,haval-jolion-pro,Haval,Jolion Pro,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000377,haval/v7,haval-v7,Haval,V7,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000378,hongqi/eh7,hongqi-eh7,Hongqi,EH7,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000379,hongqi/ehs7,hongqi-ehs7,Hongqi,EHS7,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000380,gmc/hummer-ev,gmc-hummer-ev,GMC,Hummer EV SUV,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000381,hyundai/staria,hyundai-staria,Hyundai,Staria,,,mpv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000382,hyundai/venue,hyundai-venue,Hyundai,Venue,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000383,icaur/v27,icaur-v27,iCAUR,V27,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000384,jac/js2,jac-js2,JAC,JS2,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000385,jac/js4,jac-js4,JAC,JS4,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000386,jeep/grand-cherokee-l,jeep-grand-cherokee-l,Jeep,Grand Cherokee L,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000387,kaiyi/x3-pro,kaiyi-x3-pro,Kaiyi,X3 Pro,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000388,kia/k3,kia-k3,Kia,K3 (Cerato),,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000389,lynk-co/02,lynk-co-02,Lynk & Co,02,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000390,lynk-co/03,lynk-co-03,Lynk & Co,03,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000391,mg/4,mg-4,MG,4 EV,,,hatchback,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000392,mg/cyberster,mg-cyberster,MG,Cyberster,,,convertible,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000393,mini/cooper,mini-cooper,MINI,Cooper,,,hatchback,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000394,mitsubishi/outlander-sport,mitsubishi-outlander-sport,Mitsubishi,Outlander Sport,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000395,rehigh/rh6,rehigh-rh6,Rehigh,RH6,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000396,rehigh/rh8,rehigh-rh8,Rehigh,RH8,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000397,rely/r8,rely-r8,Rely,R8,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000398,subaru/crosstrek,subaru-crosstrek,Subaru,Crosstrek,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000399,volkswagen/touareg,volkswagen-touareg,Volkswagen,Touareg,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000400,volkswagen/id-era-9x,volkswagen-id-era-9x,Volkswagen,ID. ERA 9X,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000401,xpeng/gx,xpeng-gx,XPeng,GX,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000402,xpeng/mona-m03,xpeng-mona-m03,XPeng,Mona M03,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000403,xpeng/p7-plus,xpeng-p7-plus,XPeng,Next P7,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000404,zeekr/001,zeekr-001,Zeekr,001,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000405,zeekr/007,zeekr-007,Zeekr,007,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000406,zeekr/7x,zeekr-7x,Zeekr,7X,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000407,ford/mustang,ford-mustang,Ford,Mustang,,,coupe,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000408,dodge/charger,dodge-charger,Dodge,Charger,,,coupe,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000409,changan/cs35,changan-cs35,Changan,CS35,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000410,toyota/camry,toyota-camry,Toyota,Camry,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000411,toyota/rav4,toyota-rav4,Toyota,RAV4,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000412,toyota/land-cruiser-prado,toyota-land-cruiser-prado,Toyota,Land Cruiser Prado,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000413,toyota/corolla-hybrid,toyota-corolla-hybrid,Toyota,Corolla Hybrid,,,sedan,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
+m_000414,venucia/v-online,venucia-v-online,Venucia,V-Online,,,suv,false,UNKNOWN,ACCEPTED,ID-1,,P2_ADDITION
