@@ -121,10 +121,15 @@ test.describe('boundaries', () => {
     await page.goto('/en/compare?ids=kia-sportage,hyundai-tucson');
     await expect(page.locator('.win, [data-winner]')).toHaveCount(0);
   });
-  test('conflicting price is shown as a conflict, never averaged or bracketed', async ({ page }) => {
+  // The old U11 listing conflict for Tucson is resolved upstream by a P2-accepted official distributor list (Tier A);
+  // the conflict rendering itself is covered by the unit fixture (no accepted price -> conflict, no figure).
+  test('Tucson shows the accepted official list price per version, no conflict, no bracket, no private source link', async ({ page }) => {
     await page.goto('/en/cars/hyundai-tucson');
-    await expect(page.locator('.cd-info .state-conflict')).toBeVisible();
-    await expect(page.locator('tr[data-official-state="conflict"] .bracket')).toHaveCount(0);
+    await expect(page.locator('.cd-info .state-conflict')).toHaveCount(0);
+    await expect(page.locator('tr[data-official-state="checked"]')).not.toHaveCount(0);
+    await expect(page.locator('tr[data-official-state="conflict"]')).toHaveCount(0);
+    await expect(page.locator('.src-list a[href*="drive.google.com"]')).toHaveCount(0);
+    await expect(page.locator('.src-list').first()).toContainText('GB Auto');
   });
   test('car detail Take is a data-bound slot', async ({ page }) => {
     await page.goto('/en/cars/hyundai-tucson');
@@ -171,8 +176,12 @@ test.describe('launch car pages (P2 accepted media)', () => {
     });
   }
   test('model-level accepted price is shown in the price table, not as unconfirmed', async ({ page }) => {
-    await page.goto('/en/cars/chery-arrizo-5');
-    await expect(page.locator('#prices-h ~ * tr[data-trim="model-level"][data-official-state="checked"]')).toHaveCount(1);
+    // fixture from the served P2 release: an accepted price without per-version rows (none -> nothing to check)
+    const rel = JSON.parse(readFileSync('data/registry/catalogue-serving.release.json', 'utf8'));
+    const m = [...rel.entries, ...(rel.market_additions ?? [])].find((e: { accepted?: { price?: { trims: unknown[] } } }) => e.accepted?.price && !e.accepted.price.trims.length);
+    test.skip(!m, 'no model-level-only accepted price in this release');
+    await page.goto(`/en/cars/${m.site_slug}`);
+    await expect(page.locator('tr[data-trim="model-level"][data-official-state="checked"]')).toHaveCount(1);
     await expect(page.locator('section[aria-labelledby="prices-h"] .slot-empty')).toHaveCount(0);
   });
 });

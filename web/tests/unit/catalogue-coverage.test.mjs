@@ -108,10 +108,20 @@ test('P2 media contract: accepted same-origin hero images are served automatical
  assert.equal(V2.vehicles().get('hyundai-tucson').image,null);
  assert.equal(V2.vehicles().get(noHero.site_slug).image,null);
 });
-test('Tucson conflict survives without averaging; P1 files and accepted vendor remain untouched',()=>{
- const old=snap.view.models.find(m=>m.slug==='hyundai-tucson');
- const car=V.vehicles().get('hyundai-tucson');
- assert.equal(old.price.price_from.status,'CONFLICT');assert.equal(car.priceFrom.state,'conflict');assert.equal(car.priceFrom.value,null);
+test('Tucson: P2-accepted official list price supersedes the old U11 listing conflict; the conflict path still never averages',()=>{
+ const old=snap.view.models.find(m=>m.slug==='hyundai-tucson'), e=release.entries.find(x=>x.site_slug==='hyundai-tucson');
+ assert.equal(old.price.price_from.status,'CONFLICT'); // P1/U11 snapshot untouched
+ const car=V.vehicles().get('hyundai-tucson'), ap=e.accepted?.price;
+ if(ap){ // canonical evidence: served exactly as accepted, never a blend of the conflicting listing values
+  assert.equal(car.priceFrom.state,'checked');assert.equal(car.priceFrom.value,ap.price_from);
+  assert.deepEqual(car.trims.map(t=>t.official.value).sort((a,b)=>a-b),ap.trims.filter(t=>t.model_year===car.priceFrom.modelYear||car.priceFrom.modelYear==null).map(t=>t.price_egp).sort((a,b)=>a-b));
+  for(const t of car.trims)assert.ok(t.official.sources.every(s=>!/drive\.google\.com/.test(s.url??'')));
+ }
+ // without an accepted price the U11 conflict is shown as a conflict with no figure
+ const rel3=structuredClone(release);delete rel3.entries.find(x=>x.site_slug==='hyundai-tucson').accepted.price;
+ const V3=runtime('src/server/vehicles/read-model.ts',{'@data/registry/universe.snapshot.json':snap,'@data/registry/display-crosswalk.TEMP.json':cw,
+  '@data/registry/catalogue-serving.release.json':rel3,'@data/registry/media-verified.json':JSON.parse(readFileSync('data/registry/media-verified.json','utf8'))});
+ const c3=V3.vehicles().get('hyundai-tucson');assert.equal(c3.priceFrom.state,'conflict');assert.equal(c3.priceFrom.value,null);
 });
 test('P2 specs, warranty, gallery and brochures are served as accepted, with scope and source; nothing invented',()=>{
  let specs=0,warr=0,gal=0,bro=0,driveHidden=0;

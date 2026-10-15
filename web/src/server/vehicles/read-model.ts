@@ -110,7 +110,8 @@ function issuerNames(issuer: string, brand: string): string[] {
   return issuer.split('+').map(x => x.trim()).filter(Boolean).map(x => (/_eg_web$/i.test(x) ? `${brand} Egypt` : srcName(x)));
 }
 function p2Official(price: number, issuer: string, evidence: string, asOf: string, eff: string | null, basis: string, brand: string): OfficialPrice {
-  const urls = (evidence || '').split('|').map(u => u.trim()).filter(u => /^https?:\/\//.test(u));
+  // Private document links (e.g. a distributor list on Google Drive) are evidence for P2, not a page customers can open: name the issuer, no link.
+  const urls = (evidence || '').split('|').map(u => u.trim()).filter(u => /^https?:\/\//.test(u) && !/drive\.google\.com/.test(u));
   const names = issuerNames(issuer, brand);
   const raw = issuer.split('+').map(x => x.trim().toLowerCase().replace(/_eg_web$/, '').replace(/[^a-z0-9]/g, ''));
   const sources = names.map((name, i) => ({ name, url: urls.find(u => raw[i] && u.toLowerCase().replace(/[^a-z0-9]/g, '').includes(raw[i])) ?? urls[0] ?? null,
