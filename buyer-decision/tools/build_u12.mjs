@@ -21,10 +21,21 @@ const T = require(path.join(ROOT, 'transport/reco.js')); const E = T._internals.
 const [p2dir, p2commit] = process.argv.slice(2);
 if (!p2dir || !p2commit) throw new Error('usage: build_u12.mjs <p2 dir> <p2 commit>');
 const rd = f => fs.readFileSync(path.join(p2dir, f));
+function parseCsv(t) { const out = []; let row = [], f = '', q = false;
+  for (let i = 0; i < t.length; i++) { const c = t[i];
+    if (q) { if (c === '"') { if (t[i + 1] === '"') { f += '"'; i++; } else q = false; } else f += c; }
+    else if (c === '"') q = true; else if (c === ',') { row.push(f); f = ''; } else if (c === '\n' || c === '\r') { if (c === '\r' && t[i + 1] === '\n') i++; row.push(f); out.push(row); row = []; f = ''; } else f += c; }
+  if (f || row.length) { row.push(f); out.push(row); } return out.filter(r => r.length > 1); }
 const P2 = JSON.parse(rd('catalogue-serving.release.json')), MU = JSON.parse(rd('market_universe.json'));
 const REG = {}; { const [h, ...rows] = rd('registration_models.csv').toString().trim().split('\n'); const k = h.split(',');
   for (const r of rows) { const v = r.split(','); const o = Object.fromEntries(k.map((x, i) => [x, v[i]])); REG[`${o.reg_brand}|${o.reg_model}`] = o; } }
+// Arabic model names accepted by P2 (registry; not yet in the serving release). Optional: absent files = none.
+const ARN = {}; for (const f of ['u11_models.csv', 'arabic_names.csv']) { const fp = path.join(p2dir, f); if (!fs.existsSync(fp)) continue;
+  const [h, ...rows] = parseCsv(fs.readFileSync(fp, 'utf8')); const ix = k => h.indexOf(k);
+  for (const v of rows) { const id = v[ix('p1_id')], ar = (v[ix('model_ar')] || '').trim(), st = ix('status') >= 0 ? v[ix('status')] : 'ACCEPT';
+    if (id && ar && /[\u0600-\u06FF]/.test(ar) && st === 'ACCEPT') ARN[id] = ar; } }
 const VERSION = process.env.CI_VERSION || 'U12C2-2026-10-14';
+const OFFICIAL_LISTS = process.env.CI_OFFICIAL_LISTS !== '0'; // reversible: CI_OFFICIAL_LISTS=0 restores the RC2 merge behaviour
 const base = T.loadLaunchSnapshot(), U11 = JSON.parse(JSON.stringify(base.U));
 const V = Object.fromEntries(U11.models.map(m => [m.id, m]));
 const IDN = Object.fromEntries(MU.identities.map(x => [x.id, x]));
@@ -34,7 +45,7 @@ const BODY = { suv: 'suv', sedan: 'sedan', hatchback: 'hatch', hatch: 'hatch', m
 const PT = p => (p === 'phev' || p === 'reev' ? { pt: 'hybrid', plugin: true } : p ? { pt: p, plugin: false } : { pt: null, plugin: false });
 const nl = s => String(s || '').toLowerCase().replace(/\b(a\/t|m\/t|cvt|dct|at|mt)\b/g, ' ').replace(/\d\.\d\s*l?\b/g, ' ').replace(/[^a-z0-9]/g, '');
 const brandOf = {}; U11.models.forEach(m => { if (!brandOf[m.brand_id]) brandOf[m.brand_id] = m; });
-const log = { unknown_price: [], identities: 0, splits_moved: [], prices_updated: 0, versions_added: 0, seats: 0, awd: [], in_universe: [], held_no_size_class: [], excluded: {} };
+const log = { official_lists: [], arabic_names: [], unknown_price: [], identities: 0, splits_moved: [], prices_updated: 0, versions_added: 0, seats: 0, awd: [], in_universe: [], held_no_size_class: [], excluded: {} };
 const out = (id, reason) => { (log.excluded[reason] = log.excluded[reason] || []).push(id); };
 
 // ---- identities ----
@@ -73,6 +84,24 @@ for (const r of recs) {
     else { const single = (m.powertrains || []).length === 1 ? PT(a.powertrains && a.powertrains[0]) : { pt: null, plugin: false };
       m.trims.push({ label: t.label.trim(), min: t.price_egp, year: t.model_year || null, official, date, pt: single.pt, plugin: single.plugin }); log.versions_added++; }
   }
+  // Official dated price list (P2 Tier A, SOURCE_STATED effective date, model year not stated, e.g. Mercedes-Benz Egypt
+  // 24.09.2026 / Mansour-MG 15.10.2026): newer than every version the model already carries -> it IS the current version set.
+  // Labels on these lists rarely match the older market labels, and the engine keeps only the latest model year, so merging
+  // would leave stale prices showing. No model year is invented (year stays null). Superseded rows are logged per model.
+  if (OFFICIAL_LISTS) {
+    const ol = acc.filter(t => t.price_egp > 0 && t.tier === 'A' && t.model_year == null && t.date_basis === 'SOURCE_STATED' && t.effective_date);
+    const prior = m.trims.filter(x => !ol.some(t => t.label.trim() === x.label));
+    const newest = prior.map(x => x.date || '').sort().pop() || '';
+    const eff = ol.map(t => t.effective_date).sort().pop();
+    if (ol.length && eff > newest) {
+      const PTN = { petrol: 'petrol', diesel: 'diesel', electric: 'ev', ev: 'ev', hybrid: 'hybrid', phev: 'phev' };
+      const single = (m.powertrains || []).length === 1 ? m.powertrains[0] : null;
+      const nt = ol.map(t => { const p = PT(PTN[String(t.powertrain || '').toLowerCase()] || null);
+        return { label: t.label.trim(), min: t.price_egp, year: null, official: true, date: t.effective_date, pt: p.pt || single, plugin: p.plugin }; });
+      log.official_lists.push({ id: m.id, effective: eff, versions: nt.map(t => `${t.label}=${t.min}`), superseded: m.trims.filter(x => !nt.some(t => t.label === x.label)).map(x => `${x.label}=${x.min}${x.year ? ' MY' + x.year : ''}`) });
+      m.trims = nt; m.official_list = eff;
+    }
+  }
   // seats / drive (P2-accepted)
   const sp = (a.accepted && a.accepted.specs) || {};
   const seats = [...new Set((sp.seats || []).flatMap(x => (String(x.value).match(/^\d+/) || []).map(Number)))].filter(n => n >= 2 && n <= 9);
@@ -88,6 +117,9 @@ for (const r of recs) {
   if (!m.segment && psc && SEG.has(psc.segment)) m.segment = psc.segment;
   if (!m.segment) { const s = match.map(x => x.segment_last12).find(x => SEG.has(x)); if (s) m.segment = s; }
   if (match.length && !((m.reg && m.reg.last12) > 0)) { const l12 = match.reduce((s, x) => s + (+x.last12 || 0), 0), all = match.reduce((s, x) => s + (+x.since_2021 || 0), 0); if (all) m.reg = { since_2021: all, last12: l12 }; }
+  // Arabic model name: P2-accepted registry (u11_models.csv model_ar; arabic_names.csv) into the existing ar.model field
+  const arn = ARN[r.id];
+  if (arn && !(m.ar && m.ar.model || []).includes(arn)) { m.ar = { brand: (m.ar && m.ar.brand) || [], model: [...((m.ar && m.ar.model) || []), arn] }; log.arabic_names.push(`${r.id}=${arn}`); }
   m.model_year = Math.max(0, ...m.trims.map(t => t.year || 0)) || null;
   models.push(m);
 }
@@ -102,7 +134,7 @@ for (const m of models) {
     // (approved copy) instead of the false "isn't sold new in Egypt".
     m.u = true; m.trims = []; log.unknown_price.push(m.id); continue;
   }
-  else if (!((m.model_year || 0) >= 2025 || live)) why = 'discontinued';
+  else if (!((m.model_year || 0) >= 2025 || live || (m.official_list && m.official_list >= '2025-10-15'))) why = 'discontinued'; // a dated official list within 12 months is current-sale evidence
   // `held` tells the engine WHY a known market car is outside the recommendation set, so a buyer who names it is told the
   // truth (never "not sold in Egypt"): 'scope' = a body type we don't recommend yet, 'size' = size class not yet confirmed
   if (why) { m.u = false; if (why.startsWith('body_not_passenger_car')) m.held = 'scope'; out(m.id, why); continue; }
@@ -110,7 +142,8 @@ for (const m of models) {
   if (E.size(m) == null && !(V[m.id] && V[m.id].u)) { m.u = false; m.held = 'size'; log.held_no_size_class.push(m.id); continue; }
   m.u = true; log.in_universe.push(m.id);
 }
-const U = { meta: { ...U11.meta, version: VERSION, built: '2026-10-14', models_in_universe: models.filter(m => m.u).length, models_priced_in_universe: models.filter(m => m.u && m.trims.length).length }, models: models.filter(m => m.body).sort((x, y) => x.id.localeCompare(y.id)) }; // identities without a body stay in the manifest only
+models.forEach(m => { delete m.official_list; }); // build-time only
+const U = { meta: { ...U11.meta, version: VERSION, built: VERSION.slice(-10), models_in_universe: models.filter(m => m.u).length, models_priced_in_universe: models.filter(m => m.u && m.trims.length).length }, models: models.filter(m => m.body).sort((x, y) => x.id.localeCompare(y.id)) }; // identities without a body stay in the manifest only
 const body = JSON.stringify(U), sha = s => crypto.createHash('sha256').update(s).digest('hex');
 const dir = path.join(ROOT, 'datasets', VERSION); fs.mkdirSync(dir, { recursive: true });
 fs.writeFileSync(path.join(dir, 'recommendation_view.json'), body + '\n');
@@ -120,11 +153,11 @@ const manifest = {
   file: 'recommendation_view.json', sha256: sha(body + '\n'), content_sha256: sha(body),
   identities: log.identities, models_in_universe: U.meta.models_in_universe,
   base: { dataset_id: base.id, content_sha256: base.sha256 },
-  p2_input: { commit: p2commit, release_id: P2.release_id, files: Object.fromEntries(['catalogue-serving.release.json', 'market_universe.json', 'registration_models.csv'].map(f => [f, sha(rd(f))])) },
+  p2_input: { commit: p2commit, release_id: P2.release_id, files: Object.fromEntries(['catalogue-serving.release.json', 'market_universe.json', 'registration_models.csv', 'u11_models.csv', 'arabic_names.csv'].filter(f => fs.existsSync(path.join(p2dir, f))).map(f => [f, sha(rd(f))])) },
   registry: { snapshot_id: null, registration_months: U.meta.registration_months, last12_window: U.meta.last12_window, note: 'registrations: sale evidence and size class source only; their absence never excludes' },
-  changes: { splits_moved: log.splits_moved, prices_updated: log.prices_updated, versions_added: log.versions_added, seats_changed: log.seats, awd: log.awd,
+  changes: { official_lists: log.official_lists, arabic_names_added: log.arabic_names, splits_moved: log.splits_moved, prices_updated: log.prices_updated, versions_added: log.versions_added, seats_changed: log.seats, awd: log.awd,
     unknown_price: log.unknown_price, held_no_size_class: log.held_no_size_class, excluded: log.excluded },
 };
 fs.writeFileSync(path.join(dir, 'manifest.json'), JSON.stringify(manifest, null, 1) + '\n');
-console.log(JSON.stringify({ identities: log.identities, in_universe: log.in_universe.length, unknown_price: log.unknown_price.length, held_no_size_class: log.held_no_size_class.length,
+console.log(JSON.stringify({ official_lists: log.official_lists.length, arabic_names: log.arabic_names.length, identities: log.identities, in_universe: log.in_universe.length, unknown_price: log.unknown_price.length, held_no_size_class: log.held_no_size_class.length,
   excluded: Object.fromEntries(Object.entries(log.excluded).map(([k, v]) => [k, v.length])), splits: log.splits_moved, prices_updated: log.prices_updated, versions_added: log.versions_added, seats: log.seats, awd: log.awd.length }, null, 1));

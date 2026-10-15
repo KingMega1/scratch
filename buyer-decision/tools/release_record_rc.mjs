@@ -1,12 +1,12 @@
 // Writes release/P1-RELEASE-<RC>.json: a U12C2 release candidate (engine E6.1 + dataset datasets/<RC>-2026-10-14), with hashes.
 // Status stays CANDIDATE until P3 approves the DRAFT copy keys and the release is accepted; U11/T1 remains the production binding.
-// Usage (from buyer-decision/): node tools/release_record_rc.mjs <source_commit> [U12C2-RC2]
+// Usage (from buyer-decision/): node tools/release_record_rc.mjs <source_commit> [U12C2-RC2] [datasets/<dir>]
 import fs from 'node:fs'; import path from 'node:path'; import crypto from 'node:crypto'; import { execFileSync } from 'node:child_process';
 import { createRequire } from 'node:module'; import { fileURLToPath } from 'node:url';
 const require = createRequire(import.meta.url);
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const sc = process.argv[2]; if (!sc) throw new Error('source commit required');
-const RC = process.argv[3] || 'U12C2-RC2', DS = `datasets/${RC}-2026-10-14`;
+const RC = process.argv[3] || 'U12C2-RC2', DS = process.argv[4] || `datasets/${RC}-2026-10-14`; // [dataset dir] when it is not <RC>-2026-10-14
 const git = (...a) => execFileSync('git', a, { cwd: ROOT }).toString().trim();
 const blob = (commit, f) => execFileSync('git', ['show', `${commit}:buyer-decision/${f}`], { cwd: ROOT });
 const h = b => crypto.createHash('sha256').update(b).digest('hex');
@@ -36,11 +36,13 @@ const rec = {
     browser_app: at('app/app.js'), redaction: at('app/redact.js'), tracking: at('app/track.js'),
     transport: at('transport/reco.js'), schema: at('transport/ci.reco.v1.schema.json'), p5_handoff: at(`transport/P5-HANDOFF-${RC}.md`),
     dataset_manifest: at(`${DS}/manifest.json`), dataset_view: at(`${DS}/recommendation_view.json`),
+    ...Object.fromEntries([['eligibility_manifest', 'ELIGIBILITY-MANIFEST.csv'], ['coverage_report', 'COVERAGE-REPORT.md'], ['regression_report', 'REGRESSION_REPORT.md'], ['p2_handoff', 'P2-HANDOFF-missing-facts.csv']]
+      .filter(([, f]) => fs.existsSync(path.join(ROOT, DS, f))).map(([k, f]) => [k, at(`${DS}/${f}`)])),
   },
-  semantic_changes: 'Ranking: NONE. Eligibility reason reporting only: a known market car held out of the set reports unknown_size / scope instead of not_on_sale.',
+  semantic_changes: 'Ranking, parser, eligibility rules: NONE. Engine E6.1 (vs T1): a held market car reports unknown_size / scope instead of not_on_sale. Transport T1.1: no compare table for a single-car result, matching the released app.',
   evidence: { ref: `buyer-decision/${DS}/REGRESSION_REPORT.md`, commands: [
     'node tools/build_present.mjs --check', 'node tests/regression/run.js --strict',
-    `CI_DATASET=${DS}/recommendation_view.json node tests/regression/run.js`, 'node tests/eligibility.test.js datasets/{U11-2026-09-26,U12C-2026-10-14,U12C2-2026-10-14,U12C2-RC1-2026-10-14,U12C2-RC2-2026-10-14}',
+    `CI_DATASET=${DS}/recommendation_view.json node tests/regression/run.js`, 'node tests/eligibility.test.js datasets/{U11-2026-09-26,U12C-2026-10-14,U12C2-2026-10-14,U12C2-RC1-2026-10-14,U12C2-RC2-2026-10-14,U12-RC3-2026-10-15}', `node tests/u12_data.test.js ${DS}`, `node tests/transport/browser_equivalence.mjs <build of ${DS}> ${DS}`,
     'node tests/named_cars.test.js', 'node tests/transport/transport.test.js', 'node tests/{contracts,engine,integrity,redact}.test.js', 'node tests/e2e.mjs'] },
 };
 fs.writeFileSync(path.join(ROOT, `release/P1-RELEASE-${RC}.json`), JSON.stringify(rec, null, 1) + '\n');

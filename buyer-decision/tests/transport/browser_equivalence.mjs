@@ -7,7 +7,7 @@
 //      what could change, versions, specs, market, next steps), each alternative card, the compare table, notices,
 //      the spend-less card, checks, no-match block, the brief bar, and the detail sheet of an alternative and of the
 //      spend-less car. HTML is compared after the browser's own parse/serialise of both sides (byte-exact otherwise).
-// Usage (from buyer-decision/): node tests/transport/browser_equivalence.mjs [releasedBuildDir]
+// Usage (from buyer-decision/): node tests/transport/browser_equivalence.mjs [releasedBuildDir] [datasetDir]
 import { chromium } from 'playwright';
 import http from 'node:http';
 import fs from 'node:fs';
@@ -27,7 +27,8 @@ if (!build) {
   execFileSync('python3', [path.join(ROOT, 'tools/build_public.py'), build], { stdio: 'ignore' });
 }
 const corpus = JSON.parse(fs.readFileSync(path.join(ROOT, 'tests/regression/corpus.json'), 'utf8'));
-const ds = T.loadLaunchSnapshot();
+// optional 2nd arg: the accepted dataset dir the build was made from (default: pinned U11 launch snapshot)
+const ds = process.argv[3] ? T.loadAcceptedDataset(path.resolve(process.argv[3])) : T.loadLaunchSnapshot();
 const AS_OF = '2026-10-07';
 
 const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css' };
@@ -49,7 +50,8 @@ const errors = []; page.on('pageerror', e => errors.push(e.message));
 const canon = html => page.evaluate(h => { const t = document.createElement('template'); t.innerHTML = h == null ? '' : h; return t.innerHTML; }, html);
 
 let checks = 0, fails = 0; const failures = [];
-const eq = async (a, bHtml, msg) => { checks++; const x = await canon(bHtml); if (a !== x) { fails++; failures.push(`${msg}\n    browser:   ${String(a).slice(0, 300)}\n    transport: ${String(x).slice(0, 300)}`); } };
+// a fragment absent on both sides (e.g. no compare table for a single car) is equal
+const eq = async (a, bHtml, msg) => { checks++; const x = bHtml == null ? null : await canon(bHtml); if (a !== x) { fails++; failures.push(`${msg}\n    browser:   ${String(a).slice(0, 300)}\n    transport: ${String(x).slice(0, 300)}`); } };
 const ok = (c, msg) => { checks++; if (!c) { fails++; failures.push(msg); } };
 
 for (const c of corpus) for (const lang of ['en', 'ar']) {

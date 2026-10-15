@@ -27,7 +27,7 @@ const I = (() => {
 })();
 
 const SCHEMA = 'ci.reco.v1';
-const TRANSPORT_VERSION = 'T1-2026-10-07';
+const TRANSPORT_VERSION = 'T1.1-2026-10-15'; // T1.1: no compare table for a single-car result (matches the released app);
 const LOCALES = ['en', 'ar'];
 const sha256 = s => crypto.createHash('sha256').update(s).digest('hex');
 
@@ -153,7 +153,8 @@ function execute(brief, dataset, opts = {}) {
     hero,
     alternatives: r.hero ? r.alts.map(a => car(a, false)) : [],
     equal: r.equal ? { heading: S.equal_h, sub: S.equal_sub, tier: r.tier } : null,
-    compare_html: r.hero ? PR.compareTable([r.hero, ...r.alts], r) : null,
+    // as the released app: a compare table only for an equal set or when there are alternatives (one car = nothing to compare)
+    compare_html: r.hero && (r.equal || r.alts.length) ? PR.compareTable([r.hero, ...r.alts], r) : null,
     less: r.hero && r.less ? { id: r.less.id, price: r.less.price, saves: r.less.saves, heading: S.less_h, ...frag(PR.lessHtml(r, b)), detail_html: PR.detail(PR.packFor(r.less.id, r), r, false) } : null,
     checks: r.hero ? PR.checksOf(b).map(k => ({ key: k, ...frag(S.check[k]) })) : [],
     no_match: r.hero ? null : {

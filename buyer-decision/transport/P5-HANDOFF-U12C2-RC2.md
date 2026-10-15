@@ -1,3 +1,5 @@
+> **Superseded by `P5-HANDOFF-U12-RC3.md`.**
+
 # P1 → P5 integration handoff — U12C2 release candidate (RC2)
 
 Owner: P1. Task: P1-READINESS-02. Record: `buyer-decision/release/P1-RELEASE-U12C2-RC2.json`. Supersedes RC1 (`P5-HANDOFF-U12C2-RC1.md`); code is identical, only the dataset changed.
