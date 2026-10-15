@@ -2,10 +2,10 @@
  "counts": {
   "brochure_accepted": 81,
   "fully_enriched": 36,
-  "gallery_models": 56,
-  "hero_accepted": 67,
-  "hero_accepted_hq": 63,
-  "hero_limited_archive": 139,
+  "gallery_models": 66,
+  "hero_accepted": 76,
+  "hero_accepted_hq": 72,
+  "hero_limited_archive": 130,
   "id_accepted": 283,
   "logo_accepted": 248,
   "market_status_official": 37,
@@ -19,10 +19,10 @@
  "counts_market_universe": {
   "brochure_accepted": 82,
   "fully_enriched": 36,
-  "gallery_models": 57,
-  "hero_accepted": 68,
-  "hero_accepted_hq": 64,
-  "hero_limited_archive": 139,
+  "gallery_models": 68,
+  "hero_accepted": 78,
+  "hero_accepted_hq": 74,
+  "hero_limited_archive": 130,
   "id_accepted": 416,
   "logo_accepted": 347,
   "market_status_official": 38,
@@ -60,17 +60,55 @@
    "brand": "Alfa Romeo",
    "brochures": [],
    "conflicts": [],
-   "gallery": [],
+   "gallery": [
+    {
+     "asset_id": "f80ac0479a23",
+     "credit": "Alfa Romeo (official)",
+     "height": "660",
+     "page": "https://www.alfaromeo.com.eg/models/giulia",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "f80ac0479a231643ea09bdf471d6a4593935798754f2906fccb935c56c616a8b",
+     "src": "/media/p2/models/alfa-romeo-giulia/01.webp",
+     "status": "ACCEPT",
+     "url": "https://www.alfaromeo.com.eg/content/dam/alfa/eg/en/2023/giulia/adas/desktop.jpg",
+     "width": "1920"
+    },
+    {
+     "asset_id": "ce6bc91db01a",
+     "credit": "Alfa Romeo (official)",
+     "height": "660",
+     "page": "https://www.alfaromeo.com.eg/models/giulia",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "ce6bc91db01ae3692fa1abc4eb5809f6612e63fa2128c76018a9f6ebbb9bfab2",
+     "src": "/media/p2/models/alfa-romeo-giulia/02.webp",
+     "status": "ACCEPT",
+     "url": "https://www.alfaromeo.com.eg/content/dam/alfa/eg/en/2023/giulia/performance/desktop.jpg",
+     "width": "1920"
+    }
+   ],
    "gaps": [
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
-    "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
-   "hero_image": null,
+   "hero_image": {
+    "asset_id": "e4927a2693ad",
+    "credit": "Alfa Romeo (official)",
+    "height": "888",
+    "page": "https://www.alfaromeo.com.eg/models/giulia",
+    "quality_class": "HQ",
+    "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+    "sha256": "e4927a2693ad905197e22bed85731b39dca283fdb708d0732e58f0dc5648a775",
+    "src": "/media/p2/models/alfa-romeo-giulia.webp",
+    "status": "ACCEPT",
+    "url": "https://www.alfaromeo.com.eg/content/dam/alfa/eg/en/2023/giulia/exterior/desktop.jpg",
+    "width": "1920"
+   },
    "hero_image_limited": {
     "asset_id": "eed8f1db6726",
     "credit": "CarIndex archive",
@@ -79,7 +117,7 @@
     "quality_class": "COMPACT_ONLY",
     "rights_basis": "CEO_SUPPLIED_ARCHIVE_ORIGIN_UNVERIFIED",
     "sha256": "eed8f1db672682928a40c3ece5b63a7dbf071d1e9373084f4b9a999bb3a1c7b9",
-    "src": null,
+    "src": "/media/p2/models/alfa-romeo-giulia.webp",
     "status": "ACCEPT_LIMITED",
     "url": "https://drive.google.com/file/d/1FFBgZ-VqRlDo3mM1p5e6XZDgzMd7iNFz/view?usp=drivesdk",
     "width": "698"
@@ -130,17 +168,42 @@
    "brand": "Alfa Romeo",
    "brochures": [],
    "conflicts": [],
-   "gallery": [],
+   "gallery": [
+    {
+     "asset_id": "31fc322f5c4d",
+     "credit": "Alfa Romeo (official)",
+     "height": "660",
+     "page": "https://www.alfaromeo.com.eg/models/stelvio",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "31fc322f5c4dfe75a29e27b257fb97728ea1a0fb2aefff17d9539075e8191153",
+     "src": "/media/p2/models/alfa-romeo-stelvio/01.webp",
+     "status": "ACCEPT",
+     "url": "https://www.alfaromeo.com.eg/content/dam/alfa/eg/en/2023/stelvio/technology/desktop-1.jpg",
+     "width": "1920"
+    }
+   ],
    "gaps": [
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
-    "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
-   "hero_image": null,
+   "hero_image": {
+    "asset_id": "94dbe9502ecf",
+    "credit": "Alfa Romeo (official)",
+    "height": "888",
+    "page": "https://www.alfaromeo.com.eg/models/stelvio",
+    "quality_class": "HQ",
+    "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+    "sha256": "94dbe9502ecffd94fa1419fc603135e71847a44ca05773db52971e8ac4345726",
+    "src": "/media/p2/models/alfa-romeo-stelvio.webp",
+    "status": "ACCEPT",
+    "url": "https://www.alfaromeo.com.eg/content/dam/alfa/eg/en/2023/stelvio/desktop.jpg",
+    "width": "1920"
+   },
    "hero_image_limited": {
     "asset_id": "e7ad6b1dee0d",
     "credit": "CarIndex archive",
@@ -149,7 +212,7 @@
     "quality_class": "COMPACT_ONLY",
     "rights_basis": "CEO_SUPPLIED_ARCHIVE_ORIGIN_UNVERIFIED",
     "sha256": "e7ad6b1dee0d67ab722ec854168164b1e1e5df0a3f5ed6b05866f3a40dc3d107",
-    "src": null,
+    "src": "/media/p2/models/alfa-romeo-stelvio.webp",
     "status": "ACCEPT_LIMITED",
     "url": "https://drive.google.com/file/d/1iESGN0LJL1L8Jh21vQjX7Zu8FHPBHqFl/view?usp=drivesdk",
     "width": "698"
@@ -211,17 +274,55 @@
    "brand": "Alfa Romeo",
    "brochures": [],
    "conflicts": [],
-   "gallery": [],
+   "gallery": [
+    {
+     "asset_id": "111af4f7f4ef",
+     "credit": "Alfa Romeo (official)",
+     "height": "888",
+     "page": "https://www.alfaromeo.com.eg/models/tonale",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "111af4f7f4ef1a2234e5787f08201563e949dbdabe84a413cb1f344a89bfbe57",
+     "src": "/media/p2/models/alfa-romeo-tonale/01.webp",
+     "status": "ACCEPT",
+     "url": "https://www.alfaromeo.com.eg/content/dam/alfa/cross/tonale-mp/gallery-exterior/front/mobile.jpg/jcr:content/renditions/desktop.jpg",
+     "width": "1920"
+    },
+    {
+     "asset_id": "cd4f2cbe694b",
+     "credit": "Alfa Romeo (official)",
+     "height": "888",
+     "page": "https://www.alfaromeo.com.eg/models/tonale",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "cd4f2cbe694bb0de66df7d6967693748d302a4bdd7491df1046b9848c96e88f8",
+     "src": "/media/p2/models/alfa-romeo-tonale/02.webp",
+     "status": "ACCEPT",
+     "url": "https://www.alfaromeo.com.eg/content/dam/alfa/cross/tonale-mp/gallery-exterior/rear-close-up/mobile.jpg/jcr:content/renditions/desktop.jpg",
+     "width": "1920"
+    }
+   ],
    "gaps": [
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
-    "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
-   "hero_image": null,
+   "hero_image": {
+    "asset_id": "be5577744307",
+    "credit": "Alfa Romeo (official)",
+    "height": "888",
+    "page": "https://www.alfaromeo.com.eg/models/tonale",
+    "quality_class": "HQ",
+    "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+    "sha256": "be5577744307213df993eaf107918b00916abda0fd47e47eb75525f90650655a",
+    "src": "/media/p2/models/alfa-romeo-tonale.webp",
+    "status": "ACCEPT",
+    "url": "https://www.alfaromeo.com.eg/content/dam/alfa/cross/tonale-mp/canvas/mobile.jpg/jcr:content/renditions/desktop.jpg",
+    "width": "1920"
+   },
    "hero_image_limited": {
     "asset_id": "b409d080f954",
     "credit": "CarIndex archive",
@@ -230,7 +331,7 @@
     "quality_class": "COMPACT_ONLY",
     "rights_basis": "CEO_SUPPLIED_ARCHIVE_ORIGIN_UNVERIFIED",
     "sha256": "b409d080f95472fd15439b20d6a437708f701e5d44307b248b90d8e7ab96561e",
-    "src": null,
+    "src": "/media/p2/models/alfa-romeo-tonale.webp",
     "status": "ACCEPT_LIMITED",
     "url": "https://drive.google.com/file/d/1Uv57P-7UmEtQSoYEpkH3Db00auZLDrZD/view?usp=drivesdk",
     "width": "698"
@@ -40038,14 +40139,39 @@
    "brand": "Peugeot",
    "brochures": [],
    "conflicts": [],
-   "gallery": [],
+   "gallery": [
+    {
+     "asset_id": "1c84dde1e1a9",
+     "credit": "Peugeot (official)",
+     "height": "900",
+     "page": "https://www.peugeot-eg.com/en/our-models/new-peugeot-3008/hybrid.html",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "1c84dde1e1a9faafa10aa02794dc9e95b1a08757a28b4a84afc167b0c313b878",
+     "src": "/media/p2/models/peugeot-3008/01.webp",
+     "status": "ACCEPT",
+     "url": "https://www.peugeot-eg.com/content/dam/peugeot/master/b2c/our-range/showroom/3008/2023-new-e-3008-/3008-white-label/3008-hybrid-white-label/TRIM_3008_HYBRID_ALLURE.png?imwidth=1920",
+     "width": "1600"
+    }
+   ],
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
-    "NO_VERIFIED_HERO_IMAGE",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
-   "hero_image": null,
+   "hero_image": {
+    "asset_id": "4cef2b311084",
+    "credit": "Peugeot (official)",
+    "height": "1152",
+    "page": "https://www.peugeot-eg.com/en/our-models/new-peugeot-3008/hybrid.html",
+    "quality_class": "HQ",
+    "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+    "sha256": "4cef2b311084d369a3c5b6946c2cb09d37252ed152130e6ea5698c11933a299d",
+    "src": "/media/p2/models/peugeot-3008.webp",
+    "status": "ACCEPT",
+    "url": "https://www.peugeot-eg.com/content/dam/peugeot/master/b2c/our-range/showroom/3008/2023-new-e-3008-/3008-white-label/3008-hybrid-white-label/DESKTOP_MASTHEAD_HYBRID_2880_1620.png?imwidth=1920",
+    "width": "2048"
+   },
    "hero_image_limited": {
     "asset_id": "1fa1d073f98e",
     "credit": "CarIndex archive",
@@ -40054,7 +40180,7 @@
     "quality_class": "COMPACT_ONLY",
     "rights_basis": "CEO_SUPPLIED_ARCHIVE_ORIGIN_UNVERIFIED",
     "sha256": "1fa1d073f98e6df808b6668826c0412c63ab5e9e4f16b26a98bd7b804ab05f83",
-    "src": null,
+    "src": "/media/p2/models/peugeot-3008.webp",
     "status": "ACCEPT_LIMITED",
     "url": "https://drive.google.com/file/d/1TMS-2YZRTR9a2x035ISdgZxDKNG6muW_/view?usp=drivesdk",
     "width": "698"
@@ -47840,15 +47966,40 @@
    "brand": "Volvo",
    "brochures": [],
    "conflicts": [],
-   "gallery": [],
+   "gallery": [
+    {
+     "asset_id": "78691c387592",
+     "credit": "Volvo (official)",
+     "height": "2880",
+     "page": "https://www.volvocars.com/en-eg/cars/es90-electric/",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "78691c3875923f87bb8f4e359ac93842908dc533e2e05386966e5d9bd666c837",
+     "src": "/media/p2/models/volvo-es90/01.webp",
+     "status": "ACCEPT",
+     "url": "https://www.volvocars.com/images/cs/v3/assets/blt0feaa88e629251fc/blt28a30b1902e49100/6877a96c46b6501fd3ab785c/Exterior-bento-rear2-4x3-ES90.jpg?branch=prod_alias&quality=85&format=auto&iar=0&w=3840",
+     "width": "3840"
+    }
+   ],
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
-    "NO_VERIFIED_HERO_IMAGE",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
-   "hero_image": null,
+   "hero_image": {
+    "asset_id": "66bc2ca05b16",
+    "credit": "Volvo (official)",
+    "height": "1080",
+    "page": "https://www.volvocars.com/en-eg/cars/es90-electric/",
+    "quality_class": "HQ",
+    "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+    "sha256": "66bc2ca05b1686f108fa18e1dbcd4f72d0f6e3081c82a87208e84541a8869b5e",
+    "src": "/media/p2/models/volvo-es90.webp",
+    "status": "ACCEPT",
+    "url": "https://www.volvocars.com/images/cs/v3/assets/blt0feaa88e629251fc/blt3b1634bf8f27886d/69205d40982b1a5b12e3f5e6/_0005_vin0020_34Front_745_ES90.jpg?branch=prod_alias&quality=85&format=auto&iar=0&w=1920",
+    "width": "1920"
+   },
    "hero_image_limited": {
     "asset_id": "99dfd5df7703",
     "credit": "CarIndex archive",
@@ -47857,7 +48008,7 @@
     "quality_class": "COMPACT_ONLY",
     "rights_basis": "CEO_SUPPLIED_ARCHIVE_ORIGIN_UNVERIFIED",
     "sha256": "99dfd5df7703d658fb0ca7d25dc9375b74b50f2f8f1d1a8494b7b9ec50c1e523",
-    "src": null,
+    "src": "/media/p2/models/volvo-es90.webp",
     "status": "ACCEPT_LIMITED",
     "url": "https://drive.google.com/file/d/1TD08TWin1feOPSe5IMcVt2JBiard7dYO/view?usp=drivesdk",
     "width": "698"
@@ -48005,16 +48156,41 @@
    "brand": "Volvo",
    "brochures": [],
    "conflicts": [],
-   "gallery": [],
+   "gallery": [
+    {
+     "asset_id": "8da03a706098",
+     "credit": "Volvo (official)",
+     "height": "2160",
+     "page": "https://www.volvocars.com/en-eg/cars/ex30-electric/",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "8da03a706098ede8e036cf51a5d10cab949bad55fa52a366531517d3fde61942",
+     "src": "/media/p2/models/volvo-ex30/01.webp",
+     "status": "ACCEPT",
+     "url": "https://www.volvocars.com/images/cs/v3/assets/blt0feaa88e629251fc/blt0caf2e7c7c4c8aa7/696aaf86a1438c8e2fc2ebae/my26-ex30-interiorGallery-01-16-9.jpg?branch=prod_alias&quality=85&format=auto&iar=0&w=3840",
+     "width": "3840"
+    }
+   ],
    "gaps": [
     "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
-    "NO_VERIFIED_HERO_IMAGE",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
-   "hero_image": null,
+   "hero_image": {
+    "asset_id": "99f877103563",
+    "credit": "Volvo (official)",
+    "height": "2160",
+    "page": "https://www.volvocars.com/en-eg/cars/ex30-electric/",
+    "quality_class": "HQ",
+    "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+    "sha256": "99f877103563651dbdff98b1f341a98980ab2a168cb3646c46819f9c593f1c9e",
+    "src": "/media/p2/models/volvo-ex30.webp",
+    "status": "ACCEPT",
+    "url": "https://www.volvocars.com/images/cs/v3/assets/blt0feaa88e629251fc/bltcb2acb6eb167d004/6878fdb146b6502675ab8286/Exterior-bento-front-16x9-EX30.jpg?branch=prod_alias&quality=85&format=auto&iar=0&w=3840",
+    "width": "3840"
+   },
    "hero_image_limited": {
     "asset_id": "7ca66bf6c644",
     "credit": "CarIndex archive",
@@ -48023,7 +48199,7 @@
     "quality_class": "COMPACT_ONLY",
     "rights_basis": "CEO_SUPPLIED_ARCHIVE_ORIGIN_UNVERIFIED",
     "sha256": "7ca66bf6c6445283f1345ee74734a8ecc2987e088bfab306e2e8dc3f28b701f6",
-    "src": null,
+    "src": "/media/p2/models/volvo-ex30.webp",
     "status": "ACCEPT_LIMITED",
     "url": "https://drive.google.com/file/d/11Ws4SRshnd_c3BKqDh4-H-eTXwc_4ikR/view?usp=drivesdk",
     "width": "698"
@@ -48146,15 +48322,53 @@
    "brand": "Volvo",
    "brochures": [],
    "conflicts": [],
-   "gallery": [],
+   "gallery": [
+    {
+     "asset_id": "09cdc101ee72",
+     "credit": "Volvo (official)",
+     "height": "2880",
+     "page": "https://www.volvocars.com/en-eg/cars/ex90-electric/",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "09cdc101ee723dc34f1c189d141509fb524becfc46802e35dfa34a347c81581b",
+     "src": "/media/p2/models/volvo-ex90/01.webp",
+     "status": "ACCEPT",
+     "url": "https://www.volvocars.com/images/cs/v3/assets/blt0feaa88e629251fc/blt0e82551f317969c2/683577ae1e09de18ca4615bc/Exterior-bento-rear-4x3-EX90.jpg?branch=prod_alias&quality=85&format=auto&iar=0&w=3840",
+     "width": "3840"
+    },
+    {
+     "asset_id": "d12be11079a1",
+     "credit": "Volvo (official)",
+     "height": "2400",
+     "page": "https://www.volvocars.com/en-eg/cars/ex90-electric/",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "d12be11079a1de8a705b0b738dd6a3901a8f408afdabea7a32d668392ab1887f",
+     "src": "/media/p2/models/volvo-ex90/02.webp",
+     "status": "ACCEPT",
+     "url": "https://www.volvocars.com/images/cs/v3/assets/blt0feaa88e629251fc/bltb0f22c381ab1e1f9/690dacba9541a7fd8b5f0921/my26_ex90_ext_tip_front_4x5.jpg?branch=prod_alias&quality=85&format=auto&iar=0&w=1920",
+     "width": "1920"
+    }
+   ],
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
-    "NO_VERIFIED_HERO_IMAGE",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
-   "hero_image": null,
+   "hero_image": {
+    "asset_id": "9a3bd6a9beba",
+    "credit": "Volvo (official)",
+    "height": "2160",
+    "page": "https://www.volvocars.com/en-eg/cars/ex90-electric/",
+    "quality_class": "HQ",
+    "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+    "sha256": "9a3bd6a9beba11c3cf563f2643b1a906e8b8fe234a08936f0f63fae3f9c2819e",
+    "src": "/media/p2/models/volvo-ex90.webp",
+    "status": "ACCEPT",
+    "url": "https://www.volvocars.com/images/cs/v3/assets/blt0feaa88e629251fc/blt228a1433b1c3684a/690dac8c72eba33ea58addb9/Exterior-bento-front-16x9-EX90.jpg?branch=prod_alias&quality=85&format=auto&iar=0&w=3840",
+    "width": "3840"
+   },
    "hero_image_limited": {
     "asset_id": "ba929fbeca1f",
     "credit": "CarIndex archive",
@@ -48163,7 +48377,7 @@
     "quality_class": "COMPACT_ONLY",
     "rights_basis": "CEO_SUPPLIED_ARCHIVE_ORIGIN_UNVERIFIED",
     "sha256": "ba929fbeca1f374533029431e4a8ac2b57cfd40382097d3edec07f933c078cd8",
-    "src": null,
+    "src": "/media/p2/models/volvo-ex90.webp",
     "status": "ACCEPT_LIMITED",
     "url": "https://drive.google.com/file/d/15zB1dbiFn0l1f0vH-GDT6kHgIRnXJliq/view?usp=drivesdk",
     "width": "698"
@@ -48304,15 +48518,40 @@
    "brand": "Volvo",
    "brochures": [],
    "conflicts": [],
-   "gallery": [],
+   "gallery": [
+    {
+     "asset_id": "cdaaa4fe44c7",
+     "credit": "Volvo (official)",
+     "height": "2880",
+     "page": "https://www.volvocars.com/en-eg/cars/xc40/",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "cdaaa4fe44c70ce74902387b86acdd4b829e3590cf4f844b3c19e9bf0e38a75f",
+     "src": "/media/p2/models/volvo-xc-40/01.webp",
+     "status": "ACCEPT",
+     "url": "https://www.volvocars.com/images/cs/v3/assets/blt0feaa88e629251fc/blte5a93614f4d983be/6849137e14f6c3410e4cf5f4/Exterior-bento-rear-4x3-XC40-mhev.jpg?branch=prod_alias&quality=85&format=auto&iar=0&w=3840",
+     "width": "3840"
+    }
+   ],
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
-    "NO_VERIFIED_HERO_IMAGE",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
-   "hero_image": null,
+   "hero_image": {
+    "asset_id": "0d73683ba9e7",
+    "credit": "Volvo (official)",
+    "height": "2160",
+    "page": "https://www.volvocars.com/en-eg/cars/xc40/",
+    "quality_class": "HQ",
+    "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+    "sha256": "0d73683ba9e7dd58c298855885fc4e045e741ab5b6ccb94b8e711c6016d4619a",
+    "src": "/media/p2/models/volvo-xc-40.webp",
+    "status": "ACCEPT",
+    "url": "https://www.volvocars.com/images/cs/v3/assets/blt0feaa88e629251fc/blt6364bdcbe02eab5f/6849134514f6c31a5f4cf5ec/Exterior-bento-front-16x9-XC40-mhev.jpg?branch=prod_alias&quality=85&format=auto&iar=0&w=3840",
+    "width": "3840"
+   },
    "hero_image_limited": {
     "asset_id": "8a5b644f52b5",
     "credit": "CarIndex archive",
@@ -48321,7 +48560,7 @@
     "quality_class": "COMPACT_ONLY",
     "rights_basis": "CEO_SUPPLIED_ARCHIVE_ORIGIN_UNVERIFIED",
     "sha256": "8a5b644f52b5b2bb86e4d7209da5153fcc3564eb13c617a829bf554c95b01c42",
-    "src": null,
+    "src": "/media/p2/models/volvo-xc-40.webp",
     "status": "ACCEPT_LIMITED",
     "url": "https://drive.google.com/file/d/1koPdt855KcVjigZnhq8CehGgWh_2Wqsk/view?usp=drivesdk",
     "width": "698"
@@ -48516,15 +48755,40 @@
     "PB-2 CONFLICT: Hatla2ee=3790000",
     "PB-2 CONFLICT: Hatla2ee=3990000"
    ],
-   "gallery": [],
+   "gallery": [
+    {
+     "asset_id": "405e83767f20",
+     "credit": "Volvo (official)",
+     "height": "4800",
+     "page": "https://www.volvocars.com/en-eg/cars/xc60/",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "405e83767f20a126fcd8da745cc9aee31f839d054c398bd32c6d7e508e3ab4ed",
+     "src": "/media/p2/models/volvo-xc60/01.webp",
+     "status": "ACCEPT",
+     "url": "https://www.volvocars.com/images/cs/v3/assets/blt0feaa88e629251fc/bltd0c64b2b7642054b/68358826524961f80f2aa20e/xc60-fuel-pdp-blackedition-item3-4x5.jpg?branch=prod_alias&quality=85&format=auto&iar=0&w=3840",
+     "width": "3840"
+    }
+   ],
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
-    "NO_VERIFIED_HERO_IMAGE",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
-   "hero_image": null,
+   "hero_image": {
+    "asset_id": "ea323db66e93",
+    "credit": "Volvo (official)",
+    "height": "1080",
+    "page": "https://www.volvocars.com/en-eg/cars/xc60/",
+    "quality_class": "HQ",
+    "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+    "sha256": "ea323db66e93cad8a90737a1dc19f304d7a1d16d6564c0cc811640a72ea52604",
+    "src": "/media/p2/models/volvo-xc60.webp",
+    "status": "ACCEPT",
+    "url": "https://www.volvocars.com/images/cs/v3/assets/blt0feaa88e629251fc/blt28798459e1bfdbb6/6a25df5b295f02cfdc3fab1a/my26xc60-modelIntroHero-16x9.jpg?branch=prod_alias",
+    "width": "1920"
+   },
    "hero_image_limited": {
     "asset_id": "b32f844ae60d",
     "credit": "CarIndex archive",
@@ -48533,7 +48797,7 @@
     "quality_class": "COMPACT_ONLY",
     "rights_basis": "CEO_SUPPLIED_ARCHIVE_ORIGIN_UNVERIFIED",
     "sha256": "b32f844ae60db43c13e77d9f42fe33491a82eda4f46a83788737f9b938574bf3",
-    "src": null,
+    "src": "/media/p2/models/volvo-xc60.webp",
     "status": "ACCEPT_LIMITED",
     "url": "https://drive.google.com/file/d/1H6OFtn22NmZeoAoVi_7xfRmgL4QDKBBK/view?usp=drivesdk",
     "width": "698"
@@ -48689,7 +48953,34 @@
    "brand": "Volvo",
    "brochures": [],
    "conflicts": [],
-   "gallery": [],
+   "gallery": [
+    {
+     "asset_id": "1b49468f1a94",
+     "credit": "Volvo (official)",
+     "height": "2304",
+     "page": "https://www.volvocars.com/en-eg/cars/xc90/",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "1b49468f1a943a369d5fa482b7233607e91452e7c16738554c9e177e1ee3ffb0",
+     "src": "/media/p2/models/volvo-xc90/01.webp",
+     "status": "ACCEPT",
+     "url": "https://www.volvocars.com/images/cs/v3/assets/blt0feaa88e629251fc/blt098b1a5c6d458a03/6a326dd79b0c45fd60a8ed83/desktop-16x9-XC90.jpg?branch=prod_alias&quality=85&format=auto&h=2304&iar=0&w=4096",
+     "width": "4096"
+    },
+    {
+     "asset_id": "08f6d58fbb2a",
+     "credit": "Volvo (official)",
+     "height": "2160",
+     "page": "https://www.volvocars.com/en-eg/cars/xc90/",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "08f6d58fbb2a466e160819c612edd9cacb4eac9b07b37db654cf47fff4c1c103",
+     "src": "/media/p2/models/volvo-xc90/02.webp",
+     "status": "ACCEPT",
+     "url": "https://www.volvocars.com/images/cs/v3/assets/blt0feaa88e629251fc/bltbc34448532e67d63/6878edfff3798816f116d867/my26_xc90_ext_side_left_open_mhev_16x9.jpg?branch=prod_alias&quality=85&format=auto&iar=0&w=3840",
+     "width": "3840"
+    }
+   ],
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
@@ -50210,14 +50501,52 @@
    "brand": "Citroën",
    "brochures": [],
    "conflicts": [],
-   "gallery": [],
+   "gallery": [
+    {
+     "asset_id": "3017f6a9d60c",
+     "credit": "Citroën (official)",
+     "height": "1089",
+     "page": "https://www.citroen-eg.com/en/vehicles/C5-AIRCROSS.html",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "3017f6a9d60ccd8dff8264fa7c066187ea515601d3a60770959454f890da1eac",
+     "src": "/media/p2/models/citroen-c5-aircross/01.webp",
+     "status": "ACCEPT",
+     "url": "https://www.citroen-eg.com/content/dam/citroen/master/b2c/models/new-c5-aircross/l-m/Citroen_C5_Aircross_Offres_2880_1531.jpg?imwidth=1920",
+     "width": "2048"
+    },
+    {
+     "asset_id": "ea7d6149cdad",
+     "credit": "Citroën (official)",
+     "height": "1089",
+     "page": "https://www.citroen-eg.com/en/vehicles/C5-AIRCROSS.html",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "ea7d6149cdad4ed7cccc7774101ce7cc3054fe44301d020bf68eefc4737425ad",
+     "src": "/media/p2/models/citroen-c5-aircross/02.webp",
+     "status": "ACCEPT",
+     "url": "https://www.citroen-eg.com/content/dam/citroen/master/b2c/models/new-c5-aircross/l-m/Citroen_C5_Aircross_Hybride_Rechargeable_Confort_Style_2880_1531.jpg?imwidth=1920",
+     "width": "2048"
+    }
+   ],
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
-    "NO_VERIFIED_HERO_IMAGE",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
-   "hero_image": null,
+   "hero_image": {
+    "asset_id": "a3071960b419",
+    "credit": "Citroën (official)",
+    "height": "853",
+    "page": "https://www.citroen-eg.com/en/vehicles/C5-AIRCROSS.html",
+    "quality_class": "HQ",
+    "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+    "sha256": "a3071960b419dfd03d851b449141361615b68ef7c5a4cf91bad9a305ccffae2e",
+    "src": "/media/p2/models/citroen-c5-aircross.webp",
+    "status": "ACCEPT",
+    "url": "https://www.citroen-eg.com/content/dam/citroen/master/b2c/models/new-c5-aircross/l-m/Citroen_C5_Aircross_Herobanner_2880_1200.jpg?imwidth=1920",
+    "width": "2048"
+   },
    "hero_image_limited": null,
    "id_status": "ACCEPTED",
    "logo": {
