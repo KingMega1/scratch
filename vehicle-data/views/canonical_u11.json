@@ -1,7 +1,7 @@
 {
  "counts": {
   "brochure_accepted": 81,
-  "fully_enriched": 36,
+  "fully_enriched": 37,
   "gallery_models": 66,
   "hero_accepted": 76,
   "hero_accepted_hq": 72,
@@ -10,15 +10,15 @@
   "logo_accepted": 248,
   "market_status_official": 37,
   "models": 283,
-  "price_accepted": 196,
-  "price_source_dated": 136,
-  "price_tier_a": 52,
+  "price_accepted": 201,
+  "price_source_dated": 141,
+  "price_tier_a": 66,
   "specs_accepted": 199,
   "warranty_accepted": 100
  },
  "counts_market_universe": {
   "brochure_accepted": 82,
-  "fully_enriched": 36,
+  "fully_enriched": 37,
   "gallery_models": 68,
   "hero_accepted": 78,
   "hero_accepted_hq": 74,
@@ -27,9 +27,9 @@
   "logo_accepted": 347,
   "market_status_official": 38,
   "models": 416,
-  "price_accepted": 224,
-  "price_source_dated": 158,
-  "price_tier_a": 55,
+  "price_accepted": 236,
+  "price_source_dated": 170,
+  "price_tier_a": 76,
   "specs_accepted": 241,
   "warranty_accepted": 121
  },
@@ -32270,7 +32270,6 @@
    ],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_VERIFIED_WARRANTY",
@@ -32298,7 +32297,55 @@
    "model": "C-Class",
    "model_id": "m_000194",
    "p1_id": "mercedes/c-class",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-15",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-09-24",
+    "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+    "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+    "model_year": null,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 3350000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "C 180 Saloon / Avantgarde",
+      "model_year": null,
+      "powertrain": "Petrol",
+      "price_egp": 3350000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "C 180 Saloon / Sport",
+      "model_year": null,
+      "powertrain": "Petrol",
+      "price_egp": 3905000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "C 200 Saloon / Sport",
+      "model_year": null,
+      "powertrain": "Petrol",
+      "price_egp": 4390000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 14,
    "site_slug": "mercedes-c-class",
    "size_class": {
@@ -32427,25 +32474,37 @@
    "price": {
     "as_of": "2026-10-15",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2025-11-02",
-    "evidence_url": "https://www.contactcars.com/en/new-cars/mercedes-cla_200 | https://www.contactcars.com/en/new-cars/mercedes-cla_200/year-2026 | https://www.egy-car.com/mercedes-cla200",
-    "issuer": "ContactCars+EgyCar",
-    "model_year": 2026,
+    "effective_date": "2026-09-24",
+    "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+    "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+    "model_year": null,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 2930000,
-    "tier": "B",
+    "price_from": 2890000,
+    "tier": "A",
     "trims": [
      {
       "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2025-11-02",
-      "evidence_url": "https://www.contactcars.com/en/new-cars/mercedes-cla_200 | https://www.contactcars.com/en/new-cars/mercedes-cla_200/year-2026 | https://www.egy-car.com/mercedes-cla200",
-      "issuer": "ContactCars+EgyCar",
-      "label": "Progressive",
-      "model_year": 2026,
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "CLA 180 / Progressive",
+      "model_year": null,
       "powertrain": "Petrol",
-      "price_egp": 2930000,
-      "tier": "B"
+      "price_egp": 2890000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "CLA 200 / Sport",
+      "model_year": null,
+      "powertrain": "Petrol",
+      "price_egp": 3390000,
+      "tier": "A"
      }
     ]
    },
@@ -32609,61 +32668,61 @@
    "price": {
     "as_of": "2026-10-15",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2025-11-02",
-    "evidence_url": "https://www.contactcars.com/en/new-cars/mercedes-e200 | https://www.egy-car.com/mercedes-e200",
-    "issuer": "ContactCars+EgyCar",
-    "model_year": 2026,
+    "effective_date": "2026-09-24",
+    "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+    "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+    "model_year": null,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 4920000,
-    "tier": "B",
+    "price_from": 4420000,
+    "tier": "A",
     "trims": [
      {
       "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2025-11-02",
-      "evidence_url": "https://www.contactcars.com/en/new-cars/mercedes-e200 | https://www.egy-car.com/mercedes-e200",
-      "issuer": "ContactCars+EgyCar",
-      "label": "Avantgarde",
-      "model_year": 2026,
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "E 200 Saloon / Premium",
+      "model_year": null,
       "powertrain": "Petrol",
-      "price_egp": 4920000,
-      "tier": "B"
+      "price_egp": 4420000,
+      "tier": "A"
      },
      {
       "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2025-11-02",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/mercedes/e-200 | https://www.contactcars.com/en/new-cars/mercedes-e200 | https://www.egy-car.com/mercedes-e200",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
-      "label": "Avantgarde",
-      "model_year": 2026,
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "E 200 Saloon / Avantgarde",
+      "model_year": null,
       "powertrain": "Petrol",
-      "price_egp": 4920000,
-      "tier": "B"
+      "price_egp": 5260000,
+      "tier": "A"
      },
      {
       "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2025-11-02",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/mercedes/e-200 | https://www.contactcars.com/en/new-cars/mercedes-e200 | https://www.egy-car.com/mercedes-e200",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
-      "label": "Exclusive",
-      "model_year": 2026,
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "E 200 Saloon / Sport",
+      "model_year": null,
       "powertrain": "Petrol",
-      "price_egp": 5600000,
-      "tier": "B"
+      "price_egp": 5870000,
+      "tier": "A"
      },
      {
       "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2025-11-02",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/mercedes/e-200 | https://www.contactcars.com/en/new-cars/mercedes-e200 | https://www.egy-car.com/mercedes-e200",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
-      "label": "Sport",
-      "model_year": 2026,
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "E 200 Saloon / Exclusive",
+      "model_year": null,
       "powertrain": "Petrol",
-      "price_egp": 5600000,
-      "tier": "B"
+      "price_egp": 5870000,
+      "tier": "A"
      }
     ]
    },
@@ -32810,7 +32869,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_VERIFIED_WARRANTY",
@@ -32838,7 +32896,31 @@
    "model": "EQA",
    "model_id": "m_000197",
    "p1_id": "mercedes/eqa",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-15",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-09-24",
+    "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+    "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+    "model_year": null,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 3400000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "EQA 250+ / Progressive",
+      "model_year": null,
+      "powertrain": "Electric",
+      "price_egp": 3400000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 2,
    "site_slug": "mercedes-eqa",
    "size_class": {
@@ -33038,25 +33120,25 @@
    "price": {
     "as_of": "2026-10-15",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2025-11-02",
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/mercedes/mercedes-benz-gla-200 | https://www.contactcars.com/en/new-cars/mercedes-gla_200 | https://www.contactcars.com/en/new-cars/mercedes-gla_200/year-2026 | https://www.egy-car.com/mercedes-gla200",
-    "issuer": "ContactCars+EgyCar+Hatla2ee",
-    "model_year": 2026,
+    "effective_date": "2026-09-24",
+    "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+    "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+    "model_year": null,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 2990000,
-    "tier": "B",
+    "price_from": 3140000,
+    "tier": "A",
     "trims": [
      {
       "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2025-11-02",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/mercedes/mercedes-benz-gla-200 | https://www.contactcars.com/en/new-cars/mercedes-gla_200 | https://www.contactcars.com/en/new-cars/mercedes-gla_200/year-2026 | https://www.egy-car.com/mercedes-gla200",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
-      "label": "Progressive",
-      "model_year": 2026,
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "GLA 200 / Progressive",
+      "model_year": null,
       "powertrain": "Petrol",
-      "price_egp": 2990000,
-      "tier": "B"
+      "price_egp": 3140000,
+      "tier": "A"
      }
     ]
    },
@@ -33174,49 +33256,61 @@
    "price": {
     "as_of": "2026-10-15",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2025-11-02",
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/mercedes/GLC-200 | https://www.contactcars.com/en/new-cars/mercedes-glc_200 | https://www.egy-car.com/mercedes-glc200",
-    "issuer": "ContactCars+EgyCar+Hatla2ee",
-    "model_year": 2026,
+    "effective_date": "2026-09-24",
+    "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+    "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+    "model_year": null,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 4930000,
-    "tier": "B",
+    "price_from": 4370000,
+    "tier": "A",
     "trims": [
      {
       "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2025-11-02",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/mercedes/GLC-200 | https://www.contactcars.com/en/new-cars/mercedes-glc_200 | https://www.egy-car.com/mercedes-glc200",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
-      "label": "4M SUV - Sport",
-      "model_year": 2026,
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "GLC 200 4M SUV / Avantgarde",
+      "model_year": null,
       "powertrain": "Petrol",
-      "price_egp": 4930000,
-      "tier": "B"
+      "price_egp": 4370000,
+      "tier": "A"
      },
      {
       "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2025-11-02",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/mercedes/GLC-200 | https://www.contactcars.com/en/new-cars/mercedes-glc_200 | https://www.egy-car.com/mercedes-glc200",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
-      "label": "4M COUPE - Sport",
-      "model_year": 2026,
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "GLC 200 4M Coupé / Avantgarde",
+      "model_year": null,
       "powertrain": "Petrol",
-      "price_egp": 5250000,
-      "tier": "B"
+      "price_egp": 4670000,
+      "tier": "A"
      },
      {
       "as_of": "2026-10-15",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/mercedes/mercedes-benz-glc-43 | https://www.contactcars.com/en/new-cars/mercedes-glc_43",
-      "issuer": "ContactCars+Hatla2ee",
-      "label": "4M COUPE - AMG",
-      "model_year": 2026,
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "GLC 200 4M SUV / Sport",
+      "model_year": null,
       "powertrain": "Petrol",
-      "price_egp": 6600000,
-      "tier": "B"
+      "price_egp": 4980000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "GLC 200 4M Coupé / Sport",
+      "model_year": null,
+      "powertrain": "Petrol",
+      "price_egp": 5460000,
+      "tier": "A"
      }
     ]
    },
@@ -33347,7 +33441,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
@@ -33376,7 +33469,43 @@
    "model": "GLE",
    "model_id": "m_000202",
    "p1_id": "mercedes/gle",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-15",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-09-24",
+    "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+    "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+    "model_year": null,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 7200000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "GLE 450 4M SUV / AMG",
+      "model_year": null,
+      "powertrain": "Petrol",
+      "price_egp": 7200000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "Mercedes-AMG GLE 53 4M+ / AMG",
+      "model_year": null,
+      "powertrain": "Petrol",
+      "price_egp": 8220000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 5,
    "site_slug": "mercedes-gle",
    "size_class": {
@@ -33423,7 +33552,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_VERIFIED_WARRANTY",
@@ -33451,7 +33579,31 @@
    "model": "GLS",
    "model_id": "m_000203",
    "p1_id": "mercedes/gls",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-15",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-09-24",
+    "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+    "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+    "model_year": null,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 9930000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "GLS 580 4M SUV / AMG",
+      "model_year": null,
+      "powertrain": "Petrol",
+      "price_egp": 9930000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 3,
    "site_slug": "mercedes-gls",
    "size_class": {
@@ -33614,23 +33766,34 @@
    "price": {
     "as_of": "2026-10-15",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-06-29",
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/moris-garage/mg-5 | https://www.contactcars.com/en/new-cars/mg-5 | https://www.contactcars.com/en/new-cars/mg-5/year-2027",
-    "issuer": "ContactCars+Hatla2ee",
-    "model_year": 2027,
-    "price_from": 974990,
-    "tier": "B",
+    "effective_date": "2026-10-15",
+    "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+    "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+    "model_year": null,
+    "price_from": 889990,
+    "tier": "A",
     "trims": [
      {
       "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-06-29",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/moris-garage/mg-5 | https://www.contactcars.com/en/new-cars/mg-5 | https://www.contactcars.com/en/new-cars/mg-5/year-2027",
-      "issuer": "ContactCars+Hatla2ee",
+      "effective_date": "2026-10-15",
+      "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+      "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+      "label": "Comfort",
+      "model_year": null,
+      "price_egp": 889990,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-15",
+      "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+      "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
       "label": "Luxury",
-      "model_year": 2027,
-      "price_egp": 974990,
-      "tier": "B"
+      "model_year": null,
+      "price_egp": 989990,
+      "tier": "A"
      }
     ]
    },
@@ -33988,34 +34151,23 @@
    "price": {
     "as_of": "2026-10-15",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-08-05",
-    "evidence_url": "https://www.contactcars.com/en/new-cars/mg-7 | https://www.contactcars.com/en/new-cars/mg-7/year-2026 | https://www.egy-car.com/mg-7",
-    "issuer": "ContactCars+EgyCar",
-    "model_year": 2026,
-    "price_from": 1625000,
-    "tier": "B",
+    "effective_date": "2026-10-15",
+    "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+    "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+    "model_year": null,
+    "price_from": 1750000,
+    "tier": "A",
     "trims": [
      {
       "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-08-05",
-      "evidence_url": "https://www.contactcars.com/en/new-cars/mg-7 | https://www.contactcars.com/en/new-cars/mg-7/year-2026 | https://www.egy-car.com/mg-7",
-      "issuer": "ContactCars+EgyCar",
-      "label": "Luxury",
-      "model_year": 2026,
-      "price_egp": 1625000,
-      "tier": "B"
-     },
-     {
-      "as_of": "2026-10-15",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-08-05",
-      "evidence_url": "https://www.contactcars.com/en/new-cars/mg-7 | https://www.contactcars.com/en/new-cars/mg-7/year-2026 | https://www.egy-car.com/mg-7",
-      "issuer": "ContactCars+EgyCar",
+      "effective_date": "2026-10-15",
+      "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+      "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
       "label": "Trophy",
-      "model_year": 2026,
-      "price_egp": 1725000,
-      "tier": "B"
+      "model_year": null,
+      "price_egp": 1750000,
+      "tier": "A"
      }
     ]
    },
@@ -34194,23 +34346,23 @@
    "price": {
     "as_of": "2026-10-15",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-06-28",
-    "evidence_url": "https://www.contactcars.com/en/new-cars/mg-g50_plus/year-2026 | https://www.egy-car.com/mg-g50-plus",
-    "issuer": "ContactCars+EgyCar",
-    "model_year": 2026,
-    "price_from": 1300000,
-    "tier": "B",
+    "effective_date": "2026-10-15",
+    "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+    "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+    "model_year": null,
+    "price_from": 1325000,
+    "tier": "A",
     "trims": [
      {
       "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-06-28",
-      "evidence_url": "https://www.contactcars.com/en/new-cars/mg-g50_plus/year-2026 | https://www.egy-car.com/mg-g50-plus",
-      "issuer": "ContactCars+EgyCar",
-      "label": "1.5 A/T",
-      "model_year": 2026,
-      "price_egp": 1300000,
-      "tier": "B"
+      "effective_date": "2026-10-15",
+      "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+      "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+      "label": "G50 Plus",
+      "model_year": null,
+      "price_egp": 1325000,
+      "tier": "A"
      }
     ]
    },
@@ -34348,34 +34500,23 @@
    "price": {
     "as_of": "2026-10-15",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-08-05",
-    "evidence_url": "https://www.contactcars.com/en/new-cars/mg-gt/year-2026 | https://www.egy-car.com/mg-gt",
-    "issuer": "ContactCars+EgyCar",
-    "model_year": 2026,
-    "price_from": 1110000,
-    "tier": "B",
+    "effective_date": "2026-10-15",
+    "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+    "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+    "model_year": null,
+    "price_from": 1175000,
+    "tier": "A",
     "trims": [
      {
       "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-08-05",
-      "evidence_url": "https://www.contactcars.com/en/new-cars/mg-gt/year-2026 | https://www.egy-car.com/mg-gt",
-      "issuer": "ContactCars+EgyCar",
-      "label": "Comfort",
-      "model_year": 2026,
-      "price_egp": 1110000,
-      "tier": "B"
-     },
-     {
-      "as_of": "2026-10-15",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-08-05",
-      "evidence_url": "https://www.contactcars.com/en/new-cars/mg-gt/year-2026 | https://www.egy-car.com/mg-gt",
-      "issuer": "ContactCars+EgyCar",
+      "effective_date": "2026-10-15",
+      "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+      "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
       "label": "Luxury",
-      "model_year": 2026,
-      "price_egp": 1160000,
-      "tier": "B"
+      "model_year": null,
+      "price_egp": 1175000,
+      "tier": "A"
      }
     ]
    },
@@ -34851,23 +34992,23 @@
    "price": {
     "as_of": "2026-10-15",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-08-05",
-    "evidence_url": "https://www.contactcars.com/en/new-cars/mg-one/year-2026 | https://www.egy-car.com/mg-one",
-    "issuer": "ContactCars+EgyCar",
-    "model_year": 2026,
-    "price_from": 1400000,
-    "tier": "B",
+    "effective_date": "2026-10-15",
+    "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+    "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+    "model_year": null,
+    "price_from": 1425000,
+    "tier": "A",
     "trims": [
      {
       "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-08-05",
-      "evidence_url": "https://www.contactcars.com/en/new-cars/mg-one/year-2026 | https://www.egy-car.com/mg-one",
-      "issuer": "ContactCars+EgyCar",
+      "effective_date": "2026-10-15",
+      "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+      "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
       "label": "Luxury",
-      "model_year": 2026,
-      "price_egp": 1400000,
-      "tier": "B"
+      "model_year": null,
+      "price_egp": 1425000,
+      "tier": "A"
      }
     ]
    },
@@ -35056,7 +35197,6 @@
     }
    ],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -35093,7 +35233,31 @@
    "model": "RX9",
    "model_id": "m_000210",
    "p1_id": "mg/rx9",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-15",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-15",
+    "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+    "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+    "model_year": null,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 1959990,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-15",
+      "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+      "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+      "label": "RX9",
+      "model_year": null,
+      "powertrain": "PHEV",
+      "price_egp": 1959990,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 3,
    "site_slug": "mg-rx9",
    "size_class": {
@@ -51430,7 +51594,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
@@ -51459,7 +51622,31 @@
    "model": "GLC with EQ Technology",
    "model_id": "m_000418",
    "p1_id": "mercedes/glc-eq",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-15",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-09-24",
+    "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+    "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+    "model_year": null,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 4900000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "GLC 400 4M Electric / Sport",
+      "model_year": null,
+      "powertrain": "ev",
+      "price_egp": 4900000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 1,
    "site_slug": "mercedes-glc-eq",
    "size_class": {
@@ -51479,7 +51666,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "GENERATION_UNKNOWN"
@@ -51506,7 +51692,31 @@
    "model": "RX5 Plus",
    "model_id": "m_000292",
    "p1_id": "mg/rx5",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-15",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-15",
+    "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+    "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+    "model_year": null,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 1475000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-15",
+      "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+      "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+      "label": "RX5+ Luxury",
+      "model_year": null,
+      "powertrain": "Petrol",
+      "price_egp": 1475000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 5,
    "site_slug": "mg-rx5",
    "size_class": {
@@ -54772,7 +54982,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
@@ -54801,7 +55010,31 @@
    "model": "CLE",
    "model_id": "m_000333",
    "p1_id": "mercedes/cle",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-15",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-09-24",
+    "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+    "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+    "model_year": null,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 4650000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "CLE 200 Sport Coupé / Sport",
+      "model_year": null,
+      "powertrain": "Petrol",
+      "price_egp": 4650000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 4,
    "site_slug": "mercedes-cle",
    "size_class": {
@@ -54878,7 +55111,7 @@
    "model_id": "m_000334",
    "p1_id": "mercedes/sl",
    "price": null,
-   "rework_price_rows": 2,
+   "rework_price_rows": 3,
    "site_slug": "mercedes-sl",
    "size_class": {
     "basis": "registration segment, last 12 months (19 registrations)",
@@ -54945,7 +55178,7 @@
    "model_id": "m_000335",
    "p1_id": "mercedes/amg-gt",
    "price": null,
-   "rework_price_rows": 2,
+   "rework_price_rows": 3,
    "site_slug": "mercedes-amg-gt",
    "size_class": {
     "basis": "registration segment, last 12 months (67 registrations)",
@@ -54991,7 +55224,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
@@ -55020,7 +55252,31 @@
    "model": "G-Class",
    "model_id": "m_000336",
    "p1_id": "mercedes/g-class",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-15",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-09-24",
+    "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+    "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+    "model_year": null,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 13390000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "G 500 AMG / Night Edition",
+      "model_year": null,
+      "powertrain": "Petrol",
+      "price_egp": 13390000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 6,
    "site_slug": "mercedes-g-class",
    "size_class": {
@@ -55067,7 +55323,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
@@ -55096,7 +55351,31 @@
    "model": "G 580 with EQ Technology",
    "model_id": "m_000337",
    "p1_id": "mercedes/g-580-eq",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-15",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-09-24",
+    "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+    "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+    "model_year": null,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 11200000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "G 580 Electric / Night Edition",
+      "model_year": null,
+      "powertrain": "ev",
+      "price_egp": 11200000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 1,
    "site_slug": "mercedes-g-580-eq",
    "size_class": {
@@ -55116,7 +55395,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
@@ -55145,7 +55423,31 @@
    "model": "V-Class",
    "model_id": "m_000338",
    "p1_id": "mercedes/v-class",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-15",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-09-24",
+    "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+    "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+    "model_year": null,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 6825000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "V 300 Long / Avantgarde",
+      "model_year": null,
+      "powertrain": "petrol",
+      "price_egp": 6825000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 1,
    "site_slug": "mercedes-v-class",
    "size_class": null,
@@ -60235,7 +60537,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "GENERATION_UNKNOWN"
@@ -60262,7 +60563,31 @@
    "model": "Cyberster",
    "model_id": "m_000392",
    "p1_id": "mg/cyberster",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-15",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-15",
+    "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+    "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+    "model_year": null,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 2850000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-15",
+      "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+      "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+      "label": "Cyberster",
+      "model_year": null,
+      "powertrain": "Electric",
+      "price_egp": 2850000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 3,
    "site_slug": "mg-cyberster",
    "size_class": {
