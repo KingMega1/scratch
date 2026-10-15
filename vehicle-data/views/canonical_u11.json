@@ -1,11 +1,11 @@
 {
  "counts": {
   "brochure_accepted": 81,
-  "fully_enriched": 37,
-  "gallery_models": 66,
-  "hero_accepted": 76,
-  "hero_accepted_hq": 72,
-  "hero_limited_archive": 130,
+  "fully_enriched": 39,
+  "gallery_models": 70,
+  "hero_accepted": 82,
+  "hero_accepted_hq": 78,
+  "hero_limited_archive": 125,
   "id_accepted": 283,
   "logo_accepted": 248,
   "market_status_official": 37,
@@ -13,16 +13,16 @@
   "price_accepted": 201,
   "price_source_dated": 141,
   "price_tier_a": 66,
-  "specs_accepted": 199,
+  "specs_accepted": 201,
   "warranty_accepted": 100
  },
  "counts_market_universe": {
   "brochure_accepted": 82,
-  "fully_enriched": 37,
-  "gallery_models": 68,
-  "hero_accepted": 78,
-  "hero_accepted_hq": 74,
-  "hero_limited_archive": 130,
+  "fully_enriched": 39,
+  "gallery_models": 73,
+  "hero_accepted": 85,
+  "hero_accepted_hq": 81,
+  "hero_limited_archive": 125,
   "id_accepted": 416,
   "logo_accepted": 347,
   "market_status_official": 38,
@@ -30,7 +30,7 @@
   "price_accepted": 236,
   "price_source_dated": 170,
   "price_tier_a": 76,
-  "specs_accepted": 241,
+  "specs_accepted": 244,
   "warranty_accepted": 121
  },
  "generated_as_of": "2026-10-15",
@@ -45,6 +45,7 @@
   "inputs/u11/official/X1_2026-10-14_38522002564.official_observations.csv": "e7e079230b6744fbc44edbf04eef52ad1e15ed846229702fb30b498657c878bf",
   "inputs/u11/official/X2_2026-10-14_batch2-M01.official_observations.csv": "d84244aa71ffe2d0cf42c7668910565fd65d2cf572dd863fa8de689fc919d211",
   "inputs/u11/official/X3_2026-10-14_brand-warranty-policy.official_observations.csv": "3cd1dde49cc19d52d29b42ee6aaa2d586c36da8fbeeb6d9a16c6202dc55a31d8",
+  "inputs/u11/official/X4_2026-10-15_m13d-mitsubishi.official_observations.csv": "dcade3a2c17da56ebb285e7fea4336dd0b53b051e5d31b74da77b9d9b80c127a",
   "inputs/u11/official/official_sources.json": "0c178a99eec7442667dce758a0585c8a263b1dd226b53388eeba9344ccdc278d",
   "inputs/u11/p11_universe.json": "f73fbab71ea320a41d6277375eafaa47946ba7be6014c97350d12fe58a6684ff",
   "inputs/u11/s0_urls.csv": "0fe3f54676ca73bfc6e00ccf854f67194dbced9b8cae3cf44a8191b826a2c24f",
@@ -15682,11 +15683,22 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_VERIFIED_HERO_IMAGE",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
-   "hero_image": null,
+   "hero_image": {
+    "asset_id": "fbed7124ff19",
+    "credit": "Deepal (official)",
+    "height": "1000",
+    "page": "https://www.deepal-eg.com/en/models/deepal-s05/",
+    "quality_class": "HQ",
+    "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+    "sha256": "fbed7124ff1947a3001ca859c9779dee46fcd4b0a7616e9c0358766165c69909",
+    "src": "/media/p2/models/deepal-s05.webp",
+    "status": "ACCEPT",
+    "url": "https://www.deepal-eg.com/media/car_models/hero/S05_Car_Model_Page_1_-_2.3___1.png",
+    "width": "2300"
+   },
    "hero_image_limited": {
     "asset_id": "c2c1f302996c",
     "credit": "CarIndex archive",
@@ -15695,7 +15707,7 @@
     "quality_class": "COMPACT_ONLY",
     "rights_basis": "CEO_SUPPLIED_ARCHIVE_ORIGIN_UNVERIFIED",
     "sha256": "c2c1f302996c56773d09de7c05d221063104a2bf671f9de05b1f455181e8bd09",
-    "src": null,
+    "src": "/media/p2/models/deepal-s05.webp",
     "status": "ACCEPT_LIMITED",
     "url": "https://drive.google.com/file/d/1HmDW4l5Uw8B7VOJV8RkpU1FCvXDbSccE/view?usp=drivesdk",
     "width": "690"
@@ -21155,47 +21167,13 @@
     "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
    },
    "specs": {
-    "accel_0_100_s": [
-     {
-      "applicability": "EX5 EM-i (Pro and Max)",
-      "issuer": "Abou Ghaly Motors",
-      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
-      "unit": "s",
-      "value": "8.0"
-     }
-    ],
-    "airbags": [
-     {
-      "applicability": "EX5 EM-i (Pro and Max)",
-      "issuer": "Abou Ghaly Motors",
-      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
-      "unit": "",
-      "value": "front, side, curtain"
-     }
-    ],
     "boot_l": [
-     {
-      "applicability": "EX5 EM-i (Pro and Max)",
-      "issuer": "Abou Ghaly Motors",
-      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
-      "unit": "L",
-      "value": "528"
-     },
      {
       "applicability": "market trim pages: Max, Max+, Pro",
       "issuer": "ContactCars+Hatla2ee",
       "source": "https://www.contactcars.com/en/new-cars/geely-ex5/85f4f2a2cce9 | https://www.contactcars.com/en/new-cars/geely-ex5/a30bb1920e2f | https://www.contactcars.com/en/new-cars/geely-ex5/f26d243fe5f8",
       "unit": "",
       "value": "461"
-     }
-    ],
-    "boot_max_l": [
-     {
-      "applicability": "EX5 EM-i (Pro and Max)",
-      "issuer": "Abou Ghaly Motors",
-      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
-      "unit": "L",
-      "value": "2065"
      }
     ],
     "drive": [
@@ -21207,41 +21185,7 @@
       "value": "FWD"
      }
     ],
-    "engine": [
-     {
-      "applicability": "EX5 EM-i (Pro and Max)",
-      "issuer": "Abou Ghaly Motors",
-      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
-      "unit": "",
-      "value": "1.5L 4-cylinder NA"
-     }
-    ],
-    "ev_range_km": [
-     {
-      "applicability": "EX5 EM-i (Pro and Max)",
-      "issuer": "Abou Ghaly Motors",
-      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
-      "unit": "km NEDC",
-      "value": "105"
-     }
-    ],
-    "fuel_consumption_l100": [
-     {
-      "applicability": "EX5 EM-i (Pro and Max)",
-      "issuer": "Abou Ghaly Motors",
-      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
-      "unit": "L/100km NEDC combined",
-      "value": "4.3"
-     }
-    ],
     "height_mm": [
-     {
-      "applicability": "EX5 EM-i (Pro and Max)",
-      "issuer": "Abou Ghaly Motors",
-      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
-      "unit": "mm",
-      "value": "1685"
-     },
      {
       "applicability": "market trim pages: Max, Max+, Pro",
       "issuer": "ContactCars+Hatla2ee",
@@ -21252,36 +21196,11 @@
     ],
     "length_mm": [
      {
-      "applicability": "EX5 EM-i (Pro and Max)",
-      "issuer": "Abou Ghaly Motors",
-      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
-      "unit": "mm",
-      "value": "4740"
-     },
-     {
       "applicability": "market trim pages: Max, Max+, Pro",
       "issuer": "ContactCars+Hatla2ee",
       "source": "https://www.contactcars.com/en/new-cars/geely-ex5/85f4f2a2cce9 | https://www.contactcars.com/en/new-cars/geely-ex5/a30bb1920e2f | https://www.contactcars.com/en/new-cars/geely-ex5/f26d243fe5f8",
       "unit": "",
       "value": "4615"
-     }
-    ],
-    "motor_power_kw": [
-     {
-      "applicability": "EX5 EM-i (Pro and Max)",
-      "issuer": "Abou Ghaly Motors",
-      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
-      "unit": "kW",
-      "value": "160"
-     }
-    ],
-    "motor_torque_nm": [
-     {
-      "applicability": "EX5 EM-i (Pro and Max)",
-      "issuer": "Abou Ghaly Motors",
-      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
-      "unit": "Nm",
-      "value": "262"
      }
     ],
     "powertrain_class": [
@@ -21313,13 +21232,6 @@
     ],
     "transmission": [
      {
-      "applicability": "EX5 EM-i (Pro and Max)",
-      "issuer": "Abou Ghaly Motors",
-      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
-      "unit": "",
-      "value": "1-speed DHT automatic"
-     },
-     {
       "applicability": "market trim pages: Max, Max+, Pro",
       "issuer": "ContactCars+Hatla2ee",
       "source": "https://www.contactcars.com/en/new-cars/geely-ex5/85f4f2a2cce9 | https://www.contactcars.com/en/new-cars/geely-ex5/a30bb1920e2f | https://www.contactcars.com/en/new-cars/geely-ex5/f26d243fe5f8",
@@ -21329,13 +21241,6 @@
     ],
     "wheelbase_mm": [
      {
-      "applicability": "EX5 EM-i (Pro and Max)",
-      "issuer": "Abou Ghaly Motors",
-      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
-      "unit": "mm",
-      "value": "2755"
-     },
-     {
       "applicability": "market trim pages: Max, Max+, Pro",
       "issuer": "ContactCars+Hatla2ee",
       "source": "https://www.contactcars.com/en/new-cars/geely-ex5/85f4f2a2cce9 | https://www.contactcars.com/en/new-cars/geely-ex5/a30bb1920e2f | https://www.contactcars.com/en/new-cars/geely-ex5/f26d243fe5f8",
@@ -21343,23 +21248,7 @@
       "value": "2750"
      }
     ],
-    "wheels_in": [
-     {
-      "applicability": "EX5 EM-i Pro | Max",
-      "issuer": "Abou Ghaly Motors",
-      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
-      "unit": "in",
-      "value": "18 | 19"
-     }
-    ],
     "width_mm": [
-     {
-      "applicability": "EX5 EM-i (Pro and Max)",
-      "issuer": "Abou Ghaly Motors",
-      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
-      "unit": "mm",
-      "value": "1905"
-     },
      {
       "applicability": "market trim pages: Max, Max+, Pro",
       "issuer": "ContactCars+Hatla2ee",
@@ -22257,12 +22146,23 @@
    "gallery": [],
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
-    "NO_VERIFIED_HERO_IMAGE",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
-   "hero_image": null,
+   "hero_image": {
+    "asset_id": "afff42859b59",
+    "credit": "Haval (official)",
+    "height": "974",
+    "page": "https://www.greatwall.eg/en/model/new-h6/",
+    "quality_class": "HQ",
+    "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+    "sha256": "afff42859b592dae8c9ef269d09a6f1b34cde98abde4d3364b78ef664397a054",
+    "src": "/media/p2/models/haval-h6.webp",
+    "status": "ACCEPT",
+    "url": "https://www.greatwall.eg/media/car-performance-images/NEW_H6_performance3_3evmPFp.jpg",
+    "width": "1920"
+   },
    "hero_image_limited": {
     "asset_id": "0523a174a9de",
     "credit": "CarIndex archive",
@@ -22271,7 +22171,7 @@
     "quality_class": "COMPACT_ONLY",
     "rights_basis": "CEO_SUPPLIED_ARCHIVE_ORIGIN_UNVERIFIED",
     "sha256": "0523a174a9de4b95e63dc6b4cf649579f6fff047f13133f60757d40e2b5eb856",
-    "src": null,
+    "src": "/media/p2/models/haval-h6.webp",
     "status": "ACCEPT_LIMITED",
     "url": "https://drive.google.com/file/d/1l0L8MBaITeVU6FZ70cHk3ZGK86qAd4lU/view?usp=drivesdk",
     "width": "698"
@@ -22430,15 +22330,53 @@
    "brand": "Haval",
    "brochures": [],
    "conflicts": [],
-   "gallery": [],
+   "gallery": [
+    {
+     "asset_id": "0500e5ede976",
+     "credit": "Haval (official)",
+     "height": "674",
+     "page": "https://www.greatwall.eg/en/model/h7-hev/",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "0500e5ede97643146f7b5f0ceb1500489229e7aadafdb1948b2e681bf530f1ce",
+     "src": "/media/p2/models/haval-h7/01.webp",
+     "status": "ACCEPT",
+     "url": "https://www.greatwall.eg/media/intDesignImages/interior_big_1719x674_3bijjTb.jpg",
+     "width": "1719"
+    },
+    {
+     "asset_id": "da6279aeaaf6",
+     "credit": "Haval (official)",
+     "height": "974",
+     "page": "https://www.greatwall.eg/en/model/h7-hev/",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "da6279aeaaf6dfe723d5baa596888fa6b5456eaa45ff8e938572b6cd1830257a",
+     "src": "/media/p2/models/haval-h7/02.webp",
+     "status": "ACCEPT",
+     "url": "https://www.greatwall.eg/media/car-performance-images/performance_black_edition_H7.jpg",
+     "width": "1920"
+    }
+   ],
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
-    "NO_VERIFIED_HERO_IMAGE",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
-   "hero_image": null,
+   "hero_image": {
+    "asset_id": "2c47446efd75",
+    "credit": "Haval (official)",
+    "height": "860",
+    "page": "https://www.greatwall.eg/en/model/h7-hev/",
+    "quality_class": "HQ",
+    "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+    "sha256": "2c47446efd75f11f5fed7b2bb25f5567de90f446eaf9ca2cdc8cafccdab6a489",
+    "src": "/media/p2/models/haval-h7.webp",
+    "status": "ACCEPT",
+    "url": "https://www.greatwall.eg/media/car-mobile-banners/1920x8605_1.jpg",
+    "width": "1920"
+   },
    "hero_image_limited": {
     "asset_id": "304cd369af10",
     "credit": "CarIndex archive",
@@ -22447,7 +22385,7 @@
     "quality_class": "COMPACT_ONLY",
     "rights_basis": "CEO_SUPPLIED_ARCHIVE_ORIGIN_UNVERIFIED",
     "sha256": "304cd369af105f68e95a69c62d82b8e9be07b8edc604a99717369d9ed3237a69",
-    "src": null,
+    "src": "/media/p2/models/haval-h7.webp",
     "status": "ACCEPT_LIMITED",
     "url": "https://drive.google.com/file/d/1xg0gbedJLhtyEwxy4QRgZ3HW7WrHyxDc/view?usp=drivesdk",
     "width": "698"
@@ -22647,11 +22585,22 @@
    ],
    "gallery": [],
    "gaps": [
-    "NO_VERIFIED_HERO_IMAGE",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
-   "hero_image": null,
+   "hero_image": {
+    "asset_id": "81470ab8f7a6",
+    "credit": "Haval (official)",
+    "height": "860",
+    "page": "https://www.greatwall.eg/en/model/jolion-facelift/",
+    "quality_class": "HQ",
+    "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+    "sha256": "81470ab8f7a62938e342f1e5bbf68207ea95600798a6c74c0045b7806ca3aa1f",
+    "src": "/media/p2/models/haval-jolion.webp",
+    "status": "ACCEPT",
+    "url": "https://www.greatwall.eg/media/car-mobile-banners/banner4_5RTbDoJ.jpg",
+    "width": "1920"
+   },
    "hero_image_limited": {
     "asset_id": "3c4b518f008a",
     "credit": "CarIndex archive",
@@ -22660,7 +22609,7 @@
     "quality_class": "COMPACT_ONLY",
     "rights_basis": "CEO_SUPPLIED_ARCHIVE_ORIGIN_UNVERIFIED",
     "sha256": "3c4b518f008ae201e8f3bf221efb511c4ee95ca96ca97477e57eaa4e32987e80",
-    "src": null,
+    "src": "/media/p2/models/haval-jolion.webp",
     "status": "ACCEPT_LIMITED",
     "url": "https://drive.google.com/file/d/1AnAXd-A8cw4qKmiVZVDPprNO93kLygeE/view?usp=drivesdk",
     "width": "698"
@@ -24483,15 +24432,53 @@
    "brand": "Hyundai",
    "brochures": [],
    "conflicts": [],
-   "gallery": [],
+   "gallery": [
+    {
+     "asset_id": "654e56aa48ed",
+     "credit": "Hyundai (official)",
+     "height": "1080",
+     "page": "https://hyundai-egypt.net/models/ioniq-9/",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "654e56aa48ed3d1cef129f36a2968cec28dfade20a5ba3396e6ca5b124cc0d13",
+     "src": "/media/p2/models/hyundai-ioniq-9/01.webp",
+     "status": "ACCEPT",
+     "url": "https://hyundai-egypt.net/wp-content/uploads/2026/02/ioniq9-full-04-on-a-vast-expanse-pc.jpg",
+     "width": "1920"
+    },
+    {
+     "asset_id": "4f60b11fbf8c",
+     "credit": "Hyundai (official)",
+     "height": "1080",
+     "page": "https://hyundai-egypt.net/models/ioniq-9/",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "4f60b11fbf8cb4e1133e915bfbe8b1da4b4151d026a5ab6777ba97d2dd1861fd",
+     "src": "/media/p2/models/hyundai-ioniq-9/02.webp",
+     "status": "ACCEPT",
+     "url": "https://hyundai-egypt.net/wp-content/uploads/2026/02/ioniq9-design-exterior-kv-pc.jpg",
+     "width": "1920"
+    }
+   ],
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
-    "NO_VERIFIED_HERO_IMAGE",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
-   "hero_image": null,
+   "hero_image": {
+    "asset_id": "3908665a10f0",
+    "credit": "Hyundai (official)",
+    "height": "1080",
+    "page": "https://hyundai-egypt.net/models/ioniq-9/",
+    "quality_class": "HQ",
+    "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+    "sha256": "3908665a10f04ce8a88ab05fed869336ab0950a7bb659f075e0369b384f2d88f",
+    "src": "/media/p2/models/hyundai-ioniq-9.webp",
+    "status": "ACCEPT",
+    "url": "https://hyundai-egypt.net/wp-content/uploads/2026/02/ioniq9-performance-kv-pc.jpg",
+    "width": "1920"
+   },
    "hero_image_limited": null,
    "id_status": "ACCEPTED",
    "logo": {
@@ -25051,15 +25038,6 @@
       "value": "AWD/4WD"
      }
     ],
-    "engine": [
-     {
-      "applicability": "Tucson 1.6T GDI (GB Auto brochure Sep 2026)",
-      "issuer": "GB Auto (Hyundai Egypt)",
-      "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1",
-      "unit": "",
-      "value": "Smartstream 1.6 Turbo GDI"
-     }
-    ],
     "engine_cc": [
      {
       "applicability": "market trim pages: BLACK DIAMOND, BLAZE, NIGHT, NLINE (AWD), REDLINE, REDLINE (N Pack), REDLINE - N PACK, SHADOW",
@@ -25087,32 +25065,7 @@
       "value": "170"
      }
     ],
-    "height_mm": [
-     {
-      "applicability": "Tucson 1.6T GDI (GB Auto brochure Sep 2026)",
-      "issuer": "GB Auto (Hyundai Egypt)",
-      "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1",
-      "unit": "mm (roof rack)",
-      "value": "1650"
-     }
-    ],
-    "length_mm": [
-     {
-      "applicability": "Tucson 1.6T GDI (GB Auto brochure Sep 2026)",
-      "issuer": "GB Auto (Hyundai Egypt)",
-      "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1",
-      "unit": "mm",
-      "value": "4510-4520"
-     }
-    ],
     "power_hp": [
-     {
-      "applicability": "Tucson 1.6T GDI (GB Auto brochure Sep 2026)",
-      "issuer": "GB Auto (Hyundai Egypt)",
-      "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1",
-      "unit": "hp",
-      "value": "180"
-     },
      {
       "applicability": "market trim pages: BLACK DIAMOND, BLAZE, NIGHT, NLINE (AWD), REDLINE, REDLINE (N Pack), REDLINE - N PACK, SHADOW",
       "issuer": "ContactCars+Hatla2ee",
@@ -25141,13 +25094,6 @@
     ],
     "torque_nm": [
      {
-      "applicability": "Tucson 1.6T GDI (GB Auto brochure Sep 2026)",
-      "issuer": "GB Auto (Hyundai Egypt)",
-      "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1",
-      "unit": "Nm",
-      "value": "265"
-     },
-     {
       "applicability": "market trim pages: BLACK DIAMOND, BLAZE, NIGHT, NLINE (AWD), REDLINE, REDLINE (N Pack), REDLINE - N PACK, SHADOW",
       "issuer": "ContactCars+Hatla2ee",
       "source": "https://www.contactcars.com/en/new-cars/hyundai-tucson/07b6ff51878a | https://www.contactcars.com/en/new-cars/hyundai-tucson/1c0aef2e9e29 | https://www.contactcars.com/en/new-cars/hyundai-tucson/1def13da17e4 | https://www.contactcars.com/en/new-cars/hyundai-tucson/2355eb50bb1e | https://www.contactc",
@@ -25156,13 +25102,6 @@
      }
     ],
     "transmission": [
-     {
-      "applicability": "Tucson 1.6T GDI (GB Auto brochure Sep 2026)",
-      "issuer": "GB Auto (Hyundai Egypt)",
-      "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1",
-      "unit": "",
-      "value": "7-speed DCT"
-     },
      {
       "applicability": "market trim pages: BLACK DIAMOND, BLAZE, NIGHT, NLINE (AWD), REDLINE, REDLINE (N Pack), REDLINE - N PACK, SHADOW",
       "issuer": "ContactCars+Hatla2ee",
@@ -25173,13 +25112,6 @@
     ],
     "wheelbase_mm": [
      {
-      "applicability": "Tucson 1.6T GDI (GB Auto brochure Sep 2026)",
-      "issuer": "GB Auto (Hyundai Egypt)",
-      "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1",
-      "unit": "mm",
-      "value": "2680"
-     },
-     {
       "applicability": "market trim pages: BLACK DIAMOND, BLAZE, NIGHT, NLINE (AWD), REDLINE, REDLINE (N Pack), REDLINE - N PACK, SHADOW",
       "issuer": "ContactCars+Hatla2ee",
       "source": "https://www.contactcars.com/en/new-cars/hyundai-tucson/07b6ff51878a | https://www.contactcars.com/en/new-cars/hyundai-tucson/1c0aef2e9e29 | https://www.contactcars.com/en/new-cars/hyundai-tucson/1def13da17e4 | https://www.contactcars.com/en/new-cars/hyundai-tucson/2355eb50bb1e | https://www.contactc",
@@ -25188,13 +25120,6 @@
      }
     ],
     "width_mm": [
-     {
-      "applicability": "Tucson 1.6T GDI (GB Auto brochure Sep 2026)",
-      "issuer": "GB Auto (Hyundai Egypt)",
-      "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1",
-      "unit": "mm",
-      "value": "1865"
-     },
      {
       "applicability": "market trim pages: BLACK DIAMOND, BLAZE, NIGHT, NLINE (AWD), REDLINE, REDLINE (N Pack), REDLINE - N PACK, SHADOW",
       "issuer": "ContactCars+Hatla2ee",
@@ -25207,13 +25132,6 @@
    "specs_accepted": true,
    "universe": "U11_283",
    "warranty": [
-    {
-     "applicability": "Tucson 1.6T GDI (GB Auto brochure Sep 2026)",
-     "issuer": "GB Auto (Hyundai Egypt)",
-     "source": "drive:10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1",
-     "unit": "",
-     "value": "5 years / 100000 km"
-    },
     {
      "applicability": "market trim pages: model",
      "issuer": "ContactCars+Hatla2ee",
@@ -35770,7 +35688,6 @@
    "gallery": [],
    "gaps": [
     "NO_ACCEPTED_PRICE",
-    "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_VERIFIED_WARRANTY",
@@ -35818,8 +35735,36 @@
     "segment": "Car-B",
     "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
    },
-   "specs": null,
-   "specs_accepted": false,
+   "specs": {
+    "airbags": [
+     {
+      "applicability": "Highline Automatic 2WD",
+      "issuer": "mitsubishimotors-eg.com",
+      "source": "https://www.mitsubishimotors-eg.com/en/cars/attrage",
+      "unit": "",
+      "value": "Driver and passenger SRS airbags"
+     }
+    ],
+    "drive": [
+     {
+      "applicability": "Highline Automatic 2WD",
+      "issuer": "mitsubishimotors-eg.com",
+      "source": "https://www.mitsubishimotors-eg.com/en/cars/attrage",
+      "unit": "",
+      "value": "2WD"
+     }
+    ],
+    "transmission": [
+     {
+      "applicability": "Highline Automatic 2WD",
+      "issuer": "mitsubishimotors-eg.com",
+      "source": "https://www.mitsubishimotors-eg.com/en/cars/attrage",
+      "unit": "",
+      "value": "Automatic"
+     }
+    ]
+   },
+   "specs_accepted": true,
    "universe": "U11_283",
    "warranty": null
   },
@@ -36166,7 +36111,6 @@
    "gallery": [],
    "gaps": [
     "NO_ACCEPTED_PRICE",
-    "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_VERIFIED_WARRANTY",
@@ -36214,8 +36158,36 @@
     "segment": "Car HB-C",
     "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
    },
-   "specs": null,
-   "specs_accepted": false,
+   "specs": {
+    "airbags": [
+     {
+      "applicability": "Highline Automatic 2WD",
+      "issuer": "mitsubishimotors-eg.com",
+      "source": "https://www.mitsubishimotors-eg.com/en/cars/mirage",
+      "unit": "",
+      "value": "Driver and passenger SRS airbags"
+     }
+    ],
+    "drive": [
+     {
+      "applicability": "Highline Automatic 2WD",
+      "issuer": "mitsubishimotors-eg.com",
+      "source": "https://www.mitsubishimotors-eg.com/en/cars/mirage",
+      "unit": "",
+      "value": "2WD"
+     }
+    ],
+    "transmission": [
+     {
+      "applicability": "Highline Automatic 2WD",
+      "issuer": "mitsubishimotors-eg.com",
+      "source": "https://www.mitsubishimotors-eg.com/en/cars/mirage",
+      "unit": "",
+      "value": "Automatic"
+     }
+    ]
+   },
+   "specs_accepted": true,
    "universe": "U11_283",
    "warranty": null
   },
@@ -43237,14 +43209,52 @@
    "brand": "SEAT",
    "brochures": [],
    "conflicts": [],
-   "gallery": [],
+   "gallery": [
+    {
+     "asset_id": "6f1f6eace463",
+     "credit": "SEAT (official)",
+     "height": "1320",
+     "page": "https://www.seat.eg/carworlds/new-leon-2020/overview",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "6f1f6eace46386aa8e02d8a5e436e2f04a0622ce21d8935f3d915450ddbf34ef",
+     "src": "/media/p2/models/seat-leon/01.webp",
+     "status": "ACCEPT",
+     "url": "https://www.seat.eg/content/dam/public/seat-website/carworlds/new-leon/overview/2-columns-seat-service/x-large/new-seat-leon-desire-red-colour-with-the-rear-to-rear-coast-lights.jpg",
+     "width": "2560"
+    },
+    {
+     "asset_id": "f2f2a48f609a",
+     "credit": "SEAT (official)",
+     "height": "1320",
+     "page": "https://www.seat.eg/carworlds/new-leon-2020/design",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "f2f2a48f609abc0b419ba9e8ab4ce4fb30ab44b582063cf0b5a2350937d13d02",
+     "src": "/media/p2/models/seat-leon/02.webp",
+     "status": "ACCEPT",
+     "url": "https://www.seat.eg/content/dam/public/seat-website/carworlds/new-leon/design/2-columns-full-led-lights/x-large/new-seat-leon-overview.jpg",
+     "width": "3370"
+    }
+   ],
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
-    "NO_VERIFIED_HERO_IMAGE",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
-   "hero_image": null,
+   "hero_image": {
+    "asset_id": "ea37d3938dc3",
+    "credit": "SEAT (official)",
+    "height": "1320",
+    "page": "https://www.seat.eg/carworlds/new-leon-2020/design",
+    "quality_class": "HQ",
+    "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+    "sha256": "ea37d3938dc308fe79cc7f114d385c7895e1af2d95775bffb45437ffcb6ad7e9",
+    "src": "/media/p2/models/seat-leon.webp",
+    "status": "ACCEPT",
+    "url": "https://www.seat.eg/content/dam/public/seat-website/myco/2225/carworlds/new-leon/design/2-columns-essential-elements/x-large/woman-opening-door-seat-leon-desire-red-colour.jpg",
+    "width": "3370"
+   },
    "hero_image_limited": {
     "asset_id": "f00faf68c885",
     "credit": "CarIndex archive",
@@ -43253,7 +43263,7 @@
     "quality_class": "COMPACT_ONLY",
     "rights_basis": "CEO_SUPPLIED_ARCHIVE_ORIGIN_UNVERIFIED",
     "sha256": "f00faf68c88557676f8ec455c17f98c8e5f8d11cc90499783ec009b0c63f8ceb",
-    "src": null,
+    "src": "/media/p2/models/seat-leon.webp",
     "status": "ACCEPT_LIMITED",
     "url": "https://drive.google.com/file/d/1uKCC3yLn_GprpQXyiOA0mLEd_hnvvb5_/view?usp=drivesdk",
     "width": "698"
@@ -46606,7 +46616,34 @@
     }
    ],
    "conflicts": [],
-   "gallery": [],
+   "gallery": [
+    {
+     "asset_id": "84397807fbab",
+     "credit": "Toyota (official)",
+     "height": "1642",
+     "page": "https://toyota.com.eg/en/models/corolla",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "84397807fbabd657f1db8c3ab287fa4a8dbe5bb645bd8b5a4e7b6b2d8c846030",
+     "src": "/media/p2/models/toyota-corolla/01.webp",
+     "status": "ACCEPT",
+     "url": "https://toyota.com.eg/storage/52783/Corolla-Brochure-2026.pdf#page=2&xref=28",
+     "width": "2208"
+    },
+    {
+     "asset_id": "c9c21804940b",
+     "credit": "Toyota (official)",
+     "height": "2240",
+     "page": "https://toyota.com.eg/en/models/corolla",
+     "quality_class": "HQ",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "c9c21804940b4e66aba0dfb7b57b01c2b0190e3037bb7a80ddea248e2e1b7d4b",
+     "src": "/media/p2/models/toyota-corolla/02.webp",
+     "status": "ACCEPT",
+     "url": "https://toyota.com.eg/storage/52783/Corolla-Brochure-2026.pdf#page=1&xref=1345",
+     "width": "1856"
+    }
+   ],
    "gaps": [
     "GENERATION_UNKNOWN"
    ],
@@ -57456,7 +57493,34 @@
    "brand": "Chery",
    "brochures": [],
    "conflicts": [],
-   "gallery": [],
+   "gallery": [
+    {
+     "asset_id": "e049cee6abc1",
+     "credit": "Chery (official)",
+     "height": "1664",
+     "page": "https://www.chery-eg.com/en/car/tiggo-7-pro-max",
+     "quality_class": "WEB",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "e049cee6abc129695c8a5160feb3073d1faca64bfd861a619b411143c2614695",
+     "src": "/media/p2/models/chery-tiggo-7-pro-max/01.webp",
+     "status": "ACCEPT",
+     "url": "https://www.chery-eg.com/media/files/TIGGO_7_PRO_MAXbrochure_2025-09-22_122313.167130.pdf#page=9&xref=130",
+     "width": "1286"
+    },
+    {
+     "asset_id": "3f6711d9b67a",
+     "credit": "Chery (official)",
+     "height": "1651",
+     "page": "https://www.chery-eg.com/en/car/tiggo-7-pro-max",
+     "quality_class": "WEB",
+     "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+     "sha256": "3f6711d9b67a01e6f94850103241835a2e02ab0ad759a0ed9a1de945f4b58276",
+     "src": "/media/p2/models/chery-tiggo-7-pro-max/02.webp",
+     "status": "ACCEPT",
+     "url": "https://www.chery-eg.com/media/files/TIGGO_7_PRO_MAXbrochure_2025-09-22_122313.167130.pdf#page=10&xref=134",
+     "width": "1278"
+    }
+   ],
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
@@ -58556,7 +58620,6 @@
    ],
    "gaps": [
     "NO_ACCEPTED_PRICE",
-    "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
@@ -58599,13 +58662,149 @@
    "rework_price_rows": 2,
    "site_slug": "geely-ex5-em-i",
    "size_class": {
-    "basis": "single market source, 2 trim page(s) agree (ContactCars)",
-    "confidence": "MEDIUM_SINGLE_SOURCE",
+    "basis": "length_mm accepted (see specs)",
+    "confidence": "HIGH",
     "length_mm": "4740",
     "segment": null
    },
-   "specs": null,
-   "specs_accepted": false,
+   "specs": {
+    "accel_0_100_s": [
+     {
+      "applicability": "EX5 EM-i (Pro and Max)",
+      "issuer": "Abou Ghaly Motors",
+      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
+      "unit": "s",
+      "value": "8.0"
+     }
+    ],
+    "airbags": [
+     {
+      "applicability": "EX5 EM-i (Pro and Max)",
+      "issuer": "Abou Ghaly Motors",
+      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
+      "unit": "",
+      "value": "front, side, curtain"
+     }
+    ],
+    "boot_l": [
+     {
+      "applicability": "EX5 EM-i (Pro and Max)",
+      "issuer": "Abou Ghaly Motors",
+      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
+      "unit": "L",
+      "value": "528"
+     }
+    ],
+    "boot_max_l": [
+     {
+      "applicability": "EX5 EM-i (Pro and Max)",
+      "issuer": "Abou Ghaly Motors",
+      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
+      "unit": "L",
+      "value": "2065"
+     }
+    ],
+    "engine": [
+     {
+      "applicability": "EX5 EM-i (Pro and Max)",
+      "issuer": "Abou Ghaly Motors",
+      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
+      "unit": "",
+      "value": "1.5L 4-cylinder NA"
+     }
+    ],
+    "ev_range_km": [
+     {
+      "applicability": "EX5 EM-i (Pro and Max)",
+      "issuer": "Abou Ghaly Motors",
+      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
+      "unit": "km NEDC",
+      "value": "105"
+     }
+    ],
+    "fuel_consumption_l100": [
+     {
+      "applicability": "EX5 EM-i (Pro and Max)",
+      "issuer": "Abou Ghaly Motors",
+      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
+      "unit": "L/100km NEDC combined",
+      "value": "4.3"
+     }
+    ],
+    "height_mm": [
+     {
+      "applicability": "EX5 EM-i (Pro and Max)",
+      "issuer": "Abou Ghaly Motors",
+      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
+      "unit": "mm",
+      "value": "1685"
+     }
+    ],
+    "length_mm": [
+     {
+      "applicability": "EX5 EM-i (Pro and Max)",
+      "issuer": "Abou Ghaly Motors",
+      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
+      "unit": "mm",
+      "value": "4740"
+     }
+    ],
+    "motor_power_kw": [
+     {
+      "applicability": "EX5 EM-i (Pro and Max)",
+      "issuer": "Abou Ghaly Motors",
+      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
+      "unit": "kW",
+      "value": "160"
+     }
+    ],
+    "motor_torque_nm": [
+     {
+      "applicability": "EX5 EM-i (Pro and Max)",
+      "issuer": "Abou Ghaly Motors",
+      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
+      "unit": "Nm",
+      "value": "262"
+     }
+    ],
+    "transmission": [
+     {
+      "applicability": "EX5 EM-i (Pro and Max)",
+      "issuer": "Abou Ghaly Motors",
+      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
+      "unit": "",
+      "value": "1-speed DHT automatic"
+     }
+    ],
+    "wheelbase_mm": [
+     {
+      "applicability": "EX5 EM-i (Pro and Max)",
+      "issuer": "Abou Ghaly Motors",
+      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
+      "unit": "mm",
+      "value": "2755"
+     }
+    ],
+    "wheels_in": [
+     {
+      "applicability": "EX5 EM-i Pro | Max",
+      "issuer": "Abou Ghaly Motors",
+      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
+      "unit": "in",
+      "value": "18 | 19"
+     }
+    ],
+    "width_mm": [
+     {
+      "applicability": "EX5 EM-i (Pro and Max)",
+      "issuer": "Abou Ghaly Motors",
+      "source": "drive:1h0bZIM_vOayKIwQqX9zUN0Vs_dvuYlT7",
+      "unit": "mm",
+      "value": "1905"
+     }
+    ]
+   },
+   "specs_accepted": true,
    "universe": "P2_ADDITION",
    "warranty": null
   },
@@ -59400,11 +59599,22 @@
    "gallery": [],
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
-    "NO_VERIFIED_HERO_IMAGE",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
-   "hero_image": null,
+   "hero_image": {
+    "asset_id": "ebce3a10f78f",
+    "credit": "Hyundai (official)",
+    "height": "2473",
+    "page": "https://hyundai-egypt.net/models/venue/",
+    "quality_class": "HQ",
+    "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+    "sha256": "ebce3a10f78f94a5ce2996e1898303f82e13388b9e1660a64490c65f66c3cad4",
+    "src": "/media/p2/models/hyundai-venue.webp",
+    "status": "ACCEPT",
+    "url": "https://drive.google.com/file/d/10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1/view#page=1&xref=196",
+    "width": "3297"
+   },
    "hero_image_limited": null,
    "id_status": "ACCEPTED",
    "logo": {

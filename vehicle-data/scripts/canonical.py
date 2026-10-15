@@ -159,6 +159,10 @@ def identity():
         rows.append(dict(model_id=mid, p1_id=d["id"], site_slug=d["id"].replace("/", "-"), brand=d["brand"], model=d["model"],
                          brand_ar="", model_ar="", body=d.get("body", ""), on_sale_u11="false", generation="UNKNOWN",
                          identity_checks="", universe="P2_" + d["decision"]))
+    arn = {r["p1_id"]: r for r in read(os.path.join(ROOT, "registry", "arabic_names.csv")) if r["status"] == "ACCEPT"}
+    for r in rows:  # P2-accepted Arabic display names fill blanks only; an existing name is never overwritten
+        if not r.get("model_ar") and r["p1_id"] in arn:
+            r["model_ar"] = arn[r["p1_id"]]["model_ar"]
     for k in ("model_id", "p1_id", "site_slug"):
         c = collections.Counter(r[k] for r in rows)
         for r in rows:

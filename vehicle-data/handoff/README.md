@@ -2,7 +2,10 @@
 
 | File | For | Status |
 |---|---|---|
-| `p5-release-20261015b.json` | P5 | Current. Release sha256 7cbdc3f4…, 374 served files (78 heroes, 54 logos, 242 gallery). Verified against P5 6907ee3: 374/374 sha256 match, typecheck pass, unit tests 73/74 (only the out-of-date Tucson fixture fails). P5 currently serves 20261014c. |
+| `p5-release-20261015c.json` | P5 | Current. Release sha256 955699de…, 391 files (85 heroes, 54 logos, 252 gallery). Verified against P5 8f83109: 391/391 sha256, typecheck pass, 74/74. P5 serves 20261015b. |
+| `p1-release-20261015c.json` | P1 | Current. M13-D prices/specs/Arabic names; canonical sha and regression actions. |
+| `review/m13_acceptance_manifest.csv` | all | M13-A–D row-level decisions (190 rows). |
+| `p5-release-20261015b.json` | P5 | Superseded (ingested by P5 8f83109). Release sha256 7cbdc3f4…, 374 served files (78 heroes, 54 logos, 242 gallery). Verified against P5 6907ee3: 374/374 sha256 match, typecheck pass, unit tests 73/74 (only the out-of-date Tucson fixture fails). P5 currently serves 20261014c. |
 | `p5-release-20261015.json` | P5 | Superseded. Release sha256 e17398b6…, 348 served files (68 heroes, 54 logos, 226 gallery). P5 f131fdc: typecheck pass, unit tests 73/74 (the Tucson fixture expects a price conflict that the GB Auto list resolved upstream). P5 has not ingested it yet. |
 | `chatgpt-m10-m12-selections.json` | P2 | ChatGPT Work M10–M12: 54 new images. 25 reproduced sha256-identical (CI 38723488776); 29 blocked by HTTP 403 from the Stellantis and Volvo CDNs (retry 38723784165 with browser Accept and Referer). Resolved 2026-10-15 from ChatGPT Work's Drive originals (manifest 1qeNwbuhgr4nalQhjFJmx0Tn66qlV0tFB; bytes sha256-identical; copies in `snapshots/MR_2026-10-15_drive-recovery`): 26 accepted, 3 rejected. Final M10–M12 ledger: 47 accepted + 1 promoted, 7 rejected, 0 held. Decisions: `review/chatgpt_m10_m12_decisions.csv`. |
 | `p5-release-20261014c.json` | P5 | Superseded. Release sha256 4770fbd5…, 327 served files (58 heroes, 54 logos, 215 gallery) with sha256. Verified against P5 f131fdc in a disposable worktree: typecheck pass, unit tests 74/74. P5 has not ingested it yet (P5 still serves 559c718, sha a0032612…). |

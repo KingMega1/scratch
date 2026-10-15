@@ -5,7 +5,7 @@ rank,priority,identity,model_id,brand,model,universe,parent,body,reg_last12,reg_
 4,P0,chevrolet/optra,m_000093,Chevrolet,Optra,U11_283,,sedan,6427,3332,2.77,False,3,True,2026 2027,ACCEPTED tier B,765000,B,2,5,98,5 years / 150000 km,False,True,8/8,,complete
 5,P0,kia/sportage,m_000001,Kia,Sportage,U11_283,,suv,6345,3003,2.73,False,3,True,2025 2026 2027,ACCEPTED tier A,1824900,A,5,5,180,5 years / 100000 km,True,True,7/8,length,length: official source
 6,P0,toyota/corolla,m_000261,Toyota,Corolla,U11_283,,sedan,5598,2339,2.41,False,3,True,2025 2026 2027,ACCEPTED tier A,1280000,A,5,5,120 | 120 HP/ 6000 RPM | 96 HP(Engine) &,5 years / 150000 km,True,True,8/8,,complete
-7,P0,hyundai/tucson,m_000002,Hyundai,Tucson,U11_283,,suv,5212,2204,2.24,False,4,False,2025 2026 2027,ACCEPTED tier A,1800000,A,7,5,180,5 years / 100000 km,True,False,8/8,,complete for decision; image/brochure next
+7,P0,hyundai/tucson,m_000002,Hyundai,Tucson,U11_283,,suv,5212,2204,2.24,False,4,False,2025 2026 2027,ACCEPTED tier A,1800000,A,7,5,180,5 years / 100000 km,True,False,7/8,length,length: official source
 8,P0,mg/5,m_000204,MG,5,U11_283,,sedan,4472,1731,1.93,False,3,True,2026 2027,ACCEPTED tier A,889990,A,2,,120 @ 6000,,True,True,7/8,warranty,warranty: official source
 9,P0,chery/arrizo-5,m_000081,Chery,Arrizo 5,U11_283,,sedan,4438,2081,1.91,False,4,True,2026 2027,ACCEPTED tier A,690000,A,6,5,114 | 114 HP / 6150 rpm,,True,True,7/8,warranty,warranty: official source
 10,P0,soueast/s-05,m_000247,Soueast,S 05,U11_283,,suv,4369,2315,1.88,False,3,False,2026 2027,ACCEPTED tier B,1070000,B,1,5,156,6 years / 150000 km,False,True,8/8,,complete
@@ -38,7 +38,7 @@ rank,priority,identity,model_id,brand,model,universe,parent,body,reg_last12,reg_
 37,P0,nissan/qashqai,m_000006,Nissan,Qashqai,U11_283,,suv,1694,962,0.73,False,3,True,2025 2026 2027,ACCEPTED tier A,1555000,A,4,,148,5 years / 150000 km,True,True,7/8,seats,specs: official spec page/brochure for seats
 38,P0,opel/grandland,m_000007,Opel,Grandland,U11_283,,suv,1688,1005,0.73,False,3,False,2025 2026 2027,ACCEPTED tier B,1850000,B,1,5,180,5 years / 150000 km,False,False,8/8,,complete for decision; image/brochure next
 39,P0,mg/gt,m_000208,MG,GT,U11_283,,sedan,1665,1101,0.72,False,3,True,2026 2027,ACCEPTED tier A,1175000,A,1,,170,6 years / 150000 km,True,True,7/8,length,length: official source
-40,P0,seat/leon,m_000242,SEAT,Leon,U11_283,,hatch,1662,714,0.72,False,3,False,2026 2027,ACCEPTED tier A,1499000,A,1,5,150,5 years / 100000 km,False,False,8/8,,complete for decision; image/brochure next
+40,P0,seat/leon,m_000242,SEAT,Leon,U11_283,,hatch,1662,714,0.72,False,3,False,2026 2027,ACCEPTED tier A,1499000,A,1,5,150,5 years / 100000 km,False,True,8/8,,complete
 41,P0,citroen/c5,m_000098,Citroën,C5,U11_283,,sedan,1581,965,0.68,False,1,False,2026 2027,NO_EVIDENCE,,,0,,,,False,False,3/8,price;power;transmission/drive;length;warranty,price: listing has no current price -> official/distributor source
 42,P0,jetour/t1,m_000009,Jetour,T1,U11_283,,suv,1553,736,0.67,False,3,True,2026 2027,ACCEPTED tier B,1730000,B,1,5,184 | 184 hp,6 years / 150000 km,True,True,8/8,,complete
 43,P0,baic/bj30,m_000023,BAIC,BJ30,U11_283,,suv,1528,893,0.66,False,3,False,2026,ACCEPTED tier B,1675000,B,2,5,154 | 185,,False,False,7/8,warranty,warranty: official source
@@ -50,7 +50,7 @@ rank,priority,identity,model_id,brand,model,universe,parent,body,reg_last12,reg_
 49,P0,suzuki/swift,m_000257,Suzuki,Swift,U11_283,,hatch,1377,806,0.59,False,3,False,2026 2027,REWORK: PB-2 single site x5,,,0,5,,,False,False,5/8,price;power;warranty,price: single site -> second independent source or official
 50,P0,mg/hs,m_000020,MG,HS,U11_283,,suv,1338,758,0.58,False,4,True,2025 2026 2027,ACCEPTED tier B,1525000,B,2,,170,6 years / 150000 km,True,True,6/8,seats;length,specs: official spec page/brochure for seats
 51,P0,volkswagen/tayron,m_000268,Volkswagen,Tayron,U11_283,,suv,1326,759,0.57,False,3,False,2026,ACCEPTED tier B,2890000,B,2,7,150,,False,False,6/8,length;warranty,length: official source
-52,P0,haval/h6,m_000145,Haval,H6,U11_283,,suv,1285,685,0.55,False,3,False,2025 2026,ACCEPTED tier A,1320000,A,2,5,181,,False,False,6/8,length;warranty,length: official source
+52,P0,haval/h6,m_000145,Haval,H6,U11_283,,suv,1285,685,0.55,False,3,False,2025 2026,ACCEPTED tier A,1320000,A,2,5,181,,False,True,6/8,length;warranty,length: official source
 53,P0,peugeot/408,m_000229,Peugeot,408,U11_283,,sedan,1283,778,0.55,False,3,False,2025 2026 2027,ACCEPTED tier B,1889990,B,2,5,215,5 years / 150000 km,True,False,8/8,,complete for decision; image/brochure next
 54,P0,jac/s2,m_000165,JAC,S2,U11_283,,suv,1243,524,0.54,False,2,False,2026 2027,REWORK: PB-2 single site x1,,,0,,,,False,False,2/8,price;power;transmission/drive;seats;length;warranty,price: single site -> second independent source or official
 55,P0,kia/sorento,m_000181,Kia,Sorento,U11_283,,suv,1175,610,0.51,False,3,True,2025 2026,ACCEPTED tier B,3549900,B,1,7,230,5 years / 100000 km,True,True,8/8,,complete
@@ -59,7 +59,7 @@ rank,priority,identity,model_id,brand,model,universe,parent,body,reg_last12,reg_
 58,P0,jetour/x70-plus-ckd,m_000169,Jetour,X70 Plus CKD,U11_283,,suv,1168,684,0.5,False,3,True,2025 2027,ACCEPTED tier B,1275000,B,2,7,,6 years / 150000 km,True,True,7/8,power,specs: official spec page/brochure for power
 59,P0,seat/ibiza,m_000241,SEAT,Ibiza,U11_283,,hatch,1165,500,0.5,False,3,False,2026 2027,ACCEPTED tier A,1129000,A,2,5,110,5 years / 100000 km,True,False,8/8,,complete for decision; image/brochure next
 60,P0,mg/7,m_000206,MG,7,U11_283,,sedan,1147,486,0.49,False,3,True,2025 2026 2027,ACCEPTED tier A,1750000,A,1,,185,6 years / 150000 km,True,True,7/8,length,length: official source
-61,P0,haval/jolion,m_000146,Haval,Jolion,U11_283,,suv,1096,936,0.47,False,4,True,2027,ACCEPTED tier A,1014000,A,3,5,148,5 years / 100000 km,True,False,8/8,,complete for decision; image/brochure next
+61,P0,haval/jolion,m_000146,Haval,Jolion,U11_283,,suv,1096,936,0.47,False,4,True,2027,ACCEPTED tier A,1014000,A,3,5,148,5 years / 100000 km,True,True,8/8,,complete
 62,P0,toyota/fortuner,m_000262,Toyota,Fortuner,U11_283,,suv,1093,469,0.47,False,3,True,2026 2027,ACCEPTED tier B,3700000,B,1,7,234,5 years / 150000 km,True,False,8/8,,complete for decision; image/brochure next
 63,P0,kaiyi/x3,m_000172,Kaiyi,X3,U11_283,,suv,1064,637,0.46,False,2,False,2026,REWORK: PB-2 single site x2,,,0,,,,False,False,2/8,price;power;transmission/drive;seats;length;warranty,price: single site -> second independent source or official
 64,P0,renault/kardian,m_000234,Renault,Kardian,U11_283,,suv,1023,471,0.44,False,3,False,2025 2026,ACCEPTED tier B,875000,B,3,5,100,,True,True,7/8,warranty,warranty: official source
@@ -79,7 +79,7 @@ rank,priority,identity,model_id,brand,model,universe,parent,body,reg_last12,reg_
 78,P0,mg/4,m_000391,MG,4 EV,P2_ADDITION,,hatchback,45,18,0.02,True,3,False,2026,ACCEPTED tier B,1200000,B,2,5,168 | 200,,False,False,6/8,ev_range/battery;warranty,ev_range/battery: official source
 79,P0,porsche/911,m_000339,Porsche,911,P2_ADDITION,,coupe,45,21,0.02,True,6,False,2025 2027,REWORK: PB-2 single site x11,,,0,2,,,False,False,3/8,price;power;transmission/drive;length;warranty,price: single site -> second independent source or official
 80,P0,soueast/s-08-dm,m_000249,Soueast,S 08 DM,U11_283,,suv,43,43,0.02,True,2,False,2026 2027,REWORK: PB-2 single site x1,,,0,,,,False,False,2/8,price;power;transmission/drive;seats;length;warranty,price: single site -> second independent source or official
-81,P0,mitsubishi/mirage,m_000215,Mitsubishi,Mirage,U11_283,,hatch,42,2,0.02,True,3,True,2025 2026,REWORK: PB-2 single site x1,,,0,,,,False,False,3/8,price;power;transmission/drive;length;warranty,price: single site -> second independent source or official
+81,P0,mitsubishi/mirage,m_000215,Mitsubishi,Mirage,U11_283,,hatch,42,2,0.02,True,3,True,2025 2026,REWORK: PB-2 single site x1,,,0,,,,False,False,4/8,price;power;length;warranty,price: single site -> second independent source or official
 82,P0,smart/3,m_000350,Smart,#3,P2_ADDITION,,suv,42,21,0.02,True,3,False,2025 2026,ACCEPTED tier B,1990000,B,3,5,,,False,False,5/8,power;ev_range/battery;warranty,specs: official spec page/brochure for power
 83,P0,subaru/crosstrek,m_000398,Subaru,Crosstrek,P2_ADDITION,,suv,40,27,0.02,True,2,False,2026,REWORK: PB-2 single site x1,,,0,,,,False,False,2/8,price;power;transmission/drive;seats;length;warranty,price: single site -> second independent source or official
 84,P0,byd/atto-8,m_000064,BYD,Atto 8,U11_283,,suv,38,37,0.02,True,3,True,2026,REWORK: PB-2 CONFLICT x2; PB-2 single site x1,,,0,7,275,6 years / 150000 km,True,False,7/8,price,price: sites disagree -> official price list decides
@@ -127,7 +127,7 @@ rank,priority,identity,model_id,brand,model,universe,parent,body,reg_last12,reg_
 126,P0,forthing/v9,m_000125,Forthing,V9,U11_283,,mpv,8,6,0.0,True,2,False,2026 2027,ACCEPTED tier B,2600000,B,1,,202,,False,False,6/8,seats;warranty,specs: official spec page/brochure for seats
 127,P0,mazda/cx-3,m_000191,Mazda,CX-3,U11_283,,suv,8,7,0.0,True,3,False,2026 2027,ACCEPTED tier B,1355000,B,1,5,110,,False,False,7/8,warranty,warranty: official source
 128,P0,toyota/bz4x,m_000260,Toyota,bZ4X,U11_283,,suv,8,8,0.0,True,3,True,2026,ACCEPTED tier B,2380000,B,1,5,224,5 years / 150000 km,True,True,8/8,,complete
-129,P0,hyundai/ioniq-9,m_000157,Hyundai,IONIQ 9,U11_283,,suv,6,6,0.0,True,2,True,2026,ACCEPTED tier A,2900000,A,3,7,303,,False,False,7/8,warranty,warranty: official source
+129,P0,hyundai/ioniq-9,m_000157,Hyundai,IONIQ 9,U11_283,,suv,6,6,0.0,True,2,True,2026,ACCEPTED tier A,2900000,A,3,7,303,,False,True,7/8,warranty,warranty: official source
 130,P0,bmw/i4,m_000319,BMW,i4,P2_ADDITION,,sedan,5,0,0.0,True,3,False,2025 2026,REWORK: PB-2 single site x4,,,0,,340,,False,False,4/8,price;length;ev_range/battery;warranty,price: single site -> second independent source or official
 131,P0,fiat/500,m_000118,Fiat,500,U11_283,,hatch,4,1,0.0,True,2,False,2026,REWORK: PB-2 single site x2,,,0,,,,False,False,3/8,price;power;transmission/drive;length;warranty,price: single site -> second independent source or official
 132,P0,genesis/gv60,m_000141,Genesis,GV60,U11_283,,suv,4,4,0.0,True,2,False,2026 2027,REWORK: PB-2 single site x6,,,0,5,,,False,False,4/8,price;power;length;warranty,price: single site -> second independent source or official
@@ -138,7 +138,7 @@ rank,priority,identity,model_id,brand,model,universe,parent,body,reg_last12,reg_
 137,P0,cadillac/vistiq,m_000072,Cadillac,Vistiq,U11_283,,suv,2,2,0.0,True,3,False,2026,ACCEPTED tier B,6490900,B,1,7,615,6 years / 250000 km,False,False,8/8,,complete for decision; image/brochure next
 138,P0,exeed/lx,m_000115,Exeed,LX,U11_283,,suv,2,2,0.0,True,3,False,2027,ACCEPTED tier B,1440000,B,1,5,145 | 184 | 184,,True,False,7/8,warranty,warranty: official source
 139,P0,geely/monjaro,m_000137,Geely,Monjaro,U11_283,,suv,2,2,0.0,True,3,False,2027,ACCEPTED tier B,1699000,B,1,5,275 | 335,,False,False,6/8,length;warranty,length: official source
-140,P0,hyundai/venue,m_000382,Hyundai,Venue,P2_ADDITION,,suv,2,0,0.0,True,3,False,2027,ACCEPTED tier A,869000,A,2,5,123,5 years / 100000 km,False,False,8/8,,complete for decision; image/brochure next
+140,P0,hyundai/venue,m_000382,Hyundai,Venue,P2_ADDITION,,suv,2,0,0.0,True,3,False,2027,ACCEPTED tier A,869000,A,2,5,123,5 years / 100000 km,False,True,8/8,,complete
 141,P0,volvo/ex90,m_000271,Volvo,EX90,U11_283,,suv,2,2,0.0,True,3,False,2027,ACCEPTED tier B,4900000,B,2,7,456,,False,True,7/8,warranty,warranty: official source
 142,P0,citroen/c3-aircross,m_000095,Citroën,C3 Aircross,U11_283,,suv,1,1,0.0,True,3,False,2025 2027,REWORK: PB-2 CONFLICT x2; PB-2 single site x2,,,0,5,130,5 years / 150000 km,True,False,7/8,price,price: sites disagree -> official price list decides
 143,P0,mhero/1,m_000355,M-Hero,917,P2_ADDITION,,suv,1,1,0.0,True,2,False,2026,ACCEPTED tier B,6500000,B,1,5,804,,False,False,6/8,ev_range/battery;warranty,ev_range/battery: official source
@@ -157,7 +157,7 @@ rank,priority,identity,model_id,brand,model,universe,parent,body,reg_last12,reg_
 156,P0,dongfeng/shine,m_000365,Dongfeng,Aeolus Shine,P2_ADDITION,,sedan,0,0,0.0,True,2,True,2026,ACCEPTED tier B,790000,B,2,5,125 | 197,6 years / 200000 km,False,False,8/8,,complete for decision; image/brochure next
 157,P0,gac/gs3-emzoom,m_000371,GAC,GS3 Emzoom,P2_ADDITION,,suv,0,0,0.0,True,2,False,2027,REWORK: PB-2 single site x4,,,0,,,,False,False,2/8,price;power;transmission/drive;seats;length;warranty,price: single site -> second independent source or official
 158,P0,geely/emgrand,m_000372,Geely,Emgrand,P2_ADDITION,,sedan,0,0,0.0,True,3,True,2025 2026,REWORK: PB-2 single site x10,,,0,5,120,6 years / 200000 km,False,False,7/8,price,price: single site -> second independent source or official
-159,P0,geely/ex5-em-i,m_000373,Geely,EX5 EM-i,P2_ADDITION,,suv,0,0,0.0,True,2,False,2026 2027,REWORK: PB-2 single site x2,,,0,,,,False,True,1/8,price;power;transmission/drive;seats;length;ev_range/battery;warranty,price: single site -> second independent source or official
+159,P0,geely/ex5-em-i,m_000373,Geely,EX5 EM-i,P2_ADDITION,,suv,0,0,0.0,True,2,False,2026 2027,REWORK: PB-2 single site x2,,,0,,,,False,True,5/8,price;seats;warranty,price: single site -> second independent source or official
 160,P0,haval/h6-hev,m_000375,Haval,H6 HEV,P2_ADDITION,,suv,0,0,0.0,True,3,False,2025 2026,ACCEPTED tier B,1515000,B,2,5,,,False,False,6/8,power;warranty,specs: official spec page/brochure for power
 161,P0,haval/v7,m_000377,Haval,V7,P2_ADDITION,,suv,0,0,0.0,True,3,False,2027,ACCEPTED tier A,1825000,A,2,5,244 | 360,5 years / 150000 km,False,False,8/8,,complete for decision; image/brochure next
 162,P0,icaur/v27,m_000383,iCAUR,V27,P2_ADDITION,,suv,0,0,0.0,True,3,False,2027,ACCEPTED tier B,1900000,B,2,5,,,False,False,4/8,power;length;ev_range/battery;warranty,specs: official spec page/brochure for power
@@ -183,11 +183,11 @@ rank,priority,identity,model_id,brand,model,universe,parent,body,reg_last12,reg_
 182,P1,byd/song-l,m_000293,BYD,Song L,P2_ADDITION,,suv,648,210,0.28,False,2,False,2025,NO_EVIDENCE,,,0,,,,False,False,1/8,price;power;transmission/drive;seats;length;ev_range/battery;warranty,price: listing has no current price -> official/distributor source
 183,P1,chery/arrizo-6-gt,m_000082,Chery,Arrizo 6 GT,U11_283,,sedan,640,604,0.28,False,3,True,2026 2027,ACCEPTED tier A,899000,A,4,5,145 | 145/5500,5 years / 100000 km,True,True,8/8,,complete
 184,P1,changan/cs55,m_000074,Changan,CS55,U11_283,,suv,628,246,0.27,False,2,False,2026 2027,REWORK: PB-2 single site x3,,,0,,,,False,False,2/8,price;power;transmission/drive;seats;length;warranty,price: single site -> second independent source or official
-185,P1,deepal/s-05,m_000021,Deepal,S 05,U11_283,,suv,600,354,0.26,False,3,True,2025 2026,ACCEPTED tier A,1775000,A,1,5,214,6 years / 250000 km,True,False,8/8,,complete for decision; image/brochure next
+185,P1,deepal/s-05,m_000021,Deepal,S 05,U11_283,,suv,600,354,0.26,False,3,True,2025 2026,ACCEPTED tier A,1775000,A,1,5,214,6 years / 250000 km,True,True,8/8,,complete
 186,P1,dfsk/e5-plus,m_000106,DFSK,E5 Plus,U11_283,,suv,573,475,0.25,False,3,False,2027,ACCEPTED tier B,1494900,B,1,7,214,7 years / 150000 km,False,False,7/8,length,length: official source
 187,P1,bmw/3-series,m_000294,BMW,3 Series,P2_ADDITION,,sedan,562,243,0.24,False,5,False,2026 2027,ACCEPTED tier B,3350000,B,1,,170,5 years / 200000 km,False,False,8/8,,complete for decision; image/brochure next
 188,P1,audi/q3,m_000036,Audi,Q3,U11_283,,suv,556,330,0.24,False,3,False,2025 2026,ACCEPTED tier B,2999000,B,1,5,150,,False,False,6/8,length;warranty,length: official source
-189,P1,haval/h7,m_000022,Haval,H7,U11_283,,suv,553,329,0.24,False,3,False,2026 2027,ACCEPTED tier A,1755000,A,1,5,240,,False,False,7/8,warranty,warranty: official source
+189,P1,haval/h7,m_000022,Haval,H7,U11_283,,suv,553,329,0.24,False,3,False,2026 2027,ACCEPTED tier A,1755000,A,1,5,240,,False,True,7/8,warranty,warranty: official source
 190,P1,gac/gs4-max,m_000130,GAC,GS4 Max,U11_283,,suv,551,379,0.24,False,3,False,2025 2026 2027,ACCEPTED tier B,1336000,B,1,5,174,5 years / 150000 km,False,True,8/8,,complete
 191,P1,mercedes/gle,m_000202,Mercedes-Benz,GLE,U11_283,,suv,538,161,0.23,False,4,False,2025 2026,ACCEPTED tier A,7200000,A,2,5,,,False,False,4/8,power;transmission/drive;length;warranty,specs: official spec page/brochure for power/transmission/drive
 192,P1,bmw/5-series,m_000053,BMW,5 Series,U11_283,,sedan,533,289,0.23,False,5,False,2025 2026 2027,ACCEPTED tier B,3990000,B,2,,,,False,False,4/8,power;transmission/drive;length;warranty,specs: official spec page/brochure for power/transmission/drive
@@ -286,7 +286,7 @@ rank,priority,identity,model_id,brand,model,universe,parent,body,reg_last12,reg_
 285,P1,jac/js4,m_000385,JAC,JS4,P2_ADDITION,,suv,126,73,0.05,False,3,False,2025 2026,REWORK: PB-2 single site x3,,,0,,,,False,False,2/8,price;power;transmission/drive;seats;length;warranty,price: single site -> second independent source or official
 286,P1,volkswagen/passat,m_000266,Volkswagen,Passat,U11_283,,sedan,126,10,0.05,False,2,False,,ACCEPTED tier B,1600000,B,1,,,,False,False,4/8,power;transmission/drive;length;warranty,specs: official spec page/brochure for power/transmission/drive
 287,P1,xiaomi/su7,m_000277,Xiaomi,SU7,U11_283,,sedan,123,79,0.05,False,1,False,2025 2026,NO_EVIDENCE,,,0,,,,False,True,3/8,price;power;transmission/drive;length;warranty,price: listing has no current price -> official/distributor source
-288,P1,geely/ex5,m_000135,Geely,EX5,U11_283,,suv,121,121,0.05,False,2,False,2026,ACCEPTED tier B,1419900,B,2,5,,,True,False,7/8,warranty,warranty: official source
+288,P1,geely/ex5,m_000135,Geely,EX5,U11_283,,suv,121,121,0.05,False,2,False,2026,ACCEPTED tier B,1419900,B,2,5,,,True,False,6/8,power;warranty,specs: official spec page/brochure for power
 289,P1,land-rover/range-rover-evoque,m_000303,Land Rover,Range Rover Evoque,P2_ADDITION,,suv,118,54,0.05,False,4,False,2026,REWORK: PB-2 single site x1,,,0,,,,False,False,2/8,price;power;transmission/drive;seats;length;warranty,price: single site -> second independent source or official
 290,P1,dongfeng/008,m_000108,Dongfeng,008,U11_283,,suv,114,89,0.05,False,2,True,2026,REWORK: PB-2 single site x2,,,0,6,272,7 years / 300000 km,True,False,7/8,price,price: single site -> second independent source or official
 291,P1,changan/cs35-plus,m_000073,Changan,CS35 PLUS,U11_283,,suv,112,49,0.05,False,3,False,2025 2026,ACCEPTED tier A,1049000,A,3,5,"160 | 160/ 5,500",,False,True,7/8,warranty,warranty: official source
@@ -295,7 +295,7 @@ rank,priority,identity,model_id,brand,model,universe,parent,body,reg_last12,reg_
 294,P1,denza/b3,m_000415,Denza,B3,P2_ADDITION,,suv,111,48,0.05,False,0,False,,NO_EVIDENCE,,,0,,,,False,False,1/8,price;power;transmission/drive;seats;length;ev_range/battery;warranty,price: no listing captured -> official/distributor source
 295,P1,volkswagen/golf,m_000265,Volkswagen,Golf,U11_283,,hatch,110,22,0.05,False,3,False,2025,ACCEPTED tier B,1690000,B,1,5,150,,False,False,5/8,transmission/drive;length;warranty,specs: official spec page/brochure for transmission/drive
 296,P1,lynk-co/08,m_000188,Lynk & Co,08,U11_283,,suv,109,108,0.05,False,2,False,2026,ACCEPTED tier B,2290000,B,2,,,,False,False,3/8,power;transmission/drive;seats;length;warranty,specs: official spec page/brochure for power/transmission/drive/seats
-297,P1,mitsubishi/attrage,m_000213,Mitsubishi,Attrage,U11_283,,sedan,109,32,0.05,False,3,True,2025,REWORK: PB-2 single site x2,,,0,,,,False,False,3/8,price;power;transmission/drive;length;warranty,price: single site -> second independent source or official
+297,P1,mitsubishi/attrage,m_000213,Mitsubishi,Attrage,U11_283,,sedan,109,32,0.05,False,3,True,2025,REWORK: PB-2 single site x2,,,0,,,,False,False,4/8,price;power;length;warranty,price: single site -> second independent source or official
 298,P1,jac/js6,m_000163,JAC,JS6,U11_283,,suv,107,52,0.05,False,3,False,2026,ACCEPTED tier B,1240000,B,2,5,181,,False,False,7/8,warranty,warranty: official source
 299,P1,li-auto/l6,m_000184,Li Auto,L6,U11_283,,suv,107,64,0.05,False,2,False,2026,ACCEPTED tier B,2550000,B,1,5,,,False,False,6/8,power;warranty,specs: official spec page/brochure for power
 300,P1,exeed/vx,m_000117,Exeed,VX,U11_283,,suv,106,64,0.05,False,3,False,2026 2027,ACCEPTED tier B,2620000,B,2,7,,,False,False,6/8,power;warranty,specs: official spec page/brochure for power

@@ -1,0 +1,69 @@
+{
+ "schema": "carindex.p2.p1-release-handoff/v1",
+ "date": "2026-10-15",
+ "canonical_file": "vehicle-data/views/canonical_u11.json",
+ "canonical_sha256": "1118eb1294e9ded9357601be6550d91d69c07f6da821da3445492034e14b354d",
+ "counts_market_universe": {
+  "brochure_accepted": 82,
+  "fully_enriched": 39,
+  "gallery_models": 73,
+  "hero_accepted": 85,
+  "hero_accepted_hq": 81,
+  "hero_limited_archive": 125,
+  "id_accepted": 416,
+  "logo_accepted": 347,
+  "market_status_official": 38,
+  "models": 416,
+  "price_accepted": 236,
+  "price_source_dated": 170,
+  "price_tier_a": 76,
+  "specs_accepted": 244,
+  "warranty_accepted": 121
+ },
+ "price_changes": {
+  "accepted_trim_rows": 32,
+  "models_touched": [
+   "mercedes/c-class",
+   "mercedes/cla",
+   "mercedes/cle",
+   "mercedes/e-class",
+   "mercedes/eqa",
+   "mercedes/g-580-eq",
+   "mercedes/g-class",
+   "mercedes/gla",
+   "mercedes/glc",
+   "mercedes/glc-eq",
+   "mercedes/gle",
+   "mercedes/gls",
+   "mercedes/v-class",
+   "mg/5",
+   "mg/7",
+   "mg/cyberster",
+   "mg/g50-plus",
+   "mg/gt",
+   "mg/one",
+   "mg/rx5",
+   "mg/rx9"
+  ],
+  "newly_priced_models": 12,
+  "note": "Tier A list prices (Mansour/MG 15.10.2026; Mercedes-Benz Egypt valid 24.09.2026); model year not stated on lists; AMG GT 43 and SL 43 REWORK (PA-1)"
+ },
+ "spec_changes": [
+  "geely/ex5-em-i (m_000373): 15 EM-i brochure facts now attributed here (length 4740, ev_range 105 km NEDC, etc.)",
+  "geely/ex5 (m_000135): EM-i facts removed; EX5 Electric keeps market-site facts (length 4615)",
+  "hyundai/tucson (m_000002): Venue-brochure rows quarantined; length_mm, height_mm, engine string no longer accepted; width/wheelbase/power/torque/DCT remain via SP-2",
+  "mitsubishi/attrage, mitsubishi/mirage: transmission Automatic, drive 2WD, airbags (official page)"
+ ],
+ "arabic_names": {
+  "added": 57,
+  "total": 140,
+  "location": "vehicle-data/registry/u11_models.csv (model_ar); registry/arabic_names.csv",
+  "note": "not in canonical_u11.json or serving release; field exposure needs P1/P5 contract"
+ },
+ "regression_actions": [
+  "re-run tools/build_u12.mjs against this commit",
+  "size_class for geely/ex5-em-i now from accepted length 4740 (HIGH)",
+  "re-check Tucson size class source (registration segment, unchanged)"
+ ],
+ "ledger": "vehicle-data/review/m13_acceptance_manifest.csv"
+}
