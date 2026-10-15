@@ -9,6 +9,7 @@ are labelled contact sheets for visual review.
 """
 import argparse, csv, hashlib, io, json, os, time
 
+ACCEPT_IMG = "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
 UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"}
 
 
@@ -34,14 +35,21 @@ def main():
                 r["pdf_sha_match"] = hashlib.sha256(pb).hexdigest() == s["pdf_sha256"]
                 import fitz
                 b = fitz.open(stream=pb, filetype="pdf").extract_image(int(s["pdf_xref"]))["image"]
-            else:
-                b = requests.get(s["url"], headers=UA, timeout=60).content
-                time.sleep(0.5)
+            else:  # CDNs negotiate the format on Accept: retry with the headers a browser sends for <img> before giving up
+                tried = []
+                for acc in (None, ACCEPT_IMG, "image/webp,*/*"):
+                    resp = requests.get(s["url"], headers=dict(UA, **({"Accept": acc} if acc else {}), **({"Referer": s["source_page"]} if s.get("source_page") else {})), timeout=60)
+                    b = resp.content
+                    time.sleep(0.5)
+                    tried.append(f'{acc or "default"}:{resp.status_code}:{resp.headers.get("content-type", "")}:{len(b)}:{hashlib.sha256(b).hexdigest()[:12]}')
+                    if hashlib.sha256(b).hexdigest() == s["sha256"]:
+                        break
+                r["attempts"] = " | ".join(tried)
             h = hashlib.sha256(b).hexdigest()
             r["match"] = h == s["sha256"]
             if r["match"]:
                 im = Image.open(io.BytesIO(b))
-                ext = {"JPEG": "jpg", "PNG": "png", "WEBP": "webp"}.get(im.format, "bin")
+                ext = {"JPEG": "jpg", "PNG": "png", "WEBP": "webp", "AVIF": "avif"}.get(im.format, "bin")
                 f = os.path.join(a.out, "files", f"{h[:20]}.{ext}")
                 open(f, "wb").write(b)
                 r.update(file=os.path.relpath(f, a.out), width=im.width, height=im.height)
@@ -51,7 +59,7 @@ def main():
         except Exception as x:
             r["error"] = str(x)[:200]
         rows.append(r)
-    cols = ["p1_id", "role", "sha256", "url", "pdf_xref", "pdf_sha_match", "match", "file", "width", "height", "error"]
+    cols = ["p1_id", "role", "sha256", "url", "pdf_xref", "pdf_sha_match", "match", "file", "width", "height", "error", "attempts"]
     with open(os.path.join(a.out, "report.csv"), "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore", lineterminator="\n")
         w.writeheader()
