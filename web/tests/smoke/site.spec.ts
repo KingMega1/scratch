@@ -156,6 +156,26 @@ test.describe('boundaries', () => {
 
 /* Independent audit (P5-AUDIT-01) regression guards. */
 const AXE = readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
+// Launch pages with P2-accepted heroes/galleries (handoff c) and a model-level price: WCAG A/AA, no horizontal overflow, the accepted photo shown.
+test.describe('launch car pages (P2 accepted media)', () => {
+  for (const path of ['ar','en'].flatMap(l => ['geely-ex5-em-i','gac-gs4-max','suzuki-baleno','byd-ti-7','deepal-g318','chery-arrizo-5'].map(s => `/${l}/cars/${s}`))) {
+    test(`accessible, no overflow, accepted photo: ${path}`, async ({ page }) => {
+      await page.goto(path);
+      const slug = path.split('/').pop()!;
+      await expect(page.locator(`.cd-media img[data-verified-photo][src^="/media/p2/models/${slug}"]`)).toHaveCount(1);
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1)).toBe(true);
+      await page.addScriptTag({ content: AXE });
+      const v = await page.evaluate(async () => (await (window as unknown as { axe: { run: (d: Document, o: object) => Promise<{ violations: { id: string; nodes: { target: string[] }[] }[] }> } }).axe
+        .run(document, { runOnly: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'] })).violations.map(x => `${x.id}: ${x.nodes.map(n => n.target.join(' ')).slice(0, 3).join(' | ')}`));
+      expect(v, path).toEqual([]);
+    });
+  }
+  test('model-level accepted price is shown in the price table, not as unconfirmed', async ({ page }) => {
+    await page.goto('/en/cars/chery-arrizo-5');
+    await expect(page.locator('#prices-h ~ * tr[data-trim="model-level"][data-official-state="checked"]')).toHaveCount(1);
+    await expect(page.locator('section[aria-labelledby="prices-h"] .slot-empty')).toHaveCount(0);
+  });
+});
 test.describe('accessibility (axe, WCAG 2.1 A/AA)', () => {
   for (const path of ['ar','en'].flatMap(l => ['', '/cars', '/cars/kia-sportage', '/compare?ids=kia-sportage,hyundai-tucson', '/market', '/market/catalog', '/search?q=sportage', '/find-my-car', '/my-carindex', '/news', '/news/official-vs-listing-prices', '/methodology'].map(p => `/${l}${p}`))) {
     test(`no WCAG A/AA violations: ${path}`, async ({ page }) => {

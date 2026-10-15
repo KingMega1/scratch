@@ -130,7 +130,9 @@ export default async function CarDetail({ params }: P) {
 
       <section className="cd-section" aria-labelledby="prices-h">
         <h2 id="prices-h" className="h-section">{c.pricesH}{car.priceFrom.modelYear ? <span className="small"> · {v2.modelYear} {car.priceFrom.modelYear}</span> : null}</h2>
-        {car.trims.length ? <TrimTable trims={car.trims} locale={locale} /> : <div className="slot-empty">{c.noPrice}</div>}
+        {car.trims.length ? <TrimTable trims={car.trims} locale={locale} />
+          : car.modelPrice ? <TrimTable trims={[{ key: 'model-level', label: c.modelLevelPrice, modelYear: car.priceFrom.modelYear, official: car.modelPrice, market: null }]} locale={locale} />
+          : <div className="slot-empty">{c.noPrice}</div>}
         <p className="small">{v2.marketNote}</p>
         {car.otherCohorts.length ? (
           <details style={{ marginBlockStart: 12 }}>
@@ -189,7 +191,7 @@ export default async function CarDetail({ params }: P) {
               {r.firstSeen ? <div className="small">{v2.firstSeen}: {monthLabel(r.firstSeen, locale)}</div> : null}
               <p className="small" style={{ marginBlockEnd: 0 }}>{v2.regsNote}{r.monthsMissing.length ? ` ${v2.monthsMissing(r.monthsMissing.map(m => monthLabel(m, locale)).join(', '))}` : ''}</p>
             </div>
-            <div className="card" aria-label={locale === 'ar' ? 'التسجيلات الشهرية' : 'Monthly registrations'}>
+            <div className="card" role="group" aria-label={locale === 'ar' ? 'التسجيلات الشهرية' : 'Monthly registrations'}>
               <div className="bars">{monthly.map(m => (
                 <div className="b" key={m.month}><i style={{ height: `${Math.max(3, (m.count / maxM) * 80)}px` }} title={`${m.month}: ${m.count}`} /><span className="tnum" style={{ fontSize: 10 }}>{m.month.slice(5)}</span></div>
               ))}</div>

@@ -69,6 +69,8 @@ test('actual website read-model: 283 U11 + P2 additions gettable, 283 recommenda
    const served=[...car.trims,...car.otherCohorts.flatMap(c=>c.trims)].map(t=>t.official.value).sort((a,b)=>a-b);
    assert.deepEqual(served,ap.trims.map(t=>t.price_egp).sort((a,b)=>a-b));
    for(const t of car.trims)assert.ok(t.official.sources.length>=1&&t.official.sources.every(x=>x.name&&x.observedAt));
+   // model-level accepted price (no per-version rows): shown as one model row with its source, never as 'not confirmed'
+   if(!ap.trims.length){assert.equal(car.modelPrice.value,ap.price_from);assert.ok(car.modelPrice.sources.length>=1);}else assert.equal(car.modelPrice,null);
   } else if(!e.p2_evidence){assert.equal(car.priceFrom.value,null);assert.equal(car.priceFrom.sortValue,null);
    assert.equal(car.priceFrom.state,'unknown');assert.deepEqual(car.trims,[]);}
   if(!e.p2_evidence)assert.deepEqual(car.specs,{});

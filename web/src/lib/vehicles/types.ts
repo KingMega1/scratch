@@ -65,6 +65,7 @@ export interface PublicCar {
   };
   trims: PublicTrim[];       // latest priced model-year cohort
   otherCohorts: { modelYear: number | null; trims: PublicTrim[] }[];
+  modelPrice?: OfficialPrice | null; // P2-accepted model-level starting price when no per-version prices are accepted
   changes: PriceChange[];
   specs: Record<string, SpecValue>;
   powertrains: Powertrain[]; // from registrations actually recorded

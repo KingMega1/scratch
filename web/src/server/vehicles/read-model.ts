@@ -117,7 +117,7 @@ function p2Official(price: number, issuer: string, evidence: string, asOf: strin
     observedAt: asOf, effectiveDate: basis === 'SOURCE_STATED' ? eff : null }));
   return { state: 'checked', value: price, min: null, max: null, values: [], agreedBySources: names.length, sources };
 }
-export function p2Price(e: Raw): { priceFrom: PublicCar['priceFrom']; trims: PublicTrim[]; otherCohorts: PublicCar['otherCohorts']; asOf: string } | null {
+export function p2Price(e: Raw): { priceFrom: PublicCar['priceFrom']; trims: PublicTrim[]; otherCohorts: PublicCar['otherCohorts']; modelPrice: PublicCar['modelPrice']; asOf: string } | null {
   const p = e?.accepted?.price;
   if (!p || typeof p.price_from !== 'number' || p.price_from <= 0) return null;
   const toTrim = (t: Raw): PublicTrim => ({ key: `${t.model_year ?? ''}-${t.label}`, label: String(t.label), modelYear: t.model_year ?? null,
@@ -129,6 +129,7 @@ export function p2Price(e: Raw): { priceFrom: PublicCar['priceFrom']; trims: Pub
     priceFrom: { state: 'checked', value: p.price_from, min: null, max: null, sortValue: p.price_from, modelYear: p.model_year ?? null },
     trims: all.filter(t => t.modelYear === latest).sort(trimSort),
     otherCohorts: years.filter(y => y !== latest).map(y => ({ modelYear: y, trims: all.filter(t => t.modelYear === y).sort(trimSort) })),
+    modelPrice: all.length ? null : p2Official(p.price_from, p.issuer, p.evidence_url, p.as_of, p.effective_date ?? null, p.date_basis, e.brand),
     asOf: p.as_of,
   };
 }
@@ -272,7 +273,7 @@ class JsonSnapshotReadModel implements VehicleReadModel {
       const pp = p2Price(e as Raw);
       if (pp) {
         // P2-accepted price is canonical: it replaces the S6 view figure and clears price gaps that no longer apply.
-        car.priceFrom = pp.priceFrom; car.trims = pp.trims; car.otherCohorts = pp.otherCohorts; car.lastObserved = pp.asOf;
+        car.priceFrom = pp.priceFrom; car.trims = pp.trims; car.otherCohorts = pp.otherCohorts; car.modelPrice = pp.modelPrice; car.lastObserved = pp.asOf;
         car.gaps = car.gaps.filter(g => !PRICE_GAPS.has(g));
       } else if (((e as Raw).accepted?.conflicts ?? []).length && car.priceFrom.state === 'unknown') {
         car.gaps = [...new Set([...car.gaps, 'FROM_PRICE_IN_CONFLICT'])]; // sources disagree: say so, show no number
