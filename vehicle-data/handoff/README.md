@@ -2,7 +2,9 @@
 
 | File | For | Status |
 |---|---|---|
-| `p5-release-20261014c.json` | P5 | Current. Release sha256 4770fbd5…, 327 served files (58 heroes, 54 logos, 215 gallery) with sha256. Verified against P5 f131fdc in a disposable worktree: typecheck pass, unit tests 74/74. P5 has not ingested it yet (P5 still serves 559c718, sha a0032612…). |
+| `p5-release-20261015.json` | P5 | Current. Release sha256 e17398b6…, 348 served files (68 heroes, 54 logos, 226 gallery). P5 f131fdc: typecheck pass, unit tests 73/74 (the Tucson fixture expects a price conflict that the GB Auto list resolved upstream). P5 has not ingested it yet. |
+| `chatgpt-m10-m12-selections.json` | P2 | ChatGPT Work M10–M12: 54 new images. 25 reproduced sha256-identical (CI 38723488776); 29 blocked by HTTP 403 from the Stellantis and Volvo CDNs (retry 38723784165 with browser Accept and Referer). Decisions: `review/chatgpt_m10_m12_decisions.csv`. |
+| `p5-release-20261014c.json` | P5 | Superseded. Release sha256 4770fbd5…, 327 served files (58 heroes, 54 logos, 215 gallery) with sha256. Verified against P5 f131fdc in a disposable worktree: typecheck pass, unit tests 74/74. P5 has not ingested it yet (P5 still serves 559c718, sha a0032612…). |
 | `p5-release-20261014b.json` | P5 | Superseded by `c`. |
 | `chatgpt-closure-20261014-selections.json` | P2 | ChatGPT Work priority-record closure: 22 new images. 18 reproduced sha256-identical in CI run 38576320947 and accepted; 4 Mercedes images not reproducible (site timeout). Decisions: `review/chatgpt_closure_20261014_decisions.csv`. |
 | `parallel-allocation-20261014.csv` | Claude Code Cloud, ChatGPT Work | Non-overlapping work split, generated from `review/u11_coverage.csv`. |

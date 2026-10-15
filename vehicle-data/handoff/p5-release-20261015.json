@@ -1,0 +1,1792 @@
+{
+ "schema": "carindex.p2.p5-release-handoff/v1",
+ "release_id": "P2-CATALOGUE-U11-2026-10-15-RC2",
+ "route": "P5 a6d3f0b: copy vehicle-data/views/catalogue-serving.release.json verbatim to web/data/registry/catalogue-serving.release.json; copy each file below to web/public<src>",
+ "release_sha256": "e17398b60e61acfedc2aec0d6f6090047f3c0d33a6373c463d2238c884b4aa59",
+ "counts": {
+  "catalogue": 283,
+  "p2_evidence": 21,
+  "identity_only": 262,
+  "excluded": 3,
+  "price_accepted": 196,
+  "id_accepted": 283
+ },
+ "served": {
+  "heroes": 68,
+  "logos": 54,
+  "gallery": 226,
+  "files": 348
+ },
+ "p5_verification": {
+  "status": "COMPATIBLE_VERIFIED_LOCALLY; PENDING_P5_INGEST",
+  "base": "origin/claude/vigilant-cori-ce710x f131fdc (still serving P2 559c718 release sha a0032612...)",
+  "method": "release copied verbatim + 348 files to web/public in a disposable worktree; all 348 sha256 match; nothing pushed to P5",
+  "typecheck": "pass",
+  "unit_tests": "73/74 pass",
+  "failing": "catalogue-coverage.test.mjs:109 expects hyundai/tucson price state 'conflict'; the conflict was resolved upstream by the CEO-authorised GB Auto price list (72eb2c8; Tucson now Tier A 1,800,000). Fails identically with the pre-change release; P5 to update the fixture. Not caused by this media change."
+ },
+ "files": {
+  "/media/p2/brands/arcfox.png": {
+   "from_path": "vehicle-data/media/brands/arcfox.png",
+   "sha256": "52b8bf59ee3ec86a7e34ba9cf22b42dfbec1234c31f6a69bd13a675592d3d77a",
+   "bytes": 10805
+  },
+  "/media/p2/brands/audi.png": {
+   "from_path": "vehicle-data/media/brands/audi.png",
+   "sha256": "ce24178269debd2aa9a0f5ab009cca702494567ab5922fa8e734a9f70522400e",
+   "bytes": 33741
+  },
+  "/media/p2/brands/avatr.png": {
+   "from_path": "vehicle-data/media/brands/avatr.png",
+   "sha256": "99581909834db6e70cbaadf0f5a9467b061c26727438558940092b64355d1f70",
+   "bytes": 35021
+  },
+  "/media/p2/brands/baw.png": {
+   "from_path": "vehicle-data/media/brands/baw.png",
+   "sha256": "f550f861eada9b86e4ae45709e5e825458ac6e97043fc44f04ad2415e5fae010",
+   "bytes": 16859
+  },
+  "/media/p2/brands/bmw.png": {
+   "from_path": "vehicle-data/media/brands/bmw.png",
+   "sha256": "e8c157ad41792a4b110d9ecff5e9c7a43619b89a64e3eeb60b62c04f387ba69d",
+   "bytes": 167445
+  },
+  "/media/p2/brands/byd.png": {
+   "from_path": "vehicle-data/media/brands/byd.png",
+   "sha256": "aea7800fb33ce44af3e0e974895eae79a440fc1bb2e0b6aa37a4530154c154a5",
+   "bytes": 10770
+  },
+  "/media/p2/brands/cadillac.png": {
+   "from_path": "vehicle-data/media/brands/cadillac.png",
+   "sha256": "41f62d11e0f3f9bfec329a8fd4f76177db8d220fd25e85f06b0f73497f4c0b78",
+   "bytes": 60911
+  },
+  "/media/p2/brands/changan.png": {
+   "from_path": "vehicle-data/media/brands/changan.png",
+   "sha256": "385b1c0fd33c740eeaa44ae501d9846584a04304f534a524274b63fc356fef43",
+   "bytes": 102910
+  },
+  "/media/p2/brands/chery.png": {
+   "from_path": "vehicle-data/media/brands/chery.png",
+   "sha256": "4a44196f33537c9cdd467e96dc50f1e849cf26e54992e7985e0baa3ea38be7de",
+   "bytes": 16061
+  },
+  "/media/p2/brands/chevrolet.png": {
+   "from_path": "vehicle-data/media/brands/chevrolet.png",
+   "sha256": "597a6972a64d6bad9d374bed875ef17f02afbe7f766204783a9472fc29522bf2",
+   "bytes": 9665
+  },
+  "/media/p2/brands/citroen.png": {
+   "from_path": "vehicle-data/media/brands/citroen.png",
+   "sha256": "8f38bf635b2eba57e4244e1944b6f37c38bb3054772c501058b5f02482da4819",
+   "bytes": 49464
+  },
+  "/media/p2/brands/cupra.png": {
+   "from_path": "vehicle-data/media/brands/cupra.png",
+   "sha256": "a58b04b95e2263dadaf49d195291398862949c8e5480cadca3e81a8ddf1773c3",
+   "bytes": 43041
+  },
+  "/media/p2/brands/deepal.png": {
+   "from_path": "vehicle-data/media/brands/deepal.png",
+   "sha256": "d47d64dc0efbcfd633fdfa115a21964860085c4320422c66a9279283ee2477d1",
+   "bytes": 39438
+  },
+  "/media/p2/brands/dongfeng.png": {
+   "from_path": "vehicle-data/media/brands/dongfeng.png",
+   "sha256": "0bd08f0642e1bfd0b83ca88d304d8d21b1f5633ae08dd3578f73fdf6505c7ff7",
+   "bytes": 53890
+  },
+  "/media/p2/brands/ds.png": {
+   "from_path": "vehicle-data/media/brands/ds.png",
+   "sha256": "827561421e1f637455c3b9778756002b5123bd0f200259739b41096577fb551a",
+   "bytes": 10329
+  },
+  "/media/p2/brands/exeed.png": {
+   "from_path": "vehicle-data/media/brands/exeed.png",
+   "sha256": "2701ca2e49ea91db66be47e905d7c6b906c93618ccb787d3f045b3778ecbd5e2",
+   "bytes": 6170
+  },
+  "/media/p2/brands/fiat.png": {
+   "from_path": "vehicle-data/media/brands/fiat.png",
+   "sha256": "0578b4ab50109d01eeef160ca7143f9117d90e524c24bb2b8fd45d8795531fc5",
+   "bytes": 13546
+  },
+  "/media/p2/brands/gac.png": {
+   "from_path": "vehicle-data/media/brands/gac.png",
+   "sha256": "1b29ec8a9ff42cd2c8914e45587f74903d61b8369a1dd926556d207f8fb36e14",
+   "bytes": 18502
+  },
+  "/media/p2/brands/geely.png": {
+   "from_path": "vehicle-data/media/brands/geely.png",
+   "sha256": "807cc3cf2b10310a4854bd9352382c163292791c5eb966c649e6fa2e3c33ae65",
+   "bytes": 37395
+  },
+  "/media/p2/brands/genesis.png": {
+   "from_path": "vehicle-data/media/brands/genesis.png",
+   "sha256": "10c447c893cea32907a5eb2392618bb32e641dc527b99c71087c1a69495c30d3",
+   "bytes": 21788
+  },
+  "/media/p2/brands/gmc.png": {
+   "from_path": "vehicle-data/media/brands/gmc.png",
+   "sha256": "f6eda3a326fc6c0efedf3eebe990cfa7278b6a9690821c3db3570c0e5d643b0e",
+   "bytes": 107179
+  },
+  "/media/p2/brands/haval.png": {
+   "from_path": "vehicle-data/media/brands/haval.png",
+   "sha256": "bc14f8c22a9bf7df80695f375bedf5c8611b80387833867dbd80af9c32288274",
+   "bytes": 28813
+  },
+  "/media/p2/brands/honda.png": {
+   "from_path": "vehicle-data/media/brands/honda.png",
+   "sha256": "0d7a0e2fb5c2389fde495c788dbd4a46007408499695ac9ca26877860dd43c22",
+   "bytes": 132395
+  },
+  "/media/p2/brands/hyundai.png": {
+   "from_path": "vehicle-data/media/brands/hyundai.png",
+   "sha256": "3c30fd648f04a34844bff7c4e1952f6d7bb5cd89ad437b47028f3f447fb37b0f",
+   "bytes": 17320
+  },
+  "/media/p2/brands/im.png": {
+   "from_path": "vehicle-data/media/brands/im.png",
+   "sha256": "16db771b74fdc368a1b94289122bdb9f388fd01d1a202c1d2f578de331ecc427",
+   "bytes": 27513
+  },
+  "/media/p2/brands/jac.png": {
+   "from_path": "vehicle-data/media/brands/jac.png",
+   "sha256": "b9e530e1879d870c682e926699068984536bdd505d5cb68c400d7ca458d8df15",
+   "bytes": 80838
+  },
+  "/media/p2/brands/jeep.png": {
+   "from_path": "vehicle-data/media/brands/jeep.png",
+   "sha256": "08695e77c7e0cd75c4f620e69224f9565f260fadfa925808709044d58d1fa7a2",
+   "bytes": 21771
+  },
+  "/media/p2/brands/jetour.png": {
+   "from_path": "vehicle-data/media/brands/jetour.png",
+   "sha256": "b64503096e821f0c7a69ecf43ddc8f56cf1eba077ddff76294901ee8de857799",
+   "bytes": 8479
+  },
+  "/media/p2/brands/kaiyi.png": {
+   "from_path": "vehicle-data/media/brands/kaiyi.png",
+   "sha256": "b0a2eb99cdc7e4c158b0bc46b78771642560ea11cb92fe583440d50c163a5a12",
+   "bytes": 64511
+  },
+  "/media/p2/brands/kgm.png": {
+   "from_path": "vehicle-data/media/brands/kgm.png",
+   "sha256": "24ff2abc896e4776420ea8a2769389639eea8ae47e6d61b29bdb6b3095e1a8da",
+   "bytes": 20486
+  },
+  "/media/p2/brands/kia.png": {
+   "from_path": "vehicle-data/media/brands/kia.png",
+   "sha256": "6f4abfdf4f534858ccfa2b90ade354446ca5abf4271c03928cc4e8fba2e61773",
+   "bytes": 1351
+  },
+  "/media/p2/brands/lexus.png": {
+   "from_path": "vehicle-data/media/brands/lexus.png",
+   "sha256": "ff82b582a58398ea44860ac23ea5165391dc58e26d5f83295e6efaca10910b49",
+   "bytes": 14978
+  },
+  "/media/p2/brands/li-auto.png": {
+   "from_path": "vehicle-data/media/brands/li-auto.png",
+   "sha256": "4ef08f7fdf63eaccbc4194ecece02f5d4e58e906325a3aac5d5bcd2d3087b0dd",
+   "bytes": 14066
+  },
+  "/media/p2/brands/lynk-and-co.png": {
+   "from_path": "vehicle-data/media/brands/lynk-and-co.png",
+   "sha256": "9a61be368e66f816479e9726921822fe310c2a0a53ed2dd1f9d15aa30a034907",
+   "bytes": 15912
+  },
+  "/media/p2/brands/mazda.png": {
+   "from_path": "vehicle-data/media/brands/mazda.png",
+   "sha256": "a4c3c6e558d02addedcfcb70027f3dbcd63897f928f2f910071d1626269e2822",
+   "bytes": 294081
+  },
+  "/media/p2/brands/mercedes-benz.png": {
+   "from_path": "vehicle-data/media/brands/mercedes-benz.png",
+   "sha256": "08133f157eedc344c34f2ce6c9b81c064c886fb1e509767a54b83ac4ddd8f7d1",
+   "bytes": 99534
+  },
+  "/media/p2/brands/mg.png": {
+   "from_path": "vehicle-data/media/brands/mg.png",
+   "sha256": "d879595d4be3596744016a8d8bc1cdf055dced4367d73760141fe19f5af9a8af",
+   "bytes": 85546
+  },
+  "/media/p2/brands/mini.png": {
+   "from_path": "vehicle-data/media/brands/mini.png",
+   "sha256": "6b70d53ae1a833585b638324dfc8296f15055ba1e42710a7a3e553b76946b28f",
+   "bytes": 29617
+  },
+  "/media/p2/brands/mitsubishi.png": {
+   "from_path": "vehicle-data/media/brands/mitsubishi.png",
+   "sha256": "e19441cf1a2970a338faba289ce26b6a44d7450e199694901e593eae55ce64ce",
+   "bytes": 66207
+  },
+  "/media/p2/brands/nissan.png": {
+   "from_path": "vehicle-data/media/brands/nissan.png",
+   "sha256": "9b32cb6f55e6215624a9bb6a532ddc70cd523087d20e962f0e7c64b0c5d48ba8",
+   "bytes": 12227
+  },
+  "/media/p2/brands/opel.png": {
+   "from_path": "vehicle-data/media/brands/opel.png",
+   "sha256": "b6c8ae47bc57e6d5986d034f1577420e539b1889212cf26aa513f978da3efafe",
+   "bytes": 34106
+  },
+  "/media/p2/brands/peugeot.png": {
+   "from_path": "vehicle-data/media/brands/peugeot.png",
+   "sha256": "024ea2c9dd17cd84f13938ae5cc17d7d378b524c0375530cc0a7587c1c8836b9",
+   "bytes": 4479
+  },
+  "/media/p2/brands/porsche.png": {
+   "from_path": "vehicle-data/media/brands/porsche.png",
+   "sha256": "9c93d1b7a54bf852b8cc6fa654e2854780cdda4f30311f229504d06121bd1bce",
+   "bytes": 4027
+  },
+  "/media/p2/brands/renault.png": {
+   "from_path": "vehicle-data/media/brands/renault.png",
+   "sha256": "18803e70e8808c58233c546dac1ab12cd63a7d576ad2d8b7516d2221421bbde1",
+   "bytes": 40080
+  },
+  "/media/p2/brands/seat.png": {
+   "from_path": "vehicle-data/media/brands/seat.png",
+   "sha256": "657d478869dcc00cd28d512d5db0c87dfa02d1cebba19e677899fb1b94a5c8ee",
+   "bytes": 36437
+  },
+  "/media/p2/brands/skoda.png": {
+   "from_path": "vehicle-data/media/brands/skoda.png",
+   "sha256": "7320b37b752297eca1aea5a03b99cd6a4fbc783b7e5c68234a9c6e68d89d9744",
+   "bytes": 20559
+  },
+  "/media/p2/brands/suzuki.png": {
+   "from_path": "vehicle-data/media/brands/suzuki.png",
+   "sha256": "a4699359e074810d6788b006994240a802c241c66129fc745c22c84ff943c0fa",
+   "bytes": 24910
+  },
+  "/media/p2/brands/tesla.png": {
+   "from_path": "vehicle-data/media/brands/tesla.png",
+   "sha256": "7809c9a81c94258a21bcf03a45dac50c0b391928657a254dc32d002e82f379d2",
+   "bytes": 7259
+  },
+  "/media/p2/brands/toyota.png": {
+   "from_path": "vehicle-data/media/brands/toyota.png",
+   "sha256": "fdf6804731010d53f86c2419c0902fe73420d397e106200e607e6234497d4f79",
+   "bytes": 49311
+  },
+  "/media/p2/brands/volkswagen.png": {
+   "from_path": "vehicle-data/media/brands/volkswagen.png",
+   "sha256": "f3624872fef803cfdf51cc4f3e803ec12a120d810088d7129b16adcb8b7c1fef",
+   "bytes": 91557
+  },
+  "/media/p2/brands/volvo.png": {
+   "from_path": "vehicle-data/media/brands/volvo.png",
+   "sha256": "0e1f56299cc239ae8042b8536bc5fe3f46fcffbe49012b992c2c1f9e4e70a60f",
+   "bytes": 49765
+  },
+  "/media/p2/brands/xiaomi.png": {
+   "from_path": "vehicle-data/media/brands/xiaomi.png",
+   "sha256": "810abb3d0dc671b57aba9dc2bd1e7dd72e17002c845273b6ebe7c44ea16c4eb3",
+   "bytes": 108473
+  },
+  "/media/p2/brands/xpeng.png": {
+   "from_path": "vehicle-data/media/brands/xpeng.png",
+   "sha256": "7023c748ef92aa233ee78cdcd65085df49d9e7abacd480927880eb0a16ad55cc",
+   "bytes": 10325
+  },
+  "/media/p2/brands/zeekr.png": {
+   "from_path": "vehicle-data/media/brands/zeekr.png",
+   "sha256": "9e437c20551c87c0e5102f675758487a3b8c75695c0439830dcf92ac8bd4eae0",
+   "bytes": 8560
+  },
+  "/media/p2/models/audi-a3.webp": {
+   "from_path": "vehicle-data/media/models/audi-a3.webp",
+   "sha256": "b200e52fbdd3ecacf802237859f994bceb38441d38c62194124279cbd4127805",
+   "bytes": 189054
+  },
+  "/media/p2/models/baic-u5-plus.webp": {
+   "from_path": "vehicle-data/media/models/baic-u5-plus.webp",
+   "sha256": "bfec460c3ecf541bcd168fec74075a03443074ace879c7702606efda15020fea",
+   "bytes": 56228
+  },
+  "/media/p2/models/bmw-x1.webp": {
+   "from_path": "vehicle-data/media/models/bmw-x1.webp",
+   "sha256": "e8324b299db7b739c21dc5cd3b10f04b38a85c1ecc51e6754942342c66d66d68",
+   "bytes": 681004
+  },
+  "/media/p2/models/bmw-x2.webp": {
+   "from_path": "vehicle-data/media/models/bmw-x2.webp",
+   "sha256": "ff68819501fe2322cf520d280ddf7f1e394aa15125a77209b1d9bc7c5d1167e1",
+   "bytes": 483342
+  },
+  "/media/p2/models/bmw-x5.webp": {
+   "from_path": "vehicle-data/media/models/bmw-x5.webp",
+   "sha256": "c9bc3c8bb209ec9adc1bf3964e90927902c94188f515fba562b5ed38cea3f30d",
+   "bytes": 83570
+  },
+  "/media/p2/models/bmw-x5/01.webp": {
+   "from_path": "vehicle-data/media/models/bmw-x5/01.webp",
+   "sha256": "9aceaff48f129096358ed29cfa1ba563434aa3d32bb71b6e318a82f07fdcb171",
+   "bytes": 85088
+  },
+  "/media/p2/models/bmw-x7.webp": {
+   "from_path": "vehicle-data/media/models/bmw-x7.webp",
+   "sha256": "68f4e706d529f4612c8f7efbdb495f9c80f0837cfc12a549e1bec994f5b42b12",
+   "bytes": 92044
+  },
+  "/media/p2/models/bmw-x7/01.webp": {
+   "from_path": "vehicle-data/media/models/bmw-x7/01.webp",
+   "sha256": "9ce0a4b22bed20654d01b3c3ef299177d8061ee3e15b7ba5694428ac4bf0f1fd",
+   "bytes": 103726
+  },
+  "/media/p2/models/bmw-x7/02.webp": {
+   "from_path": "vehicle-data/media/models/bmw-x7/02.webp",
+   "sha256": "43a65fed83d71a28331bbc14af05735925c3a81ad62380ea9928ebfbdc8c67aa",
+   "bytes": 82844
+  },
+  "/media/p2/models/bmw-x7/03.webp": {
+   "from_path": "vehicle-data/media/models/bmw-x7/03.webp",
+   "sha256": "5be7415ee300a946a53385d3fb899887dfeaa85eb3f7d6a94afc9f25bd8b3f26",
+   "bytes": 68896
+  },
+  "/media/p2/models/byd-ti-7.webp": {
+   "from_path": "vehicle-data/media/models/byd-ti-7.webp",
+   "sha256": "c6b267efab44e1c561e95efa7b5565c502122ae810066e31671def157e46905c",
+   "bytes": 187522
+  },
+  "/media/p2/models/byd-ti-7/01.webp": {
+   "from_path": "vehicle-data/media/models/byd-ti-7/01.webp",
+   "sha256": "041e7228ed476b43697f691ec0ae893fcd763b489528371355779eaaaa6f0e21",
+   "bytes": 339992
+  },
+  "/media/p2/models/byd-ti-7/02.webp": {
+   "from_path": "vehicle-data/media/models/byd-ti-7/02.webp",
+   "sha256": "66446e305ac7a5e36535bee07cf22a69f1b84d53f7228f923069264c35a914c1",
+   "bytes": 109126
+  },
+  "/media/p2/models/changan-cs35-plus.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs35-plus.webp",
+   "sha256": "0b5a7f7a0ff55e2f331e5e784fa2774ddc98ecea4c1ef9a94f7e11c710fdc4fc",
+   "bytes": 177478
+  },
+  "/media/p2/models/changan-cs35-plus/01.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs35-plus/01.webp",
+   "sha256": "4da56349463046739f7d22ab87233656dbac53aac1cc677d8a2dfeb7526c7d7e",
+   "bytes": 37066
+  },
+  "/media/p2/models/changan-cs35-plus/02.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs35-plus/02.webp",
+   "sha256": "2b9621025219b35e6943fd61f0f484b3e1eaba7501b9cec6d4cbc7a349a5731b",
+   "bytes": 261336
+  },
+  "/media/p2/models/changan-cs35-plus/03.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs35-plus/03.webp",
+   "sha256": "0b6214e88e640d87a45a1b7aaf3fcd7d1fb0535e186d1cc479369219d1178c18",
+   "bytes": 345094
+  },
+  "/media/p2/models/changan-cs35-plus/04.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs35-plus/04.webp",
+   "sha256": "cc8b188a26378a8536062cf3d1e9bc1ab4b555516da25276bab31f49f28ef497",
+   "bytes": 284280
+  },
+  "/media/p2/models/changan-cs35-plus/05.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs35-plus/05.webp",
+   "sha256": "23054ce1ffcfd530ce6f23608db443cba31d873bc1bc9628cadc066e2d815e09",
+   "bytes": 326396
+  },
+  "/media/p2/models/changan-cs35-plus/06.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs35-plus/06.webp",
+   "sha256": "b930366c7a6c1194b20ea4c31d30ca022ee8704263617e55d7771812020b250f",
+   "bytes": 214602
+  },
+  "/media/p2/models/changan-cs35-plus/07.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs35-plus/07.webp",
+   "sha256": "eba590ae5ec41082473d21d8edfcb8e67bad4d8a8bc8dcfe6049b99eac2a5b91",
+   "bytes": 307264
+  },
+  "/media/p2/models/changan-cs55-plus.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs55-plus.webp",
+   "sha256": "f743afbea1fe15269b0fbc3d4743ef5cf105e873f441c30e4328ac4015550ad0",
+   "bytes": 157556
+  },
+  "/media/p2/models/changan-cs55-plus/01.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs55-plus/01.webp",
+   "sha256": "011544359cd194a871c0210338098e6f212b27c0fcf7271f07f23ee0f3057ced",
+   "bytes": 32526
+  },
+  "/media/p2/models/changan-cs55-plus/02.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs55-plus/02.webp",
+   "sha256": "55357fd6face92dc543096487c87b0c040082800200cbaf57ed32bd9acc7af83",
+   "bytes": 252510
+  },
+  "/media/p2/models/changan-cs55-plus/03.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs55-plus/03.webp",
+   "sha256": "7ed9a2ae48b3cad3924a3a63701cb0e72b0db0f551ab5424865e991916bb2a0e",
+   "bytes": 282888
+  },
+  "/media/p2/models/changan-cs55-plus/04.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs55-plus/04.webp",
+   "sha256": "57561d666d23a757ff5b310824ab31a4047bda777c0862803786c9ca9e702903",
+   "bytes": 207106
+  },
+  "/media/p2/models/changan-cs55-plus/05.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs55-plus/05.webp",
+   "sha256": "27ba9492f4bd41829c7e0fb71553785146dd60a5f963d37dc729160b5b6e5530",
+   "bytes": 98652
+  },
+  "/media/p2/models/changan-cs55-plus/06.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs55-plus/06.webp",
+   "sha256": "58abf94ce71236559d575c9c51a980befc438be86fb03029304314accfb8c222",
+   "bytes": 115338
+  },
+  "/media/p2/models/changan-cs55-plus/07.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs55-plus/07.webp",
+   "sha256": "a906bd68bf8cd347d55e77148e748b6b9f4ba5d4b2981346622d72b6d3e765a9",
+   "bytes": 73736
+  },
+  "/media/p2/models/changan-cs55-plus/08.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs55-plus/08.webp",
+   "sha256": "9e724ce7249455c79aa62832df0735553d2bc901c62f1d1e8d38bfe721a49706",
+   "bytes": 53932
+  },
+  "/media/p2/models/changan-cs55-plus/09.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs55-plus/09.webp",
+   "sha256": "e819a009df2f2312172afc6a5871bd7829763b6af4601a34fa1e2004fb949f15",
+   "bytes": 129906
+  },
+  "/media/p2/models/changan-cs75-plus.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs75-plus.webp",
+   "sha256": "6b0e0aebbfa6fdb104224cea300c9525c91e95dc80919f8083d69dab0b3f0242",
+   "bytes": 39974
+  },
+  "/media/p2/models/changan-cs75-plus/01.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs75-plus/01.webp",
+   "sha256": "b9936099e07d9c48185bbbbf93d159657e2e62e0c422ad0056f19ff03671f00d",
+   "bytes": 84698
+  },
+  "/media/p2/models/changan-cs75-plus/02.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs75-plus/02.webp",
+   "sha256": "41adfbb7dd325517dc19ff556674e62ae0e7e27f5ddaaf5982d43a06994c93d3",
+   "bytes": 112098
+  },
+  "/media/p2/models/changan-cs75-plus/03.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs75-plus/03.webp",
+   "sha256": "ce2efe35da863f0d4ff33631214bdbf2d92679ffc2d60ad2e17f7512e3714768",
+   "bytes": 45124
+  },
+  "/media/p2/models/changan-cs75-plus/04.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs75-plus/04.webp",
+   "sha256": "c76692fe526c71c95203062d2c9dbdddb2d9c4e549eba57986f09862a2bf581a",
+   "bytes": 161662
+  },
+  "/media/p2/models/changan-cs75-plus/05.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs75-plus/05.webp",
+   "sha256": "bad987998ede1e9f7f78c27d291e865cfd0716a655055f229107342a28cb39e0",
+   "bytes": 45472
+  },
+  "/media/p2/models/changan-cs75-plus/06.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs75-plus/06.webp",
+   "sha256": "079812138975b9743e242c064ed4940c889b0370aa1add8e914c2783a93d16ec",
+   "bytes": 106270
+  },
+  "/media/p2/models/changan-cs75-plus/07.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs75-plus/07.webp",
+   "sha256": "ddccd6998e3377423cd4be4bd27858f305d5a5399ac7514bbf1facfb506b53e6",
+   "bytes": 110222
+  },
+  "/media/p2/models/changan-cs75-plus/08.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs75-plus/08.webp",
+   "sha256": "56c56a78b46838a0ae6ab9d1d4dd8d728e04128d35bf961904290d64300e5a34",
+   "bytes": 62460
+  },
+  "/media/p2/models/changan-cs75-plus/09.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs75-plus/09.webp",
+   "sha256": "179c96faaf9744319f1266fe786a8cfad19068f8e11872a5665993cd052a3575",
+   "bytes": 105712
+  },
+  "/media/p2/models/changan-cs75-plus/10.webp": {
+   "from_path": "vehicle-data/media/models/changan-cs75-plus/10.webp",
+   "sha256": "474d71da424b5254fd5515838619df77cc7a436efc613b4cd947df934d94ae94",
+   "bytes": 60074
+  },
+  "/media/p2/models/changan-eado-plus.webp": {
+   "from_path": "vehicle-data/media/models/changan-eado-plus.webp",
+   "sha256": "000fcc9cfbcb4b9d26a93c58348105469aca3c8443eec38a627f422f10eb7604",
+   "bytes": 59484
+  },
+  "/media/p2/models/changan-eado.webp": {
+   "from_path": "vehicle-data/media/models/changan-eado.webp",
+   "sha256": "1c994b78b596e087ea885f04f456c83e4f9728104bac3241858d7f238207854f",
+   "bytes": 197790
+  },
+  "/media/p2/models/changan-eado/01.webp": {
+   "from_path": "vehicle-data/media/models/changan-eado/01.webp",
+   "sha256": "2e7ef41d338b39491beedba1e5687e7c2dd8cfdc8f447ef4d0fc204e897c4d99",
+   "bytes": 102668
+  },
+  "/media/p2/models/changan-eado/02.webp": {
+   "from_path": "vehicle-data/media/models/changan-eado/02.webp",
+   "sha256": "21b2448b45260b81357fd73a800d08d96cd378137129fa4555cd51b8c1f3ea65",
+   "bytes": 74722
+  },
+  "/media/p2/models/changan-eado/03.webp": {
+   "from_path": "vehicle-data/media/models/changan-eado/03.webp",
+   "sha256": "932dc3706b508f3958f55b7190b6a6411d1e475e61e8d7fdd0ee3fe5b4d5d352",
+   "bytes": 139766
+  },
+  "/media/p2/models/changan-eado/04.webp": {
+   "from_path": "vehicle-data/media/models/changan-eado/04.webp",
+   "sha256": "929938d844d2d73a6730a5b9696597beba1140b48665b48d8d06a663804859c9",
+   "bytes": 92036
+  },
+  "/media/p2/models/changan-eado/05.webp": {
+   "from_path": "vehicle-data/media/models/changan-eado/05.webp",
+   "sha256": "52b6f9f64f16365b867721114caf2621fd1a5f4fe476bc1cc10870dc6fb9f5aa",
+   "bytes": 135586
+  },
+  "/media/p2/models/changan-eado/06.webp": {
+   "from_path": "vehicle-data/media/models/changan-eado/06.webp",
+   "sha256": "ca688bb3af924b7b902faad7a5214d34c01b509db45ec1ed2fb6638c1cd99b20",
+   "bytes": 77522
+  },
+  "/media/p2/models/changan-eado/07.webp": {
+   "from_path": "vehicle-data/media/models/changan-eado/07.webp",
+   "sha256": "e1ad96642024d691c20273e062f5bd8091c1f6006876f17ff027aa7c9ec831b3",
+   "bytes": 151368
+  },
+  "/media/p2/models/changan-eado/08.webp": {
+   "from_path": "vehicle-data/media/models/changan-eado/08.webp",
+   "sha256": "863ba2ef01475e48e4d9888217d1207f96f04f790bae52ed3d93c4ef70c52716",
+   "bytes": 36566
+  },
+  "/media/p2/models/changan-eado/09.webp": {
+   "from_path": "vehicle-data/media/models/changan-eado/09.webp",
+   "sha256": "bf389d66b26bb75cb89d6d586fa172a197510ddefc56801a8b395af3f9f46652",
+   "bytes": 179946
+  },
+  "/media/p2/models/changan-uni-t.webp": {
+   "from_path": "vehicle-data/media/models/changan-uni-t.webp",
+   "sha256": "4e53a9306a8d2b77f75670b9b16af1c1343df5b683f5b2e8624cb22675285711",
+   "bytes": 97588
+  },
+  "/media/p2/models/changan-uni-t/01.webp": {
+   "from_path": "vehicle-data/media/models/changan-uni-t/01.webp",
+   "sha256": "093d63d689887939a8bd1056471157a5cb8effc26180f1e952f67d9d2c3b1aa5",
+   "bytes": 185862
+  },
+  "/media/p2/models/changan-uni-t/02.webp": {
+   "from_path": "vehicle-data/media/models/changan-uni-t/02.webp",
+   "sha256": "45c4e396570e75007a374dc56f1414b8d491555c48b9d9a6e6ee0e06dfc282b6",
+   "bytes": 91378
+  },
+  "/media/p2/models/changan-uni-t/03.webp": {
+   "from_path": "vehicle-data/media/models/changan-uni-t/03.webp",
+   "sha256": "fc6152daea45038aae13b74f342282bccd032e19b673c92415eaf4495fadd175",
+   "bytes": 100922
+  },
+  "/media/p2/models/changan-uni-v.webp": {
+   "from_path": "vehicle-data/media/models/changan-uni-v.webp",
+   "sha256": "a06bfc5d56cdf71664560b858dfb7883d44fd06c1773de7f338ad4b2272a5b85",
+   "bytes": 71848
+  },
+  "/media/p2/models/changan-uni-v/01.webp": {
+   "from_path": "vehicle-data/media/models/changan-uni-v/01.webp",
+   "sha256": "7ebda80ee1b550917710eb7e0b9df8e36bc95c5fe450fb61ecd1bef82903941b",
+   "bytes": 54638
+  },
+  "/media/p2/models/changan-uni-v/03.webp": {
+   "from_path": "vehicle-data/media/models/changan-uni-v/03.webp",
+   "sha256": "93fc65d648222c85ef46559971eca8b30659c2366321ea1a692da03364efc10b",
+   "bytes": 60340
+  },
+  "/media/p2/models/changan-uni-v/04.webp": {
+   "from_path": "vehicle-data/media/models/changan-uni-v/04.webp",
+   "sha256": "90f923a54b7907c5a22080ced93dfd815da04ecc87e5e6cb0ff632969f543c34",
+   "bytes": 91658
+  },
+  "/media/p2/models/changan-uni-v/05.webp": {
+   "from_path": "vehicle-data/media/models/changan-uni-v/05.webp",
+   "sha256": "2a8f91e67524185fb85549db652f5e3dc1a208ffb045e7cc0a3748745969df88",
+   "bytes": 131652
+  },
+  "/media/p2/models/changan-uni-v/06.webp": {
+   "from_path": "vehicle-data/media/models/changan-uni-v/06.webp",
+   "sha256": "e146b75258579659eb5e68815b5aaf04e7d84659e44f02f838c5358eb310ca94",
+   "bytes": 197174
+  },
+  "/media/p2/models/changan-uni-v/07.webp": {
+   "from_path": "vehicle-data/media/models/changan-uni-v/07.webp",
+   "sha256": "38a521b678deab85a7e5d0ce44ebd19956be3f5f989b832bf1fcee3516057a29",
+   "bytes": 103828
+  },
+  "/media/p2/models/changan-uni-v/08.webp": {
+   "from_path": "vehicle-data/media/models/changan-uni-v/08.webp",
+   "sha256": "7a0da976d2bc153f5f5a219f9a3c2f07c815e64257dd4c98883a26d9af514d10",
+   "bytes": 126860
+  },
+  "/media/p2/models/changan-uni-v/09.webp": {
+   "from_path": "vehicle-data/media/models/changan-uni-v/09.webp",
+   "sha256": "7b137f8abdd9cb9116371de72333c3272e5302bebfa6f74bb3d488c46b02fba4",
+   "bytes": 57170
+  },
+  "/media/p2/models/chery-arrizo-5.webp": {
+   "from_path": "vehicle-data/media/models/chery-arrizo-5.webp",
+   "sha256": "8ea4042e9ec14530e7fa861bc9be30f5bc4a66221e923fd1e63359359273eecc",
+   "bytes": 69286
+  },
+  "/media/p2/models/chery-arrizo-5/02.webp": {
+   "from_path": "vehicle-data/media/models/chery-arrizo-5/02.webp",
+   "sha256": "8ee27761609b043cb3f9abedbe255fe7529fc68373a0fe01688f73a445d197b1",
+   "bytes": 75046
+  },
+  "/media/p2/models/chery-arrizo-6-gt.webp": {
+   "from_path": "vehicle-data/media/models/chery-arrizo-6-gt.webp",
+   "sha256": "e4a57c783844abb408698483f226f8e56f1861b5e24f8377878ab652884be04f",
+   "bytes": 79280
+  },
+  "/media/p2/models/chery-arrizo-6-gt/01.webp": {
+   "from_path": "vehicle-data/media/models/chery-arrizo-6-gt/01.webp",
+   "sha256": "31efc7ca060ed502adde3b373b9192e53cfbef54d214e88b637f66d97d4a7454",
+   "bytes": 211308
+  },
+  "/media/p2/models/chery-arrizo-6-gt/02.webp": {
+   "from_path": "vehicle-data/media/models/chery-arrizo-6-gt/02.webp",
+   "sha256": "cc23fadb558940c44b4ae88718afa5714090dfaaed8c88ac84449d6edc1d81b9",
+   "bytes": 181748
+  },
+  "/media/p2/models/chery-arrizo-6-gt/03.webp": {
+   "from_path": "vehicle-data/media/models/chery-arrizo-6-gt/03.webp",
+   "sha256": "2b24ca2e3356d695fe46c172fc80ae627ef7a392c0ea971e0be92bad3b3f3a13",
+   "bytes": 112636
+  },
+  "/media/p2/models/chery-arrizo-8.webp": {
+   "from_path": "vehicle-data/media/models/chery-arrizo-8.webp",
+   "sha256": "810eddfe10e1625182449679c6405205dc3480a920e3043fddc7d06b894f3226",
+   "bytes": 125896
+  },
+  "/media/p2/models/chery-arrizo-8/01.webp": {
+   "from_path": "vehicle-data/media/models/chery-arrizo-8/01.webp",
+   "sha256": "acca960d3d224d216e8cbff967435f84d597c99685b87228093cd0cb40bcc5eb",
+   "bytes": 76040
+  },
+  "/media/p2/models/chery-eq7.webp": {
+   "from_path": "vehicle-data/media/models/chery-eq7.webp",
+   "sha256": "bc50dd51845cf711bf4b78a66f455ef4d51250d1e19646a0bc5ca2b34aa87a37",
+   "bytes": 75174
+  },
+  "/media/p2/models/chery-eq7/01.webp": {
+   "from_path": "vehicle-data/media/models/chery-eq7/01.webp",
+   "sha256": "25958960ac8d8dd34c59083473bf366876f4b39afe28b693731746dffd8144b9",
+   "bytes": 31756
+  },
+  "/media/p2/models/chery-eq7/02.webp": {
+   "from_path": "vehicle-data/media/models/chery-eq7/02.webp",
+   "sha256": "22558b86a44dbc41462711cfbfd5e759133f089d0eb6e235be1c250e70fb0500",
+   "bytes": 133910
+  },
+  "/media/p2/models/chery-tiggo-4-pro.webp": {
+   "from_path": "vehicle-data/media/models/chery-tiggo-4-pro.webp",
+   "sha256": "9e1f26e3977315a5c8d2016905edf38aefaf2b8ec8dc7e1bc33bfb404220c4f5",
+   "bytes": 68928
+  },
+  "/media/p2/models/chery-tiggo-4-pro/01.webp": {
+   "from_path": "vehicle-data/media/models/chery-tiggo-4-pro/01.webp",
+   "sha256": "88cdbaf6db599fd3abd28a01e8d340448a54ed9b4ace3f37eb74bed5f1f8ed1c",
+   "bytes": 78626
+  },
+  "/media/p2/models/chery-tiggo-7-pro/01.webp": {
+   "from_path": "vehicle-data/media/models/chery-tiggo-7-pro/01.webp",
+   "sha256": "aaff2ee332571f60bcb7c97b5575a1a74d3c96ffcda55ffddda43c783c2d61e1",
+   "bytes": 167760
+  },
+  "/media/p2/models/chery-tiggo-7-pro/02.webp": {
+   "from_path": "vehicle-data/media/models/chery-tiggo-7-pro/02.webp",
+   "sha256": "46e47b3b220612b3e749a3dd9b3475ea9393b0b36985f30c1b455e6c675d222d",
+   "bytes": 93616
+  },
+  "/media/p2/models/chery-tiggo-7-pro/03.webp": {
+   "from_path": "vehicle-data/media/models/chery-tiggo-7-pro/03.webp",
+   "sha256": "160d72a94f0121b41b94eccf83c7ca6da099133da91bc6ef005f3a6246110a70",
+   "bytes": 78930
+  },
+  "/media/p2/models/chery-tiggo-7-pro/04.webp": {
+   "from_path": "vehicle-data/media/models/chery-tiggo-7-pro/04.webp",
+   "sha256": "a41459e7bae0224c2098a4c60db7487688ce840a4df529909ce66352a8cff9ec",
+   "bytes": 89828
+  },
+  "/media/p2/models/chery-tiggo-7-pro/05.webp": {
+   "from_path": "vehicle-data/media/models/chery-tiggo-7-pro/05.webp",
+   "sha256": "3ac0dd1daa67391e974cafe12c6478460d80920c5c532d7f64f4d9ccc4ed8dd5",
+   "bytes": 60092
+  },
+  "/media/p2/models/chery-tiggo-7-pro/06.webp": {
+   "from_path": "vehicle-data/media/models/chery-tiggo-7-pro/06.webp",
+   "sha256": "b9246d7857099cc9c5c26d1791fb80ebe3c4b228cfa3b4bebf373b60cec45151",
+   "bytes": 55648
+  },
+  "/media/p2/models/chery-tiggo-7-pro/07.webp": {
+   "from_path": "vehicle-data/media/models/chery-tiggo-7-pro/07.webp",
+   "sha256": "89002da8c2c55b56eb9149e99184e971ca51ab198ba82356087086c704f72321",
+   "bytes": 71762
+  },
+  "/media/p2/models/chery-tiggo-7-pro/08.webp": {
+   "from_path": "vehicle-data/media/models/chery-tiggo-7-pro/08.webp",
+   "sha256": "d09c3fd852dfd9ab79cdc92469dec134817eee88a3adb4217174233671bd6cd0",
+   "bytes": 55222
+  },
+  "/media/p2/models/chery-tiggo-8-pro-max.webp": {
+   "from_path": "vehicle-data/media/models/chery-tiggo-8-pro-max.webp",
+   "sha256": "02b8de02080e35ace7bdc391c157dc1dc198abbd4b30c06b922d3151f722bf38",
+   "bytes": 96222
+  },
+  "/media/p2/models/chery-tiggo-8-pro-max/01.webp": {
+   "from_path": "vehicle-data/media/models/chery-tiggo-8-pro-max/01.webp",
+   "sha256": "d404178418fab9e3bb27eba70a8f13b9ea126d1d08731c2ba5d2cdc398b2a99c",
+   "bytes": 79930
+  },
+  "/media/p2/models/chery-tiggo-8-pro-max/02.webp": {
+   "from_path": "vehicle-data/media/models/chery-tiggo-8-pro-max/02.webp",
+   "sha256": "6525f2571276b2af05267217ca3d663d3e219b4d937656dfef418711d1879fa5",
+   "bytes": 55322
+  },
+  "/media/p2/models/chery-tiggo-8.webp": {
+   "from_path": "vehicle-data/media/models/chery-tiggo-8.webp",
+   "sha256": "ae0f15270c2bbfdb0175d5de69e732adde4fc3c1adb63111bf87ca8ef965ebe1",
+   "bytes": 112550
+  },
+  "/media/p2/models/chery-tiggo-8/01.webp": {
+   "from_path": "vehicle-data/media/models/chery-tiggo-8/01.webp",
+   "sha256": "90d2e0122b04432e07a7e772635dfd29130f69e501370ca9fcba35f8ff7d9dc2",
+   "bytes": 94890
+  },
+  "/media/p2/models/chery-tiggo-9.webp": {
+   "from_path": "vehicle-data/media/models/chery-tiggo-9.webp",
+   "sha256": "b0c349428963d0a04f8709a8b23b87ac04bc94dd7b4ae94feb4acbe635006edb",
+   "bytes": 101804
+  },
+  "/media/p2/models/chery-tiggo-9/01.webp": {
+   "from_path": "vehicle-data/media/models/chery-tiggo-9/01.webp",
+   "sha256": "752073faef7171b4f7445814b6a9276e346451fed3f628dbc5e3463e0a93ad0b",
+   "bytes": 117460
+  },
+  "/media/p2/models/chery-tiggo-9/02.webp": {
+   "from_path": "vehicle-data/media/models/chery-tiggo-9/02.webp",
+   "sha256": "c84405d3fc0b71c0d2161ecbb5398e117e6c5f3de41f1831489f8c97c87ba2ba",
+   "bytes": 61630
+  },
+  "/media/p2/models/chevrolet-captiva-ev.webp": {
+   "from_path": "vehicle-data/media/models/chevrolet-captiva-ev.webp",
+   "sha256": "c167c3989747277bca0ba1ff7009a83420d2eb8646f08d193d19ef99ca0ade4d",
+   "bytes": 166654
+  },
+  "/media/p2/models/chevrolet-captiva-ev/02.webp": {
+   "from_path": "vehicle-data/media/models/chevrolet-captiva-ev/02.webp",
+   "sha256": "4ef6849dd898d2dccaf862c30e334c05aa98e265e240586f013f657ac791fe61",
+   "bytes": 131354
+  },
+  "/media/p2/models/chevrolet-captiva-ev/03.webp": {
+   "from_path": "vehicle-data/media/models/chevrolet-captiva-ev/03.webp",
+   "sha256": "ea75db6a0b4a87862447631ad9d0dd6e5cfd872d957711446a2ded9d2887c42c",
+   "bytes": 76782
+  },
+  "/media/p2/models/chevrolet-captiva-ev/04.webp": {
+   "from_path": "vehicle-data/media/models/chevrolet-captiva-ev/04.webp",
+   "sha256": "65d25bdf7b6abfb6a740517ee7d27eb9e127dfade7fa28f6d0425a6a888e5964",
+   "bytes": 207904
+  },
+  "/media/p2/models/chevrolet-captiva-ev/05.webp": {
+   "from_path": "vehicle-data/media/models/chevrolet-captiva-ev/05.webp",
+   "sha256": "8392983125f86d798ec5fb7b0f8131a86ae887ff1a2d5cf7396c13defa44b446",
+   "bytes": 302982
+  },
+  "/media/p2/models/chevrolet-captiva-ev/06.webp": {
+   "from_path": "vehicle-data/media/models/chevrolet-captiva-ev/06.webp",
+   "sha256": "c0fb6ed69329671e4e8e8e783557a8c8bef4d4bbde33ca1888d0add4c57debd1",
+   "bytes": 158014
+  },
+  "/media/p2/models/chevrolet-captiva-ev/07.webp": {
+   "from_path": "vehicle-data/media/models/chevrolet-captiva-ev/07.webp",
+   "sha256": "00ce65dde33ba9789dbf06cc3ce366064b3b5025e3ea229cdc1c3dd7d6a03fab",
+   "bytes": 188086
+  },
+  "/media/p2/models/chevrolet-captiva-ev/08.webp": {
+   "from_path": "vehicle-data/media/models/chevrolet-captiva-ev/08.webp",
+   "sha256": "e0cac4c111f912760e917e3443e0f4ae5bfe7cc1a9b61acf7a5ae9d6461a7885",
+   "bytes": 436724
+  },
+  "/media/p2/models/chevrolet-captiva-ev/09.webp": {
+   "from_path": "vehicle-data/media/models/chevrolet-captiva-ev/09.webp",
+   "sha256": "fc9bbb0f09228a0b1d8e8e6e73059368afc907172a34f24790763feafcedf3cb",
+   "bytes": 173414
+  },
+  "/media/p2/models/chevrolet-captiva-ev/10.webp": {
+   "from_path": "vehicle-data/media/models/chevrolet-captiva-ev/10.webp",
+   "sha256": "6fee51ddf16cfe0a964ebb8a0b1402dcbbe17dfe34f3c6e5b4376b70ed9f1c72",
+   "bytes": 155648
+  },
+  "/media/p2/models/chevrolet-captiva-ev/11.webp": {
+   "from_path": "vehicle-data/media/models/chevrolet-captiva-ev/11.webp",
+   "sha256": "d32e8b30bce009c40c61d9422400a038ce651d66e48842579fb1114bc41d5023",
+   "bytes": 155200
+  },
+  "/media/p2/models/chevrolet-captiva-ev/12.webp": {
+   "from_path": "vehicle-data/media/models/chevrolet-captiva-ev/12.webp",
+   "sha256": "98985d58eb130c4a2dea341a253a78e9485a384bbabde049839a97db319948d9",
+   "bytes": 179730
+  },
+  "/media/p2/models/chevrolet-captiva-ev/13.webp": {
+   "from_path": "vehicle-data/media/models/chevrolet-captiva-ev/13.webp",
+   "sha256": "332135d90080b25900fa2f3839d3e61733598a9a5157a16405aaa18d72a1f8e1",
+   "bytes": 161582
+  },
+  "/media/p2/models/chevrolet-captiva-ev/14.webp": {
+   "from_path": "vehicle-data/media/models/chevrolet-captiva-ev/14.webp",
+   "sha256": "ff8671b3a8d6fffa625779b653925f90f8ba2ccc852a8c7f9af62262b1a40c13",
+   "bytes": 131206
+  },
+  "/media/p2/models/chevrolet-captiva-ev/15.webp": {
+   "from_path": "vehicle-data/media/models/chevrolet-captiva-ev/15.webp",
+   "sha256": "3594aec1ebcac69f98d1cb8fdd55233031d653192c18750997b7d33bf82fc796",
+   "bytes": 37838
+  },
+  "/media/p2/models/chevrolet-optra.webp": {
+   "from_path": "vehicle-data/media/models/chevrolet-optra.webp",
+   "sha256": "c49a8e666ab753f83e68f2987be65d72a6f8d2652a31d78dbb95758607f38912",
+   "bytes": 59558
+  },
+  "/media/p2/models/chevrolet-optra/01.webp": {
+   "from_path": "vehicle-data/media/models/chevrolet-optra/01.webp",
+   "sha256": "bfd144136c7764e8094bc37d3cd011b6d55b061dadc36b5c169548ecfa056c41",
+   "bytes": 66232
+  },
+  "/media/p2/models/chevrolet-optra/02.webp": {
+   "from_path": "vehicle-data/media/models/chevrolet-optra/02.webp",
+   "sha256": "22cff6169c0ad3f284ff69564271335a34697829352c2c8401ddbded75026206",
+   "bytes": 61994
+  },
+  "/media/p2/models/chevrolet-optra/03.webp": {
+   "from_path": "vehicle-data/media/models/chevrolet-optra/03.webp",
+   "sha256": "1949bb49ff70140edc438cb795bbf6fd2da8a437dc63fc3f51935d8deba45b09",
+   "bytes": 404420
+  },
+  "/media/p2/models/citroen-c3.webp": {
+   "from_path": "vehicle-data/media/models/citroen-c3.webp",
+   "sha256": "cac4bced73385d26a32f89317d77b36892e2f691e9f726ed627be36337c529b1",
+   "bytes": 587598
+  },
+  "/media/p2/models/deepal-g318.webp": {
+   "from_path": "vehicle-data/media/models/deepal-g318.webp",
+   "sha256": "8c48c507df1bfc51bb0599ba192fa183474e7920bcc0d980f034d236ffe02e79",
+   "bytes": 77432
+  },
+  "/media/p2/models/deepal-g318/01.webp": {
+   "from_path": "vehicle-data/media/models/deepal-g318/01.webp",
+   "sha256": "0bd14290f00ce87279a94b2dbb008acf4c05535191e6d9d7cf71165fc8bbe4a5",
+   "bytes": 73288
+  },
+  "/media/p2/models/deepal-g318/02.webp": {
+   "from_path": "vehicle-data/media/models/deepal-g318/02.webp",
+   "sha256": "1fc6834f93852249e1793d0ac5d395ed46de18b17722fc6b8c5e607fbcfb66ba",
+   "bytes": 161456
+  },
+  "/media/p2/models/fiat-500x.webp": {
+   "from_path": "vehicle-data/media/models/fiat-500x.webp",
+   "sha256": "a2e359983cdb763d4d8926600ea25a3fb11f47b80fa2beedb4384dd7f43a7e96",
+   "bytes": 153098
+  },
+  "/media/p2/models/gac-gs4-max.webp": {
+   "from_path": "vehicle-data/media/models/gac-gs4-max.webp",
+   "sha256": "203c45fd8387e2a3e761642b38f92e0bf6f56dce32f21d5a4f136c7301f136ad",
+   "bytes": 114280
+  },
+  "/media/p2/models/gac-gs4-max/01.webp": {
+   "from_path": "vehicle-data/media/models/gac-gs4-max/01.webp",
+   "sha256": "98cfeed71033731199cc19eb892c4e941ddc7b8b1ed2e9e5037e00b5355bcf20",
+   "bytes": 56514
+  },
+  "/media/p2/models/gac-gs4-max/02.webp": {
+   "from_path": "vehicle-data/media/models/gac-gs4-max/02.webp",
+   "sha256": "cdf9834abb59496a7d9fc101e25f59952b5abc29f95cf911b2969c6bcfcfad6c",
+   "bytes": 61612
+  },
+  "/media/p2/models/gac-gs4-max/03.webp": {
+   "from_path": "vehicle-data/media/models/gac-gs4-max/03.webp",
+   "sha256": "19ebc14595be895405a9306325b40a2d22571ff11a06dd0014e1306fe1adb7e0",
+   "bytes": 70238
+  },
+  "/media/p2/models/geely-ex5-em-i.webp": {
+   "from_path": "vehicle-data/media/models/geely-ex5-em-i.webp",
+   "sha256": "b67a7e8b90a8af01e24570580fe4af8557852b643ec1964e43c74e95372b57d0",
+   "bytes": 93812
+  },
+  "/media/p2/models/geely-ex5-em-i/01.webp": {
+   "from_path": "vehicle-data/media/models/geely-ex5-em-i/01.webp",
+   "sha256": "991d5e8f28647f1cf46fc357aec57c1f70c86a9f08c98ab0d26ab96a8436bb1d",
+   "bytes": 159538
+  },
+  "/media/p2/models/geely-ex5-em-i/02.webp": {
+   "from_path": "vehicle-data/media/models/geely-ex5-em-i/02.webp",
+   "sha256": "33a91726f3a6c0a51d47cc2c3797266981e6bda0fd78fe264ea728f49abf9c6e",
+   "bytes": 85828
+  },
+  "/media/p2/models/geely-ex5-em-i/03.webp": {
+   "from_path": "vehicle-data/media/models/geely-ex5-em-i/03.webp",
+   "sha256": "afdf8f9af7e20489859d78dc41caf9c28cff39789907305fa8205aaf858c396f",
+   "bytes": 50078
+  },
+  "/media/p2/models/honda-zr-v.webp": {
+   "from_path": "vehicle-data/media/models/honda-zr-v.webp",
+   "sha256": "d0278f4220589ae979ccc226bdad89db49b392e2b7f0d1b4559f6204bce777d6",
+   "bytes": 132000
+  },
+  "/media/p2/models/honda-zr-v/01.webp": {
+   "from_path": "vehicle-data/media/models/honda-zr-v/01.webp",
+   "sha256": "c0cfd4d41e638738b4d684a5f09e4debbe698a860abc08d7725a192ec965666b",
+   "bytes": 189964
+  },
+  "/media/p2/models/honda-zr-v/02.webp": {
+   "from_path": "vehicle-data/media/models/honda-zr-v/02.webp",
+   "sha256": "8ea70429c6b198defcf7fe4684ad68ccee8b3fcacf3412683f90063a0b50ce7a",
+   "bytes": 201014
+  },
+  "/media/p2/models/honda-zr-v/03.webp": {
+   "from_path": "vehicle-data/media/models/honda-zr-v/03.webp",
+   "sha256": "3e6c045f80710adb498b1d8a40ded198390f7633fa3bb14c15148bd1d4ce8449",
+   "bytes": 133764
+  },
+  "/media/p2/models/hyundai-elantra.webp": {
+   "from_path": "vehicle-data/media/models/hyundai-elantra.webp",
+   "sha256": "b98913b2c81349eb56e227d0bd022b479bbceb533d4a856d7bea07cd8f058a9d",
+   "bytes": 47168
+  },
+  "/media/p2/models/hyundai-elantra/01.webp": {
+   "from_path": "vehicle-data/media/models/hyundai-elantra/01.webp",
+   "sha256": "cf70128ce183d5a7c049a22e3b9c8a49c115774349648a0930db3eb636fd39f2",
+   "bytes": 119154
+  },
+  "/media/p2/models/hyundai-elantra/02.webp": {
+   "from_path": "vehicle-data/media/models/hyundai-elantra/02.webp",
+   "sha256": "403719cb399c13988e8e86e93fe9bbd9cfa46c326c73cb932b5dffd3c8458b62",
+   "bytes": 57394
+  },
+  "/media/p2/models/hyundai-elantra/03.webp": {
+   "from_path": "vehicle-data/media/models/hyundai-elantra/03.webp",
+   "sha256": "eb0806e0a096869fd678b52e5ad55b9f388285d1d905dc9281bb25bbb5f7fc43",
+   "bytes": 113570
+  },
+  "/media/p2/models/hyundai-elantra/04.webp": {
+   "from_path": "vehicle-data/media/models/hyundai-elantra/04.webp",
+   "sha256": "d7793c97fbe48df75b8cafc12483ec76608211899966e668e15b67a5cddcec29",
+   "bytes": 76158
+  },
+  "/media/p2/models/hyundai-elantra/05.webp": {
+   "from_path": "vehicle-data/media/models/hyundai-elantra/05.webp",
+   "sha256": "ca92c76fc9d415641c759d8904f40b4fd9594f37d9c153dc09a33a1aa52531e6",
+   "bytes": 82514
+  },
+  "/media/p2/models/hyundai-elantra/06.webp": {
+   "from_path": "vehicle-data/media/models/hyundai-elantra/06.webp",
+   "sha256": "c8a1d9485f621c3ce17d1baf7b2ac5c551a27ca6ecbdb2eb18ad9bd701ae3d3b",
+   "bytes": 67992
+  },
+  "/media/p2/models/hyundai-elantra/07.webp": {
+   "from_path": "vehicle-data/media/models/hyundai-elantra/07.webp",
+   "sha256": "e5c05a0041c316116af6a4c6098a6155788a026fd8127d22023254a8f9f84d0a",
+   "bytes": 101860
+  },
+  "/media/p2/models/hyundai-tucson/01.webp": {
+   "from_path": "vehicle-data/media/models/hyundai-tucson/01.webp",
+   "sha256": "a80f68d936cea7da12f794fe181497be2930a034f19e8319b8bb7aae8f3454ee",
+   "bytes": 96582
+  },
+  "/media/p2/models/hyundai-tucson/02.webp": {
+   "from_path": "vehicle-data/media/models/hyundai-tucson/02.webp",
+   "sha256": "2690a3a7211cbb7aae67ba1d0c3ee62fa777adbe76a8301664c1b083da640410",
+   "bytes": 45408
+  },
+  "/media/p2/models/jetour-dashing.webp": {
+   "from_path": "vehicle-data/media/models/jetour-dashing.webp",
+   "sha256": "bbb0bf42288b19d0a1eeaa15a9b8d2972cbfa2ffe3d27232d7bfccf2fe4afbee",
+   "bytes": 89398
+  },
+  "/media/p2/models/jetour-dashing/01.webp": {
+   "from_path": "vehicle-data/media/models/jetour-dashing/01.webp",
+   "sha256": "cb2f9645d9afe28385a8e37d92db59c4377cf2a2af0bb324ed7618056044f6f6",
+   "bytes": 84052
+  },
+  "/media/p2/models/jetour-dashing/02.webp": {
+   "from_path": "vehicle-data/media/models/jetour-dashing/02.webp",
+   "sha256": "293c73c5b44b18cfc208a823e78be75daf1ffe57a12f34dce51ffb490bf58782",
+   "bytes": 94132
+  },
+  "/media/p2/models/jetour-t1.webp": {
+   "from_path": "vehicle-data/media/models/jetour-t1.webp",
+   "sha256": "28c607c019b09cd15969fbebb4c6fcdaed2a391eacccf0a399f1025ccf26ec9a",
+   "bytes": 452772
+  },
+  "/media/p2/models/jetour-t1/01.webp": {
+   "from_path": "vehicle-data/media/models/jetour-t1/01.webp",
+   "sha256": "85608224ad0020e34266bc1e842f21ed4f28a488f26c4e05229e6a5eda7e8da2",
+   "bytes": 186492
+  },
+  "/media/p2/models/jetour-t1/02.webp": {
+   "from_path": "vehicle-data/media/models/jetour-t1/02.webp",
+   "sha256": "b33f30e49c7777231fde395900a5589b84d804bf9f9c79a4f1a2ca6d2ffba310",
+   "bytes": 128676
+  },
+  "/media/p2/models/jetour-t1/03.webp": {
+   "from_path": "vehicle-data/media/models/jetour-t1/03.webp",
+   "sha256": "83be549ee69654145ebe6408842ac0818711733e5663da90c1fbdc53efdb182d",
+   "bytes": 106942
+  },
+  "/media/p2/models/jetour-t2.webp": {
+   "from_path": "vehicle-data/media/models/jetour-t2.webp",
+   "sha256": "c2e15ef2a207a59fa1efac189f1ada2e2b4a0f51eb35e6900e60ac88df960c4a",
+   "bytes": 467392
+  },
+  "/media/p2/models/jetour-t2/01.webp": {
+   "from_path": "vehicle-data/media/models/jetour-t2/01.webp",
+   "sha256": "dfc5b9d615b962d7d8c724951cec92546bf2d5522b52955dd14b127a22979357",
+   "bytes": 280076
+  },
+  "/media/p2/models/jetour-x70-plus-ckd.webp": {
+   "from_path": "vehicle-data/media/models/jetour-x70-plus-ckd.webp",
+   "sha256": "edec48700faa8dbea7ee97d2188f79d76230cd90b171783e08b9f87e1c9b1cc6",
+   "bytes": 222696
+  },
+  "/media/p2/models/jetour-x70-plus-ckd/01.webp": {
+   "from_path": "vehicle-data/media/models/jetour-x70-plus-ckd/01.webp",
+   "sha256": "a3ddd64460ec11b235722f8f3abc0d3c3e7ab30180fbc051b4610cf010075253",
+   "bytes": 84168
+  },
+  "/media/p2/models/jetour-x70-plus-ckd/02.webp": {
+   "from_path": "vehicle-data/media/models/jetour-x70-plus-ckd/02.webp",
+   "sha256": "002f0a0d2c81b75edaae50f15a6035162a78f531f96269ca387f7276dfb5fa01",
+   "bytes": 39642
+  },
+  "/media/p2/models/jetour-x70-plus-ckd/03.webp": {
+   "from_path": "vehicle-data/media/models/jetour-x70-plus-ckd/03.webp",
+   "sha256": "f968a65a5023b8608472c4874b468f022fd8ac418a4b5923b8d8bad1932e0e5a",
+   "bytes": 55306
+  },
+  "/media/p2/models/jetour-x70.webp": {
+   "from_path": "vehicle-data/media/models/jetour-x70.webp",
+   "sha256": "b716c642a067a2f24d772a1e7879d6bb2438d0782c06393a67618b62dd2382e5",
+   "bytes": 96518
+  },
+  "/media/p2/models/jetour-x70/01.webp": {
+   "from_path": "vehicle-data/media/models/jetour-x70/01.webp",
+   "sha256": "a64effe83be4fa196e724324fe1255ede206c95b85f494d6ec8b1f1affc75da8",
+   "bytes": 259728
+  },
+  "/media/p2/models/jetour-x90-plus/01.webp": {
+   "from_path": "vehicle-data/media/models/jetour-x90-plus/01.webp",
+   "sha256": "68922267c3ff63b94402020e17508c98d97f9f8f45dfd50ac80c31c2bd7cfe65",
+   "bytes": 74652
+  },
+  "/media/p2/models/jetour-x90-plus/02.webp": {
+   "from_path": "vehicle-data/media/models/jetour-x90-plus/02.webp",
+   "sha256": "6865700011a594552330b4e3e210dc97c45158597805fe22a802198f26933e59",
+   "bytes": 21276
+  },
+  "/media/p2/models/jetour-x90-plus/03.webp": {
+   "from_path": "vehicle-data/media/models/jetour-x90-plus/03.webp",
+   "sha256": "f3f5303066314b5dd7d6d3c6848ef37323d88131696995f7768bf7ec8b0efab6",
+   "bytes": 58806
+  },
+  "/media/p2/models/jetour-x90-plus/04.webp": {
+   "from_path": "vehicle-data/media/models/jetour-x90-plus/04.webp",
+   "sha256": "7980f7e520da95f4fa959b8d5f579db43c08423081d3130bc6b2757bc94371d4",
+   "bytes": 43078
+  },
+  "/media/p2/models/jetour-x90-plus/05.webp": {
+   "from_path": "vehicle-data/media/models/jetour-x90-plus/05.webp",
+   "sha256": "f81b729e1715e28ab6672f6e7b162cb8755c3a374c52d3228bd5962915177402",
+   "bytes": 77020
+  },
+  "/media/p2/models/jetour-x90-plus/06.webp": {
+   "from_path": "vehicle-data/media/models/jetour-x90-plus/06.webp",
+   "sha256": "98bca48cdabbff172e9d0f2bc215ba5568cc186cfce8aaea980047ff710663b0",
+   "bytes": 118734
+  },
+  "/media/p2/models/jetour-x90-plus/07.webp": {
+   "from_path": "vehicle-data/media/models/jetour-x90-plus/07.webp",
+   "sha256": "e0c68a40870d79d7cb6d8763ce377637e39d881d07817440074f5a15347e0f90",
+   "bytes": 89304
+  },
+  "/media/p2/models/kia-ev3.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev3.webp",
+   "sha256": "0a34cb9ed6cbd1da53af6f3f5c2f1fa3c26be460f0b84a4a9971346c02ed8429",
+   "bytes": 72982
+  },
+  "/media/p2/models/kia-ev3/01.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev3/01.webp",
+   "sha256": "b9418bd24b703114c30ae8a73a31b5779286d0c1eb98790deb3e986a48a8ed7d",
+   "bytes": 124868
+  },
+  "/media/p2/models/kia-ev3/02.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev3/02.webp",
+   "sha256": "9a3dc0be3eef64000d75df0450948d00cedcc02d01b780d1a40ca49de7e75ebc",
+   "bytes": 395632
+  },
+  "/media/p2/models/kia-ev3/03.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev3/03.webp",
+   "sha256": "97fa4fe77fa5c047c214fe69f3e24944755c9f08a6325ecc76ecd65607667ba4",
+   "bytes": 321516
+  },
+  "/media/p2/models/kia-ev3/04.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev3/04.webp",
+   "sha256": "9903f7ac426786fb6fec4dbabec4eebd16d5f91e79683e67e218b93b80223c27",
+   "bytes": 230598
+  },
+  "/media/p2/models/kia-ev3/05.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev3/05.webp",
+   "sha256": "db95b4954f54cb3a813d7fd78c80781a913b0499402fa191f8694b96fcb47f58",
+   "bytes": 147024
+  },
+  "/media/p2/models/kia-ev3/06.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev3/06.webp",
+   "sha256": "6fb9a5b9d87cd9039dac165321186ba5af285242a07393678770dfb4f944b885",
+   "bytes": 27978
+  },
+  "/media/p2/models/kia-ev5.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev5.webp",
+   "sha256": "8324e113faa8db684cf44170710a1013013c16e44cd0515a8056eede4d3a01e8",
+   "bytes": 58008
+  },
+  "/media/p2/models/kia-ev5/01.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev5/01.webp",
+   "sha256": "7df522f7ed42df9758fc66e8fd4d04eabcdcf1c7173f1a474b5fa7205bd08ac2",
+   "bytes": 64940
+  },
+  "/media/p2/models/kia-ev5/02.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev5/02.webp",
+   "sha256": "9040f1302814ef43677d0ce98c425d3ba4c42f3de38d43d6416c25d2650f3a98",
+   "bytes": 398784
+  },
+  "/media/p2/models/kia-ev5/03.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev5/03.webp",
+   "sha256": "10f597e3a9dd294733b9094e1f1138f6a449d1aa66eb89265a9666b4d137a4ea",
+   "bytes": 446680
+  },
+  "/media/p2/models/kia-ev5/04.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev5/04.webp",
+   "sha256": "a3afea7b3af38a0dbbe487268d7584a17f387d5299f4cfa084a6d80c04fe132a",
+   "bytes": 68524
+  },
+  "/media/p2/models/kia-ev6.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev6.webp",
+   "sha256": "21a7786997d5dcd1e33f53c821b665f44eb5bbac5cefbe3a9c51332cd81f9977",
+   "bytes": 86522
+  },
+  "/media/p2/models/kia-ev6/01.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev6/01.webp",
+   "sha256": "73df607d246ee7c7390336d3eff33beb6b6f1a524916df360152b524d396eab1",
+   "bytes": 248304
+  },
+  "/media/p2/models/kia-ev6/02.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev6/02.webp",
+   "sha256": "9cf909706143fcba81ccf56f885b675b3f85e53efe5c686dc433221cc349ab01",
+   "bytes": 287982
+  },
+  "/media/p2/models/kia-ev6/03.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev6/03.webp",
+   "sha256": "1c535bf3cbc6d635ea35f38154551b820a15d08bb03e4bd3531ad05b92403bd3",
+   "bytes": 328276
+  },
+  "/media/p2/models/kia-ev6/04.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev6/04.webp",
+   "sha256": "4e182079625448efbfdf22bf2dc39b4be91d3e50e4074dda5990adebaacab107",
+   "bytes": 234694
+  },
+  "/media/p2/models/kia-ev6/05.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev6/05.webp",
+   "sha256": "69a34ddccf80c94a9336ed703178abfab5d82840f8b76992e2b0caaaf06e46d1",
+   "bytes": 251620
+  },
+  "/media/p2/models/kia-ev6/06.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev6/06.webp",
+   "sha256": "bb52446a69d3114190f1d904f1d90131908746c03ae853a002d0dbd70852d953",
+   "bytes": 287324
+  },
+  "/media/p2/models/kia-ev6/07.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev6/07.webp",
+   "sha256": "25fb196e48d426552e0d4faf638ccbca62e5161f9d658ec6400ea1be1a64a6a7",
+   "bytes": 64026
+  },
+  "/media/p2/models/kia-ev9.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev9.webp",
+   "sha256": "f532df5e1b9db493cbd87397d000782dcb15c467368fe9a01842dcd027b85d75",
+   "bytes": 484324
+  },
+  "/media/p2/models/kia-ev9/01.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev9/01.webp",
+   "sha256": "d12a2e654c107620d0590f6e47bef55fe24e782ed4a063d5284db4b998e1408c",
+   "bytes": 462952
+  },
+  "/media/p2/models/kia-ev9/02.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev9/02.webp",
+   "sha256": "2515ed66992185f63b9bce6e0b32e1f09c7af39fd68a5b404b4fdf4153063382",
+   "bytes": 204392
+  },
+  "/media/p2/models/kia-ev9/03.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev9/03.webp",
+   "sha256": "a8c65100dba836a166a80420b8c565bd4c1320d312d7bdc132225b5f87feb16c",
+   "bytes": 347966
+  },
+  "/media/p2/models/kia-ev9/04.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev9/04.webp",
+   "sha256": "b4e87a716f2815cb5330b3f9c74ac9d3cb1e6c4878ef3b7e6bc8d2d12052a344",
+   "bytes": 206178
+  },
+  "/media/p2/models/kia-ev9/05.webp": {
+   "from_path": "vehicle-data/media/models/kia-ev9/05.webp",
+   "sha256": "623e8d792abd729f4de7f86cacd7e5d94fa1a962bd3a6c159fc6a4d8fe47e604",
+   "bytes": 79344
+  },
+  "/media/p2/models/kia-k4.webp": {
+   "from_path": "vehicle-data/media/models/kia-k4.webp",
+   "sha256": "9f2f392e1df033cd82f9a451c06cec9d35a77f0429dfc5e5416cddedb451d526",
+   "bytes": 230558
+  },
+  "/media/p2/models/kia-k4/01.webp": {
+   "from_path": "vehicle-data/media/models/kia-k4/01.webp",
+   "sha256": "9463e3601efae9d5d0812001a79525ada16334d0d5f887cd2bda58b2369c562e",
+   "bytes": 267668
+  },
+  "/media/p2/models/kia-k4/02.webp": {
+   "from_path": "vehicle-data/media/models/kia-k4/02.webp",
+   "sha256": "f8b3169ba2e24724b50a999a9a99267725fa7e890dd8eb12a64763c369dd4891",
+   "bytes": 65466
+  },
+  "/media/p2/models/kia-seltos.webp": {
+   "from_path": "vehicle-data/media/models/kia-seltos.webp",
+   "sha256": "2841074beb22a4b33a6180052da7f2751bf88de2644b5a8d4d2d043dafdf76b5",
+   "bytes": 76020
+  },
+  "/media/p2/models/kia-seltos/01.webp": {
+   "from_path": "vehicle-data/media/models/kia-seltos/01.webp",
+   "sha256": "e8689bd04b9b2c613d6f050d9e236a65fd54d97859b9e7c4ea1c922919c69d5e",
+   "bytes": 64266
+  },
+  "/media/p2/models/kia-sorento.webp": {
+   "from_path": "vehicle-data/media/models/kia-sorento.webp",
+   "sha256": "9bfb90236373de5bb6e563ba868a71ad42987512a9b7230d63d4ffed8c3bb500",
+   "bytes": 305656
+  },
+  "/media/p2/models/kia-sorento/01.webp": {
+   "from_path": "vehicle-data/media/models/kia-sorento/01.webp",
+   "sha256": "41c0dff2285806c319f9f614dd4c13748de9718b2ada8f82dd0f6ffb55bf41d8",
+   "bytes": 248344
+  },
+  "/media/p2/models/kia-sorento/02.webp": {
+   "from_path": "vehicle-data/media/models/kia-sorento/02.webp",
+   "sha256": "9c7b8040b1d5798b2624815741a84510e473ed5b639855c550b927c7a672bb5a",
+   "bytes": 139832
+  },
+  "/media/p2/models/kia-sorento/03.webp": {
+   "from_path": "vehicle-data/media/models/kia-sorento/03.webp",
+   "sha256": "681237f8ac35f16c3032ddc4bae0bec201460bc73fef44d0b3f07f7d12ec9ce2",
+   "bytes": 128734
+  },
+  "/media/p2/models/kia-sorento/04.webp": {
+   "from_path": "vehicle-data/media/models/kia-sorento/04.webp",
+   "sha256": "b3c66d458735908eb5d59700379204f0a0555d785d3dc2352a44dd3055cc3a50",
+   "bytes": 94356
+  },
+  "/media/p2/models/kia-sorento/05.webp": {
+   "from_path": "vehicle-data/media/models/kia-sorento/05.webp",
+   "sha256": "d9328742f45a26fcdaa26129b3a1274afaccb305d71d43eb3769a1326649c873",
+   "bytes": 121434
+  },
+  "/media/p2/models/kia-sorento/06.webp": {
+   "from_path": "vehicle-data/media/models/kia-sorento/06.webp",
+   "sha256": "bed59b7d1697102d1addaeb6c939c67faf116022c3ff993b50977fb17752f5ab",
+   "bytes": 95208
+  },
+  "/media/p2/models/kia-sorento/07.webp": {
+   "from_path": "vehicle-data/media/models/kia-sorento/07.webp",
+   "sha256": "51652eb4423f5ab83fdc5515cb4413eee3c1759330b652ad89553d0616747c09",
+   "bytes": 103570
+  },
+  "/media/p2/models/kia-sportage.webp": {
+   "from_path": "vehicle-data/media/models/kia-sportage.webp",
+   "sha256": "840daeaf86dad0bd2cc298ec40a657a8f0b655edcabda92a589a6a198cce871d",
+   "bytes": 229554
+  },
+  "/media/p2/models/kia-sportage/02.webp": {
+   "from_path": "vehicle-data/media/models/kia-sportage/02.webp",
+   "sha256": "c3e8f8a4b27e0c91f579f95c286acb69a5ddea9a91653596d36c992202091b2d",
+   "bytes": 96056
+  },
+  "/media/p2/models/mg-5.webp": {
+   "from_path": "vehicle-data/media/models/mg-5.webp",
+   "sha256": "c19bdaa2bf5ae11e21ee6f0a52f6f517ec6f4190390f286ce1ef7acb1b2c1201",
+   "bytes": 64912
+  },
+  "/media/p2/models/mg-5/01.webp": {
+   "from_path": "vehicle-data/media/models/mg-5/01.webp",
+   "sha256": "c1d4b3d7dd726f9279ee94bdc950fa4e43c24584ba843118dcdd13cf1d5cd8bf",
+   "bytes": 129190
+  },
+  "/media/p2/models/mg-7.webp": {
+   "from_path": "vehicle-data/media/models/mg-7.webp",
+   "sha256": "fb9997d1faffd4c3bdce9d4a2c344a4e38db090660c59b9a6f15158128c3aadc",
+   "bytes": 144306
+  },
+  "/media/p2/models/mg-7/01.webp": {
+   "from_path": "vehicle-data/media/models/mg-7/01.webp",
+   "sha256": "5b064d6201777382c9edde9c3c8f2e61f732766a188c603d075b9264ff3ee273",
+   "bytes": 399042
+  },
+  "/media/p2/models/mg-7/02.webp": {
+   "from_path": "vehicle-data/media/models/mg-7/02.webp",
+   "sha256": "c2405784b6448fdc5351aab3f5b177509101ab68d4483ebc492a1399c9b5c284",
+   "bytes": 397274
+  },
+  "/media/p2/models/mg-g50-plus.webp": {
+   "from_path": "vehicle-data/media/models/mg-g50-plus.webp",
+   "sha256": "5e6875a7a0754e866d876240e2fa653ac1a7725a73a5f9eb8f022c3cef67c4b1",
+   "bytes": 135186
+  },
+  "/media/p2/models/mg-gt.webp": {
+   "from_path": "vehicle-data/media/models/mg-gt.webp",
+   "sha256": "7a9e7c003381150bb17ddb09624da34e485201b837d1630cec7b76b1502e51c2",
+   "bytes": 145106
+  },
+  "/media/p2/models/mg-gt/01.webp": {
+   "from_path": "vehicle-data/media/models/mg-gt/01.webp",
+   "sha256": "b7b9243362b9ddaa6ea1cd67983c24e20d79590b6bddcb4b8a8101c9c1d6d44c",
+   "bytes": 57148
+  },
+  "/media/p2/models/mg-hs.webp": {
+   "from_path": "vehicle-data/media/models/mg-hs.webp",
+   "sha256": "a65c8651d333a3cb91db6149c1d718abfb2ba1c35ca791a2a77b6b680914042a",
+   "bytes": 214582
+  },
+  "/media/p2/models/mg-hs/01.webp": {
+   "from_path": "vehicle-data/media/models/mg-hs/01.webp",
+   "sha256": "212991ad8034e074540d1f4d1cfde13fc1187f0af205a06e1fcdab0c028d6f87",
+   "bytes": 212310
+  },
+  "/media/p2/models/mg-hs/02.webp": {
+   "from_path": "vehicle-data/media/models/mg-hs/02.webp",
+   "sha256": "bcb8a44cf9ec27997bfa4c38a62c7fdd738268551b80d6ff4dc31c1da02a8d57",
+   "bytes": 222138
+  },
+  "/media/p2/models/mg-one.webp": {
+   "from_path": "vehicle-data/media/models/mg-one.webp",
+   "sha256": "d7476cacbe8ac3363f35ae336f757e699896ff2cf966c7938e9ee21fe991d847",
+   "bytes": 79086
+  },
+  "/media/p2/models/mg-one/01.webp": {
+   "from_path": "vehicle-data/media/models/mg-one/01.webp",
+   "sha256": "9d0bf59a953c5364ea6ac1ac81f16dec66374af4deb24cd3a7353c1b6ccb99c9",
+   "bytes": 186598
+  },
+  "/media/p2/models/mg-rx9.webp": {
+   "from_path": "vehicle-data/media/models/mg-rx9.webp",
+   "sha256": "4ab96025fcaffa323345b783e15bdf7d8dca88fcffa32fa4112e465e63e56203",
+   "bytes": 142042
+  },
+  "/media/p2/models/mg-rx9/02.webp": {
+   "from_path": "vehicle-data/media/models/mg-rx9/02.webp",
+   "sha256": "4756e079c4fa9df8455a8b5ff668eaae6ab981e19ab09602792bcda737597ff2",
+   "bytes": 225400
+  },
+  "/media/p2/models/mg-rx9/03.webp": {
+   "from_path": "vehicle-data/media/models/mg-rx9/03.webp",
+   "sha256": "d8e0c95b03bba2f8539c1e7788d09dc1079fbaec670b9c62fcd6538494f02ddb",
+   "bytes": 303584
+  },
+  "/media/p2/models/mg-rx9/04.webp": {
+   "from_path": "vehicle-data/media/models/mg-rx9/04.webp",
+   "sha256": "428866c8d0dc44b47d0cfbfc82a9a7763f10bad7a58fea8f7ce31f813df4fb51",
+   "bytes": 256466
+  },
+  "/media/p2/models/mg-zs.webp": {
+   "from_path": "vehicle-data/media/models/mg-zs.webp",
+   "sha256": "d217f3ec8815ea2372b075df66688c2ba4574df1d476f888dc4a397f3fa34019",
+   "bytes": 47172
+  },
+  "/media/p2/models/mg-zs/01.webp": {
+   "from_path": "vehicle-data/media/models/mg-zs/01.webp",
+   "sha256": "3920b237ef655ce08da6dcba01c7333a0bc75b086fa5a32b027215c93f735fb1",
+   "bytes": 42772
+  },
+  "/media/p2/models/nissan-juke.webp": {
+   "from_path": "vehicle-data/media/models/nissan-juke.webp",
+   "sha256": "7aea0492cd6d9e7dfb79a27b2fe3c1a3e19bfcfdd635b468419aa6d394f556d2",
+   "bytes": 490008
+  },
+  "/media/p2/models/nissan-juke/01.webp": {
+   "from_path": "vehicle-data/media/models/nissan-juke/01.webp",
+   "sha256": "50b73fd115bc45690255ca2a4da9aa91f4f5f07c2f8aa7beca964b0fc816cdec",
+   "bytes": 806896
+  },
+  "/media/p2/models/nissan-juke/02.webp": {
+   "from_path": "vehicle-data/media/models/nissan-juke/02.webp",
+   "sha256": "a544053aad7b721dc483a50c6b6ea264e82141a41cd27cdc58cc5535006b51ff",
+   "bytes": 135078
+  },
+  "/media/p2/models/nissan-juke/03.webp": {
+   "from_path": "vehicle-data/media/models/nissan-juke/03.webp",
+   "sha256": "fb5301505e3422f9e216a8f610cba5f2234232bdeff982b7c8c4aea7dee35230",
+   "bytes": 44704
+  },
+  "/media/p2/models/nissan-juke/04.webp": {
+   "from_path": "vehicle-data/media/models/nissan-juke/04.webp",
+   "sha256": "b753e3c9afc3c9895373f0d6ee584742dffb81187923c27d9146b168cccd942b",
+   "bytes": 38588
+  },
+  "/media/p2/models/nissan-juke/05.webp": {
+   "from_path": "vehicle-data/media/models/nissan-juke/05.webp",
+   "sha256": "34d50e65053776e86f742b0bfcb3cb25c25ff8a7b0a350ce287109900a6f98e4",
+   "bytes": 42724
+  },
+  "/media/p2/models/nissan-magnite.webp": {
+   "from_path": "vehicle-data/media/models/nissan-magnite.webp",
+   "sha256": "e2dbb5c4979fbe9e19b5e9f8c9de941bf326939ae49e8406139f32ec0c8f09fd",
+   "bytes": 141550
+  },
+  "/media/p2/models/nissan-magnite/01.webp": {
+   "from_path": "vehicle-data/media/models/nissan-magnite/01.webp",
+   "sha256": "ebb64a92fbffabe98e67fdbc4a5f3854cb7834e26e56bf1fa68a2337275dd48b",
+   "bytes": 242004
+  },
+  "/media/p2/models/nissan-magnite/02.webp": {
+   "from_path": "vehicle-data/media/models/nissan-magnite/02.webp",
+   "sha256": "6abd5c4662b751a4bcd68770c42c4acf83f8ca8c7ca72b7dd1f951415e1cf401",
+   "bytes": 242052
+  },
+  "/media/p2/models/nissan-magnite/03.webp": {
+   "from_path": "vehicle-data/media/models/nissan-magnite/03.webp",
+   "sha256": "4f083df4656fa5b5635360def4b9952878beb923d17f381038671b34411196c5",
+   "bytes": 34618
+  },
+  "/media/p2/models/nissan-magnite/04.webp": {
+   "from_path": "vehicle-data/media/models/nissan-magnite/04.webp",
+   "sha256": "54d46ecc4825676a210c7795a8e257f8ce3accb82a9e4856ea71dd9433bae0f8",
+   "bytes": 38794
+  },
+  "/media/p2/models/nissan-magnite/05.webp": {
+   "from_path": "vehicle-data/media/models/nissan-magnite/05.webp",
+   "sha256": "3ea80eb81772dd2507013e38fda38bdfcb3a542173e471bbd46ed84274bac6b2",
+   "bytes": 42108
+  },
+  "/media/p2/models/nissan-magnite/06.webp": {
+   "from_path": "vehicle-data/media/models/nissan-magnite/06.webp",
+   "sha256": "0815b29914af6f683111760c7d69f7b1e19bccb61d7b7f3af35fdfec56a9b013",
+   "bytes": 46156
+  },
+  "/media/p2/models/nissan-magnite/07.webp": {
+   "from_path": "vehicle-data/media/models/nissan-magnite/07.webp",
+   "sha256": "baa94e66f547de2de2ed2cc1c4e3bbae60f702efcdbcf3a88571476d30724121",
+   "bytes": 141480
+  },
+  "/media/p2/models/nissan-magnite/08.webp": {
+   "from_path": "vehicle-data/media/models/nissan-magnite/08.webp",
+   "sha256": "ed997f70def0dfc74c38dbb24d420a2ea6aab160fed673dcc178d77693583480",
+   "bytes": 150146
+  },
+  "/media/p2/models/nissan-magnite/09.webp": {
+   "from_path": "vehicle-data/media/models/nissan-magnite/09.webp",
+   "sha256": "f8e578b84df3952ff94a48f8d3d89ac7b699dfcd336345145a708c0f1225fb10",
+   "bytes": 178132
+  },
+  "/media/p2/models/nissan-magnite/10.webp": {
+   "from_path": "vehicle-data/media/models/nissan-magnite/10.webp",
+   "sha256": "579d9eca3a806e8e2ef635db1f10de2d2050e11639d780e4f6280a0aaa8b9f64",
+   "bytes": 105468
+  },
+  "/media/p2/models/nissan-magnite/11.webp": {
+   "from_path": "vehicle-data/media/models/nissan-magnite/11.webp",
+   "sha256": "f0dbf0510bb1a3465264fb3db41187e9da07b91df002ef83c15b927805b53edc",
+   "bytes": 92946
+  },
+  "/media/p2/models/nissan-magnite/12.webp": {
+   "from_path": "vehicle-data/media/models/nissan-magnite/12.webp",
+   "sha256": "3283ef7a65b3fff9f420deb3da55adad3c1a5bc57fe104886fdec4ecfcaa7569",
+   "bytes": 155764
+  },
+  "/media/p2/models/nissan-magnite/13.webp": {
+   "from_path": "vehicle-data/media/models/nissan-magnite/13.webp",
+   "sha256": "93b1eeaeef84bd4d95bcb1c6d49e6629318592cf52a896392c036ab4ee849d0c",
+   "bytes": 72628
+  },
+  "/media/p2/models/nissan-patrol.webp": {
+   "from_path": "vehicle-data/media/models/nissan-patrol.webp",
+   "sha256": "cf9bbe7ff063dbcb5ecf6454f207135e32ca065aa6b355b729751fa6193002e2",
+   "bytes": 117372
+  },
+  "/media/p2/models/nissan-patrol/01.webp": {
+   "from_path": "vehicle-data/media/models/nissan-patrol/01.webp",
+   "sha256": "a9267fca07854de6abe91b4273639c1897faf3e30bf5de9196d5f911a878b102",
+   "bytes": 203856
+  },
+  "/media/p2/models/nissan-patrol/02.webp": {
+   "from_path": "vehicle-data/media/models/nissan-patrol/02.webp",
+   "sha256": "2e80a87b596b27ee6bb802a1084427ef38cac1199205b7d37243e1df16297a94",
+   "bytes": 106284
+  },
+  "/media/p2/models/nissan-patrol/03.webp": {
+   "from_path": "vehicle-data/media/models/nissan-patrol/03.webp",
+   "sha256": "5f66fc735c715f7ae378b12bda060a319fa232ab74a992d7a593d6cd7be97031",
+   "bytes": 121344
+  },
+  "/media/p2/models/nissan-patrol/04.webp": {
+   "from_path": "vehicle-data/media/models/nissan-patrol/04.webp",
+   "sha256": "8208bb2167273ba5c57b6dfb9cd9ffdce9522c8a5cc6511d54bfb005c5f9c496",
+   "bytes": 72280
+  },
+  "/media/p2/models/nissan-patrol/05.webp": {
+   "from_path": "vehicle-data/media/models/nissan-patrol/05.webp",
+   "sha256": "ed8c4c78ae53ffcbafa7ca793e0a257984a081901bd6d47b74fe975d897d1a0d",
+   "bytes": 307850
+  },
+  "/media/p2/models/nissan-patrol/06.webp": {
+   "from_path": "vehicle-data/media/models/nissan-patrol/06.webp",
+   "sha256": "cc1349ec8685beeb281f8d1a340b2b34e5727cca10ca0620b7d73d68713227e8",
+   "bytes": 114146
+  },
+  "/media/p2/models/nissan-patrol/07.webp": {
+   "from_path": "vehicle-data/media/models/nissan-patrol/07.webp",
+   "sha256": "22fcd9111f09aa269ec22195ea63a2f0a7560284e94c34762e9e050b5e36a067",
+   "bytes": 197010
+  },
+  "/media/p2/models/nissan-patrol/08.webp": {
+   "from_path": "vehicle-data/media/models/nissan-patrol/08.webp",
+   "sha256": "80fcb5010342a1621f604d65be07f2039bfd852be72cde115a81aa7a7e52ef5e",
+   "bytes": 224822
+  },
+  "/media/p2/models/nissan-patrol/09.webp": {
+   "from_path": "vehicle-data/media/models/nissan-patrol/09.webp",
+   "sha256": "c089e772646988df226ee0fb18a3dd151f80b1044b075ae1b9f596076d2010b8",
+   "bytes": 136710
+  },
+  "/media/p2/models/nissan-patrol/10.webp": {
+   "from_path": "vehicle-data/media/models/nissan-patrol/10.webp",
+   "sha256": "cb6d00c53e014d5923df8a002d71d2d1924c578e76fbeb59dda53adee2a375dc",
+   "bytes": 158382
+  },
+  "/media/p2/models/nissan-patrol/11.webp": {
+   "from_path": "vehicle-data/media/models/nissan-patrol/11.webp",
+   "sha256": "064a97501de41fb036f0899502f9b8b417a061b1b6d9beca18a4ce5c5f638c67",
+   "bytes": 159004
+  },
+  "/media/p2/models/nissan-qashqai.webp": {
+   "from_path": "vehicle-data/media/models/nissan-qashqai.webp",
+   "sha256": "50eaa524471d987b43bbc5c263aefd8aa9b2df3e95b962375ca1b3f8a57da22b",
+   "bytes": 181810
+  },
+  "/media/p2/models/nissan-qashqai/01.webp": {
+   "from_path": "vehicle-data/media/models/nissan-qashqai/01.webp",
+   "sha256": "c5e41169710af5e5812f73fca82c22188f2a2ae4d991b01adcf0f57af3f1840f",
+   "bytes": 55404
+  },
+  "/media/p2/models/nissan-qashqai/02.webp": {
+   "from_path": "vehicle-data/media/models/nissan-qashqai/02.webp",
+   "sha256": "7508754fb7508d162f5ae739e9ab53b1f8fb7d5e6e4a2ce7be8aea2402e92511",
+   "bytes": 65636
+  },
+  "/media/p2/models/nissan-qashqai/03.webp": {
+   "from_path": "vehicle-data/media/models/nissan-qashqai/03.webp",
+   "sha256": "a76321d8e0d273ed52cfa815bb660c49c28830697a87fd0f26284af76dcabe30",
+   "bytes": 64764
+  },
+  "/media/p2/models/nissan-qashqai/04.webp": {
+   "from_path": "vehicle-data/media/models/nissan-qashqai/04.webp",
+   "sha256": "5dc1db067d5058dfbcaa3ce9eadc48ff73fed8e22f854b64d8daf5840348ca69",
+   "bytes": 67726
+  },
+  "/media/p2/models/nissan-sentra.webp": {
+   "from_path": "vehicle-data/media/models/nissan-sentra.webp",
+   "sha256": "13486fd08d4df0ed881caa07f2d1bfbd0f66a8c7c488902f1c57241ea575b59e",
+   "bytes": 435828
+  },
+  "/media/p2/models/nissan-sentra/01.webp": {
+   "from_path": "vehicle-data/media/models/nissan-sentra/01.webp",
+   "sha256": "46338d782ab30fc0829b8d57eca36fb16c26e251ddba2d2576993d6943c3d3e3",
+   "bytes": 56494
+  },
+  "/media/p2/models/nissan-sentra/02.webp": {
+   "from_path": "vehicle-data/media/models/nissan-sentra/02.webp",
+   "sha256": "b088e24fc8301a2ee4fd19c158a10d27454c248be06cc67986b0cb8c7944ace9",
+   "bytes": 77714
+  },
+  "/media/p2/models/nissan-sentra/03.webp": {
+   "from_path": "vehicle-data/media/models/nissan-sentra/03.webp",
+   "sha256": "9a682a78321a5a929c240210a939dac56b35310935f397fcc7dafbaac25db32f",
+   "bytes": 356942
+  },
+  "/media/p2/models/nissan-sentra/04.webp": {
+   "from_path": "vehicle-data/media/models/nissan-sentra/04.webp",
+   "sha256": "a753a8cd947ca9c11d7e85e5ae50771680db85768305f9cd596167c9a4bc0d25",
+   "bytes": 355820
+  },
+  "/media/p2/models/nissan-sentra/05.webp": {
+   "from_path": "vehicle-data/media/models/nissan-sentra/05.webp",
+   "sha256": "ac90c2f9060b93273219fdab67d1e9774167ab2be27580e3afbbce479e5b4141",
+   "bytes": 281310
+  },
+  "/media/p2/models/nissan-sunny.webp": {
+   "from_path": "vehicle-data/media/models/nissan-sunny.webp",
+   "sha256": "fea7102c23fac620bbe566818028383bdefb97f83e2a34ae2caab1bdc5c628c3",
+   "bytes": 170042
+  },
+  "/media/p2/models/nissan-sunny/01.webp": {
+   "from_path": "vehicle-data/media/models/nissan-sunny/01.webp",
+   "sha256": "a1944cb359afce96656474f6dace05a99de01d83debb8d4094b9ad3a6332fe0c",
+   "bytes": 21564
+  },
+  "/media/p2/models/nissan-sunny/03.webp": {
+   "from_path": "vehicle-data/media/models/nissan-sunny/03.webp",
+   "sha256": "201bcd063332f712c9b17d69ad52fb557839a0d7268e5fee24f0ab9fe8a9fcbf",
+   "bytes": 20504
+  },
+  "/media/p2/models/nissan-x-trail.webp": {
+   "from_path": "vehicle-data/media/models/nissan-x-trail.webp",
+   "sha256": "f4bee6b31b56007fae313d7ed724ae076f73334189e3b77130d0199146374e14",
+   "bytes": 999252
+  },
+  "/media/p2/models/nissan-x-trail/01.webp": {
+   "from_path": "vehicle-data/media/models/nissan-x-trail/01.webp",
+   "sha256": "f85122da7942469329ba6e48325e82a55f79f2a4c8d45b564f15b86ee93f8d8f",
+   "bytes": 75622
+  },
+  "/media/p2/models/nissan-x-trail/02.webp": {
+   "from_path": "vehicle-data/media/models/nissan-x-trail/02.webp",
+   "sha256": "2874a1f827101354515f5385c6bd76f4ef0f3f4bc3a3efdb2ccb4fdeae6f624b",
+   "bytes": 132758
+  },
+  "/media/p2/models/nissan-x-trail/03.webp": {
+   "from_path": "vehicle-data/media/models/nissan-x-trail/03.webp",
+   "sha256": "8f15dfc54a69394e3bcabcd3814816cb0cdf076075dd4809330c9393f7f5f31f",
+   "bytes": 136176
+  },
+  "/media/p2/models/nissan-x-trail/04.webp": {
+   "from_path": "vehicle-data/media/models/nissan-x-trail/04.webp",
+   "sha256": "fb71566d677e754941aa551b74255ea193b35c6075cf512374e9de327f84c91c",
+   "bytes": 110562
+  },
+  "/media/p2/models/nissan-x-trail/05.webp": {
+   "from_path": "vehicle-data/media/models/nissan-x-trail/05.webp",
+   "sha256": "574e3a23f9881fc4036166046dc442bfe85faaf08c7736139547199c998904c5",
+   "bytes": 114170
+  },
+  "/media/p2/models/nissan-x-trail/06.webp": {
+   "from_path": "vehicle-data/media/models/nissan-x-trail/06.webp",
+   "sha256": "561db8bd59c6edea242555e8f9144b929727d52581d72d3378abc0ce198d8dad",
+   "bytes": 64782
+  },
+  "/media/p2/models/nissan-x-trail/07.webp": {
+   "from_path": "vehicle-data/media/models/nissan-x-trail/07.webp",
+   "sha256": "4dfb52f901cbaba24f047e4824626665b3bf977979ca8937fdafc7a0c469f0b2",
+   "bytes": 51318
+  },
+  "/media/p2/models/nissan-x-trail/08.webp": {
+   "from_path": "vehicle-data/media/models/nissan-x-trail/08.webp",
+   "sha256": "be44c48e6cf0c0f4b7a4dfa6102f1046993f8a1754abfaa002e323d786c33050",
+   "bytes": 125602
+  },
+  "/media/p2/models/nissan-x-trail/09.webp": {
+   "from_path": "vehicle-data/media/models/nissan-x-trail/09.webp",
+   "sha256": "d361a5ec94b5985c8de8e735449e3548116b6ecb063bad03512bdad885368338",
+   "bytes": 46206
+  },
+  "/media/p2/models/nissan-x-trail/10.webp": {
+   "from_path": "vehicle-data/media/models/nissan-x-trail/10.webp",
+   "sha256": "664ba1874ef5bf746fd76ebf7d9198d3392686e72c47de4d266ab38d8edf9677",
+   "bytes": 46080
+  },
+  "/media/p2/models/renault-kardian.webp": {
+   "from_path": "vehicle-data/media/models/renault-kardian.webp",
+   "sha256": "24df01c24e01d960c6e44f972036b657dd7352478ae16563dc3bf2e26c4e4b2e",
+   "bytes": 273842
+  },
+  "/media/p2/models/skoda-octavia.webp": {
+   "from_path": "vehicle-data/media/models/skoda-octavia.webp",
+   "sha256": "f88c7d1c4a83a7990f73ed4e1c5b6ca7117de2e2c1cc228a5cbe1fc3f515f0e0",
+   "bytes": 94052
+  },
+  "/media/p2/models/soueast-s-05.webp": {
+   "from_path": "vehicle-data/media/models/soueast-s-05.webp",
+   "sha256": "2c5d154667142553c3c86a339fbe6f96c079dd26c60e9d9a2ad228b74e3db67e",
+   "bytes": 349132
+  },
+  "/media/p2/models/soueast-s-07.webp": {
+   "from_path": "vehicle-data/media/models/soueast-s-07.webp",
+   "sha256": "11f7ca34e2739f964de04befd524e688cb8d6a2b15dd6c6de825eff70ad50a71",
+   "bytes": 199186
+  },
+  "/media/p2/models/soueast-s-07/01.webp": {
+   "from_path": "vehicle-data/media/models/soueast-s-07/01.webp",
+   "sha256": "1da3bad2145984897c344e111b1566ca39d755a646c6b27e787ce6251f33cba4",
+   "bytes": 84574
+  },
+  "/media/p2/models/soueast-s06.webp": {
+   "from_path": "vehicle-data/media/models/soueast-s06.webp",
+   "sha256": "62e5bb0b4be465efa05743200b52f62e859baf8edb1bdbca710d09648eebf233",
+   "bytes": 133496
+  },
+  "/media/p2/models/soueast-s06/01.webp": {
+   "from_path": "vehicle-data/media/models/soueast-s06/01.webp",
+   "sha256": "c9dee8de89dee543b207d20a0548100025cb9c7990a8aab652b6f663943ce8c7",
+   "bytes": 222080
+  },
+  "/media/p2/models/suzuki-baleno.webp": {
+   "from_path": "vehicle-data/media/models/suzuki-baleno.webp",
+   "sha256": "deeb06efd6aa3abb82284c681756eebc0c275992bf8eb5560bd4665d6a9b4dcd",
+   "bytes": 437174
+  },
+  "/media/p2/models/suzuki-baleno/01.webp": {
+   "from_path": "vehicle-data/media/models/suzuki-baleno/01.webp",
+   "sha256": "9a1aaf42812043b35432cc4c20c4a1e3584888d0c6be227daa69ae8c5b7f10c6",
+   "bytes": 278290
+  },
+  "/media/p2/models/suzuki-baleno/02.webp": {
+   "from_path": "vehicle-data/media/models/suzuki-baleno/02.webp",
+   "sha256": "f1ae0fa5bab9ddcbe4c9884e29bfb935567982547eed4305f311a6e544413af8",
+   "bytes": 699342
+  },
+  "/media/p2/models/suzuki-baleno/03.webp": {
+   "from_path": "vehicle-data/media/models/suzuki-baleno/03.webp",
+   "sha256": "a6da7e7d152d810c9764fc2964dd6789442764364b3311a8556977e37c0b32b6",
+   "bytes": 481404
+  },
+  "/media/p2/models/toyota-bz4x.webp": {
+   "from_path": "vehicle-data/media/models/toyota-bz4x.webp",
+   "sha256": "8abfaf432c288adb53e5cb042c91df9bcb1819ff51b2c18c4fd2a6c8e8a126b0",
+   "bytes": 109014
+  },
+  "/media/p2/models/toyota-corolla.webp": {
+   "from_path": "vehicle-data/media/models/toyota-corolla.webp",
+   "sha256": "c981918c628140ca24db199a3d5376ae6831194a8876e4e4f66d0a7a6e120d5d",
+   "bytes": 273554
+  },
+  "/media/p2/models/xiaomi-su7.webp": {
+   "from_path": "vehicle-data/media/models/xiaomi-su7.webp",
+   "sha256": "ce486ccf73fadaa48b089b33bf1e16dd829ec0a29e93d0f10f953faa61ced868",
+   "bytes": 334640
+  }
+ },
+ "counts_market_universe": {
+  "brochure_accepted": 82,
+  "fully_enriched": 27,
+  "gallery_models": 46,
+  "hero_accepted": 53,
+  "hero_accepted_hq": 49,
+  "hero_limited_archive": 149,
+  "id_accepted": 415,
+  "logo_accepted": 346,
+  "market_status_official": 38,
+  "models": 415,
+  "price_accepted": 220,
+  "price_source_dated": 175,
+  "price_tier_a": 25,
+  "specs_accepted": 241,
+  "warranty_accepted": 115
+ },
+ "market_additions": 132,
+ "changes_since_previous": [
+  "ChatGPT Work M10-M12: 21 images accepted + Nissan Sunny hero promoted (heroes: chevrolet/optra, soueast/s-05, soueast/s-07, soueast/s-06, bmw/x5, bmw/x7, baic/u5-plus, fiat/500x, honda/zr-v, nissan/sunny); 4 rejected; 29 held (source CDN 403). Decisions: review/chatgpt_m10_m12_decisions.csv",
+  "Includes other workers' GB Auto price QA rebuild (1cac57c) as on branch"
+ ]
+}

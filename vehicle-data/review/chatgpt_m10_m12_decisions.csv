@@ -1,0 +1,56 @@
+model_id,p1_id,role,asset_id,decision,detail
+m_000093,chevrolet/optra,hero,b301d00f9ab6,ACCEPT,media/models/chevrolet-optra.webp
+m_000093,chevrolet/optra,gallery,0ff054900742,ACCEPT,media/models/chevrolet-optra/01.webp
+m_000093,chevrolet/optra,gallery,534879e9fda2,ACCEPT,media/models/chevrolet-optra/02.webp
+m_000093,chevrolet/optra,gallery,1f8906f8d3da,ACCEPT,media/models/chevrolet-optra/03.webp
+m_000247,soueast/s-05,hero,9f4853705791,ACCEPT,media/models/soueast-s-05.webp
+m_000248,soueast/s-07,hero,749950bb3ee3,ACCEPT,media/models/soueast-s-07.webp
+m_000248,soueast/s-07,gallery,294feaa32f9a,ACCEPT,media/models/soueast-s-07/01.webp
+m_000019,soueast/s-06,hero,d594fcefcbe4,ACCEPT,media/models/soueast-s06.webp
+m_000019,soueast/s-06,gallery,e94dd068e681,REJECT,"feature banner 2089x660; person dominates frame, vehicle partial"
+m_000019,soueast/s-06,gallery,bfd09ecf6507,ACCEPT,media/models/soueast-s06/01.webp
+m_000061,bmw/x5,hero,0841cd38d652,ACCEPT,media/models/bmw-x5.webp
+m_000061,bmw/x5,gallery,66a44e7c2b0b,ACCEPT,media/models/bmw-x5/01.webp
+m_000061,bmw/x5,gallery,5dca4387e966,REJECT,"near-duplicate of accepted X5 hero/gallery (same side angle, colour variant only)"
+m_000027,alfa-romeo/tonale,hero,be5577744307,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000027,alfa-romeo/tonale,gallery,111af4f7f4ef,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000027,alfa-romeo/tonale,gallery,cd4f2cbe694b,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000025,alfa-romeo/giulia,hero,e4927a2693ad,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000025,alfa-romeo/giulia,gallery,f80ac0479a23,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000025,alfa-romeo/giulia,gallery,ce6bc91db01a,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000026,alfa-romeo/stelvio,hero,94dbe9502ecf,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000026,alfa-romeo/stelvio,gallery,31fc322f5c4d,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000026,alfa-romeo/stelvio,gallery,b90ec367a1a2,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000063,bmw/x7,hero,258440c676c5,ACCEPT,media/models/bmw-x7.webp
+m_000063,bmw/x7,gallery,67c4b0b39fc3,ACCEPT,media/models/bmw-x7/01.webp
+m_000063,bmw/x7,gallery,0cee993b3ef3,ACCEPT,media/models/bmw-x7/02.webp
+m_000063,bmw/x7,gallery,f8f9557ab0d9,ACCEPT,media/models/bmw-x7/03.webp
+m_000222,nissan/sunny,hero,52781ae7fe67,ACCEPT (promoted),bytes already canonical
+m_000044,baic/u5-plus,hero,7b45f13a11af,ACCEPT,media/models/baic-u5-plus.webp
+m_000044,baic/u5-plus,gallery,23a1d3f27653,REJECT,"near-duplicate of accepted U5 Plus hero (same side cut-out, colour variant only)"
+m_000044,baic/u5-plus,gallery,855614cc522f,REJECT,"near-duplicate of accepted U5 Plus hero (same side cut-out, colour variant only)"
+m_000005,peugeot/3008,hero,4cef2b311084,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000005,peugeot/3008,gallery,a65f5ce93ba6,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000005,peugeot/3008,gallery,1c84dde1e1a9,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000008,citroen/c5-aircross,hero,a3071960b419,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000008,citroen/c5-aircross,gallery,3017f6a9d60c,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000008,citroen/c5-aircross,gallery,ea7d6149cdad,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000119,fiat/500x,hero,56e99ac16532,ACCEPT,media/models/fiat-500x.webp
+m_000272,volvo/xc-40,hero,0d73683ba9e7,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000272,volvo/xc-40,gallery,cdaaa4fe44c7,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000273,volvo/xc60,hero,ea323db66e93,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000273,volvo/xc60,gallery,405e83767f20,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000147,honda/zr-v,hero,d01d38efcf96,ACCEPT,media/models/honda-zr-v.webp
+m_000147,honda/zr-v,gallery,4c17c46e04c9,ACCEPT,media/models/honda-zr-v/01.webp
+m_000147,honda/zr-v,gallery,74d7fc11aa39,ACCEPT,media/models/honda-zr-v/02.webp
+m_000147,honda/zr-v,gallery,2ac7712217ff,ACCEPT,media/models/honda-zr-v/03.webp
+m_000270,volvo/ex30,hero,99f877103563,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000270,volvo/ex30,gallery,8da03a706098,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000271,volvo/ex90,hero,9a3bd6a9beba,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000271,volvo/ex90,gallery,09cdc101ee72,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000271,volvo/ex90,gallery,d12be11079a1,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000269,volvo/es90,hero,66bc2ca05b16,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000269,volvo/es90,gallery,64754aeb361b,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000269,volvo/es90,gallery,78691c387592,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000274,volvo/xc90,gallery,1b49468f1a94,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
+m_000274,volvo/xc90,gallery,08f6d58fbb2a,HOLD,source CDN returns HTTP 403 (bot protection) to CI in runs 38723488776/38723784165 incl. browser Accept+Referer retries; package zip over Drive connector 10 MB limit; bytes not reproducible by P2
