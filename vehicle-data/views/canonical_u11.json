@@ -1,36 +1,36 @@
 {
  "counts": {
   "brochure_accepted": 81,
-  "fully_enriched": 39,
-  "gallery_models": 70,
-  "hero_accepted": 82,
-  "hero_accepted_hq": 78,
-  "hero_limited_archive": 125,
+  "fully_enriched": 35,
+  "gallery_models": 66,
+  "hero_accepted": 76,
+  "hero_accepted_hq": 72,
+  "hero_limited_archive": 130,
   "id_accepted": 283,
   "logo_accepted": 248,
   "market_status_official": 37,
   "models": 283,
-  "price_accepted": 201,
-  "price_source_dated": 141,
-  "price_tier_a": 66,
-  "specs_accepted": 201,
+  "price_accepted": 194,
+  "price_source_dated": 136,
+  "price_tier_a": 52,
+  "specs_accepted": 199,
   "warranty_accepted": 100
  },
  "counts_market_universe": {
   "brochure_accepted": 82,
-  "fully_enriched": 39,
-  "gallery_models": 73,
-  "hero_accepted": 85,
-  "hero_accepted_hq": 81,
-  "hero_limited_archive": 125,
+  "fully_enriched": 35,
+  "gallery_models": 68,
+  "hero_accepted": 78,
+  "hero_accepted_hq": 74,
+  "hero_limited_archive": 130,
   "id_accepted": 416,
   "logo_accepted": 347,
   "market_status_official": 38,
   "models": 416,
-  "price_accepted": 236,
-  "price_source_dated": 170,
-  "price_tier_a": 76,
-  "specs_accepted": 244,
+  "price_accepted": 222,
+  "price_source_dated": 158,
+  "price_tier_a": 55,
+  "specs_accepted": 241,
   "warranty_accepted": 121
  },
  "generated_as_of": "2026-10-15",
@@ -51,9 +51,9 @@
   "inputs/u11/s0_urls.csv": "0fe3f54676ca73bfc6e00ccf854f67194dbced9b8cae3cf44a8191b826a2c24f",
   "inputs/u11/u11_source_urls.csv": "2421f3e82d175a8fd88166522f1f575e6ac5b594f51cc6cbdc1c53ebd9cee918"
  },
- "market_snapshot": "snapshots/U_2026-10-15_38699307017",
+ "market_snapshot": "snapshots/U_2026-10-15_38789230686",
  "market_snapshots": [
-  "snapshots/U_2026-10-15_38699307017",
+  "snapshots/U_2026-10-15_38789230686",
   "snapshots/UA_2026-10-14_38545206122"
  ],
  "models": [
@@ -1077,8 +1077,8 @@
    "p1_id": "audi/a5",
    "price": {
     "as_of": "2026-10-15",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-04-20",
     "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/a5 | https://www.contactcars.com/en/new-cars/audi-a5 | https://www.contactcars.com/en/new-cars/audi-a5/year-2026",
     "issuer": "ContactCars+Hatla2ee",
     "model_year": 2026,
@@ -1100,8 +1100,8 @@
      },
      {
       "as_of": "2026-10-15",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-04-20",
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/a5 | https://www.contactcars.com/en/new-cars/audi-a5 | https://www.contactcars.com/en/new-cars/audi-a5/year-2026",
       "issuer": "ContactCars+Hatla2ee",
       "label": "Advanced",
@@ -1870,8 +1870,8 @@
    "p1_id": "audi/q7",
    "price": {
     "as_of": "2026-10-15",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-04-02",
     "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/q7 | https://www.contactcars.com/en/new-cars/audi-q7/year-2026",
     "issuer": "ContactCars+Hatla2ee",
     "model_year": 2026,
@@ -1881,8 +1881,8 @@
     "trims": [
      {
       "as_of": "2026-10-15",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-04-02",
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/q7 | https://www.contactcars.com/en/new-cars/audi-q7/year-2026",
       "issuer": "ContactCars+Hatla2ee",
       "label": "S-line",
@@ -15380,7 +15380,7 @@
      }
     ]
    },
-   "rework_price_rows": 4,
+   "rework_price_rows": 8,
    "site_slug": "deepal-g318",
    "size_class": {
     "basis": "registration segment, last 12 months (430 registrations)",
@@ -15756,7 +15756,7 @@
      }
     ]
    },
-   "rework_price_rows": 4,
+   "rework_price_rows": 8,
    "site_slug": "deepal-s05",
    "size_class": {
     "basis": "registration segment, last 12 months (600 registrations)",
@@ -22137,12 +22137,7 @@
   {
    "brand": "Haval",
    "brochures": [],
-   "conflicts": [
-    "PB-2 CONFLICT: ContactCars=1300000",
-    "PB-2 CONFLICT: ContactCars=1490000",
-    "PB-2 CONFLICT: EgyCar=1310000;Hatla2ee=1310000",
-    "PB-2 CONFLICT: Hatla2ee=1500000"
-   ],
+   "conflicts": [],
    "gallery": [],
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
@@ -22232,7 +22227,7 @@
      }
     ]
    },
-   "rework_price_rows": 9,
+   "rework_price_rows": 5,
    "site_slug": "haval-h6",
    "size_class": {
     "basis": "registration segment, last 12 months (1285 registrations)",
@@ -22434,7 +22429,7 @@
      }
     ]
    },
-   "rework_price_rows": 3,
+   "rework_price_rows": 4,
    "site_slug": "haval-h7",
    "size_class": {
     "basis": "registration segment, last 12 months (553 registrations)",
@@ -22444,117 +22439,117 @@
    "specs": {
     "boot_l": [
      {
-      "applicability": "market trim pages: HEV, ULTRA BLACK",
+      "applicability": "market trim pages: ULTRA BLACK",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/haval-h7/24255a8816df | https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
+      "source": "https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
       "unit": "",
       "value": "483"
      }
     ],
     "drive": [
      {
-      "applicability": "market trim pages: HEV, ULTRA BLACK",
+      "applicability": "market trim pages: ULTRA BLACK",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/haval-h7/24255a8816df | https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
+      "source": "https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
       "unit": "",
       "value": "FWD"
      }
     ],
     "engine_cc": [
      {
-      "applicability": "market trim pages: HEV, ULTRA BLACK",
+      "applicability": "market trim pages: ULTRA BLACK",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/haval-h7/24255a8816df | https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
+      "source": "https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
       "unit": "",
       "value": "1500"
      }
     ],
     "ground_clearance_mm": [
      {
-      "applicability": "market trim pages: HEV, ULTRA BLACK",
+      "applicability": "market trim pages: ULTRA BLACK",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/haval-h7/24255a8816df | https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
+      "source": "https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
       "unit": "",
       "value": "210"
      }
     ],
     "height_mm": [
      {
-      "applicability": "market trim pages: HEV, ULTRA BLACK",
+      "applicability": "market trim pages: ULTRA BLACK",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/haval-h7/24255a8816df | https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
+      "source": "https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
       "unit": "",
       "value": "1780"
      }
     ],
     "length_mm": [
      {
-      "applicability": "market trim pages: HEV, ULTRA BLACK",
+      "applicability": "market trim pages: ULTRA BLACK",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/haval-h7/24255a8816df | https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
+      "source": "https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
       "unit": "",
       "value": "4705"
      }
     ],
     "power_hp": [
      {
-      "applicability": "market trim pages: HEV, ULTRA BLACK",
+      "applicability": "market trim pages: ULTRA BLACK",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/haval-h7/24255a8816df | https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
+      "source": "https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
       "unit": "",
       "value": "240"
      }
     ],
     "powertrain_class": [
      {
-      "applicability": "market trim pages: HEV, ULTRA BLACK",
+      "applicability": "market trim pages: ULTRA BLACK",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/haval-h7/24255a8816df | https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
+      "source": "https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
       "unit": "",
       "value": "Hybrid"
      }
     ],
     "seats": [
      {
-      "applicability": "market trim pages: HEV, ULTRA BLACK",
+      "applicability": "market trim pages: ULTRA BLACK",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/haval-h7/24255a8816df | https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
+      "source": "https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
       "unit": "",
       "value": "5"
      }
     ],
     "torque_nm": [
      {
-      "applicability": "market trim pages: HEV, ULTRA BLACK",
+      "applicability": "market trim pages: ULTRA BLACK",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/haval-h7/24255a8816df | https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
+      "source": "https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
       "unit": "",
       "value": "530"
      }
     ],
     "transmission": [
      {
-      "applicability": "market trim pages: HEV, ULTRA BLACK",
+      "applicability": "market trim pages: ULTRA BLACK",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/haval-h7/24255a8816df | https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
+      "source": "https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
       "unit": "",
       "value": "Automatic"
      }
     ],
     "wheelbase_mm": [
      {
-      "applicability": "market trim pages: HEV, ULTRA BLACK",
+      "applicability": "market trim pages: ULTRA BLACK",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/haval-h7/24255a8816df | https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
+      "source": "https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
       "unit": "",
       "value": "2810"
      }
     ],
     "width_mm": [
      {
-      "applicability": "market trim pages: HEV, ULTRA BLACK",
+      "applicability": "market trim pages: ULTRA BLACK",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/haval-h7/24255a8816df | https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
+      "source": "https://www.contactcars.com/en/new-cars/haval-h7/d3f0e9429e49",
       "unit": "",
       "value": "1908"
      }
@@ -22576,9 +22571,6 @@
     }
    ],
    "conflicts": [
-    "PB-2 CONFLICT: ContactCars=1035000",
-    "PB-2 CONFLICT: ContactCars=1135000",
-    "PB-2 CONFLICT: ContactCars=985000",
     "PB-2 CONFLICT: EgyCar=1055000;Hatla2ee=1055000",
     "PB-2 CONFLICT: EgyCar=1155000;Hatla2ee=1155000",
     "PB-2 CONFLICT: Hatla2ee=999000"
@@ -22682,7 +22674,7 @@
      }
     ]
    },
-   "rework_price_rows": 7,
+   "rework_price_rows": 4,
    "site_slug": "haval-jolion",
    "size_class": {
     "basis": "registration segment, last 12 months (1096 registrations)",
@@ -34223,6 +34215,7 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
+    "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
@@ -34261,30 +34254,8 @@
    "model": "G50 Plus",
    "model_id": "m_000207",
    "p1_id": "mg/g50-plus",
-   "price": {
-    "as_of": "2026-10-15",
-    "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-10-15",
-    "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
-    "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
-    "model_year": null,
-    "price_from": 1325000,
-    "tier": "A",
-    "trims": [
-     {
-      "as_of": "2026-10-15",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-15",
-      "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
-      "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
-      "label": "G50 Plus",
-      "model_year": null,
-      "price_egp": 1325000,
-      "tier": "A"
-     }
-    ]
-   },
-   "rework_price_rows": 2,
+   "price": null,
+   "rework_price_rows": 4,
    "site_slug": "mg-g50-plus",
    "size_class": {
     "basis": "registration segment, last 12 months (507 registrations)",
@@ -34871,6 +34842,7 @@
     }
    ],
    "gaps": [
+    "NO_ACCEPTED_PRICE",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -34907,30 +34879,8 @@
    "model": "One",
    "model_id": "m_000209",
    "p1_id": "mg/one",
-   "price": {
-    "as_of": "2026-10-15",
-    "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-10-15",
-    "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
-    "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
-    "model_year": null,
-    "price_from": 1425000,
-    "tier": "A",
-    "trims": [
-     {
-      "as_of": "2026-10-15",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-15",
-      "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
-      "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
-      "label": "Luxury",
-      "model_year": null,
-      "price_egp": 1425000,
-      "tier": "A"
-     }
-    ]
-   },
-   "rework_price_rows": 4,
+   "price": null,
+   "rework_price_rows": 6,
    "site_slug": "mg-one",
    "size_class": {
     "basis": "registration segment, last 12 months (2464 registrations)",
@@ -41769,7 +41719,7 @@
     "as_of": "2026-10-15",
     "date_basis": "SOURCE_STATED",
     "effective_date": "2026-04-16",
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Kardian | https://www.contactcars.com/en/new-cars/renault-kardian/year-2026 | https://www.egy-car.com/renault-kardian",
+    "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Kardian | https://www.contactcars.com/en/new-cars/renault-kardian | https://www.contactcars.com/en/new-cars/renault-kardian/year-2026 | https://www.egy-car.com/renault-kardian",
     "issuer": "ContactCars+EgyCar+Hatla2ee",
     "model_year": 2026,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
@@ -41780,7 +41730,7 @@
       "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
       "effective_date": "2026-04-16",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Kardian | https://www.contactcars.com/en/new-cars/renault-kardian/year-2026 | https://www.egy-car.com/renault-kardian",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Kardian | https://www.contactcars.com/en/new-cars/renault-kardian | https://www.contactcars.com/en/new-cars/renault-kardian/year-2026 | https://www.egy-car.com/renault-kardian",
       "issuer": "ContactCars+EgyCar+Hatla2ee",
       "label": "Evolution",
       "model_year": 2026,
@@ -41792,7 +41742,7 @@
       "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
       "effective_date": "2026-04-16",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Kardian | https://www.contactcars.com/en/new-cars/renault-kardian/year-2026 | https://www.egy-car.com/renault-kardian",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Kardian | https://www.contactcars.com/en/new-cars/renault-kardian | https://www.contactcars.com/en/new-cars/renault-kardian/year-2026 | https://www.egy-car.com/renault-kardian",
       "issuer": "ContactCars+EgyCar+Hatla2ee",
       "label": "Techno",
       "model_year": 2026,
@@ -41804,7 +41754,7 @@
       "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
       "effective_date": "2026-04-16",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Kardian | https://www.contactcars.com/en/new-cars/renault-kardian/year-2026 | https://www.egy-car.com/renault-kardian",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Kardian | https://www.contactcars.com/en/new-cars/renault-kardian | https://www.contactcars.com/en/new-cars/renault-kardian/year-2026 | https://www.egy-car.com/renault-kardian",
       "issuer": "ContactCars+EgyCar+Hatla2ee",
       "label": "Iconic",
       "model_year": 2026,
@@ -41814,7 +41764,7 @@
      }
     ]
    },
-   "rework_price_rows": 3,
+   "rework_price_rows": 0,
    "site_slug": "renault-kardian",
    "size_class": {
     "basis": "registration segment, last 12 months (1023 registrations)",
@@ -44556,7 +44506,7 @@
      {
       "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-04-10",
+      "effective_date": "2026-06-25",
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/soueast/S+06 | https://www.contactcars.com/en/new-cars/soueast-s_06/year-2027 | https://www.egy-car.com/soueast-s06",
       "issuer": "ContactCars+EgyCar+Hatla2ee",
       "label": "Premium",
@@ -44868,7 +44818,7 @@
      {
       "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-04-10",
+      "effective_date": "2026-06-25",
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/soueast/S+07 | https://www.contactcars.com/en/new-cars/soueast-s_07/year-2027 | https://www.egy-car.com/soueast-s07",
       "issuer": "ContactCars+EgyCar+Hatla2ee",
       "label": "Premium",
