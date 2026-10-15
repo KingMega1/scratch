@@ -1,36 +1,36 @@
 {
  "counts": {
   "brochure_accepted": 81,
-  "fully_enriched": 35,
-  "gallery_models": 66,
-  "hero_accepted": 76,
-  "hero_accepted_hq": 72,
-  "hero_limited_archive": 130,
+  "fully_enriched": 39,
+  "gallery_models": 70,
+  "hero_accepted": 82,
+  "hero_accepted_hq": 78,
+  "hero_limited_archive": 125,
   "id_accepted": 283,
   "logo_accepted": 248,
   "market_status_official": 37,
   "models": 283,
-  "price_accepted": 194,
-  "price_source_dated": 136,
-  "price_tier_a": 52,
-  "specs_accepted": 199,
+  "price_accepted": 201,
+  "price_source_dated": 143,
+  "price_tier_a": 66,
+  "specs_accepted": 201,
   "warranty_accepted": 100
  },
  "counts_market_universe": {
   "brochure_accepted": 82,
-  "fully_enriched": 35,
-  "gallery_models": 68,
-  "hero_accepted": 78,
-  "hero_accepted_hq": 74,
-  "hero_limited_archive": 130,
+  "fully_enriched": 39,
+  "gallery_models": 73,
+  "hero_accepted": 85,
+  "hero_accepted_hq": 81,
+  "hero_limited_archive": 125,
   "id_accepted": 416,
   "logo_accepted": 347,
   "market_status_official": 38,
   "models": 416,
-  "price_accepted": 222,
-  "price_source_dated": 158,
-  "price_tier_a": 55,
-  "specs_accepted": 241,
+  "price_accepted": 236,
+  "price_source_dated": 172,
+  "price_tier_a": 76,
+  "specs_accepted": 244,
   "warranty_accepted": 121
  },
  "generated_as_of": "2026-10-15",
@@ -34215,7 +34215,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
@@ -34254,7 +34253,29 @@
    "model": "G50 Plus",
    "model_id": "m_000207",
    "p1_id": "mg/g50-plus",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-15",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-15",
+    "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+    "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+    "model_year": null,
+    "price_from": 1325000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-15",
+      "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+      "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+      "label": "G50 Plus",
+      "model_year": null,
+      "price_egp": 1325000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 4,
    "site_slug": "mg-g50-plus",
    "size_class": {
@@ -34842,7 +34863,6 @@
     }
    ],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -34879,7 +34899,29 @@
    "model": "One",
    "model_id": "m_000209",
    "p1_id": "mg/one",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-15",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-15",
+    "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+    "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+    "model_year": null,
+    "price_from": 1425000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-15",
+      "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+      "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+      "label": "Luxury",
+      "model_year": null,
+      "price_egp": 1425000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 6,
    "site_slug": "mg-one",
    "size_class": {

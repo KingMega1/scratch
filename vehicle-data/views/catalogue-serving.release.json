@@ -18,9 +18,9 @@
     "counts": {
       "models": 283,
       "id_accepted": 283,
-      "price_accepted": 194,
-      "price_tier_a": 52,
-      "price_source_dated": 136,
+      "price_accepted": 201,
+      "price_tier_a": 66,
+      "price_source_dated": 143,
       "market_status_official": 37,
       "specs_accepted": 201,
       "warranty_accepted": 100,
@@ -30,7 +30,7 @@
       "hero_limited_archive": 125,
       "gallery_models": 70,
       "logo_accepted": 248,
-      "fully_enriched": 35
+      "fully_enriched": 39
     }
   },
   "relation": "Website on-sale set equals pinned U11 on-sale set (283). 'accepted' carries only P2-ACCEPTED values; absent means UNKNOWN. P1 recommendation semantics unchanged.",
@@ -39,7 +39,7 @@
     "p2_evidence": 21,
     "identity_only": 262,
     "excluded": 3,
-    "price_accepted": 194,
+    "price_accepted": 201,
     "id_accepted": 283
   },
   "entries": [
@@ -36053,10 +36053,9 @@
       },
       "p2_evidence": false,
       "evidence_state": "U11_IDENTITY_ONLY",
-      "price_status": "UNKNOWN",
+      "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_PRICE",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
@@ -36068,7 +36067,29 @@
           "basis": "registration segment, last 12 months (507 registrations)",
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
-        "price": null,
+        "price": {
+          "price_from": 1325000,
+          "model_year": null,
+          "tier": "A",
+          "effective_date": "2026-10-15",
+          "date_basis": "SOURCE_STATED",
+          "as_of": "2026-10-15",
+          "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+          "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+          "trims": [
+            {
+              "model_year": null,
+              "label": "G50 Plus",
+              "price_egp": 1325000,
+              "tier": "A",
+              "effective_date": "2026-10-15",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-15",
+              "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+              "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view"
+            }
+          ]
+        },
         "specs": {
           "engine": [
             {
@@ -36695,10 +36716,9 @@
       },
       "p2_evidence": false,
       "evidence_state": "U11_IDENTITY_ONLY",
-      "price_status": "UNKNOWN",
+      "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_PRICE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -36708,7 +36728,29 @@
           "basis": "registration segment, last 12 months (2464 registrations)",
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
-        "price": null,
+        "price": {
+          "price_from": 1425000,
+          "model_year": null,
+          "tier": "A",
+          "effective_date": "2026-10-15",
+          "date_basis": "SOURCE_STATED",
+          "as_of": "2026-10-15",
+          "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+          "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+          "trims": [
+            {
+              "model_year": null,
+              "label": "Luxury",
+              "price_egp": 1425000,
+              "tier": "A",
+              "effective_date": "2026-10-15",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-15",
+              "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+              "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view"
+            }
+          ]
+        },
         "specs": {
           "airbags": [
             {
