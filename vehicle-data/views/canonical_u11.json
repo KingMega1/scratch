@@ -10,10 +10,10 @@
   "logo_accepted": 248,
   "market_status_official": 37,
   "models": 283,
-  "price_accepted": 189,
+  "price_accepted": 192,
   "price_source_dated": 152,
   "price_tier_a": 24,
-  "specs_accepted": 198,
+  "specs_accepted": 199,
   "warranty_accepted": 100
  },
  "counts_market_universe": {
@@ -27,10 +27,10 @@
   "logo_accepted": 347,
   "market_status_official": 38,
   "models": 416,
-  "price_accepted": 217,
+  "price_accepted": 220,
   "price_source_dated": 175,
   "price_tier_a": 24,
-  "specs_accepted": 240,
+  "specs_accepted": 241,
   "warranty_accepted": 121
  },
  "generated_as_of": "2026-10-15",
@@ -50,9 +50,9 @@
   "inputs/u11/s0_urls.csv": "0fe3f54676ca73bfc6e00ccf854f67194dbced9b8cae3cf44a8191b826a2c24f",
   "inputs/u11/u11_source_urls.csv": "2421f3e82d175a8fd88166522f1f575e6ac5b594f51cc6cbdc1c53ebd9cee918"
  },
- "market_snapshot": "snapshots/U_2026-10-15_38671020358",
+ "market_snapshot": "snapshots/U_2026-10-15_38699307017",
  "market_snapshots": [
-  "snapshots/U_2026-10-15_38671020358",
+  "snapshots/U_2026-10-15_38699307017",
   "snapshots/UA_2026-10-14_38545206122"
  ],
  "models": [
@@ -1768,8 +1768,8 @@
    "p1_id": "audi/q7",
    "price": {
     "as_of": "2026-10-15",
-    "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-04-02",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
     "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/q7 | https://www.contactcars.com/en/new-cars/audi-q7/year-2026",
     "issuer": "ContactCars+Hatla2ee",
     "model_year": 2026,
@@ -1779,8 +1779,8 @@
     "trims": [
      {
       "as_of": "2026-10-15",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-04-02",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/q7 | https://www.contactcars.com/en/new-cars/audi-q7/year-2026",
       "issuer": "ContactCars+Hatla2ee",
       "label": "S-line",
@@ -9074,8 +9074,8 @@
    "p1_id": "changan/uni-t",
    "price": {
     "as_of": "2026-10-15",
-    "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-04-06",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
     "evidence_url": "https://eg.hatla2ee.com/en/new-car/changan/uni-t | https://www.contactcars.com/en/new-cars/changan-uni_t/year-2026",
     "issuer": "ContactCars+Hatla2ee",
     "model_year": 2026,
@@ -9085,8 +9085,8 @@
     "trims": [
      {
       "as_of": "2026-10-15",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-04-06",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/changan/uni-t | https://www.contactcars.com/en/new-cars/changan-uni_t/year-2026",
       "issuer": "ContactCars+Hatla2ee",
       "label": "Premium",
@@ -9097,8 +9097,8 @@
      },
      {
       "as_of": "2026-10-15",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-04-06",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/changan/uni-t | https://www.contactcars.com/en/new-cars/changan-uni_t/year-2026",
       "issuer": "ContactCars+Hatla2ee",
       "label": "Flagship",
@@ -10744,8 +10744,8 @@
      },
      {
       "as_of": "2026-10-15",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-08-18",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/chery/Tiggo-4-Pro | https://www.contactcars.com/en/new-cars/chery-tiggo_4_pro | https://www.contactcars.com/en/new-cars/chery-tiggo_4_pro/year-2027",
       "issuer": "ContactCars+Hatla2ee",
       "label": "LUXURY",
@@ -11676,7 +11676,7 @@
      }
     ]
    },
-   "rework_price_rows": 6,
+   "rework_price_rows": 7,
    "site_slug": "chery-tiggo-8",
    "size_class": {
     "basis": "registration segment, last 12 months (1789 registrations)",
@@ -11901,8 +11901,8 @@
    "p1_id": "chery/tiggo-8-pro",
    "price": {
     "as_of": "2026-10-15",
-    "date_basis": "SOURCE_STATED",
-    "effective_date": "2025-08-03",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
     "evidence_url": "https://eg.hatla2ee.com/en/new-car/chery/Tiggo-8-Pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro/year-2026",
     "issuer": "ContactCars+Hatla2ee",
     "model_year": 2026,
@@ -11912,8 +11912,8 @@
     "trims": [
      {
       "as_of": "2026-10-15",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2025-08-03",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/chery/Tiggo-8-Pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro/year-2026",
       "issuer": "ContactCars+Hatla2ee",
       "label": "Luxury",
@@ -12150,8 +12150,8 @@
      },
      {
       "as_of": "2026-10-15",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-06-15",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/chery/Tiggo-8-Pro-Max | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro_max/year-2027",
       "issuer": "ContactCars+Hatla2ee",
       "label": "1.6T 6DCT Flagship",
@@ -23232,7 +23232,7 @@
      {
       "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-04-05",
+      "effective_date": "2026-04-06",
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/hyundai/i30 | https://www.contactcars.com/en/new-cars/hyundai-i_30/year-2026 | https://www.egy-car.com/hyundai-i30",
       "issuer": "ContactCars+EgyCar+Hatla2ee",
       "label": "HB REDLINE",
@@ -23500,7 +23500,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
@@ -23529,8 +23528,56 @@
    "model": "IONIQ 5",
    "model_id": "m_000155",
    "p1_id": "hyundai/ioniq-5",
-   "price": null,
-   "rework_price_rows": 12,
+   "price": {
+    "as_of": "2026-10-15",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-04-06",
+    "evidence_url": "https://eg.hatla2ee.com/en/new-car/hyundai/Ioniq-5 | https://www.contactcars.com/en/new-cars/hyundai-ioniq_5/year-2025",
+    "issuer": "ContactCars+Hatla2ee",
+    "model_year": 2025,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 2200000,
+    "tier": "B",
+    "trims": [
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-04-06",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/hyundai/Ioniq-5 | https://www.contactcars.com/en/new-cars/hyundai-ioniq_5/year-2025",
+      "issuer": "ContactCars+Hatla2ee",
+      "label": "Connect Plus LR RR",
+      "model_year": 2025,
+      "powertrain": "Electric",
+      "price_egp": 2200000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-04-06",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/hyundai/Ioniq-5 | https://www.contactcars.com/en/new-cars/hyundai-ioniq_5/year-2025",
+      "issuer": "ContactCars+Hatla2ee",
+      "label": "Extreme  LR AWD",
+      "model_year": 2025,
+      "powertrain": "Electric",
+      "price_egp": 2800000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-04-06",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/hyundai/Ioniq-5 | https://www.contactcars.com/en/new-cars/hyundai-ioniq_5/year-2025",
+      "issuer": "ContactCars+Hatla2ee",
+      "label": "N BOOST 84",
+      "model_year": 2025,
+      "powertrain": "Electric",
+      "price_egp": 3300000,
+      "tier": "B"
+     }
+    ]
+   },
+   "rework_price_rows": 6,
    "site_slug": "hyundai-ioniq-5",
    "size_class": {
     "basis": "registration segment, last 12 months (17 registrations)",
@@ -24089,22 +24136,7 @@
      "url": "https://drive.google.com/file/d/10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1/view"
     }
    ],
-   "conflicts": [
-    "PB-2 CONFLICT: ContactCars=1800000;EgyCar=1800000",
-    "PB-2 CONFLICT: ContactCars=1950000",
-    "PB-2 CONFLICT: ContactCars=2050000;EgyCar=2050000",
-    "PB-2 CONFLICT: ContactCars=2125000",
-    "PB-2 CONFLICT: ContactCars=2200000",
-    "PB-2 CONFLICT: ContactCars=2300000",
-    "PB-2 CONFLICT: EgyCar=2400000",
-    "PB-2 CONFLICT: Hatla2ee=1775000",
-    "PB-2 CONFLICT: Hatla2ee=1925000",
-    "PB-2 CONFLICT: Hatla2ee=2025000",
-    "PB-2 CONFLICT: Hatla2ee=2100000",
-    "PB-2 CONFLICT: Hatla2ee=2175000",
-    "PB-2 CONFLICT: Hatla2ee=2275000",
-    "PB-2 CONFLICT: Hatla2ee=2375000"
-   ],
+   "conflicts": [],
    "gallery": [
     {
      "asset_id": "0fc21b2b565b",
@@ -24134,7 +24166,6 @@
     }
    ],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_VERIFIED_HERO_IMAGE",
     "GENERATION_UNKNOWN"
    ],
@@ -24160,8 +24191,104 @@
    "model": "Tucson",
    "model_id": "m_000002",
    "p1_id": "hyundai/tucson",
-   "price": null,
-   "rework_price_rows": 32,
+   "price": {
+    "as_of": "2026-10-15",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-15",
+    "evidence_url": "https://eg.hatla2ee.com/en/new-car/hyundai/tucson | https://www.contactcars.com/en/new-cars/hyundai-tucson | https://www.contactcars.com/en/new-cars/hyundai-tucson/year-2027 | https://www.egy-car.com/hyundai-tucson",
+    "issuer": "ContactCars+EgyCar+Hatla2ee",
+    "model_year": 2027,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 1800000,
+    "tier": "B",
+    "trims": [
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-15",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/hyundai/tucson | https://www.contactcars.com/en/new-cars/hyundai-tucson | https://www.contactcars.com/en/new-cars/hyundai-tucson/year-2027 | https://www.egy-car.com/hyundai-tucson",
+      "issuer": "ContactCars+EgyCar+Hatla2ee",
+      "label": "SHADOW",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 1800000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-15",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/hyundai/tucson | https://www.contactcars.com/en/new-cars/hyundai-tucson | https://www.contactcars.com/en/new-cars/hyundai-tucson/year-2027",
+      "issuer": "ContactCars+Hatla2ee",
+      "label": "BLAZE",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 1950000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-15",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/hyundai/tucson | https://www.contactcars.com/en/new-cars/hyundai-tucson | https://www.contactcars.com/en/new-cars/hyundai-tucson/year-2027 | https://www.egy-car.com/hyundai-tucson",
+      "issuer": "ContactCars+EgyCar+Hatla2ee",
+      "label": "REDLINE",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 2050000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-15",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/hyundai/tucson | https://www.contactcars.com/en/new-cars/hyundai-tucson | https://www.contactcars.com/en/new-cars/hyundai-tucson/year-2027",
+      "issuer": "ContactCars+Hatla2ee",
+      "label": "REDLINE (N Pack)",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 2125000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-15",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/hyundai/tucson | https://www.contactcars.com/en/new-cars/hyundai-tucson | https://www.contactcars.com/en/new-cars/hyundai-tucson/year-2027",
+      "issuer": "ContactCars+Hatla2ee",
+      "label": "NIGHT",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 2200000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-15",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/hyundai/tucson | https://www.contactcars.com/en/new-cars/hyundai-tucson | https://www.contactcars.com/en/new-cars/hyundai-tucson/year-2027",
+      "issuer": "ContactCars+Hatla2ee",
+      "label": "BLACK DIAMOND",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 2300000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-15",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/hyundai/tucson | https://www.egy-car.com/hyundai-tucson",
+      "issuer": "EgyCar+Hatla2ee",
+      "label": "A/T / N-Line",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 2400000,
+      "tier": "B"
+     }
+    ]
+   },
+   "rework_price_rows": 16,
    "site_slug": "hyundai-tucson",
    "size_class": {
     "basis": "registration segment, last 12 months (5212 registrations)",
@@ -29680,7 +29807,7 @@
      }
     ]
    },
-   "rework_price_rows": 15,
+   "rework_price_rows": 20,
    "site_slug": "kia-sportage",
    "size_class": {
     "basis": "registration segment, last 12 months (6345 registrations)",
@@ -29911,8 +30038,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
-    "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_VERIFIED_WARRANTY",
@@ -29952,16 +30077,129 @@
    "model": "L6",
    "model_id": "m_000184",
    "p1_id": "li-auto/l6",
-   "price": null,
-   "rework_price_rows": 1,
+   "price": {
+    "as_of": "2026-10-15",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-03-05",
+    "evidence_url": "https://eg.hatla2ee.com/en/new-car/li-auto/li-auto-l6 | https://www.contactcars.com/en/new-cars/li_auto-l6 | https://www.contactcars.com/en/new-cars/li_auto-l6/year-2026",
+    "issuer": "ContactCars+Hatla2ee",
+    "model_year": 2026,
+    "price_from": 2550000,
+    "tier": "B",
+    "trims": [
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-03-05",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/li-auto/li-auto-l6 | https://www.contactcars.com/en/new-cars/li_auto-l6 | https://www.contactcars.com/en/new-cars/li_auto-l6/year-2026",
+      "issuer": "ContactCars+Hatla2ee",
+      "label": "Pro",
+      "model_year": 2026,
+      "price_egp": 2550000,
+      "tier": "B"
+     }
+    ]
+   },
+   "rework_price_rows": 0,
    "site_slug": "li-auto-l6",
    "size_class": {
     "basis": "registration segment, last 12 months (107 registrations)",
     "segment": "Luxury SUV-4",
     "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
    },
-   "specs": null,
-   "specs_accepted": false,
+   "specs": {
+    "drive": [
+     {
+      "applicability": "market trim pages: Pro",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/li_auto-l6/eee4a88f533f",
+      "unit": "",
+      "value": "AWD/4WD"
+     }
+    ],
+    "engine_cc": [
+     {
+      "applicability": "market trim pages: Pro",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/li_auto-l6/eee4a88f533f",
+      "unit": "",
+      "value": "1500"
+     }
+    ],
+    "fuel_tank_l": [
+     {
+      "applicability": "market trim pages: Pro",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/li_auto-l6/eee4a88f533f",
+      "unit": "",
+      "value": "60"
+     }
+    ],
+    "height_mm": [
+     {
+      "applicability": "market trim pages: Pro",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/li_auto-l6/eee4a88f533f",
+      "unit": "",
+      "value": "1735"
+     }
+    ],
+    "length_mm": [
+     {
+      "applicability": "market trim pages: Pro",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/li_auto-l6/eee4a88f533f",
+      "unit": "",
+      "value": "4925"
+     }
+    ],
+    "seats": [
+     {
+      "applicability": "market trim pages: Pro",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/li_auto-l6/eee4a88f533f",
+      "unit": "",
+      "value": "5"
+     }
+    ],
+    "torque_nm": [
+     {
+      "applicability": "market trim pages: Pro",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/li_auto-l6/eee4a88f533f",
+      "unit": "",
+      "value": "529"
+     }
+    ],
+    "transmission": [
+     {
+      "applicability": "market trim pages: Pro",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/li_auto-l6/eee4a88f533f",
+      "unit": "",
+      "value": "Automatic"
+     }
+    ],
+    "wheelbase_mm": [
+     {
+      "applicability": "market trim pages: Pro",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/li_auto-l6/eee4a88f533f",
+      "unit": "",
+      "value": "2920"
+     }
+    ],
+    "width_mm": [
+     {
+      "applicability": "market trim pages: Pro",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/li_auto-l6/eee4a88f533f",
+      "unit": "",
+      "value": "1960"
+     }
+    ]
+   },
+   "specs_accepted": true,
    "universe": "U11_283",
    "warranty": null
   },
@@ -43355,7 +43593,7 @@
      {
       "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-06-25",
+      "effective_date": "2026-04-10",
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/soueast/S+06 | https://www.contactcars.com/en/new-cars/soueast-s_06/year-2027 | https://www.egy-car.com/soueast-s06",
       "issuer": "ContactCars+EgyCar+Hatla2ee",
       "label": "Premium",
@@ -43642,7 +43880,7 @@
      {
       "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-06-25",
+      "effective_date": "2026-04-10",
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/soueast/S+07 | https://www.contactcars.com/en/new-cars/soueast-s_07/year-2027 | https://www.egy-car.com/soueast-s07",
       "issuer": "ContactCars+EgyCar+Hatla2ee",
       "label": "Premium",
