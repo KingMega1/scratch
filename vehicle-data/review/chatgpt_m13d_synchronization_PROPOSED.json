@@ -1,0 +1,570 @@
+{
+  "task_id": "M13-D-20261015",
+  "from": "ChatGPT Work/Codex",
+  "objective": "P2 price/spec/name acceptance then P1/P5 gated integration; all416 audited, high-impact batch delivered",
+  "state": "VERIFYING",
+  "constitution": "v1.1 read and acknowledged",
+  "authority": "Review/proposal files and existing handoff only; no canonical acceptance, engine or P5 code edits, publishing, production or schedules",
+  "links": {
+    "price-proposals.json": {
+      "id": "1UlhtT-vC1sqO7ZDGVGZTRMoz8egLG4aP",
+      "url": "https://drive.google.com/file/d/1UlhtT-vC1sqO7ZDGVGZTRMoz8egLG4aP/view?usp=drivesdk"
+    },
+    "price-evidence-import-PROPOSED.csv": {
+      "id": "1igHuotdTukm8peRkbvhdctNEnVCId6sU",
+      "url": "https://drive.google.com/file/d/1igHuotdTukm8peRkbvhdctNEnVCId6sU/view?usp=drivesdk"
+    },
+    "specification-proposals.json": {
+      "id": "1SN4oBY4fRVQKWrc286vRjTHWqtwH7LLa",
+      "url": "https://drive.google.com/file/d/1SN4oBY4fRVQKWrc286vRjTHWqtwH7LLa/view?usp=drivesdk"
+    },
+    "arabic-name-proposals.json": {
+      "id": "1fc_hS-EbjrDdRT_dJEI5r2sEYZ8_l6TL",
+      "url": "https://drive.google.com/file/d/1fc_hS-EbjrDdRT_dJEI5r2sEYZ8_l6TL/view?usp=drivesdk"
+    },
+    "arabic-terminology.json": {
+      "id": "1r0Rl4UhI2_WZlH_ZqLo2HK1Tu__Ultpo",
+      "url": "https://drive.google.com/file/d/1r0Rl4UhI2_WZlH_ZqLo2HK1Tu__Ultpo/view?usp=drivesdk"
+    },
+    "conflict-quarantine.json": {
+      "id": "1k6zG2bHV8kJN9x1Bk2e4qLvpYRM_T8Q5",
+      "url": "https://drive.google.com/file/d/1k6zG2bHV8kJN9x1Bk2e4qLvpYRM_T8Q5/view?usp=drivesdk"
+    },
+    "p1-readiness-416.json": {
+      "id": "1H7ThoHnG2rNbYC0Kd0jKyzZhoV91MSVR",
+      "url": "https://drive.google.com/file/d/1H7ThoHnG2rNbYC0Kd0jKyzZhoV91MSVR/view?usp=drivesdk"
+    },
+    "catalogue-coverage-416.json": {
+      "id": "1b6js5w277FA_E_qUAoe3Mt6U7P_dBFj9",
+      "url": "https://drive.google.com/file/d/1b6js5w277FA_E_qUAoe3Mt6U7P_dBFj9/view?usp=drivesdk"
+    },
+    "canonical-field-source-index.json": {
+      "id": "1OyeDaWYPMlLlasCFTKnBagRb28gZFyRt",
+      "url": "https://drive.google.com/file/d/1OyeDaWYPMlLlasCFTKnBagRb28gZFyRt/view?usp=drivesdk"
+    },
+    "remediation-queue-416.json": {
+      "id": "1ZkG7HPOaki1kNYki43kQzHz_vUVXFj0k",
+      "url": "https://drive.google.com/file/d/1ZkG7HPOaki1kNYki43kQzHz_vUVXFj0k/view?usp=drivesdk"
+    },
+    "existing-price-gap-evidence.json": {
+      "id": "1CuE9YKYq3EbE4XNQJMF551qQmm6K39Qd",
+      "url": "https://drive.google.com/file/d/1CuE9YKYq3EbE4XNQJMF551qQmm6K39Qd/view?usp=drivesdk"
+    },
+    "source-ledger.json": {
+      "id": "11d7_T2WOoEa69DIp6SNpUihlMGoiQ6zd",
+      "url": "https://drive.google.com/file/d/11d7_T2WOoEa69DIp6SNpUihlMGoiQ6zd/view?usp=drivesdk"
+    },
+    "research-exclusions.json": {
+      "id": "1qzRUtid8dj2aZhaZTFduBSvjPdX6V0n-",
+      "url": "https://drive.google.com/file/d/1qzRUtid8dj2aZhaZTFduBSvjPdX6V0n-/view?usp=drivesdk"
+    },
+    "field-coverage-summary.json": {
+      "id": "1A0yNMinjdvskPFH5anA9VuouPJ9N_VPc",
+      "url": "https://drive.google.com/file/d/1A0yNMinjdvskPFH5anA9VuouPJ9N_VPc/view?usp=drivesdk"
+    },
+    "summary.json": {
+      "id": "18W-QMgs9B7cmFnw3ipWgQoJH-rCYiyXS",
+      "url": "https://drive.google.com/file/d/18W-QMgs9B7cmFnw3ipWgQoJH-rCYiyXS/view?usp=drivesdk"
+    },
+    "p5-integration-readiness.json": {
+      "id": "1dFne9h1uUZkG3SBWw8v4Qhtcrx9twzao",
+      "url": "https://drive.google.com/file/d/1dFne9h1uUZkG3SBWw8v4Qhtcrx9twzao/view?usp=drivesdk"
+    }
+  },
+  "P2": {
+    "state": "QUEUED",
+    "executor_verified": false,
+    "handoff": "https://app.notion.com/p/3ec6811407bc81e4ba5edf713b70b481",
+    "next_executable_action": "Validate proposed import against existing registry/price_evidence_manual.csv header; review 36 scope-preserved price rows, hold15, retain2 nonnumeric; accept/rework each with reason. Merge reviewed input only; deterministic canonical rebuild and accepted release owned by P2.",
+    "acceptance_tests": [
+      "Canonical416 IDs unchanged; no duplicate identities; no standalone trim IDs invented",
+      "No model year fabricated from list effective date; evaluate unknown-MY price cohort in builder/serving so old dated-year prices do not silently mask the new official price",
+      "Existing accepted base prices preserved until reviewed scope-specific supersession; no wholesale all-trim overwrite",
+      "CLA250+ Electric held outside petrolCLA; GLC400 Electric maps onlym418; G580 onlym337; MGZSPlus andHS variant holds respected",
+      "Six Haval overrides and V7 unchanged; prior100safeGB15prices preserved; Deepal withdrawnREEV rows stay withheld",
+      "Quarantine all15 EX5EM-i-attributed fact fields under EX5Electric; resolve exact source before transfer",
+      "Tucson/Venue mixedPDF exact visible page validation; retain independent sources",
+      "26spec proposals include24absentcells and2existingcomposite refinements; map safety fields under existing import/review contract before acceptance",
+      "Review57 Arabic name proposals as display mappings; no parser aliases automatically added",
+      "Return accepted/rejected counts, commit, generatedcanonical/releaseSHA and per-proposal decision ledger"
+    ]
+  },
+  "P1": {
+    "state": "QUEUED",
+    "executor_verified": false,
+    "handoff": "https://app.notion.com/p/3f96811407bc812da949d474f94ce224",
+    "next_executable_action": "After P2 accepted release, run existing tools/build_u12.mjs with that commit, compare all416 readiness rows and releasedU11; do not change engine/policy.",
+    "regression_requirements": [
+      "Unknown price/size remain unknown;12policybodyexclusions preserved",
+      "Baseline strict regression plus eligibility/namedcars/transport/integrity/redaction suites",
+      "Current-year trim cohort, petrol/BEV/HEV/REEV identity and mixedtrim checks",
+      "7-seat/4WD hard constraints: missing stays unknown, optional media/warranty never gate",
+      "Budget boundaries and70%spendless floor; no popularity ranking change",
+      "ArabicEX5EM-i must never resolveBMWX5/EX5BEV; CS55/Plus and trim code isolation",
+      "P3 open copy keys and accountable release approval remain required"
+    ],
+    "release_state": "RC2_CANDIDATE_NOT_RELEASED; native325eligible of373inu, releasedU11basis283; P2accepted price is a separate measure"
+  },
+  "P5": {
+    "state": "QUEUED",
+    "executor_verified": false,
+    "handoff": "https://app.notion.com/p/3f36811407bc819c8faaeaf0bfe57cbb",
+    "next_executable_action": "Consume independently accepted P2 release; FindMyCar changes only after accepted P1 release; perform linked preview QA and return actual commit/URL/output evidence.",
+    "package": "p5-integration-readiness.json"
+  },
+  "prior_media": [
+    {
+      "batch": "M13-A",
+      "manifest": "https://drive.google.com/file/d/1y7JRPcV0w6tuuYWnHIMa0W0U2Rrkbhpe/view",
+      "gallery": "https://drive.google.com/file/d/1OTnjU_eoBabWrJVAWClhV474f80oJdFo/view",
+      "assets": 8
+    },
+    {
+      "batch": "M13-B",
+      "manifest": "https://drive.google.com/file/d/1zO3k2otCarKHESRGOibtpreQFr3sIZxQ/view",
+      "gallery": "https://drive.google.com/file/d/188O1UimIXbt0w9hIr3ok5F8I0q0d9Hmw/view",
+      "assets": 6
+    },
+    {
+      "batch": "M13-C",
+      "manifest": "https://drive.google.com/file/d/1iYOHAkH6SrcIUC-o2baNR9j6i27iaaw8/view",
+      "gallery": "https://drive.google.com/file/d/1kWhK5tj5R7U-FJiYq50zDMtg9krOtdnd/view",
+      "assets": 5
+    }
+  ],
+  "remaining_blockers": [
+    "P2 acceptance/unknown-MY cohort binding and variant validation",
+    "P1 data release and open P3 copy acceptance",
+    "57names are a priority subset of333blank canonical fields, not closure ofallArabic gaps",
+    "Price evidence remains absent/unaccepted for192models; existing503 review rows preserved",
+    "Tucson/Tiggo7/ProMax hero gaps; other M13media remain independently reviewable",
+    "Catalogue-wide source re-verification not completed; this report audits latest accepted-record completeness and verifies the new batch sources"
+  ],
+  "next_batch": [
+    {
+      "canonical_model_id": "m_000194",
+      "p1_id": "mercedes/c-class",
+      "model": "Mercedes-Benz C-Class",
+      "priority": "P0",
+      "score": 191.3,
+      "registration_last12": 2630,
+      "registration_definition": "First registrations, Sep2025-Aug2026; not sales or default P1 ranking",
+      "readiness": "PRICE_ACCEPTANCE_CANDIDATE",
+      "blockers": [
+        {
+          "field": "price",
+          "blocker": "No P2-accepted trim price",
+          "evidence": "Official Egypt exact trim/MY price or two independent agreeing sources under PB-1",
+          "route": "Review attached exact-scope proposal",
+          "owner": "P2"
+        }
+      ],
+      "evidence_rows_already_available": 14,
+      "next_action": "Review attached exact-scope proposal",
+      "owner": "P2"
+    },
+    {
+      "canonical_model_id": "m_000202",
+      "p1_id": "mercedes/gle",
+      "model": "Mercedes-Benz GLE",
+      "priority": "P0",
+      "score": 170.38,
+      "registration_last12": 538,
+      "registration_definition": "First registrations, Sep2025-Aug2026; not sales or default P1 ranking",
+      "readiness": "PRICE_ACCEPTANCE_CANDIDATE",
+      "blockers": [
+        {
+          "field": "price",
+          "blocker": "No P2-accepted trim price",
+          "evidence": "Official Egypt exact trim/MY price or two independent agreeing sources under PB-1",
+          "route": "Review attached exact-scope proposal",
+          "owner": "P2"
+        }
+      ],
+      "evidence_rows_already_available": 5,
+      "next_action": "Review attached exact-scope proposal",
+      "owner": "P2"
+    },
+    {
+      "canonical_model_id": "m_000203",
+      "p1_id": "mercedes/gls",
+      "model": "Mercedes-Benz GLS",
+      "priority": "P0",
+      "score": 167.29,
+      "registration_last12": 229,
+      "registration_definition": "First registrations, Sep2025-Aug2026; not sales or default P1 ranking",
+      "readiness": "PRICE_ACCEPTANCE_CANDIDATE",
+      "blockers": [
+        {
+          "field": "price",
+          "blocker": "No P2-accepted trim price",
+          "evidence": "Official Egypt exact trim/MY price or two independent agreeing sources under PB-1",
+          "route": "Review attached exact-scope proposal",
+          "owner": "P2"
+        }
+      ],
+      "evidence_rows_already_available": 3,
+      "next_action": "Review attached exact-scope proposal",
+      "owner": "P2"
+    },
+    {
+      "canonical_model_id": "m_000197",
+      "p1_id": "mercedes/eqa",
+      "model": "Mercedes-Benz EQA",
+      "priority": "P0",
+      "score": 166.77,
+      "registration_last12": 177,
+      "registration_definition": "First registrations, Sep2025-Aug2026; not sales or default P1 ranking",
+      "readiness": "PRICE_ACCEPTANCE_CANDIDATE",
+      "blockers": [
+        {
+          "field": "price",
+          "blocker": "No P2-accepted trim price",
+          "evidence": "Official Egypt exact trim/MY price or two independent agreeing sources under PB-1",
+          "route": "Review attached exact-scope proposal",
+          "owner": "P2"
+        }
+      ],
+      "evidence_rows_already_available": 2,
+      "next_action": "Review attached exact-scope proposal",
+      "owner": "P2"
+    },
+    {
+      "canonical_model_id": "m_000213",
+      "p1_id": "mitsubishi/attrage",
+      "model": "Mitsubishi Attrage",
+      "priority": "P0",
+      "score": 166.09,
+      "registration_last12": 109,
+      "registration_definition": "First registrations, Sep2025-Aug2026; not sales or default P1 ranking",
+      "readiness": "PRICE_ACCEPTANCE_CANDIDATE",
+      "blockers": [
+        {
+          "field": "price",
+          "blocker": "No P2-accepted trim price",
+          "evidence": "Official Egypt exact trim/MY price or two independent agreeing sources under PB-1",
+          "route": "Review attached exact-scope proposal",
+          "owner": "P2"
+        }
+      ],
+      "evidence_rows_already_available": 2,
+      "next_action": "Review attached exact-scope proposal",
+      "owner": "P2"
+    },
+    {
+      "canonical_model_id": "m_000210",
+      "p1_id": "mg/rx9",
+      "model": "MG RX9",
+      "priority": "P0",
+      "score": 165.72,
+      "registration_last12": 72,
+      "registration_definition": "First registrations, Sep2025-Aug2026; not sales or default P1 ranking",
+      "readiness": "PRICE_ACCEPTANCE_CANDIDATE",
+      "blockers": [
+        {
+          "field": "price",
+          "blocker": "No P2-accepted trim price",
+          "evidence": "Official Egypt exact trim/MY price or two independent agreeing sources under PB-1",
+          "route": "Review attached exact-scope proposal",
+          "owner": "P2"
+        }
+      ],
+      "evidence_rows_already_available": 3,
+      "next_action": "Review attached exact-scope proposal",
+      "owner": "P2"
+    },
+    {
+      "canonical_model_id": "m_000215",
+      "p1_id": "mitsubishi/mirage",
+      "model": "Mitsubishi Mirage",
+      "priority": "P0",
+      "score": 165.42,
+      "registration_last12": 42,
+      "registration_definition": "First registrations, Sep2025-Aug2026; not sales or default P1 ranking",
+      "readiness": "PRICE_ACCEPTANCE_CANDIDATE",
+      "blockers": [
+        {
+          "field": "price",
+          "blocker": "No P2-accepted trim price",
+          "evidence": "Official Egypt exact trim/MY price or two independent agreeing sources under PB-1",
+          "route": "Review attached exact-scope proposal",
+          "owner": "P2"
+        }
+      ],
+      "evidence_rows_already_available": 1,
+      "next_action": "Review attached exact-scope proposal",
+      "owner": "P2"
+    },
+    {
+      "canonical_model_id": "m_000232",
+      "p1_id": "proton/saga",
+      "model": "Proton Saga",
+      "priority": "P0",
+      "score": 159.67,
+      "registration_last12": 2467,
+      "registration_definition": "First registrations, Sep2025-Aug2026; not sales or default P1 ranking",
+      "readiness": "MISSING_ACCEPTED_DATA",
+      "blockers": [
+        {
+          "field": "price",
+          "blocker": "No P2-accepted trim price",
+          "evidence": "Official Egypt exact trim/MY price or two independent agreeing sources under PB-1",
+          "route": "Resolve existing review rows then targeted OEM/importer evidence",
+          "owner": "P2"
+        }
+      ],
+      "evidence_rows_already_available": 2,
+      "next_action": "Resolve existing review rows then targeted OEM/importer evidence",
+      "owner": "P2"
+    },
+    {
+      "canonical_model_id": "m_000015",
+      "p1_id": "mitsubishi/eclipse-cross",
+      "model": "Mitsubishi Eclipse Cross",
+      "priority": "P0",
+      "score": 157.69,
+      "registration_last12": 2269,
+      "registration_definition": "First registrations, Sep2025-Aug2026; not sales or default P1 ranking",
+      "readiness": "MISSING_ACCEPTED_DATA",
+      "blockers": [
+        {
+          "field": "price",
+          "blocker": "No P2-accepted trim price",
+          "evidence": "Official Egypt exact trim/MY price or two independent agreeing sources under PB-1",
+          "route": "Resolve existing review rows then targeted OEM/importer evidence",
+          "owner": "P2"
+        }
+      ],
+      "evidence_rows_already_available": 14,
+      "next_action": "Resolve existing review rows then targeted OEM/importer evidence",
+      "owner": "P2"
+    },
+    {
+      "canonical_model_id": "m_000119",
+      "p1_id": "fiat/500x",
+      "model": "Fiat 500X",
+      "priority": "P0",
+      "score": 157.4,
+      "registration_last12": 2240,
+      "registration_definition": "First registrations, Sep2025-Aug2026; not sales or default P1 ranking",
+      "readiness": "MISSING_ACCEPTED_DATA",
+      "blockers": [
+        {
+          "field": "price",
+          "blocker": "No P2-accepted trim price",
+          "evidence": "Official Egypt exact trim/MY price or two independent agreeing sources under PB-1",
+          "route": "Resolve existing review rows then targeted OEM/importer evidence",
+          "owner": "P2"
+        }
+      ],
+      "evidence_rows_already_available": 3,
+      "next_action": "Resolve existing review rows then targeted OEM/importer evidence",
+      "owner": "P2"
+    }
+  ],
+  "active_background_executor": false,
+  "schedules_created": 0,
+  "review_input_commit": "9711aed9528dc469eb028ee3648c9b69ccf84776",
+  "review_input_path": "vehicle-data/review/chatgpt_m13d_price_evidence_PROPOSED.csv",
+  "source_ledger": {
+    "MB24": {
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list",
+      "date": "2026-09-24",
+      "file": "upload/IMG_7524(1).jpeg",
+      "url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "scope": "Valid from 24.09.2026; model year not stated; source crop has no masthead",
+      "sha256": "e36ffd55530d4f3dcc6d91feac123a10bf3a1134a11b99be6bb7634126c6a75e",
+      "captured_at": "2026-10-15T15:01:27.680375+00:00",
+      "tier": "A",
+      "rights": "Manufacturer/distributor copyright; internal factual evidence, no blanket image-reuse licence"
+    },
+    "MG15": {
+      "issuer": "Al Mansour / MG Egypt",
+      "date": "2026-10-15",
+      "file": "upload/IMG_7526(1).jpeg",
+      "url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+      "scope": "Retail Price List 15.10.2026; model year not stated",
+      "sha256": "14d119ed316e70dfc652c14e29a5d07f824ceeaf9acf6992203e09bc225bb131",
+      "captured_at": "2026-10-15T15:01:27.680375+00:00",
+      "tier": "A",
+      "rights": "Manufacturer/distributor copyright; internal factual evidence, no blanket image-reuse licence"
+    },
+    "SEAT22": {
+      "issuer": "KAYAN Egypt / SEAT",
+      "date": "2026-08-22",
+      "file": "/workspace/scratch/ad2a36eb2b9f/enrichment-M13D/inputs/seat-price.pdf",
+      "url": "https://drive.google.com/file/d/1UaB-J_dPqnDHskEy_2EZfDpstNOuIqR6/view",
+      "scope": "Already accepted price evidence; avoid duplicate import",
+      "sha256": "dbdc76e2421504a612ccb6f316c8a7b798f5e21f990f3e1511fae880983a3240",
+      "captured_at": "2026-10-15T15:01:27.680375+00:00",
+      "tier": "A",
+      "rights": "Manufacturer/distributor copyright; internal factual evidence, no blanket image-reuse licence"
+    },
+    "CUPRA22": {
+      "issuer": "KAYAN Egypt / CUPRA",
+      "date": "2026-08-22",
+      "file": "/workspace/scratch/ad2a36eb2b9f/enrichment-M13D/inputs/cupra-price.pdf",
+      "url": "https://drive.google.com/file/d/1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD/view",
+      "scope": "Already accepted price evidence; avoid duplicate import",
+      "sha256": "79a5d5dd45275115667b9ca04d42ab4ff6f83db573b217be36dc8fed6ead4c05",
+      "captured_at": "2026-10-15T15:01:27.680375+00:00",
+      "tier": "A",
+      "rights": "Manufacturer/distributor copyright; internal factual evidence, no blanket image-reuse licence"
+    },
+    "MITSU": {
+      "issuer": "Diamond Motors / Mitsubishi Motors Egypt",
+      "date": null,
+      "file": "/workspace/scratch/ad2a36eb2b9f/enrichment-M13D/inputs/mitsubishi-official.html",
+      "url": "https://www.mitsubishimotors-eg.com/ar/MitsubisiDiamond",
+      "scope": "Official booking form observed 15 Oct 2026; retains MY2025 and MY2026; no effective date; conflict with current other official pages requires hold for Eclipse Cross",
+      "sha256": "11344291b9aa130529388fed7d8bbc11d9ff25e4099b257a3440ea1deee5b58a",
+      "captured_at": "2026-10-15T15:01:27.680375+00:00",
+      "tier": "A",
+      "rights": "Manufacturer/distributor copyright; internal factual evidence, no blanket image-reuse licence",
+      "original_drive_evidence_url": "https://drive.google.com/file/d/1sim43eTCRw4MN4hJqLGK0PHYYYvlK22M/view"
+    },
+    "MITSUBUY": {
+      "issuer": "Diamond Motors / Mitsubishi Motors Egypt",
+      "date": null,
+      "file": "/workspace/scratch/ad2a36eb2b9f/enrichment-M13D/inputs/mitsubishi-buy.html",
+      "url": "https://www.mitsubishimotors-eg.com/en/buy",
+      "scope": "Official Egypt page; no model year/effective date stated; model-page equipment variability warning retained",
+      "sha256": "a24595d8dc2f02e1dbb6750d746729a52d049f8bde2dd46b50ea06f0e63415ae",
+      "captured_at": "2026-10-15T15:01:27.680375+00:00",
+      "tier": "A",
+      "rights": "Manufacturer/distributor copyright; internal factual evidence, no blanket image-reuse licence",
+      "original_drive_evidence_url": "https://drive.google.com/file/d/1tiHdGFzM-SkQgwux45PQkOGAMnwtT80Y/view"
+    },
+    "ATTR": {
+      "issuer": "Diamond Motors / Mitsubishi Motors Egypt",
+      "date": null,
+      "file": "/workspace/scratch/ad2a36eb2b9f/enrichment-M13D/inputs/mitsubishi-attrage.html",
+      "url": "https://www.mitsubishimotors-eg.com/en/cars/attrage",
+      "scope": "Official Egypt page; no model year/effective date stated; model-page equipment variability warning retained",
+      "sha256": "be46fa185bb077dbbc8985d37dd3d0a955cee7c313c565bd35758223d1191dba",
+      "captured_at": "2026-10-15T15:01:27.680375+00:00",
+      "tier": "A",
+      "rights": "Manufacturer/distributor copyright; internal factual evidence, no blanket image-reuse licence",
+      "original_drive_evidence_url": "https://drive.google.com/file/d/1D52gSUcmviLg4s7IlO-E7CbSMP3V8D_r/view"
+    },
+    "MIR": {
+      "issuer": "Diamond Motors / Mitsubishi Motors Egypt",
+      "date": null,
+      "file": "/workspace/scratch/ad2a36eb2b9f/enrichment-M13D/inputs/mitsubishi-mirage.html",
+      "url": "https://www.mitsubishimotors-eg.com/en/cars/mirage",
+      "scope": "Official Egypt page; no model year/effective date stated; model-page equipment variability warning retained",
+      "sha256": "181d5783403a9228886536b90bf227807554db384019eb1e3bc48d766e767edc",
+      "captured_at": "2026-10-15T15:01:27.680375+00:00",
+      "tier": "A",
+      "rights": "Manufacturer/distributor copyright; internal factual evidence, no blanket image-reuse licence",
+      "original_drive_evidence_url": "https://drive.google.com/file/d/1HtdPVs1mcXb29E9fYsMI-mZi8u7CVO3v/view"
+    }
+  },
+  "summary": {
+    "batch_id": "M13-D-20261015",
+    "state": "VERIFYING",
+    "models": 416,
+    "canonical_blob": "aabb0aeae7eaff84a30b0246d7a410c3af3d48dd",
+    "accepted_before": {
+      "brochure_accepted": 82,
+      "fully_enriched": 36,
+      "gallery_models": 68,
+      "hero_accepted": 78,
+      "hero_accepted_hq": 74,
+      "hero_limited_archive": 130,
+      "id_accepted": 416,
+      "logo_accepted": 347,
+      "market_status_official": 38,
+      "models": 416,
+      "price_accepted": 224,
+      "price_source_dated": 158,
+      "price_tier_a": 55,
+      "specs_accepted": 241,
+      "warranty_accepted": 121
+    },
+    "accepted_after": {
+      "brochure_accepted": 82,
+      "fully_enriched": 36,
+      "gallery_models": 68,
+      "hero_accepted": 78,
+      "hero_accepted_hq": 74,
+      "hero_limited_archive": 130,
+      "id_accepted": 416,
+      "logo_accepted": 347,
+      "market_status_official": 38,
+      "models": 416,
+      "price_accepted": 224,
+      "price_source_dated": 158,
+      "price_tier_a": 55,
+      "specs_accepted": 241,
+      "warranty_accepted": 121
+    },
+    "new_canonical_acceptances_verified": 0,
+    "price_rows_transcribed": 53,
+    "numeric_price_rows": 51,
+    "price_proposed_accept_scope": 36,
+    "price_proposed_models": 25,
+    "potential_new_price_models": [
+      "m_000194",
+      "m_000197",
+      "m_000202",
+      "m_000203",
+      "m_000210",
+      "m_000213",
+      "m_000215",
+      "m_000292",
+      "m_000333",
+      "m_000334",
+      "m_000335",
+      "m_000336",
+      "m_000337",
+      "m_000338",
+      "m_000392",
+      "m_000418"
+    ],
+    "specification_proposals": 26,
+    "specification_models": 7,
+    "arabic_name_proposals": 57,
+    "canonical_arabic_names_present": 83,
+    "canonical_arabic_names_missing": 333,
+    "RC2": {
+      "identities": 416,
+      "in_universe": 373,
+      "native_priced_eligible": 325,
+      "unknown_price": 48,
+      "unknown_size": 31,
+      "policy_scope_excluded": 12,
+      "released": false
+    },
+    "p1_readiness_counts": {
+      "DATA_READY_CANDIDATE_RELEASE_GATE_OPEN": 207,
+      "MISSING_ACCEPTED_DATA": 148,
+      "CONFLICT_OR_UNVERIFIED_EVIDENCE": 8,
+      "PRICE_ACCEPTANCE_CANDIDATE": 12,
+      "MISSING_SIZE_EVIDENCE": 29,
+      "CORRECT_POLICY_EXCLUSION": 12
+    },
+    "existing_price_gap_rows": 503,
+    "new_image_candidates": 0,
+    "prior_media_proposals_preserved": 19,
+    "generated_at": "2026-10-15T15:01:27.680375+00:00",
+    "scope_notes": [
+      "Price proposals are scope-verified transcriptions, pending P2 derivative/model-year review and acceptance. 16 potential new-price models is conditional, not an accepted gain.",
+      "57 Arabic proposals address a priority subset; observed canonical416 has333missing Arabic display names, not57.",
+      "The full416 audit reconciles records, not source-by-source independent validation of every existing accepted fact.",
+      "New24 specification cells plus2 refinements remain proposals; 9 additional safety fields are measured separately from complete safety coverage.",
+      "No new vehicle photos; existingM13A/B/C19 candidates and handoffs preserved."
+    ],
+    "new_price_model_potential": 16
+  },
+  "dashboard_QA": {
+    "state": "STRUCTURAL_FILTER_LOGIC_PASS",
+    "checks": [
+      "JavaScript syntax",
+      "416 rows render",
+      "192 accepted-price gaps filter",
+      "exact ID search returns 1 row"
+    ],
+    "browser_QA": "UNAVAILABLE: local Playwright browser binary not installed; geometry/mobile visual verification not claimed"
+  }
+}
