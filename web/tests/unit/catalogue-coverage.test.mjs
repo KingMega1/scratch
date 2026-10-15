@@ -2,6 +2,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
 import ts from 'typescript';
+const ARABIC=JSON.parse((await import('node:fs')).readFileSync('data/registry/arabic-names.p2.json','utf8'));
 import {buildCatalogue,loadInputs} from '../../scripts/build-catalogue-release.mjs';
 const [snap,u,cw]=loadInputs(), release=JSON.parse(readFileSync('data/registry/catalogue-serving.release.json','utf8'));
 // The served release is P2's RC2 (canonical; P5 never regenerates it). Its website identity layer must stay identical
@@ -46,7 +47,7 @@ function runtime(path, dependencies){
 }
 const V=runtime('src/server/vehicles/read-model.ts',{
  '@data/registry/universe.snapshot.json':snap,'@data/registry/display-crosswalk.TEMP.json':cw,
- '@data/registry/catalogue-serving.release.json':release,'@data/registry/media-verified.json':JSON.parse(readFileSync('data/registry/media-verified.json','utf8')),
+ '@data/registry/catalogue-serving.release.json':release,'@data/registry/arabic-names.p2.json':ARABIC,'@data/registry/media-verified.json':JSON.parse(readFileSync('data/registry/media-verified.json','utf8')),
 });
 const Q=runtime('src/server/vehicles/query.ts',{'./read-model':V});
 const ADD=release.market_additions??[], TOTAL=283+ADD.length;
@@ -102,7 +103,7 @@ test('P2 media contract: accepted same-origin hero images are served automatical
  noHero.hero_image={src:'/media/../secret.webp'};
  const V2=runtime('src/server/vehicles/read-model.ts',{
   '@data/registry/universe.snapshot.json':snap,'@data/registry/display-crosswalk.TEMP.json':cw,
-  '@data/registry/catalogue-serving.release.json':rel2,'@data/registry/media-verified.json':{entries:[]},
+  '@data/registry/catalogue-serving.release.json':rel2,'@data/registry/arabic-names.p2.json':ARABIC,'@data/registry/media-verified.json':{entries:[]},
  });
  assert.deepEqual(V2.vehicles().get('kia-sportage').image,{src:'/media/models/kia-sportage.webp',credit:'Kia Egypt',sourcePage:'https://example.test/kia',flags:[]});
  assert.equal(V2.vehicles().get('hyundai-tucson').image,null);
@@ -120,7 +121,7 @@ test('Tucson: P2-accepted official list price supersedes the old U11 listing con
  // without an accepted price the U11 conflict is shown as a conflict with no figure
  const rel3=structuredClone(release);delete rel3.entries.find(x=>x.site_slug==='hyundai-tucson').accepted.price;
  const V3=runtime('src/server/vehicles/read-model.ts',{'@data/registry/universe.snapshot.json':snap,'@data/registry/display-crosswalk.TEMP.json':cw,
-  '@data/registry/catalogue-serving.release.json':rel3,'@data/registry/media-verified.json':JSON.parse(readFileSync('data/registry/media-verified.json','utf8'))});
+  '@data/registry/catalogue-serving.release.json':rel3,'@data/registry/arabic-names.p2.json':ARABIC,'@data/registry/media-verified.json':JSON.parse(readFileSync('data/registry/media-verified.json','utf8'))});
  const c3=V3.vehicles().get('hyundai-tucson');assert.equal(c3.priceFrom.state,'conflict');assert.equal(c3.priceFrom.value,null);
 });
 test('P2 specs, warranty, gallery and brochures are served as accepted, with scope and source; nothing invented',()=>{
@@ -137,4 +138,25 @@ test('P2 specs, warranty, gallery and brochures are served as accepted, with sco
   assert.deepEqual((c?.brochures??[]).map(b=>b.url),pub.map(b=>b.url)); bro+=pub.length;
  }
  assert.ok(specs>0&&warr>0&&gal>0&&bro>0); console.log({specs,warr,gal,bro,driveHidden});
+});
+test('P2 Arabic model names fill blanks only and reach the read-model (entries and additions)',()=>{
+ let filled=0;
+ for(const [pid,ar] of Object.entries(ARABIC.names)){
+  const e=release.entries.find(x=>x.p1_id===pid), a=ADD.find(x=>x.identity===pid);
+  assert.ok(e||a,pid);
+  const car=V.vehicles().get((e??a).site_slug);
+  if(e?.ar?.model)assert.equal(car.model.ar,e.ar.model); // approved name never overwritten
+  else{assert.equal(car.model.ar,ar);filled++;}
+ }
+ for(const e of release.entries)if(e.ar?.model)assert.equal(V.vehicles().get(e.site_slug).model.ar,e.ar.model);
+ assert.ok(filled>0);
+});
+test('M13 spec remap and quarantine: brochure facts only on the model the brochure is for; no private links',()=>{
+ const src=(slug)=>V.vehicles().get(slug).p2?.specs.flatMap(s=>s.facts)??[];
+ const raw=(slug)=>Object.values(release.entries.concat(ADD).find(e=>e.site_slug===slug).accepted?.specs??{}).flat();
+ // "Geely Brochure_EX5-EMI.pdf" (Drive 1h0bZIM…) belongs to EX5 EM-i; "Venue Brochure RTP.pdf" (Drive 10hQJ6…) never on Tucson
+ assert.ok(raw('geely-ex5').every(f=>!String(f.source).includes('1h0bZIM')));
+ assert.ok(raw('hyundai-tucson').every(f=>!String(f.source).includes('10hQJ6')));
+ for(const c of V.vehicles().all())for(const f of c.p2?.specs.flatMap(s=>s.facts)??[])assert.ok(!/drive\.google\.com/.test(f.sourceUrl??''),c.id);
+ assert.ok(src('geely-ex5-em-i').length>0);
 });

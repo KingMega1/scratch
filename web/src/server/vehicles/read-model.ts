@@ -3,6 +3,7 @@ import snapshot from '@data/registry/universe.snapshot.json';
 import crosswalk from '@data/registry/display-crosswalk.TEMP.json';
 import serving from '@data/registry/catalogue-serving.release.json';
 import media from '@data/registry/media-verified.json';
+import arabicNames from '@data/registry/arabic-names.p2.json';
 import type { P2Content, P2Fact, AssetFlag, BrandSummary, OfficialPrice, PriceChange, PriceState, Powertrain, PublicCar, PublicImage, PublicTrim, RegistryMeta, SpecValue } from '@/lib/vehicles/types';
 
 /* Serving read model.
@@ -244,9 +245,11 @@ function shape(m: Raw): PublicCar {
    (P2_ADDITION) and identity splits (P2_SPLIT). Browsable with their accepted fields only; they carry no P1 id until a P1
    release includes them, and never take S6 view data (p2_model_id is not joined). */
 const knownAr = new Map<string, string | null>(serving.entries.map(e => [e.brand, e.ar.brand]));
+// P2-accepted Arabic model names (registry/arabic_names.csv, vendored with its sha256): fill blanks only, never overwrite an approved name.
+const P2_AR_MODEL: Record<string, string> = (arabicNames as { names?: Record<string, string> }).names ?? {};
 const additions: Raw[] = (((serving as Raw).market_additions ?? []) as Raw[]).map(x => ({
   p1_id: null, p2_model_id: null, id_status: x.universe, site_slug: x.site_slug, brand: x.brand, model: x.model,
-  ar: { brand: knownAr.get(x.brand) ?? null, model: null }, on_sale: true, body: x.body ?? null, powertrains: x.powertrains ?? [],
+  ar: { brand: knownAr.get(x.brand) ?? null, model: P2_AR_MODEL[x.identity] ?? null }, on_sale: true, body: x.body ?? null, powertrains: x.powertrains ?? [],
   registration: null, p2_evidence: false, evidence_state: x.universe, price_status: 'UNKNOWN', conflicts: [],
   missing_evidence: x.missing_evidence ?? [], accepted: x.accepted ?? {}, identity: x.identity, parent: x.parent ?? null,
 }));
@@ -265,7 +268,7 @@ class JsonSnapshotReadModel implements VehicleReadModel {
         price: {}, specs: {}, registration: null, gaps: e.missing_evidence, conflicts: [],
       });
       car.brand.ar = e.ar.brand;
-      car.model.ar = e.ar.model;
+      car.model.ar = e.ar.model ?? (e.p1_id ? P2_AR_MODEL[e.p1_id] ?? null : null);
       car.body = e.body;
       car.p1Id = e.p1_id;
       car.evidenceState = e.evidence_state;

@@ -175,6 +175,16 @@ test.describe('launch car pages (P2 accepted media)', () => {
       expect(v, path).toEqual([]);
     });
   }
+  test('P2-accepted Arabic model names: Arabic title for word names, Latin model codes kept; both searchable', async ({ page }) => {
+    await page.goto('/ar/cars/alfa-romeo-giulia');
+    await expect(page.locator('h1')).toContainText('جوليا');
+    await page.goto('/ar/cars/audi-q5');
+    await expect(page.locator('h1')).toContainText('Q5');
+    for (const [q, slug] of [['جوليا', 'alfa-romeo-giulia'], ['كيو 5', 'audi-q5']]) {
+      await page.goto(`/ar/search?q=${encodeURIComponent(q)}`);
+      await expect(page.locator(`a[href="/ar/cars/${slug}"]`).first()).toBeVisible();
+    }
+  });
   test('model-level accepted price is shown in the price table, not as unconfirmed', async ({ page }) => {
     // fixture from the served P2 release: an accepted price without per-version rows (none -> nothing to check)
     const rel = JSON.parse(readFileSync('data/registry/catalogue-serving.release.json', 'utf8'));

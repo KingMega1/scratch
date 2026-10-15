@@ -3,6 +3,7 @@ import type { Locale } from '@/lib/i18n/config';
 import { dict } from '@/lib/i18n/dictionaries';
 import { priceShort } from '@/lib/format';
 import { vehicles } from '../vehicles/read-model';
+import { carNameText } from '@/components/car';
 import { content } from '../cms/provider';
 import { showDrafts } from '@/lib/deploy-env';
 
@@ -28,7 +29,7 @@ function build(): Doc[] {
   const V = vehicles();
   const docs: Doc[] = [];
   for (const c of V.all()) {
-    const ar = `${c.brand.ar ?? c.brand.en} ${c.model.ar ?? c.model.en}`;
+    const ar = carNameText(c, 'ar'); // same Arabic display rule as the car page (model codes stay Latin); keys below still index the Arabic name
     docs.push({
       group: 'cars', id: c.id, weight: Math.log10(10 + (c.registrations?.inWindow ?? 0)),
       keys: norm([c.brand.en, c.model.en, c.brand.ar, c.model.ar, c.id.replace(/-/g, ' '), ar].filter(Boolean).join(' ')),
