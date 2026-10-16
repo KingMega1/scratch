@@ -1,3 +1,4 @@
 u11+u11specs+logos+materialize
 # AT-51 2026-10-16 02:35 Africa/Cairo: bounded existing P2 refresh after >3h since prior executor completed. Retain all prior accepted data; source QA required; not a Claude full-enrichment dispatch.
 # AT-51 2026-10-16 10:11 Africa/Cairo: repeat bounded refresh after last successful job 116728977674 ended 04:06 Cairo; >6h without new P2 worker. Preserve source/sha acceptance gates; media PDF fragment and 403/429 exceptions require owner QA; this is NOT Claude full 283-model dispatch.
+# AT-51 2026-10-16 15:14 Africa/Cairo: resume existing bounded P2 refresh after >3h since run 38865691236 completed 11:56 Cairo. Media SHA gates unchanged; PDF #page&xref defect remains pending authorized repair. Not Claude full-enrichment dispatch.
