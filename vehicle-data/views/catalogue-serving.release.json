@@ -14,16 +14,16 @@
   "evidence_authority": {
     "schema": "carindex.p2.canonical/v1",
     "path": "vehicle-data/views/canonical_u11.json",
-    "market_snapshot": "snapshots/U_2026-10-15_38789230686",
+    "market_snapshot": "snapshots/U_2026-10-15_38824600820",
     "counts": {
       "models": 283,
       "id_accepted": 283,
       "price_accepted": 201,
       "price_tier_a": 66,
-      "price_source_dated": 143,
+      "price_source_dated": 142,
       "market_status_official": 37,
-      "specs_accepted": 201,
-      "warranty_accepted": 100,
+      "specs_accepted": 200,
+      "warranty_accepted": 99,
       "brochure_accepted": 81,
       "hero_accepted": 82,
       "hero_accepted_hq": 78,
@@ -91,7 +91,7 @@
           "tier": "B",
           "effective_date": "2025-09-25",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/alpha-romeo/Giulia | https://www.contactcars.com/en/new-cars/alfa_romeo-giulia | https://www.contactcars.com/en/new-cars/alfa_romeo-giulia/year-2025",
           "trims": [
@@ -102,7 +102,7 @@
               "tier": "B",
               "effective_date": "2025-09-25",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/alpha-romeo/Giulia | https://www.contactcars.com/en/new-cars/alfa_romeo-giulia | https://www.contactcars.com/en/new-cars/alfa_romeo-giulia/year-2025"
             }
@@ -214,7 +214,7 @@
           "tier": "B",
           "effective_date": "2025-09-25",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/alpha-romeo/Stelvio | https://www.contactcars.com/en/new-cars/alfa_romeo-stelvio | https://www.contactcars.com/en/new-cars/alfa_romeo-stelvio/year-2025",
           "trims": [
@@ -225,7 +225,7 @@
               "tier": "B",
               "effective_date": "2025-09-25",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/alpha-romeo/Stelvio | https://www.contactcars.com/en/new-cars/alfa_romeo-stelvio | https://www.contactcars.com/en/new-cars/alfa_romeo-stelvio/year-2025"
             },
@@ -236,7 +236,7 @@
               "tier": "B",
               "effective_date": "2025-11-20",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/alpha-romeo/Stelvio | https://www.contactcars.com/en/new-cars/alfa_romeo-stelvio | https://www.contactcars.com/en/new-cars/alfa_romeo-stelvio/year-2025 | https://www.egy-car.com/alfaromeo-stelvio"
             }
@@ -335,7 +335,7 @@
           "tier": "B",
           "effective_date": "2026-07-09",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/alpha-romeo/Tonale | https://www.contactcars.com/en/new-cars/alfa_romeo-tonale/year-2025 | https://www.egy-car.com/alfa-romeo-tonale",
           "trims": [
@@ -346,7 +346,7 @@
               "tier": "B",
               "effective_date": "2026-07-09",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/alpha-romeo/Tonale | https://www.contactcars.com/en/new-cars/alfa_romeo-tonale/year-2025 | https://www.egy-car.com/alfa-romeo-tonale"
             },
@@ -368,7 +368,7 @@
               "tier": "B",
               "effective_date": "2026-07-09",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/alpha-romeo/Tonale | https://www.contactcars.com/en/new-cars/alfa_romeo-tonale/year-2025 | https://www.egy-car.com/alfa-romeo-tonale"
             }
@@ -1125,9 +1125,9 @@
           "price_from": 3449000,
           "model_year": 2026,
           "tier": "B",
-          "effective_date": "2026-04-20",
-          "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "effective_date": null,
+          "date_basis": "OBSERVED",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/a5 | https://www.contactcars.com/en/new-cars/audi-a5 | https://www.contactcars.com/en/new-cars/audi-a5/year-2026",
           "trims": [
@@ -1148,9 +1148,9 @@
               "label": "Advanced",
               "price_egp": 3449000,
               "tier": "B",
-              "effective_date": "2026-04-20",
-              "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "effective_date": null,
+              "date_basis": "OBSERVED",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/a5 | https://www.contactcars.com/en/new-cars/audi-a5 | https://www.contactcars.com/en/new-cars/audi-a5/year-2026",
               "powertrain": "Petrol"
@@ -1162,7 +1162,7 @@
               "tier": "B",
               "effective_date": "2026-04-20",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/a5 | https://www.contactcars.com/en/new-cars/audi-a5 | https://www.contactcars.com/en/new-cars/audi-a5/year-2026",
               "powertrain": "Petrol"
@@ -1300,7 +1300,7 @@
           "tier": "B",
           "effective_date": "2026-04-15",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar",
           "evidence_url": "https://www.contactcars.com/en/new-cars/audi-a6 | https://www.contactcars.com/en/new-cars/audi-a6/year-2026 | https://www.egy-car.com/audi-a6",
           "trims": [
@@ -1311,7 +1311,7 @@
               "tier": "B",
               "effective_date": "2026-04-15",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar",
               "evidence_url": "https://www.contactcars.com/en/new-cars/audi-a6 | https://www.contactcars.com/en/new-cars/audi-a6/year-2026 | https://www.egy-car.com/audi-a6",
               "powertrain": "Petrol"
@@ -1509,7 +1509,7 @@
           "tier": "B",
           "effective_date": "2026-04-02",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/Q2 | https://www.contactcars.com/en/new-cars/audi-q2 | https://www.contactcars.com/en/new-cars/audi-q2/year-2026",
           "trims": [
@@ -1520,7 +1520,7 @@
               "tier": "B",
               "effective_date": "2026-04-02",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/Q2 | https://www.contactcars.com/en/new-cars/audi-q2 | https://www.contactcars.com/en/new-cars/audi-q2/year-2026",
               "powertrain": "Petrol"
@@ -1676,7 +1676,7 @@
           "tier": "B",
           "effective_date": "2026-04-21",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/q3 | https://www.contactcars.com/en/new-cars/audi-q3 | https://www.contactcars.com/en/new-cars/audi-q3/year-2026",
           "trims": [
@@ -1687,7 +1687,7 @@
               "tier": "B",
               "effective_date": "2026-04-21",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/q3 | https://www.contactcars.com/en/new-cars/audi-q3 | https://www.contactcars.com/en/new-cars/audi-q3/year-2026",
               "powertrain": "Petrol"
@@ -1960,7 +1960,7 @@
           "tier": "B",
           "effective_date": "2026-04-02",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/q7 | https://www.contactcars.com/en/new-cars/audi-q7/year-2026",
           "trims": [
@@ -1971,7 +1971,7 @@
               "tier": "B",
               "effective_date": "2026-04-02",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/q7 | https://www.contactcars.com/en/new-cars/audi-q7/year-2026",
               "powertrain": "Petrol"
@@ -1983,7 +1983,7 @@
               "tier": "B",
               "effective_date": "2026-04-02",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/q7 | https://www.contactcars.com/en/new-cars/audi-q7/year-2026",
               "powertrain": "Petrol"
@@ -2118,7 +2118,7 @@
           "tier": "B",
           "effective_date": "2026-04-20",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/q8 | https://www.contactcars.com/en/new-cars/audi-q8/year-2026 | https://www.egy-car.com/audi-q8",
           "trims": [
@@ -2153,7 +2153,7 @@
               "tier": "B",
               "effective_date": "2026-04-20",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/q8 | https://www.contactcars.com/en/new-cars/audi-q8/year-2026 | https://www.egy-car.com/audi-q8",
               "powertrain": "Petrol"
@@ -2255,7 +2255,7 @@
           "tier": "B",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/avatr/avatr-07 | https://www.contactcars.com/en/new-cars/avatr-07/year-2027 | https://www.egy-car.com/avatr-07",
           "trims": [
@@ -2266,7 +2266,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/avatr/avatr-07 | https://www.contactcars.com/en/new-cars/avatr-07/year-2027 | https://www.egy-car.com/avatr-07"
             },
@@ -2277,7 +2277,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/avatr/avatr-07 | https://www.contactcars.com/en/new-cars/avatr-07/year-2027 | https://www.egy-car.com/avatr-07"
             },
@@ -2288,7 +2288,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/avatr/avatr-07 | https://www.contactcars.com/en/new-cars/avatr-07/year-2027 | https://www.egy-car.com/avatr-07"
             }
@@ -2299,18 +2299,18 @@
             {
               "value": "500",
               "unit": "",
-              "applicability": "market trim pages: AWD Premium, AWD Premium Vision, RWD Luxury",
+              "applicability": "market trim pages: AWD Premium, RWD Luxury",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/avatr-07/6e3e14155a26 | https://www.contactcars.com/en/new-cars/avatr-07/acdf50c2172d | https://www.contactcars.com/en/new-cars/avatr-07/c4b1b3dfdecf"
+              "source": "https://www.contactcars.com/en/new-cars/avatr-07/6e3e14155a26 | https://www.contactcars.com/en/new-cars/avatr-07/acdf50c2172d"
             }
           ],
           "drive": [
             {
               "value": "AWD/4WD",
               "unit": "",
-              "applicability": "market trim pages: AWD Premium, AWD Premium Vision",
+              "applicability": "market trim pages: AWD Premium",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/avatr-07/6e3e14155a26 | https://www.contactcars.com/en/new-cars/avatr-07/c4b1b3dfdecf"
+              "source": "https://www.contactcars.com/en/new-cars/avatr-07/6e3e14155a26"
             },
             {
               "value": "RWD",
@@ -2324,36 +2324,36 @@
             {
               "value": "1500",
               "unit": "",
-              "applicability": "market trim pages: AWD Premium, AWD Premium Vision, RWD Luxury",
+              "applicability": "market trim pages: AWD Premium, RWD Luxury",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/avatr-07/6e3e14155a26 | https://www.contactcars.com/en/new-cars/avatr-07/acdf50c2172d | https://www.contactcars.com/en/new-cars/avatr-07/c4b1b3dfdecf"
+              "source": "https://www.contactcars.com/en/new-cars/avatr-07/6e3e14155a26 | https://www.contactcars.com/en/new-cars/avatr-07/acdf50c2172d"
             }
           ],
           "height_mm": [
             {
               "value": "1620",
               "unit": "",
-              "applicability": "market trim pages: AWD Premium, AWD Premium Vision, RWD Luxury",
+              "applicability": "market trim pages: AWD Premium, RWD Luxury",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/avatr-07/6e3e14155a26 | https://www.contactcars.com/en/new-cars/avatr-07/acdf50c2172d | https://www.contactcars.com/en/new-cars/avatr-07/c4b1b3dfdecf"
+              "source": "https://www.contactcars.com/en/new-cars/avatr-07/6e3e14155a26 | https://www.contactcars.com/en/new-cars/avatr-07/acdf50c2172d"
             }
           ],
           "length_mm": [
             {
               "value": "4825",
               "unit": "",
-              "applicability": "market trim pages: AWD Premium, AWD Premium Vision, RWD Luxury",
+              "applicability": "market trim pages: AWD Premium, RWD Luxury",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/avatr-07/6e3e14155a26 | https://www.contactcars.com/en/new-cars/avatr-07/acdf50c2172d | https://www.contactcars.com/en/new-cars/avatr-07/c4b1b3dfdecf"
+              "source": "https://www.contactcars.com/en/new-cars/avatr-07/6e3e14155a26 | https://www.contactcars.com/en/new-cars/avatr-07/acdf50c2172d"
             }
           ],
           "power_hp": [
             {
               "value": "495",
               "unit": "",
-              "applicability": "market trim pages: AWD Premium, AWD Premium Vision",
+              "applicability": "market trim pages: AWD Premium",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/avatr-07/6e3e14155a26 | https://www.contactcars.com/en/new-cars/avatr-07/c4b1b3dfdecf"
+              "source": "https://www.contactcars.com/en/new-cars/avatr-07/6e3e14155a26"
             },
             {
               "value": "310",
@@ -2367,18 +2367,18 @@
             {
               "value": "5",
               "unit": "",
-              "applicability": "market trim pages: AWD Premium, AWD Premium Vision, RWD Luxury",
+              "applicability": "market trim pages: AWD Premium, RWD Luxury",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/avatr-07/6e3e14155a26 | https://www.contactcars.com/en/new-cars/avatr-07/acdf50c2172d | https://www.contactcars.com/en/new-cars/avatr-07/c4b1b3dfdecf"
+              "source": "https://www.contactcars.com/en/new-cars/avatr-07/6e3e14155a26 | https://www.contactcars.com/en/new-cars/avatr-07/acdf50c2172d"
             }
           ],
           "torque_nm": [
             {
               "value": "595",
               "unit": "",
-              "applicability": "market trim pages: AWD Premium, AWD Premium Vision",
+              "applicability": "market trim pages: AWD Premium",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/avatr-07/6e3e14155a26 | https://www.contactcars.com/en/new-cars/avatr-07/c4b1b3dfdecf"
+              "source": "https://www.contactcars.com/en/new-cars/avatr-07/6e3e14155a26"
             },
             {
               "value": "333",
@@ -2392,27 +2392,27 @@
             {
               "value": "Automatic",
               "unit": "",
-              "applicability": "market trim pages: AWD Premium, AWD Premium Vision, RWD Luxury",
+              "applicability": "market trim pages: AWD Premium, RWD Luxury",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/avatr-07/6e3e14155a26 | https://www.contactcars.com/en/new-cars/avatr-07/acdf50c2172d | https://www.contactcars.com/en/new-cars/avatr-07/c4b1b3dfdecf"
+              "source": "https://www.contactcars.com/en/new-cars/avatr-07/6e3e14155a26 | https://www.contactcars.com/en/new-cars/avatr-07/acdf50c2172d"
             }
           ],
           "wheelbase_mm": [
             {
               "value": "2940",
               "unit": "",
-              "applicability": "market trim pages: AWD Premium, AWD Premium Vision, RWD Luxury",
+              "applicability": "market trim pages: AWD Premium, RWD Luxury",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/avatr-07/6e3e14155a26 | https://www.contactcars.com/en/new-cars/avatr-07/acdf50c2172d | https://www.contactcars.com/en/new-cars/avatr-07/c4b1b3dfdecf"
+              "source": "https://www.contactcars.com/en/new-cars/avatr-07/6e3e14155a26 | https://www.contactcars.com/en/new-cars/avatr-07/acdf50c2172d"
             }
           ],
           "width_mm": [
             {
               "value": "1980",
               "unit": "",
-              "applicability": "market trim pages: AWD Premium, AWD Premium Vision, RWD Luxury",
+              "applicability": "market trim pages: AWD Premium, RWD Luxury",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/avatr-07/6e3e14155a26 | https://www.contactcars.com/en/new-cars/avatr-07/acdf50c2172d | https://www.contactcars.com/en/new-cars/avatr-07/c4b1b3dfdecf"
+              "source": "https://www.contactcars.com/en/new-cars/avatr-07/6e3e14155a26 | https://www.contactcars.com/en/new-cars/avatr-07/acdf50c2172d"
             }
           ]
         },
@@ -2480,7 +2480,7 @@
           "tier": "B",
           "effective_date": "2026-04-05",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/avatr/avatr-11 | https://www.contactcars.com/en/new-cars/avatr-11 | https://www.contactcars.com/en/new-cars/avatr-11/year-2026",
           "trims": [
@@ -2491,7 +2491,7 @@
               "tier": "B",
               "effective_date": "2026-04-05",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/avatr/avatr-11 | https://www.contactcars.com/en/new-cars/avatr-11 | https://www.contactcars.com/en/new-cars/avatr-11/year-2026",
               "powertrain": "Electric"
@@ -2703,7 +2703,7 @@
           "tier": "B",
           "effective_date": "2026-04-05",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/avatr/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12/year-2026",
           "trims": [
@@ -2714,7 +2714,7 @@
               "tier": "B",
               "effective_date": "2026-04-05",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/avatr/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12/year-2026",
               "powertrain": "Electric"
@@ -2726,7 +2726,7 @@
               "tier": "B",
               "effective_date": "2026-04-05",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/avatr/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12/year-2026",
               "powertrain": "Electric"
@@ -3727,7 +3727,7 @@
           "tier": "B",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/baw/m7 | https://www.contactcars.com/en/new-cars/baw-m7/year-2027",
           "trims": [
@@ -3738,7 +3738,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/baw/m7 | https://www.contactcars.com/en/new-cars/baw-m7/year-2027",
               "powertrain": "Petrol"
@@ -4027,7 +4027,7 @@
           "tier": "B",
           "effective_date": "2025-08-03",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/bestune/T55 | https://www.contactcars.com/en/new-cars/bestune-t55/year-2025",
           "trims": [
@@ -4038,7 +4038,7 @@
               "tier": "B",
               "effective_date": "2025-08-03",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/bestune/T55 | https://www.contactcars.com/en/new-cars/bestune-t55/year-2025"
             }
@@ -4103,7 +4103,7 @@
           "tier": "B",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/bmw/520 | https://www.contactcars.com/en/new-cars/bmw-520i/year-2027",
           "trims": [
@@ -4125,7 +4125,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/bmw/520 | https://www.contactcars.com/en/new-cars/bmw-520i/year-2027"
             }
@@ -4198,7 +4198,7 @@
           "tier": "B",
           "effective_date": "2026-01-31",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar",
           "evidence_url": "https://www.contactcars.com/en/new-cars/bmw-i7 | https://www.contactcars.com/en/new-cars/bmw-i7/year-2026 | https://www.egy-car.com/bmw-i7",
           "trims": [
@@ -4209,7 +4209,7 @@
               "tier": "B",
               "effective_date": "2026-01-31",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar",
               "evidence_url": "https://www.contactcars.com/en/new-cars/bmw-i7 | https://www.contactcars.com/en/new-cars/bmw-i7/year-2026 | https://www.egy-car.com/bmw-i7"
             }
@@ -5646,7 +5646,7 @@
           "tier": "B",
           "effective_date": "2026-01-31",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar",
           "evidence_url": "https://www.contactcars.com/en/new-cars/bmw-x7 | https://www.contactcars.com/en/new-cars/bmw-x7/year-2026 | https://www.egy-car.com/bmw-x7",
           "trims": [
@@ -5657,7 +5657,7 @@
               "tier": "B",
               "effective_date": "2026-01-31",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar",
               "evidence_url": "https://www.contactcars.com/en/new-cars/bmw-x7 | https://www.contactcars.com/en/new-cars/bmw-x7/year-2026 | https://www.egy-car.com/bmw-x7"
             }
@@ -6527,9 +6527,9 @@
           "price_from": 1449000,
           "model_year": 2027,
           "tier": "B",
-          "effective_date": "2026-09-22",
-          "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "effective_date": null,
+          "date_basis": "OBSERVED",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/sealion-5 | https://www.contactcars.com/en/new-cars/byd-sealion_5/year-2027",
           "trims": [
@@ -6540,7 +6540,7 @@
               "tier": "B",
               "effective_date": "2026-05-15",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar",
               "evidence_url": "https://www.contactcars.com/en/new-cars/byd-sealion_5 | https://www.contactcars.com/en/new-cars/byd-sealion_5/year-2026 | https://www.egy-car.com/byd-sealion-5",
               "powertrain": "Hybrid"
@@ -6552,7 +6552,7 @@
               "tier": "B",
               "effective_date": "2026-05-15",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar",
               "evidence_url": "https://www.contactcars.com/en/new-cars/byd-sealion_5 | https://www.contactcars.com/en/new-cars/byd-sealion_5/year-2026 | https://www.egy-car.com/byd-sealion-5",
               "powertrain": "Hybrid"
@@ -6562,9 +6562,9 @@
               "label": "Ultra",
               "price_egp": 1449000,
               "tier": "B",
-              "effective_date": "2026-09-22",
-              "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "effective_date": null,
+              "date_basis": "OBSERVED",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/sealion-5 | https://www.contactcars.com/en/new-cars/byd-sealion_5/year-2027",
               "powertrain": "Hybrid"
@@ -6576,7 +6576,7 @@
               "tier": "B",
               "effective_date": "2026-09-22",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/sealion-5 | https://www.contactcars.com/en/new-cars/byd-sealion_5/year-2027",
               "powertrain": "Hybrid"
@@ -6774,7 +6774,7 @@
           "tier": "B",
           "effective_date": "2026-07-13",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/sealion-6 | https://www.contactcars.com/en/new-cars/byd-sealion_6 | https://www.contactcars.com/en/new-cars/byd-sealion_6/year-2027",
           "trims": [
@@ -6785,7 +6785,7 @@
               "tier": "B",
               "effective_date": "2026-07-13",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/sealion-6 | https://www.contactcars.com/en/new-cars/byd-sealion_6 | https://www.contactcars.com/en/new-cars/byd-sealion_6/year-2027",
               "powertrain": "PHEV"
@@ -6797,7 +6797,7 @@
               "tier": "B",
               "effective_date": "2026-07-13",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/sealion-6 | https://www.contactcars.com/en/new-cars/byd-sealion_6 | https://www.contactcars.com/en/new-cars/byd-sealion_6/year-2027",
               "powertrain": "PHEV"
@@ -7618,7 +7618,7 @@
           "tier": "B",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/cadillac/vistiq | https://www.contactcars.com/en/new-cars/cadillac-vistiq/year-2026",
           "trims": [
@@ -7629,7 +7629,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/cadillac/vistiq | https://www.contactcars.com/en/new-cars/cadillac-vistiq/year-2026",
               "powertrain": "Electric"
@@ -13021,8 +13021,8 @@
           "price_from": 1375000,
           "model_year": 2026,
           "tier": "B",
-          "effective_date": null,
-          "date_basis": "OBSERVED",
+          "effective_date": "2025-08-03",
+          "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-15",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/chery/Tiggo-8-Pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro/year-2026",
@@ -13032,8 +13032,8 @@
               "label": "Luxury",
               "price_egp": 1375000,
               "tier": "B",
-              "effective_date": null,
-              "date_basis": "OBSERVED",
+              "effective_date": "2025-08-03",
+              "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-15",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/chery/Tiggo-8-Pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro/year-2026",
@@ -15106,7 +15106,7 @@
           "tier": "B",
           "effective_date": "2026-04-30",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/citroen/C4X | https://www.contactcars.com/en/new-cars/citroen-c4_x/year-2026 | https://www.egy-car.com/citroen-c4x",
           "trims": [
@@ -15117,7 +15117,7 @@
               "tier": "B",
               "effective_date": "2026-04-30",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/citroen/C4X | https://www.contactcars.com/en/new-cars/citroen-c4_x/year-2026 | https://www.egy-car.com/citroen-c4x"
             },
@@ -15128,7 +15128,7 @@
               "tier": "B",
               "effective_date": "2026-04-30",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/citroen/C4X | https://www.contactcars.com/en/new-cars/citroen-c4_x/year-2026 | https://www.egy-car.com/citroen-c4x"
             }
@@ -16922,7 +16922,7 @@
           "tier": "B",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/dfsk/600 | https://www.contactcars.com/en/new-cars/dfsk-600/year-2026",
           "trims": [
@@ -16933,7 +16933,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/dfsk/600 | https://www.contactcars.com/en/new-cars/dfsk-600/year-2026"
             }
@@ -17095,7 +17095,7 @@
           "tier": "B",
           "effective_date": "2026-06-16",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/dfsk/e-5 | https://www.contactcars.com/en/new-cars/dfsk-e5/year-2027",
           "trims": [
@@ -17106,7 +17106,7 @@
               "tier": "B",
               "effective_date": "2026-06-16",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/dfsk/e-5 | https://www.contactcars.com/en/new-cars/dfsk-e5/year-2027"
             }
@@ -17259,7 +17259,7 @@
           "tier": "B",
           "effective_date": "2026-06-16",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/dfsk/e-5-plus | https://www.contactcars.com/en/new-cars/dfsk-e5_plus/year-2027",
           "trims": [
@@ -17270,7 +17270,7 @@
               "tier": "B",
               "effective_date": "2026-06-16",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/dfsk/e-5-plus | https://www.contactcars.com/en/new-cars/dfsk-e5_plus/year-2027"
             }
@@ -17422,7 +17422,7 @@
           "tier": "B",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/dfm/007 | https://www.contactcars.com/en/new-cars/dongfeng-007/year-2026",
           "trims": [
@@ -17433,7 +17433,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/dfm/007 | https://www.contactcars.com/en/new-cars/dongfeng-007/year-2026"
             }
@@ -17786,7 +17786,7 @@
           "tier": "B",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/dfm/Box | https://www.contactcars.com/en/new-cars/dongfeng-box/year-2026",
           "trims": [
@@ -17797,7 +17797,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/dfm/Box | https://www.contactcars.com/en/new-cars/dongfeng-box/year-2026",
               "powertrain": "Electric"
@@ -17809,7 +17809,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/dfm/Box | https://www.contactcars.com/en/new-cars/dongfeng-box/year-2026",
               "powertrain": "Electric"
@@ -17961,7 +17961,7 @@
           "tier": "B",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/dfm/Mage | https://www.contactcars.com/en/new-cars/dongfeng-mage/year-2026",
           "trims": [
@@ -17972,7 +17972,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/dfm/Mage | https://www.contactcars.com/en/new-cars/dongfeng-mage/year-2026",
               "powertrain": "Petrol"
@@ -17984,7 +17984,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/dfm/Mage | https://www.contactcars.com/en/new-cars/dongfeng-mage/year-2026",
               "powertrain": "Petrol"
@@ -18421,7 +18421,7 @@
           "tier": "B",
           "effective_date": "2026-06-09",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/exeed/Exeed-ES | https://www.contactcars.com/en/new-cars/exeed-es/year-2027",
           "trims": [
@@ -18432,7 +18432,7 @@
               "tier": "B",
               "effective_date": "2026-06-09",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/exeed/Exeed-ES | https://www.contactcars.com/en/new-cars/exeed-es/year-2027"
             },
@@ -18443,7 +18443,7 @@
               "tier": "B",
               "effective_date": "2026-06-09",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/exeed/Exeed-ES | https://www.contactcars.com/en/new-cars/exeed-es/year-2027"
             }
@@ -18612,7 +18612,7 @@
           "tier": "B",
           "effective_date": "2026-06-09",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/exeed/ET | https://www.contactcars.com/en/new-cars/exeed-et/year-2027",
           "trims": [
@@ -18623,7 +18623,7 @@
               "tier": "B",
               "effective_date": "2026-06-09",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/exeed/ET | https://www.contactcars.com/en/new-cars/exeed-et/year-2027"
             },
@@ -18634,7 +18634,7 @@
               "tier": "B",
               "effective_date": "2026-06-09",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/exeed/ET | https://www.contactcars.com/en/new-cars/exeed-et/year-2027"
             }
@@ -18814,7 +18814,7 @@
           "tier": "B",
           "effective_date": "2026-09-13",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/exeed/Exceed-LX | https://www.contactcars.com/en/new-cars/exeed-lx | https://www.contactcars.com/en/new-cars/exeed-lx/year-2027 | https://www.egy-car.com/exeed-lx",
           "trims": [
@@ -18825,7 +18825,7 @@
               "tier": "B",
               "effective_date": "2026-09-13",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/exeed/Exceed-LX | https://www.contactcars.com/en/new-cars/exeed-lx | https://www.contactcars.com/en/new-cars/exeed-lx/year-2027 | https://www.egy-car.com/exeed-lx",
               "powertrain": "Petrol"
@@ -19129,7 +19129,7 @@
           "tier": "B",
           "effective_date": "2026-06-09",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/exeed/Exeed-RX | https://www.contactcars.com/en/new-cars/exeed-rx | https://www.contactcars.com/en/new-cars/exeed-rx/year-2027",
           "trims": [
@@ -19140,7 +19140,7 @@
               "tier": "B",
               "effective_date": "2026-06-09",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/exeed/Exeed-RX | https://www.contactcars.com/en/new-cars/exeed-rx | https://www.contactcars.com/en/new-cars/exeed-rx/year-2027",
               "powertrain": "Petrol"
@@ -19296,7 +19296,7 @@
           "tier": "B",
           "effective_date": "2026-06-09",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/exeed/VX | https://www.contactcars.com/en/new-cars/exeed-vx | https://www.contactcars.com/en/new-cars/exeed-vx/year-2027 | https://www.egy-car.com/exeed-vx",
           "trims": [
@@ -19307,7 +19307,7 @@
               "tier": "B",
               "effective_date": "2026-06-09",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/exeed/VX | https://www.contactcars.com/en/new-cars/exeed-vx | https://www.contactcars.com/en/new-cars/exeed-vx/year-2027 | https://www.egy-car.com/exeed-vx",
               "powertrain": "Petrol"
@@ -19319,7 +19319,7 @@
               "tier": "B",
               "effective_date": "2026-06-09",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/exeed/VX | https://www.contactcars.com/en/new-cars/exeed-vx | https://www.contactcars.com/en/new-cars/exeed-vx/year-2027 | https://www.egy-car.com/exeed-vx",
               "powertrain": "Petrol"
@@ -19819,7 +19819,7 @@
           "tier": "B",
           "effective_date": "2026-06-29",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/forthing/Forthing-S7 | https://www.contactcars.com/en/new-cars/forthing-s7/year-2027",
           "trims": [
@@ -19830,7 +19830,7 @@
               "tier": "B",
               "effective_date": "2026-06-29",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/forthing/Forthing-S7 | https://www.contactcars.com/en/new-cars/forthing-s7/year-2027",
               "powertrain": "Electric"
@@ -19842,7 +19842,7 @@
               "tier": "B",
               "effective_date": "2026-06-29",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/forthing/Forthing-S7 | https://www.contactcars.com/en/new-cars/forthing-s7/year-2027",
               "powertrain": "Electric"
@@ -20277,7 +20277,7 @@
           "tier": "B",
           "effective_date": "2026-06-29",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/forthing/U-Tour | https://www.contactcars.com/en/new-cars/forthing-u_tour | https://www.contactcars.com/en/new-cars/forthing-u_tour/year-2027",
           "trims": [
@@ -20288,7 +20288,7 @@
               "tier": "B",
               "effective_date": "2026-06-29",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/forthing/U-Tour | https://www.contactcars.com/en/new-cars/forthing-u_tour | https://www.contactcars.com/en/new-cars/forthing-u_tour/year-2027",
               "powertrain": "Petrol"
@@ -20445,7 +20445,7 @@
           "tier": "B",
           "effective_date": "2026-06-29",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/forthing/v9 | https://www.contactcars.com/en/new-cars/forthing-v9/year-2027",
           "trims": [
@@ -20456,7 +20456,7 @@
               "tier": "B",
               "effective_date": "2026-06-29",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/forthing/v9 | https://www.contactcars.com/en/new-cars/forthing-v9/year-2027"
             }
@@ -20672,7 +20672,7 @@
           "tier": "B",
           "effective_date": "2026-04-15",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/gac/Empow | https://www.contactcars.com/en/new-cars/gac-empow/year-2027",
           "trims": [
@@ -20683,7 +20683,7 @@
               "tier": "B",
               "effective_date": "2026-04-15",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/gac/Empow | https://www.contactcars.com/en/new-cars/gac-empow/year-2027",
               "powertrain": "Petrol"
@@ -20695,7 +20695,7 @@
               "tier": "B",
               "effective_date": "2026-04-15",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/gac/Empow | https://www.contactcars.com/en/new-cars/gac-empow/year-2027",
               "powertrain": "Petrol"
@@ -20707,7 +20707,7 @@
               "tier": "B",
               "effective_date": "2026-06-29",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/gac/Empow | https://www.contactcars.com/en/new-cars/gac-empow/year-2027 | https://www.egy-car.com/gac-empow",
               "powertrain": "Petrol"
@@ -21066,7 +21066,7 @@
           "tier": "B",
           "effective_date": "2026-07-20",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/gac/GS4+max | https://www.contactcars.com/en/new-cars/gac-gs4_max/year-2027 | https://www.egy-car.com/gac-gs4-max",
           "trims": [
@@ -21077,7 +21077,7 @@
               "tier": "B",
               "effective_date": "2026-07-20",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/gac/GS4+max | https://www.contactcars.com/en/new-cars/gac-gs4_max/year-2027 | https://www.egy-car.com/gac-gs4-max",
               "powertrain": "Petrol"
@@ -21327,7 +21327,7 @@
           "tier": "B",
           "effective_date": "2026-06-01",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/City-Ray | https://www.contactcars.com/en/new-cars/geely-cityray/year-2026",
           "trims": [
@@ -21338,7 +21338,7 @@
               "tier": "B",
               "effective_date": "2026-06-01",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/City-Ray | https://www.contactcars.com/en/new-cars/geely-cityray/year-2026",
               "powertrain": "Petrol"
@@ -21350,7 +21350,7 @@
               "tier": "B",
               "effective_date": "2026-06-01",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/City-Ray | https://www.contactcars.com/en/new-cars/geely-cityray/year-2026",
               "powertrain": "Petrol"
@@ -21362,7 +21362,7 @@
               "tier": "B",
               "effective_date": "2026-06-01",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/City-Ray | https://www.contactcars.com/en/new-cars/geely-cityray/year-2026",
               "powertrain": "Petrol"
@@ -21578,7 +21578,7 @@
           "tier": "B",
           "effective_date": "2026-04-11",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar",
           "evidence_url": "https://www.contactcars.com/en/new-cars/geely-coolray/year-2026 | https://www.egy-car.com/geely-coolray",
           "trims": [
@@ -21589,7 +21589,7 @@
               "tier": "B",
               "effective_date": "2026-04-11",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar",
               "evidence_url": "https://www.contactcars.com/en/new-cars/geely-coolray/year-2026 | https://www.egy-car.com/geely-coolray"
             },
@@ -21600,7 +21600,7 @@
               "tier": "B",
               "effective_date": "2026-04-27",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/Coolray | https://www.contactcars.com/en/new-cars/geely-coolray/year-2026 | https://www.egy-car.com/geely-coolray"
             },
@@ -21611,7 +21611,7 @@
               "tier": "B",
               "effective_date": "2026-04-27",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/Coolray | https://www.contactcars.com/en/new-cars/geely-coolray/year-2026"
             }
@@ -21761,7 +21761,7 @@
           "tier": "B",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/ex2 | https://www.contactcars.com/en/new-cars/geely-ex2 | https://www.contactcars.com/en/new-cars/geely-ex2/year-2026",
           "trims": [
@@ -21772,7 +21772,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/ex2 | https://www.contactcars.com/en/new-cars/geely-ex2 | https://www.contactcars.com/en/new-cars/geely-ex2/year-2026"
             }
@@ -22090,7 +22090,7 @@
           "tier": "B",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/ex5 | https://www.contactcars.com/en/new-cars/geely-ex5 | https://www.contactcars.com/en/new-cars/geely-ex5/year-2026",
           "trims": [
@@ -22101,7 +22101,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/ex5 | https://www.contactcars.com/en/new-cars/geely-ex5 | https://www.contactcars.com/en/new-cars/geely-ex5/year-2026",
               "powertrain": "Electric"
@@ -22113,7 +22113,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/ex5 | https://www.contactcars.com/en/new-cars/geely-ex5 | https://www.contactcars.com/en/new-cars/geely-ex5/year-2026",
               "powertrain": "Electric"
@@ -22286,7 +22286,7 @@
           "tier": "B",
           "effective_date": "2026-05-02",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar",
           "evidence_url": "https://www.contactcars.com/en/new-cars/geely-gx3_pro | https://www.contactcars.com/en/new-cars/geely-gx3_pro/year-2025 | https://www.egy-car.com/geely-gx3-pro",
           "trims": [
@@ -22297,7 +22297,7 @@
               "tier": "B",
               "effective_date": "2026-05-02",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar",
               "evidence_url": "https://www.contactcars.com/en/new-cars/geely-gx3_pro | https://www.contactcars.com/en/new-cars/geely-gx3_pro/year-2025 | https://www.egy-car.com/geely-gx3-pro"
             }
@@ -22375,7 +22375,7 @@
           "tier": "B",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/Monjaro | https://www.contactcars.com/en/new-cars/geely-monjaro/year-2027",
           "trims": [
@@ -22386,7 +22386,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/Monjaro | https://www.contactcars.com/en/new-cars/geely-monjaro/year-2027",
               "powertrain": "Plug-in hybrid"
@@ -24037,7 +24037,7 @@
           "tier": "B",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/hongqi/E-HS9 | https://www.contactcars.com/en/new-cars/hongqi-e_hs9/year-2026",
           "trims": [
@@ -24048,7 +24048,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/hongqi/E-HS9 | https://www.contactcars.com/en/new-cars/hongqi-e_hs9/year-2026",
               "powertrain": "Electric"
@@ -24312,7 +24312,7 @@
           "tier": "B",
           "effective_date": "2026-07-12",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/hongqi/Ousado | https://www.contactcars.com/en/new-cars/hongqi-ousado/year-2026",
           "trims": [
@@ -24323,7 +24323,7 @@
               "tier": "B",
               "effective_date": "2026-07-12",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/hongqi/Ousado | https://www.contactcars.com/en/new-cars/hongqi-ousado/year-2026",
               "powertrain": "Petrol"
@@ -24478,7 +24478,7 @@
           "price_from": 800000,
           "model_year": 2026,
           "tier": "B",
-          "effective_date": "2025-11-30",
+          "effective_date": "2025-12-01",
           "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-15",
           "issuer": "EgyCar+Hatla2ee",
@@ -24489,7 +24489,7 @@
               "label": "A/T / DAB ABS",
               "price_egp": 800000,
               "tier": "B",
-              "effective_date": "2025-11-30",
+              "effective_date": "2025-12-01",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-15",
               "issuer": "EgyCar+Hatla2ee",
@@ -26799,7 +26799,7 @@
           "tier": "B",
           "effective_date": "2026-10-07",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/jac/JS6 | https://www.contactcars.com/en/new-cars/jac-js6/year-2026 | https://www.egy-car.com/jac-js6",
           "trims": [
@@ -26810,7 +26810,7 @@
               "tier": "B",
               "effective_date": "2026-10-07",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/jac/JS6 | https://www.contactcars.com/en/new-cars/jac-js6/year-2026 | https://www.egy-car.com/jac-js6",
               "powertrain": "Petrol"
@@ -26822,7 +26822,7 @@
               "tier": "B",
               "effective_date": "2026-10-07",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/jac/JS6 | https://www.contactcars.com/en/new-cars/jac-js6/year-2026 | https://www.egy-car.com/jac-js6",
               "powertrain": "Petrol"
@@ -27245,7 +27245,7 @@
           "tier": "B",
           "effective_date": "2025-07-21",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar",
           "evidence_url": "https://www.contactcars.com/en/new-cars/jeep-grand_cherokee/year-2025 | https://www.egy-car.com/jeep-grand-cherokee",
           "trims": [
@@ -27256,7 +27256,7 @@
               "tier": "B",
               "effective_date": "2025-07-21",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar",
               "evidence_url": "https://www.contactcars.com/en/new-cars/jeep-grand_cherokee/year-2025 | https://www.egy-car.com/jeep-grand-cherokee"
             }
@@ -29168,8 +29168,10 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
+        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
+        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -29198,122 +29200,12 @@
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-15",
               "issuer": "EgyCar+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/Kaiyi/Kaiyi-X7 | https://www.egy-car.com/kaiyi-x7",
-              "powertrain": "Petrol"
-            }
-          ],
-          "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
-        },
-        "specs": {
-          "engine_cc": [
-            {
-              "value": "1600",
-              "unit": "",
-              "applicability": "market trim pages: Flagship",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x7/ca1e9a72326e"
-            }
-          ],
-          "fuel_tank_l": [
-            {
-              "value": "60",
-              "unit": "",
-              "applicability": "market trim pages: Flagship",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x7/ca1e9a72326e"
-            }
-          ],
-          "height_mm": [
-            {
-              "value": "1705",
-              "unit": "",
-              "applicability": "market trim pages: Flagship",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x7/ca1e9a72326e"
-            }
-          ],
-          "length_mm": [
-            {
-              "value": "4710",
-              "unit": "",
-              "applicability": "market trim pages: Flagship",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x7/ca1e9a72326e"
-            }
-          ],
-          "power_hp": [
-            {
-              "value": "197",
-              "unit": "",
-              "applicability": "market trim pages: Flagship",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x7/ca1e9a72326e"
-            }
-          ],
-          "powertrain_class": [
-            {
-              "value": "Petrol",
-              "unit": "",
-              "applicability": "market trim pages: Flagship",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x7/ca1e9a72326e"
-            }
-          ],
-          "seats": [
-            {
-              "value": "7",
-              "unit": "",
-              "applicability": "market trim pages: Flagship",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x7/ca1e9a72326e"
-            }
-          ],
-          "torque_nm": [
-            {
-              "value": "290",
-              "unit": "",
-              "applicability": "market trim pages: Flagship",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x7/ca1e9a72326e"
-            }
-          ],
-          "transmission": [
-            {
-              "value": "DCT",
-              "unit": "",
-              "applicability": "market trim pages: Flagship",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x7/ca1e9a72326e"
-            }
-          ],
-          "wheelbase_mm": [
-            {
-              "value": "2800",
-              "unit": "",
-              "applicability": "market trim pages: Flagship",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x7/ca1e9a72326e"
-            }
-          ],
-          "width_mm": [
-            {
-              "value": "1955",
-              "unit": "",
-              "applicability": "market trim pages: Flagship",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x7/ca1e9a72326e"
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/Kaiyi/Kaiyi-X7 | https://www.egy-car.com/kaiyi-x7"
             }
           ]
         },
-        "warranty": [
-          {
-            "value": "5 years / 150000 km",
-            "unit": "",
-            "applicability": "market trim pages: model",
-            "issuer": "ContactCars+Hatla2ee",
-            "source": "https://www.contactcars.com/en/new-cars/kaiyi-x7/ca1e9a72326e"
-          }
-        ],
+        "specs": null,
+        "warranty": null,
         "brochures": [],
         "logo": {
           "src": "/media/p2/brands/kaiyi.png",
@@ -29328,10 +29220,7 @@
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
-        "conflicts": [
-          "PB-2 CONFLICT: ContactCars=1400000",
-          "PB-2 CONFLICT: Hatla2ee=1399900"
-        ]
+        "conflicts": []
       }
     },
     {
@@ -29380,7 +29269,7 @@
           "tier": "B",
           "effective_date": "2026-04-20",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/kgm/KGM-Actyon | https://www.contactcars.com/en/new-cars/kgm-actyon | https://www.contactcars.com/en/new-cars/kgm-actyon/year-2026 | https://www.egy-car.com/kgm-actyon",
           "trims": [
@@ -29391,7 +29280,7 @@
               "tier": "B",
               "effective_date": "2026-04-20",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/kgm/KGM-Actyon | https://www.contactcars.com/en/new-cars/kgm-actyon | https://www.contactcars.com/en/new-cars/kgm-actyon/year-2026 | https://www.egy-car.com/kgm-actyon",
               "powertrain": "Petrol"
@@ -29403,7 +29292,7 @@
               "tier": "B",
               "effective_date": "2026-04-20",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/kgm/KGM-Actyon | https://www.contactcars.com/en/new-cars/kgm-actyon | https://www.contactcars.com/en/new-cars/kgm-actyon/year-2026 | https://www.egy-car.com/kgm-actyon",
               "powertrain": "Petrol"
@@ -29593,7 +29482,7 @@
           "tier": "B",
           "effective_date": "2026-04-20",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/kgm/KGM-Torres | https://www.contactcars.com/en/new-cars/kgm-torres | https://www.contactcars.com/en/new-cars/kgm-torres/year-2026",
           "trims": [
@@ -29604,7 +29493,7 @@
               "tier": "B",
               "effective_date": "2026-04-20",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/kgm/KGM-Torres | https://www.contactcars.com/en/new-cars/kgm-torres | https://www.contactcars.com/en/new-cars/kgm-torres/year-2026",
               "powertrain": "Petrol"
@@ -32303,7 +32192,7 @@
           "tier": "B",
           "effective_date": "2026-03-05",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/li-auto/li-auto-l6 | https://www.contactcars.com/en/new-cars/li_auto-l6 | https://www.contactcars.com/en/new-cars/li_auto-l6/year-2026",
           "trims": [
@@ -32314,7 +32203,7 @@
               "tier": "B",
               "effective_date": "2026-03-05",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/li-auto/li-auto-l6 | https://www.contactcars.com/en/new-cars/li_auto-l6 | https://www.contactcars.com/en/new-cars/li_auto-l6/year-2026"
             }
@@ -32477,7 +32366,7 @@
           "tier": "B",
           "effective_date": "2026-03-05",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/li-auto/li-auto-l7 | https://www.contactcars.com/en/new-cars/li_auto-l7 | https://www.contactcars.com/en/new-cars/li_auto-l7/year-2026",
           "trims": [
@@ -32488,7 +32377,7 @@
               "tier": "B",
               "effective_date": "2026-03-05",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/li-auto/li-auto-l7 | https://www.contactcars.com/en/new-cars/li_auto-l7 | https://www.contactcars.com/en/new-cars/li_auto-l7/year-2026"
             }
@@ -32642,7 +32531,7 @@
           "tier": "B",
           "effective_date": "2026-03-05",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/li-auto/li-auto-l9 | https://www.contactcars.com/en/new-cars/li_auto-l9/year-2026",
           "trims": [
@@ -32653,7 +32542,7 @@
               "tier": "B",
               "effective_date": "2026-03-05",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/li-auto/li-auto-l9 | https://www.contactcars.com/en/new-cars/li_auto-l9/year-2026"
             }
@@ -33500,7 +33389,7 @@
           "tier": "B",
           "effective_date": "2025-11-02",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/mercedes/a-200 | https://www.contactcars.com/en/new-cars/mercedes-a200 | https://www.contactcars.com/en/new-cars/mercedes-a200/year-2026 | https://www.egy-car.com/mercedes-a200",
           "trims": [
@@ -33511,7 +33400,7 @@
               "tier": "B",
               "effective_date": "2025-11-02",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/mercedes/a-200 | https://www.contactcars.com/en/new-cars/mercedes-a200 | https://www.contactcars.com/en/new-cars/mercedes-a200/year-2026 | https://www.egy-car.com/mercedes-a200",
               "powertrain": "Petrol"
@@ -33678,7 +33567,7 @@
           "tier": "B",
           "effective_date": "2025-11-02",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar",
           "evidence_url": "https://www.contactcars.com/en/new-cars/mercedes-b_200 | https://www.contactcars.com/en/new-cars/mercedes-b_200/year-2026 | https://www.egy-car.com/mercedes-b200",
           "trims": [
@@ -33689,7 +33578,7 @@
               "tier": "B",
               "effective_date": "2025-11-02",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar",
               "evidence_url": "https://www.contactcars.com/en/new-cars/mercedes-b_200 | https://www.contactcars.com/en/new-cars/mercedes-b_200/year-2026 | https://www.egy-car.com/mercedes-b200",
               "powertrain": "Petrol"
@@ -37704,7 +37593,7 @@
           "tier": "B",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/mitsubishi/destinator | https://www.contactcars.com/en/new-cars/mitsubishi-destinator | https://www.contactcars.com/en/new-cars/mitsubishi-destinator/year-2027 | https://www.egy-car.com/mitsubishi-destinator",
           "trims": [
@@ -37715,7 +37604,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/mitsubishi/destinator | https://www.contactcars.com/en/new-cars/mitsubishi-destinator | https://www.contactcars.com/en/new-cars/mitsubishi-destinator/year-2027 | https://www.egy-car.com/mitsubishi-destinator",
               "powertrain": "Petrol"
@@ -37727,7 +37616,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/mitsubishi/destinator | https://www.contactcars.com/en/new-cars/mitsubishi-destinator | https://www.contactcars.com/en/new-cars/mitsubishi-destinator/year-2027 | https://www.egy-car.com/mitsubishi-destinator",
               "powertrain": "Petrol"
@@ -37739,7 +37628,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/mitsubishi/destinator | https://www.contactcars.com/en/new-cars/mitsubishi-destinator | https://www.contactcars.com/en/new-cars/mitsubishi-destinator/year-2027 | https://www.egy-car.com/mitsubishi-destinator",
               "powertrain": "Petrol"
@@ -38198,7 +38087,7 @@
           "tier": "B",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/mitsubishi/Xpander | https://www.contactcars.com/en/new-cars/mitsubishi-xpander/year-2026",
           "trims": [
@@ -38209,7 +38098,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/mitsubishi/Xpander | https://www.contactcars.com/en/new-cars/mitsubishi-xpander/year-2026",
               "powertrain": "Petrol"
@@ -38221,7 +38110,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/mitsubishi/Xpander | https://www.contactcars.com/en/new-cars/mitsubishi-xpander/year-2026",
               "powertrain": "Petrol"
@@ -38233,7 +38122,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/mitsubishi/Xpander | https://www.contactcars.com/en/new-cars/mitsubishi-xpander/year-2026",
               "powertrain": "Petrol"
@@ -41267,7 +41156,7 @@
           "tier": "B",
           "effective_date": "2026-04-15",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/opel/corsa | https://www.contactcars.com/en/new-cars/opel-corsa | https://www.contactcars.com/en/new-cars/opel-corsa/year-2026",
           "trims": [
@@ -41278,7 +41167,7 @@
               "tier": "B",
               "effective_date": "2026-04-15",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/opel/corsa | https://www.contactcars.com/en/new-cars/opel-corsa | https://www.contactcars.com/en/new-cars/opel-corsa/year-2026",
               "powertrain": "Petrol"
@@ -42052,7 +41941,7 @@
           "tier": "B",
           "effective_date": "2026-04-15",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/opel/Mokka | https://www.contactcars.com/en/new-cars/opel-mokka/year-2026",
           "trims": [
@@ -42063,7 +41952,7 @@
               "tier": "B",
               "effective_date": "2026-04-15",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/opel/Mokka | https://www.contactcars.com/en/new-cars/opel-mokka/year-2026"
             }
@@ -42336,7 +42225,7 @@
           "tier": "B",
           "effective_date": "2026-04-07",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/peugeot/3008 | https://www.contactcars.com/en/new-cars/peugeot-3008/year-2027",
           "trims": [
@@ -42347,7 +42236,7 @@
               "tier": "B",
               "effective_date": "2026-04-07",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/peugeot/3008 | https://www.contactcars.com/en/new-cars/peugeot-3008/year-2027",
               "powertrain": "Petrol"
@@ -42359,7 +42248,7 @@
               "tier": "B",
               "effective_date": "2026-04-07",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/peugeot/3008 | https://www.contactcars.com/en/new-cars/peugeot-3008/year-2027",
               "powertrain": "Petrol"
@@ -42592,7 +42481,7 @@
           "tier": "B",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/peugeot/408 | https://www.contactcars.com/en/new-cars/peugeot-408/year-2027",
           "trims": [
@@ -42603,7 +42492,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/peugeot/408 | https://www.contactcars.com/en/new-cars/peugeot-408/year-2027",
               "powertrain": "Petrol"
@@ -42615,7 +42504,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/peugeot/408 | https://www.contactcars.com/en/new-cars/peugeot-408/year-2027",
               "powertrain": "Petrol"
@@ -42904,7 +42793,7 @@
           "tier": "B",
           "effective_date": "2026-06-22",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar",
           "evidence_url": "https://www.contactcars.com/en/new-cars/peugeot-5008 | https://www.contactcars.com/en/new-cars/peugeot-5008/year-2026 | https://www.egy-car.com/peugeot-5008",
           "trims": [
@@ -42915,7 +42804,7 @@
               "tier": "B",
               "effective_date": "2026-06-22",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar",
               "evidence_url": "https://www.contactcars.com/en/new-cars/peugeot-5008 | https://www.contactcars.com/en/new-cars/peugeot-5008/year-2026 | https://www.egy-car.com/peugeot-5008"
             },
@@ -42926,7 +42815,7 @@
               "tier": "B",
               "effective_date": "2026-06-22",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar",
               "evidence_url": "https://www.contactcars.com/en/new-cars/peugeot-5008 | https://www.contactcars.com/en/new-cars/peugeot-5008/year-2026 | https://www.egy-car.com/peugeot-5008"
             }
@@ -44471,7 +44360,7 @@
           "tier": "B",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/rox/rox-01 | https://www.contactcars.com/en/new-cars/rox-01 | https://www.contactcars.com/en/new-cars/rox-01/year-2026",
           "trims": [
@@ -44482,7 +44371,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/rox/rox-01 | https://www.contactcars.com/en/new-cars/rox-01 | https://www.contactcars.com/en/new-cars/rox-01/year-2026",
               "powertrain": "Electric"
@@ -44494,7 +44383,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/rox/rox-01 | https://www.contactcars.com/en/new-cars/rox-01 | https://www.contactcars.com/en/new-cars/rox-01/year-2026",
               "powertrain": "Electric"
@@ -45864,7 +45753,7 @@
           "tier": "B",
           "effective_date": "2026-10-14",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/kodiaq | https://www.contactcars.com/en/new-cars/skoda-kodiaq/year-2027 | https://www.egy-car.com/skoda-kodiaq",
           "trims": [
@@ -45875,7 +45764,7 @@
               "tier": "B",
               "effective_date": "2026-10-14",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/kodiaq | https://www.contactcars.com/en/new-cars/skoda-kodiaq/year-2027 | https://www.egy-car.com/skoda-kodiaq",
               "powertrain": "Petrol"
@@ -45899,7 +45788,7 @@
               "tier": "B",
               "effective_date": "2026-10-14",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/kodiaq | https://www.contactcars.com/en/new-cars/skoda-kodiaq/year-2027 | https://www.egy-car.com/skoda-kodiaq",
               "powertrain": "Petrol"
@@ -45911,7 +45800,7 @@
               "tier": "B",
               "effective_date": "2026-10-14",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/kodiaq | https://www.contactcars.com/en/new-cars/skoda-kodiaq/year-2027 | https://www.egy-car.com/skoda-kodiaq",
               "powertrain": "Petrol"
@@ -46055,7 +45944,7 @@
           "tier": "B",
           "effective_date": "2026-10-14",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/Octavia-A8 | https://www.contactcars.com/en/new-cars/skoda-octavia/year-2027 | https://www.egy-car.com/skoda-octavia",
           "trims": [
@@ -46066,7 +45955,7 @@
               "tier": "B",
               "effective_date": "2026-10-14",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/Octavia-A8 | https://www.contactcars.com/en/new-cars/skoda-octavia/year-2027 | https://www.egy-car.com/skoda-octavia",
               "powertrain": "Petrol"
@@ -46090,7 +45979,7 @@
               "tier": "B",
               "effective_date": "2026-10-14",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/Octavia-A8 | https://www.contactcars.com/en/new-cars/skoda-octavia/year-2027 | https://www.egy-car.com/skoda-octavia",
               "powertrain": "Petrol"
@@ -46114,7 +46003,7 @@
               "tier": "B",
               "effective_date": "2026-10-14",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/Octavia-A8 | https://www.contactcars.com/en/new-cars/skoda-octavia/year-2027 | https://www.egy-car.com/skoda-octavia",
               "powertrain": "Petrol"
@@ -46325,7 +46214,7 @@
           "tier": "B",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/superb | https://www.contactcars.com/en/new-cars/skoda-superb | https://www.contactcars.com/en/new-cars/skoda-superb/year-2027",
           "trims": [
@@ -46336,7 +46225,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/superb | https://www.contactcars.com/en/new-cars/skoda-superb | https://www.contactcars.com/en/new-cars/skoda-superb/year-2027",
               "powertrain": "Petrol"
@@ -46758,7 +46647,7 @@
           "tier": "B",
           "effective_date": "2026-06-25",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/soueast/S+06 | https://www.contactcars.com/en/new-cars/soueast-s_06/year-2027 | https://www.egy-car.com/soueast-s06",
           "trims": [
@@ -46769,7 +46658,7 @@
               "tier": "B",
               "effective_date": "2026-06-25",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/soueast/S+06 | https://www.contactcars.com/en/new-cars/soueast-s_06/year-2027 | https://www.egy-car.com/soueast-s06",
               "powertrain": "Petrol"
@@ -46781,7 +46670,7 @@
               "tier": "B",
               "effective_date": "2026-06-25",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/soueast/S+06 | https://www.contactcars.com/en/new-cars/soueast-s_06/year-2027 | https://www.egy-car.com/soueast-s06",
               "powertrain": "Petrol"
@@ -47085,7 +46974,7 @@
           "tier": "B",
           "effective_date": "2026-06-25",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/soueast/S+07 | https://www.contactcars.com/en/new-cars/soueast-s_07/year-2027 | https://www.egy-car.com/soueast-s07",
           "trims": [
@@ -47096,7 +46985,7 @@
               "tier": "B",
               "effective_date": "2026-06-25",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/soueast/S+07 | https://www.contactcars.com/en/new-cars/soueast-s_07/year-2027 | https://www.egy-car.com/soueast-s07",
               "powertrain": "Petrol"
@@ -47106,9 +46995,9 @@
               "label": "Premium",
               "price_egp": 1530000,
               "tier": "B",
-              "effective_date": "2026-06-25",
+              "effective_date": "2026-04-10",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/soueast/S+07 | https://www.contactcars.com/en/new-cars/soueast-s_07/year-2027 | https://www.egy-car.com/soueast-s07",
               "powertrain": "Petrol"
@@ -47402,7 +47291,7 @@
           "tier": "B",
           "effective_date": "2026-06-25",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/soueast/S+09 | https://www.contactcars.com/en/new-cars/soueast-s_09/year-2027 | https://www.egy-car.com/soueast-s09",
           "trims": [
@@ -47413,7 +47302,7 @@
               "tier": "B",
               "effective_date": "2026-06-25",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/soueast/S+09 | https://www.contactcars.com/en/new-cars/soueast-s_09/year-2027 | https://www.egy-car.com/soueast-s09",
               "powertrain": "Petrol"
@@ -47820,7 +47709,7 @@
           "tier": "B",
           "effective_date": "2026-06-16",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/suzuki/baleno | https://www.contactcars.com/en/new-cars/suzuki-baleno/year-2026",
           "trims": [
@@ -47831,7 +47720,7 @@
               "tier": "B",
               "effective_date": "2026-06-16",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/suzuki/baleno | https://www.contactcars.com/en/new-cars/suzuki-baleno/year-2026",
               "powertrain": "Petrol"
@@ -49319,7 +49208,7 @@
           "tier": "B",
           "effective_date": "2026-07-15",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "EgyCar+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/toyota/fortuner | https://www.egy-car.com/toyota-fortuner",
           "trims": [
@@ -49330,7 +49219,7 @@
               "tier": "B",
               "effective_date": "2026-07-15",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/toyota/fortuner | https://www.egy-car.com/toyota-fortuner",
               "powertrain": "Petrol"
@@ -50061,7 +49950,7 @@
           "tier": "B",
           "effective_date": "2023-05-04",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar",
           "evidence_url": "https://www.contactcars.com/en/new-cars/volkswagen-passat | https://www.egy-car.com/volkswagen-passat",
           "trims": [
@@ -50072,7 +49961,7 @@
               "tier": "B",
               "effective_date": "2023-05-04",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar",
               "evidence_url": "https://www.contactcars.com/en/new-cars/volkswagen-passat | https://www.egy-car.com/volkswagen-passat"
             }
@@ -50144,7 +50033,7 @@
           "tier": "B",
           "effective_date": "2026-03-30",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/volks-wagen/T-Roc | https://www.contactcars.com/en/new-cars/volkswagen-t_roc | https://www.contactcars.com/en/new-cars/volkswagen-t_roc/year-2026 | https://www.egy-car.com/volkswagen-t-roc",
           "trims": [
@@ -50155,7 +50044,7 @@
               "tier": "B",
               "effective_date": "2026-03-30",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/volks-wagen/T-Roc | https://www.contactcars.com/en/new-cars/volkswagen-t_roc | https://www.contactcars.com/en/new-cars/volkswagen-t_roc/year-2026 | https://www.egy-car.com/volkswagen-t-roc",
               "powertrain": "Petrol"
@@ -50320,7 +50209,7 @@
           "tier": "B",
           "effective_date": "2026-03-30",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar",
           "evidence_url": "https://www.contactcars.com/en/new-cars/volkswagen-tayron/year-2026 | https://www.egy-car.com/volkswagen-tayron",
           "trims": [
@@ -50331,7 +50220,7 @@
               "tier": "B",
               "effective_date": "2026-03-30",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar",
               "evidence_url": "https://www.contactcars.com/en/new-cars/volkswagen-tayron/year-2026 | https://www.egy-car.com/volkswagen-tayron",
               "powertrain": "Petrol"
@@ -50343,7 +50232,7 @@
               "tier": "B",
               "effective_date": "2026-03-30",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/volks-wagen/tayron | https://www.contactcars.com/en/new-cars/volkswagen-tayron/year-2026 | https://www.egy-car.com/volkswagen-tayron",
               "powertrain": "Petrol"
@@ -50492,7 +50381,7 @@
           "tier": "B",
           "effective_date": "2026-03-30",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/volks-wagen/tiguan | https://www.contactcars.com/en/new-cars/volkswagen-tiguan | https://www.contactcars.com/en/new-cars/volkswagen-tiguan/year-2026 | https://www.egy-car.com/volkswagen-tiguan",
           "trims": [
@@ -50503,7 +50392,7 @@
               "tier": "B",
               "effective_date": "2026-03-30",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/volks-wagen/tiguan | https://www.contactcars.com/en/new-cars/volkswagen-tiguan | https://www.contactcars.com/en/new-cars/volkswagen-tiguan/year-2026 | https://www.egy-car.com/volkswagen-tiguan",
               "powertrain": "Petrol"
@@ -50679,7 +50568,7 @@
           "tier": "B",
           "effective_date": "2026-08-18",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/volvo/es-90 | https://www.contactcars.com/en/new-cars/volvo-es90 | https://www.contactcars.com/en/new-cars/volvo-es90/year-2026",
           "trims": [
@@ -50690,7 +50579,7 @@
               "tier": "B",
               "effective_date": "2026-08-18",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/volvo/es-90 | https://www.contactcars.com/en/new-cars/volvo-es90 | https://www.contactcars.com/en/new-cars/volvo-es90/year-2026",
               "powertrain": "Electric"
@@ -51058,7 +50947,7 @@
           "tier": "B",
           "effective_date": "2026-09-03",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar",
           "evidence_url": "https://www.contactcars.com/en/new-cars/volvo-ex90/year-2027 | https://www.egy-car.com/volvo-ex90",
           "trims": [
@@ -51069,7 +50958,7 @@
               "tier": "B",
               "effective_date": "2026-09-03",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar",
               "evidence_url": "https://www.contactcars.com/en/new-cars/volvo-ex90/year-2027 | https://www.egy-car.com/volvo-ex90",
               "powertrain": "Electric"
@@ -51081,7 +50970,7 @@
               "tier": "B",
               "effective_date": "2026-09-03",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/volvo/EX90 | https://www.contactcars.com/en/new-cars/volvo-ex90/year-2027 | https://www.egy-car.com/volvo-ex90",
               "powertrain": "Electric"
@@ -51266,7 +51155,7 @@
           "tier": "B",
           "effective_date": "2026-04-12",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/volvo/XC-40 | https://www.contactcars.com/en/new-cars/volvo-xc_40/year-2026 | https://www.egy-car.com/volvo-xc40",
           "trims": [
@@ -51277,7 +51166,7 @@
               "tier": "B",
               "effective_date": "2026-04-12",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/volvo/XC-40 | https://www.contactcars.com/en/new-cars/volvo-xc_40/year-2026 | https://www.egy-car.com/volvo-xc40",
               "powertrain": "Petrol"
@@ -51289,7 +51178,7 @@
               "tier": "B",
               "effective_date": "2026-04-12",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/volvo/XC-40 | https://www.contactcars.com/en/new-cars/volvo-xc_40/year-2026 | https://www.egy-car.com/volvo-xc40",
               "powertrain": "Petrol"
@@ -51301,7 +51190,7 @@
               "tier": "B",
               "effective_date": "2026-04-12",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/volvo/XC-40 | https://www.contactcars.com/en/new-cars/volvo-xc_40/year-2026 | https://www.egy-car.com/volvo-xc40",
               "powertrain": "Petrol"
@@ -51509,7 +51398,7 @@
           "tier": "B",
           "effective_date": "2026-08-18",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/volvo/xc60 | https://www.contactcars.com/en/new-cars/volvo-xc_60/year-2026",
           "trims": [
@@ -51520,7 +51409,7 @@
               "tier": "B",
               "effective_date": "2026-08-18",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/volvo/xc60 | https://www.contactcars.com/en/new-cars/volvo-xc_60/year-2026",
               "powertrain": "Petrol"
@@ -51726,7 +51615,7 @@
           "tier": "B",
           "effective_date": "2026-08-21",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar",
           "evidence_url": "https://www.contactcars.com/en/new-cars/volvo-xc_90 | https://www.contactcars.com/en/new-cars/volvo-xc_90/year-2026 | https://www.egy-car.com/volvo-xc90",
           "trims": [
@@ -51737,7 +51626,7 @@
               "tier": "B",
               "effective_date": "2026-08-21",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar",
               "evidence_url": "https://www.contactcars.com/en/new-cars/volvo-xc_90 | https://www.contactcars.com/en/new-cars/volvo-xc_90/year-2026 | https://www.egy-car.com/volvo-xc90"
             }
@@ -51892,7 +51781,7 @@
           "tier": "B",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/voyah/dream | https://www.contactcars.com/en/new-cars/voyah-dream/year-2026",
           "trims": [
@@ -51903,7 +51792,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/voyah/dream | https://www.contactcars.com/en/new-cars/voyah-dream/year-2026"
             }
@@ -52049,7 +51938,7 @@
           "tier": "B",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/voyah/free | https://www.contactcars.com/en/new-cars/voyah-free/year-2026",
           "trims": [
@@ -52060,7 +51949,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/voyah/free | https://www.contactcars.com/en/new-cars/voyah-free/year-2026"
             }
@@ -52366,7 +52255,7 @@
           "tier": "B",
           "effective_date": "2026-04-10",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar",
           "evidence_url": "https://www.contactcars.com/en/new-cars/xpeng-g6 | https://www.contactcars.com/en/new-cars/xpeng-g6/year-2026 | https://www.egy-car.com/xpeng-g6",
           "trims": [
@@ -52377,7 +52266,7 @@
               "tier": "B",
               "effective_date": "2026-04-10",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar",
               "evidence_url": "https://www.contactcars.com/en/new-cars/xpeng-g6 | https://www.contactcars.com/en/new-cars/xpeng-g6/year-2026 | https://www.egy-car.com/xpeng-g6",
               "powertrain": "Electric"
@@ -52524,7 +52413,7 @@
           "tier": "B",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/xpeng/g7 | https://www.contactcars.com/en/new-cars/xpeng-g7/year-2027",
           "trims": [
@@ -52535,7 +52424,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/xpeng/g7 | https://www.contactcars.com/en/new-cars/xpeng-g7/year-2027"
             }
@@ -52707,7 +52596,7 @@
           "tier": "B",
           "effective_date": "2026-04-10",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar",
           "evidence_url": "https://www.contactcars.com/en/new-cars/xpeng-g9/year-2026 | https://www.egy-car.com/xpeng-g9",
           "trims": [
@@ -52718,7 +52607,7 @@
               "tier": "B",
               "effective_date": "2026-04-10",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar",
               "evidence_url": "https://www.contactcars.com/en/new-cars/xpeng-g9/year-2026 | https://www.egy-car.com/xpeng-g9",
               "powertrain": "Electric"
@@ -52730,7 +52619,7 @@
               "tier": "B",
               "effective_date": "2026-05-19",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/xpeng/G9 | https://www.contactcars.com/en/new-cars/xpeng-g9/year-2026 | https://www.egy-car.com/xpeng-g9",
               "powertrain": "Electric"
@@ -52742,7 +52631,7 @@
               "tier": "B",
               "effective_date": "2026-04-10",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar",
               "evidence_url": "https://www.contactcars.com/en/new-cars/xpeng-g9/year-2026 | https://www.egy-car.com/xpeng-g9",
               "powertrain": "Electric"
@@ -52754,7 +52643,7 @@
               "tier": "B",
               "effective_date": "2026-05-19",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/xpeng/G9 | https://www.contactcars.com/en/new-cars/xpeng-g9/year-2026 | https://www.egy-car.com/xpeng-g9",
               "powertrain": "Electric"
@@ -52766,7 +52655,7 @@
               "tier": "B",
               "effective_date": "2026-04-10",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar",
               "evidence_url": "https://www.contactcars.com/en/new-cars/xpeng-g9/year-2026 | https://www.egy-car.com/xpeng-g9",
               "powertrain": "Electric"
@@ -52778,7 +52667,7 @@
               "tier": "B",
               "effective_date": "2026-05-19",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/xpeng/G9 | https://www.contactcars.com/en/new-cars/xpeng-g9/year-2026 | https://www.egy-car.com/xpeng-g9",
               "powertrain": "Electric"
@@ -53193,7 +53082,7 @@
           "tier": "B",
           "effective_date": "2025-10-08",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/zeekr/X | https://www.contactcars.com/en/new-cars/zeekr-x/year-2025",
           "trims": [
@@ -53204,7 +53093,7 @@
               "tier": "B",
               "effective_date": "2025-10-08",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/zeekr/X | https://www.contactcars.com/en/new-cars/zeekr-x/year-2025",
               "powertrain": "Electric"
@@ -53216,7 +53105,7 @@
               "tier": "B",
               "effective_date": "2025-10-08",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/zeekr/X | https://www.contactcars.com/en/new-cars/zeekr-x/year-2025",
               "powertrain": "Electric"
@@ -53929,17 +53818,7 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": null,
-        "specs": {
-          "engine_cc": [
-            {
-              "value": "1500",
-              "unit": "",
-              "applicability": "market trim pages: PHEV",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/kaiyi-x7/a75b12ac45d2"
-            }
-          ]
-        },
+        "specs": null,
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -54138,7 +54017,7 @@
           "tier": "B",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/sealion-6 | https://www.contactcars.com/en/new-cars/byd-sealion_6 | https://www.contactcars.com/en/new-cars/byd-sealion_6/year-2027",
           "trims": [
@@ -54149,7 +54028,7 @@
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/sealion-6 | https://www.contactcars.com/en/new-cars/byd-sealion_6 | https://www.contactcars.com/en/new-cars/byd-sealion_6/year-2027",
               "powertrain": "Electric"
