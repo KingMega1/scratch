@@ -14,13 +14,13 @@
   "evidence_authority": {
     "schema": "carindex.p2.canonical/v1",
     "path": "vehicle-data/views/canonical_u11.json",
-    "market_snapshot": "snapshots/U_2026-10-16_38899210993",
+    "market_snapshot": "snapshots/U_2026-10-16_38930368374",
     "counts": {
       "models": 283,
       "id_accepted": 283,
-      "price_accepted": 200,
+      "price_accepted": 201,
       "price_tier_a": 66,
-      "price_source_dated": 141,
+      "price_source_dated": 143,
       "market_status_official": 37,
       "specs_accepted": 201,
       "warranty_accepted": 100,
@@ -39,7 +39,7 @@
     "p2_evidence": 21,
     "identity_only": 262,
     "excluded": 3,
-    "price_accepted": 200,
+    "price_accepted": 201,
     "id_accepted": 283
   },
   "entries": [
@@ -2701,8 +2701,8 @@
           "price_from": 3050000,
           "model_year": 2026,
           "tier": "B",
-          "effective_date": null,
-          "date_basis": "OBSERVED",
+          "effective_date": "2026-04-05",
+          "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/avatr/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12/year-2026",
@@ -2712,8 +2712,8 @@
               "label": "Luxury",
               "price_egp": 3050000,
               "tier": "B",
-              "effective_date": null,
-              "date_basis": "OBSERVED",
+              "effective_date": "2026-04-05",
+              "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/avatr/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12/year-2026",
@@ -10423,9 +10423,7 @@
             "credit": "changan.com.eg"
           }
         ],
-        "conflicts": [
-          "PB-2 CONFLICT: EgyCar=1350000;Hatla2ee=1350000"
-        ]
+        "conflicts": []
       }
     },
     {
@@ -13021,8 +13019,8 @@
           "price_from": 1375000,
           "model_year": 2026,
           "tier": "B",
-          "effective_date": null,
-          "date_basis": "OBSERVED",
+          "effective_date": "2025-08-03",
+          "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/chery/Tiggo-8-Pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro/year-2026",
@@ -13032,8 +13030,8 @@
               "label": "Luxury",
               "price_egp": 1375000,
               "tier": "B",
-              "effective_date": null,
-              "date_basis": "OBSERVED",
+              "effective_date": "2025-08-03",
+              "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/chery/Tiggo-8-Pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro/year-2026",
@@ -19817,8 +19815,8 @@
           "price_from": 1290000,
           "model_year": 2027,
           "tier": "B",
-          "effective_date": "2026-06-29",
-          "date_basis": "SOURCE_STATED",
+          "effective_date": null,
+          "date_basis": "OBSERVED",
           "as_of": "2026-10-16",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/forthing/Forthing-S7 | https://www.contactcars.com/en/new-cars/forthing-s7/year-2027",
@@ -19828,8 +19826,8 @@
               "label": "EV",
               "price_egp": 1290000,
               "tier": "B",
-              "effective_date": "2026-06-29",
-              "date_basis": "SOURCE_STATED",
+              "effective_date": null,
+              "date_basis": "OBSERVED",
               "as_of": "2026-10-16",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/forthing/Forthing-S7 | https://www.contactcars.com/en/new-cars/forthing-s7/year-2027",
@@ -32888,10 +32886,9 @@
       },
       "p2_evidence": false,
       "evidence_state": "U11_IDENTITY_ONLY",
-      "price_status": "UNKNOWN",
+      "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_PRICE",
         "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
@@ -32905,7 +32902,40 @@
           "basis": "registration segment, last 12 months (109 registrations)",
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
-        "price": null,
+        "price": {
+          "price_from": 2290000,
+          "model_year": 2026,
+          "tier": "B",
+          "effective_date": "2026-05-12",
+          "date_basis": "SOURCE_STATED",
+          "as_of": "2026-10-16",
+          "issuer": "EgyCar+Hatla2ee",
+          "evidence_url": "https://eg.hatla2ee.com/en/new-car/lynkco/08 | https://www.egy-car.com/lynk-co-08",
+          "trims": [
+            {
+              "model_year": 2026,
+              "label": " A/T / Core",
+              "price_egp": 2290000,
+              "tier": "B",
+              "effective_date": "2026-05-12",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-16",
+              "issuer": "EgyCar+Hatla2ee",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/lynkco/08 | https://www.egy-car.com/lynk-co-08"
+            },
+            {
+              "model_year": 2026,
+              "label": " A/T / More",
+              "price_egp": 2490000,
+              "tier": "B",
+              "effective_date": "2026-05-12",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-16",
+              "issuer": "EgyCar+Hatla2ee",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/lynkco/08 | https://www.egy-car.com/lynk-co-08"
+            }
+          ]
+        },
         "specs": null,
         "warranty": null,
         "brochures": [],
@@ -35993,9 +36023,7 @@
             "credit": "MG Egypt / Mansour"
           }
         ],
-        "conflicts": [
-          "PB-2 CONFLICT: EgyCar=1725000"
-        ]
+        "conflicts": []
       }
     },
     {
@@ -36386,36 +36414,36 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 1525000,
+          "price_from": 1550000,
           "model_year": 2026,
           "tier": "B",
-          "effective_date": "2026-08-05",
+          "effective_date": "2026-10-16",
           "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-16",
           "issuer": "ContactCars+EgyCar",
-          "evidence_url": "https://www.contactcars.com/en/new-cars/mg-hs | https://www.egy-car.com/mg-hs",
+          "evidence_url": "https://www.contactcars.com/en/new-cars/mg-hs/year-2026 | https://www.egy-car.com/mg-hs",
           "trims": [
             {
               "model_year": 2026,
               "label": "+ Luxury",
-              "price_egp": 1525000,
+              "price_egp": 1550000,
               "tier": "B",
-              "effective_date": "2026-08-05",
+              "effective_date": "2026-10-16",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar",
-              "evidence_url": "https://www.contactcars.com/en/new-cars/mg-hs | https://www.egy-car.com/mg-hs"
+              "evidence_url": "https://www.contactcars.com/en/new-cars/mg-hs/year-2026 | https://www.egy-car.com/mg-hs"
             },
             {
               "model_year": 2026,
               "label": "HEV",
-              "price_egp": 1625000,
+              "price_egp": 1650000,
               "tier": "B",
-              "effective_date": "2026-08-05",
+              "effective_date": "2026-10-16",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar",
-              "evidence_url": "https://www.contactcars.com/en/new-cars/mg-hs | https://www.egy-car.com/mg-hs"
+              "evidence_url": "https://www.contactcars.com/en/new-cars/mg-hs/year-2026 | https://www.egy-car.com/mg-hs"
             }
           ]
         },
@@ -36657,8 +36685,8 @@
           }
         ],
         "conflicts": [
-          "PB-2 CONFLICT: EgyCar=1525000",
-          "PB-2 CONFLICT: EgyCar=1625000",
+          "PB-2 CONFLICT: EgyCar=1550000",
+          "PB-2 CONFLICT: EgyCar=1650000",
           "power_hp: SP-1 CONFLICT: MG Egypt HS page prose 221 hp vs spec table 200 hp (hybrid)"
         ]
       }
@@ -37185,7 +37213,7 @@
           }
         ],
         "conflicts": [
-          "PB-2 CONFLICT: ContactCars=1899000",
+          "PB-2 CONFLICT: ContactCars=1959990",
           "PB-2 CONFLICT: Hatla2ee=1900000"
         ]
       }
@@ -37253,9 +37281,9 @@
             {
               "model_year": 2026,
               "label": "Luxury Facelift MCE",
-              "price_egp": 1150000,
+              "price_egp": 1165000,
               "tier": "B",
-              "effective_date": "2026-08-05",
+              "effective_date": "2026-10-16",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-16",
               "issuer": "ContactCars+EgyCar",

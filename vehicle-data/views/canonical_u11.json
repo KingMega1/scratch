@@ -10,8 +10,8 @@
   "logo_accepted": 248,
   "market_status_official": 37,
   "models": 283,
-  "price_accepted": 200,
-  "price_source_dated": 141,
+  "price_accepted": 201,
+  "price_source_dated": 143,
   "price_tier_a": 66,
   "specs_accepted": 201,
   "warranty_accepted": 100
@@ -27,8 +27,8 @@
   "logo_accepted": 347,
   "market_status_official": 38,
   "models": 416,
-  "price_accepted": 235,
-  "price_source_dated": 170,
+  "price_accepted": 236,
+  "price_source_dated": 172,
   "price_tier_a": 76,
   "specs_accepted": 244,
   "warranty_accepted": 121
@@ -51,9 +51,9 @@
   "inputs/u11/s0_urls.csv": "0fe3f54676ca73bfc6e00ccf854f67194dbced9b8cae3cf44a8191b826a2c24f",
   "inputs/u11/u11_source_urls.csv": "2421f3e82d175a8fd88166522f1f575e6ac5b594f51cc6cbdc1c53ebd9cee918"
  },
- "market_snapshot": "snapshots/U_2026-10-16_38899210993",
+ "market_snapshot": "snapshots/U_2026-10-16_38930368374",
  "market_snapshots": [
-  "snapshots/U_2026-10-16_38899210993",
+  "snapshots/U_2026-10-16_38930368374",
   "snapshots/UA_2026-10-14_38545206122"
  ],
  "models": [
@@ -2596,8 +2596,8 @@
    "p1_id": "avatr/12",
    "price": {
     "as_of": "2026-10-16",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-04-05",
     "evidence_url": "https://eg.hatla2ee.com/en/new-car/avatr/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12/year-2026",
     "issuer": "ContactCars+Hatla2ee",
     "model_year": 2026,
@@ -2607,8 +2607,8 @@
     "trims": [
      {
       "as_of": "2026-10-16",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-04-05",
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/avatr/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12/year-2026",
       "issuer": "ContactCars+Hatla2ee",
       "label": "Luxury",
@@ -8353,7 +8353,7 @@
      }
     ]
    },
-   "rework_price_rows": 4,
+   "rework_price_rows": 8,
    "site_slug": "changan-cs75-plus",
    "size_class": {
     "basis": "registration segment, last 12 months (299 registrations)",
@@ -9534,9 +9534,7 @@
      "url": "https://changan.com.eg/wp-content/uploads/2025/06/Uni-V.pdf"
     }
    ],
-   "conflicts": [
-    "PB-2 CONFLICT: EgyCar=1350000;Hatla2ee=1350000"
-   ],
+   "conflicts": [],
    "gallery": [
     {
      "asset_id": "5d96dffc29fa",
@@ -9706,7 +9704,7 @@
      }
     ]
    },
-   "rework_price_rows": 2,
+   "rework_price_rows": 1,
    "site_slug": "changan-uni-v",
    "size_class": {
     "basis": "registration segment, last 12 months (323 registrations)",
@@ -12129,7 +12127,7 @@
      }
     ]
    },
-   "rework_price_rows": 6,
+   "rework_price_rows": 7,
    "site_slug": "chery-tiggo-8",
    "size_class": {
     "basis": "registration segment, last 12 months (1789 registrations)",
@@ -12354,8 +12352,8 @@
    "p1_id": "chery/tiggo-8-pro",
    "price": {
     "as_of": "2026-10-16",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2025-08-03",
     "evidence_url": "https://eg.hatla2ee.com/en/new-car/chery/Tiggo-8-Pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro/year-2026",
     "issuer": "ContactCars+Hatla2ee",
     "model_year": 2026,
@@ -12365,8 +12363,8 @@
     "trims": [
      {
       "as_of": "2026-10-16",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2025-08-03",
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/chery/Tiggo-8-Pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro/year-2026",
       "issuer": "ContactCars+Hatla2ee",
       "label": "Luxury",
@@ -18935,8 +18933,8 @@
    "p1_id": "forthing/s7",
    "price": {
     "as_of": "2026-10-16",
-    "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-06-29",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
     "evidence_url": "https://eg.hatla2ee.com/en/new-car/forthing/Forthing-S7 | https://www.contactcars.com/en/new-cars/forthing-s7/year-2027",
     "issuer": "ContactCars+Hatla2ee",
     "model_year": 2027,
@@ -18946,8 +18944,8 @@
     "trims": [
      {
       "as_of": "2026-10-16",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-06-29",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/forthing/Forthing-S7 | https://www.contactcars.com/en/new-cars/forthing-s7/year-2027",
       "issuer": "ContactCars+Hatla2ee",
       "label": "EV",
@@ -31260,7 +31258,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
@@ -31301,8 +31298,41 @@
    "model": "08",
    "model_id": "m_000188",
    "p1_id": "lynk-co/08",
-   "price": null,
-   "rework_price_rows": 2,
+   "price": {
+    "as_of": "2026-10-16",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-05-12",
+    "evidence_url": "https://eg.hatla2ee.com/en/new-car/lynkco/08 | https://www.egy-car.com/lynk-co-08",
+    "issuer": "EgyCar+Hatla2ee",
+    "model_year": 2026,
+    "price_from": 2290000,
+    "tier": "B",
+    "trims": [
+     {
+      "as_of": "2026-10-16",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-05-12",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/lynkco/08 | https://www.egy-car.com/lynk-co-08",
+      "issuer": "EgyCar+Hatla2ee",
+      "label": " A/T / Core",
+      "model_year": 2026,
+      "price_egp": 2290000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-16",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-05-12",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/lynkco/08 | https://www.egy-car.com/lynk-co-08",
+      "issuer": "EgyCar+Hatla2ee",
+      "label": " A/T / More",
+      "model_year": 2026,
+      "price_egp": 2490000,
+      "tier": "B"
+     }
+    ]
+   },
+   "rework_price_rows": 0,
    "site_slug": "lynk-co-08",
    "size_class": {
     "basis": "registration segment, last 12 months (109 registrations)",
@@ -33961,9 +33991,7 @@
      "url": "https://www.mgmotor.com.eg/wp-content/uploads/2025/08/MG7-Brochure-Jul-25-Amended.pdf"
     }
    ],
-   "conflicts": [
-    "PB-2 CONFLICT: EgyCar=1725000"
-   ],
+   "conflicts": [],
    "gallery": [
     {
      "asset_id": "a615a35d34dd",
@@ -34052,7 +34080,7 @@
      }
     ]
    },
-   "rework_price_rows": 3,
+   "rework_price_rows": 2,
    "site_slug": "mg-7",
    "size_class": {
     "basis": "registration segment, last 12 months (1147 registrations)",
@@ -34247,7 +34275,7 @@
      }
     ]
    },
-   "rework_price_rows": 4,
+   "rework_price_rows": 2,
    "site_slug": "mg-g50-plus",
    "size_class": {
     "basis": "registration segment, last 12 months (507 registrations)",
@@ -34401,7 +34429,7 @@
      }
     ]
    },
-   "rework_price_rows": 2,
+   "rework_price_rows": 5,
    "site_slug": "mg-gt",
    "size_class": {
     "basis": "registration segment, last 12 months (1665 registrations)",
@@ -34516,8 +34544,8 @@
     }
    ],
    "conflicts": [
-    "PB-2 CONFLICT: EgyCar=1525000",
-    "PB-2 CONFLICT: EgyCar=1625000",
+    "PB-2 CONFLICT: EgyCar=1550000",
+    "PB-2 CONFLICT: EgyCar=1650000",
     "power_hp: SP-1 CONFLICT: MG Egypt HS page prose 221 hp vs spec table 200 hp (hybrid)"
    ],
    "gallery": [
@@ -34588,33 +34616,33 @@
    "price": {
     "as_of": "2026-10-16",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-08-05",
-    "evidence_url": "https://www.contactcars.com/en/new-cars/mg-hs | https://www.egy-car.com/mg-hs",
+    "effective_date": "2026-10-16",
+    "evidence_url": "https://www.contactcars.com/en/new-cars/mg-hs/year-2026 | https://www.egy-car.com/mg-hs",
     "issuer": "ContactCars+EgyCar",
     "model_year": 2026,
-    "price_from": 1525000,
+    "price_from": 1550000,
     "tier": "B",
     "trims": [
      {
       "as_of": "2026-10-16",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-08-05",
-      "evidence_url": "https://www.contactcars.com/en/new-cars/mg-hs | https://www.egy-car.com/mg-hs",
+      "effective_date": "2026-10-16",
+      "evidence_url": "https://www.contactcars.com/en/new-cars/mg-hs/year-2026 | https://www.egy-car.com/mg-hs",
       "issuer": "ContactCars+EgyCar",
       "label": "+ Luxury",
       "model_year": 2026,
-      "price_egp": 1525000,
+      "price_egp": 1550000,
       "tier": "B"
      },
      {
       "as_of": "2026-10-16",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-08-05",
-      "evidence_url": "https://www.contactcars.com/en/new-cars/mg-hs | https://www.egy-car.com/mg-hs",
+      "effective_date": "2026-10-16",
+      "evidence_url": "https://www.contactcars.com/en/new-cars/mg-hs/year-2026 | https://www.egy-car.com/mg-hs",
       "issuer": "ContactCars+EgyCar",
       "label": "HEV",
       "model_year": 2026,
-      "price_egp": 1625000,
+      "price_egp": 1650000,
       "tier": "B"
      }
     ]
@@ -34895,7 +34923,7 @@
      }
     ]
    },
-   "rework_price_rows": 6,
+   "rework_price_rows": 4,
    "site_slug": "mg-one",
    "size_class": {
     "basis": "registration segment, last 12 months (2464 registrations)",
@@ -35035,7 +35063,7 @@
     }
    ],
    "conflicts": [
-    "PB-2 CONFLICT: ContactCars=1899000",
+    "PB-2 CONFLICT: ContactCars=1959990",
     "PB-2 CONFLICT: Hatla2ee=1900000"
    ],
    "gallery": [
@@ -35400,17 +35428,17 @@
      {
       "as_of": "2026-10-16",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-08-05",
+      "effective_date": "2026-10-16",
       "evidence_url": "https://www.contactcars.com/en/new-cars/mg-zs/year-2026 | https://www.egy-car.com/mg-zs",
       "issuer": "ContactCars+EgyCar",
       "label": "Luxury Facelift MCE",
       "model_year": 2026,
-      "price_egp": 1150000,
+      "price_egp": 1165000,
       "tier": "B"
      }
     ]
    },
-   "rework_price_rows": 5,
+   "rework_price_rows": 4,
    "site_slug": "mg-zs",
    "size_class": {
     "basis": "registration segment, last 12 months (6861 registrations)",
