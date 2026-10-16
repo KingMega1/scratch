@@ -11,7 +11,7 @@
   "market_status_official": 37,
   "models": 283,
   "price_accepted": 201,
-  "price_source_dated": 143,
+  "price_source_dated": 147,
   "price_tier_a": 66,
   "specs_accepted": 201,
   "warranty_accepted": 100
@@ -28,7 +28,7 @@
   "market_status_official": 38,
   "models": 416,
   "price_accepted": 236,
-  "price_source_dated": 172,
+  "price_source_dated": 176,
   "price_tier_a": 76,
   "specs_accepted": 244,
   "warranty_accepted": 121
@@ -51,9 +51,9 @@
   "inputs/u11/s0_urls.csv": "0fe3f54676ca73bfc6e00ccf854f67194dbced9b8cae3cf44a8191b826a2c24f",
   "inputs/u11/u11_source_urls.csv": "2421f3e82d175a8fd88166522f1f575e6ac5b594f51cc6cbdc1c53ebd9cee918"
  },
- "market_snapshot": "snapshots/U_2026-10-16_38930368374",
+ "market_snapshot": "snapshots/U_2026-10-16_38969730404",
  "market_snapshots": [
-  "snapshots/U_2026-10-16_38930368374",
+  "snapshots/U_2026-10-16_38969730404",
   "snapshots/UA_2026-10-14_38545206122"
  ],
  "models": [
@@ -1637,7 +1637,7 @@
      }
     ]
    },
-   "rework_price_rows": 13,
+   "rework_price_rows": 11,
    "site_slug": "audi-q3",
    "size_class": {
     "basis": "registration segment, last 12 months (556 registrations)",
@@ -2154,8 +2154,8 @@
    "p1_id": "avatr/07",
    "price": {
     "as_of": "2026-10-16",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-07-17",
     "evidence_url": "https://eg.hatla2ee.com/en/new-car/avatr/avatr-07 | https://www.contactcars.com/en/new-cars/avatr-07/year-2027 | https://www.egy-car.com/avatr-07",
     "issuer": "ContactCars+EgyCar+Hatla2ee",
     "model_year": 2027,
@@ -2164,8 +2164,8 @@
     "trims": [
      {
       "as_of": "2026-10-16",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-07-17",
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/avatr/avatr-07 | https://www.contactcars.com/en/new-cars/avatr-07/year-2027 | https://www.egy-car.com/avatr-07",
       "issuer": "ContactCars+EgyCar+Hatla2ee",
       "label": "RWD Luxury",
@@ -2175,8 +2175,8 @@
      },
      {
       "as_of": "2026-10-16",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-07-17",
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/avatr/avatr-07 | https://www.contactcars.com/en/new-cars/avatr-07/year-2027 | https://www.egy-car.com/avatr-07",
       "issuer": "ContactCars+EgyCar+Hatla2ee",
       "label": "AWD Premium",
@@ -2186,8 +2186,8 @@
      },
      {
       "as_of": "2026-10-16",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-07-17",
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/avatr/avatr-07 | https://www.contactcars.com/en/new-cars/avatr-07/year-2027 | https://www.egy-car.com/avatr-07",
       "issuer": "ContactCars+EgyCar+Hatla2ee",
       "label": "AWD Premium Vision",
@@ -4281,8 +4281,8 @@
    "p1_id": "bmw/ix3",
    "price": {
     "as_of": "2026-10-16",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-06-29",
     "evidence_url": "https://eg.hatla2ee.com/en/new-car/bmw/IX3 | https://www.egy-car.com/bmw-ix3",
     "issuer": "EgyCar+Hatla2ee",
     "model_year": 2027,
@@ -4292,8 +4292,8 @@
     "trims": [
      {
       "as_of": "2026-10-16",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-06-29",
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/bmw/IX3 | https://www.egy-car.com/bmw-ix3",
       "issuer": "EgyCar+Hatla2ee",
       "label": " A/T / 50 xDrive",
@@ -6393,8 +6393,8 @@
      },
      {
       "as_of": "2026-10-16",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-07-13",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/sealion-6 | https://www.contactcars.com/en/new-cars/byd-sealion_6 | https://www.contactcars.com/en/new-cars/byd-sealion_6/year-2027",
       "issuer": "ContactCars+Hatla2ee",
       "label": "DMi Luxury",
@@ -11159,7 +11159,7 @@
      }
     ]
    },
-   "rework_price_rows": 5,
+   "rework_price_rows": 8,
    "site_slug": "chery-tiggo-4-pro",
    "size_class": {
     "basis": "registration segment, last 12 months (3338 registrations)",
@@ -18933,8 +18933,8 @@
    "p1_id": "forthing/s7",
    "price": {
     "as_of": "2026-10-16",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-06-29",
     "evidence_url": "https://eg.hatla2ee.com/en/new-car/forthing/Forthing-S7 | https://www.contactcars.com/en/new-cars/forthing-s7/year-2027",
     "issuer": "ContactCars+Hatla2ee",
     "model_year": 2027,
@@ -18944,8 +18944,8 @@
     "trims": [
      {
       "as_of": "2026-10-16",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-06-29",
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/forthing/Forthing-S7 | https://www.contactcars.com/en/new-cars/forthing-s7/year-2027",
       "issuer": "ContactCars+Hatla2ee",
       "label": "EV",
@@ -24100,7 +24100,7 @@
    "model_id": "m_000154",
    "p1_id": "hyundai/ioniq",
    "price": null,
-   "rework_price_rows": 1,
+   "rework_price_rows": 0,
    "site_slug": "hyundai-ioniq",
    "size_class": {
     "basis": "registration segment, last 12 months (1 registrations)",
@@ -31653,7 +31653,7 @@
    "brand": "Mazda",
    "brochures": [],
    "conflicts": [
-    "PB-2 CONFLICT: ContactCars=1355000",
+    "PB-2 CONFLICT: ContactCars=1355000;EgyCar=1355000",
     "PB-2 CONFLICT: Hatla2ee=1335000"
    ],
    "gallery": [],
@@ -31883,7 +31883,7 @@
      }
     ]
    },
-   "rework_price_rows": 0,
+   "rework_price_rows": 2,
    "site_slug": "mercedes-a-class",
    "size_class": {
     "basis": "registration segment, last 12 months (94 registrations)",
@@ -32412,7 +32412,7 @@
      }
     ]
    },
-   "rework_price_rows": 0,
+   "rework_price_rows": 1,
    "site_slug": "mercedes-cla",
    "size_class": {
     "basis": "registration segment, last 12 months (389 registrations)",
@@ -32992,7 +32992,8 @@
    "brand": "Mercedes-Benz",
    "brochures": [],
    "conflicts": [
-    "PB-2 CONFLICT: EgyCar=2990000;Hatla2ee=2990000"
+    "PB-2 CONFLICT: ContactCars=3140000",
+    "PB-2 CONFLICT: Hatla2ee=2990000"
    ],
    "gallery": [],
    "gaps": [
@@ -33048,7 +33049,7 @@
      }
     ]
    },
-   "rework_price_rows": 1,
+   "rework_price_rows": 3,
    "site_slug": "mercedes-gla",
    "size_class": {
     "basis": "registration segment, last 12 months (485 registrations)",
@@ -35808,8 +35809,8 @@
    "p1_id": "mitsubishi/destinator",
    "price": {
     "as_of": "2026-10-16",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-06-15",
     "evidence_url": "https://eg.hatla2ee.com/en/new-car/mitsubishi/destinator | https://www.contactcars.com/en/new-cars/mitsubishi-destinator | https://www.contactcars.com/en/new-cars/mitsubishi-destinator/year-2027 | https://www.egy-car.com/mitsubishi-destinator",
     "issuer": "ContactCars+EgyCar+Hatla2ee",
     "model_year": 2027,
@@ -35819,8 +35820,8 @@
     "trims": [
      {
       "as_of": "2026-10-16",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-06-15",
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/mitsubishi/destinator | https://www.contactcars.com/en/new-cars/mitsubishi-destinator | https://www.contactcars.com/en/new-cars/mitsubishi-destinator/year-2027 | https://www.egy-car.com/mitsubishi-destinator",
       "issuer": "ContactCars+EgyCar+Hatla2ee",
       "label": "1.5 A/T MIDLINE",
@@ -35831,8 +35832,8 @@
      },
      {
       "as_of": "2026-10-16",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-06-15",
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/mitsubishi/destinator | https://www.contactcars.com/en/new-cars/mitsubishi-destinator | https://www.contactcars.com/en/new-cars/mitsubishi-destinator/year-2027 | https://www.egy-car.com/mitsubishi-destinator",
       "issuer": "ContactCars+EgyCar+Hatla2ee",
       "label": "1.5 A/T Highline",
@@ -35843,8 +35844,8 @@
      },
      {
       "as_of": "2026-10-16",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-06-15",
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/mitsubishi/destinator | https://www.contactcars.com/en/new-cars/mitsubishi-destinator | https://www.contactcars.com/en/new-cars/mitsubishi-destinator/year-2027 | https://www.egy-car.com/mitsubishi-destinator",
       "issuer": "ContactCars+EgyCar+Hatla2ee",
       "label": "1.5 A/T Premium Line",
@@ -48598,7 +48599,7 @@
    "price": {
     "as_of": "2026-10-16",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-09-03",
+    "effective_date": "2026-10-16",
     "evidence_url": "https://www.contactcars.com/en/new-cars/volvo-ex90/year-2027 | https://www.egy-car.com/volvo-ex90",
     "issuer": "ContactCars+EgyCar",
     "model_year": 2027,
@@ -48609,7 +48610,7 @@
      {
       "as_of": "2026-10-16",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-09-03",
+      "effective_date": "2026-10-16",
       "evidence_url": "https://www.contactcars.com/en/new-cars/volvo-ex90/year-2027 | https://www.egy-car.com/volvo-ex90",
       "issuer": "ContactCars+EgyCar",
       "label": "Twin Motor AWD",
@@ -48621,7 +48622,7 @@
      {
       "as_of": "2026-10-16",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-09-03",
+      "effective_date": "2026-10-16",
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/volvo/EX90 | https://www.contactcars.com/en/new-cars/volvo-ex90/year-2027 | https://www.egy-car.com/volvo-ex90",
       "issuer": "ContactCars+EgyCar+Hatla2ee",
       "label": "Twin Motor AWD",
