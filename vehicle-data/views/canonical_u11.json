@@ -51,9 +51,9 @@
   "inputs/u11/s0_urls.csv": "0fe3f54676ca73bfc6e00ccf854f67194dbced9b8cae3cf44a8191b826a2c24f",
   "inputs/u11/u11_source_urls.csv": "2421f3e82d175a8fd88166522f1f575e6ac5b594f51cc6cbdc1c53ebd9cee918"
  },
- "market_snapshot": "snapshots/U_2026-10-17_39048461532",
+ "market_snapshot": "snapshots/U_2026-10-17_39072899589",
  "market_snapshots": [
-  "snapshots/U_2026-10-17_39048461532",
+  "snapshots/U_2026-10-17_39072899589",
   "snapshots/UA_2026-10-14_38545206122"
  ],
  "models": [
@@ -6393,8 +6393,8 @@
      },
      {
       "as_of": "2026-10-17",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-07-13",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/sealion-6 | https://www.contactcars.com/en/new-cars/byd-sealion_6 | https://www.contactcars.com/en/new-cars/byd-sealion_6/year-2027",
       "issuer": "ContactCars+Hatla2ee",
       "label": "DMi Luxury",
@@ -23380,7 +23380,7 @@
    "price": {
     "as_of": "2026-10-17",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2025-12-01",
+    "effective_date": "2025-11-30",
     "evidence_url": "https://eg.hatla2ee.com/en/new-car/hyundai/Accent-RB | https://www.egy-car.com/hyundai-accent-rb",
     "issuer": "EgyCar+Hatla2ee",
     "model_year": 2026,
@@ -23390,7 +23390,7 @@
      {
       "as_of": "2026-10-17",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2025-12-01",
+      "effective_date": "2025-11-30",
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/hyundai/Accent-RB | https://www.egy-car.com/hyundai-accent-rb",
       "issuer": "EgyCar+Hatla2ee",
       "label": "A/T / DAB ABS",
@@ -44548,7 +44548,7 @@
      {
       "as_of": "2026-10-17",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-04-10",
+      "effective_date": "2026-06-25",
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/soueast/S+06 | https://www.contactcars.com/en/new-cars/soueast-s_06/year-2027 | https://www.egy-car.com/soueast-s06",
       "issuer": "ContactCars+EgyCar+Hatla2ee",
       "label": "Premium",
