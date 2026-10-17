@@ -14,11 +14,11 @@
   "evidence_authority": {
     "schema": "carindex.p2.canonical/v1",
     "path": "vehicle-data/views/canonical_u11.json",
-    "market_snapshot": "snapshots/U_2026-10-17_38991976445",
+    "market_snapshot": "snapshots/U_2026-10-17_39025667137",
     "counts": {
       "models": 283,
       "id_accepted": 283,
-      "price_accepted": 200,
+      "price_accepted": 201,
       "price_tier_a": 66,
       "price_source_dated": 146,
       "market_status_official": 37,
@@ -39,7 +39,7 @@
     "p2_evidence": 21,
     "identity_only": 262,
     "excluded": 3,
-    "price_accepted": 200,
+    "price_accepted": 201,
     "id_accepted": 283
   },
   "entries": [
@@ -42334,8 +42334,8 @@
           "price_from": 2099990,
           "model_year": 2027,
           "tier": "B",
-          "effective_date": "2026-04-07",
-          "date_basis": "SOURCE_STATED",
+          "effective_date": null,
+          "date_basis": "OBSERVED",
           "as_of": "2026-10-17",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/peugeot/3008 | https://www.contactcars.com/en/new-cars/peugeot-3008/year-2027",
@@ -42345,8 +42345,8 @@
               "label": "Allure",
               "price_egp": 2099990,
               "tier": "B",
-              "effective_date": "2026-04-07",
-              "date_basis": "SOURCE_STATED",
+              "effective_date": null,
+              "date_basis": "OBSERVED",
               "as_of": "2026-10-17",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/peugeot/3008 | https://www.contactcars.com/en/new-cars/peugeot-3008/year-2027",
@@ -43840,8 +43840,8 @@
           "effective_date": "2026-04-16",
           "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-17",
-          "issuer": "ContactCars+Hatla2ee",
-          "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Kardian | https://www.contactcars.com/en/new-cars/renault-kardian | https://www.contactcars.com/en/new-cars/renault-kardian/year-2026",
+          "issuer": "ContactCars+EgyCar+Hatla2ee",
+          "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Kardian | https://www.contactcars.com/en/new-cars/renault-kardian | https://www.contactcars.com/en/new-cars/renault-kardian/year-2026 | https://www.egy-car.com/renault-kardian",
           "trims": [
             {
               "model_year": 2026,
@@ -43851,8 +43851,8 @@
               "effective_date": "2026-04-16",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-17",
-              "issuer": "ContactCars+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Kardian | https://www.contactcars.com/en/new-cars/renault-kardian | https://www.contactcars.com/en/new-cars/renault-kardian/year-2026",
+              "issuer": "ContactCars+EgyCar+Hatla2ee",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Kardian | https://www.contactcars.com/en/new-cars/renault-kardian | https://www.contactcars.com/en/new-cars/renault-kardian/year-2026 | https://www.egy-car.com/renault-kardian",
               "powertrain": "Petrol"
             },
             {
@@ -43863,8 +43863,8 @@
               "effective_date": "2026-04-16",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-17",
-              "issuer": "ContactCars+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Kardian | https://www.contactcars.com/en/new-cars/renault-kardian | https://www.contactcars.com/en/new-cars/renault-kardian/year-2026",
+              "issuer": "ContactCars+EgyCar+Hatla2ee",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Kardian | https://www.contactcars.com/en/new-cars/renault-kardian | https://www.contactcars.com/en/new-cars/renault-kardian/year-2026 | https://www.egy-car.com/renault-kardian",
               "powertrain": "Petrol"
             },
             {
@@ -43875,8 +43875,8 @@
               "effective_date": "2026-04-16",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-17",
-              "issuer": "ContactCars+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Kardian | https://www.contactcars.com/en/new-cars/renault-kardian | https://www.contactcars.com/en/new-cars/renault-kardian/year-2026",
+              "issuer": "ContactCars+EgyCar+Hatla2ee",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/renault/Kardian | https://www.contactcars.com/en/new-cars/renault-kardian | https://www.contactcars.com/en/new-cars/renault-kardian/year-2026 | https://www.egy-car.com/renault-kardian",
               "powertrain": "Petrol"
             }
           ],
@@ -47106,7 +47106,7 @@
               "label": "Premium",
               "price_egp": 1530000,
               "tier": "B",
-              "effective_date": "2026-06-25",
+              "effective_date": "2026-04-10",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-17",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
@@ -49300,10 +49300,9 @@
       },
       "p2_evidence": false,
       "evidence_state": "U11_IDENTITY_ONLY",
-      "price_status": "UNKNOWN",
+      "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_PRICE",
         "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
@@ -49314,7 +49313,31 @@
           "basis": "registration segment, last 12 months (1093 registrations)",
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
-        "price": null,
+        "price": {
+          "price_from": 3700000,
+          "model_year": 2026,
+          "tier": "B",
+          "effective_date": "2026-07-15",
+          "date_basis": "SOURCE_STATED",
+          "as_of": "2026-10-17",
+          "issuer": "EgyCar+Hatla2ee",
+          "evidence_url": "https://eg.hatla2ee.com/en/new-car/toyota/fortuner | https://www.egy-car.com/toyota-fortuner",
+          "trims": [
+            {
+              "model_year": 2026,
+              "label": "A/T / Sport",
+              "price_egp": 3700000,
+              "tier": "B",
+              "effective_date": "2026-07-15",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-17",
+              "issuer": "EgyCar+Hatla2ee",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/toyota/fortuner | https://www.egy-car.com/toyota-fortuner",
+              "powertrain": "Petrol"
+            }
+          ],
+          "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
+        },
         "specs": {
           "drive": [
             {
@@ -50122,8 +50145,8 @@
           "effective_date": "2026-03-30",
           "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-17",
-          "issuer": "ContactCars+Hatla2ee",
-          "evidence_url": "https://eg.hatla2ee.com/en/new-car/volks-wagen/T-Roc | https://www.contactcars.com/en/new-cars/volkswagen-t_roc | https://www.contactcars.com/en/new-cars/volkswagen-t_roc/year-2026",
+          "issuer": "ContactCars+EgyCar+Hatla2ee",
+          "evidence_url": "https://eg.hatla2ee.com/en/new-car/volks-wagen/T-Roc | https://www.contactcars.com/en/new-cars/volkswagen-t_roc | https://www.contactcars.com/en/new-cars/volkswagen-t_roc/year-2026 | https://www.egy-car.com/volkswagen-t-roc",
           "trims": [
             {
               "model_year": 2026,
@@ -50133,8 +50156,8 @@
               "effective_date": "2026-03-30",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-17",
-              "issuer": "ContactCars+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/volks-wagen/T-Roc | https://www.contactcars.com/en/new-cars/volkswagen-t_roc | https://www.contactcars.com/en/new-cars/volkswagen-t_roc/year-2026",
+              "issuer": "ContactCars+EgyCar+Hatla2ee",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/volks-wagen/T-Roc | https://www.contactcars.com/en/new-cars/volkswagen-t_roc | https://www.contactcars.com/en/new-cars/volkswagen-t_roc/year-2026 | https://www.egy-car.com/volkswagen-t-roc",
               "powertrain": "Petrol"
             }
           ],
