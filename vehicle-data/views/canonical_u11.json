@@ -51,9 +51,9 @@
   "inputs/u11/s0_urls.csv": "0fe3f54676ca73bfc6e00ccf854f67194dbced9b8cae3cf44a8191b826a2c24f",
   "inputs/u11/u11_source_urls.csv": "2421f3e82d175a8fd88166522f1f575e6ac5b594f51cc6cbdc1c53ebd9cee918"
  },
- "market_snapshot": "snapshots/U_2026-10-18_39107999992",
+ "market_snapshot": "snapshots/U_2026-10-18_39130368751",
  "market_snapshots": [
-  "snapshots/U_2026-10-18_39107999992",
+  "snapshots/U_2026-10-18_39130368751",
   "snapshots/UA_2026-10-14_38545206122"
  ],
  "models": [
@@ -1077,8 +1077,8 @@
    "p1_id": "audi/a5",
    "price": {
     "as_of": "2026-10-18",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-04-20",
     "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/a5 | https://www.contactcars.com/en/new-cars/audi-a5 | https://www.contactcars.com/en/new-cars/audi-a5/year-2026",
     "issuer": "ContactCars+Hatla2ee",
     "model_year": 2026,
@@ -1100,8 +1100,8 @@
      },
      {
       "as_of": "2026-10-18",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-04-20",
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/a5 | https://www.contactcars.com/en/new-cars/audi-a5 | https://www.contactcars.com/en/new-cars/audi-a5/year-2026",
       "issuer": "ContactCars+Hatla2ee",
       "label": "Advanced",
@@ -40263,8 +40263,8 @@
    "p1_id": "peugeot/3008",
    "price": {
     "as_of": "2026-10-18",
-    "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-04-07",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
     "evidence_url": "https://eg.hatla2ee.com/en/new-car/peugeot/3008 | https://www.contactcars.com/en/new-cars/peugeot-3008/year-2027",
     "issuer": "ContactCars+Hatla2ee",
     "model_year": 2027,
@@ -40274,8 +40274,8 @@
     "trims": [
      {
       "as_of": "2026-10-18",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-04-07",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
       "evidence_url": "https://eg.hatla2ee.com/en/new-car/peugeot/3008 | https://www.contactcars.com/en/new-cars/peugeot-3008/year-2027",
       "issuer": "ContactCars+Hatla2ee",
       "label": "Allure",
