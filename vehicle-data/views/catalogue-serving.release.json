@@ -14,15 +14,15 @@
   "evidence_authority": {
     "schema": "carindex.p2.canonical/v1",
     "path": "vehicle-data/views/canonical_u11.json",
-    "market_snapshot": "snapshots/U_2026-10-19_39185822958",
+    "market_snapshot": "snapshots/U_2026-10-19_39216288327",
     "counts": {
       "models": 283,
       "id_accepted": 283,
-      "price_accepted": 198,
+      "price_accepted": 194,
       "price_tier_a": 66,
-      "price_source_dated": 144,
+      "price_source_dated": 138,
       "market_status_official": 37,
-      "specs_accepted": 201,
+      "specs_accepted": 200,
       "warranty_accepted": 100,
       "brochure_accepted": 81,
       "hero_accepted": 82,
@@ -39,7 +39,7 @@
     "p2_evidence": 21,
     "identity_only": 262,
     "excluded": 3,
-    "price_accepted": 198,
+    "price_accepted": 194,
     "id_accepted": 283
   },
   "entries": [
@@ -1674,8 +1674,8 @@
           "price_from": 2999000,
           "model_year": 2026,
           "tier": "B",
-          "effective_date": "2026-04-21",
-          "date_basis": "SOURCE_STATED",
+          "effective_date": null,
+          "date_basis": "OBSERVED",
           "as_of": "2026-10-19",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/q3 | https://www.contactcars.com/en/new-cars/audi-q3 | https://www.contactcars.com/en/new-cars/audi-q3/year-2026",
@@ -1685,8 +1685,8 @@
               "label": "S-Line",
               "price_egp": 2999000,
               "tier": "B",
-              "effective_date": "2026-04-21",
-              "date_basis": "SOURCE_STATED",
+              "effective_date": null,
+              "date_basis": "OBSERVED",
               "as_of": "2026-10-19",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/q3 | https://www.contactcars.com/en/new-cars/audi-q3 | https://www.contactcars.com/en/new-cars/audi-q3/year-2026",
@@ -2701,8 +2701,8 @@
           "price_from": 3050000,
           "model_year": 2026,
           "tier": "B",
-          "effective_date": "2026-04-05",
-          "date_basis": "SOURCE_STATED",
+          "effective_date": null,
+          "date_basis": "OBSERVED",
           "as_of": "2026-10-19",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/avatr/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12/year-2026",
@@ -2712,8 +2712,8 @@
               "label": "Luxury",
               "price_egp": 3050000,
               "tier": "B",
-              "effective_date": "2026-04-05",
-              "date_basis": "SOURCE_STATED",
+              "effective_date": null,
+              "date_basis": "OBSERVED",
               "as_of": "2026-10-19",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/avatr/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12/year-2026",
@@ -46435,9 +46435,10 @@
       },
       "p2_evidence": false,
       "evidence_state": "U11_IDENTITY_ONLY",
-      "price_status": "ACCEPTED",
+      "price_status": "UNKNOWN",
       "conflicts": [],
       "missing_evidence": [
+        "NO_ACCEPTED_PRICE",
         "NO_OFFICIAL_BROCHURE",
         "NO_OFFICIAL_LOGO",
         "GENERATION_UNKNOWN"
@@ -46449,31 +46450,7 @@
           "basis": "registration segment, last 12 months (4369 registrations)",
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
-        "price": {
-          "price_from": 1070000,
-          "model_year": 2027,
-          "tier": "B",
-          "effective_date": "2026-06-25",
-          "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-19",
-          "issuer": "ContactCars+Hatla2ee",
-          "evidence_url": "https://eg.hatla2ee.com/en/new-car/soueast/S+05 | https://www.contactcars.com/en/new-cars/soueast-s_05 | https://www.contactcars.com/en/new-cars/soueast-s_05/year-2027",
-          "trims": [
-            {
-              "model_year": 2027,
-              "label": "Highline",
-              "price_egp": 1070000,
-              "tier": "B",
-              "effective_date": "2026-06-25",
-              "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-19",
-              "issuer": "ContactCars+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/soueast/S+05 | https://www.contactcars.com/en/new-cars/soueast-s_05 | https://www.contactcars.com/en/new-cars/soueast-s_05/year-2027",
-              "powertrain": "Petrol"
-            }
-          ],
-          "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
-        },
+        "price": null,
         "specs": {
           "boot_l": [
             {
@@ -46637,7 +46614,10 @@
           "sha256": "f6d415644326fbbe55eae4e9a79a4cc2bdf6c44e5fb42d3562a43184d8203192"
         },
         "gallery": [],
-        "conflicts": []
+        "conflicts": [
+          "PB-2 CONFLICT: ContactCars=1070000",
+          "PB-2 CONFLICT: Hatla2ee=1090000"
+        ]
       }
     },
     {
@@ -46667,9 +46647,10 @@
       },
       "p2_evidence": true,
       "evidence_state": "P2_S6_EVIDENCE",
-      "price_status": "ACCEPTED",
+      "price_status": "RESOLVED",
       "conflicts": [],
       "missing_evidence": [
+        "NO_ACCEPTED_PRICE",
         "NO_OFFICIAL_BROCHURE",
         "NO_OFFICIAL_LOGO",
         "GENERATION_UNKNOWN"
@@ -46681,43 +46662,7 @@
           "basis": "registration segment, last 12 months (1755 registrations)",
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
-        "price": {
-          "price_from": 1350000,
-          "model_year": 2027,
-          "tier": "B",
-          "effective_date": "2026-06-25",
-          "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-19",
-          "issuer": "ContactCars+Hatla2ee",
-          "evidence_url": "https://eg.hatla2ee.com/en/new-car/soueast/S+06 | https://www.contactcars.com/en/new-cars/soueast-s_06/year-2027",
-          "trims": [
-            {
-              "model_year": 2027,
-              "label": "Highline",
-              "price_egp": 1350000,
-              "tier": "B",
-              "effective_date": "2026-06-25",
-              "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-19",
-              "issuer": "ContactCars+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/soueast/S+06 | https://www.contactcars.com/en/new-cars/soueast-s_06/year-2027",
-              "powertrain": "Petrol"
-            },
-            {
-              "model_year": 2027,
-              "label": "Premium",
-              "price_egp": 1485000,
-              "tier": "B",
-              "effective_date": null,
-              "date_basis": "OBSERVED",
-              "as_of": "2026-10-19",
-              "issuer": "ContactCars+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/soueast/S+06 | https://www.contactcars.com/en/new-cars/soueast-s_06/year-2027",
-              "powertrain": "Petrol"
-            }
-          ],
-          "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
-        },
+        "price": null,
         "specs": {
           "boot_l": [
             {
@@ -46965,7 +46910,12 @@
             "credit": "Soueast (official)"
           }
         ],
-        "conflicts": []
+        "conflicts": [
+          "PB-2 CONFLICT: ContactCars=1350000",
+          "PB-2 CONFLICT: ContactCars=1485000",
+          "PB-2 CONFLICT: EgyCar=1370000;Hatla2ee=1370000",
+          "PB-2 CONFLICT: EgyCar=1510000;Hatla2ee=1510000"
+        ]
       }
     },
     {
@@ -46994,9 +46944,10 @@
       },
       "p2_evidence": false,
       "evidence_state": "U11_IDENTITY_ONLY",
-      "price_status": "ACCEPTED",
+      "price_status": "UNKNOWN",
       "conflicts": [],
       "missing_evidence": [
+        "NO_ACCEPTED_PRICE",
         "NO_OFFICIAL_BROCHURE",
         "NO_OFFICIAL_LOGO",
         "GENERATION_UNKNOWN"
@@ -47008,43 +46959,7 @@
           "basis": "registration segment, last 12 months (2475 registrations)",
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
-        "price": {
-          "price_from": 1390000,
-          "model_year": 2027,
-          "tier": "B",
-          "effective_date": "2026-06-25",
-          "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-19",
-          "issuer": "ContactCars+Hatla2ee",
-          "evidence_url": "https://eg.hatla2ee.com/en/new-car/soueast/S+07 | https://www.contactcars.com/en/new-cars/soueast-s_07/year-2027",
-          "trims": [
-            {
-              "model_year": 2027,
-              "label": "Highline",
-              "price_egp": 1390000,
-              "tier": "B",
-              "effective_date": "2026-06-25",
-              "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-19",
-              "issuer": "ContactCars+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/soueast/S+07 | https://www.contactcars.com/en/new-cars/soueast-s_07/year-2027",
-              "powertrain": "Petrol"
-            },
-            {
-              "model_year": 2027,
-              "label": "Premium",
-              "price_egp": 1530000,
-              "tier": "B",
-              "effective_date": "2026-06-25",
-              "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-19",
-              "issuer": "ContactCars+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/soueast/S+07 | https://www.contactcars.com/en/new-cars/soueast-s_07/year-2027",
-              "powertrain": "Petrol"
-            }
-          ],
-          "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
-        },
+        "price": null,
         "specs": {
           "drive": [
             {
@@ -47225,7 +47140,12 @@
             "credit": "Soueast (official)"
           }
         ],
-        "conflicts": []
+        "conflicts": [
+          "PB-2 CONFLICT: ContactCars=1390000",
+          "PB-2 CONFLICT: ContactCars=1530000",
+          "PB-2 CONFLICT: EgyCar=1415000;Hatla2ee=1415000",
+          "PB-2 CONFLICT: EgyCar=1555000;Hatla2ee=1555000"
+        ]
       }
     },
     {
@@ -47310,9 +47230,10 @@
       },
       "p2_evidence": true,
       "evidence_state": "P2_S6_EVIDENCE",
-      "price_status": "ACCEPTED",
+      "price_status": "RESOLVED",
       "conflicts": [],
       "missing_evidence": [
+        "NO_ACCEPTED_PRICE",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -47325,31 +47246,7 @@
           "basis": "registration segment, last 12 months (914 registrations)",
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
-        "price": {
-          "price_from": 1600000,
-          "model_year": 2027,
-          "tier": "B",
-          "effective_date": "2026-06-25",
-          "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-19",
-          "issuer": "ContactCars+Hatla2ee",
-          "evidence_url": "https://eg.hatla2ee.com/en/new-car/soueast/S+09 | https://www.contactcars.com/en/new-cars/soueast-s_09/year-2027",
-          "trims": [
-            {
-              "model_year": 2027,
-              "label": "Premium",
-              "price_egp": 1600000,
-              "tier": "B",
-              "effective_date": "2026-06-25",
-              "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-19",
-              "issuer": "ContactCars+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/soueast/S+09 | https://www.contactcars.com/en/new-cars/soueast-s_09/year-2027",
-              "powertrain": "Petrol"
-            }
-          ],
-          "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
-        },
+        "price": null,
         "specs": {
           "drive": [
             {
@@ -47474,7 +47371,10 @@
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
-        "conflicts": []
+        "conflicts": [
+          "PB-2 CONFLICT: ContactCars=1600000",
+          "PB-2 CONFLICT: EgyCar=1620000;Hatla2ee=1620000"
+        ]
       }
     },
     {
@@ -48239,6 +48139,7 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
+        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
@@ -48252,116 +48153,7 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": null,
-        "specs": {
-          "boot_l": [
-            {
-              "value": "239",
-              "unit": "",
-              "applicability": "market trim pages: AMT GLX",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
-            }
-          ],
-          "drive": [
-            {
-              "value": "FWD",
-              "unit": "",
-              "applicability": "market trim pages: AMT GLX",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
-            }
-          ],
-          "engine_cc": [
-            {
-              "value": "1000",
-              "unit": "",
-              "applicability": "market trim pages: AMT GLX",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
-            }
-          ],
-          "fuel_tank_l": [
-            {
-              "value": "27",
-              "unit": "",
-              "applicability": "market trim pages: AMT GLX",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
-            }
-          ],
-          "ground_clearance_mm": [
-            {
-              "value": "180",
-              "unit": "",
-              "applicability": "market trim pages: AMT GLX",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
-            }
-          ],
-          "length_mm": [
-            {
-              "value": "3565",
-              "unit": "",
-              "applicability": "market trim pages: AMT GLX",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
-            }
-          ],
-          "power_hp": [
-            {
-              "value": "67",
-              "unit": "",
-              "applicability": "market trim pages: AMT GLX",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
-            }
-          ],
-          "powertrain_class": [
-            {
-              "value": "Petrol",
-              "unit": "",
-              "applicability": "market trim pages: AMT GLX",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
-            }
-          ],
-          "torque_nm": [
-            {
-              "value": "90",
-              "unit": "",
-              "applicability": "market trim pages: AMT GLX",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
-            }
-          ],
-          "transmission": [
-            {
-              "value": "Automatic",
-              "unit": "",
-              "applicability": "market trim pages: AMT GLX",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
-            }
-          ],
-          "wheelbase_mm": [
-            {
-              "value": "2380",
-              "unit": "",
-              "applicability": "market trim pages: AMT GLX",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
-            }
-          ],
-          "width_mm": [
-            {
-              "value": "1520",
-              "unit": "",
-              "applicability": "market trim pages: AMT GLX",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
-            }
-          ]
-        },
+        "specs": null,
         "warranty": null,
         "brochures": [],
         "logo": {
