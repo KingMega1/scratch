@@ -14,15 +14,15 @@
   "evidence_authority": {
     "schema": "carindex.p2.canonical/v1",
     "path": "vehicle-data/views/canonical_u11.json",
-    "market_snapshot": "snapshots/U_2026-10-19_39216288327",
+    "market_snapshot": "snapshots/U_2026-10-19_39252800608",
     "counts": {
       "models": 283,
       "id_accepted": 283,
-      "price_accepted": 194,
+      "price_accepted": 192,
       "price_tier_a": 66,
-      "price_source_dated": 138,
+      "price_source_dated": 136,
       "market_status_official": 37,
-      "specs_accepted": 200,
+      "specs_accepted": 201,
       "warranty_accepted": 100,
       "brochure_accepted": 81,
       "hero_accepted": 82,
@@ -39,7 +39,7 @@
     "p2_evidence": 21,
     "identity_only": 262,
     "excluded": 3,
-    "price_accepted": 194,
+    "price_accepted": 192,
     "id_accepted": 283
   },
   "entries": [
@@ -1674,8 +1674,8 @@
           "price_from": 2999000,
           "model_year": 2026,
           "tier": "B",
-          "effective_date": null,
-          "date_basis": "OBSERVED",
+          "effective_date": "2026-04-21",
+          "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-19",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/q3 | https://www.contactcars.com/en/new-cars/audi-q3 | https://www.contactcars.com/en/new-cars/audi-q3/year-2026",
@@ -1685,8 +1685,8 @@
               "label": "S-Line",
               "price_egp": 2999000,
               "tier": "B",
-              "effective_date": null,
-              "date_basis": "OBSERVED",
+              "effective_date": "2026-04-21",
+              "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-19",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/audi/q3 | https://www.contactcars.com/en/new-cars/audi-q3 | https://www.contactcars.com/en/new-cars/audi-q3/year-2026",
@@ -2701,8 +2701,8 @@
           "price_from": 3050000,
           "model_year": 2026,
           "tier": "B",
-          "effective_date": null,
-          "date_basis": "OBSERVED",
+          "effective_date": "2026-04-05",
+          "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-19",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/avatr/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12/year-2026",
@@ -2712,8 +2712,8 @@
               "label": "Luxury",
               "price_egp": 3050000,
               "tier": "B",
-              "effective_date": null,
-              "date_basis": "OBSERVED",
+              "effective_date": "2026-04-05",
+              "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-19",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/avatr/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12/year-2026",
@@ -6527,8 +6527,8 @@
           "price_from": 1449000,
           "model_year": 2027,
           "tier": "B",
-          "effective_date": "2026-09-22",
-          "date_basis": "SOURCE_STATED",
+          "effective_date": null,
+          "date_basis": "OBSERVED",
           "as_of": "2026-10-19",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/sealion-5 | https://www.contactcars.com/en/new-cars/byd-sealion_5/year-2027",
@@ -6562,8 +6562,8 @@
               "label": "Ultra",
               "price_egp": 1449000,
               "tier": "B",
-              "effective_date": "2026-09-22",
-              "date_basis": "SOURCE_STATED",
+              "effective_date": null,
+              "date_basis": "OBSERVED",
               "as_of": "2026-10-19",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/sealion-5 | https://www.contactcars.com/en/new-cars/byd-sealion_5/year-2027",
@@ -6795,8 +6795,8 @@
               "label": "DMi Luxury",
               "price_egp": 2149900,
               "tier": "B",
-              "effective_date": null,
-              "date_basis": "OBSERVED",
+              "effective_date": "2026-07-13",
+              "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-19",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/sealion-6 | https://www.contactcars.com/en/new-cars/byd-sealion_6 | https://www.contactcars.com/en/new-cars/byd-sealion_6/year-2027",
@@ -8710,18 +8710,18 @@
             {
               "value": "610",
               "unit": "",
-              "applicability": "market trim pages: FLAGSHIP, PREMIUM",
+              "applicability": "market trim pages: FLAGSHIP, Flagship, PREMIUM, Premium",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac"
+              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac | https://www.contactcars.com/en/new-cars/changan-cs75_plus/931e1323d7fe | https://www.contactcars.com/en/new-cars/changan-cs75_plus/d58ac3ccfffb"
             }
           ],
           "drive": [
             {
               "value": "FWD",
               "unit": "",
-              "applicability": "market trim pages: FLAGSHIP, PREMIUM",
+              "applicability": "market trim pages: FLAGSHIP, Flagship, PREMIUM, Premium",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac"
+              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac | https://www.contactcars.com/en/new-cars/changan-cs75_plus/931e1323d7fe | https://www.contactcars.com/en/new-cars/changan-cs75_plus/d58ac3ccfffb"
             }
           ],
           "engine": [
@@ -8737,18 +8737,18 @@
             {
               "value": "1500",
               "unit": "",
-              "applicability": "market trim pages: FLAGSHIP, PREMIUM",
+              "applicability": "market trim pages: FLAGSHIP, Flagship, PREMIUM, Premium",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac"
+              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac | https://www.contactcars.com/en/new-cars/changan-cs75_plus/931e1323d7fe | https://www.contactcars.com/en/new-cars/changan-cs75_plus/d58ac3ccfffb"
             }
           ],
           "fuel_tank_l": [
             {
               "value": "58",
               "unit": "",
-              "applicability": "market trim pages: FLAGSHIP, PREMIUM",
+              "applicability": "market trim pages: FLAGSHIP, Flagship, PREMIUM, Premium",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac"
+              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac | https://www.contactcars.com/en/new-cars/changan-cs75_plus/931e1323d7fe | https://www.contactcars.com/en/new-cars/changan-cs75_plus/d58ac3ccfffb"
             },
             {
               "value": "58",
@@ -8762,9 +8762,9 @@
             {
               "value": "190",
               "unit": "",
-              "applicability": "market trim pages: FLAGSHIP, PREMIUM",
+              "applicability": "market trim pages: FLAGSHIP, Flagship, PREMIUM, Premium",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac"
+              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac | https://www.contactcars.com/en/new-cars/changan-cs75_plus/931e1323d7fe | https://www.contactcars.com/en/new-cars/changan-cs75_plus/d58ac3ccfffb"
             },
             {
               "value": "190",
@@ -8778,25 +8778,25 @@
             {
               "value": "1705",
               "unit": "",
-              "applicability": "market trim pages: FLAGSHIP",
+              "applicability": "market trim pages: FLAGSHIP, Flagship",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803"
+              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/d58ac3ccfffb"
             },
             {
               "value": "1695",
               "unit": "",
-              "applicability": "market trim pages: PREMIUM",
+              "applicability": "market trim pages: PREMIUM, Premium",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac"
+              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac | https://www.contactcars.com/en/new-cars/changan-cs75_plus/931e1323d7fe"
             }
           ],
           "length_mm": [
             {
               "value": "4770",
               "unit": "",
-              "applicability": "market trim pages: FLAGSHIP, PREMIUM",
+              "applicability": "market trim pages: FLAGSHIP, Flagship, PREMIUM, Premium",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac"
+              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac | https://www.contactcars.com/en/new-cars/changan-cs75_plus/931e1323d7fe | https://www.contactcars.com/en/new-cars/changan-cs75_plus/d58ac3ccfffb"
             },
             {
               "value": "4,770",
@@ -8810,45 +8810,45 @@
             {
               "value": "185",
               "unit": "",
-              "applicability": "market trim pages: FLAGSHIP, PREMIUM",
+              "applicability": "market trim pages: FLAGSHIP, Flagship, PREMIUM, Premium",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac"
+              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac | https://www.contactcars.com/en/new-cars/changan-cs75_plus/931e1323d7fe | https://www.contactcars.com/en/new-cars/changan-cs75_plus/d58ac3ccfffb"
             }
           ],
           "powertrain_class": [
             {
               "value": "Petrol",
               "unit": "",
-              "applicability": "market trim pages: FLAGSHIP, PREMIUM",
+              "applicability": "market trim pages: FLAGSHIP, Flagship, PREMIUM, Premium",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac"
+              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac | https://www.contactcars.com/en/new-cars/changan-cs75_plus/931e1323d7fe | https://www.contactcars.com/en/new-cars/changan-cs75_plus/d58ac3ccfffb"
             }
           ],
           "seats": [
             {
               "value": "5",
               "unit": "",
-              "applicability": "market trim pages: FLAGSHIP, PREMIUM",
+              "applicability": "market trim pages: FLAGSHIP, Flagship, PREMIUM, Premium",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac"
+              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac | https://www.contactcars.com/en/new-cars/changan-cs75_plus/931e1323d7fe | https://www.contactcars.com/en/new-cars/changan-cs75_plus/d58ac3ccfffb"
             }
           ],
           "torque_nm": [
             {
               "value": "300",
               "unit": "",
-              "applicability": "market trim pages: FLAGSHIP, PREMIUM",
+              "applicability": "market trim pages: FLAGSHIP, Flagship, PREMIUM, Premium",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac"
+              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac | https://www.contactcars.com/en/new-cars/changan-cs75_plus/931e1323d7fe | https://www.contactcars.com/en/new-cars/changan-cs75_plus/d58ac3ccfffb"
             }
           ],
           "transmission": [
             {
               "value": "Automatic",
               "unit": "",
-              "applicability": "market trim pages: FLAGSHIP",
+              "applicability": "market trim pages: FLAGSHIP, Flagship, Premium",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803"
+              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/931e1323d7fe | https://www.contactcars.com/en/new-cars/changan-cs75_plus/d58ac3ccfffb"
             },
             {
               "value": "8 AT",
@@ -8862,9 +8862,9 @@
             {
               "value": "2800",
               "unit": "",
-              "applicability": "market trim pages: FLAGSHIP, PREMIUM",
+              "applicability": "market trim pages: FLAGSHIP, Flagship, PREMIUM, Premium",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac"
+              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac | https://www.contactcars.com/en/new-cars/changan-cs75_plus/931e1323d7fe | https://www.contactcars.com/en/new-cars/changan-cs75_plus/d58ac3ccfffb"
             },
             {
               "value": "2800",
@@ -8878,9 +8878,9 @@
             {
               "value": "1910",
               "unit": "",
-              "applicability": "market trim pages: FLAGSHIP, PREMIUM",
+              "applicability": "market trim pages: FLAGSHIP, Flagship, PREMIUM, Premium",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac"
+              "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac | https://www.contactcars.com/en/new-cars/changan-cs75_plus/931e1323d7fe | https://www.contactcars.com/en/new-cars/changan-cs75_plus/d58ac3ccfffb"
             }
           ]
         },
@@ -8890,7 +8890,7 @@
             "unit": "",
             "applicability": "market trim pages: model",
             "issuer": "ContactCars+Hatla2ee",
-            "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac"
+            "source": "https://www.contactcars.com/en/new-cars/changan-cs75_plus/24e421f85803 | https://www.contactcars.com/en/new-cars/changan-cs75_plus/6de74c2ffdac | https://www.contactcars.com/en/new-cars/changan-cs75_plus/931e1323d7fe | https://www.contactcars.com/en/new-cars/changan-cs75_plus/d58ac3ccfffb"
           }
         ],
         "brochures": [
@@ -9140,7 +9140,7 @@
               "unit": "",
               "applicability": "market trim pages: Elite, Flagship",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299"
+              "source": "https://www.contactcars.com/en/new-cars/changan-eado/3b401b51cedf | https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299 | https://www.contactcars.com/en/new-cars/changan-eado/dcfc17552f2e"
             }
           ],
           "drive": [
@@ -9149,7 +9149,7 @@
               "unit": "",
               "applicability": "market trim pages: Elite, Flagship",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299"
+              "source": "https://www.contactcars.com/en/new-cars/changan-eado/3b401b51cedf | https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299 | https://www.contactcars.com/en/new-cars/changan-eado/dcfc17552f2e"
             }
           ],
           "engine": [
@@ -9167,7 +9167,7 @@
               "unit": "",
               "applicability": "market trim pages: Elite, Flagship",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299"
+              "source": "https://www.contactcars.com/en/new-cars/changan-eado/3b401b51cedf | https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299 | https://www.contactcars.com/en/new-cars/changan-eado/dcfc17552f2e"
             }
           ],
           "fuel_tank_l": [
@@ -9176,7 +9176,7 @@
               "unit": "",
               "applicability": "market trim pages: Elite, Flagship",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299"
+              "source": "https://www.contactcars.com/en/new-cars/changan-eado/3b401b51cedf | https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299 | https://www.contactcars.com/en/new-cars/changan-eado/dcfc17552f2e"
             },
             {
               "value": "53",
@@ -9192,7 +9192,7 @@
               "unit": "",
               "applicability": "market trim pages: Elite, Flagship",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299"
+              "source": "https://www.contactcars.com/en/new-cars/changan-eado/3b401b51cedf | https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299 | https://www.contactcars.com/en/new-cars/changan-eado/dcfc17552f2e"
             },
             {
               "value": "155",
@@ -9208,7 +9208,7 @@
               "unit": "",
               "applicability": "market trim pages: Elite, Flagship",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299"
+              "source": "https://www.contactcars.com/en/new-cars/changan-eado/3b401b51cedf | https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299 | https://www.contactcars.com/en/new-cars/changan-eado/dcfc17552f2e"
             }
           ],
           "length_mm": [
@@ -9217,7 +9217,7 @@
               "unit": "",
               "applicability": "market trim pages: Elite, Flagship",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299"
+              "source": "https://www.contactcars.com/en/new-cars/changan-eado/3b401b51cedf | https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299 | https://www.contactcars.com/en/new-cars/changan-eado/dcfc17552f2e"
             },
             {
               "value": "4,730",
@@ -9233,7 +9233,7 @@
               "unit": "",
               "applicability": "market trim pages: Elite, Flagship",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299"
+              "source": "https://www.contactcars.com/en/new-cars/changan-eado/3b401b51cedf | https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299 | https://www.contactcars.com/en/new-cars/changan-eado/dcfc17552f2e"
             }
           ],
           "powertrain_class": [
@@ -9242,7 +9242,7 @@
               "unit": "",
               "applicability": "market trim pages: Elite, Flagship",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299"
+              "source": "https://www.contactcars.com/en/new-cars/changan-eado/3b401b51cedf | https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299 | https://www.contactcars.com/en/new-cars/changan-eado/dcfc17552f2e"
             }
           ],
           "seats": [
@@ -9251,7 +9251,7 @@
               "unit": "",
               "applicability": "market trim pages: Elite, Flagship",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299"
+              "source": "https://www.contactcars.com/en/new-cars/changan-eado/3b401b51cedf | https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299 | https://www.contactcars.com/en/new-cars/changan-eado/dcfc17552f2e"
             }
           ],
           "torque_nm": [
@@ -9260,7 +9260,7 @@
               "unit": "",
               "applicability": "market trim pages: Elite, Flagship",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299"
+              "source": "https://www.contactcars.com/en/new-cars/changan-eado/3b401b51cedf | https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299 | https://www.contactcars.com/en/new-cars/changan-eado/dcfc17552f2e"
             }
           ],
           "transmission": [
@@ -9269,7 +9269,7 @@
               "unit": "",
               "applicability": "market trim pages: Elite, Flagship",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299"
+              "source": "https://www.contactcars.com/en/new-cars/changan-eado/3b401b51cedf | https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299 | https://www.contactcars.com/en/new-cars/changan-eado/dcfc17552f2e"
             },
             {
               "value": "7DCT-Wet",
@@ -9285,7 +9285,7 @@
               "unit": "",
               "applicability": "market trim pages: Elite, Flagship",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299"
+              "source": "https://www.contactcars.com/en/new-cars/changan-eado/3b401b51cedf | https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299 | https://www.contactcars.com/en/new-cars/changan-eado/dcfc17552f2e"
             },
             {
               "value": "2700",
@@ -9301,7 +9301,7 @@
               "unit": "",
               "applicability": "market trim pages: Elite, Flagship",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299"
+              "source": "https://www.contactcars.com/en/new-cars/changan-eado/3b401b51cedf | https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299 | https://www.contactcars.com/en/new-cars/changan-eado/dcfc17552f2e"
             }
           ]
         },
@@ -9311,7 +9311,7 @@
             "unit": "",
             "applicability": "market trim pages: model",
             "issuer": "ContactCars+Hatla2ee",
-            "source": "https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299"
+            "source": "https://www.contactcars.com/en/new-cars/changan-eado/3b401b51cedf | https://www.contactcars.com/en/new-cars/changan-eado/939baac4c2f7 | https://www.contactcars.com/en/new-cars/changan-eado/d213957ab299 | https://www.contactcars.com/en/new-cars/changan-eado/dcfc17552f2e"
           }
         ],
         "brochures": [
@@ -24071,9 +24071,10 @@
       },
       "p2_evidence": false,
       "evidence_state": "U11_IDENTITY_ONLY",
-      "price_status": "ACCEPTED",
+      "price_status": "UNKNOWN",
       "conflicts": [],
       "missing_evidence": [
+        "NO_ACCEPTED_PRICE",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -24087,31 +24088,7 @@
           "basis": "registration segment, last 12 months (29 registrations)",
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
-        "price": {
-          "price_from": 1850000,
-          "model_year": 2026,
-          "tier": "B",
-          "effective_date": "2026-07-09",
-          "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-19",
-          "issuer": "EgyCar+Hatla2ee",
-          "evidence_url": "https://eg.hatla2ee.com/en/new-car/hongqi/HS3 | https://www.egy-car.com/hongqi-hs3",
-          "trims": [
-            {
-              "model_year": 2026,
-              "label": "A/T / Luxury",
-              "price_egp": 1850000,
-              "tier": "B",
-              "effective_date": "2026-07-09",
-              "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-19",
-              "issuer": "EgyCar+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/hongqi/HS3 | https://www.egy-car.com/hongqi-hs3",
-              "powertrain": "Petrol"
-            }
-          ],
-          "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
-        },
+        "price": null,
         "specs": {
           "engine_cc": [
             {
@@ -24213,9 +24190,10 @@
       },
       "p2_evidence": false,
       "evidence_state": "U11_IDENTITY_ONLY",
-      "price_status": "ACCEPTED",
+      "price_status": "UNKNOWN",
       "conflicts": [],
       "missing_evidence": [
+        "NO_ACCEPTED_PRICE",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_OFFICIAL_LOGO",
@@ -24229,31 +24207,7 @@
           "basis": "registration segment, last 12 months (11 registrations)",
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
-        "price": {
-          "price_from": 1749000,
-          "model_year": 2026,
-          "tier": "B",
-          "effective_date": "2026-07-12",
-          "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-19",
-          "issuer": "ContactCars+Hatla2ee",
-          "evidence_url": "https://eg.hatla2ee.com/en/new-car/hongqi/Ousado | https://www.contactcars.com/en/new-cars/hongqi-ousado/year-2026",
-          "trims": [
-            {
-              "model_year": 2026,
-              "label": "Luxury",
-              "price_egp": 1749000,
-              "tier": "B",
-              "effective_date": "2026-07-12",
-              "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-19",
-              "issuer": "ContactCars+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/hongqi/Ousado | https://www.contactcars.com/en/new-cars/hongqi-ousado/year-2026",
-              "powertrain": "Petrol"
-            }
-          ],
-          "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
-        },
+        "price": null,
         "specs": {
           "drive": [
             {
@@ -24352,7 +24306,10 @@
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
-        "conflicts": []
+        "conflicts": [
+          "PB-2 CONFLICT: ContactCars=1749000",
+          "PB-2 CONFLICT: Hatla2ee=1444000"
+        ]
       }
     },
     {
@@ -42263,8 +42220,8 @@
           "price_from": 2099990,
           "model_year": 2027,
           "tier": "B",
-          "effective_date": "2026-04-07",
-          "date_basis": "SOURCE_STATED",
+          "effective_date": null,
+          "date_basis": "OBSERVED",
           "as_of": "2026-10-19",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/peugeot/3008 | https://www.contactcars.com/en/new-cars/peugeot-3008/year-2027",
@@ -42274,8 +42231,8 @@
               "label": "Allure",
               "price_egp": 2099990,
               "tier": "B",
-              "effective_date": "2026-04-07",
-              "date_basis": "SOURCE_STATED",
+              "effective_date": null,
+              "date_basis": "OBSERVED",
               "as_of": "2026-10-19",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/peugeot/3008 | https://www.contactcars.com/en/new-cars/peugeot-3008/year-2027",
@@ -48139,7 +48096,6 @@
       "conflicts": [],
       "missing_evidence": [
         "NO_ACCEPTED_PRICE",
-        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
@@ -48153,7 +48109,116 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": null,
-        "specs": null,
+        "specs": {
+          "boot_l": [
+            {
+              "value": "239",
+              "unit": "",
+              "applicability": "market trim pages: AMT GLX",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
+            }
+          ],
+          "drive": [
+            {
+              "value": "FWD",
+              "unit": "",
+              "applicability": "market trim pages: AMT GLX",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
+            }
+          ],
+          "engine_cc": [
+            {
+              "value": "1000",
+              "unit": "",
+              "applicability": "market trim pages: AMT GLX",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
+            }
+          ],
+          "fuel_tank_l": [
+            {
+              "value": "27",
+              "unit": "",
+              "applicability": "market trim pages: AMT GLX",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
+            }
+          ],
+          "ground_clearance_mm": [
+            {
+              "value": "180",
+              "unit": "",
+              "applicability": "market trim pages: AMT GLX",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
+            }
+          ],
+          "length_mm": [
+            {
+              "value": "3565",
+              "unit": "",
+              "applicability": "market trim pages: AMT GLX",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
+            }
+          ],
+          "power_hp": [
+            {
+              "value": "67",
+              "unit": "",
+              "applicability": "market trim pages: AMT GLX",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
+            }
+          ],
+          "powertrain_class": [
+            {
+              "value": "Petrol",
+              "unit": "",
+              "applicability": "market trim pages: AMT GLX",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
+            }
+          ],
+          "torque_nm": [
+            {
+              "value": "90",
+              "unit": "",
+              "applicability": "market trim pages: AMT GLX",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
+            }
+          ],
+          "transmission": [
+            {
+              "value": "Automatic",
+              "unit": "",
+              "applicability": "market trim pages: AMT GLX",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
+            }
+          ],
+          "wheelbase_mm": [
+            {
+              "value": "2380",
+              "unit": "",
+              "applicability": "market trim pages: AMT GLX",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
+            }
+          ],
+          "width_mm": [
+            {
+              "value": "1520",
+              "unit": "",
+              "applicability": "market trim pages: AMT GLX",
+              "issuer": "ContactCars+Hatla2ee",
+              "source": "https://www.contactcars.com/en/new-cars/suzuki-spresso/7c5c87790b68"
+            }
+          ]
+        },
         "warranty": null,
         "brochures": [],
         "logo": {
