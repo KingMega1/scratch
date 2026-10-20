@@ -7157,7 +7157,23 @@
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
-        "conflicts": []
+        "conflicts": [],
+        "powertrains": [
+          "hybrid"
+        ],
+        "powertrains_correction": {
+          "rc1": [
+            "ev",
+            "hybrid"
+          ],
+          "to": [
+            "hybrid"
+          ],
+          "split_children": [
+            "byd/sealion-6-ev"
+          ],
+          "basis": "accepted P2 trims/powertrain_class: phev"
+        }
       }
     },
     {
@@ -22106,7 +22122,23 @@
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
-        "conflicts": []
+        "conflicts": [],
+        "powertrains": [
+          "ev"
+        ],
+        "powertrains_correction": {
+          "rc1": [
+            "ev",
+            "hybrid"
+          ],
+          "to": [
+            "ev"
+          ],
+          "split_children": [
+            "geely/ex5-em-i"
+          ],
+          "basis": "accepted P2 trims/powertrain_class: electric"
+        }
       }
     },
     {
@@ -27901,7 +27933,23 @@
             "credit": "jetouregypt.com"
           }
         ],
-        "conflicts": []
+        "conflicts": [],
+        "powertrains": [
+          "petrol"
+        ],
+        "powertrains_correction": {
+          "rc1": [
+            "hybrid",
+            "petrol"
+          ],
+          "to": [
+            "petrol"
+          ],
+          "split_children": [
+            "jetour/t2-i-dm"
+          ],
+          "basis": "accepted P2 trims/powertrain_class: petrol"
+        }
       }
     },
     {
@@ -29154,7 +29202,23 @@
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=1400000",
           "PB-2 CONFLICT: Hatla2ee=1399900"
-        ]
+        ],
+        "powertrains": [
+          "petrol"
+        ],
+        "powertrains_correction": {
+          "rc1": [
+            "hybrid",
+            "petrol"
+          ],
+          "to": [
+            "petrol"
+          ],
+          "split_children": [
+            "kaiyi/x7-phev"
+          ],
+          "basis": "accepted P2 trims/powertrain_class: petrol"
+        }
       }
     },
     {
@@ -34929,7 +34993,23 @@
         "gallery": [],
         "conflicts": [
           "PB-2 CONFLICT: Hatla2ee=6600000"
-        ]
+        ],
+        "powertrains": [
+          "petrol"
+        ],
+        "powertrains_correction": {
+          "rc1": [
+            "ev",
+            "petrol"
+          ],
+          "to": [
+            "petrol"
+          ],
+          "split_children": [
+            "mercedes/glc-eq"
+          ],
+          "basis": "accepted P2 trims/powertrain_class: petrol"
+        }
       }
     },
     {
@@ -48878,7 +48958,23 @@
             "credit": "Toyota (official)"
           }
         ],
-        "conflicts": []
+        "conflicts": [],
+        "powertrains": [
+          "petrol"
+        ],
+        "powertrains_correction": {
+          "rc1": [
+            "hybrid",
+            "petrol"
+          ],
+          "to": [
+            "petrol"
+          ],
+          "split_children": [
+            "toyota/corolla-hybrid"
+          ],
+          "basis": "accepted P2 trims/powertrain_class: petrol"
+        }
       }
     },
     {

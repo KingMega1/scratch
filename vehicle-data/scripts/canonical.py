@@ -723,6 +723,31 @@ def main():
     print(json.dumps(canon["counts"]))
 
 
+PT_FAMILY = {"ev": "ev", "bev": "ev", "electric": "ev", "phev": "hybrid", "hev": "hybrid", "hybrid": "hybrid", "reev": "reev"}
+ADDITION_PARENT = {"geely/ex5-em-i": "geely/ex5"}  # additions carved out of an RC1 entry (no SPLIT record)
+PT_EVIDENCE = {"ev": {"electric", "ev", "bev"}, "hybrid": {"phev", "hev", "hybrid", "plug-in hybrid"}, "reev": {"reev"}}
+
+
+def split_parent_powertrains(e, c, mu):
+    """RC1 parent entries predate P2 identity splits: a powertrain that now has its own P2 ADDITION/SPLIT identity is
+    removed from the parent only when the parent's accepted trims and powertrain_class carry no evidence of it."""
+    kids = [d for d in mu.values() if d["decision"] in ("ADDITION", "SPLIT") and
+            (d.get("parent") or ADDITION_PARENT.get(d["id"])) == e["p1_id"]]
+    if not kids or not e.get("powertrains"):
+        return None
+    ev = {str(t.get("powertrain") or "").lower() for t in ((c["price"] or {}).get("trims") or [])}
+    ev |= {str(x["value"]).lower() for x in (c["specs"] or {}).get("powertrain_class", [])}
+    ev.discard("")
+    if not ev:
+        return None
+    drop = {PT_FAMILY.get(p, p) for d in kids for p in d.get("powertrains", [])}
+    keep = [p for p in e["powertrains"] if not (PT_FAMILY.get(p, p) in drop and not (ev & PT_EVIDENCE.get(PT_FAMILY.get(p, p), {p})))]
+    if keep == e["powertrains"] or not keep:
+        return None
+    return dict(rc1=e["powertrains"], to=keep, split_children=[d["id"] for d in kids],
+                basis="accepted P2 trims/powertrain_class: " + ", ".join(sorted(ev)))
+
+
 def serving(canon):
     """Same contract as P5 RC1 (all RC1 entry fields kept, same order); accepted P2 data added as optional fields."""
     rc1 = json.load(open(os.path.join(IN, "catalogue-serving.RC1.json")))
@@ -744,6 +769,10 @@ def serving(canon):
                              hero_image_limited=pub(c["hero_image_limited"], ["PHOTO_NEEDS_ENRICHMENT", "ORIGIN_UNVERIFIED"]),
                              gallery=[g for g in c["gallery"] if g["src"]],
                              conflicts=c["conflicts"])
+        fix = split_parent_powertrains(e, c, mu)  # RC1 'powertrains' stays verbatim (P5 contract); P2 value is accepted-only
+        if fix:
+            e["accepted"]["powertrains"] = fix["to"]
+            e["accepted"]["powertrains_correction"] = fix
         entries.append(e)
     rel = dict(rc1, release_id=f"P2-CATALOGUE-U11-{canon['generated_as_of']}-RC2", state="VERIFYING",
                acceptance="P2_ACCEPTED_FIELDS_ONLY", generated_as_of=canon["generated_as_of"],

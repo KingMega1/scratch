@@ -1,0 +1,65 @@
+{
+ "schema": "carindex.p2.p1-release-handoff/v1",
+ "date": "2026-10-20",
+ "canonical_file": "vehicle-data/views/canonical_u11.json",
+ "canonical_sha256": "176b39cbe362a5df061ffbdcf561e143400f7813740e9489d53d7267161c6bfa",
+ "counts_market_universe": {
+  "brochure_accepted": 82,
+  "fully_enriched": 39,
+  "gallery_models": 73,
+  "hero_accepted": 85,
+  "hero_accepted_hq": 81,
+  "hero_limited_archive": 125,
+  "id_accepted": 416,
+  "logo_accepted": 347,
+  "market_status_official": 38,
+  "models": 416,
+  "price_accepted": 226,
+  "price_source_dated": 166,
+  "price_tier_a": 76,
+  "specs_accepted": 243,
+  "warranty_accepted": 121
+ },
+ "price_count_reconciliation": {
+  "at_fc19238": {
+   "canonical": 236,
+   "release": 236,
+   "with_trim_rows": 234,
+   "from_price_only": [
+    "chery/eq7",
+    "chevrolet/captiva"
+   ]
+  },
+  "now": {
+   "canonical": 226,
+   "release": 226
+  },
+  "moved_to_rework_since_fc19238": {
+   "forthing/s7": "sites disagree / single site",
+   "forthing/u-tour": "ContactCars 1,590,000 vs Hatla2ee 1,620,000",
+   "forthing/v9": "single site",
+   "gac/gs4-max": "ContactCars 1,336,000 vs EgyCar+Hatla2ee 1,350,000",
+   "hongqi/hs3": "single site",
+   "hongqi/ousado": "ContactCars 1,749,000 vs Hatla2ee 1,444,000",
+   "soueast/s-05": "ContactCars 1,070,000 vs EgyCar+Hatla2ee 1,090,000",
+   "soueast/s-06": "ContactCars 1,350,000 vs EgyCar+Hatla2ee 1,370,000",
+   "soueast/s-07": "ContactCars 1,390,000 vs EgyCar+Hatla2ee 1,415,000",
+   "soueast/s-09": "ContactCars 1,600,000 vs EgyCar+Hatla2ee 1,620,000"
+  },
+  "note": "Rule unchanged: disagreeing market sites -> REWORK, never averaged. An official SouEast/GAC/Forthing/Hongqi list restores these."
+ },
+ "powertrain_corrections": {
+  "geely/ex5": "ev (EX5 EM-i is m_000373)",
+  "toyota/corolla": "petrol (hybrid is toyota/corolla-hybrid)",
+  "mercedes/glc": "petrol (EQ is mercedes/glc-eq)",
+  "byd/sealion-6": "hybrid/PHEV (EV is byd/sealion-6-ev)",
+  "kaiyi/x7": "petrol (PHEV is kaiyi/x7-phev)",
+  "jetour/t2": "petrol (i-DM is jetour/t2-i-dm)",
+  "where": "release entries accepted.powertrains; P1 universe powertrains for these 6 still include the split-off variant"
+ },
+ "trim_availability": {
+  "mg/gt": "Luxury 1,175,000 only (official Mansour/MG list 15.10.2026; EgyCar agrees). Comfort 1,110,000 still on ContactCars/Hatla2ee at pre-list prices and absent from the official list: not accepted, availability unconfirmed.",
+  "mg/7": "Trophy 1,750,000 only (official list; ContactCars+EgyCar agree 2026-10-20). Luxury 1,625,000 only on Hatla2ee (2026-10-14), absent from official list: not accepted."
+ },
+ "decision_critical_queue": "vehicle-data/review/decision_critical_gaps.csv (309 P0/P1 models; photos excluded)"
+}

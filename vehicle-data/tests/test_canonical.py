@@ -94,6 +94,16 @@ class Canonical(unittest.TestCase):
             else:
                 self.assertIn("NO_ACCEPTED_PRICE", m["gaps"])
 
+    def test_split_parent_powertrains_follow_accepted_evidence(self):
+        rel = json.load(open(os.path.join(ROOT, "views", "catalogue-serving.release.json")))
+        e = {x["p1_id"]: x for x in rel["entries"]}
+        self.assertEqual(e["geely/ex5"]["accepted"].get("powertrains"), ["ev"])  # EX5 EM-i is its own identity
+        for x in rel["entries"]:
+            fix = x["accepted"].get("powertrains_correction")
+            if fix:
+                self.assertEqual(fix["rc1"], x["powertrains"])  # RC1 field untouched
+                self.assertTrue(set(fix["to"]) < set(fix["rc1"]))
+
     def test_serving_release_keeps_p5_contract(self):
         r, rc1 = self.release, self.rc1
         self.assertEqual(r["schema"], "carindex.p2.catalogue-serving/v1")

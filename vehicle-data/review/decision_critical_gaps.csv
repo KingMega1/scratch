@@ -1,0 +1,310 @@
+rank,priority,model_id,identity,brand,model,reg_last12,regression_since_fc19238,essentials_missing,price_state,price_conflict_detail,next_action,score
+1,P0,m_000247,soueast/s-05,Soueast,S 05,4369,YES,price,REWORK: PB-2 CONFLICT x2,EgyCar+Hatla2ee A/T / Highline 1090000 (PB-2 CONFLICT: ContactCars=1070000); ContactCars Highline 1070000 (PB-2 CONFLICT: Hatla2ee=1090000),price: sites disagree -> official price list decides,59.7
+2,P0,m_000133,geely/emgrand-7,Geely,Emgrand 7,1827,,price;power;transmission/drive;length;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,49.5
+3,P0,m_000015,mitsubishi/eclipse-cross,Mitsubishi,Eclipse Cross,2269,,price;seats;length;warranty,REWORK: PB-2 single site x14,,price: single site -> second independent source or official,47.3
+4,P0,m_000211,mg/zs,MG,ZS,6861,,seats;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for seats,47.2
+5,P0,m_000098,citroen/c5,Citroën,C5,1581,,price;power;transmission/drive;length;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,44.6
+6,P0,m_000119,fiat/500x,Fiat,500X,2240,,price;length;warranty,REWORK: PB-2 single site x3,,price: single site -> second independent source or official,41.4
+7,P0,m_000165,jac/s2,JAC,S2,1243,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x1,,price: single site -> second independent source or official,41.3
+8,P0,m_000248,soueast/s-07,Soueast,S 07,2475,YES,price,REWORK: PB-2 CONFLICT x4; PB-2 single site x2,EgyCar+Hatla2ee A/T / Highline 1415000 (PB-2 CONFLICT: ContactCars=1390000); EgyCar+Hatla2ee A/T / Premium 1555000 (PB-2 CONFLICT: ContactCars=1530000),price: sites disagree -> official price list decides,40.8
+9,P0,m_000232,proton/saga,Proton,Saga,2467,,price;warranty,REWORK: PB-2 CONFLICT x2,ContactCars+EgyCar Premium 675000 (PB-2 CONFLICT: Hatla2ee=685000); Hatla2ee A/T / Premium 685000 (PB-2 CONFLICT: ContactCars=675000;EgyCar),price: sites disagree -> official price list decides,38.6
+10,P0,m_000172,kaiyi/x3,Kaiyi,X3,1064,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x2,,price: single site -> second independent source or official,37.4
+11,P0,m_000019,soueast/s-06,Soueast,S 06,1755,YES,price,REWORK: PB-2 single site x5; PB-2 CONFLICT x4,EgyCar+Hatla2ee A/T / Highline 1370000 (PB-2 CONFLICT: ContactCars=1350000); EgyCar+Hatla2ee A/T / Premium 1510000 (PB-2 CONFLICT: ContactCars=1485000),price: sites disagree -> official price list decides,33.5
+12,P0,m_000257,suzuki/swift,Suzuki,Swift,1377,,price;power;warranty,REWORK: PB-2 single site x5,,price: single site -> second independent source or official,33.0
+13,P0,m_000128,gac/emzoom,GAC,EMZOOM,842,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x8,,price: single site -> second independent source or official,32.5
+14,P0,m_000123,forthing/t5-evo,Forthing,T5 Evo,1172,,price;power;seats,REWORK: PB-2 single site x4,,price: single site -> second independent source or official,29.8
+15,P1,m_000293,byd/song-l,BYD,Song L,648,,price;power;transmission/drive;seats;length;ev_range/battery;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,29.8
+16,P0,m_000151,hyundai/accent-rb,Hyundai,Accent RB,2021,,power;transmission/drive;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive,28.2
+17,P0,m_000013,soueast/s-09,Soueast,S 09,914,YES,price,REWORK: PB-2 CONFLICT x2; PB-2 single site x1,EgyCar+Hatla2ee A/T / Premium 1620000 (PB-2 CONFLICT: ContactCars=1600000); ContactCars Premium 1600000 (PB-2 CONFLICT: EgyCar=1620000;Hatla2ee=1),price: sites disagree -> official price list decides,25.1
+18,P1,m_000074,changan/cs55,Changan,CS55,628,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x3,,price: single site -> second independent source or official,24.8
+19,P1,m_000216,mitsubishi/outlander,Mitsubishi,Outlander,532,,price;power;transmission/drive;seats;length;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,22.7
+20,P0,m_000132,geely/cool-ray,Geely,Cool Ray,1453,,power;transmission/drive;seats;length,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive/seats,22.5
+21,P0,m_000149,hongqi/hs3,Hongqi,HS3,29,YES,price;power;seats;warranty,REWORK: PB-2 single site x3,,price: single site -> second independent source or official,20.5
+22,P1,m_000388,kia/k3,Kia,K3 (Cerato),526,,price;power;transmission/drive;length;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,20.5
+23,P0,m_000014,peugeot/5008,Peugeot,5008,906,,power;transmission/drive;seats;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive/seats,19.9
+24,P1,m_000299,byd/tang-l,BYD,Tang L,251,,price;power;transmission/drive;seats;length;ev_range/battery;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,19.5
+25,P1,m_000147,honda/zr-v,Honda,ZR-V,348,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x4,,price: single site -> second independent source or official,18.7
+26,P1,m_000130,gac/gs4-max,GAC,GS4 Max,551,YES,price,REWORK: PB-2 CONFLICT x2; PB-2 single site x1,EgyCar+Hatla2ee A/T / Premium 1350000 (PB-2 CONFLICT: ContactCars=1336000); ContactCars Premium 1336000 (PB-2 CONFLICT: EgyCar=1350000;Hatla2ee=1),price: sites disagree -> official price list decides,18.5
+27,P0,m_000125,forthing/v9,Forthing,V9,8,YES,price;seats;warranty,REWORK: PB-2 single site x3,,price: single site -> second independent source or official,18.1
+28,P0,m_000236,renault/taliant,Renault,Taliant,1380,,power;transmission/drive;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive,18.0
+29,P1,m_000295,honda/cr-v,Honda,CR-V,315,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x1,,price: single site -> second independent source or official,17.9
+30,P1,m_000298,toyota/land-cruiser,Toyota,Land Cruiser,307,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x3,,price: single site -> second independent source or official,17.8
+31,P1,m_000046,baic/x35,BAIC,X35,287,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x1,,price: single site -> second independent source or official,17.3
+32,P0,m_000150,hongqi/ousado,Hongqi,Ousado,12,YES,price;warranty,REWORK: PB-2 single site x3; PB-2 CONFLICT x2,Hatla2ee A/T / Luxury 1444000 (PB-2 CONFLICT: ContactCars=1749000); ContactCars Luxury 1749000 (PB-2 CONFLICT: Hatla2ee=1444000),price: sites disagree -> official price list decides,17.1
+33,P0,m_000124,forthing/u-tour,Forthing,U-Tour,11,YES,price;warranty,REWORK: PB-2 CONFLICT x2,ContactCars Exclusive 1590000 (PB-2 CONFLICT: Hatla2ee=1620000); Hatla2ee  A/T / Exclusive 1620000 (PB-2 CONFLICT: ContactCars=1590000),price: sites disagree -> official price list decides,17.1
+34,P0,m_000001,kia/sportage,Kia,Sportage,6345,,length,ACCEPTED tier A,EgyCar+Hatla2ee A/T / LX 1825000 (PB-2 CONFLICT: ContactCars=1824900); EgyCar+Hatla2ee A/T / EX 1925000 (PB-2 CONFLICT: ContactCars=1924900),length: official source,16.7
+35,P1,m_000416,denza/b5,Denza,B5,138,,price;power;transmission/drive;seats;length;ev_range/battery;warranty,NO_EVIDENCE,,price: no listing captured -> official/distributor source,16.6
+36,P0,m_000289,kaiyi/x7-phev,Kaiyi,X7 PHEV,14,,price;power;transmission/drive;seats;length;ev_range/battery;warranty,REWORK: PB-2 single site x2,,price: single site -> second independent source or official,16.4
+37,P0,m_000369,gac/aion-y,GAC,Aion Y Plus,10,,price;power;transmission/drive;seats;length;ev_range/battery;warranty,REWORK: PB-2 single site x1,,price: single site -> second independent source or official,16.3
+38,P1,m_000415,denza/b3,Denza,B3,111,,price;power;transmission/drive;seats;length;ev_range/battery;warranty,NO_EVIDENCE,,price: no listing captured -> official/distributor source,15.9
+39,P1,m_000307,nissan/n7,Nissan,N7,158,,price;power;transmission/drive;length;ev_range/battery;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,15.8
+40,P0,m_000194,mercedes/c-class,Mercedes-Benz,C-Class,2630,,length;warranty,ACCEPTED tier A,Hatla2ee A/T / Sport 3650000 (PB-2 CONFLICT: ContactCars=3905000;Conta); ContactCars Sport 3905000 (PB-2 CONFLICT: Hatla2ee=3650000;Hatla2ee),length: official source,15.5
+41,P1,m_000212,mini/countryman,MINI,Countryman,205,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x29,,price: single site -> second independent source or official,15.5
+42,P1,m_000231,porsche/macan,Porsche,Macan,205,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x7,,price: single site -> second independent source or official,15.5
+43,P1,m_000067,byd/seagull,BYD,Seagull,265,,price;power;transmission/drive;length;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,15.3
+44,P1,m_000282,xpeng/m03,XPeng,M03,263,,price;power;transmission/drive;length;warranty,REWORK: PB-2 single site x2,,price: single site -> second independent source or official,15.3
+45,P0,m_000290,jetour/t2-i-dm,Jetour,T2 i-DM,250,,price;transmission/drive;ev_range/battery,REWORK: PB-2 single site x2,,price: single site -> second independent source or official,15.0
+46,P0,m_000402,xpeng/mona-m03,XPeng,Mona M03,0,,price;power;transmission/drive;length;ev_range/battery;warranty,REWORK: PB-2 single site x2,,price: single site -> second independent source or official,15.0
+47,P1,m_000230,porsche/cayenne,Porsche,Cayenne,184,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x7,,price: single site -> second independent source or official,15.0
+48,P0,m_000209,mg/one,MG,One,2464,,seats;length,ACCEPTED tier A,,specs: official spec page/brochure for seats,14.9
+49,P0,m_000249,soueast/s-08-dm,Soueast,S 08 DM,43,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x1,,price: single site -> second independent source or official,14.9
+50,P0,m_000398,subaru/crosstrek,Subaru,Crosstrek,40,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x1,,price: single site -> second independent source or official,14.9
+51,P0,m_000198,mercedes/eqb,Mercedes-Benz,EQB,38,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x2,,price: single site -> second independent source or official,14.8
+52,P1,m_000300,land-rover/range-rover,Land Rover,Range Rover,171,,price;power;transmission/drive;seats;length;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,14.8
+53,P1,m_000254,suzuki/fronx,Suzuki,Fronx,163,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x5,,price: single site -> second independent source or official,14.6
+54,P1,m_000417,denza/b8,Denza,B8,61,,price;power;transmission/drive;seats;length;ev_range/battery;warranty,NO_EVIDENCE,,price: no listing captured -> official/distributor source,14.6
+55,P1,m_000175,kia/carens,Kia,Carens,157,,price;power;transmission/drive;seats;length;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,14.5
+56,P1,m_000121,forthing/s7,Forthing,S7,151,YES,price,REWORK: PB-2 CONFLICT x4; PB-2 single site x2,ContactCars EV 1290000 (PB-2 CONFLICT: Hatla2ee=1320000); Hatla2ee  A/T / EV 1320000 (PB-2 CONFLICT: ContactCars=1290000),price: sites disagree -> official price list decides,14.5
+57,P0,m_000002,hyundai/tucson,Hyundai,Tucson,5212,,length,ACCEPTED tier A,,length: official source,14.4
+58,P1,m_000389,lynk-co/02,Lynk & Co,02,52,,price;power;transmission/drive;seats;length;ev_range/battery;warranty,REWORK: PB-2 single site x1,,price: single site -> second independent source or official,14.4
+59,P0,m_000305,land-rover/defender,Land Rover,Defender,14,,price;power;transmission/drive;seats;length;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,14.3
+60,P1,m_000097,citroen/c4-x,Citroën,C4 X,695,,power;transmission/drive;seats;length;warranty,ACCEPTED tier B,ContactCars Feel 1199000 (PB-2 CONFLICT: EgyCar=1290000;Hatla2ee=1); ContactCars Shine 1349000 (PB-2 CONFLICT: EgyCar=1420000;Hatla2ee=1),specs: official spec page/brochure for power/transmission/drive/seats,14.3
+61,P1,m_000048,baic/x7,BAIC,X7,150,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x3,,price: single site -> second independent source or official,14.3
+62,P1,m_000331,mercedes/eqe,Mercedes-Benz,EQE,96,,price;power;transmission/drive;length;ev_range/battery;warranty,REWORK: PB-2 single site x1,,price: single site -> second independent source or official,14.3
+63,P0,m_000071,cadillac/escalade-iq,Cadillac,Escalade IQ,11,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x2,,price: single site -> second independent source or official,14.2
+64,P0,m_000055,bmw/ix,BMW,iX,10,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x2,,price: single site -> second independent source or official,14.2
+65,P0,m_000301,land-rover/range-rover-vogue,Land Rover,Range Rover Vogue,10,,price;power;transmission/drive;seats;length;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,14.2
+66,P0,m_000183,lexus/rz,Lexus,RZ,3,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x4,,price: single site -> second independent source or official,14.1
+67,P0,m_000045,baic/x3,BAIC,X3,2,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x2,,price: single site -> second independent source or official,14.0
+68,P0,m_000371,gac/gs3-emzoom,GAC,GS3 Emzoom,0,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x4,,price: single site -> second independent source or official,14.0
+69,P0,m_000384,jac/js2,JAC,JS2,0,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x3,,price: single site -> second independent source or official,14.0
+70,P0,m_000302,land-rover/range-rover-sport,Land Rover,Range Rover Sport,0,,price;power;transmission/drive;seats;length;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,14.0
+71,P1,m_000160,im/im-6,IM,IM 6,137,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x3,,price: single site -> second independent source or official,14.0
+72,P0,m_000339,porsche/911,Porsche,911,45,,price;power;transmission/drive;length;warranty,REWORK: PB-2 single site x11,,price: single site -> second independent source or official,13.9
+73,P1,m_000120,fiat/tipo,Fiat,Tipo,483,,price;length;warranty,REWORK: PB-2 single site x5,,price: single site -> second independent source or official,13.8
+74,P1,m_000094,citroen/c3,Citroën,C3,192,,price;power;transmission/drive;length;warranty,REWORK: PB-2 single site x2,,price: single site -> second independent source or official,13.8
+75,P1,m_000385,jac/js4,JAC,JS4,126,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x3,,price: single site -> second independent source or official,13.8
+76,P1,m_000303,land-rover/range-rover-evoque,Land Rover,Range Rover Evoque,118,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x1,,price: single site -> second independent source or official,13.6
+77,P0,m_000283,xpeng/p7,XPeng,P7,25,,price;power;transmission/drive;length;warranty,REWORK: PB-2 single site x3,,price: single site -> second independent source or official,13.5
+78,P0,m_000255,suzuki/jimny,Suzuki,Jimny,21,,price;power;seats;length;warranty,REWORK: PB-2 single site x2,,price: single site -> second independent source or official,13.4
+79,P1,m_000070,cadillac/escalade,Cadillac,Escalade,102,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x4,,price: single site -> second independent source or official,13.2
+80,P1,m_000330,mercedes/eqs,Mercedes-Benz,EQS,48,,price;power;transmission/drive;length;ev_range/battery;warranty,REWORK: PB-2 single site x3,,price: single site -> second independent source or official,13.2
+81,P0,m_000118,fiat/500,Fiat,500,4,,price;power;transmission/drive;length;warranty,REWORK: PB-2 single site x2,,price: single site -> second independent source or official,13.1
+82,P0,m_000326,bmw/z4,BMW,Z4,0,,price;power;transmission/drive;length;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,13.0
+83,P0,m_000361,cadillac/optiq,Cadillac,Optiq,0,,price;power;seats;ev_range/battery,REWORK: PB-2 single site x2,,price: single site -> second independent source or official,13.0
+84,P0,m_000413,toyota/corolla-hybrid,Toyota,Corolla Hybrid,0,,price;power;transmission/drive;length;warranty,REWORK: PB-2 single site x1,,price: single site -> second independent source or official,13.0
+85,P0,m_000204,mg/5,MG,5,4472,,warranty,ACCEPTED tier A,Hatla2ee A/T / Luxury 974990 (PB-2 CONFLICT: ContactCars=989990); ContactCars Luxury 989990 (PB-2 CONFLICT: Hatla2ee=974990),warranty: official source,12.9
+86,P0,m_000081,chery/arrizo-5,Chery,Arrizo 5,4438,,warranty,ACCEPTED tier A,,warranty: official source,12.9
+87,P0,m_000215,mitsubishi/mirage,Mitsubishi,Mirage,42,,price;power;length;warranty,REWORK: PB-2 single site x1,,price: single site -> second independent source or official,12.8
+88,P1,m_000304,land-rover/velar,Land Rover,Range Rover Velar,83,,price;power;transmission/drive;seats;length;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,12.8
+89,P0,m_000244,skoda/kodiaq,Skoda,KODIAQ,4335,,length,ACCEPTED tier B,,length: official source,12.7
+90,P1,m_000278,xiaomi/yu7,Xiaomi,YU7,76,,price;power;transmission/drive;seats;length;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,12.7
+91,P0,m_000003,volkswagen/tiguan,Volkswagen,Tiguan,4280,,warranty,ACCEPTED tier B,,warranty: official source,12.6
+92,P1,m_000162,jac/j7,JAC,J7,128,,price;power;transmission/drive;length;warranty,REWORK: PB-2 single site x5,,price: single site -> second independent source or official,12.6
+93,P1,m_000122,forthing/t5,Forthing,T5,74,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x3,,price: single site -> second independent source or official,12.6
+94,P1,m_000277,xiaomi/su7,Xiaomi,SU7,123,,price;power;transmission/drive;length;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,12.5
+95,P1,m_000363,chevrolet/spark-euv,Chevrolet,Spark EUV,62,,price;power;seats;length;ev_range/battery,REWORK: PB-2 CONFLICT x2; PB-2 single site x1,Hatla2ee  A/T / ACTIV 950000 (PB-2 CONFLICT: ContactCars=1099000); ContactCars ACTIV 1099000 (PB-2 CONFLICT: Hatla2ee=950000),price: sites disagree -> official price list decides,12.4
+96,P1,m_000253,suzuki/ertiga,Suzuki,Ertiga,62,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x2,,price: single site -> second independent source or official,12.4
+97,P1,m_000341,porsche/taycan,Porsche,Taycan,18,,price;power;transmission/drive;length;ev_range/battery;warranty,REWORK: PB-2 single site x17,,price: single site -> second independent source or official,12.4
+98,P0,m_000356,arcfox/kaola-s,Arcfox,Kaola S,18,,price;seats;ev_range/battery;warranty,REWORK: PB-2 CONFLICT x4,Hatla2ee  A/T / Air 1174900 (PB-2 CONFLICT: ContactCars=1175000); ContactCars Air 1175000 (PB-2 CONFLICT: Hatla2ee=1174900),price: sites disagree -> official price list decides,12.3
+99,P1,m_000364,dongfeng/huge,Dongfeng,Aeolus Huge,60,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x4,,price: single site -> second independent source or official,12.3
+100,P1,m_000143,gmc/terrain,GMC,Terrain,54,,price;power;transmission/drive;seats;length;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,12.2
+101,P1,m_000306,jaguar/f-pace,Jaguar,F-Pace,54,,price;power;transmission/drive;seats;length;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,12.2
+102,P1,m_000250,soueast/s08,Soueast,S08,54,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x1,,price: single site -> second independent source or official,12.2
+103,P1,m_000348,lotus/emeya,Lotus,Emeya,7,,price;power;transmission/drive;length;ev_range/battery;warranty,REWORK: PB-2 single site x3,,price: single site -> second independent source or official,12.2
+104,P0,m_000319,bmw/i4,BMW,i4,5,,price;length;ev_range/battery;warranty,REWORK: PB-2 single site x4,,price: single site -> second independent source or official,12.1
+105,P0,m_000141,genesis/gv60,Genesis,GV60,4,,price;power;length;warranty,REWORK: PB-2 single site x6,,price: single site -> second independent source or official,12.1
+106,P1,m_000139,geely/starray,Geely,Starray,172,,price;power;seats;length,REWORK: PB-2 single site x16,,price: single site -> second independent source or official,12.1
+107,P1,m_000412,toyota/land-cruiser-prado,Toyota,Land Cruiser Prado,51,,price;power;transmission/drive;seats;length;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,12.1
+108,P1,m_000358,avatr/06,Avatr,06,0,,price;power;transmission/drive;length;ev_range/battery;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,12.0
+109,P1,m_000126,gac/emkoo,GAC,Emkoo,42,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x3,,price: single site -> second independent source or official,11.9
+110,P1,m_000414,venucia/v-online,Venucia,V-Online,33,,price;power;transmission/drive;seats;length;warranty,NO_EVIDENCE,,price: no listing captured -> official/distributor source,11.7
+111,P1,m_000138,geely/okavango,Geely,Okavango,31,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x4,,price: single site -> second independent source or official,11.7
+112,P1,m_000259,tesla/model-y,Tesla,Model Y,31,,price;power;transmission/drive;seats;length;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,11.7
+113,P0,m_000085,chery/tiggo-4-pro,Chery,Tiggo 4 Pro,3784,,warranty,ACCEPTED tier A,,warranty: official source,11.6
+114,P1,m_000238,rox/adamas,ROX,Adamas,142,,price;power;length;warranty,REWORK: PB-2 single site x6,,price: single site -> second independent source or official,11.6
+115,P1,m_000144,gmc/yukon,GMC,Yukon,29,,price;power;transmission/drive;seats;length;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,11.6
+116,P1,m_000344,rolls-royce/cullinan,Rolls-Royce,Cullinan,24,,price;power;transmission/drive;seats;length;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,11.5
+117,P1,m_000225,opel/crossland,Opel,Crossland,23,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x2,,price: single site -> second independent source or official,11.5
+118,P1,m_000284,xpeng/x9,XPeng,X9,23,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x1,,price: single site -> second independent source or official,11.5
+119,P1,m_000346,maserati/grecale,Maserati,Grecale,21,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x1,,price: single site -> second independent source or official,11.5
+120,P0,m_000028,arcfox/alpha-s5,Arcfox,Alpha S5,25,,price;power;warranty,REWORK: PB-2 CONFLICT x4; PB-2 single site x3,ContactCars Air 1450000 (PB-2 CONFLICT: Hatla2ee=1499900); Hatla2ee  A/T / Air 1499900 (PB-2 CONFLICT: ContactCars=1450000),price: sites disagree -> official price list decides,11.4
+121,P1,m_000031,audi/a3,Audi,A3,451,,price;warranty,REWORK: PB-2 single site x8,,price: single site -> second independent source or official,11.4
+122,P1,m_000317,bmw/2-series-gran-coupe,BMW,2 Series Gran Coupe,68,,price;power;transmission/drive;length;warranty,REWORK: PB-2 single site x4,,price: single site -> second independent source or official,11.4
+123,P1,m_000199,mercedes/eqs-suv,Mercedes-Benz,EQS SUV,17,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x4,,price: single site -> second independent source or official,11.4
+124,P0,m_000029,arcfox/alpha-t5,Arcfox,Alpha T5,20,,price;power;warranty,REWORK: PB-2 CONFLICT x4; PB-2 single site x2,Hatla2ee  A/T / Air 1499900 (PB-2 CONFLICT: ContactCars=1500000); ContactCars Air 1500000 (PB-2 CONFLICT: Hatla2ee=1499900),price: sites disagree -> official price list decides,11.3
+125,P0,m_000044,baic/u5-plus,BAIC,U5 Plus,3609,,warranty,ACCEPTED tier B,ContactCars+EgyCar Comfort 850000 (PB-2 CONFLICT: Hatla2ee=849900); ContactCars+EgyCar Top Line 975000 (PB-2 CONFLICT: Hatla2ee=974900),warranty: official source,11.2
+126,P0,m_000142,genesis/gv70,Genesis,GV70,15,,price;power;warranty,REWORK: PB-2 single site x4,,price: single site -> second independent source or official,11.2
+127,P1,m_000354,bestune/t77-pro,Bestune,T77 Pro,9,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 CONFLICT x2; PB-2 single site x1,EgyCar+Hatla2ee A/T / Premium 1150000 (PB-2 CONFLICT: ContactCars=1275000); ContactCars Premium 1275000 (PB-2 CONFLICT: EgyCar=1150000;Hatla2ee=1),price: sites disagree -> official price list decides,11.2
+128,P0,m_000086,chery/tiggo-7,Chery,Tiggo 7,3571,,warranty,ACCEPTED tier A,,warranty: official source,11.1
+129,P1,m_000051,bestune/b70s,Bestune,B70S,5,,price;power;transmission/drive;seats;length;warranty,REWORK: PB-2 single site x3,,price: single site -> second independent source or official,11.1
+130,P0,m_000360,cadillac/lyriq,Cadillac,Lyriq,0,,price;seats;ev_range/battery,REWORK: PB-2 single site x2,,price: single site -> second independent source or official,11.0
+131,P0,m_000418,mercedes/glc-eq,Mercedes-Benz,GLC with EQ Technology,0,,power;transmission/drive;seats;length;ev_range/battery;warranty,ACCEPTED tier A,,specs: official spec page/brochure for power/transmission/drive/seats,11.0
+132,P1,m_000296,kia/carnival,Kia,Carnival,287,,price;power,REWORK: PB-2 CONFLICT x2; PB-2 single site x1,Hatla2ee A/T / Top Line 3849900 (PB-2 CONFLICT: EgyCar=3850000); EgyCar Topline 3850000 (PB-2 CONFLICT: Hatla2ee=3849900),price: sites disagree -> official price list decides,11.0
+133,P1,m_000213,mitsubishi/attrage,Mitsubishi,Attrage,109,,price;power;length;warranty,REWORK: PB-2 single site x2,,price: single site -> second independent source or official,11.0
+134,P1,m_000096,citroen/c4,Citroën,C4,404,,power;transmission/drive;seats;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive/seats,10.8
+135,P0,m_000020,mg/hs,MG,HS,1338,,seats;length,ACCEPTED tier B,,specs: official spec page/brochure for seats,10.4
+136,P1,m_000202,mercedes/gle,Mercedes-Benz,GLE,538,,power;transmission/drive;length;warranty,ACCEPTED tier A,,specs: official spec page/brochure for power/transmission/drive,10.4
+137,P1,m_000340,porsche/718,Porsche,718,22,,price;power;transmission/drive;length;warranty,REWORK: PB-2 single site x10,,price: single site -> second independent source or official,10.4
+138,P1,m_000334,mercedes/sl,Mercedes-Benz,SL,19,,price;power;transmission/drive;length;warranty,REWORK: PB-2 single site x2; PA-1 outside +/-25% of market official range 14330000-14980000; M13-D reviewed by P2 2026-10-15 x1,,price: single site -> second independent source or official,10.4
+139,P1,m_000111,ds/ds4,DS,Ds4,18,,price;power;transmission/drive;length;warranty,REWORK: PB-2 single site x2; PB-2 CONFLICT x2,Hatla2ee A/T / Performance  2000000 (PB-2 CONFLICT: ContactCars=2060000); ContactCars 1.6 A/T Performanc 2060000 (PB-2 CONFLICT: Hatla2ee=2000000),price: sites disagree -> official price list decides,10.4
+140,P0,m_000268,volkswagen/tayron,Volkswagen,Tayron,1326,,length;warranty,ACCEPTED tier B,ContactCars R-Line 2690000 (PB-2 CONFLICT: EgyCar=2890000),length: official source,10.3
+141,P1,m_000053,bmw/5-series,BMW,5 Series,533,,power;transmission/drive;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive,10.3
+142,P1,m_000252,suzuki/baleno,Suzuki,Baleno,528,,power;transmission/drive;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive,10.3
+143,P1,m_000060,bmw/x2,BMW,X2,144,,price;power;seats,REWORK: PB-2 single site x3,,price: single site -> second independent source or official,10.3
+144,P1,m_000327,mercedes/s-class,Mercedes-Benz,S-Class,75,,price;power;length;warranty,REWORK: PB-2 CONFLICT x2,ContactCars 4M SALOON LONG 11900000 (PB-2 CONFLICT: Hatla2ee=12300000); Hatla2ee A/T / 4M Saloon lo 12300000 (PB-2 CONFLICT: ContactCars=11900000),price: sites disagree -> official price list decides,10.3
+145,P1,m_000335,mercedes/amg-gt,Mercedes-Benz,AMG GT,67,,price;power;length;warranty,REWORK: PB-2 single site x2; PA-1 outside +/-25% of market official range 17200000-17200000; M13-D reviewed by P2 2026-10-15 x1,,price: single site -> second independent source or official,10.2
+146,P0,m_000145,haval/h6,Haval,H6,1285,,length;warranty,ACCEPTED tier A,,length: official source,10.1
+147,P1,m_000270,volvo/ex30,Volvo,EX30,132,,price;power;warranty,REWORK: PB-2 single site x8,,price: single site -> second independent source or official,10.1
+148,P0,m_000373,geely/ex5-em-i,Geely,EX5 EM-i,0,,price;seats;warranty,REWORK: PB-2 single site x2,,price: single site -> second independent source or official,10.0
+149,P1,m_000050,bestune/b70,Bestune,B70,1,,price;power;transmission/drive;length;warranty,REWORK: PB-2 single site x3; PB-2 CONFLICT x2,Hatla2ee A/T / Deluxe 1225000 (PB-2 CONFLICT: ContactCars=1305000); ContactCars Deluxe 1305000 (PB-2 CONFLICT: Hatla2ee=1225000),price: sites disagree -> official price list decides,10.0
+150,P1,m_000154,hyundai/ioniq,Hyundai,Ioniq,1,,price;power;transmission/drive;length;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,10.0
+151,P1,m_000347,maserati/ghibli,Maserati,Ghibli,1,,price;power;transmission/drive;length;warranty,NO_EVIDENCE,,price: listing has no current price -> official/distributor source,10.0
+152,P1,m_000410,toyota/camry,Toyota,Camry,0,,price;power;transmission/drive;length;warranty,REWORK: PB-2 single site x2,,price: single site -> second independent source or official,10.0
+153,P1,m_000406,zeekr/7x,Zeekr,7X,480,,power;ev_range/battery;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power,9.8
+154,P1,m_000189,lynk-co/900,Lynk & Co,900,320,,power;transmission/drive;seats;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive/seats,9.8
+155,P0,m_000169,jetour/x70-plus-ckd,Jetour,X70 Plus CKD,1168,,power,ACCEPTED tier B,,specs: official spec page/brochure for power,9.7
+156,P0,m_000287,hyundai/elantra-cn7,Hyundai,Elantra CN7,161,,power;transmission/drive;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive,9.6
+157,P0,m_000026,alfa-romeo/stelvio,Alfa Romeo,Stelvio,48,,power;transmission/drive;seats;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive/seats,9.6
+158,P1,m_000240,seat/ateca,SEAT,Ateca,303,,power;transmission/drive;seats;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive/seats,9.6
+159,P1,m_000227,opel/mokka,Opel,Mokka,290,,power;transmission/drive;seats;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive/seats,9.5
+160,P0,m_000251,suzuki/alto,Suzuki,Alto,29,,price;warranty,REWORK: PB-2 single site x3,,price: single site -> second independent source or official,9.3
+161,P0,m_000245,skoda/octavia,Skoda,Octavia,2599,,length,ACCEPTED tier B,,length: official source,9.2
+162,P0,m_000057,bmw/ix2,BMW,iX2,11,,price;seats,REWORK: PB-2 single site x3,,price: single site -> second independent source or official,9.1
+163,P0,m_000066,byd/m9,BYD,M9,10,,price;warranty,REWORK: PB-2 CONFLICT x4; PB-2 single site x2,Hatla2ee  A/T / Ultra 3299900 (PB-2 CONFLICT: ContactCars=3300000); ContactCars Ultra 3300000 (PB-2 CONFLICT: Hatla2ee=3299900),price: sites disagree -> official price list decides,9.1
+164,P1,m_000112,ds/ds7,DS,DS7,260,,price;warranty,REWORK: PB-2 single site x5,,price: single site -> second independent source or official,9.1
+165,P1,m_000166,jeep/grand-cherokee,Jeep,Grand Cherokee,255,,power;transmission/drive;seats;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive/seats,9.1
+166,P0,m_000383,icaur/v27,iCAUR,V27,0,,power;length;ev_range/battery;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power,9.0
+167,P0,m_000328,mercedes/maybach-s-580,Mercedes-Benz,Maybach S-Class,0,,price;warranty,REWORK: PB-2 single site x2,,price: single site -> second independent source or official,9.0
+168,P1,m_000314,bmw/i5,BMW,i5,63,,price;ev_range/battery;warranty,REWORK: PB-2 single site x5,,price: single site -> second independent source or official,9.0
+169,P1,m_000065,byd/f3,BYD,F3,363,,power;transmission/drive;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive,8.6
+170,P0,m_000315,bmw/7-series,BMW,7 Series,49,,price,REWORK: PB-2 single site x5,,price: single site -> second independent source or official,8.5
+171,P1,m_000187,lynk-co/06,Lynk & Co,06,212,,power;transmission/drive;seats;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive/seats,8.5
+172,P1,m_000164,jac/js8-pro,JAC,JS8 PRO,206,,price;warranty,REWORK: PB-2 CONFLICT x5,EgyCar+Hatla2ee A/T / Limited 1150000 (PB-2 CONFLICT: ContactCars=1225000;Conta); EgyCar+Hatla2ee A/T / Flagship 1200000 (PB-2 CONFLICT: ContactCars=1295000),price: sites disagree -> official price list decides,8.5
+173,P0,m_000350,smart/3,Smart,#3,42,,power;ev_range/battery;warranty,ACCEPTED tier B,ContactCars Pro+ 2290000 (PB-2 CONFLICT: Hatla2ee=1990000); ContactCars Premium 2490000 (PB-2 CONFLICT: Hatla2ee=2190000),specs: official spec page/brochure for power,8.4
+174,P0,m_000064,byd/atto-8,BYD,Atto 8,38,,price,REWORK: PB-2 CONFLICT x2; PB-2 single site x1,ContactCars Ultra 2849000 (PB-2 CONFLICT: Hatla2ee=2849900); Hatla2ee  A/T / Ultra 2849900 (PB-2 CONFLICT: ContactCars=2849000),price: sites disagree -> official price list decides,8.4
+175,P0,m_000318,bmw/4-series,BMW,4 Series,37,,price,REWORK: PB-2 single site x7,,price: single site -> second independent source or official,8.4
+176,P0,m_000349,smart/1,Smart,#1,37,,power;ev_range/battery;warranty,ACCEPTED tier B,ContactCars Pure+ 1890000 (PB-2 CONFLICT: Hatla2ee=1490000); ContactCars Premium 2290000 (PB-2 CONFLICT: Hatla2ee=1990000),specs: official spec page/brochure for power,8.4
+177,P1,m_000030,arcfox/t1,Arcfox,T1,198,,price;warranty,REWORK: PB-2 CONFLICT x4; PB-2 single site x1,Hatla2ee  A/T / Pro 924900 (PB-2 CONFLICT: ContactCars=925000); ContactCars Pro 925000 (PB-2 CONFLICT: Hatla2ee=924900),price: sites disagree -> official price list decides,8.4
+178,P0,m_000316,bmw/1-series,BMW,1 Series,28,,price,REWORK: PB-2 single site x4,,price: single site -> second independent source or official,8.3
+179,P0,m_000054,bmw/i7,BMW,i7,17,,power;transmission/drive;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive,8.2
+180,P0,m_000351,smart/5,Smart,#5,16,,power;length;ev_range/battery,ACCEPTED tier B,,specs: official spec page/brochure for power,8.2
+181,P0,m_000205,mg/6,MG,6,15,,power;transmission/drive;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive,8.2
+182,P0,m_000390,lynk-co/03,Lynk & Co,03,13,,power;transmission/drive;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive,8.1
+183,P0,m_000095,citroen/c3-aircross,Citroën,C3 Aircross,1,,price,REWORK: PB-2 CONFLICT x2; PB-2 single site x2,EgyCar+Hatla2ee  A/T / Plus 1120000 (PB-2 CONFLICT: ContactCars=1080000); ContactCars Plus 1080000 (PB-2 CONFLICT: EgyCar=1120000;Hatla2ee=1),price: sites disagree -> official price list decides,8.0
+184,P0,m_000288,baic/x55e,BAIC,X55e,0,,price,REWORK: Tier C x1,,price: single site -> second independent source or official,8.0
+185,P0,m_000372,geely/emgrand,Geely,Emgrand,0,,price,REWORK: PB-2 single site x10,,price: single site -> second independent source or official,8.0
+186,P1,m_000399,volkswagen/touareg,Volkswagen,Touareg,66,,price;transmission/drive;warranty,REWORK: PB-2 single site x3,,price: single site -> second independent source or official,7.9
+187,P1,m_000017,kgm/torres,KGM,Torres,793,,power;length,ACCEPTED tier B,ContactCars Premium 1850000 (PB-2 CONFLICT: Hatla2ee=1850001); Hatla2ee A/T / Premium 1850001 (PB-2 CONFLICT: ContactCars=1850000),specs: official spec page/brochure for power,7.8
+188,P1,m_000297,bmw/x3,BMW,X3,282,,price,REWORK: PB-2 single site x6,,price: single site -> second independent source or official,7.8
+189,P1,m_000161,im/ls7,IM,LS7,148,,power;transmission/drive;seats;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive/seats,7.8
+190,P0,m_000201,mercedes/glc,Mercedes-Benz,GLC,1801,,warranty,ACCEPTED tier A,ContactCars 4M COUPE - AMG 6890000 (PB-2 CONFLICT: Hatla2ee=6600000),warranty: official source,7.6
+191,P0,m_000088,chery/tiggo-8,Chery,Tiggo 8,1789,,warranty,ACCEPTED tier A,,warranty: official source,7.6
+192,P1,m_000047,baic/x55,BAIC,X55,249,,price,REWORK: PB-2 CONFLICT x6; PB-2 single site x1,Hatla2ee A/T / Highline 1199900 (PB-2 CONFLICT: ContactCars=1200000); ContactCars High Line 1200000 (PB-2 CONFLICT: Hatla2ee=1199900),price: sites disagree -> official price list decides,7.5
+193,P0,m_000233,renault/duster,Renault,Duster,1721,,warranty,ACCEPTED tier B,,warranty: official source,7.4
+194,P0,m_000006,nissan/qashqai,Nissan,Qashqai,1694,,seats,ACCEPTED tier A,nissan_eg_web Qashqai N-connecta 1777000 (PS-2 CONFLICT: ContactCars+EgyCar states),specs: official spec page/brochure for seats,7.4
+195,P0,m_000208,mg/gt,MG,GT,1665,,length,ACCEPTED tier A,,length: official source,7.3
+196,P0,m_000393,mini/cooper,MINI,Cooper,35,,length;ev_range/battery;warranty,ACCEPTED tier B,,length: official source,7.3
+197,P1,m_000188,lynk-co/08,Lynk & Co,08,109,,power;transmission/drive;seats;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive/seats,7.3
+198,P0,m_000033,audi/a6,Audi,A6,22,,power;length;warranty,ACCEPTED tier B,ContactCars+EgyCar Advanced 4749000 (PB-2 CONFLICT: Hatla2ee=4748998); Hatla2ee A/T / Advanced 4748998 (PB-2 CONFLICT: ContactCars=4749000;EgyCa),specs: official spec page/brochure for power,7.2
+199,P1,m_000256,suzuki/s-presso,Suzuki,S-Presso,104,,price;warranty,REWORK: PB-2 single site x3,,price: single site -> second independent source or official,7.2
+200,P0,m_000023,baic/bj30,BAIC,BJ30,1528,,warranty,ACCEPTED tier B,ContactCars+EgyCar Pro 1575000 (PB-2 CONFLICT: Hatla2ee=1574900); Hatla2ee A/T / PRO 1574900 (PB-2 CONFLICT: ContactCars=1575000;EgyCa),warranty: official source,7.1
+201,P0,m_000352,im/ls9,IM,LS9,15,,seats;ev_range/battery;warranty,ACCEPTED tier B,,specs: official spec page/brochure for seats,7.1
+202,P0,m_000148,hongqi/e-hs9,Hongqi,E-HS9,12,,power;seats;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/seats,7.1
+203,P0,m_000217,mitsubishi/xpander,Mitsubishi,Xpander,1507,,warranty,ACCEPTED tier B,,warranty: official source,7.0
+204,P0,m_000310,byd/atto-2,BYD,Atto 2,0,,seats;ev_range/battery;warranty,ACCEPTED tier B,Hatla2ee  A/T / Luxury 1349900 (PB-2 CONFLICT: EgyCar=1350000),specs: official spec page/brochure for seats,7.0
+205,P0,m_000291,byd/sealion-6-ev,BYD,Sealion 6 EV,0,,length;ev_range/battery;warranty,ACCEPTED tier B,ContactCars EV 1700000 (PB-2 CONFLICT: Hatla2ee=1749900); Hatla2ee  A/T / EV 1749900 (PB-2 CONFLICT: ContactCars=1700000),length: official source,7.0
+206,P1,m_000313,bmw/x4,BMW,X4,86,,power;transmission/drive;seats;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive/seats,7.0
+207,P1,m_000040,audi/q8,Audi,Q8,83,,power;transmission/drive;seats;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive/seats,7.0
+208,P0,m_000196,mercedes/e-class,Mercedes-Benz,E-Class,1429,,warranty,ACCEPTED tier A,ContactCars Avantgarde 5260000 (PB-2 CONFLICT: EgyCar=4920000); ContactCars Exclusive 5870000 (PB-2 CONFLICT: EgyCar=5600000;Hatla2ee=5),warranty: official source,6.9
+209,P1,m_000258,suzuki/swift-dzire,Suzuki,Swift Dzire,166,,power;transmission/drive;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive,6.7
+210,P1,m_000061,bmw/x5,BMW,X5,165,,price,REWORK: PB-2 single site x6,,price: single site -> second independent source or official,6.7
+211,P1,m_000063,bmw/x7,BMW,X7,57,,power;transmission/drive;seats;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive/seats,6.7
+212,P1,m_000027,alfa-romeo/tonale,Alfa Romeo,Tonale,56,,power;transmission/drive;seats;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive/seats,6.7
+213,P1,m_000136,geely/gx3-pro,Geely,GX3 Pro,160,,power;transmission/drive;seats;length,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive/seats,6.6
+214,P1,m_000404,zeekr/001,Zeekr,001,160,,power;ev_range/battery;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power,6.6
+215,P1,m_000129,gac/gs4,GAC,GS4,54,,power;transmission/drive;seats;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive/seats,6.6
+216,P0,m_000206,mg/7,MG,7,1147,,length,ACCEPTED tier A,,length: official source,6.3
+217,P0,m_000391,mg/4,MG,4 EV,45,,ev_range/battery;warranty,ACCEPTED tier B,,ev_range/battery: official source,6.3
+218,P1,m_000266,volkswagen/passat,Volkswagen,Passat,126,,power;transmission/drive;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive,6.3
+219,P1,m_000052,bestune/t55,Bestune,T55,16,,power;transmission/drive;seats;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive/seats,6.2
+220,P0,m_000176,kia/ev3,Kia,EV3,23,,power;length,ACCEPTED tier A,,specs: official spec page/brochure for power,6.1
+221,P0,m_000084,chery/eq7,Chery,eQ7,10,,power;warranty,ACCEPTED tier A,,specs: official spec page/brochure for power,6.1
+222,P1,m_000108,dongfeng/008,Dongfeng,008,114,,price,REWORK: PB-2 single site x2,,price: single site -> second independent source or official,6.1
+223,P0,m_000234,renault/kardian,Renault,Kardian,1023,,warranty,ACCEPTED tier B,,warranty: official source,6.0
+224,P0,m_000355,mhero/1,M-Hero,917,1,,ev_range/battery;warranty,ACCEPTED tier B,,ev_range/battery: official source,6.0
+225,P0,m_000090,chery/tiggo-9,Chery,Tiggo 9,0,,power;transmission/drive,ACCEPTED tier A,,specs: official spec page/brochure for power/transmission/drive,6.0
+226,P0,m_000375,haval/h6-hev,Haval,H6 HEV,0,,power;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power,6.0
+227,P1,m_000207,mg/g50-plus,MG,G50 Plus,507,,seats;length;warranty,ACCEPTED tier A,,specs: official spec page/brochure for seats,6.0
+228,P1,m_000411,toyota/rav4,Toyota,RAV4,4,,power;transmission/drive;seats;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive/seats,6.0
+229,P1,m_000264,vgv/u70p-plus,Vgv,U70P Plus,0,,price;warranty,REWORK: PB-2 single site x3; PB-2 CONFLICT x2,ContactCars 1.5 A/T Highline 1069000 (PB-2 CONFLICT: Hatla2ee=1069900); Hatla2ee A/T / Highline 1069900 (PB-2 CONFLICT: ContactCars=1069000),price: sites disagree -> official price list decides,6.0
+230,P0,m_000012,renault/austral,Renault,Austral,964,,warranty,ACCEPTED tier B,Hatla2ee A/T / Evolution 1400000 (PB-2 CONFLICT: EgyCar=1550000); Hatla2ee A/T / Techno 1570000 (PB-2 CONFLICT: EgyCar=1690000),warranty: official source,5.9
+231,P1,m_000333,mercedes/cle,Mercedes-Benz,CLE,76,,power;transmission/drive;length;warranty,ACCEPTED tier A,,specs: official spec page/brochure for power/transmission/drive,5.8
+232,P1,m_000056,bmw/ix1,BMW,iX1,70,,power;seats;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/seats,5.7
+233,P1,m_000025,alfa-romeo/giulia,Alfa Romeo,Giulia,65,,power;transmission/drive;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive,5.6
+234,P1,m_000336,mercedes/g-class,Mercedes-Benz,G-Class,65,,power;transmission/drive;length;warranty,ACCEPTED tier A,,specs: official spec page/brochure for power/transmission/drive,5.6
+235,P1,m_000159,im/im-5,IM,IM 5,61,,power;transmission/drive;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive,5.6
+236,P1,m_000197,mercedes/eqa,Mercedes-Benz,EQA,177,,power;seats;warranty,ACCEPTED tier A,,specs: official spec page/brochure for power/seats,5.4
+237,P0,m_000178,kia/ev6,Kia,EV6,11,,power,ACCEPTED tier A,,specs: official spec page/brochure for power,5.0
+238,P0,m_000275,voyah/dream,Voyah,Dream,10,,seats;warranty,ACCEPTED tier B,,specs: official spec page/brochure for seats,5.0
+239,P0,m_000179,kia/ev9,Kia,EV9,3,,power,ACCEPTED tier A,,specs: official spec page/brochure for power,5.0
+240,P0,m_000392,mg/cyberster,MG,Cyberster,3,,ev_range/battery,ACCEPTED tier A,,ev_range/battery: official source,5.0
+241,P0,m_000137,geely/monjaro,Geely,Monjaro,2,,length;warranty,ACCEPTED tier B,,length: official source,5.0
+242,P0,m_000092,chevrolet/captiva-ev,Chevrolet,Captiva EV,0,,power,ACCEPTED tier B,ContactCars Premier 1499000 (PB-2 CONFLICT: Hatla2ee=1399000),specs: official spec page/brochure for power,5.0
+243,P0,m_000394,mitsubishi/outlander-sport,Mitsubishi,Outlander Sport,0,,seats;warranty,ACCEPTED tier B,,specs: official spec page/brochure for seats,5.0
+244,P1,m_000034,audi/a8,Audi,A8,2,,power;transmission/drive;length;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power/transmission/drive,5.0
+245,P1,m_000357,audi/rs-e-tron-gt,Audi,RS e-tron GT,0,,power;ev_range/battery;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power,5.0
+246,P1,m_000309,byd/dolphin-surf,BYD,Dolphin Surf,102,,power;ev_range/battery,ACCEPTED tier B,,specs: official spec page/brochure for power,4.8
+247,P1,m_000267,volkswagen/t-roc,Volkswagen,T-Roc,287,,power;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power,4.7
+248,P1,m_000036,audi/q3,Audi,Q3,556,,length;warranty,ACCEPTED tier B,,length: official source,4.2
+249,P0,m_000114,exeed/et,Exeed,ET,33,,warranty,ACCEPTED tier B,,warranty: official source,4.1
+250,P0,m_000190,mazda/3,Mazda,3,31,,warranty,ACCEPTED tier B,,warranty: official source,4.1
+251,P0,m_000049,baw/m7,BAW,M7,30,,warranty,ACCEPTED tier B,,warranty: official source,4.1
+252,P1,m_000155,hyundai/ioniq-5,Hyundai,IONIQ 5,17,,power;length;warranty,ACCEPTED tier A,,specs: official spec page/brochure for power,4.1
+253,P0,m_000193,mercedes/b-class,Mercedes-Benz,B-Class,22,,warranty,ACCEPTED tier B,,warranty: official source,4.0
+254,P0,m_000177,kia/ev5,Kia,EV5,20,,length,ACCEPTED tier A,,length: official source,4.0
+255,P0,m_000113,exeed/es,Exeed,ES,18,,warranty,ACCEPTED tier B,,warranty: official source,4.0
+256,P0,m_000276,voyah/free,Voyah,Free,10,,warranty,ACCEPTED tier B,,warranty: official source,4.0
+257,P0,m_000191,mazda/cx-3,Mazda,CX-3,8,,warranty,ACCEPTED tier B,ContactCars+EgyCar Highline 1355000 (PB-2 CONFLICT: Hatla2ee=1335000); Hatla2ee A/T / Highline 1335000 (PB-2 CONFLICT: ContactCars=1355000;EgyCa),warranty: official source,4.0
+258,P0,m_000157,hyundai/ioniq-9,Hyundai,IONIQ 9,6,,warranty,ACCEPTED tier A,,warranty: official source,4.0
+259,P0,m_000115,exeed/lx,Exeed,LX,2,,warranty,ACCEPTED tier B,,warranty: official source,4.0
+260,P0,m_000271,volvo/ex90,Volvo,EX90,2,,warranty,ACCEPTED tier B,,warranty: official source,4.0
+261,P0,m_000280,xpeng/g7,XPeng,G7,1,,warranty,ACCEPTED tier B,,warranty: official source,4.0
+262,P0,m_000362,chery/tiggo-7-pro-max,Chery,Tiggo 7 Pro Max,0,,seats,ACCEPTED tier A,,specs: official spec page/brochure for seats,4.0
+263,P0,m_000387,kaiyi/x3-pro,Kaiyi,X3 Pro,0,,warranty,ACCEPTED tier B,,warranty: official source,4.0
+264,P0,m_000269,volvo/es90,Volvo,ES90,0,,warranty,ACCEPTED tier B,,warranty: official source,4.0
+265,P1,m_000273,volvo/xc60,Volvo,XC60,172,,power;warranty,ACCEPTED tier B,ContactCars+Hatla2ee Essential 3490000 (PB-2 CONFLICT: EgyCar=3690000); ContactCars+EgyCar Essential 3690000 (PB-2 CONFLICT: Hatla2ee=3490000),specs: official spec page/brochure for power,4.0
+266,P1,m_000281,xpeng/g9,XPeng,G9,159,,power;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power,4.0
+267,P1,m_000200,mercedes/gla,Mercedes-Benz,GLA,485,,length;warranty,ACCEPTED tier A,Hatla2ee A/T / PROGRESSIVE 2990000 (PB-2 CONFLICT: ContactCars=3140000); ContactCars Progressive 3140000 (PB-2 CONFLICT: Hatla2ee=2990000),length: official source,3.9
+268,P1,m_000279,xpeng/g6,XPeng,G6,140,,power;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power,3.8
+269,P1,m_000135,geely/ex5,Geely,EX5,121,,power;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power,3.7
+270,P1,m_000171,kaiyi/e5,Kaiyi,E5,112,,power;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power,3.7
+271,P1,m_000265,volkswagen/golf,Volkswagen,Golf,110,,transmission/drive;length;warranty,ACCEPTED tier B,ContactCars 1.4 A/T Life 1850000 (PB-2 CONFLICT: Hatla2ee=1690000),specs: official spec page/brochure for transmission/drive,3.7
+272,P1,m_000184,li-auto/l6,Li Auto,L6,107,,power;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power,3.6
+273,P1,m_000117,exeed/vx,Exeed,VX,106,,power;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power,3.6
+274,P1,m_000059,bmw/x1,BMW,X1,384,,power,ACCEPTED tier B,,specs: official spec page/brochure for power,3.5
+275,P1,m_000185,li-auto/l7,Li Auto,L7,71,,power;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power,3.4
+276,P1,m_000186,li-auto/l9,Li Auto,L9,70,,power;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power,3.4
+277,P1,m_000286,zeekr/x,Zeekr,X,47,,power;warranty,ACCEPTED tier B,,specs: official spec page/brochure for power,3.3
+278,P1,m_000032,audi/a5,Audi,A5,303,,length;warranty,ACCEPTED tier B,,length: official source,3.2
+279,P1,m_000156,hyundai/ioniq-6,Hyundai,IONIQ 6,2,,power;warranty,ACCEPTED tier A,,specs: official spec page/brochure for power,3.0
+280,P1,m_000109,dongfeng/box,Dongfeng,Box,217,,power,ACCEPTED tier B,,specs: official spec page/brochure for power,2.9
+281,P1,m_000274,volvo/xc90,Volvo,XC90,214,,length;warranty,ACCEPTED tier B,,length: official source,2.9
+282,P1,m_000039,audi/q7,Audi,Q7,165,,length;warranty,ACCEPTED tier B,ContactCars S-Line 5250000 (PB-2 CONFLICT: Hatla2ee=5500000;Hatla2ee); Hatla2ee A/T / S Line 5500000 (PB-2 CONFLICT: ContactCars=5250000),length: official source,2.7
+283,P1,m_000091,chevrolet/captiva,Chevrolet,Captiva,686,,warranty,ACCEPTED tier A,,warranty: official source,2.4
+284,P1,m_000153,hyundai/i30,Hyundai,i30,664,,warranty,ACCEPTED tier A,,warranty: official source,2.3
+285,P1,m_000058,bmw/ix3,BMW,iX3,64,,seats;length,ACCEPTED tier B,,specs: official spec page/brochure for seats,2.3
+286,P1,m_000104,dfsk/600,DFSK,600,59,,power,ACCEPTED tier B,,specs: official spec page/brochure for power,2.2
+287,P1,m_000035,audi/q2,Audi,Q2,54,,transmission/drive;warranty,ACCEPTED tier B,,specs: official spec page/brochure for transmission/drive,2.2
+288,P1,m_000106,dfsk/e5-plus,DFSK,E5 Plus,573,,length,ACCEPTED tier B,,length: official source,2.1
+289,P1,m_000022,haval/h7,Haval,H7,553,,warranty,ACCEPTED tier A,,warranty: official source,2.1
+290,P1,m_000228,peugeot/2008,Peugeot,2008,392,,warranty,ACCEPTED tier B,,warranty: official source,1.8
+291,P1,m_000195,mercedes/cla,Mercedes-Benz,CLA,389,,warranty,ACCEPTED tier A,,warranty: official source,1.8
+292,P1,m_000105,dfsk/e5,DFSK,E5,371,,length,ACCEPTED tier B,,length: official source,1.7
+293,P1,m_000134,geely/ex2,Geely,EX2,328,,warranty,ACCEPTED tier B,Hatla2ee  A/T / Max 849899 (PB-2 CONFLICT: ContactCars=849900); ContactCars Max 849900 (PB-2 CONFLICT: Hatla2ee=849899),warranty: official source,1.7
+294,P1,m_000080,changan/uni-v,Changan,UNI-V,323,,warranty,ACCEPTED tier A,,warranty: official source,1.6
+295,P1,m_000174,kgm/actyon,KGM,Actyon,307,,seats,ACCEPTED tier B,,specs: official spec page/brochure for seats,1.6
+296,P1,m_000089,chery/tiggo-8-pro,Chery,Tiggo 8 Pro,239,,warranty,ACCEPTED tier B,,warranty: official source,1.5
+297,P1,m_000214,mitsubishi/destinator,Mitsubishi,Destinator,239,,warranty,ACCEPTED tier B,,warranty: official source,1.5
+298,P1,m_000203,mercedes/gls,Mercedes-Benz,GLS,229,,warranty,ACCEPTED tier A,,warranty: official source,1.5
+299,P1,m_000041,avatr/07,Avatr,07,222,,warranty,ACCEPTED tier B,,warranty: official source,1.4
+300,P1,m_000243,skoda/karoq,Skoda,KAROQ,221,,warranty,ACCEPTED tier B,,warranty: official source,1.4
+301,P1,m_000068,byd/sealion-5,BYD,Sealion 5,203,,length,ACCEPTED tier B,,length: official source,1.4
+302,P1,m_000116,exeed/rx,Exeed,RX,187,,warranty,ACCEPTED tier B,,warranty: official source,1.4
+303,P1,m_000272,volvo/xc-40,Volvo,XC 40,177,,warranty,ACCEPTED tier B,,warranty: official source,1.4
+304,P1,m_000073,changan/cs35-plus,Changan,CS35 PLUS,112,,warranty,ACCEPTED tier A,,warranty: official source,1.2
+305,P1,m_000158,hyundai/santa-fe,Hyundai,Santa Fe,112,,warranty,ACCEPTED tier A,,warranty: official source,1.2
+306,P1,m_000163,jac/js6,JAC,JS6,107,,warranty,ACCEPTED tier B,,warranty: official source,1.2
+307,P1,m_000226,opel/frontera,Opel,Frontera,99,,warranty,ACCEPTED tier B,,warranty: official source,1.2
+308,P1,m_000192,mercedes/a-class,Mercedes-Benz,A-Class,94,,warranty,ACCEPTED tier B,,warranty: official source,1.2
+309,P1,m_000376,haval/jolion-pro,Haval,Jolion Pro,0,,warranty,ACCEPTED tier B,ContactCars High Deluxe 1340000 (PB-2 CONFLICT: Hatla2ee=1209000),warranty: official source,1.0

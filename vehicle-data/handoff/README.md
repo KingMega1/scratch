@@ -2,8 +2,11 @@
 
 | File | For | Status |
 |---|---|---|
-| `p5-release-20261015c.json` | P5 | Current. Release sha256 955699de…, 391 files (85 heroes, 54 logos, 252 gallery). Verified against P5 8f83109: 391/391 sha256, typecheck pass, 74/74. P5 serves 20261015b. |
-| `p1-release-20261015c.json` | P1 | Current. M13-D prices/specs/Arabic names; canonical sha and regression actions. |
+| `p5-release-20261020.json` | P5 | Current. Release sha256 6cac9612…, 391 files. P5 d1b731a: 391/391 sha256, typecheck pass, 76/76. Adds accepted.powertrains corrections; price-count definition. |
+| `p1-release-20261020.json` | P1 | Current. Price reconciliation (236/234/226), powertrain corrections, MG GT/7 trim availability. |
+| `review/decision_critical_gaps.csv` | P2/ChatGPT Work | Ranked decision-critical gaps (no photos). |
+| `p5-release-20261015c.json` | P5 | Superseded (ingested by P5 d1b731a). Release sha256 955699de…, 391 files (85 heroes, 54 logos, 252 gallery). Verified against P5 8f83109: 391/391 sha256, typecheck pass, 74/74. P5 serves 20261015b. |
+| `p1-release-20261015c.json` | P1 | Superseded. M13-D prices/specs/Arabic names; canonical sha and regression actions. |
 | `review/m13_acceptance_manifest.csv` | all | M13-A–D row-level decisions (190 rows). |
 | `p5-release-20261015b.json` | P5 | Superseded (ingested by P5 8f83109). Release sha256 7cbdc3f4…, 374 served files (78 heroes, 54 logos, 242 gallery). Verified against P5 6907ee3: 374/374 sha256 match, typecheck pass, unit tests 73/74 (only the out-of-date Tucson fixture fails). P5 currently serves 20261014c. |
 | `p5-release-20261015.json` | P5 | Superseded. Release sha256 e17398b6…, 348 served files (68 heroes, 54 logos, 226 gallery). P5 f131fdc: typecheck pass, unit tests 73/74 (the Tucson fixture expects a price conflict that the GB Auto list resolved upstream). P5 has not ingested it yet. |
