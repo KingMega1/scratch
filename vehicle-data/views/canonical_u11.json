@@ -10,10 +10,10 @@
   "logo_accepted": 248,
   "market_status_official": 37,
   "models": 283,
-  "price_accepted": 191,
-  "price_source_dated": 137,
+  "price_accepted": 186,
+  "price_source_dated": 134,
   "price_tier_a": 66,
-  "specs_accepted": 200,
+  "specs_accepted": 201,
   "warranty_accepted": 100
  },
  "counts_market_universe": {
@@ -27,10 +27,10 @@
   "logo_accepted": 347,
   "market_status_official": 38,
   "models": 416,
-  "price_accepted": 226,
-  "price_source_dated": 166,
+  "price_accepted": 221,
+  "price_source_dated": 163,
   "price_tier_a": 76,
-  "specs_accepted": 243,
+  "specs_accepted": 244,
   "warranty_accepted": 121
  },
  "generated_as_of": "2026-10-20",
@@ -51,9 +51,9 @@
   "inputs/u11/s0_urls.csv": "0fe3f54676ca73bfc6e00ccf854f67194dbced9b8cae3cf44a8191b826a2c24f",
   "inputs/u11/u11_source_urls.csv": "2421f3e82d175a8fd88166522f1f575e6ac5b594f51cc6cbdc1c53ebd9cee918"
  },
- "market_snapshot": "snapshots/U_2026-10-20_39379393100",
+ "market_snapshot": "snapshots/U_2026-10-20_39501187422",
  "market_snapshots": [
-  "snapshots/U_2026-10-20_39379393100",
+  "snapshots/U_2026-10-20_39501187422",
   "snapshots/UA_2026-10-14_38545206122"
  ],
  "models": [
@@ -19611,11 +19611,7 @@
   {
    "brand": "GAC",
    "brochures": [],
-   "conflicts": [
-    "PB-2 CONFLICT: ContactCars=1075000",
-    "PB-2 CONFLICT: EgyCar=1095000",
-    "PB-2 CONFLICT: EgyCar=1320000"
-   ],
+   "conflicts": [],
    "gallery": [],
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
@@ -19660,20 +19656,68 @@
     "as_of": "2026-10-20",
     "date_basis": "SOURCE_STATED",
     "effective_date": "2026-10-19",
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/gac/Empow | https://www.egy-car.com/gac-empow",
-    "issuer": "EgyCar+Hatla2ee",
+    "evidence_url": "https://www.contactcars.com/en/new-cars/gac-empow/year-2027 | https://www.egy-car.com/gac-empow",
+    "issuer": "ContactCars+EgyCar",
     "model_year": 2027,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 1320000,
+    "price_from": 1095000,
     "tier": "B",
     "trims": [
      {
       "as_of": "2026-10-20",
       "date_basis": "SOURCE_STATED",
       "effective_date": "2026-10-19",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/gac/Empow | https://www.egy-car.com/gac-empow",
-      "issuer": "EgyCar+Hatla2ee",
-      "label": "A/T / GE S-Style",
+      "evidence_url": "https://www.contactcars.com/en/new-cars/gac-empow/year-2027 | https://www.egy-car.com/gac-empow",
+      "issuer": "ContactCars+EgyCar",
+      "label": "Elegance",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 1095000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-20",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-19",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/gac/Empow | https://www.contactcars.com/en/new-cars/gac-empow/year-2027 | https://www.egy-car.com/gac-empow",
+      "issuer": "ContactCars+EgyCar+Hatla2ee",
+      "label": "Elegance",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 1095000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-20",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-19",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/gac/Empow | https://www.contactcars.com/en/new-cars/gac-empow/year-2027",
+      "issuer": "ContactCars+Hatla2ee",
+      "label": "Premium",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 1214000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-20",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-19",
+      "evidence_url": "https://www.contactcars.com/en/new-cars/gac-empow/year-2027 | https://www.egy-car.com/gac-empow",
+      "issuer": "ContactCars+EgyCar",
+      "label": "S-Style",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 1320000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-20",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-19",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/gac/Empow | https://www.contactcars.com/en/new-cars/gac-empow/year-2027 | https://www.egy-car.com/gac-empow",
+      "issuer": "ContactCars+EgyCar+Hatla2ee",
+      "label": "S-Style",
       "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 1320000,
@@ -19681,7 +19725,7 @@
      }
     ]
    },
-   "rework_price_rows": 12,
+   "rework_price_rows": 7,
    "site_slug": "gac-empow",
    "size_class": {
     "basis": "registration segment, last 12 months (826 registrations)",
@@ -19965,10 +20009,7 @@
   {
    "brand": "GAC",
    "brochures": [],
-   "conflicts": [
-    "PB-2 CONFLICT: ContactCars=1336000",
-    "PB-2 CONFLICT: EgyCar=1350000;Hatla2ee=1350000"
-   ],
+   "conflicts": [],
    "gallery": [
     {
      "asset_id": "b660056736fe",
@@ -20011,7 +20052,6 @@
     }
    ],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "GENERATION_UNKNOWN"
    ],
@@ -20061,8 +20101,32 @@
    "model": "GS4 Max",
    "model_id": "m_000130",
    "p1_id": "gac/gs4-max",
-   "price": null,
-   "rework_price_rows": 3,
+   "price": {
+    "as_of": "2026-10-20",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-19",
+    "evidence_url": "https://eg.hatla2ee.com/en/new-car/gac/GS4+max | https://www.contactcars.com/en/new-cars/gac-gs4_max/year-2027 | https://www.egy-car.com/gac-gs4-max",
+    "issuer": "ContactCars+EgyCar+Hatla2ee",
+    "model_year": 2027,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 1350000,
+    "tier": "B",
+    "trims": [
+     {
+      "as_of": "2026-10-20",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-19",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/gac/GS4+max | https://www.contactcars.com/en/new-cars/gac-gs4_max/year-2027 | https://www.egy-car.com/gac-gs4-max",
+      "issuer": "ContactCars+EgyCar+Hatla2ee",
+      "label": "Premium",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 1350000,
+      "tier": "B"
+     }
+    ]
+   },
+   "rework_price_rows": 1,
    "site_slug": "gac-gs4-max",
    "size_class": {
     "basis": "registration segment, last 12 months (551 registrations)",
@@ -20205,6 +20269,7 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
+    "NO_ACCEPTED_PRICE",
     "NO_VERIFIED_HERO_IMAGE",
     "GENERATION_UNKNOWN"
    ],
@@ -20242,56 +20307,8 @@
    "model": "City Ray",
    "model_id": "m_000131",
    "p1_id": "geely/city-ray",
-   "price": {
-    "as_of": "2026-10-20",
-    "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-06-01",
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/City-Ray | https://www.contactcars.com/en/new-cars/geely-cityray/year-2026",
-    "issuer": "ContactCars+Hatla2ee",
-    "model_year": 2026,
-    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 1299000,
-    "tier": "B",
-    "trims": [
-     {
-      "as_of": "2026-10-20",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-06-01",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/City-Ray | https://www.contactcars.com/en/new-cars/geely-cityray/year-2026",
-      "issuer": "ContactCars+Hatla2ee",
-      "label": "Comfort",
-      "model_year": 2026,
-      "powertrain": "Petrol",
-      "price_egp": 1299000,
-      "tier": "B"
-     },
-     {
-      "as_of": "2026-10-20",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-06-01",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/City-Ray | https://www.contactcars.com/en/new-cars/geely-cityray/year-2026",
-      "issuer": "ContactCars+Hatla2ee",
-      "label": "Premium",
-      "model_year": 2026,
-      "powertrain": "Petrol",
-      "price_egp": 1379000,
-      "tier": "B"
-     },
-     {
-      "as_of": "2026-10-20",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-06-01",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/City-Ray | https://www.contactcars.com/en/new-cars/geely-cityray/year-2026",
-      "issuer": "ContactCars+Hatla2ee",
-      "label": "Sport",
-      "model_year": 2026,
-      "powertrain": "Petrol",
-      "price_egp": 1469000,
-      "tier": "B"
-     }
-    ]
-   },
-   "rework_price_rows": 3,
+   "price": null,
+   "rework_price_rows": 9,
    "site_slug": "geely-city-ray",
    "size_class": {
     "basis": "registration segment, last 12 months (392 registrations)",
@@ -20452,6 +20469,7 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
+    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
     "NO_VERIFIED_HERO_IMAGE",
     "GENERATION_UNKNOWN"
@@ -20490,52 +20508,8 @@
    "model": "Cool Ray",
    "model_id": "m_000132",
    "p1_id": "geely/cool-ray",
-   "price": {
-    "as_of": "2026-10-20",
-    "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-04-11",
-    "evidence_url": "https://www.contactcars.com/en/new-cars/geely-coolray/year-2026 | https://www.egy-car.com/geely-coolray",
-    "issuer": "ContactCars+EgyCar",
-    "model_year": 2026,
-    "price_from": 975000,
-    "tier": "B",
-    "trims": [
-     {
-      "as_of": "2026-10-20",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-04-11",
-      "evidence_url": "https://www.contactcars.com/en/new-cars/geely-coolray/year-2026 | https://www.egy-car.com/geely-coolray",
-      "issuer": "ContactCars+EgyCar",
-      "label": "Comfort",
-      "model_year": 2026,
-      "price_egp": 975000,
-      "tier": "B"
-     },
-     {
-      "as_of": "2026-10-20",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-04-27",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/Coolray | https://www.contactcars.com/en/new-cars/geely-coolray/year-2026 | https://www.egy-car.com/geely-coolray",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
-      "label": "Comfort",
-      "model_year": 2026,
-      "price_egp": 975000,
-      "tier": "B"
-     },
-     {
-      "as_of": "2026-10-20",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/Coolray | https://www.contactcars.com/en/new-cars/geely-coolray/year-2026",
-      "issuer": "ContactCars+Hatla2ee",
-      "label": "Premium",
-      "model_year": 2026,
-      "price_egp": 1075000,
-      "tier": "B"
-     }
-    ]
-   },
-   "rework_price_rows": 11,
+   "price": null,
+   "rework_price_rows": 12,
    "site_slug": "geely-cool-ray",
    "size_class": {
     "basis": "registration segment, last 12 months (1453 registrations)",
@@ -20626,12 +20600,10 @@
      "url": "https://drive.google.com/file/d/1pS4bdj57DB1090NKsKU_-cAEuEaiJfN-/view"
     }
    ],
-   "conflicts": [
-    "PB-2 CONFLICT: ContactCars=849900",
-    "PB-2 CONFLICT: Hatla2ee=849899"
-   ],
+   "conflicts": [],
    "gallery": [],
    "gaps": [
+    "NO_ACCEPTED_PRICE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
@@ -20670,30 +20642,8 @@
    "model": "EX2",
    "model_id": "m_000134",
    "p1_id": "geely/ex2",
-   "price": {
-    "as_of": "2026-10-20",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/ex2 | https://www.contactcars.com/en/new-cars/geely-ex2 | https://www.contactcars.com/en/new-cars/geely-ex2/year-2026",
-    "issuer": "ContactCars+Hatla2ee",
-    "model_year": 2026,
-    "price_from": 749900,
-    "tier": "B",
-    "trims": [
-     {
-      "as_of": "2026-10-20",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/ex2 | https://www.contactcars.com/en/new-cars/geely-ex2 | https://www.contactcars.com/en/new-cars/geely-ex2/year-2026",
-      "issuer": "ContactCars+Hatla2ee",
-      "label": "Pro",
-      "model_year": 2026,
-      "price_egp": 749900,
-      "tier": "B"
-     }
-    ]
-   },
-   "rework_price_rows": 2,
+   "price": null,
+   "rework_price_rows": 4,
    "site_slug": "geely-ex2",
    "size_class": {
     "basis": "registration segment, last 12 months (328 registrations)",
@@ -20954,6 +20904,7 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
+    "NO_ACCEPTED_PRICE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
@@ -20992,44 +20943,8 @@
    "model": "EX5",
    "model_id": "m_000135",
    "p1_id": "geely/ex5",
-   "price": {
-    "as_of": "2026-10-20",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/ex5 | https://www.contactcars.com/en/new-cars/geely-ex5 | https://www.contactcars.com/en/new-cars/geely-ex5/year-2026",
-    "issuer": "ContactCars+Hatla2ee",
-    "model_year": 2026,
-    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 1419900,
-    "tier": "B",
-    "trims": [
-     {
-      "as_of": "2026-10-20",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/ex5 | https://www.contactcars.com/en/new-cars/geely-ex5 | https://www.contactcars.com/en/new-cars/geely-ex5/year-2026",
-      "issuer": "ContactCars+Hatla2ee",
-      "label": "Pro",
-      "model_year": 2026,
-      "powertrain": "Electric",
-      "price_egp": 1419900,
-      "tier": "B"
-     },
-     {
-      "as_of": "2026-10-20",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/ex5 | https://www.contactcars.com/en/new-cars/geely-ex5 | https://www.contactcars.com/en/new-cars/geely-ex5/year-2026",
-      "issuer": "ContactCars+Hatla2ee",
-      "label": "Max",
-      "model_year": 2026,
-      "powertrain": "Electric",
-      "price_egp": 1499900,
-      "tier": "B"
-     }
-    ]
-   },
-   "rework_price_rows": 2,
+   "price": null,
+   "rework_price_rows": 6,
    "site_slug": "geely-ex5",
    "size_class": {
     "basis": "registration segment, last 12 months (121 registrations)",
@@ -21462,7 +21377,7 @@
    "model_id": "m_000138",
    "p1_id": "geely/okavango",
    "price": null,
-   "rework_price_rows": 4,
+   "rework_price_rows": 2,
    "site_slug": "geely-okavango",
    "size_class": {
     "basis": "registration segment, last 12 months (31 registrations)",
@@ -27723,9 +27638,15 @@
   {
    "brand": "KGM",
    "brochures": [],
-   "conflicts": [],
+   "conflicts": [
+    "PB-2 CONFLICT: ContactCars=1925000",
+    "PB-2 CONFLICT: ContactCars=2125000",
+    "PB-2 CONFLICT: EgyCar=1950000;Hatla2ee=1950000",
+    "PB-2 CONFLICT: EgyCar=2150000;Hatla2ee=2150000"
+   ],
    "gallery": [],
    "gaps": [
+    "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "GENERATION_UNKNOWN"
@@ -27764,44 +27685,8 @@
    "model": "Actyon",
    "model_id": "m_000174",
    "p1_id": "kgm/actyon",
-   "price": {
-    "as_of": "2026-10-20",
-    "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-04-20",
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/kgm/KGM-Actyon | https://www.contactcars.com/en/new-cars/kgm-actyon | https://www.contactcars.com/en/new-cars/kgm-actyon/year-2026",
-    "issuer": "ContactCars+Hatla2ee",
-    "model_year": 2026,
-    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 1925000,
-    "tier": "B",
-    "trims": [
-     {
-      "as_of": "2026-10-20",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-04-20",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/kgm/KGM-Actyon | https://www.contactcars.com/en/new-cars/kgm-actyon | https://www.contactcars.com/en/new-cars/kgm-actyon/year-2026",
-      "issuer": "ContactCars+Hatla2ee",
-      "label": "Highline",
-      "model_year": 2026,
-      "powertrain": "Petrol",
-      "price_egp": 1925000,
-      "tier": "B"
-     },
-     {
-      "as_of": "2026-10-20",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-04-20",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/kgm/KGM-Actyon | https://www.contactcars.com/en/new-cars/kgm-actyon | https://www.contactcars.com/en/new-cars/kgm-actyon/year-2026",
-      "issuer": "ContactCars+Hatla2ee",
-      "label": "Topline",
-      "model_year": 2026,
-      "powertrain": "Petrol",
-      "price_egp": 2125000,
-      "tier": "B"
-     }
-    ]
-   },
-   "rework_price_rows": 2,
+   "price": null,
+   "rework_price_rows": 4,
    "site_slug": "kgm-actyon",
    "size_class": {
     "basis": "registration segment, last 12 months (307 registrations)",
@@ -27935,10 +27820,13 @@
    "brochures": [],
    "conflicts": [
     "PB-2 CONFLICT: ContactCars=1850000",
-    "PB-2 CONFLICT: Hatla2ee=1850001"
+    "PB-2 CONFLICT: ContactCars=1980000",
+    "PB-2 CONFLICT: Hatla2ee=1875000",
+    "PB-2 CONFLICT: Hatla2ee=2024000"
    ],
    "gallery": [],
    "gaps": [
+    "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "GENERATION_UNKNOWN"
@@ -27977,32 +27865,8 @@
    "model": "Torres",
    "model_id": "m_000017",
    "p1_id": "kgm/torres",
-   "price": {
-    "as_of": "2026-10-20",
-    "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-04-20",
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/kgm/KGM-Torres | https://www.contactcars.com/en/new-cars/kgm-torres | https://www.contactcars.com/en/new-cars/kgm-torres/year-2026",
-    "issuer": "ContactCars+Hatla2ee",
-    "model_year": 2026,
-    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 1980000,
-    "tier": "B",
-    "trims": [
-     {
-      "as_of": "2026-10-20",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-04-20",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/kgm/KGM-Torres | https://www.contactcars.com/en/new-cars/kgm-torres | https://www.contactcars.com/en/new-cars/kgm-torres/year-2026",
-      "issuer": "ContactCars+Hatla2ee",
-      "label": "Luxury",
-      "model_year": 2026,
-      "powertrain": "Petrol",
-      "price_egp": 1980000,
-      "tier": "B"
-     }
-    ]
-   },
-   "rework_price_rows": 8,
+   "price": null,
+   "rework_price_rows": 10,
    "site_slug": "kgm-torres",
    "size_class": {
     "basis": "registration segment, last 12 months (793 registrations)",
@@ -33069,7 +32933,7 @@
     ],
     "engine_cc": [
      {
-      "applicability": "market trim pages: 4M COUPE - AMG , 4M Coupe - Sport, 4M Coupe Avantgarde, 4M SUV - Avantgarde, 4M SUV - Sport",
+      "applicability": "market trim pages: 4M COUPE - AMG , 4M Coupe - Sport, 4M Coupe Avantgarde, 4M SUV - Avantgarde, 4M SUV - Sport, Sport",
       "issuer": "ContactCars+Hatla2ee",
       "source": "https://www.contactcars.com/en/new-cars/mercedes-glc_200/3f9a207b4bbe | https://www.contactcars.com/en/new-cars/mercedes-glc_200/83e22e187d9e | https://www.contactcars.com/en/new-cars/mercedes-glc_200/b1ac1fd12f75 | https://www.contactcars.com/en/new-cars/mercedes-glc_200/f63738bbccd6 | https://www.",
       "unit": "",
@@ -33078,7 +32942,7 @@
     ],
     "fuel_tank_l": [
      {
-      "applicability": "market trim pages: 4M COUPE - AMG , 4M Coupe - Sport, 4M Coupe Avantgarde, 4M SUV - Avantgarde, 4M SUV - Sport",
+      "applicability": "market trim pages: 4M COUPE - AMG , 4M Coupe - Sport, 4M Coupe Avantgarde, 4M SUV - Avantgarde, 4M SUV - Sport, Sport",
       "issuer": "ContactCars+Hatla2ee",
       "source": "https://www.contactcars.com/en/new-cars/mercedes-glc_200/3f9a207b4bbe | https://www.contactcars.com/en/new-cars/mercedes-glc_200/83e22e187d9e | https://www.contactcars.com/en/new-cars/mercedes-glc_200/b1ac1fd12f75 | https://www.contactcars.com/en/new-cars/mercedes-glc_200/f63738bbccd6 | https://www.",
       "unit": "",
@@ -33114,18 +32978,18 @@
     ],
     "powertrain_class": [
      {
-      "applicability": "market trim pages: 4M Coupe - Sport, 4M Coupe Avantgarde, 4M SUV - Avantgarde, 4M SUV - Sport",
+      "applicability": "market trim pages: 4M Coupe - Sport, 4M Coupe Avantgarde, 4M SUV - Avantgarde, 4M SUV - Sport, Sport",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/mercedes-glc_200/3f9a207b4bbe | https://www.contactcars.com/en/new-cars/mercedes-glc_200/83e22e187d9e | https://www.contactcars.com/en/new-cars/mercedes-glc_200/b1ac1fd12f75 | https://www.contactcars.com/en/new-cars/mercedes-glc_200/f63738bbccd6",
+      "source": "https://www.contactcars.com/en/new-cars/mercedes-glc_200/3f9a207b4bbe | https://www.contactcars.com/en/new-cars/mercedes-glc_200/83e22e187d9e | https://www.contactcars.com/en/new-cars/mercedes-glc_200/b1ac1fd12f75 | https://www.contactcars.com/en/new-cars/mercedes-glc_200/f63738bbccd6 | https://www.",
       "unit": "",
       "value": "Petrol"
      }
     ],
     "seats": [
      {
-      "applicability": "market trim pages: 4M COUPE - AMG , 4M Coupe - Sport, 4M SUV - Sport",
+      "applicability": "market trim pages: 4M COUPE - AMG , 4M Coupe - Sport, 4M SUV - Sport, Sport",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/mercedes-glc_200/b1ac1fd12f75 | https://www.contactcars.com/en/new-cars/mercedes-glc_200/f63738bbccd6 | https://www.contactcars.com/en/new-cars/mercedes-glc_43/f142c273274f",
+      "source": "https://www.contactcars.com/en/new-cars/mercedes-glc_200/b1ac1fd12f75 | https://www.contactcars.com/en/new-cars/mercedes-glc_200/f63738bbccd6 | https://www.contactcars.com/en/new-cars/mercedes-glc_300/c3035dbb784b | https://www.contactcars.com/en/new-cars/mercedes-glc_43/f142c273274f",
       "unit": "",
       "value": "5"
      }
@@ -33141,16 +33005,16 @@
     ],
     "transmission": [
      {
-      "applicability": "market trim pages: 4M Coupe Avantgarde, 4M SUV - Avantgarde",
+      "applicability": "market trim pages: 4M Coupe Avantgarde, 4M SUV - Avantgarde, Sport",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/mercedes-glc_200/3f9a207b4bbe | https://www.contactcars.com/en/new-cars/mercedes-glc_200/83e22e187d9e",
+      "source": "https://www.contactcars.com/en/new-cars/mercedes-glc_200/3f9a207b4bbe | https://www.contactcars.com/en/new-cars/mercedes-glc_200/83e22e187d9e | https://www.contactcars.com/en/new-cars/mercedes-glc_300/c3035dbb784b",
       "unit": "",
       "value": "Automatic"
      }
     ],
     "wheelbase_mm": [
      {
-      "applicability": "market trim pages: 4M COUPE - AMG , 4M Coupe - Sport, 4M Coupe Avantgarde, 4M SUV - Avantgarde, 4M SUV - Sport",
+      "applicability": "market trim pages: 4M COUPE - AMG , 4M Coupe - Sport, 4M Coupe Avantgarde, 4M SUV - Avantgarde, 4M SUV - Sport, Sport",
       "issuer": "ContactCars+Hatla2ee",
       "source": "https://www.contactcars.com/en/new-cars/mercedes-glc_200/3f9a207b4bbe | https://www.contactcars.com/en/new-cars/mercedes-glc_200/83e22e187d9e | https://www.contactcars.com/en/new-cars/mercedes-glc_200/b1ac1fd12f75 | https://www.contactcars.com/en/new-cars/mercedes-glc_200/f63738bbccd6 | https://www.",
       "unit": "",
@@ -44630,9 +44494,9 @@
    "specs": {
     "drive": [
      {
-      "applicability": "market trim pages: Highline",
+      "applicability": "market trim pages: Highline, Premium",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f",
+      "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f | https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e",
       "unit": "",
       "value": "FWD"
      }
@@ -44644,31 +44508,38 @@
       "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f",
       "unit": "",
       "value": "1500"
+     },
+     {
+      "applicability": "market trim pages: Premium",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e",
+      "unit": "",
+      "value": "1600"
      }
     ],
     "fuel_tank_l": [
      {
-      "applicability": "market trim pages: Highline",
+      "applicability": "market trim pages: Highline, Premium",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f",
+      "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f | https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e",
       "unit": "",
       "value": "57"
      }
     ],
     "height_mm": [
      {
-      "applicability": "market trim pages: Highline",
+      "applicability": "market trim pages: Highline, Premium",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f",
+      "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f | https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e",
       "unit": "",
       "value": "1720"
      }
     ],
     "length_mm": [
      {
-      "applicability": "market trim pages: Highline",
+      "applicability": "market trim pages: Highline, Premium",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f",
+      "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f | https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e",
       "unit": "",
       "value": "4724"
      }
@@ -44680,22 +44551,29 @@
       "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f",
       "unit": "",
       "value": "156"
+     },
+     {
+      "applicability": "market trim pages: Premium",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e",
+      "unit": "",
+      "value": "197"
      }
     ],
     "powertrain_class": [
      {
-      "applicability": "market trim pages: Highline",
+      "applicability": "market trim pages: Highline, Premium",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f",
+      "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f | https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e",
       "unit": "",
       "value": "Petrol"
      }
     ],
     "seats": [
      {
-      "applicability": "market trim pages: Highline",
+      "applicability": "market trim pages: Highline, Premium",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f",
+      "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f | https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e",
       "unit": "",
       "value": "7"
      }
@@ -44707,31 +44585,38 @@
       "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f",
       "unit": "",
       "value": "230"
+     },
+     {
+      "applicability": "market trim pages: Premium",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e",
+      "unit": "",
+      "value": "290"
      }
     ],
     "transmission": [
      {
-      "applicability": "market trim pages: Highline",
+      "applicability": "market trim pages: Highline, Premium",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f",
+      "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f | https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e",
       "unit": "",
       "value": "DCT"
      }
     ],
     "wheelbase_mm": [
      {
-      "applicability": "market trim pages: Highline",
+      "applicability": "market trim pages: Highline, Premium",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f",
+      "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f | https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e",
       "unit": "",
       "value": "2720"
      }
     ],
     "width_mm": [
      {
-      "applicability": "market trim pages: Highline",
+      "applicability": "market trim pages: Highline, Premium",
       "issuer": "ContactCars+Hatla2ee",
-      "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f",
+      "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f | https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e",
       "unit": "",
       "value": "1900"
      }
@@ -44743,7 +44628,7 @@
     {
      "applicability": "market trim pages: model",
      "issuer": "ContactCars+Hatla2ee",
-     "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f",
+     "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f | https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e",
      "unit": "",
      "value": "6 years / 150000 km"
     }
@@ -45204,7 +45089,6 @@
     }
    ],
    "gaps": [
-    "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
@@ -45262,6 +45146,7 @@
     "evidence_url": "https://eg.hatla2ee.com/en/new-car/suzuki/baleno | https://www.contactcars.com/en/new-cars/suzuki-baleno/year-2026",
     "issuer": "ContactCars+Hatla2ee",
     "model_year": 2026,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 1090000,
     "tier": "B",
     "trims": [
@@ -45273,6 +45158,7 @@
       "issuer": "ContactCars+Hatla2ee",
       "label": "AMT GLX",
       "model_year": 2026,
+      "powertrain": "Petrol",
       "price_egp": 1090000,
       "tier": "B"
      }
@@ -45285,8 +45171,108 @@
     "segment": "Car HB-B",
     "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
    },
-   "specs": null,
-   "specs_accepted": false,
+   "specs": {
+    "boot_l": [
+     {
+      "applicability": "market trim pages: AMT GLX",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/suzuki-baleno/633c86acde5e",
+      "unit": "",
+      "value": "355"
+     }
+    ],
+    "drive": [
+     {
+      "applicability": "market trim pages: AMT GLX",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/suzuki-baleno/633c86acde5e",
+      "unit": "",
+      "value": "FWD"
+     }
+    ],
+    "fuel_tank_l": [
+     {
+      "applicability": "market trim pages: AMT GLX",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/suzuki-baleno/633c86acde5e",
+      "unit": "",
+      "value": "37"
+     }
+    ],
+    "height_mm": [
+     {
+      "applicability": "market trim pages: AMT GLX",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/suzuki-baleno/633c86acde5e",
+      "unit": "",
+      "value": "1470"
+     }
+    ],
+    "length_mm": [
+     {
+      "applicability": "market trim pages: AMT GLX",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/suzuki-baleno/633c86acde5e",
+      "unit": "",
+      "value": "3995"
+     }
+    ],
+    "powertrain_class": [
+     {
+      "applicability": "market trim pages: AMT GLX",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/suzuki-baleno/633c86acde5e",
+      "unit": "",
+      "value": "Petrol"
+     }
+    ],
+    "seats": [
+     {
+      "applicability": "market trim pages: AMT GLX",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/suzuki-baleno/633c86acde5e",
+      "unit": "",
+      "value": "5"
+     }
+    ],
+    "torque_nm": [
+     {
+      "applicability": "market trim pages: AMT GLX",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/suzuki-baleno/633c86acde5e",
+      "unit": "",
+      "value": "130"
+     }
+    ],
+    "transmission": [
+     {
+      "applicability": "market trim pages: AMT GLX",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/suzuki-baleno/633c86acde5e",
+      "unit": "",
+      "value": "Automatic"
+     }
+    ],
+    "wheelbase_mm": [
+     {
+      "applicability": "market trim pages: AMT GLX",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/suzuki-baleno/633c86acde5e",
+      "unit": "",
+      "value": "2520"
+     }
+    ],
+    "width_mm": [
+     {
+      "applicability": "market trim pages: AMT GLX",
+      "issuer": "ContactCars+Hatla2ee",
+      "source": "https://www.contactcars.com/en/new-cars/suzuki-baleno/633c86acde5e",
+      "unit": "",
+      "value": "1745"
+     }
+    ]
+   },
+   "specs_accepted": true,
    "universe": "U11_283",
    "warranty": null
   },
