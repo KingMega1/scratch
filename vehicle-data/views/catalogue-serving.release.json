@@ -14,15 +14,15 @@
   "evidence_authority": {
     "schema": "carindex.p2.canonical/v1",
     "path": "vehicle-data/views/canonical_u11.json",
-    "market_snapshot": "snapshots/U_2026-10-20_39361566209",
+    "market_snapshot": "snapshots/U_2026-10-20_39379393100",
     "counts": {
       "models": 283,
       "id_accepted": 283,
       "price_accepted": 191,
       "price_tier_a": 66,
-      "price_source_dated": 135,
+      "price_source_dated": 137,
       "market_status_official": 37,
-      "specs_accepted": 201,
+      "specs_accepted": 200,
       "warranty_accepted": 100,
       "brochure_accepted": 81,
       "hero_accepted": 82,
@@ -2701,8 +2701,8 @@
           "price_from": 3050000,
           "model_year": 2026,
           "tier": "B",
-          "effective_date": null,
-          "date_basis": "OBSERVED",
+          "effective_date": "2026-04-05",
+          "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-20",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/avatr/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12/year-2026",
@@ -2712,8 +2712,8 @@
               "label": "Luxury",
               "price_egp": 3050000,
               "tier": "B",
-              "effective_date": null,
-              "date_basis": "OBSERVED",
+              "effective_date": "2026-04-05",
+              "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-20",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/avatr/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12 | https://www.contactcars.com/en/new-cars/avatr-12/year-2026",
@@ -21479,8 +21479,8 @@
               "label": "Premium",
               "price_egp": 1075000,
               "tier": "B",
-              "effective_date": "2026-04-27",
-              "date_basis": "SOURCE_STATED",
+              "effective_date": null,
+              "date_basis": "OBSERVED",
               "as_of": "2026-10-20",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/Coolray | https://www.contactcars.com/en/new-cars/geely-coolray/year-2026"
@@ -29414,8 +29414,8 @@
           "price_from": 1980000,
           "model_year": 2026,
           "tier": "B",
-          "effective_date": null,
-          "date_basis": "OBSERVED",
+          "effective_date": "2026-04-20",
+          "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-20",
           "issuer": "ContactCars+Hatla2ee",
           "evidence_url": "https://eg.hatla2ee.com/en/new-car/kgm/KGM-Torres | https://www.contactcars.com/en/new-cars/kgm-torres | https://www.contactcars.com/en/new-cars/kgm-torres/year-2026",
@@ -29425,8 +29425,8 @@
               "label": "Luxury",
               "price_egp": 1980000,
               "tier": "B",
-              "effective_date": null,
-              "date_basis": "OBSERVED",
+              "effective_date": "2026-04-20",
+              "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-20",
               "issuer": "ContactCars+Hatla2ee",
               "evidence_url": "https://eg.hatla2ee.com/en/new-car/kgm/KGM-Torres | https://www.contactcars.com/en/new-cars/kgm-torres | https://www.contactcars.com/en/new-cars/kgm-torres/year-2026",
@@ -46865,9 +46865,9 @@
             {
               "value": "FWD",
               "unit": "",
-              "applicability": "market trim pages: Highline, Premium",
+              "applicability": "market trim pages: Highline",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f | https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e"
+              "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f"
             }
           ],
           "engine_cc": [
@@ -46877,40 +46877,33 @@
               "applicability": "market trim pages: Highline",
               "issuer": "ContactCars+Hatla2ee",
               "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f"
-            },
-            {
-              "value": "1600",
-              "unit": "",
-              "applicability": "market trim pages: Premium",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e"
             }
           ],
           "fuel_tank_l": [
             {
               "value": "57",
               "unit": "",
-              "applicability": "market trim pages: Highline, Premium",
+              "applicability": "market trim pages: Highline",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f | https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e"
+              "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f"
             }
           ],
           "height_mm": [
             {
               "value": "1720",
               "unit": "",
-              "applicability": "market trim pages: Highline, Premium",
+              "applicability": "market trim pages: Highline",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f | https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e"
+              "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f"
             }
           ],
           "length_mm": [
             {
               "value": "4724",
               "unit": "",
-              "applicability": "market trim pages: Highline, Premium",
+              "applicability": "market trim pages: Highline",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f | https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e"
+              "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f"
             }
           ],
           "power_hp": [
@@ -46920,31 +46913,24 @@
               "applicability": "market trim pages: Highline",
               "issuer": "ContactCars+Hatla2ee",
               "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f"
-            },
-            {
-              "value": "197",
-              "unit": "",
-              "applicability": "market trim pages: Premium",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e"
             }
           ],
           "powertrain_class": [
             {
               "value": "Petrol",
               "unit": "",
-              "applicability": "market trim pages: Highline, Premium",
+              "applicability": "market trim pages: Highline",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f | https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e"
+              "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f"
             }
           ],
           "seats": [
             {
               "value": "7",
               "unit": "",
-              "applicability": "market trim pages: Highline, Premium",
+              "applicability": "market trim pages: Highline",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f | https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e"
+              "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f"
             }
           ],
           "torque_nm": [
@@ -46954,40 +46940,33 @@
               "applicability": "market trim pages: Highline",
               "issuer": "ContactCars+Hatla2ee",
               "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f"
-            },
-            {
-              "value": "290",
-              "unit": "",
-              "applicability": "market trim pages: Premium",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e"
             }
           ],
           "transmission": [
             {
               "value": "DCT",
               "unit": "",
-              "applicability": "market trim pages: Highline, Premium",
+              "applicability": "market trim pages: Highline",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f | https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e"
+              "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f"
             }
           ],
           "wheelbase_mm": [
             {
               "value": "2720",
               "unit": "",
-              "applicability": "market trim pages: Highline, Premium",
+              "applicability": "market trim pages: Highline",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f | https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e"
+              "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f"
             }
           ],
           "width_mm": [
             {
               "value": "1900",
               "unit": "",
-              "applicability": "market trim pages: Highline, Premium",
+              "applicability": "market trim pages: Highline",
               "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f | https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e"
+              "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f"
             }
           ]
         },
@@ -46997,7 +46976,7 @@
             "unit": "",
             "applicability": "market trim pages: model",
             "issuer": "ContactCars+Hatla2ee",
-            "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f | https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e"
+            "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f"
           }
         ],
         "brochures": [],
@@ -47532,6 +47511,7 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
+        "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
@@ -47562,113 +47542,11 @@
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-20",
               "issuer": "ContactCars+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/suzuki/baleno | https://www.contactcars.com/en/new-cars/suzuki-baleno/year-2026",
-              "powertrain": "Petrol"
-            }
-          ],
-          "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
-        },
-        "specs": {
-          "boot_l": [
-            {
-              "value": "355",
-              "unit": "",
-              "applicability": "market trim pages: AMT GLX",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/suzuki-baleno/633c86acde5e"
-            }
-          ],
-          "drive": [
-            {
-              "value": "FWD",
-              "unit": "",
-              "applicability": "market trim pages: AMT GLX",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/suzuki-baleno/633c86acde5e"
-            }
-          ],
-          "fuel_tank_l": [
-            {
-              "value": "37",
-              "unit": "",
-              "applicability": "market trim pages: AMT GLX",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/suzuki-baleno/633c86acde5e"
-            }
-          ],
-          "height_mm": [
-            {
-              "value": "1470",
-              "unit": "",
-              "applicability": "market trim pages: AMT GLX",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/suzuki-baleno/633c86acde5e"
-            }
-          ],
-          "length_mm": [
-            {
-              "value": "3995",
-              "unit": "",
-              "applicability": "market trim pages: AMT GLX",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/suzuki-baleno/633c86acde5e"
-            }
-          ],
-          "powertrain_class": [
-            {
-              "value": "Petrol",
-              "unit": "",
-              "applicability": "market trim pages: AMT GLX",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/suzuki-baleno/633c86acde5e"
-            }
-          ],
-          "seats": [
-            {
-              "value": "5",
-              "unit": "",
-              "applicability": "market trim pages: AMT GLX",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/suzuki-baleno/633c86acde5e"
-            }
-          ],
-          "torque_nm": [
-            {
-              "value": "130",
-              "unit": "",
-              "applicability": "market trim pages: AMT GLX",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/suzuki-baleno/633c86acde5e"
-            }
-          ],
-          "transmission": [
-            {
-              "value": "Automatic",
-              "unit": "",
-              "applicability": "market trim pages: AMT GLX",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/suzuki-baleno/633c86acde5e"
-            }
-          ],
-          "wheelbase_mm": [
-            {
-              "value": "2520",
-              "unit": "",
-              "applicability": "market trim pages: AMT GLX",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/suzuki-baleno/633c86acde5e"
-            }
-          ],
-          "width_mm": [
-            {
-              "value": "1745",
-              "unit": "",
-              "applicability": "market trim pages: AMT GLX",
-              "issuer": "ContactCars+Hatla2ee",
-              "source": "https://www.contactcars.com/en/new-cars/suzuki-baleno/633c86acde5e"
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/suzuki/baleno | https://www.contactcars.com/en/new-cars/suzuki-baleno/year-2026"
             }
           ]
         },
+        "specs": null,
         "warranty": null,
         "brochures": [],
         "logo": {
@@ -51016,7 +50894,7 @@
               "label": "Ultra Dark",
               "price_egp": 2890000,
               "tier": "B",
-              "effective_date": "2026-04-08",
+              "effective_date": "2026-04-12",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-20",
               "issuer": "ContactCars+EgyCar+Hatla2ee",
