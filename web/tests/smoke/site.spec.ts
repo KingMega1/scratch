@@ -86,10 +86,13 @@ test.describe('navigation + brand', () => {
     expect(tokens.toUpperCase()).toBe('#FFD12A');
   });
   test('no horizontal overflow', async ({ page }) => {
-    for (const p of ['ar','en'].flatMap(l => ['', '/cars', '/cars/kia-sportage', '/compare?ids=kia-sportage,hyundai-tucson', '/market', '/market/catalog', '/search?q=sportage', '/my-carindex', '/news'].map(p => `/${l}${p}`))) {
+    const vw = page.viewportSize()!.width;
+    for (const p of ['ar','en'].flatMap(l => ['', '/cars', '/cars/kia-sportage', '/compare?ids=kia-sportage,hyundai-tucson', '/market', '/market/catalog', '/search?q=sportage', '/find-my-car', '/my-carindex', '/news'].map(p => `/${l}${p}`))) {
       await page.goto(p);
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
       expect(overflow, p).toBeLessThanOrEqual(1);
+      // a too-wide element can also make a phone widen its layout viewport (page zooms out) instead of scrolling
+      expect(await page.evaluate(() => window.innerWidth), p).toBeLessThanOrEqual(vw);
     }
   });
 });
@@ -120,6 +123,11 @@ test.describe('boundaries', () => {
   test('compare shows no winner marks', async ({ page }) => {
     await page.goto('/en/compare?ids=kia-sportage,hyundai-tucson');
     await expect(page.locator('.win, [data-winner]')).toHaveCount(0);
+    // price wording only on price rows; other unknowns use the neutral label; car columns are equal width
+    const rows = page.locator('table.cmp tbody tr').filter({ hasNot: page.locator('th', { hasText: /^(From|Top version|Price state)$/ }) });
+    await expect(rows.filter({ hasText: 'Price not available yet' })).toHaveCount(0);
+    const w = await page.locator('table.cmp thead th.cmp-car').evaluateAll(els => els.map(e => Math.round(e.getBoundingClientRect().width)));
+    expect(Math.max(...w) - Math.min(...w)).toBeLessThanOrEqual(2);
   });
   // The old U11 listing conflict for Tucson is resolved upstream by a P2-accepted official distributor list (Tier A);
   // the conflict rendering itself is covered by the unit fixture (no accepted price -> conflict, no figure).
@@ -184,6 +192,14 @@ test.describe('launch car pages (P2 accepted media)', () => {
       await page.goto(`/ar/search?q=${encodeURIComponent(q)}`);
       await expect(page.locator(`a[href="/ar/cars/${slug}"]`).first()).toBeVisible();
     }
+  });
+  test('visual QA regressions: Latin-only names read in order on Arabic pages; model counts pluralised; no internal source notes', async ({ page }) => {
+    await page.goto('/ar/cars/arcfox-t1');
+    await expect(page.locator('h1 bdi').first()).toHaveText('Arcfox T1'); // one LTR run, not "T1 Arcfox"
+    await page.goto('/en/market');
+    await expect(page.locator('body')).not.toContainText(/\b1 models\b/);
+    await page.goto('/en/cars/haval-h6');
+    await expect(page.locator('section[aria-labelledby="prices-h"]')).not.toContainText(/CEO|supplied/i);
   });
   test('model-level accepted price is shown in the price table, not as unconfirmed', async ({ page }) => {
     // fixture from the served P2 release: an accepted price without per-version rows (none -> nothing to check)

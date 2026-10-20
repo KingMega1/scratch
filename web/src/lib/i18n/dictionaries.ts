@@ -90,7 +90,7 @@ const ar = {
   ],
   market: {
     h1: 'أسعار السيارات', lede: 'أسعار العربيات الجديدة في مصر، والجديد في السوق، والأكتر تسجيلًا.',
-    brandsH: 'تصفّح حسب الماركة', bandsH: 'تصفّح حسب السعر', bodyH: 'تصفّح حسب نوع العربية', models: (n: number) => `${n} موديل`,
+    brandsH: 'تصفّح حسب الماركة', bandsH: 'تصفّح حسب السعر', bodyH: 'تصفّح حسب نوع العربية', models: (n: number) => (n === 1 ? 'موديل واحد' : `${n} موديلات`), // same wording as catalog.models
     changedH: 'إيه اللي اتغيّر',
     changedFirst: (v: string) => `دي أول نسخة بيانات منشورة (${v}). حركة الأسعار هتظهر هنا لما تتنشر النسخة الجاية ونقارن بينهم.`,
     newH: 'جديد في السوق', newSub: (from: string) => `موديلات أول تسجيل ليها في مصر كان من ${from} أو بعد كده.`,
@@ -240,7 +240,7 @@ const en: Dict = {
   ],
   market: {
     h1: 'Car Prices', lede: 'New-car prices in Egypt, new arrivals, and what people are registering.',
-    brandsH: 'Browse by brand', bandsH: 'Browse by price', bodyH: 'Browse by body type', models: (n: number) => `${n} models`,
+    brandsH: 'Browse by brand', bandsH: 'Browse by price', bodyH: 'Browse by body type', models: (n: number) => (n === 1 ? '1 model' : `${n} models`), // same wording as catalog.models
     changedH: 'What’s changed',
     changedFirst: (v: string) => `This is the first published data version (${v}). Price movements will appear here once the next version is published and compared.`,
     newH: 'New to the market', newSub: (from: string) => `Models first registered in Egypt in ${from} or later.`,

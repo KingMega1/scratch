@@ -29,12 +29,14 @@ export default async function Compare({ params, searchParams }: P) {
   const ids = [...new Set(raw.split(',').map(s => s.trim()).filter(s => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(s)))].filter(id => V.get(id)).slice(0, 3);
   const cars = ids.map(id => V.get(id)!) as PublicCar[];
   const options = [...V.all()].sort((a, b) => carNameText(a, locale).localeCompare(carNameText(b, locale)));
-  const dash = <span className="state state-unknown">{t.state.unknown}</span>;
+  // Unknown values: the price wording only where the missing value is a price; elsewhere the neutral catalogue wording.
+  const dash = <span className="state state-unknown">{t.catalog.na}</span>;
+  const noPrice = <span className="state state-unknown">{t.state.unknown}</span>;
   const top = (x: PublicCar) => x.trims.at(-1);
   const spec = (x: PublicCar, k: string) => x.specs[k] ? <>{x.specs[k].values.map((v, i) => <div key={i}><bdi>{v.value}</bdi></div>)}</> : dash;
   const rows: [string, (car: PublicCar) => React.ReactNode][] = [
     [c.rows.from, x => <PriceFrom car={x} locale={locale} />],
-    [c.rows.to, x => top(x) ? <OfficialFigure o={top(x)!.official} locale={locale} /> : dash],
+    [c.rows.to, x => top(x) ? <OfficialFigure o={top(x)!.official} locale={locale} /> : noPrice],
     [c.rows.state, x => <PriceState state={x.priceFrom.state} locale={locale} />],
     [c.rows.versions, x => x.trims.length ? <span className="tnum">{x.trims.length}</span> : dash],
     [c.rows.pt, x => x.powertrains.length ? x.powertrains.map(p => t.pt[p]).join(' / ') : dash],
@@ -68,7 +70,7 @@ export default async function Compare({ params, searchParams }: P) {
       {cars.length < 2 ? <div className="notice" style={{ marginBlockEnd: 20 }}>{c.empty}</div> : null}
       {cars.length ? (
         <div className="cmp-wrap">
-          <table className="cmp">
+          <table className="cmp" style={{ minWidth: 160 + cars.length * 200 }}>
             <thead><tr><td />{cars.map(x => (
               <th key={x.id} scope="col" className="cmp-car">
                 <CarMedia car={x} locale={locale} />

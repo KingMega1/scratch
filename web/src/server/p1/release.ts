@@ -25,19 +25,24 @@ export const BOUND = {
   p3_artifact: '1791369522-eecc',
 } as const;
 
-/* PREPARED, NOT ACTIVE. P1 candidate U12C2 (P1-READINESS-01, commit b435c28): 366 models in universe, 323 priced/recommendable,
-   identities reconciled with P2 (283 U11 + additions/splits). Vendored verbatim under p1-release/ for dry runs only
-   (tests/unit/p1-candidate-u12c2.test.mjs). Activation = P1 release acceptance (a release record naming this dataset) plus a
-   reviewed change of BOUND above; nothing at runtime reads CANDIDATE. */
+/* PREPARED, NOT ACTIVE. P1 candidate record P1-RELEASE-U12-RC3 (status CANDIDATE — not released): engine E6.1, transport T1.1,
+   dataset U12-RC3 (416 identities, 371 in universe), P2 input fc19238. Vendored verbatim under p1-candidate/U12-RC3/ (each file's
+   sha256 checked against the record) for dry runs only: tests/unit/p1-candidate-u12-rc3.test.mjs. Nothing at runtime reads it.
+   Activation = P1 RELEASE of this record (gates: P3 copy approval of six DRAFT keys; release acceptance) plus a reviewed change of BOUND. */
 export const CANDIDATE = {
   status: 'CANDIDATE_NOT_ACCEPTED',
-  source_commit: 'b435c283175b51f107f5a722189d331afcbc7ad1',
-  dataset_id: 'U12C2-2026-10-14/recommendation_view',
-  universe_version: 'U12C2-2026-10-14',
-  path: 'buyer-decision/datasets/U12C2-2026-10-14',
-  file_sha256: '31a64bb7accf763e1fe3d0eb059d5e702029263abb1b65fcdb0da33b16b9644a',
-  content_sha256: '293acba6a5d4c0f9a7b46e233981f4040e19702e3e5cffa7843bd2a5bd09cb61',
-  p2_input_commit: 'bd8a67ac7f3c7da746a212deba73c818741710c9',
+  record: 'P1-RELEASE-U12-RC3',
+  record_commit: '3b339a0e6f66f81297d28de17288207981945162',
+  record_sha256: '6c9e723beeba4ad5ba14ba023694c0c11ed29a3ccc9f0da4d577fc084ac70bdb',
+  root: 'p1-candidate/U12-RC3',
+  engine_version: 'E6.1-2026-10-14',
+  transport_version: 'T1.1-2026-10-15',
+  universe_version: 'U12-RC3-2026-10-15',
+  dataset_id: 'U12-RC3-2026-10-15/recommendation_view',
+  path: 'buyer-decision/datasets/U12-RC3-2026-10-15',
+  file_sha256: '15406eabb700ebaa3cbd92989691ce40eed5ccd132c2c953899cda1e750fe550',
+  content_sha256: '36d47933ec697e779eb6bc63a1cac9f32094c605ff96644896837caa2d95b1d8',
+  p2_input_commit: 'fc19238',
 } as const;
 
 const RUNTIME_FILES = ['engine', 'parser', 'copy_i18n', 'presentation_extracted', 'redaction', 'transport', 'schema', 'p5_contract', 'dataset_manifest', 'dataset_view'];

@@ -25,7 +25,18 @@ type Raw = any;
 
 const brandId = (s: string) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const SOURCE_NAME: Record<string, string> = { contactcars: 'ContactCars', egycar: 'EgyCar', hatla2ee: 'Hatla2ee' };
-const srcName = (s: string) => SOURCE_NAME[s?.toLowerCase?.()] ?? s;
+/* Customer-facing source names. P2 issuer/credit strings can carry internal provenance notes (who supplied a list, how it
+   was transcribed); the named issuer is kept exactly, the internal annotation is not shown. Nothing is renamed or inferred. */
+export function customerSource(s: string): string {
+  return s
+    .replace(/^CEO explicit price adjustment to\s+/i, '')
+    .replace(/\s*;\s*CEO-supplied official list/gi, '')
+    .replace(/\s*\((?:CEO-supplied[^)]*)\)/gi, '')
+    .replace(/\s+as listed$/i, '')
+    .replace(/\s*\/\s*official issuer$/i, '')
+    .trim();
+}
+const srcName = (s: string) => SOURCE_NAME[s?.toLowerCase?.()] ?? customerSource(String(s ?? ''));
 const PT: Record<string, Powertrain> = { ICE: 'ice', Hybrid: 'hybrid', HEV: 'hybrid', PHEV: 'phev', REEV: 'reev', BEV: 'ev' };
 
 function official(o: Raw): OfficialPrice {
@@ -100,7 +111,7 @@ function specs(m: Raw): Record<string, SpecValue> {
 export function p2Hero(e: Raw): PublicImage | null {
   const h = e?.accepted?.hero_image ?? e?.hero_image;
   if (!h || typeof h.src !== 'string' || !/^\/media\/[\w./-]+\.(webp|png|jpe?g|avif)$/i.test(h.src) || h.src.includes('..')) return null;
-  return { src: h.src, credit: h.credit ?? h.issuer ?? null, sourcePage: h.source_url ?? h.source_page ?? null, flags: [] as AssetFlag[] };
+  return { src: h.src, credit: (h.credit ?? h.issuer) ? customerSource(String(h.credit ?? h.issuer)) : null, sourcePage: h.source_url ?? h.source_page ?? null, flags: [] as AssetFlag[] };
 }
 
 /* P2 accepted price (RC2 accepted.price). Tier A = official Egypt OEM/importer source; Tier B = the same official EGP list
@@ -180,7 +191,7 @@ export function p2Content(e: Raw): P2Content | null {
   }
   for (const w of (a.specs?.warranty_battery ?? []) as Raw[]) warranty.push({ kind: 'battery', fact: fact(w, e.brand) });
   const gallery = ((a.gallery ?? []) as Raw[]).filter(g => typeof g.src === 'string' && /^\/media\/[\w./-]+\.(webp|png|jpe?g|avif)$/i.test(g.src) && !g.src.includes('..'))
-    .map(g => ({ src: g.src, width: Number(g.width) || null, height: Number(g.height) || null, credit: g.credit ?? null, page: g.page ?? null }));
+    .map(g => ({ src: g.src, width: Number(g.width) || null, height: Number(g.height) || null, credit: g.credit ? customerSource(String(g.credit)) : null, page: g.page ?? null }));
   // Drive links point at the CarIndex working archive (not public); only official public URLs reach customers.
   const brochures = ((a.brochures ?? []) as Raw[]).filter(b => /^https:\/\//.test(b.url ?? '') && !/drive\.google\.com/.test(b.url))
     .map(b => ({ title: String(b.title ?? ''), url: b.url, issuer: String(b.issuer ?? ''),

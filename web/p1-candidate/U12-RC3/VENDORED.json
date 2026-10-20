@@ -1,0 +1,18 @@
+{
+ "record": "P1-RELEASE-U12-RC3",
+ "status": "CANDIDATE \u2014 not released",
+ "record_commit": "3b339a0e6f66f81297d28de17288207981945162",
+ "record_sha256": "6c9e723beeba4ad5ba14ba023694c0c11ed29a3ccc9f0da4d577fc084ac70bdb",
+ "files": [
+  "buyer-decision/app/brief.js",
+  "buyer-decision/app/engine.js",
+  "buyer-decision/app/i18n.js",
+  "buyer-decision/app/present.js",
+  "buyer-decision/app/redact.js",
+  "buyer-decision/datasets/U12-RC3-2026-10-15/manifest.json",
+  "buyer-decision/datasets/U12-RC3-2026-10-15/recommendation_view.json",
+  "buyer-decision/transport/P5-HANDOFF-U12-RC3.md",
+  "buyer-decision/transport/ci.reco.v1.schema.json",
+  "buyer-decision/transport/reco.js"
+ ]
+}

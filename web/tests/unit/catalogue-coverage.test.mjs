@@ -160,3 +160,15 @@ test('M13 spec remap and quarantine: brochure facts only on the model the brochu
  for(const c of V.vehicles().all())for(const f of c.p2?.specs.flatMap(s=>s.facts)??[])assert.ok(!/drive\.google\.com/.test(f.sourceUrl??''),c.id);
  assert.ok(src('geely-ex5-em-i').length>0);
 });
+test('customer-visible source names carry no internal provenance notes; the named issuer is kept',()=>{
+ const bad=/CEO|supplied|official issuer|as listed|_eg_web/i, seen=new Set();
+ for(const c of V.vehicles().all()){
+  const names=[...[...c.trims,...c.otherCohorts.flatMap(o=>o.trims)].flatMap(t=>t.official.sources.map(s=>s.name)),...(c.modelPrice?.sources??[]).map(s=>s.name),
+   ...(c.p2?.specs??[]).flatMap(s=>s.facts.map(f=>f.issuer)),...(c.p2?.warranty??[]).map(w=>w.fact.issuer),c.image?.credit,...(c.p2?.gallery??[]).map(g=>g.credit)].filter(Boolean);
+  for(const n of names){assert.ok(!bad.test(n),`${c.id}: ${n}`);seen.add(n);}
+ }
+ assert.equal(V.customerSource('CEO explicit price adjustment to GB Auto Haval list'),'GB Auto Haval list');
+ assert.equal(V.customerSource('Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)'),'Mercedes-Benz Egypt');
+ assert.equal(V.customerSource('GB Auto official distributor list (CEO-supplied)'),'GB Auto official distributor list');
+ assert.ok(seen.has('GB Auto official distributor list'));
+});

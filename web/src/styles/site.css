@@ -261,7 +261,8 @@ figcaption { font-size: 12px; color: var(--ci-semantic-text-secondary); padding:
 
 /* ---------- compare ---------- */
 .cmp-wrap { overflow-x: auto; border: 1px solid var(--ci-color-line); border-radius: var(--radius-card); }
-table.cmp { border-collapse: separate; border-spacing: 0; min-width: 100%; font-size: 14px; }
+table.cmp { border-collapse: separate; border-spacing: 0; min-width: 100%; width: 100%; table-layout: fixed; font-size: 14px; } /* equal car columns */
+table.cmp thead td:first-child, table.cmp th[scope='row'] { width: 160px; }
 table.cmp th, table.cmp td { padding: 12px 14px; border-block-end: 1px solid var(--ci-color-line); text-align: start; vertical-align: top; min-width: 160px; }
 table.cmp th[scope='row'] { position: sticky; inset-inline-start: 0; background: var(--ci-color-fog); font-weight: 600; font-size: 13px; min-width: 120px; z-index: 1; }
 table.cmp thead th { background: var(--ci-color-white); }
@@ -337,6 +338,9 @@ table.t th.t-num { text-align: end; }
 .fmc .fmc-top, .fmc .fmc-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
 .fmc .fmc-head-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 .fmc .fmc-welcome, .fmc .fmc-question, .fmc .fmc-summary, .fmc .fmc-edit { display: grid; gap: var(--ci-space-4); max-width: 760px; }
+/* Example briefs are full sentences: let them wrap so a long one never widens the page on a phone (layout zoom-out). */
+.fmc .fmc-welcome > * { min-width: 0; }
+.fmc .fmc-welcome .chips .chip { white-space: normal; max-width: 100%; text-align: start; padding-block: 8px; }
 .fmc .fmc-heard { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 .fmc .options { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 .fmc .opt { display: grid; gap: 2px; text-align: start; border: 1px solid var(--ci-color-line); border-radius: var(--radius-card); background: var(--ci-color-white); padding: 14px 16px; font: inherit; cursor: pointer; min-height: 56px; color: var(--ci-color-ink); }

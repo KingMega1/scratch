@@ -14,6 +14,8 @@ export const arModel = (car: Pick<PublicCar, 'model'>) => (isModelCode(car.model
 export function CarName({ car, locale }: { car: PublicCar; locale: Locale }) {
   if (locale === 'ar') {
     const m = arModel(car);
+    // An all-Latin name (no Arabic brand or model name) is one LTR run, so it reads "Arcfox T1", not "T1 Arcfox".
+    if (!car.brand.ar && !m) return <bdi>{car.brand.en} {car.model.en}</bdi>;
     return <>{car.brand.ar ?? <bdi>{car.brand.en}</bdi>} {m ?? <bdi>{car.model.en}</bdi>}</>;
   }
   return <>{car.brand.en} {car.model.en}</>;
