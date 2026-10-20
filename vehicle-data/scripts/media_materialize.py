@@ -46,7 +46,8 @@ def main():
         dst = os.path.join(ROOT, r["local_path"])
         res = dict(asset_id=r["asset_id"], owner=r["owner"], kind=r["kind"], local_path=r["local_path"], url=r["url"])
         try:
-            url, _, frag = r["url"].partition("#xref=")  # brochure image: native image object <xref> of the PDF at url
+            url, _, fragment = r["url"].partition("#")  # strip URL fragment before fetching the source PDF
+            frag = next((part.split("=", 1)[1] for part in fragment.split("&") if part.startswith("xref=")), "")  # accepts #xref=N and #page=P&xref=N
             for i in range(4):  # 429 back-off (Commons rate limits)
                 resp = requests.get(url, headers=UA, timeout=120)
                 if resp.status_code != 429:
