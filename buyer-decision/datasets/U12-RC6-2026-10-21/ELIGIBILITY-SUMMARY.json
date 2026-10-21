@@ -1,0 +1,43 @@
+{
+ "catalogue": 419,
+ "u11_released": 283,
+ "state": {
+  "RECOMMENDABLE": 387,
+  "UNKNOWN_PRICE": 31,
+  "EXCLUDED:p2_discontinued": 1
+ },
+ "recommendable_by_price_basis": {
+  "P2_ACCEPTED": 223,
+  "U11_RELEASED_ONLY": 141,
+  "P2_TIER_A_OFFICIAL_LIST": 23
+ },
+ "recommendable_by_p2_readiness": {
+  "DATA_READY_CANDIDATE_RELEASE_GATE_OPEN": 207,
+  "MISSING_ACCEPTED_DATA": 121,
+  "MISSING_SIZE_EVIDENCE": 29,
+  "CORRECT_POLICY_EXCLUSION": 8,
+  "CONFLICT_OR_UNVERIFIED_EVIDENCE": 8,
+  "(none)": 2,
+  "PRICE_ACCEPTANCE_CANDIDATE": 12
+ },
+ "p2_readiness_by_state": {
+  "DATA_READY_CANDIDATE_RELEASE_GATE_OPEN -> RECOMMENDABLE": 207,
+  "MISSING_ACCEPTED_DATA -> RECOMMENDABLE": 121,
+  "MISSING_SIZE_EVIDENCE -> RECOMMENDABLE": 29,
+  "CORRECT_POLICY_EXCLUSION -> RECOMMENDABLE": 8,
+  "MISSING_ACCEPTED_DATA -> UNKNOWN_PRICE": 26,
+  "CORRECT_POLICY_EXCLUSION -> UNKNOWN_PRICE": 4,
+  "CONFLICT_OR_UNVERIFIED_EVIDENCE -> RECOMMENDABLE": 8,
+  "(none) -> UNKNOWN_PRICE": 1,
+  "MISSING_ACCEPTED_DATA -> EXCLUDED:p2_discontinued": 1,
+  "(none) -> RECOMMENDABLE": 2,
+  "PRICE_ACCEPTANCE_CANDIDATE -> RECOMMENDABLE": 12
+ },
+ "u11_released_now": {
+  "RECOMMENDABLE": 282,
+  "EXCLUDED:p2_discontinued": 1
+ },
+ "models_with_accepted_price": 246,
+ "recommendable": 387,
+ "recommendable_new_vs_u11": 105
+}
