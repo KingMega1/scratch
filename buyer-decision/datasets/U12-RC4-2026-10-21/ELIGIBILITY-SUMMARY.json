@@ -1,0 +1,48 @@
+{
+ "catalogue": 419,
+ "u11_released": 283,
+ "state": {
+  "RECOMMENDABLE": 327,
+  "HELD_NO_SIZE_CLASS": 35,
+  "UNKNOWN_PRICE": 43,
+  "POLICY_SCOPE_coupe": 9,
+  "POLICY_SCOPE_convertible": 3,
+  "EXCLUDED:p2_discontinued": 1,
+  "POLICY_SCOPE_van": 1
+ },
+ "recommendable_by_price_basis": {
+  "P2_ACCEPTED": 204,
+  "U11_RELEASED_ONLY": 104,
+  "P2_TIER_A_OFFICIAL_LIST": 19
+ },
+ "recommendable_by_p2_readiness": {
+  "DATA_READY_CANDIDATE_RELEASE_GATE_OPEN": 207,
+  "MISSING_ACCEPTED_DATA": 104,
+  "CONFLICT_OR_UNVERIFIED_EVIDENCE": 6,
+  "PRICE_ACCEPTANCE_CANDIDATE": 10
+ },
+ "p2_readiness_by_state": {
+  "DATA_READY_CANDIDATE_RELEASE_GATE_OPEN -> RECOMMENDABLE": 207,
+  "MISSING_ACCEPTED_DATA -> RECOMMENDABLE": 104,
+  "MISSING_SIZE_EVIDENCE -> HELD_NO_SIZE_CLASS": 29,
+  "MISSING_ACCEPTED_DATA -> UNKNOWN_PRICE": 42,
+  "CORRECT_POLICY_EXCLUSION -> POLICY_SCOPE_coupe": 9,
+  "CORRECT_POLICY_EXCLUSION -> POLICY_SCOPE_convertible": 3,
+  "CONFLICT_OR_UNVERIFIED_EVIDENCE -> RECOMMENDABLE": 6,
+  "CONFLICT_OR_UNVERIFIED_EVIDENCE -> HELD_NO_SIZE_CLASS": 2,
+  "(none) -> UNKNOWN_PRICE": 1,
+  "MISSING_ACCEPTED_DATA -> EXCLUDED:p2_discontinued": 1,
+  "(none) -> HELD_NO_SIZE_CLASS": 1,
+  "MISSING_ACCEPTED_DATA -> HELD_NO_SIZE_CLASS": 1,
+  "(none) -> POLICY_SCOPE_van": 1,
+  "PRICE_ACCEPTANCE_CANDIDATE -> RECOMMENDABLE": 10,
+  "PRICE_ACCEPTANCE_CANDIDATE -> HELD_NO_SIZE_CLASS": 2
+ },
+ "u11_released_now": {
+  "RECOMMENDABLE": 282,
+  "EXCLUDED:p2_discontinued": 1
+ },
+ "models_with_accepted_price": 246,
+ "recommendable": 327,
+ "recommendable_new_vs_u11": 45
+}

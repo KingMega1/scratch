@@ -48,7 +48,10 @@ for (const [t, lang, id, want] of cases) {
   console.log(`  ${lang} | ${t} -> ${row.ok ? (o.hero && o.hero.id === id ? 'recommended' : 'eligible') : row.why} | ${(o.notices[0] || { text: o.hero ? o.hero.name.text : '' }).text.slice(0, 150)}`);
 }
 // no P2-identified car anywhere in the view resolves to "not on sale"
-const bad = ds.U.models.filter(m => !m.u && E.eligibility(m, { budget: 1e9 }, E.territory({ budget: 1e9 })).reason === 'not_on_sale');
+// except cars P2 records as discontinued (manifest changes.off_sale): for those "not sold new in Egypt" is the truth
+const dir0 = process.argv[2] || path.join(__dirname, '..', 'datasets/U12C2-RC2-2026-10-14');
+const offSale = new Set(((JSON.parse(fs.readFileSync(path.join(dir0, 'manifest.json'), 'utf8')).changes || {}).off_sale) || []);
+const bad = ds.U.models.filter(m => !m.u && !offSale.has(m.id) && E.eligibility(m, { budget: 1e9 }, E.territory({ budget: 1e9 })).reason === 'not_on_sale');
 ok(!bad.length, `market cars still reported as not on sale: ${bad.map(m => m.id).join(', ')}`);
 gaps.forEach(g => console.log('KNOWN DATA GAP ' + g));
 console.log(`named cars: ${n - fails}/${n} checks pass (${ds.universe_version})`);

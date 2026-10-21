@@ -1,3 +1,5 @@
+> **Superseded by `P5-HANDOFF-U12-RC4.md`.**
+
 # P1 → P5 consumption contract and release gate — U12-RC3
 
 Owner: P1. Record: `buyer-decision/release/P1-RELEASE-U12-RC3.json`. Supersedes `P5-HANDOFF-U12C2-RC2.md`.

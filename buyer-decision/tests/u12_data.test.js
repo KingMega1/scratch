@@ -13,7 +13,9 @@ const elig = (m, b) => E.eligibility(m, E.normalizeBrief({ budget: 1e9, budgetMo
 
 // 1. no unpriced model is recommendable; every U11 universe model is still in the universe
 for (const m of M) if (m.u && !E.currentTrims(m).length) ok(elig(m, {}).status !== 'eligible', `${m.id}: unpriced but eligible`);
-ok(U11.filter(m => m.u).every(m => by[m.id] && by[m.id].u && by[m.id].trims.length), 'a U11 universe model left the universe');
+const offSale = new Set(man.changes.off_sale || []); // P2/CEO model-status decision "discontinued"
+ok(U11.filter(m => m.u && !offSale.has(m.id)).every(m => by[m.id] && by[m.id].u && by[m.id].trims.length), 'a U11 universe model left the universe');
+for (const id of offSale) ok(by[id] && !by[id].u && !by[id].held, `${id}: P2-discontinued car must be off sale`);
 
 // 2. EX5 Electric and EX5 EM-i are separate identities with disjoint versions and powertrains
 const ex5 = by['geely/ex5'], emi = by['geely/ex5-em-i'];
