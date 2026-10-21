@@ -1,0 +1,72 @@
+{
+ "schema": "carindex.p2.p1-release-handoff/v1",
+ "date": "2026-10-21",
+ "canonical_file": "vehicle-data/views/canonical_u11.json",
+ "canonical_sha256": "e7058234c78767b839d0dcf4b32864200f6348032d7234455bcd9ca5118c64f6",
+ "previous_canonical_sha256": "dae11c2b434adf2ebfe24e5f0599a54542f22585c1c73a84838771f1589407fd",
+ "compatibility": {
+  "top_level_keys_equal": true,
+  "model_keys_equal": true,
+  "models_before": 416,
+  "models_after": 419,
+  "p1_ids_preserved": true,
+  "model_ids_unchanged": true,
+  "u11_283_unchanged": true
+ },
+ "counts_283": {
+  "brochure_accepted": 81,
+  "fully_enriched": 39,
+  "gallery_models": 70,
+  "hero_accepted": 82,
+  "hero_accepted_hq": 78,
+  "hero_limited_archive": 125,
+  "id_accepted": 283,
+  "logo_accepted": 248,
+  "market_status_official": 37,
+  "models": 283,
+  "price_accepted": 204,
+  "price_source_dated": 153,
+  "price_tier_a": 98,
+  "specs_accepted": 201,
+  "warranty_accepted": 108
+ },
+ "counts_market_universe": {
+  "brochure_accepted": 82,
+  "fully_enriched": 39,
+  "gallery_models": 73,
+  "hero_accepted": 85,
+  "hero_accepted_hq": 81,
+  "hero_limited_archive": 125,
+  "id_accepted": 419,
+  "logo_accepted": 350,
+  "market_status_official": 38,
+  "models": 419,
+  "price_accepted": 247,
+  "price_source_dated": 189,
+  "price_tier_a": 119,
+  "specs_accepted": 244,
+  "warranty_accepted": 133
+ },
+ "coverage": {
+  "before": {
+   "commit": "773a8f3",
+   "release_sha256": "37d3440708b6c1b6b00f2b806bf6149dbc74629e66ae8d5768c6193855099dc7",
+   "models": 416,
+   "priced": 221,
+   "priced_tier_a": 76,
+   "priced_283": 186
+  },
+  "after": {
+   "release_sha256": "c09fc01c893bd48ae184d735bef5fd83a1968f6becc3734dab7084d86ec58d35",
+   "models": 419,
+   "priced": 247,
+   "priced_tier_a": 119,
+   "priced_283": 204
+  }
+ },
+ "p1_eligibility": "unchanged: 3 new identities are P2 market additions outside U11 283",
+ "ledger": "vehicle-data/review/oct21_price_ledger.csv",
+ "warranty_ledger": "vehicle-data/review/oct21_warranty_ledger.csv",
+ "missing_price_priority": "vehicle-data/review/oct21_missing_price_priority.csv",
+ "supersession_history": "vehicle-data/review/price_supersession_history.csv"
+}

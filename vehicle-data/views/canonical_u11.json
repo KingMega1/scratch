@@ -10,11 +10,11 @@
   "logo_accepted": 248,
   "market_status_official": 37,
   "models": 283,
-  "price_accepted": 186,
-  "price_source_dated": 134,
-  "price_tier_a": 66,
+  "price_accepted": 204,
+  "price_source_dated": 153,
+  "price_tier_a": 98,
   "specs_accepted": 201,
-  "warranty_accepted": 100
+  "warranty_accepted": 108
  },
  "counts_market_universe": {
   "brochure_accepted": 82,
@@ -23,15 +23,15 @@
   "hero_accepted": 85,
   "hero_accepted_hq": 81,
   "hero_limited_archive": 125,
-  "id_accepted": 416,
-  "logo_accepted": 347,
+  "id_accepted": 419,
+  "logo_accepted": 350,
   "market_status_official": 38,
-  "models": 416,
-  "price_accepted": 221,
-  "price_source_dated": 163,
-  "price_tier_a": 76,
+  "models": 419,
+  "price_accepted": 247,
+  "price_source_dated": 189,
+  "price_tier_a": 119,
   "specs_accepted": 244,
-  "warranty_accepted": 121
+  "warranty_accepted": 133
  },
  "generated_as_of": "2026-10-21",
  "inputs": {
@@ -12347,38 +12347,38 @@
    "p1_id": "chery/tiggo-8-pro",
    "price": {
     "as_of": "2026-10-21",
-    "date_basis": "SOURCE_STATED",
-    "effective_date": "2025-08-03",
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/chery/Tiggo-8-Pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro/year-2026",
-    "issuer": "ContactCars+Hatla2ee",
-    "model_year": 2026,
+    "date_basis": "OBSERVED",
+    "effective_date": null,
+    "evidence_url": "https://drive.google.com/file/d/17ZnNOxe5FXREfuuRD9gbqXWZcPl0gZl8/view",
+    "issuer": "GB Auto official distributor list (CEO-supplied)",
+    "model_year": 2025,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 1375000,
-    "tier": "B",
+    "price_from": 1365000,
+    "tier": "A",
     "trims": [
      {
       "as_of": "2026-10-21",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2025-08-03",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/chery/Tiggo-8-Pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro/year-2026",
-      "issuer": "ContactCars+Hatla2ee",
-      "label": "Luxury",
-      "model_year": 2026,
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/17ZnNOxe5FXREfuuRD9gbqXWZcPl0gZl8/view",
+      "issuer": "GB Auto official distributor list (CEO-supplied)",
+      "label": "1.6T 6DCT Luxury",
+      "model_year": 2025,
       "powertrain": "Petrol",
-      "price_egp": 1375000,
-      "tier": "B"
+      "price_egp": 1365000,
+      "tier": "A"
      },
      {
       "as_of": "2026-10-21",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2025-08-03",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/chery/Tiggo-8-Pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro/year-2026",
-      "issuer": "ContactCars+Hatla2ee",
-      "label": "Flagship",
-      "model_year": 2026,
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/17ZnNOxe5FXREfuuRD9gbqXWZcPl0gZl8/view",
+      "issuer": "GB Auto official distributor list (CEO-supplied)",
+      "label": "1.6T 6DCT Flagship",
+      "model_year": 2025,
       "powertrain": "Petrol",
-      "price_egp": 1475000,
-      "tier": "B"
+      "price_egp": 1465000,
+      "tier": "A"
      }
     ]
    },
@@ -15732,9 +15732,21 @@
     "issuer": "GB Auto official distributor list (CEO-supplied)",
     "model_year": 2027,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 1775000,
+    "price_from": 1625000,
     "tier": "A",
     "trims": [
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/1FwcH0hjcZY2Xw4VfZNr1iaMy7hKMJRrn/view?usp=drivesdk",
+      "issuer": "GB Auto official distributor list (CEO-supplied)",
+      "label": "SUV REEV",
+      "model_year": 2027,
+      "powertrain": "Electric",
+      "price_egp": 1625000,
+      "tier": "A"
+     },
      {
       "as_of": "2026-10-15",
       "date_basis": "OBSERVED",
@@ -15932,9 +15944,21 @@
     "issuer": "GB Auto official distributor list (CEO-supplied)",
     "model_year": 2026,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 2015000,
+    "price_from": 1925000,
     "tier": "A",
     "trims": [
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/1FwcH0hjcZY2Xw4VfZNr1iaMy7hKMJRrn/view?usp=drivesdk",
+      "issuer": "GB Auto official distributor list (CEO-supplied)",
+      "label": "SUV REEV",
+      "model_year": 2026,
+      "powertrain": "Electric",
+      "price_egp": 1925000,
+      "tier": "A"
+     },
      {
       "as_of": "2026-10-15",
       "date_basis": "OBSERVED",
@@ -18905,7 +18929,6 @@
    ],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
     "GENERATION_UNKNOWN"
@@ -18932,7 +18955,43 @@
    "model": "S7",
    "model_id": "m_000121",
    "p1_id": "forthing/s7",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-21",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
+    "evidence_url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
+    "issuer": "AYM (Forthing distributor) price list (CEO-supplied)",
+    "model_year": 2027,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 1320000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
+      "issuer": "AYM (Forthing distributor) price list (CEO-supplied)",
+      "label": "EV Exclusive",
+      "model_year": 2027,
+      "powertrain": "Electric",
+      "price_egp": 1320000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
+      "issuer": "AYM (Forthing distributor) price list (CEO-supplied)",
+      "label": "REEV Exclusive",
+      "model_year": 2027,
+      "powertrain": "Electric",
+      "price_egp": 1400000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 6,
    "site_slug": "forthing-s7",
    "size_class": {
@@ -19063,6 +19122,13 @@
    "universe": "U11_283",
    "warranty": [
     {
+     "applicability": "all trims (AYM price list)",
+     "issuer": "AYM",
+     "source": "drive:1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    },
+    {
      "applicability": "market trim pages: model",
      "issuer": "ContactCars+Hatla2ee",
      "source": "https://www.contactcars.com/en/new-cars/forthing-s7/0d6041f22452",
@@ -19077,12 +19143,10 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -19095,7 +19159,40 @@
    "model": "T5",
    "model_id": "m_000122",
    "p1_id": "forthing/t5",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-21",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
+    "evidence_url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
+    "issuer": "AYM (Forthing distributor) price list (CEO-supplied)",
+    "model_year": 2027,
+    "price_from": 1410000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
+      "issuer": "AYM (Forthing distributor) price list (CEO-supplied)",
+      "label": "EV Exclusive",
+      "model_year": 2027,
+      "price_egp": 1410000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
+      "issuer": "AYM (Forthing distributor) price list (CEO-supplied)",
+      "label": "REEV Exclusive",
+      "model_year": 2027,
+      "price_egp": 1420000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 3,
    "site_slug": "forthing-t5",
    "size_class": {
@@ -19106,7 +19203,15 @@
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "all trims (AYM price list)",
+     "issuer": "AYM",
+     "source": "drive:1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Forthing",
@@ -19122,7 +19227,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
     "GENERATION_UNKNOWN"
@@ -19137,7 +19241,29 @@
    "model": "T5 Evo",
    "model_id": "m_000123",
    "p1_id": "forthing/t5-evo",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-21",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
+    "evidence_url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
+    "issuer": "AYM (Forthing distributor) price list (CEO-supplied)",
+    "model_year": 2027,
+    "price_from": 1220000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
+      "issuer": "AYM (Forthing distributor) price list (CEO-supplied)",
+      "label": "Exclusive",
+      "model_year": 2027,
+      "price_egp": 1220000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 4,
    "site_slug": "forthing-t5-evo",
    "size_class": {
@@ -19259,6 +19385,13 @@
    "universe": "U11_283",
    "warranty": [
     {
+     "applicability": "all trims (AYM price list)",
+     "issuer": "AYM",
+     "source": "drive:1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    },
+    {
      "applicability": "model page",
      "issuer": "forthing-egypt.com",
      "source": "https://forthing-egypt.com/brochure/T5-EVO-Brochure.pdf",
@@ -19276,11 +19409,9 @@
    ],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -19305,7 +19436,31 @@
    "model": "U-Tour",
    "model_id": "m_000124",
    "p1_id": "forthing/u-tour",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-21",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
+    "evidence_url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
+    "issuer": "AYM (Forthing distributor) price list (CEO-supplied)",
+    "model_year": 2027,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 1620000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
+      "issuer": "AYM (Forthing distributor) price list (CEO-supplied)",
+      "label": "Exclusive",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 1620000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 2,
    "site_slug": "forthing-u-tour",
    "size_class": {
@@ -19407,7 +19562,15 @@
    },
    "specs_accepted": true,
    "universe": "U11_283",
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "all trims (AYM price list)",
+     "issuer": "AYM",
+     "source": "drive:1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Forthing",
@@ -19415,11 +19578,9 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -19444,7 +19605,29 @@
    "model": "V9",
    "model_id": "m_000125",
    "p1_id": "forthing/v9",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-21",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
+    "evidence_url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
+    "issuer": "AYM (Forthing distributor) price list (CEO-supplied)",
+    "model_year": 2027,
+    "price_from": 2650000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
+      "issuer": "AYM (Forthing distributor) price list (CEO-supplied)",
+      "label": "Exclusive",
+      "model_year": 2027,
+      "price_egp": 2650000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 3,
    "site_slug": "forthing-v9",
    "size_class": {
@@ -19546,7 +19729,15 @@
    },
    "specs_accepted": true,
    "universe": "U11_283",
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "all trims (AYM price list)",
+     "issuer": "AYM",
+     "source": "drive:1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "GAC",
@@ -19654,74 +19845,50 @@
    "p1_id": "gac/empow",
    "price": {
     "as_of": "2026-10-21",
-    "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-10-19",
-    "evidence_url": "https://www.contactcars.com/en/new-cars/gac-empow/year-2027 | https://www.egy-car.com/gac-empow",
-    "issuer": "ContactCars+EgyCar",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
+    "evidence_url": "https://drive.google.com/file/d/15gPWlIzEIUazoWR41ShvPoxwzud9dq6R/view",
+    "issuer": "Jameel Motors (GAC distributor) price list (CEO-supplied)",
     "model_year": 2027,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 1095000,
-    "tier": "B",
+    "tier": "A",
     "trims": [
      {
       "as_of": "2026-10-21",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-19",
-      "evidence_url": "https://www.contactcars.com/en/new-cars/gac-empow/year-2027 | https://www.egy-car.com/gac-empow",
-      "issuer": "ContactCars+EgyCar",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/15gPWlIzEIUazoWR41ShvPoxwzud9dq6R/view",
+      "issuer": "Jameel Motors (GAC distributor) price list (CEO-supplied)",
       "label": "Elegance",
       "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 1095000,
-      "tier": "B"
+      "tier": "A"
      },
      {
       "as_of": "2026-10-21",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-19",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/gac/Empow | https://www.contactcars.com/en/new-cars/gac-empow/year-2027 | https://www.egy-car.com/gac-empow",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
-      "label": "Elegance",
-      "model_year": 2027,
-      "powertrain": "Petrol",
-      "price_egp": 1095000,
-      "tier": "B"
-     },
-     {
-      "as_of": "2026-10-21",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-19",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/gac/Empow | https://www.contactcars.com/en/new-cars/gac-empow/year-2027",
-      "issuer": "ContactCars+Hatla2ee",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/15gPWlIzEIUazoWR41ShvPoxwzud9dq6R/view",
+      "issuer": "Jameel Motors (GAC distributor) price list (CEO-supplied)",
       "label": "Premium",
       "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 1214000,
-      "tier": "B"
+      "tier": "A"
      },
      {
       "as_of": "2026-10-21",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-19",
-      "evidence_url": "https://www.contactcars.com/en/new-cars/gac-empow/year-2027 | https://www.egy-car.com/gac-empow",
-      "issuer": "ContactCars+EgyCar",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/15gPWlIzEIUazoWR41ShvPoxwzud9dq6R/view",
+      "issuer": "Jameel Motors (GAC distributor) price list (CEO-supplied)",
       "label": "S-Style",
       "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 1320000,
-      "tier": "B"
-     },
-     {
-      "as_of": "2026-10-21",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-19",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/gac/Empow | https://www.contactcars.com/en/new-cars/gac-empow/year-2027 | https://www.egy-car.com/gac-empow",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
-      "label": "S-Style",
-      "model_year": 2027,
-      "powertrain": "Petrol",
-      "price_egp": 1320000,
-      "tier": "B"
+      "tier": "A"
      }
     ]
    },
@@ -19846,6 +20013,13 @@
    "universe": "U11_283",
    "warranty": [
     {
+     "applicability": "all trims (Jameel Motors price list)",
+     "issuer": "Jameel Motors",
+     "source": "drive:15gPWlIzEIUazoWR41ShvPoxwzud9dq6R",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    },
+    {
      "applicability": "market trim pages: model",
      "issuer": "ContactCars+Hatla2ee",
      "source": "https://www.contactcars.com/en/new-cars/gac-empow/1a572e19abee | https://www.contactcars.com/en/new-cars/gac-empow/2337ad7d2484 | https://www.contactcars.com/en/new-cars/gac-empow/606ea55e8437",
@@ -19860,11 +20034,9 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -19901,7 +20073,62 @@
    "model": "EMZOOM",
    "model_id": "m_000128",
    "p1_id": "gac/emzoom",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-21",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
+    "evidence_url": "https://drive.google.com/file/d/15gPWlIzEIUazoWR41ShvPoxwzud9dq6R/view",
+    "issuer": "Jameel Motors (GAC distributor) price list (CEO-supplied)",
+    "model_year": 2027,
+    "price_from": 1014000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/15gPWlIzEIUazoWR41ShvPoxwzud9dq6R/view",
+      "issuer": "Jameel Motors (GAC distributor) price list (CEO-supplied)",
+      "label": "Comfort",
+      "model_year": 2027,
+      "price_egp": 1014000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/15gPWlIzEIUazoWR41ShvPoxwzud9dq6R/view",
+      "issuer": "Jameel Motors (GAC distributor) price list (CEO-supplied)",
+      "label": "Elegance",
+      "model_year": 2027,
+      "price_egp": 1129000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/15gPWlIzEIUazoWR41ShvPoxwzud9dq6R/view",
+      "issuer": "Jameel Motors (GAC distributor) price list (CEO-supplied)",
+      "label": "Premium",
+      "model_year": 2027,
+      "price_egp": 1214000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/15gPWlIzEIUazoWR41ShvPoxwzud9dq6R/view",
+      "issuer": "Jameel Motors (GAC distributor) price list (CEO-supplied)",
+      "label": "R-Style",
+      "model_year": 2027,
+      "price_egp": 1320000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 8,
    "site_slug": "gac-emzoom",
    "size_class": {
@@ -19912,7 +20139,15 @@
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "all trims (Jameel Motors price list)",
+     "issuer": "Jameel Motors",
+     "source": "drive:15gPWlIzEIUazoWR41ShvPoxwzud9dq6R",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "GAC",
@@ -20103,26 +20338,26 @@
    "p1_id": "gac/gs4-max",
    "price": {
     "as_of": "2026-10-21",
-    "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-10-19",
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/gac/GS4+max | https://www.contactcars.com/en/new-cars/gac-gs4_max/year-2027 | https://www.egy-car.com/gac-gs4-max",
-    "issuer": "ContactCars+EgyCar+Hatla2ee",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
+    "evidence_url": "https://drive.google.com/file/d/15gPWlIzEIUazoWR41ShvPoxwzud9dq6R/view",
+    "issuer": "Jameel Motors (GAC distributor) price list (CEO-supplied)",
     "model_year": 2027,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 1350000,
-    "tier": "B",
+    "tier": "A",
     "trims": [
      {
       "as_of": "2026-10-21",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-19",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/gac/GS4+max | https://www.contactcars.com/en/new-cars/gac-gs4_max/year-2027 | https://www.egy-car.com/gac-gs4-max",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/15gPWlIzEIUazoWR41ShvPoxwzud9dq6R/view",
+      "issuer": "Jameel Motors (GAC distributor) price list (CEO-supplied)",
       "label": "Premium",
       "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 1350000,
-      "tier": "B"
+      "tier": "A"
      }
     ]
    },
@@ -20247,6 +20482,13 @@
    "universe": "U11_283",
    "warranty": [
     {
+     "applicability": "all trims (Jameel Motors price list)",
+     "issuer": "Jameel Motors",
+     "source": "drive:15gPWlIzEIUazoWR41ShvPoxwzud9dq6R",
+     "unit": "",
+     "value": "5 years / 150000 km"
+    },
+    {
      "applicability": "market trim pages: model",
      "issuer": "ContactCars+Hatla2ee",
      "source": "https://www.contactcars.com/en/new-cars/gac-gs4_max/a4b7bf21eae9",
@@ -20269,7 +20511,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_VERIFIED_HERO_IMAGE",
     "GENERATION_UNKNOWN"
    ],
@@ -20307,7 +20548,55 @@
    "model": "City Ray",
    "model_id": "m_000131",
    "p1_id": "geely/city-ray",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-18",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-18",
+    "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+    "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+    "model_year": 2027,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 1249000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+      "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+      "label": "Comfort GL",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 1249000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+      "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+      "label": "Premium GK",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 1329000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+      "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+      "label": "Sport GF Plus",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 1399000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 9,
    "site_slug": "geely-city-ray",
    "size_class": {
@@ -20469,7 +20758,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
     "NO_VERIFIED_HERO_IMAGE",
     "GENERATION_UNKNOWN"
@@ -20508,7 +20796,51 @@
    "model": "Cool Ray",
    "model_id": "m_000132",
    "p1_id": "geely/cool-ray",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-18",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-18",
+    "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+    "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+    "model_year": 2027,
+    "price_from": 975000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+      "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+      "label": "Comfort GL",
+      "model_year": 2027,
+      "price_egp": 975000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+      "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+      "label": "Premium GK",
+      "model_year": 2027,
+      "price_egp": 1075000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+      "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+      "label": "Sport GF Plus",
+      "model_year": 2027,
+      "price_egp": 1199000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 12,
    "site_slug": "geely-cool-ray",
    "size_class": {
@@ -20603,7 +20935,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
@@ -20642,7 +20973,40 @@
    "model": "EX2",
    "model_id": "m_000134",
    "p1_id": "geely/ex2",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-18",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-18",
+    "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+    "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+    "model_year": 2027,
+    "price_from": 789900,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+      "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+      "label": "Pro",
+      "model_year": 2027,
+      "price_egp": 789900,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+      "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+      "label": "Max",
+      "model_year": 2027,
+      "price_egp": 899900,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 4,
    "site_slug": "geely-ex2",
    "size_class": {
@@ -20904,7 +21268,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
@@ -20943,7 +21306,55 @@
    "model": "EX5",
    "model_id": "m_000135",
    "p1_id": "geely/ex5",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-18",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-18",
+    "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+    "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+    "model_year": 2027,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 1419900,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+      "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+      "label": "Pro",
+      "model_year": 2027,
+      "powertrain": "Electric",
+      "price_egp": 1419900,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+      "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+      "label": "Max",
+      "model_year": 2027,
+      "powertrain": "Electric",
+      "price_egp": 1499900,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+      "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+      "label": "Max Plus",
+      "model_year": 2027,
+      "powertrain": "Electric",
+      "price_egp": 1569900,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 6,
    "site_slug": "geely-ex5",
    "size_class": {
@@ -21181,27 +21592,63 @@
    "model_id": "m_000137",
    "p1_id": "geely/monjaro",
    "price": {
-    "as_of": "2026-10-21",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/Monjaro | https://www.contactcars.com/en/new-cars/geely-monjaro/year-2027",
-    "issuer": "ContactCars+Hatla2ee",
+    "as_of": "2026-10-18",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-18",
+    "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+    "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
     "model_year": 2027,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 1699000,
-    "tier": "B",
+    "price_from": 1699900,
+    "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-21",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/Monjaro | https://www.contactcars.com/en/new-cars/geely-monjaro/year-2027",
-      "issuer": "ContactCars+Hatla2ee",
-      "label": "EM-i Max",
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+      "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+      "label": "Pro",
       "model_year": 2027,
       "powertrain": "Plug-in hybrid",
-      "price_egp": 1699000,
-      "tier": "B"
+      "price_egp": 1699900,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+      "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+      "label": "Max",
+      "model_year": 2027,
+      "powertrain": "Plug-in hybrid",
+      "price_egp": 1790900,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+      "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+      "label": "Ultra AWD",
+      "model_year": 2027,
+      "powertrain": "Plug-in hybrid",
+      "price_egp": 1949900,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+      "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+      "label": "Ultra Plus AWD",
+      "model_year": 2027,
+      "powertrain": "Plug-in hybrid",
+      "price_egp": 1999900,
+      "tier": "A"
      }
     ]
    },
@@ -21976,38 +22423,38 @@
    "model_id": "m_000145",
    "p1_id": "haval/h6",
    "price": {
-    "as_of": "2026-10-15",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
-    "evidence_url": "https://drive.google.com/file/d/1yQHbewS1RY4U4EJzMmWDxaTJ8u7CUOfv/view?usp=drivesdk",
-    "issuer": "CEO explicit price adjustment to GB Auto Haval list",
+    "as_of": "2026-10-14",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-14",
+    "evidence_url": "https://drive.google.com/file/d/1a1v31tnZrp5olxB8LkTXchXLfiWU4N90/view",
+    "issuer": "GB Auto official distributor list (CEO-supplied)",
     "model_year": 2026,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 1320000,
+    "price_from": 1310000,
     "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-15",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://drive.google.com/file/d/1yQHbewS1RY4U4EJzMmWDxaTJ8u7CUOfv/view?usp=drivesdk",
-      "issuer": "CEO explicit price adjustment to GB Auto Haval list",
+      "as_of": "2026-10-14",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-14",
+      "evidence_url": "https://drive.google.com/file/d/1a1v31tnZrp5olxB8LkTXchXLfiWU4N90/view",
+      "issuer": "GB Auto official distributor list (CEO-supplied)",
       "label": "1.5T 7DCT Platinum",
       "model_year": 2026,
       "powertrain": "Petrol",
-      "price_egp": 1320000,
+      "price_egp": 1310000,
       "tier": "A"
      },
      {
-      "as_of": "2026-10-15",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://drive.google.com/file/d/1yQHbewS1RY4U4EJzMmWDxaTJ8u7CUOfv/view?usp=drivesdk",
-      "issuer": "CEO explicit price adjustment to GB Auto Haval list",
+      "as_of": "2026-10-14",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-14",
+      "evidence_url": "https://drive.google.com/file/d/1a1v31tnZrp5olxB8LkTXchXLfiWU4N90/view",
+      "issuer": "GB Auto official distributor list (CEO-supplied)",
       "label": "1.5T 7DCT Ultra",
       "model_year": 2026,
       "powertrain": "Petrol",
-      "price_egp": 1510000,
+      "price_egp": 1500000,
       "tier": "A"
      }
     ]
@@ -22190,26 +22637,26 @@
    "model_id": "m_000022",
    "p1_id": "haval/h7",
    "price": {
-    "as_of": "2026-10-15",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
-    "evidence_url": "https://drive.google.com/file/d/1yQHbewS1RY4U4EJzMmWDxaTJ8u7CUOfv/view?usp=drivesdk",
-    "issuer": "CEO explicit price adjustment to GB Auto Haval list",
+    "as_of": "2026-10-14",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-14",
+    "evidence_url": "https://drive.google.com/file/d/1a1v31tnZrp5olxB8LkTXchXLfiWU4N90/view",
+    "issuer": "GB Auto official distributor list (CEO-supplied)",
     "model_year": 2027,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 1755000,
+    "price_from": 1740000,
     "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-15",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://drive.google.com/file/d/1yQHbewS1RY4U4EJzMmWDxaTJ8u7CUOfv/view?usp=drivesdk",
-      "issuer": "CEO explicit price adjustment to GB Auto Haval list",
+      "as_of": "2026-10-14",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-14",
+      "evidence_url": "https://drive.google.com/file/d/1a1v31tnZrp5olxB8LkTXchXLfiWU4N90/view",
+      "issuer": "GB Auto official distributor list (CEO-supplied)",
       "label": "1.5T 2DHT HEV Ultra Black Edition",
       "model_year": 2027,
       "powertrain": "Hybrid",
-      "price_egp": 1755000,
+      "price_egp": 1740000,
       "tier": "A"
      }
     ]
@@ -22407,50 +22854,50 @@
    "model_id": "m_000146",
    "p1_id": "haval/jolion",
    "price": {
-    "as_of": "2026-10-15",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
-    "evidence_url": "https://drive.google.com/file/d/1yQHbewS1RY4U4EJzMmWDxaTJ8u7CUOfv/view?usp=drivesdk",
-    "issuer": "CEO explicit price adjustment to GB Auto Haval list",
+    "as_of": "2026-10-14",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-14",
+    "evidence_url": "https://drive.google.com/file/d/1a1v31tnZrp5olxB8LkTXchXLfiWU4N90/view",
+    "issuer": "GB Auto official distributor list (CEO-supplied)",
     "model_year": 2027,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 1014000,
+    "price_from": 999000,
     "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-15",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://drive.google.com/file/d/1yQHbewS1RY4U4EJzMmWDxaTJ8u7CUOfv/view?usp=drivesdk",
-      "issuer": "CEO explicit price adjustment to GB Auto Haval list",
+      "as_of": "2026-10-14",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-14",
+      "evidence_url": "https://drive.google.com/file/d/1a1v31tnZrp5olxB8LkTXchXLfiWU4N90/view",
+      "issuer": "GB Auto official distributor list (CEO-supplied)",
       "label": "1.5T 7DCT Standard",
       "model_year": 2027,
       "powertrain": "Petrol",
-      "price_egp": 1014000,
+      "price_egp": 999000,
       "tier": "A"
      },
      {
-      "as_of": "2026-10-15",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://drive.google.com/file/d/1yQHbewS1RY4U4EJzMmWDxaTJ8u7CUOfv/view?usp=drivesdk",
-      "issuer": "CEO explicit price adjustment to GB Auto Haval list",
+      "as_of": "2026-10-14",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-14",
+      "evidence_url": "https://drive.google.com/file/d/1a1v31tnZrp5olxB8LkTXchXLfiWU4N90/view",
+      "issuer": "GB Auto official distributor list (CEO-supplied)",
       "label": "1.5T 7DCT Deluxe",
       "model_year": 2027,
       "powertrain": "Petrol",
-      "price_egp": 1075000,
+      "price_egp": 1055000,
       "tier": "A"
      },
      {
-      "as_of": "2026-10-15",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://drive.google.com/file/d/1yQHbewS1RY4U4EJzMmWDxaTJ8u7CUOfv/view?usp=drivesdk",
-      "issuer": "CEO explicit price adjustment to GB Auto Haval list",
+      "as_of": "2026-10-14",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-14",
+      "evidence_url": "https://drive.google.com/file/d/1a1v31tnZrp5olxB8LkTXchXLfiWU4N90/view",
+      "issuer": "GB Auto official distributor list (CEO-supplied)",
       "label": "1.5T 7DCT High Deluxe",
       "model_year": 2027,
       "powertrain": "Petrol",
-      "price_egp": 1175000,
+      "price_egp": 1155000,
       "tier": "A"
      }
     ]
@@ -25121,11 +25568,9 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -25162,7 +25607,29 @@
    "model": "J7",
    "model_id": "m_000162",
    "p1_id": "jac/j7",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-06",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-06",
+    "evidence_url": "https://drive.google.com/file/d/19-6uc16A04WD6A5ZAIfgo1pq6VYcQOM5/view",
+    "issuer": "Kasrawy Group (JAC distributor) price list (CEO-supplied)",
+    "model_year": 2026,
+    "price_from": 1039000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-06",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-06",
+      "evidence_url": "https://drive.google.com/file/d/19-6uc16A04WD6A5ZAIfgo1pq6VYcQOM5/view",
+      "issuer": "Kasrawy Group (JAC distributor) price list (CEO-supplied)",
+      "label": "Ultimate",
+      "model_year": 2026,
+      "price_egp": 1039000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 5,
    "site_slug": "jac-j7",
    "size_class": {
@@ -25173,7 +25640,15 @@
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "all trims (Kasrawy Group price list)",
+     "issuer": "Kasrawy Group",
+     "source": "drive:19-6uc16A04WD6A5ZAIfgo1pq6VYcQOM5",
+     "unit": "",
+     "value": "6 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "JAC",
@@ -25183,7 +25658,6 @@
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -25221,39 +25695,39 @@
    "model_id": "m_000163",
    "p1_id": "jac/js6",
    "price": {
-    "as_of": "2026-10-21",
+    "as_of": "2026-10-06",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-10-07",
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/jac/JS6 | https://www.contactcars.com/en/new-cars/jac-js6/year-2026 | https://www.egy-car.com/jac-js6",
-    "issuer": "ContactCars+EgyCar+Hatla2ee",
-    "model_year": 2026,
+    "effective_date": "2026-10-06",
+    "evidence_url": "https://drive.google.com/file/d/19-6uc16A04WD6A5ZAIfgo1pq6VYcQOM5/view",
+    "issuer": "Kasrawy Group (JAC distributor) price list (CEO-supplied)",
+    "model_year": 2027,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 1240000,
-    "tier": "B",
+    "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-21",
+      "as_of": "2026-10-06",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-07",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/jac/JS6 | https://www.contactcars.com/en/new-cars/jac-js6/year-2026 | https://www.egy-car.com/jac-js6",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
+      "effective_date": "2026-10-06",
+      "evidence_url": "https://drive.google.com/file/d/19-6uc16A04WD6A5ZAIfgo1pq6VYcQOM5/view",
+      "issuer": "Kasrawy Group (JAC distributor) price list (CEO-supplied)",
       "label": "Limited",
-      "model_year": 2026,
+      "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 1240000,
-      "tier": "B"
+      "tier": "A"
      },
      {
-      "as_of": "2026-10-21",
+      "as_of": "2026-10-06",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-07",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/jac/JS6 | https://www.contactcars.com/en/new-cars/jac-js6/year-2026 | https://www.egy-car.com/jac-js6",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
+      "effective_date": "2026-10-06",
+      "evidence_url": "https://drive.google.com/file/d/19-6uc16A04WD6A5ZAIfgo1pq6VYcQOM5/view",
+      "issuer": "Kasrawy Group (JAC distributor) price list (CEO-supplied)",
       "label": "Flagship",
-      "model_year": 2026,
+      "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 1290000,
-      "tier": "B"
+      "tier": "A"
      }
     ]
    },
@@ -25367,7 +25841,15 @@
    },
    "specs_accepted": true,
    "universe": "U11_283",
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "all trims (Kasrawy Group price list)",
+     "issuer": "Kasrawy Group",
+     "source": "drive:19-6uc16A04WD6A5ZAIfgo1pq6VYcQOM5",
+     "unit": "",
+     "value": "6 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "JAC",
@@ -25383,7 +25865,6 @@
     "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -25549,7 +26030,15 @@
    },
    "specs_accepted": true,
    "universe": "U11_283",
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "all trims (Kasrawy Group price list)",
+     "issuer": "Kasrawy Group",
+     "source": "drive:19-6uc16A04WD6A5ZAIfgo1pq6VYcQOM5",
+     "unit": "",
+     "value": "6 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "JAC",
@@ -27646,7 +28135,6 @@
    ],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "GENERATION_UNKNOWN"
@@ -27685,7 +28173,43 @@
    "model": "Actyon",
    "model_id": "m_000174",
    "p1_id": "kgm/actyon",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-19",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-19",
+    "evidence_url": "https://drive.google.com/file/d/1-KjWiZZ-j9QHw0pLMrgYf4rCEe9X2KJ5/view",
+    "issuer": "Arabiat Egypt (KGM distributor) price list (CEO-supplied)",
+    "model_year": 2026,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 1950000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-19",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-19",
+      "evidence_url": "https://drive.google.com/file/d/1-KjWiZZ-j9QHw0pLMrgYf4rCEe9X2KJ5/view",
+      "issuer": "Arabiat Egypt (KGM distributor) price list (CEO-supplied)",
+      "label": "Highline",
+      "model_year": 2026,
+      "powertrain": "Petrol",
+      "price_egp": 1950000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-19",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-19",
+      "evidence_url": "https://drive.google.com/file/d/1-KjWiZZ-j9QHw0pLMrgYf4rCEe9X2KJ5/view",
+      "issuer": "Arabiat Egypt (KGM distributor) price list (CEO-supplied)",
+      "label": "Topline",
+      "model_year": 2026,
+      "powertrain": "Petrol",
+      "price_egp": 2150000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 4,
    "site_slug": "kgm-actyon",
    "size_class": {
@@ -27826,7 +28350,6 @@
    ],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "GENERATION_UNKNOWN"
@@ -27865,7 +28388,79 @@
    "model": "Torres",
    "model_id": "m_000017",
    "p1_id": "kgm/torres",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-19",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-19",
+    "evidence_url": "https://drive.google.com/file/d/1-KjWiZZ-j9QHw0pLMrgYf4rCEe9X2KJ5/view",
+    "issuer": "Arabiat Egypt (KGM distributor) price list (CEO-supplied)",
+    "model_year": 2026,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 1610000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-19",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-19",
+      "evidence_url": "https://drive.google.com/file/d/1-KjWiZZ-j9QHw0pLMrgYf4rCEe9X2KJ5/view",
+      "issuer": "Arabiat Egypt (KGM distributor) price list (CEO-supplied)",
+      "label": "Comfort",
+      "model_year": 2026,
+      "powertrain": "Petrol",
+      "price_egp": 1610000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-19",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-19",
+      "evidence_url": "https://drive.google.com/file/d/1-KjWiZZ-j9QHw0pLMrgYf4rCEe9X2KJ5/view",
+      "issuer": "Arabiat Egypt (KGM distributor) price list (CEO-supplied)",
+      "label": "Advance",
+      "model_year": 2026,
+      "powertrain": "Petrol",
+      "price_egp": 1745000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-19",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-19",
+      "evidence_url": "https://drive.google.com/file/d/1-KjWiZZ-j9QHw0pLMrgYf4rCEe9X2KJ5/view",
+      "issuer": "Arabiat Egypt (KGM distributor) price list (CEO-supplied)",
+      "label": "Premium",
+      "model_year": 2026,
+      "powertrain": "Petrol",
+      "price_egp": 1875000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-19",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-19",
+      "evidence_url": "https://drive.google.com/file/d/1-KjWiZZ-j9QHw0pLMrgYf4rCEe9X2KJ5/view",
+      "issuer": "Arabiat Egypt (KGM distributor) price list (CEO-supplied)",
+      "label": "Luxury",
+      "model_year": 2026,
+      "powertrain": "Petrol",
+      "price_egp": 2024000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-19",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-19",
+      "evidence_url": "https://drive.google.com/file/d/1-KjWiZZ-j9QHw0pLMrgYf4rCEe9X2KJ5/view",
+      "issuer": "Arabiat Egypt (KGM distributor) price list (CEO-supplied)",
+      "label": "Black Edition",
+      "model_year": 2026,
+      "powertrain": "Petrol",
+      "price_egp": 2024000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 10,
    "site_slug": "kgm-torres",
    "size_class": {
@@ -28120,47 +28715,47 @@
    "p1_id": "kia/ev3",
    "price": {
     "as_of": "2026-10-13",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
-    "evidence_url": "https://kia.com.eg/kia-ev3",
-    "issuer": "kia_eg_web",
-    "model_year": null,
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-13",
+    "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+    "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
+    "model_year": 2026,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 1400000,
     "tier": "A",
     "trims": [
      {
       "as_of": "2026-10-13",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://kia.com.eg/kia-ev3",
-      "issuer": "kia_eg_web",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-13",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
       "label": "Air",
-      "model_year": null,
+      "model_year": 2026,
       "powertrain": "Electric",
       "price_egp": 1400000,
       "tier": "A"
      },
      {
       "as_of": "2026-10-13",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://kia.com.eg/kia-ev3",
-      "issuer": "kia_eg_web",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-13",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
       "label": "Earth",
-      "model_year": null,
+      "model_year": 2026,
       "powertrain": "Electric",
       "price_egp": 1800000,
       "tier": "A"
      },
      {
       "as_of": "2026-10-13",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://kia.com.eg/kia-ev3",
-      "issuer": "kia_eg_web",
-      "label": "GT-Line",
-      "model_year": null,
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-13",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
+      "label": "GT-line",
+      "model_year": 2026,
       "powertrain": "Electric",
       "price_egp": 2050000,
       "tier": "A"
@@ -28347,47 +28942,47 @@
    "p1_id": "kia/ev5",
    "price": {
     "as_of": "2026-10-13",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
-    "evidence_url": "https://kia.com.eg/kia-ev5",
-    "issuer": "kia_eg_web",
-    "model_year": null,
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-13",
+    "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+    "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
+    "model_year": 2026,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 2050000,
     "tier": "A",
     "trims": [
      {
       "as_of": "2026-10-13",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://kia.com.eg/kia-ev5",
-      "issuer": "kia_eg_web",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-13",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
       "label": "Air",
-      "model_year": null,
+      "model_year": 2026,
       "powertrain": "Electric",
       "price_egp": 2050000,
       "tier": "A"
      },
      {
       "as_of": "2026-10-13",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://kia.com.eg/kia-ev5",
-      "issuer": "kia_eg_web",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-13",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
       "label": "Earth",
-      "model_year": null,
+      "model_year": 2026,
       "powertrain": "Electric",
       "price_egp": 2300000,
       "tier": "A"
      },
      {
       "as_of": "2026-10-13",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://kia.com.eg/kia-ev5",
-      "issuer": "kia_eg_web",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-13",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
       "label": "GT-line",
-      "model_year": null,
+      "model_year": 2026,
       "powertrain": "Electric",
       "price_egp": 2550000,
       "tier": "A"
@@ -28631,47 +29226,47 @@
    "p1_id": "kia/ev6",
    "price": {
     "as_of": "2026-10-13",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
-    "evidence_url": "https://kia.com.eg/kia-ev6",
-    "issuer": "kia_eg_web",
-    "model_year": null,
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-13",
+    "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+    "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
+    "model_year": 2026,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 2300000,
     "tier": "A",
     "trims": [
      {
       "as_of": "2026-10-13",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://kia.com.eg/kia-ev6",
-      "issuer": "kia_eg_web",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-13",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
       "label": "Earth",
-      "model_year": null,
+      "model_year": 2026,
       "powertrain": "Electric",
       "price_egp": 2300000,
       "tier": "A"
      },
      {
       "as_of": "2026-10-13",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://kia.com.eg/kia-ev6",
-      "issuer": "kia_eg_web",
-      "label": "GT-Line",
-      "model_year": null,
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-13",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
+      "label": "GT-line",
+      "model_year": 2026,
       "powertrain": "Electric",
       "price_egp": 2550000,
       "tier": "A"
      },
      {
       "as_of": "2026-10-13",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://kia.com.eg/kia-ev6",
-      "issuer": "kia_eg_web",
-      "label": "All new GT",
-      "model_year": null,
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-13",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
+      "label": "GT",
+      "model_year": 2026,
       "powertrain": "Electric",
       "price_egp": 3000000,
       "tier": "A"
@@ -28880,47 +29475,47 @@
    "p1_id": "kia/ev9",
    "price": {
     "as_of": "2026-10-13",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
-    "evidence_url": "https://kia.com.eg/kia-ev9",
-    "issuer": "kia_eg_web",
-    "model_year": null,
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-13",
+    "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+    "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
+    "model_year": 2025,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 3700000,
     "tier": "A",
     "trims": [
      {
       "as_of": "2026-10-13",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://kia.com.eg/kia-ev9",
-      "issuer": "kia_eg_web",
-      "label": "GT-line 7 Seats",
-      "model_year": null,
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-13",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
+      "label": "GT-line 7-Seats",
+      "model_year": 2025,
       "powertrain": "Electric",
       "price_egp": 3700000,
       "tier": "A"
      },
      {
       "as_of": "2026-10-13",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://kia.com.eg/kia-ev9",
-      "issuer": "kia_eg_web",
-      "label": "GT-line 6 Seats Swivilling",
-      "model_year": null,
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-13",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
+      "label": "GT-line 6-Seats Swiveling",
+      "model_year": 2025,
       "powertrain": "Electric",
       "price_egp": 3750000,
       "tier": "A"
      },
      {
       "as_of": "2026-10-13",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://kia.com.eg/kia-ev9",
-      "issuer": "kia_eg_web",
-      "label": "GT-line 6 Seats Relaxing",
-      "model_year": null,
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-13",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
+      "label": "GT-line 6-Seats Relaxing",
+      "model_year": 2025,
       "powertrain": "Electric",
       "price_egp": 3800000,
       "tier": "A"
@@ -29105,51 +29700,51 @@
    "model_id": "m_000180",
    "p1_id": "kia/k4",
    "price": {
-    "as_of": "2026-10-14",
+    "as_of": "2026-10-13",
     "date_basis": "SOURCE_STATED",
     "effective_date": "2026-10-13",
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/kia/KIA-K4 | https://sayaratelyoum.com/kia-2027-prices-egypt-increases | https://misrcars.com/أسعار-سيارات-كيا-في-مصر-طرح-موديلات-2027-من/ | ceo-supplied://EIT-price-list/57142E94-B8CE-4A8E-B7CB-3E829CECE9C8_1_105_c.jpeg",
-    "issuer": "EIT (Kia Egypt distributor)",
+    "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+    "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
     "model_year": 2027,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 1519900,
-    "tier": "B",
+    "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-14",
+      "as_of": "2026-10-13",
       "date_basis": "SOURCE_STATED",
       "effective_date": "2026-10-13",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/kia/KIA-K4 | https://sayaratelyoum.com/kia-2027-prices-egypt-increases | https://misrcars.com/أسعار-سيارات-كيا-في-مصر-طرح-موديلات-2027-من/ | ceo-supplied://EIT-price-list/57142E94-B8CE-4A8E-B7CB-3E829CECE9C8_1_105_c.jpeg",
-      "issuer": "EIT (Kia Egypt distributor)",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
       "label": "Highline",
       "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 1519900,
-      "tier": "B"
+      "tier": "A"
      },
      {
-      "as_of": "2026-10-14",
+      "as_of": "2026-10-13",
       "date_basis": "SOURCE_STATED",
       "effective_date": "2026-10-13",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/kia/KIA-K4 | https://sayaratelyoum.com/kia-2027-prices-egypt-increases | https://misrcars.com/أسعار-سيارات-كيا-في-مصر-طرح-موديلات-2027-من/ | ceo-supplied://EIT-price-list/57142E94-B8CE-4A8E-B7CB-3E829CECE9C8_1_105_c.jpeg",
-      "issuer": "EIT (Kia Egypt distributor)",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
       "label": "GT-line",
       "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 1719900,
-      "tier": "B"
+      "tier": "A"
      },
      {
-      "as_of": "2026-10-14",
+      "as_of": "2026-10-13",
       "date_basis": "SOURCE_STATED",
       "effective_date": "2026-10-13",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/kia/KIA-K4 | https://sayaratelyoum.com/kia-2027-prices-egypt-increases | https://misrcars.com/أسعار-سيارات-كيا-في-مصر-طرح-موديلات-2027-من/ | ceo-supplied://EIT-price-list/57142E94-B8CE-4A8E-B7CB-3E829CECE9C8_1_105_c.jpeg",
-      "issuer": "EIT (Kia Egypt distributor)",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
       "label": "GT-line Black Edition",
       "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 1859900,
-      "tier": "B"
+      "tier": "A"
      }
     ]
    },
@@ -29380,47 +29975,47 @@
    "p1_id": "kia/seltos",
    "price": {
     "as_of": "2026-10-13",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
-    "evidence_url": "https://kia.com.eg/models/The_Seltos",
-    "issuer": "kia_eg_web",
-    "model_year": null,
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-13",
+    "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+    "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
+    "model_year": 2027,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 1369900,
     "tier": "A",
     "trims": [
      {
       "as_of": "2026-10-13",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://kia.com.eg/models/The_Seltos",
-      "issuer": "kia_eg_web",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-13",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
       "label": "EX",
-      "model_year": null,
+      "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 1369900,
       "tier": "A"
      },
      {
       "as_of": "2026-10-13",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://kia.com.eg/models/The_Seltos",
-      "issuer": "kia_eg_web",
-      "label": "HL-Turbo",
-      "model_year": null,
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-13",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
+      "label": "Highline Turbo",
+      "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 1524900,
       "tier": "A"
      },
      {
       "as_of": "2026-10-13",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://kia.com.eg/models/The_Seltos",
-      "issuer": "kia_eg_web",
-      "label": "TL-Turbo",
-      "model_year": null,
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-13",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
+      "label": "Topline Turbo",
+      "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 1674900,
       "tier": "A"
@@ -29815,27 +30410,27 @@
    "model_id": "m_000181",
    "p1_id": "kia/sorento",
    "price": {
-    "as_of": "2026-10-21",
+    "as_of": "2026-10-13",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-03-31",
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/kia/sorento | https://www.contactcars.com/en/new-cars/kia-sorento/year-2026",
-    "issuer": "ContactCars+Hatla2ee",
+    "effective_date": "2026-10-13",
+    "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+    "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
     "model_year": 2026,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 3549900,
-    "tier": "B",
+    "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-21",
+      "as_of": "2026-10-13",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-03-31",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/kia/sorento | https://www.contactcars.com/en/new-cars/kia-sorento/year-2026",
-      "issuer": "ContactCars+Hatla2ee",
-      "label": "HEV Topline 7 Seats",
+      "effective_date": "2026-10-13",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
+      "label": "HEV 7-Seats Topline",
       "model_year": 2026,
       "powertrain": "Hybrid",
       "price_egp": 3549900,
-      "tier": "B"
+      "tier": "A"
      }
     ]
    },
@@ -30063,71 +30658,71 @@
    "p1_id": "kia/sportage",
    "price": {
     "as_of": "2026-10-13",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
-    "evidence_url": "https://kia.com.eg/models/The_Sportage",
-    "issuer": "kia_eg_web",
-    "model_year": null,
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-13",
+    "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+    "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
+    "model_year": 2027,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 1824900,
     "tier": "A",
     "trims": [
      {
       "as_of": "2026-10-13",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://kia.com.eg/models/The_Sportage",
-      "issuer": "kia_eg_web",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-13",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
       "label": "LX",
-      "model_year": null,
+      "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 1824900,
       "tier": "A"
      },
      {
       "as_of": "2026-10-13",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://kia.com.eg/models/The_Sportage",
-      "issuer": "kia_eg_web",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-13",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
       "label": "EX",
-      "model_year": null,
+      "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 1924900,
       "tier": "A"
      },
      {
       "as_of": "2026-10-13",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://kia.com.eg/models/The_Sportage",
-      "issuer": "kia_eg_web",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-13",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
       "label": "Highline",
-      "model_year": null,
+      "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 2074900,
       "tier": "A"
      },
      {
       "as_of": "2026-10-13",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://kia.com.eg/models/The_Sportage",
-      "issuer": "kia_eg_web",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-13",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
       "label": "Premium",
-      "model_year": null,
+      "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 2299900,
       "tier": "A"
      },
      {
       "as_of": "2026-10-13",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://kia.com.eg/models/The_Sportage",
-      "issuer": "kia_eg_web",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-13",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
       "label": "GT-line",
-      "model_year": null,
+      "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 2399900,
       "tier": "A"
@@ -31164,39 +31759,63 @@
    "model_id": "m_000190",
    "p1_id": "mazda/3",
    "price": {
-    "as_of": "2026-10-14",
-    "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-10-12",
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/mazda/mazda-3 | ceo-supplied://GB-Auto-Mazda-price-list/CF792FDF-5384-472A-8EDC-EDBDD83F1658.jpeg",
-    "issuer": "GB Auto (Mazda Egypt distributor) as listed",
+    "as_of": "2026-10-21",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
+    "evidence_url": "https://drive.google.com/file/d/1ozoM3zPgG_LJQZEy9d5DEkeELTM9ozQw/view",
+    "issuer": "GB Auto (Mazda Egypt distributor) price list (CEO-supplied)",
     "model_year": 2027,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 1609000,
-    "tier": "B",
+    "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-14",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-12",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/mazda/mazda-3 | ceo-supplied://GB-Auto-Mazda-price-list/CF792FDF-5384-472A-8EDC-EDBDD83F1658.jpeg",
-      "issuer": "GB Auto (Mazda Egypt distributor) as listed",
-      "label": "Highline 1.5L SKYACTIV AT Sedan",
+      "as_of": "2026-10-21",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/1ozoM3zPgG_LJQZEy9d5DEkeELTM9ozQw/view",
+      "issuer": "GB Auto (Mazda Egypt distributor) price list (CEO-supplied)",
+      "label": "Highline 1.5L Skyactiv AT Sedan",
+      "model_year": 2026,
+      "powertrain": "Petrol",
+      "price_egp": 1589000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/1ozoM3zPgG_LJQZEy9d5DEkeELTM9ozQw/view",
+      "issuer": "GB Auto (Mazda Egypt distributor) price list (CEO-supplied)",
+      "label": "Highline 1.5L Skyactiv AT Hatchback",
+      "model_year": 2026,
+      "powertrain": "Petrol",
+      "price_egp": 1599000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/1ozoM3zPgG_LJQZEy9d5DEkeELTM9ozQw/view",
+      "issuer": "GB Auto (Mazda Egypt distributor) price list (CEO-supplied)",
+      "label": "Highline 1.5L Skyactiv AT Sedan",
       "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 1609000,
-      "tier": "B"
+      "tier": "A"
      },
      {
-      "as_of": "2026-10-14",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-12",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/mazda/mazda-3 | ceo-supplied://GB-Auto-Mazda-price-list/CF792FDF-5384-472A-8EDC-EDBDD83F1658.jpeg",
-      "issuer": "GB Auto (Mazda Egypt distributor) as listed",
-      "label": "Highline 1.5L SKYACTIV AT Hatchback",
+      "as_of": "2026-10-21",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/1ozoM3zPgG_LJQZEy9d5DEkeELTM9ozQw/view",
+      "issuer": "GB Auto (Mazda Egypt distributor) price list (CEO-supplied)",
+      "label": "Highline 1.5L Skyactiv AT Hatchback",
       "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 1619000,
-      "tier": "B"
+      "tier": "A"
      }
     ]
    },
@@ -31391,27 +32010,39 @@
    "model_id": "m_000191",
    "p1_id": "mazda/cx-3",
    "price": {
-    "as_of": "2026-10-14",
+    "as_of": "2026-10-21",
     "date_basis": "OBSERVED",
     "effective_date": null,
-    "evidence_url": "https://www.contactcars.com/en/new-cars/mazda-cx_3/year-2027 | ceo-supplied://GB-Auto-Mazda-price-list/CF792FDF-5384-472A-8EDC-EDBDD83F1658.jpeg",
-    "issuer": "GB Auto (Mazda Egypt distributor) as listed",
+    "evidence_url": "https://drive.google.com/file/d/1ozoM3zPgG_LJQZEy9d5DEkeELTM9ozQw/view",
+    "issuer": "GB Auto (Mazda Egypt distributor) price list (CEO-supplied)",
     "model_year": 2027,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 1355000,
-    "tier": "B",
+    "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-14",
+      "as_of": "2026-10-21",
       "date_basis": "OBSERVED",
       "effective_date": null,
-      "evidence_url": "https://www.contactcars.com/en/new-cars/mazda-cx_3/year-2027 | ceo-supplied://GB-Auto-Mazda-price-list/CF792FDF-5384-472A-8EDC-EDBDD83F1658.jpeg",
-      "issuer": "GB Auto (Mazda Egypt distributor) as listed",
-      "label": "Highline 1.5L SKYACTIV AT",
+      "evidence_url": "https://drive.google.com/file/d/1ozoM3zPgG_LJQZEy9d5DEkeELTM9ozQw/view",
+      "issuer": "GB Auto (Mazda Egypt distributor) price list (CEO-supplied)",
+      "label": "Highline 1.5L Skyactiv AT",
+      "model_year": 2026,
+      "powertrain": "Petrol",
+      "price_egp": 1335000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/1ozoM3zPgG_LJQZEy9d5DEkeELTM9ozQw/view",
+      "issuer": "GB Auto (Mazda Egypt distributor) price list (CEO-supplied)",
+      "label": "Highline 1.5L Skyactiv AT",
       "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 1355000,
-      "tier": "B"
+      "tier": "A"
      }
     ]
    },
@@ -34306,36 +34937,36 @@
    "model_id": "m_000020",
    "p1_id": "mg/hs",
    "price": {
-    "as_of": "2026-10-21",
+    "as_of": "2026-10-15",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-10-16",
-    "evidence_url": "https://www.contactcars.com/en/new-cars/mg-hs | https://www.contactcars.com/en/new-cars/mg-hs/year-2026 | https://www.egy-car.com/mg-hs",
-    "issuer": "ContactCars+EgyCar",
-    "model_year": 2026,
+    "effective_date": "2026-10-15",
+    "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+    "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+    "model_year": null,
     "price_from": 1550000,
-    "tier": "B",
+    "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-21",
+      "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-16",
-      "evidence_url": "https://www.contactcars.com/en/new-cars/mg-hs | https://www.contactcars.com/en/new-cars/mg-hs/year-2026 | https://www.egy-car.com/mg-hs",
-      "issuer": "ContactCars+EgyCar",
-      "label": "+ Luxury",
-      "model_year": 2026,
+      "effective_date": "2026-10-15",
+      "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+      "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+      "label": "HS AS33 LUX",
+      "model_year": null,
       "price_egp": 1550000,
-      "tier": "B"
+      "tier": "A"
      },
      {
-      "as_of": "2026-10-21",
+      "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-16",
-      "evidence_url": "https://www.contactcars.com/en/new-cars/mg-hs | https://www.contactcars.com/en/new-cars/mg-hs/year-2026 | https://www.egy-car.com/mg-hs",
-      "issuer": "ContactCars+EgyCar",
-      "label": "HEV",
-      "model_year": 2026,
+      "effective_date": "2026-10-15",
+      "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+      "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+      "label": "HS HEV",
+      "model_year": null,
       "price_egp": 1650000,
-      "tier": "B"
+      "tier": "A"
      }
     ]
    },
@@ -35097,36 +35728,25 @@
    "model_id": "m_000211",
    "p1_id": "mg/zs",
    "price": {
-    "as_of": "2026-10-21",
+    "as_of": "2026-10-15",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-04-29",
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/moris-garage/zs | https://www.contactcars.com/en/new-cars/mg-zs/year-2026",
-    "issuer": "ContactCars+Hatla2ee",
-    "model_year": 2026,
-    "price_from": 1075000,
-    "tier": "B",
+    "effective_date": "2026-10-15",
+    "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+    "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+    "model_year": null,
+    "price_from": 1165000,
+    "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-21",
+      "as_of": "2026-10-15",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-04-29",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/moris-garage/zs | https://www.contactcars.com/en/new-cars/mg-zs/year-2026",
-      "issuer": "ContactCars+Hatla2ee",
-      "label": "Comfort",
-      "model_year": 2026,
-      "price_egp": 1075000,
-      "tier": "B"
-     },
-     {
-      "as_of": "2026-10-21",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-16",
-      "evidence_url": "https://www.contactcars.com/en/new-cars/mg-zs/year-2026 | https://www.egy-car.com/mg-zs",
-      "issuer": "ContactCars+EgyCar",
-      "label": "Luxury Facelift MCE",
-      "model_year": 2026,
+      "effective_date": "2026-10-15",
+      "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+      "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
+      "label": "ZS Plus",
+      "model_year": null,
       "price_egp": 1165000,
-      "tier": "B"
+      "tier": "A"
      }
     ]
    },
@@ -43354,63 +43974,51 @@
    "model_id": "m_000244",
    "p1_id": "skoda/kodiaq",
    "price": {
-    "as_of": "2026-10-21",
+    "as_of": "2026-10-12",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-10-14",
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/kodiaq | https://www.contactcars.com/en/new-cars/skoda-kodiaq/year-2027 | https://www.egy-car.com/skoda-kodiaq",
-    "issuer": "ContactCars+EgyCar+Hatla2ee",
+    "effective_date": "2026-10-12",
+    "evidence_url": "https://drive.google.com/file/d/1POXjMPG-iqsQGsw02YgWuIEX05MHW6As/view",
+    "issuer": "Skoda Egypt MY2027 price list, issuer logo not shown (CEO-supplied)",
     "model_year": 2027,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 2625000,
-    "tier": "B",
+    "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-21",
+      "as_of": "2026-10-12",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-14",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/kodiaq | https://www.contactcars.com/en/new-cars/skoda-kodiaq/year-2027 | https://www.egy-car.com/skoda-kodiaq",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
+      "effective_date": "2026-10-12",
+      "evidence_url": "https://drive.google.com/file/d/1POXjMPG-iqsQGsw02YgWuIEX05MHW6As/view",
+      "issuer": "Skoda Egypt MY2027 price list, issuer logo not shown (CEO-supplied)",
       "label": "Selection Loft",
       "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 2625000,
-      "tier": "B"
+      "tier": "A"
      },
      {
-      "as_of": "2026-10-21",
+      "as_of": "2026-10-12",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-14",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/kodiaq | https://www.egy-car.com/skoda-kodiaq",
-      "issuer": "EgyCar+Hatla2ee",
-      "label": "A/T / Loft",
-      "model_year": 2027,
-      "powertrain": "Petrol",
-      "price_egp": 2625000,
-      "tier": "B"
-     },
-     {
-      "as_of": "2026-10-21",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-14",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/kodiaq | https://www.contactcars.com/en/new-cars/skoda-kodiaq/year-2027 | https://www.egy-car.com/skoda-kodiaq",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
-      "label": "Suite",
+      "effective_date": "2026-10-12",
+      "evidence_url": "https://drive.google.com/file/d/1POXjMPG-iqsQGsw02YgWuIEX05MHW6As/view",
+      "issuer": "Skoda Egypt MY2027 price list, issuer logo not shown (CEO-supplied)",
+      "label": "Selection Suite",
       "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 3000000,
-      "tier": "B"
+      "tier": "A"
      },
      {
-      "as_of": "2026-10-21",
+      "as_of": "2026-10-12",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-14",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/kodiaq | https://www.contactcars.com/en/new-cars/skoda-kodiaq/year-2027 | https://www.egy-car.com/skoda-kodiaq",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
+      "effective_date": "2026-10-12",
+      "evidence_url": "https://drive.google.com/file/d/1POXjMPG-iqsQGsw02YgWuIEX05MHW6As/view",
+      "issuer": "Skoda Egypt MY2027 price list, issuer logo not shown (CEO-supplied)",
       "label": "Sportline",
       "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 3150000,
-      "tier": "B"
+      "tier": "A"
      }
     ]
    },
@@ -43542,87 +44150,51 @@
    "model_id": "m_000245",
    "p1_id": "skoda/octavia",
    "price": {
-    "as_of": "2026-10-21",
+    "as_of": "2026-10-12",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-10-14",
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/Octavia-A8 | https://www.contactcars.com/en/new-cars/skoda-octavia/year-2027 | https://www.egy-car.com/skoda-octavia",
-    "issuer": "ContactCars+EgyCar+Hatla2ee",
+    "effective_date": "2026-10-12",
+    "evidence_url": "https://drive.google.com/file/d/1POXjMPG-iqsQGsw02YgWuIEX05MHW6As/view",
+    "issuer": "Skoda Egypt MY2027 price list, issuer logo not shown (CEO-supplied)",
     "model_year": 2027,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 1825000,
-    "tier": "B",
+    "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-21",
+      "as_of": "2026-10-12",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-14",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/Octavia-A8 | https://www.contactcars.com/en/new-cars/skoda-octavia/year-2027 | https://www.egy-car.com/skoda-octavia",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
+      "effective_date": "2026-10-12",
+      "evidence_url": "https://drive.google.com/file/d/1POXjMPG-iqsQGsw02YgWuIEX05MHW6As/view",
+      "issuer": "Skoda Egypt MY2027 price list, issuer logo not shown (CEO-supplied)",
       "label": "Selection Loft",
       "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 1825000,
-      "tier": "B"
+      "tier": "A"
      },
      {
-      "as_of": "2026-10-21",
+      "as_of": "2026-10-12",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-14",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/Octavia-A8 | https://www.egy-car.com/skoda-octavia",
-      "issuer": "EgyCar+Hatla2ee",
-      "label": "A/T / Loft",
-      "model_year": 2027,
-      "powertrain": "Petrol",
-      "price_egp": 1825000,
-      "tier": "B"
-     },
-     {
-      "as_of": "2026-10-21",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-14",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/Octavia-A8 | https://www.contactcars.com/en/new-cars/skoda-octavia/year-2027 | https://www.egy-car.com/skoda-octavia",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
-      "label": "Selection lounge",
+      "effective_date": "2026-10-12",
+      "evidence_url": "https://drive.google.com/file/d/1POXjMPG-iqsQGsw02YgWuIEX05MHW6As/view",
+      "issuer": "Skoda Egypt MY2027 price list, issuer logo not shown (CEO-supplied)",
+      "label": "Selection Lounge",
       "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 2050000,
-      "tier": "B"
+      "tier": "A"
      },
      {
-      "as_of": "2026-10-21",
+      "as_of": "2026-10-12",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-14",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/Octavia-A8 | https://www.egy-car.com/skoda-octavia",
-      "issuer": "EgyCar+Hatla2ee",
-      "label": "A/T / Lounge",
-      "model_year": 2027,
-      "powertrain": "Petrol",
-      "price_egp": 2050000,
-      "tier": "B"
-     },
-     {
-      "as_of": "2026-10-21",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-14",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/Octavia-A8 | https://www.contactcars.com/en/new-cars/skoda-octavia/year-2027 | https://www.egy-car.com/skoda-octavia",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
+      "effective_date": "2026-10-12",
+      "evidence_url": "https://drive.google.com/file/d/1POXjMPG-iqsQGsw02YgWuIEX05MHW6As/view",
+      "issuer": "Skoda Egypt MY2027 price list, issuer logo not shown (CEO-supplied)",
       "label": "Selection Suite",
       "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 2250000,
-      "tier": "B"
-     },
-     {
-      "as_of": "2026-10-21",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-14",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/Octavia-A8 | https://www.egy-car.com/skoda-octavia",
-      "issuer": "EgyCar+Hatla2ee",
-      "label": "A/T / Suite",
-      "model_year": 2027,
-      "powertrain": "Petrol",
-      "price_egp": 2250000,
-      "tier": "B"
+      "tier": "A"
      }
     ]
    },
@@ -43788,27 +44360,39 @@
    "model_id": "m_000246",
    "p1_id": "skoda/superb",
    "price": {
-    "as_of": "2026-10-21",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/superb | https://www.contactcars.com/en/new-cars/skoda-superb | https://www.contactcars.com/en/new-cars/skoda-superb/year-2027",
-    "issuer": "ContactCars+Hatla2ee",
+    "as_of": "2026-10-12",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-12",
+    "evidence_url": "https://drive.google.com/file/d/1POXjMPG-iqsQGsw02YgWuIEX05MHW6As/view",
+    "issuer": "Skoda Egypt MY2027 price list, issuer logo not shown (CEO-supplied)",
     "model_year": 2027,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 2600000,
-    "tier": "B",
+    "price_from": 2350000,
+    "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-21",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/superb | https://www.contactcars.com/en/new-cars/skoda-superb | https://www.contactcars.com/en/new-cars/skoda-superb/year-2027",
-      "issuer": "ContactCars+Hatla2ee",
-      "label": "L&K 1.5",
+      "as_of": "2026-10-12",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-12",
+      "evidence_url": "https://drive.google.com/file/d/1POXjMPG-iqsQGsw02YgWuIEX05MHW6As/view",
+      "issuer": "Skoda Egypt MY2027 price list, issuer logo not shown (CEO-supplied)",
+      "label": "Selection Suite",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 2350000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-12",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-12",
+      "evidence_url": "https://drive.google.com/file/d/1POXjMPG-iqsQGsw02YgWuIEX05MHW6As/view",
+      "issuer": "Skoda Egypt MY2027 price list, issuer logo not shown (CEO-supplied)",
+      "label": "L&K",
       "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 2600000,
-      "tier": "B"
+      "tier": "A"
      }
     ]
    },
@@ -43950,7 +44534,6 @@
    ],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_OFFICIAL_LOGO",
     "GENERATION_UNKNOWN"
@@ -43989,7 +44572,31 @@
    "model": "S 05",
    "model_id": "m_000247",
    "p1_id": "soueast/s-05",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-18",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-18",
+    "evidence_url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
+    "issuer": "Soueast Egypt price list, issuer logo not shown (CEO-supplied)",
+    "model_year": 2027,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 1090000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
+      "issuer": "Soueast Egypt price list, issuer logo not shown (CEO-supplied)",
+      "label": "Highline 1.5L Turbo",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 1090000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 2,
    "site_slug": "soueast-s-05",
    "size_class": {
@@ -44134,6 +44741,13 @@
      "source": "https://www.contactcars.com/en/new-cars/soueast-s_05/b42d52629099",
      "unit": "",
      "value": "6 years / 150000 km"
+    },
+    {
+     "applicability": "petrol trims (Soueast Egypt (issuer logo not shown) price list)",
+     "issuer": "Soueast Egypt (issuer logo not shown)",
+     "source": "drive:1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe",
+     "unit": "",
+     "value": "6 years / 150000 km; engine 10 years / 1000000 km"
     }
    ]
   },
@@ -44162,7 +44776,6 @@
     }
    ],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_OFFICIAL_LOGO",
     "GENERATION_UNKNOWN"
@@ -44201,7 +44814,55 @@
    "model": "S 06",
    "model_id": "m_000019",
    "p1_id": "soueast/s-06",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-18",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-18",
+    "evidence_url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
+    "issuer": "Soueast Egypt price list, issuer logo not shown (CEO-supplied)",
+    "model_year": 2027,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 1370000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
+      "issuer": "Soueast Egypt price list, issuer logo not shown (CEO-supplied)",
+      "label": "Highline 1.5L Turbo",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 1370000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
+      "issuer": "Soueast Egypt price list, issuer logo not shown (CEO-supplied)",
+      "label": "Premium 1.6L Turbo",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 1510000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
+      "issuer": "Soueast Egypt price list, issuer logo not shown (CEO-supplied)",
+      "label": "DM Intelligent 1.5L Turbo PHEV",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 1689000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 9,
    "site_slug": "soueast-s06",
    "size_class": {
@@ -44411,11 +45072,25 @@
    "universe": "U11_283",
    "warranty": [
     {
+     "applicability": "S06 DM PHEV (Soueast Egypt (issuer logo not shown) price list)",
+     "issuer": "Soueast Egypt (issuer logo not shown)",
+     "source": "drive:1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe",
+     "unit": "",
+     "value": "6 years / 150000 km; battery 8 years / 160000 km"
+    },
+    {
      "applicability": "market trim pages: model",
      "issuer": "ContactCars+Hatla2ee",
      "source": "https://www.contactcars.com/en/new-cars/soueast-s_06/1bab410868c6 | https://www.contactcars.com/en/new-cars/soueast-s_06/50166ab19c79 | https://www.contactcars.com/en/new-cars/soueast-s_06/7623c28b58a5",
      "unit": "",
      "value": "6 years / 150000 km"
+    },
+    {
+     "applicability": "petrol trims (Soueast Egypt (issuer logo not shown) price list)",
+     "issuer": "Soueast Egypt (issuer logo not shown)",
+     "source": "drive:1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe",
+     "unit": "",
+     "value": "6 years / 150000 km; engine 10 years / 1000000 km"
     }
    ]
   },
@@ -44444,7 +45119,6 @@
     }
    ],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_OFFICIAL_LOGO",
     "GENERATION_UNKNOWN"
@@ -44483,7 +45157,43 @@
    "model": "S 07",
    "model_id": "m_000248",
    "p1_id": "soueast/s-07",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-18",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-18",
+    "evidence_url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
+    "issuer": "Soueast Egypt price list, issuer logo not shown (CEO-supplied)",
+    "model_year": 2027,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 1415000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
+      "issuer": "Soueast Egypt price list, issuer logo not shown (CEO-supplied)",
+      "label": "Highline 1.5L Turbo",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 1415000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
+      "issuer": "Soueast Egypt price list, issuer logo not shown (CEO-supplied)",
+      "label": "Premium 1.6L Turbo",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 1555000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 6,
    "site_slug": "soueast-s-07",
    "size_class": {
@@ -44631,6 +45341,13 @@
      "source": "https://www.contactcars.com/en/new-cars/soueast-s_07/bc970ee1052f | https://www.contactcars.com/en/new-cars/soueast-s_07/e5f064c3215e",
      "unit": "",
      "value": "6 years / 150000 km"
+    },
+    {
+     "applicability": "petrol trims (Soueast Egypt (issuer logo not shown) price list)",
+     "issuer": "Soueast Egypt (issuer logo not shown)",
+     "source": "drive:1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe",
+     "unit": "",
+     "value": "6 years / 150000 km; engine 10 years / 1000000 km"
     }
    ]
   },
@@ -44640,12 +45357,10 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -44658,7 +45373,29 @@
    "model": "S 08 DM",
    "model_id": "m_000249",
    "p1_id": "soueast/s-08-dm",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-18",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-18",
+    "evidence_url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
+    "issuer": "Soueast Egypt price list, issuer logo not shown (CEO-supplied)",
+    "model_year": 2027,
+    "price_from": 1849000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
+      "issuer": "Soueast Egypt price list, issuer logo not shown (CEO-supplied)",
+      "label": "DM Intelligent 1.5L Turbo PHEV",
+      "model_year": 2027,
+      "price_egp": 1849000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 1,
    "site_slug": "soueast-s-08-dm",
    "size_class": {
@@ -44669,7 +45406,15 @@
    "specs": null,
    "specs_accepted": false,
    "universe": "U11_283",
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "all trims, PHEV (Soueast Egypt (issuer logo not shown) price list)",
+     "issuer": "Soueast Egypt (issuer logo not shown)",
+     "source": "drive:1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe",
+     "unit": "",
+     "value": "6 years / 150000 km; battery 8 years / 160000 km"
+    }
+   ]
   },
   {
    "brand": "Soueast",
@@ -44680,7 +45425,6 @@
    ],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
@@ -44708,7 +45452,31 @@
    "model": "S 09",
    "model_id": "m_000013",
    "p1_id": "soueast/s-09",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-18",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-18",
+    "evidence_url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
+    "issuer": "Soueast Egypt price list, issuer logo not shown (CEO-supplied)",
+    "model_year": 2027,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 1620000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
+      "issuer": "Soueast Egypt price list, issuer logo not shown (CEO-supplied)",
+      "label": "Flagship 1.6L Turbo",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 1620000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 3,
    "site_slug": "soueast-s09",
    "size_class": {
@@ -44835,6 +45603,13 @@
      "source": "https://www.contactcars.com/en/new-cars/soueast-s_09/b040f1133140",
      "unit": "",
      "value": "6 years / 150000 km"
+    },
+    {
+     "applicability": "petrol trims (Soueast Egypt (issuer logo not shown) price list)",
+     "issuer": "Soueast Egypt (issuer logo not shown)",
+     "source": "drive:1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe",
+     "unit": "",
+     "value": "6 years / 150000 km; engine 10 years / 1000000 km"
     }
    ]
   },
@@ -51782,7 +52557,6 @@
    ],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "GENERATION_UNKNOWN"
@@ -51809,7 +52583,31 @@
    "model": "Carnival",
    "model_id": "m_000296",
    "p1_id": "kia/carnival",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-13",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-13",
+    "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+    "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
+    "model_year": 2026,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 3849900,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-13",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-13",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
+      "label": "HEV 8-Seats Topline",
+      "model_year": 2026,
+      "powertrain": "Hybrid",
+      "price_egp": 3849900,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 3,
    "site_slug": "kia-carnival",
    "size_class": {
@@ -55550,7 +56348,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -55564,63 +56361,27 @@
    "model_id": "m_000349",
    "p1_id": "smart/1",
    "price": {
-    "as_of": "2026-10-14",
+    "as_of": "2026-10-01",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2025-10-01",
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/smart/smart-1 | https://www.contactcars.com/en/new-cars/smart-hashtag_1/year-2025",
-    "issuer": "ContactCars+Hatla2ee",
-    "model_year": 2025,
+    "effective_date": "2026-10-01",
+    "evidence_url": "https://drive.google.com/file/d/1Yx5MI_Eyru11hVten96EnTpHU7luadcD/view",
+    "issuer": "smart Egypt retail price list (CEO-supplied)",
+    "model_year": null,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 1490000,
-    "tier": "B",
+    "price_from": 2140000,
+    "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-14",
+      "as_of": "2026-10-01",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2025-10-01",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/smart/smart-1 | https://www.contactcars.com/en/new-cars/smart-hashtag_1/year-2025",
-      "issuer": "ContactCars+Hatla2ee",
-      "label": "Pure+",
-      "model_year": 2025,
-      "powertrain": "Electric",
-      "price_egp": 1490000,
-      "tier": "B"
-     },
-     {
-      "as_of": "2026-10-14",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2025-10-01",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/smart/smart-1 | https://www.contactcars.com/en/new-cars/smart-hashtag_1/year-2025",
-      "issuer": "ContactCars+Hatla2ee",
-      "label": "Pro+",
-      "model_year": 2025,
-      "powertrain": "Electric",
-      "price_egp": 1840000,
-      "tier": "B"
-     },
-     {
-      "as_of": "2026-10-14",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2025-10-01",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/smart/smart-1 | https://www.contactcars.com/en/new-cars/smart-hashtag_1/year-2025",
-      "issuer": "ContactCars+Hatla2ee",
-      "label": "Premium",
-      "model_year": 2025,
-      "powertrain": "Electric",
-      "price_egp": 1990000,
-      "tier": "B"
-     },
-     {
-      "as_of": "2026-10-14",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2025-10-01",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/smart/smart-1 | https://www.contactcars.com/en/new-cars/smart-hashtag_1/year-2025",
-      "issuer": "ContactCars+Hatla2ee",
+      "effective_date": "2026-10-01",
+      "evidence_url": "https://drive.google.com/file/d/1Yx5MI_Eyru11hVten96EnTpHU7luadcD/view",
+      "issuer": "smart Egypt retail price list (CEO-supplied)",
       "label": "Brabus",
-      "model_year": 2025,
+      "model_year": null,
       "powertrain": "Electric",
       "price_egp": 2140000,
-      "tier": "B"
+      "tier": "A"
      }
     ]
    },
@@ -55707,7 +56468,15 @@
    },
    "specs_accepted": true,
    "universe": "P2_ADDITION",
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "all trims (smart Egypt price list)",
+     "issuer": "smart Egypt",
+     "source": "drive:1Yx5MI_Eyru11hVten96EnTpHU7luadcD",
+     "unit": "",
+     "value": "5 years / 150000 km; battery 8 years / 160000 km"
+    }
+   ]
   },
   {
    "brand": "Smart",
@@ -55722,7 +56491,6 @@
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_OFFICIAL_LOGO",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -55736,51 +56504,51 @@
    "model_id": "m_000350",
    "p1_id": "smart/3",
    "price": {
-    "as_of": "2026-10-14",
+    "as_of": "2026-10-01",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2025-10-01",
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/smart/smart-3 | https://www.contactcars.com/en/new-cars/smart-hashtag_3/year-2025",
-    "issuer": "ContactCars+Hatla2ee",
-    "model_year": 2025,
+    "effective_date": "2026-10-01",
+    "evidence_url": "https://drive.google.com/file/d/1Yx5MI_Eyru11hVten96EnTpHU7luadcD/view",
+    "issuer": "smart Egypt retail price list (CEO-supplied)",
+    "model_year": null,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 1990000,
-    "tier": "B",
+    "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-14",
+      "as_of": "2026-10-01",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2025-10-01",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/smart/smart-3 | https://www.contactcars.com/en/new-cars/smart-hashtag_3/year-2025",
-      "issuer": "ContactCars+Hatla2ee",
+      "effective_date": "2026-10-01",
+      "evidence_url": "https://drive.google.com/file/d/1Yx5MI_Eyru11hVten96EnTpHU7luadcD/view",
+      "issuer": "smart Egypt retail price list (CEO-supplied)",
       "label": "Pro+",
-      "model_year": 2025,
+      "model_year": null,
       "powertrain": "ev",
       "price_egp": 1990000,
-      "tier": "B"
+      "tier": "A"
      },
      {
-      "as_of": "2026-10-14",
+      "as_of": "2026-10-01",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2025-10-01",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/smart/smart-3 | https://www.contactcars.com/en/new-cars/smart-hashtag_3/year-2025",
-      "issuer": "ContactCars+Hatla2ee",
+      "effective_date": "2026-10-01",
+      "evidence_url": "https://drive.google.com/file/d/1Yx5MI_Eyru11hVten96EnTpHU7luadcD/view",
+      "issuer": "smart Egypt retail price list (CEO-supplied)",
       "label": "Premium",
-      "model_year": 2025,
+      "model_year": null,
       "powertrain": "ev",
       "price_egp": 2190000,
-      "tier": "B"
+      "tier": "A"
      },
      {
-      "as_of": "2026-10-14",
+      "as_of": "2026-10-01",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2025-10-01",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/smart/smart-3 | https://www.contactcars.com/en/new-cars/smart-hashtag_3/year-2025",
-      "issuer": "ContactCars+Hatla2ee",
+      "effective_date": "2026-10-01",
+      "evidence_url": "https://drive.google.com/file/d/1Yx5MI_Eyru11hVten96EnTpHU7luadcD/view",
+      "issuer": "smart Egypt retail price list (CEO-supplied)",
       "label": "Brabus",
-      "model_year": 2025,
+      "model_year": null,
       "powertrain": "ev",
       "price_egp": 2390000,
-      "tier": "B"
+      "tier": "A"
      }
     ]
    },
@@ -55858,7 +56626,15 @@
    },
    "specs_accepted": true,
    "universe": "P2_ADDITION",
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "all trims (smart Egypt price list)",
+     "issuer": "smart Egypt",
+     "source": "drive:1Yx5MI_Eyru11hVten96EnTpHU7luadcD",
+     "unit": "",
+     "value": "5 years / 150000 km; battery 8 years / 160000 km"
+    }
+   ]
   },
   {
    "brand": "Smart",
@@ -55882,51 +56658,51 @@
    "model_id": "m_000351",
    "p1_id": "smart/5",
    "price": {
-    "as_of": "2026-10-14",
+    "as_of": "2026-10-01",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-10-06",
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/smart/5 | https://www.contactcars.com/en/new-cars/smart-hashtag_5 | https://www.contactcars.com/en/new-cars/smart-hashtag_5/year-2026 | https://www.egy-car.com/smart-5",
-    "issuer": "ContactCars+EgyCar+Hatla2ee",
-    "model_year": 2026,
+    "effective_date": "2026-10-01",
+    "evidence_url": "https://drive.google.com/file/d/1Yx5MI_Eyru11hVten96EnTpHU7luadcD/view",
+    "issuer": "smart Egypt retail price list (CEO-supplied)",
+    "model_year": null,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 2300000,
-    "tier": "B",
+    "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-14",
+      "as_of": "2026-10-01",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-06",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/smart/5 | https://www.contactcars.com/en/new-cars/smart-hashtag_5 | https://www.contactcars.com/en/new-cars/smart-hashtag_5/year-2026 | https://www.egy-car.com/smart-5",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
-      "label": "PRO+",
-      "model_year": 2026,
+      "effective_date": "2026-10-01",
+      "evidence_url": "https://drive.google.com/file/d/1Yx5MI_Eyru11hVten96EnTpHU7luadcD/view",
+      "issuer": "smart Egypt retail price list (CEO-supplied)",
+      "label": "Pro+",
+      "model_year": null,
       "powertrain": "Electric",
       "price_egp": 2300000,
-      "tier": "B"
+      "tier": "A"
      },
      {
-      "as_of": "2026-10-14",
+      "as_of": "2026-10-01",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-06",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/smart/5 | https://www.contactcars.com/en/new-cars/smart-hashtag_5 | https://www.contactcars.com/en/new-cars/smart-hashtag_5/year-2026 | https://www.egy-car.com/smart-5",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
-      "label": "PREMIUM",
-      "model_year": 2026,
+      "effective_date": "2026-10-01",
+      "evidence_url": "https://drive.google.com/file/d/1Yx5MI_Eyru11hVten96EnTpHU7luadcD/view",
+      "issuer": "smart Egypt retail price list (CEO-supplied)",
+      "label": "Premium",
+      "model_year": null,
       "powertrain": "Electric",
       "price_egp": 2650000,
-      "tier": "B"
+      "tier": "A"
      },
      {
-      "as_of": "2026-10-14",
+      "as_of": "2026-10-01",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-06",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/smart/5 | https://www.contactcars.com/en/new-cars/smart-hashtag_5 | https://www.contactcars.com/en/new-cars/smart-hashtag_5/year-2026 | https://www.egy-car.com/smart-5",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
-      "label": "BRABUS",
-      "model_year": 2026,
+      "effective_date": "2026-10-01",
+      "evidence_url": "https://drive.google.com/file/d/1Yx5MI_Eyru11hVten96EnTpHU7luadcD/view",
+      "issuer": "smart Egypt retail price list (CEO-supplied)",
+      "label": "Brabus",
+      "model_year": null,
       "powertrain": "Electric",
       "price_egp": 2850000,
-      "tier": "B"
+      "tier": "A"
      }
     ]
    },
@@ -56030,6 +56806,13 @@
    "specs_accepted": true,
    "universe": "P2_ADDITION",
    "warranty": [
+    {
+     "applicability": "all trims (smart Egypt price list)",
+     "issuer": "smart Egypt",
+     "source": "drive:1Yx5MI_Eyru11hVten96EnTpHU7luadcD",
+     "unit": "",
+     "value": "5 years / 150000 km; battery 8 years / 160000 km"
+    },
     {
      "applicability": "market trim pages: model",
      "issuer": "ContactCars+Hatla2ee",
@@ -57991,7 +58774,6 @@
    ],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "GENERATION_UNKNOWN"
@@ -58018,7 +58800,43 @@
    "model": "Emgrand",
    "model_id": "m_000372",
    "p1_id": "geely/emgrand",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-18",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-18",
+    "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+    "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+    "model_year": 2027,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 839000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+      "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+      "label": "Comfort GS",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 839000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+      "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+      "label": "Luxury GF",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 939000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 10,
    "site_slug": "geely-emgrand",
    "size_class": {
@@ -58204,7 +59022,6 @@
     }
    ],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
@@ -58243,7 +59060,43 @@
    "model": "EX5 EM-i",
    "model_id": "m_000373",
    "p1_id": "geely/ex5-em-i",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-18",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-18",
+    "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+    "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+    "model_year": 2027,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 1399900,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+      "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+      "label": "Pro",
+      "model_year": 2027,
+      "powertrain": "phev",
+      "price_egp": 1399900,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+      "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+      "label": "Max",
+      "model_year": 2027,
+      "powertrain": "phev",
+      "price_egp": 1549900,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 2,
    "site_slug": "geely-ex5-em-i",
    "size_class": {
@@ -59620,11 +60473,9 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -59649,14 +60500,46 @@
    "model": "JS2",
    "model_id": "m_000384",
    "p1_id": "jac/js2",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-06",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-06",
+    "evidence_url": "https://drive.google.com/file/d/19-6uc16A04WD6A5ZAIfgo1pq6VYcQOM5/view",
+    "issuer": "Kasrawy Group (JAC distributor) price list (CEO-supplied)",
+    "model_year": 2027,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 775000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-06",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-06",
+      "evidence_url": "https://drive.google.com/file/d/19-6uc16A04WD6A5ZAIfgo1pq6VYcQOM5/view",
+      "issuer": "Kasrawy Group (JAC distributor) price list (CEO-supplied)",
+      "label": "Smart",
+      "model_year": 2027,
+      "powertrain": "petrol",
+      "price_egp": 775000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 3,
    "site_slug": "jac-js2",
    "size_class": null,
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "all trims (Kasrawy Group price list)",
+     "issuer": "Kasrawy Group",
+     "source": "drive:19-6uc16A04WD6A5ZAIfgo1pq6VYcQOM5",
+     "unit": "",
+     "value": "6 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "JAC",
@@ -59664,11 +60547,9 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
-    "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -59693,7 +60574,31 @@
    "model": "JS4",
    "model_id": "m_000385",
    "p1_id": "jac/js4",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-06",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-06",
+    "evidence_url": "https://drive.google.com/file/d/19-6uc16A04WD6A5ZAIfgo1pq6VYcQOM5/view",
+    "issuer": "Kasrawy Group (JAC distributor) price list (CEO-supplied)",
+    "model_year": 2026,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 1039000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-06",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-06",
+      "evidence_url": "https://drive.google.com/file/d/19-6uc16A04WD6A5ZAIfgo1pq6VYcQOM5/view",
+      "issuer": "Kasrawy Group (JAC distributor) price list (CEO-supplied)",
+      "label": "Ultimate",
+      "model_year": 2026,
+      "powertrain": "petrol",
+      "price_egp": 1039000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 3,
    "site_slug": "jac-js4",
    "size_class": {
@@ -59704,7 +60609,15 @@
    "specs": null,
    "specs_accepted": false,
    "universe": "P2_ADDITION",
-   "warranty": null
+   "warranty": [
+    {
+     "applicability": "all trims (Kasrawy Group price list)",
+     "issuer": "Kasrawy Group",
+     "source": "drive:19-6uc16A04WD6A5ZAIfgo1pq6VYcQOM5",
+     "unit": "",
+     "value": "6 years / 150000 km"
+    }
+   ]
   },
   {
    "brand": "Jeep",
@@ -61152,7 +62065,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
@@ -61181,7 +62093,31 @@
    "model": "GX",
    "model_id": "m_000401",
    "p1_id": "xpeng/gx",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-21",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
+    "evidence_url": "https://claude.ai/code/session_01A2C3avdVAjAntRFHUEGUJi",
+    "issuer": "XPENG Egypt launch event (CEO-supplied)",
+    "model_year": null,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 3750000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://claude.ai/code/session_01A2C3avdVAjAntRFHUEGUJi",
+      "issuer": "XPENG Egypt launch event (CEO-supplied)",
+      "label": "GX (trim not specified)",
+      "model_year": null,
+      "powertrain": "ev",
+      "price_egp": 3750000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 0,
    "site_slug": "xpeng-gx",
    "size_class": null,
@@ -62098,8 +63034,214 @@
    "specs_accepted": false,
    "universe": "P2_ADDITION",
    "warranty": null
+  },
+  {
+   "brand": "Geely",
+   "brochures": [],
+   "conflicts": [],
+   "gallery": [],
+   "gaps": [
+    "NO_ACCEPTED_SPECS",
+    "NO_OFFICIAL_BROCHURE",
+    "NO_VERIFIED_HERO_IMAGE",
+    "NO_VERIFIED_WARRANTY",
+    "GENERATION_UNKNOWN"
+   ],
+   "generation": null,
+   "hero_image": null,
+   "hero_image_limited": null,
+   "id_status": "ACCEPTED",
+   "logo": {
+    "asset_id": "12acee9162bf",
+    "credit": "commons.wikimedia.org",
+    "height": "1040",
+    "page": "https://commons.wikimedia.org/wiki/File:Geely_Auto_2023.svg",
+    "quality_class": "HQ",
+    "rights_basis": "Wikimedia Commons (Public domain); trademark of brand owner",
+    "sha256": "12acee9162bf8c7ef3799d9c5e8100583f3fea8f89b772d4be51efd5e4ab64e7",
+    "src": "/media/p2/brands/geely.png",
+    "status": "ACCEPT",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Geely_Auto_2023.svg/1920px-Geely_Auto_2023.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": "1920"
+   },
+   "market_status": "unverified",
+   "market_status_basis": "P2 market-universe decision (config/market_universe.json); see review/market_universe_audit.csv",
+   "model": "EX5 EM-R",
+   "model_id": "m_000419",
+   "p1_id": "geely/ex5-em-r",
+   "price": {
+    "as_of": "2026-10-18",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-18",
+    "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+    "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+    "model_year": 2027,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 1349900,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+      "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+      "label": "Pro",
+      "model_year": 2027,
+      "powertrain": "reev",
+      "price_egp": 1349900,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+      "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+      "label": "Max",
+      "model_year": 2027,
+      "powertrain": "reev",
+      "price_egp": 1499900,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-18",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-18",
+      "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+      "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+      "label": "Max Plus",
+      "model_year": 2027,
+      "powertrain": "reev",
+      "price_egp": 1599900,
+      "tier": "A"
+     }
+    ]
+   },
+   "rework_price_rows": 0,
+   "site_slug": "geely-ex5-em-r",
+   "size_class": null,
+   "specs": null,
+   "specs_accepted": false,
+   "universe": "P2_ADDITION",
+   "warranty": null
+  },
+  {
+   "brand": "Kia",
+   "brochures": [],
+   "conflicts": [],
+   "gallery": [],
+   "gaps": [
+    "NO_ACCEPTED_SPECS",
+    "NO_OFFICIAL_BROCHURE",
+    "NO_VERIFIED_HERO_IMAGE",
+    "NO_VERIFIED_WARRANTY",
+    "GENERATION_UNKNOWN"
+   ],
+   "generation": null,
+   "hero_image": null,
+   "hero_image_limited": null,
+   "id_status": "ACCEPTED",
+   "logo": {
+    "asset_id": "0e67ff99f73c",
+    "credit": "kia.com.eg",
+    "height": "60",
+    "page": "https://kia.com.eg/models/The_K4",
+    "quality_class": "COMPACT_ONLY",
+    "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+    "sha256": "0e67ff99f73c19ab6887c392c132da68f836beac30e54176af45d6b4df6f8bdc",
+    "src": "/media/p2/brands/kia.png",
+    "status": "ACCEPT",
+    "url": "https://kia.com.eg/img/global/logo-black.png",
+    "width": "256"
+   },
+   "market_status": "unverified",
+   "market_status_basis": "P2 market-universe decision (config/market_universe.json); see review/market_universe_audit.csv",
+   "model": "PV5",
+   "model_id": "m_000420",
+   "p1_id": "kia/pv5",
+   "price": {
+    "as_of": "2026-10-13",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-13",
+    "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+    "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
+    "model_year": 2026,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 2500000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-13",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-13",
+      "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+      "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
+      "label": "Elite",
+      "model_year": 2026,
+      "powertrain": "ev",
+      "price_egp": 2500000,
+      "tier": "A"
+     }
+    ]
+   },
+   "rework_price_rows": 0,
+   "site_slug": "kia-pv5",
+   "size_class": null,
+   "specs": null,
+   "specs_accepted": false,
+   "universe": "P2_ADDITION",
+   "warranty": null
+  },
+  {
+   "brand": "Deepal",
+   "brochures": [],
+   "conflicts": [],
+   "gallery": [],
+   "gaps": [
+    "NO_ACCEPTED_PRICE",
+    "NO_ACCEPTED_SPECS",
+    "NO_OFFICIAL_BROCHURE",
+    "NO_VERIFIED_HERO_IMAGE",
+    "NO_VERIFIED_WARRANTY",
+    "GENERATION_UNKNOWN"
+   ],
+   "generation": null,
+   "hero_image": null,
+   "hero_image_limited": null,
+   "id_status": "ACCEPTED",
+   "logo": {
+    "asset_id": "8155c1b99153",
+    "credit": "commons.wikimedia.org",
+    "height": "531",
+    "page": "https://commons.wikimedia.org/wiki/File:Deepal_global_logo.svg",
+    "quality_class": "HQ",
+    "rights_basis": "Wikimedia Commons (Public domain); trademark of brand owner",
+    "sha256": "8155c1b99153df402772fc261f3d68eb92fd10b5e7fcacf8b54705427780bb1c",
+    "src": "/media/p2/brands/deepal.png",
+    "status": "ACCEPT",
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Deepal_global_logo.svg/1920px-Deepal_global_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "width": "1920"
+   },
+   "market_status": "unverified",
+   "market_status_basis": "P2 market-universe decision (config/market_universe.json); see review/market_universe_audit.csv",
+   "model": "S09",
+   "model_id": "m_000421",
+   "p1_id": "deepal/s09",
+   "price": null,
+   "rework_price_rows": 0,
+   "site_slug": "deepal-s09",
+   "size_class": {
+    "basis": "registration segment, last 12 months (6 registrations)",
+    "segment": "SUV-D",
+    "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
+   },
+   "specs": null,
+   "specs_accepted": false,
+   "universe": "P2_ADDITION",
+   "warranty": null
   }
  ],
- "rules": "(AT-39 price evidence policy; conflicts -> REWORK, nothing inferred, nothing averaged):\n  ID-1   identity ACCEPT when p1_id/slug/model_id are unique, U11 and the P5 RC1 release agree on brand+model,\n         and any pre-existing P2 ID keeps its slug. IDs are never re-assigned; new IDs continue m_NNNNNN.\n  PA-1   Tier A (official Egypt OEM/importer page or document): ACCEPT if confidence HIGH, value not repeated across\n         >=3 trims of the model (parser-suspect), and within +/-25% of the market official-price range when one exists.\n  PB-1   Tier B: the same official EGP value for the same model, model year and trim reported by >=2 independent\n         sites (trim key equal, or the value unique within each site's cohort). Date = source-stated effective date\n         when a site states one for that value, else the common observation date (date_basis=OBSERVED).\n  PB-2   same model/year/trim with different values across sites -> REWORK (CONFLICT); single site -> Tier C REWORK.\n  PS-1   when a model has accepted Tier A trim prices, Tier B rows are kept as CORROBORATES / SUPERSEDED_BY_TIER_A.",
+ "rules": "(AT-39 price evidence policy; conflicts -> REWORK, nothing inferred, nothing averaged):\n  ID-1   identity ACCEPT when p1_id/slug/model_id are unique, U11 and the P5 RC1 release agree on brand+model,\n         and any pre-existing P2 ID keeps its slug. IDs are never re-assigned; new IDs continue m_NNNNNN.\n  PA-1   Tier A (official Egypt OEM/importer page or document): ACCEPT if confidence HIGH, value not repeated across\n         >=3 trims of the model (parser-suspect), and within +/-25% of the market official-price range when one exists.\n  PB-1   Tier B: the same official EGP value for the same model, model year and trim reported by >=2 independent\n         sites (trim key equal, or the value unique within each site's cohort). Date = source-stated effective date\n         when a site states one for that value, else the common observation date (date_basis=OBSERVED).\n  PB-2   same model/year/trim with different values across sites -> REWORK (CONFLICT); single site -> Tier C REWORK.\n  PS-1   when a model has accepted Tier A trim prices, Tier B rows are kept as CORROBORATES / SUPERSEDED_BY_TIER_A.\n  PS-3   when a model has an accepted Tier A importer/distributor document with a source-stated date, older or undated\n         Tier A rows of other issuers for that model (same or unstated model year) are kept as\n         CORROBORATES_TIER_A_DOC (same value) or SUPERSEDED_BY_NEWER_TIER_A; the newest dated document wins.",
  "schema": "carindex.p2.canonical/v1"
 }

@@ -23,6 +23,9 @@ Acceptance rules (AT-39 price evidence policy; conflicts -> REWORK, nothing infe
          when a site states one for that value, else the common observation date (date_basis=OBSERVED).
   PB-2   same model/year/trim with different values across sites -> REWORK (CONFLICT); single site -> Tier C REWORK.
   PS-1   when a model has accepted Tier A trim prices, Tier B rows are kept as CORROBORATES / SUPERSEDED_BY_TIER_A.
+  PS-3   when a model has an accepted Tier A importer/distributor document with a source-stated date, older or undated
+         Tier A rows of other issuers for that model (same or unstated model year) are kept as
+         CORROBORATES_TIER_A_DOC (same value) or SUPERSEDED_BY_NEWER_TIER_A; the newest dated document wins.
 """
 import argparse, collections, functools, csv, glob, hashlib, importlib.util, json, os, re
 
@@ -383,6 +386,23 @@ def tier_a(market, stated=()):
 
 
 def supersede(a_rows, b_rows):
+    docs = collections.defaultdict(list)  # PS-3
+    for r in a_rows:
+        if r["status"] == "ACCEPT" and r["kind"] == "trim" and r["tier"] == "A" and r["date_basis"] == "SOURCE_STATED" and r["effective_date"] \
+                and not r["issuer"].endswith("_eg_web"):
+            docs[r["p1_id"]].append(r)
+    for r in a_rows:
+        if r["status"] != "ACCEPT" or r["tier"] != "A" or r["p1_id"] not in docs:
+            continue
+        newer = [d for d in docs[r["p1_id"]] if d["issuer"] != r["issuer"] and d["effective_date"] > (r["effective_date"] or "")
+                 and (not str(r["model_year"]) or str(d["model_year"]) == str(r["model_year"]))]
+        if not newer:
+            continue
+        top = max(d["effective_date"] for d in newer)
+        vals = {d["price_egp"] for d in newer if d["effective_date"] == top}
+        iss = next(d["issuer"] for d in newer if d["effective_date"] == top)
+        r["status"] = "CORROBORATES_TIER_A_DOC" if r["price_egp"] in vals else "SUPERSEDED_BY_NEWER_TIER_A"
+        r["reason"] += f"; PS-3 newer dated document {iss} ({top})"
     a_ok = collections.defaultdict(set)
     for r in a_rows:
         if r["status"] == "ACCEPT" and r["kind"] == "trim":
@@ -403,7 +423,7 @@ def supersede(a_rows, b_rows):
     for r in a_rows:
         if r["status"] == "ACCEPT" and r["kind"] == "trim":
             a_ok[r["p1_id"]].add(r["price_egp"])
-    for r in b_rows:
+    for r in b_rows + [x for x in a_rows if x["tier"] != "A"]:  # manual Tier B rows sit with the Tier A rows
         if r["p1_id"] in a_ok and r["status"] == "ACCEPT":
             r["status"] = "CORROBORATES_TIER_A" if r["price_egp"] in a_ok[r["p1_id"]] else "SUPERSEDED_BY_TIER_A"
             r["reason"] += "; PS-1"
