@@ -367,8 +367,11 @@ def tier_a(market, stated=()):
         v = int(r["price_egp"])
         m = rng.get(r["p1_id"])
         doc = {int(x["price_egp"]) for x in manual if x["p1_id"] == r["p1_id"] and x["evidence_ref"] == r["evidence_ref"]}
-        later = sorted({s["effective_date"] for s in stated if s["p1_id"] == r["p1_id"] and s["effective_date"] > (r["effective_date"] or "9")
-                        and s["price_egp"] not in doc})  # a later change to a value the document already states corroborates it
+        ch = collections.defaultdict(set)  # later stated changes, grouped by date; a date that restates any document value corroborates it
+        for s_ in stated:
+            if s_["p1_id"] == r["p1_id"] and s_["effective_date"] > (r["effective_date"] or "9"):
+                ch[s_["effective_date"]].add(s_["price_egp"])
+        later = sorted(d_ for d_, v in ch.items() if not v & doc)
         srcs = [u for u in (r["evidence_url"] or "").split(" | ") if u]
         if r["tier"] == "B" and len({u.split("/")[2] for u in srcs}) >= 2 and not later:
             status, reason = "ACCEPT", f"PB-M {len({u.split('/')[2] for u in srcs})} independent dated sources state the identical value"

@@ -2,7 +2,7 @@
  "schema": "carindex.p2.p5-release-handoff/v1",
  "release_id": "P2-CATALOGUE-U11-2026-10-21-RC2",
  "route": "P5 a6d3f0b: copy vehicle-data/views/catalogue-serving.release.json verbatim to web/data/registry/catalogue-serving.release.json; copy each file below to web/public<src>",
- "release_sha256": "49756cd33c062238742349b0f908f7ca867b52e9db46c9b7d1286475b3df2ec4",
+ "release_sha256": "492e08f4157acde21040ad74b7ed80ebd694b84dec32f96bf535096126043937",
  "counts": {
   "catalogue": 283,
   "p2_evidence": 21,
@@ -1989,11 +1989,11 @@
    "priced_283": 186
   },
   "after": {
-   "release_sha256": "49756cd33c062238742349b0f908f7ca867b52e9db46c9b7d1286475b3df2ec4",
+   "release_sha256": "492e08f4157acde21040ad74b7ed80ebd694b84dec32f96bf535096126043937",
    "models": 419,
-   "priced": 247,
-   "priced_tier_a": 119,
-   "priced_283": 204
+   "priced": 248,
+   "priced_tier_a": 120,
+   "priced_283": 205
   }
  },
  "market_additions": 136,
@@ -2004,7 +2004,8 @@
   "3 new market identities: geely/ex5-em-r, kia/pv5, deepal/s09 (S09: identity only, launch 2026-10-25, no price)",
   "PS-3 rule: newest dated Tier A distributor document supersedes older/undated Tier A rows of other issuers; manual Tier B rows now follow PS-1",
   "Warranty added from price lists: GAC, JAC, Forthing, Soueast, smart",
-  "CEO 2026-10-21: geely/emgrand-7 accepted.market_status=discontinued (+market_status_basis); soueast/s08 <-> soueast/s-08-dm accepted.related (same model, other powertrain); chery/eq7 list price 1,599,000 accepted (promotion label noted)"
+  "CEO 2026-10-21: geely/emgrand-7 accepted.market_status=discontinued (+market_status_basis); soueast/s08 <-> soueast/s-08-dm accepted.related (same model, other powertrain); chery/eq7 list price 1,599,000 accepted (promotion label noted)",
+  "soueast/s08 accepted.market_status=\"duplicate\" of soueast/s-08-dm (no petrol S08 found); Chery Tiggo 8 Pro MY2026 and JAC JS8 Pro list prices accepted (promotion labels noted); PA-2 refined: a later stated change that restates a document value corroborates it"
  ],
  "p5_actions": [
   "Ingest release + files per route; no schema change",

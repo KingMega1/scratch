@@ -10,9 +10,9 @@
   "logo_accepted": 248,
   "market_status_official": 37,
   "models": 283,
-  "price_accepted": 204,
-  "price_source_dated": 153,
-  "price_tier_a": 98,
+  "price_accepted": 205,
+  "price_source_dated": 154,
+  "price_tier_a": 99,
   "specs_accepted": 201,
   "warranty_accepted": 108
  },
@@ -27,9 +27,9 @@
   "logo_accepted": 350,
   "market_status_official": 38,
   "models": 419,
-  "price_accepted": 247,
-  "price_source_dated": 189,
-  "price_tier_a": 119,
+  "price_accepted": 248,
+  "price_source_dated": 190,
+  "price_tier_a": 120,
   "specs_accepted": 244,
   "warranty_accepted": 133
  },
@@ -12364,9 +12364,9 @@
     "effective_date": null,
     "evidence_url": "https://drive.google.com/file/d/17ZnNOxe5FXREfuuRD9gbqXWZcPl0gZl8/view",
     "issuer": "GB Auto official distributor list (CEO-supplied)",
-    "model_year": 2025,
+    "model_year": 2026,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 1365000,
+    "price_from": 1375000,
     "tier": "A",
     "trims": [
      {
@@ -12391,6 +12391,30 @@
       "model_year": 2025,
       "powertrain": "Petrol",
       "price_egp": 1465000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/17ZnNOxe5FXREfuuRD9gbqXWZcPl0gZl8/view",
+      "issuer": "GB Auto official distributor list (CEO-supplied)",
+      "label": "1.6T 6DCT Luxury",
+      "model_year": 2026,
+      "powertrain": "Petrol",
+      "price_egp": 1375000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://drive.google.com/file/d/17ZnNOxe5FXREfuuRD9gbqXWZcPl0gZl8/view",
+      "issuer": "GB Auto official distributor list (CEO-supplied)",
+      "label": "1.6T 6DCT Flagship",
+      "model_year": 2026,
+      "powertrain": "Petrol",
+      "price_egp": 1475000,
       "tier": "A"
      }
     ]
@@ -25883,7 +25907,6 @@
    ],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "GENERATION_UNKNOWN"
@@ -25922,7 +25945,43 @@
    "model": "JS8 PRO",
    "model_id": "m_000164",
    "p1_id": "jac/js8-pro",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-06",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-06",
+    "evidence_url": "https://drive.google.com/file/d/19-6uc16A04WD6A5ZAIfgo1pq6VYcQOM5/view",
+    "issuer": "Kasrawy Group (JAC distributor) price list (CEO-supplied)",
+    "model_year": 2026,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 1150000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-06",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-06",
+      "evidence_url": "https://drive.google.com/file/d/19-6uc16A04WD6A5ZAIfgo1pq6VYcQOM5/view",
+      "issuer": "Kasrawy Group (JAC distributor) price list (CEO-supplied)",
+      "label": "Limited",
+      "model_year": 2026,
+      "powertrain": "Petrol",
+      "price_egp": 1150000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-06",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-06",
+      "evidence_url": "https://drive.google.com/file/d/19-6uc16A04WD6A5ZAIfgo1pq6VYcQOM5/view",
+      "issuer": "Kasrawy Group (JAC distributor) price list (CEO-supplied)",
+      "label": "Flagship",
+      "model_year": 2026,
+      "powertrain": "Petrol",
+      "price_egp": 1200000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 5,
    "site_slug": "jac-js8-pro",
    "size_class": {
@@ -45419,9 +45478,9 @@
    },
    "related": [
     {
-     "basis": "Same car as S08; S08 DM = plug-in hybrid, S08 = petrol (CEO). Kept as separate entries because powertrains differ.",
+     "basis": "soueast/s08 is a duplicate listing of this car (plug-in hybrid DM-i); no petrol S08 found in the Soueast 18 Oct 2026 list or market pages.",
      "identity": "soueast/s08",
-     "relation": "same model; other powertrain"
+     "relation": "duplicate listing"
     }
    ],
    "rework_price_rows": 1,
@@ -45660,17 +45719,17 @@
    "hero_image_limited": null,
    "id_status": "ACCEPTED",
    "logo": null,
-   "market_status": "unverified",
-   "market_status_basis": "U11 on-sale (registrations + market listings); no official Egypt page captured yet",
+   "market_status": "duplicate",
+   "market_status_basis": "Same car as S08 DM (plug-in hybrid DM-i). No petrol S08 found: Soueast 18 Oct 2026 list shows only S08 DM PHEV 1,849,000; Hatla2ee 'S08' page lists only 'A/T Intelligent (DM-i) 1500cc' 1,849,000; ContactCars lists only 'S 08 DM'. Registration engine tags (S08=Hybrid, S08DM=ICE) conflict with the lists and are not relied on. Verified after CEO request; corrects the 'petrol vs hybrid' note. (CEO 2026-10-21)",
    "model": "S08",
    "model_id": "m_000250",
    "p1_id": "soueast/s08",
    "price": null,
    "related": [
     {
-     "basis": "Same car as S08 DM; S08 = petrol, S08 DM = plug-in hybrid (CEO). Kept as separate entries because powertrains differ.",
+     "basis": "Same car as S08 DM (plug-in hybrid DM-i). No petrol S08 found: Soueast 18 Oct 2026 list shows only S08 DM PHEV 1,849,000; Hatla2ee 'S08' page lists only 'A/T Intelligent (DM-i) 1500cc' 1,849,000; ContactCars lists only 'S 08 DM'. Registration engine tags (S08=Hybrid, S08DM=ICE) conflict with the lists and are not relied on. Verified after CEO request; corrects the 'petrol vs hybrid' note.",
      "identity": "soueast/s-08-dm",
-     "relation": "same model; other powertrain"
+     "relation": "duplicate listing of"
     }
    ],
    "rework_price_rows": 1,
