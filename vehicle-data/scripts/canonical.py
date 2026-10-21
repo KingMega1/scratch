@@ -573,6 +573,11 @@ def market_spec_facts_one(snap):
     return out
 
 
+def model_status():
+    p = os.path.join(ROOT, "registry", "model_status_decisions.csv")
+    return {r["p1_id"]: r for r in read(p)} if os.path.exists(p) else {}
+
+
 def media_accepted():
     return read(os.path.join(ROOT, "registry", "media_accepted.csv"))
 
@@ -715,6 +720,12 @@ def main():
                    price=pv, specs=specs or None, specs_accepted=spec_ok, warranty=warranty, brochures=bro.get(m["p1_id"], []),
                    logo=logo, hero_image=hero, hero_image_limited=hero_limited, gallery=gallery,
                    conflicts=conflicts, gaps=gaps, rework_price_rows=sum(r["status"] == "REWORK" for r in pr))
+        st = model_status().get(m["p1_id"])  # CEO market-status / relation decisions (registry/model_status_decisions.csv)
+        if st:
+            if st["market_status"]:
+                rec["market_status"], rec["market_status_basis"] = st["market_status"], f'{st["basis"]} ({st["decided_by"]} {st["decided_on"]})'
+                rec["gaps"] = rec["gaps"] + (["DISCONTINUED"] if st["market_status"] == "discontinued" else [])
+            rec["related"] = [dict(identity=st["related_identity"], relation=st["relation"], basis=st["basis"])] if st["related_identity"] else []
         models.append(rec)
         cov.append(dict(model_id=m["model_id"], p1_id=m["p1_id"], brand=m["brand"], model=m["model"], universe=m["universe"], id_status=m["id_status"],
                         market_status=rec["market_status"],
@@ -789,6 +800,10 @@ def serving(canon):
                              hero_image_limited=pub(c["hero_image_limited"], ["PHOTO_NEEDS_ENRICHMENT", "ORIGIN_UNVERIFIED"]),
                              gallery=[g for g in c["gallery"] if g["src"]],
                              conflicts=c["conflicts"])
+        if c.get("related") is not None:
+            e["accepted"]["related"] = c["related"]
+        if c["market_status"] == "discontinued":
+            e["accepted"]["market_status_basis"] = c["market_status_basis"]
         fix = split_parent_powertrains(e, c, mu)  # RC1 'powertrains' stays verbatim (P5 contract); P2 value is accepted-only
         if fix:
             e["accepted"]["powertrains"] = fix["to"]

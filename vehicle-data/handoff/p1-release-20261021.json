@@ -2,7 +2,7 @@
  "schema": "carindex.p2.p1-release-handoff/v1",
  "date": "2026-10-21",
  "canonical_file": "vehicle-data/views/canonical_u11.json",
- "canonical_sha256": "e7058234c78767b839d0dcf4b32864200f6348032d7234455bcd9ca5118c64f6",
+ "canonical_sha256": "9680fc78f87f45ce9e7c657850b0d80707bdbbe14af5c338eb8ddf3511e8f608",
  "previous_canonical_sha256": "dae11c2b434adf2ebfe24e5f0599a54542f22585c1c73a84838771f1589407fd",
  "compatibility": {
   "top_level_keys_equal": true,
@@ -57,7 +57,7 @@
    "priced_283": 186
   },
   "after": {
-   "release_sha256": "c09fc01c893bd48ae184d735bef5fd83a1968f6becc3734dab7084d86ec58d35",
+   "release_sha256": "49756cd33c062238742349b0f908f7ca867b52e9db46c9b7d1286475b3df2ec4",
    "models": 419,
    "priced": 247,
    "priced_tier_a": 119,
@@ -68,5 +68,6 @@
  "ledger": "vehicle-data/review/oct21_price_ledger.csv",
  "warranty_ledger": "vehicle-data/review/oct21_warranty_ledger.csv",
  "missing_price_priority": "vehicle-data/review/oct21_missing_price_priority.csv",
- "supersession_history": "vehicle-data/review/price_supersession_history.csv"
+ "supersession_history": "vehicle-data/review/price_supersession_history.csv",
+ "model_status_decisions": "vehicle-data/registry/model_status_decisions.csv (emgrand-7 discontinued; S08/S08 DM related)"
 }

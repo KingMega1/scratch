@@ -53,6 +53,6 @@ Review sheet `1TUlGhEYzrOQrYdgMgyVhHwdw_ABGZSk9OhohYnvbZVg` (CarIndex P2 Data Co
 - Existing tabs (CEO Review, CEO Decisions, Model Completeness, etc.) were not modified.
 
 ## 2026-10-21 — October price refresh
-- `p5-release-20261021.json`: release `P2-CATALOGUE-U11-2026-10-21-RC2`, sha256 `c09fc01c…`, 391 files; verified in a disposable copy of P5 `bd1086f` (typecheck pass, unit 79/79). Not pushed to P5.
-- `p1-release-20261021.json`: canonical sha256 `e7058234…`; schema/IDs unchanged; 419 models (3 P2 additions).
+- `p5-release-20261021.json`: release `P2-CATALOGUE-U11-2026-10-21-RC2`, see manifest for final sha256, 391 files; verified in a disposable copy of P5 `bd1086f` (typecheck pass, unit 79/79). Not pushed to P5.
+- `p1-release-20261021.json`: canonical sha256 in manifest; schema/IDs unchanged; 419 models (3 P2 additions).
 - Ledgers: `review/oct21_price_ledger.csv`, `review/oct21_warranty_ledger.csv`, `review/oct21_missing_price_priority.csv`, `review/price_supersession_history.csv`.

@@ -11447,14 +11447,27 @@
         },
         "price": {
           "price_from": 1599000,
-          "model_year": null,
+          "model_year": 2026,
           "tier": "A",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-13",
-          "issuer": "chery_eg_web",
-          "evidence_url": "https://www.chery-eg.com/en/car/eq7",
-          "trims": [],
+          "as_of": "2026-10-21",
+          "issuer": "GB Auto official distributor list (CEO-supplied)",
+          "evidence_url": "https://drive.google.com/file/d/17ZnNOxe5FXREfuuRD9gbqXWZcPl0gZl8/view",
+          "trims": [
+            {
+              "model_year": 2026,
+              "label": "Luxury",
+              "price_egp": 1599000,
+              "tier": "A",
+              "effective_date": null,
+              "date_basis": "OBSERVED",
+              "as_of": "2026-10-21",
+              "issuer": "GB Auto official distributor list (CEO-supplied)",
+              "evidence_url": "https://drive.google.com/file/d/17ZnNOxe5FXREfuuRD9gbqXWZcPl0gZl8/view",
+              "powertrain": "Electric"
+            }
+          ],
           "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
         },
         "specs": {
@@ -21878,10 +21891,11 @@
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
-        "GENERATION_UNKNOWN"
+        "GENERATION_UNKNOWN",
+        "DISCONTINUED"
       ],
       "accepted": {
-        "market_status": "unverified",
+        "market_status": "discontinued",
         "size_class": {
           "segment": "Car-B",
           "basis": "registration segment, last 12 months (1827 registrations)",
@@ -21904,7 +21918,15 @@
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
-        "conflicts": []
+        "conflicts": [],
+        "related": [
+          {
+            "identity": "geely/emgrand",
+            "relation": "successor",
+            "basis": "Discontinued in Egypt many years ago; no new registrations for 5+ years (CEO). The registration-explorer label 'Geely|Emegrand 7' (1,827 last 12m) therefore refers to the current Emgrand (geely/emgrand), not this model."
+          }
+        ],
+        "market_status_basis": "Discontinued in Egypt many years ago; no new registrations for 5+ years (CEO). The registration-explorer label 'Geely|Emegrand 7' (1,827 last 12m) therefore refers to the current Emgrand (geely/emgrand), not this model. (CEO 2026-10-21)"
       }
     },
     {
@@ -47790,7 +47812,14 @@
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
-        "conflicts": []
+        "conflicts": [],
+        "related": [
+          {
+            "identity": "soueast/s08",
+            "relation": "same model; other powertrain",
+            "basis": "Same car as S08; S08 DM = plug-in hybrid, S08 = petrol (CEO). Kept as separate entries because powertrains differ."
+          }
+        ]
       }
     },
     {
@@ -48048,7 +48077,14 @@
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
-        "conflicts": []
+        "conflicts": [],
+        "related": [
+          {
+            "identity": "soueast/s-08-dm",
+            "relation": "same model; other powertrain",
+            "basis": "Same car as S08 DM; S08 = petrol, S08 DM = plug-in hybrid (CEO). Kept as separate entries because powertrains differ."
+          }
+        ]
       }
     },
     {
