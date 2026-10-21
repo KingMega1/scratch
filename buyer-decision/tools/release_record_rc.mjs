@@ -39,7 +39,7 @@ const rec = {
     ...Object.fromEntries([['eligibility_manifest', 'ELIGIBILITY-MANIFEST.csv'], ['coverage_report', 'COVERAGE-REPORT.md'], ['regression_report', 'REGRESSION_REPORT.md'], ['p2_handoff', 'P2-HANDOFF-missing-facts.csv']]
       .filter(([, f]) => fs.existsSync(path.join(ROOT, DS, f))).map(([k, f]) => [k, at(`${DS}/${f}`)])),
   },
-  semantic_changes: 'Ranking, parser, eligibility rules: NONE. Engine E6.1 (vs T1): a held market car reports unknown_size / scope instead of not_on_sale. Transport T1.1: no compare table for a single-car result, matching the released app.',
+  semantic_changes: 'Ranking and parser: NONE. Eligibility data policy per CEO 2026-10-21 (market prices for unpriced cars, no size hold, coupes/convertibles/vans included; see dataset manifest changes.policy). Engine E6.1 (vs T1): a held market car reports unknown_size / scope instead of not_on_sale. Transport T1.1: no compare table for a single-car result, matching the released app.',
   evidence: { ref: `buyer-decision/${DS}/REGRESSION_REPORT.md`, commands: [
     'node tools/build_present.mjs --check', 'node tests/regression/run.js --strict',
     `CI_DATASET=${DS}/recommendation_view.json node tests/regression/run.js`, 'node tests/eligibility.test.js datasets/{U11-2026-09-26,U12C-2026-10-14,U12C2-2026-10-14,U12C2-RC1-2026-10-14,U12C2-RC2-2026-10-14,U12-RC3-2026-10-15,U12-RC4-2026-10-21,U12-RC5-2026-10-21,U12-RC6-2026-10-21}', `node tests/buyer_scenarios.test.js ${DS}`, `node tests/u12_data.test.js ${DS}`, `node tests/transport/browser_equivalence.mjs <build of ${DS}> ${DS}`,
