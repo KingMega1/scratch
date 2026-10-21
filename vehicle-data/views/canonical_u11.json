@@ -10,9 +10,9 @@
   "logo_accepted": 248,
   "market_status_official": 37,
   "models": 283,
-  "price_accepted": 205,
-  "price_source_dated": 154,
-  "price_tier_a": 99,
+  "price_accepted": 188,
+  "price_source_dated": 136,
+  "price_tier_a": 66,
   "specs_accepted": 201,
   "warranty_accepted": 108
  },
@@ -26,10 +26,10 @@
   "id_accepted": 419,
   "logo_accepted": 350,
   "market_status_official": 38,
-  "models": 419,
-  "price_accepted": 248,
-  "price_source_dated": 190,
-  "price_tier_a": 120,
+  "models": 416,
+  "price_accepted": 223,
+  "price_source_dated": 165,
+  "price_tier_a": 76,
   "specs_accepted": 244,
   "warranty_accepted": 133
  },
@@ -9877,7 +9877,9 @@
      "url": "https://www.chery-eg.com/media/files/ARRIZO_5brochure_2025-08-26_120912.728777.pdf"
     }
    ],
-   "conflicts": [],
+   "conflicts": [
+    "PS-2 CONFLICT: EgyCar+Hatla2ee states 705000 effective 2026-10-21 (newer than official undated)"
+   ],
    "gallery": [
     {
      "asset_id": "103a6fdfd332",
@@ -9960,18 +9962,6 @@
       "effective_date": null,
       "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
       "issuer": "GB Auto official distributor list (CEO-supplied)",
-      "label": "1.5 CVT Basic",
-      "model_year": 2026,
-      "powertrain": "Petrol",
-      "price_egp": 715000,
-      "tier": "A"
-     },
-     {
-      "as_of": "2026-10-15",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
-      "issuer": "GB Auto official distributor list (CEO-supplied)",
       "label": "1.5 CVT Comfort",
       "model_year": 2026,
       "powertrain": "Petrol",
@@ -10016,7 +10006,7 @@
      }
     ]
    },
-   "rework_price_rows": 14,
+   "rework_price_rows": 15,
    "site_slug": "chery-arrizo-5",
    "size_class": {
     "basis": "registration segment, last 12 months (4438 registrations)",
@@ -10631,7 +10621,7 @@
      }
     ]
    },
-   "rework_price_rows": 0,
+   "rework_price_rows": 2,
    "site_slug": "chery-arrizo-8",
    "size_class": {
     "basis": "registration segment, last 12 months (132 registrations)",
@@ -11787,7 +11777,7 @@
      }
     ]
    },
-   "rework_price_rows": 6,
+   "rework_price_rows": 10,
    "site_slug": "chery-tiggo-7-pro",
    "size_class": {
     "basis": "registration segment, last 12 months (2074 registrations)",
@@ -12135,7 +12125,7 @@
      }
     ]
    },
-   "rework_price_rows": 7,
+   "rework_price_rows": 13,
    "site_slug": "chery-tiggo-8",
    "size_class": {
     "basis": "registration segment, last 12 months (1789 registrations)",
@@ -12360,10 +12350,10 @@
    "p1_id": "chery/tiggo-8-pro",
    "price": {
     "as_of": "2026-10-21",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
-    "evidence_url": "https://drive.google.com/file/d/17ZnNOxe5FXREfuuRD9gbqXWZcPl0gZl8/view",
-    "issuer": "GB Auto official distributor list (CEO-supplied)",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2025-08-03",
+    "evidence_url": "https://eg.hatla2ee.com/en/new-car/chery/Tiggo-8-Pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro/year-2026",
+    "issuer": "ContactCars+Hatla2ee",
     "model_year": 2026,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 1375000,
@@ -12371,35 +12361,11 @@
     "trims": [
      {
       "as_of": "2026-10-21",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://drive.google.com/file/d/17ZnNOxe5FXREfuuRD9gbqXWZcPl0gZl8/view",
-      "issuer": "GB Auto official distributor list (CEO-supplied)",
-      "label": "1.6T 6DCT Luxury",
-      "model_year": 2025,
-      "powertrain": "Petrol",
-      "price_egp": 1365000,
-      "tier": "A"
-     },
-     {
-      "as_of": "2026-10-21",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://drive.google.com/file/d/17ZnNOxe5FXREfuuRD9gbqXWZcPl0gZl8/view",
-      "issuer": "GB Auto official distributor list (CEO-supplied)",
-      "label": "1.6T 6DCT Flagship",
-      "model_year": 2025,
-      "powertrain": "Petrol",
-      "price_egp": 1465000,
-      "tier": "A"
-     },
-     {
-      "as_of": "2026-10-21",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://drive.google.com/file/d/17ZnNOxe5FXREfuuRD9gbqXWZcPl0gZl8/view",
-      "issuer": "GB Auto official distributor list (CEO-supplied)",
-      "label": "1.6T 6DCT Luxury",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2025-08-03",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/chery/Tiggo-8-Pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro/year-2026",
+      "issuer": "ContactCars+Hatla2ee",
+      "label": "Luxury",
       "model_year": 2026,
       "powertrain": "Petrol",
       "price_egp": 1375000,
@@ -12407,11 +12373,11 @@
      },
      {
       "as_of": "2026-10-21",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://drive.google.com/file/d/17ZnNOxe5FXREfuuRD9gbqXWZcPl0gZl8/view",
-      "issuer": "GB Auto official distributor list (CEO-supplied)",
-      "label": "1.6T 6DCT Flagship",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2025-08-03",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/chery/Tiggo-8-Pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro | https://www.contactcars.com/en/new-cars/chery-tiggo_8_pro/year-2026",
+      "issuer": "ContactCars+Hatla2ee",
+      "label": "Flagship",
       "model_year": 2026,
       "powertrain": "Petrol",
       "price_egp": 1475000,
@@ -19882,10 +19848,10 @@
    "p1_id": "gac/empow",
    "price": {
     "as_of": "2026-10-21",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
-    "evidence_url": "https://drive.google.com/file/d/15gPWlIzEIUazoWR41ShvPoxwzud9dq6R/view",
-    "issuer": "Jameel Motors (GAC distributor) price list (CEO-supplied)",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-19",
+    "evidence_url": "https://www.contactcars.com/en/new-cars/gac-empow/year-2027 | https://www.egy-car.com/gac-empow",
+    "issuer": "ContactCars+EgyCar",
     "model_year": 2027,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 1095000,
@@ -19893,10 +19859,10 @@
     "trims": [
      {
       "as_of": "2026-10-21",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://drive.google.com/file/d/15gPWlIzEIUazoWR41ShvPoxwzud9dq6R/view",
-      "issuer": "Jameel Motors (GAC distributor) price list (CEO-supplied)",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-19",
+      "evidence_url": "https://www.contactcars.com/en/new-cars/gac-empow/year-2027 | https://www.egy-car.com/gac-empow",
+      "issuer": "ContactCars+EgyCar",
       "label": "Elegance",
       "model_year": 2027,
       "powertrain": "Petrol",
@@ -19905,10 +19871,22 @@
      },
      {
       "as_of": "2026-10-21",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://drive.google.com/file/d/15gPWlIzEIUazoWR41ShvPoxwzud9dq6R/view",
-      "issuer": "Jameel Motors (GAC distributor) price list (CEO-supplied)",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-19",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/gac/Empow | https://www.contactcars.com/en/new-cars/gac-empow/year-2027 | https://www.egy-car.com/gac-empow",
+      "issuer": "ContactCars+EgyCar+Hatla2ee",
+      "label": "Elegance",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 1095000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-19",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/gac/Empow | https://www.contactcars.com/en/new-cars/gac-empow/year-2027",
+      "issuer": "ContactCars+Hatla2ee",
       "label": "Premium",
       "model_year": 2027,
       "powertrain": "Petrol",
@@ -19917,15 +19895,27 @@
      },
      {
       "as_of": "2026-10-21",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://drive.google.com/file/d/15gPWlIzEIUazoWR41ShvPoxwzud9dq6R/view",
-      "issuer": "Jameel Motors (GAC distributor) price list (CEO-supplied)",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-19",
+      "evidence_url": "https://www.contactcars.com/en/new-cars/gac-empow/year-2027 | https://www.egy-car.com/gac-empow",
+      "issuer": "ContactCars+EgyCar",
       "label": "S-Style",
       "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 1320000,
-      "tier": "A"
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-19",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/gac/Empow | https://www.contactcars.com/en/new-cars/gac-empow/year-2027 | https://www.egy-car.com/gac-empow",
+      "issuer": "ContactCars+EgyCar+Hatla2ee",
+      "label": "S-Style",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 1320000,
+      "tier": "B"
      }
     ]
    },
@@ -20375,10 +20365,10 @@
    "p1_id": "gac/gs4-max",
    "price": {
     "as_of": "2026-10-21",
-    "date_basis": "OBSERVED",
-    "effective_date": null,
-    "evidence_url": "https://drive.google.com/file/d/15gPWlIzEIUazoWR41ShvPoxwzud9dq6R/view",
-    "issuer": "Jameel Motors (GAC distributor) price list (CEO-supplied)",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-10-19",
+    "evidence_url": "https://eg.hatla2ee.com/en/new-car/gac/GS4+max | https://www.contactcars.com/en/new-cars/gac-gs4_max/year-2027 | https://www.egy-car.com/gac-gs4-max",
+    "issuer": "ContactCars+EgyCar+Hatla2ee",
     "model_year": 2027,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 1350000,
@@ -20386,10 +20376,10 @@
     "trims": [
      {
       "as_of": "2026-10-21",
-      "date_basis": "OBSERVED",
-      "effective_date": null,
-      "evidence_url": "https://drive.google.com/file/d/15gPWlIzEIUazoWR41ShvPoxwzud9dq6R/view",
-      "issuer": "Jameel Motors (GAC distributor) price list (CEO-supplied)",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-19",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/gac/GS4+max | https://www.contactcars.com/en/new-cars/gac-gs4_max/year-2027 | https://www.egy-car.com/gac-gs4-max",
+      "issuer": "ContactCars+EgyCar+Hatla2ee",
       "label": "Premium",
       "model_year": 2027,
       "powertrain": "Petrol",
@@ -21637,23 +21627,23 @@
    "model_id": "m_000137",
    "p1_id": "geely/monjaro",
    "price": {
-    "as_of": "2026-10-18",
-    "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-10-18",
-    "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
-    "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
+    "as_of": "2026-10-21",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
+    "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/Monjaro | https://www.contactcars.com/en/new-cars/geely-monjaro/year-2027",
+    "issuer": "ContactCars+Hatla2ee",
     "model_year": 2027,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 1699900,
     "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-18",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-18",
-      "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
-      "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
-      "label": "Pro",
+      "as_of": "2026-10-21",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/geely/Monjaro | https://www.contactcars.com/en/new-cars/geely-monjaro/year-2027",
+      "issuer": "ContactCars+Hatla2ee",
+      "label": "EM-i Max",
       "model_year": 2027,
       "powertrain": "Plug-in hybrid",
       "price_egp": 1699900,
@@ -23651,7 +23641,9 @@
   {
    "brand": "Hyundai",
    "brochures": [],
-   "conflicts": [],
+   "conflicts": [
+    "PB-2 CONFLICT: EgyCar=1150000"
+   ],
    "gallery": [
     {
      "asset_id": "97bba0c56e84",
@@ -23844,7 +23836,7 @@
      }
     ]
    },
-   "rework_price_rows": 8,
+   "rework_price_rows": 13,
    "site_slug": "hyundai-elantra",
    "size_class": {
     "basis": "registration segment, last 12 months (8511 registrations)",
@@ -25075,7 +25067,12 @@
      "url": "https://drive.google.com/file/d/10hQJ6jScP1wuSRc34Fx29yfy_b0nLxk1/view"
     }
    ],
-   "conflicts": [],
+   "conflicts": [
+    "PB-2 CONFLICT: ContactCars=1700000",
+    "PB-2 CONFLICT: ContactCars=1950000",
+    "PB-2 CONFLICT: EgyCar=1850000",
+    "PB-2 CONFLICT: EgyCar=2100000"
+   ],
    "gallery": [
     {
      "asset_id": "0fc21b2b565b",
@@ -25227,7 +25224,7 @@
      }
     ]
    },
-   "rework_price_rows": 16,
+   "rework_price_rows": 22,
    "site_slug": "hyundai-tucson",
    "size_class": {
     "basis": "registration segment, last 12 months (5212 registrations)",
@@ -25740,7 +25737,7 @@
    "model_id": "m_000163",
    "p1_id": "jac/js6",
    "price": {
-    "as_of": "2026-10-06",
+    "as_of": "2026-10-21",
     "date_basis": "SOURCE_STATED",
     "effective_date": "2026-10-06",
     "evidence_url": "https://drive.google.com/file/d/19-6uc16A04WD6A5ZAIfgo1pq6VYcQOM5/view",
@@ -25751,7 +25748,7 @@
     "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-06",
+      "as_of": "2026-10-21",
       "date_basis": "SOURCE_STATED",
       "effective_date": "2026-10-06",
       "evidence_url": "https://drive.google.com/file/d/19-6uc16A04WD6A5ZAIfgo1pq6VYcQOM5/view",
@@ -25763,7 +25760,7 @@
       "tier": "A"
      },
      {
-      "as_of": "2026-10-06",
+      "as_of": "2026-10-21",
       "date_basis": "SOURCE_STATED",
       "effective_date": "2026-10-06",
       "evidence_url": "https://drive.google.com/file/d/19-6uc16A04WD6A5ZAIfgo1pq6VYcQOM5/view",
@@ -28207,10 +28204,7 @@
   {
    "brand": "KGM",
    "brochures": [],
-   "conflicts": [
-    "PB-2 CONFLICT: EgyCar=1950000;Hatla2ee=1950000",
-    "PB-2 CONFLICT: EgyCar=2150000;Hatla2ee=2150000"
-   ],
+   "conflicts": [],
    "gallery": [],
    "gaps": [
     "NO_OFFICIAL_BROCHURE",
@@ -28252,43 +28246,43 @@
    "model_id": "m_000174",
    "p1_id": "kgm/actyon",
    "price": {
-    "as_of": "2026-10-19",
+    "as_of": "2026-10-21",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-10-19",
-    "evidence_url": "https://drive.google.com/file/d/1-KjWiZZ-j9QHw0pLMrgYf4rCEe9X2KJ5/view",
-    "issuer": "Arabiat Egypt (KGM distributor) price list (CEO-supplied)",
+    "effective_date": "2026-10-20",
+    "evidence_url": "https://eg.hatla2ee.com/en/new-car/kgm/KGM-Actyon | https://www.contactcars.com/en/new-cars/kgm-actyon | https://www.contactcars.com/en/new-cars/kgm-actyon/year-2026 | https://www.egy-car.com/kgm-actyon",
+    "issuer": "ContactCars+EgyCar+Hatla2ee",
     "model_year": 2026,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 1950000,
-    "tier": "A",
+    "tier": "B",
     "trims": [
      {
-      "as_of": "2026-10-19",
+      "as_of": "2026-10-21",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-19",
-      "evidence_url": "https://drive.google.com/file/d/1-KjWiZZ-j9QHw0pLMrgYf4rCEe9X2KJ5/view",
-      "issuer": "Arabiat Egypt (KGM distributor) price list (CEO-supplied)",
+      "effective_date": "2026-10-20",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/kgm/KGM-Actyon | https://www.contactcars.com/en/new-cars/kgm-actyon | https://www.contactcars.com/en/new-cars/kgm-actyon/year-2026 | https://www.egy-car.com/kgm-actyon",
+      "issuer": "ContactCars+EgyCar+Hatla2ee",
       "label": "Highline",
       "model_year": 2026,
       "powertrain": "Petrol",
       "price_egp": 1950000,
-      "tier": "A"
+      "tier": "B"
      },
      {
-      "as_of": "2026-10-19",
+      "as_of": "2026-10-21",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-19",
-      "evidence_url": "https://drive.google.com/file/d/1-KjWiZZ-j9QHw0pLMrgYf4rCEe9X2KJ5/view",
-      "issuer": "Arabiat Egypt (KGM distributor) price list (CEO-supplied)",
+      "effective_date": "2026-10-20",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/kgm/KGM-Actyon | https://www.contactcars.com/en/new-cars/kgm-actyon | https://www.contactcars.com/en/new-cars/kgm-actyon/year-2026 | https://www.egy-car.com/kgm-actyon",
+      "issuer": "ContactCars+EgyCar+Hatla2ee",
       "label": "Topline",
       "model_year": 2026,
       "powertrain": "Petrol",
       "price_egp": 2150000,
-      "tier": "A"
+      "tier": "B"
      }
     ]
    },
-   "rework_price_rows": 2,
+   "rework_price_rows": 0,
    "site_slug": "kgm-actyon",
    "size_class": {
     "basis": "registration segment, last 12 months (307 registrations)",
@@ -28465,75 +28459,63 @@
    "model_id": "m_000017",
    "p1_id": "kgm/torres",
    "price": {
-    "as_of": "2026-10-19",
+    "as_of": "2026-10-21",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-10-19",
-    "evidence_url": "https://drive.google.com/file/d/1-KjWiZZ-j9QHw0pLMrgYf4rCEe9X2KJ5/view",
-    "issuer": "Arabiat Egypt (KGM distributor) price list (CEO-supplied)",
+    "effective_date": "2026-10-20",
+    "evidence_url": "https://eg.hatla2ee.com/en/new-car/kgm/KGM-Torres | https://www.contactcars.com/en/new-cars/kgm-torres/year-2026",
+    "issuer": "ContactCars+Hatla2ee",
     "model_year": 2026,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 1610000,
-    "tier": "A",
+    "tier": "B",
     "trims": [
      {
-      "as_of": "2026-10-19",
+      "as_of": "2026-10-21",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-19",
-      "evidence_url": "https://drive.google.com/file/d/1-KjWiZZ-j9QHw0pLMrgYf4rCEe9X2KJ5/view",
-      "issuer": "Arabiat Egypt (KGM distributor) price list (CEO-supplied)",
+      "effective_date": "2026-10-20",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/kgm/KGM-Torres | https://www.contactcars.com/en/new-cars/kgm-torres/year-2026",
+      "issuer": "ContactCars+Hatla2ee",
       "label": "Comfort",
       "model_year": 2026,
       "powertrain": "Petrol",
       "price_egp": 1610000,
-      "tier": "A"
+      "tier": "B"
      },
      {
-      "as_of": "2026-10-19",
+      "as_of": "2026-10-21",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-19",
-      "evidence_url": "https://drive.google.com/file/d/1-KjWiZZ-j9QHw0pLMrgYf4rCEe9X2KJ5/view",
-      "issuer": "Arabiat Egypt (KGM distributor) price list (CEO-supplied)",
+      "effective_date": "2026-10-20",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/kgm/KGM-Torres | https://www.contactcars.com/en/new-cars/kgm-torres/year-2026",
+      "issuer": "ContactCars+Hatla2ee",
       "label": "Advance",
       "model_year": 2026,
       "powertrain": "Petrol",
       "price_egp": 1745000,
-      "tier": "A"
+      "tier": "B"
      },
      {
-      "as_of": "2026-10-19",
+      "as_of": "2026-10-21",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-19",
-      "evidence_url": "https://drive.google.com/file/d/1-KjWiZZ-j9QHw0pLMrgYf4rCEe9X2KJ5/view",
-      "issuer": "Arabiat Egypt (KGM distributor) price list (CEO-supplied)",
+      "effective_date": "2026-10-20",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/kgm/KGM-Torres | https://www.contactcars.com/en/new-cars/kgm-torres/year-2026",
+      "issuer": "ContactCars+Hatla2ee",
       "label": "Premium",
       "model_year": 2026,
       "powertrain": "Petrol",
       "price_egp": 1875000,
-      "tier": "A"
+      "tier": "B"
      },
      {
-      "as_of": "2026-10-19",
+      "as_of": "2026-10-21",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-19",
-      "evidence_url": "https://drive.google.com/file/d/1-KjWiZZ-j9QHw0pLMrgYf4rCEe9X2KJ5/view",
-      "issuer": "Arabiat Egypt (KGM distributor) price list (CEO-supplied)",
+      "effective_date": "2026-10-20",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/kgm/KGM-Torres | https://www.contactcars.com/en/new-cars/kgm-torres/year-2026",
+      "issuer": "ContactCars+Hatla2ee",
       "label": "Luxury",
       "model_year": 2026,
       "powertrain": "Petrol",
       "price_egp": 2024000,
-      "tier": "A"
-     },
-     {
-      "as_of": "2026-10-19",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-19",
-      "evidence_url": "https://drive.google.com/file/d/1-KjWiZZ-j9QHw0pLMrgYf4rCEe9X2KJ5/view",
-      "issuer": "Arabiat Egypt (KGM distributor) price list (CEO-supplied)",
-      "label": "Black Edition",
-      "model_year": 2026,
-      "powertrain": "Petrol",
-      "price_egp": 2024000,
-      "tier": "A"
+      "tier": "B"
      }
     ]
    },
@@ -30486,7 +30468,7 @@
    "model_id": "m_000181",
    "p1_id": "kia/sorento",
    "price": {
-    "as_of": "2026-10-13",
+    "as_of": "2026-10-21",
     "date_basis": "SOURCE_STATED",
     "effective_date": "2026-10-13",
     "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
@@ -30497,7 +30479,7 @@
     "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-13",
+      "as_of": "2026-10-21",
       "date_basis": "SOURCE_STATED",
       "effective_date": "2026-10-13",
       "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
@@ -35013,7 +34995,7 @@
    "model_id": "m_000020",
    "p1_id": "mg/hs",
    "price": {
-    "as_of": "2026-10-15",
+    "as_of": "2026-10-21",
     "date_basis": "SOURCE_STATED",
     "effective_date": "2026-10-15",
     "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
@@ -35023,7 +35005,7 @@
     "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-15",
+      "as_of": "2026-10-21",
       "date_basis": "SOURCE_STATED",
       "effective_date": "2026-10-15",
       "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
@@ -35034,7 +35016,7 @@
       "tier": "A"
      },
      {
-      "as_of": "2026-10-15",
+      "as_of": "2026-10-21",
       "date_basis": "SOURCE_STATED",
       "effective_date": "2026-10-15",
       "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
@@ -35804,7 +35786,7 @@
    "model_id": "m_000211",
    "p1_id": "mg/zs",
    "price": {
-    "as_of": "2026-10-15",
+    "as_of": "2026-10-21",
     "date_basis": "SOURCE_STATED",
     "effective_date": "2026-10-15",
     "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
@@ -35814,13 +35796,24 @@
     "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-15",
+      "as_of": "2026-10-21",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-15",
-      "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
-      "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
-      "label": "ZS Plus",
-      "model_year": null,
+      "effective_date": "2026-04-29",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/moris-garage/zs | https://www.contactcars.com/en/new-cars/mg-zs/year-2026",
+      "issuer": "ContactCars+Hatla2ee",
+      "label": "Comfort",
+      "model_year": 2026,
+      "price_egp": 1075000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-16",
+      "evidence_url": "https://www.contactcars.com/en/new-cars/mg-zs/year-2026 | https://www.egy-car.com/mg-zs",
+      "issuer": "ContactCars+EgyCar",
+      "label": "Luxury Facelift MCE",
+      "model_year": 2026,
       "price_egp": 1165000,
       "tier": "A"
      }
@@ -44050,7 +44043,7 @@
    "model_id": "m_000244",
    "p1_id": "skoda/kodiaq",
    "price": {
-    "as_of": "2026-10-12",
+    "as_of": "2026-10-21",
     "date_basis": "SOURCE_STATED",
     "effective_date": "2026-10-12",
     "evidence_url": "https://drive.google.com/file/d/1POXjMPG-iqsQGsw02YgWuIEX05MHW6As/view",
@@ -44061,7 +44054,7 @@
     "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-12",
+      "as_of": "2026-10-21",
       "date_basis": "SOURCE_STATED",
       "effective_date": "2026-10-12",
       "evidence_url": "https://drive.google.com/file/d/1POXjMPG-iqsQGsw02YgWuIEX05MHW6As/view",
@@ -44073,19 +44066,31 @@
       "tier": "A"
      },
      {
-      "as_of": "2026-10-12",
+      "as_of": "2026-10-21",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-12",
-      "evidence_url": "https://drive.google.com/file/d/1POXjMPG-iqsQGsw02YgWuIEX05MHW6As/view",
-      "issuer": "Skoda Egypt MY2027 price list, issuer logo not shown (CEO-supplied)",
-      "label": "Selection Suite",
+      "effective_date": "2026-10-14",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/kodiaq | https://www.egy-car.com/skoda-kodiaq",
+      "issuer": "EgyCar+Hatla2ee",
+      "label": "A/T / Loft",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 2625000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-14",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/kodiaq | https://www.contactcars.com/en/new-cars/skoda-kodiaq/year-2027 | https://www.egy-car.com/skoda-kodiaq",
+      "issuer": "ContactCars+EgyCar+Hatla2ee",
+      "label": "Suite",
       "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 3000000,
       "tier": "A"
      },
      {
-      "as_of": "2026-10-12",
+      "as_of": "2026-10-21",
       "date_basis": "SOURCE_STATED",
       "effective_date": "2026-10-12",
       "evidence_url": "https://drive.google.com/file/d/1POXjMPG-iqsQGsw02YgWuIEX05MHW6As/view",
@@ -44226,7 +44231,7 @@
    "model_id": "m_000245",
    "p1_id": "skoda/octavia",
    "price": {
-    "as_of": "2026-10-12",
+    "as_of": "2026-10-21",
     "date_basis": "SOURCE_STATED",
     "effective_date": "2026-10-12",
     "evidence_url": "https://drive.google.com/file/d/1POXjMPG-iqsQGsw02YgWuIEX05MHW6As/view",
@@ -44237,7 +44242,7 @@
     "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-12",
+      "as_of": "2026-10-21",
       "date_basis": "SOURCE_STATED",
       "effective_date": "2026-10-12",
       "evidence_url": "https://drive.google.com/file/d/1POXjMPG-iqsQGsw02YgWuIEX05MHW6As/view",
@@ -44249,28 +44254,64 @@
       "tier": "A"
      },
      {
-      "as_of": "2026-10-12",
+      "as_of": "2026-10-21",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-12",
-      "evidence_url": "https://drive.google.com/file/d/1POXjMPG-iqsQGsw02YgWuIEX05MHW6As/view",
-      "issuer": "Skoda Egypt MY2027 price list, issuer logo not shown (CEO-supplied)",
-      "label": "Selection Lounge",
+      "effective_date": "2026-10-14",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/Octavia-A8 | https://www.egy-car.com/skoda-octavia",
+      "issuer": "EgyCar+Hatla2ee",
+      "label": "A/T / Loft",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 1825000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-14",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/Octavia-A8 | https://www.contactcars.com/en/new-cars/skoda-octavia/year-2027 | https://www.egy-car.com/skoda-octavia",
+      "issuer": "ContactCars+EgyCar+Hatla2ee",
+      "label": "Selection lounge",
       "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 2050000,
       "tier": "A"
      },
      {
-      "as_of": "2026-10-12",
+      "as_of": "2026-10-21",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-12",
-      "evidence_url": "https://drive.google.com/file/d/1POXjMPG-iqsQGsw02YgWuIEX05MHW6As/view",
-      "issuer": "Skoda Egypt MY2027 price list, issuer logo not shown (CEO-supplied)",
+      "effective_date": "2026-10-14",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/Octavia-A8 | https://www.egy-car.com/skoda-octavia",
+      "issuer": "EgyCar+Hatla2ee",
+      "label": "A/T / Lounge",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 2050000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-14",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/Octavia-A8 | https://www.contactcars.com/en/new-cars/skoda-octavia/year-2027 | https://www.egy-car.com/skoda-octavia",
+      "issuer": "ContactCars+EgyCar+Hatla2ee",
       "label": "Selection Suite",
       "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 2250000,
-      "tier": "A"
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-21",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-14",
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/Octavia-A8 | https://www.egy-car.com/skoda-octavia",
+      "issuer": "EgyCar+Hatla2ee",
+      "label": "A/T / Suite",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 2250000,
+      "tier": "B"
      }
     ]
    },
@@ -44436,35 +44477,23 @@
    "model_id": "m_000246",
    "p1_id": "skoda/superb",
    "price": {
-    "as_of": "2026-10-12",
-    "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-10-12",
-    "evidence_url": "https://drive.google.com/file/d/1POXjMPG-iqsQGsw02YgWuIEX05MHW6As/view",
-    "issuer": "Skoda Egypt MY2027 price list, issuer logo not shown (CEO-supplied)",
+    "as_of": "2026-10-21",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
+    "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/superb | https://www.contactcars.com/en/new-cars/skoda-superb | https://www.contactcars.com/en/new-cars/skoda-superb/year-2027",
+    "issuer": "ContactCars+Hatla2ee",
     "model_year": 2027,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 2350000,
     "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-12",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-12",
-      "evidence_url": "https://drive.google.com/file/d/1POXjMPG-iqsQGsw02YgWuIEX05MHW6As/view",
-      "issuer": "Skoda Egypt MY2027 price list, issuer logo not shown (CEO-supplied)",
-      "label": "Selection Suite",
-      "model_year": 2027,
-      "powertrain": "Petrol",
-      "price_egp": 2350000,
-      "tier": "A"
-     },
-     {
-      "as_of": "2026-10-12",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-10-12",
-      "evidence_url": "https://drive.google.com/file/d/1POXjMPG-iqsQGsw02YgWuIEX05MHW6As/view",
-      "issuer": "Skoda Egypt MY2027 price list, issuer logo not shown (CEO-supplied)",
-      "label": "L&K",
+      "as_of": "2026-10-21",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/skoda/superb | https://www.contactcars.com/en/new-cars/skoda-superb | https://www.contactcars.com/en/new-cars/skoda-superb/year-2027",
+      "issuer": "ContactCars+Hatla2ee",
+      "label": "L&K 1.5",
       "model_year": 2027,
       "powertrain": "Petrol",
       "price_egp": 2600000,
