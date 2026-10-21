@@ -1,0 +1,593 @@
+{
+ "schema": "ci.dataset.v1",
+ "dataset_id": "U12-RC5-2026-10-21/recommendation_view",
+ "universe_version": "U12-RC5-2026-10-21",
+ "kind": "CANDIDATE recommendation view — test link only; U11 stays the production binding until acceptance",
+ "file": "recommendation_view.json",
+ "sha256": "2b627303d3167527c62f9aef5fe6ced0dab80dd01316f5e2f08443c15560d3f2",
+ "content_sha256": "71f27c107cf469421bf754b1f76822498960cf2b303ba55ad4f75fdd0e1c6008",
+ "identities": 419,
+ "models_in_universe": 417,
+ "base": {
+  "dataset_id": "U11-2026-09-26/recommendation_view",
+  "content_sha256": "5348da5721f049d3befb1e6c8159ecdf0bfd8ed273916da95ee158ba804934e2"
+ },
+ "p2_input": {
+  "commit": "aadc647",
+  "release_id": "P2-CATALOGUE-U11-2026-10-21-RC2",
+  "files": {
+   "catalogue-serving.release.json": "49756cd33c062238742349b0f908f7ca867b52e9db46c9b7d1286475b3df2ec4",
+   "market_universe.json": "f757f85315c030ac9f8fd42cfa2985fd0eb29cef40cb3413cb393362a98f3215",
+   "registration_models.csv": "e6f43df6596f3fe38f4b13f9afb7d24663379fc96db31cfb5a588f17a94571af",
+   "u11_models.csv": "6597a2d3f906cd6f80514b14dd034c6aa046c7bde30d8d62562147eb2eca93fd",
+   "arabic_names.csv": "91a7d71b7165da6a9b87544b2a0eb6dc1d1aaa4253ce063fce283e8a6429c188"
+  }
+ },
+ "registry": {
+  "snapshot_id": null,
+  "registration_months": [
+   "2021-02",
+   "2026-08"
+  ],
+  "last12_window": [
+   "2025-09",
+   "2026-08"
+  ],
+  "note": "registrations: sale evidence and size class source only; their absence never excludes"
+ },
+ "changes": {
+  "policy": {
+   "market_prices": true,
+   "no_size_hold": true,
+   "coupes_convertibles": true,
+   "decided": "CEO 2026-10-21"
+  },
+  "market_prices": [
+   "baic/x55e: X55e (DHT hybrid) single trim=1225000",
+   "toyota/land-cruiser: A/T / Prado - Highline=9000000; A/T / Prado - VX Petrol=10700000",
+   "land-rover/range-rover-evoque: SE=1450000",
+   "bmw/2-series-gran-coupe: A/T /  M SPORT=2750000",
+   "bmw/4-series: A/T / M SPORT=4950000; A/T / Convertible=5200000",
+   "bmw/i4: eDrive40 M Sport=5100000",
+   "bmw/m4: Competition M xDrive=10700000",
+   "mercedes/maybach-eqs-680: A/T / 4M SUV=11800000; A/T / Night Series=13200000",
+   "mercedes/eqs: A/T / 500 4M SUV=8850000",
+   "mercedes/eqe: A/T / SUV=5500000",
+   "mercedes/sl: A/T / AMG SL 55 4M=14330000; AMG=14980000",
+   "mercedes/amg-gt: A/T / 63 4MATIC=17200000",
+   "porsche/911: A/T / Carrera=10422300; manual‏=11323900; A/T /  Carrera Cabriolet=11421900; manual‏ / Cabriolet=12460700; A/T / Carrera GTS=13984600; A/T / Carrera 4 GTS=14641200; A/T / Carrera GTS Cabriolet=15116500; A/T / Carrera 4 GTS Cabriolet=15782900",
+   "porsche/718: A/T / Cayman=4944100; A/T / Boxster=5189100; A/T / Cayman Style Edition=5404700; A/T / Boxster Style Edition=5649700; A/T / Cayman S=6526800; A/T / Boxster S=6806100; A/T /  Cayman GTS 4.0=7658700; A/T / Boxster GTS 4.0=7933100; A/T / Cayman GT4 RS=13058500; A/T / Spyder RS=13058500",
+   "lotus/emeya: Emeya=5900000; Emeya S=6800000; Emeya R=7900000",
+   "baic/beijing-x7: A/T / Highline=1429900; A/T / Top Line=1504900; A/T / Premium=1579900",
+   "chevrolet/spark-euv: ACTIV=1099000",
+   "dongfeng/huge: Hybrid=1495000; Hybrid Special Color=1545000",
+   "fiat/e-ulysse: Lounge=2790000",
+   "forthing/friday: EV=1380000; REEV=1390000",
+   "hyundai/staria: HEV Premium Lounge 7 Seats=3650000",
+   "rehigh/rh8: Nobel Version RWD=2450000; Luxury Version AWD=2750000",
+   "xpeng/mona-m03: FWD Premium=1350000; FWD Premium Plus=1400000",
+   "xpeng/p7-plus: RWD Flagship Ultra Range=2650000; AWD Performance=2850000",
+   "toyota/camry: Automatic / High Line=7400000"
+  ],
+  "off_sale": [
+   "geely/emgrand-7"
+  ],
+  "powertrains": [
+   "byd/sealion-6: [\"ev\",\"hybrid\"] -> [\"hybrid\"]",
+   "geely/ex5: [\"ev\",\"hybrid\"] -> [\"ev\"]",
+   "jetour/t2: [\"hybrid\",\"petrol\"] -> [\"petrol\"]",
+   "kaiyi/x7: [\"hybrid\",\"petrol\"] -> [\"petrol\"]",
+   "mercedes/glc: [\"ev\",\"petrol\"] -> [\"petrol\"]",
+   "toyota/corolla: [\"hybrid\",\"petrol\"] -> [\"petrol\"]"
+  ],
+  "official_lists": [
+   {
+    "id": "mercedes/c-class",
+    "effective": "2026-09-24",
+    "versions": [
+     "C 180 Saloon / Avantgarde=3350000",
+     "C 180 Saloon / Sport=3905000",
+     "C 200 Saloon / Sport=4390000"
+    ],
+    "superseded": [
+     "C 180 Avantgarde=3100000 MY2026",
+     "C 180 Sport=3650000 MY2026",
+     "C 200 Sport=4100000 MY2026",
+     "C 43=5800000 MY2026"
+    ]
+   },
+   {
+    "id": "mercedes/cla",
+    "effective": "2026-09-24",
+    "versions": [
+     "CLA 180 / Progressive=2890000",
+     "CLA 200 / Sport=3390000"
+    ],
+    "superseded": [
+     "CLA 200 Coupé=2930000 MY2026"
+    ]
+   },
+   {
+    "id": "mercedes/e-class",
+    "effective": "2026-09-24",
+    "versions": [
+     "E 200 Saloon / Premium=4420000",
+     "E 200 Saloon / Avantgarde=5260000",
+     "E 200 Saloon / Sport=5870000",
+     "E 200 Saloon / Exclusive=5870000"
+    ],
+    "superseded": [
+     "E 200=4920000 MY2026",
+     "E 200 Exclusive=5600000 MY2026",
+     "E 200 Sport=5600000 MY2026"
+    ]
+   },
+   {
+    "id": "mercedes/eqa",
+    "effective": "2026-09-24",
+    "versions": [
+     "EQA 250+ / Progressive=3400000"
+    ],
+    "superseded": [
+     "EQA 250+=3300000 MY2026"
+    ]
+   },
+   {
+    "id": "mercedes/gla",
+    "effective": "2026-09-24",
+    "versions": [
+     "GLA 200 / Progressive=3140000"
+    ],
+    "superseded": [
+     "GLA 200=2990000 MY2026"
+    ]
+   },
+   {
+    "id": "mercedes/glc",
+    "effective": "2026-09-24",
+    "versions": [
+     "GLC 200 4M SUV / Avantgarde=4370000",
+     "GLC 200 4M Coupé / Avantgarde=4670000",
+     "GLC 200 4M SUV / Sport=4980000",
+     "GLC 200 4M Coupé / Sport=5460000"
+    ],
+    "superseded": [
+     "GLC 200=4930000 MY2026"
+    ]
+   },
+   {
+    "id": "mercedes/gle",
+    "effective": "2026-09-24",
+    "versions": [
+     "GLE 450 4M SUV / AMG=7200000",
+     "Mercedes-AMG GLE 53 4M+ / AMG=8220000"
+    ],
+    "superseded": [
+     "GLE 450 4MATIC=7090000 MY2025",
+     "GLE 53 4MATIC+=8100000 MY2025"
+    ]
+   },
+   {
+    "id": "mercedes/gls",
+    "effective": "2026-09-24",
+    "versions": [
+     "GLS 580 4M SUV / AMG=9930000"
+    ],
+    "superseded": [
+     "GLS 580 4MATIC=9930000 MY2025"
+    ]
+   },
+   {
+    "id": "mg/5",
+    "effective": "2026-10-15",
+    "versions": [
+     "Comfort=889990",
+     "Luxury=989990"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mg/7",
+    "effective": "2026-10-15",
+    "versions": [
+     "Trophy=1750000"
+    ],
+    "superseded": [
+     "Luxury=1625000 MY2027"
+    ]
+   },
+   {
+    "id": "mg/g50-plus",
+    "effective": "2026-10-15",
+    "versions": [
+     "G50 Plus=1325000"
+    ],
+    "superseded": [
+     "(1 class)=1300000 MY2027"
+    ]
+   },
+   {
+    "id": "mg/gt",
+    "effective": "2026-10-15",
+    "versions": [
+     "Luxury=1175000"
+    ],
+    "superseded": [
+     "Comfort=1110000 MY2027"
+    ]
+   },
+   {
+    "id": "mg/hs",
+    "effective": "2026-10-15",
+    "versions": [
+     "HS AS33 LUX=1550000",
+     "HS HEV=1650000"
+    ],
+    "superseded": [
+     "Plus Luxury=1525000 MY2027",
+     "HEV=1625000 MY2027"
+    ]
+   },
+   {
+    "id": "mg/one",
+    "effective": "2026-10-15",
+    "versions": [
+     "Luxury=1425000"
+    ],
+    "superseded": [
+     "(1 class)=1400000 MY2027"
+    ]
+   },
+   {
+    "id": "mg/rx9",
+    "effective": "2026-10-15",
+    "versions": [
+     "RX9=1959990"
+    ],
+    "superseded": [
+     "Luxury=1899000 MY2027",
+     "(1 class)=1900000 MY2027"
+    ]
+   },
+   {
+    "id": "mg/zs",
+    "effective": "2026-10-15",
+    "versions": [
+     "ZS Plus=1165000"
+    ],
+    "superseded": [
+     "Comfort=1075000 MY2027",
+     "Plus=1150000 MY2027",
+     "Facelift (1 class)=1150000 MY2027"
+    ]
+   },
+   {
+    "id": "mercedes/glc-eq",
+    "effective": "2026-09-24",
+    "versions": [
+     "GLC 400 4M Electric / Sport=4900000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mg/rx5",
+    "effective": "2026-10-15",
+    "versions": [
+     "RX5+ Luxury=1475000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mercedes/cle",
+    "effective": "2026-09-24",
+    "versions": [
+     "CLE 200 Sport Coupé / Sport=4650000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mercedes/g-class",
+    "effective": "2026-09-24",
+    "versions": [
+     "G 500 AMG / Night Edition=13390000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mercedes/g-580-eq",
+    "effective": "2026-09-24",
+    "versions": [
+     "G 580 Electric / Night Edition=11200000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mercedes/v-class",
+    "effective": "2026-09-24",
+    "versions": [
+     "V 300 Long / Avantgarde=6825000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mg/cyberster",
+    "effective": "2026-10-15",
+    "versions": [
+     "Cyberster=2850000"
+    ],
+    "superseded": []
+   }
+  ],
+  "arabic_names_added": [
+   "alfa-romeo/giulia=جوليا",
+   "alfa-romeo/stelvio=ستلفيو",
+   "alfa-romeo/tonale=تونالي",
+   "arcfox/alpha-s5=ألفا إس 5",
+   "arcfox/alpha-t5=ألفا تي 5",
+   "arcfox/t1=تي 1",
+   "audi/a3=إيه 3",
+   "audi/a5=إيه 5",
+   "audi/a6=إيه 6",
+   "audi/a8=إيه 8",
+   "audi/q2=كيو 2",
+   "audi/q3=كيو 3",
+   "audi/q4-e-tron=كيو 4 إي ترون",
+   "audi/q5=كيو 5",
+   "audi/q7=كيو 7",
+   "audi/q8=كيو 8",
+   "baic/bj30=بي جيه 30",
+   "baic/u5-plus=يو 5 بلس",
+   "baic/x3=إكس 3",
+   "baic/x35=إكس 35",
+   "baic/x55=إكس 55",
+   "baic/x7=إكس 7",
+   "bestune/b70=بي 70",
+   "bestune/b70s=بي 70 إس",
+   "bestune/t55=تي 55",
+   "bmw/5-series=الفئة الخامسة",
+   "bmw/i7=آي 7",
+   "bmw/ix=آي إكس",
+   "bmw/ix1=آي إكس 1",
+   "bmw/ix2=آي إكس 2",
+   "bmw/ix3=آي إكس 3",
+   "bmw/x2=إكس 2",
+   "bmw/x6=إكس 6",
+   "bmw/x7=إكس 7",
+   "changan/cs35-plus=سي إس 35 بلس",
+   "changan/cs55=سي إس 55",
+   "changan/cs55-plus=سي إس 55 بلس",
+   "changan/eado=إيدو",
+   "changan/eado-plus=إيدو بلس",
+   "changan/uni-t=يوني تي",
+   "changan/uni-v=يوني في",
+   "geely/ex5=إي إكس 5",
+   "hyundai/ioniq-9=أيونيك 9",
+   "mitsubishi/attrage=أتراج",
+   "mitsubishi/mirage=ميراج",
+   "mercedes/glc-eq=جي إل سي الكهربائية",
+   "mg/rx5=آر إكس 5 بلس",
+   "mercedes/cle=سي إل إي",
+   "mercedes/g-class=الفئة جي",
+   "mercedes/g-580-eq=جي 580 الكهربائية",
+   "mercedes/v-class=الفئة في",
+   "chery/tiggo-7-pro-max=تيجو 7 برو ماكس",
+   "geely/ex5-em-i=إي إكس 5 إي إم آي",
+   "haval/h6-hev=إتش 6 هايبرد",
+   "haval/v7=في 7",
+   "hyundai/venue=فينيو",
+   "mg/cyberster=سايبرستر"
+  ],
+  "splits_moved": [
+   "kaiyi/x7 -> kaiyi/x7-phev: Flagship (PHEV)",
+   "jetour/t2 -> jetour/t2-i-dm: i-DM, Luxury (i-DM)",
+   "byd/sealion-6 -> byd/sealion-6-ev: EV Luxury",
+   "toyota/corolla -> toyota/corolla-hybrid: Hybrid"
+  ],
+  "prices_updated": 126,
+  "versions_added": 211,
+  "seats_changed": 146,
+  "awd": [
+   "arcfox/alpha-s5:undefined->true",
+   "arcfox/t1:undefined->false",
+   "audi/a3:undefined->false",
+   "audi/a5:undefined->false",
+   "audi/q3:undefined->false",
+   "avatr/07:undefined->true",
+   "avatr/11:undefined->true",
+   "avatr/12:undefined->true",
+   "baic/u5-plus:undefined->false",
+   "baw/m7:undefined->false",
+   "bmw/ix2:undefined->false",
+   "bmw/ix3:undefined->true",
+   "bmw/x1:undefined->false",
+   "bmw/x2:undefined->false",
+   "bmw/x5:undefined->true",
+   "bmw/x6:undefined->true",
+   "byd/m9:undefined->false",
+   "byd/ti-7:undefined->true",
+   "cadillac/vistiq:undefined->true",
+   "changan/cs55-plus:undefined->false",
+   "changan/cs75-plus:undefined->false",
+   "changan/eado:undefined->false",
+   "changan/eado-plus:undefined->false",
+   "changan/uni-v:undefined->false",
+   "chery/arrizo-5:undefined->false",
+   "chery/arrizo-6-gt:undefined->false",
+   "chery/arrizo-8:undefined->false",
+   "chery/tiggo-4-pro:undefined->false",
+   "chery/tiggo-7:undefined->false",
+   "chery/tiggo-7-pro:undefined->false",
+   "chery/tiggo-8:undefined->false",
+   "chevrolet/captiva-ev:undefined->false",
+   "citroen/c3-aircross:undefined->false",
+   "cupra/formentor:undefined->false",
+   "cupra/leon:undefined->false",
+   "cupra/terramar:undefined->false",
+   "deepal/g318:undefined->true",
+   "dfsk/600:undefined->false",
+   "dongfeng/007:undefined->false",
+   "dongfeng/008:undefined->false",
+   "dongfeng/box:undefined->false",
+   "dongfeng/mage:undefined->false",
+   "exeed/es:undefined->false",
+   "exeed/et:undefined->true",
+   "exeed/lx:undefined->false",
+   "fiat/500x:undefined->false",
+   "fiat/tipo:undefined->false",
+   "forthing/s7:undefined->false",
+   "forthing/t5-evo:undefined->false",
+   "forthing/u-tour:undefined->false",
+   "forthing/v9:undefined->false",
+   "gac/empow:undefined->false",
+   "gac/gs4-max:undefined->false",
+   "geely/city-ray:undefined->false",
+   "geely/ex2:undefined->false",
+   "geely/ex5:undefined->false",
+   "geely/monjaro:undefined->true",
+   "geely/starray:undefined->false",
+   "genesis/gv60:undefined->true",
+   "genesis/gv70:undefined->true",
+   "haval/jolion:undefined->false",
+   "hongqi/e-hs9:undefined->true",
+   "hongqi/ousado:undefined->false",
+   "hyundai/ioniq-5:undefined->true",
+   "hyundai/ioniq-6:false->true",
+   "hyundai/ioniq-9:undefined->true",
+   "jac/js6:undefined->false",
+   "jac/js8-pro:undefined->false",
+   "jetour/dashing:undefined->false",
+   "jetour/t2:true->false",
+   "jetour/x70:undefined->false",
+   "jetour/x70-plus-ckd:undefined->false",
+   "jetour/x90-plus:undefined->false",
+   "kaiyi/e5:undefined->false",
+   "kgm/actyon:undefined->false",
+   "kia/ev3:undefined->false",
+   "kia/ev5:false->true",
+   "kia/ev9:undefined->true",
+   "kia/k4:undefined->false",
+   "kia/sorento:undefined->false",
+   "li-auto/l6:undefined->true",
+   "li-auto/l7:undefined->true",
+   "li-auto/l9:undefined->true",
+   "mazda/cx-3:undefined->false",
+   "mercedes/a-class:undefined->false",
+   "mercedes/b-class:undefined->false",
+   "mercedes/cla:undefined->false",
+   "mercedes/e-class:undefined->false",
+   "mercedes/eqa:undefined->false",
+   "mercedes/gla:undefined->false",
+   "mercedes/gls:undefined->true",
+   "mitsubishi/attrage:undefined->false",
+   "mitsubishi/destinator:undefined->false",
+   "mitsubishi/mirage:undefined->false",
+   "mitsubishi/xpander:undefined->false",
+   "nissan/patrol:false->true",
+   "nissan/x-trail:false->true",
+   "opel/frontera:undefined->false",
+   "peugeot/2008:undefined->false",
+   "peugeot/408:undefined->false",
+   "proton/saga:undefined->false",
+   "renault/duster:undefined->false",
+   "renault/kardian:undefined->false",
+   "rox/01:undefined->true",
+   "rox/adamas:undefined->true",
+   "seat/arona:undefined->false",
+   "seat/ibiza:undefined->false",
+   "seat/leon:undefined->false",
+   "skoda/karoq:undefined->false",
+   "skoda/kodiaq:undefined->false",
+   "skoda/octavia:undefined->false",
+   "skoda/superb:undefined->false",
+   "soueast/s-05:undefined->false",
+   "soueast/s-07:undefined->false",
+   "suzuki/alto:undefined->false",
+   "suzuki/baleno:undefined->false",
+   "suzuki/jimny:undefined->true",
+   "suzuki/s-presso:undefined->false",
+   "suzuki/swift:undefined->false",
+   "toyota/urban-cruiser:undefined->false",
+   "volkswagen/tayron:undefined->false",
+   "volvo/es90:undefined->false",
+   "volvo/ex30:undefined->true",
+   "volvo/ex90:undefined->true",
+   "volvo/xc60:undefined->true",
+   "volvo/xc90:undefined->true",
+   "voyah/dream:undefined->true",
+   "voyah/free:undefined->true",
+   "xpeng/g6:undefined->false",
+   "xpeng/g7:undefined->false",
+   "xpeng/g9:undefined->true",
+   "zeekr/x:undefined->true",
+   "mg/rx5:undefined->false",
+   "bmw/3-series:undefined->false",
+   "kia/carnival:undefined->false",
+   "bmw/x3:undefined->true",
+   "byd/dolphin-surf:undefined->false",
+   "byd/atto-2:undefined->false",
+   "bmw/1-series:undefined->false",
+   "bmw/4-series:undefined->false",
+   "mercedes/s-class:undefined->true",
+   "mercedes/maybach-s-580:undefined->true",
+   "mercedes/amg-gt:undefined->true",
+   "smart/5:undefined->false",
+   "im/ls9:undefined->true",
+   "mhero/1:undefined->true",
+   "arcfox/kaola-s:undefined->false",
+   "audi/rs-e-tron-gt:undefined->true",
+   "cadillac/lyriq:undefined->true",
+   "cadillac/optiq:undefined->true",
+   "chery/tiggo-7-pro-max:undefined->false",
+   "chevrolet/spark-euv:undefined->false",
+   "dongfeng/shine:undefined->false",
+   "geely/emgrand:undefined->false",
+   "haval/v7:undefined->true",
+   "hyundai/venue:undefined->false",
+   "icaur/v27:undefined->true",
+   "kaiyi/x3-pro:undefined->false",
+   "mg/cyberster:undefined->false",
+   "mini/cooper:undefined->false",
+   "mitsubishi/outlander-sport:undefined->false",
+   "zeekr/7x:undefined->true"
+  ],
+  "unknown_price": [
+   "byd/song-l",
+   "byd/tang-l",
+   "land-rover/range-rover",
+   "land-rover/range-rover-vogue",
+   "land-rover/range-rover-sport",
+   "land-rover/velar",
+   "land-rover/defender",
+   "jaguar/f-pace",
+   "nissan/n7",
+   "nissan/armada",
+   "byd/seal",
+   "bmw/i3-sedan",
+   "bmw/m8",
+   "bmw/z4",
+   "rolls-royce/spectre",
+   "maserati/ghibli",
+   "dongfeng/l7",
+   "gmc/hummer-ev",
+   "volkswagen/id-era-9x",
+   "ford/mustang",
+   "dodge/charger",
+   "changan/cs35",
+   "toyota/land-cruiser-prado",
+   "venucia/v-online",
+   "denza/b3",
+   "denza/b5",
+   "denza/b8",
+   "deepal/s09"
+  ],
+  "held_no_size_class": [],
+  "excluded": {
+   "p2_discontinued": [
+    "geely/emgrand-7"
+   ],
+   "body_not_passenger_car:van": [
+    "kia/pv5"
+   ]
+  }
+ }
+}

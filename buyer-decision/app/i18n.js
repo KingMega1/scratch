@@ -29,8 +29,8 @@
       egp: n => `EGP ${n}`, mill: n => `EGP ${n}M`,
       month: ym => `${MONTHS_EN[+ym.slice(5, 7) - 1]} ${ym.slice(0, 4)}`,
       size: k => SIZE_EN[k] || '',
-      body: { suv: 'SUV', sedan: 'Sedan', hatch: 'Hatchback', mpv: 'MPV / people carrier' },
-      body_pl: { suv: 'SUVs', sedan: 'sedans', hatch: 'hatchbacks', mpv: 'MPVs' },
+      body: { suv: 'SUV', sedan: 'Sedan', hatch: 'Hatchback', mpv: 'MPV / people carrier', coupe: 'Coupe', convertible: 'Convertible' },
+      body_pl: { suv: 'SUVs', sedan: 'sedans', hatch: 'hatchbacks', mpv: 'MPVs', coupe: 'coupes', convertible: 'convertibles' },
       pt: { petrol: 'Petrol', hybrid: 'Hybrid', ev: 'Electric', plugin: 'Plug-in hybrid' },
 
       // welcome
@@ -285,8 +285,8 @@
       egp: n => `${n} جنيه`, mill: n => `${n} مليون جنيه`,
       month: ym => `${MONTHS_AR[+ym.slice(5, 7) - 1]} ${ym.slice(0, 4)}`,
       size: k => SIZE_AR[k] || '',
-      body: { suv: 'عربية عالية (SUV)', sedan: 'سيدان', hatch: 'هاتشباك', mpv: 'ميني فان' },
-      body_pl: { suv: 'عربية SUV', sedan: 'عربية سيدان', hatch: 'عربية هاتشباك', mpv: 'ميني فان' },
+      body: { suv: 'عربية عالية (SUV)', sedan: 'سيدان', hatch: 'هاتشباك', mpv: 'ميني فان', coupe: 'كوبيه', convertible: 'مكشوفة' },
+      body_pl: { suv: 'عربية SUV', sedan: 'عربية سيدان', hatch: 'عربية هاتشباك', mpv: 'ميني فان', coupe: 'عربية كوبيه', convertible: 'عربية مكشوفة' },
       pt: { petrol: 'بنزين', hybrid: 'هايبرد', ev: 'كهربا', plugin: 'هايبرد بالشحن' },
 
       w_eyebrow: 'لاقي عربيتك · نصيحة مستقلة',

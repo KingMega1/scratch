@@ -67,7 +67,8 @@ for (const [g, lang, text, pair] of S) {
   // lower-cost alternative is actually cheaper than the lead
   if (o.less && o.hero) ok(o.less.price < Math.min(...o.hero.versions.map(v => v.min)), `${id}: spend-less card is not cheaper`);
   // missing evidence: named cars that cannot be recommended are reported, never shown as picks
-  if (g === 'missing') ok(!cars.some(c => ['land-rover/range-rover', 'geely/ex5-em-i', 'geely/emgrand-7', 'kia/carnival'].includes(c.id)), `${id}: unrecommendable named car shown as a pick`);
+  // missing evidence: a car without a price, held, or off sale is never shown as a pick (whatever the dataset says it is)
+  ok(cars.every(c => by[c.id] && by[c.id].u && E.currentTrims(by[c.id]).length && !by[c.id].held), `${id}: unrecommendable car shown as a pick`);
   if (pair) (pairs[pair] = pairs[pair] || []).push({ lang, ids: cars.map(c => c.id).join(',') });
   rows.push(`| ${g} | ${lang.toUpperCase()} | ${text} | ${o.mode}${o.confidence ? '/' + o.confidence.level : ''} | ${cars.map(c => `${c.name.text} (${c.price_range.text})`).join('; ') || (o.no_match ? 'no match' : '-')}${o.less ? ` · spend less: ${o.less.id}` : ''}${o.notices.length ? ` · notice: ${o.notices[0].text.slice(0, 90)}` : ''} |`);
 }

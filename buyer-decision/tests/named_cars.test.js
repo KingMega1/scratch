@@ -16,22 +16,24 @@ const run = (t, lang, extra = {}) => {
   const text = JSON.stringify(o.notices.map(x => x.text)) + (o.hero ? '' : JSON.stringify(o.no_match));
   return { b, o, r, text, rows: r.shortlist ? r.shortlist.rows : [] };
 };
+// expected outcome follows the dataset: a recommendable car (priced, in the universe) must be eligible; otherwise its held reason
+const exp = id => { const m = by[id]; return !m ? 'missing' : m.u && m.trims.length ? 'eligible' : m.u ? 'unknown_price' : m.held === 'size' ? 'unknown_size' : m.held === 'scope' ? 'scope' : 'not_on_sale'; };
 const cases = [
   // [buyer text, lang, expected named id, expected outcome: 'recommended' | reason key]
   ["I'm considering the Mercedes GLC, budget 5.5M", 'en', 'mercedes/glc', 'recommended'],
   ['بفكر في مرسيدس GLC وميزانيتي 5.5 مليون', 'ar', 'mercedes/glc', 'recommended'],
   ["I'm considering the Toyota Corolla, budget 1.6M", 'en', 'toyota/corolla', 'recommended'],
   ['بفكر في تويوتا كورولا في حدود 1.6 مليون', 'ar', 'toyota/corolla', 'recommended'],
-  ["I'm considering the Geely EX5 EM-i", 'en', 'geely/ex5-em-i', by['geely/ex5-em-i'] && by['geely/ex5-em-i'].held === 'size' ? 'unknown_size' : 'unknown_price'],
+  ["I'm considering the Geely EX5 EM-i, budget 2M", 'en', 'geely/ex5-em-i', exp('geely/ex5-em-i')],
   ['Range Rover, budget 10 million', 'en', 'land-rover/range-rover', 'unknown_price'],
   ['Toyota Corolla Hybrid, budget 2M', 'en', 'toyota/corolla-hybrid', by['toyota/corolla-hybrid'] && by['toyota/corolla-hybrid'].trims.length ? 'eligible' : 'unknown_price'],
-  ['Toyota Land Cruiser, budget 8M', 'en', 'toyota/land-cruiser', 'unknown_price'],
-  ['تويوتا لاند كروزر بميزانية 8 مليون', 'ar', 'toyota/land-cruiser', 'unknown_price'],
+  ['Toyota Land Cruiser, budget 12M', 'en', 'toyota/land-cruiser', exp('toyota/land-cruiser')],
+  ['تويوتا لاند كروزر بميزانية 12 مليون', 'ar', 'toyota/land-cruiser', exp('toyota/land-cruiser')],
   ['Denza B3, budget 3M', 'en', 'denza/b3', 'unknown_price'],
   ['Denza B8, budget 4M', 'en', 'denza/b8', 'unknown_price'],
-  ['بفكر في جيلي EX5 EM-i', 'ar', 'geely/ex5-em-i', by['geely/ex5-em-i'] && by['geely/ex5-em-i'].held === 'size' ? 'unknown_size' : 'unknown_price'],
+  ['بفكر في جيلي EX5 EM-i وميزانيتي 2 مليون', 'ar', 'geely/ex5-em-i', exp('geely/ex5-em-i')],
   ['Denza B5, budget 3M', 'en', 'denza/b5', 'unknown_price'],
-  ['BMW M4, budget 8M', 'en', 'bmw/m4', 'scope'],
+  ['BMW M4, budget 12M', 'en', 'bmw/m4', exp('bmw/m4')],
 ];
 for (const [t, lang, id, want] of cases) {
   const { o, rows, text } = run(t, lang);
