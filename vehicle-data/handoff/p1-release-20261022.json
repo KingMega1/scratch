@@ -1,0 +1,60 @@
+{
+ "schema": "carindex.p2.p1-release-handoff/v1",
+ "date": "2026-10-22",
+ "canonical_file": "vehicle-data/views/canonical_u11.json",
+ "canonical_sha256": "43287980e95c25846aaf989e09448a21ff2102159a245bc6bb902b516fad9c08",
+ "counts_283": {
+  "brochure_accepted": 81,
+  "fully_enriched": 39,
+  "gallery_models": 70,
+  "hero_accepted": 82,
+  "hero_accepted_hq": 78,
+  "hero_limited_archive": 125,
+  "id_accepted": 283,
+  "logo_accepted": 248,
+  "market_status_official": 37,
+  "models": 283,
+  "price_accepted": 208,
+  "price_source_dated": 157,
+  "price_tier_a": 113,
+  "specs_accepted": 200,
+  "warranty_accepted": 110
+ },
+ "counts_market_universe": {
+  "brochure_accepted": 82,
+  "fully_enriched": 39,
+  "gallery_models": 73,
+  "hero_accepted": 85,
+  "hero_accepted_hq": 81,
+  "hero_limited_archive": 125,
+  "id_accepted": 419,
+  "logo_accepted": 350,
+  "market_status_official": 38,
+  "models": 419,
+  "price_accepted": 253,
+  "price_source_dated": 195,
+  "price_tier_a": 140,
+  "specs_accepted": 243,
+  "warranty_accepted": 135
+ },
+ "coverage": {
+  "before": {
+   "release_sha256": "ab1ac078f3181dad4f23c020a979e651ec84bba50d02e17f55965a13a099de50",
+   "models": 419,
+   "priced": 248,
+   "priced_tier_a": 120,
+   "priced_283": 205
+  },
+  "after": {
+   "release_sha256": "548cab132279044d8b42e53903bd152f592f6d433c57b20be4b5007f84d29396",
+   "models": 419,
+   "priced": 253,
+   "priced_tier_a": 140,
+   "priced_283": 208
+  }
+ },
+ "compatibility": "schema and IDs unchanged vs 2026-10-21 (no new identities)",
+ "ledger": "vehicle-data/review/oct22_price_ledger.csv",
+ "supersession_history": "vehicle-data/review/price_supersession_history.csv",
+ "evidence": "vehicle-data/evidence/ceo-2026-10-22/"
+}

@@ -18,12 +18,12 @@
     "counts": {
       "models": 283,
       "id_accepted": 283,
-      "price_accepted": 205,
-      "price_tier_a": 99,
-      "price_source_dated": 154,
+      "price_accepted": 208,
+      "price_tier_a": 113,
+      "price_source_dated": 157,
       "market_status_official": 37,
       "specs_accepted": 200,
-      "warranty_accepted": 108,
+      "warranty_accepted": 110,
       "brochure_accepted": 81,
       "hero_accepted": 82,
       "hero_accepted_hq": 78,
@@ -39,7 +39,7 @@
     "p2_evidence": 21,
     "identity_only": 262,
     "excluded": 3,
-    "price_accepted": 205,
+    "price_accepted": 208,
     "id_accepted": 283
   },
   "entries": [
@@ -5757,10 +5757,9 @@
       },
       "p2_evidence": false,
       "evidence_state": "U11_IDENTITY_ONLY",
-      "price_status": "UNKNOWN",
+      "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_PRICE",
         "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
@@ -5771,7 +5770,31 @@
           "basis": "registration segment, last 12 months (38 registrations)",
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
-        "price": null,
+        "price": {
+          "price_from": 2899900,
+          "model_year": 2027,
+          "tier": "A",
+          "effective_date": "2026-10-22",
+          "date_basis": "SOURCE_STATED",
+          "as_of": "2026-10-22",
+          "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+          "trims": [
+            {
+              "model_year": 2027,
+              "label": "DMi Ultra",
+              "price_egp": 2899900,
+              "tier": "A",
+              "effective_date": "2026-10-22",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-22",
+              "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+              "powertrain": "PHEV"
+            }
+          ],
+          "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
+        },
         "specs": {
           "airbags": [
             {
@@ -6152,10 +6175,9 @@
       },
       "p2_evidence": false,
       "evidence_state": "U11_IDENTITY_ONLY",
-      "price_status": "UNKNOWN",
+      "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_PRICE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
@@ -6167,7 +6189,43 @@
           "basis": "registration segment, last 12 months (10 registrations)",
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
-        "price": null,
+        "price": {
+          "price_from": 3299900,
+          "model_year": 2027,
+          "tier": "A",
+          "effective_date": "2026-10-22",
+          "date_basis": "SOURCE_STATED",
+          "as_of": "2026-10-22",
+          "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+          "trims": [
+            {
+              "model_year": 2027,
+              "label": "DMi Ultra",
+              "price_egp": 3299900,
+              "tier": "A",
+              "effective_date": "2026-10-22",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-22",
+              "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+              "powertrain": "PHEV"
+            },
+            {
+              "model_year": 2027,
+              "label": "DMi Luxury",
+              "price_egp": 3849900,
+              "tier": "A",
+              "effective_date": "2026-10-22",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-22",
+              "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+              "powertrain": "PHEV"
+            }
+          ],
+          "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
+        },
         "specs": {
           "airbags": [
             {
@@ -6524,61 +6582,37 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 1449000,
+          "price_from": 1479900,
           "model_year": 2027,
-          "tier": "B",
-          "effective_date": "2026-09-22",
+          "tier": "A",
+          "effective_date": "2026-10-22",
           "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-22",
-          "issuer": "ContactCars+Hatla2ee",
-          "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/sealion-5 | https://www.contactcars.com/en/new-cars/byd-sealion_5/year-2027",
+          "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
           "trims": [
             {
-              "model_year": 2026,
-              "label": "Ultra",
-              "price_egp": 1400000,
-              "tier": "B",
-              "effective_date": "2026-05-15",
+              "model_year": 2027,
+              "label": "DMi Ultra",
+              "price_egp": 1479900,
+              "tier": "A",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-22",
-              "issuer": "ContactCars+EgyCar",
-              "evidence_url": "https://www.contactcars.com/en/new-cars/byd-sealion_5 | https://www.contactcars.com/en/new-cars/byd-sealion_5/year-2026 | https://www.egy-car.com/byd-sealion-5",
-              "powertrain": "Hybrid"
-            },
-            {
-              "model_year": 2026,
-              "label": "Luxury",
-              "price_egp": 1650000,
-              "tier": "B",
-              "effective_date": "2026-05-15",
-              "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-22",
-              "issuer": "ContactCars+EgyCar",
-              "evidence_url": "https://www.contactcars.com/en/new-cars/byd-sealion_5 | https://www.contactcars.com/en/new-cars/byd-sealion_5/year-2026 | https://www.egy-car.com/byd-sealion-5",
+              "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
               "powertrain": "Hybrid"
             },
             {
               "model_year": 2027,
-              "label": "Ultra",
-              "price_egp": 1449000,
-              "tier": "B",
-              "effective_date": "2026-09-22",
+              "label": "DMi Luxury",
+              "price_egp": 1729900,
+              "tier": "A",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-22",
-              "issuer": "ContactCars+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/sealion-5 | https://www.contactcars.com/en/new-cars/byd-sealion_5/year-2027",
-              "powertrain": "Hybrid"
-            },
-            {
-              "model_year": 2027,
-              "label": "Luxury",
-              "price_egp": 1699000,
-              "tier": "B",
-              "effective_date": "2026-09-22",
-              "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-22",
-              "issuer": "ContactCars+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/sealion-5 | https://www.contactcars.com/en/new-cars/byd-sealion_5/year-2027",
+              "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
               "powertrain": "Hybrid"
             }
           ],
@@ -6771,35 +6805,35 @@
         "price": {
           "price_from": 1949900,
           "model_year": 2027,
-          "tier": "B",
-          "effective_date": "2026-07-13",
+          "tier": "A",
+          "effective_date": "2026-10-22",
           "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-22",
-          "issuer": "ContactCars+Hatla2ee",
-          "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/sealion-6 | https://www.contactcars.com/en/new-cars/byd-sealion_6 | https://www.contactcars.com/en/new-cars/byd-sealion_6/year-2027",
+          "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
           "trims": [
             {
               "model_year": 2027,
               "label": "DMi Ultra",
               "price_egp": 1949900,
-              "tier": "B",
-              "effective_date": "2026-07-13",
+              "tier": "A",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-22",
-              "issuer": "ContactCars+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/sealion-6 | https://www.contactcars.com/en/new-cars/byd-sealion_6 | https://www.contactcars.com/en/new-cars/byd-sealion_6/year-2027",
+              "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
               "powertrain": "PHEV"
             },
             {
               "model_year": 2027,
               "label": "DMi Luxury",
               "price_egp": 2149900,
-              "tier": "B",
-              "effective_date": "2026-07-13",
+              "tier": "A",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-22",
-              "issuer": "ContactCars+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/sealion-6 | https://www.contactcars.com/en/new-cars/byd-sealion_6 | https://www.contactcars.com/en/new-cars/byd-sealion_6/year-2027",
+              "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
               "powertrain": "PHEV"
             }
           ],
@@ -7215,36 +7249,36 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 2350000,
+          "price_from": 2424900,
           "model_year": 2027,
-          "tier": "B",
-          "effective_date": "2026-05-20",
+          "tier": "A",
+          "effective_date": "2026-10-22",
           "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-22",
-          "issuer": "EgyCar+Hatla2ee",
-          "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/ti-7 | https://www.egy-car.com/byd-ti-7",
+          "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
           "trims": [
             {
               "model_year": 2027,
-              "label": " A/T / Ultra",
-              "price_egp": 2350000,
-              "tier": "B",
-              "effective_date": "2026-05-20",
+              "label": "DMi Ultra FWD",
+              "price_egp": 2424900,
+              "tier": "A",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-22",
-              "issuer": "EgyCar+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/ti-7 | https://www.egy-car.com/byd-ti-7"
+              "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg"
             },
             {
               "model_year": 2027,
-              "label": " A/T / Luxury",
-              "price_egp": 2800000,
-              "tier": "B",
-              "effective_date": "2026-05-20",
+              "label": "DMi Luxury AWD",
+              "price_egp": 2874900,
+              "tier": "A",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-22",
-              "issuer": "EgyCar+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/ti-7 | https://www.egy-car.com/byd-ti-7"
+              "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg"
             }
           ]
         },
@@ -7826,9 +7860,9 @@
           "tier": "A",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-22",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1voz3btZn484J8AQ4sEy_CUZXE1ezSzDu/view?usp=drivesdk",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/changan-gbauto-undated.jpg",
           "trims": [
             {
               "model_year": 2026,
@@ -7837,9 +7871,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1voz3btZn484J8AQ4sEy_CUZXE1ezSzDu/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/changan-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
@@ -7849,9 +7883,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1voz3btZn484J8AQ4sEy_CUZXE1ezSzDu/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/changan-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
@@ -7861,9 +7895,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1voz3btZn484J8AQ4sEy_CUZXE1ezSzDu/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/changan-gbauto-undated.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -8253,14 +8287,14 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 1145000,
+          "price_from": 1160000,
           "model_year": 2027,
           "tier": "A",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-22",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1voz3btZn484J8AQ4sEy_CUZXE1ezSzDu/view?usp=drivesdk",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/changan-gbauto-undated.jpg",
           "trims": [
             {
               "model_year": 2026,
@@ -8269,33 +8303,33 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1voz3btZn484J8AQ4sEy_CUZXE1ezSzDu/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/changan-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2027,
               "label": "Elite",
-              "price_egp": 1145000,
+              "price_egp": 1160000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1voz3btZn484J8AQ4sEy_CUZXE1ezSzDu/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/changan-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2027,
               "label": "Premium",
-              "price_egp": 1275000,
+              "price_egp": 1290000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1voz3btZn484J8AQ4sEy_CUZXE1ezSzDu/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/changan-gbauto-undated.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -8680,37 +8714,37 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 1490000,
+          "price_from": 1520000,
           "model_year": 2027,
           "tier": "A",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-22",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1voz3btZn484J8AQ4sEy_CUZXE1ezSzDu/view?usp=drivesdk",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/changan-gbauto-undated.jpg",
           "trims": [
             {
               "model_year": 2027,
               "label": "Premium",
-              "price_egp": 1490000,
+              "price_egp": 1520000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1voz3btZn484J8AQ4sEy_CUZXE1ezSzDu/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/changan-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2027,
               "label": "Flagship",
-              "price_egp": 1640000,
+              "price_egp": 1670000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1voz3btZn484J8AQ4sEy_CUZXE1ezSzDu/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/changan-gbauto-undated.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -9113,9 +9147,9 @@
           "tier": "A",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-22",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1voz3btZn484J8AQ4sEy_CUZXE1ezSzDu/view?usp=drivesdk",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/changan-gbauto-undated.jpg",
           "trims": [
             {
               "model_year": 2027,
@@ -9124,9 +9158,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1voz3btZn484J8AQ4sEy_CUZXE1ezSzDu/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/changan-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
@@ -9136,9 +9170,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1voz3btZn484J8AQ4sEy_CUZXE1ezSzDu/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/changan-gbauto-undated.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -9521,9 +9555,9 @@
           "tier": "A",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-22",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1voz3btZn484J8AQ4sEy_CUZXE1ezSzDu/view?usp=drivesdk",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/changan-gbauto-undated.jpg",
           "trims": [
             {
               "model_year": 2026,
@@ -9532,9 +9566,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1voz3btZn484J8AQ4sEy_CUZXE1ezSzDu/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/changan-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
@@ -9544,9 +9578,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1voz3btZn484J8AQ4sEy_CUZXE1ezSzDu/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/changan-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
@@ -9556,9 +9590,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1voz3btZn484J8AQ4sEy_CUZXE1ezSzDu/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/changan-gbauto-undated.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -9816,9 +9850,9 @@
           "tier": "A",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-22",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1voz3btZn484J8AQ4sEy_CUZXE1ezSzDu/view?usp=drivesdk",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/changan-gbauto-undated.jpg",
           "trims": [
             {
               "model_year": 2026,
@@ -9827,9 +9861,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1voz3btZn484J8AQ4sEy_CUZXE1ezSzDu/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/changan-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
@@ -9839,9 +9873,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1voz3btZn484J8AQ4sEy_CUZXE1ezSzDu/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/changan-gbauto-undated.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -10117,25 +10151,25 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 1350000,
+          "price_from": 1365000,
           "model_year": 2026,
           "tier": "A",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-22",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1voz3btZn484J8AQ4sEy_CUZXE1ezSzDu/view?usp=drivesdk",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/changan-gbauto-undated.jpg",
           "trims": [
             {
               "model_year": 2026,
               "label": "Flagship",
-              "price_egp": 1350000,
+              "price_egp": 1365000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1voz3btZn484J8AQ4sEy_CUZXE1ezSzDu/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/changan-gbauto-undated.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -10477,14 +10511,14 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 690000,
+          "price_from": 705000,
           "model_year": 2027,
           "tier": "A",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-22",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
           "trims": [
             {
               "model_year": 2026,
@@ -10493,9 +10527,21 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
+              "powertrain": "Petrol"
+            },
+            {
+              "model_year": 2026,
+              "label": "1.5 CVT Basic",
+              "price_egp": 715000,
+              "tier": "A",
+              "effective_date": null,
+              "date_basis": "OBSERVED",
+              "as_of": "2026-10-22",
+              "issuer": "GB Auto official distributor list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
@@ -10505,45 +10551,45 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2027,
               "label": "1.5 MT Basic",
-              "price_egp": 690000,
+              "price_egp": 705000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2027,
               "label": "1.5 CVT Basic",
-              "price_egp": 735000,
+              "price_egp": 750000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2027,
               "label": "1.5 CVT Comfort",
-              "price_egp": 775000,
+              "price_egp": 790000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -10774,9 +10820,7 @@
             "credit": "chery-eg.com"
           }
         ],
-        "conflicts": [
-          "PS-2 CONFLICT: EgyCar+Hatla2ee states 705000 effective 2026-10-21 (newer than official undated)"
-        ]
+        "conflicts": []
       }
     },
     {
@@ -10818,14 +10862,14 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 899000,
+          "price_from": 915000,
           "model_year": 2027,
           "tier": "A",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-22",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
           "trims": [
             {
               "model_year": 2026,
@@ -10834,9 +10878,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
@@ -10846,33 +10890,33 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2027,
               "label": "1.5T DCT Comfort",
-              "price_egp": 899000,
+              "price_egp": 915000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2027,
               "label": "1.5T DCT Luxury",
-              "price_egp": 999000,
+              "price_egp": 1015000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -11154,37 +11198,37 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 1300000,
+          "price_from": 1320000,
           "model_year": 2026,
           "tier": "A",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-22",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
           "trims": [
             {
               "model_year": 2026,
               "label": "1.6T 7DCT Luxury",
-              "price_egp": 1300000,
+              "price_egp": 1320000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2026,
               "label": "1.6T 7DCT Flagship",
-              "price_egp": 1380000,
+              "price_egp": 1400000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -11441,9 +11485,9 @@
           "tier": "A",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-21",
+          "as_of": "2026-10-22",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/17ZnNOxe5FXREfuuRD9gbqXWZcPl0gZl8/view",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
           "trims": [
             {
               "model_year": 2026,
@@ -11452,9 +11496,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-21",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/17ZnNOxe5FXREfuuRD9gbqXWZcPl0gZl8/view",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Electric"
             }
           ],
@@ -11666,14 +11710,14 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 899000,
+          "price_from": 915000,
           "model_year": 2027,
           "tier": "A",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-22",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
           "trims": [
             {
               "model_year": 2026,
@@ -11682,9 +11726,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
@@ -11694,9 +11738,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
@@ -11706,45 +11750,45 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2027,
               "label": "1.5 CVT Comfort",
-              "price_egp": 899000,
+              "price_egp": 915000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2027,
               "label": "1.5 CVT Luxury",
-              "price_egp": 939000,
+              "price_egp": 955000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2027,
               "label": "1.5T CVT Luxury Turbo",
-              "price_egp": 999000,
+              "price_egp": 1015000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -12039,9 +12083,9 @@
           "tier": "A",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-22",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
           "trims": [
             {
               "model_year": 2026,
@@ -12050,9 +12094,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
@@ -12062,9 +12106,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
@@ -12074,9 +12118,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
@@ -12086,9 +12130,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -12280,37 +12324,37 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 1090000,
+          "price_from": 1115000,
           "model_year": 2027,
           "tier": "A",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-22",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
           "trims": [
             {
               "model_year": 2027,
               "label": "1.5T CVT Comfort",
-              "price_egp": 1090000,
+              "price_egp": 1115000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2027,
               "label": "1.5T CVT Luxury",
-              "price_egp": 1190000,
+              "price_egp": 1215000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -12676,14 +12720,14 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 1180000,
+          "price_from": 1200000,
           "model_year": 2027,
           "tier": "A",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-22",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
           "trims": [
             {
               "model_year": 2026,
@@ -12692,9 +12736,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
@@ -12704,9 +12748,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
@@ -12716,45 +12760,45 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2027,
               "label": "1.5T 6DCT Comfort 7 Seat",
-              "price_egp": 1180000,
+              "price_egp": 1200000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2027,
               "label": "1.5T 6DCT Luxury 5 Seat",
-              "price_egp": 1240000,
+              "price_egp": 1260000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2027,
               "label": "1.5T 6DCT Luxury 7 Seat",
-              "price_egp": 1280000,
+              "price_egp": 1300000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -13035,9 +13079,9 @@
           "tier": "A",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-21",
+          "as_of": "2026-10-22",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/17ZnNOxe5FXREfuuRD9gbqXWZcPl0gZl8/view",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
           "trims": [
             {
               "model_year": 2025,
@@ -13046,9 +13090,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-21",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/17ZnNOxe5FXREfuuRD9gbqXWZcPl0gZl8/view",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
@@ -13058,9 +13102,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-21",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/17ZnNOxe5FXREfuuRD9gbqXWZcPl0gZl8/view",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
@@ -13070,9 +13114,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-21",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/17ZnNOxe5FXREfuuRD9gbqXWZcPl0gZl8/view",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
@@ -13082,9 +13126,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-21",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/17ZnNOxe5FXREfuuRD9gbqXWZcPl0gZl8/view",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -13248,14 +13292,14 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 1620000,
+          "price_from": 1640000,
           "model_year": 2027,
           "tier": "A",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-22",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
           "trims": [
             {
               "model_year": 2026,
@@ -13264,9 +13308,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
@@ -13276,33 +13320,33 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2027,
               "label": "1.6T 6DCT Luxury 7 Seat",
-              "price_egp": 1620000,
+              "price_egp": 1640000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2027,
               "label": "1.6T 6DCT Flagship 7 Seat",
-              "price_egp": 1720000,
+              "price_egp": 1740000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -13565,25 +13609,25 @@
           "confidence": "HIGH"
         },
         "price": {
-          "price_from": 2100000,
+          "price_from": 2120000,
           "model_year": 2026,
           "tier": "A",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-22",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
           "trims": [
             {
               "model_year": 2026,
               "label": "1.5T DHT Luxury 7 Seat",
-              "price_egp": 2100000,
+              "price_egp": 2120000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk"
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg"
             }
           ]
         },
@@ -14733,10 +14777,9 @@
       },
       "p2_evidence": false,
       "evidence_state": "U11_IDENTITY_ONLY",
-      "price_status": "UNKNOWN",
+      "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_PRICE",
         "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
       ],
@@ -14747,7 +14790,31 @@
           "basis": "registration segment, last 12 months (1 registrations)",
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
-        "price": null,
+        "price": {
+          "price_from": 1149000,
+          "model_year": 2027,
+          "tier": "A",
+          "effective_date": "2026-10-22",
+          "date_basis": "SOURCE_STATED",
+          "as_of": "2026-10-22",
+          "issuer": "Kasrawy Group (Citroen Egypt) retail price list (CEO-supplied)",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/citroen-kasrawy-2026-10-22.png",
+          "trims": [
+            {
+              "model_year": 2027,
+              "label": "Plus",
+              "price_egp": 1149000,
+              "tier": "A",
+              "effective_date": "2026-10-22",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-22",
+              "issuer": "Kasrawy Group (Citroen Egypt) retail price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/citroen-kasrawy-2026-10-22.png",
+              "powertrain": "Petrol"
+            }
+          ],
+          "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
+        },
         "specs": {
           "airbags": [
             {
@@ -14977,6 +15044,13 @@
           {
             "value": "5 years / 150000 km",
             "unit": "",
+            "applicability": "all trims (Kasrawy Group price list 22 Oct 2026)",
+            "issuer": "Kasrawy Group",
+            "source": "drive:repo:vehicle-data/evidence/ceo-2026-10-22/citroen-kasrawy-2026-10-22.png"
+          },
+          {
+            "value": "5 years / 150000 km",
+            "unit": "",
             "applicability": "market trim pages: model",
             "issuer": "ContactCars+Hatla2ee",
             "source": "https://www.contactcars.com/en/new-cars/citroen-c3_aircross/b3a2e0ef19c5"
@@ -15042,7 +15116,6 @@
         "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -15053,30 +15126,38 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 1525000,
+          "price_from": 1535000,
           "model_year": 2027,
-          "tier": "B",
-          "effective_date": "2026-09-24",
+          "tier": "A",
+          "effective_date": "2026-10-22",
           "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-22",
-          "issuer": "EgyCar+Hatla2ee",
-          "evidence_url": "https://eg.hatla2ee.com/en/new-car/citroen/c4 | https://www.egy-car.com/citroen-c4",
+          "issuer": "Kasrawy Group (Citroen Egypt) retail price list (CEO-supplied)",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/citroen-kasrawy-2026-10-22.png",
           "trims": [
             {
               "model_year": 2027,
-              "label": "A/T / Shine Two Tone",
-              "price_egp": 1525000,
-              "tier": "B",
-              "effective_date": "2026-09-24",
+              "label": "FL Shine",
+              "price_egp": 1535000,
+              "tier": "A",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-22",
-              "issuer": "EgyCar+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/citroen/c4 | https://www.egy-car.com/citroen-c4"
+              "issuer": "Kasrawy Group (Citroen Egypt) retail price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/citroen-kasrawy-2026-10-22.png"
             }
           ]
         },
         "specs": null,
-        "warranty": null,
+        "warranty": [
+          {
+            "value": "5 years / 150000 km",
+            "unit": "",
+            "applicability": "all trims (Kasrawy Group price list 22 Oct 2026)",
+            "issuer": "Kasrawy Group",
+            "source": "drive:repo:vehicle-data/evidence/ceo-2026-10-22/citroen-kasrawy-2026-10-22.png"
+          }
+        ],
         "brochures": [],
         "logo": {
           "src": "/media/p2/brands/citroen.png",
@@ -15126,7 +15207,6 @@
         "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -15139,39 +15219,47 @@
         "price": {
           "price_from": 1290000,
           "model_year": 2026,
-          "tier": "B",
-          "effective_date": "2026-04-30",
+          "tier": "A",
+          "effective_date": "2026-10-22",
           "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-22",
-          "issuer": "ContactCars+EgyCar+Hatla2ee",
-          "evidence_url": "https://eg.hatla2ee.com/en/new-car/citroen/C4X | https://www.contactcars.com/en/new-cars/citroen-c4_x/year-2026 | https://www.egy-car.com/citroen-c4x",
+          "issuer": "Kasrawy Group (Citroen Egypt) retail price list (CEO-supplied)",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/citroen-kasrawy-2026-10-22.png",
           "trims": [
             {
               "model_year": 2026,
-              "label": "Feel",
+              "label": "SKD Feel",
               "price_egp": 1290000,
-              "tier": "B",
-              "effective_date": "2026-04-30",
+              "tier": "A",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-22",
-              "issuer": "ContactCars+EgyCar+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/citroen/C4X | https://www.contactcars.com/en/new-cars/citroen-c4_x/year-2026 | https://www.egy-car.com/citroen-c4x"
+              "issuer": "Kasrawy Group (Citroen Egypt) retail price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/citroen-kasrawy-2026-10-22.png"
             },
             {
               "model_year": 2026,
-              "label": "Shine",
+              "label": "SKD Shine",
               "price_egp": 1420000,
-              "tier": "B",
-              "effective_date": "2026-04-30",
+              "tier": "A",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-22",
-              "issuer": "ContactCars+EgyCar+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/citroen/C4X | https://www.contactcars.com/en/new-cars/citroen-c4_x/year-2026 | https://www.egy-car.com/citroen-c4x"
+              "issuer": "Kasrawy Group (Citroen Egypt) retail price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/citroen-kasrawy-2026-10-22.png"
             }
           ]
         },
         "specs": null,
-        "warranty": null,
+        "warranty": [
+          {
+            "value": "5 years / 150000 km",
+            "unit": "",
+            "applicability": "all trims (Kasrawy Group price list 22 Oct 2026)",
+            "issuer": "Kasrawy Group",
+            "source": "drive:repo:vehicle-data/evidence/ceo-2026-10-22/citroen-kasrawy-2026-10-22.png"
+          }
+        ],
         "brochures": [],
         "logo": {
           "src": "/media/p2/brands/citroen.png",
@@ -15295,37 +15383,37 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 2049000,
-          "model_year": 2026,
+          "price_from": 2080000,
+          "model_year": 2027,
           "tier": "A",
-          "effective_date": "2026-08-22",
+          "effective_date": "2026-10-22",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-08-22",
+          "as_of": "2026-10-22",
           "issuer": "KAYAN Egypt (CUPRA Egypt price list)",
-          "evidence_url": "https://drive.google.com/file/d/1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD/view",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/cupra-kayan-2026-10-22.png",
           "trims": [
             {
-              "model_year": 2026,
+              "model_year": 2027,
               "label": "V1 1.5L 150HP",
-              "price_egp": 2049000,
+              "price_egp": 2080000,
               "tier": "A",
-              "effective_date": "2026-08-22",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-08-22",
+              "as_of": "2026-10-22",
               "issuer": "KAYAN Egypt (CUPRA Egypt price list)",
-              "evidence_url": "https://drive.google.com/file/d/1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD/view",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/cupra-kayan-2026-10-22.png",
               "powertrain": "Petrol"
             },
             {
-              "model_year": 2026,
+              "model_year": 2027,
               "label": "VZ 2.0L 265HP",
-              "price_egp": 2589000,
+              "price_egp": 2670000,
               "tier": "A",
-              "effective_date": "2026-08-22",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-08-22",
+              "as_of": "2026-10-22",
               "issuer": "KAYAN Egypt (CUPRA Egypt price list)",
-              "evidence_url": "https://drive.google.com/file/d/1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD/view",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/cupra-kayan-2026-10-22.png",
               "powertrain": "Petrol"
             }
           ],
@@ -15553,9 +15641,9 @@
           {
             "value": "4 years / 120000 km",
             "unit": "",
-            "applicability": "all trims (CUPRA Egypt)",
+            "applicability": "all trims (KAYAN Egypt price list 22 Oct 2026)",
             "issuer": "KAYAN Egypt",
-            "source": "drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD"
+            "source": "drive:repo:vehicle-data/evidence/ceo-2026-10-22/cupra-kayan-2026-10-22.png"
           },
           {
             "value": "4 years / 120000 km",
@@ -15632,25 +15720,25 @@
           "confidence": "HIGH"
         },
         "price": {
-          "price_from": 1849000,
-          "model_year": 2026,
+          "price_from": 1880000,
+          "model_year": 2027,
           "tier": "A",
-          "effective_date": "2026-08-22",
+          "effective_date": "2026-10-22",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-08-22",
+          "as_of": "2026-10-22",
           "issuer": "KAYAN Egypt (CUPRA Egypt price list)",
-          "evidence_url": "https://drive.google.com/file/d/1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD/view",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/cupra-kayan-2026-10-22.png",
           "trims": [
             {
-              "model_year": 2026,
+              "model_year": 2027,
               "label": "V1 1.4L 150HP",
-              "price_egp": 1849000,
+              "price_egp": 1880000,
               "tier": "A",
-              "effective_date": "2026-08-22",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-08-22",
+              "as_of": "2026-10-22",
               "issuer": "KAYAN Egypt (CUPRA Egypt price list)",
-              "evidence_url": "https://drive.google.com/file/d/1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD/view",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/cupra-kayan-2026-10-22.png",
               "powertrain": "Petrol"
             }
           ],
@@ -15793,9 +15881,9 @@
           {
             "value": "4 years / 120000 km",
             "unit": "",
-            "applicability": "all trims (CUPRA Egypt)",
+            "applicability": "all trims (KAYAN Egypt price list 22 Oct 2026)",
             "issuer": "KAYAN Egypt",
-            "source": "drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD"
+            "source": "drive:repo:vehicle-data/evidence/ceo-2026-10-22/cupra-kayan-2026-10-22.png"
           }
         ],
         "brochures": [],
@@ -15856,37 +15944,37 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 2299000,
-          "model_year": 2026,
+          "price_from": 2360000,
+          "model_year": 2027,
           "tier": "A",
-          "effective_date": "2026-08-22",
+          "effective_date": "2026-10-22",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-08-22",
+          "as_of": "2026-10-22",
           "issuer": "KAYAN Egypt (CUPRA Egypt price list)",
-          "evidence_url": "https://drive.google.com/file/d/1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD/view",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/cupra-kayan-2026-10-22.png",
           "trims": [
             {
-              "model_year": 2026,
-              "label": "Impulse 1.4L 150HP",
-              "price_egp": 2299000,
+              "model_year": 2027,
+              "label": "Impulse 1.4L 150HP (with HUD)",
+              "price_egp": 2360000,
               "tier": "A",
-              "effective_date": "2026-08-22",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-08-22",
+              "as_of": "2026-10-22",
               "issuer": "KAYAN Egypt (CUPRA Egypt price list)",
-              "evidence_url": "https://drive.google.com/file/d/1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD/view",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/cupra-kayan-2026-10-22.png",
               "powertrain": "Petrol"
             },
             {
-              "model_year": 2026,
-              "label": "Control 1.4L 150HP",
-              "price_egp": 2399000,
+              "model_year": 2027,
+              "label": "Control 1.4L 150HP (with HUD)",
+              "price_egp": 2460000,
               "tier": "A",
-              "effective_date": "2026-08-22",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-08-22",
+              "as_of": "2026-10-22",
               "issuer": "KAYAN Egypt (CUPRA Egypt price list)",
-              "evidence_url": "https://drive.google.com/file/d/1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD/view",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/cupra-kayan-2026-10-22.png",
               "powertrain": "Petrol"
             }
           ],
@@ -16022,9 +16110,9 @@
           {
             "value": "4 years / 120000 km",
             "unit": "",
-            "applicability": "all trims (CUPRA Egypt)",
+            "applicability": "all trims (KAYAN Egypt price list 22 Oct 2026)",
             "issuer": "KAYAN Egypt",
-            "source": "drive:1KOprMijB0TBRdyXGOyMBmdFqyWGF-EZD"
+            "source": "drive:repo:vehicle-data/evidence/ceo-2026-10-22/cupra-kayan-2026-10-22.png"
           }
         ],
         "brochures": [],
@@ -16083,37 +16171,37 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 2100000,
+          "price_from": 2135000,
           "model_year": 2027,
           "tier": "A",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-22",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1FwcH0hjcZY2Xw4VfZNr1iaMy7hKMJRrn/view?usp=drivesdk",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
           "trims": [
             {
               "model_year": 2027,
               "label": "Premium REEV",
-              "price_egp": 2100000,
+              "price_egp": 2135000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1FwcH0hjcZY2Xw4VfZNr1iaMy7hKMJRrn/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
               "powertrain": "REEV"
             },
             {
               "model_year": 2027,
               "label": "Adventure REEV",
-              "price_egp": 2250000,
+              "price_egp": 2285000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1FwcH0hjcZY2Xw4VfZNr1iaMy7hKMJRrn/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
               "powertrain": "REEV"
             }
           ],
@@ -16504,37 +16592,37 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 1625000,
+          "price_from": 1660000,
           "model_year": 2027,
           "tier": "A",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-22",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1FwcH0hjcZY2Xw4VfZNr1iaMy7hKMJRrn/view?usp=drivesdk",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
           "trims": [
             {
               "model_year": 2027,
               "label": "SUV REEV",
-              "price_egp": 1625000,
+              "price_egp": 1660000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1FwcH0hjcZY2Xw4VfZNr1iaMy7hKMJRrn/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
               "powertrain": "Electric"
             },
             {
               "model_year": 2027,
               "label": "SUV BEV",
-              "price_egp": 1775000,
+              "price_egp": 1810000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1FwcH0hjcZY2Xw4VfZNr1iaMy7hKMJRrn/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
               "powertrain": "Electric"
             }
           ],
@@ -16744,37 +16832,37 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 1925000,
+          "price_from": 1975000,
           "model_year": 2026,
           "tier": "A",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-22",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1FwcH0hjcZY2Xw4VfZNr1iaMy7hKMJRrn/view?usp=drivesdk",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
           "trims": [
             {
               "model_year": 2026,
               "label": "SUV REEV",
-              "price_egp": 1925000,
+              "price_egp": 1975000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1FwcH0hjcZY2Xw4VfZNr1iaMy7hKMJRrn/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
               "powertrain": "Electric"
             },
             {
               "model_year": 2026,
               "label": "SUV BEV",
-              "price_egp": 2015000,
+              "price_egp": 2065000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1FwcH0hjcZY2Xw4VfZNr1iaMy7hKMJRrn/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
               "powertrain": "Electric"
             }
           ],
@@ -23502,37 +23590,37 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 1310000,
+          "price_from": 1340000,
           "model_year": 2026,
           "tier": "A",
-          "effective_date": "2026-10-14",
+          "effective_date": "2026-10-21",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-14",
+          "as_of": "2026-10-21",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1a1v31tnZrp5olxB8LkTXchXLfiWU4N90/view",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/haval-gbauto-2026-10-21.jpg",
           "trims": [
             {
               "model_year": 2026,
               "label": "1.5T 7DCT Platinum",
-              "price_egp": 1310000,
+              "price_egp": 1340000,
               "tier": "A",
-              "effective_date": "2026-10-14",
+              "effective_date": "2026-10-21",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-14",
+              "as_of": "2026-10-21",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1a1v31tnZrp5olxB8LkTXchXLfiWU4N90/view",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/haval-gbauto-2026-10-21.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2026,
               "label": "1.5T 7DCT Ultra",
-              "price_egp": 1500000,
+              "price_egp": 1530000,
               "tier": "A",
-              "effective_date": "2026-10-14",
+              "effective_date": "2026-10-21",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-14",
+              "as_of": "2026-10-21",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1a1v31tnZrp5olxB8LkTXchXLfiWU4N90/view",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/haval-gbauto-2026-10-21.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -23701,25 +23789,25 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 1740000,
+          "price_from": 1765000,
           "model_year": 2027,
           "tier": "A",
-          "effective_date": "2026-10-14",
+          "effective_date": "2026-10-21",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-14",
+          "as_of": "2026-10-21",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1a1v31tnZrp5olxB8LkTXchXLfiWU4N90/view",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/haval-gbauto-2026-10-21.jpg",
           "trims": [
             {
               "model_year": 2027,
               "label": "1.5T 2DHT HEV Ultra Black Edition",
-              "price_egp": 1740000,
+              "price_egp": 1765000,
               "tier": "A",
-              "effective_date": "2026-10-14",
+              "effective_date": "2026-10-21",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-14",
+              "as_of": "2026-10-21",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1a1v31tnZrp5olxB8LkTXchXLfiWU4N90/view",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/haval-gbauto-2026-10-21.jpg",
               "powertrain": "Hybrid"
             }
           ],
@@ -23949,49 +24037,49 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 999000,
+          "price_from": 1025000,
           "model_year": 2027,
           "tier": "A",
-          "effective_date": "2026-10-14",
+          "effective_date": "2026-10-21",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-14",
+          "as_of": "2026-10-21",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1a1v31tnZrp5olxB8LkTXchXLfiWU4N90/view",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/haval-gbauto-2026-10-21.jpg",
           "trims": [
             {
               "model_year": 2027,
               "label": "1.5T 7DCT Standard",
-              "price_egp": 999000,
+              "price_egp": 1025000,
               "tier": "A",
-              "effective_date": "2026-10-14",
+              "effective_date": "2026-10-21",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-14",
+              "as_of": "2026-10-21",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1a1v31tnZrp5olxB8LkTXchXLfiWU4N90/view",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/haval-gbauto-2026-10-21.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2027,
               "label": "1.5T 7DCT Deluxe",
-              "price_egp": 1055000,
+              "price_egp": 1080000,
               "tier": "A",
-              "effective_date": "2026-10-14",
+              "effective_date": "2026-10-21",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-14",
+              "as_of": "2026-10-21",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1a1v31tnZrp5olxB8LkTXchXLfiWU4N90/view",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/haval-gbauto-2026-10-21.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2027,
               "label": "1.5T 7DCT High Deluxe",
-              "price_egp": 1155000,
+              "price_egp": 1180000,
               "tier": "A",
-              "effective_date": "2026-10-14",
+              "effective_date": "2026-10-21",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-14",
+              "as_of": "2026-10-21",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1a1v31tnZrp5olxB8LkTXchXLfiWU4N90/view",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/haval-gbauto-2026-10-21.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -27594,37 +27682,37 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 1330000,
-          "model_year": 2027,
-          "tier": "B",
-          "effective_date": "2026-10-18",
+          "price_from": 1430000,
+          "model_year": 2026,
+          "tier": "A",
+          "effective_date": "2026-10-22",
           "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-22",
-          "issuer": "ContactCars+EgyCar+Hatla2ee",
-          "evidence_url": "https://eg.hatla2ee.com/en/new-car/jetour/Dashing | https://www.contactcars.com/en/new-cars/jetour-dashing/year-2027 | https://www.egy-car.com/jetour-dashing",
+          "issuer": "Kasrawy Group (Jetour distributor) price list (CEO-supplied)",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg",
           "trims": [
             {
-              "model_year": 2027,
-              "label": "Luxury 1.5 L",
-              "price_egp": 1330000,
-              "tier": "B",
-              "effective_date": "2026-10-18",
+              "model_year": 2026,
+              "label": "Luxury 1.5L",
+              "price_egp": 1430000,
+              "tier": "A",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-22",
-              "issuer": "ContactCars+EgyCar+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/jetour/Dashing | https://www.contactcars.com/en/new-cars/jetour-dashing/year-2027 | https://www.egy-car.com/jetour-dashing",
+              "issuer": "Kasrawy Group (Jetour distributor) price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg",
               "powertrain": "Petrol"
             },
             {
-              "model_year": 2027,
-              "label": "Luxury 1.6 L",
-              "price_egp": 1480000,
-              "tier": "B",
-              "effective_date": "2026-10-18",
+              "model_year": 2026,
+              "label": "Luxury 1.6L",
+              "price_egp": 1580000,
+              "tier": "A",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-22",
-              "issuer": "ContactCars+EgyCar+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/jetour/Dashing | https://www.contactcars.com/en/new-cars/jetour-dashing/year-2027 | https://www.egy-car.com/jetour-dashing",
+              "issuer": "Kasrawy Group (Jetour distributor) price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -27765,6 +27853,13 @@
           {
             "value": "6 years / 150000 km",
             "unit": "",
+            "applicability": "all trims (Kasrawy Group price list 22 Oct 2026)",
+            "issuer": "Kasrawy Group",
+            "source": "drive:repo:vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg"
+          },
+          {
+            "value": "6 years / 150000 km",
+            "unit": "",
             "applicability": "market trim pages: model",
             "issuer": "ContactCars+Hatla2ee",
             "source": "https://www.contactcars.com/en/new-cars/jetour-dashing/05fc20afadbd | https://www.contactcars.com/en/new-cars/jetour-dashing/9504e286735c"
@@ -27870,25 +27965,37 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 1730000,
-          "model_year": 2027,
-          "tier": "B",
-          "effective_date": "2026-06-17",
+          "price_from": 1830000,
+          "model_year": 2026,
+          "tier": "A",
+          "effective_date": "2026-10-22",
           "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-22",
-          "issuer": "ContactCars+EgyCar+Hatla2ee",
-          "evidence_url": "https://eg.hatla2ee.com/en/new-car/jetour/T1 | https://www.contactcars.com/en/new-cars/jetour-t1 | https://www.contactcars.com/en/new-cars/jetour-t1/year-2027 | https://www.egy-car.com/jetour-t1",
+          "issuer": "Kasrawy Group (Jetour distributor) price list (CEO-supplied)",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg",
           "trims": [
             {
-              "model_year": 2027,
+              "model_year": 2026,
               "label": "Luxury",
-              "price_egp": 1730000,
-              "tier": "B",
-              "effective_date": "2026-06-17",
+              "price_egp": 1830000,
+              "tier": "A",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-22",
-              "issuer": "ContactCars+EgyCar+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/jetour/T1 | https://www.contactcars.com/en/new-cars/jetour-t1 | https://www.contactcars.com/en/new-cars/jetour-t1/year-2027 | https://www.egy-car.com/jetour-t1",
+              "issuer": "Kasrawy Group (Jetour distributor) price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg",
+              "powertrain": "Petrol"
+            },
+            {
+              "model_year": 2026,
+              "label": "Luxury (Matte Color)",
+              "price_egp": 1860000,
+              "tier": "A",
+              "effective_date": "2026-10-22",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-22",
+              "issuer": "Kasrawy Group (Jetour distributor) price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -28015,9 +28122,9 @@
           {
             "value": "6 years / 150000 km",
             "unit": "",
-            "applicability": "official brand warranty policy",
-            "issuer": "jetouregypt.com",
-            "source": "https://jetouregypt.com/after-sales-services/warranty/"
+            "applicability": "all trims (Kasrawy Group price list 22 Oct 2026)",
+            "issuer": "Kasrawy Group",
+            "source": "drive:repo:vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg"
           }
         ],
         "brochures": [
@@ -28134,25 +28241,37 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 1900000,
-          "model_year": 2027,
-          "tier": "B",
-          "effective_date": "2026-06-17",
+          "price_from": 2000000,
+          "model_year": 2026,
+          "tier": "A",
+          "effective_date": "2026-10-22",
           "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-22",
-          "issuer": "ContactCars+EgyCar+Hatla2ee",
-          "evidence_url": "https://eg.hatla2ee.com/en/new-car/jetour/T2 | https://www.contactcars.com/en/new-cars/jetour-t2 | https://www.contactcars.com/en/new-cars/jetour-t2/year-2027 | https://www.egy-car.com/jetour-t2",
+          "issuer": "Kasrawy Group (Jetour distributor) price list (CEO-supplied)",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg",
           "trims": [
             {
-              "model_year": 2027,
-              "label": "Luxury 1.5 L",
-              "price_egp": 1900000,
-              "tier": "B",
-              "effective_date": "2026-06-17",
+              "model_year": 2026,
+              "label": "Luxury",
+              "price_egp": 2000000,
+              "tier": "A",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-22",
-              "issuer": "ContactCars+EgyCar+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/jetour/T2 | https://www.contactcars.com/en/new-cars/jetour-t2 | https://www.contactcars.com/en/new-cars/jetour-t2/year-2027 | https://www.egy-car.com/jetour-t2",
+              "issuer": "Kasrawy Group (Jetour distributor) price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg",
+              "powertrain": "Petrol"
+            },
+            {
+              "model_year": 2026,
+              "label": "Luxury (Matte Color)",
+              "price_egp": 2030000,
+              "tier": "A",
+              "effective_date": "2026-10-22",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-22",
+              "issuer": "Kasrawy Group (Jetour distributor) price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -28295,6 +28414,13 @@
           {
             "value": "6 years / 150000 km",
             "unit": "",
+            "applicability": "all trims (Kasrawy Group price list 22 Oct 2026)",
+            "issuer": "Kasrawy Group",
+            "source": "drive:repo:vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg"
+          },
+          {
+            "value": "6 years / 150000 km",
+            "unit": "",
             "applicability": "market trim pages: model",
             "issuer": "ContactCars+Hatla2ee",
             "source": "https://www.contactcars.com/en/new-cars/jetour-t2/85762aa68bbd | https://www.contactcars.com/en/new-cars/jetour-t2/8b5111622905 | https://www.contactcars.com/en/new-cars/jetour-t2/df25efea26ee"
@@ -28410,61 +28536,37 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 1095000,
-          "model_year": 2027,
-          "tier": "B",
-          "effective_date": "2026-06-17",
+          "price_from": 1195000,
+          "model_year": 2026,
+          "tier": "A",
+          "effective_date": "2026-10-22",
           "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-22",
-          "issuer": "ContactCars+EgyCar+Hatla2ee",
-          "evidence_url": "https://eg.hatla2ee.com/en/new-car/jetour/X70 | https://www.contactcars.com/en/new-cars/jetour-x70___facelift/year-2027 | https://www.egy-car.com/jetour-x70",
+          "issuer": "Kasrawy Group (Jetour distributor) price list (CEO-supplied)",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg",
           "trims": [
             {
-              "model_year": 2027,
-              "label": "Comfort - Facelift",
-              "price_egp": 1095000,
-              "tier": "B",
-              "effective_date": "2026-06-17",
+              "model_year": 2026,
+              "label": "New X70 FL Comfort",
+              "price_egp": 1195000,
+              "tier": "A",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-22",
-              "issuer": "ContactCars+EgyCar+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/jetour/X70 | https://www.contactcars.com/en/new-cars/jetour-x70___facelift/year-2027 | https://www.egy-car.com/jetour-x70",
+              "issuer": "Kasrawy Group (Jetour distributor) price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg",
               "powertrain": "Petrol"
             },
             {
-              "model_year": 2027,
-              "label": "A/T / Comfort",
-              "price_egp": 1095000,
-              "tier": "B",
-              "effective_date": "2026-06-17",
+              "model_year": 2026,
+              "label": "New X70 FL Luxury",
+              "price_egp": 1340000,
+              "tier": "A",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-22",
-              "issuer": "EgyCar+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/jetour/X70 | https://www.egy-car.com/jetour-x70",
-              "powertrain": "Petrol"
-            },
-            {
-              "model_year": 2027,
-              "label": "Luxury - facelift",
-              "price_egp": 1240000,
-              "tier": "B",
-              "effective_date": "2026-06-17",
-              "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-22",
-              "issuer": "ContactCars+EgyCar+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/jetour/X70 | https://www.contactcars.com/en/new-cars/jetour-x70___facelift/year-2027 | https://www.egy-car.com/jetour-x70",
-              "powertrain": "Petrol"
-            },
-            {
-              "model_year": 2027,
-              "label": "A/T / Luxury",
-              "price_egp": 1240000,
-              "tier": "B",
-              "effective_date": "2026-06-17",
-              "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-22",
-              "issuer": "EgyCar+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/jetour/X70 | https://www.egy-car.com/jetour-x70",
+              "issuer": "Kasrawy Group (Jetour distributor) price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -28593,6 +28695,13 @@
           {
             "value": "6 years / 150000 km",
             "unit": "",
+            "applicability": "all trims (Kasrawy Group price list 22 Oct 2026)",
+            "issuer": "Kasrawy Group",
+            "source": "drive:repo:vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg"
+          },
+          {
+            "value": "6 years / 150000 km",
+            "unit": "",
             "applicability": "market trim pages: model",
             "issuer": "ContactCars+Hatla2ee",
             "source": "https://www.contactcars.com/en/new-cars/jetour-x70___facelift/0b4092ed0cba | https://www.contactcars.com/en/new-cars/jetour-x70___facelift/3dbbfd3aa353"
@@ -28685,36 +28794,25 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 1275000,
-          "model_year": 2027,
-          "tier": "B",
-          "effective_date": "2026-06-17",
+          "price_from": 1350000,
+          "model_year": 2026,
+          "tier": "A",
+          "effective_date": "2026-10-22",
           "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-22",
-          "issuer": "ContactCars+EgyCar",
-          "evidence_url": "https://www.contactcars.com/en/new-cars/jetour-x70_plus_ckd/year-2027 | https://www.egy-car.com/jetour-x70-plus",
+          "issuer": "Kasrawy Group (Jetour distributor) price list (CEO-supplied)",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg",
           "trims": [
             {
-              "model_year": 2027,
+              "model_year": 2026,
               "label": "Luxury",
-              "price_egp": 1275000,
-              "tier": "B",
-              "effective_date": "2026-06-17",
+              "price_egp": 1350000,
+              "tier": "A",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-22",
-              "issuer": "ContactCars+EgyCar",
-              "evidence_url": "https://www.contactcars.com/en/new-cars/jetour-x70_plus_ckd/year-2027 | https://www.egy-car.com/jetour-x70-plus"
-            },
-            {
-              "model_year": 2027,
-              "label": "Luxury",
-              "price_egp": 1275000,
-              "tier": "B",
-              "effective_date": "2026-06-23",
-              "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-22",
-              "issuer": "ContactCars+EgyCar+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/jetour/X70-Plus | https://www.contactcars.com/en/new-cars/jetour-x70_plus_ckd/year-2027 | https://www.egy-car.com/jetour-x70-plus"
+              "issuer": "Kasrawy Group (Jetour distributor) price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg"
             }
           ]
         },
@@ -28829,6 +28927,13 @@
           ]
         },
         "warranty": [
+          {
+            "value": "6 years / 150000 km",
+            "unit": "",
+            "applicability": "all trims (Kasrawy Group price list 22 Oct 2026)",
+            "issuer": "Kasrawy Group",
+            "source": "drive:repo:vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg"
+          },
           {
             "value": "6 years / 150000 km",
             "unit": "",
@@ -28952,37 +29057,25 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 1560000,
-          "model_year": 2027,
-          "tier": "B",
-          "effective_date": "2026-06-17",
+          "price_from": 1660000,
+          "model_year": 2026,
+          "tier": "A",
+          "effective_date": "2026-10-22",
           "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-22",
-          "issuer": "ContactCars+EgyCar+Hatla2ee",
-          "evidence_url": "https://eg.hatla2ee.com/en/new-car/jetour/X90-Plus | https://www.contactcars.com/en/new-cars/jetour-x90_plus/year-2027 | https://www.egy-car.com/jetour-x90-plus",
+          "issuer": "Kasrawy Group (Jetour distributor) price list (CEO-supplied)",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg",
           "trims": [
             {
-              "model_year": 2027,
-              "label": "Luxury FL",
-              "price_egp": 1560000,
-              "tier": "B",
-              "effective_date": "2026-06-17",
+              "model_year": 2026,
+              "label": "FL Luxury",
+              "price_egp": 1660000,
+              "tier": "A",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-22",
-              "issuer": "ContactCars+EgyCar+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/jetour/X90-Plus | https://www.contactcars.com/en/new-cars/jetour-x90_plus/year-2027 | https://www.egy-car.com/jetour-x90-plus",
-              "powertrain": "Petrol"
-            },
-            {
-              "model_year": 2027,
-              "label": "A/T / Luxury",
-              "price_egp": 1560000,
-              "tier": "B",
-              "effective_date": "2026-06-17",
-              "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-22",
-              "issuer": "EgyCar+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/jetour/X90-Plus | https://www.egy-car.com/jetour-x90-plus",
+              "issuer": "Kasrawy Group (Jetour distributor) price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -29099,6 +29192,13 @@
           ]
         },
         "warranty": [
+          {
+            "value": "6 years / 150000 km",
+            "unit": "",
+            "applicability": "all trims (Kasrawy Group price list 22 Oct 2026)",
+            "issuer": "Kasrawy Group",
+            "source": "drive:repo:vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg"
+          },
           {
             "value": "6 years / 150000 km",
             "unit": "",
@@ -53878,37 +53978,37 @@
           "confidence": "HIGH"
         },
         "price": {
-          "price_from": 1695000,
+          "price_from": 1719000,
           "model_year": 2027,
-          "tier": "B",
-          "effective_date": "2026-05-16",
+          "tier": "A",
+          "effective_date": "2026-10-22",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-14",
-          "issuer": "ContactCars+EgyCar+Hatla2ee",
-          "evidence_url": "https://eg.hatla2ee.com/en/new-car/citroen/C5-Aircross | https://www.contactcars.com/en/new-cars/citroen-c5_aircross/year-2027 | https://www.egy-car.com/citroen-c5-aircross",
+          "as_of": "2026-10-22",
+          "issuer": "Kasrawy Group (Citroen Egypt) retail price list (CEO-supplied)",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/citroen-kasrawy-2026-10-22.png",
           "trims": [
             {
               "model_year": 2027,
               "label": "Advanced",
-              "price_egp": 1695000,
-              "tier": "B",
-              "effective_date": "2026-05-16",
+              "price_egp": 1719000,
+              "tier": "A",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-14",
-              "issuer": "ContactCars+EgyCar+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/citroen/C5-Aircross | https://www.contactcars.com/en/new-cars/citroen-c5_aircross/year-2027 | https://www.egy-car.com/citroen-c5-aircross",
+              "as_of": "2026-10-22",
+              "issuer": "Kasrawy Group (Citroen Egypt) retail price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/citroen-kasrawy-2026-10-22.png",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2027,
               "label": "Ultimate",
-              "price_egp": 1935000,
-              "tier": "B",
-              "effective_date": "2026-05-16",
+              "price_egp": 1969000,
+              "tier": "A",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-14",
-              "issuer": "ContactCars+EgyCar+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/citroen/C5-Aircross | https://www.contactcars.com/en/new-cars/citroen-c5_aircross/year-2027 | https://www.egy-car.com/citroen-c5-aircross",
+              "as_of": "2026-10-22",
+              "issuer": "Kasrawy Group (Citroen Egypt) retail price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/citroen-kasrawy-2026-10-22.png",
               "powertrain": "Petrol"
             }
           ],
@@ -54025,6 +54125,13 @@
           ]
         },
         "warranty": [
+          {
+            "value": "5 years / 150000 km",
+            "unit": "",
+            "applicability": "all trims (Kasrawy Group price list 22 Oct 2026)",
+            "issuer": "Kasrawy Group",
+            "source": "drive:repo:vehicle-data/evidence/ceo-2026-10-22/citroen-kasrawy-2026-10-22.png"
+          },
           {
             "value": "5 years / 150000 km",
             "unit": "",
@@ -54476,7 +54583,31 @@
           "basis": "registration segment, last 12 months (250 registrations)",
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
-        "price": null,
+        "price": {
+          "price_from": 2250000,
+          "model_year": 2026,
+          "tier": "A",
+          "effective_date": "2026-10-22",
+          "date_basis": "SOURCE_STATED",
+          "as_of": "2026-10-22",
+          "issuer": "Kasrawy Group (Jetour distributor) price list (CEO-supplied)",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg",
+          "trims": [
+            {
+              "model_year": 2026,
+              "label": "i-DM PHEV Luxury",
+              "price_egp": 2250000,
+              "tier": "A",
+              "effective_date": "2026-10-22",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-22",
+              "issuer": "Kasrawy Group (Jetour distributor) price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg",
+              "powertrain": "phev"
+            }
+          ],
+          "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
+        },
         "specs": {
           "engine_cc": [
             {
@@ -54564,9 +54695,9 @@
           {
             "value": "6 years / 150000 km",
             "unit": "",
-            "applicability": "official brand warranty policy",
-            "issuer": "jetouregypt.com",
-            "source": "https://jetouregypt.com/after-sales-services/warranty/"
+            "applicability": "all trims (Kasrawy Group price list 22 Oct 2026)",
+            "issuer": "Kasrawy Group",
+            "source": "drive:repo:vehicle-data/evidence/ceo-2026-10-22/jetour-kasrawy-2026-10-22.jpg"
           }
         ],
         "brochures": [],
@@ -54585,7 +54716,6 @@
         "conflicts": []
       },
       "missing_evidence": [
-        "NO_ACCEPTED_PRICE",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
@@ -54619,25 +54749,25 @@
           "confidence": "MEDIUM_SINGLE_SOURCE"
         },
         "price": {
-          "price_from": 1799000,
+          "price_from": 1829900,
           "model_year": 2027,
-          "tier": "B",
-          "effective_date": null,
-          "date_basis": "OBSERVED",
+          "tier": "A",
+          "effective_date": "2026-10-22",
+          "date_basis": "SOURCE_STATED",
           "as_of": "2026-10-22",
-          "issuer": "ContactCars+Hatla2ee",
-          "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/sealion-6 | https://www.contactcars.com/en/new-cars/byd-sealion_6 | https://www.contactcars.com/en/new-cars/byd-sealion_6/year-2027",
+          "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
           "trims": [
             {
               "model_year": 2027,
-              "label": "EV Luxury",
-              "price_egp": 1799000,
-              "tier": "B",
-              "effective_date": null,
-              "date_basis": "OBSERVED",
+              "label": "EV Luxury 520 km 87 kWh",
+              "price_egp": 1829900,
+              "tier": "A",
+              "effective_date": "2026-10-22",
+              "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-22",
-              "issuer": "ContactCars+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/sealion-6 | https://www.contactcars.com/en/new-cars/byd-sealion_6 | https://www.contactcars.com/en/new-cars/byd-sealion_6/year-2027",
+              "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
               "powertrain": "Electric"
             }
           ],
@@ -56333,23 +56463,23 @@
         "price": {
           "price_from": 949900,
           "model_year": 2027,
-          "tier": "B",
-          "effective_date": "2026-07-13",
+          "tier": "A",
+          "effective_date": "2026-10-22",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-14",
-          "issuer": "ContactCars+Hatla2ee",
-          "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/Dolphin | https://www.contactcars.com/en/new-cars/byd-dolphin_surf/year-2027",
+          "as_of": "2026-10-22",
+          "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
           "trims": [
             {
               "model_year": 2027,
               "label": "EV",
               "price_egp": 949900,
-              "tier": "B",
-              "effective_date": "2026-07-13",
+              "tier": "A",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-14",
-              "issuer": "ContactCars+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/byd/Dolphin | https://www.contactcars.com/en/new-cars/byd-dolphin_surf/year-2027",
+              "as_of": "2026-10-22",
+              "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
               "powertrain": "Electric"
             }
           ],
@@ -56502,25 +56632,25 @@
           "confidence": "HIGH"
         },
         "price": {
-          "price_from": 1350000,
+          "price_from": 1379900,
           "model_year": 2027,
-          "tier": "B",
-          "effective_date": "2026-09-18",
+          "tier": "A",
+          "effective_date": "2026-10-22",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-14",
-          "issuer": "ContactCars+EgyCar",
-          "evidence_url": "https://www.contactcars.com/en/new-cars/byd-atto_2/year-2027 | https://www.egy-car.com/byd-atto-2",
+          "as_of": "2026-10-22",
+          "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
           "trims": [
             {
               "model_year": 2027,
-              "label": "لاكشري",
-              "price_egp": 1350000,
-              "tier": "B",
-              "effective_date": "2026-09-18",
+              "label": "EV",
+              "price_egp": 1379900,
+              "tier": "A",
+              "effective_date": "2026-10-22",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-14",
-              "issuer": "ContactCars+EgyCar",
-              "evidence_url": "https://www.contactcars.com/en/new-cars/byd-atto_2/year-2027 | https://www.egy-car.com/byd-atto-2",
+              "as_of": "2026-10-22",
+              "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
               "powertrain": "Electric"
             }
           ],
@@ -56975,7 +57105,31 @@
           "basis": "registration segment, last 12 months (49 registrations)",
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
-        "price": null,
+        "price": {
+          "price_from": 12000000,
+          "model_year": null,
+          "tier": "A",
+          "effective_date": "2026-10-21",
+          "date_basis": "SOURCE_STATED",
+          "as_of": "2026-10-21",
+          "issuer": "BMW Egypt launch event (CEO-supplied)",
+          "evidence_url": "https://claude.ai/code/session_01A2C3avdVAjAntRFHUEGUJi",
+          "trims": [
+            {
+              "model_year": null,
+              "label": "New 7 Series (trim not specified)",
+              "price_egp": 12000000,
+              "tier": "A",
+              "effective_date": "2026-10-21",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-21",
+              "issuer": "BMW Egypt launch event (CEO-supplied)",
+              "evidence_url": "https://claude.ai/code/session_01A2C3avdVAjAntRFHUEGUJi",
+              "powertrain": "Petrol"
+            }
+          ],
+          "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
+        },
         "specs": {
           "boot_l": [
             {
@@ -57102,7 +57256,6 @@
         "conflicts": []
       },
       "missing_evidence": [
-        "NO_ACCEPTED_PRICE",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "GENERATION_UNKNOWN"
@@ -61052,14 +61205,14 @@
           "confidence": "HIGH"
         },
         "price": {
-          "price_from": 1320000,
+          "price_from": 1340000,
           "model_year": 2027,
           "tier": "A",
           "effective_date": null,
           "date_basis": "OBSERVED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-22",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
           "trims": [
             {
               "model_year": 2026,
@@ -61068,9 +61221,9 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
@@ -61080,33 +61233,33 @@
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2027,
               "label": "1.5T DCT Comfort",
-              "price_egp": 1320000,
+              "price_egp": 1340000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2027,
               "label": "1.5T DCT Luxury",
-              "price_egp": 1420000,
+              "price_egp": 1440000,
               "tier": "A",
               "effective_date": null,
               "date_basis": "OBSERVED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1UqG9_KZ0J0VcaCySu_wCKTPN6D9Fue1J/view?usp=drivesdk",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/chery-gbauto-undated.jpg",
               "powertrain": "Petrol"
             }
           ],
@@ -62868,36 +63021,36 @@
           "confidence": "HIGH"
         },
         "price": {
-          "price_from": 1825000,
+          "price_from": 1885000,
           "model_year": 2027,
           "tier": "A",
-          "effective_date": "2026-10-14",
+          "effective_date": "2026-10-21",
           "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
+          "as_of": "2026-10-21",
           "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1yQHbewS1RY4U4EJzMmWDxaTJ8u7CUOfv/view?usp=drivesdk",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/haval-gbauto-2026-10-21.jpg",
           "trims": [
             {
               "model_year": 2027,
               "label": "1.5T 2DHT HEV FWD Ultra",
-              "price_egp": 1825000,
+              "price_egp": 1885000,
               "tier": "A",
-              "effective_date": "2026-10-14",
+              "effective_date": "2026-10-21",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-21",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1yQHbewS1RY4U4EJzMmWDxaTJ8u7CUOfv/view?usp=drivesdk"
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/haval-gbauto-2026-10-21.jpg"
             },
             {
               "model_year": 2027,
-              "label": "1.5T 4DHT PHEV AWD Ultra",
-              "price_egp": 2100000,
+              "label": "1.5T 4DHT PHEV Hi4 Ultra",
+              "price_egp": 2160000,
               "tier": "A",
-              "effective_date": "2026-10-14",
+              "effective_date": "2026-10-21",
               "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
+              "as_of": "2026-10-21",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1yQHbewS1RY4U4EJzMmWDxaTJ8u7CUOfv/view?usp=drivesdk"
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/haval-gbauto-2026-10-21.jpg"
             }
           ]
         },
@@ -63295,37 +63448,37 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 869000,
+          "price_from": 890000,
           "model_year": 2027,
           "tier": "A",
-          "effective_date": "2026-10-15",
-          "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-15",
-          "issuer": "GB Auto official distributor list (CEO-supplied)",
-          "evidence_url": "https://drive.google.com/file/d/1mvAbzBvYGYKLtVlxEf3T0sIHgOpo3iLH/view?usp=drivesdk",
+          "effective_date": null,
+          "date_basis": "OBSERVED",
+          "as_of": "2026-10-22",
+          "issuer": "EgyCar price-change report (CEO-supplied)",
+          "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/hyundai-venue-egycar.jpg",
           "trims": [
             {
               "model_year": 2027,
               "label": "1.6 Blaze",
-              "price_egp": 869000,
+              "price_egp": 890000,
               "tier": "A",
-              "effective_date": "2026-10-15",
-              "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
-              "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1mvAbzBvYGYKLtVlxEf3T0sIHgOpo3iLH/view?usp=drivesdk",
+              "effective_date": null,
+              "date_basis": "OBSERVED",
+              "as_of": "2026-10-22",
+              "issuer": "EgyCar price-change report (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/hyundai-venue-egycar.jpg",
               "powertrain": "Petrol"
             },
             {
               "model_year": 2027,
               "label": "1.6 Redline",
-              "price_egp": 945000,
+              "price_egp": 965000,
               "tier": "A",
-              "effective_date": "2026-10-15",
-              "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-15",
-              "issuer": "GB Auto official distributor list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1mvAbzBvYGYKLtVlxEf3T0sIHgOpo3iLH/view?usp=drivesdk",
+              "effective_date": null,
+              "date_basis": "OBSERVED",
+              "as_of": "2026-10-22",
+              "issuer": "EgyCar price-change report (CEO-supplied)",
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/hyundai-venue-egycar.jpg",
               "powertrain": "Petrol"
             }
           ],
