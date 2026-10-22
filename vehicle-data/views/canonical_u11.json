@@ -1,6 +1,6 @@
 {
  "counts": {
-  "brochure_accepted": 81,
+  "brochure_accepted": 83,
   "fully_enriched": 39,
   "gallery_models": 70,
   "hero_accepted": 82,
@@ -10,14 +10,14 @@
   "logo_accepted": 248,
   "market_status_official": 37,
   "models": 283,
-  "price_accepted": 208,
-  "price_source_dated": 157,
-  "price_tier_a": 113,
+  "price_accepted": 211,
+  "price_source_dated": 155,
+  "price_tier_a": 119,
   "specs_accepted": 200,
   "warranty_accepted": 110
  },
  "counts_market_universe": {
-  "brochure_accepted": 82,
+  "brochure_accepted": 85,
   "fully_enriched": 39,
   "gallery_models": 73,
   "hero_accepted": 85,
@@ -27,9 +27,9 @@
   "logo_accepted": 350,
   "market_status_official": 38,
   "models": 419,
-  "price_accepted": 253,
-  "price_source_dated": 195,
-  "price_tier_a": 140,
+  "price_accepted": 257,
+  "price_source_dated": 193,
+  "price_tier_a": 147,
   "specs_accepted": 243,
   "warranty_accepted": 135
  },
@@ -43054,26 +43054,38 @@
    "model_id": "m_000239",
    "p1_id": "seat/arona",
    "price": {
-    "as_of": "2026-08-22",
+    "as_of": "2026-10-22",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-08-22",
-    "evidence_url": "https://drive.google.com/file/d/1UaB-J_dPqnDHskEy_2EZfDpstNOuIqR6/view",
+    "effective_date": "2026-10-22",
+    "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/seat-kayan-2026-10-22.jpg",
     "issuer": "KAYAN Egypt (SEAT Egypt price list)",
     "model_year": 2027,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 1329000,
+    "price_from": 1350000,
     "tier": "A",
     "trims": [
      {
-      "as_of": "2026-08-22",
+      "as_of": "2026-10-22",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-08-22",
-      "evidence_url": "https://drive.google.com/file/d/1UaB-J_dPqnDHskEy_2EZfDpstNOuIqR6/view",
+      "effective_date": "2026-10-22",
+      "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/seat-kayan-2026-10-22.jpg",
       "issuer": "KAYAN Egypt (SEAT Egypt price list)",
       "label": "Style Plus 1.6L",
       "model_year": 2027,
       "powertrain": "Petrol",
-      "price_egp": 1329000,
+      "price_egp": 1350000,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-22",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-10-22",
+      "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/seat-kayan-2026-10-22.jpg",
+      "issuer": "KAYAN Egypt (SEAT Egypt price list)",
+      "label": "FR 1.6L",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 1380000,
       "tier": "A"
      }
     ]
@@ -43199,9 +43211,9 @@
    "universe": "U11_283",
    "warranty": [
     {
-     "applicability": "all trims (SEAT Egypt)",
+     "applicability": "all trims (KAYAN Egypt price list 22 Oct 2026)",
      "issuer": "KAYAN Egypt",
-     "source": "drive:1UaB-J_dPqnDHskEy_2EZfDpstNOuIqR6",
+     "source": "drive:repo:vehicle-data/evidence/ceo-2026-10-22/seat-kayan-2026-10-22.jpg",
      "unit": "",
      "value": "5 years / 100000 km"
     }
@@ -43340,38 +43352,38 @@
    "model_id": "m_000241",
    "p1_id": "seat/ibiza",
    "price": {
-    "as_of": "2026-08-22",
+    "as_of": "2026-10-22",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-08-22",
-    "evidence_url": "https://drive.google.com/file/d/1UaB-J_dPqnDHskEy_2EZfDpstNOuIqR6/view",
+    "effective_date": "2026-10-22",
+    "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/seat-kayan-2026-10-22.jpg",
     "issuer": "KAYAN Egypt (SEAT Egypt price list)",
     "model_year": 2027,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 1129000,
+    "price_from": 1160000,
     "tier": "A",
     "trims": [
      {
-      "as_of": "2026-08-22",
+      "as_of": "2026-10-22",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-08-22",
-      "evidence_url": "https://drive.google.com/file/d/1UaB-J_dPqnDHskEy_2EZfDpstNOuIqR6/view",
+      "effective_date": "2026-10-22",
+      "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/seat-kayan-2026-10-22.jpg",
       "issuer": "KAYAN Egypt (SEAT Egypt price list)",
       "label": "Edge 1.6L",
       "model_year": 2027,
       "powertrain": "Petrol",
-      "price_egp": 1129000,
+      "price_egp": 1160000,
       "tier": "A"
      },
      {
-      "as_of": "2026-08-22",
+      "as_of": "2026-10-22",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-08-22",
-      "evidence_url": "https://drive.google.com/file/d/1UaB-J_dPqnDHskEy_2EZfDpstNOuIqR6/view",
+      "effective_date": "2026-10-22",
+      "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/seat-kayan-2026-10-22.jpg",
       "issuer": "KAYAN Egypt (SEAT Egypt price list)",
       "label": "FR 1.6L",
       "model_year": 2027,
       "powertrain": "Petrol",
-      "price_egp": 1329000,
+      "price_egp": 1350000,
       "tier": "A"
      }
     ]
@@ -43609,9 +43621,9 @@
    "universe": "U11_283",
    "warranty": [
     {
-     "applicability": "all trims (SEAT Egypt)",
+     "applicability": "all trims (KAYAN Egypt price list 22 Oct 2026)",
      "issuer": "KAYAN Egypt",
-     "source": "drive:1UaB-J_dPqnDHskEy_2EZfDpstNOuIqR6",
+     "source": "drive:repo:vehicle-data/evidence/ceo-2026-10-22/seat-kayan-2026-10-22.jpg",
      "unit": "",
      "value": "5 years / 100000 km"
     }
@@ -43700,26 +43712,26 @@
    "model_id": "m_000242",
    "p1_id": "seat/leon",
    "price": {
-    "as_of": "2026-08-22",
+    "as_of": "2026-10-22",
     "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-08-22",
-    "evidence_url": "https://drive.google.com/file/d/1UaB-J_dPqnDHskEy_2EZfDpstNOuIqR6/view",
+    "effective_date": "2026-10-22",
+    "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/seat-kayan-2026-10-22.jpg",
     "issuer": "KAYAN Egypt (SEAT Egypt price list)",
-    "model_year": 2026,
+    "model_year": 2027,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 1499000,
+    "price_from": 1530000,
     "tier": "A",
     "trims": [
      {
-      "as_of": "2026-08-22",
+      "as_of": "2026-10-22",
       "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-08-22",
-      "evidence_url": "https://drive.google.com/file/d/1UaB-J_dPqnDHskEy_2EZfDpstNOuIqR6/view",
+      "effective_date": "2026-10-22",
+      "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/seat-kayan-2026-10-22.jpg",
       "issuer": "KAYAN Egypt (SEAT Egypt price list)",
       "label": "Advance 1.4L",
-      "model_year": 2026,
+      "model_year": 2027,
       "powertrain": "Petrol",
-      "price_egp": 1499000,
+      "price_egp": 1530000,
       "tier": "A"
      }
     ]
@@ -43845,9 +43857,9 @@
    "universe": "U11_283",
    "warranty": [
     {
-     "applicability": "all trims (SEAT Egypt)",
+     "applicability": "all trims (KAYAN Egypt price list 22 Oct 2026)",
      "issuer": "KAYAN Egypt",
-     "source": "drive:1UaB-J_dPqnDHskEy_2EZfDpstNOuIqR6",
+     "source": "drive:repo:vehicle-data/evidence/ceo-2026-10-22/seat-kayan-2026-10-22.jpg",
      "unit": "",
      "value": "5 years / 100000 km"
     },
@@ -50276,26 +50288,26 @@
    "p1_id": "xpeng/g6",
    "price": {
     "as_of": "2026-10-22",
-    "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-04-10",
-    "evidence_url": "https://www.contactcars.com/en/new-cars/xpeng-g6 | https://www.contactcars.com/en/new-cars/xpeng-g6/year-2026 | https://www.egy-car.com/xpeng-g6",
-    "issuer": "ContactCars+EgyCar",
-    "model_year": 2026,
+    "date_basis": "OBSERVED",
+    "effective_date": null,
+    "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+    "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
+    "model_year": null,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 2190000,
-    "tier": "B",
+    "price_from": 2220000,
+    "tier": "A",
     "trims": [
      {
       "as_of": "2026-10-22",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-04-10",
-      "evidence_url": "https://www.contactcars.com/en/new-cars/xpeng-g6 | https://www.contactcars.com/en/new-cars/xpeng-g6/year-2026 | https://www.egy-car.com/xpeng-g6",
-      "issuer": "ContactCars+EgyCar",
-      "label": "RWD Flagship",
-      "model_year": 2026,
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+      "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
+      "label": "RWD Flagship EV",
+      "model_year": null,
       "powertrain": "Electric",
-      "price_egp": 2190000,
-      "tier": "B"
+      "price_egp": 2220000,
+      "tier": "A"
      }
     ]
    },
@@ -50386,11 +50398,18 @@
   },
   {
    "brand": "XPeng",
-   "brochures": [],
+   "brochures": [
+    {
+     "drive_id": "1TRe7k4oGJKDTqqulUQI0bc0KcodeKheZ",
+     "issuer": "XPENG (link xpeng.com/eg)",
+     "scope": "G7 Super REEV 1704 Max",
+     "title": "G7 Brochure .pdf",
+     "url": "https://drive.google.com/file/d/1TRe7k4oGJKDTqqulUQI0bc0KcodeKheZ/view"
+    }
+   ],
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
@@ -50421,22 +50440,22 @@
     "as_of": "2026-10-22",
     "date_basis": "OBSERVED",
     "effective_date": null,
-    "evidence_url": "https://eg.hatla2ee.com/en/new-car/xpeng/g7 | https://www.contactcars.com/en/new-cars/xpeng-g7/year-2027",
-    "issuer": "ContactCars+Hatla2ee",
-    "model_year": 2027,
-    "price_from": 2249900,
-    "tier": "B",
+    "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+    "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
+    "model_year": null,
+    "price_from": 2299900,
+    "tier": "A",
     "trims": [
      {
       "as_of": "2026-10-22",
       "date_basis": "OBSERVED",
       "effective_date": null,
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/xpeng/g7 | https://www.contactcars.com/en/new-cars/xpeng-g7/year-2027",
-      "issuer": "ContactCars+Hatla2ee",
-      "label": "Super REEV",
-      "model_year": 2027,
-      "price_egp": 2249900,
-      "tier": "B"
+      "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+      "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
+      "label": "RWD Flagship Super REEV",
+      "model_year": null,
+      "price_egp": 2299900,
+      "tier": "A"
      }
     ]
    },
@@ -50599,86 +50618,50 @@
    "p1_id": "xpeng/g9",
    "price": {
     "as_of": "2026-10-22",
-    "date_basis": "SOURCE_STATED",
-    "effective_date": "2026-04-10",
-    "evidence_url": "https://www.contactcars.com/en/new-cars/xpeng-g9/year-2026 | https://www.egy-car.com/xpeng-g9",
-    "issuer": "ContactCars+EgyCar",
-    "model_year": 2026,
+    "date_basis": "OBSERVED",
+    "effective_date": null,
+    "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+    "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
+    "model_year": null,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
-    "price_from": 2740000,
-    "tier": "B",
+    "price_from": 2790000,
+    "tier": "A",
     "trims": [
      {
       "as_of": "2026-10-22",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-04-10",
-      "evidence_url": "https://www.contactcars.com/en/new-cars/xpeng-g9/year-2026 | https://www.egy-car.com/xpeng-g9",
-      "issuer": "ContactCars+EgyCar",
-      "label": "RWD Premium",
-      "model_year": 2026,
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+      "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
+      "label": "RWD Premium EV",
+      "model_year": null,
       "powertrain": "Electric",
-      "price_egp": 2740000,
-      "tier": "B"
+      "price_egp": 2790000,
+      "tier": "A"
      },
      {
       "as_of": "2026-10-22",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-05-19",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/xpeng/G9 | https://www.contactcars.com/en/new-cars/xpeng-g9/year-2026 | https://www.egy-car.com/xpeng-g9",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
-      "label": "RWD Premium",
-      "model_year": 2026,
-      "powertrain": "Electric",
-      "price_egp": 2740000,
-      "tier": "B"
-     },
-     {
-      "as_of": "2026-10-22",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-04-10",
-      "evidence_url": "https://www.contactcars.com/en/new-cars/xpeng-g9/year-2026 | https://www.egy-car.com/xpeng-g9",
-      "issuer": "ContactCars+EgyCar",
-      "label": "RWD Flagship",
-      "model_year": 2026,
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+      "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
+      "label": "RWD Flagship EV",
+      "model_year": null,
       "powertrain": "Electric",
       "price_egp": 2890000,
-      "tier": "B"
+      "tier": "A"
      },
      {
       "as_of": "2026-10-22",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-05-19",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/xpeng/G9 | https://www.contactcars.com/en/new-cars/xpeng-g9/year-2026 | https://www.egy-car.com/xpeng-g9",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
-      "label": "RWD Flagship",
-      "model_year": 2026,
-      "powertrain": "Electric",
-      "price_egp": 2890000,
-      "tier": "B"
-     },
-     {
-      "as_of": "2026-10-22",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-04-10",
-      "evidence_url": "https://www.contactcars.com/en/new-cars/xpeng-g9/year-2026 | https://www.egy-car.com/xpeng-g9",
-      "issuer": "ContactCars+EgyCar",
-      "label": "AWD Performance",
-      "model_year": 2026,
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+      "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
+      "label": "AWD Performance EV",
+      "model_year": null,
       "powertrain": "Electric",
       "price_egp": 3150000,
-      "tier": "B"
-     },
-     {
-      "as_of": "2026-10-22",
-      "date_basis": "SOURCE_STATED",
-      "effective_date": "2026-05-19",
-      "evidence_url": "https://eg.hatla2ee.com/en/new-car/xpeng/G9 | https://www.contactcars.com/en/new-cars/xpeng-g9/year-2026 | https://www.egy-car.com/xpeng-g9",
-      "issuer": "ContactCars+EgyCar+Hatla2ee",
-      "label": "AWD Performance",
-      "model_year": 2026,
-      "powertrain": "Electric",
-      "price_egp": 3150000,
-      "tier": "B"
+      "tier": "A"
      }
     ]
    },
@@ -50789,7 +50772,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
@@ -50830,7 +50812,29 @@
    "model": "M03",
    "model_id": "m_000282",
    "p1_id": "xpeng/m03",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-22",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
+    "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+    "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
+    "model_year": null,
+    "price_from": 1400000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-22",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+      "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
+      "label": "M03+ FWD EV",
+      "model_year": null,
+      "price_egp": 1400000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 2,
    "site_slug": "xpeng-m03",
    "size_class": {
@@ -50845,13 +50849,19 @@
   },
   {
    "brand": "XPeng",
-   "brochures": [],
+   "brochures": [
+    {
+     "drive_id": "1wdlHVArzPcVro4XMxBQALcRCZapDwVcl",
+     "issuer": "XPENG",
+     "scope": "The Next P7",
+     "title": "P7 Next Brouchure.pdf",
+     "url": "https://drive.google.com/file/d/1wdlHVArzPcVro4XMxBQALcRCZapDwVcl/view"
+    }
+   ],
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
-    "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
@@ -50878,7 +50888,29 @@
    "model": "P7",
    "model_id": "m_000283",
    "p1_id": "xpeng/p7",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-22",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
+    "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+    "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
+    "model_year": null,
+    "price_from": 2899900,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-22",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+      "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
+      "label": "AWD Performance EV",
+      "model_year": null,
+      "price_egp": 2899900,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 3,
    "site_slug": "xpeng-p7",
    "size_class": {
@@ -50897,7 +50929,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
@@ -50926,7 +50957,29 @@
    "model": "X9",
    "model_id": "m_000284",
    "p1_id": "xpeng/x9",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-22",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
+    "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+    "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
+    "model_year": null,
+    "price_from": 3649000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-22",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+      "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
+      "label": "Flagship Super REEV",
+      "model_year": null,
+      "price_egp": 3649000,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 1,
    "site_slug": "xpeng-x9",
    "size_class": {
@@ -62268,23 +62321,23 @@
    "model_id": "m_000401",
    "p1_id": "xpeng/gx",
    "price": {
-    "as_of": "2026-10-21",
+    "as_of": "2026-10-22",
     "date_basis": "OBSERVED",
     "effective_date": null,
-    "evidence_url": "https://claude.ai/code/session_01A2C3avdVAjAntRFHUEGUJi",
-    "issuer": "XPENG Egypt launch event (CEO-supplied)",
+    "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+    "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
     "model_year": null,
     "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
     "price_from": 3750000,
     "tier": "A",
     "trims": [
      {
-      "as_of": "2026-10-21",
+      "as_of": "2026-10-22",
       "date_basis": "OBSERVED",
       "effective_date": null,
-      "evidence_url": "https://claude.ai/code/session_01A2C3avdVAjAntRFHUEGUJi",
-      "issuer": "XPENG Egypt launch event (CEO-supplied)",
-      "label": "GX (trim not specified)",
+      "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+      "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
+      "label": "Flagship Super REEV",
       "model_year": null,
       "powertrain": "ev",
       "price_egp": 3750000,
@@ -62330,12 +62383,19 @@
     "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/XPeng_logo.svg/1280px-XPeng_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
     "width": "1280"
    },
-   "market_status": "unverified",
-   "market_status_basis": "P2 market-universe decision (config/market_universe.json); see review/market_universe_audit.csv",
+   "market_status": "duplicate",
+   "market_status_basis": "MONA M03 is the same car sold in Egypt as XPENG M03 (Raya Auto list Oct 2026 prints 'M03+'); priced on xpeng/m03. (P2 review 2026-10-22)",
    "model": "Mona M03",
    "model_id": "m_000402",
    "p1_id": "xpeng/mona-m03",
    "price": null,
+   "related": [
+    {
+     "basis": "MONA M03 is the same car sold in Egypt as XPENG M03 (Raya Auto list Oct 2026 prints 'M03+'); priced on xpeng/m03.",
+     "identity": "xpeng/m03",
+     "relation": "duplicate listing of"
+    }
+   ],
    "rework_price_rows": 2,
    "site_slug": "xpeng-mona-m03",
    "size_class": {
@@ -62351,13 +62411,19 @@
   },
   {
    "brand": "XPeng",
-   "brochures": [],
+   "brochures": [
+    {
+     "drive_id": "1vSNZYxxV-9uomq5QrGQV2cKQn-w5D9Tg",
+     "issuer": "XPENG (link xpeng.com/eg)",
+     "scope": "P7+ Super REEV 1550 Max",
+     "title": "P7+REEV Brochure .pdf",
+     "url": "https://drive.google.com/file/d/1vSNZYxxV-9uomq5QrGQV2cKQn-w5D9Tg/view"
+    }
+   ],
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
-    "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
@@ -62381,10 +62447,46 @@
    },
    "market_status": "unverified",
    "market_status_basis": "P2 market-universe decision (config/market_universe.json); see review/market_universe_audit.csv",
-   "model": "Next P7",
+   "model": "P7+",
    "model_id": "m_000403",
    "p1_id": "xpeng/p7-plus",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-22",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
+    "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+    "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
+    "model_year": null,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 2199900,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-22",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+      "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
+      "label": "RWD Flagship EV",
+      "model_year": null,
+      "powertrain": "ev",
+      "price_egp": 2199900,
+      "tier": "A"
+     },
+     {
+      "as_of": "2026-10-22",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+      "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
+      "label": "REEV-RWD Flagship Super REEV",
+      "model_year": null,
+      "powertrain": "ev",
+      "price_egp": 2249900,
+      "tier": "A"
+     }
+    ]
+   },
    "rework_price_rows": 2,
    "site_slug": "xpeng-p7-plus",
    "size_class": {

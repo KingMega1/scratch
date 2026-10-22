@@ -2,7 +2,7 @@
  "schema": "carindex.p2.p5-release-handoff/v1",
  "release_id": "P2-CATALOGUE-U11-2026-10-22-RC2",
  "route": "P5 a6d3f0b: copy vehicle-data/views/catalogue-serving.release.json verbatim to web/data/registry/catalogue-serving.release.json; copy each file below to web/public<src>",
- "release_sha256": "548cab132279044d8b42e53903bd152f592f6d433c57b20be4b5007f84d29396",
+ "release_sha256": "ee4a013b71eeb8d6bb20315a83baef5be1b72b029862dbf526617d14e0d67f76",
  "counts": {
   "catalogue": 283,
   "p2_evidence": 21,
@@ -1987,18 +1987,20 @@
    "priced_283": 205
   },
   "after": {
-   "release_sha256": "548cab132279044d8b42e53903bd152f592f6d433c57b20be4b5007f84d29396",
+   "release_sha256": "ee4a013b71eeb8d6bb20315a83baef5be1b72b029862dbf526617d14e0d67f76",
    "models": 419,
-   "priced": 253,
-   "priced_tier_a": 140,
-   "priced_283": 208
+   "priced": 257,
+   "priced_tier_a": 147,
+   "priced_283": 211
   }
  },
  "market_additions": 136,
  "changes_since_previous": [
   "22 Oct lists: BYD (Mandream 22 Oct), Jetour (Kasrawy 22 Oct), Citroen (Kasrawy 22 Oct), CUPRA (KAYAN 22 Oct), Haval (GB Auto 21 Oct), updated undated GB Auto Chery/Deepal/Changan lists, Hyundai Venue increase (EgyCar); 111 Tier A rows; 81 older list rows moved to review/price_supersession_history.csv",
   "BMW 7 Series 12,000,000 (launch 21 Oct, CEO-supplied)",
-  "Warranty from lists: Citroen 5y/150k, Jetour 6y/150k, CUPRA 4y/120k"
+  "Warranty from lists: Citroen 5y/150k, Jetour 6y/150k, CUPRA 4y/120k",
+  "SEAT (KAYAN 22 Oct) and XPENG (Raya Auto, Oct 2026) lists: 16 Tier A rows; SEAT warranty 5y/100k",
+  "XPENG brochures accepted as links (G7, P7+ REEV, Next P7); xpeng/p7-plus display name -> \"P7+\"; xpeng/mona-m03 marked duplicate of xpeng/m03"
  ],
  "p5_actions": [
   "Ingest release + files per route; no schema change"

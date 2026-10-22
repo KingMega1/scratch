@@ -2,7 +2,7 @@
  "schema": "carindex.p2.p1-release-handoff/v1",
  "date": "2026-10-22",
  "canonical_file": "vehicle-data/views/canonical_u11.json",
- "canonical_sha256": "43287980e95c25846aaf989e09448a21ff2102159a245bc6bb902b516fad9c08",
+ "canonical_sha256": "24ed1f758df224fc90421ac225bda6baa571a533409d51b8633d008eb7c04a7e",
  "counts_283": {
   "brochure_accepted": 81,
   "fully_enriched": 39,
@@ -46,11 +46,11 @@
    "priced_283": 205
   },
   "after": {
-   "release_sha256": "548cab132279044d8b42e53903bd152f592f6d433c57b20be4b5007f84d29396",
+   "release_sha256": "ee4a013b71eeb8d6bb20315a83baef5be1b72b029862dbf526617d14e0d67f76",
    "models": 419,
-   "priced": 253,
-   "priced_tier_a": 140,
-   "priced_283": 208
+   "priced": 257,
+   "priced_tier_a": 147,
+   "priced_283": 211
   }
  },
  "compatibility": "schema and IDs unchanged vs 2026-10-21 (no new identities)",
