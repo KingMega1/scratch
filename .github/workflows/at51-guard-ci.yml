@@ -1,0 +1,32 @@
+name: AT-51 acceptance guard CI (read-only)
+
+on:
+  push:
+    branches:
+      - fix/at51-acceptance-regression-guard-20261024
+    paths:
+      - .github/workflows/at51-guard-ci.yml
+      - vehicle-data/scripts/acceptance_regression_guard.py
+      - vehicle-data/tests/test_acceptance_regression_guard.py
+      - vehicle-data/views/canonical_u11.json
+
+permissions:
+  contents: read
+
+jobs:
+  acceptance-guard-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run deterministic guard tests
+        run: python3 -m unittest discover -s vehicle-data/tests -p test_acceptance_regression_guard.py -v
+      - name: Compare current canonical against accepted base
+        run: |
+          git fetch origin claude/carindex-buyer-vehicle-data-97yinp
+          python3 vehicle-data/scripts/acceptance_regression_guard.py --baseline-ref origin/claude/carindex-buyer-vehicle-data-97yinp
