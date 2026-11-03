@@ -1,0 +1,30 @@
+{
+  "record": "P1-RELEASE-U12-CEO2",
+  "record_commit": "0b066207e43baa9af7e9b1d536e3ba8568d023ce",
+  "record_sha256": "f46f4c1c04dcd32c5bba6b1f65f169395f9fd7d1a8e557665052ae9eb2bc805c",
+  "p2_input": {
+    "commit": "5a373d7a5ee97247f2da6de65239ff61c79cab4e",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "files": {
+      "catalogue-serving.release.json": "2b796199e6c534cc69464ee181254bd127bc766511b52d833b9a4d9384479488",
+      "market_universe.json": "9b9b1d34946280f83359cfa886e524ccebd1e2c913892b7539febaf008f7cd3a",
+      "registration_models.csv": "e6f43df6596f3fe38f4b13f9afb7d24663379fc96db31cfb5a588f17a94571af",
+      "u11_models.csv": "36c45232e490a924975060b0fe08c14b3eeb546577da81676b624ee8bbcdf36a",
+      "arabic_names.csv": "91a7d71b7165da6a9b87544b2a0eb6dc1d1aaa4253ce063fce283e8a6429c188",
+      "u11_prices.csv": "75a6a6561b910b9f92602171761db7a0c288c8cb49c7186f5e07658c82ec1fb4"
+    }
+  },
+  "files": [
+    "buyer-decision/app/engine.js",
+    "buyer-decision/app/brief.js",
+    "buyer-decision/app/i18n.js",
+    "buyer-decision/app/present.js",
+    "buyer-decision/app/redact.js",
+    "buyer-decision/transport/reco.js",
+    "buyer-decision/transport/ci.reco.v1.schema.json",
+    "buyer-decision/transport/P5-HANDOFF-U12-CEO2.md",
+    "buyer-decision/datasets/U12-CEO2-2026-11-03/manifest.json",
+    "buyer-decision/datasets/U12-CEO2-2026-11-03/recommendation_view.json",
+    "buyer-decision/release/P1-RELEASE-U12-CEO2.json"
+  ]
+}

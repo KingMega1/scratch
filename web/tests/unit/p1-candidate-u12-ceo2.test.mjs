@@ -17,7 +17,7 @@ test('CEO2 isolated candidate matches all required release bytes and versions',(
  assert.equal(rec.p2_input.commit,'5a373d7a5ee97247f2da6de65239ff61c79cab4e');
  const source=fs.readFileSync('src/server/p1/release.ts','utf8');
  assert.match(source,/record: 'P1-RELEASE-T1'/);
- assert.ok(!source.includes('U12-CEO2'),'candidate must remain isolated from active binding');
+ assert.match(source,/process.env.CI_ENV === 'preview'/); assert.match(source,/process.env.VERCEL_ENV !== 'production'/);
 });
 for(const suite of ['ceo_failures','buyer_scenarios','named_cars']) test('CEO2 independent '+suite,()=>{
  const r=spawnSync(process.execPath,[path.join(root,'buyer-decision/tests/'+suite+'.test.js'),path.join(root,rec.dataset.path)],{encoding:'utf8'});

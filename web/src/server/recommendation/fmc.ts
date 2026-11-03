@@ -1,5 +1,5 @@
 import 'server-only';
-import { BOUND, release, type Dataset, type Transport } from '../p1/release';
+import { selectedBinding, release, type Dataset, type Transport } from '../p1/release';
 import { vehicles, p1DisplaySlug } from '../vehicles/read-model';
 import { log } from '../http/guard';
 
@@ -186,7 +186,13 @@ export function saveEdit(briefIn: unknown, e: any, locale: Locale) {
   const keepUn = new Set(arr(e?.unresolved));
   nb.unresolved = (b.unresolved || []).filter((u: any) => keepUn.has(String(u.text)));
   if (nb.pt === 'open') nb.ptNo = [];
-  const out = P.renorm(nb);
+  const { T, ds } = bound();
+  // Keep a parsed range when this edit changes other preferences only.
+  if (b.budgetMode === 'range' && e?.budget?.changed !== true && n === b.budget && mode === 'around') {
+    nb.budgetMode = b.budgetMode; nb.budgetMin = b.budgetMin;
+  }
+  // Replacement edits must use T1.2; mergeAnswer is only for additive question answers.
+  const out = T.editBrief ? T.editBrief(b, nb, ds) : P.renorm(nb);
   if (!nb.body) { out.body = null; out.bodyAny = true; out.bodyImplied = false; }
   return summaryOf(out, locale);
 }
@@ -197,6 +203,7 @@ const SHARE_KEYS = new Set(['drive4', 'offroad', 'sizePref', 'brandsOnly', 'ptNo
 
 // §5 + §6 guards on every result. Throws: the route refuses to serve instead of serving an unverified or leaky result.
 export function guardResult(r: any, brief: Brief, locale: Locale) {
+  const BOUND = selectedBinding();
   if (r?.schema !== BOUND.schema || r.engine_version !== BOUND.engine_version || r.transport_version !== BOUND.transport_version ||
       r.universe_version !== BOUND.universe_version || r.dataset?.sha256 !== BOUND.dataset_content_sha256 || r.dataset?.id !== BOUND.dataset_id ||
       r.locale !== locale || !/^cr1_[0-9a-f]{32}$/.test(r.result_id)) throw new FmcError('release_version_mismatch', 500);

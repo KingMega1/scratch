@@ -120,10 +120,11 @@ function Welcome({ copy, onText, onGuided }: { copy: Copy; onText: (t: string) =
 
 const money = (copy: Copy, n: number) => `<span class="money">${copy.egp[0]}<span class="num">${Number(Math.round(n)).toLocaleString('en-US')}</span>${copy.egp[1]}</span>`;
 
-function BudgetCard({ copy, init, onChange }: { copy: Copy; init: { value: number; mode: string; stretch: boolean }; onChange: (v: { budget: number; mode: string; stretch: boolean }) => void }) {
+function BudgetCard({ copy, init, onChange }: { copy: Copy; init: { value: number; mode: string; stretch: boolean }; onChange: (v: { budget: number; mode: string; stretch: boolean; changed?: boolean }) => void }) {
   const [b, setB] = useState(init.value), [mode, setMode] = useState(init.mode), [stretch, setStretch] = useState(init.stretch);
-  useEffect(() => { onChange({ budget: b, mode, stretch: mode === 'max' && stretch }); }, [b, mode, stretch, onChange]);
-  const step = (d: number) => setB(v => Math.max(300000, Math.min(20000000, v + d * copy.step_amount)));
+  const [changed, setChanged] = useState(false);
+  useEffect(() => { onChange({ budget: b, mode, stretch: mode === 'max' && stretch, changed }); }, [b, mode, stretch, changed, onChange]);
+  const step = (d: number) => { setChanged(true); setB(v => Math.max(300000, Math.min(20000000, v + d * copy.step_amount))); };
   return (
     <div className="budget-card">
       <div className="budget-row">
@@ -131,8 +132,8 @@ function BudgetCard({ copy, init, onChange }: { copy: Copy; init: { value: numbe
         <H className="budget-val" html={money(copy, b)} />
         <button className="icon-btn" type="button" aria-label={copy.plus} onClick={() => step(1)}>+</button>
       </div>
-      <div className="chips" role="radiogroup">{['around', 'max'].map(k => <button key={k} type="button" role="radio" className="chip" aria-checked={mode === k} aria-pressed={mode === k} onClick={() => setMode(k)}>{copy.e_budget_mode[k]}</button>)}</div>
-      <label className="check-line"><input type="checkbox" checked={stretch} disabled={mode !== 'max'} onChange={e => setStretch(e.target.checked)} /> {copy.e_stretch}</label>
+      <div className="chips" role="radiogroup">{['around', 'max'].map(k => <button key={k} type="button" role="radio" className="chip" aria-checked={mode === k} aria-pressed={mode === k} onClick={() => { setChanged(true); setMode(k); }}>{copy.e_budget_mode[k]}</button>)}</div>
+      <label className="check-line"><input type="checkbox" checked={stretch} disabled={mode !== 'max'} onChange={e => { setChanged(true); setStretch(e.target.checked); }} /> {copy.e_stretch}</label>
     </div>
   );
 }
@@ -237,7 +238,7 @@ function Edit({ copy, v, locale, onBack, onSave }: { copy: Copy; v: Extract<View
         </div>
       </div>
       <div className="fmc-actions"><button className="btn btn-primary" type="button" onClick={() => onSave({
-        budget: { value: budget.current.budget, mode: budget.current.mode, stretch: budget.current.stretch }, sel,
+        budget: { value: budget.current.budget, mode: budget.current.mode, stretch: budget.current.stretch, changed: budget.current.changed }, sel,
         only: only.map(x => x.id), excl: excl.map(x => x.id), unresolved: unres, cars: cars.filter(c => !added.includes(c.id)).map(c => c.id), addCars: added,
       })}>{copy.e_save}</button></div>
     </section>

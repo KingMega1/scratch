@@ -22,7 +22,7 @@ test('production stays on P1-RELEASE-T1 / U11; candidate is a CANDIDATE record',
   const bound=R.verifyRelease(path.resolve('p1-release'),require);assert.equal(bound.ok,true);assert.equal(bound.ds.universe_version,'U11-2026-09-26');
   assert.equal(C.status,'CANDIDATE_NOT_ACCEPTED');assert.match(rec.status,/^CANDIDATE/);assert.ok(rec.release_gates_open.length>0);
   assert.equal(sha(recBytes),C.record_sha256);
-  const src=fs.readFileSync('src/server/p1/release.ts','utf8');assert.ok(!/p1-candidate/.test(src.replace(/\/\*[\s\S]*?\*\//g,'').replace(/root: 'p1-candidate\/U12-RC3'/,'')));
+  const src=fs.readFileSync('src/server/p1/release.ts','utf8');assert.equal(R.candidateEnabled(),false); assert.equal(R.selectedBinding().record,'P1-RELEASE-T1');
 });
 test('every vendored candidate file is the P1 bytes named in the record',()=>{
   for(const [k,f] of Object.entries(rec.files)){

@@ -45,6 +45,25 @@ export const CANDIDATE = {
   p2_input_commit: 'fc19238',
 } as const;
 
+
+/* CEO-authorized NONPRODUCTION integration, pinned to 0b06620. Never follows a moving P1 branch. */
+export const CEO2 = {
+  record: 'P1-RELEASE-U12-CEO2',
+  record_commit: '0b066207e43baa9af7e9b1d536e3ba8568d023ce',
+  record_sha256: 'f46f4c1c04dcd32c5bba6b1f65f169395f9fd7d1a8e557665052ae9eb2bc805c',
+  transport_commit: '49c4b88ce7171d1ece776d818aac95b8ff1755fd',
+  engine_version: 'E6.1-2026-10-14', transport_version: 'T1.2-2026-11-03',
+  schema: 'ci.reco.v1', universe_version: 'U12-CEO2-2026-11-03',
+  dataset_id: 'U12-CEO2-2026-11-03/recommendation_view',
+  dataset_content_sha256: 'aa5e32ee11a9ef0f6d1f5b4ce44bf177579e5efb8834f9373dc0c930ae2344e1',
+  p3_artifact: 'CANDIDATE_COPY_NOT_ACCEPTED',
+} as const;
+export function candidateEnabled() {
+  return process.env.P1_CANDIDATE === 'U12-CEO2' && process.env.CI_ENV === 'preview' &&
+    process.env.VERCEL_ENV !== 'production';
+}
+export const selectedBinding = () => candidateEnabled() ? CEO2 : BOUND;
+
 const RUNTIME_FILES = ['engine', 'parser', 'copy_i18n', 'presentation_extracted', 'redaction', 'transport', 'schema', 'p5_contract', 'dataset_manifest', 'dataset_view'];
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -57,6 +76,7 @@ export type Transport = {
   nextQuestion(brief: any, asked: string[], ds: Dataset, o: { path: string }): string | null;
   normalize(brief: any, ds: Dataset): any;
   mergeAnswer(brief: any, patch: any, ds: Dataset): any;
+  editBrief?(brief: any, changes: any, ds: Dataset): any;
   summary(brief: any, ds: Dataset, o: { locale: string }): { key: string; label: string; value: { html: string; text: string } }[];
   decodeShare(token: string, ds: Dataset): any;
   _internals: { E: any; P: any; I: any; Present: any };
@@ -66,25 +86,28 @@ export type ReleaseState =
   | { ok: true; T: Transport; ds: Dataset; checks: string[] }
   | { ok: false; error: string; checks: string[] };
 
-export const releaseRoot = () => path.join(process.cwd(), 'p1-release');
+export const releaseRoot = () => path.join(process.cwd(), candidateEnabled() ? 'p1-candidate/U12-CEO2' : 'p1-release');
 const sha = (b: Buffer) => createHash('sha256').update(b).digest('hex');
 declare const __non_webpack_require__: NodeRequire | undefined;
 // Load the vendored CommonJS at runtime from disk (not bundled), so the bytes executed are the bytes hash-checked.
 const nodeRequire: NodeRequire = typeof __non_webpack_require__ === 'function' ? __non_webpack_require__ : eval('require');
 
 export function verifyRelease(root = releaseRoot(), req: NodeRequire = nodeRequire): ReleaseState {
+  const binding = selectedBinding();
+  const candidate = candidateEnabled();
   const checks: string[] = [];
   const fail = (error: string): ReleaseState => ({ ok: false, error, checks });
   try {
-    const recBytes = readFileSync(path.join(root, 'buyer-decision/release/P1-RELEASE-T1.json'));
-    if (sha(recBytes) !== BOUND.record_sha256) return fail('release record hash mismatch');
+    if (process.env.P1_CANDIDATE && !candidate) return fail('candidate forbidden outside explicit nonproduction preview');
+    const recBytes = readFileSync(path.join(root, `buyer-decision/release/${binding.record}.json`));
+    if (sha(recBytes) !== binding.record_sha256) return fail('release record hash mismatch');
     const rec = JSON.parse(recBytes.toString('utf8'));
-    if (rec.record !== BOUND.record || rec.transport_commit !== BOUND.transport_commit || rec.engine_version !== BOUND.engine_version ||
-        rec.transport_version !== BOUND.transport_version || rec.universe_version !== BOUND.universe_version || rec.schema !== BOUND.schema ||
-        rec.dataset?.content_sha256 !== BOUND.dataset_content_sha256 || rec.semantic_changes !== 'NONE') return fail('release record does not match the bound release');
+    if (rec.record !== binding.record || (rec.transport_commit ?? rec.source_commit) !== binding.transport_commit || rec.engine_version !== binding.engine_version ||
+        rec.transport_version !== binding.transport_version || rec.universe_version !== binding.universe_version || rec.schema !== binding.schema ||
+        rec.dataset?.content_sha256 !== binding.dataset_content_sha256 || (!candidate && rec.semantic_changes !== 'NONE')) return fail('release record does not match the bound release');
     checks.push(`record ${rec.record} sha256 ok`);
     for (const k of RUNTIME_FILES) {
-      const f = rec.files[k];
+      const f = rec.files[candidate && k === 'p5_contract' ? 'p5_handoff' : k];
       const b = readFileSync(path.join(root, f.path));
       if (sha(b) !== f.sha256 || b.length !== f.bytes) return fail(`file hash mismatch: ${f.path}`);
     }
@@ -93,7 +116,7 @@ export function verifyRelease(root = releaseRoot(), req: NodeRequire = nodeRequi
     if (T.ENGINE_VERSION !== rec.engine_version || T.TRANSPORT_VERSION !== rec.transport_version || T.SCHEMA !== rec.schema) return fail('transport version mismatch');
     checks.push(`engine ${T.ENGINE_VERSION}, transport ${T.TRANSPORT_VERSION} ok`);
     const ds = T.loadAcceptedDataset(path.join(root, rec.dataset.path));
-    if (ds.universe_version !== BOUND.universe_version || ds.sha256 !== BOUND.dataset_content_sha256 || ds.id !== BOUND.dataset_id) return fail('dataset is not the bound accepted dataset');
+    if (ds.universe_version !== binding.universe_version || ds.sha256 !== binding.dataset_content_sha256 || ds.id !== binding.dataset_id) return fail('dataset is not the bound accepted dataset');
     checks.push(`dataset ${ds.id} ${ds.sha256.slice(0, 12)} ok`);
     return { ok: true, T, ds, checks };
   } catch (e) {

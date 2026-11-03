@@ -1,7 +1,7 @@
 import { json } from '@/server/http/guard';
 import { vehicles } from '@/server/vehicles/read-model';
 import { recommendationStatus } from '@/server/recommendation/provider';
-import { BOUND } from '@/server/p1/release';
+import { selectedBinding } from '@/server/p1/release';
 import { serverEnv } from '@/server/env';
 import manifest from '@data/registry/sync-manifest.json';
 
@@ -9,6 +9,7 @@ export const dynamic = 'force-dynamic';
 
 /* Public health/version probe. Versions and integrity only — no secrets, no internal data. */
 export function GET() {
+  const BOUND = selectedBinding();
   const m = vehicles().meta();
   const st = recommendationStatus();
   return json({

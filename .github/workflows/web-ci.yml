@@ -52,6 +52,17 @@ jobs:
         run: CI_ENV=production SMOKE_PRODUCTION=1 SMOKE_PORT=3278 npm run test:smoke -- --grep production-only
       # Keep the security gate mandatory, but collect non-deployed integration evidence first.
       - run: npm run audit:deps
+      - name: Build authorized CEO2 nonproduction candidate (default binding stays T1)
+        run: CI_ENV=preview P1_CANDIDATE=U12-CEO2 npm run build
+      - name: CEO2 exact transport API and rendered bilingual buyer edits
+        env:
+          CI_ENV: preview
+          P1_CANDIDATE: U12-CEO2
+        run: |
+          npx next start -H 127.0.0.1 -p 3210 > test-results/ceo2-server.log 2>&1 &
+          for i in $(seq 1 60); do curl -sf http://127.0.0.1:3210/api/health >/dev/null && break; sleep 1; done
+          FMC_BASE_URL=http://127.0.0.1:3210 node --test --test-concurrency=1 tests/integration/fmc.ceo2.test.mjs
+          npx playwright test -c playwright.ceo2.config.ts
       - uses: actions/upload-artifact@v4
         if: always()
         with:
