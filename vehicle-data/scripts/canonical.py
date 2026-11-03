@@ -624,6 +624,10 @@ def counts(models):
 
 
 def main():
+    # A full source rebuild would drop separately accepted CEO intake and facts.
+    # Fail before ANY write until the reviewed incremental release is reconciled.
+    if os.path.exists(os.path.join(ROOT, 'review', 'ceo_acceptance_20261102.json')):
+        raise SystemExit('Protected accepted CEO intake present. Full rebuild refused before writes; reconcile accepted incremental release first.')
     ap = argparse.ArgumentParser()
     ap.add_argument("--snap", default=None)
     ap.add_argument("--as-of", default=None)

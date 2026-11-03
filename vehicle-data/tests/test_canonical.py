@@ -17,7 +17,8 @@ def digest():
 class Canonical(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "canonical.py")], check=True, capture_output=True)
+        if not os.path.exists(os.path.join(ROOT, "review/ceo_acceptance_20261102.json")):
+            subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "canonical.py")], check=True, capture_output=True)
         cls.models = rd("registry/u11_models.csv")
         cls.prices = rd("registry/u11_prices.csv")
         cls.canon = json.load(open(os.path.join(ROOT, "views", "canonical_u11.json")))
@@ -26,7 +27,12 @@ class Canonical(unittest.TestCase):
 
     def test_deterministic(self):
         a = digest()
-        subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "canonical.py")], check=True, capture_output=True)
+        result = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "canonical.py")], capture_output=True)
+        if os.path.exists(os.path.join(ROOT, "review/ceo_acceptance_20261102.json")):
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn(b"Full rebuild refused", result.stderr + result.stdout)
+        else:
+            self.assertEqual(result.returncode, 0)
         self.assertEqual(a, digest())
 
     def test_identity_complete_and_unique(self):
@@ -48,9 +54,12 @@ class Canonical(unittest.TestCase):
         for r in self.prices:
             if r["status"] != "ACCEPT":
                 continue
-            self.assertIn(r["tier"], ("A", "B"))
+            if r.get("confirmation_status") == "CEO_CONFIRMED":
+                self.assertTrue(r.get("confirmation_authority") and r.get("ledger_row_id") and r.get("source_sha256"))
+            else:
+                self.assertIn(r["tier"], ("A", "B"))
             self.assertTrue(r["evidence_url"] and r["issuer"] and r["as_of"], r["price_id"])
-            self.assertIn(r["date_basis"], ("SOURCE_STATED", "OBSERVED"))
+            self.assertIn(r["date_basis"], ("SOURCE_STATED", "OBSERVED", "SOURCE_PRINTED_DATE", "CEO_CONFIRMED_AS_OF"))
             if r["date_basis"] == "SOURCE_STATED":
                 self.assertTrue(r["effective_date"])
             if r["tier"] == "B":
@@ -78,7 +87,7 @@ class Canonical(unittest.TestCase):
                         self.assertIn(u, seen[int(r["price_egp"])], (r["p1_id"], r["price_egp"], u))
 
     def test_no_tier_c_accepted(self):
-        self.assertFalse([r for r in self.prices if r["tier"] == "C" and r["status"] == "ACCEPT"])
+        self.assertFalse([r for r in self.prices if r["tier"] == "C" and r["status"] == "ACCEPT" and r.get("confirmation_status") != "CEO_CONFIRMED"])
 
     def test_conflicts_never_accepted(self):
         self.assertFalse([r for r in self.prices if "CONFLICT" in r["reason"] and r["status"] == "ACCEPT"])

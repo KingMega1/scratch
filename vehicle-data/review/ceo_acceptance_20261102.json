@@ -1,0 +1,230 @@
+{
+  "task_id": "AT-39/AT-51",
+  "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+  "state": "DONE",
+  "base_commit": "01f976ed5eadd6a8fdc9a649c8adc8f0145fc01b",
+  "confirmed_rows": 96,
+  "accepted_retail_rows": 89,
+  "accepted_options": 7,
+  "new_identities": 5,
+  "counts_before": {
+    "brochure_accepted": 85,
+    "fully_enriched": 39,
+    "gallery_models": 73,
+    "hero_accepted": 85,
+    "hero_accepted_hq": 81,
+    "hero_limited_archive": 125,
+    "id_accepted": 419,
+    "logo_accepted": 350,
+    "market_status_official": 38,
+    "models": 419,
+    "price_accepted": 257,
+    "price_source_dated": 193,
+    "price_tier_a": 147,
+    "specs_accepted": 243,
+    "warranty_accepted": 135
+  },
+  "counts_after": {
+    "models": 424,
+    "id_accepted": 424,
+    "price_accepted": 266,
+    "price_tier_a": 158,
+    "price_source_dated": 172,
+    "market_status_official": 38,
+    "specs_accepted": 247,
+    "warranty_accepted": 135,
+    "brochure_accepted": 89,
+    "hero_accepted": 85,
+    "hero_accepted_hq": 81,
+    "hero_limited_archive": 125,
+    "gallery_models": 73,
+    "logo_accepted": 350,
+    "fully_enriched": 39
+  },
+  "source_files": [
+    {
+      "file_id": "1zZy62p2JOx0MsqSI06OOX0Qr-qkSDFBV",
+      "url": "https://drive.google.com/file/d/1zZy62p2JOx0MsqSI06OOX0Qr-qkSDFBV/view",
+      "sha256": "f412c7264f8077ba12375a468ff2b7e9242e6ddf8ac962e3eb26c37461b4ff33",
+      "verification": "HASH_PASS; VISUAL_PRICE_REVIEW_PASS"
+    },
+    {
+      "file_id": "15YLLuCifm-HMZ_jfupwewMDuAK7fnuzJ",
+      "url": "https://drive.google.com/file/d/15YLLuCifm-HMZ_jfupwewMDuAK7fnuzJ/view",
+      "sha256": "794d42de5919c3134b9f8f585170b7367f0e134035975e93ff84dfefb76add72",
+      "verification": "HASH_PASS; VISUAL_PRICE_REVIEW_PASS"
+    },
+    {
+      "file_id": "1lIOXZpjKqm62X5T0W1VPGwEcBndJSPy-",
+      "url": "https://drive.google.com/file/d/1lIOXZpjKqm62X5T0W1VPGwEcBndJSPy-/view",
+      "sha256": "8f97f04ab9897adfa94887c69095ce31e3d3054e627b5c2fcbd0debd4b562e5c",
+      "verification": "HASH_PASS; VISUAL_PRICE_REVIEW_PASS"
+    },
+    {
+      "file_id": "1f3Sa_cDuNVxPAfxByqIHszcvIiN-dFoE",
+      "url": "https://drive.google.com/file/d/1f3Sa_cDuNVxPAfxByqIHszcvIiN-dFoE/view",
+      "sha256": "94e9edd6870fdb8935598a9359316000f54aa2541882ce9050b81d1ef220a077",
+      "verification": "HASH_PASS; VISUAL_PRICE_REVIEW_PASS"
+    },
+    {
+      "file_id": "1VCcshNW6XMGBzUCx8l01nD5B8RMfMa4q",
+      "url": "https://drive.google.com/file/d/1VCcshNW6XMGBzUCx8l01nD5B8RMfMa4q/view",
+      "sha256": "fcadde124b4469f7c32826c090a747dedc8db00d0b7319d0bbbe864372a66a79",
+      "verification": "HASH_PASS; VISUAL_PRICE_REVIEW_PASS"
+    },
+    {
+      "file_id": "1v5-THjGlI9viPvBxQqOBJpwjhiWm6zuG",
+      "url": "https://drive.google.com/file/d/1v5-THjGlI9viPvBxQqOBJpwjhiWm6zuG/view",
+      "sha256": "9f4882d7189857ac3496428e2b6e0ce0864ff5976ff0e140cf38a430cd699cfe",
+      "verification": "HASH_PASS; VISUAL_PRICE_REVIEW_PASS"
+    },
+    {
+      "file_id": "15AzAmESpWl-XJVhSUISCazsaBvvgKMUF",
+      "url": "https://drive.google.com/file/d/15AzAmESpWl-XJVhSUISCazsaBvvgKMUF/view",
+      "sha256": "c9b1a9f55d1a39b1ea5f6f099faf46503d8de8f5bb9ac3799d1309813c7433ec",
+      "verification": "HASH_PASS; VISUAL_PRICE_REVIEW_PASS"
+    },
+    {
+      "file_id": "13O9XzmS-hoJ2QE9kwL_JzUXQ3q7VtOpG",
+      "url": "https://drive.google.com/file/d/13O9XzmS-hoJ2QE9kwL_JzUXQ3q7VtOpG/view",
+      "sha256": "8dbc726381144d0aa0df8c5b6fbeb119f7deb50bfaf9eeb0b5523335d3aa0b88",
+      "verification": "HASH_PASS; VISUAL_PRICE_REVIEW_PASS"
+    },
+    {
+      "file_id": "1P_wjNVF3He7ZvTemSpBP_VMt42DtJx2n",
+      "url": "https://drive.google.com/file/d/1P_wjNVF3He7ZvTemSpBP_VMt42DtJx2n/view",
+      "sha256": "a94b78f87f9bca46e58fcd2b8e289a66c2652164d3bfb820d89fd349f62ed014",
+      "verification": "HASH_PASS; VISUAL_PRICE_REVIEW_PASS"
+    },
+    {
+      "file_id": "1JjSLs2ESq8rVC2QkFCznZJUhWTQuTEU6",
+      "url": "https://drive.google.com/file/d/1JjSLs2ESq8rVC2QkFCznZJUhWTQuTEU6/view",
+      "sha256": "02819d42c95ff8b40139d0d058838e1df47339e77a12bdc4d5390d20cfd32ed1",
+      "verification": "HASH_PASS; VISUAL_PRICE_REVIEW_PASS"
+    },
+    {
+      "file_id": "1WGIKN2hrkfE89dXAugDLJLrHbb5zXq-L",
+      "url": "https://drive.google.com/file/d/1WGIKN2hrkfE89dXAugDLJLrHbb5zXq-L/view",
+      "sha256": "2df755c77b17f9f96dabc1be2db015ab5dddbe03a7ccaa3d06915e9809bde491",
+      "verification": "HASH_PASS; VISUAL_PRICE_REVIEW_PASS"
+    },
+    {
+      "file_id": "1VxJugp0IZ8CKLdKKi8IMRo6NrEvuS7hJ",
+      "url": "https://drive.google.com/file/d/1VxJugp0IZ8CKLdKKi8IMRo6NrEvuS7hJ/view",
+      "sha256": "497db8b5eafd29bae273a45d127bc7351fc73138cadb1ea34afad8773ea6e0de",
+      "verification": "HASH_PASS; VISUAL_PRICE_REVIEW_PASS"
+    },
+    {
+      "file_id": "1XZwnSLjGawBYObKMYpaeRoNACNsRK_LX",
+      "url": "https://drive.google.com/file/d/1XZwnSLjGawBYObKMYpaeRoNACNsRK_LX/view",
+      "sha256": "1f3e18ab1acef6c82e90d8bef1fb46cf7bbc7dee8dc2164387877bb44938e428",
+      "verification": "HASH_PASS; VISUAL_PRICE_REVIEW_PASS"
+    },
+    {
+      "file_id": "1qyc-TXOdVkrBa_skwnAFcavvzkkJcvYp",
+      "url": "https://drive.google.com/file/d/1qyc-TXOdVkrBa_skwnAFcavvzkkJcvYp/view",
+      "sha256": "84bd058a3df55c67aa207d758218350cda552fdc4d728ad988922a7a697ea11a",
+      "verification": "HASH_PASS; VISUAL_PRICE_REVIEW_PASS"
+    },
+    {
+      "file_id": "14j7yH7wAcua3zmEXFw9QjnL30X4nJsPk",
+      "url": "https://drive.google.com/file/d/14j7yH7wAcua3zmEXFw9QjnL30X4nJsPk/view",
+      "sha256": "e6adff9a4f122d57979fa26ba92aec08ccdefb4bd07c0f2474b1c1798ade616c",
+      "verification": "HASH_PASS; VISUAL_PRICE_REVIEW_PASS"
+    },
+    {
+      "file_id": "1EiC_qBL8oej0CLpsLe9fHocuqjOgilDm",
+      "url": "https://drive.google.com/file/d/1EiC_qBL8oej0CLpsLe9fHocuqjOgilDm/view",
+      "sha256": "c3456ec9a16051ce53d1df0327ca518e818481e75e21cd3d45affa612cedaf69",
+      "verification": "HASH_PASS; VISUAL_PRICE_REVIEW_PASS"
+    },
+    {
+      "file_id": "1Scu8bYje-w9ErgV6yqZKBkYwM-AMDmqV",
+      "url": "https://drive.google.com/file/d/1Scu8bYje-w9ErgV6yqZKBkYwM-AMDmqV/view",
+      "sha256": "b3a72689e9405f4bd661cb1dddd12319e8d645a8d761791a26c3625a1f91f37b",
+      "verification": "HASH_PASS; VISUAL_PRICE_REVIEW_PASS"
+    },
+    {
+      "file_id": "1ldx0Wa23sDo2y9dz-446YIDStey5Na8h",
+      "url": "https://drive.google.com/file/d/1ldx0Wa23sDo2y9dz-446YIDStey5Na8h/view",
+      "sha256": "6837674f5d8861f6fc42029cbc1639882db385c8863776222be0e7545fbd5975",
+      "verification": "HASH_PASS; VISUAL_PRICE_REVIEW_PASS"
+    },
+    {
+      "file_id": "1BgvDJ9B8guWEUkfE_HxF3DOIBx2JFnun",
+      "url": "https://drive.google.com/file/d/1BgvDJ9B8guWEUkfE_HxF3DOIBx2JFnun/view",
+      "sha256": "2b437040982a5d6e33950e44afb25ee68f9db3c727d1fda1a3bb77b0ebaf2d8c",
+      "verification": "HASH_PASS; VISUAL_PRICE_REVIEW_PASS"
+    }
+  ],
+  "unresolved": [
+    "BMW exact trim unstated; accepted as model starting price only",
+    "No inferred model years or effective dates",
+    "P1/P5 consumption not yet verified",
+    "Printed dates on BAIC/Jetour/Citroen/Chevrolet lists are not asserted as effective dates; immutable ledger preserved and canonical date_basis corrected"
+  ],
+  "validation": {
+    "all_source_hashes": true,
+    "kia_baselines": 21,
+    "unrelated_canonical_fields_unchanged": true,
+    "u11_membership_unchanged": 283,
+    "regression_tests": "14/14 PASS"
+  },
+  "canonical_sha256": "031ea5e900156e8f64305dcbbd178ca411ecb8758fc8d9d6700d1d622163233f",
+  "release_sha256": "2b796199e6c534cc69464ee181254bd127bc766511b52d833b9a4d9384479488",
+  "brochure_records": [
+    {
+      "p1_id": "jaecoo/j5",
+      "model_id": "m_000422",
+      "source_url": "https://drive.google.com/file/d/1hag5pAVmq_nyTK-7kYTGq7jTtZb0mi8N/view",
+      "sha256": "d2acd50e343ab7f73271b39cb8f727c6e36e59e7fe2e1f43f218e48f931945c2",
+      "bytes": 2735396,
+      "spec_fact_count": 19,
+      "warranty": "NOT_STATED",
+      "model_year": null,
+      "printed_date": null,
+      "range_cycle": null,
+      "status": "ACCEPT"
+    },
+    {
+      "p1_id": "jaecoo/j7",
+      "model_id": "m_000423",
+      "source_url": "https://drive.google.com/file/d/1ftZl6FBcmmn8puu6ZVus9iowpRY8rBMX/view",
+      "sha256": "6ccf72f4fad732a13f4f6ce5ab981666a28679fc777e80d0b16a879dccba189f",
+      "bytes": 3319197,
+      "spec_fact_count": 17,
+      "warranty": "NOT_STATED",
+      "model_year": null,
+      "printed_date": null,
+      "range_cycle": null,
+      "status": "ACCEPT"
+    },
+    {
+      "p1_id": "jaecoo/j7-phev",
+      "model_id": "m_000424",
+      "source_url": "https://drive.google.com/file/d/1DIVaZShwtqlDI2sqwAsmH6GrxhCkCzMV/view",
+      "sha256": "e45fc3de2a9d84a9aa01963c018fd1d72589dd035e27ce9c299f9bc4eddb611a",
+      "bytes": 5362105,
+      "spec_fact_count": 20,
+      "warranty": "NOT_STATED",
+      "model_year": null,
+      "printed_date": null,
+      "range_cycle": "UNSTATED",
+      "status": "ACCEPT"
+    },
+    {
+      "p1_id": "jaecoo/j8-phev",
+      "model_id": "m_000425",
+      "source_url": "https://drive.google.com/file/d/1omhxNzxrv0ZwwpYtXFEii3w22uo4NsrA/view",
+      "sha256": "accc9459f010085f0fd2a3f757e7b54fd980230c9956c14db906b864295c9205",
+      "bytes": 4226844,
+      "spec_fact_count": 17,
+      "warranty": "NOT_STATED",
+      "model_year": null,
+      "printed_date": null,
+      "range_cycle": "UNSTATED",
+      "status": "ACCEPT"
+    }
+  ],
+  "scope": "P2 intake acceptance only; overall enrichment and downstream verification remain open"
+}
