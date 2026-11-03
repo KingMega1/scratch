@@ -18,7 +18,7 @@ function request(chunks, length) {
     },
     cancel() { cancelled = true; },
   }, { highWaterMark: 0 });
-  return { req: { headers: new Headers(length === undefined ? {} : { 'content-length': String(length) }), body: stream },
+  return { req: { headers: new Headers(length === undefined ? {} : { 'content-length': String(length) }), body: stream, text: () => new Response(stream).text() },
     state: () => ({ cancelled, consumed }) };
 }
 test('JSON limit counts UTF-8 bytes without trusting absent or understated length', async () => {
