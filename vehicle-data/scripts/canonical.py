@@ -23,6 +23,8 @@ Acceptance rules (AT-39 price evidence policy; conflicts -> REWORK, nothing infe
          when a site states one for that value, else the common observation date (date_basis=OBSERVED).
   PB-2   same model/year/trim with different values across sites -> REWORK (CONFLICT); single site -> Tier C REWORK.
   PS-1   when a model has accepted Tier A trim prices, Tier B rows are kept as CORROBORATES / SUPERSEDED_BY_TIER_A.
+  PA-3   a CEO-supplied official list row (issuer marked CEO-supplied) is OEM-confirmed: the PA-1 market-range check is not
+         applied to it (market sites may list other derivatives); PA-2 later stated changes still apply.
   PS-3   when a model has an accepted Tier A importer/distributor document with a source-stated date, older or undated
          Tier A rows of other issuers for that model (same or unstated model year) are kept as
          CORROBORATES_TIER_A_DOC (same value) or SUPERSEDED_BY_NEWER_TIER_A; the newest dated document wins.
@@ -379,8 +381,11 @@ def tier_a(market, stated=()):
             status, reason = "REWORK", f"Tier {r['tier']}: single media/dealer/social report; review only"
         elif later:
             status, reason = "REWORK", f"PA-2 market source states a later official price change ({later[-1]}) than the document date"
-        elif m and not ((1 - DIVERGENCE) * min(m) <= v <= (1 + DIVERGENCE) * max(m)):
+        elif m and not ((1 - DIVERGENCE) * min(m) <= v <= (1 + DIVERGENCE) * max(m)) and "CEO-supplied" not in r["issuer"]:
             status, reason = "REWORK", f"PA-1 outside +/-25% of market official range {min(m)}-{max(m)}"
+        elif m and not ((1 - DIVERGENCE) * min(m) <= v <= (1 + DIVERGENCE) * max(m)):  # PA-3
+            status, reason = "ACCEPT", (f"PA-3 CEO-supplied official list (OEM-confirmed per CEO instruction); market range {min(m)}-{max(m)} "
+                                        "not applied: market rows may be other derivatives")
         else:
             status, reason = "ACCEPT", "PA-1 official importer/distributor document"
         rows.append(dict(r, price_egp=v, trim_key=b.trim_key(r["trim_label"]), sites=max(1, len({u.split("/")[2] for u in srcs})), kind=r.get("kind") or "trim",
@@ -408,11 +413,11 @@ def supersede(a_rows, b_rows):
         r["reason"] += f"; PS-3 newer dated document {iss} ({top})"
     a_ok = collections.defaultdict(set)
     for r in a_rows:
-        if r["status"] == "ACCEPT" and r["kind"] == "trim":
+        if r["status"] == "ACCEPT" and r["kind"] == "trim" and r["tier"] == "A":
             a_ok[r["p1_id"]].add(r["price_egp"])
     a_by = collections.defaultdict(list)
     for r in a_rows:
-        if r["status"] == "ACCEPT" and r["kind"] == "trim":
+        if r["status"] == "ACCEPT" and r["kind"] == "trim" and r["tier"] == "A":
             a_by[r["p1_id"]].append(r)
     for r in b_rows:  # PS-2: a newer-dated market value close to an official value but different -> official trim REWORK
         if r["status"] != "ACCEPT" or r["date_basis"] != "SOURCE_STATED" or r["p1_id"] not in a_by:
@@ -424,7 +429,7 @@ def supersede(a_rows, b_rows):
             near["reason"] = f'PS-2 CONFLICT: {r["issuer"]} states {r["price_egp"]} effective {r["effective_date"]} (newer than official {near["effective_date"] or "undated"})'
     a_ok = collections.defaultdict(set)
     for r in a_rows:
-        if r["status"] == "ACCEPT" and r["kind"] == "trim":
+        if r["status"] == "ACCEPT" and r["kind"] == "trim" and r["tier"] == "A":
             a_ok[r["p1_id"]].add(r["price_egp"])
     for r in b_rows + [x for x in a_rows if x["tier"] != "A"]:  # manual Tier B rows sit with the Tier A rows
         if r["p1_id"] in a_ok and r["status"] == "ACCEPT":

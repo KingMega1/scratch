@@ -1,0 +1,97 @@
+{
+ "task_id": "AT-39/AT-51",
+ "date": "2026-11-03",
+ "input_commits": {
+  "canonical": "8c7833f",
+  "staging": "cb682a2"
+ },
+ "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+ "revision": "359327921c55",
+ "release_sha256": "0f2584ccecfcb18cfe95075623f3f491d888d40d636742e608ca0a45f154f3e4",
+ "canonical_sha256": "7e262d55ac5d72899bf8a4ffa3b798adaa0a15d0a1b10b6503f92fb1813ab539",
+ "staging_queue": {
+  "total": 74,
+  "accept_ready": 56,
+  "accepted": 44,
+  "held_for_verification": 13,
+  "other_accepted": {
+   "mercedes_ceo_list_rows": 2,
+   "eclipse_cross_url_alias": 1
+  },
+  "closed_price_conflicts": 8,
+  "unchanged": {
+   "registration_aliases_P1": "5 ACCEPTED_PENDING_REVIEW (P1 crosswalk scope)",
+   "alto_market_status": "HOLD",
+   "icaur_logo": "HOLD (no exact iCAUR asset)"
+  },
+  "identity_proposals": "MP-05 IM LS9, MP-06 iCAUR V27, MP-09 MG Cyberster: already catalogued (m_000352, m_000383, m_000392); no new identity"
+ },
+ "accepted": {
+  "spec_facts": 41,
+  "spec_facts_by_model": {
+   "kia/seltos": 16,
+   "chery/tiggo-7-pro": 25
+  },
+  "brochures": [
+   "chery/tiggo-7-pro (sha256 a0bb3a95, Chery Egypt)"
+  ],
+  "prices": {
+   "suzuki/alto": "535,000 MY2027 manual (PB-M Hatla2ee+ContactCars)",
+   "mitsubishi/eclipse-cross": "1,550,000 / 1,610,000 / 1,690,000 MY2026 (PB-M; ContactCars Eclipse = Eclipse Cross)",
+   "mercedes/amg-gt": "9,300,000 GT 43 (CEO-supplied Mercedes-Benz Egypt list, PA-3)",
+   "mercedes/sl": "9,800,000 SL 43 (CEO-supplied list, PA-3)"
+  }
+ },
+ "held": {
+  "seltos_13": "per-trim columns not legible in server-side text; 9.9 MB PDF exceeds Drive download limit for page-image check: sunroof, rear camera, cruise, smart key, ventilated seats, dual-zone AC, CarPlay, paddle shifters",
+  "eclipse_cross_base_trims": "Insport / Insport Plus: single priced source"
+ },
+ "rule_changes": [
+  "PA-3: CEO-supplied official list rows exempt from the PA-1 market-range check (market rows may be other derivatives)",
+  "Bug fix: PS-1/PS-2 now count Tier A rows only; manual Tier B rows no longer corroborate themselves (affected only the 2 new PB-M models)"
+ ],
+ "integrity": {
+  "price_rows_before": 2158,
+  "price_rows_after": 2162,
+  "accepted_lost": 0,
+  "status_changes": "2 REWORK->ACCEPT (Mercedes)",
+  "tests": "34/34"
+ },
+ "coverage_before": {
+  "models": 424,
+  "active": 421,
+  "price": 266,
+  "specs": 259,
+  "warranty": 135,
+  "brochure": 89,
+  "hero": 85,
+  "gallery": 73,
+  "logo": 349
+ },
+ "coverage_after": {
+  "models": 424,
+  "active": 421,
+  "price": 270,
+  "specs": 259,
+  "warranty": 135,
+  "brochure": 89,
+  "hero": 85,
+  "gallery": 73,
+  "logo": 349
+ },
+ "consumption_receipt": {
+  "base": "origin/claude/vigilant-cori-ce710x d602dac (serves P2-CEO-CONFIRMED-20261102-R1 sha 2b796199; includes next 15.5.28 / zod 4.6.7)",
+  "method": "web-ci.yml sequence run locally in a disposable worktree; release + 391 media files copied verbatim; Playwright pointed at preinstalled Chromium in the disposable copy only; nothing pushed to P5",
+  "typecheck": "PASS",
+  "verify_p1": "PASS",
+  "unit": "72/72 PASS",
+  "build": "PASS",
+  "smoke_preview": "236 PASS, 6 skipped",
+  "fmc": "15/15 PASS",
+  "production_build": "PASS",
+  "production_boundary": "6/6 PASS",
+  "audit_deps": "PASS (0 vulnerabilities)"
+ },
+ "ledger": "review/p2_staging_acceptance_20261103.csv",
+ "deployment": "NOT_PERFORMED"
+}

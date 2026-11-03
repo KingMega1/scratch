@@ -18,7 +18,7 @@
     "counts": {
       "models": 283,
       "id_accepted": 283,
-      "price_accepted": 212,
+      "price_accepted": 214,
       "price_tier_a": 129,
       "price_source_dated": 137,
       "market_status_official": 37,
@@ -39,7 +39,7 @@
     "p2_evidence": 21,
     "identity_only": 262,
     "excluded": 3,
-    "price_accepted": 212,
+    "price_accepted": 214,
     "id_accepted": 283
   },
   "entries": [
@@ -14213,6 +14213,33 @@
           "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
         },
         "specs": {
+          "abs": [
+            {
+              "value": "available",
+              "unit": "",
+              "applicability": "Comfort | Luxury; Egypt brochure p16; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
+            }
+          ],
+          "apple_carplay_android_auto": [
+            {
+              "value": "available",
+              "unit": "",
+              "applicability": "Comfort | Luxury; Egypt brochure p18; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=18&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
+            }
+          ],
+          "auto_hold": [
+            {
+              "value": "available",
+              "unit": "",
+              "applicability": "Comfort | Luxury; Egypt brochure p16; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
+            }
+          ],
           "boot_l": [
             {
               "value": "565",
@@ -14220,6 +14247,22 @@
               "applicability": "market trim pages: CKD Comfort, CKD Luxury ",
               "issuer": "ContactCars+Hatla2ee",
               "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro/9f04d2ce6c8b | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro/ee4d1d933c6d"
+            }
+          ],
+          "curtain_airbags": [
+            {
+              "value": "not available (-)",
+              "unit": "",
+              "applicability": "Comfort; Egypt brochure p16; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
+            },
+            {
+              "value": "available",
+              "unit": "",
+              "applicability": "Luxury; Egypt brochure p16; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
             }
           ],
           "drive": [
@@ -14238,6 +14281,58 @@
               "source": "https://www.chery-eg.com/en/car/tiggo-7-pro"
             }
           ],
+          "dual_zone_ac": [
+            {
+              "value": "available",
+              "unit": "",
+              "applicability": "Comfort | Luxury; Egypt brochure p17; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=17&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
+            }
+          ],
+          "ebd": [
+            {
+              "value": "available",
+              "unit": "",
+              "applicability": "Comfort | Luxury; Egypt brochure p16; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
+            }
+          ],
+          "electric_tailgate": [
+            {
+              "value": "not available (-)",
+              "unit": "",
+              "applicability": "Comfort; Egypt brochure p18; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=18&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
+            },
+            {
+              "value": "available",
+              "unit": "",
+              "applicability": "Luxury; Egypt brochure p18; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=18&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
+            }
+          ],
+          "electronic_parking_brake": [
+            {
+              "value": "available",
+              "unit": "",
+              "applicability": "Comfort | Luxury; Egypt brochure p16; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
+            }
+          ],
+          "electronic_stability_program": [
+            {
+              "value": "available",
+              "unit": "",
+              "applicability": "Comfort | Luxury; Egypt brochure p16; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
+            }
+          ],
           "engine": [
             {
               "value": "1.5L T",
@@ -14254,6 +14349,31 @@
               "applicability": "market trim pages: CKD Comfort, CKD Luxury ",
               "issuer": "ContactCars+Hatla2ee",
               "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro/9f04d2ce6c8b | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro/ee4d1d933c6d"
+            }
+          ],
+          "front_airbags": [
+            {
+              "value": "Driver & Passenger: available",
+              "unit": "",
+              "applicability": "Comfort | Luxury; Egypt brochure p16; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
+            }
+          ],
+          "front_parking_sensors": [
+            {
+              "value": "not available (-)",
+              "unit": "",
+              "applicability": "Comfort; Egypt brochure p16; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
+            },
+            {
+              "value": "available",
+              "unit": "",
+              "applicability": "Luxury; Egypt brochure p16; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
             }
           ],
           "fuel_tank_l": [
@@ -14297,6 +14417,24 @@
               "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro/9f04d2ce6c8b | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro/ee4d1d933c6d"
             }
           ],
+          "hill_descent_control": [
+            {
+              "value": "available",
+              "unit": "",
+              "applicability": "Comfort | Luxury; Egypt brochure p16; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
+            }
+          ],
+          "hill_hold_control": [
+            {
+              "value": "available",
+              "unit": "",
+              "applicability": "Comfort | Luxury; Egypt brochure p16; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
+            }
+          ],
           "length_mm": [
             {
               "value": "4500",
@@ -14311,6 +14449,22 @@
               "applicability": "model page",
               "issuer": "chery_eg_web",
               "source": "https://www.chery-eg.com/en/car/tiggo-7-pro"
+            }
+          ],
+          "panoramic_sunroof": [
+            {
+              "value": "not available (-)",
+              "unit": "",
+              "applicability": "Comfort; Egypt brochure p18; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=18&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
+            },
+            {
+              "value": "available",
+              "unit": "",
+              "applicability": "Luxury; Egypt brochure p18; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=18&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
             }
           ],
           "power_hp": [
@@ -14331,6 +14485,33 @@
               "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro/9f04d2ce6c8b | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro/ee4d1d933c6d"
             }
           ],
+          "rear_ac_vents": [
+            {
+              "value": "available",
+              "unit": "",
+              "applicability": "Comfort | Luxury; Egypt brochure p17; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=17&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
+            }
+          ],
+          "rear_parking_sensors": [
+            {
+              "value": "available",
+              "unit": "",
+              "applicability": "Comfort | Luxury; Egypt brochure p16; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
+            }
+          ],
+          "rear_seat_folding": [
+            {
+              "value": "60:40",
+              "unit": "",
+              "applicability": "Comfort | Luxury; Egypt brochure p17; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=17&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
+            }
+          ],
           "seats": [
             {
               "value": "5",
@@ -14340,6 +14521,31 @@
               "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro/9f04d2ce6c8b | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro/ee4d1d933c6d"
             }
           ],
+          "side_airbags": [
+            {
+              "value": "available",
+              "unit": "",
+              "applicability": "Comfort | Luxury; Egypt brochure p16; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
+            }
+          ],
+          "surround_view_camera_360": [
+            {
+              "value": "not available (-)",
+              "unit": "",
+              "applicability": "Comfort; Egypt brochure p16; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
+            },
+            {
+              "value": "available",
+              "unit": "",
+              "applicability": "Luxury; Egypt brochure p16; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
+            }
+          ],
           "torque_nm": [
             {
               "value": "210",
@@ -14347,6 +14553,15 @@
               "applicability": "market trim pages: CKD Comfort, CKD Luxury ",
               "issuer": "ContactCars+Hatla2ee",
               "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro/9f04d2ce6c8b | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro/ee4d1d933c6d"
+            }
+          ],
+          "tpms": [
+            {
+              "value": "available",
+              "unit": "",
+              "applicability": "Comfort | Luxury; Egypt brochure p16; model year not stated",
+              "issuer": "Chery Egypt",
+              "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
             }
           ],
           "transmission": [
@@ -14401,6 +14616,14 @@
           }
         ],
         "brochures": [
+          {
+            "drive_id": "109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD",
+            "title": "Tiggo 7 Pro Brochure.pdf",
+            "issuer": "Chery Egypt",
+            "scope": "Comfort | Luxury",
+            "url": "https://drive.google.com/file/d/109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD/view",
+            "sha256": "a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8"
+          },
           {
             "drive_id": null,
             "title": "TIGGO_7_PRObrochure_2026-08-24_192745.742095.pdf",
@@ -36448,6 +36671,40 @@
           "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
         },
         "specs": {
+          "abs": [
+            {
+              "value": "standard",
+              "unit": "",
+              "applicability": "EX | HL-Turbo | TL-Turbo; Egypt brochure p4; model year not stated",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9"
+            }
+          ],
+          "alloy_wheel_inches": [
+            {
+              "value": "16",
+              "unit": "inch",
+              "applicability": "EX; Egypt brochure p4; model year not stated",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9"
+            },
+            {
+              "value": "17",
+              "unit": "inch",
+              "applicability": "HL-Turbo | TL-Turbo; Egypt brochure p4; model year not stated",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9"
+            }
+          ],
+          "auto_hold": [
+            {
+              "value": "standard",
+              "unit": "",
+              "applicability": "EX | HL-Turbo | TL-Turbo; Egypt brochure p4; model year not stated",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9"
+            }
+          ],
           "boot_l": [
             {
               "value": "460",
@@ -36473,6 +36730,24 @@
               "source": "https://www.contactcars.com/en/new-cars/kia-seltos/0a8e696c349b | https://www.contactcars.com/en/new-cars/kia-seltos/23162b96a2f9 | https://www.contactcars.com/en/new-cars/kia-seltos/8f42adf3e247"
             }
           ],
+          "ebd": [
+            {
+              "value": "standard",
+              "unit": "",
+              "applicability": "EX | HL-Turbo | TL-Turbo; Egypt brochure p4; model year not stated",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9"
+            }
+          ],
+          "electronic_parking_brake": [
+            {
+              "value": "standard",
+              "unit": "",
+              "applicability": "EX | HL-Turbo | TL-Turbo; Egypt brochure p4; model year not stated",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9"
+            }
+          ],
           "engine_cc": [
             {
               "value": "1497 | 1382 turbo | 1382 turbo",
@@ -36494,6 +36769,31 @@
               "applicability": "market trim pages: Highline Turbo, Topline Turbo",
               "issuer": "ContactCars+Hatla2ee",
               "source": "https://www.contactcars.com/en/new-cars/kia-seltos/0a8e696c349b | https://www.contactcars.com/en/new-cars/kia-seltos/23162b96a2f9"
+            }
+          ],
+          "front_airbags": [
+            {
+              "value": "Driver + Passenger: standard",
+              "unit": "",
+              "applicability": "EX; Egypt brochure p4; model year not stated",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9"
+            },
+            {
+              "value": "Driver + Passenger plus Front Thorax",
+              "unit": "",
+              "applicability": "HL-Turbo | TL-Turbo; Egypt brochure p4; model year not stated",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9"
+            }
+          ],
+          "front_suspension": [
+            {
+              "value": "McPherson Strut",
+              "unit": "",
+              "applicability": "EX | HL-Turbo | TL-Turbo; Egypt brochure p4; model year not stated",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9"
             }
           ],
           "fuel_tank_l": [
@@ -36544,6 +36844,15 @@
               "source": "https://www.contactcars.com/en/new-cars/kia-seltos/0a8e696c349b | https://www.contactcars.com/en/new-cars/kia-seltos/23162b96a2f9 | https://www.contactcars.com/en/new-cars/kia-seltos/8f42adf3e247"
             }
           ],
+          "hill_assist_control": [
+            {
+              "value": "standard",
+              "unit": "",
+              "applicability": "EX | HL-Turbo | TL-Turbo; Egypt brochure p4; model year not stated",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9"
+            }
+          ],
           "length_mm": [
             {
               "value": "4385",
@@ -36558,6 +36867,22 @@
               "applicability": "market trim pages: EX, Highline Turbo, Topline Turbo",
               "issuer": "ContactCars+Hatla2ee",
               "source": "https://www.contactcars.com/en/new-cars/kia-seltos/0a8e696c349b | https://www.contactcars.com/en/new-cars/kia-seltos/23162b96a2f9 | https://www.contactcars.com/en/new-cars/kia-seltos/8f42adf3e247"
+            }
+          ],
+          "parking_distance_warning": [
+            {
+              "value": "Rear",
+              "unit": "",
+              "applicability": "EX; Egypt brochure p4; model year not stated",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9"
+            },
+            {
+              "value": "Front/Rear",
+              "unit": "",
+              "applicability": "HL-Turbo | TL-Turbo; Egypt brochure p4; model year not stated",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9"
             }
           ],
           "power_hp": [
@@ -36592,6 +36917,31 @@
               "source": "https://www.contactcars.com/en/new-cars/kia-seltos/0a8e696c349b | https://www.contactcars.com/en/new-cars/kia-seltos/23162b96a2f9 | https://www.contactcars.com/en/new-cars/kia-seltos/8f42adf3e247"
             }
           ],
+          "rear_suspension": [
+            {
+              "value": "Coupled Torsion Beam Axle",
+              "unit": "",
+              "applicability": "EX | HL-Turbo | TL-Turbo; Egypt brochure p4; model year not stated",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9"
+            }
+          ],
+          "seat_material": [
+            {
+              "value": "Fabric",
+              "unit": "",
+              "applicability": "EX | HL-Turbo; Egypt brochure p4; model year not stated",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9"
+            },
+            {
+              "value": "Leather",
+              "unit": "",
+              "applicability": "TL-Turbo; Egypt brochure p4; model year not stated",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9"
+            }
+          ],
           "seats": [
             {
               "value": "5",
@@ -36622,6 +36972,15 @@
               "applicability": "market trim pages: Highline Turbo, Topline Turbo",
               "issuer": "ContactCars+Hatla2ee",
               "source": "https://www.contactcars.com/en/new-cars/kia-seltos/0a8e696c349b | https://www.contactcars.com/en/new-cars/kia-seltos/23162b96a2f9"
+            }
+          ],
+          "tpms": [
+            {
+              "value": "standard",
+              "unit": "",
+              "applicability": "EX | HL-Turbo | TL-Turbo; Egypt brochure p4; model year not stated",
+              "issuer": "KIA Egypt",
+              "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9"
             }
           ],
           "transmission": [
@@ -44150,10 +44509,9 @@
       },
       "p2_evidence": true,
       "evidence_state": "P2_S6_EVIDENCE",
-      "price_status": "RESOLVED",
+      "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_PRICE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
@@ -44165,7 +44523,51 @@
           "basis": "registration segment, last 12 months (2269 registrations)",
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
-        "price": null,
+        "price": {
+          "price_from": 1550000,
+          "model_year": 2026,
+          "tier": "B",
+          "effective_date": null,
+          "date_basis": "OBSERVED",
+          "as_of": "2026-10-22",
+          "issuer": "Hatla2ee+Contactcars",
+          "evidence_url": "https://eg.hatla2ee.com/en/new-car/mitsubishi/Eclipse-Cross | https://www.contactcars.com/en/new-cars/mitsubishi-eclipse/year-2026",
+          "trims": [
+            {
+              "model_year": 2026,
+              "label": "Inspire HL",
+              "price_egp": 1550000,
+              "tier": "B",
+              "effective_date": null,
+              "date_basis": "OBSERVED",
+              "as_of": "2026-10-22",
+              "issuer": "Hatla2ee+Contactcars",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/mitsubishi/Eclipse-Cross | https://www.contactcars.com/en/new-cars/mitsubishi-eclipse/year-2026"
+            },
+            {
+              "model_year": 2026,
+              "label": "Instyle TL",
+              "price_egp": 1610000,
+              "tier": "B",
+              "effective_date": null,
+              "date_basis": "OBSERVED",
+              "as_of": "2026-10-22",
+              "issuer": "Hatla2ee+Contactcars",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/mitsubishi/Eclipse-Cross | https://www.contactcars.com/en/new-cars/mitsubishi-eclipse/year-2026"
+            },
+            {
+              "model_year": 2026,
+              "label": "Infinity PL AWD",
+              "price_egp": 1690000,
+              "tier": "B",
+              "effective_date": null,
+              "date_basis": "OBSERVED",
+              "as_of": "2026-10-22",
+              "issuer": "Hatla2ee+Contactcars",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/mitsubishi/Eclipse-Cross | https://www.contactcars.com/en/new-cars/mitsubishi-eclipse/year-2026"
+            }
+          ]
+        },
         "specs": {
           "engine_l": [
             {
@@ -55302,10 +55704,9 @@
       },
       "p2_evidence": false,
       "evidence_state": "U11_IDENTITY_ONLY",
-      "price_status": "UNKNOWN",
+      "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_ACCEPTED_PRICE",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
@@ -55318,7 +55719,31 @@
           "basis": "registration segment, last 12 months (29 registrations)",
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
-        "price": null,
+        "price": {
+          "price_from": 535000,
+          "model_year": 2027,
+          "tier": "B",
+          "effective_date": null,
+          "date_basis": "OBSERVED",
+          "as_of": "2026-10-22",
+          "issuer": "Hatla2ee+Contactcars",
+          "evidence_url": "https://eg.hatla2ee.com/en/new-car/suzuki/alto | https://www.contactcars.com/en/new-cars/suzuki-alto/year-2027",
+          "trims": [
+            {
+              "model_year": 2027,
+              "label": "1.0L Manual (Standard / 1000 M/T)",
+              "price_egp": 535000,
+              "tier": "B",
+              "effective_date": null,
+              "date_basis": "OBSERVED",
+              "as_of": "2026-10-22",
+              "issuer": "Hatla2ee+Contactcars",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/suzuki/alto | https://www.contactcars.com/en/new-cars/suzuki-alto/year-2027",
+              "powertrain": "Petrol"
+            }
+          ],
+          "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
+        },
         "specs": {
           "boot_l": [
             {
@@ -61908,7 +62333,7 @@
       "retained_in_p2": true
     }
   ],
-  "revision": "d37b93677fc4",
+  "revision": "359327921c55",
   "market_additions": [
     {
       "p1_id": null,
@@ -67306,7 +67731,31 @@
           "basis": "registration segment, last 12 months (19 registrations)",
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
-        "price": null,
+        "price": {
+          "price_from": 9800000,
+          "model_year": null,
+          "tier": "A",
+          "effective_date": "2026-09-24",
+          "date_basis": "SOURCE_STATED",
+          "as_of": "2026-10-15",
+          "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+          "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+          "trims": [
+            {
+              "model_year": null,
+              "label": "Mercedes-AMG SL 43 / AMG",
+              "price_egp": 9800000,
+              "tier": "A",
+              "effective_date": "2026-09-24",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-15",
+              "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+              "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+              "powertrain": "Petrol"
+            }
+          ],
+          "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
+        },
         "specs": {
           "engine_cc": [
             {
@@ -67357,7 +67806,6 @@
         "conflicts": []
       },
       "missing_evidence": [
-        "NO_ACCEPTED_PRICE",
         "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
@@ -67389,7 +67837,31 @@
           "basis": "registration segment, last 12 months (67 registrations)",
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
-        "price": null,
+        "price": {
+          "price_from": 9300000,
+          "model_year": null,
+          "tier": "A",
+          "effective_date": "2026-09-24",
+          "date_basis": "SOURCE_STATED",
+          "as_of": "2026-10-15",
+          "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+          "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+          "trims": [
+            {
+              "model_year": null,
+              "label": "Mercedes-AMG GT 43 Coupé / AMG",
+              "price_egp": 9300000,
+              "tier": "A",
+              "effective_date": "2026-09-24",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-10-15",
+              "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+              "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+              "powertrain": "Petrol"
+            }
+          ],
+          "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
+        },
         "specs": {
           "drive": [
             {
@@ -67449,7 +67921,6 @@
         "conflicts": []
       },
       "missing_evidence": [
-        "NO_ACCEPTED_PRICE",
         "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",

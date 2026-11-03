@@ -29,7 +29,7 @@ class ConfirmedIntake(unittest.TestCase):
   for old in self.old['models']:
    now=self.by[old['p1_id']]
    for k,v in old.items():
-    if k=='gaps' or (k=='price' and old['p1_id'] in affected):continue
+    if k in ('gaps','rework_price_rows') or (k=='price' and old['p1_id'] in affected):continue  # counters are not evidence
     if k=='hero_image_limited' and v and now.get('hero_image') and (now['hero_image'] or {}).get('src')==v.get('src'):
      # IM-2: the shared file holds the accepted official hero; the archive record keeps its provenance but is no longer served as that file
      self.assertIsNone(now[k]['src']);self.assertEqual({x:y for x,y in now[k].items() if x not in('src','meta')},{x:y for x,y in v.items() if x!='src'});continue

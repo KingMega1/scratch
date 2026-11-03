@@ -65,3 +65,7 @@ Review sheet `1TUlGhEYzrOQrYdgMgyVhHwdw_ABGZSk9OhohYnvbZVg` (CarIndex P2 Data Co
 - `canonical.py` reproduces the November CEO intake from `registry/ceo_confirmed_accepted_20261102.csv` and refuses to write if it is incomplete (replaces the hard rebuild refusal).
 - `registry/media_metadata.csv`: view, colour, setting, alt text (EN/AR), dims and served-file hash for all 391 served files; served as `meta`.
 - Gap report: `review/gap_report_20261103.csv`. Reconciliation: `review/rebuild_reconciliation_20261103.json`.
+
+## 2026-11-03 (b) — ChatGPT Work staging accepted
+- `p5-release-20261103b.json` / `p1-release-20261103b.json`; acceptance `review/p2_staging_acceptance_20261103.{json,csv}`.
+- 41 spec facts (Seltos 16, Tiggo 7 Pro 25), Tiggo 7 Pro brochure, Alto / Eclipse Cross / AMG GT 43 / SL 43 prices. 13 Seltos facts held for page-image verification.

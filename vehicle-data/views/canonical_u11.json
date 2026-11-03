@@ -15,7 +15,7 @@
   "logo_accepted": 248,
   "market_status_official": 37,
   "models": 283,
-  "price_accepted": 212,
+  "price_accepted": 214,
   "price_source_dated": 137,
   "price_tier_a": 129,
   "specs_accepted": 200,
@@ -32,9 +32,9 @@
   "logo_accepted": 351,
   "market_status_official": 38,
   "models": 424,
-  "price_accepted": 266,
-  "price_source_dated": 172,
-  "price_tier_a": 158,
+  "price_accepted": 270,
+  "price_source_dated": 174,
+  "price_tier_a": 160,
   "specs_accepted": 247,
   "warranty_accepted": 135
  },
@@ -13547,6 +13547,14 @@
    "brand": "Chery",
    "brochures": [
     {
+     "drive_id": "109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD",
+     "issuer": "Chery Egypt",
+     "scope": "Comfort | Luxury",
+     "sha256": "a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+     "title": "Tiggo 7 Pro Brochure.pdf",
+     "url": "https://drive.google.com/file/d/109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD/view"
+    },
+    {
      "drive_id": null,
      "issuer": "Chery Egypt official site (www.chery-eg.com)",
      "scope": "Download Brochure",
@@ -13851,6 +13859,33 @@
     "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
    },
    "specs": {
+    "abs": [
+     {
+      "applicability": "Comfort | Luxury; Egypt brochure p16; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "available"
+     }
+    ],
+    "apple_carplay_android_auto": [
+     {
+      "applicability": "Comfort | Luxury; Egypt brochure p18; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=18&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "available"
+     }
+    ],
+    "auto_hold": [
+     {
+      "applicability": "Comfort | Luxury; Egypt brochure p16; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "available"
+     }
+    ],
     "boot_l": [
      {
       "applicability": "market trim pages: CKD Comfort, CKD Luxury ",
@@ -13858,6 +13893,22 @@
       "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro/9f04d2ce6c8b | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro/ee4d1d933c6d",
       "unit": "",
       "value": "565"
+     }
+    ],
+    "curtain_airbags": [
+     {
+      "applicability": "Comfort; Egypt brochure p16; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "not available (-)"
+     },
+     {
+      "applicability": "Luxury; Egypt brochure p16; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "available"
      }
     ],
     "drive": [
@@ -13876,6 +13927,58 @@
       "value": "FWD"
      }
     ],
+    "dual_zone_ac": [
+     {
+      "applicability": "Comfort | Luxury; Egypt brochure p17; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=17&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "available"
+     }
+    ],
+    "ebd": [
+     {
+      "applicability": "Comfort | Luxury; Egypt brochure p16; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "available"
+     }
+    ],
+    "electric_tailgate": [
+     {
+      "applicability": "Comfort; Egypt brochure p18; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=18&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "not available (-)"
+     },
+     {
+      "applicability": "Luxury; Egypt brochure p18; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=18&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "available"
+     }
+    ],
+    "electronic_parking_brake": [
+     {
+      "applicability": "Comfort | Luxury; Egypt brochure p16; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "available"
+     }
+    ],
+    "electronic_stability_program": [
+     {
+      "applicability": "Comfort | Luxury; Egypt brochure p16; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "available"
+     }
+    ],
     "engine": [
      {
       "applicability": "model page",
@@ -13892,6 +13995,31 @@
       "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro/9f04d2ce6c8b | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro/ee4d1d933c6d",
       "unit": "",
       "value": "1500"
+     }
+    ],
+    "front_airbags": [
+     {
+      "applicability": "Comfort | Luxury; Egypt brochure p16; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "Driver & Passenger: available"
+     }
+    ],
+    "front_parking_sensors": [
+     {
+      "applicability": "Comfort; Egypt brochure p16; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "not available (-)"
+     },
+     {
+      "applicability": "Luxury; Egypt brochure p16; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "available"
      }
     ],
     "fuel_tank_l": [
@@ -13935,6 +14063,24 @@
       "value": "1705"
      }
     ],
+    "hill_descent_control": [
+     {
+      "applicability": "Comfort | Luxury; Egypt brochure p16; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "available"
+     }
+    ],
+    "hill_hold_control": [
+     {
+      "applicability": "Comfort | Luxury; Egypt brochure p16; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "available"
+     }
+    ],
     "length_mm": [
      {
       "applicability": "market trim pages: CKD Comfort, CKD Luxury ",
@@ -13949,6 +14095,22 @@
       "source": "https://www.chery-eg.com/en/car/tiggo-7-pro",
       "unit": "mm",
       "value": "4,500"
+     }
+    ],
+    "panoramic_sunroof": [
+     {
+      "applicability": "Comfort; Egypt brochure p18; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=18&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "not available (-)"
+     },
+     {
+      "applicability": "Luxury; Egypt brochure p18; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=18&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "available"
      }
     ],
     "power_hp": [
@@ -13969,6 +14131,33 @@
       "value": "Petrol"
      }
     ],
+    "rear_ac_vents": [
+     {
+      "applicability": "Comfort | Luxury; Egypt brochure p17; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=17&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "available"
+     }
+    ],
+    "rear_parking_sensors": [
+     {
+      "applicability": "Comfort | Luxury; Egypt brochure p16; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "available"
+     }
+    ],
+    "rear_seat_folding": [
+     {
+      "applicability": "Comfort | Luxury; Egypt brochure p17; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=17&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "60:40"
+     }
+    ],
     "seats": [
      {
       "applicability": "market trim pages: CKD Comfort, CKD Luxury ",
@@ -13978,6 +14167,31 @@
       "value": "5"
      }
     ],
+    "side_airbags": [
+     {
+      "applicability": "Comfort | Luxury; Egypt brochure p16; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "available"
+     }
+    ],
+    "surround_view_camera_360": [
+     {
+      "applicability": "Comfort; Egypt brochure p16; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "not available (-)"
+     },
+     {
+      "applicability": "Luxury; Egypt brochure p16; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "available"
+     }
+    ],
     "torque_nm": [
      {
       "applicability": "market trim pages: CKD Comfort, CKD Luxury ",
@@ -13985,6 +14199,15 @@
       "source": "https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro/9f04d2ce6c8b | https://www.contactcars.com/en/new-cars/chery-tiggo_7_pro/ee4d1d933c6d",
       "unit": "",
       "value": "210"
+     }
+    ],
+    "tpms": [
+     {
+      "applicability": "Comfort | Luxury; Egypt brochure p16; model year not stated",
+      "issuer": "Chery Egypt",
+      "source": "drive:109DeZ7SMiJcCVTo0I50CSvvEbseyzkcD#page=16&sha256=a0bb3a95a006d90329fc104b2801f6103e17565d8bd994b5e59daa0d632445f8",
+      "unit": "",
+      "value": "available"
      }
     ],
     "transmission": [
@@ -35098,6 +35321,40 @@
     "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
    },
    "specs": {
+    "abs": [
+     {
+      "applicability": "EX | HL-Turbo | TL-Turbo; Egypt brochure p4; model year not stated",
+      "issuer": "KIA Egypt",
+      "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9",
+      "unit": "",
+      "value": "standard"
+     }
+    ],
+    "alloy_wheel_inches": [
+     {
+      "applicability": "EX; Egypt brochure p4; model year not stated",
+      "issuer": "KIA Egypt",
+      "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9",
+      "unit": "inch",
+      "value": "16"
+     },
+     {
+      "applicability": "HL-Turbo | TL-Turbo; Egypt brochure p4; model year not stated",
+      "issuer": "KIA Egypt",
+      "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9",
+      "unit": "inch",
+      "value": "17"
+     }
+    ],
+    "auto_hold": [
+     {
+      "applicability": "EX | HL-Turbo | TL-Turbo; Egypt brochure p4; model year not stated",
+      "issuer": "KIA Egypt",
+      "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9",
+      "unit": "",
+      "value": "standard"
+     }
+    ],
     "boot_l": [
      {
       "applicability": "Seltos (all trims, Kia Egypt brochure)",
@@ -35123,6 +35380,24 @@
       "value": "FWD"
      }
     ],
+    "ebd": [
+     {
+      "applicability": "EX | HL-Turbo | TL-Turbo; Egypt brochure p4; model year not stated",
+      "issuer": "KIA Egypt",
+      "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9",
+      "unit": "",
+      "value": "standard"
+     }
+    ],
+    "electronic_parking_brake": [
+     {
+      "applicability": "EX | HL-Turbo | TL-Turbo; Egypt brochure p4; model year not stated",
+      "issuer": "KIA Egypt",
+      "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9",
+      "unit": "",
+      "value": "standard"
+     }
+    ],
     "engine_cc": [
      {
       "applicability": "EX | HL-Turbo | TL-Turbo",
@@ -35144,6 +35419,31 @@
       "source": "https://www.contactcars.com/en/new-cars/kia-seltos/0a8e696c349b | https://www.contactcars.com/en/new-cars/kia-seltos/23162b96a2f9",
       "unit": "",
       "value": "1400"
+     }
+    ],
+    "front_airbags": [
+     {
+      "applicability": "EX; Egypt brochure p4; model year not stated",
+      "issuer": "KIA Egypt",
+      "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9",
+      "unit": "",
+      "value": "Driver + Passenger: standard"
+     },
+     {
+      "applicability": "HL-Turbo | TL-Turbo; Egypt brochure p4; model year not stated",
+      "issuer": "KIA Egypt",
+      "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9",
+      "unit": "",
+      "value": "Driver + Passenger plus Front Thorax"
+     }
+    ],
+    "front_suspension": [
+     {
+      "applicability": "EX | HL-Turbo | TL-Turbo; Egypt brochure p4; model year not stated",
+      "issuer": "KIA Egypt",
+      "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9",
+      "unit": "",
+      "value": "McPherson Strut"
      }
     ],
     "fuel_tank_l": [
@@ -35194,6 +35494,15 @@
       "value": "1620"
      }
     ],
+    "hill_assist_control": [
+     {
+      "applicability": "EX | HL-Turbo | TL-Turbo; Egypt brochure p4; model year not stated",
+      "issuer": "KIA Egypt",
+      "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9",
+      "unit": "",
+      "value": "standard"
+     }
+    ],
     "length_mm": [
      {
       "applicability": "Seltos (all trims, Kia Egypt brochure)",
@@ -35208,6 +35517,22 @@
       "source": "https://www.contactcars.com/en/new-cars/kia-seltos/0a8e696c349b | https://www.contactcars.com/en/new-cars/kia-seltos/23162b96a2f9 | https://www.contactcars.com/en/new-cars/kia-seltos/8f42adf3e247",
       "unit": "",
       "value": "4385"
+     }
+    ],
+    "parking_distance_warning": [
+     {
+      "applicability": "EX; Egypt brochure p4; model year not stated",
+      "issuer": "KIA Egypt",
+      "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9",
+      "unit": "",
+      "value": "Rear"
+     },
+     {
+      "applicability": "HL-Turbo | TL-Turbo; Egypt brochure p4; model year not stated",
+      "issuer": "KIA Egypt",
+      "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9",
+      "unit": "",
+      "value": "Front/Rear"
      }
     ],
     "power_hp": [
@@ -35242,6 +35567,31 @@
       "value": "Petrol"
      }
     ],
+    "rear_suspension": [
+     {
+      "applicability": "EX | HL-Turbo | TL-Turbo; Egypt brochure p4; model year not stated",
+      "issuer": "KIA Egypt",
+      "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9",
+      "unit": "",
+      "value": "Coupled Torsion Beam Axle"
+     }
+    ],
+    "seat_material": [
+     {
+      "applicability": "EX | HL-Turbo; Egypt brochure p4; model year not stated",
+      "issuer": "KIA Egypt",
+      "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9",
+      "unit": "",
+      "value": "Fabric"
+     },
+     {
+      "applicability": "TL-Turbo; Egypt brochure p4; model year not stated",
+      "issuer": "KIA Egypt",
+      "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9",
+      "unit": "",
+      "value": "Leather"
+     }
+    ],
     "seats": [
      {
       "applicability": "market trim pages: EX, Highline Turbo, Topline Turbo",
@@ -35272,6 +35622,15 @@
       "source": "https://www.contactcars.com/en/new-cars/kia-seltos/0a8e696c349b | https://www.contactcars.com/en/new-cars/kia-seltos/23162b96a2f9",
       "unit": "",
       "value": "247"
+     }
+    ],
+    "tpms": [
+     {
+      "applicability": "EX | HL-Turbo | TL-Turbo; Egypt brochure p4; model year not stated",
+      "issuer": "KIA Egypt",
+      "source": "drive:1VN465hL3XnGN1dhCdvExjpDkZ3pren1_#page=4&sha256=b5138c154512c92a8808df6e4283c8c10892679db950e6eecc88c61ed9b00eb9",
+      "unit": "",
+      "value": "standard"
      }
     ],
     "transmission": [
@@ -42318,7 +42677,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_VERIFIED_WARRANTY",
     "GENERATION_UNKNOWN"
@@ -42370,7 +42728,51 @@
    "model": "Eclipse Cross",
    "model_id": "m_000015",
    "p1_id": "mitsubishi/eclipse-cross",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-22",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
+    "evidence_url": "https://eg.hatla2ee.com/en/new-car/mitsubishi/Eclipse-Cross | https://www.contactcars.com/en/new-cars/mitsubishi-eclipse/year-2026",
+    "issuer": "Hatla2ee+Contactcars",
+    "model_year": 2026,
+    "price_from": 1550000,
+    "tier": "B",
+    "trims": [
+     {
+      "as_of": "2026-10-22",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/mitsubishi/Eclipse-Cross | https://www.contactcars.com/en/new-cars/mitsubishi-eclipse/year-2026",
+      "issuer": "Hatla2ee+Contactcars",
+      "label": "Inspire HL",
+      "model_year": 2026,
+      "price_egp": 1550000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-22",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/mitsubishi/Eclipse-Cross | https://www.contactcars.com/en/new-cars/mitsubishi-eclipse/year-2026",
+      "issuer": "Hatla2ee+Contactcars",
+      "label": "Instyle TL",
+      "model_year": 2026,
+      "price_egp": 1610000,
+      "tier": "B"
+     },
+     {
+      "as_of": "2026-10-22",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/mitsubishi/Eclipse-Cross | https://www.contactcars.com/en/new-cars/mitsubishi-eclipse/year-2026",
+      "issuer": "Hatla2ee+Contactcars",
+      "label": "Infinity PL AWD",
+      "model_year": 2026,
+      "price_egp": 1690000,
+      "tier": "B"
+     }
+    ]
+   },
    "rework_price_rows": 14,
    "site_slug": "mitsubishi-eclipse-cross",
    "size_class": {
@@ -53101,7 +53503,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
     "NO_VERIFIED_WARRANTY",
@@ -53154,7 +53555,31 @@
    "model": "Alto",
    "model_id": "m_000251",
    "p1_id": "suzuki/alto",
-   "price": null,
+   "price": {
+    "as_of": "2026-10-22",
+    "date_basis": "OBSERVED",
+    "effective_date": null,
+    "evidence_url": "https://eg.hatla2ee.com/en/new-car/suzuki/alto | https://www.contactcars.com/en/new-cars/suzuki-alto/year-2027",
+    "issuer": "Hatla2ee+Contactcars",
+    "model_year": 2027,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 535000,
+    "tier": "B",
+    "trims": [
+     {
+      "as_of": "2026-10-22",
+      "date_basis": "OBSERVED",
+      "effective_date": null,
+      "evidence_url": "https://eg.hatla2ee.com/en/new-car/suzuki/alto | https://www.contactcars.com/en/new-cars/suzuki-alto/year-2027",
+      "issuer": "Hatla2ee+Contactcars",
+      "label": "1.0L Manual (Standard / 1000 M/T)",
+      "model_year": 2027,
+      "powertrain": "Petrol",
+      "price_egp": 535000,
+      "tier": "B"
+     }
+    ]
+   },
    "rework_price_rows": 3,
    "site_slug": "suzuki-alto",
    "size_class": {
@@ -64588,7 +65013,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
@@ -64630,8 +65054,32 @@
    "model": "SL",
    "model_id": "m_000334",
    "p1_id": "mercedes/sl",
-   "price": null,
-   "rework_price_rows": 3,
+   "price": {
+    "as_of": "2026-10-15",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-09-24",
+    "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+    "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+    "model_year": null,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 9800000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "Mercedes-AMG SL 43 / AMG",
+      "model_year": null,
+      "powertrain": "Petrol",
+      "price_egp": 9800000,
+      "tier": "A"
+     }
+    ]
+   },
+   "rework_price_rows": 2,
    "site_slug": "mercedes-sl",
    "size_class": {
     "basis": "registration segment, last 12 months (19 registrations)",
@@ -64668,7 +65116,6 @@
    "conflicts": [],
    "gallery": [],
    "gaps": [
-    "NO_ACCEPTED_PRICE",
     "NO_ACCEPTED_SPECS",
     "NO_OFFICIAL_BROCHURE",
     "NO_VERIFIED_HERO_IMAGE",
@@ -64710,8 +65157,32 @@
    "model": "AMG GT",
    "model_id": "m_000335",
    "p1_id": "mercedes/amg-gt",
-   "price": null,
-   "rework_price_rows": 3,
+   "price": {
+    "as_of": "2026-10-15",
+    "date_basis": "SOURCE_STATED",
+    "effective_date": "2026-09-24",
+    "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+    "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+    "model_year": null,
+    "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)",
+    "price_from": 9300000,
+    "tier": "A",
+    "trims": [
+     {
+      "as_of": "2026-10-15",
+      "date_basis": "SOURCE_STATED",
+      "effective_date": "2026-09-24",
+      "evidence_url": "https://drive.google.com/file/d/1fyuQNiquh_8REp9Kjp0SyRXoW7QnCaEq/view",
+      "issuer": "Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)",
+      "label": "Mercedes-AMG GT 43 Coupé / AMG",
+      "model_year": null,
+      "powertrain": "Petrol",
+      "price_egp": 9300000,
+      "tier": "A"
+     }
+    ]
+   },
+   "rework_price_rows": 2,
    "site_slug": "mercedes-amg-gt",
    "size_class": {
     "basis": "registration segment, last 12 months (67 registrations)",
@@ -74453,6 +74924,6 @@
    "warranty": null
   }
  ],
- "rules": "(AT-39 price evidence policy; conflicts -> REWORK, nothing inferred, nothing averaged):\n  ID-1   identity ACCEPT when p1_id/slug/model_id are unique, U11 and the P5 RC1 release agree on brand+model,\n         and any pre-existing P2 ID keeps its slug. IDs are never re-assigned; new IDs continue m_NNNNNN.\n  PA-1   Tier A (official Egypt OEM/importer page or document): ACCEPT if confidence HIGH, value not repeated across\n         >=3 trims of the model (parser-suspect), and within +/-25% of the market official-price range when one exists.\n  PB-1   Tier B: the same official EGP value for the same model, model year and trim reported by >=2 independent\n         sites (trim key equal, or the value unique within each site's cohort). Date = source-stated effective date\n         when a site states one for that value, else the common observation date (date_basis=OBSERVED).\n  PB-2   same model/year/trim with different values across sites -> REWORK (CONFLICT); single site -> Tier C REWORK.\n  PS-1   when a model has accepted Tier A trim prices, Tier B rows are kept as CORROBORATES / SUPERSEDED_BY_TIER_A.\n  PS-3   when a model has an accepted Tier A importer/distributor document with a source-stated date, older or undated\n         Tier A rows of other issuers for that model (same or unstated model year) are kept as\n         CORROBORATES_TIER_A_DOC (same value) or SUPERSEDED_BY_NEWER_TIER_A; the newest dated document wins.",
+ "rules": "(AT-39 price evidence policy; conflicts -> REWORK, nothing inferred, nothing averaged):\n  ID-1   identity ACCEPT when p1_id/slug/model_id are unique, U11 and the P5 RC1 release agree on brand+model,\n         and any pre-existing P2 ID keeps its slug. IDs are never re-assigned; new IDs continue m_NNNNNN.\n  PA-1   Tier A (official Egypt OEM/importer page or document): ACCEPT if confidence HIGH, value not repeated across\n         >=3 trims of the model (parser-suspect), and within +/-25% of the market official-price range when one exists.\n  PB-1   Tier B: the same official EGP value for the same model, model year and trim reported by >=2 independent\n         sites (trim key equal, or the value unique within each site's cohort). Date = source-stated effective date\n         when a site states one for that value, else the common observation date (date_basis=OBSERVED).\n  PB-2   same model/year/trim with different values across sites -> REWORK (CONFLICT); single site -> Tier C REWORK.\n  PS-1   when a model has accepted Tier A trim prices, Tier B rows are kept as CORROBORATES / SUPERSEDED_BY_TIER_A.\n  PA-3   a CEO-supplied official list row (issuer marked CEO-supplied) is OEM-confirmed: the PA-1 market-range check is not\n         applied to it (market sites may list other derivatives); PA-2 later stated changes still apply.\n  PS-3   when a model has an accepted Tier A importer/distributor document with a source-stated date, older or undated\n         Tier A rows of other issuers for that model (same or unstated model year) are kept as\n         CORROBORATES_TIER_A_DOC (same value) or SUPERSEDED_BY_NEWER_TIER_A; the newest dated document wins.",
  "schema": "carindex.p2.canonical/v1"
 }
