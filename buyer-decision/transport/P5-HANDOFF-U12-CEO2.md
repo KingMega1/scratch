@@ -15,6 +15,7 @@ Owner: P1. Record: `buyer-decision/release/P1-RELEASE-U12-CEO2.json`. Supersedes
 | Presentation | An electric lead ranked on fuel economy now says why (existing approved copy) | Reason matches the ranking |
 | Transport T1.2 | `editBrief(brief, changes, dataset)`: the buyer's revised values replace the old ones (the released app's edit screen) | Removed priorities, exclusions and brands really go away. `mergeAnswer` stays for answering questions |
 | Transport T1.2 | `execute()` refuses a brief with no budget (clear error) instead of crashing in the engine | P5 robustness |
+| Data build | CEO powertrain decisions (tools/ceo_fact_decisions.json) for 7 models with no P2 powertrain; iCAUR V27 pending | Filters ("petrol only", "no electric", "no hybrid") now include them |
 | Data build | An accepted P2 price observed within 12 months is current-sale evidence | XPeng P7+ (Raya Auto list, 22 Oct) no longer wrongly "discontinued" |
 
 **P5 must use `editBrief` for "Edit your brief"** (not `mergeAnswer`).
@@ -26,7 +27,7 @@ Owner: P1. Record: `buyer-decision/release/P1-RELEASE-U12-CEO2.json`. Supersedes
 | `engine_version` | E6-2026-09-28 | E6.1-2026-10-14 (ranking unchanged) |
 | `transport_version` | T1-2026-10-07 | T1.2-2026-11-03 |
 | `schema` | ci.reco.v1 | ci.reco.v1 (unchanged) |
-| Dataset | U11-2026-09-26, 283 recommendable | U12-CEO2-2026-11-03, 424 identities, 392 recommendable (P2 5a373d7, P2-CEO-CONFIRMED-20261102-R1) |
+| Dataset | U11-2026-09-26, 283 recommendable | U12-CEO3-2026-11-03, 424 identities, 392 recommendable (P2 5a373d7, P2-CEO-CONFIRMED-20261102-R1) |
 | P2 input | — | aadc647 (handoff p1-release-20261021), serving release P2-CATALOGUE-U11-2026-10-21-RC2, sha256 49756cd3…2ec4 |
 
 ## 2. Files to re-vendor (verify each sha256 against the record)
@@ -35,7 +36,7 @@ Owner: P1. Record: `buyer-decision/release/P1-RELEASE-U12-CEO2.json`. Supersedes
 - `app/brief.js`: the model-name index is rebuilt when the dataset changes; brand-prefixed 4-digit names (Peugeot 3008/5008) are recognised.
 - `app/i18n.js`: contains six DRAFT strings pending P3 (§6 gate 1). Its hash will change once P3 approves.
 - `transport/reco.js`: T1.1. `compare_html` is `null` when the result is a single car with no alternatives, as in the released app. The schema already allows null.
-- `datasets/U12-CEO2-2026-11-03/{manifest.json, recommendation_view.json}`: new.
+- `datasets/U12-CEO3-2026-11-03/{manifest.json, recommendation_view.json}`: new.
 - Unchanged: `app/present.js`, `app/app.js`, `transport/ci.reco.v1.schema.json`.
 
 ## 2a. CEO decisions in this dataset (2026-10-21)
@@ -65,7 +66,7 @@ Every field the transport reads must survive the Postgres serving projection.
 
 - `T.ENGINE_VERSION === 'E6.1-2026-10-14'`
 - `T.TRANSPORT_VERSION === 'T1.2-2026-11-03'`
-- `ds.universe_version === 'U12-CEO2-2026-11-03'`
+- `ds.universe_version === 'U12-CEO3-2026-11-03'`
 - `ds.sha256 ===` the `dataset.content_sha256` in the record
 - The sha256 of every vendored file matches the record.
 
@@ -78,11 +79,11 @@ Results stored under T1/U11 are historical: recompute them from `share.r` and la
 3. **P1 test evidence on the final hashes**:
    - regression 1211/1211 (U11 1142/1142, 0 changes)
    - eligibility 1505/1505 on 4 datasets (949/949 on the original 3)
-   - u12_data 191/191 · ceo_intake PASS (45 models, 88 trims) · ceo_failures 118/118
+   - u12_data 191/191 · ceo_intake PASS (45 models, 88 trims) · ceo_failures 134/134
    - named_cars 49/49
    - buyer_scenarios 696/696 (42 EN/AR scenarios)
    - transport 1517/1517
-   - browser-vs-transport 1371/1371 (CEO2) and 1335/1335 (U11)
+   - browser-vs-transport 1371/1371 (CEO3) and 1335/1335 (U11)
    - build_present --check PASS
 4. **P5 integration**: re-vendor, version checks, deployed EN/AR smoke on the RC4 binding, including one single-car result (`7-seater around EGP 1M` → BAW M7, no compare table).
 
@@ -90,12 +91,12 @@ Results stored under T1/U11 are historical: recompute them from `share.r` and la
 
 ```
 node tools/build_present.mjs --check
-CI_DATASET=datasets/U12-CEO2-2026-11-03/recommendation_view.json node tests/regression/run.js
-node tests/eligibility.test.js datasets/U11-2026-09-26 datasets/U12C-2026-10-14 datasets/U12C2-2026-10-14 datasets/U12C2-RC1-2026-10-14 datasets/U12C2-RC2-2026-10-14 datasets/U12-RC3-2026-10-15 datasets/U12-CEO2-2026-11-03
-node tests/u12_data.test.js datasets/U12-CEO2-2026-11-03 <P2 flat dir>
-node tests/ceo_failures.test.js datasets/U12-CEO2-2026-11-03
-node tests/named_cars.test.js datasets/U12-CEO2-2026-11-03
-node tests/buyer_scenarios.test.js datasets/U12-CEO2-2026-11-03
+CI_DATASET=datasets/U12-CEO3-2026-11-03/recommendation_view.json node tests/regression/run.js
+node tests/eligibility.test.js datasets/U11-2026-09-26 datasets/U12C-2026-10-14 datasets/U12C2-2026-10-14 datasets/U12C2-RC1-2026-10-14 datasets/U12C2-RC2-2026-10-14 datasets/U12-RC3-2026-10-15 datasets/U12-CEO3-2026-11-03
+node tests/u12_data.test.js datasets/U12-CEO3-2026-11-03 <P2 flat dir>
+node tests/ceo_failures.test.js datasets/U12-CEO3-2026-11-03
+node tests/named_cars.test.js datasets/U12-CEO3-2026-11-03
+node tests/buyer_scenarios.test.js datasets/U12-CEO3-2026-11-03
 node tests/transport/transport.test.js
-node tests/transport/browser_equivalence.mjs <build of RC4> datasets/U12-CEO2-2026-11-03
+node tests/transport/browser_equivalence.mjs <build of RC4> datasets/U12-CEO3-2026-11-03
 ```

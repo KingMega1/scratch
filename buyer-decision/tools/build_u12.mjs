@@ -41,6 +41,8 @@ const OFFICIAL_LISTS = process.env.CI_OFFICIAL_LISTS !== '0';
 const MARKET_PRICES = process.env.CI_MARKET_PRICES !== '0', NO_SIZE_HOLD = process.env.CI_NO_SIZE_HOLD !== '0', COUPES = process.env.CI_COUPES !== '0', VANS = process.env.CI_VANS !== '0';
 // CEO price review overrides (tools/ceo_price_overrides.json): market prices removed, brands never shown as official
 const OVR = JSON.parse(fs.readFileSync(path.join(ROOT, 'tools/ceo_price_overrides.json'), 'utf8'));
+// CEO model-fact decisions (tools/ceo_fact_decisions.json): powertrain where P2 has none; versions without a powertrain inherit it
+const FACTS = JSON.parse(fs.readFileSync(path.join(ROOT, 'tools/ceo_fact_decisions.json'), 'utf8'));
 // P2 market price rows held for review (registry u11_prices.csv, status REWORK): single site or sites disagree
 const MKT = {}; { const fp = path.join(p2dir, 'u11_prices.csv'); if (fs.existsSync(fp)) { const [h, ...rows] = parseCsv(fs.readFileSync(fp, 'utf8')); const ix = k => h.indexOf(k);
   for (const v of rows) { if (v[ix('status')] !== 'REWORK' || !(+v[ix('price_egp')] > 0)) continue; (MKT[v[ix('p1_id')]] = MKT[v[ix('p1_id')]] || []).push({ label: v[ix('trim_label')].trim(), min: +v[ix('price_egp')], year: +v[ix('model_year')] || null, date: v[ix('observed_at')] || null }); } } } // reversible: CI_OFFICIAL_LISTS=0 restores the RC2 merge behaviour
@@ -53,7 +55,7 @@ const BODY = { suv: 'suv', sedan: 'sedan', hatchback: 'hatch', hatch: 'hatch', m
 const PT = p => (p === 'phev' || p === 'reev' ? { pt: 'hybrid', plugin: true } : p ? { pt: p, plugin: false } : { pt: null, plugin: false });
 const nl = s => String(s || '').toLowerCase().replace(/\b(a\/t|m\/t|cvt|dct|at|mt)\b/g, ' ').replace(/\d\.\d\s*l?\b/g, ' ').replace(/[^a-z0-9]/g, '');
 const brandOf = {}; U11.models.forEach(m => { if (!brandOf[m.brand_id]) brandOf[m.brand_id] = m; });
-const log = { confirmed_cohorts: [], market_prices: [], off_sale: [], powertrains: [], official_lists: [], arabic_names: [], unknown_price: [], identities: 0, splits_moved: [], prices_updated: 0, versions_added: 0, seats: 0, awd: [], in_universe: [], held_no_size_class: [], excluded: {} };
+const log = { ceo_facts: [], confirmed_cohorts: [], market_prices: [], off_sale: [], powertrains: [], official_lists: [], arabic_names: [], unknown_price: [], identities: 0, splits_moved: [], prices_updated: 0, versions_added: 0, seats: 0, awd: [], in_universe: [], held_no_size_class: [], excluded: {} };
 const out = (id, reason) => { (log.excluded[reason] = log.excluded[reason] || []).push(id); };
 
 // ---- identities ----
@@ -196,7 +198,9 @@ for (const m of models) {
   m.u = true; log.in_universe.push(m.id);
 }
 models.forEach(m => { delete m.official_list; delete m.off_sale; delete m.market_seen; delete m.accepted_seen; delete m.confirmed_cohort;
-  if (OVR.never_official_brands[m.brand_id]) m.trims.forEach(t => { t.official = false; }); }); // build-time only
+  if (OVR.never_official_brands[m.brand_id]) m.trims.forEach(t => { t.official = false; });
+  const f = FACTS.powertrain[m.id];
+  if (f) { const p = PT(f.pt); m.powertrains = [p.pt]; m.trims.forEach(t => { if (!t.pt) { t.pt = p.pt; t.plugin = p.plugin; } }); log.ceo_facts.push(`${m.id}: ${f.pt}`); } }); // build-time only
 const U = { meta: { ...U11.meta, version: VERSION, built: VERSION.slice(-10), models_in_universe: models.filter(m => m.u).length, models_priced_in_universe: models.filter(m => m.u && m.trims.length).length }, models: models.filter(m => m.body).sort((x, y) => x.id.localeCompare(y.id)) }; // identities without a body stay in the manifest only
 const body = JSON.stringify(U), sha = s => crypto.createHash('sha256').update(s).digest('hex');
 const dir = path.join(ROOT, 'datasets', VERSION); fs.mkdirSync(dir, { recursive: true });

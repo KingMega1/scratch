@@ -102,6 +102,14 @@ for (const [id, t] of [['not-byd-ar', 'عايز اي حاجه غير BYD في ح
 { const J = journey('عايز SUV هايبرد بتتشحن بحوالي ١.٨ مليون جنيه ومش عايز عربية كهربا بالكامل'); ok((J.parsed.checks || []).includes('plugin') && J.parsed.pt === 'hybrid', 'phev-ar: lost'); }
 { const J = journey('hybrid SUV 1.8M'); ok(J.parsed.pt === 'hybrid' && !(J.parsed.checks || []).includes('plugin'), 'hev: a regular hybrid request became plug-in'); }
 
+// CEO powertrain decisions (tools/ceo_fact_decisions.json): the cars now pass the matching powertrain filters
+{ const F = require(path.join(__dirname, '..', 'tools/ceo_fact_decisions.json')).powertrain;
+  for (const [id, f] of Object.entries(F)) { const m = by[id]; if (!m || !(m.u && E.currentTrims(m).length)) continue;
+    const huge = { budget: 1e9, budgetMode: 'max' }, el = b => E.eligibility(m, E.normalizeBrief({ ...huge, ...b }, by), E.territory({ ...huge, ...b })).status;
+    if (f.pt === 'petrol') { ok(el({ pt: 'petrol' }) === 'eligible', `fact ${id}: not eligible for petrol-only`); ok(el({ ptNo: ['ev'], pt: 'no_ev' }) === 'eligible', `fact ${id}: not eligible for "no electric"`); }
+    if (f.pt === 'phev') { ok(el({ pt: 'petrol' }) === 'ineligible', `fact ${id}: plug-in shown as petrol-only`); ok(el({ ptNo: ['ev'], pt: 'no_ev' }) === 'eligible', `fact ${id}: plug-in excluded by "no electric"`); ok(el({ ptNo: ['hybrid'] }) === 'ineligible', `fact ${id}: plug-in passes "no hybrid"`); } }
+  if (by['icaur/v27']) ok(!(by['icaur/v27'].powertrains || []).includes('ev'), 'fact icaur/v27: classified fully electric while the Egypt version is a range-extender (pending CEO)'); }
+
 // 6/7/8. One primary car when the evidence supports it, honest ties otherwise; alternatives with reasons; no false claims
 for (const t of ['Family SUV around 1.8M, fuel economy and space matter most, no Chinese brands', 'SUV around 2M', 'Cheapest 7 seater possible, budget 2M', 'BYD only, 2M']) {
   const J = journey(t), lvl = J.o.confidence && J.o.confidence.level;
