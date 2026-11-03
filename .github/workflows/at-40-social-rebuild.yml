@@ -19,9 +19,9 @@ jobs:
           cat > at40-output/brief.md <<'EOF'
           # AT-40 — P4/P3 Social Rebuild Execution Packet
 
-          Status: EXECUTOR_STARTED
-          Canonical source: CarIndex Brand System V1.5 Reviewed/Amended PDF + matching PPTX.
-          Additional input: CarIndex V1.5 Real Content Stress Test.
+          Status: PACKET_CREATED — this workflow does not render media or start a creative worker
+          Canonical source: CarIndex Brand V2 social agent skill v0.7 / Brand v2.0-draft.10.
+          Required skill: Drive folder 1CatHPXah60JBNVMPT2yGqc8WE28lg0vQ, file 01-skill-prompt.md (1KyTk9htGMrtdQwGaRumZUa4kqEVk65zX). Use packaged fonts, logo, tokens and references, not V1.5 manuals.
           Negative reference: prior rejected social package only; do not reproduce its visual/copy structure.
 
           Required production outputs:
@@ -35,12 +35,14 @@ jobs:
           - Internal draft/research only; no publishing or paid media.
           - Use only P2-verified factual claims; unknown remains unknown.
           - Must feel materially distinct, not a repeated AI template.
-          - Brand V1.5 remains canonical until successor is explicitly accepted.
+          - Brand V2 v2.0-draft.10 is canonical. Apply F1-F6, exact-market car/trim, rights, Arabic copy, factual provenance, export safe zones and independent QA from 01-skill-prompt.md.
+          - This GitHub run produces an execution packet only. No actual carousel/Reel, creative worker heartbeat, acceptance or publishing is implied.
+          - Do not dispatch stale AT-40 work until the owner verifies the Brand V2 packet; rights-cleared imagery, Arabic narration and music remain separate media gates.
 
           Handoff: ChatGPT Work creative/research factory -> P3 brand review -> P4/G1.
           EOF
           cat > at40-output/executor.json <<EOF
-          {"task_id":"AT-40","executor":"github-actions-bounded-fallback","run_id":"${GITHUB_RUN_ID}","job":"social-rebuild","branch":"${GITHUB_REF_NAME}","commit":"${GITHUB_SHA}","started_at":"$(date -u +%FT%TZ)","state":"EXECUTOR_STARTED","acceptance":"PENDING_P3_REVIEW"}
+          {"task_id":"AT-40","executor":"github-actions-bounded-fallback","run_id":"${GITHUB_RUN_ID}","job":"social-rebuild","branch":"${GITHUB_REF_NAME}","commit":"${GITHUB_SHA}","started_at":"$(date -u +%FT%TZ)","state":"PACKET_CREATED","acceptance":"PENDING_P3_REVIEW"}
           EOF
       - name: Upload executor evidence
         uses: actions/upload-artifact@v4
