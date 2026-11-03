@@ -36,6 +36,9 @@ const ARN = {}; for (const f of ['u11_models.csv', 'arabic_names.csv']) { const 
     if (id && ar && /[\u0600-\u06FF]/.test(ar) && st === 'ACCEPT') ARN[id] = ar; } }
 const VERSION = process.env.CI_VERSION || 'U12C2-2026-10-14';
 const OFFICIAL_LISTS = process.env.CI_OFFICIAL_LISTS !== '0';
+// P2-accepted price is canonical (same rule as P5 compare/detail): when P2 accepted priced versions for a model, those versions
+// replace every U11/S0 version. Reversible: CI_P2_PRICE_CANONICAL=0 restores the label-match-only merge.
+const P2_PRICE_CANONICAL = process.env.CI_P2_PRICE_CANONICAL !== '0';
 // CEO decisions 2026-10-21 (each reversible with =0): use P2 held market prices for cars with no accepted price;
 // recommend cars without a size class; recommend coupes and convertibles like any passenger car
 const MARKET_PRICES = process.env.CI_MARKET_PRICES !== '0', NO_SIZE_HOLD = process.env.CI_NO_SIZE_HOLD !== '0', COUPES = process.env.CI_COUPES !== '0', VANS = process.env.CI_VANS !== '0';
@@ -43,6 +46,8 @@ const MARKET_PRICES = process.env.CI_MARKET_PRICES !== '0', NO_SIZE_HOLD = proce
 const OVR = JSON.parse(fs.readFileSync(path.join(ROOT, 'tools/ceo_price_overrides.json'), 'utf8'));
 // CEO model-fact decisions (tools/ceo_fact_decisions.json): powertrain where P2 has none; versions without a powertrain inherit it
 const FACTS = JSON.parse(fs.readFileSync(path.join(ROOT, 'tools/ceo_fact_decisions.json'), 'utf8'));
+// P1 price holds (tools/p1_price_holds.json): carried prices withheld (no current price) pending a P2 identity/price decision
+const HOLDS = JSON.parse(fs.readFileSync(path.join(ROOT, 'tools/p1_price_holds.json'), 'utf8')).hold;
 // P2 market price rows held for review (registry u11_prices.csv, status REWORK): single site or sites disagree
 const MKT = {}; { const fp = path.join(p2dir, 'u11_prices.csv'); if (fs.existsSync(fp)) { const [h, ...rows] = parseCsv(fs.readFileSync(fp, 'utf8')); const ix = k => h.indexOf(k);
   for (const v of rows) { if (v[ix('status')] !== 'REWORK' || !(+v[ix('price_egp')] > 0)) continue; (MKT[v[ix('p1_id')]] = MKT[v[ix('p1_id')]] || []).push({ label: v[ix('trim_label')].trim(), min: +v[ix('price_egp')], year: +v[ix('model_year')] || null, date: v[ix('observed_at')] || null }); } } } // reversible: CI_OFFICIAL_LISTS=0 restores the RC2 merge behaviour
@@ -55,7 +60,7 @@ const BODY = { suv: 'suv', sedan: 'sedan', hatchback: 'hatch', hatch: 'hatch', m
 const PT = p => (p === 'phev' || p === 'reev' ? { pt: 'hybrid', plugin: true } : p ? { pt: p, plugin: false } : { pt: null, plugin: false });
 const nl = s => String(s || '').toLowerCase().replace(/\b(a\/t|m\/t|cvt|dct|at|mt)\b/g, ' ').replace(/\d\.\d\s*l?\b/g, ' ').replace(/[^a-z0-9]/g, '');
 const brandOf = {}; U11.models.forEach(m => { if (!brandOf[m.brand_id]) brandOf[m.brand_id] = m; });
-const log = { ceo_facts: [], confirmed_cohorts: [], market_prices: [], off_sale: [], powertrains: [], official_lists: [], arabic_names: [], unknown_price: [], identities: 0, splits_moved: [], prices_updated: 0, versions_added: 0, seats: 0, awd: [], in_universe: [], held_no_size_class: [], excluded: {} };
+const log = { ceo_facts: [], confirmed_cohorts: [], market_prices: [], off_sale: [], powertrains: [], official_lists: [], arabic_names: [], unknown_price: [], identities: 0, splits_moved: [], p2_price_canonical: [], p2_price_from: [], p1_price_holds: [], prices_updated: 0, versions_added: 0, seats: 0, awd: [], in_universe: [], held_no_size_class: [], excluded: {} };
 const out = (id, reason) => { (log.excluded[reason] = log.excluded[reason] || []).push(id); };
 
 // ---- identities ----
@@ -93,14 +98,22 @@ for (const r of recs) {
   // prices
   const previousTrims = JSON.parse(JSON.stringify(m.trims));
   const acc = (a.accepted && a.accepted.price && a.accepted.price.trims) || [];
+  const accepted = new Set();
   for (const t of acc) {
     if (!(t.price_egp > 0)) continue;
-    const hit = m.trims.find(x => nl(x.label) && nl(x.label) === nl(t.label));
+    const hit = m.trims.find(x => (!P2_PRICE_CANONICAL || !accepted.has(x)) && nl(x.label) && nl(x.label) === nl(t.label));
     const date = t.effective_date || t.as_of || null, official = t.tier === 'A';
-    if (hit) { if (hit.min !== t.price_egp || hit.year !== t.model_year) log.prices_updated++; Object.assign(hit, { min: t.price_egp, year: t.model_year || hit.year, date, official }); }
+    if (hit) { if (hit.min !== t.price_egp || hit.year !== t.model_year) log.prices_updated++; Object.assign(hit, { label: P2_PRICE_CANONICAL ? t.label.trim() : hit.label, min: t.price_egp, year: P2_PRICE_CANONICAL ? (t.model_year ?? null) : (t.model_year || hit.year), date, official }); accepted.add(hit); }
     else { const src = apt ? a.accepted.powertrains : a.powertrains; // the corrected list when P2 accepted one
       const single = (m.powertrains || []).length === 1 ? PT(src && src.length === 1 ? src[0] : m.powertrains[0]) : { pt: null, plugin: false };
-      m.trims.push({ label: t.label.trim(), min: t.price_egp, year: t.model_year || null, official, date, pt: single.pt, plugin: single.plugin }); log.versions_added++; }
+      const nt = { label: t.label.trim(), min: t.price_egp, year: t.model_year || null, official, date, pt: single.pt, plugin: single.plugin };
+      m.trims.push(nt); accepted.add(nt); log.versions_added++; }
+  }
+  if (P2_PRICE_CANONICAL && accepted.size) {
+    const dropped = m.trims.filter(x => !accepted.has(x));
+    if (dropped.length) log.p2_price_canonical.push({ id: m.id, kept: [...accepted].map(t => `${t.label}=${t.min}${t.year ? ' MY' + t.year : ''}`),
+      superseded: dropped.map(x => `${x.label}=${x.min}${x.year ? ' MY' + x.year : ''}${x.date ? ' @' + x.date : ''}`) });
+    m.trims = m.trims.filter(x => accepted.has(x));
   }
   // an accepted P2 price observed in the market is current-sale evidence (e.g. a distributor list with no model year stated)
   { const seen = acc.filter(t => t.price_egp > 0).map(t => t.as_of || t.effective_date || '').sort().pop(); if (seen) m.accepted_seen = seen; }
@@ -126,6 +139,21 @@ for (const r of recs) {
     m.confirmed_cohort = true;
     log.confirmed_cohorts.push({ id: m.id, release_id: confirmed.release_id, accepted_price_ids: acc.map(t => t.price_id),
       model_from_only: !acc.length, superseded: previous.map(t => ({ label: t.label, year: t.year, price: t.min })) });
+  }
+  if (HOLDS[m.id] && !acc.some(t => t.price_egp > 0)) { log.p1_price_holds.push({ id: m.id, withheld: m.trims.map(t => `${t.label}=${t.min}`), reason: HOLDS[m.id] }); m.trims = []; }
+  // P2 accepted only a model-level starting price (no version rows): carried versions priced below it are contradicted by it
+  // and dropped; when nothing priced remains, the accepted starting price becomes one 'Unspecified trim' version flagged
+  // price_from_only (official only when P2's tier is A). Never invents a version name or a model year.
+  const pfm = a.accepted && a.accepted.price;
+  if (P2_PRICE_CANONICAL && pfm && pfm.price_from > 0 && !acc.some(t => t.price_egp > 0)) {
+    const below = m.trims.filter(t => t.min > 0 && t.min < pfm.price_from);
+    if (below.length) m.trims = m.trims.filter(t => !below.includes(t));
+    const added = !m.trims.some(t => t.min > 0);
+    if (added) { const single = (m.powertrains || []).length === 1 ? m.powertrains[0] : null;
+      m.trims = [{ label: 'Unspecified trim', min: pfm.price_from, year: pfm.model_year ?? null, official: pfm.tier === 'A', date: pfm.effective_date || pfm.as_of || null,
+        pt: single, plugin: false, price_from_only: true }]; }
+    if (below.length || added) log.p2_price_from.push({ id: m.id, price_from: pfm.price_from, tier: pfm.tier, as_of: pfm.as_of,
+      superseded: below.map(x => `${x.label}=${x.min}${x.year ? ' MY' + x.year : ''}${x.date ? ' @' + x.date : ''}`), from_only_version: added });
   }
   // Official dated price list (P2 Tier A, SOURCE_STATED effective date, model year not stated, e.g. Mercedes-Benz Egypt
   // 24.09.2026 / Mansour-MG 15.10.2026): newer than every version the model already carries -> it IS the current version set.
@@ -172,7 +200,7 @@ for (const m of models) {
   let why = null;
   if (m.off_sale) { m.u = false; log.off_sale.push(m.id); out(m.id, 'p2_discontinued'); continue; }
   if (!['suv', 'sedan', 'hatch', 'mpv', ...(COUPES ? ['coupe', 'convertible'] : []), ...(VANS ? ['van'] : [])].includes(m.body)) why = m.body ? `body_not_passenger_car:${m.body}` : 'no_body';
-  else if (!E.currentTrims(m).length && !m.confirmed_cohort && MARKET_PRICES && (MKT[m.id] || []).length && !OVR.remove_market_price[m.id]) {
+  else if (!E.currentTrims(m).length && !m.confirmed_cohort && MARKET_PRICES && (MKT[m.id] || []).length && !OVR.remove_market_price[m.id] && !HOLDS[m.id]) {
     // one version per (model year, label): the latest observation wins; on a tie the higher price (safer for budgets)
     const best = {}; for (const r of MKT[m.id]) { const k = `${r.year}|${nl(r.label) || r.label}`, o = best[k];
       if (!o || (r.date || '') > (o.date || '') || ((r.date || '') === (o.date || '') && r.min > o.min)) best[k] = r; }
@@ -213,7 +241,7 @@ const manifest = {
   base: { dataset_id: base.id, content_sha256: base.sha256 },
   p2_input: { commit: p2commit, release_id: P2.release_id, files: Object.fromEntries(['catalogue-serving.release.json', 'market_universe.json', 'registration_models.csv', 'u11_models.csv', 'arabic_names.csv', 'u11_prices.csv'].filter(f => fs.existsSync(path.join(p2dir, f))).map(f => [f, sha(rd(f))])) },
   registry: { snapshot_id: null, registration_months: U.meta.registration_months, last12_window: U.meta.last12_window, note: 'registrations: sale evidence and size class source only; their absence never excludes' },
-  changes: { confirmed_cohorts: log.confirmed_cohorts, policy: { market_prices: MARKET_PRICES, no_size_hold: NO_SIZE_HOLD, coupes_convertibles: COUPES, vans: VANS, decided: 'CEO 2026-10-21', price_overrides: OVR }, market_prices: log.market_prices, off_sale: log.off_sale, powertrains: log.powertrains, official_lists: log.official_lists, arabic_names_added: log.arabic_names, splits_moved: log.splits_moved, prices_updated: log.prices_updated, versions_added: log.versions_added, seats_changed: log.seats, awd: log.awd,
+  changes: { confirmed_cohorts: log.confirmed_cohorts, p2_price_canonical: log.p2_price_canonical, p2_price_from: log.p2_price_from, p1_price_holds: log.p1_price_holds, policy: { market_prices: MARKET_PRICES, no_size_hold: NO_SIZE_HOLD, coupes_convertibles: COUPES, vans: VANS, decided: 'CEO 2026-10-21', price_overrides: OVR }, market_prices: log.market_prices, off_sale: log.off_sale, powertrains: log.powertrains, official_lists: log.official_lists, arabic_names_added: log.arabic_names, splits_moved: log.splits_moved, prices_updated: log.prices_updated, versions_added: log.versions_added, seats_changed: log.seats, awd: log.awd,
     unknown_price: log.unknown_price, held_no_size_class: log.held_no_size_class, excluded: log.excluded },
 };
 fs.writeFileSync(path.join(dir, 'manifest.json'), JSON.stringify(manifest, null, 1) + '\n');
