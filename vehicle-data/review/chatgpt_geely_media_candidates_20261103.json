@@ -33,7 +33,14 @@
       "stage_status": "NEEDS_P2_QA",
       "accepted": false,
       "proposed_destination_after_acceptance": "vehicle-data/media/models/geely-ex2.webp",
-      "notes": "Green EX2 driving/parked beside city shops; vehicle modest portion of frame, less ideal for clean card"
+      "notes": "Green EX2 driving/parked beside city shops; vehicle modest portion of frame, less ideal for clean card",
+      "existing_drive_asset": {
+        "url": "https://drive.google.com/file/d/1f9XEHEaUOuJupCsJ_4teQfO3txTI8u8h/view?usp=drivesdk",
+        "container_folder": "https://drive.google.com/drive/folders/1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "match_basis": "Existing filename equals first 20 hex characters of verified downloaded source SHA256; Drive bytes not independently hashed",
+        "reuse_without_reupload": true
+      },
+      "duplicate_upload_prohibited": true
     },
     {
       "candidate_id": "CI-GEELY-1103-02",
@@ -54,7 +61,9 @@
       "stage_status": "NEEDS_P2_QA",
       "accepted": false,
       "proposed_destination_after_acceptance": "vehicle-data/media/models/geely-ex2.webp",
-      "notes": "Moon White EX2 isolated whole-car side view on dark background; strong candidate for card if OEM visual suitability accepted"
+      "notes": "Moon White EX2 isolated whole-car side view on dark background; strong candidate for card if OEM visual suitability accepted",
+      "existing_drive_asset": null,
+      "duplicate_upload_prohibited": false
     },
     {
       "candidate_id": "CI-GEELY-1103-03",
@@ -75,7 +84,14 @@
       "stage_status": "NEEDS_P2_QA",
       "accepted": false,
       "proposed_destination_after_acceptance": "vehicle-data/media/models/geely-ex2/01.webp",
-      "notes": "EX2 rear seats with person and dog; lifestyle, limited specification value"
+      "notes": "EX2 rear seats with person and dog; lifestyle, limited specification value",
+      "existing_drive_asset": {
+        "url": "https://drive.google.com/file/d/1lGQ0scNuCGMb7cUxc9E0a5lYlKbmMDe8/view?usp=drivesdk",
+        "container_folder": "https://drive.google.com/drive/folders/1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "match_basis": "Existing filename equals first 20 hex characters of verified downloaded source SHA256; Drive bytes not independently hashed",
+        "reuse_without_reupload": true
+      },
+      "duplicate_upload_prohibited": true
     },
     {
       "candidate_id": "CI-GEELY-1103-04",
@@ -96,7 +112,14 @@
       "stage_status": "NEEDS_P2_QA",
       "accepted": false,
       "proposed_destination_after_acceptance": "vehicle-data/media/models/geely-ex5.webp",
-      "notes": "Dark grey EX5 whole car at front 3/4 on roadway, strong hero candidate"
+      "notes": "Dark grey EX5 whole car at front 3/4 on roadway, strong hero candidate",
+      "existing_drive_asset": {
+        "url": "https://drive.google.com/file/d/1uWsHWqnftX_P6sRPFa6N3DJKpKrz1w5z/view?usp=drivesdk",
+        "container_folder": "https://drive.google.com/drive/folders/1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "match_basis": "Existing filename equals first 20 hex characters of verified downloaded source SHA256; Drive bytes not independently hashed",
+        "reuse_without_reupload": true
+      },
+      "duplicate_upload_prohibited": true
     },
     {
       "candidate_id": "CI-GEELY-1103-05",
@@ -117,7 +140,9 @@
       "stage_status": "NEEDS_P2_QA",
       "accepted": false,
       "proposed_destination_after_acceptance": "vehicle-data/media/models/geely-ex5/01.webp",
-      "notes": "Snowy White EX5 isolated side profile; distinct angle"
+      "notes": "Snowy White EX5 isolated side profile; distinct angle",
+      "existing_drive_asset": null,
+      "duplicate_upload_prohibited": false
     },
     {
       "candidate_id": "CI-GEELY-1103-06",
@@ -138,7 +163,21 @@
       "stage_status": "NEEDS_P2_QA",
       "accepted": false,
       "proposed_destination_after_acceptance": "vehicle-data/media/models/geely-ex5/02.webp",
-      "notes": "EX5 front cabin dashboard/interior; woman appears beside driver's opening"
+      "notes": "EX5 front cabin dashboard/interior; woman appears beside driver's opening",
+      "existing_drive_asset": {
+        "url": "https://drive.google.com/file/d/1-XK2blF3uIBdWBQRWSplptGLiRllmUav/view?usp=drivesdk",
+        "container_folder": "https://drive.google.com/drive/folders/1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "match_basis": "Existing filename equals first 20 hex characters of verified downloaded source SHA256; Drive bytes not independently hashed",
+        "reuse_without_reupload": true
+      },
+      "duplicate_upload_prohibited": true
     }
-  ]
+  ],
+  "drive_asset_reconciliation": {
+    "checked_at": "2026-11-03",
+    "existing_folder": "https://drive.google.com/drive/folders/1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+    "exact_hash_prefixed_filename_matches": 4,
+    "unseen_in_this_folder": 2,
+    "action": "Reuse existing individual Drive assets. No new zip or duplicate uploads. P2 to verify file bytes/rights and promote to canonical model folder only on acceptance."
+  }
 }
