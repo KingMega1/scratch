@@ -1,0 +1,73 @@
+{
+  "batch_id": "P2-CHATGPT-MEDIA-20261103-2200",
+  "created_at": "2026-11-03T22:00:00+02:00",
+  "baseline_commit": "27776970d47f38ad29e60794cc8cc0db74dd1229",
+  "authority": "support-only; Claude P2 must QA and accept",
+  "source_page": "https://hyundai-egypt.net/models/tucson/",
+  "source_type": "official Egyptian importer Hyundai GB Auto model page",
+  "model_id": "m_000002",
+  "p1_id": "hyundai/tucson",
+  "market": "Egypt importer page identifies Tucson and N Line as sold in Egypt",
+  "year": "not independently confirmed from image; URL upload path 2024/09 is not model year",
+  "trim": "not independently confirmed",
+  "existing_gap": "u11_coverage 2026-11-02 hero NONE, 2 gallery images; media_accepted includes Tucson_Exterior.png ACCEPT_LOWRES and two accepted galleries Highlight_interior.png and Tucson_Highlight_Main.png; do not duplicate or overwrite",
+  "rights": "Official importer website; public viewing verified, redistribution or serving rights not independently established; seek P2 rights clearance before promotion",
+  "capture_date": "2026-11-03",
+  "candidates": [
+    {
+      "kind": "hero_candidate",
+      "view_angle": "exterior_unspecified",
+      "direct_image_url": "https://hyundai-egypt.net/wp-content/uploads/2024/09/Highlight_Tucson.png",
+      "source_page": "https://hyundai-egypt.net/models/tucson/",
+      "discovery_method": "direct image URL extracted from importer model page by web fetch; not downloaded or visually checked",
+      "dimensions": null,
+      "sha256": null,
+      "byte_size": null,
+      "download_verified": false,
+      "visual_model_match_verified": false,
+      "status": "NEEDS_P2_QA",
+      "notes": "Confirm actual image subject and model generation; confirm not duplicate of accepted assets and determine whether suitable for website. No acceptance or publishing."
+    },
+    {
+      "kind": "gallery_candidate",
+      "view_angle": "interior_seats",
+      "direct_image_url": "https://hyundai-egypt.net/wp-content/uploads/2024/09/Tucson_Design_Seats.png",
+      "source_page": "https://hyundai-egypt.net/models/tucson/",
+      "discovery_method": "direct image URL extracted from importer model page by web fetch; not downloaded or visually checked",
+      "dimensions": null,
+      "sha256": null,
+      "byte_size": null,
+      "download_verified": false,
+      "visual_model_match_verified": false,
+      "status": "NEEDS_P2_QA",
+      "notes": "Confirm actual image subject and model generation; confirm not duplicate of accepted assets and determine whether suitable for website. No acceptance or publishing."
+    },
+    {
+      "kind": "gallery_candidate",
+      "view_angle": "interior_cabin",
+      "direct_image_url": "https://hyundai-egypt.net/wp-content/uploads/2024/09/Tucson_Design_Interior.png",
+      "source_page": "https://hyundai-egypt.net/models/tucson/",
+      "discovery_method": "direct image URL extracted from importer model page by web fetch; not downloaded or visually checked",
+      "dimensions": null,
+      "sha256": null,
+      "byte_size": null,
+      "download_verified": false,
+      "visual_model_match_verified": false,
+      "status": "NEEDS_P2_QA",
+      "notes": "Confirm actual image subject and model generation; confirm not duplicate of accepted assets and determine whether suitable for website. No acceptance or publishing."
+    }
+  ],
+  "other_models_screened": [
+    {
+      "p1_id": "skoda/kodiaq",
+      "finding": "Egypt official design page text available, no direct image links extracted; no candidate staged"
+    },
+    {
+      "p1_id": "volkswagen/tiguan",
+      "finding": "Global Volkswagen press archive contains many images, but Egypt variant/model-year match and image license not verified; no candidate staged"
+    }
+  ],
+  "acceptance_count": 0,
+  "p5_changes": 0,
+  "canonical_registry_changes": 0
+}
