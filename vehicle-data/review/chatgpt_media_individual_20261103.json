@@ -1,0 +1,1208 @@
+{
+  "task_id": "AT-39 / AT-51",
+  "batch_id": "P2-MEDIA-INDIVIDUAL-20261103",
+  "state": "VERIFYING",
+  "from": "ChatGPT P2 media support",
+  "to": "Existing Claude P2 owner",
+  "authority": "Owner-review staging only; no canonical or P1/P5 changes",
+  "baseline_commit": "27776970d47f38ad29e60794cc8cc0db74dd1229",
+  "support_parent": "e046e2a6537cb91732fe4b3413839f1d6ebfff31",
+  "branch": "chatgpt/p2-media-support-20261103",
+  "drive_folder": "https://drive.google.com/drive/folders/1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+  "storage_convention": "Existing asset folder uses SHA256-prefix filenames. Original filenames, URL and model IDs retained per file. No ZIP or overwrite.",
+  "accepted_media_registry_git_blob": "d02603de38c10df0c5edff73170fc82affd4f9b4",
+  "accepted_metadata_git_blob": "b1de0b5cdcfa01fb645e43616e117f7998ab4a3b",
+  "rights_policy": "vehicle-data/config/media_policy.json; CEO-MEDIA-2026-10-13; official imagery approved, P2 exact applicability and acceptance still required",
+  "counts": {
+    "individual_files": 20,
+    "geely_files": 10,
+    "geely_photos_for_review": 8,
+    "geely_oem_render_policy_holds": 2,
+    "tucson_files": 4,
+    "tucson_rhd_hold": 1,
+    "reused_logo_masters": 6,
+    "new_logo_discoveries": 0,
+    "new_geely_source_files": 10,
+    "pending_p2": 17,
+    "explicit_holds": 3,
+    "accepted": 0,
+    "accepted_files_replaced": 0,
+    "distinct_logo_brands": 5
+  },
+  "separate_identities": [
+    {
+      "id": "m_000134",
+      "p1_id": "geely/ex2",
+      "market_year": 2027,
+      "trims": [
+        "Pro",
+        "Max"
+      ],
+      "powertrain": "BEV"
+    },
+    {
+      "id": "m_000135",
+      "p1_id": "geely/ex5",
+      "market_year": 2027,
+      "trims": [
+        "Pro",
+        "Max",
+        "Max Plus"
+      ],
+      "powertrain": "BEV"
+    },
+    {
+      "id": "m_000373",
+      "p1_id": "geely/ex5-em-i",
+      "market_year": 2027,
+      "trims": [
+        "Pro",
+        "Max"
+      ],
+      "powertrain": "PHEV",
+      "action": "Reuse existing accepted HQ hero and three galleries, untouched"
+    },
+    {
+      "id": "m_000419",
+      "p1_id": "geely/ex5-em-r",
+      "market_year": 2027,
+      "trims": [
+        "Pro",
+        "Max",
+        "Max Plus"
+      ],
+      "powertrain": "REEV as accepted importer list",
+      "action": "No image inheritance from EX5 or EX5 EM-i; remains separate unresolved media gap"
+    }
+  ],
+  "blockers": [
+    {
+      "owner": "proton",
+      "source_url": "https://proton-egypt.com/wp-content/uploads/2025/09/proton-logo.png",
+      "status": "HOLD",
+      "error": "HTTP403 on original official URL retry; no substitute created"
+    }
+  ],
+  "checkpoints": {
+    "timezone": "Africa/Cairo",
+    "morning": "08:00",
+    "afternoon": "16:00",
+    "protocol": "Existing task checkpoint instructions preserved; consolidated existing Control Tower handoff; no hourly Claude invocation; no claim of Claude acknowledgment"
+  },
+  "assets": [
+    {
+      "owner": "geely/ex2",
+      "model_id": "m_000134",
+      "source_page": "https://geelyeg.com/models/ex2",
+      "source_url": "https://geelyeg.com/assets/ex2-model-page/hero.webp",
+      "kind": "image",
+      "sha256": "f693e92e20d71f120dabb3d03fa2fb3dccb08cf28908c770816571230b277c05",
+      "bytes": 237466,
+      "width": 1920,
+      "height": 1201,
+      "format": "WEBP",
+      "original_filename": "hero.webp",
+      "retrieved_at": "2026-11-03T20:13:44.747845+00:00",
+      "accepted_duplicate": false,
+      "status": "NEEDS_P2_QA",
+      "qc": {
+        "byte_integrity": "PASS",
+        "decode": "PASS",
+        "visual_review": "PASS exact model or marque at contact-sheet inspection",
+        "market": "Egypt official source",
+        "trim_applicability": "unassigned; P2 must confirm depicted equipment against accepted Egypt trims",
+        "model_year": null,
+        "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+        "promotion": "PENDING_P2"
+      },
+      "market_variants": {
+        "canonical_model_id": "m_000134",
+        "powertrain": "BEV",
+        "accepted_market_model_year": "2027",
+        "accepted_market_trims": [
+          "Pro",
+          "Max"
+        ],
+        "image_trim": null
+      },
+      "github_path": "vehicle-data/review/media-support-20261103/geely-ex2/f693e92e20d71f120dab.webp",
+      "drive": {
+        "accepted_input": "file_uri",
+        "success": true,
+        "id": "1f9XEHEaUOuJupCsJ_4teQfO3txTI8u8h",
+        "title": "f693e92e20d71f120dab.webp",
+        "file_name": "f693e92e20d71f120dab.webp",
+        "mime_type": "image/webp",
+        "url": "https://drive.google.com/file/d/1f9XEHEaUOuJupCsJ_4teQfO3txTI8u8h/view?usp=drivesdk",
+        "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "structuredContent": {
+          "accepted_input": "file_uri",
+          "success": true,
+          "id": "1f9XEHEaUOuJupCsJ_4teQfO3txTI8u8h",
+          "title": "f693e92e20d71f120dab.webp",
+          "file_name": "f693e92e20d71f120dab.webp",
+          "mime_type": "image/webp",
+          "url": "https://drive.google.com/file/d/1f9XEHEaUOuJupCsJ_4teQfO3txTI8u8h/view?usp=drivesdk",
+          "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T"
+        }
+      },
+      "drive_verified": true,
+      "github_blob_sha": "5b9145784eb487c731151bab177e3c86e7c302a7"
+    },
+    {
+      "owner": "geely/ex2",
+      "model_id": "m_000134",
+      "source_page": "https://geelyeg.com/models/ex2",
+      "source_url": "https://geelyeg.com/assets/ex2-model-page/lifestyle-media/20250066.webp",
+      "kind": "image",
+      "sha256": "6d3d3c1e7edf9828c2d200acf6884c9dc03ed3829f0337007d91211f2171ad53",
+      "bytes": 77810,
+      "width": 1200,
+      "height": 750,
+      "format": "WEBP",
+      "original_filename": "20250066.webp",
+      "retrieved_at": "2026-11-03T20:13:44.766459+00:00",
+      "accepted_duplicate": false,
+      "status": "NEEDS_P2_QA",
+      "qc": {
+        "byte_integrity": "PASS",
+        "decode": "PASS",
+        "visual_review": "PASS exact model or marque at contact-sheet inspection",
+        "market": "Egypt official source",
+        "trim_applicability": "unassigned; P2 must confirm depicted equipment against accepted Egypt trims",
+        "model_year": null,
+        "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+        "promotion": "PENDING_P2"
+      },
+      "market_variants": {
+        "canonical_model_id": "m_000134",
+        "powertrain": "BEV",
+        "accepted_market_model_year": "2027",
+        "accepted_market_trims": [
+          "Pro",
+          "Max"
+        ],
+        "image_trim": null
+      },
+      "github_path": "vehicle-data/review/media-support-20261103/geely-ex2/6d3d3c1e7edf9828c2d2.webp",
+      "drive": {
+        "accepted_input": "file_uri",
+        "success": true,
+        "id": "1IOxymCl7oDyTk2B6SgOxW0IrlEgztF-9",
+        "title": "6d3d3c1e7edf9828c2d2.webp",
+        "file_name": "6d3d3c1e7edf9828c2d2.webp",
+        "mime_type": "image/webp",
+        "url": "https://drive.google.com/file/d/1IOxymCl7oDyTk2B6SgOxW0IrlEgztF-9/view?usp=drivesdk",
+        "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "structuredContent": {
+          "accepted_input": "file_uri",
+          "success": true,
+          "id": "1IOxymCl7oDyTk2B6SgOxW0IrlEgztF-9",
+          "title": "6d3d3c1e7edf9828c2d2.webp",
+          "file_name": "6d3d3c1e7edf9828c2d2.webp",
+          "mime_type": "image/webp",
+          "url": "https://drive.google.com/file/d/1IOxymCl7oDyTk2B6SgOxW0IrlEgztF-9/view?usp=drivesdk",
+          "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T"
+        }
+      },
+      "drive_verified": true,
+      "github_blob_sha": "0c1e7727ccad04b7069e6f4ec158495bf1d53b23"
+    },
+    {
+      "owner": "geely/ex2",
+      "model_id": "m_000134",
+      "source_page": "https://geelyeg.com/models/ex2",
+      "source_url": "https://geelyeg.com/assets/ex2-model-page/lifestyle-media/20250499.webp",
+      "kind": "image",
+      "sha256": "331dd99b9f1a69a676bb812167d47b508156d4e8458bce613e9c7fbd11d764ca",
+      "bytes": 73288,
+      "width": 1200,
+      "height": 751,
+      "format": "WEBP",
+      "original_filename": "20250499.webp",
+      "retrieved_at": "2026-11-03T20:13:44.742667+00:00",
+      "accepted_duplicate": false,
+      "status": "NEEDS_P2_QA",
+      "qc": {
+        "byte_integrity": "PASS",
+        "decode": "PASS",
+        "visual_review": "PASS exact model or marque at contact-sheet inspection",
+        "market": "Egypt official source",
+        "trim_applicability": "unassigned; P2 must confirm depicted equipment against accepted Egypt trims",
+        "model_year": null,
+        "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+        "promotion": "PENDING_P2"
+      },
+      "market_variants": {
+        "canonical_model_id": "m_000134",
+        "powertrain": "BEV",
+        "accepted_market_model_year": "2027",
+        "accepted_market_trims": [
+          "Pro",
+          "Max"
+        ],
+        "image_trim": null
+      },
+      "github_path": "vehicle-data/review/media-support-20261103/geely-ex2/331dd99b9f1a69a676bb.webp",
+      "drive": {
+        "accepted_input": "file_uri",
+        "success": true,
+        "id": "1lGQ0scNuCGMb7cUxc9E0a5lYlKbmMDe8",
+        "title": "331dd99b9f1a69a676bb.webp",
+        "file_name": "331dd99b9f1a69a676bb.webp",
+        "mime_type": "image/webp",
+        "url": "https://drive.google.com/file/d/1lGQ0scNuCGMb7cUxc9E0a5lYlKbmMDe8/view?usp=drivesdk",
+        "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "structuredContent": {
+          "accepted_input": "file_uri",
+          "success": true,
+          "id": "1lGQ0scNuCGMb7cUxc9E0a5lYlKbmMDe8",
+          "title": "331dd99b9f1a69a676bb.webp",
+          "file_name": "331dd99b9f1a69a676bb.webp",
+          "mime_type": "image/webp",
+          "url": "https://drive.google.com/file/d/1lGQ0scNuCGMb7cUxc9E0a5lYlKbmMDe8/view?usp=drivesdk",
+          "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T"
+        }
+      },
+      "drive_verified": true,
+      "github_blob_sha": "5859af722247f190460ed5028f2a3fba3862fe59"
+    },
+    {
+      "owner": "geely/ex2",
+      "model_id": "m_000134",
+      "source_page": "https://geelyeg.com/models/ex2",
+      "source_url": "https://geelyeg.com/assets/ex2-model-page/lifestyle-media/20250932.webp",
+      "kind": "image",
+      "sha256": "f5e70f0eb1edc6ba72b833b5e6d23918742c1e263c60f7c38e943f718ceb0871",
+      "bytes": 109666,
+      "width": 1200,
+      "height": 676,
+      "format": "WEBP",
+      "original_filename": "20250932.webp",
+      "retrieved_at": "2026-11-03T20:13:44.741878+00:00",
+      "accepted_duplicate": false,
+      "status": "NEEDS_P2_QA",
+      "qc": {
+        "byte_integrity": "PASS",
+        "decode": "PASS",
+        "visual_review": "PASS exact model or marque at contact-sheet inspection",
+        "market": "Egypt official source",
+        "trim_applicability": "unassigned; P2 must confirm depicted equipment against accepted Egypt trims",
+        "model_year": null,
+        "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+        "promotion": "PENDING_P2"
+      },
+      "market_variants": {
+        "canonical_model_id": "m_000134",
+        "powertrain": "BEV",
+        "accepted_market_model_year": "2027",
+        "accepted_market_trims": [
+          "Pro",
+          "Max"
+        ],
+        "image_trim": null
+      },
+      "github_path": "vehicle-data/review/media-support-20261103/geely-ex2/f5e70f0eb1edc6ba72b8.webp",
+      "drive": {
+        "accepted_input": "file_uri",
+        "success": true,
+        "id": "1924D3lk_qJUfuWv-qD9k8aIStt3lvInR",
+        "title": "f5e70f0eb1edc6ba72b8.webp",
+        "file_name": "f5e70f0eb1edc6ba72b8.webp",
+        "mime_type": "image/webp",
+        "url": "https://drive.google.com/file/d/1924D3lk_qJUfuWv-qD9k8aIStt3lvInR/view?usp=drivesdk",
+        "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "structuredContent": {
+          "accepted_input": "file_uri",
+          "success": true,
+          "id": "1924D3lk_qJUfuWv-qD9k8aIStt3lvInR",
+          "title": "f5e70f0eb1edc6ba72b8.webp",
+          "file_name": "f5e70f0eb1edc6ba72b8.webp",
+          "mime_type": "image/webp",
+          "url": "https://drive.google.com/file/d/1924D3lk_qJUfuWv-qD9k8aIStt3lvInR/view?usp=drivesdk",
+          "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T"
+        }
+      },
+      "drive_verified": true,
+      "github_blob_sha": "9cd9bd4e5f3870a8b60df99dc7d9c0300ae8d795"
+    },
+    {
+      "owner": "geely/ex5",
+      "model_id": "m_000135",
+      "source_page": "https://geelyeg.com/models/ex5",
+      "source_url": "https://geelyeg.com/assets/ex5-model-page/optimized/ex5-hero.webp",
+      "kind": "image",
+      "sha256": "ed8698f222e5d2a7a2527de4bc26fc88abd0d238912c960fc834918a73c85c1b",
+      "bytes": 106052,
+      "width": 1671,
+      "height": 925,
+      "format": "WEBP",
+      "original_filename": "ex5-hero.webp",
+      "retrieved_at": "2026-11-03T20:13:44.750438+00:00",
+      "accepted_duplicate": false,
+      "status": "NEEDS_P2_QA",
+      "drive": {
+        "accepted_input": "file_uri",
+        "success": true,
+        "id": "1uWsHWqnftX_P6sRPFa6N3DJKpKrz1w5z",
+        "title": "ed8698f222e5d2a7a252.webp",
+        "file_name": "ed8698f222e5d2a7a252.webp",
+        "mime_type": "image/webp",
+        "url": "https://drive.google.com/file/d/1uWsHWqnftX_P6sRPFa6N3DJKpKrz1w5z/view?usp=drivesdk",
+        "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "structuredContent": {
+          "accepted_input": "file_uri",
+          "success": true,
+          "id": "1uWsHWqnftX_P6sRPFa6N3DJKpKrz1w5z",
+          "title": "ed8698f222e5d2a7a252.webp",
+          "file_name": "ed8698f222e5d2a7a252.webp",
+          "mime_type": "image/webp",
+          "url": "https://drive.google.com/file/d/1uWsHWqnftX_P6sRPFa6N3DJKpKrz1w5z/view?usp=drivesdk",
+          "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T"
+        }
+      },
+      "qc": {
+        "byte_integrity": "PASS",
+        "decode": "PASS",
+        "visual_review": "PASS exact model or marque at contact-sheet inspection",
+        "market": "Egypt official source",
+        "trim_applicability": "unassigned; P2 must confirm depicted equipment against accepted Egypt trims",
+        "model_year": null,
+        "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+        "promotion": "PENDING_P2"
+      },
+      "market_variants": {
+        "canonical_model_id": "m_000135",
+        "powertrain": "BEV",
+        "accepted_market_model_year": "2027",
+        "accepted_market_trims": [
+          "Pro",
+          "Max",
+          "Max Plus"
+        ],
+        "image_trim": null,
+        "excluded_model_ids": [
+          "m_000373",
+          "m_000419"
+        ]
+      },
+      "github_path": "vehicle-data/review/media-support-20261103/geely-ex5/ed8698f222e5d2a7a252.webp",
+      "drive_verified": true,
+      "github_blob_sha": "228dcdfcf0e5f076bd32f5a4d4768441d3607a0a"
+    },
+    {
+      "owner": "geely/ex5",
+      "model_id": "m_000135",
+      "source_page": "https://geelyeg.com/models/ex5",
+      "source_url": "https://geelyeg.com/assets/ex5-model-page/optimized/interior-1.webp",
+      "kind": "image",
+      "sha256": "7f04071e5131ec53c9c42573fbfb35c056ec67838f252072c3a575e7b00827bd",
+      "bytes": 90016,
+      "width": 1600,
+      "height": 1000,
+      "format": "WEBP",
+      "original_filename": "interior-1.webp",
+      "retrieved_at": "2026-11-03T20:13:45.146516+00:00",
+      "accepted_duplicate": false,
+      "status": "NEEDS_P2_QA",
+      "qc": {
+        "byte_integrity": "PASS",
+        "decode": "PASS",
+        "visual_review": "PASS exact model or marque at contact-sheet inspection",
+        "market": "Egypt official source",
+        "trim_applicability": "unassigned; P2 must confirm depicted equipment against accepted Egypt trims",
+        "model_year": null,
+        "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+        "promotion": "PENDING_P2"
+      },
+      "market_variants": {
+        "canonical_model_id": "m_000135",
+        "powertrain": "BEV",
+        "accepted_market_model_year": "2027",
+        "accepted_market_trims": [
+          "Pro",
+          "Max",
+          "Max Plus"
+        ],
+        "image_trim": null,
+        "excluded_model_ids": [
+          "m_000373",
+          "m_000419"
+        ]
+      },
+      "github_path": "vehicle-data/review/media-support-20261103/geely-ex5/7f04071e5131ec53c9c4.webp",
+      "drive": {
+        "accepted_input": "file_uri",
+        "success": true,
+        "id": "1-XK2blF3uIBdWBQRWSplptGLiRllmUav",
+        "title": "7f04071e5131ec53c9c4.webp",
+        "file_name": "7f04071e5131ec53c9c4.webp",
+        "mime_type": "image/webp",
+        "url": "https://drive.google.com/file/d/1-XK2blF3uIBdWBQRWSplptGLiRllmUav/view?usp=drivesdk",
+        "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "structuredContent": {
+          "accepted_input": "file_uri",
+          "success": true,
+          "id": "1-XK2blF3uIBdWBQRWSplptGLiRllmUav",
+          "title": "7f04071e5131ec53c9c4.webp",
+          "file_name": "7f04071e5131ec53c9c4.webp",
+          "mime_type": "image/webp",
+          "url": "https://drive.google.com/file/d/1-XK2blF3uIBdWBQRWSplptGLiRllmUav/view?usp=drivesdk",
+          "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T"
+        }
+      },
+      "drive_verified": true,
+      "github_blob_sha": "9ee15372ef3a28444017b268f0e7e685ed91027b"
+    },
+    {
+      "owner": "geely/ex5",
+      "model_id": "m_000135",
+      "source_page": "https://geelyeg.com/models/ex5",
+      "source_url": "https://geelyeg.com/assets/ex5-model-page/optimized/interior-2.webp",
+      "kind": "image",
+      "sha256": "c684ba751d5302043a594877fa5fb8e11276c0babd9e7168c298a17c89719bc4",
+      "bytes": 94872,
+      "width": 1600,
+      "height": 880,
+      "format": "WEBP",
+      "original_filename": "interior-2.webp",
+      "retrieved_at": "2026-11-03T20:13:45.169627+00:00",
+      "accepted_duplicate": false,
+      "status": "NEEDS_P2_QA",
+      "qc": {
+        "byte_integrity": "PASS",
+        "decode": "PASS",
+        "visual_review": "PASS exact model or marque at contact-sheet inspection",
+        "market": "Egypt official source",
+        "trim_applicability": "unassigned; P2 must confirm depicted equipment against accepted Egypt trims",
+        "model_year": null,
+        "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+        "promotion": "PENDING_P2"
+      },
+      "market_variants": {
+        "canonical_model_id": "m_000135",
+        "powertrain": "BEV",
+        "accepted_market_model_year": "2027",
+        "accepted_market_trims": [
+          "Pro",
+          "Max",
+          "Max Plus"
+        ],
+        "image_trim": null,
+        "excluded_model_ids": [
+          "m_000373",
+          "m_000419"
+        ]
+      },
+      "github_path": "vehicle-data/review/media-support-20261103/geely-ex5/c684ba751d5302043a59.webp",
+      "drive": {
+        "accepted_input": "file_uri",
+        "success": true,
+        "id": "1e28qhlvmV2xQBbbRHBGmcfZqCpfjlBFK",
+        "title": "c684ba751d5302043a59.webp",
+        "file_name": "c684ba751d5302043a59.webp",
+        "mime_type": "image/webp",
+        "url": "https://drive.google.com/file/d/1e28qhlvmV2xQBbbRHBGmcfZqCpfjlBFK/view?usp=drivesdk",
+        "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "structuredContent": {
+          "accepted_input": "file_uri",
+          "success": true,
+          "id": "1e28qhlvmV2xQBbbRHBGmcfZqCpfjlBFK",
+          "title": "c684ba751d5302043a59.webp",
+          "file_name": "c684ba751d5302043a59.webp",
+          "mime_type": "image/webp",
+          "url": "https://drive.google.com/file/d/1e28qhlvmV2xQBbbRHBGmcfZqCpfjlBFK/view?usp=drivesdk",
+          "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T"
+        }
+      },
+      "drive_verified": true,
+      "github_blob_sha": "4a719e4fa01d5ee2e3060d3245070d436fac6b16"
+    },
+    {
+      "owner": "geely/ex5",
+      "model_id": "m_000135",
+      "source_page": "https://geelyeg.com/models/ex5",
+      "source_url": "https://geelyeg.com/assets/ex5-model-page/optimized/lifestyle-ex5-6.webp",
+      "kind": "image",
+      "sha256": "b84df4cd439c180034cef213bb42a49a997e3b3cb2fd22803b8fda8dd8bbff53",
+      "bytes": 132700,
+      "width": 1600,
+      "height": 1067,
+      "format": "WEBP",
+      "original_filename": "lifestyle-ex5-6.webp",
+      "retrieved_at": "2026-11-03T20:13:45.212563+00:00",
+      "accepted_duplicate": false,
+      "status": "NEEDS_P2_QA",
+      "qc": {
+        "byte_integrity": "PASS",
+        "decode": "PASS",
+        "visual_review": "PASS exact model or marque at contact-sheet inspection",
+        "market": "Egypt official source",
+        "trim_applicability": "unassigned; P2 must confirm depicted equipment against accepted Egypt trims",
+        "model_year": null,
+        "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+        "promotion": "PENDING_P2"
+      },
+      "market_variants": {
+        "canonical_model_id": "m_000135",
+        "powertrain": "BEV",
+        "accepted_market_model_year": "2027",
+        "accepted_market_trims": [
+          "Pro",
+          "Max",
+          "Max Plus"
+        ],
+        "image_trim": null,
+        "excluded_model_ids": [
+          "m_000373",
+          "m_000419"
+        ]
+      },
+      "github_path": "vehicle-data/review/media-support-20261103/geely-ex5/b84df4cd439c180034ce.webp",
+      "drive": {
+        "accepted_input": "file_uri",
+        "success": true,
+        "id": "1XUX0Vp4eTEKzbe5qaQAkKf0VtESvcNAM",
+        "title": "b84df4cd439c180034ce.webp",
+        "file_name": "b84df4cd439c180034ce.webp",
+        "mime_type": "image/webp",
+        "url": "https://drive.google.com/file/d/1XUX0Vp4eTEKzbe5qaQAkKf0VtESvcNAM/view?usp=drivesdk",
+        "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "structuredContent": {
+          "accepted_input": "file_uri",
+          "success": true,
+          "id": "1XUX0Vp4eTEKzbe5qaQAkKf0VtESvcNAM",
+          "title": "b84df4cd439c180034ce.webp",
+          "file_name": "b84df4cd439c180034ce.webp",
+          "mime_type": "image/webp",
+          "url": "https://drive.google.com/file/d/1XUX0Vp4eTEKzbe5qaQAkKf0VtESvcNAM/view?usp=drivesdk",
+          "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T"
+        }
+      },
+      "drive_verified": true,
+      "github_blob_sha": "be8119200f0a4a827a3b35654cdab90e2bc6f771"
+    },
+    {
+      "owner": "hyundai/tucson",
+      "model_id": "m_000002",
+      "source_page": "https://hyundai-egypt.net/models/tucson/",
+      "source_url": "https://hyundai-egypt.net/wp-content/uploads/2024/09/Highlight_Tucson.png",
+      "kind": "image",
+      "sha256": "0c621e04b7eca0efedb32000b9c5bb520caa8137adf04783db1446d522e6e73f",
+      "bytes": 1037990,
+      "width": 1120,
+      "height": 600,
+      "format": "PNG",
+      "original_filename": "Highlight_Tucson.png",
+      "retrieved_at": "2026-11-03T20:13:48.379360+00:00",
+      "accepted_duplicate": false,
+      "status": "NEEDS_P2_QA",
+      "qc": {
+        "byte_integrity": "PASS",
+        "decode": "PASS",
+        "visual_review": "PASS exact model or marque at contact-sheet inspection",
+        "market": "Egypt official source",
+        "trim_applicability": "unassigned; P2 must confirm depicted equipment against accepted Egypt trims",
+        "model_year": null,
+        "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+        "promotion": "PENDING_P2"
+      },
+      "github_path": "vehicle-data/review/media-support-20261103/hyundai-tucson/0c621e04b7eca0efedb3.png",
+      "drive": {
+        "accepted_input": "file_uri",
+        "success": true,
+        "id": "1-fo3nSAgDLypEUPMZV6B1UNxPdV7D-vq",
+        "title": "0c621e04b7eca0efedb3.png",
+        "file_name": "0c621e04b7eca0efedb3.png",
+        "mime_type": "image/png",
+        "url": "https://drive.google.com/file/d/1-fo3nSAgDLypEUPMZV6B1UNxPdV7D-vq/view?usp=drivesdk",
+        "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "structuredContent": {
+          "accepted_input": "file_uri",
+          "success": true,
+          "id": "1-fo3nSAgDLypEUPMZV6B1UNxPdV7D-vq",
+          "title": "0c621e04b7eca0efedb3.png",
+          "file_name": "0c621e04b7eca0efedb3.png",
+          "mime_type": "image/png",
+          "url": "https://drive.google.com/file/d/1-fo3nSAgDLypEUPMZV6B1UNxPdV7D-vq/view?usp=drivesdk",
+          "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T"
+        }
+      },
+      "drive_verified": true,
+      "github_blob_sha": "9d1002cbaaa59f871ecdf3d0380094ccdd5d2c67"
+    },
+    {
+      "owner": "hyundai/tucson",
+      "model_id": "m_000002",
+      "source_page": "https://hyundai-egypt.net/models/tucson/",
+      "source_url": "https://hyundai-egypt.net/wp-content/uploads/2024/09/Tucson_Design_Seats.png",
+      "kind": "image",
+      "sha256": "311c5962ddb4f01bbf77ef8d48d41773802695e81569e5dc6bbef12f132e9b22",
+      "bytes": 1255176,
+      "width": 1250,
+      "height": 671,
+      "format": "PNG",
+      "original_filename": "Tucson_Design_Seats.png",
+      "retrieved_at": "2026-11-03T20:13:48.712046+00:00",
+      "accepted_duplicate": false,
+      "status": "NEEDS_P2_QA",
+      "qc": {
+        "byte_integrity": "PASS",
+        "decode": "PASS",
+        "visual_review": "PASS exact model or marque at contact-sheet inspection",
+        "market": "Egypt official source",
+        "trim_applicability": "unassigned; P2 must confirm depicted equipment against accepted Egypt trims",
+        "model_year": null,
+        "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+        "promotion": "PENDING_P2"
+      },
+      "github_path": "vehicle-data/review/media-support-20261103/hyundai-tucson/311c5962ddb4f01bbf77.png",
+      "drive": {
+        "accepted_input": "file_uri",
+        "success": true,
+        "id": "1R8Nj3TakWvrSPzQn44bOXtt02GTDxYor",
+        "title": "311c5962ddb4f01bbf77.png",
+        "file_name": "311c5962ddb4f01bbf77.png",
+        "mime_type": "image/png",
+        "url": "https://drive.google.com/file/d/1R8Nj3TakWvrSPzQn44bOXtt02GTDxYor/view?usp=drivesdk",
+        "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "structuredContent": {
+          "accepted_input": "file_uri",
+          "success": true,
+          "id": "1R8Nj3TakWvrSPzQn44bOXtt02GTDxYor",
+          "title": "311c5962ddb4f01bbf77.png",
+          "file_name": "311c5962ddb4f01bbf77.png",
+          "mime_type": "image/png",
+          "url": "https://drive.google.com/file/d/1R8Nj3TakWvrSPzQn44bOXtt02GTDxYor/view?usp=drivesdk",
+          "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T"
+        }
+      },
+      "drive_verified": true,
+      "github_blob_sha": "8c2b8419e0c14ba4c91c4a7b18c4baa1594904cf"
+    },
+    {
+      "owner": "hyundai/tucson",
+      "model_id": "m_000002",
+      "source_page": "https://hyundai-egypt.net/models/tucson/",
+      "source_url": "https://hyundai-egypt.net/wp-content/uploads/2024/09/Tucson_Hightlight_Seats.png",
+      "kind": "image",
+      "sha256": "e218d8398e3f0b736492fb9d5a6cbcc20613d04667901cac07a1f2b587730b14",
+      "bytes": 1192473,
+      "width": 1120,
+      "height": 600,
+      "format": "PNG",
+      "original_filename": "Tucson_Hightlight_Seats.png",
+      "retrieved_at": "2026-11-03T20:13:48.888684+00:00",
+      "accepted_duplicate": false,
+      "status": "NEEDS_P2_QA",
+      "qc": {
+        "byte_integrity": "PASS",
+        "decode": "PASS",
+        "visual_review": "PASS exact model or marque at contact-sheet inspection",
+        "market": "Egypt official source",
+        "trim_applicability": "unassigned; P2 must confirm depicted equipment against accepted Egypt trims",
+        "model_year": null,
+        "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+        "promotion": "PENDING_P2"
+      },
+      "github_path": "vehicle-data/review/media-support-20261103/hyundai-tucson/e218d8398e3f0b736492.png",
+      "drive": {
+        "accepted_input": "file_uri",
+        "success": true,
+        "id": "1JwhgenpeO0d9spb4F6NQzUTBUuZCUnvC",
+        "title": "e218d8398e3f0b736492.png",
+        "file_name": "e218d8398e3f0b736492.png",
+        "mime_type": "image/png",
+        "url": "https://drive.google.com/file/d/1JwhgenpeO0d9spb4F6NQzUTBUuZCUnvC/view?usp=drivesdk",
+        "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "structuredContent": {
+          "accepted_input": "file_uri",
+          "success": true,
+          "id": "1JwhgenpeO0d9spb4F6NQzUTBUuZCUnvC",
+          "title": "e218d8398e3f0b736492.png",
+          "file_name": "e218d8398e3f0b736492.png",
+          "mime_type": "image/png",
+          "url": "https://drive.google.com/file/d/1JwhgenpeO0d9spb4F6NQzUTBUuZCUnvC/view?usp=drivesdk",
+          "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T"
+        }
+      },
+      "drive_verified": true,
+      "github_blob_sha": "64095ab3696ff5be3707756699b9d6c1821a9c34"
+    },
+    {
+      "owner": "hyundai/tucson",
+      "model_id": "m_000002",
+      "source_page": "https://hyundai-egypt.net/models/tucson/",
+      "source_url": "https://hyundai-egypt.net/wp-content/uploads/2024/09/Tucson_Design_Interior.png",
+      "kind": "image",
+      "sha256": "10a8fb5d37ac95093821d6edbf6f6c11a4a4e668a0155f9eecc0135f8a27f646",
+      "bytes": 1174874,
+      "width": 1250,
+      "height": 671,
+      "format": "PNG",
+      "original_filename": "Tucson_Design_Interior.png",
+      "retrieved_at": "2026-11-03T20:13:48.977873+00:00",
+      "accepted_duplicate": false,
+      "status": "HOLD_MARKET_MISMATCH",
+      "qc": {
+        "byte_integrity": "PASS",
+        "decode": "PASS",
+        "visual_review": "Right-hand-drive cockpit visible; not valid as exact Egypt LHD cabin proof",
+        "market": "Egypt official source",
+        "trim_applicability": "unassigned; P2 must confirm depicted equipment against accepted Egypt trims",
+        "model_year": null,
+        "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+        "promotion": "PENDING_P2"
+      },
+      "github_path": "vehicle-data/review/media-support-20261103/hyundai-tucson/10a8fb5d37ac95093821.png",
+      "drive": {
+        "accepted_input": "file_uri",
+        "success": true,
+        "id": "1i3WiFwnbZY6-SZWRLDgoUAqN7n0DSuTW",
+        "title": "10a8fb5d37ac95093821.png",
+        "file_name": "10a8fb5d37ac95093821.png",
+        "mime_type": "image/png",
+        "url": "https://drive.google.com/file/d/1i3WiFwnbZY6-SZWRLDgoUAqN7n0DSuTW/view?usp=drivesdk",
+        "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "structuredContent": {
+          "accepted_input": "file_uri",
+          "success": true,
+          "id": "1i3WiFwnbZY6-SZWRLDgoUAqN7n0DSuTW",
+          "title": "10a8fb5d37ac95093821.png",
+          "file_name": "10a8fb5d37ac95093821.png",
+          "mime_type": "image/png",
+          "url": "https://drive.google.com/file/d/1i3WiFwnbZY6-SZWRLDgoUAqN7n0DSuTW/view?usp=drivesdk",
+          "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T"
+        }
+      },
+      "drive_verified": true,
+      "github_blob_sha": "7ff2a86945a2cc7e12e6c70da193fed55965243d"
+    },
+    {
+      "owner": "soueast",
+      "model_id": null,
+      "source_page": "https://www.soueast-egypt.com/",
+      "source_url": "https://www.soueast-egypt.com/Logo.png",
+      "kind": "logo",
+      "prior_sha256": "6a4cad0814428784048112434446607a0a1860665aa2963385d70210232c21d5",
+      "sha256": "6a4cad0814428784048112434446607a0a1860665aa2963385d70210232c21d5",
+      "bytes": 867,
+      "width": 270,
+      "height": 18,
+      "format": "PNG",
+      "original_filename": "Logo.png",
+      "retrieved_at": "2026-11-03T20:13:45.609857+00:00",
+      "accepted_duplicate": false,
+      "status": "NEEDS_P2_QA",
+      "qc": {
+        "byte_integrity": "PASS",
+        "decode": "PASS",
+        "visual_review": "PASS exact model or marque at contact-sheet inspection; small original dimensions retained, no upscale",
+        "market": "Egypt official source",
+        "trim_applicability": "unassigned; P2 must confirm depicted equipment against accepted Egypt trims",
+        "model_year": null,
+        "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+        "promotion": "PENDING_P2"
+      },
+      "prior_proposal": "P2I2-1103 existing logo proposal; materialization only, not a new discovery",
+      "github_path": "vehicle-data/review/media-support-20261103/soueast/6a4cad08144287840481.png",
+      "drive": {
+        "accepted_input": "file_uri",
+        "success": true,
+        "id": "1h9vPFfMljtCD9M8tEntHV3gv3gaOyXVu",
+        "title": "6a4cad08144287840481.png",
+        "file_name": "6a4cad08144287840481.png",
+        "mime_type": "image/png",
+        "url": "https://drive.google.com/file/d/1h9vPFfMljtCD9M8tEntHV3gv3gaOyXVu/view?usp=drivesdk",
+        "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "structuredContent": {
+          "accepted_input": "file_uri",
+          "success": true,
+          "id": "1h9vPFfMljtCD9M8tEntHV3gv3gaOyXVu",
+          "title": "6a4cad08144287840481.png",
+          "file_name": "6a4cad08144287840481.png",
+          "mime_type": "image/png",
+          "url": "https://drive.google.com/file/d/1h9vPFfMljtCD9M8tEntHV3gv3gaOyXVu/view?usp=drivesdk",
+          "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T"
+        }
+      },
+      "drive_verified": true,
+      "github_blob_sha": "cf5402279b8831596d6257e7334391607561d245"
+    },
+    {
+      "owner": "forthing",
+      "model_id": null,
+      "source_page": "https://forthing-egypt.com/",
+      "source_url": "https://forthing-egypt.com/storage/2024/12/LOGO-191x38.webp",
+      "kind": "logo",
+      "prior_sha256": "5355e8d305ac37e64a2bc74dedff59529b5e568760726cad4c95e5680ac9e5bc",
+      "sha256": "5355e8d305ac37e64a2bc74dedff59529b5e568760726cad4c95e5680ac9e5bc",
+      "bytes": 2158,
+      "width": 191,
+      "height": 38,
+      "format": "WEBP",
+      "original_filename": "LOGO-191x38.webp",
+      "retrieved_at": "2026-11-03T20:13:46.254011+00:00",
+      "accepted_duplicate": false,
+      "status": "NEEDS_P2_QA",
+      "qc": {
+        "byte_integrity": "PASS",
+        "decode": "PASS",
+        "visual_review": "PASS exact model or marque at contact-sheet inspection; small original dimensions retained, no upscale",
+        "market": "Egypt official source",
+        "trim_applicability": "unassigned; P2 must confirm depicted equipment against accepted Egypt trims",
+        "model_year": null,
+        "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+        "promotion": "PENDING_P2"
+      },
+      "prior_proposal": "P2I2-1103 existing logo proposal; materialization only, not a new discovery",
+      "github_path": "vehicle-data/review/media-support-20261103/forthing/5355e8d305ac37e64a2b.webp",
+      "drive": {
+        "accepted_input": "file_uri",
+        "success": true,
+        "id": "17Q4AKSbrg_fMttNHuPK17C20eKeUIV7E",
+        "title": "5355e8d305ac37e64a2b.webp",
+        "file_name": "5355e8d305ac37e64a2b.webp",
+        "mime_type": "image/webp",
+        "url": "https://drive.google.com/file/d/17Q4AKSbrg_fMttNHuPK17C20eKeUIV7E/view?usp=drivesdk",
+        "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "structuredContent": {
+          "accepted_input": "file_uri",
+          "success": true,
+          "id": "17Q4AKSbrg_fMttNHuPK17C20eKeUIV7E",
+          "title": "5355e8d305ac37e64a2b.webp",
+          "file_name": "5355e8d305ac37e64a2b.webp",
+          "mime_type": "image/webp",
+          "url": "https://drive.google.com/file/d/17Q4AKSbrg_fMttNHuPK17C20eKeUIV7E/view?usp=drivesdk",
+          "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T"
+        }
+      },
+      "drive_verified": true,
+      "github_blob_sha": "8c9dc1b603210c2d9b77dba417fda81589f493fa"
+    },
+    {
+      "owner": "rox",
+      "model_id": null,
+      "source_page": "https://roxmotor.com/",
+      "source_url": "https://roxmotoreg.com/wp-content/uploads/2024/11/3.png",
+      "kind": "logo",
+      "prior_sha256": "b480a7d6122ddcc697b74acddcce4523d42d6d68b6ecedf801b1e73a16966a78",
+      "sha256": "b480a7d6122ddcc697b74acddcce4523d42d6d68b6ecedf801b1e73a16966a78",
+      "bytes": 5256,
+      "width": 584,
+      "height": 160,
+      "format": "PNG",
+      "original_filename": "3.png",
+      "retrieved_at": "2026-11-03T20:13:47.035577+00:00",
+      "accepted_duplicate": false,
+      "status": "NEEDS_P2_QA",
+      "qc": {
+        "byte_integrity": "PASS",
+        "decode": "PASS",
+        "visual_review": "PASS exact model or marque at contact-sheet inspection; small original dimensions retained, no upscale",
+        "market": "Egypt official source",
+        "trim_applicability": "unassigned; P2 must confirm depicted equipment against accepted Egypt trims",
+        "model_year": null,
+        "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+        "promotion": "PENDING_P2"
+      },
+      "prior_proposal": "P2I2-1103 existing logo proposal; materialization only, not a new discovery",
+      "github_path": "vehicle-data/review/media-support-20261103/rox/b480a7d6122ddcc697b7.png",
+      "drive": {
+        "accepted_input": "file_uri",
+        "success": true,
+        "id": "181oUz_JJDgNUX69337VhYia-SuMi3kU5",
+        "title": "b480a7d6122ddcc697b7.png",
+        "file_name": "b480a7d6122ddcc697b7.png",
+        "mime_type": "image/png",
+        "url": "https://drive.google.com/file/d/181oUz_JJDgNUX69337VhYia-SuMi3kU5/view?usp=drivesdk",
+        "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "structuredContent": {
+          "accepted_input": "file_uri",
+          "success": true,
+          "id": "181oUz_JJDgNUX69337VhYia-SuMi3kU5",
+          "title": "b480a7d6122ddcc697b7.png",
+          "file_name": "b480a7d6122ddcc697b7.png",
+          "mime_type": "image/png",
+          "url": "https://drive.google.com/file/d/181oUz_JJDgNUX69337VhYia-SuMi3kU5/view?usp=drivesdk",
+          "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T"
+        }
+      },
+      "drive_verified": true,
+      "github_blob_sha": "a32a0ff208be9fc1fcef5cddac5b5d0dc7810ec7"
+    },
+    {
+      "owner": "geely/ex2",
+      "model_id": "m_000134",
+      "source_url": "https://geelyeg.com/assets/models/EX2/Aurora%20Green/optimized/19-1600.webp",
+      "source_page": "https://geelyeg.com/models/ex2",
+      "kind": "image",
+      "sha256": "02561b37c3c3271a9b6a9ed40aed90b63072df0bcbd4e4d95d4d49d05ac3e46c",
+      "bytes": 75906,
+      "width": 1600,
+      "height": 900,
+      "format": "WEBP",
+      "original_filename": "19-1600.webp",
+      "retrieved_at": "2026-11-03T20:14:28.413511+00:00",
+      "accepted_duplicate": false,
+      "status": "HOLD_OEM_RENDER_POLICY",
+      "qc": {
+        "byte_integrity": "PASS",
+        "decode": "PASS",
+        "visual_review": "Official 360 configurator side view, transparent; exact model; OEM rendered asset, P2 must approve under no-synthetic rule",
+        "market": "Egypt official source",
+        "trim_applicability": "unassigned; P2 must confirm depicted equipment against accepted Egypt trims",
+        "model_year": null,
+        "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+        "promotion": "PENDING_P2"
+      },
+      "market_variants": {
+        "canonical_model_id": "m_000134",
+        "powertrain": "BEV",
+        "accepted_market_model_year": "2027",
+        "accepted_market_trims": [
+          "Pro",
+          "Max"
+        ],
+        "image_trim": null
+      },
+      "github_path": "vehicle-data/review/media-support-20261103/geely-ex2/02561b37c3c3271a9b6a.webp",
+      "drive": {
+        "accepted_input": "file_uri",
+        "success": true,
+        "id": "1BAddjN58QCuXT5UOSgWzDlKEil2fdl04",
+        "title": "02561b37c3c3271a9b6a.webp",
+        "file_name": "02561b37c3c3271a9b6a.webp",
+        "mime_type": "image/webp",
+        "url": "https://drive.google.com/file/d/1BAddjN58QCuXT5UOSgWzDlKEil2fdl04/view?usp=drivesdk",
+        "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "structuredContent": {
+          "accepted_input": "file_uri",
+          "success": true,
+          "id": "1BAddjN58QCuXT5UOSgWzDlKEil2fdl04",
+          "title": "02561b37c3c3271a9b6a.webp",
+          "file_name": "02561b37c3c3271a9b6a.webp",
+          "mime_type": "image/webp",
+          "url": "https://drive.google.com/file/d/1BAddjN58QCuXT5UOSgWzDlKEil2fdl04/view?usp=drivesdk",
+          "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T"
+        }
+      },
+      "drive_verified": true,
+      "github_blob_sha": "61f888ce119015a5b67257deaf1ddb429b584184"
+    },
+    {
+      "owner": "geely/ex5",
+      "model_id": "m_000135",
+      "source_url": "https://geelyeg.com/assets/models/EX5/Turquoise%20Green/optimized/7-1600.webp",
+      "source_page": "https://geelyeg.com/models/ex5",
+      "kind": "image",
+      "sha256": "ccc90a6e06756322e97875a68777725a27f4f6a95b2e442aa2f021744488d840",
+      "bytes": 148694,
+      "width": 1600,
+      "height": 1067,
+      "format": "WEBP",
+      "original_filename": "7-1600.webp",
+      "retrieved_at": "2026-11-03T20:14:28.891833+00:00",
+      "accepted_duplicate": false,
+      "status": "HOLD_OEM_RENDER_POLICY",
+      "qc": {
+        "byte_integrity": "PASS",
+        "decode": "PASS",
+        "visual_review": "Official 360 configurator side view, transparent; exact model; OEM rendered asset, P2 must approve under no-synthetic rule",
+        "market": "Egypt official source",
+        "trim_applicability": "unassigned; P2 must confirm depicted equipment against accepted Egypt trims",
+        "model_year": null,
+        "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+        "promotion": "PENDING_P2"
+      },
+      "market_variants": {
+        "canonical_model_id": "m_000135",
+        "powertrain": "BEV",
+        "accepted_market_model_year": "2027",
+        "accepted_market_trims": [
+          "Pro",
+          "Max",
+          "Max Plus"
+        ],
+        "image_trim": null,
+        "excluded_model_ids": [
+          "m_000373",
+          "m_000419"
+        ]
+      },
+      "github_path": "vehicle-data/review/media-support-20261103/geely-ex5/ccc90a6e06756322e978.webp",
+      "drive": {
+        "accepted_input": "file_uri",
+        "success": true,
+        "id": "1j5oY9T4BpojxHd-g70W-jMb4mjfDUYK5",
+        "title": "ccc90a6e06756322e978.webp",
+        "file_name": "ccc90a6e06756322e978.webp",
+        "mime_type": "image/webp",
+        "url": "https://drive.google.com/file/d/1j5oY9T4BpojxHd-g70W-jMb4mjfDUYK5/view?usp=drivesdk",
+        "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "structuredContent": {
+          "accepted_input": "file_uri",
+          "success": true,
+          "id": "1j5oY9T4BpojxHd-g70W-jMb4mjfDUYK5",
+          "title": "ccc90a6e06756322e978.webp",
+          "file_name": "ccc90a6e06756322e978.webp",
+          "mime_type": "image/webp",
+          "url": "https://drive.google.com/file/d/1j5oY9T4BpojxHd-g70W-jMb4mjfDUYK5/view?usp=drivesdk",
+          "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T"
+        }
+      },
+      "drive_verified": true,
+      "github_blob_sha": "69f10b3ff35325644b83be6023e4fb377c628b56"
+    },
+    {
+      "owner": "baic",
+      "model_id": null,
+      "source_url": "https://www.baicglobal.com/",
+      "source_page": "https://www.baicglobal.com/",
+      "kind": "logo",
+      "sha256": "e2d39a800110da745ccf2b354b8f3fd495538487445c6d9abc0dbbbb5a116fdc",
+      "bytes": 1054,
+      "width": 120,
+      "height": 47,
+      "format": "WEBP",
+      "original_filename": null,
+      "retrieved_at": "2026-11-03 (existing staged bytes reused)",
+      "accepted_duplicate": false,
+      "status": "NEEDS_P2_QA",
+      "notes": "Original inline data URL has no filename. Exact prior P2I2 proposal bytes; no recolor or redraw.",
+      "qc": {
+        "byte_integrity": "PASS",
+        "decode": "PASS",
+        "visual_review": "PASS exact model or marque at contact-sheet inspection; small original dimensions retained, no upscale",
+        "market": "Egypt official source",
+        "trim_applicability": "unassigned; P2 must confirm depicted equipment against accepted Egypt trims",
+        "model_year": null,
+        "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+        "promotion": "PENDING_P2"
+      },
+      "prior_proposal": "P2I2-1103 existing logo proposal; materialization only, not a new discovery",
+      "github_path": "vehicle-data/review/media-support-20261103/baic/e2d39a800110da745ccf.webp",
+      "drive": {
+        "accepted_input": "file_uri",
+        "success": true,
+        "id": "10FtNCqaWELC71dzmZ6NbTdwUTiNEsW8S",
+        "title": "e2d39a800110da745ccf.webp",
+        "file_name": "e2d39a800110da745ccf.webp",
+        "mime_type": "image/webp",
+        "url": "https://drive.google.com/file/d/10FtNCqaWELC71dzmZ6NbTdwUTiNEsW8S/view?usp=drivesdk",
+        "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "structuredContent": {
+          "accepted_input": "file_uri",
+          "success": true,
+          "id": "10FtNCqaWELC71dzmZ6NbTdwUTiNEsW8S",
+          "title": "e2d39a800110da745ccf.webp",
+          "file_name": "e2d39a800110da745ccf.webp",
+          "mime_type": "image/webp",
+          "url": "https://drive.google.com/file/d/10FtNCqaWELC71dzmZ6NbTdwUTiNEsW8S/view?usp=drivesdk",
+          "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T"
+        }
+      },
+      "drive_verified": true,
+      "github_blob_sha": "b11e9944fdeafb1a6e868664dc65bc0b993570f6"
+    },
+    {
+      "owner": "baic",
+      "model_id": null,
+      "source_url": "https://baic-egypt.com/img/global/logo.png",
+      "source_page": "https://baic-egypt.com/",
+      "kind": "logo",
+      "sha256": "fb2c1f47322f2ce78a482c72cfcd2e22d728848c28a1d16de9e6a1ad4253e110",
+      "bytes": 2358,
+      "width": 198,
+      "height": 47,
+      "format": "PNG",
+      "original_filename": "logo.png",
+      "retrieved_at": "2026-11-03T20:24:53.782182+00:00",
+      "accepted_duplicate": false,
+      "status": "NEEDS_P2_QA",
+      "prior_proposal": "Existing e046e2a OEM logo manifest; materialization only",
+      "qc": {
+        "byte_integrity": "PASS",
+        "decode": "PASS",
+        "visual_review": "PASS exact red BAIC or standalone black JAECOO wordmark; small original retained without upscale",
+        "market": "Egypt importer official",
+        "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+        "promotion": "PENDING_P2",
+        "quality": "LIMITED"
+      },
+      "github_path": "vehicle-data/review/media-support-20261103/baic/fb2c1f47322f2ce78a48.png",
+      "drive": {
+        "accepted_input": "file_uri",
+        "success": true,
+        "id": "1PEZRi65DEnLEzqn21khcw9EsDUtNnSLw",
+        "title": "fb2c1f47322f2ce78a48.png",
+        "file_name": "fb2c1f47322f2ce78a48.png",
+        "mime_type": "image/png",
+        "url": "https://drive.google.com/file/d/1PEZRi65DEnLEzqn21khcw9EsDUtNnSLw/view?usp=drivesdk",
+        "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "structuredContent": {
+          "accepted_input": "file_uri",
+          "success": true,
+          "id": "1PEZRi65DEnLEzqn21khcw9EsDUtNnSLw",
+          "title": "fb2c1f47322f2ce78a48.png",
+          "file_name": "fb2c1f47322f2ce78a48.png",
+          "mime_type": "image/png",
+          "url": "https://drive.google.com/file/d/1PEZRi65DEnLEzqn21khcw9EsDUtNnSLw/view?usp=drivesdk",
+          "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T"
+        }
+      },
+      "drive_verified": true,
+      "github_blob_sha": "f090d3a0e6ca94179c05d769a537f3d3956b86a6"
+    },
+    {
+      "owner": "jaecoo",
+      "model_id": null,
+      "source_url": "https://www.omodajaecoo.com/global/images/footer/JAECOO_light.png",
+      "source_page": "https://www.omodajaecoo.com/global/globalWebsite/",
+      "kind": "logo",
+      "sha256": "653754cdf66e6a618c52f7447f32f7b7da6f36487a5f34c74988909ea504e67e",
+      "bytes": 1266,
+      "width": 134,
+      "height": 16,
+      "format": "PNG",
+      "original_filename": "JAECOO_light.png",
+      "retrieved_at": "2026-11-03T20:24:54.269996+00:00",
+      "accepted_duplicate": false,
+      "status": "NEEDS_P2_QA",
+      "prior_proposal": "Existing e046e2a OEM logo manifest; materialization only",
+      "qc": {
+        "byte_integrity": "PASS",
+        "decode": "PASS",
+        "visual_review": "PASS exact red BAIC or standalone black JAECOO wordmark; small original retained without upscale",
+        "market": "Global OEM; Egypt logo applicability pending",
+        "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+        "promotion": "PENDING_P2",
+        "quality": "LIMITED"
+      },
+      "github_path": "vehicle-data/review/media-support-20261103/jaecoo/653754cdf66e6a618c52.png",
+      "drive": {
+        "accepted_input": "file_uri",
+        "success": true,
+        "id": "13eRdGCJJwkMqveIcgKeQOlIymwxzmFG2",
+        "title": "653754cdf66e6a618c52.png",
+        "file_name": "653754cdf66e6a618c52.png",
+        "mime_type": "image/png",
+        "url": "https://drive.google.com/file/d/13eRdGCJJwkMqveIcgKeQOlIymwxzmFG2/view?usp=drivesdk",
+        "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T",
+        "structuredContent": {
+          "accepted_input": "file_uri",
+          "success": true,
+          "id": "13eRdGCJJwkMqveIcgKeQOlIymwxzmFG2",
+          "title": "653754cdf66e6a618c52.png",
+          "file_name": "653754cdf66e6a618c52.png",
+          "mime_type": "image/png",
+          "url": "https://drive.google.com/file/d/13eRdGCJJwkMqveIcgKeQOlIymwxzmFG2/view?usp=drivesdk",
+          "parent_id": "1Wfyz3yvES9nFBC3ndg4MiGJHX1vXt32T"
+        }
+      },
+      "drive_verified": true,
+      "github_blob_sha": "04b8d3175fd87eebbb3b79b4667c0c7d94e65cac"
+    }
+  ],
+  "concurrent_staging_preserved": "e046e2a Geely/priorities/logo proposals; link same source bytes without duplicate queue rows"
+}
