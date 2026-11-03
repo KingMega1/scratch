@@ -1,4 +1,4 @@
-import {test,expect} from '@playwright/test';
+import {test,expect} from './fixtures';
 import {readFileSync} from 'node:fs';
 /* Official brochures: P2-accepted public links (catalogue serving release accepted.brochures) with issuer and scope;
    working-archive Drive links are never shown; the legacy Nissan brochure release applies only where P2 lists none. */

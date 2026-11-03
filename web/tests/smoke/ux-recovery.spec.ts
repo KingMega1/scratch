@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures';
 import { readFileSync } from 'node:fs';
 
 /* AT-43 UX & visual recovery (2026-10-13) acceptance checks, EN/AR, desktop/mobile. */
@@ -171,18 +171,15 @@ const rel = release.entries as unknown as SE[];
 for (const l of ['en', 'ar'] as const) {
   test(`${l}: accepted specs, warranty and gallery render with scope and source`, async ({ page }) => {
     const s = rel.find(e => Object.keys(e.accepted?.specs ?? {}).includes('power_hp'))!;
-    // DOM assertions only: don't wait for every image. Next's self-hosted image optimiser (next start, used by CI; not
-    // Vercel) leaves a width/image key hanging after an earlier request for it was aborted, which blocked 'load' for 30 s.
-    const nav = { waitUntil: 'domcontentloaded' } as const;
-    await page.goto(`/${l}/cars/${s.site_slug}`, nav);
+    await page.goto(`/${l}/cars/${s.site_slug}`);
     await expect(page.locator('[data-spec="power_hp"]')).toBeVisible();
     await expect(page.locator('#specs-h').locator('..')).not.toContainText(/_mm|_hp|power_hp|U11/);
     const w = rel.find(e => (e.accepted?.warranty ?? []).some(x => /battery/i.test(x.value)))!;
-    await page.goto(`/${l}/cars/${w.site_slug}`, nav);
+    await page.goto(`/${l}/cars/${w.site_slug}`);
     await expect(page.locator('[data-warranty-kind="battery"]').first()).toBeVisible();
     await expect(page.locator('[data-warranty-kind="vehicle"]').first()).toBeVisible();
     const g = rel.find(e => (e.accepted?.gallery ?? []).length > 6)!;
-    await page.goto(`/${l}/cars/${g.site_slug}`, nav);
+    await page.goto(`/${l}/cars/${g.site_slug}`);
     await expect(page.locator('#gallery-h')).toBeVisible();
     const lazy = await page.locator('img[data-gallery-photo]').evaluateAll(els => els.map(e => e.getAttribute('loading')));
     expect(lazy.length).toBe(g.accepted!.gallery!.length);

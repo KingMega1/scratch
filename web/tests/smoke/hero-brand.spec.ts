@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from './fixtures';
 
 for (const locale of ['ar', 'en']) {
   test(`Brand V2 safe homepage hero in ${locale}`, async ({ page }) => {

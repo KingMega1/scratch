@@ -1,4 +1,4 @@
-import {test,expect} from '@playwright/test';
+import {test,expect} from './fixtures';
 import {readFileSync} from 'node:fs';
 const release=JSON.parse(readFileSync('data/registry/catalogue-serving.release.json','utf8'));
 const ADD=release.market_additions??[], ALL=[...release.entries,...ADD], TOTAL=ALL.length;
