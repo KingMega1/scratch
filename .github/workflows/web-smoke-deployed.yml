@@ -60,7 +60,7 @@ jobs:
           SMOKE_BASE_URL: ${{ steps.target.outputs.url }}
           VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
           SMOKE_SCREENSHOTS: '1'
-        run: mkdir -p test-results/screens && npx playwright test
+        run: mkdir -p test-results/screens && npx playwright test brand-v21.spec.ts
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -10,6 +10,7 @@ const assets = {
 
 for (const locale of ['en', 'ar'] as const) {
   test(`${locale}: V2.1 exact assets and branded customer journeys`, async ({ page, request }, testInfo) => {
+    test.setTimeout(90_000);
     for (const [src, sha] of Object.entries(assets)) {
       const response = await request.get(src);
       expect(response.status(), src).toBe(200);
@@ -30,6 +31,19 @@ for (const locale of ['en', 'ar'] as const) {
       expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(1);
       if (process.env.SMOKE_SCREENSHOTS === '1') {
         const screen = route === '' ? 'home' : route.startsWith('/cars/') ? 'detail' : route.startsWith('/compare') ? 'compare' : 'find-my-car';
+        // Exercise normal scrolling so browser-native lazy images are actually requested.
+        await page.evaluate(async () => {
+          for (let y = 0; y < document.documentElement.scrollHeight; y += Math.max(200, innerHeight * .8)) {
+            window.scrollTo(0, y);
+            await new Promise(resolve => setTimeout(resolve, 180));
+          }
+        });
+        for (const img of await page.locator('img').all()) {
+          await img.scrollIntoViewIfNeeded();
+          await expect(img).toHaveJSProperty('complete', true);
+          expect(await img.evaluate(el => (el as HTMLImageElement).naturalWidth), 'image must load after normal scrolling').toBeGreaterThan(0);
+        }
+        await page.evaluate(() => window.scrollTo(0, 0));
         await page.screenshot({ path: `test-results/screens/brand-v21/${locale}-${testInfo.project.name}-${screen}.png`, fullPage: true });
       }
     }
