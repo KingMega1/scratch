@@ -322,7 +322,7 @@ function Result({ copy, site, locale, v, identityEnabled, onRestart, onEdit, onA
       {/* Final step: the account invitation (moved from the My CarIndex shell). Same form, same identity_gate_view tracking. */}
       <section className="note-card fmc-invite" aria-labelledby="fmc-inv-h" data-fmc-invite="true">
         <h3 id="fmc-inv-h">{dict(locale as 'en' | 'ar').account.verifyH}</h3>
-        <p className="small">{dict(locale as 'en' | 'ar').account.verifyBody}</p>
+        {identityEnabled ? <p className="small">{dict(locale as 'en' | 'ar').account.verifyBody}</p> : null}
         <VerifyForm locale={locale as 'en' | 'ar'} enabled={identityEnabled} />
       </section>
 

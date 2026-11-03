@@ -34,7 +34,7 @@ export default function Header({ locale }: { locale: Locale }) {
     <header className="gh">
       <div className="wrap gh-row">
         <Link className="gh-logo" href={`/${locale}`} aria-label={`${t.brand} — ${t.nav.home}`}>
-          <img src="/brand/carindex-logo-ink.svg" alt="CarIndex" width={106} height={24} />
+          <img src="/brand/carindexed-logo-ink.svg" alt="CarIndexed" width={106} height={24} />
         </Link>
         <nav className="gh-nav" aria-label={locale === 'ar' ? 'القائمة الرئيسية' : 'Primary'}>
           {NAV.filter(([k]) => k !== 'search').map(([k, href]) => (

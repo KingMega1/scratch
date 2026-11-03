@@ -4,7 +4,7 @@ import { dict } from '@/lib/i18n/dictionaries';
 import { vehicles } from '@/server/vehicles/read-model';
 import { brandName, sortBrands } from '@/components/brand';
 
-/* Fat footer (Brand V2): logo on ink uses the white-with-yellow-brackets variant (rule F1). The data version stays
+/* Fat footer (Brand V2.1): logo on ink uses the white-with-yellow-brackets variant (rule F1). The data version stays
    machine-readable on the element for QA; it is not shown to customers. */
 export default function Footer({ locale, dataVersion }: { locale: Locale; dataVersion: string }) {
   const t = dict(locale), f = t.footer, L = (p: string) => `/${locale}${p}`;
@@ -14,7 +14,7 @@ export default function Footer({ locale, dataVersion }: { locale: Locale; dataVe
       <div className="wrap">
         <div className="gf-cols">
           <div className="gf-brand">
-            <img src="/brand/carindex-logo-white-yellow.svg" alt="CarIndex" width={106} height={24} />
+            <img src="/brand/carindexed-logo-white-yellow.svg" alt="CarIndexed" width={106} height={24} />
             <p>{f.about}</p>
             <p className="gf-tag">{t.tagline}</p>
           </div>

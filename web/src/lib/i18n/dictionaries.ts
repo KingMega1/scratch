@@ -2,32 +2,32 @@ import type { Locale } from './config';
 
 /* UI chrome copy (P5/P3-owned). Arabic is written first, in Egyptian colloquial; English is not a word-for-word
    translation. Brand V2 voice: no superlatives ("best", "amazing", "premium"), no exclamation marks, no emoji.
-   CarIndex is written كار إندكس inside Arabic copy. Recommendation wording is P1-owned and does NOT live here. */
+   CarIndexed is written كار إندكسد inside Arabic copy. Recommendation wording is P1-owned and does NOT live here. */
 
 const ar = {
-  brand: 'كار إندكس',
-  tagline: 'قبل ما تشتري، شوف كار إندكس.',
-  taglineShort: 'شوف كار إندكس الأول',
+  brand: 'كار إندكسد',
+  tagline: 'قبل ما تشتري، شوف كار إندكسد.',
+  taglineShort: 'شوف كار إندكسد الأول',
   skip: 'انتقل للمحتوى',
-  nav: { fmc: 'رشّحلي عربية', cars: 'العربيات', compare: 'قارن', market: 'أسعار السيارات', news: 'أخبار وأدلة', search: 'بحث', account: 'كار إندكس بتاعي', home: 'الرئيسية', menu: 'القائمة', close: 'إغلاق' },
+  nav: { fmc: 'رشّحلي عربية', cars: 'العربيات', compare: 'قارن', market: 'أسعار السيارات', news: 'أخبار وأدلة', search: 'بحث', account: 'كار إندكسد بتاعي', home: 'الرئيسية', menu: 'القائمة', close: 'إغلاق' },
   lang: { switchTo: 'English', label: 'اللغة' },
-  searchPlaceholder: 'دوّر على عربية، ماركة، سعر أو محتوى من كار إندكس',
+  searchPlaceholder: 'دوّر على عربية، ماركة، سعر أو محتوى من كار إندكسد',
   footer: {
     about: 'معلومات مستقلة تساعدك تختار عربيتك الجديدة في مصر. إحنا مش بنبيع عربيات، ومفيش ترشيح مدفوع.',
-    cols: { cars: 'العربيات', tools: 'أدوات', content: 'محتوى', company: 'كار إندكس', brands: 'الماركات' }, allBrands: 'كل الماركات',
+    cols: { cars: 'العربيات', tools: 'أدوات', content: 'محتوى', company: 'كار إندكسد', brands: 'الماركات' }, allBrands: 'كل الماركات',
     browseAll: 'كل العربيات', byBrand: 'حسب الماركة', byBody: 'حسب نوع العربية', launches: 'الجديد في السوق',
     marketPrices: 'أسعار السيارات', newsL: 'أخبار', guidesL: 'أدلة', insightsL: 'تحليلات',
-    methodology: 'طريقة الشغل', independence: 'استقلاليتنا', about2: 'عن كار إندكس', contact: 'تواصل معانا', privacy: 'الخصوصية', terms: 'الشروط',
-    rights: '© 2026 كار إندكس',
+    methodology: 'طريقة الشغل', independence: 'استقلاليتنا', about2: 'عن كار إندكسد', contact: 'تواصل معانا', privacy: 'الخصوصية', terms: 'الشروط',
+    rights: '© 2026 كار إندكسد',
     data: (v: string) => `نسخة البيانات ${v}`,
   },
   home: {
     kicker: 'مستقل · سوق العربيات في مصر',
-    h1: 'قبل ما تشتري، شوف كار إندكس.',
+    h1: 'قبل ما تشتري، شوف كار إندكسد.',
     lede: 'إحنا مش بنبيع عربيات. شوف أسعار العربيات الجديدة في مصر، وقارن، واعرف إيه اللي يناسبك.',
     ctaFmc: 'رشّحلي عربية', ctaCars: 'استكشف العربيات',
     proof: (n: string, o: string) => `${n} موديل معروض · ${o} منهم بأسعار رسمية`,
-    whyH: 'ليه كار إندكس', whySub: 'تلات حاجات كل صفحة في الموقع لازم تلتزم بيها.',
+    whyH: 'ليه كار إندكسد', whySub: 'تلات حاجات كل صفحة في الموقع لازم تلتزم بيها.',
     why: [
       ['السعر واضح', 'السعر قدامك على طول، ومصدره وتاريخه في التفاصيل.'],
       ['بنشرح السبب', 'مش بس اسم عربية. بنقولك ليه ممكن تناسبك، وإيه اللي هتتنازل عنه.'],
@@ -45,7 +45,7 @@ const ar = {
   },
   car: {
     from: 'يبدأ من', versions: (n: number) => (n === 1 ? 'فئة واحدة' : `${n} فئات`),
-    fits: 'شوف لو تناسبني', compare: 'قارن', takeH: 'رأي كار إندكس', bestFor: 'تناسب', thinkTwice: 'فكّر تاني لو',
+    fits: 'شوف لو تناسبني', compare: 'قارن', takeH: 'رأي كار إندكسد', bestFor: 'تناسب', thinkTwice: 'فكّر تاني لو',
     takePending: 'لسه ما نشرناش رأي موثّق للموديل ده. الرأي هيظهر هنا لما يكون مربوط بأدلة وبيانات.',
     pricesH: 'الأسعار والفئات', grade: 'الفئة', priceCol: 'السعر', stateCol: 'الحالة', dateCol: 'التاريخ',
     specsH: 'أهم المعلومات', galleryH: 'الصور', marketH: 'في السوق المصري', altH: 'بدائل للمقارنة', fmcH: 'مش متأكد إنها تناسبك؟',
@@ -125,7 +125,7 @@ const ar = {
     readMore: 'اقرا',
   },
   account: {
-    h1: 'كار إندكس بتاعي', nav: { recs: 'الترشيحات', saved: 'العربيات المحفوظة', comparisons: 'المقارنات', shared: 'المشاركات', invites: 'الدعوات', profile: 'البيانات' },
+    h1: 'كار إندكسد بتاعي', nav: { recs: 'الترشيحات', saved: 'العربيات المحفوظة', comparisons: 'المقارنات', shared: 'المشاركات', invites: 'الدعوات', profile: 'البيانات' },
     verifyH: 'أكّد رقم موبايلك', verifyBody: 'تقدر تشوف أول ترشيح من غير تسجيل. التأكيد مطلوب بس عشان تحفظ، تشارك لينك دائم، أو ترجع لترشيحاتك.',
     phone: 'رقم الموبايل', email: 'الإيميل (اختياري، للتواصل الاحتياطي)', send: 'ابعتلي كود', code: 'الكود', verify: 'أكّد',
     gated: 'التسجيل مش شغال في النسخة التجريبية دي. هيتفعل بعد موافقة الخصوصية والأمان وتجهيز مزوّد الرسايل.',
@@ -141,9 +141,9 @@ const ar = {
     carPage: 'صفحة العربية', compareOnSite: 'قارن العربيات دي', notOnSite: 'صفحتها لسه مش على الموقع',
   },
   pages: {
-    methodology: ['طريقة الشغل', 'كل سعر على كار إندكس جاي من مصدر مسمّى وله تاريخ. بنفرّق بين السعر الرسمي وسعر السوق، وبنعرض الحالة جنب كل رقم. لو المصادر مختلفة بنعرض كل الأرقام ومش بناخد متوسط. العلامة حوالين الرقم معناها إننا راجعناه على مصدر رسمي بتاريخ. لو مش متأكدين من رقم، بنقول كده ومش بنخمّن.'],
-    independence: ['استقلاليتنا', 'كار إندكس مش وكيل ولا معرض، ومش بيبيع عربيات. مفيش ترتيب مدفوع، ولا ظهور مموّل، ولا عروض وكلاء. نفس المعيار على كل الماركات.'],
-    about: ['عن كار إندكس', 'كار إندكس بيساعد الناس في مصر يختاروا عربيتهم الجديدة بمعلومات واضحة: الأسعار وحالتها، التسجيلات، والفروق بين الموديلات.'],
+    methodology: ['طريقة الشغل', 'كل سعر على كار إندكسد جاي من مصدر مسمّى وله تاريخ. بنفرّق بين السعر الرسمي وسعر السوق، وبنعرض الحالة جنب كل رقم. لو المصادر مختلفة بنعرض كل الأرقام ومش بناخد متوسط. العلامة حوالين الرقم معناها إننا راجعناه على مصدر رسمي بتاريخ. لو مش متأكدين من رقم، بنقول كده ومش بنخمّن.'],
+    independence: ['استقلاليتنا', 'كار إندكسد مش وكيل ولا معرض، ومش بيبيع عربيات. مفيش ترتيب مدفوع، ولا ظهور مموّل، ولا عروض وكلاء. نفس المعيار على كل الماركات.'],
+    about: ['عن كار إندكسد', 'كار إندكسد بيساعد الناس في مصر يختاروا عربيتهم الجديدة بمعلومات واضحة: الأسعار وحالتها، التسجيلات، والفروق بين الموديلات.'],
     contact: ['تواصل معانا', 'بيانات التواصل الرسمية هتتنشر هنا قبل الإطلاق.'],
     privacy: ['الخصوصية', 'مسودة — النص القانوني النهائي لسه بيتراجع ومش منشور. في النسخة التجريبية دي مش بنجمع بيانات شخصية: لا رقم موبايل ولا إيميل.'],
     terms: ['الشروط', 'مسودة — النص القانوني النهائي لسه بيتراجع ومش منشور.'],
@@ -155,29 +155,29 @@ const ar = {
 type Dict = typeof ar;
 
 const en: Dict = {
-  brand: 'CarIndex',
-  tagline: 'Before making a car decision, check CarIndex.',
-  taglineShort: 'Check CarIndex first.',
+  brand: 'CarIndexed',
+  tagline: 'Before making a car decision, check CarIndexed.',
+  taglineShort: 'Check CarIndexed first.',
   skip: 'Skip to content',
-  nav: { fmc: 'Find My Car', cars: 'Cars', compare: 'Compare', market: 'Car Prices', news: 'News & Guides', search: 'Search', account: 'My CarIndex', home: 'Home', menu: 'Menu', close: 'Close' },
+  nav: { fmc: 'Find My Car', cars: 'Cars', compare: 'Compare', market: 'Car Prices', news: 'News & Guides', search: 'Search', account: 'My CarIndexed', home: 'Home', menu: 'Menu', close: 'Close' },
   lang: { switchTo: 'عربي', label: 'Language' },
-  searchPlaceholder: 'Search cars, brands, prices or CarIndex content',
+  searchPlaceholder: 'Search cars, brands, prices or CarIndexed content',
   footer: {
     about: 'Independent buyer-decision intelligence for Egypt. We don’t sell cars, and no recommendation is paid for.',
-    cols: { cars: 'Cars', tools: 'Tools', content: 'Content', company: 'CarIndex', brands: 'Brands' }, allBrands: 'All brands',
+    cols: { cars: 'Cars', tools: 'Tools', content: 'Content', company: 'CarIndexed', brands: 'Brands' }, allBrands: 'All brands',
     browseAll: 'All cars', byBrand: 'By brand', byBody: 'By body type', launches: 'New to the market',
     marketPrices: 'Car prices', newsL: 'News', guidesL: 'Guides', insightsL: 'Insights',
     methodology: 'Methodology', independence: 'Independence', about2: 'About', contact: 'Contact', privacy: 'Privacy', terms: 'Terms',
-    rights: '© 2026 CarIndex',
+    rights: '© 2026 CarIndexed',
     data: (v: string) => `Data version ${v}`,
   },
   home: {
     kicker: 'Independent · Egypt’s new-car market',
-    h1: 'Before making a car decision, check CarIndex.',
+    h1: 'Before making a car decision, check CarIndexed.',
     lede: 'We don’t sell cars. See new-car prices in Egypt, compare models, and find what fits you.',
     ctaFmc: 'Find My Car', ctaCars: 'Explore Cars',
     proof: (n: string, o: string) => `${n} models on sale · ${o} with official prices`,
-    whyH: 'Why CarIndex', whySub: 'Three things every page on this site has to agree with.',
+    whyH: 'Why CarIndexed', whySub: 'Three things every page on this site has to agree with.',
     why: [
       ['Clear prices', 'The price comes first. Its source and date are one tap away.'],
       ['We explain why', 'Not just a car name. Why it could fit you, and what you’d be giving up.'],
@@ -195,7 +195,7 @@ const en: Dict = {
   },
   car: {
     from: 'from', versions: (n: number) => (n === 1 ? '1 version' : `${n} versions`),
-    fits: 'Find out if it fits me', compare: 'Compare', takeH: 'CarIndex Take', bestFor: 'Suits', thinkTwice: 'Think twice if',
+    fits: 'Find out if it fits me', compare: 'Compare', takeH: 'CarIndexed Take', bestFor: 'Suits', thinkTwice: 'Think twice if',
     takePending: 'We haven’t published an evidence-backed Take for this model yet. It will appear here once it is bound to data.',
     pricesH: 'Prices & versions', grade: 'Version', priceCol: 'Price', stateCol: 'State', dateCol: 'Date',
     specsH: 'Key facts', galleryH: 'Gallery', marketH: 'Market reality', altH: 'Alternatives to compare', fmcH: 'Not sure it fits you?',
@@ -275,7 +275,7 @@ const en: Dict = {
     readMore: 'Read',
   },
   account: {
-    h1: 'My CarIndex', nav: { recs: 'Recommendations', saved: 'Saved cars', comparisons: 'Comparisons', shared: 'Shared results', invites: 'Invites', profile: 'Profile' },
+    h1: 'My CarIndexed', nav: { recs: 'Recommendations', saved: 'Saved cars', comparisons: 'Comparisons', shared: 'Shared results', invites: 'Invites', profile: 'Profile' },
     verifyH: 'Verify your mobile number', verifyBody: 'You can see your first recommendation without signing in. Verification is only needed to save, share a lasting link, or come back to your results.',
     phone: 'Mobile number', email: 'Email (optional, backup contact)', send: 'Send me a code', code: 'Code', verify: 'Verify',
     gated: 'Sign-in isn’t switched on in this preview. It turns on after privacy and security sign-off and SMS provider setup.',
@@ -291,9 +291,9 @@ const en: Dict = {
     carPage: 'Car page', compareOnSite: 'Compare these cars', notOnSite: 'Car page not on the site yet',
   },
   pages: {
-    methodology: ['Methodology', 'Every price on CarIndex comes from a named kind of source with a date. We keep official prices apart from market prices and show the state next to every figure. When sources disagree we show every figure and never average. The bracket around a figure means we checked it against an official, dated source. When we aren’t sure of a figure, we say so instead of guessing.'],
-    independence: ['Independence', 'CarIndex is not a dealer or a showroom and does not sell cars. No paid rankings, no sponsored placement, no dealer offers. The same standard for every brand.'],
-    about: ['About CarIndex', 'CarIndex helps people in Egypt choose a new car with clear information: prices and their state, registrations, and the differences between models.'],
+    methodology: ['Methodology', 'Every price on CarIndexed comes from a named kind of source with a date. We keep official prices apart from market prices and show the state next to every figure. When sources disagree we show every figure and never average. The bracket around a figure means we checked it against an official, dated source. When we aren’t sure of a figure, we say so instead of guessing.'],
+    independence: ['Independence', 'CarIndexed is not a dealer or a showroom and does not sell cars. No paid rankings, no sponsored placement, no dealer offers. The same standard for every brand.'],
+    about: ['About CarIndexed', 'CarIndexed helps people in Egypt choose a new car with clear information: prices and their state, registrations, and the differences between models.'],
     contact: ['Contact', 'Official contact details will be published here before launch.'],
     privacy: ['Privacy', 'Draft — the final legal text is under review and not published. This preview collects no personal data: no mobile number and no email.'],
     terms: ['Terms', 'Draft — the final legal text is under review and not published.'],

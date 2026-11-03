@@ -141,7 +141,7 @@ for (const l of ['en', 'ar'] as const) {
   test(`${l}: fat footer with the Brand V2 logo on ink`, async ({ page }) => {
     await page.goto(`/${l}`);
     const f = page.locator('footer.gf');
-    await expect(f.locator('img[src="/brand/carindex-logo-white-yellow.svg"]')).toHaveCount(1);
+    await expect(f.locator('img[src="/brand/carindexed-logo-white-yellow.svg"]')).toHaveCount(1);
     expect(await f.locator('.gf-cols > div').count()).toBeGreaterThanOrEqual(5);
     for (const p of ['/find-my-car', '/market', '/compare', '/methodology', '/privacy', '/news?type=news']) await expect(f.locator(`a[href="/${l}${p}"]`)).toHaveCount(1);
     await expect(f.locator('a[href*="/market/catalog?brand="]').first()).toBeVisible();

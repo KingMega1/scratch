@@ -33,7 +33,7 @@ test.describe('pages', () => {
     ['/ar', /قبل ما تشتري/], ['/en', /Before making a car decision/i], ['/en/cars', /Browse/i], ['/ar/cars', /تصفّح/],
     ['/en/market', /Car Prices/], ['/ar/market', /أسعار السيارات/], ['/en/cars/kia-sportage', /Kia Sportage/], ['/ar/cars/kia-sportage', /كيا/],
     ['/en/compare?ids=kia-sportage,hyundai-tucson', /Compare/], ['/en/search?q=sportage', /Kia Sportage/],
-    ['/en/my-carindex', /My CarIndex/], ['/en/news', /News/], ['/en/find-my-car', /Find My Car/], ['/en/methodology', /Methodology/],
+    ['/en/my-carindex', /My CarIndexed/], ['/en/news', /News/], ['/en/find-my-car', /Find My Car/], ['/en/methodology', /Methodology/],
     ['/en/market/catalog', /All cars and prices/i], ['/ar/market/catalog', /كل العربيات وأسعارها/],
   ];
   for (const [path, re] of PAGES) {

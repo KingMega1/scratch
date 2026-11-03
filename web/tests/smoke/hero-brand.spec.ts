@@ -13,6 +13,7 @@ for (const locale of ['ar', 'en']) {
     await page.setViewportSize(size.width > 720 ? { width: 1280, height: 800 } : { width: 390, height: 844 });
     const box = await hero.locator('a[data-cta="hero_fmc"]').boundingBox();
     expect(box!.y + box!.height).toBeLessThanOrEqual(page.viewportSize()!.height);
+    await expect(page.locator('.gh-logo img')).toHaveAttribute('alt', 'CarIndexed');
     expect(await hero.evaluate(el => getComputedStyle(el).backgroundColor)).toBe('rgb(11, 22, 32)');
   });
 }

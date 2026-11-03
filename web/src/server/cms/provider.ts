@@ -35,7 +35,7 @@ const STUB_CONTENT: ContentItem[] = [
     summary: { ar: 'الفرق بين الرقمين معناه إيه بالنسبالك.', en: 'What the gap between the two numbers means for you.' },
     body: {
       ar: ['السعر الرسمي هو اللي الوكيل بينشره للفئة. سعر الإعلانات هو اللي معروض في مواقع البيع، وممكن يكون أعلى أو أقل.', 'عشان كده بنكتب حالة السعر جنب كل رقم، ومش بنخلط بين الاتنين.'],
-      en: ['The official price is what the distributor publishes for a version. A listing price is what sellers advertise, and it can be higher or lower.', 'That is why every figure on CarIndex carries its state, and we never mix the two.'],
+      en: ['The official price is what the distributor publishes for a version. A listing price is what sellers advertise, and it can be higher or lower.', 'That is why every figure on CarIndexed carries its state, and we never mix the two.'],
     },
   },
   {
