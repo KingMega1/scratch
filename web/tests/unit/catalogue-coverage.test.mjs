@@ -22,7 +22,7 @@ test('21 P2 S6 evidence rows, 262 identity rows, 3 off-sale exclusions; accepted
  for(const k of ['catalogue','p2_evidence','identity_only','excluded'])assert.equal(release.counts[k],{catalogue:283,p2_evidence:21,identity_only:262,excluded:3}[k]);
  for(const e of release.entries){
    const p=e.accepted?.price;
-   if(p){assert.ok(p.price_from>0);assert.ok(['A','B'].includes(p.tier));assert.ok(!e.missing_evidence.includes('NO_ACCEPTED_PRICE'));}
+   if(p){assert.ok(p.price_from>0);assert.ok(['A','B'].includes(p.tier) || (p.confirmation_status === 'CEO_CONFIRMED' && /^[a-f0-9]{64}$/.test(p.source_sha256) && p.release_id === 'P2-CEO-CONFIRMED-20261102-R1'));assert.ok(!e.missing_evidence.includes('NO_ACCEPTED_PRICE'));}
    else assert.ok(e.p2_evidence||e.missing_evidence.includes('NO_ACCEPTED_PRICE'),e.site_slug);
  }
  for(const e of release.excluded)assert.equal(u.models.find(m=>m.id===e.p1_id).u,false);
@@ -171,4 +171,30 @@ test('customer-visible source names carry no internal provenance notes; the name
  assert.equal(V.customerSource('Mercedes-Benz Egypt; CEO-supplied official list (CEO-supplied list)'),'Mercedes-Benz Egypt');
  assert.equal(V.customerSource('GB Auto official distributor list (CEO-supplied)'),'GB Auto official distributor list');
  assert.ok(seen.has('GB Auto official distributor list'));
+});
+
+test('November CEO intake reaches browse prices with exact provenance and distinct JAECOO variants',()=>{
+ assert.equal(release.release_id,'P2-CEO-CONFIRMED-20261102-R1');
+ const rows=release.entries.concat(ADD);
+ let retail=0;
+ for(const e of rows){
+  const p=e.accepted?.price;
+  if(p?.confirmation_status!=='CEO_CONFIRMED')continue;
+  assert.equal(V.vehicles().get(e.site_slug).priceFrom.value,p.price_from);
+  for(const t of p.trims){
+   retail++;
+   assert.equal(t.confirmation_status,'CEO_CONFIRMED');
+   assert.ok(t.confirmation_authority);
+   assert.match(t.source_sha256,/^[a-f0-9]{64}$/);
+   assert.ok(t.price_id.startsWith('ceo1102-'));
+  }
+ }
+ assert.ok(retail>=80);
+ for(const slug of ['jaecoo-j5','jaecoo-j7','jaecoo-j7-phev','jaecoo-j8-phev','jac-rf8-phev'])assert.ok(V.vehicles().get(slug),slug);
+ const phev=V.vehicles().get('jaecoo-j7-phev');
+ const range=phev.p2.specs.find(s=>s.key==='ev_range_km');
+ assert.equal(range.facts[0].value,'100');
+ assert.match(range.facts[0].scope,/cycle unstated/);
+ assert.equal(phev.p2.specs.find(s=>s.key==='max_dc_kw').facts[0].value,'40');
+ assert.equal(phev.p2.warranty.length,0);
 });

@@ -180,7 +180,11 @@ export function p2Content(e: Raw): P2Content | null {
     }
     return [...m.values()];
   };
-  const specs = P2_SPEC_KEYS.filter(k => Array.isArray(a.specs?.[k]) && a.specs[k].length).map(k => ({ key: k as string, facts: merge((a.specs[k] as Raw[]).map(x => fact(x, e.brand))) }));
+  const specInput: Raw = { ...(a.specs ?? {}) };
+  for (const [alias, key] of Object.entries({ electric_range_km: 'ev_range_km', dc_charge_kw: 'max_dc_kw', ac_charge_kw: 'max_ac_kw' })) {
+    if (!specInput[key] && specInput[alias]) specInput[key] = specInput[alias];
+  }
+  const specs = P2_SPEC_KEYS.filter(k => Array.isArray(specInput[k]) && specInput[k].length).map(k => ({ key: k as string, facts: merge((specInput[k] as Raw[]).map(x => fact(x, e.brand))) }));
   const warranty: P2Content['warranty'] = [];
   for (const w of (a.warranty ?? []) as Raw[]) {
     // "6 years / 150000 km; battery 7 years / 150000 km" -> vehicle + battery entries, same source and scope
