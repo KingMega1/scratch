@@ -18,13 +18,22 @@ class ConfirmedIntake(unittest.TestCase):
   for r in self.p+rows('registry/price_options_20261102.csv'):
    self.assertEqual(r['price_egp'],ledger[r['ledger_row_id']]['price_egp'])
    self.assertEqual(r['source_sha256'],ledger[r['ledger_row_id']]['source_sha256'])
- def test_unrelated_fields_preserved(self):
+ def test_no_accepted_evidence_lost(self):
+  # every accepted value at the pre-intake base is still present (prices may only be superseded by confirmed intake rows)
   affected={r['p1_id'] for r in self.ledger}
+  def kept(o,n):
+   if o in (None,[],{},'',False):return True
+   if isinstance(o,dict):return isinstance(n,dict) and all(kept(v,n.get(k)) for k,v in o.items())
+   if isinstance(o,list):return isinstance(n,list) and all(any(kept(x,y) for y in n) for x in o)
+   return o==n
   for old in self.old['models']:
    now=self.by[old['p1_id']]
    for k,v in old.items():
-    if k not in ('price','gaps'):self.assertEqual(now[k],v,(old['p1_id'],k))
-   if old['p1_id'] not in affected:self.assertEqual(now,old)
+    if k=='gaps' or (k=='price' and old['p1_id'] in affected):continue
+    if k=='hero_image_limited' and v and now.get('hero_image') and (now['hero_image'] or {}).get('src')==v.get('src'):
+     # IM-2: the shared file holds the accepted official hero; the archive record keeps its provenance but is no longer served as that file
+     self.assertIsNone(now[k]['src']);self.assertEqual({x:y for x,y in now[k].items() if x not in('src','meta')},{x:y for x,y in v.items() if x!='src'});continue
+    self.assertTrue(kept(v,now.get(k)),(old['p1_id'],k))
  def test_u11_not_expanded(self):
   self.assertEqual({m['p1_id'] for m in self.c['models'] if m['universe']=='U11_283'},{m['p1_id'] for m in self.old['models'] if m['universe']=='U11_283'})
   self.assertEqual(self.c['counts']['models'],283)
@@ -60,13 +69,30 @@ class ConfirmedIntake(unittest.TestCase):
   rel=obj('views/catalogue-serving.release.json')
   for e in rel['entries']+rel['market_additions']:
    key=e.get('p1_id') or e['identity'];self.assertEqual(e['accepted']['price'],self.by[key]['price'])
- def test_rebuild_guard_before_writes(self):
-  paths=['views/canonical_u11.json','registry/u11_prices.csv','registry/u11_models.csv']
-  before={p:(ROOT/p).read_bytes() for p in paths}
+ def test_rebuild_reproduces_intake(self):
   r=subprocess.run([sys.executable,str(ROOT/'scripts/canonical.py')],capture_output=True)
-  self.assertNotEqual(r.returncode,0);self.assertIn(b'Full rebuild refused',r.stderr)
-  self.assertEqual(before,{p:(ROOT/p).read_bytes() for p in paths})
+  self.assertEqual(r.returncode,0,r.stderr)
+  acc={x['ledger_row_id'] for x in rows('registry/u11_prices.csv') if x.get('ledger_row_id') and x['status']=='ACCEPT'}
+  self.assertEqual(acc,{x['ledger_row_id'] for x in rows('registry/ceo_confirmed_accepted_20261102.csv')})
+  self.assertEqual(len(acc),89)
+ def test_altered_intake_refused_before_writes(self):
+  import shutil,tempfile
+  sys.path.insert(0,str(ROOT/'scripts'));import canonical as c
+  tmp=pathlib.Path(tempfile.mkdtemp())
+  for d in ('registry','review'):(tmp/d).mkdir()
+  for f in ('review/ceo_acceptance_20261102.json','review/ceo_confirmed_prices_20261102.csv'):shutil.copy(ROOT/f,tmp/f)
+  src=(ROOT/'registry/ceo_confirmed_accepted_20261102.csv').read_text().splitlines(True)
+  old=c.ROOT
+  try:
+   c.ROOT=str(tmp)
+   for bad in (src[:-1], src[:1]+[src[1].replace(',ACCEPT,',',REWORK,',1)]+src[2:]):
+    (tmp/'registry/ceo_confirmed_accepted_20261102.csv').write_text(''.join(bad))
+    with self.assertRaises(SystemExit):c.protected_intake()
+  finally:c.ROOT=old;shutil.rmtree(tmp)
  def test_release_hashes(self):
+  # the manifest records the files produced by the intake commit itself; later releases supersede them
   m=obj('review/ceo_acceptance_20261102.json')
-  for key,path in [('canonical_sha256','views/canonical_u11.json'),('release_sha256','views/catalogue-serving.release.json')]:self.assertEqual(m[key],hashlib.sha256((ROOT/path).read_bytes()).hexdigest())
+  for key,path in [('canonical_sha256','views/canonical_u11.json'),('release_sha256','views/catalogue-serving.release.json')]:
+   blob=subprocess.check_output(['git','show','5a373d7:vehicle-data/'+path],cwd=ROOT)
+   self.assertEqual(m[key],hashlib.sha256(blob).hexdigest())
 if __name__=='__main__':unittest.main()

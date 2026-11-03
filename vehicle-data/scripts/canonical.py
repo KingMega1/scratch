@@ -451,7 +451,7 @@ def spec_facts():
     f = []
     for r in read(os.path.join(ROOT, "registry", "spec_facts.csv")):
         f.append(dict(p1_id=r["p1_id"], field=r["field"], value=r["value"], unit=r["unit"], applicability=r["applicability"],
-                      source=f'drive:{r["source_drive_id"]}', issuer=r["source_issuer"], tier="A",
+                      source=f'drive:{r["source_drive_id"]}{r.get("source_ref") or ""}', issuer=r["source_issuer"], tier="A",
                       status="ACCEPT" if r["status"] == "ACCEPT" else "REWORK", reason="SP-1 Egypt brochure/price list"))
     for path in sorted(glob.glob(os.path.join(IN, "official", "*.official_observations.csv"))):
         for r in read(path):
@@ -581,6 +581,65 @@ def model_status():
     return {r["p1_id"]: r for r in read(p)} if os.path.exists(p) else {}
 
 
+INTAKE_COLS = ["price_id", "model_id", "p1_id", "model_year", "trim_label", "trim_key", "price_egp", "effective_date", "date_basis",
+               "as_of", "issuer", "tier", "evidence_url", "evidence_ref", "observed_at", "confidence", "status", "reason", "sites", "kind",
+               "source_type", "source_carrier", "source_sha256", "confirmation_authority", "confirmation_status", "ledger_row_id",
+               "release_id", "baseline_price_id", "baseline_egp", "confirmed_delta_egp", "baseline_evidence_url", "baseline_commit",
+               "printed_date"]
+
+
+def protected_intake():
+    """PI-1: CEO-confirmed accepted intake (registry/ceo_confirmed_accepted_*.csv) is protected input. Each file must match its
+    acceptance manifest (review/ceo_acceptance_*.json: row count, ledger rows, values, source hashes) or the build stops
+    before writing anything."""
+    rows, meta = [], []
+    for path in sorted(glob.glob(os.path.join(ROOT, "registry", "ceo_confirmed_accepted_*.csv"))):
+        tag = os.path.basename(path)[len("ceo_confirmed_accepted_"):-4]
+        man = json.load(open(os.path.join(ROOT, "review", f"ceo_acceptance_{tag}.json")))
+        ledger = {r["row_id"]: r for r in read(os.path.join(ROOT, "review", f"ceo_confirmed_prices_{tag}.csv"))}
+        rs = read(path)
+        bad = [r["ledger_row_id"] for r in rs if r["status"] != "ACCEPT" or r["ledger_row_id"] not in ledger
+               or r["price_egp"] != ledger[r["ledger_row_id"]]["price_egp"] or r["source_sha256"] != ledger[r["ledger_row_id"]]["source_sha256"]]
+        if len(rs) != man["accepted_retail_rows"] or len({r["ledger_row_id"] for r in rs}) != len(rs) or bad:
+            raise SystemExit(f"Protected CEO intake {tag} incomplete or altered ({len(rs)} rows, manifest {man['accepted_retail_rows']}, "
+                             f"mismatched {bad[:5]}). Build refused before writes.")
+        for r in rs:
+            r["price_egp"], r["sites"] = int(r["price_egp"]), int(r["sites"] or 1)
+        rows += rs
+        meta.append(dict(release_id=man["release_id"], base_commit=man["base_commit"], as_of=max(r["as_of"] for r in rs),
+                         ledger_sha256=sha(os.path.join(ROOT, "review", f"ceo_confirmed_prices_{tag}.csv"))))
+    return rows, meta
+
+
+def intake_view(rs):
+    """Served price for a model with CEO-confirmed intake: exactly the confirmed cohort (older rows stay in history)."""
+    pv = price_view(rs)
+    for t, r in zip(pv["trims"], sorted([r for r in rs if r["kind"] == "trim"], key=lambda r: (str(r["model_year"]), r["price_egp"]))):
+        for k in ("price_id", "source_type", "source_carrier", "source_sha256", "confirmation_status", "confirmation_authority", "ledger_row_id"):
+            t[k] = r[k]
+        if r.get("powertrain"):
+            t["powertrain"] = r["powertrain"]
+    for obj, r in [(pv, min([r for r in rs if r["kind"] == "trim"] or rs, key=lambda r: r["price_egp"]))] + \
+            list(zip(pv["trims"], sorted([r for r in rs if r["kind"] == "trim"], key=lambda r: (str(r["model_year"]), r["price_egp"])))):
+        if r["date_basis"] == "SOURCE_PRINTED_DATE":  # printed list date kept; never promoted to an effective date
+            obj["printed_date"] = r["printed_date"]
+    pv.update(confirmation_status="CEO_CONFIRMED", source_type=rs[0]["source_type"], source_sha256=rs[0]["source_sha256"],
+              price_scope="model_from" if rs[0]["kind"] == "from" else "confirmed_intake_trim_cohort", release_id=rs[0]["release_id"])
+    return pv
+
+
+def media_metadata():
+    """IM-3: structured metadata per served asset (registry/media_metadata.csv): view, colour, setting, alt text, served-file
+    hash. Model year and trim are only filled when verifiable."""
+    out = {}
+    for r in read(os.path.join(ROOT, "registry", "media_metadata.csv")):
+        out[r["asset_id"]] = dict(view_angle=r["view_angle"], color=r["color"] or None, setting=r["setting"], people=r["people"] == "yes",
+                                  model_year=int(r["model_year"]) if r["model_year"] else None, trim=r["trim"] or None,
+                                  width=int(r["width"]), height=int(r["height"]), served_file_sha256=r["served_file_sha256"],
+                                  alt_en=r["alt_text_en"], alt_ar=r["alt_text_ar"] or None)
+    return out
+
+
 def media_accepted():
     return read(os.path.join(ROOT, "registry", "media_accepted.csv"))
 
@@ -624,10 +683,7 @@ def counts(models):
 
 
 def main():
-    # A full source rebuild would drop separately accepted CEO intake and facts.
-    # Fail before ANY write until the reviewed incremental release is reconciled.
-    if os.path.exists(os.path.join(ROOT, 'review', 'ceo_acceptance_20261102.json')):
-        raise SystemExit('Protected accepted CEO intake present. Full rebuild refused before writes; reconcile accepted incremental release first.')
+    intake, intake_meta = protected_intake()  # validated before ANY write; a rebuild can never drop accepted CEO intake
     ap = argparse.ArgumentParser()
     ap.add_argument("--snap", default=None)
     ap.add_argument("--as-of", default=None)
@@ -642,19 +698,27 @@ def main():
     mobs, stated = market_obs(snaps)
     a_rows = tier_a(mobs, stated)
     rows = supersede(a_rows, tier_b(mobs, stated))
+    ikey = {}
+    for r in intake:
+        ikey.setdefault((r["p1_id"], str(r["model_year"]), r["trim_key"]), r["price_id"])
+    for r in rows:  # PS-4: only the exact model/year/trim series a CEO-confirmed row replaces is superseded; history kept
+        k = (r["p1_id"], str(r["model_year"]), r["trim_key"])
+        if r["status"] == "ACCEPT" and k in ikey:
+            r["status"], r["reason"] = "SUPERSEDED_BY_CEO_CONFIRMED", r["reason"] + "; superseded by " + ikey[k]
     byid = {r["p1_id"]: r for r in ids}
     for r in rows:
         r["model_id"] = byid.get(r["p1_id"], {}).get("model_id", "")
         r["price_id"] = hashlib.sha256(f'{r["p1_id"]}|{r["model_year"]}|{r["trim_key"]}|{r["price_egp"]}|{r["tier"]}|{r["issuer"]}'.encode()).hexdigest()[:12]
+    rows += [dict(r, model_id=byid.get(r["p1_id"], {}).get("model_id", r["model_id"])) for r in intake]
     rows.sort(key=lambda r: (r["p1_id"], r["tier"], str(r["model_year"]), r["price_egp"], r["issuer"]))
-    write(os.path.join(ROOT, "registry", "u11_prices.csv"),
-          ["price_id", "model_id", "p1_id", "model_year", "trim_label", "trim_key", "price_egp", "effective_date", "date_basis",
-           "as_of", "issuer", "tier", "evidence_url", "evidence_ref", "observed_at", "confidence", "status", "reason", "sites"], rows)
+    pcols = ["price_id", "model_id", "p1_id", "model_year", "trim_label", "trim_key", "price_egp", "effective_date", "date_basis",
+             "as_of", "issuer", "tier", "evidence_url", "evidence_ref", "observed_at", "confidence", "status", "reason", "sites"]
+    write(os.path.join(ROOT, "registry", "u11_prices.csv"), pcols + [k for k in INTAKE_COLS if k not in pcols], rows)
     official_models = {r["p1_id"] for r in a_rows if r["tier"] == "A" and r["issuer"].endswith("_eg_web")}
     per = collections.defaultdict(list)
     for r in rows:
         per[r["p1_id"]].append(r)
-    as_of = a.as_of or (os.path.basename(snap).split("_")[1] if snap else "")
+    as_of = a.as_of or max([os.path.basename(snap).split("_")[1] if snap else ""] + [m["as_of"] for m in intake_meta])
     facts = spec_facts()
     write(os.path.join(ROOT, "registry", "u11_spec_facts.csv"),
           ["p1_id", "field", "value", "unit", "applicability", "issuer", "tier", "source", "status", "reason"],
@@ -666,14 +730,18 @@ def main():
     for r in read(os.path.join(ROOT, "registry", "brochures.csv")):
         if r["status"] == "ACCEPT":
             bro[r["p1_id"]].append(dict(drive_id=r["drive_id"] or None, title=r["title"], issuer=r["issuer"], scope=r["variant_scope"],
-                                        url=r.get("url") or f'https://drive.google.com/file/d/{r["drive_id"]}/view'))
+                                        url=r.get("url") or f'https://drive.google.com/file/d/{r["drive_id"]}/view',
+                                        **({"sha256": r["sha256"]} if r.get("sha256") else {})))
     med = collections.defaultdict(list)
     for r in media_accepted():
         med[r["owner"]].append(r)
+    official_paths = {r["local_path"] for r in media_accepted() if r["status"] == "ACCEPT" and r["local_path"]}
+    media_meta = media_metadata()
     models, cov = [], []
     for m in [r for r in ids if in_catalogue(r)]:
         pr = per.get(m["p1_id"], [])
-        pv = price_view(pr)
+        irs = [r for r in intake if r["p1_id"] == m["p1_id"]]
+        pv = intake_view(irs) if irs else price_view(pr)
         fx = fby.get(m["p1_id"], [])
         acc = [x for x in fx if x["status"] == "ACCEPT"]
         specs = {}
@@ -694,12 +762,16 @@ def main():
         if not pts:
             cfg = {d["id"]: d for d in market_universe()["identities"] if d["decision"] in ("ADDITION", "SPLIT")}.get(m["p1_id"], {})
             pts = set(cfg.get("powertrains", [])) if len(cfg.get("powertrains", [])) == 1 else set()
-        if pv and len(pts) == 1:  # per-version powertrain: the model has one accepted powertrain (splits separate the others)
+        if pv and len(pts) == 1 and not irs:  # per-version powertrain: the model has one accepted powertrain (splits separate the others)
             pv = dict(pv, trims=[dict(t, powertrain=next(iter(pts))) for t in pv.get("trims", [])], powertrain_basis=
                       "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)")
         def asset(x):  # IM-1: P5 serves local files only; src is set once the verified bytes are materialized
             d = {k: x[k] for k in ("asset_id", "sha256", "width", "height", "quality_class", "url", "page", "rights_basis", "status")}
             d["src"] = SERVE_PREFIX + x["local_path"].split("media/", 1)[1] if x.get("local_path") and os.path.exists(os.path.join(ROOT, x["local_path"])) else None
+            if x["status"] != "ACCEPT" and x.get("local_path") in official_paths:  # IM-2: file now holds an accepted official asset's bytes
+                d["src"] = None
+            if x["asset_id"] in media_meta:
+                d["meta"] = media_meta[x["asset_id"]]
             d["credit"] = x.get("credit") or (re.sub(r"^https?://(www\.)?([^/]+).*$", r"\2", x["page"] or x["url"])
                                               if "drive.google" not in x["url"] else "CarIndex archive")
             return d
@@ -733,6 +805,9 @@ def main():
                 rec["market_status"], rec["market_status_basis"] = st["market_status"], f'{st["basis"]} ({st["decided_by"]} {st["decided_on"]})'
                 rec["gaps"] = rec["gaps"] + (["DISCONTINUED"] if st["market_status"] == "discontinued" else [])
             rec["related"] = [dict(identity=st["related_identity"], relation=st["relation"], basis=st["basis"])] if st["related_identity"] else []
+        mb = {d["id"]: d for d in market_universe()["identities"]}.get(m["p1_id"], {}).get("market_status_basis")
+        if mb and rec["market_status"] != "official":
+            rec["market_status_basis"] = mb
         models.append(rec)
         cov.append(dict(model_id=m["model_id"], p1_id=m["p1_id"], brand=m["brand"], model=m["model"], universe=m["universe"], id_status=m["id_status"],
                         market_status=rec["market_status"],
@@ -755,6 +830,8 @@ def main():
                  counts_market_universe=counts(models),
                  market_snapshots=[os.path.relpath(x, ROOT) for x in snaps],
                  models=models)
+    if intake_meta:
+        canon["accepted_intake"] = {k: intake_meta[-1][k] for k in ("release_id", "base_commit", "ledger_sha256")}
     json.dump(canon, open(os.path.join(ROOT, "views", "canonical_u11.json"), "w"), indent=1, ensure_ascii=False, sort_keys=True)
     write(os.path.join(ROOT, "review", "u11_coverage.csv"), list(cov[0].keys()), cov)
     serving(canon)
@@ -794,7 +871,8 @@ def serving(canon):
 
     def pub(h, flags):  # P5 read-model p2Hero(): {src:'/media/...', credit, source_url}; it ignores flags
         return dict(src=h["src"], credit=h["credit"], source_url=h["page"] or h["url"], image_url=h["url"], flags=flags,
-                    status=h["status"], quality_class=h["quality_class"], sha256=h["sha256"]) if h and h["src"] else None
+                    status=h["status"], quality_class=h["quality_class"], sha256=h["sha256"],
+                    **({"meta": h["meta"]} if h.get("meta") else {})) if h and h["src"] else None
     entries = []
     for e in rc1["entries"]:
         c = by[e["p1_id"]]
@@ -816,7 +894,9 @@ def serving(canon):
             e["accepted"]["powertrains"] = fix["to"]
             e["accepted"]["powertrains_correction"] = fix
         entries.append(e)
-    rel = dict(rc1, release_id=f"P2-CATALOGUE-U11-{canon['generated_as_of']}-RC2", state="VERIFYING",
+    rid = (canon.get("accepted_intake") or {}).get("release_id")  # serving version stays pinned to the accepted intake release
+    rel = dict(rc1, release_id=rid or f"P2-CATALOGUE-U11-{canon['generated_as_of']}-RC2", state="VERIFYING",
+               revision=hashlib.sha256(json.dumps(canon, sort_keys=True, ensure_ascii=False).encode()).hexdigest()[:12],
                acceptance="P2_ACCEPTED_FIELDS_ONLY", generated_as_of=canon["generated_as_of"],
                evidence_authority=dict(schema=canon["schema"], path="vehicle-data/views/canonical_u11.json",
                                        market_snapshot=canon["market_snapshot"], counts=canon["counts"]),

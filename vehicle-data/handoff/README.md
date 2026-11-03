@@ -59,3 +59,9 @@ Review sheet `1TUlGhEYzrOQrYdgMgyVhHwdw_ABGZSk9OhohYnvbZVg` (CarIndex P2 Data Co
 
 ## 2026-10-22 — price update
 - `p5-release-20261022.json` / `p1-release-20261022.json` (hashes inside). Ledger `review/oct22_price_ledger.csv`; evidence images `evidence/ceo-2026-10-22/`.
+
+## 2026-11-03 — rebuild reconciliation + image metadata
+- Release `P2-CEO-CONFIRMED-20261102-R1` (serving ID pinned), new `revision` field; hashes in `p5-release-20261103.json` / `p1-release-20261103.json`.
+- `canonical.py` reproduces the November CEO intake from `registry/ceo_confirmed_accepted_20261102.csv` and refuses to write if it is incomplete (replaces the hard rebuild refusal).
+- `registry/media_metadata.csv`: view, colour, setting, alt text (EN/AR), dims and served-file hash for all 391 served files; served as `meta`.
+- Gap report: `review/gap_report_20261103.csv`. Reconciliation: `review/rebuild_reconciliation_20261103.json`.

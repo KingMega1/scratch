@@ -1,0 +1,101 @@
+{
+ "task_id": "AT-39/AT-51",
+ "date": "2026-11-03",
+ "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+ "revision": "d37b93677fc4",
+ "release_sha256": "7705d8ad76a67275d80b9291c7112acb9bf3ed9c8b18feb8e8b9c45699162fc4",
+ "canonical_sha256": "e0035c85633fb3d4bd8af76ad65b5e9f06be1ff295524331078f9e9e1cffda93",
+ "previous_release_sha256": "2b796199e6c534cc69464ee181254bd127bc766511b52d833b9a4d9384479488",
+ "integrity": {
+  "rebuild_guard": "replaced: canonical.py now ingests protected CEO intake (registry/ceo_confirmed_accepted_20261102.csv, 89 rows) and refuses to write if any protected row is missing or altered (PI-1)",
+  "accepted_price_rows_before": 579,
+  "accepted_price_rows_after": 579,
+  "accepted_rows_lost": 0,
+  "options_preserved": 7,
+  "identities_preserved": [
+   "jaecoo/j5",
+   "jaecoo/j7",
+   "jaecoo/j7-phev",
+   "jaecoo/j8-phev",
+   "jac/rf8-phev"
+  ],
+  "brochure_facts_preserved": 73,
+  "rebuild_vs_november": "identical except additive: size_class for 4 JAECOO (accepted brochure length), JAC brand logo on jac/rf8-phev, sorted spec order (jaecoo/j5)",
+  "provenance_fix": "24 archive hero records pointed at files that now hold the accepted official hero; they are no longer served as that file (IM-2); official heroes unchanged",
+  "deterministic": true
+ },
+ "media_metadata": {
+  "file": "registry/media_metadata.csv",
+  "rows": 391,
+  "vehicle_images": 337,
+  "logos": 54,
+  "fields": [
+   "view_angle",
+   "color",
+   "setting",
+   "people",
+   "width",
+   "height",
+   "format",
+   "served_file_sha256",
+   "source_sha256",
+   "source_page",
+   "source_url",
+   "rights_basis",
+   "license",
+   "credit",
+   "alt_text_en",
+   "alt_text_ar",
+   "model_year",
+   "trim"
+  ],
+  "method": "visual review of every served file on numbered contact sheets; coarse view classes; model year and trim left blank (not verifiable from image)",
+  "alt_text_ar_rows": 256
+ },
+ "coverage_before": {
+  "models": 424,
+  "active": 421,
+  "price": 266,
+  "specs": 259,
+  "warranty": 135,
+  "brochure": 89,
+  "hero": 85,
+  "gallery": 73,
+  "logo": 348,
+  "hero_with_metadata": 0
+ },
+ "coverage_after": {
+  "models": 424,
+  "active": 421,
+  "price": 266,
+  "specs": 259,
+  "warranty": 135,
+  "brochure": 89,
+  "hero": 85,
+  "gallery": 73,
+  "logo": 349,
+  "hero_with_metadata": 85
+ },
+ "gap_report": "review/gap_report_20261103.csv",
+ "consumption_receipt": {
+  "base": "origin/claude/vigilant-cori-ce710x 85c4e12 (serves P2-CEO-CONFIRMED-20261102-R1, sha 2b796199)",
+  "method": "web-ci.yml sequence run locally in a disposable worktree with this release + 391 media files copied verbatim; nothing pushed to P5; Playwright pointed at the preinstalled Chromium (/opt/pw-browsers/chromium) in the disposable copy only",
+  "typecheck": "PASS",
+  "verify_p1": "PASS",
+  "unit": "80/80 PASS",
+  "build": "PASS",
+  "smoke_preview": "236 PASS, 6 skipped",
+  "fmc": "15/15 PASS",
+  "production_build": "PASS",
+  "production_boundary": "6/6 PASS",
+  "audit_deps": "FAIL (pre-existing: next critical, zod high; P5 dependency issue, not data)"
+ },
+ "not_done": [
+  "No new official images or prices fetched: OEM hosts are blocked by this session network policy (proxy 403); official-page evidence requires page byte hashes"
+ ],
+ "boundaries": [
+  "No production deployment",
+  "U11 set remains 283",
+  "No recommendation semantics change"
+ ]
+}

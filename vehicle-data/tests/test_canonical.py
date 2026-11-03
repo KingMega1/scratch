@@ -17,8 +17,7 @@ def digest():
 class Canonical(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        if not os.path.exists(os.path.join(ROOT, "review/ceo_acceptance_20261102.json")):
-            subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "canonical.py")], check=True, capture_output=True)
+        subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "canonical.py")], check=True, capture_output=True)
         cls.models = rd("registry/u11_models.csv")
         cls.prices = rd("registry/u11_prices.csv")
         cls.canon = json.load(open(os.path.join(ROOT, "views", "canonical_u11.json")))
@@ -28,11 +27,7 @@ class Canonical(unittest.TestCase):
     def test_deterministic(self):
         a = digest()
         result = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "canonical.py")], capture_output=True)
-        if os.path.exists(os.path.join(ROOT, "review/ceo_acceptance_20261102.json")):
-            self.assertNotEqual(result.returncode, 0)
-            self.assertIn(b"Full rebuild refused", result.stderr + result.stdout)
-        else:
-            self.assertEqual(result.returncode, 0)
+        self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(a, digest())
 
     def test_identity_complete_and_unique(self):
@@ -178,6 +173,29 @@ class Canonical(unittest.TestCase):
         rows = rd("review/market_universe_audit.csv")
         self.assertFalse([r["identity"] for r in rows if r["audit_class"] == "ON_SALE_NOT_IN_283"])
         self.assertEqual(sum(r["audit_class"] == "IN_283" for r in rows), 283)
+
+
+    def test_media_metadata_covers_served_files(self):
+        import hashlib, re
+        meta = {r["served_path"]: r for r in rd("registry/media_metadata.csv")}
+        rb = open(os.path.join(ROOT, "views", "catalogue-serving.release.json"), encoding="utf-8").read()
+        served = set(re.findall(r'"(/media/p2/[^"]+)"', rb))
+        self.assertTrue(served)
+        for src in served:
+            path = "media/" + src[len("/media/p2/"):]
+            self.assertIn(path, meta, src)
+            r = meta[path]
+            self.assertEqual(hashlib.sha256(open(os.path.join(ROOT, path), "rb").read()).hexdigest(), r["served_file_sha256"], src)
+            self.assertIn(r["view_angle"], {"front", "front_3q", "side", "rear_3q", "rear", "top", "interior", "detail", "exterior", "logo"})
+            self.assertTrue(r["alt_text_en"] and r["source_url"] and r["rights_basis"], src)
+            self.assertFalse(r["model_year"] or r["trim"], "model year/trim must stay blank unless verified")
+
+    def test_archive_record_never_serves_official_file(self):
+        official = {r["local_path"] for r in rd("registry/media_accepted.csv") if r["status"] == "ACCEPT" and r["local_path"]}
+        for m in self.canon["models"]:
+            h = m.get("hero_image_limited")
+            if h and h.get("src"):
+                self.assertNotIn("media/" + h["src"][len("/media/p2/"):], official, m["p1_id"])
 
 
 if __name__ == "__main__":
