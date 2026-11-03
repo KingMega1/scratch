@@ -118,15 +118,7 @@ export default async function CarDetail({ params }: P) {
         </section>
       ) : null}
 
-      <section className="cd-section" aria-labelledby="take-h" data-slot="carindex-take" data-bound={take ? 'true' : 'false'}>
-        <h2 id="take-h" className="h-section">{c.takeH}</h2>
-        {take ? (
-          <div className="take-grid">
-            <div className="card"><h3>{c.bestFor}</h3><ul>{take.bestFor.map(s => <li key={s.code}>{s.text[locale]}</li>)}</ul></div>
-            <div className="card"><h3>{c.thinkTwice}</h3><ul>{take.thinkTwice.map(s => <li key={s.code}>{s.text[locale]}</li>)}</ul></div>
-          </div>
-        ) : <div className="slot-empty">{c.takePending}</div>}
-      </section>
+
 
       <section className="cd-section" aria-labelledby="prices-h">
         <h2 id="prices-h" className="h-section">{c.pricesH}{car.priceFrom.modelYear ? <span className="small"> · {v2.modelYear} {car.priceFrom.modelYear}</span> : null}</h2>
@@ -167,6 +159,16 @@ export default async function CarDetail({ params }: P) {
         {car.p2?.specs.length ? <P2Specs c={car.p2} locale={locale} lead={specRows.slice(0, 1)} />
           : <div className="spec-grid">{specRows.map(([k, v]) => <div className="spec" key={k}><div className="k">{k}</div><div className="v">{v}</div></div>)}</div>}
       </section>
+
+      {take ? <section className="cd-section" aria-labelledby="take-h" data-slot="carindex-take" data-bound={take ? 'true' : 'false'}>
+        <h2 id="take-h" className="h-section">{c.takeH}</h2>
+        {take ? (
+          <div className="take-grid">
+            <div className="card"><h3>{c.bestFor}</h3><ul>{take.bestFor.map(s => <li key={s.code}>{s.text[locale]}</li>)}</ul></div>
+            <div className="card"><h3>{c.thinkTwice}</h3><ul>{take.thinkTwice.map(s => <li key={s.code}>{s.text[locale]}</li>)}</ul></div>
+          </div>
+        ) : <div className="slot-empty">{c.takePending}</div>}
+      </section> : null}
 
       {car.p2 ? <P2Warranty c={car.p2} locale={locale} /> : null}
 

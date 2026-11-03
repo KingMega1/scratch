@@ -141,7 +141,8 @@ test.describe('boundaries', () => {
   });
   test('car detail Take is a data-bound slot', async ({ page }) => {
     await page.goto('/en/cars/hyundai-tucson');
-    await expect(page.locator('[data-slot="carindex-take"]')).toHaveAttribute('data-bound', 'false');
+    await expect(page.locator('[data-slot="carindex-take"]')).toHaveCount(0);
+    await expect(page.locator('#prices-h')).toBeVisible();
   });
   test('security headers', async ({ request }) => {
     const h = (await request.get('/en')).headers();

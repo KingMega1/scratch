@@ -118,6 +118,17 @@ for (const l of ['en', 'ar'] as const) {
     expect((await request.get(`/${l}/my-carindex`)).status()).toBe(200);
     expect((await request.get('/admin')).status()).toBe(404); // internal, auth-only (404 when unconfigured)
   });
+  test(`${l}: comparison groups unverified rows and keeps known facts visible`, async ({ page }) => {
+    await page.goto(`/${l}/compare?ids=arcfox-t1,arcfox-alpha-t5`);
+    const disclosure = page.locator('[data-missing-for-all="true"]');
+    await expect(disclosure).toBeVisible();
+    expect(await disclosure.locator('li').count()).toBeGreaterThan(0);
+    for (const label of await disclosure.locator('li').allTextContents())
+      await expect(page.locator('table tbody th')).not.toContainText([label]);
+    await expect(page.locator('table tbody')).not.toBeEmpty();
+    await disclosure.locator('summary').click();
+    await expect(disclosure.locator('ul')).toBeVisible();
+  });
   test(`${l}: first fold has a clear Find My Car CTA and verified photos only`, async ({ page }) => {
     await page.goto(`/${l}`);
     const fold = page.locator('section.hero');
@@ -140,7 +151,8 @@ for (const l of ['en', 'ar'] as const) {
     await page.goto(`/${l}/find-my-car?r=${j.result.share.r}`);
     const inv = page.locator('[data-fmc-invite]');
     await expect(inv).toBeVisible({ timeout: 20_000 });
-    await expect(inv.locator('input#phone')).toBeAttached();
+    await expect(inv.locator('input#phone')).toHaveCount(0);
+    await expect(inv.locator('[role="status"]')).toBeVisible();
     const ev = await page.evaluate(() => ((window as unknown as { dataLayer?: { event: string }[] }).dataLayer || []).map(e => e.event));
     expect(ev).toContain('identity_gate_view');
     // it is the last block of the result

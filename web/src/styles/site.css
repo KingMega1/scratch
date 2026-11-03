@@ -483,8 +483,8 @@ table.t th.t-num { text-align: end; }
 .hero-cars { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
 .hero-cars li:first-child { grid-column: 1 / -1; }
 .hero-cars a { display: block; position: relative; border-radius: var(--radius-card); overflow: hidden; color: var(--ci-color-white); text-decoration: none; background: var(--ci-color-fog); }
-.hero-cars img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
-.hero-cars li:first-child img { aspect-ratio: 16 / 8; }
+.hero-cars img { display: block; width: 100%; height: clamp(80px, 12vw, 132px); object-fit: contain; }
+.hero-cars li:first-child img { height: clamp(140px, 20vw, 224px); }
 .hero-cars span { position: absolute; inset-inline-start: 0; inset-block-end: 0; padding: 6px 10px; background: rgba(11,22,32,.78); font-size: 13px; font-weight: 600; border-start-end-radius: 6px; }
 @media (max-width: 599px) { .hero-grid { padding-block: 32px; gap: 24px; } .hero-cars { grid-template-columns: 1fr 1fr; } }
 .gf-tag { color: var(--ci-color-white); font-weight: 700; margin-block-start: 12px !important; }

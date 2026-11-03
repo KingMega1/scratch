@@ -19,6 +19,7 @@ export default function VerifyForm({ locale, enabled }: { locale: Locale; enable
     setBusy(false);
     setMsg(res && res.ok ? null : a.gated);
   }
+  if (!enabled) return <p className="gated" role="status">{a.gated}</p>;
   return (
     <form onSubmit={submit} noValidate style={{ display: 'grid', gap: 14, maxWidth: 420 }}>
       <div className="field">

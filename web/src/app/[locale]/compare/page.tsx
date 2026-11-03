@@ -48,6 +48,17 @@ export default async function Compare({ params, searchParams }: P) {
     [c.rows.warranty, x => spec(x, 'warranty')],
     [c.rows.regs, x => x.registrations?.inWindow != null ? <span className="tnum">{num(x.registrations.inWindow)}</span> : dash],
   ];
+  const known = (x: PublicCar, i: number) => {
+    if (i === 0) return x.priceFrom.state !== 'unknown';
+    if (i === 1) return !!top(x);
+    if (i === 2) return true; // Keep the explicit price state visible.
+    if (i === 3) return x.trims.length > 0;
+    if (i === 4) return x.powertrains.length > 0;
+    if (i === 11) return x.registrations?.inWindow != null;
+    return !!x.specs[['horsepower', 'engine_capacity', 'transmission', 'drive_type', 'seats', 'warranty'][i - 5]]?.values.length;
+  };
+  const visibleRows = rows.filter((_, i) => cars.some(x => known(x, i)));
+  const missingRows = rows.filter((_, i) => !cars.some(x => known(x, i)));
   const slot = (i: number) => (
     <div className="field" key={i}>
       <label htmlFor={`cmp-${i}`}>{c.pick} {i + 1}</label>
@@ -77,12 +88,16 @@ export default async function Compare({ params, searchParams }: P) {
                 <Link href={`/${locale}/cars/${x.id}`}><CarName car={x} locale={locale} /></Link>
                 <div><Link className="small" href={`/${locale}/compare?ids=${ids.filter(i => i !== x.id).join(',')}`}>{c.remove}</Link></div>
               </th>))}</tr></thead>
-            <tbody>{rows.map(([label, f]) => (
+            <tbody>{visibleRows.map(([label, f]) => (
               <tr key={label}><th scope="row">{label}</th>{cars.map(x => <td key={x.id}>{f(x)}</td>)}</tr>
             ))}</tbody>
           </table>
         </div>
       ) : null}
+      {cars.length > 0 && missingRows.length > 0 ? <details className="notice" data-missing-for-all="true" style={{ marginBlockStart: 16 }}>
+        <summary>{locale === 'ar' ? 'بيانات لم يتم التحقق منها لأي من العربيات المختارة' : 'Not yet verified for any selected car'}</summary>
+        <ul>{missingRows.map(([label]) => <li key={label}>{label}</li>)}</ul>
+      </details> : null}
       {cars.length >= 2 ? (
         <div className="notice" style={{ marginBlockStart: 20 }}>{c.noWinner} <Link className="link" href={`/${locale}/find-my-car`}>{t.nav.fmc}</Link></div>
       ) : null}
