@@ -44,13 +44,38 @@
   "raw_rows": "vehicle-data/review/ceo_acceptance_20261102.csv",
   "authority": "CEO explicit 2026-11-02 confirmation and implementation mandate",
   "acceptance": "P2_ACCEPTED",
-  "consumption_state": "QUEUED",
-  "executor_acknowledgment": null,
+  "consumption_state": "VERIFYING",
+  "executor_acknowledgment": {
+    "kind": "GitHub Actions",
+    "run_id": 41595998021,
+    "job_id": 125783382920,
+    "commit": "e5fa552881dec7ea41e1e754a1887e21e5ac17d7",
+    "result": "typecheck PASS; P1 vendor integrity PASS; 80/80 unit tests PASS"
+  },
   "boundaries": [
     "No production deployment",
     "No recommendation semantics change",
     "U11 set remains 283; five new identities are market additions only"
   ],
-  "next_action": "Consume exact accepted release in existing preview read model and run bilingual regression",
-  "source_policy": "Official Pricelist for branded list reproductions. Media and increase-message carrier retained; CEO confirmation separately stored. Printed date is not inferred effective date."
+  "next_action": "Repair dependency audit; P1 candidate acceptance remains separate. No deployment performed.",
+  "source_policy": "Official Pricelist for branded list reproductions. Media and increase-message carrier retained; CEO confirmation separately stored. Printed date is not inferred effective date.",
+  "website_binding_commit": "e5fa552881dec7ea41e1e754a1887e21e5ac17d7",
+  "p2_commit": "5a373d7a5ee97247f2da6de65239ff61c79cab4e",
+  "build_verification": {
+    "run_id": 41596185674,
+    "result": "PASS"
+  },
+  "smoke_verification": {
+    "run_id": 41596321984,
+    "job_id": 125784412262,
+    "preview": "236 PASS,6 skipped",
+    "fmc": "15/15 PASS",
+    "production_boundary": "6/6 PASS",
+    "build": "PASS",
+    "unit": "80/80 PASS",
+    "artifact_id": 13212587600
+  },
+  "deployment": "NOT_PERFORMED",
+  "latest_commit": "85c4e1264437a751153b39ff340502396bcb47fd",
+  "remaining_blocker": "Mandatory dependency audit FAILED: Next15.5.27 critical; Zod3.25.76 high. No waiver. Full CI not PASS."
 }

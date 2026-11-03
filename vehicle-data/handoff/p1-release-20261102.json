@@ -44,13 +44,24 @@
   "raw_rows": "vehicle-data/review/ceo_acceptance_20261102.csv",
   "authority": "CEO explicit 2026-11-02 confirmation and implementation mandate",
   "acceptance": "P2_ACCEPTED",
-  "consumption_state": "QUEUED",
-  "executor_acknowledgment": null,
+  "consumption_state": "VERIFYING",
+  "executor_acknowledgment": {
+    "executor": "Current execution session; existing P1 build_u12.mjs",
+    "commit": "d55372903553a1bff926eb317ca80f6ed60a5ffb",
+    "dataset": "U12-CEO-2026-11-03",
+    "tests": {
+      "data": "189/189 PASS",
+      "eligibility": "404/404 PASS",
+      "buyer_scenarios": "696/696 PASS",
+      "intake": "88 trim prices,1 model-from hold,7 options excluded PASS"
+    }
+  },
   "boundaries": [
     "No production deployment",
     "No recommendation semantics change",
     "U11 set remains 283; five new identities are market additions only"
   ],
-  "next_action": "Consume accepted canonical data through existing candidate build; retain semantic release gate",
-  "source_policy": "Official Pricelist for branded list reproductions. Media and increase-message carrier retained; CEO confirmation separately stored. Printed date is not inferred effective date."
+  "next_action": "Existing P3 copy and E6.1/dataset release acceptance gates remain; do not bind candidate to production.",
+  "source_policy": "Official Pricelist for branded list reproductions. Media and increase-message carrier retained; CEO confirmation separately stored. Printed date is not inferred effective date.",
+  "production_binding_changed": false
 }
