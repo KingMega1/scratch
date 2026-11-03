@@ -1,0 +1,68 @@
+{
+  "batch": "ChatGPT_P2_OEM_brand_logo_candidates_20261103",
+  "canonical_reference": "27776970d47f38ad29e60794cc8cc0db74dd1229",
+  "status": "STAGING_ONLY_NEEDS_P2_QA",
+  "scoping": "3 brand master candidates could cover 18 missing-model logo rows if correctly reviewed; existing current logo statuses remain unchanged.",
+  "visual_checked_at": "2026-11-03",
+  "rights": "Public OEM importer/global assets. CarIndexed reuse/redistribution permission and technical style need P2 acceptance; not automatically approved.",
+  "assets": [
+    {
+      "brand": "Soueast",
+      "model_rows_impacted": 6,
+      "site": "https://www.soueast-egypt.com/",
+      "direct_file": "https://www.soueast-egypt.com/Logo.png",
+      "format": "PNG RGBA",
+      "pixels": "270x18",
+      "bytes": 867,
+      "sha256": "6a4cad0814428784048112434446607a0a1860665aa2963385d70210232c21d5",
+      "visual": "white horizontal SOUEAST wordmark on transparent; dark card background recommended",
+      "quality": "LIMITED",
+      "preexisting_drive_asset": "https://drive.google.com/file/d/1h9vPFfMljtCD9M8tEntHV3gv3gaOyXVu/view?usp=drivesdk",
+      "proposed_accepted_destination": "vehicle-data/media/brands/soueast.png",
+      "status": "NEEDS_P2_QA",
+      "notes": "Reuses existing individually stored Drive asset; do not re-upload. Seek scalable or higher-resolution official alternative before HQ acceptance."
+    },
+    {
+      "brand": "BAIC",
+      "model_rows_impacted": 8,
+      "site": "https://www.baic-egypt.com/",
+      "direct_file": "https://baic-egypt.com/img/global/logo.png",
+      "format": "PNG RGBA",
+      "pixels": "198x47",
+      "bytes": 2358,
+      "sha256": "fb2c1f47322f2ce78a482c72cfcd2e22d728848c28a1d16de9e6a1ad4253e110",
+      "visual": "red BAIC horizontal wordmark on transparent",
+      "quality": "LIMITED",
+      "preexisting_drive_asset": null,
+      "proposed_accepted_destination": "vehicle-data/media/brands/baic.png",
+      "status": "NEEDS_P2_QA",
+      "notes": "Not seen in checked Drive assets folder. Seek official HQ or SVG variant to avoid upscale artifacts."
+    },
+    {
+      "brand": "JAECOO",
+      "model_rows_impacted": 4,
+      "site": "https://www.omodajaecoo.com/global/globalWebsite/",
+      "direct_file": "https://www.omodajaecoo.com/global/images/footer/JAECOO_light.png",
+      "format": "PNG RGBA",
+      "pixels": "134x16",
+      "bytes": 1266,
+      "sha256": "653754cdf66e6a618c52f7447f32f7b7da6f36487a5f34c74988909ea504e67e",
+      "visual": "black JAECOO stand-alone wordmark on transparent; distinguish OMODA group logo",
+      "quality": "LIMITED",
+      "preexisting_drive_asset": null,
+      "proposed_accepted_destination": "vehicle-data/media/brands/jaecoo.png",
+      "status": "NEEDS_P2_QA",
+      "notes": "Global OEM, not Egypt importer verified. Find HQ standalone JAECOO primary logo for launch quality."
+    }
+  ],
+  "assertions": {
+    "official_source_domain_verified": 3,
+    "pixel_and_hash_checked": 3,
+    "visually_inspected": 3,
+    "drive_preexisting_matched_by_name_prefix": 1,
+    "accepted_count": 0,
+    "canonical_writes": 0,
+    "web_releases": 0
+  },
+  "delivery_policy": "INDIVIDUAL asset links; no ZIP; do not place low-resolution logo files into accepted vehicle-data/media/brands without P2 owner QA."
+}
