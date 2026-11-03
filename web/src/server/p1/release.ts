@@ -25,44 +25,28 @@ export const BOUND = {
   p3_artifact: '1791369522-eecc',
 } as const;
 
-/* PREPARED, NOT ACTIVE. P1 candidate record P1-RELEASE-U12-RC3 (status CANDIDATE — not released): engine E6.1, transport T1.1,
-   dataset U12-RC3 (416 identities, 371 in universe), P2 input fc19238. Vendored verbatim under p1-candidate/U12-RC3/ (each file's
-   sha256 checked against the record) for dry runs only: tests/unit/p1-candidate-u12-rc3.test.mjs. Nothing at runtime reads it.
-   Activation = P1 RELEASE of this record (gates: P3 copy approval of six DRAFT keys; release acceptance) plus a reviewed change of BOUND. */
-export const CANDIDATE = {
-  status: 'CANDIDATE_NOT_ACCEPTED',
-  record: 'P1-RELEASE-U12-RC3',
-  record_commit: '3b339a0e6f66f81297d28de17288207981945162',
-  record_sha256: '6c9e723beeba4ad5ba14ba023694c0c11ed29a3ccc9f0da4d577fc084ac70bdb',
-  root: 'p1-candidate/U12-RC3',
-  engine_version: 'E6.1-2026-10-14',
-  transport_version: 'T1.1-2026-10-15',
-  universe_version: 'U12-RC3-2026-10-15',
-  dataset_id: 'U12-RC3-2026-10-15/recommendation_view',
-  path: 'buyer-decision/datasets/U12-RC3-2026-10-15',
-  file_sha256: '15406eabb700ebaa3cbd92989691ce40eed5ccd132c2c953899cda1e750fe550',
-  content_sha256: '36d47933ec697e779eb6bc63a1cac9f32094c605ff96644896837caa2d95b1d8',
-  p2_input_commit: 'fc19238',
-} as const;
-
-
-/* CEO-authorized NONPRODUCTION integration, pinned to 0b06620. Never follows a moving P1 branch. */
-export const CEO2 = {
-  record: 'P1-RELEASE-U12-CEO2',
-  record_commit: '0b066207e43baa9af7e9b1d536e3ba8568d023ce',
-  record_sha256: 'f46f4c1c04dcd32c5bba6b1f65f169395f9fd7d1a8e557665052ae9eb2bc805c',
-  transport_commit: '49c4b88ce7171d1ece776d818aac95b8ff1755fd',
+/* CEO-authorized NONPRODUCTION preview candidate, pinned to P1 record commit 47e33e1 (P1-RELEASE-U12-CEO3, status
+   CANDIDATE — not released). Never follows a moving P1 branch. Supersedes the staged U12-CEO2 (0b06620) and U12-RC3 candidates, which
+   are no longer vendored: CEO3 changes only the dataset (CEO powertrain decisions for 7 models); engine E6.1, transport T1.2, parser,
+   copy and presentation bytes are identical to CEO2, and the P2 input is the same release P5 serves (5a373d7). */
+export const PREVIEW_CANDIDATE = {
+  record: 'P1-RELEASE-U12-CEO3',
+  record_commit: '47e33e16475018e440f9de92af4cd4ba22f51559',
+  record_sha256: '06880f9838289247f0e81663f0a7564cbd1f63e2cbc5eb0c9e725b51e45f02d3',
+  transport_commit: 'cfa3450f62c8c5353c3eebfda8d096792a034bb2',
   engine_version: 'E6.1-2026-10-14', transport_version: 'T1.2-2026-11-03',
-  schema: 'ci.reco.v1', universe_version: 'U12-CEO2-2026-11-03',
-  dataset_id: 'U12-CEO2-2026-11-03/recommendation_view',
-  dataset_content_sha256: 'aa5e32ee11a9ef0f6d1f5b4ce44bf177579e5efb8834f9373dc0c930ae2344e1',
+  schema: 'ci.reco.v1', universe_version: 'U12-CEO3-2026-11-03',
+  dataset_id: 'U12-CEO3-2026-11-03/recommendation_view',
+  dataset_content_sha256: '4f2e9ccc8d57b5fc9df3de2b7e99df27348047a795f834ea2c1ca975627cfd52',
   p3_artifact: 'CANDIDATE_COPY_NOT_ACCEPTED',
 } as const;
+export const PREVIEW_CANDIDATE_ID = 'U12-CEO3';
+export const PREVIEW_CANDIDATE_ROOT = 'p1-candidate/U12-CEO3';
 export function candidateEnabled() {
-  return process.env.P1_CANDIDATE === 'U12-CEO2' && process.env.CI_ENV === 'preview' &&
+  return process.env.P1_CANDIDATE === PREVIEW_CANDIDATE_ID && process.env.CI_ENV === 'preview' &&
     process.env.VERCEL_ENV !== 'production';
 }
-export const selectedBinding = () => candidateEnabled() ? CEO2 : BOUND;
+export const selectedBinding = () => candidateEnabled() ? PREVIEW_CANDIDATE : BOUND;
 
 const RUNTIME_FILES = ['engine', 'parser', 'copy_i18n', 'presentation_extracted', 'redaction', 'transport', 'schema', 'p5_contract', 'dataset_manifest', 'dataset_view'];
 
@@ -86,7 +70,7 @@ export type ReleaseState =
   | { ok: true; T: Transport; ds: Dataset; checks: string[] }
   | { ok: false; error: string; checks: string[] };
 
-export const releaseRoot = () => path.join(process.cwd(), candidateEnabled() ? 'p1-candidate/U12-CEO2' : 'p1-release');
+export const releaseRoot = () => path.join(process.cwd(), candidateEnabled() ? PREVIEW_CANDIDATE_ROOT : 'p1-release');
 const sha = (b: Buffer) => createHash('sha256').update(b).digest('hex');
 declare const __non_webpack_require__: NodeRequire | undefined;
 // Load the vendored CommonJS at runtime from disk (not bundled), so the bytes executed are the bytes hash-checked.
