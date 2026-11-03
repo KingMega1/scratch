@@ -1,0 +1,30 @@
+{
+  "task_id": "AT-39/AT-51 -> P1",
+  "state": "VERIFYING",
+  "scope": "Candidate data consumption completed; release gates remain open",
+  "p1_base_commit": "4e302b9cc208f43fd133baf89c9ab663f2e579fc",
+  "p2_commit": "5a373d7a5ee97247f2da6de65239ff61c79cab4e",
+  "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+  "dataset": "U12-CEO-2026-11-03",
+  "dataset_sha256": "ef84f0070ab5539aca5151cd284ae1f33c34fe67e34824f5537496c9b17a2037",
+  "engine_changed": false,
+  "production_binding_changed": false,
+  "validation": {
+    "data_checks": "189/189 PASS",
+    "eligibility_checks": "404/404 PASS",
+    "buyer_scenarios": "696/696 PASS; 42 scenarios",
+    "confirmed_intake": "45 models;88 exact trim prices;1 model-from evidence hold;7 options excluded"
+  },
+  "open_gates": [
+    "Existing P3 candidate copy approval",
+    "Existing E6.1/dataset release acceptance"
+  ],
+  "model_from_hold": "BMW 7 Series: EGP11900000 accepted as model-from evidence; source does not establish740i or a purchasable trim. No fabricated recommendation version.",
+  "runtime_hashes": {
+    "app/engine.js": "78180dc7e4127c8722fdad01732a16f9a202d8e158c120e88aa1f1195efb75ed",
+    "app/brief.js": "ddf63356b4fafd6b6c93b5cf283d0939e100d2043c85bba2fbc8f3fc3eb0e4b2",
+    "app/present.js": "9f2f5e17abe3d2121f351bb0df4c3941c8d1b9d9e438f8e5cee4340c278f2f5c",
+    "app/i18n.js": "ef7ad27d2b527a9cbd701aef9321fd3e37c05bb017778273d032feb8cb5bb9ff",
+    "transport/reco.js": "19ac7abcb06f33f2f4da3783a3cacd2028d8cb2c2507ab0d3d9224f484e62f1e"
+  }
+}
