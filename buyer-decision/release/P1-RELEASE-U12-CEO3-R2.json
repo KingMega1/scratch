@@ -1,0 +1,150 @@
+{
+ "record": "P1-RELEASE-U12-CEO3-R2",
+ "status": "CANDIDATE — not released",
+ "created": "2026-11-03",
+ "owner": "P1",
+ "task": "P1-READINESS-02",
+ "repo": "KingMega1/scratch",
+ "branch": "claude/carindex-buyer-decision-slice-applo4",
+ "source_commit": "f69003772c0eae0ef9886cd0c966fe48736f132b",
+ "production_binding_unchanged": "P1-RELEASE-T1 (engine E6-2026-09-28, U11-2026-09-26) stays bound until this candidate is accepted",
+ "release_gates_open": [
+  "P3 approval of DRAFT copy keys in app/i18n.js (conflict_h, conflict.unknown_price, conflict.unknown_size, conflict.scope, sl_out.unknown_size, sl_out.scope) — see datasets/U12-CEO3-R2-2026-11-03/P3-COPY-REQUEST.md",
+  "Release acceptance of engine E6.1 + dataset U12-CEO3-R2"
+ ],
+ "test_build": {
+  "repo": "KingMega1/carindex-buyer-test",
+  "commit": null,
+  "url": "https://kingmega1.github.io/carindex-buyer-test/u12c2/app/index.html",
+  "tracking": "none"
+ },
+ "engine_version": "E6.1-2026-10-14",
+ "transport_version": "T1.2-2026-11-03",
+ "schema": "ci.reco.v1",
+ "universe_version": "U12-CEO3-R2-2026-11-03",
+ "dataset": {
+  "id": "U12-CEO3-R2-2026-11-03/recommendation_view",
+  "path": "buyer-decision/datasets/U12-CEO3-R2-2026-11-03",
+  "file_sha256": "edaa29bb089864cf6086f5899d02bd6f92d64fee27bdc81a63878109d3a7f7c1",
+  "content_sha256": "dc70d044879eb4f0ca6da810b9bab114240a55c9cc9bcd7ca370a44ab35b7145",
+  "identities": 424,
+  "models_in_universe": 423
+ },
+ "p2_input": {
+  "commit": "0ca90ef13c89da5289e4cd6b281d7fc6a95ce7e4",
+  "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+  "files": {
+   "catalogue-serving.release.json": "0f2584ccecfcb18cfe95075623f3f491d888d40d636742e608ca0a45f154f3e4",
+   "market_universe.json": "b0d8a15fcf39a8b497aab68119ff778f18031824a8d0e84c9a77ad7bf76731c0",
+   "registration_models.csv": "e6f43df6596f3fe38f4b13f9afb7d24663379fc96db31cfb5a588f17a94571af",
+   "u11_models.csv": "36c45232e490a924975060b0fe08c14b3eeb546577da81676b624ee8bbcdf36a",
+   "arabic_names.csv": "91a7d71b7165da6a9b87544b2a0eb6dc1d1aaa4253ce063fce283e8a6429c188",
+   "u11_prices.csv": "27402039587e039e9d1d97b14f815336f5118759d8c6e3769e2a5763d988d682"
+  }
+ },
+ "registry": {
+  "snapshot_id": null,
+  "registration_months": [
+   "2021-02",
+   "2026-08"
+  ],
+  "last12_window": [
+   "2025-09",
+   "2026-08"
+  ],
+  "note": "registrations: sale evidence and size class source only; their absence never excludes"
+ },
+ "files_changed_vs_T1": [
+  "app/engine.js",
+  "app/brief.js",
+  "app/i18n.js",
+  "app/present.js",
+  "app/app.js",
+  "transport/reco.js"
+ ],
+ "files": {
+  "engine": {
+   "path": "buyer-decision/app/engine.js",
+   "sha256": "78180dc7e4127c8722fdad01732a16f9a202d8e158c120e88aa1f1195efb75ed",
+   "bytes": 35396
+  },
+  "parser": {
+   "path": "buyer-decision/app/brief.js",
+   "sha256": "30389d717a7e5e47efad2113f957de830397b5bb6b713038030928ee5e95fc17",
+   "bytes": 30700
+  },
+  "copy_i18n": {
+   "path": "buyer-decision/app/i18n.js",
+   "sha256": "928518079f46ea8406b572c199fdab54d6f211ad751e0dd59035bebe0f340788",
+   "bytes": 62591
+  },
+  "presentation_extracted": {
+   "path": "buyer-decision/app/present.js",
+   "sha256": "61e09385cce7f1413aba890f70a14fe902bfd961959e40f99beb254b332056fb",
+   "bytes": 26900
+  },
+  "browser_app": {
+   "path": "buyer-decision/app/app.js",
+   "sha256": "09e1623e342f2ac3083a72768d5b2024e5c7978c91d8890c4e5b8d6791280328",
+   "bytes": 57499
+  },
+  "redaction": {
+   "path": "buyer-decision/app/redact.js",
+   "sha256": "2e26a612310e5931048fde96546f9b92c4ce7f7df4568707e04a3c0b5f084aa9",
+   "bytes": 1599
+  },
+  "tracking": {
+   "path": "buyer-decision/app/track.js",
+   "sha256": "1cce794d9c5ae1bc51bda332d5192691cb4f3f045c2c325de19e149a85a9f727",
+   "bytes": 6616
+  },
+  "transport": {
+   "path": "buyer-decision/transport/reco.js",
+   "sha256": "606d65b78390dcaffef80e2a6e5e481f2e9d5e7fe5279df1cf80bdc48841f8e3",
+   "bytes": 13339
+  },
+  "schema": {
+   "path": "buyer-decision/transport/ci.reco.v1.schema.json",
+   "sha256": "fb13b0a4fa96778f117b1c446ccfbbba14c805d6caf0a95f8a11fcea73e5bb38",
+   "bytes": 8663
+  },
+  "p5_handoff": {
+   "path": "buyer-decision/transport/P5-HANDOFF-U12-CEO3-R2.md",
+   "sha256": "2dccbad7bad4e689cb7d787793dda5201258ebcfb264f3c196e471bb5e72587a",
+   "bytes": 9764
+  },
+  "dataset_manifest": {
+   "path": "buyer-decision/datasets/U12-CEO3-R2-2026-11-03/manifest.json",
+   "sha256": "7b000d90ab30c20547384ccb98a26a83ecee7a1b9677aa2d178633cb2bda2a07",
+   "bytes": 79830
+  },
+  "dataset_view": {
+   "path": "buyer-decision/datasets/U12-CEO3-R2-2026-11-03/recommendation_view.json",
+   "sha256": "edaa29bb089864cf6086f5899d02bd6f92d64fee27bdc81a63878109d3a7f7c1",
+   "bytes": 343746
+  },
+  "regression_report": {
+   "path": "buyer-decision/datasets/U12-CEO3-R2-2026-11-03/REGRESSION_REPORT.md",
+   "sha256": "0d6f25a53ea44fed2bbecb0ce905383ac463453f075089fbc9ba67700b4df90a",
+   "bytes": 48794
+  }
+ },
+ "semantic_changes": "Ranking: NONE. Parser understanding fixes (ranges, +10% stated as %, brand-only phrasings, running costs, Arabic fuel priority, plug-in check) and transport T1.2 (editBrief, budget guard): see transport/P5-HANDOFF-U12-CEO2.md. Eligibility data policy per CEO 2026-10-21 (market prices for unpriced cars, no size hold, coupes/convertibles/vans included; see dataset manifest changes.policy). Engine E6.1 (vs T1): a held market car reports unknown_size / scope instead of not_on_sale. Transport T1.1: no compare table for a single-car result, matching the released app.",
+ "evidence": {
+  "ref": "buyer-decision/datasets/U12-CEO3-R2-2026-11-03/REGRESSION_REPORT.md",
+  "commands": [
+   "node tools/build_present.mjs --check",
+   "node tests/regression/run.js --strict",
+   "CI_DATASET=datasets/U12-CEO3-R2-2026-11-03/recommendation_view.json node tests/regression/run.js",
+   "node tests/eligibility.test.js datasets/{U11-2026-09-26,U12C-2026-10-14,U12C2-2026-10-14,U12C2-RC1-2026-10-14,U12C2-RC2-2026-10-14,U12-RC3-2026-10-15,U12-RC6-2026-10-21,U12-CEO-2026-11-03,U12-CEO2-2026-11-03}",
+   "node tests/ceo_failures.test.js datasets/U12-CEO3-R2-2026-11-03",
+   "node tests/buyer_scenarios.test.js datasets/U12-CEO3-R2-2026-11-03",
+   "node tests/u12_data.test.js datasets/U12-CEO3-R2-2026-11-03",
+   "node tests/transport/browser_equivalence.mjs <build of datasets/U12-CEO3-R2-2026-11-03> datasets/U12-CEO3-R2-2026-11-03",
+   "node tests/named_cars.test.js",
+   "node tests/transport/transport.test.js",
+   "node tests/{contracts,engine,integrity,redact}.test.js",
+   "node tests/e2e.mjs"
+  ]
+ }
+}
