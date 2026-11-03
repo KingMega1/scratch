@@ -1,6 +1,6 @@
-# P1 → P5 consumption contract and release gate — U12-CEO2 (recommendation quality recovery)
+# P1 → P5 consumption contract and release gate — U12-CEO3 (recommendation quality recovery)
 
-Owner: P1. Record: `buyer-decision/release/P1-RELEASE-U12-CEO2.json`. Supersedes `P5-HANDOFF-U12-RC6.md` and the d553729 candidate (U12-CEO-2026-11-03). **CANDIDATE: do not bind in production.** Production stays on P1-RELEASE-T1 (E6 / T1 / U11) until the release authority accepts this candidate.
+Owner: P1. Record: `buyer-decision/release/P1-RELEASE-U12-CEO3.json`. Supersedes `P5-HANDOFF-U12-RC6.md` and the d553729 candidate (U12-CEO-2026-11-03). **CANDIDATE: do not bind in production.** Production stays on P1-RELEASE-T1 (E6 / T1 / U11) until the release authority accepts this candidate.
 
 ## 0. What changed since d553729 (engine and ranking unchanged)
 
