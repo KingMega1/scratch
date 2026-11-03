@@ -6,7 +6,7 @@ import { z } from 'zod';
    the server (never URLs, storage, logs or analytics). The only URL-safe value is ci.reco.v1 share.r. */
 export const RECO_SCHEMA_VERSION = 'ci.reco.v1';
 const Locale = z.enum(['en', 'ar']);
-const Obj = z.record(z.unknown());
+const Obj = z.record(z.string(), z.unknown());
 const Asked = z.array(z.string().max(16)).max(16);
 const Path = z.enum(['text', 'guided', 'shared']);
 

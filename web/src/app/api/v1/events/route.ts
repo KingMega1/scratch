@@ -10,7 +10,7 @@ const Envelope = z.object({
   event: z.string().max(40), schema: z.literal('EV3'), event_id: z.string().max(64), ts: z.string().max(40),
   session_id: z.string().max(64), anon_id: z.string().max(64), source_app: z.literal('web'),
   universe_version: z.string().max(40).nullable(), engine_version: z.string().max(40).nullable(),
-  locale: z.string().max(5), route: z.string().max(40), journey_stage: z.string().max(20), props: z.record(z.unknown()),
+  locale: z.string().max(5), route: z.string().max(40), journey_stage: z.string().max(20), props: z.record(z.string(), z.unknown()),
 }).passthrough();
 
 const PROP_KEY = /^[a-z][a-z0-9_]{0,31}$/;
