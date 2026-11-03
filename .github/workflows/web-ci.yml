@@ -31,7 +31,6 @@ jobs:
       - run: npm run typecheck
       - run: npm run verify:p1
       - run: npm run test:unit
-      - run: npm run audit:deps
       - run: npm run build
       - run: npx playwright install --with-deps chromium
       - run: SMOKE_SCREENSHOTS=1 npm run test:smoke
@@ -51,6 +50,8 @@ jobs:
         run: CI_ENV=production NEXT_PUBLIC_SITE_URL=https://carindex.example npm run build
       - name: Production draft, indexing and browser-buffer guards
         run: CI_ENV=production SMOKE_PRODUCTION=1 SMOKE_PORT=3278 npm run test:smoke -- --grep production-only
+      # Keep the security gate mandatory, but collect non-deployed integration evidence first.
+      - run: npm run audit:deps
       - uses: actions/upload-artifact@v4
         if: always()
         with:
