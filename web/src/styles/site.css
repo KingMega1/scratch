@@ -483,7 +483,7 @@ table.t th.t-num { text-align: end; }
 .hero-cars { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
 .hero-cars li:first-child { grid-column: 1 / -1; }
 .hero-cars a { display: block; position: relative; border-radius: var(--radius-card); overflow: hidden; color: var(--ci-color-white); text-decoration: none; background: var(--ci-color-fog); }
-.hero-cars img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.hero-cars img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; } /* height:auto so the ratio wins over the height attribute (P3 AT-42 item 1: bounded hero, whole cars) */
 .hero-cars li:first-child img { aspect-ratio: 16 / 8; }
 .hero-cars span { position: absolute; inset-inline-start: 0; inset-block-end: 0; padding: 6px 10px; background: rgba(11,22,32,.78); font-size: 13px; font-weight: 600; border-start-end-radius: 6px; }
 @media (max-width: 599px) { .hero-grid { padding-block: 32px; gap: 24px; } .hero-cars { grid-template-columns: 1fr 1fr; } }
@@ -513,3 +513,8 @@ table.t th.t-num { text-align: end; }
 .spec .fact + .fact { margin-block-start: 6px; padding-block-start: 6px; border-block-start: 1px dashed var(--ci-color-line); }
 .fact-meta { font-weight: 400; color: var(--ci-semantic-text-secondary); }
 .fact-meta .fm { display: block; }
+
+/* Compare: rows unknown for every selected car, listed once (P3 AT-42 item 6a). */
+.cmp-missing { margin-block-start: var(--ci-space-4); border: 1px solid var(--ci-color-line); border-radius: var(--radius-card); padding: 12px 16px; }
+.cmp-missing summary { cursor: pointer; font-weight: 600; min-height: var(--ci-size-target-min); display: flex; align-items: center; }
+.cmp-missing ul { margin: 8px 0 0; padding-inline-start: 20px; }

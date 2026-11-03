@@ -48,6 +48,10 @@ export default async function Compare({ params, searchParams }: P) {
     [c.rows.warranty, x => spec(x, 'warranty')],
     [c.rows.regs, x => x.registrations?.inWindow != null ? <span className="tnum">{num(x.registrations.inWindow)}</span> : dash],
   ];
+  // P3 AT-42 item 6(a): a row unknown for every selected car is listed once in a disclosure, not repeated per car.
+  const unknownForAll = (f: (car: PublicCar) => React.ReactNode) => cars.length > 0 && cars.every(x => { const v = f(x); return v === dash || v === noPrice; });
+  const shown = rows.filter(([, f]) => !unknownForAll(f));
+  const missing = rows.filter(([, f]) => unknownForAll(f)).map(([label]) => label);
   const slot = (i: number) => (
     <div className="field" key={i}>
       <label htmlFor={`cmp-${i}`}>{c.pick} {i + 1}</label>
@@ -77,11 +81,17 @@ export default async function Compare({ params, searchParams }: P) {
                 <Link href={`/${locale}/cars/${x.id}`}><CarName car={x} locale={locale} /></Link>
                 <div><Link className="small" href={`/${locale}/compare?ids=${ids.filter(i => i !== x.id).join(',')}`}>{c.remove}</Link></div>
               </th>))}</tr></thead>
-            <tbody>{rows.map(([label, f]) => (
+            <tbody>{shown.map(([label, f]) => (
               <tr key={label}><th scope="row">{label}</th>{cars.map(x => <td key={x.id}>{f(x)}</td>)}</tr>
             ))}</tbody>
           </table>
         </div>
+      ) : null}
+      {cars.length && missing.length ? (
+        <details className="cmp-missing" data-cmp-missing={missing.length}>
+          <summary>{t.catalog.na} ({num(missing.length)})</summary>
+          <ul>{missing.map(m => <li key={m}>{m}</li>)}</ul>
+        </details>
       ) : null}
       {cars.length >= 2 ? (
         <div className="notice" style={{ marginBlockStart: 20 }}>{c.noWinner} <Link className="link" href={`/${locale}/find-my-car`}>{t.nav.fmc}</Link></div>

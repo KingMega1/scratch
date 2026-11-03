@@ -201,6 +201,38 @@ test.describe('launch car pages (P2 accepted media)', () => {
     await page.goto('/en/cars/haval-h6');
     await expect(page.locator('section[aria-labelledby="prices-h"]')).not.toContainText(/CEO|supplied/i);
   });
+  test('CarIndexed V2.1 identity: header/footer/favicon assets and no legacy name in P5-owned visible text', async ({ page }) => {
+    for (const l of ['en', 'ar']) {
+      await page.goto(`/${l}`);
+      await expect(page.locator('header img[src="/brand/carindexed-logo-ink.svg"][alt="CarIndexed"]')).toHaveCount(1);
+      await expect(page.locator('footer img[src="/brand/carindexed-logo-white-yellow.svg"][alt="CarIndexed"]')).toHaveCount(1);
+      await expect(page.locator('link[rel="icon"][href*="/brand/carindexed-favicon.svg"]')).toHaveCount(1);
+      for (const path of ['', '/cars', '/cars/kia-sportage', '/compare?ids=kia-sportage,hyundai-tucson', '/market']) {
+        await page.goto(`/${l}${path}`);
+        const text = await page.locator('body').innerText();
+        expect(text, `${l}${path}`).not.toMatch(/CarIndex(?!ed)|كار إندكس(?!د)/);
+      }
+    }
+    expect((await page.request.get('/brand/carindexed-logo-ink.svg')).status()).toBe(200);
+    expect((await page.request.get('/brand/carindex-logo-ink.svg')).status()).toBe(404);
+  });
+  test('accepted P3 layout corrections: hero CTA above the fold; empty Take after prices/specs; all-unknown compare rows listed once', async ({ page }) => {
+    for (const l of ['en', 'ar']) {
+      await page.goto(`/${l}`);
+      const vh = page.viewportSize()!.height;
+      const cta = await page.locator('.hero-v2 .ctas').boundingBox();
+      expect(cta!.y + cta!.height, l).toBeLessThanOrEqual(vh);
+      for (const img of await page.locator('.hero-cars img').all()) { const b = await img.boundingBox(); expect(b!.width / b!.height).toBeGreaterThan(1.5); } // whole cars, not portrait crops
+    }
+    await page.goto('/en/cars/hyundai-tucson');
+    const order = await page.evaluate(() => ['prices-h', 'specs-h', 'take-h'].map(id => document.getElementById(id)!.compareDocumentPosition(document.getElementById('take-h')!)));
+    if (await page.locator('[data-slot="carindex-take"][data-bound="false"]').count()) expect(order.slice(0, 2).every(p => (p & 4) === 4 /* DOCUMENT_POSITION_FOLLOWING */)).toBe(true);
+    await page.goto('/en/compare?ids=kia-sportage,hyundai-tucson');
+    const missing = page.locator('details[data-cmp-missing]');
+    const rowsUnknownForAll = await page.locator('table.cmp tbody tr').evaluateAll(trs => trs.filter(tr => { const tds = [...tr.querySelectorAll('td')]; return tds.length > 0 && tds.every(td => td.querySelector('.state-unknown') && td.textContent!.trim() === td.querySelector('.state-unknown')!.textContent!.trim()); }).length);
+    expect(rowsUnknownForAll).toBe(0);
+    if (await missing.count()) await expect(missing.locator('li').first()).toBeAttached();
+  });
   test('model-level accepted price is shown in the price table, not as unconfirmed', async ({ page }) => {
     // fixture from the served P2 release: an accepted price without per-version rows (none -> nothing to check)
     const rel = JSON.parse(readFileSync('data/registry/catalogue-serving.release.json', 'utf8'));

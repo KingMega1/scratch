@@ -5,7 +5,7 @@ import { dict } from '@/lib/i18n/dictionaries';
 import { track } from '@/lib/analytics/client';
 
 /* Mobile-first verification UI. Values are posted to the BFF only; never logged or sent to analytics. */
-export default function VerifyForm({ locale, enabled }: { locale: Locale; enabled: boolean }) {
+export default function VerifyForm({ locale, enabled, compact = false }: { locale: Locale; enabled: boolean; compact?: boolean }) {
   const a = dict(locale).account;
   const [msg, setMsg] = useState<string | null>(enabled ? null : a.gated);
   const [busy, setBusy] = useState(false);
@@ -19,6 +19,8 @@ export default function VerifyForm({ locale, enabled }: { locale: Locale; enable
     setBusy(false);
     setMsg(res && res.ok ? null : a.gated);
   }
+  // P3 AT-42 item 4: where sign-in is off, a compact note instead of a full disabled form (same copy, same tracking).
+  if (compact && !enabled) return <p className="gated small" role="note" data-identity-gated="true">{a.gated}</p>;
   return (
     <form onSubmit={submit} noValidate style={{ display: 'grid', gap: 14, maxWidth: 420 }}>
       <div className="field">

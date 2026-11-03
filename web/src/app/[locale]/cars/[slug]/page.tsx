@@ -85,6 +85,18 @@ export default async function CarDetail({ params }: P) {
   };
   const gapItems = [...new Map(car.gaps.map(g => [GAP[g] ?? v2.gaps[g], g] as const).filter(([l]) => l).map(([l, g]) => [l, [g, l] as const])).values()];
 
+  // P3 AT-42 item 5: an evidence-backed Take stays near the top; the empty placeholder moves below prices and specs.
+  const takeSection = (
+        <section className="cd-section" aria-labelledby="take-h" data-slot="carindex-take" data-bound={take ? 'true' : 'false'}>
+          <h2 id="take-h" className="h-section">{c.takeH}</h2>
+          {take ? (
+            <div className="take-grid">
+              <div className="card"><h3>{c.bestFor}</h3><ul>{take.bestFor.map(s => <li key={s.code}>{s.text[locale]}</li>)}</ul></div>
+              <div className="card"><h3>{c.thinkTwice}</h3><ul>{take.thinkTwice.map(s => <li key={s.code}>{s.text[locale]}</li>)}</ul></div>
+            </div>
+          ) : <div className="slot-empty">{c.takePending}</div>}
+        </section>
+  );
   return (
     <div className="wrap section" style={{ paddingBlockStart: 24 }} data-model-id={car.id}>
       <TrackOnMount event="car_view" props={{ model_id: car.id }} />
@@ -118,15 +130,7 @@ export default async function CarDetail({ params }: P) {
         </section>
       ) : null}
 
-      <section className="cd-section" aria-labelledby="take-h" data-slot="carindex-take" data-bound={take ? 'true' : 'false'}>
-        <h2 id="take-h" className="h-section">{c.takeH}</h2>
-        {take ? (
-          <div className="take-grid">
-            <div className="card"><h3>{c.bestFor}</h3><ul>{take.bestFor.map(s => <li key={s.code}>{s.text[locale]}</li>)}</ul></div>
-            <div className="card"><h3>{c.thinkTwice}</h3><ul>{take.thinkTwice.map(s => <li key={s.code}>{s.text[locale]}</li>)}</ul></div>
-          </div>
-        ) : <div className="slot-empty">{c.takePending}</div>}
-      </section>
+      {take ? takeSection : null}
 
       <section className="cd-section" aria-labelledby="prices-h">
         <h2 id="prices-h" className="h-section">{c.pricesH}{car.priceFrom.modelYear ? <span className="small"> · {v2.modelYear} {car.priceFrom.modelYear}</span> : null}</h2>
@@ -167,6 +171,8 @@ export default async function CarDetail({ params }: P) {
         {car.p2?.specs.length ? <P2Specs c={car.p2} locale={locale} lead={specRows.slice(0, 1)} />
           : <div className="spec-grid">{specRows.map(([k, v]) => <div className="spec" key={k}><div className="k">{k}</div><div className="v">{v}</div></div>)}</div>}
       </section>
+
+      {take ? null : takeSection}
 
       {car.p2 ? <P2Warranty c={car.p2} locale={locale} /> : null}
 

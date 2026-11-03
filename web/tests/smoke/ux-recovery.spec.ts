@@ -130,7 +130,7 @@ for (const l of ['en', 'ar'] as const) {
   test(`${l}: fat footer with the Brand V2 logo on ink`, async ({ page }) => {
     await page.goto(`/${l}`);
     const f = page.locator('footer.gf');
-    await expect(f.locator('img[src="/brand/carindex-logo-white-yellow.svg"]')).toHaveCount(1);
+    await expect(f.locator('img[src="/brand/carindexed-logo-white-yellow.svg"][alt="CarIndexed"]')).toHaveCount(1);
     expect(await f.locator('.gf-cols > div').count()).toBeGreaterThanOrEqual(5);
     for (const p of ['/find-my-car', '/market', '/compare', '/methodology', '/privacy', '/news?type=news']) await expect(f.locator(`a[href="/${l}${p}"]`)).toHaveCount(1);
     await expect(f.locator('a[href*="/market/catalog?brand="]').first()).toBeVisible();
@@ -140,7 +140,9 @@ for (const l of ['en', 'ar'] as const) {
     await page.goto(`/${l}/find-my-car?r=${j.result.share.r}`);
     const inv = page.locator('[data-fmc-invite]');
     await expect(inv).toBeVisible({ timeout: 20_000 });
-    await expect(inv.locator('input#phone')).toBeAttached();
+    // sign-in is off in preview: a compact note, not a disabled form (P3 AT-42 item 4)
+    await expect(inv.locator('[data-identity-gated]')).toBeVisible();
+    await expect(inv.locator('input')).toHaveCount(0);
     const ev = await page.evaluate(() => ((window as unknown as { dataLayer?: { event: string }[] }).dataLayer || []).map(e => e.event));
     expect(ev).toContain('identity_gate_view');
     // it is the last block of the result

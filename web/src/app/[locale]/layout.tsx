@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   if (!isLocale(locale)) return {};
   return {
     metadataBase: new URL(SITE_URL),
-    icons: { icon: '/brand/carindex-favicon.svg', apple: '/brand/carindex-app-icon.svg' },
+    icons: { icon: '/brand/carindexed-favicon.svg', apple: '/brand/carindexed-app-icon.svg' },
     title: dict(locale).brand,
   };
 }
