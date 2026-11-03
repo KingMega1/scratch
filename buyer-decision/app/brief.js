@@ -48,7 +48,10 @@
   const MAX = ['max', 'maximum', 'up to', 'upto', 'under', 'below', 'no more than', 'not more than', 'at most', 'less than', 'cap',
     'لحد', 'اقصي', 'اقصى', 'مش اكتر من', 'ماتزيدش', 'متزيدش', 'ما يزيدش', 'تحت', 'اقل من', 'بالكتير', 'بالكثير'];
   const STRETCH = ['stretch', 'a bit more', 'a little more', 'flexible', 'can go higher', 'can add',
-    'ممكن ازود', 'ممكن زياده', 'ازود شويه', 'ازود حاجه بسيطه', 'مرن', 'لو تستاهل'];
+    'ممكن ازود', 'ممكن زياده', 'ازود شويه', 'ازود حاجه بسيطه', 'مرن', 'لو تستاهل',
+    'slightly more', 'a little over', 'a bit over', 'go over a bit', 'ممكن ازيد', 'ازيد شويه', 'زياده بسيطه'];
+  // "10% more", "up to 10% over", "١٠٪ زيادة": the approved stretch (the engine allows up to +10% whatever the figure)
+  const STRETCH_PCT = /\d+\s*[%٪]\s*(?:more|extra|over|above|higher|زياده|زيادة|اكتر|أكتر|فوق)|(?:go|up to|over by|stretch(?: by)?)\s*\d+\s*[%٪]/;
   const MONEY_CTX = ['budget', 'egp', 'le', 'pounds', 'price', 'spend', 'afford', 'ميزانيه', 'ميزانيتي', 'جنيه', 'جنية', 'سعر', 'حدود', 'حوالي', 'فلوس', 'معايا'];
 
   function parseBudget(t) {
@@ -89,11 +92,11 @@
     found.sort((a, b) => a.idx - b.idx);
     // a range "1.5 to 2 million" -> the upper value is the budget
     const vals = [...new Set(found.map(f => f.v))];
-    const hasRange = vals.length >= 2 && /(\d)\s*(?:-|–|to|and|ل|لـ|الى|إلى|لحد|و)\s*\d/.test(t);
+    const hasRange = vals.length >= 2 && /(\d)\s*(?:m|mn|mil|million|k|مليون|الف|ألف)?\s*(?:-|–|to|and|ل|لـ|الى|إلى|لحد|و)\s*\d/.test(t);
     const v = hasRange ? Math.max(...vals) : found[0].v;
     const lo = hasRange ? Math.min(...vals) : null;
     const mode = has(t, MAX) && !has(t, AROUND) ? 'max' : 'around';
-    return { budget: v, budgetMin: lo, budgetMode: hasRange ? 'range' : mode, stretch: has(t, STRETCH) };
+    return { budget: v, budgetMin: lo, budgetMode: hasRange ? 'range' : mode, stretch: has(t, STRETCH) || STRETCH_PCT.test(t) };
   }
 
   /* ---------- vocabulary ---------- */
@@ -132,7 +135,7 @@
     space: ['space', 'spacious', 'roomy', 'big', 'bigger', 'large', 'boot', 'trunk', 'luggage', 'واسعه', 'واسع', 'كبيره', 'مساحه', 'شنطه كبيره', 'رحبه'],
     performance: ['power', 'powerful', 'performance', 'fast', 'sporty', 'torque', 'turbo', 'قويه', 'قوه', 'عزم', 'سريعه', 'تيربو', 'رياضيه', 'بتسحب', 'سحب'],
     warranty: ['warranty', 'guarantee', 'ضمان'],
-    economy: ['fuel economy', 'economical', 'fuel efficient', 'efficient', 'low fuel', 'consumption', 'موفره', 'موفر', 'استهلاك', 'بنزين قليل', 'بتصرف قليل', 'مش بتصرف'],
+    economy: ['fuel economy', 'economical', 'fuel efficient', 'efficient', 'low fuel', 'consumption', 'running cost', 'running costs', 'fuel cost', 'fuel bill', 'مصاريف التشغيل', 'مصاريف البنزين', 'موفره', 'موفر', 'استهلاك', 'بنزين قليل', 'بتصرف قليل', 'مش بتصرف'],
     popular: ['popular', 'common', 'everyone buys', 'most people', 'best seller', 'bestseller', 'منتشره', 'الناس بتشتريها', 'مشهوره', 'الاكثر مبيعا', 'اكتر مبيعا', 'اكتر حاجه بتتباع'],
     // recorded, not scored: we have no evidence to rank these on
     reliability: ['reliable', 'reliability', 'dependable', "doesn't break", 'no problems', 'trouble free', 'اعتماديه', 'مبتعطلش', 'متعطلش', 'مش بتعطل', 'يعتمد عليها', 'تتحمل', 'ماتعملش مشاكل', 'مشاكلها قليله'],
@@ -235,7 +238,7 @@
 
     const bud = parseBudget(t);
     if (bud) { Object.assign(r, bud); got('budget'); }
-    else if (has(t, STRETCH)) r.stretch = true;
+    else if (has(t, STRETCH) || STRETCH_PCT.test(t)) r.stretch = true;
 
     // body (negated words exclude that body)
     const bodies = [], notBodies = [];
@@ -257,8 +260,11 @@
     if (city || long) { r.usage = city && long ? 'mixed' : city ? 'city' : 'long'; got('usage'); }
 
     // powertrain: "no electric" -> exclude; "hybrid" -> prefer
+    // Egyptian "الأهم عندي البنزين" = fuel use matters (a priority), not "petrol only" (a hard filter the buyer didn't ask for)
+    const fuelPriority = /(?:الاهم|اهم|مهم|يهمني)[^.,،]{0,14}(?:ال)?بنزين/.test(t) && !/بنزين\s*(?:بس|فقط)/.test(t);
     const ptWant = [], ptNot = [], ptOpen = [];
     for (const [k, words] of Object.entries(PT)) {
+      if (k === 'petrol' && fuelPriority) continue;
       const i = find(t, words.map(esc));
       if (i < 0) continue;
       const pre = t.slice(Math.max(0, i - 26), i + 1);
@@ -290,6 +296,9 @@
 
     const pr = [];
     for (const [k, words] of Object.entries(PRIORITY)) if (has(t, words.map(esc))) pr.push(k);
+    if (fuelPriority && !pr.includes('economy')) pr.push('economy');
+    // plug-in hybrid asked for: recorded as a check (plug-in vs regular hybrid is not reliable enough in the data to rank on)
+    if (has(t, ['plug-in', 'plug in', 'plugin', 'phev', 'rechargeable hybrid', 'بتتشحن', 'بالشحن', 'بلج ان', 'بلاج ان'].map(esc)) && !negatedBefore(t, find(t, ['plug-in', 'plug in', 'plugin', 'phev', 'بتتشحن', 'بالشحن'].map(esc)) + 1)) pr.push('plugin');
     // "big" inside "7 seats for a big family" still means space; "brand" words next to a model name are about that model
     // four-wheel drive stated explicitly = a requirement (checked against confirmed drivetrain data)
     if (has(t, ['4x4', '4wd', 'awd', 'all wheel drive', 'all-wheel drive', 'four wheel drive', 'four-wheel drive', 'دفع رباعي', 'دفع كلي', 'فور باي فور', '4 × 4'].map(esc)) && !negatedBefore(t, find(t, ['4x4', '4wd', 'awd', 'دفع رباعي'].map(esc)) + 1)) { r.drive4 = true; got('drive'); }
@@ -300,7 +309,11 @@
     const bh = findBrands(t);
     const mh = findModels(t, bh);
     const modelBrandIdx = new Set(mh.filter(h => h.withBrand).map(h => h.idx));
-    const bare = bh.filter(h => !modelBrandIdx.has(h.idx) && !mh.some(x => x.brand === h.brand && Math.abs(x.idx - h.idx) < 4));
+    const bare = bh.filter(h => !modelBrandIdx.has(h.idx) && !mh.some(x => x.brand === h.brand && Math.abs(x.idx - h.idx) < 4))
+      // one written name matched twice ("Mercedes-Benz" = mercedes + benz): keep the first, so the second isn't read in the first's context
+      .sort((x, y) => x.idx - y.idx || y.len - x.len)
+      .reduce((a, h) => { const o = a.find(x => x.brand === h.brand && h.idx <= x.idx + x.len + 2);
+        if (o) o.len = Math.max(o.len, h.idx + h.len - o.idx); else a.push({ ...h }); return a; }, []);
     const prefer = [], avoid = [];
     const only = [], unresolved = [];
     // the buyer's own words around a comparative phrase, kept verbatim for the confirm step
@@ -310,11 +323,23 @@
     for (const h of bare) {
       // "7-seat", "seats": the word, not the SEAT brand (the brand counts when written SEAT / سيات)
       if (h.brand === 'seat' && !/SEAT|سيات/.test(raw)) continue;
-      const post = t.slice(h.idx + h.len, h.idx + h.len + 12), pre = t.slice(Math.max(0, h.idx - 14), h.idx);
+      const post = t.slice(h.idx + h.len, h.idx + h.len + 22), pre = t.slice(Math.max(0, h.idx - 30), h.idx);
       if (isFloor(t, h.idx, h.idx + h.len)) { unresolved.push({ kind: 'brand_floor', brand: h.brand, text: snippet(h.idx, h.idx + h.len) }); continue; }
-      if (negatedBefore(t, h.idx + 1)) avoid.push(h.brand);
-      else if (/^\s*(?:only|بس|فقط)(?![a-zء-ي])/.test(post) || /(?:only|لازم|غير|الا)\s*$/.test(pre)) only.push(h.brand);
+      // "مش عايز غير BYD" / "ماعنديش غير BYD" = nothing but BYD: an only-constraint, not a negation of the brand
+      // "اي حاجه غير BYD" / "anything but BYD" = everything except it
+      if (/(?:اي|أي)\s*(?:حاجه|حاجة|عربيه|عربية|ماركه|ماركة)\s*(?:غير|الا|إلا)\s*$|anything (?:but|except)\s*$/.test(pre)) avoid.push(h.brand);
+      else if (/(?:غير|الا|إلا)\s*$/.test(pre)) only.push(h.brand);
+      else if (negatedBefore(t, h.idx + 1)) avoid.push(h.brand);
+      else if (/^\s*(?:only|بس|فقط|وبس|exclusively)(?![a-zء-ي])/.test(post) || /^\s*,?\s*(?:and\s+)?nothing else/.test(post) || /(?:only|لازم|غير|الا)\s*$/.test(pre)
+        || /(?:only|just)\s+(?:want|like|consider|need|buy|looking at|interested in)\s+(?:a|an|the)?\s*$/.test(pre)) only.push(h.brand);
       else prefer.push(h.brand);
+    }
+    // "only BYD or MG" / "غير BYD او MG": a brand joined by or/and to an only-brand is part of the same only-list
+    for (const h of bare) {
+      if (only.includes(h.brand) || !prefer.includes(h.brand)) continue;
+      const sep = (x, y) => /^\s*(?:,|or|and|او|أو|و|ولا)\s*$/.test(t.slice(x.idx + x.len, y.idx));
+      const joined = bare.some(o => only.includes(o.brand) && ((o.idx < h.idx && sep(o, h)) || (h.idx < o.idx && sep(h, o))));
+      if (joined) { only.push(h.brand); prefer.splice(prefer.indexOf(h.brand), 1); }
     }
     if (only.length) { r.brandsOnly = [...new Set(only)]; got('brands'); }
     if (prefer.length) r.brandsPrefer = [...new Set(prefer)];

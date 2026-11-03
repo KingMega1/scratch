@@ -138,7 +138,7 @@
     if (pr.includes('pocket') && p.entry < B) out.push(S.why.pocket({ entry: money(p.entry), amount: money(B - p.entry) }));
     if (pr.includes('popular') && m.reg && m.reg.rank_in_body_last12) out.push(S.why.popular({ rank: num(m.reg.rank_in_body_last12), of: num(m.reg.of_body), body: S.body_pl[m.body] }));
     if ((b.pt === 'hybrid' || pr.includes('economy') || b.usage === 'city') && p.hybrid) out.push(S.why.hybrid());
-    else if (b.usage === 'city' && p.anyEv && b.pt === 'open') out.push(S.why.ev_city());
+    else if (p.anyEv && b.usage !== 'long' && ((b.usage === 'city' && b.pt === 'open') || pr.includes('economy'))) out.push(S.why.ev_city());
     if ((b.brandsPrefer || []).includes(m.brand_id)) out.push(S.why.brand({ brand: lat(m.brand) }));
     const asp = (b.aspiration || []).map(id => byId[id]).filter(Boolean);
     if (asp.length && b.attraction) {
@@ -162,7 +162,8 @@
     if (p.ref && p.ref.diff < 0) out.push(S.trade.ref_smaller({ ref: nm(p.ref.ids[0]) }));
     if (p.ref && p.ref.diff > 0 && !((b.priorities || []).includes('space') || b.seats === 7)) out.push(S.trade.ref_bigger({ ref: nm(p.ref.ids[0]) }));
     if (m.reg && m.reg.trend === 'new') out.push(S.trade.new_model({ month: S.month(m.reg.first_month) }));
-    else if (!m.reg || (m.reg.last12 || 0) < 100) out.push(S.trade.low_presence({ n: num((m.reg && m.reg.last12) || 0) }));
+    // only a measured low count is stated; a car with no registration record gets no number (we don't know it)
+    else if (m.reg && (m.reg.last12 || 0) < 100) out.push(S.trade.low_presence({ n: num(m.reg.last12 || 0) }));
     if (family(b) && b.seats !== 7 && m.seats && Math.max(...m.seats) <= 5) out.push(S.trade.not_seven_family());
     return out.slice(0, 4);
   }

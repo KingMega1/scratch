@@ -119,7 +119,7 @@
       chinese_v: { open: 'Open', prefer_not: 'Prefer not', exclude: 'Leave out' },
       attr_v: { size: 'its size', brand: 'the brand', premium: 'the premium feel', performance: 'the power', design: 'the design' },
       prio_v: { premium: 'Premium', offroad: 'Off-road ability', driving: 'Driving character', space: 'Space', performance: 'Power', warranty: 'Long warranty', pocket: 'Spend less', economy: 'Low fuel use', easy: 'Easy to drive and park', popular: 'Proven, popular choice',
-        reliability: 'Reliability', resale: 'Resale value', aftersales: 'Service and parts', safety: 'Safety', comfort: 'Comfort', tech: 'Technology', design: 'Design', brand: 'Brand image' },
+        reliability: 'Reliability', resale: 'Resale value', aftersales: 'Service and parts', safety: 'Safety', comfort: 'Comfort', tech: 'Technology', design: 'Design', brand: 'Brand image', plugin: 'Plug-in hybrid' },
 
       // edit
       e_h: 'Edit your brief', e_save: 'Update', e_budget_mode: { around: 'Around', max: 'Maximum' }, e_stretch: 'I can stretch about 10% for the right car',
@@ -257,6 +257,7 @@
         warranty: 'Warranty: get the warranty terms (years, kilometres, what is covered) from the official distributor in writing.',
         offroad: 'Off-road: check ground clearance, whether the 4WD has low-range gearing, approach/departure angles and tyres in the official brochure.',
         driving: 'Driving character: test-drive on a road you know; it’s the only reliable way to judge steering, ride and handling.',
+        plugin: 'Plug-in hybrid: confirm the exact version charges from a socket (some hybrids don’t), and its electric-only range.',
         test: 'Test-drive your top two back to back, on the same day if you can.',
         terms: 'Get the price, delivery date and warranty terms in writing before paying a deposit.',
       },
@@ -373,7 +374,7 @@
       chinese_v: { open: 'مفتوح', prefer_not: 'يفضّل لأ', exclude: 'استبعدها' },
       attr_v: { size: 'حجمها', brand: 'الماركة', premium: 'الإحساس الفاخر', performance: 'القوة', design: 'الشكل' },
       prio_v: { premium: 'فخامة', offroad: 'قدرة الأوف رود', driving: 'متعة السواقة', space: 'المساحة', performance: 'القوة', warranty: 'ضمان طويل', pocket: 'أصرف أقل', economy: 'استهلاك أقل', easy: 'سهلة في السواقة والركن', popular: 'اختيار مجرّب ومنتشر',
-        reliability: 'الاعتمادية', resale: 'سعر إعادة البيع', aftersales: 'الصيانة وقطع الغيار', safety: 'الأمان', comfort: 'الراحة', tech: 'التكنولوجيا', design: 'الشكل', brand: 'اسم الماركة' },
+        reliability: 'الاعتمادية', resale: 'سعر إعادة البيع', aftersales: 'الصيانة وقطع الغيار', safety: 'الأمان', comfort: 'الراحة', tech: 'التكنولوجيا', design: 'الشكل', brand: 'اسم الماركة', plugin: 'هايبرد بالشحن' },
 
       e_h: 'عدّل طلبك', e_save: 'تحديث', e_budget_mode: { around: 'في حدود', max: 'بحد أقصى' }, e_stretch: 'ممكن أزود حوالي 10% لو العربية تستاهل',
       e_add: 'ضيف عربية بتفكر فيها', e_add_ph: 'مثلًا: تويوتا كورولا', e_remove: n => `شيل ${n}`,
@@ -509,6 +510,7 @@
         warranty: 'الضمان: خد شروط الضمان (السنين، الكيلومترات، وبيغطي إيه) مكتوبة من الوكيل الرسمي.',
         offroad: 'الأوف رود: شوف في الكتالوج الرسمي الارتفاع عن الأرض، والدفع الرباعي فيه جير مخفّض ولا لأ، وزوايا الدخول والخروج، والكاوتش.',
         driving: 'متعة السواقة: جرّبها على طريق تعرفه؛ دي الطريقة الوحيدة المضمونة للحكم على الدركسيون والتعليق والثبات.',
+        plugin: 'هايبرد بالشحن: اتأكد إن الفئة نفسها بتتشحن من الكهربا (مش كل الهايبرد كده)، وكام كيلو بتمشي بالكهربا بس.',
         test: 'جرّب أحسن اتنين ورا بعض، في نفس اليوم لو تقدر.',
         terms: 'خد السعر ومعاد الاستلام وشروط الضمان مكتوبين قبل ما تدفع مقدم.',
       },

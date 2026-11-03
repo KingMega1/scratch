@@ -100,6 +100,8 @@ for (const r of recs) {
       const single = (m.powertrains || []).length === 1 ? PT(src && src.length === 1 ? src[0] : m.powertrains[0]) : { pt: null, plugin: false };
       m.trims.push({ label: t.label.trim(), min: t.price_egp, year: t.model_year || null, official, date, pt: single.pt, plugin: single.plugin }); log.versions_added++; }
   }
+  // an accepted P2 price observed in the market is current-sale evidence (e.g. a distributor list with no model year stated)
+  { const seen = acc.filter(t => t.price_egp > 0).map(t => t.as_of || t.effective_date || '').sort().pop(); if (seen) m.accepted_seen = seen; }
   // Explicit P2-accepted confirmed cohort supersedes old price versions without inventing a model year.
   const confirmed = a.accepted && a.accepted.price;
   if (confirmed && confirmed.confirmation_status === 'CEO_CONFIRMED') {
@@ -185,7 +187,7 @@ for (const m of models) {
     // (approved copy) instead of the false "isn't sold new in Egypt".
     m.u = true; m.trims = []; log.unknown_price.push(m.id); continue;
   }
-  else if (!((m.model_year || 0) >= 2025 || live || (m.official_list && m.official_list >= '2025-10-15') || (m.market_seen && m.market_seen >= '2025-10-21'))) why = 'discontinued'; // a dated official list within 12 months is current-sale evidence
+  else if (!((m.model_year || 0) >= 2025 || live || (m.official_list && m.official_list >= '2025-10-15') || (m.market_seen && m.market_seen >= '2025-10-21') || (m.accepted_seen && m.accepted_seen >= '2025-11-03'))) why = 'discontinued'; // a dated official list within 12 months is current-sale evidence
   // `held` tells the engine WHY a known market car is outside the recommendation set, so a buyer who names it is told the
   // truth (never "not sold in Egypt"): 'scope' = a body type we don't recommend yet, 'size' = size class not yet confirmed
   if (why) { m.u = false; if (why.startsWith('body_not_passenger_car')) m.held = 'scope'; out(m.id, why); continue; }
@@ -193,7 +195,7 @@ for (const m of models) {
   if (!NO_SIZE_HOLD && E.size(m) == null && !(V[m.id] && V[m.id].u)) { m.u = false; m.held = 'size'; log.held_no_size_class.push(m.id); continue; }
   m.u = true; log.in_universe.push(m.id);
 }
-models.forEach(m => { delete m.official_list; delete m.off_sale; delete m.market_seen; delete m.confirmed_cohort;
+models.forEach(m => { delete m.official_list; delete m.off_sale; delete m.market_seen; delete m.accepted_seen; delete m.confirmed_cohort;
   if (OVR.never_official_brands[m.brand_id]) m.trims.forEach(t => { t.official = false; }); }); // build-time only
 const U = { meta: { ...U11.meta, version: VERSION, built: VERSION.slice(-10), models_in_universe: models.filter(m => m.u).length, models_priced_in_universe: models.filter(m => m.u && m.trims.length).length }, models: models.filter(m => m.body).sort((x, y) => x.id.localeCompare(y.id)) }; // identities without a body stay in the manifest only
 const body = JSON.stringify(U), sha = s => crypto.createHash('sha256').update(s).digest('hex');

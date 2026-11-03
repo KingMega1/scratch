@@ -27,7 +27,7 @@ const I = (() => {
 })();
 
 const SCHEMA = 'ci.reco.v1';
-const TRANSPORT_VERSION = 'T1.1-2026-10-15'; // T1.1: no compare table for a single-car result (matches the released app);
+const TRANSPORT_VERSION = 'T1.2-2026-11-03'; // T1.1: no compare table for a single-car result (matches the released app);
 const LOCALES = ['en', 'ar'];
 const sha256 = s => crypto.createHash('sha256').update(s).digest('hex');
 
@@ -100,6 +100,9 @@ function execute(brief, dataset, opts = {}) {
   const asOf = opts.asOf || new Date().toISOString().slice(0, 10);
   const PR = presenter(dataset, locale), S = PR.S, U = dataset.U, byId = PR.byId;
   const b = JSON.parse(JSON.stringify(brief || {}));
+  // the released flow always asks the budget first (nextQuestion -> 'budget'); without one the engine has no price territory
+  // (a budget taken from a referenced car, "the Qashqai's price", counts: the engine derives it while normalising)
+  if (!(b.budget > 0) && !(E.normalizeBrief(JSON.parse(JSON.stringify(b)), byId).budget > 0)) throw new Error('ci.reco: brief has no budget; ask nextQuestion() until it returns null, then normalize() before execute()');
   const r = E.recommend(U, b); // the released browser calls exactly this with the confirmed brief (app.js renderResult)
 
   const token = PR.enc(PR.slim(b));
@@ -178,6 +181,21 @@ function understand(textIn, dataset, { locale = 'en' } = {}) {
 function nextQuestion(brief, asked, dataset, { path: pth = 'text' } = {}) { return presenter(dataset, 'en').nextQ(brief, asked || [], pth); }
 const normalize = (brief, dataset) => presenter(dataset, 'en').norm(brief);
 const mergeAnswer = (brief, patch, dataset) => presenter(dataset, 'en').merge(brief, patch);
+// "Edit your brief" (the released app's edit screen, app.js #save): the buyer's revised values REPLACE the old ones, so a
+// removed priority, exclusion or brand really goes away (mergeAnswer adds to lists, which is right only for answering a
+// question). null clears a field. Powertrain set to 'open' clears explicit exclusions, as the released edit screen does.
+function editBrief(brief, changes, dataset) {
+  const nb = { ...brief, budgetFrom: null };
+  for (const [k, v] of Object.entries(changes || {})) {
+    if (k === 'text' || k === 'extracted') continue;
+    nb[k] = Array.isArray(v) ? [...new Set(v)] : v;
+  }
+  if ('body' in (changes || {})) { nb.bodyImplied = false; if (!(nb.body && nb.body.length)) { nb.body = null; nb.bodyAny = true; } else nb.bodyAny = false; }
+  if (nb.pt === 'open') nb.ptNo = [];
+  const out = presenter(dataset, 'en').norm(nb);
+  if ('body' in (changes || {}) && !nb.body) { out.body = null; out.bodyAny = true; out.bodyImplied = false; }
+  return out;
+}
 // "Here's what we understood" rows (confirm step). Includes the unresolved comparative phrases verbatim (private view only).
 function summary(brief, dataset, { locale = 'en' } = {}) {
   const PR = presenter(dataset, locale);
@@ -188,6 +206,6 @@ const decodeShare = (token, dataset) => presenter(dataset, 'en').dec(token);
 module.exports = {
   SCHEMA, TRANSPORT_VERSION, ENGINE_VERSION: E.ENGINE_VERSION, LOCALES, STALE_DAYS,
   loadAcceptedDataset, loadLaunchSnapshot, LAUNCH_SNAPSHOT,
-  execute, understand, nextQuestion, normalize, mergeAnswer, summary, decodeShare,
+  execute, understand, nextQuestion, normalize, mergeAnswer, editBrief, summary, decodeShare,
   _internals: { E, P, I, Present, text },
 };
