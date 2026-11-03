@@ -1,0 +1,94 @@
+{
+  "batch_id": "P2-CHATGPT-MEDIA-20261103-2300",
+  "created_at": "2026-11-03T23:02:35+02:00",
+  "support_branch": "chatgpt/p2-media-support-20261103",
+  "support_parent": "0b25eab26874efc77711158837025c107c841282",
+  "canonical_baseline": "27776970d47f38ad29e60794cc8cc0db74dd1229",
+  "authority": "NEEDS_P2_QA; no acceptance or canonical/website changes",
+  "existing_assets_checked": "Prior 20-file individual manifest and prior 22:00 Tucson candidate manifest inspected. No Geely/Tucson/logo duplicates created.",
+  "source_page": "https://www.renault.com.eg/cars/duster-p1311-ph1-en/overview.html",
+  "market_identity": "Renault Egypt official Duster P1311 ph1 current Egypt page; source paths include HELIOS/2024, which is content folder and NOT confirmed vehicle model year; do not conflate with old Duster 1.6 115HP pages.",
+  "model_id": "m_000233",
+  "p1_id": "renault/duster",
+  "existing_gap": "u11_coverage 2026-11-02 hero NONE/gallery 0; 1721 registrations last12 in gap_report",
+  "rights": "Official Renault Egypt public source; CEO-MEDIA-2026-10-13 policy applicable but exact rights/redistribution and image acceptance P2-owned",
+  "candidates": [
+    {
+      "role": "hero_review",
+      "view": "official Duster overview lead image, actual view not visually checked",
+      "url": "https://www.renault.com.eg/CountriesData/Egypt/images/renault-duster-p1311-ph1-overview-002_ig_w1500_h843.jpg",
+      "source_page": "https://www.renault.com.eg/cars/duster-p1311-ph1-en/overview.html",
+      "status": "NEEDS_P2_QA",
+      "download_verified": false,
+      "visual_match_verified": false,
+      "dimensions_verified": false,
+      "dimensions": null,
+      "sha256": null,
+      "original_files_saved": false,
+      "source": "live Firecrawl image extraction 2026-11-03; URL strings only; no byte integrity or visual inspection",
+      "duplicate_check": "No match to previously staged 20 individual assets or Tucson manifest; full accepted byte/URL dedupe pending P2"
+    },
+    {
+      "role": "gallery_review",
+      "view": "official Duster beautyshot desktop 002, actual view not visually checked",
+      "url": "https://www.renault.com.eg/CountriesData/Egypt/images/cars/HELIOS/2024/DusterP1311ph1/renault-duster-p1311-ph1-beautyshot-desktop-002_ig_w1500_h843.jpeg",
+      "source_page": "https://www.renault.com.eg/cars/duster-p1311-ph1-en/overview.html",
+      "status": "NEEDS_P2_QA",
+      "download_verified": false,
+      "visual_match_verified": false,
+      "dimensions_verified": false,
+      "dimensions": null,
+      "sha256": null,
+      "original_files_saved": false,
+      "source": "live Firecrawl image extraction 2026-11-03; URL strings only; no byte integrity or visual inspection",
+      "duplicate_check": "No match to previously staged 20 individual assets or Tucson manifest; full accepted byte/URL dedupe pending P2"
+    },
+    {
+      "role": "gallery_review",
+      "view": "official Duster overview 023, actual view not visually checked",
+      "url": "https://www.renault.com.eg/CountriesData/Egypt/images/renault-duster-p1311-ph1-overview-023_ig_w1500_h843.jpg",
+      "source_page": "https://www.renault.com.eg/cars/duster-p1311-ph1-en/overview.html",
+      "status": "NEEDS_P2_QA",
+      "download_verified": false,
+      "visual_match_verified": false,
+      "dimensions_verified": false,
+      "dimensions": null,
+      "sha256": null,
+      "original_files_saved": false,
+      "source": "live Firecrawl image extraction 2026-11-03; URL strings only; no byte integrity or visual inspection",
+      "duplicate_check": "No match to previously staged 20 individual assets or Tucson manifest; full accepted byte/URL dedupe pending P2"
+    }
+  ],
+  "screened": [
+    {
+      "p1_id": "chery/tiggo-7-pro",
+      "model_id": "m_000087",
+      "result": "Official Chery Egypt model page images extracted but generic shared filenames (01.jpg etc) cannot be proven unique to this model without byte and visual review; no candidate staged."
+    },
+    {
+      "p1_id": "geely/ex5-em-r",
+      "model_id": "m_000419",
+      "result": "Existing accepted coverage confirms no hero; no distinct EM-R source image verified; no EX5/EM-i inheritance."
+    }
+  ],
+  "counts": {
+    "models_touched": 3,
+    "new_official_direct_urls": 3,
+    "downloaded_files": 0,
+    "dimensions_verified": 0,
+    "new_accepted": 0
+  },
+  "blockers": [
+    "No image binary download or visual inspection performed; 3 URLs are source-backed proposals, not confirmed usable images.",
+    "Accepted registry direct paths unavailable at expected paths; no claim of full accepted URL/byte dedupe.",
+    "Trim/model-year visual applicability and redistribution need P2 QA."
+  ],
+  "next_ids": [
+    "chery/tiggo-7-pro",
+    "mercedes/glc",
+    "proton/saga",
+    "mitsubishi/eclipse-cross",
+    "geely/cool-ray",
+    "baic/bj30"
+  ]
+}
