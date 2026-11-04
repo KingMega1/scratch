@@ -25801,6 +25801,32 @@
               "alt_ar": "جيلي EX2 - منظر أمامي جانبي"
             },
             "credit": "Geely Egypt"
+          },
+          {
+            "asset_id": "02561b37c3c3",
+            "sha256": "02561b37c3c3271a9b6a9ed40aed90b63072df0bcbd4e4d95d4d49d05ac3e46c",
+            "width": "1600",
+            "height": "900",
+            "quality_class": "HQ",
+            "url": "https://geelyeg.com/assets/models/EX2/Aurora%20Green/optimized/19-1600.webp",
+            "page": "https://geelyeg.com/models/ex2",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/geely-ex2/04.webp",
+            "meta": {
+              "view_angle": "side",
+              "color": "green",
+              "setting": "studio",
+              "people": false,
+              "model_year": null,
+              "trim": null,
+              "width": 1600,
+              "height": 900,
+              "served_file_sha256": "69824acbc415a85db23dfb692ede89a0991937175e95b58a1592d7f6a68ac17c",
+              "alt_en": "Green Geely EX2, side view (manufacturer render)",
+              "alt_ar": "جيلي EX2 - منظر جانبي (صورة مصنّعة)"
+            },
+            "credit": "Geely Egypt"
           }
         ],
         "conflicts": []
@@ -26120,6 +26146,32 @@
               "served_file_sha256": "c203dc735a0483297370e2ff405088a2f190502b3f3cf664e9f8e98a2cbed202",
               "alt_en": "Silver Geely EX5, rear three-quarter view",
               "alt_ar": "جيلي EX5 - منظر خلفي جانبي"
+            },
+            "credit": "Geely Egypt"
+          },
+          {
+            "asset_id": "ccc90a6e0675",
+            "sha256": "ccc90a6e06756322e97875a68777725a27f4f6a95b2e442aa2f021744488d840",
+            "width": "1600",
+            "height": "1067",
+            "quality_class": "HQ",
+            "url": "https://geelyeg.com/assets/models/EX5/Turquoise%20Green/optimized/7-1600.webp",
+            "page": "https://geelyeg.com/models/ex5",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/geely-ex5/04.webp",
+            "meta": {
+              "view_angle": "side",
+              "color": "turquoise green",
+              "setting": "studio",
+              "people": false,
+              "model_year": null,
+              "trim": null,
+              "width": 1600,
+              "height": 1067,
+              "served_file_sha256": "c5207d215d104f44f81a1da5daf13a33616729a2104f26d532d7bc5d95924069",
+              "alt_en": "Turquoise green Geely EX5, side view (manufacturer render)",
+              "alt_ar": "جيلي EX5 - منظر جانبي (صورة مصنّعة)"
             },
             "credit": "Geely Egypt"
           }
@@ -30863,6 +30915,32 @@
               "served_file_sha256": "d5bb0a8131f4cefe93a40b896fef77cea4314713f784500a353853481788acc4",
               "alt_en": "Hyundai Tucson seats",
               "alt_ar": "هيونداي توسان - المقاعد"
+            },
+            "credit": "Hyundai Egypt / GB Auto"
+          },
+          {
+            "asset_id": "10a8fb5d37ac",
+            "sha256": "10a8fb5d37ac95093821d6edbf6f6c11a4a4e668a0155f9eecc0135f8a27f646",
+            "width": "1250",
+            "height": "671",
+            "quality_class": "WEB",
+            "url": "https://hyundai-egypt.net/wp-content/uploads/2024/09/Tucson_Design_Interior.png",
+            "page": "https://hyundai-egypt.net/models/tucson/",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/hyundai-tucson/06.webp",
+            "meta": {
+              "view_angle": "interior",
+              "color": null,
+              "setting": "interior",
+              "people": false,
+              "model_year": null,
+              "trim": null,
+              "width": 1250,
+              "height": 671,
+              "served_file_sha256": "783b00e24a9e19e8a52879ce1262fb1e9602b56e18541793add40e027c7b63cb",
+              "alt_en": "Hyundai Tucson cockpit",
+              "alt_ar": "هيونداي توسان - مقصورة القيادة"
             },
             "credit": "Hyundai Egypt / GB Auto"
           }
@@ -62728,7 +62806,7 @@
       "retained_in_p2": true
     }
   ],
-  "revision": "ac757adcfffb",
+  "revision": "03089cc2febb",
   "market_additions": [
     {
       "p1_id": null,

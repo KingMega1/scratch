@@ -1,22 +1,29 @@
 {
  "record": "P2-CONSOLIDATED-ACCEPTANCE-20261104",
- "inputs": {"support_commit": "0b25eab", "support_branch_head": "c7d190e (chatgpt/p2-media-support-20261103)", "manifest": "vehicle-data/review/chatgpt_media_individual_20261103.json", "pr": "https://github.com/KingMega1/scratch/pull/11 (head 9c7e54a)"},
+ "inputs": {
+  "support_commit": "0b25eab",
+  "support_branch_head": "c7d190e (chatgpt/p2-media-support-20261103)",
+  "manifest": "vehicle-data/review/chatgpt_media_individual_20261103.json",
+  "pr": "https://github.com/KingMega1/scratch/pull/11 (head 9c7e54a)"
+ },
  "method": "staged originals sha256-verified against manifest (20/20); no duplicate sha/url against accepted registry; owner visual review of all 20 at contact-sheet and full size; no new research; no ZIPs",
  "media": {
-  "accepted": 12, "held": 7, "rejected": 1,
-  "accepted_items": {
-   "geely/ex2 m_000134": "HQ hero 1920x1201 (official side profile) + 3 galleries (cabin, rear seats, front 3/4)",
-   "geely/ex5 m_000135": "HQ hero 1671x925 (official front 3/4, EX5 badge) + 3 HQ galleries (2 cabin, rear 3/4)",
-   "hyundai/tucson m_000002": "3 galleries (front view 1120px gallery-only, front seats, rear-facing cabin); gallery 2 -> 5",
-   "BAIC": "logo 198x47 official baic-egypt.com (BAIC wordmark, not BAW) -> 8 BAIC models"
-  },
+  "accepted": 12,
   "held": {
    "10a8fb5d37ac Tucson_Design_Interior": "HOLD_MARKET_MISMATCH per owner instruction (support flagged RHD); P2 visual check reads wheel on left, so RHD is not confirmed either way",
    "02561b37c3c3 EX2 / ccc90a6e0675 EX5": "HOLD_OEM_RENDER_POLICY: configurator CGI; media policy excludes synthetic imagery unless CEO approves OEM renders",
    "6a4cad081442 Soueast 270x18 / 653754cdf66e JAECOO 134x16": "HOLD_LOW_RES",
    "5355e8d305ac Forthing / b480a7d6122d ROX": "HOLD_LIGHT_ONLY: white marks; P5 LIGHT_ONLY_LOGOS (on-ink) entry needed before serving"
   },
-  "rejected": {"e2d39a800110 BAIC global inline 120x47": "smaller alternative of the accepted BAIC Egypt master"},
+  "rejected": {
+   "e2d39a800110 BAIC global inline 120x47": "smaller alternative of the accepted BAIC Egypt master"
+  },
+  "accepted_items": {
+   "geely/ex2 m_000134": "HQ hero 1920x1201 (official side profile) + 3 galleries (cabin, rear seats, front 3/4)",
+   "geely/ex5 m_000135": "HQ hero 1671x925 (official front 3/4, EX5 badge) + 3 HQ galleries (2 cabin, rear 3/4)",
+   "hyundai/tucson m_000002": "3 galleries (front view 1120px gallery-only, front seats, rear-facing cabin); gallery 2 -> 5",
+   "BAIC": "logo 198x47 official baic-egypt.com (BAIC wordmark, not BAW) -> 8 BAIC models"
+  },
   "not_duplicated": "geely/ex5-em-i accepted hero + 3 galleries untouched; EX5 EM-R gets no inherited imagery; archive heroes for EX2/EX5 kept (IM-2: no longer served as that file)"
  },
  "pr11": {
@@ -24,10 +31,64 @@
   "passat": "PH-1 registry/price_holds.csv: e38b16d3579d (MY2023, source-stated 2023-05-04) ACCEPT -> REWORK STALE_2023_PRICE_PUBLIC_HOLD; served price now none (UNKNOWN); nothing invented",
   "peugeot_2008": "PY-1 canonical.py: a parsed model_year outside 2015-2035 (model name '2008') is replaced by the year the row label states, else blank. Sources then give MY2027 Allure 1,499,990 and GT 1,649,990 (ContactCars year-2027 page + Hatla2ee agree, Tier B ACCEPT). The PR's MY2025 is not supported: only the ContactCars price-table label says 2025 (now its own single-site REWORK row)"
  },
- "rebuild": {"canonical_sha256": "da636cba0437d25e00f9590d3f59ed84255d72221f160f71338258acc7a5278c", "serving_sha256": "c4bd33ba1b89ff319a6fdc99de44c03d9499f2949e32a821cf25d7293988b363", "release_id": "P2-CEO-CONFIRMED-20261102-R1", "revision": "359327921c55 -> ac757adcfffb",
+ "rebuild": {
+  "canonical_sha256": "da636cba0437d25e00f9590d3f59ed84255d72221f160f71338258acc7a5278c",
+  "serving_sha256": "c4bd33ba1b89ff319a6fdc99de44c03d9499f2949e32a821cf25d7293988b363",
+  "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+  "revision": "359327921c55 -> ac757adcfffb",
   "serving_changes": "only geely/ex2, geely/ex5, hyundai/tucson (media), volkswagen/passat, peugeot/2008 (price), 8 BAIC models (logo)",
-  "counts_before_after": {"hero_accepted": [82, 84], "hero_accepted_hq": [78, 80], "gallery_models": [70, 72], "logo_accepted": [248, 254], "price_accepted": [214, 213]}},
- "regression": {"p2_tests": "36/36 (incl. 2 new: PR #11 corrections, media batch)", "p5_local_ci_on_d602dac": "npm ci, typecheck, verify:p1 PASS; unit 72/72; build PASS; smoke 236 passed / 6 skipped",
-  "public_values_checked": "Passat page: no price shown; Peugeot 2008: 2027 Allure 1,499,990 and GT 1,649,990; EX2/EX5 pages serve new hero + 3 galleries; brands/baic.png served"},
- "remaining_blockers": ["P1 pinned P2 input still 5a373d7: Passat/Peugeot corrections reach recommendations only after P1 rebuild (and P1-MAP-01 patch)", "Forthing/ROX logos need P5 on-ink entries", "Soueast/JAECOO need larger official logo masters; Proton logo HTTP 403", "Geely OEM renders need a CEO policy decision", "Tucson cabin hold needs owner confirmation of RHD", "P5 deployment of this serving release not performed (no production deploy)"]
+  "counts_before_after": {
+   "hero_accepted": [
+    82,
+    84
+   ],
+   "hero_accepted_hq": [
+    78,
+    80
+   ],
+   "gallery_models": [
+    70,
+    72
+   ],
+   "logo_accepted": [
+    248,
+    254
+   ],
+   "price_accepted": [
+    214,
+    213
+   ]
+  }
+ },
+ "regression": {
+  "p2_tests": "36/36 (incl. 2 new: PR #11 corrections, media batch)",
+  "p5_local_ci_on_d602dac": "npm ci, typecheck, verify:p1 PASS; unit 72/72; build PASS; smoke 236 passed / 6 skipped",
+  "public_values_checked": "Passat page: no price shown; Peugeot 2008: 2027 Allure 1,499,990 and GT 1,649,990; EX2/EX5 pages serve new hero + 3 galleries; brands/baic.png served"
+ },
+ "remaining_blockers": [
+  "P1 pinned P2 input still 5a373d7: Passat/Peugeot corrections reach recommendations only after P1 rebuild (and P1-MAP-01 patch)",
+  "Forthing/ROX logos need P5 on-ink entries",
+  "Soueast/JAECOO need larger official logo masters; Proton logo HTTP 403",
+  "P5 deployment of this serving release not performed (no production deploy)",
+  "Tucson has no served hero: its accepted hero is ACCEPT_LOWRES (1120 px), which the serving rule does not select"
+ ],
+ "ceo_decisions_20261104": {
+  "decision_id": "CEO-MEDIA-2026-11-04 (config/media_policy.json)",
+  "geely_renders": "02561b37c3c3 EX2 (Aurora Green, 1600x900) and ccc90a6e0675 EX5 (Turquoise Green, 1600x1067) promoted to ACCEPT HQ gallery 04 with transparency kept. Source: geelyeg.com configurator, model-named folders /assets/models/EX2|EX5 (separate from the EX5 EM-i set); body/wheels/paint match accepted photos; side view so gallery, not hero",
+  "tucson_cabin": "10a8fb5d37ac promoted to ACCEPT gallery 06: LEFT-hand drive verified at native 1250x671 (cluster behind wheel, infotainment to its right toward centre, driver switch panel far left, passenger seat/door/mirror right, on-screen text not mirrored). RHD flag not upheld",
+  "media_totals_after": {
+   "accepted": 15,
+   "held": 4,
+   "rejected": 1
+  },
+  "galleries": {
+   "geely/ex2": "3 -> 4",
+   "geely/ex5": "3 -> 4",
+   "hyundai/tucson": "5 -> 6"
+  },
+  "serving_revision": "ac757adcfffb -> 03089cc2febb",
+  "serving_sha256": "8429ddbaf4462d268068a43a5f2d87071a8e806d6d0af0f71c19d30884b3879c",
+  "canonical_sha256": "f91dd7683bb924fc0aa5c1640a9172358f5503f2dab7a9352802c748b859277c",
+  "regression": "P2 36/36; P5 local CI: typecheck, unit 72/72, build, smoke 236 passed / 6 skipped; the three new gallery files served 200 image/webp on their model pages"
+ }
 }

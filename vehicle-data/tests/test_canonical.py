@@ -211,10 +211,14 @@ class Canonical(unittest.TestCase):
         b = [r for r in reg if r["verified_at"] == "2026-11-04"]
         self.assertEqual(len(b), 20)
         self.assertEqual(len({r["sha256"] for r in reg}), len(reg))  # no duplicate media
-        self.assertEqual(collections.Counter(r["status"] for r in b), {"ACCEPT": 12, "REWORK": 7, "REJECT": 1})
-        held = {r["asset_id"] for r in b if r["status"] != "ACCEPT"}
-        self.assertIn("10a8fb5d37ac", held)  # Tucson RHD-flagged cabin
-        self.assertTrue({"02561b37c3c3", "ccc90a6e0675"} <= held)  # Geely configurator renders
+        self.assertEqual(collections.Counter(r["status"] for r in b), {"ACCEPT": 15, "REWORK": 4, "REJECT": 1})
+        acc = {r["asset_id"]: r for r in b if r["status"] == "ACCEPT"}
+        # CEO-MEDIA-2026-11-04: Geely EX2/EX5 configurator renders as gallery only; Tucson cabin accepted only as verified LHD
+        self.assertTrue({"02561b37c3c3", "ccc90a6e0675", "10a8fb5d37ac"} <= set(acc))
+        self.assertEqual({acc[k]["kind"] for k in ("02561b37c3c3", "ccc90a6e0675")}, {"gallery"})
+        self.assertIn("LEFT-hand drive verified", acc["10a8fb5d37ac"]["notes"])
+        pol = json.load(open(os.path.join(ROOT, "config", "media_policy.json")))
+        self.assertIn("CEO-MEDIA-2026-11-04", [d["decision_id"] for d in pol["decisions"]])
 
 
 if __name__ == "__main__":

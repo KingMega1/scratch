@@ -10,5 +10,13 @@
   "source URL, retrieval time, SHA-256 and rights basis stored per asset"
  ],
  "rights_basis_values": ["CEO_APPROVED_OEM_OFFICIAL", "COMMONS_LICENSED"],
- "still_excluded": ["dealer/classified photos", "media-site photos", "unverified social posts", "AI-generated images"]
+ "still_excluded": ["dealer/classified photos", "media-site photos", "unverified social posts", "AI-generated images"],
+ "decisions": [
+  {
+   "decision_id": "CEO-MEDIA-2026-11-04",
+   "decided_by": "CEO (session instruction, 2026-11-04)",
+   "decision": "Official manufacturer configurator renders approved for Geely EX2 and EX5 only (geelyeg.com configurator assets), after P2 verifies source, model identity and placement. Not an authorization for AI-generated or arbitrary synthetic images.",
+   "also": "Right-hand-drive imagery is not acceptable; a cabin image is accepted only when clearly left-hand drive."
+  }
+ ]
 }

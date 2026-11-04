@@ -4,11 +4,11 @@
  "date": "2026-11-04",
  "sequence": "a",
  "release_id": "P2-CEO-CONFIRMED-20261102-R1",
- "revision": "ac757adcfffb",
+ "revision": "03089cc2febb",
  "release_file": "vehicle-data/views/catalogue-serving.release.json",
- "release_sha256": "c4bd33ba1b89ff319a6fdc99de44c03d9499f2949e32a821cf25d7293988b363",
+ "release_sha256": "8429ddbaf4462d268068a43a5f2d87071a8e806d6d0af0f71c19d30884b3879c",
  "canonical_file": "vehicle-data/views/canonical_u11.json",
- "canonical_sha256": "da636cba0437d25e00f9590d3f59ed84255d72221f160f71338258acc7a5278c",
+ "canonical_sha256": "f91dd7683bb924fc0aa5c1640a9172358f5503f2dab7a9352802c748b859277c",
  "counts_283": {
   "models": 283,
   "id_accepted": 283,
@@ -44,9 +44,12 @@
   "media/models/hyundai-tucson/03.webp",
   "media/models/hyundai-tucson/04.webp",
   "media/models/hyundai-tucson/05.webp",
-  "media/brands/baic.png"
+  "media/brands/baic.png",
+  "media/models/geely-ex2/04.webp",
+  "media/models/geely-ex5/04.webp",
+  "media/models/hyundai-tucson/06.webp"
  ],
- "changes": "consolidated media acceptance (12 accepted, 7 held, 1 rejected) and PR #11 corrections (Passat price held; Peugeot 2008 MY2027 from 1,499,990); see review/media_price_acceptance_20261104.json",
+ "changes": "consolidated media acceptance (12 accepted, 7 held, 1 rejected) and PR #11 corrections (Passat price held; Peugeot 2008 MY2027 from 1,499,990); see review/media_price_acceptance_20261104.json; CEO-MEDIA-2026-11-04: EX2/EX5 configurator renders and LHD-verified Tucson cabin added as galleries (15 accepted, 4 held, 1 rejected)",
  "verified": "P5 local CI on d602dac with this release + media: typecheck, verify:p1, unit 72/72, build, smoke 236 passed / 6 skipped",
  "deploy": "not performed; no production deployment"
 }

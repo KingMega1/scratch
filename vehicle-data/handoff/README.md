@@ -74,3 +74,4 @@ Review sheet `1TUlGhEYzrOQrYdgMgyVhHwdw_ABGZSk9OhohYnvbZVg` (CarIndex P2 Data Co
 - `p5-release-20261104.json`; record `review/media_price_acceptance_20261104.json`.
 - Media batch (support 0b25eab): 12 accepted (EX2/EX5 HQ heroes + 6 galleries, Tucson +3 galleries, BAIC logo), 7 held, 1 rejected.
 - PR #11 implemented at source: PH-1 `registry/price_holds.csv` (Passat stale 2023 price held); PY-1 model-name-as-year parse fix (Peugeot 2008 now MY2027).
+- CEO-MEDIA-2026-11-04: EX2/EX5 configurator renders (gallery) and LHD-verified Tucson cabin accepted; revision 03089cc2febb.
