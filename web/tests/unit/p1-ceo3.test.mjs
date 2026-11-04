@@ -11,13 +11,13 @@ const R=load('src/server/p1/release.ts',{'server-only':{}});
 test('CEO3 is refused in production even if explicitly selected',()=>{
  const prev={...process.env};
  try {
-  process.env.P1_CANDIDATE='U12-CEO3';
+  process.env.P1_CANDIDATE='U12-CEO3-R3';
   for(const env of [{CI_ENV:'production',VERCEL_ENV:'production'},{CI_ENV:'preview',VERCEL_ENV:'production'},{CI_ENV:'development',VERCEL_ENV:''}]){
    Object.assign(process.env,env); assert.equal(R.candidateEnabled(),false);
    assert.equal(R.verifyRelease(path.resolve('p1-release'),require).ok,false);
   }
   process.env.CI_ENV='preview'; delete process.env.VERCEL_ENV;
-  const rel=R.verifyRelease(path.resolve('p1-candidate/U12-CEO3'),require);
+  const rel=R.verifyRelease(path.resolve('p1-candidate/U12-CEO3-R3'),require);
   assert.equal(rel.ok,true,rel.error); assert.equal(rel.T.TRANSPORT_VERSION,'T1.2-2026-11-03');
   assert.equal(rel.ds.sha256,R.PREVIEW_CANDIDATE.dataset_content_sha256);
   assert.equal(typeof rel.T.editBrief,'function');

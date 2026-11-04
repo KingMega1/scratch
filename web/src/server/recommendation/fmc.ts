@@ -227,6 +227,18 @@ export function websiteLinks(r: any): Record<string, string | null> {
   return out;
 }
 
+/* P2-accepted, same-origin photo for each result car that has a website page (same audited mapping as websiteLinks).
+   P1's own dataset photos (external, not P2-accepted) are never shown; the result object itself is untouched. */
+export function resultPhotos(website: Record<string, string | null>, locale: Locale): Record<string, { src: string; alt: string } | null> {
+  const V = vehicles(), out: Record<string, { src: string; alt: string } | null> = {};
+  for (const [id, slug] of Object.entries(website)) {
+    const car = slug ? V.get(slug) : undefined, img = car?.image;
+    const alt = car ? (locale === 'ar' ? `${car.brand.ar ?? car.brand.en} ${car.model.ar ?? car.model.en}` : `${car.brand.en} ${car.model.en}`) : '';
+    out[id] = img && img.src.startsWith('/media/') ? { src: img.src, alt } : null;
+  }
+  return out;
+}
+
 export function execute(briefIn: unknown, locale: Locale) {
   const { T, ds } = bound();
   const nb = T.normalize(checkBrief(briefIn), ds); // mandatory: normalize() before execute() (P5-INTEGRATION §3)
@@ -235,7 +247,8 @@ export function execute(briefIn: unknown, locale: Locale) {
   // §5 audit set; share.r carries SHARE_KEYS only (no free text / PII).
   log('reco_result', { result_id: r.result_id, engine_version: r.engine_version, universe_version: r.universe_version, dataset_sha256: r.dataset.sha256,
     transport_version: r.transport_version, locale: r.locale, share_r: r.share.r, mode: r.mode });
-  return { view: 'result' as const, brief: nb, result: r, website: websiteLinks(r) };
+  const website = websiteLinks(r);
+  return { view: 'result' as const, brief: nb, result: r, website, photos: resultPhotos(website, locale) };
 }
 
 export function executeShared(token: unknown, locale: Locale) {

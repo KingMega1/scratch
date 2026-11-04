@@ -36,6 +36,8 @@ export default function Header({ locale }: { locale: Locale }) {
         <Link className="gh-logo" href={`/${locale}`} aria-label={`${t.brand} — ${t.nav.home}`}>
           <img src="/brand/carindexed-logo-ink.svg" alt="CarIndexed" width={114} height={24} />
         </Link>
+        {/* CEO 4 Nov: a discreet Beta mark beside the logo, all environments; no preview bar. */}
+        <span className="gh-beta" data-beta-badge="true">{t.beta}</span>
         <nav className="gh-nav" aria-label={locale === 'ar' ? 'القائمة الرئيسية' : 'Primary'}>
           {NAV.filter(([k]) => k !== 'search').map(([k, href]) => (
             <Link key={k} href={`/${locale}${href}`} aria-current={isCurrent(href) ? 'page' : undefined}>{t.nav[k]}</Link>

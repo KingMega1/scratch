@@ -1,0 +1,38 @@
+{
+ "record": "P1-RELEASE-U12-CEO3-R3",
+ "record_commit": "3faad56347e686ca0969a6d1613c0d1aca6c7749",
+ "record_sha256": "67db11f52a3f542dc897bb13d3122b9ecba9108faae3026b0ae3fc53faac9618",
+ "p2_input": {
+  "commit": "dfbcccc4857428beaa1cb7ec68865cc1846f896a",
+  "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+  "files": {
+   "catalogue-serving.release.json": "c4bd33ba1b89ff319a6fdc99de44c03d9499f2949e32a821cf25d7293988b363",
+   "market_universe.json": "b0d8a15fcf39a8b497aab68119ff778f18031824a8d0e84c9a77ad7bf76731c0",
+   "registration_models.csv": "e6f43df6596f3fe38f4b13f9afb7d24663379fc96db31cfb5a588f17a94571af",
+   "u11_models.csv": "36c45232e490a924975060b0fe08c14b3eeb546577da81676b624ee8bbcdf36a",
+   "arabic_names.csv": "91a7d71b7165da6a9b87544b2a0eb6dc1d1aaa4253ce063fce283e8a6429c188",
+   "u11_prices.csv": "cb5541256682ba256e33cc077793eb466dba54236cfa6cc3b439f7bf7a43ba52"
+  }
+ },
+ "files": [
+  "buyer-decision/app/engine.js",
+  "buyer-decision/app/brief.js",
+  "buyer-decision/app/i18n.js",
+  "buyer-decision/app/present.js",
+  "buyer-decision/app/redact.js",
+  "buyer-decision/transport/reco.js",
+  "buyer-decision/transport/ci.reco.v1.schema.json",
+  "buyer-decision/transport/P5-HANDOFF-U12-CEO3-R3.md",
+  "buyer-decision/datasets/U12-CEO3-R3-2026-11-04/manifest.json",
+  "buyer-decision/datasets/U12-CEO3-R3-2026-11-04/recommendation_view.json",
+  "buyer-decision/release/P1-RELEASE-U12-CEO3-R3.json"
+ ],
+ "test_fixtures": {
+  "buyer-decision/tests/ceo_failures.test.js": "907b7bfe626b3c1cf8acca8b9d7a089a53022fdd081c59e8a0aa882737367a36",
+  "buyer-decision/tests/buyer_scenarios.test.js": "81d727a58935822bef19f4bf6d41a79f311c451889059ef1f8e486c1250592a6",
+  "buyer-decision/tests/named_cars.test.js": "50721e5a688dacdef10f278ee217180846701ef8efcf42f5c00b065c56ebdd2f",
+  "buyer-decision/tools/ceo_fact_decisions.json": "231f5e10391890d52fe74e10c66168ca1b0f38a9a7ffc088b23b8737a7157b5a",
+  "buyer-decision/tools/ceo_price_overrides.json": "c83e4ed95595deb64cad144f1e23408c0fc33035644c483360d843c0a7bfc0ae"
+ },
+ "test_fixtures_note": "P1 owner-side acceptance suites and fixtures from the same record commit; dry-run only, not runtime files"
+}

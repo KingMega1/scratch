@@ -69,7 +69,7 @@
         priorities: { t: 'What matters most to you?', h: 'Optional. Pick up to three. The first group changes which cars we recommend.',
           o: { premium: ['Premium', 'A premium-segment model'], space: ['Space', 'Room for people and luggage'], performance: ['Power', 'Strong engine'], warranty: ['Long warranty', 'Years and kilometres covered'], pocket: ['Spend less', 'Keep money in my pocket'], economy: ['Low fuel use', 'Hybrid where possible'], easy: ['Easy to drive and park', 'Compact size'],
             popular: ['A proven, popular choice', 'What many Egyptians buy'], reliability: ['Reliability', 'Few problems'], resale: ['Resale value', 'Sells well later'], aftersales: ['Service and parts', 'Easy to maintain'], safety: ['Safety', 'Protection for the family'], tech: ['Technology', 'Screens, features'] } },
-        more: { t: 'Anything else you’d like CarIndex to know?', h: 'Optional. For example: a brand you’d rather avoid, where you park, or a car you’ve test-driven.', ph: 'Type here…' },
+        more: { t: 'Anything else you’d like CarIndexed to know?', h: 'Optional. For example: a brand you’d rather avoid, where you park, or a car you’ve test-driven.', ph: 'Type here…' },
       },
 
       // summary
@@ -95,13 +95,15 @@
       drive_v: 'Four-wheel drive (confirmed 4WD/AWD version)',
       offroad_v: 'Off-road / rough-road use',
       seats_named: p => `Note: the ${p.cars} you named have 5 seats. Choosing 7 seats would rule them out.`,
-      // DRAFT pending P3 approval (P1 copy request 2026-10-14): neutral heading — the named cars may be missing data, not ruled out
+      // CEO-approved 2026-10-21: neutral heading — the named cars may be missing data, not ruled out
       conflict_h: 'About the cars you named',
       conflict: {
-        // DRAFT pending P3 approval: missing data is never described as "not sold in Egypt" or as a failed must-have
-        unknown_price: p => `We don’t have a current price for the ${p.cars} yet, so we can’t recommend it. Below are the cars that fit your brief.`,
-        unknown_size: p => `We don’t have confirmed size details for the ${p.cars} yet, so we can’t compare it fairly. Below are the cars that fit your brief.`,
-        scope: p => `We don’t cover coupes and convertibles like the ${p.cars} in recommendations yet. Below are the cars that fit your brief.`,
+        // resolved 2026-11-04: missing data is never described as "not sold in Egypt" or as a failed must-have; one sentence that
+        // reads right for one or several cars and makes no claim about what is shown below (there may be nothing).
+        // unknown_size / scope are unreachable under the CEO decisions of 2026-10-21 (no car is held for size or body type).
+        unknown_price: p => `We don’t have a current price yet for: ${p.cars}.`,
+        unknown_size: p => `We don’t have confirmed size details yet for: ${p.cars}.`,
+        scope: p => `We don’t include this type of car in recommendations yet: ${p.cars}.`,
         seats: p => `The ${p.cars} don’t have 7 seats, and you told us 7 seats is a must. Below are 7-seaters that fit your brief.`,
         budget: p => `The ${p.cars} start above your budget. Below are the cars that fit it.`,
         drive: p => `We can’t confirm a four-wheel-drive version of the ${p.cars}. Below are cars with a confirmed 4WD/AWD version.`,
@@ -225,9 +227,9 @@
         below_floor: p => `The ${p.n} costs much less than your budget (from ${p.entry}).`,
         brand_only: p => `The ${p.n} isn’t from the brand you asked for.`, unknown_seats: p => `We can’t confirm that the ${p.n} has 7 seats.`,
         unknown_price: p => `We don’t have a current price for the ${p.n}.`,
-        // DRAFT pending P3 approval (P1 copy request 2026-10-14)
-        unknown_size: p => `We don’t have confirmed size details for the ${p.n} yet, so we can’t compare it fairly.`,
-        scope: p => `We don’t cover coupes and convertibles like the ${p.n} in recommendations yet.` },
+        // unreachable under the CEO decisions of 2026-10-21 (kept for the engine's reason keys)
+        unknown_size: p => `We don’t have confirmed size details for the ${p.n} yet.`,
+        scope: p => `We don’t include this type of car in recommendations yet: ${p.n}.` },
       sl_also: p => `You may also want to consider the ${p.n}: ${p.why}`,
 
       asp_h: n => `About the ${n}`,
@@ -272,7 +274,7 @@
       nomatch_p: 'Here’s what would open up options:',
       fix: { seats: n => `Drop the 7-seat requirement (${n} cars)`, chinese: n => `Include Chinese brands (${n} cars)`, powertrain: n => `Open to any powertrain (${n} cars)`, body: n => `Open to any type (${n} cars)`, brand: n => `Include the brands you left out (${n} cars)`, brand_only: n => `Consider other brands (${n} cars)`, budget: p => `Raise budget to ${p}` },
 
-      fb_q: 'Did CarIndex help you get closer to a decision?',
+      fb_q: 'Did CarIndexed help you get closer to a decision?',
       fb: { yes: 'Yes', somewhat: 'Somewhat', no: 'No' },
       fb_more: 'What would make it more useful? (optional)', fb_send: 'Send', fb_thanks: 'Thank you — this helps us improve.',
       share: 'Copy link', copied: 'Link copied',
@@ -283,7 +285,7 @@
       dir: 'rtl', lang_switch: 'English', skip: 'انتقل للمحتوى', nav_find: 'لاقي عربيتك',
       trust: 'نصيحة مستقلة. مفيش ترتيب مدفوع ولا عمولات من التجار.',
       method: 'الأسعار: من قوائم أسعار الوكيل الرسمي لما تكون منشورة، وغير كده من أهم مواقع أسعار العربيات في مصر (سبتمبر 2026). بيانات السوق: أول ترخيص في مصر، من فبراير 2021 لحد أغسطس 2026.',
-      egp: n => `${n} جنيه`, mill: n => `${n} مليون جنيه`,
+      egp: n => `${n} ج.م`, mill: n => `${n} مليون ج.م`,
       month: ym => `${MONTHS_AR[+ym.slice(5, 7) - 1]} ${ym.slice(0, 4)}`,
       size: k => SIZE_AR[k] || '',
       body: { suv: 'عربية عالية (SUV)', sedan: 'سيدان', hatch: 'هاتشباك', mpv: 'ميني فان', coupe: 'كوبيه', convertible: 'مكشوفة', van: 'فان' },
@@ -325,7 +327,7 @@
         priorities: { t: 'إيه أهم حاجة بالنسبالك؟', h: 'اختياري. اختار لحد 3. المجموعة الأولى بتغيّر العربيات اللي بنرشّحها.',
           o: { premium: ['فخامة', 'موديل من الفئة الفاخرة'], space: ['المساحة', 'مكان للناس والشنط'], performance: ['القوة', 'موتور قوي'], warranty: ['ضمان طويل', 'سنين وكيلومترات أكتر'], pocket: ['أصرف أقل', 'يفضل معايا فلوس'], economy: ['استهلاك بنزين أقل', 'هايبرد لو ينفع'], easy: ['سهلة في السواقة والركن', 'حجم صغير'],
             popular: ['اختيار مجرّب ومنتشر', 'اللي مصريين كتير بيشتروه'], reliability: ['الاعتمادية', 'مشاكلها قليلة'], resale: ['سعر إعادة البيع', 'تتباع كويس بعدين'], aftersales: ['الصيانة وقطع الغيار', 'سهلة في الصيانة'], safety: ['الأمان', 'حماية للعيلة'], tech: ['التكنولوجيا', 'شاشات ومميزات'] } },
-        more: { t: 'في حاجة تانية تحب CarIndex يعرفها؟', h: 'اختياري. مثلًا: ماركة مش عايزها، بتركن فين، أو عربية جرّبتها.', ph: 'اكتب هنا…' },
+        more: { t: 'في حاجة تانية تحب كار إندكسد يعرفها؟', h: 'اختياري. مثلًا: ماركة مش عايزها، بتركن فين، أو عربية جرّبتها.', ph: 'اكتب هنا…' },
       },
 
       s_eyebrow: 'قبل ما نرشّح',
@@ -350,13 +352,13 @@
       drive_v: 'دفع رباعي (فئة 4WD/AWD مؤكدة)',
       offroad_v: 'أوف رود / طرق وعرة',
       seats_named: p => `خد بالك: الـ ${p.cars} اللي ذكرتها 5 كراسي. لو اخترت 7 كراسي هتطلع من الاختيارات.`,
-      // DRAFT pending P3 approval (P1 copy request 2026-10-14)
+      // CEO-approved 2026-10-21
       conflict_h: 'عن العربيات اللي ذكرتها',
       conflict: {
-        // DRAFT pending P3 approval: البيانات الناقصة عمرها ما تتوصف إنها "مش بتتباع في مصر"
-        unknown_price: p => `معندناش لسه سعر حالي للـ ${p.cars}، فمش هنقدر نرشّحها. تحت العربيات المناسبة لطلبك.`,
-        unknown_size: p => `معندناش لسه مقاسات مؤكدة للـ ${p.cars}، فمش هنقدر نقارنها بشكل عادل. تحت العربيات المناسبة لطلبك.`,
-        scope: p => `لسه مش بنرشّح عربيات كوبيه أو مكشوفة زي الـ ${p.cars}. تحت العربيات المناسبة لطلبك.`,
+        // resolved 2026-11-04: البيانات الناقصة عمرها ما تتوصف إنها "مش بتتباع في مصر"؛ جملة واحدة تنفع لعربية أو أكتر
+        unknown_price: p => `معندناش لسه سعر حالي لـ: ${p.cars}.`,
+        unknown_size: p => `معندناش لسه مقاسات مؤكدة لـ: ${p.cars}.`,
+        scope: p => `لسه مش بنرشّح النوع ده من العربيات: ${p.cars}.`,
         seats: p => `الـ ${p.cars} مش 7 كراسي، وإنت قلت إن 7 كراسي شرط أساسي. تحت عربيات 7 كراسي مناسبة لطلبك.`,
         budget: p => `الـ ${p.cars} بتبدأ أعلى من ميزانيتك. تحت العربيات اللي في ميزانيتك.`,
         drive: p => `مش قادرين نأكد إن فيه فئة دفع رباعي من الـ ${p.cars}. تحت عربيات عندها فئة دفع رباعي مؤكدة.`,
@@ -478,9 +480,9 @@
         below_floor: p => `الـ ${p.n} أرخص بكتير من ميزانيتك (من ${p.entry}).`,
         brand_only: p => `الـ ${p.n} مش من الماركة اللي طلبتها.`, unknown_seats: p => `مش قادرين نأكد إن الـ ${p.n} فيها 7 كراسي.`,
         unknown_price: p => `معندناش سعر حالي للـ ${p.n}.`,
-        // DRAFT pending P3 approval (P1 copy request 2026-10-14)
-        unknown_size: p => `معندناش لسه مقاسات مؤكدة للـ ${p.n}، فمش هنقدر نقارنها بشكل عادل.`,
-        scope: p => `لسه مش بنرشّح عربيات كوبيه أو مكشوفة زي الـ ${p.n}.` },
+        // unreachable under the CEO decisions of 2026-10-21
+        unknown_size: p => `معندناش لسه مقاسات مؤكدة للـ ${p.n}.`,
+        scope: p => `لسه مش بنرشّح النوع ده من العربيات: ${p.n}.` },
       sl_also: p => `ممكن كمان تبص على الـ ${p.n}: ${p.why}`,
 
       asp_h: n => `بخصوص الـ ${n}`,
@@ -525,7 +527,7 @@
       nomatch_p: 'ده اللي ممكن يفتح اختيارات:',
       fix: { seats: n => `من غير شرط الـ 7 كراسي (${n} عربية)`, chinese: n => `ضيف الماركات الصيني (${n} عربية)`, powertrain: n => `أي نوع موتور (${n} عربية)`, body: n => `أي نوع عربية (${n} عربية)`, brand: n => `رجّع الماركات اللي استبعدتها (${n} عربية)`, brand_only: n => `شوف ماركات تانية (${n} عربية)`, budget: p => `زوّد الميزانية لـ ${p}` },
 
-      fb_q: 'CarIndex ساعدك تقرّب من قرارك؟',
+      fb_q: 'كار إندكسد ساعدك تقرّب من قرارك؟',
       fb: { yes: 'أيوه', somewhat: 'شوية', no: 'لأ' },
       fb_more: 'إيه اللي يخليه مفيد أكتر؟ (اختياري)', fb_send: 'ابعت', fb_thanks: 'شكرًا — ده بيساعدنا نحسّن.',
       share: 'انسخ اللينك', copied: 'اتنسخ اللينك',

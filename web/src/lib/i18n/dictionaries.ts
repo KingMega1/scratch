@@ -148,6 +148,7 @@ const ar = {
     privacy: ['الخصوصية', 'مسودة — النص القانوني النهائي لسه بيتراجع ومش منشور. مش بنطلب رقم موبايل أو إيميل لاستخدام الموقع حاليًا.'],
     terms: ['الشروط', 'مسودة — النص القانوني النهائي لسه بيتراجع ومش منشور.'],
   },
+  beta: 'تجريبي',
   notFound: ['الصفحة مش موجودة', 'ممكن يكون اللينك اتغيّر. جرّب البحث أو ارجع للرئيسية.'],
 };
 
@@ -297,6 +298,7 @@ const en: Dict = {
     privacy: ['Privacy', 'Draft — the final legal text is under review and not published. We do not currently ask for a mobile number or email to use the site.'],
     terms: ['Terms', 'Draft — the final legal text is under review and not published.'],
   },
+  beta: 'Beta',
   notFound: ['Page not found', 'The link may have changed. Try search, or go back home.'],
 };
 

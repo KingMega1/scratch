@@ -3,19 +3,19 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
 import { createRequire } from 'node:module';
-const require=createRequire(import.meta.url), root='../../p1-candidate/U12-CEO3/buyer-decision/';
+const require=createRequire(import.meta.url), root='../../p1-candidate/U12-CEO3-R3/buyer-decision/';
 const T=require(root+'transport/reco.js');
-const rec=JSON.parse(fs.readFileSync(new URL(root+'release/P1-RELEASE-U12-CEO3.json',import.meta.url)));
-const ds=T.loadAcceptedDataset(new URL(root+ 'datasets/U12-CEO3-2026-11-03',import.meta.url).pathname);
+const rec=JSON.parse(fs.readFileSync(new URL(root+'release/P1-RELEASE-U12-CEO3-R3.json',import.meta.url)));
+const ds=T.loadAcceptedDataset(new URL(root+ 'datasets/U12-CEO3-R3-2026-11-04',import.meta.url).pathname);
 const base=process.env.FMC_BASE_URL||'http://localhost:3210';
 async function api(body){const res=await fetch(base+'/api/v1/recommendation',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(body)});const j=await res.json();assert.equal(res.status,200,JSON.stringify(j));return j;}
 const direct=(b,l)=>T.execute(T.normalize(b,ds),ds,{locale:l});
 const ids=r=>[r.hero,...r.alternatives].filter(Boolean).map(c=>c.id);
 test('candidate status and P1/P2 exact provenance',async()=>{
  const j=await api({op:'status',locale:'en'}); assert.equal(j.status.record,rec.record); assert.equal(j.status.dataset_sha256,rec.dataset.content_sha256);
- const h=await (await fetch(base+'/api/health')).json();assert.equal(h.recommendation.release_commit,'47e33e16475018e440f9de92af4cd4ba22f51559');
+ const h=await (await fetch(base+'/api/health')).json();assert.equal(h.recommendation.release_commit,'3faad56347e686ca0969a6d1613c0d1aca6c7749');
  const p2=JSON.parse(fs.readFileSync(new URL('../../data/registry/catalogue-serving.release.json',import.meta.url)));
- assert.equal(rec.p2_input.commit,'5a373d7a5ee97247f2da6de65239ff61c79cab4e');
+ assert.equal(rec.p2_input.commit,'dfbcccc4857428beaa1cb7ec68865cc1846f896a');
  assert.ok(p2);
  assert.equal(createHash('sha256').update(fs.readFileSync(new URL('../../data/registry/catalogue-serving.release.json',import.meta.url))).digest('hex'),rec.p2_input.files['catalogue-serving.release.json']);
 });

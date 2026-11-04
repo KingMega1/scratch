@@ -20,10 +20,13 @@ type View =
   | { view: 'q'; brief: any; asked: string[]; path: string; q: Q }
   | { view: 'summary'; brief: any; rows: { key: string; label: string; value: Frag }[] }
   | { view: 'edit'; brief: any; form: any }
-  | { view: 'result'; brief: any; result: any; website: Record<string, string | null> };
+  | { view: 'result'; brief: any; result: any; website: Record<string, string | null>; photos?: Record<string, { src: string; alt: string } | null> };
 type SiteCopy = { carPage: string; compareOnSite: string; loading: string; error: string; retry: string; notOnSite: string };
 
-const H = ({ html, as: As = 'span', className }: { html: string; as?: any; className?: string }) => <As className={className} dangerouslySetInnerHTML={{ __html: html }} />;
+// P1 fragments are rendered as delivered, except P1 dataset photos hosted off-site: they are not P2-accepted and the CSP blocks
+// them, so the <figure> is dropped before rendering (the result object and its hashes are untouched).
+const offsiteFigure = /<figure\b[^>]*>\s*<img\b[^>]*\bsrc="(?:https?:)?\/\/[^"]*"[\s\S]*?<\/figure>/g;
+const H = ({ html, as: As = 'span', className }: { html: string; as?: any; className?: string }) => <As className={className} dangerouslySetInnerHTML={{ __html: (html || '').replace(offsiteFigure, '') }} />;
 
 async function call(body: Record<string, unknown>) {
   const res = await fetch('/api/v1/recommendation', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body), cache: 'no-store' });
@@ -248,7 +251,9 @@ function Edit({ copy, v, locale, onBack, onSave }: { copy: Copy; v: Extract<View
 /* Result: renders ci.reco.v1 only. Ties (equal) show hero + alternatives as equal cards in the given order, none leads. */
 function Result({ copy, site, locale, v, identityEnabled, onRestart, onEdit, onAdjust }: { copy: Copy; site: SiteCopy; locale: string; v: Extract<View, { view: 'result' }>; identityEnabled: boolean; onRestart: () => void; onEdit: () => void;
   onAdjust: (a: { kind: 'budget' | 'fix' | 'relax'; key?: string; to?: number; dir?: number }) => void }) {
-  const r = v.result, W = v.website;
+  const r = v.result, W = v.website, PH = v.photos ?? {};
+  // P2-accepted, same-origin photo for a result car (joined through the audited website mapping), else nothing.
+  const photo = (id: string) => PH[id] ? <img className="fmc-photo" src={PH[id]!.src} alt={PH[id]!.alt} width={640} height={400} loading="lazy" decoding="async" data-fmc-photo={id} /> : null;
   const [cmp, setCmp] = useState(false), [sheet, setSheet] = useState<string | null>(null), [toast, setToast] = useState(false);
   const cars: any[] = r.hero ? [r.hero, ...r.alternatives] : [];
   const onSite = cars.map(c => W[c.id]).filter((x): x is string => !!x);
@@ -291,13 +296,14 @@ function Result({ copy, site, locale, v, identityEnabled, onRestart, onEdit, onA
         <section className="fmc-equal" aria-labelledby="fmc-eq-h" data-fmc-equal="true">
           <div className="fmc-head"><h2 id="fmc-eq-h" className="h3">{r.equal.heading}</h2><button className="link-btn" type="button" aria-expanded={cmp} onClick={() => setCmp(x => !x)}>{cmp ? copy.compare_hide : copy.compare}</button></div>
           <p className="small">{r.equal.sub}</p>
-          <div className="alts">{cars.map(c => <div key={c.id} className="fmc-card" data-model-id={c.id}><H as="div" html={c.card.html} />{siteLink(c.id)}</div>)}</div>
+          <div className="alts">{cars.map(c => <div key={c.id} className="fmc-card" data-model-id={c.id}>{photo(c.id)}<H as="div" html={c.card.html} />{siteLink(c.id)}</div>)}</div>
           {cmp && r.compare_html ? <H as="div" html={r.compare_html} /> : null}
         </section>
       ) : null}
 
       {r.hero && !r.equal ? <>
         <article className="fmc-hero" aria-labelledby="fmc-hero-h" data-model-id={r.hero.id}>
+          {photo(r.hero.id)}
           {/* P1 dataset photos are unverified (AT-43 image policy): not rendered; P1 markup is unchanged. */}
           <div className="fmc-hero-top">
             <div>{r.eyebrow ? <H as="p" className="eyebrow" html={r.eyebrow.html} /> : null}
@@ -311,7 +317,7 @@ function Result({ copy, site, locale, v, identityEnabled, onRestart, onEdit, onA
         </article>
         {r.alternatives.length ? <section aria-labelledby="fmc-alt-h">
           <div className="fmc-head"><h2 id="fmc-alt-h" className="h3">{copy.alts_h}</h2><button className="link-btn" type="button" aria-expanded={cmp} onClick={() => setCmp(x => !x)}>{cmp ? copy.compare_hide : copy.compare}</button></div>
-          <div className="alts">{r.alternatives.map((c: any) => <div key={c.id} className="fmc-card" data-model-id={c.id}><H as="div" html={c.card.html} />{siteLink(c.id)}</div>)}</div>
+          <div className="alts">{r.alternatives.map((c: any) => <div key={c.id} className="fmc-card" data-model-id={c.id}>{photo(c.id)}<H as="div" html={c.card.html} />{siteLink(c.id)}</div>)}</div>
           {cmp && r.compare_html ? <H as="div" html={r.compare_html} /> : null}
         </section> : null}
       </> : null}

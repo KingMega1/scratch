@@ -112,6 +112,8 @@ html[lang='ar'] .label { text-transform: none; letter-spacing: 0; font-size: 13p
 /* ---------- header ---------- */
 .gh { position: sticky; inset-block-start: 0; z-index: 40; background: var(--ci-color-white); border-block-end: var(--ci-border-strong) solid var(--ci-color-ink); }
 .gh-row { display: flex; align-items: center; gap: 16px; height: var(--header-h); }
+.gh-beta { flex: none; align-self: center; margin-inline-start: -8px; padding: 1px 6px; border: 1px solid var(--ci-color-ink); border-radius: var(--ci-radius-control); font-size: 11px; font-weight: 700; line-height: 16px; letter-spacing: .04em; text-transform: uppercase; color: var(--ci-color-ink); }
+html[lang='ar'] .gh-beta { letter-spacing: 0; font-size: 12px; }
 .gh-logo { display: inline-flex; align-items: center; flex: none; min-height: var(--ci-size-target-min); }
 .gh-logo img { height: 20px; width: auto; }
 @media (min-width: 1024px) { .gh-logo img { height: 24px; } }
@@ -517,3 +519,9 @@ table.t th.t-num { text-align: end; }
 .cmp-missing { margin-block-start: var(--ci-space-4); border: 1px solid var(--ci-color-line); border-radius: var(--radius-card); padding: 12px 16px; }
 .cmp-missing summary { cursor: pointer; font-weight: 600; min-height: var(--ci-size-target-min); display: flex; align-items: center; }
 .cmp-missing ul { margin: 8px 0 0; padding-inline-start: 20px; }
+
+/* Find My Car: P2-accepted photo on result cards. */
+/* Fixed, modest height so the pick's name, price and reasons stay the first read; whole car shown (contain), never cropped. */
+.fmc-photo { display: block; width: 100%; height: 200px; object-fit: contain; border-radius: var(--radius-card); background: var(--ci-color-fog); margin-block-end: 12px; }
+.fmc-card .fmc-photo { height: 150px; }
+@media (max-width: 640px) { .fmc-photo { height: 170px; } .fmc-card .fmc-photo { height: 140px; } }

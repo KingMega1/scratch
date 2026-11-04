@@ -1,6 +1,6 @@
-# P1 → P5 consumption contract and release gate — U12-CEO3 (recommendation quality recovery)
+# P1 → P5 consumption contract and release gate — U12-CEO3-R3 (final release candidate)
 
-Owner: P1. Record: `buyer-decision/release/P1-RELEASE-U12-CEO3.json`. Supersedes `P5-HANDOFF-U12-RC6.md` and the d553729 candidate (U12-CEO-2026-11-03). **CANDIDATE: do not bind in production.** Production stays on P1-RELEASE-T1 (E6 / T1 / U11) until the release authority accepts this candidate.
+Owner: P1. Record: `buyer-decision/release/P1-RELEASE-U12-CEO3-R3.json`. Supersedes `P5-HANDOFF-U12-RC6.md` and the d553729 candidate (U12-CEO-2026-11-03). **CANDIDATE: do not bind in production.** Production stays on P1-RELEASE-T1 (E6 / T1 / U11) until the release authority accepts this candidate.
 
 ## 0. What changed since d553729 (engine and ranking unchanged)
 
@@ -20,6 +20,26 @@ Owner: P1. Record: `buyer-decision/release/P1-RELEASE-U12-CEO3.json`. Supersedes
 
 **P5 must use `editBrief` for "Edit your brief"** (not `mergeAnswer`).
 
+## 0b. Final candidate changes (U12-CEO3-R3, 2026-11-04)
+
+- **P2 input:** dfbcccc (exact serving sha256 above; not the 3 Nov handoff JSON).
+- **Prices:** P1 = P2 accepted for all **269** accepted models (0 disagreements; `datasets/U12-CEO3-R3-2026-11-04/P2-PRICE-AGREEMENT.json`).
+  - Changes vs R2: Peugeot 2008 MY2027 from EGP 1,499,990 (Allure; GT 1,649,990).
+  - VW Passat has no accepted price. The stale EGP 1,600,000 (MY2023) row is locked out (`tools/ceo_price_overrides.json`). Passat shows its approved U11 price, EGP 2,550,000 "Unspecified trim" MY2026, as a non-official market price.
+- **Copy:**
+  - PR #10 merged: "CarIndexed" / "كار إندكسد" in customer copy; Arabic money `ج.م`.
+  - Also: browser tab title, the test page title, meta description and logo label now say "CarIndexed".
+  - All DRAFT copy markers resolved: `conflict_h` (CEO-approved 21 Oct); the no-price message is one sentence that works for one or several cars and makes no claim about what follows. `unknown_size` / `scope` are unreachable under the 21 Oct CEO decisions.
+  - P5 must take the copy only from `i18n.js` / ci.reco.v1 fragments, never by text replacement.
+
+## 0a. Prices (U12-CEO3-R2, 2026-11-03)
+
+- P1 prices now equal P2 accepted prices for **all 269 accepted models in R3 (0 disagreements**; P2 `check_p1_price_agreement.py`; result in `datasets/U12-CEO3-R3-2026-11-04/P2-PRICE-AGREEMENT.json`).
+- Rule: P2-accepted versions replace all older U11/S0 versions of the same model (P2 patch P1-MAP-01, `CI_P2_PRICE_CANONICAL=0` reverts). Prices from the CEO-shared lists are factual.
+- New version field `price_from_only: true`: a single `Unspecified trim` carrying an accepted model starting price where no version is stated (BMW 7 Series, EGP 11.9M). Show it as "from"; never as a named version.
+- Indicative market prices (CEO 21 Oct policy) apply only where no accepted price exists and are never `official: true`.
+- Details: `datasets/U12-CEO3-R3-2026-11-04/PRICE-RECONCILIATION.md`.
+
 ## 1. What changes
 
 | Item | T1 (production) | U12-CEO2 |
@@ -27,7 +47,7 @@ Owner: P1. Record: `buyer-decision/release/P1-RELEASE-U12-CEO3.json`. Supersedes
 | `engine_version` | E6-2026-09-28 | E6.1-2026-10-14 (ranking unchanged) |
 | `transport_version` | T1-2026-10-07 | T1.2-2026-11-03 |
 | `schema` | ci.reco.v1 | ci.reco.v1 (unchanged) |
-| Dataset | U11-2026-09-26, 283 recommendable | U12-CEO3-2026-11-03, 424 identities, 392 recommendable (P2 5a373d7, P2-CEO-CONFIRMED-20261102-R1) |
+| Dataset | U11-2026-09-26, 283 recommendable | U12-CEO3-R3-2026-11-04, 424 identities, 392 recommendable (P2 dfbcccc, P2-CEO-CONFIRMED-20261102-R1 rev ac757adcfffb, serving sha256 c4bd33ba1b89ff319a6fdc99de44c03d9499f2949e32a821cf25d7293988b363) |
 | P2 input | — | aadc647 (handoff p1-release-20261021), serving release P2-CATALOGUE-U11-2026-10-21-RC2, sha256 49756cd3…2ec4 |
 
 ## 2. Files to re-vendor (verify each sha256 against the record)
@@ -36,7 +56,7 @@ Owner: P1. Record: `buyer-decision/release/P1-RELEASE-U12-CEO3.json`. Supersedes
 - `app/brief.js`: the model-name index is rebuilt when the dataset changes; brand-prefixed 4-digit names (Peugeot 3008/5008) are recognised.
 - `app/i18n.js`: contains six DRAFT strings pending P3 (§6 gate 1). Its hash will change once P3 approves.
 - `transport/reco.js`: T1.1. `compare_html` is `null` when the result is a single car with no alternatives, as in the released app. The schema already allows null.
-- `datasets/U12-CEO3-2026-11-03/{manifest.json, recommendation_view.json}`: new.
+- `datasets/U12-CEO3-R3-2026-11-04/{manifest.json, recommendation_view.json}`: new.
 - Unchanged: `app/present.js`, `app/app.js`, `transport/ci.reco.v1.schema.json`.
 
 ## 2a. CEO decisions in this dataset (2026-10-21)
@@ -66,7 +86,7 @@ Every field the transport reads must survive the Postgres serving projection.
 
 - `T.ENGINE_VERSION === 'E6.1-2026-10-14'`
 - `T.TRANSPORT_VERSION === 'T1.2-2026-11-03'`
-- `ds.universe_version === 'U12-CEO3-2026-11-03'`
+- `ds.universe_version === 'U12-CEO3-R3-2026-11-04'`
 - `ds.sha256 ===` the `dataset.content_sha256` in the record
 - The sha256 of every vendored file matches the record.
 
@@ -77,13 +97,13 @@ Results stored under T1/U11 are historical: recompute them from `share.r` and la
 1. **Copy approval (CEO, in P1 session):** `conflict_h` approved. With the 2026-10-21 decisions, the size and scope strings are no longer shown (no car carries `held`). Still open: the no-price wording (`conflict.unknown_price`, `sl_out.unknown_price`), shown only for the 31 cars without a price. P1 then reissues the record with the final `i18n.js` hash.
 2. **Release authority acceptance** of engine E6.1, transport T1.1 and dataset U12-CEO2. Closed since RC3: target universe (broad set, owner instruction 17 Oct) and official MG trims (P2 20 Oct: list only).
 3. **P1 test evidence on the final hashes**:
-   - regression 1211/1211 (U11 1142/1142, 0 changes)
-   - eligibility 1505/1505 on 4 datasets (949/949 on the original 3)
-   - u12_data 191/191 · ceo_intake PASS (45 models, 88 trims) · ceo_failures 134/134
+   - regression 1232/1232 (U11 1142/1142, 0 changes)
+   - eligibility 1106/1106 on 3 datasets (949/949 on the original 3)
+   - u12_data 202/202 · ceo_intake PASS (45 models, 88 trims) · ceo_failures 134/134 · ceo_intake PASS · price agreement 0/269 disagreements
    - named_cars 49/49
-   - buyer_scenarios 696/696 (42 EN/AR scenarios)
+   - buyer_scenarios 701/701 (42 EN/AR scenarios)
    - transport 1517/1517
-   - browser-vs-transport 1371/1371 (CEO3) and 1335/1335 (U11)
+   - browser-vs-transport 1413/1413 (CEO3-R3) and 1335/1335 (U11)
    - build_present --check PASS
 4. **P5 integration**: re-vendor, version checks, deployed EN/AR smoke on the RC4 binding, including one single-car result (`7-seater around EGP 1M` → BAW M7, no compare table).
 
@@ -91,12 +111,12 @@ Results stored under T1/U11 are historical: recompute them from `share.r` and la
 
 ```
 node tools/build_present.mjs --check
-CI_DATASET=datasets/U12-CEO3-2026-11-03/recommendation_view.json node tests/regression/run.js
-node tests/eligibility.test.js datasets/U11-2026-09-26 datasets/U12C-2026-10-14 datasets/U12C2-2026-10-14 datasets/U12C2-RC1-2026-10-14 datasets/U12C2-RC2-2026-10-14 datasets/U12-RC3-2026-10-15 datasets/U12-CEO3-2026-11-03
-node tests/u12_data.test.js datasets/U12-CEO3-2026-11-03 <P2 flat dir>
-node tests/ceo_failures.test.js datasets/U12-CEO3-2026-11-03
-node tests/named_cars.test.js datasets/U12-CEO3-2026-11-03
-node tests/buyer_scenarios.test.js datasets/U12-CEO3-2026-11-03
+CI_DATASET=datasets/U12-CEO3-R3-2026-11-04/recommendation_view.json node tests/regression/run.js
+node tests/eligibility.test.js datasets/U11-2026-09-26 datasets/U12C-2026-10-14 datasets/U12C2-2026-10-14 datasets/U12C2-RC1-2026-10-14 datasets/U12C2-RC2-2026-10-14 datasets/U12-RC3-2026-10-15 datasets/U12-CEO3-R3-2026-11-04
+node tests/u12_data.test.js datasets/U12-CEO3-R3-2026-11-04 <P2 flat dir>
+node tests/ceo_failures.test.js datasets/U12-CEO3-R3-2026-11-04
+node tests/named_cars.test.js datasets/U12-CEO3-R3-2026-11-04
+node tests/buyer_scenarios.test.js datasets/U12-CEO3-R3-2026-11-04
 node tests/transport/transport.test.js
-node tests/transport/browser_equivalence.mjs <build of RC4> datasets/U12-CEO3-2026-11-03
+node tests/transport/browser_equivalence.mjs <build of RC4> datasets/U12-CEO3-R3-2026-11-04
 ```

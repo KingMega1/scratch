@@ -7,9 +7,11 @@ async function shot(page: Page, name: string, testInfo: { project: { name: strin
 }
 
 test.describe('locale + direction', () => {
-  test('no Beta or preview banner is shown on Arabic or English pages', async ({ page }) => {
+  test('no preview banner; one discreet Beta badge beside the logo (CEO 4 Nov) on Arabic and English pages', async ({ page }) => {
     for (const locale of ['ar', 'en'] as const) {
       await page.goto(`/${locale}`);
+      await expect(page.locator('header [data-beta-badge]')).toHaveCount(1);
+      await expect(page.locator('header [data-beta-badge]')).toHaveText(locale === 'ar' ? 'تجريبي' : 'Beta');
       await expect(page.locator('.preview-bar')).toHaveCount(0);
       await expect(page.locator('body')).not.toContainText('Preview — not the live site');
       await expect(page.locator('body')).not.toContainText('نسخة تجريبية — مش الموقع النهائي');
@@ -302,6 +304,54 @@ test.describe('Arabic compare search', () => {
   for (const join of ['و','ولا']) test(`compare action for Arabic ${join}`,async({request})=>{
     const j=await(await request.get(`/api/v1/search?q=${encodeURIComponent(`كيا سبورتاج ${join} هيونداي توسان`)}&locale=ar`)).json();
     expect(JSON.stringify(j)).toContain('/ar/compare?ids=');
+  });
+});
+
+test.describe('CEO QC 4 Nov: P2 dfbcccc data on public pages', () => {
+  test('Passat has no accepted price: no EGP figure anywhere on its page (EN/AR)', async ({ page }) => {
+    for (const l of ['en', 'ar']) {
+      await page.goto(`/${l}/cars/volkswagen-passat`);
+      const t = await page.locator('main').innerText();
+      expect(t, l).not.toMatch(/EGP\s?[\d,]{5,}|[\d,٬]{7,}\s?(ج\.م|جنيه)/);
+    }
+  });
+  test('Peugeot 2008 shows the corrected MY2027 official prices', async ({ page }) => {
+    await page.goto('/en/cars/peugeot-2008');
+    const m = page.locator('main');
+    await expect(m).toContainText('Model year 2027');
+    await expect(m).toContainText('EGP 1,499,990');
+    await expect(m).toContainText('EGP 1,649,990');
+  });
+  for (const [l, slug] of [['en', 'geely-ex2'], ['ar', 'geely-ex2'], ['en', 'geely-ex5'], ['ar', 'geely-ex5']]) {
+    test(`accepted ${slug} hero + 3 gallery photos load (${l})`, async ({ page }) => {
+      await page.goto(`/${l}/cars/${slug}`);
+      const imgs = page.locator(`main img[src*="/media/p2/models/${slug}"], main img[srcset*="${encodeURIComponent(`/media/p2/models/${slug}`)}"]`);
+      await expect(imgs).toHaveCount(4);
+      await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+      await expect.poll(() => imgs.evaluateAll(xs => xs.every(i => (i as HTMLImageElement).complete && (i as HTMLImageElement).naturalWidth > 0))).toBe(true);
+    });
+  }
+  test('BAIC accepted logo renders (home EN/AR, catalogue)', async ({ page }) => {
+    for (const u of ['/en', '/ar', '/en/market/catalog']) {
+      await page.goto(u);
+      const logo = page.locator('img[data-brand-logo="baic"][src="/media/p2/brands/baic.png"]').first();
+      await logo.scrollIntoViewIfNeeded();
+      await expect.poll(() => logo.evaluate(i => (i as HTMLImageElement).complete && (i as HTMLImageElement).naturalWidth > 0), { message: u }).toBe(true);
+    }
+  });
+  test('Find My Car result: P2-accepted same-origin photos only; P1 off-site figures dropped (EN/AR)', async ({ page, request }) => {
+    const corpus = JSON.parse(readFileSync('tests/fixtures/p1-release/corpus.json', 'utf8'));
+    const j = await (await request.post('/api/v1/recommendation', { data: { op: 'execute', locale: 'en', brief: corpus[24].brief } })).json();
+    expect(j.view).toBe('result');
+    for (const v of Object.values(j.photos as Record<string, { src: string } | null>)) if (v) expect(v.src).toMatch(/^\/media\/p2\//);
+    const withPhoto = Object.entries(j.photos).filter(([, v]) => v).map(([k]) => k);
+    expect(withPhoto.length).toBeGreaterThan(0);
+    for (const l of ['en', 'ar']) {
+      await page.goto(`/${l}/find-my-car?r=${j.result.share.r}`);
+      await expect(page.locator('[data-fmc-photo]')).toHaveCount(withPhoto.length, { timeout: 30000 });
+      await expect(page.locator('.fmc-result figure')).toHaveCount(0);
+      expect(await page.evaluate(() => [...document.images].filter(i => !i.src.startsWith(location.origin)).length)).toBe(0);
+    }
   });
 });
 

@@ -25,23 +25,23 @@ export const BOUND = {
   p3_artifact: '1791369522-eecc',
 } as const;
 
-/* CEO-authorized NONPRODUCTION preview candidate, pinned to P1 record commit 47e33e1 (P1-RELEASE-U12-CEO3, status
-   CANDIDATE — not released). Never follows a moving P1 branch. Supersedes the staged U12-CEO2 (0b06620) and U12-RC3 candidates, which
-   are no longer vendored: CEO3 changes only the dataset (CEO powertrain decisions for 7 models); engine E6.1, transport T1.2, parser,
-   copy and presentation bytes are identical to CEO2, and the P2 input is the same release P5 serves (5a373d7). */
+/* CEO-authorized NONPRODUCTION preview candidate, pinned to P1 record commit 3faad56 (P1-RELEASE-U12-CEO3-R3, status
+   CANDIDATE — not released). Never follows a moving P1 branch. Supersedes CEO3 (47e33e1). Engine E6.1, transport T1.2; dataset
+   U12-CEO3-R3 on P2 dfbcccc (serving sha256 c4bd33ba…, the same release P5 serves). Activation requires P1 RELEASE plus a
+   reviewed change of BOUND; until then it runs only behind the gate below. */
 export const PREVIEW_CANDIDATE = {
-  record: 'P1-RELEASE-U12-CEO3',
-  record_commit: '47e33e16475018e440f9de92af4cd4ba22f51559',
-  record_sha256: '06880f9838289247f0e81663f0a7564cbd1f63e2cbc5eb0c9e725b51e45f02d3',
-  transport_commit: 'cfa3450f62c8c5353c3eebfda8d096792a034bb2',
+  record: 'P1-RELEASE-U12-CEO3-R3',
+  record_commit: '3faad56347e686ca0969a6d1613c0d1aca6c7749',
+  record_sha256: '67db11f52a3f542dc897bb13d3122b9ecba9108faae3026b0ae3fc53faac9618',
+  transport_commit: 'ee295eb33d7f952a17d6723dcea7c3094b74c2f1',
   engine_version: 'E6.1-2026-10-14', transport_version: 'T1.2-2026-11-03',
-  schema: 'ci.reco.v1', universe_version: 'U12-CEO3-2026-11-03',
-  dataset_id: 'U12-CEO3-2026-11-03/recommendation_view',
-  dataset_content_sha256: '4f2e9ccc8d57b5fc9df3de2b7e99df27348047a795f834ea2c1ca975627cfd52',
+  schema: 'ci.reco.v1', universe_version: 'U12-CEO3-R3-2026-11-04',
+  dataset_id: 'U12-CEO3-R3-2026-11-04/recommendation_view',
+  dataset_content_sha256: 'baac72716b4655ad3fb2c8c7ff80f6d14817097faee3df064b3ffea05b116038',
   p3_artifact: 'CANDIDATE_COPY_NOT_ACCEPTED',
 } as const;
-export const PREVIEW_CANDIDATE_ID = 'U12-CEO3';
-export const PREVIEW_CANDIDATE_ROOT = 'p1-candidate/U12-CEO3';
+export const PREVIEW_CANDIDATE_ID = 'U12-CEO3-R3';
+export const PREVIEW_CANDIDATE_ROOT = 'p1-candidate/U12-CEO3-R3';
 export function candidateEnabled() {
   return process.env.P1_CANDIDATE === PREVIEW_CANDIDATE_ID && process.env.CI_ENV === 'preview' &&
     process.env.VERCEL_ENV !== 'production';
