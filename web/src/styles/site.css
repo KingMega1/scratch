@@ -110,7 +110,6 @@ html[lang='ar'] .label { text-transform: none; letter-spacing: 0; font-size: 13p
 .inverse .state-listing, .inverse .state-mixed { background: rgba(255,255,255,.12); color: var(--ci-color-white); }
 
 /* ---------- header ---------- */
-.preview-bar { background: var(--ci-color-ink); color: var(--ci-color-white); font-size: 12px; text-align: center; padding: 4px var(--gutter); }
 .gh { position: sticky; inset-block-start: 0; z-index: 40; background: var(--ci-color-white); border-block-end: var(--ci-border-strong) solid var(--ci-color-ink); }
 .gh-row { display: flex; align-items: center; gap: 16px; height: var(--header-h); }
 .gh-logo { display: inline-flex; align-items: center; flex: none; min-height: var(--ci-size-target-min); }
