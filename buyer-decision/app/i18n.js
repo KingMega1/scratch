@@ -69,7 +69,7 @@
         priorities: { t: 'What matters most to you?', h: 'Optional. Pick up to three. The first group changes which cars we recommend.',
           o: { premium: ['Premium', 'A premium-segment model'], space: ['Space', 'Room for people and luggage'], performance: ['Power', 'Strong engine'], warranty: ['Long warranty', 'Years and kilometres covered'], pocket: ['Spend less', 'Keep money in my pocket'], economy: ['Low fuel use', 'Hybrid where possible'], easy: ['Easy to drive and park', 'Compact size'],
             popular: ['A proven, popular choice', 'What many Egyptians buy'], reliability: ['Reliability', 'Few problems'], resale: ['Resale value', 'Sells well later'], aftersales: ['Service and parts', 'Easy to maintain'], safety: ['Safety', 'Protection for the family'], tech: ['Technology', 'Screens, features'] } },
-        more: { t: 'Anything else you’d like CarIndex to know?', h: 'Optional. For example: a brand you’d rather avoid, where you park, or a car you’ve test-driven.', ph: 'Type here…' },
+        more: { t: 'Anything else you’d like CarIndexed to know?', h: 'Optional. For example: a brand you’d rather avoid, where you park, or a car you’ve test-driven.', ph: 'Type here…' },
       },
 
       // summary
@@ -272,7 +272,7 @@
       nomatch_p: 'Here’s what would open up options:',
       fix: { seats: n => `Drop the 7-seat requirement (${n} cars)`, chinese: n => `Include Chinese brands (${n} cars)`, powertrain: n => `Open to any powertrain (${n} cars)`, body: n => `Open to any type (${n} cars)`, brand: n => `Include the brands you left out (${n} cars)`, brand_only: n => `Consider other brands (${n} cars)`, budget: p => `Raise budget to ${p}` },
 
-      fb_q: 'Did CarIndex help you get closer to a decision?',
+      fb_q: 'Did CarIndexed help you get closer to a decision?',
       fb: { yes: 'Yes', somewhat: 'Somewhat', no: 'No' },
       fb_more: 'What would make it more useful? (optional)', fb_send: 'Send', fb_thanks: 'Thank you — this helps us improve.',
       share: 'Copy link', copied: 'Link copied',
@@ -283,7 +283,7 @@
       dir: 'rtl', lang_switch: 'English', skip: 'انتقل للمحتوى', nav_find: 'لاقي عربيتك',
       trust: 'نصيحة مستقلة. مفيش ترتيب مدفوع ولا عمولات من التجار.',
       method: 'الأسعار: من قوائم أسعار الوكيل الرسمي لما تكون منشورة، وغير كده من أهم مواقع أسعار العربيات في مصر (سبتمبر 2026). بيانات السوق: أول ترخيص في مصر، من فبراير 2021 لحد أغسطس 2026.',
-      egp: n => `${n} جنيه`, mill: n => `${n} مليون جنيه`,
+      egp: n => `${n} ج.م`, mill: n => `${n} مليون ج.م`,
       month: ym => `${MONTHS_AR[+ym.slice(5, 7) - 1]} ${ym.slice(0, 4)}`,
       size: k => SIZE_AR[k] || '',
       body: { suv: 'عربية عالية (SUV)', sedan: 'سيدان', hatch: 'هاتشباك', mpv: 'ميني فان', coupe: 'كوبيه', convertible: 'مكشوفة', van: 'فان' },
@@ -325,7 +325,7 @@
         priorities: { t: 'إيه أهم حاجة بالنسبالك؟', h: 'اختياري. اختار لحد 3. المجموعة الأولى بتغيّر العربيات اللي بنرشّحها.',
           o: { premium: ['فخامة', 'موديل من الفئة الفاخرة'], space: ['المساحة', 'مكان للناس والشنط'], performance: ['القوة', 'موتور قوي'], warranty: ['ضمان طويل', 'سنين وكيلومترات أكتر'], pocket: ['أصرف أقل', 'يفضل معايا فلوس'], economy: ['استهلاك بنزين أقل', 'هايبرد لو ينفع'], easy: ['سهلة في السواقة والركن', 'حجم صغير'],
             popular: ['اختيار مجرّب ومنتشر', 'اللي مصريين كتير بيشتروه'], reliability: ['الاعتمادية', 'مشاكلها قليلة'], resale: ['سعر إعادة البيع', 'تتباع كويس بعدين'], aftersales: ['الصيانة وقطع الغيار', 'سهلة في الصيانة'], safety: ['الأمان', 'حماية للعيلة'], tech: ['التكنولوجيا', 'شاشات ومميزات'] } },
-        more: { t: 'في حاجة تانية تحب CarIndex يعرفها؟', h: 'اختياري. مثلًا: ماركة مش عايزها، بتركن فين، أو عربية جرّبتها.', ph: 'اكتب هنا…' },
+        more: { t: 'في حاجة تانية تحب كار إندكسد يعرفها؟', h: 'اختياري. مثلًا: ماركة مش عايزها، بتركن فين، أو عربية جرّبتها.', ph: 'اكتب هنا…' },
       },
 
       s_eyebrow: 'قبل ما نرشّح',
@@ -525,7 +525,7 @@
       nomatch_p: 'ده اللي ممكن يفتح اختيارات:',
       fix: { seats: n => `من غير شرط الـ 7 كراسي (${n} عربية)`, chinese: n => `ضيف الماركات الصيني (${n} عربية)`, powertrain: n => `أي نوع موتور (${n} عربية)`, body: n => `أي نوع عربية (${n} عربية)`, brand: n => `رجّع الماركات اللي استبعدتها (${n} عربية)`, brand_only: n => `شوف ماركات تانية (${n} عربية)`, budget: p => `زوّد الميزانية لـ ${p}` },
 
-      fb_q: 'CarIndex ساعدك تقرّب من قرارك؟',
+      fb_q: 'كار إندكسد ساعدك تقرّب من قرارك؟',
       fb: { yes: 'أيوه', somewhat: 'شوية', no: 'لأ' },
       fb_more: 'إيه اللي يخليه مفيد أكتر؟ (اختياري)', fb_send: 'ابعت', fb_thanks: 'شكرًا — ده بيساعدنا نحسّن.',
       share: 'انسخ اللينك', copied: 'اتنسخ اللينك',
