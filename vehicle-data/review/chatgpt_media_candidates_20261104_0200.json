@@ -1,0 +1,82 @@
+{
+  "batch_id": "P2-CHATGPT-MEDIA-20261104-0200",
+  "branch": "chatgpt/p2-media-support-20261103",
+  "parent": "5d1e143a2e590e0b8d1f8143b5237766b1c4d9ae",
+  "scope": [
+    "chery/tiggo-7-pro m_000087",
+    "skoda/kodiaq screened no usable direct URL",
+    "volkswagen/tiguan screened no usable direct URL"
+  ],
+  "source_review": "Read original 20 individual-file manifest and latest 0100 batch; checked P2 accepted u11_coverage. Scraped exact official Chery Egypt /en/car/tiggo-7-pro page on 2026-11-04, not Tiggo 7 or Tiggo 7 Pro Max. No source image bytes downloaded or visual review. Generic Chery /media/ paths may be shared/reused by CMS across variants; owner must check each image's model identity and crop before acceptance. Skoda/VW candidate URLs failed live scrape, no invented sources.",
+  "source_date": "2026-11-04T02:03:00+02:00",
+  "status": "NEEDS_P2_QA",
+  "accepted_count": 0,
+  "downloaded_files": 0,
+  "verified_dimensions": 0,
+  "verified_hashes": 0,
+  "rights_policy": "CEO-MEDIA-2026-10-13; official importer web image subject to existing policy and P2 exact applicability, rights, visual review",
+  "candidates": [
+    {
+      "model_id": "m_000087",
+      "p1_id": "chery/tiggo-7-pro",
+      "market_year": 2027,
+      "source_page": "https://www.chery-eg.com/en/car/tiggo-7-pro",
+      "direct_image_url": "https://www.chery-eg.com/media/ModelsBanner/Main_02.jpg",
+      "role": "hero_review",
+      "view": "official model banner; full vehicle / angle unverified",
+      "prior_gap": "hero NONE, gallery 0; accepted Egypt MY2027",
+      "status": "NEEDS_P2_QA",
+      "dimensions": null,
+      "sha256": null,
+      "bytes": null,
+      "downloaded": false,
+      "visual_review": false,
+      "image_year_verified": false,
+      "image_trim_verified": false,
+      "rights_basis": "Official Chery Egypt page; pending P2 visual/rights review"
+    },
+    {
+      "model_id": "m_000087",
+      "p1_id": "chery/tiggo-7-pro",
+      "market_year": 2027,
+      "source_page": "https://www.chery-eg.com/en/car/tiggo-7-pro",
+      "direct_image_url": "https://www.chery-eg.com/media/extDesignImages/01.jpg",
+      "role": "gallery_review",
+      "view": "front styling detail per official page; may be cropped",
+      "prior_gap": "hero NONE, gallery 0",
+      "status": "NEEDS_P2_QA",
+      "dimensions": null,
+      "sha256": null,
+      "bytes": null,
+      "downloaded": false,
+      "visual_review": false,
+      "image_year_verified": false,
+      "image_trim_verified": false,
+      "rights_basis": "Official Chery Egypt page; pending P2 visual/rights review"
+    },
+    {
+      "model_id": "m_000087",
+      "p1_id": "chery/tiggo-7-pro",
+      "market_year": 2027,
+      "source_page": "https://www.chery-eg.com/en/car/tiggo-7-pro",
+      "direct_image_url": "https://www.chery-eg.com/media/extDesignImages/02.jpg",
+      "role": "gallery_review",
+      "view": "exterior silhouette per official page; full vehicle/angle unverified",
+      "prior_gap": "hero NONE, gallery 0",
+      "status": "NEEDS_P2_QA",
+      "dimensions": null,
+      "sha256": null,
+      "bytes": null,
+      "downloaded": false,
+      "visual_review": false,
+      "image_year_verified": false,
+      "image_trim_verified": false,
+      "rights_basis": "Official Chery Egypt page; pending P2 visual/rights review"
+    }
+  ],
+  "notes": [
+    "No new prices staged: official page shows EGP 1,115,000, already matching P2 accepted Tiggo 7 Pro starting price; no duplication.",
+    "Do not treat CMS image filename as proof of exact vehicle, MY or trim.",
+    "No changes to P2 canonical accepted registry, P1/P5 or production."
+  ]
+}
