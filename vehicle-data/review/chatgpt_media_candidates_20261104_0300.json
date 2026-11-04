@@ -1,0 +1,81 @@
+{
+  "batch_id": "P2-CHATGPT-MEDIA-20261104-0300",
+  "branch": "chatgpt/p2-media-support-20261103",
+  "parent": "81c0efdb015d73ad637198531026a5a7adb5bc3e",
+  "captured_at": "2026-11-04T03:00:00+02:00",
+  "scope": [
+    "fiat/500x gallery gap",
+    "mitsubishi/eclipse-cross source DNS failure",
+    "soueast/s-05 official domain DNS failure"
+  ],
+  "source_page": "https://www.fiat.com.eg/en/models/500x",
+  "official_egypt_brochure": "https://www.fiat.com.eg/content/dam/fiat2023/eg/brochure/FIAT%20500X%20%20final%20brochure.pdf",
+  "notes": "Live Fiat Egypt 500X page supplied exact image URLs. No download, pixel/byte hash, visual QA, exact trim/year proof, or redistribution authorization verified. No claim that 500X Cabrio images apply to 500X; selected paths explicitly 500x only. No prices staged. Existing accepted hero preserved. Mitsubishi and Soueast candidate source domains did not resolve; no invented images.",
+  "candidates": [
+    {
+      "model_id": "fiat/500x",
+      "canonical_id": "P2 exact m_ ID to confirm in accepted u11_coverage",
+      "market_year": null,
+      "egypt_status": "official Fiat Egypt 500X model page and Egypt brochure present",
+      "source_page": "https://www.fiat.com.eg/en/models/500x",
+      "direct_image_url": "https://www.fiat.com.eg/content/dam/fiat2023/cross/models/500x/500x/header-canvas/canvas-4/mobile.jpg/jcr:content/renditions/desktop.jpg",
+      "role": "hero_or_gallery_review",
+      "view": "Header image, exact whole-car view unverified",
+      "prior_gap": "gallery missing; accepted hero retained",
+      "status": "NEEDS_P2_QA",
+      "dimensions": null,
+      "sha256": null,
+      "downloaded": false,
+      "visual_review": false,
+      "image_year_verified": false,
+      "image_trim_verified": false,
+      "rights_basis": "Fiat Egypt OEM webpage; subject to CEO-MEDIA-2026-10-13 and P2 acceptance; redistribution not independently confirmed"
+    },
+    {
+      "model_id": "fiat/500x",
+      "canonical_id": "P2 exact m_ ID to confirm in accepted u11_coverage",
+      "market_year": null,
+      "egypt_status": "official Fiat Egypt 500X model page and Egypt brochure present",
+      "source_page": "https://www.fiat.com.eg/en/models/500x",
+      "direct_image_url": "https://www.fiat.com.eg/content/dam/fiat2023/cross/models/500x/500x/discover-all-the-versions/500x/mobile.jpg",
+      "role": "gallery_review",
+      "view": "500X version visual, not Cabrio; angle unverified",
+      "prior_gap": "gallery missing; accepted hero retained",
+      "status": "NEEDS_P2_QA",
+      "dimensions": null,
+      "sha256": null,
+      "downloaded": false,
+      "visual_review": false,
+      "image_year_verified": false,
+      "image_trim_verified": false,
+      "rights_basis": "Fiat Egypt OEM webpage; subject to CEO-MEDIA-2026-10-13 and P2 acceptance; redistribution not independently confirmed"
+    },
+    {
+      "model_id": "fiat/500x",
+      "canonical_id": "P2 exact m_ ID to confirm in accepted u11_coverage",
+      "market_year": null,
+      "egypt_status": "official Fiat Egypt 500X model page and Egypt brochure present",
+      "source_page": "https://www.fiat.com.eg/en/models/500x",
+      "direct_image_url": "https://www.fiat.com.eg/content/dam/fiat2023/cross/models/500x/500x/colorizer/figurini/s1-a1-b1.jpg",
+      "role": "gallery_review",
+      "view": "Fiat colorizer front view (frontale), model-year unverified",
+      "prior_gap": "gallery missing; accepted hero retained",
+      "status": "NEEDS_P2_QA",
+      "dimensions": null,
+      "sha256": null,
+      "downloaded": false,
+      "visual_review": false,
+      "image_year_verified": false,
+      "image_trim_verified": false,
+      "rights_basis": "Fiat Egypt OEM webpage; subject to CEO-MEDIA-2026-10-13 and P2 acceptance; redistribution not independently confirmed"
+    }
+  ],
+  "counts": {
+    "models_screened": 3,
+    "new_candidates": 3,
+    "downloaded": 0,
+    "dimensions_verified": 0,
+    "hashes_verified": 0,
+    "accepted": 0
+  }
+}
