@@ -1,5 +1,5 @@
 // Writes release/P1-RELEASE-<RC>.json: a U12C2 release candidate (engine E6.1 + dataset datasets/<RC>-2026-10-14), with hashes.
-// Status stays CANDIDATE until P3 approves the DRAFT copy keys and the release is accepted; U11/T1 remains the production binding.
+// Status stays CANDIDATE until the release authority accepts it; U11/T1 remains the production binding.
 // Usage (from buyer-decision/): node tools/release_record_rc.mjs <source_commit> [U12C2-RC2] [datasets/<dir>]
 import fs from 'node:fs'; import path from 'node:path'; import crypto from 'node:crypto'; import { execFileSync } from 'node:child_process';
 import { createRequire } from 'node:module'; import { fileURLToPath } from 'node:url';
@@ -22,8 +22,12 @@ const rec = {
   repo: 'KingMega1/scratch', branch: 'claude/carindex-buyer-decision-slice-applo4', source_commit: git('rev-parse', sc),
   production_binding_unchanged: 'P1-RELEASE-T1 (engine E6-2026-09-28, U11-2026-09-26) stays bound until this candidate is accepted',
   release_gates_open: [
-    'P3 approval of DRAFT copy keys in app/i18n.js (conflict_h, conflict.unknown_price, conflict.unknown_size, conflict.scope, sl_out.unknown_size, sl_out.scope) — see ' + DS + '/P3-COPY-REQUEST.md',
     `Release acceptance of engine E6.1 + dataset ${RC}`,
+  ],
+  copy_gate: 'CLOSED: no DRAFT markers in app/i18n.js. conflict_h CEO-approved 2026-10-21; conflict.unknown_price / sl_out.unknown_price final wording; conflict.unknown_size, conflict.scope, sl_out.unknown_size, sl_out.scope unreachable (no car carries held) under the 2026-10-21 CEO decisions.',
+  p2_compatible_revisions: [
+    { revision: 'ac757adcfffb', serving_sha256: 'c4bd33ba1b89ff319a6fdc99de44c03d9499f2949e32a821cf25d7293988b363', role: 'dataset built from' },
+    { revision: '03089cc2febb', serving_sha256: '8429ddbaf4462d268068a43a5f2d87071a8e806d6d0af0f71c19d30884b3879c', role: 'accepted; delta vs ac757adcfffb = revision + accepted.gallery (geely/ex2, geely/ex5, hyundai/tucson) only; dataset unchanged; price agreement 0/269' },
   ],
   test_build: { repo: 'KingMega1/carindex-buyer-test', commit: process.env.TEST_BUILD_COMMIT || null, url: 'https://kingmega1.github.io/carindex-buyer-test/u12c2/app/index.html', tracking: 'none' },
   engine_version: T.ENGINE_VERSION, transport_version: T.TRANSPORT_VERSION, schema: T.SCHEMA,

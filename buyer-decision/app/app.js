@@ -520,9 +520,11 @@
     return `<dl class="specs">${rows.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>`;
   }
 
+  // a model priced in more than one model year: every price says which year it is
+  const multiYear = m => new Set(m.trims.map(t => t.year).filter(Boolean)).size > 1;
   function versionsBlock(p, r) {
     const above = p.all.filter(t => t.min > r.terr.ceil);
-    return `<ul class="vers">${p.fit.map(t => `<li class="${t === p.pick || (t.label === p.pick.label && t.min === p.pick.min) ? 'pick' : ''}"><span class="ltr">${esc(t.label)}</span><span>${money(t.min)}${t.official ? ` <span class="chip ok tiny">${S.official}</span>` : ''}</span></li>`).join('')}</ul>
+    return `<ul class="vers">${p.fit.map(t => `<li class="${t === p.pick || (t.label === p.pick.label && t.min === p.pick.min) ? 'pick' : ''}"><span class="ltr">${esc(t.label)}${t.year && multiYear(byId[p.id]) ? ` <span class="chip tiny">${S.my(t.year)}</span>` : ''}</span><span>${money(t.min)}${t.official ? ` <span class="chip ok tiny">${S.official}</span>` : ` <span class="chip tiny">${S.market_price}</span>`}</span></li>`).join('')}</ul>
       ${above.length ? `<p class="muted small">${S.above_range(money(Math.min(...above.map(t => t.min))))}</p>` : ''}`;
   }
 
@@ -656,7 +658,7 @@
             <div class="hero-price">
               <p class="label-mono">${S.in_range}</p>
               <p class="price-big">${S.from_to(money(h.fit[0].min), money(h.fit[h.fit.length - 1].min))}</p>
-              <p class="small muted-dark">${h.stretch ? S.over_by(money(h.stretch.over)) : S.n_versions(num(h.fit.length))}</p>
+              <p class="small muted-dark">${h.stretch ? S.over_by(money(h.stretch.over)) : S.n_versions(num(h.fit.length), h.fit.length)}${multiYear(byId[h.id]) ? ` · ${S.my_prices(h.fit[0].year)}` : ''}</p>
             </div>
           </div>
           <div class="r3 hero-detail">${detail(h, r, true)}</div>
@@ -745,7 +747,7 @@
     const lead = i => (i || r.equal ? '' : 'is-hero');
     const row = (label, f) => `<tr><th scope="row">${label}</th>${list.map((p, i) => `<td class="${lead(i)}">${f(p) || '—'}</td>`).join('')}</tr>`;
     return `<div class="table-wrap"><table class="cmp"><thead><tr><th></th>${list.map((p, i) => `<th class="${lead(i)}" scope="col">${nm(p.id)}</th>`).join('')}</tr></thead><tbody>
-      ${row(S.in_range, p => S.from_to(money(p.fit[0].min), money(p.fit[p.fit.length - 1].min)))}
+      ${row(S.in_range, p => S.from_to(money(p.fit[0].min), money(p.fit[p.fit.length - 1].min)) + (multiYear(byId[p.id]) ? ` <span class="chip tiny">${S.my(p.fit[0].year)}</span>` : ''))}
       ${row(S.sp.size, p => (p.sizeKey ? S.size(p.sizeKey) : ''))}
       ${row(S.sp.seats, p => { const m = byId[p.id]; return m.seats ? m.seats.map(num).join(' / ') : ''; })}
       ${row(S.sp.pt, p => joinList(pts(p.fit).map(x => S.pt[x])))}

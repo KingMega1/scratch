@@ -55,7 +55,7 @@ const X = {
   eyebrow: snip("${r.heroFromShortlist ? S.eyebrow_hero_yours : r.confidence && r.confidence.level === 'lean' ? S.eyebrow_lean : S.eyebrow_clear}"),
   heroSize: snip("<p class=\"hero-trim\">${h.sizeKey ? S.size(h.sizeKey) : ''}</p>").slice('<p class="hero-trim">'.length, -'</p>'.length),
   heroRange: snip("${S.from_to(money(h.fit[0].min), money(h.fit[h.fit.length - 1].min))}"),
-  heroSub: snip("${h.stretch ? S.over_by(money(h.stretch.over)) : S.n_versions(num(h.fit.length))}"),
+  heroSub: snip("${h.stretch ? S.over_by(money(h.stretch.over)) : S.n_versions(num(h.fit.length), h.fit.length)}${multiYear(byId[h.id]) ? ` · ${S.my_prices(h.fit[0].year)}` : ''}"),
   less: snip("${S.less_line({ n: nm(r.less.id), price: money(r.less.price), saves: money(r.less.saves), seven: r.less.seven && b.seats === 7, same: r.less.sameSize })}"),
   checkItems: snip("${checks.map(c => `<li>${S.check[c]}</li>`).join('')}"),
 };
