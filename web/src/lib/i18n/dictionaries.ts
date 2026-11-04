@@ -128,7 +128,7 @@ const ar = {
     h1: 'كار إندكسد بتاعي', nav: { recs: 'الترشيحات', saved: 'العربيات المحفوظة', comparisons: 'المقارنات', shared: 'المشاركات', invites: 'الدعوات', profile: 'البيانات' },
     verifyH: 'أكّد رقم موبايلك', verifyBody: 'تقدر تشوف أول ترشيح من غير تسجيل. التأكيد مطلوب بس عشان تحفظ، تشارك لينك دائم، أو ترجع لترشيحاتك.',
     phone: 'رقم الموبايل', email: 'الإيميل (اختياري، للتواصل الاحتياطي)', send: 'ابعتلي كود', code: 'الكود', verify: 'أكّد',
-    gated: 'التسجيل مش شغال في النسخة التجريبية دي. هيتفعل بعد موافقة الخصوصية والأمان وتجهيز مزوّد الرسايل.',
+    gated: 'حفظ الترشيحات على حساب مش متاح حاليًا. تقدر تشوف الترشيحات وتقارن العربيات من غير تسجيل.',
     emptyRecs: 'لسه مفيش ترشيحات محفوظة.', emptySaved: 'لسه مفيش عربيات محفوظة.', emptyGeneric: 'لسه مفيش حاجة هنا.',
   },
   fmc: {
@@ -145,11 +145,10 @@ const ar = {
     independence: ['استقلاليتنا', 'كار إندكسد مش وكيل ولا معرض، ومش بيبيع عربيات. مفيش ترتيب مدفوع، ولا ظهور مموّل، ولا عروض وكلاء. نفس المعيار على كل الماركات.'],
     about: ['عن كار إندكسد', 'كار إندكسد بيساعد الناس في مصر يختاروا عربيتهم الجديدة بمعلومات واضحة: الأسعار وحالتها، التسجيلات، والفروق بين الموديلات.'],
     contact: ['تواصل معانا', 'بيانات التواصل الرسمية هتتنشر هنا قبل الإطلاق.'],
-    privacy: ['الخصوصية', 'مسودة — النص القانوني النهائي لسه بيتراجع ومش منشور. في النسخة التجريبية دي مش بنجمع بيانات شخصية: لا رقم موبايل ولا إيميل.'],
+    privacy: ['الخصوصية', 'مسودة — النص القانوني النهائي لسه بيتراجع ومش منشور. مش بنطلب رقم موبايل أو إيميل لاستخدام الموقع حاليًا.'],
     terms: ['الشروط', 'مسودة — النص القانوني النهائي لسه بيتراجع ومش منشور.'],
   },
   notFound: ['الصفحة مش موجودة', 'ممكن يكون اللينك اتغيّر. جرّب البحث أو ارجع للرئيسية.'],
-  preview: 'نسخة تجريبية — مش الموقع النهائي',
 };
 
 type Dict = typeof ar;
@@ -278,7 +277,7 @@ const en: Dict = {
     h1: 'My CarIndexed', nav: { recs: 'Recommendations', saved: 'Saved cars', comparisons: 'Comparisons', shared: 'Shared results', invites: 'Invites', profile: 'Profile' },
     verifyH: 'Verify your mobile number', verifyBody: 'You can see your first recommendation without signing in. Verification is only needed to save, share a lasting link, or come back to your results.',
     phone: 'Mobile number', email: 'Email (optional, backup contact)', send: 'Send me a code', code: 'Code', verify: 'Verify',
-    gated: 'Sign-in isn’t switched on in this preview. It turns on after privacy and security sign-off and SMS provider setup.',
+    gated: 'Saving recommendations to an account is not available yet. You can explore and compare cars without signing in.',
     emptyRecs: 'No saved recommendations yet.', emptySaved: 'No saved cars yet.', emptyGeneric: 'Nothing here yet.',
   },
   fmc: {
@@ -295,11 +294,10 @@ const en: Dict = {
     independence: ['Independence', 'CarIndexed is not a dealer or a showroom and does not sell cars. No paid rankings, no sponsored placement, no dealer offers. The same standard for every brand.'],
     about: ['About CarIndexed', 'CarIndexed helps people in Egypt choose a new car with clear information: prices and their state, registrations, and the differences between models.'],
     contact: ['Contact', 'Official contact details will be published here before launch.'],
-    privacy: ['Privacy', 'Draft — the final legal text is under review and not published. This preview collects no personal data: no mobile number and no email.'],
+    privacy: ['Privacy', 'Draft — the final legal text is under review and not published. We do not currently ask for a mobile number or email to use the site.'],
     terms: ['Terms', 'Draft — the final legal text is under review and not published.'],
   },
   notFound: ['Page not found', 'The link may have changed. Try search, or go back home.'],
-  preview: 'Preview — not the live site',
 };
 
 const DICTS: Record<Locale, Dict> = { ar, en };
