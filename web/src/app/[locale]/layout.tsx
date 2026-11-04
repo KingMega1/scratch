@@ -42,7 +42,6 @@ export default async function LocaleLayout({ children, params }: { children: Rea
       </head>
       <body>
         <a className="skip" href="#main">{t.skip}</a>
-        {env !== 'production' ? <aside className="preview-bar" aria-label={t.preview}>{t.preview}</aside> : null}
         <Header locale={locale} />
         <main id="main" tabIndex={-1}>{children}</main>
         <Footer locale={locale} dataVersion={meta.registry_version} />
