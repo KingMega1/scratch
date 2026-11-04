@@ -39,7 +39,7 @@
     $('.trust').textContent = S.trust;
     $('#method').textContent = S.method;
     $('.sheet-close').setAttribute('aria-label', S.close);
-    document.title = `${S.nav_find} — CarIndex`;
+    document.title = `${S.nav_find} — CarIndexed`;
   }
 
   /* ---------- state + history ---------- */

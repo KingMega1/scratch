@@ -95,13 +95,15 @@
       drive_v: 'Four-wheel drive (confirmed 4WD/AWD version)',
       offroad_v: 'Off-road / rough-road use',
       seats_named: p => `Note: the ${p.cars} you named have 5 seats. Choosing 7 seats would rule them out.`,
-      // DRAFT pending P3 approval (P1 copy request 2026-10-14): neutral heading — the named cars may be missing data, not ruled out
+      // CEO-approved 2026-10-21: neutral heading — the named cars may be missing data, not ruled out
       conflict_h: 'About the cars you named',
       conflict: {
-        // DRAFT pending P3 approval: missing data is never described as "not sold in Egypt" or as a failed must-have
-        unknown_price: p => `We don’t have a current price for the ${p.cars} yet, so we can’t recommend it. Below are the cars that fit your brief.`,
-        unknown_size: p => `We don’t have confirmed size details for the ${p.cars} yet, so we can’t compare it fairly. Below are the cars that fit your brief.`,
-        scope: p => `We don’t cover coupes and convertibles like the ${p.cars} in recommendations yet. Below are the cars that fit your brief.`,
+        // resolved 2026-11-04: missing data is never described as "not sold in Egypt" or as a failed must-have; one sentence that
+        // reads right for one or several cars and makes no claim about what is shown below (there may be nothing).
+        // unknown_size / scope are unreachable under the CEO decisions of 2026-10-21 (no car is held for size or body type).
+        unknown_price: p => `We don’t have a current price yet for: ${p.cars}.`,
+        unknown_size: p => `We don’t have confirmed size details yet for: ${p.cars}.`,
+        scope: p => `We don’t include this type of car in recommendations yet: ${p.cars}.`,
         seats: p => `The ${p.cars} don’t have 7 seats, and you told us 7 seats is a must. Below are 7-seaters that fit your brief.`,
         budget: p => `The ${p.cars} start above your budget. Below are the cars that fit it.`,
         drive: p => `We can’t confirm a four-wheel-drive version of the ${p.cars}. Below are cars with a confirmed 4WD/AWD version.`,
@@ -225,9 +227,9 @@
         below_floor: p => `The ${p.n} costs much less than your budget (from ${p.entry}).`,
         brand_only: p => `The ${p.n} isn’t from the brand you asked for.`, unknown_seats: p => `We can’t confirm that the ${p.n} has 7 seats.`,
         unknown_price: p => `We don’t have a current price for the ${p.n}.`,
-        // DRAFT pending P3 approval (P1 copy request 2026-10-14)
-        unknown_size: p => `We don’t have confirmed size details for the ${p.n} yet, so we can’t compare it fairly.`,
-        scope: p => `We don’t cover coupes and convertibles like the ${p.n} in recommendations yet.` },
+        // unreachable under the CEO decisions of 2026-10-21 (kept for the engine's reason keys)
+        unknown_size: p => `We don’t have confirmed size details for the ${p.n} yet.`,
+        scope: p => `We don’t include this type of car in recommendations yet: ${p.n}.` },
       sl_also: p => `You may also want to consider the ${p.n}: ${p.why}`,
 
       asp_h: n => `About the ${n}`,
@@ -350,13 +352,13 @@
       drive_v: 'دفع رباعي (فئة 4WD/AWD مؤكدة)',
       offroad_v: 'أوف رود / طرق وعرة',
       seats_named: p => `خد بالك: الـ ${p.cars} اللي ذكرتها 5 كراسي. لو اخترت 7 كراسي هتطلع من الاختيارات.`,
-      // DRAFT pending P3 approval (P1 copy request 2026-10-14)
+      // CEO-approved 2026-10-21
       conflict_h: 'عن العربيات اللي ذكرتها',
       conflict: {
-        // DRAFT pending P3 approval: البيانات الناقصة عمرها ما تتوصف إنها "مش بتتباع في مصر"
-        unknown_price: p => `معندناش لسه سعر حالي للـ ${p.cars}، فمش هنقدر نرشّحها. تحت العربيات المناسبة لطلبك.`,
-        unknown_size: p => `معندناش لسه مقاسات مؤكدة للـ ${p.cars}، فمش هنقدر نقارنها بشكل عادل. تحت العربيات المناسبة لطلبك.`,
-        scope: p => `لسه مش بنرشّح عربيات كوبيه أو مكشوفة زي الـ ${p.cars}. تحت العربيات المناسبة لطلبك.`,
+        // resolved 2026-11-04: البيانات الناقصة عمرها ما تتوصف إنها "مش بتتباع في مصر"؛ جملة واحدة تنفع لعربية أو أكتر
+        unknown_price: p => `معندناش لسه سعر حالي لـ: ${p.cars}.`,
+        unknown_size: p => `معندناش لسه مقاسات مؤكدة لـ: ${p.cars}.`,
+        scope: p => `لسه مش بنرشّح النوع ده من العربيات: ${p.cars}.`,
         seats: p => `الـ ${p.cars} مش 7 كراسي، وإنت قلت إن 7 كراسي شرط أساسي. تحت عربيات 7 كراسي مناسبة لطلبك.`,
         budget: p => `الـ ${p.cars} بتبدأ أعلى من ميزانيتك. تحت العربيات اللي في ميزانيتك.`,
         drive: p => `مش قادرين نأكد إن فيه فئة دفع رباعي من الـ ${p.cars}. تحت عربيات عندها فئة دفع رباعي مؤكدة.`,
@@ -478,9 +480,9 @@
         below_floor: p => `الـ ${p.n} أرخص بكتير من ميزانيتك (من ${p.entry}).`,
         brand_only: p => `الـ ${p.n} مش من الماركة اللي طلبتها.`, unknown_seats: p => `مش قادرين نأكد إن الـ ${p.n} فيها 7 كراسي.`,
         unknown_price: p => `معندناش سعر حالي للـ ${p.n}.`,
-        // DRAFT pending P3 approval (P1 copy request 2026-10-14)
-        unknown_size: p => `معندناش لسه مقاسات مؤكدة للـ ${p.n}، فمش هنقدر نقارنها بشكل عادل.`,
-        scope: p => `لسه مش بنرشّح عربيات كوبيه أو مكشوفة زي الـ ${p.n}.` },
+        // unreachable under the CEO decisions of 2026-10-21
+        unknown_size: p => `معندناش لسه مقاسات مؤكدة للـ ${p.n}.`,
+        scope: p => `لسه مش بنرشّح النوع ده من العربيات: ${p.n}.` },
       sl_also: p => `ممكن كمان تبص على الـ ${p.n}: ${p.why}`,
 
       asp_h: n => `بخصوص الـ ${n}`,
