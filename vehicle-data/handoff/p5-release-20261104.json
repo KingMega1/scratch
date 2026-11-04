@@ -1,0 +1,52 @@
+{
+ "schema": "carindex.p2.p5-release-handoff/v1",
+ "task_id": "AT-39/AT-51",
+ "date": "2026-11-04",
+ "sequence": "a",
+ "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+ "revision": "ac757adcfffb",
+ "release_file": "vehicle-data/views/catalogue-serving.release.json",
+ "release_sha256": "c4bd33ba1b89ff319a6fdc99de44c03d9499f2949e32a821cf25d7293988b363",
+ "canonical_file": "vehicle-data/views/canonical_u11.json",
+ "canonical_sha256": "da636cba0437d25e00f9590d3f59ed84255d72221f160f71338258acc7a5278c",
+ "counts_283": {
+  "models": 283,
+  "id_accepted": 283,
+  "price_accepted": 213,
+  "price_tier_a": 129,
+  "price_source_dated": 136,
+  "market_status_official": 37,
+  "specs_accepted": 200,
+  "warranty_accepted": 110,
+  "brochure_accepted": 83,
+  "hero_accepted": 84,
+  "hero_accepted_hq": 80,
+  "hero_limited_archive": 123,
+  "gallery_models": 72,
+  "logo_accepted": 254,
+  "fully_enriched": 39
+ },
+ "coverage_all_identities_served": {
+  "price": 269,
+  "hero_image": 87,
+  "gallery": 75,
+  "logo": 359
+ },
+ "media_files_to_copy": [
+  "media/models/geely-ex2.webp",
+  "media/models/geely-ex2/01.webp",
+  "media/models/geely-ex2/02.webp",
+  "media/models/geely-ex2/03.webp",
+  "media/models/geely-ex5.webp",
+  "media/models/geely-ex5/01.webp",
+  "media/models/geely-ex5/02.webp",
+  "media/models/geely-ex5/03.webp",
+  "media/models/hyundai-tucson/03.webp",
+  "media/models/hyundai-tucson/04.webp",
+  "media/models/hyundai-tucson/05.webp",
+  "media/brands/baic.png"
+ ],
+ "changes": "consolidated media acceptance (12 accepted, 7 held, 1 rejected) and PR #11 corrections (Passat price held; Peugeot 2008 MY2027 from 1,499,990); see review/media_price_acceptance_20261104.json",
+ "verified": "P5 local CI on d602dac with this release + media: typecheck, verify:p1, unit 72/72, build, smoke 236 passed / 6 skipped",
+ "deploy": "not performed; no production deployment"
+}

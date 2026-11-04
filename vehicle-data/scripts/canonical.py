@@ -250,7 +250,11 @@ def market_obs_one(snap):
         tk = b.trim_key(r["trim_raw"])
         if v is None or tk == "othertrims":
             continue
-        out.append(dict(p1_id=p1, site=SITE[r["source"]], source=r["source"], url=r["source_url"], model_year=r["model_year"] or "",
+        my = r["model_year"] or ""
+        if my and not (my.isdigit() and 2015 <= int(my) <= 2035):  # PY-1: a model name parsed as a year (Peugeot "2008")
+            mm = re.match(r"\s*(20[1-3]\d)\b", r["trim_raw"] or "")  # use the year the row label states, else unknown
+            my = mm.group(1) if mm else ""
+        out.append(dict(p1_id=p1, site=SITE[r["source"]], source=r["source"], url=r["source_url"], model_year=my,
                         trim_label=r["trim_raw"], trim_key=tk, price_egp=v, observed_at=day(r["fetched_at"]),
                         source_effective_date=r.get("effective_date") or "", page_sha256=r["page_sha256"]))
     yrs = collections.defaultdict(set)  # EgyCar pages carry no model year: join the cohort holding the same value
@@ -645,6 +649,11 @@ def media_metadata():
     return out
 
 
+def price_holds():
+    p = os.path.join(ROOT, "registry", "price_holds.csv")
+    return {r["price_id"]: r for r in read(p)} if os.path.exists(p) else {}
+
+
 def media_accepted():
     return read(os.path.join(ROOT, "registry", "media_accepted.csv"))
 
@@ -714,6 +723,10 @@ def main():
     for r in rows:
         r["model_id"] = byid.get(r["p1_id"], {}).get("model_id", "")
         r["price_id"] = hashlib.sha256(f'{r["p1_id"]}|{r["model_year"]}|{r["trim_key"]}|{r["price_egp"]}|{r["tier"]}|{r["issuer"]}'.encode()).hexdigest()[:12]
+    for r in rows:  # PH-1: owner holds on individual derived rows (registry/price_holds.csv); no replacement price invented
+        h = price_holds().get(r["price_id"])
+        if h and r["status"] == "ACCEPT":
+            r["status"], r["reason"] = h["status"], r["reason"] + "; " + h["reason"]
     rows += [dict(r, model_id=byid.get(r["p1_id"], {}).get("model_id", r["model_id"])) for r in intake]
     rows.sort(key=lambda r: (r["p1_id"], r["tier"], str(r["model_year"]), r["price_egp"], r["issuer"]))
     pcols = ["price_id", "model_id", "p1_id", "model_year", "trim_label", "trim_key", "price_egp", "effective_date", "date_basis",

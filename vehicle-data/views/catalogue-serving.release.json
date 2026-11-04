@@ -18,18 +18,18 @@
     "counts": {
       "models": 283,
       "id_accepted": 283,
-      "price_accepted": 214,
+      "price_accepted": 213,
       "price_tier_a": 129,
-      "price_source_dated": 137,
+      "price_source_dated": 136,
       "market_status_official": 37,
       "specs_accepted": 200,
       "warranty_accepted": 110,
       "brochure_accepted": 83,
-      "hero_accepted": 82,
-      "hero_accepted_hq": 78,
-      "hero_limited_archive": 125,
-      "gallery_models": 70,
-      "logo_accepted": 248,
+      "hero_accepted": 84,
+      "hero_accepted_hq": 80,
+      "hero_limited_archive": 123,
+      "gallery_models": 72,
+      "logo_accepted": 254,
       "fully_enriched": 39
     }
   },
@@ -39,7 +39,7 @@
     "p2_evidence": 21,
     "identity_only": 262,
     "excluded": 3,
-    "price_accepted": 214,
+    "price_accepted": 213,
     "id_accepted": 283
   },
   "entries": [
@@ -3203,7 +3203,6 @@
       "missing_evidence": [
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_OFFICIAL_LOGO",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
@@ -3428,7 +3427,29 @@
         },
         "warranty": null,
         "brochures": [],
-        "logo": null,
+        "logo": {
+          "src": "/media/p2/brands/baic.png",
+          "credit": "BAIC Egypt",
+          "source_url": "https://baic-egypt.com/",
+          "image_url": "https://baic-egypt.com/img/global/logo.png",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "WEB",
+          "sha256": "fb2c1f47322f2ce78a482c72cfcd2e22d728848c28a1d16de9e6a1ad4253e110",
+          "meta": {
+            "view_angle": "logo",
+            "color": "red",
+            "setting": "logo",
+            "people": false,
+            "model_year": null,
+            "trim": null,
+            "width": 198,
+            "height": 47,
+            "served_file_sha256": "3fa4593658a820fc4c588de27acb843eac11025b84f59be49b384a2afd0a5a5d",
+            "alt_en": "BAIC logo",
+            "alt_ar": "شعار بايك"
+          }
+        },
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
@@ -3467,7 +3488,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_LOGO",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
@@ -3708,7 +3728,29 @@
             "url": "https://baic-egypt.com/brochures/BAIC-U5-Plus-Catalog-Final.pdf"
           }
         ],
-        "logo": null,
+        "logo": {
+          "src": "/media/p2/brands/baic.png",
+          "credit": "BAIC Egypt",
+          "source_url": "https://baic-egypt.com/",
+          "image_url": "https://baic-egypt.com/img/global/logo.png",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "WEB",
+          "sha256": "fb2c1f47322f2ce78a482c72cfcd2e22d728848c28a1d16de9e6a1ad4253e110",
+          "meta": {
+            "view_angle": "logo",
+            "color": "red",
+            "setting": "logo",
+            "people": false,
+            "model_year": null,
+            "trim": null,
+            "width": 198,
+            "height": 47,
+            "served_file_sha256": "3fa4593658a820fc4c588de27acb843eac11025b84f59be49b384a2afd0a5a5d",
+            "alt_en": "BAIC logo",
+            "alt_ar": "شعار بايك"
+          }
+        },
         "hero_image": {
           "src": "/media/p2/models/baic-u5-plus.webp",
           "credit": "BAIC (official)",
@@ -3775,7 +3817,6 @@
         "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_OFFICIAL_LOGO",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
@@ -3790,7 +3831,29 @@
         "specs": null,
         "warranty": null,
         "brochures": [],
-        "logo": null,
+        "logo": {
+          "src": "/media/p2/brands/baic.png",
+          "credit": "BAIC Egypt",
+          "source_url": "https://baic-egypt.com/",
+          "image_url": "https://baic-egypt.com/img/global/logo.png",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "WEB",
+          "sha256": "fb2c1f47322f2ce78a482c72cfcd2e22d728848c28a1d16de9e6a1ad4253e110",
+          "meta": {
+            "view_angle": "logo",
+            "color": "red",
+            "setting": "logo",
+            "people": false,
+            "model_year": null,
+            "trim": null,
+            "width": 198,
+            "height": 47,
+            "served_file_sha256": "3fa4593658a820fc4c588de27acb843eac11025b84f59be49b384a2afd0a5a5d",
+            "alt_en": "BAIC logo",
+            "alt_ar": "شعار بايك"
+          }
+        },
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
@@ -3830,7 +3893,6 @@
         "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_OFFICIAL_LOGO",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
@@ -3845,7 +3907,29 @@
         "specs": null,
         "warranty": null,
         "brochures": [],
-        "logo": null,
+        "logo": {
+          "src": "/media/p2/brands/baic.png",
+          "credit": "BAIC Egypt",
+          "source_url": "https://baic-egypt.com/",
+          "image_url": "https://baic-egypt.com/img/global/logo.png",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "WEB",
+          "sha256": "fb2c1f47322f2ce78a482c72cfcd2e22d728848c28a1d16de9e6a1ad4253e110",
+          "meta": {
+            "view_angle": "logo",
+            "color": "red",
+            "setting": "logo",
+            "people": false,
+            "model_year": null,
+            "trim": null,
+            "width": 198,
+            "height": 47,
+            "served_file_sha256": "3fa4593658a820fc4c588de27acb843eac11025b84f59be49b384a2afd0a5a5d",
+            "alt_en": "BAIC logo",
+            "alt_ar": "شعار بايك"
+          }
+        },
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
@@ -3884,7 +3968,6 @@
         "NO_ACCEPTED_PRICE",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_OFFICIAL_LOGO",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -4006,7 +4089,29 @@
           }
         ],
         "brochures": [],
-        "logo": null,
+        "logo": {
+          "src": "/media/p2/brands/baic.png",
+          "credit": "BAIC Egypt",
+          "source_url": "https://baic-egypt.com/",
+          "image_url": "https://baic-egypt.com/img/global/logo.png",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "WEB",
+          "sha256": "fb2c1f47322f2ce78a482c72cfcd2e22d728848c28a1d16de9e6a1ad4253e110",
+          "meta": {
+            "view_angle": "logo",
+            "color": "red",
+            "setting": "logo",
+            "people": false,
+            "model_year": null,
+            "trim": null,
+            "width": 198,
+            "height": 47,
+            "served_file_sha256": "3fa4593658a820fc4c588de27acb843eac11025b84f59be49b384a2afd0a5a5d",
+            "alt_en": "BAIC logo",
+            "alt_ar": "شعار بايك"
+          }
+        },
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
@@ -4053,7 +4158,6 @@
         "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_OFFICIAL_LOGO",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
@@ -4068,7 +4172,29 @@
         "specs": null,
         "warranty": null,
         "brochures": [],
-        "logo": null,
+        "logo": {
+          "src": "/media/p2/brands/baic.png",
+          "credit": "BAIC Egypt",
+          "source_url": "https://baic-egypt.com/",
+          "image_url": "https://baic-egypt.com/img/global/logo.png",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "WEB",
+          "sha256": "fb2c1f47322f2ce78a482c72cfcd2e22d728848c28a1d16de9e6a1ad4253e110",
+          "meta": {
+            "view_angle": "logo",
+            "color": "red",
+            "setting": "logo",
+            "people": false,
+            "model_year": null,
+            "trim": null,
+            "width": 198,
+            "height": 47,
+            "served_file_sha256": "3fa4593658a820fc4c588de27acb843eac11025b84f59be49b384a2afd0a5a5d",
+            "alt_en": "BAIC logo",
+            "alt_ar": "شعار بايك"
+          }
+        },
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
@@ -25260,7 +25386,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
@@ -25574,9 +25699,110 @@
             "alt_ar": "شعار جيلي"
           }
         },
-        "hero_image": null,
+        "hero_image": {
+          "src": "/media/p2/models/geely-ex2.webp",
+          "credit": "Geely Egypt",
+          "source_url": "https://geelyeg.com/models/ex2",
+          "image_url": "https://geelyeg.com/assets/ex2-model-page/hero.webp",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "HQ",
+          "sha256": "f693e92e20d71f120dabb3d03fa2fb3dccb08cf28908c770816571230b277c05",
+          "meta": {
+            "view_angle": "side",
+            "color": "green",
+            "setting": "outdoor",
+            "people": true,
+            "model_year": null,
+            "trim": null,
+            "width": 1920,
+            "height": 1201,
+            "served_file_sha256": "88252eadb1b5df3d67620c82ae0be5dbbfa437e01b910aec92b7c354c34c5990",
+            "alt_en": "Green Geely EX2, side view",
+            "alt_ar": "جيلي EX2 - منظر جانبي"
+          }
+        },
         "hero_image_limited": null,
-        "gallery": [],
+        "gallery": [
+          {
+            "asset_id": "6d3d3c1e7edf",
+            "sha256": "6d3d3c1e7edf9828c2d200acf6884c9dc03ed3829f0337007d91211f2171ad53",
+            "width": "1200",
+            "height": "750",
+            "quality_class": "WEB",
+            "url": "https://geelyeg.com/assets/ex2-model-page/lifestyle-media/20250066.webp",
+            "page": "https://geelyeg.com/models/ex2",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/geely-ex2/01.webp",
+            "meta": {
+              "view_angle": "interior",
+              "color": null,
+              "setting": "interior",
+              "people": true,
+              "model_year": null,
+              "trim": null,
+              "width": 1200,
+              "height": 750,
+              "served_file_sha256": "e8f1a30948d60b34c55012a23a0c3c20dc54f04fcf2e314d21c029b33ee9fc97",
+              "alt_en": "Geely EX2 interior",
+              "alt_ar": "جيلي EX2 - المقصورة الداخلية"
+            },
+            "credit": "Geely Egypt"
+          },
+          {
+            "asset_id": "331dd99b9f1a",
+            "sha256": "331dd99b9f1a69a676bb812167d47b508156d4e8458bce613e9c7fbd11d764ca",
+            "width": "1200",
+            "height": "751",
+            "quality_class": "WEB",
+            "url": "https://geelyeg.com/assets/ex2-model-page/lifestyle-media/20250499.webp",
+            "page": "https://geelyeg.com/models/ex2",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/geely-ex2/02.webp",
+            "meta": {
+              "view_angle": "interior",
+              "color": null,
+              "setting": "interior",
+              "people": true,
+              "model_year": null,
+              "trim": null,
+              "width": 1200,
+              "height": 751,
+              "served_file_sha256": "2f1f37574a0ed426d4edc11b1ef26edc0ffcb0a72f517fde3fe5a0db8e56a845",
+              "alt_en": "Geely EX2 rear seats",
+              "alt_ar": "جيلي EX2 - المقاعد الخلفية"
+            },
+            "credit": "Geely Egypt"
+          },
+          {
+            "asset_id": "f5e70f0eb1ed",
+            "sha256": "f5e70f0eb1edc6ba72b833b5e6d23918742c1e263c60f7c38e943f718ceb0871",
+            "width": "1200",
+            "height": "676",
+            "quality_class": "WEB",
+            "url": "https://geelyeg.com/assets/ex2-model-page/lifestyle-media/20250932.webp",
+            "page": "https://geelyeg.com/models/ex2",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/geely-ex2/03.webp",
+            "meta": {
+              "view_angle": "front_3q",
+              "color": "green",
+              "setting": "outdoor",
+              "people": true,
+              "model_year": null,
+              "trim": null,
+              "width": 1200,
+              "height": 676,
+              "served_file_sha256": "54a3fda11ca3d7d7b248ef07c1cbf0e511998b3076c05cb93c72d6e72a255a6c",
+              "alt_en": "Green Geely EX2, front three-quarter view",
+              "alt_ar": "جيلي EX2 - منظر أمامي جانبي"
+            },
+            "credit": "Geely Egypt"
+          }
+        ],
         "conflicts": []
       }
     },
@@ -25610,7 +25836,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_VERIFIED_HERO_IMAGE",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ],
@@ -25795,9 +26020,110 @@
             "alt_ar": "شعار جيلي"
           }
         },
-        "hero_image": null,
+        "hero_image": {
+          "src": "/media/p2/models/geely-ex5.webp",
+          "credit": "Geely Egypt",
+          "source_url": "https://geelyeg.com/models/ex5",
+          "image_url": "https://geelyeg.com/assets/ex5-model-page/optimized/ex5-hero.webp",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "HQ",
+          "sha256": "ed8698f222e5d2a7a2527de4bc26fc88abd0d238912c960fc834918a73c85c1b",
+          "meta": {
+            "view_angle": "front_3q",
+            "color": "dark grey",
+            "setting": "outdoor",
+            "people": false,
+            "model_year": null,
+            "trim": null,
+            "width": 1671,
+            "height": 925,
+            "served_file_sha256": "639ac7677b48b0d31c3fc45bfb7a5de35dc21e797a14bc3235236f37fdc1aceb",
+            "alt_en": "Dark grey Geely EX5, front three-quarter view",
+            "alt_ar": "جيلي EX5 - منظر أمامي جانبي"
+          }
+        },
         "hero_image_limited": null,
-        "gallery": [],
+        "gallery": [
+          {
+            "asset_id": "7f04071e5131",
+            "sha256": "7f04071e5131ec53c9c42573fbfb35c056ec67838f252072c3a575e7b00827bd",
+            "width": "1600",
+            "height": "1000",
+            "quality_class": "HQ",
+            "url": "https://geelyeg.com/assets/ex5-model-page/optimized/interior-1.webp",
+            "page": "https://geelyeg.com/models/ex5",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/geely-ex5/01.webp",
+            "meta": {
+              "view_angle": "interior",
+              "color": null,
+              "setting": "interior",
+              "people": true,
+              "model_year": null,
+              "trim": null,
+              "width": 1600,
+              "height": 1000,
+              "served_file_sha256": "80a995b17236efccb13ecd7c49bd3756f2dca41aaa322913deb1b3b6193feb13",
+              "alt_en": "Geely EX5 interior",
+              "alt_ar": "جيلي EX5 - المقصورة الداخلية"
+            },
+            "credit": "Geely Egypt"
+          },
+          {
+            "asset_id": "c684ba751d53",
+            "sha256": "c684ba751d5302043a594877fa5fb8e11276c0babd9e7168c298a17c89719bc4",
+            "width": "1600",
+            "height": "880",
+            "quality_class": "HQ",
+            "url": "https://geelyeg.com/assets/ex5-model-page/optimized/interior-2.webp",
+            "page": "https://geelyeg.com/models/ex5",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/geely-ex5/02.webp",
+            "meta": {
+              "view_angle": "interior",
+              "color": null,
+              "setting": "interior",
+              "people": false,
+              "model_year": null,
+              "trim": null,
+              "width": 1600,
+              "height": 880,
+              "served_file_sha256": "a57ef44a7f0bbdcf9cb9a5ddfa539ef0330ed38379698007ec4214a5656a8977",
+              "alt_en": "Geely EX5 dashboard",
+              "alt_ar": "جيلي EX5 - لوحة القيادة"
+            },
+            "credit": "Geely Egypt"
+          },
+          {
+            "asset_id": "b84df4cd439c",
+            "sha256": "b84df4cd439c180034cef213bb42a49a997e3b3cb2fd22803b8fda8dd8bbff53",
+            "width": "1600",
+            "height": "1067",
+            "quality_class": "HQ",
+            "url": "https://geelyeg.com/assets/ex5-model-page/optimized/lifestyle-ex5-6.webp",
+            "page": "https://geelyeg.com/models/ex5",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/geely-ex5/03.webp",
+            "meta": {
+              "view_angle": "rear_3q",
+              "color": "silver",
+              "setting": "outdoor",
+              "people": true,
+              "model_year": null,
+              "trim": null,
+              "width": 1600,
+              "height": 1067,
+              "served_file_sha256": "c203dc735a0483297370e2ff405088a2f190502b3f3cf664e9f8e98a2cbed202",
+              "alt_en": "Silver Geely EX5, rear three-quarter view",
+              "alt_ar": "جيلي EX5 - منظر خلفي جانبي"
+            },
+            "credit": "Geely Egypt"
+          }
+        ],
         "conflicts": [],
         "powertrains": [
           "ev"
@@ -30459,6 +30785,84 @@
               "served_file_sha256": "2690a3a7211cbb7aae67ba1d0c3ee62fa777adbe76a8301664c1b083da640410",
               "alt_en": "Dark grey Hyundai Tucson, front three-quarter view",
               "alt_ar": "هيونداي توسان - منظر أمامي جانبي"
+            },
+            "credit": "Hyundai Egypt / GB Auto"
+          },
+          {
+            "asset_id": "0c621e04b7ec",
+            "sha256": "0c621e04b7eca0efedb32000b9c5bb520caa8137adf04783db1446d522e6e73f",
+            "width": "1120",
+            "height": "600",
+            "quality_class": "WEB",
+            "url": "https://hyundai-egypt.net/wp-content/uploads/2024/09/Highlight_Tucson.png",
+            "page": "https://hyundai-egypt.net/models/tucson/",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/hyundai-tucson/03.webp",
+            "meta": {
+              "view_angle": "front",
+              "color": "dark grey",
+              "setting": "outdoor",
+              "people": false,
+              "model_year": null,
+              "trim": null,
+              "width": 1120,
+              "height": 600,
+              "served_file_sha256": "2362ae61533edeaf923fb756b4f10c69e01c3f8289a0d3c036b92c558c1650ec",
+              "alt_en": "Dark grey Hyundai Tucson, front view",
+              "alt_ar": "هيونداي توسان - منظر أمامي"
+            },
+            "credit": "Hyundai Egypt / GB Auto"
+          },
+          {
+            "asset_id": "311c5962ddb4",
+            "sha256": "311c5962ddb4f01bbf77ef8d48d41773802695e81569e5dc6bbef12f132e9b22",
+            "width": "1250",
+            "height": "671",
+            "quality_class": "WEB",
+            "url": "https://hyundai-egypt.net/wp-content/uploads/2024/09/Tucson_Design_Seats.png",
+            "page": "https://hyundai-egypt.net/models/tucson/",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/hyundai-tucson/04.webp",
+            "meta": {
+              "view_angle": "interior",
+              "color": null,
+              "setting": "interior",
+              "people": false,
+              "model_year": null,
+              "trim": null,
+              "width": 1250,
+              "height": 671,
+              "served_file_sha256": "3509c66084bf1e0f5e97e83362909b015f499e42d8fdb757af828889ab3ee240",
+              "alt_en": "Hyundai Tucson front seats",
+              "alt_ar": "هيونداي توسان - المقاعد الأمامية"
+            },
+            "credit": "Hyundai Egypt / GB Auto"
+          },
+          {
+            "asset_id": "e218d8398e3f",
+            "sha256": "e218d8398e3f0b736492fb9d5a6cbcc20613d04667901cac07a1f2b587730b14",
+            "width": "1120",
+            "height": "600",
+            "quality_class": "WEB",
+            "url": "https://hyundai-egypt.net/wp-content/uploads/2024/09/Tucson_Hightlight_Seats.png",
+            "page": "https://hyundai-egypt.net/models/tucson/",
+            "rights_basis": "CEO_APPROVED_OEM_OFFICIAL (CEO-MEDIA-2026-10-13)",
+            "status": "ACCEPT",
+            "src": "/media/p2/models/hyundai-tucson/05.webp",
+            "meta": {
+              "view_angle": "interior",
+              "color": null,
+              "setting": "interior",
+              "people": false,
+              "model_year": null,
+              "trim": null,
+              "width": 1120,
+              "height": 600,
+              "served_file_sha256": "d5bb0a8131f4cefe93a40b896fef77cea4314713f784500a353853481788acc4",
+              "alt_en": "Hyundai Tucson seats",
+              "alt_ar": "هيونداي توسان - المقاعد"
             },
             "credit": "Hyundai Egypt / GB Auto"
           }
@@ -49781,25 +50185,37 @@
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
         "price": {
-          "price_from": 1649990,
-          "model_year": 2008,
+          "price_from": 1499990,
+          "model_year": 2027,
           "tier": "B",
           "effective_date": null,
           "date_basis": "OBSERVED",
           "as_of": "2026-10-22",
           "issuer": "ContactCars+Hatla2ee",
-          "evidence_url": "https://eg.hatla2ee.com/en/new-car/peugeot/2008 | https://www.contactcars.com/en/new-cars/peugeot-2008",
+          "evidence_url": "https://eg.hatla2ee.com/en/new-car/peugeot/2008 | https://www.contactcars.com/en/new-cars/peugeot-2008/year-2027",
           "trims": [
             {
-              "model_year": 2008,
-              "label": "2025 1.2 A/T GT Line",
+              "model_year": 2027,
+              "label": "Allure",
+              "price_egp": 1499990,
+              "tier": "B",
+              "effective_date": null,
+              "date_basis": "OBSERVED",
+              "as_of": "2026-10-22",
+              "issuer": "ContactCars+Hatla2ee",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/peugeot/2008 | https://www.contactcars.com/en/new-cars/peugeot-2008/year-2027",
+              "powertrain": "Petrol"
+            },
+            {
+              "model_year": 2027,
+              "label": "GT",
               "price_egp": 1649990,
               "tier": "B",
               "effective_date": null,
               "date_basis": "OBSERVED",
               "as_of": "2026-10-22",
               "issuer": "ContactCars+Hatla2ee",
-              "evidence_url": "https://eg.hatla2ee.com/en/new-car/peugeot/2008 | https://www.contactcars.com/en/new-cars/peugeot-2008",
+              "evidence_url": "https://eg.hatla2ee.com/en/new-car/peugeot/2008 | https://www.contactcars.com/en/new-cars/peugeot-2008/year-2027",
               "powertrain": "Petrol"
             }
           ],
@@ -58427,9 +58843,10 @@
       },
       "p2_evidence": false,
       "evidence_state": "U11_IDENTITY_ONLY",
-      "price_status": "ACCEPTED",
+      "price_status": "UNKNOWN",
       "conflicts": [],
       "missing_evidence": [
+        "NO_ACCEPTED_PRICE",
         "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
@@ -58443,29 +58860,7 @@
           "basis": "registration segment, last 12 months (126 registrations)",
           "source": "inputs/registration_models.csv (Vehicle_Registration_Explorer)"
         },
-        "price": {
-          "price_from": 1600000,
-          "model_year": 2023,
-          "tier": "B",
-          "effective_date": "2023-05-04",
-          "date_basis": "SOURCE_STATED",
-          "as_of": "2026-10-22",
-          "issuer": "ContactCars+EgyCar",
-          "evidence_url": "https://www.contactcars.com/en/new-cars/volkswagen-passat | https://www.egy-car.com/volkswagen-passat",
-          "trims": [
-            {
-              "model_year": 2023,
-              "label": "1.4 A/T Comfort line",
-              "price_egp": 1600000,
-              "tier": "B",
-              "effective_date": "2023-05-04",
-              "date_basis": "SOURCE_STATED",
-              "as_of": "2026-10-22",
-              "issuer": "ContactCars+EgyCar",
-              "evidence_url": "https://www.contactcars.com/en/new-cars/volkswagen-passat | https://www.egy-car.com/volkswagen-passat"
-            }
-          ]
-        },
+        "price": null,
         "specs": null,
         "warranty": null,
         "brochures": [],
@@ -62333,7 +62728,7 @@
       "retained_in_p2": true
     }
   ],
-  "revision": "359327921c55",
+  "revision": "ac757adcfffb",
   "market_additions": [
     {
       "p1_id": null,
@@ -62988,14 +63383,35 @@
             "url": "https://drive.google.com/file/d/1g-DvMwKKNYl6ogTNEmA1gpqAPBD73kta/view"
           }
         ],
-        "logo": null,
+        "logo": {
+          "src": "/media/p2/brands/baic.png",
+          "credit": "BAIC Egypt",
+          "source_url": "https://baic-egypt.com/",
+          "image_url": "https://baic-egypt.com/img/global/logo.png",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "WEB",
+          "sha256": "fb2c1f47322f2ce78a482c72cfcd2e22d728848c28a1d16de9e6a1ad4253e110",
+          "meta": {
+            "view_angle": "logo",
+            "color": "red",
+            "setting": "logo",
+            "people": false,
+            "model_year": null,
+            "trim": null,
+            "width": 198,
+            "height": 47,
+            "served_file_sha256": "3fa4593658a820fc4c588de27acb843eac11025b84f59be49b384a2afd0a5a5d",
+            "alt_en": "BAIC logo",
+            "alt_ar": "شعار بايك"
+          }
+        },
         "hero_image": null,
         "gallery": [],
         "conflicts": []
       },
       "missing_evidence": [
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_OFFICIAL_LOGO",
         "GENERATION_UNKNOWN"
       ]
     },
@@ -70166,7 +70582,29 @@
         "specs": null,
         "warranty": null,
         "brochures": [],
-        "logo": null,
+        "logo": {
+          "src": "/media/p2/brands/baic.png",
+          "credit": "BAIC Egypt",
+          "source_url": "https://baic-egypt.com/",
+          "image_url": "https://baic-egypt.com/img/global/logo.png",
+          "flags": [],
+          "status": "ACCEPT",
+          "quality_class": "WEB",
+          "sha256": "fb2c1f47322f2ce78a482c72cfcd2e22d728848c28a1d16de9e6a1ad4253e110",
+          "meta": {
+            "view_angle": "logo",
+            "color": "red",
+            "setting": "logo",
+            "people": false,
+            "model_year": null,
+            "trim": null,
+            "width": 198,
+            "height": 47,
+            "served_file_sha256": "3fa4593658a820fc4c588de27acb843eac11025b84f59be49b384a2afd0a5a5d",
+            "alt_en": "BAIC logo",
+            "alt_ar": "شعار بايك"
+          }
+        },
         "hero_image": null,
         "gallery": [],
         "conflicts": []
@@ -70176,7 +70614,6 @@
         "NO_ACCEPTED_SPECS",
         "NO_OFFICIAL_BROCHURE",
         "NO_VERIFIED_HERO_IMAGE",
-        "NO_OFFICIAL_LOGO",
         "NO_VERIFIED_WARRANTY",
         "GENERATION_UNKNOWN"
       ]

@@ -69,3 +69,8 @@ Review sheet `1TUlGhEYzrOQrYdgMgyVhHwdw_ABGZSk9OhohYnvbZVg` (CarIndex P2 Data Co
 ## 2026-11-03 (b) — ChatGPT Work staging accepted
 - `p5-release-20261103b.json` / `p1-release-20261103b.json`; acceptance `review/p2_staging_acceptance_20261103.{json,csv}`.
 - 41 spec facts (Seltos 16, Tiggo 7 Pro 25), Tiggo 7 Pro brochure, Alto / Eclipse Cross / AMG GT 43 / SL 43 prices. 13 Seltos facts held for page-image verification.
+
+## 2026-11-04 — consolidated media acceptance + PR #11
+- `p5-release-20261104.json`; record `review/media_price_acceptance_20261104.json`.
+- Media batch (support 0b25eab): 12 accepted (EX2/EX5 HQ heroes + 6 galleries, Tucson +3 galleries, BAIC logo), 7 held, 1 rejected.
+- PR #11 implemented at source: PH-1 `registry/price_holds.csv` (Passat stale 2023 price held); PY-1 model-name-as-year parse fix (Peugeot 2008 now MY2027).

@@ -197,6 +197,25 @@ class Canonical(unittest.TestCase):
             if h and h.get("src"):
                 self.assertNotIn("media/" + h["src"][len("/media/p2/"):], official, m["p1_id"])
 
+    def test_pr11_price_corrections(self):
+        rel = json.load(open(os.path.join(ROOT, "views", "catalogue-serving.release.json")))
+        by = {e.get("p1_id") or e.get("identity"): e for e in rel["entries"] + rel.get("market_additions", [])}
+        self.assertIsNone(by["volkswagen/passat"]["accepted"]["price"])  # PH-1: stale 2023 row held, nothing invented
+        rows = rd(os.path.join(ROOT, "registry", "u11_prices.csv"))
+        self.assertFalse([r for r in rows if r["model_year"] and not 2015 <= int(r["model_year"]) <= 2035])  # PY-1
+        p = by["peugeot/2008"]["accepted"]["price"]
+        self.assertEqual((p["price_from"], p["model_year"]), (1499990, 2027))
+
+    def test_media_batch_20261104(self):
+        reg = rd(os.path.join(ROOT, "registry", "media_accepted.csv"))
+        b = [r for r in reg if r["verified_at"] == "2026-11-04"]
+        self.assertEqual(len(b), 20)
+        self.assertEqual(len({r["sha256"] for r in reg}), len(reg))  # no duplicate media
+        self.assertEqual(collections.Counter(r["status"] for r in b), {"ACCEPT": 12, "REWORK": 7, "REJECT": 1})
+        held = {r["asset_id"] for r in b if r["status"] != "ACCEPT"}
+        self.assertIn("10a8fb5d37ac", held)  # Tucson RHD-flagged cabin
+        self.assertTrue({"02561b37c3c3", "ccc90a6e0675"} <= held)  # Geely configurator renders
+
 
 if __name__ == "__main__":
     unittest.main()

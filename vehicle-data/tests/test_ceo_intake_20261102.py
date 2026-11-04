@@ -26,8 +26,12 @@ class ConfirmedIntake(unittest.TestCase):
    if isinstance(o,dict):return isinstance(n,dict) and all(kept(v,n.get(k)) for k,v in o.items())
    if isinstance(o,list):return isinstance(n,list) and all(any(kept(x,y) for y in n) for x in o)
    return o==n
+  # owner corrections (PR #11): registry/price_holds.csv rows and PY-1 rows whose old model_year was a model name (e.g. 2008)
+  held={r['p1_id'] for r in rows('registry/price_holds.csv')}
+  def bad_year(p):return any(t.get('model_year') and not 2015<=t['model_year']<=2035 for t in (p or {}).get('trims',[]))
   for old in self.old['models']:
    now=self.by[old['p1_id']]
+   if old['p1_id'] in held or bad_year(old.get('price')):affected=affected|{old['p1_id']}
    for k,v in old.items():
     if k in ('gaps','rework_price_rows') or (k=='price' and old['p1_id'] in affected):continue  # counters are not evidence
     if k=='hero_image_limited' and v and now.get('hero_image') and (now['hero_image'] or {}).get('src')==v.get('src'):
