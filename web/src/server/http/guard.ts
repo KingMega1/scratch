@@ -36,7 +36,26 @@ export function log(event: string, fields: Record<string, string | number | bool
 export async function readJson(req: Request, maxBytes = 16_384): Promise<unknown> {
   const len = Number(req.headers.get('content-length') || 0);
   if (len > maxBytes) throw new Error('too_large');
-  const text = await req.text();
-  if (text.length > maxBytes) throw new Error('too_large');
+  // Enforce actual wire bytes while streaming: Content-Length can be absent or inaccurate,
+  // and UTF-8 text may use several bytes per JavaScript character.
+  if (!req.body) return JSON.parse('');
+  const reader = req.body.getReader();
+  const decoder = new TextDecoder();
+  let bytes = 0, text = '';
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      bytes += value.byteLength;
+      if (bytes > maxBytes) {
+        await reader.cancel().catch(() => undefined);
+        throw new Error('too_large');
+      }
+      text += decoder.decode(value, { stream: true });
+    }
+    text += decoder.decode();
+  } finally {
+    reader.releaseLock();
+  }
   return JSON.parse(text);
 }
