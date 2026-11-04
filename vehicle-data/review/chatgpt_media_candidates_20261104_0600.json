@@ -1,1 +1,117 @@
-{}
+{
+  "batch_id": "P2-CHATGPT-MEDIA-20261104-0600",
+  "captured_at": "2026-11-04T06:02:44+02:00",
+  "branch": "chatgpt/p2-media-support-20261103",
+  "baseline_p2_sha": "27776970d47f38ad29e60794cc8cc0db74dd1229",
+  "previous_support_head": "4d45a7a8e255f46c3d0eb80648cc632c983bdd55",
+  "scope": [
+    "skoda/kodiaq",
+    "volkswagen/tiguan",
+    "jaecoo/j7"
+  ],
+  "screened": 3,
+  "new_candidate_urls": 3,
+  "downloaded_files": 0,
+  "verified_dimensions": 0,
+  "verified_sha256": 0,
+  "accepted": 0,
+  "source_note": "HTML of global official JAECOO J7 page scraped live; direct img src attributes verified in returned HTML. No image bytes, actual viewing angle, Egypt model-year/trim or redistribution independently verified. The global page warns configurations vary by market. URLs are staging only, not image acceptance.",
+  "blocked": [
+    {
+      "id": "m_000244",
+      "p1_id": "skoda/kodiaq",
+      "reason": "Attempted skoda-eg.com model route DNS failure; no official Egypt direct image source verified."
+    },
+    {
+      "id": "m_000003",
+      "p1_id": "volkswagen/tiguan",
+      "reason": "Attempted volkswagen-eg.com Tiguan route did not load; no official Egypt direct image source verified."
+    }
+  ],
+  "candidates": [
+    {
+      "canonical_id": "m_000423",
+      "p1_id": "jaecoo/j7",
+      "model": "JAECOO J7 petrol",
+      "egypt_status": "P2 accepted addition, CEO-confirmed price; official global source is not Egypt-specific",
+      "accepted_market_model_year": null,
+      "model_year_verified": false,
+      "trim_verified": false,
+      "powertrain": "petrol; not J7 PHEV / J7 SHS",
+      "old_gap": "hero NONE, gallery 0, logo NONE in 2026-11-02 accepted coverage",
+      "source_page": "https://www.omodajaecoo.com/global/j7/",
+      "direct_image_url": "https://www.omodajaecoo.com/global/images/models/banner.webp",
+      "role": "possible_hero_or_banner",
+      "view": "unverified (HTML image URL only)",
+      "source_provenance": "Official OMODA & JAECOO global J7 page rendered HTML img[src]",
+      "capture_date": "2026-11-04",
+      "dimensions": null,
+      "sha256": null,
+      "downloaded": false,
+      "visual_review": false,
+      "rights_basis": "Official OEM page, CEO-MEDIA-2026-10-13; redistribution and exact Egypt market applicability subject to P2 QA",
+      "rights_restriction": "Global source explicitly says national specifications differ; do not promote as Egyptian MY/trim without verification",
+      "status": "NEEDS_P2_QA",
+      "hold": "Egypt model/trim and actual image content unverified"
+    },
+    {
+      "canonical_id": "m_000423",
+      "p1_id": "jaecoo/j7",
+      "model": "JAECOO J7 petrol",
+      "egypt_status": "P2 accepted addition, CEO-confirmed price; official global source is not Egypt-specific",
+      "accepted_market_model_year": null,
+      "model_year_verified": false,
+      "trim_verified": false,
+      "powertrain": "petrol; not J7 PHEV / J7 SHS",
+      "old_gap": "hero NONE, gallery 0, logo NONE in 2026-11-02 accepted coverage",
+      "source_page": "https://www.omodajaecoo.com/global/j7/",
+      "direct_image_url": "https://www.omodajaecoo.com/global/images/models/page4Swiper1.webp",
+      "role": "possible_gallery",
+      "view": "unverified (HTML image URL only)",
+      "source_provenance": "Official OMODA & JAECOO global J7 page rendered HTML img[src]",
+      "capture_date": "2026-11-04",
+      "dimensions": null,
+      "sha256": null,
+      "downloaded": false,
+      "visual_review": false,
+      "rights_basis": "Official OEM page, CEO-MEDIA-2026-10-13; redistribution and exact Egypt market applicability subject to P2 QA",
+      "rights_restriction": "Global source explicitly says national specifications differ; do not promote as Egyptian MY/trim without verification",
+      "status": "NEEDS_P2_QA",
+      "hold": "Egypt model/trim and actual image content unverified"
+    },
+    {
+      "canonical_id": "m_000423",
+      "p1_id": "jaecoo/j7",
+      "model": "JAECOO J7 petrol",
+      "egypt_status": "P2 accepted addition, CEO-confirmed price; official global source is not Egypt-specific",
+      "accepted_market_model_year": null,
+      "model_year_verified": false,
+      "trim_verified": false,
+      "powertrain": "petrol; not J7 PHEV / J7 SHS",
+      "old_gap": "hero NONE, gallery 0, logo NONE in 2026-11-02 accepted coverage",
+      "source_page": "https://www.omodajaecoo.com/global/j7/",
+      "direct_image_url": "https://www.omodajaecoo.com/global/images/models/page4Swiper2.webp",
+      "role": "possible_gallery",
+      "view": "unverified (HTML image URL only)",
+      "source_provenance": "Official OMODA & JAECOO global J7 page rendered HTML img[src]",
+      "capture_date": "2026-11-04",
+      "dimensions": null,
+      "sha256": null,
+      "downloaded": false,
+      "visual_review": false,
+      "rights_basis": "Official OEM page, CEO-MEDIA-2026-10-13; redistribution and exact Egypt market applicability subject to P2 QA",
+      "rights_restriction": "Global source explicitly says national specifications differ; do not promote as Egyptian MY/trim without verification",
+      "status": "NEEDS_P2_QA",
+      "hold": "Egypt model/trim and actual image content unverified"
+    }
+  ],
+  "next": [
+    "geely/ex5-em-r",
+    "xpeng/p7-plus",
+    "jaecoo/j7-phev",
+    "skoda/kodiaq",
+    "volkswagen/tiguan",
+    "jaecoo/j5"
+  ],
+  "owner": "Claude P2 acceptance only; no canonical registry or P1/P5 modifications"
+}
