@@ -103,7 +103,7 @@ Results stored under T1/U11 are historical: recompute them from `share.r` and la
    - named_cars 49/49
    - buyer_scenarios 701/701 (42 EN/AR scenarios)
    - transport 1517/1517
-   - browser-vs-transport 1413/1413 (CEO3-R2) and 1335/1335 (U11)
+   - browser-vs-transport 1413/1413 (CEO3-R3) and 1335/1335 (U11)
    - build_present --check PASS
 4. **P5 integration**: re-vendor, version checks, deployed EN/AR smoke on the RC4 binding, including one single-car result (`7-seater around EGP 1M` → BAW M7, no compare table).
 
