@@ -27,7 +27,8 @@ export const BOUND = {
 
 /* CEO-authorized NONPRODUCTION preview candidate, pinned to P1 record commit 3faad56 (P1-RELEASE-U12-CEO3-R3, status
    CANDIDATE — not released). Never follows a moving P1 branch. Supersedes CEO3 (47e33e1). Engine E6.1, transport T1.2; dataset
-   U12-CEO3-R3 on P2 dfbcccc (serving sha256 c4bd33ba…, the same release P5 serves). Activation requires P1 RELEASE plus a
+   U12-CEO3-R3 on P2 dfbcccc (serving sha256 c4bd33ba…; P5 now serves 635b897 / 03089cc2febb, which differs only by three
+   gallery photos). Activation requires P1 RELEASE plus a
    reviewed change of BOUND; until then it runs only behind the gate below. */
 export const PREVIEW_CANDIDATE = {
   record: 'P1-RELEASE-U12-CEO3-R3',

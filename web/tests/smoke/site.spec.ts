@@ -307,7 +307,7 @@ test.describe('Arabic compare search', () => {
   });
 });
 
-test.describe('CEO QC 4 Nov: P2 dfbcccc data on public pages', () => {
+test.describe('CEO QC 4 Nov: P2 635b897 data on public pages', () => {
   test('Passat has no accepted price: no EGP figure anywhere on its page (EN/AR)', async ({ page }) => {
     for (const l of ['en', 'ar']) {
       await page.goto(`/${l}/cars/volkswagen-passat`);
@@ -323,14 +323,34 @@ test.describe('CEO QC 4 Nov: P2 dfbcccc data on public pages', () => {
     await expect(m).toContainText('EGP 1,649,990');
   });
   for (const [l, slug] of [['en', 'geely-ex2'], ['ar', 'geely-ex2'], ['en', 'geely-ex5'], ['ar', 'geely-ex5']]) {
-    test(`accepted ${slug} hero + 3 gallery photos load (${l})`, async ({ page }) => {
+    test(`accepted ${slug} hero + every P2 gallery photo load (${l})`, async ({ page }) => {
+      const rel = JSON.parse(readFileSync('data/registry/catalogue-serving.release.json', 'utf8'));
+      const e = rel.entries.find((x: { site_slug?: string }) => x.site_slug === slug);
       await page.goto(`/${l}/cars/${slug}`);
       const imgs = page.locator(`main img[src*="/media/p2/models/${slug}"], main img[srcset*="${encodeURIComponent(`/media/p2/models/${slug}`)}"]`);
-      await expect(imgs).toHaveCount(4);
+      await expect(imgs).toHaveCount(1 + e.accepted.gallery.length);
       await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
       await expect.poll(() => imgs.evaluateAll(xs => xs.every(i => (i as HTMLImageElement).complete && (i as HTMLImageElement).naturalWidth > 0))).toBe(true);
     });
   }
+  // The 14 models whose P2 "from" price (latest model year) differs from P1's lowest version (includes previous-MY
+  // versions): the car page must show P2's accepted from-price and its model year, EN and AR.
+  test('starting price follows P2 accepted latest model year for the 14 model-year cases (EN/AR)', async ({ page }) => {
+    const rel = JSON.parse(readFileSync('data/registry/catalogue-serving.release.json', 'utf8'));
+    const all = [...rel.entries, ...(rel.market_additions ?? [])];
+    const ids = ['audi/a5', 'audi/q8', 'baic/bj30', 'baic/u5-plus', 'chery/arrizo-5', 'chery/arrizo-6-gt', 'chery/tiggo-4-pro', 'chery/tiggo-7',
+      'chery/tiggo-8', 'chery/tiggo-8-pro', 'chery/tiggo-8-pro-max', 'chery/tiggo-7-pro-max', 'mazda/3', 'mazda/cx-3'];
+    for (const id of ids) {
+      const e = all.find((x: { p1_id?: string; identity?: string }) => (x.p1_id ?? x.identity) === id);
+      const p = e.accepted.price;
+      for (const l of ['en', 'ar']) {
+        await page.goto(`/${l}/cars/${e.site_slug}`);
+        const t = await page.locator('main').innerText();
+        expect(t.includes(p.price_from.toLocaleString('en-US')) || t.includes(p.price_from.toLocaleString('ar-EG')), `${l} ${id} from ${p.price_from}`).toBe(true);
+        expect(l === 'en' ? t.includes(`Model year ${p.model_year}`) : t.includes(String(p.model_year)) || t.includes(p.model_year.toLocaleString('ar-EG', { useGrouping: false })), `${l} ${id} MY ${p.model_year}`).toBe(true);
+      }
+    }
+  });
   test('BAIC accepted logo renders (home EN/AR, catalogue)', async ({ page }) => {
     for (const u of ['/en', '/ar', '/en/market/catalog']) {
       await page.goto(u);

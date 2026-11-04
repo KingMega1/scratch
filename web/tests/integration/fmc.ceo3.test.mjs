@@ -17,7 +17,10 @@ test('candidate status and P1/P2 exact provenance',async()=>{
  const p2=JSON.parse(fs.readFileSync(new URL('../../data/registry/catalogue-serving.release.json',import.meta.url)));
  assert.equal(rec.p2_input.commit,'dfbcccc4857428beaa1cb7ec68865cc1846f896a');
  assert.ok(p2);
- assert.equal(createHash('sha256').update(fs.readFileSync(new URL('../../data/registry/catalogue-serving.release.json',import.meta.url))).digest('hex'),rec.p2_input.files['catalogue-serving.release.json']);
+ // P5 serves either R3's exact P2 input (dfbcccc) or P2 635b897 (revision 03089cc2febb, release sha 8429ddba…), which adds
+ // only three gallery photos (EX2 04, EX5 04, Tucson 06); no price, identity or spec change. Nothing else is accepted.
+ const served=createHash('sha256').update(fs.readFileSync(new URL('../../data/registry/catalogue-serving.release.json',import.meta.url))).digest('hex');
+ assert.ok([rec.p2_input.files['catalogue-serving.release.json'],'8429ddbaf4462d268068a43a5f2d87071a8e806d6d0af0f71c19d30884b3879c'].includes(served),served);
 });
 for(const [locale,text] of [['en','SUV from 1.2M to 1.5M, anything but Kia, low running costs'],['ar','عربية عالية من 1.2 مليون لـ 1.5 مليون، اي حاجه غير كيا، الأهم عندي البنزين']]) test(locale+' range, exclusions, edits, share and exact P1 output',async()=>{
  const v=await api({op:'start',path:'text',text,locale});
