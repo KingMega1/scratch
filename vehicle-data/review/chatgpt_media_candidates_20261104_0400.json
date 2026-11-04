@@ -1,0 +1,101 @@
+{
+  "batch_id": "P2-CHATGPT-MEDIA-20261104-0400",
+  "branch": "chatgpt/p2-media-support-20261103",
+  "parent": "5d27b7487917f40c1f8046bd50b933ac787c107b",
+  "captured_at": "2026-11-04T04:00:00+02:00",
+  "scope": [
+    "soueast/s-05 gallery",
+    "skoda/kodiaq unresolved",
+    "volkswagen/tiguan unresolved"
+  ],
+  "baseline": {
+    "p2_branch_sha": "27776970d47f38ad29e60794cc8cc0db74dd1229",
+    "coverage_file": "vehicle-data/review/u11_coverage.csv",
+    "accepted_hero": "ACCEPTED/HQ",
+    "accepted_gallery_count": 0,
+    "logo": "NONE",
+    "registrations_last12": 4369
+  },
+  "notes": "Official SOUEAST global Arabic S05 page is live (HTTP 200) and includes gallery assets, but explicitly warns configurations differ by region. This is NOT an Egyptian importer-specific model-year or trim proof. Exact direct URLs were extracted from official page's image list by live Firecrawl scrape; image bytes, view angles, model year, trim, license and dimensions NOT verified. Preserve accepted HQ hero. Existing Soueast logo candidate in 20-file manifest untouched. Do not promote any asset without P2 visual and Egypt-applicability checks.",
+  "candidates": [
+    {
+      "canonical_id": "m_000247",
+      "p1_id": "soueast/s-05",
+      "market_model_year": 2027,
+      "egypt_status": "P2 accepted model; accepted price and HQ hero, gallery=0",
+      "source_page": "https://www.soueast-motor.com/ar/s05/",
+      "direct_image_url": "https://www.soueast-motor.com/img-page/car/s05/Gallery-1.jpg",
+      "role": "gallery_review",
+      "view": "Official S05 gallery asset; exact angle unverified",
+      "rights_basis": "Official SOUEAST OEM global website; CEO-MEDIA-2026-10-13; Egypt region applicability and redistribution review required",
+      "capture_date": "2026-11-04",
+      "dimensions": null,
+      "sha256": null,
+      "downloaded": false,
+      "visual_review": false,
+      "exact_model_year_verified": false,
+      "exact_trim_verified": false,
+      "status": "NEEDS_P2_QA"
+    },
+    {
+      "canonical_id": "m_000247",
+      "p1_id": "soueast/s-05",
+      "market_model_year": 2027,
+      "egypt_status": "P2 accepted model; accepted price and HQ hero, gallery=0",
+      "source_page": "https://www.soueast-motor.com/ar/s05/",
+      "direct_image_url": "https://www.soueast-motor.com/img-page/car/s05/Gallery-5.jpg",
+      "role": "gallery_review",
+      "view": "Official S05 gallery asset; exact angle unverified",
+      "rights_basis": "Official SOUEAST OEM global website; CEO-MEDIA-2026-10-13; Egypt region applicability and redistribution review required",
+      "capture_date": "2026-11-04",
+      "dimensions": null,
+      "sha256": null,
+      "downloaded": false,
+      "visual_review": false,
+      "exact_model_year_verified": false,
+      "exact_trim_verified": false,
+      "status": "NEEDS_P2_QA"
+    },
+    {
+      "canonical_id": "m_000247",
+      "p1_id": "soueast/s-05",
+      "market_model_year": 2027,
+      "egypt_status": "P2 accepted model; accepted price and HQ hero, gallery=0",
+      "source_page": "https://www.soueast-motor.com/ar/s05/",
+      "direct_image_url": "https://www.soueast-motor.com/img-page/car/s05/Gallery-6.jpg",
+      "role": "gallery_review",
+      "view": "Official S05 gallery asset; exact angle unverified",
+      "rights_basis": "Official SOUEAST OEM global website; CEO-MEDIA-2026-10-13; Egypt region applicability and redistribution review required",
+      "capture_date": "2026-11-04",
+      "dimensions": null,
+      "sha256": null,
+      "downloaded": false,
+      "visual_review": false,
+      "exact_model_year_verified": false,
+      "exact_trim_verified": false,
+      "status": "NEEDS_P2_QA"
+    }
+  ],
+  "counts": {
+    "models_screened": 3,
+    "new_candidates": 3,
+    "official_direct_urls": 3,
+    "downloaded": 0,
+    "dimensions_verified": 0,
+    "hashes_verified": 0,
+    "accepted": 0
+  },
+  "blockers": [
+    "Global OEM S05 page explicitly warns regional configurations vary; P2 must confirm same Egyptian-market exterior/interior",
+    "Direct image URLs discovered via page scraper, not visually inspected or downloaded",
+    "No new verified Egypt Kodiaq or Tiguan source image URLs this batch"
+  ],
+  "next_models": [
+    "skoda/kodiaq",
+    "volkswagen/tiguan",
+    "mitsubishi/eclipse-cross",
+    "geely/ex5-em-r",
+    "jaecoo/j7",
+    "xpeng/p7-plus"
+  ]
+}
