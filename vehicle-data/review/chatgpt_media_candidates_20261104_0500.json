@@ -1,0 +1,104 @@
+{
+  "batch_id": "P2-CHATGPT-MEDIA-20261104-0500",
+  "branch": "chatgpt/p2-media-support-20261103",
+  "parent": "d9f722c96aa5497aaddaac863866d9897edd66cd",
+  "captured_at": "2026-11-04T05:00:00+02:00",
+  "baseline": {
+    "p2_branch_sha": "27776970d47f38ad29e60794cc8cc0db74dd1229",
+    "accepted_hero": "ACCEPTED_LIMITED/COMPACT_ONLY",
+    "accepted_gallery_count": 0,
+    "registrations_last12": 2269
+  },
+  "scope": [
+    "mitsubishi/eclipse-cross",
+    "xpeng/p7-plus"
+  ],
+  "notes": "Live Firecrawl official Egypt importer page returned exact direct image URLs. All three paths explicitly include /my21/; source also has 2023 vehicle colour assets. These do NOT establish applicability to the accepted Egypt MY2026 vehicle. XPENG Raya Egypt official page indexed but live Firecrawl blocked by TLS; no direct URLs staged. Prior batch files 0000-0400 and 20-file individual manifest checked to avoid duplicates. No image bytes downloaded or visually checked. Source page shows 'From EGP 1,400,000' without model year; existing P2 review queue already holds corresponding proposed starting price, do not restage.",
+  "candidates": [
+    {
+      "canonical_id": "m_000015",
+      "p1_id": "mitsubishi/eclipse-cross",
+      "egypt_status": "Accepted active P2 model; MY2026 prices accepted, current accepted hero COMPACT_ONLY and gallery 0",
+      "accepted_market_model_year": 2026,
+      "source_page": "https://www.mitsubishimotors-eg.com/en/cars/eclipse-cross",
+      "direct_image_url": "https://www.mitsubishimotors-eg.com/content/dam/mitsubishi-motors/images/site-images/cars/eclipse-cross/my21/landing/EC_exterior.jpg?width=2160&auto=webp&quality=70",
+      "role": "hero_candidate_hold",
+      "view": "exterior candidate; exact angle unverified",
+      "source_asset_generation": "my21 explicitly in official asset path",
+      "exact_model_year_verified": false,
+      "exact_trim_verified": false,
+      "rights_basis": "Official Mitsubishi Motors Egypt importer page, CEO-MEDIA-2026-10-13; P2 must confirm 2021-generation visuals still represent MY2026 Egypt sale and rights",
+      "capture_date": "2026-11-04",
+      "dimensions": null,
+      "sha256": null,
+      "downloaded": false,
+      "visual_review": false,
+      "status": "NEEDS_P2_QA",
+      "hold": "MY21 asset path; DO NOT PROMOTE as MY2026 without explicit visual/generation verification"
+    },
+    {
+      "canonical_id": "m_000015",
+      "p1_id": "mitsubishi/eclipse-cross",
+      "egypt_status": "Accepted active P2 model; MY2026 prices accepted, current accepted hero COMPACT_ONLY and gallery 0",
+      "accepted_market_model_year": 2026,
+      "source_page": "https://www.mitsubishimotors-eg.com/en/cars/eclipse-cross",
+      "direct_image_url": "https://www.mitsubishimotors-eg.com/content/dam/mitsubishi-motors/images/site-images/cars/eclipse-cross/my21/landing/EC_drive.jpg?width=2160&auto=webp&quality=70",
+      "role": "gallery_candidate_hold",
+      "view": "driving/lifestyle gallery candidate; exact visible content unverified",
+      "source_asset_generation": "my21 explicitly in official asset path",
+      "exact_model_year_verified": false,
+      "exact_trim_verified": false,
+      "rights_basis": "Official Mitsubishi Motors Egypt importer page, CEO-MEDIA-2026-10-13; P2 must confirm 2021-generation visuals still represent MY2026 Egypt sale and rights",
+      "capture_date": "2026-11-04",
+      "dimensions": null,
+      "sha256": null,
+      "downloaded": false,
+      "visual_review": false,
+      "status": "NEEDS_P2_QA",
+      "hold": "MY21 asset path; DO NOT PROMOTE as MY2026 without explicit visual/generation verification"
+    },
+    {
+      "canonical_id": "m_000015",
+      "p1_id": "mitsubishi/eclipse-cross",
+      "egypt_status": "Accepted active P2 model; MY2026 prices accepted, current accepted hero COMPACT_ONLY and gallery 0",
+      "accepted_market_model_year": 2026,
+      "source_page": "https://www.mitsubishimotors-eg.com/en/cars/eclipse-cross",
+      "direct_image_url": "https://www.mitsubishimotors-eg.com/content/dam/mitsubishi-motors/images/site-images/cars/eclipse-cross/my21/landing/EC_3.jpg?width=2160&auto=webp&quality=70",
+      "role": "gallery_candidate_hold",
+      "view": "gallery candidate; exact visible content unverified",
+      "source_asset_generation": "my21 explicitly in official asset path",
+      "exact_model_year_verified": false,
+      "exact_trim_verified": false,
+      "rights_basis": "Official Mitsubishi Motors Egypt importer page, CEO-MEDIA-2026-10-13; P2 must confirm 2021-generation visuals still represent MY2026 Egypt sale and rights",
+      "capture_date": "2026-11-04",
+      "dimensions": null,
+      "sha256": null,
+      "downloaded": false,
+      "visual_review": false,
+      "status": "NEEDS_P2_QA",
+      "hold": "MY21 asset path; DO NOT PROMOTE as MY2026 without explicit visual/generation verification"
+    }
+  ],
+  "counts": {
+    "models_screened": 2,
+    "new_candidates": 3,
+    "official_direct_urls": 3,
+    "downloaded": 0,
+    "dimensions_verified": 0,
+    "hashes_verified": 0,
+    "accepted": 0
+  },
+  "blockers": [
+    "MY21 asset path vs accepted Egypt MY2026 model: P2 visual and generation verification required",
+    "XPENG Egypt live scrape TLS certificate error; do not fabricate direct image URL",
+    "No visual review, downloads or license beyond existing CEO OEM policy"
+  ],
+  "next_models": [
+    "skoda/kodiaq",
+    "volkswagen/tiguan",
+    "geely/ex5-em-r",
+    "jaecoo/j7",
+    "jaecoo/j7-phev",
+    "xpeng/p7-plus"
+  ]
+}
