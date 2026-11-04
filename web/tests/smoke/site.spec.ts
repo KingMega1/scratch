@@ -7,6 +7,14 @@ async function shot(page: Page, name: string, testInfo: { project: { name: strin
 }
 
 test.describe('locale + direction', () => {
+  test('no Beta or preview banner is shown on Arabic or English pages', async ({ page }) => {
+    for (const locale of ['ar', 'en'] as const) {
+      await page.goto(`/${locale}`);
+      await expect(page.locator('.preview-bar')).toHaveCount(0);
+      await expect(page.locator('body')).not.toContainText('Preview — not the live site');
+      await expect(page.locator('body')).not.toContainText('نسخة تجريبية — مش الموقع النهائي');
+    }
+  });
   test('root redirects to Arabic', async ({ page }) => {
     const res = await page.goto('/');
     expect(page.url()).toMatch(/\/ar$/);
