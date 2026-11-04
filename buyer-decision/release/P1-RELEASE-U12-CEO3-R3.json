@@ -6,11 +6,23 @@
  "task": "P1-READINESS-02",
  "repo": "KingMega1/scratch",
  "branch": "claude/carindex-buyer-decision-slice-applo4",
- "source_commit": "ee295eb33d7f952a17d6723dcea7c3094b74c2f1",
+ "source_commit": "2a8db0bb562b30318dde84e6bbafb4224822b022",
  "production_binding_unchanged": "P1-RELEASE-T1 (engine E6-2026-09-28, U11-2026-09-26) stays bound until this candidate is accepted",
  "release_gates_open": [
-  "P3 approval of DRAFT copy keys in app/i18n.js (conflict_h, conflict.unknown_price, conflict.unknown_size, conflict.scope, sl_out.unknown_size, sl_out.scope) — see datasets/U12-CEO3-R3-2026-11-04/P3-COPY-REQUEST.md",
   "Release acceptance of engine E6.1 + dataset U12-CEO3-R3"
+ ],
+ "copy_gate": "CLOSED: no DRAFT markers in app/i18n.js. conflict_h CEO-approved 2026-10-21; conflict.unknown_price / sl_out.unknown_price final wording; conflict.unknown_size, conflict.scope, sl_out.unknown_size, sl_out.scope unreachable (no car carries held) under the 2026-10-21 CEO decisions.",
+ "p2_compatible_revisions": [
+  {
+   "revision": "ac757adcfffb",
+   "serving_sha256": "c4bd33ba1b89ff319a6fdc99de44c03d9499f2949e32a821cf25d7293988b363",
+   "role": "dataset built from"
+  },
+  {
+   "revision": "03089cc2febb",
+   "serving_sha256": "8429ddbaf4462d268068a43a5f2d87071a8e806d6d0af0f71c19d30884b3879c",
+   "role": "accepted; delta vs ac757adcfffb = revision + accepted.gallery (geely/ex2, geely/ex5, hyundai/tucson) only; dataset unchanged; price agreement 0/269"
+  }
  ],
  "test_build": {
   "repo": "KingMega1/carindex-buyer-test",
@@ -75,18 +87,18 @@
   },
   "copy_i18n": {
    "path": "buyer-decision/app/i18n.js",
-   "sha256": "40dc5a9ed7487af596cb26adea50bd656b9d859ddd267fec27b496092fe87d2b",
-   "bytes": 62304
+   "sha256": "48471fce1bcfeab136059e87fbce81795098fe3b1245f08b97cd8f5507543042",
+   "bytes": 62572
   },
   "presentation_extracted": {
    "path": "buyer-decision/app/present.js",
-   "sha256": "61e09385cce7f1413aba890f70a14fe902bfd961959e40f99beb254b332056fb",
-   "bytes": 26900
+   "sha256": "c0ac5e18957508287847f5f0a7e023484622b865bcaf14562c82ed3eb15e8b60",
+   "bytes": 27379
   },
   "browser_app": {
    "path": "buyer-decision/app/app.js",
-   "sha256": "7a918488a6f7f77b87d16b333455106322f8a52a0e6856ab768dab9b8f839887",
-   "bytes": 57501
+   "sha256": "dd6b7eb808ff27d18c330a88d35f616f65cc702a49fc64595f90bc07e1d0eb10",
+   "bytes": 57980
   },
   "redaction": {
    "path": "buyer-decision/app/redact.js",
@@ -110,8 +122,8 @@
   },
   "p5_handoff": {
    "path": "buyer-decision/transport/P5-HANDOFF-U12-CEO3-R3.md",
-   "sha256": "d1035b6d98204738448c034697b59d5513ff65da643a00a2d995f8b42759055f",
-   "bytes": 11018
+   "sha256": "74f87e0079e8ba09588ee46c0011230baf51c14c0d00f9a3e6f76630a07b23b6",
+   "bytes": 12343
   },
   "dataset_manifest": {
    "path": "buyer-decision/datasets/U12-CEO3-R3-2026-11-04/manifest.json",
