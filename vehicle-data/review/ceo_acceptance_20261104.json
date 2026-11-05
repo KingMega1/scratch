@@ -1,0 +1,71 @@
+{
+ "task_id": "AT-39/AT-51",
+ "release_id": "P2-CEO-CONFIRMED-20261104-R1",
+ "state": "DONE",
+ "base_commit": "635b897820b795e646650f04be811008f51d9b2f",
+ "intake": "Control Tower AT-39 page, section 'Next P2 approval cycle — CEO-supplied November price intake — 4 November 2026' (https://app.notion.com/p/3ec6811407bc81e4ba5edf713b70b481)",
+ "priced_observations": 52,
+ "dispositions": {
+  "ACCEPT": 15,
+  "UNCHANGED": 31,
+  "HOLD": 6
+ },
+ "accepted_retail_rows": 15,
+ "by_source": {
+  "nissan": {
+   "rows": 22,
+   "ACCEPT": 15,
+   "UNCHANGED": 7
+  },
+  "jetour": {
+   "rows": 12,
+   "UNCHANGED": 11,
+   "HOLD": 1
+  },
+  "citroen": {
+   "rows": 6,
+   "UNCHANGED": 6
+  },
+  "baic": {
+   "rows": 7,
+   "UNCHANGED": 7
+  },
+  "geely": {
+   "rows": 5,
+   "HOLD": 5
+  }
+ },
+ "source_files": [
+  {
+   "file_id": "1gIIJOLW2NJJ5I5Im20cQZUBxzboanK1t",
+   "name": "PHOTO-2026-11-04-09-00-02.jpg",
+   "sha256": "48d49cf254cfe275b3ecd0e50f41434e0e6362a5bfc462c0d1ab79e436242b91",
+   "verification": "VISUAL_PRICE_REVIEW_PASS: 22/22 prices match intake; trim label 'LE T2 SR RSE V6T' taken from image"
+  },
+  {
+   "file_id": "14j7yH7wAcua3zmEXFw9QjnL30X4nJsPk",
+   "name": "IMG_8189.PNG (accepted 2 Nov Jetour source)",
+   "sha256": "e6adff9a4f122d57979fa26ba92aec08ccdefb4bd07c0f2474b1c1798ade616c",
+   "verification": "re-read to reconcile: T2 Matte Color 1,970,000; Dashing Comfort/Luxury"
+  }
+ ],
+ "not_available_to_p2": "Geely IMG_8271, Jetour/Citroen/BAIC branded originals are ChatGPT-library files only; Jetour/Citroen/BAIC rows reconcile to already accepted 2 Nov rows, Geely held",
+ "unchanged_policy": "UNCHANGED rows are corroboration only (ledger); served data unchanged",
+ "excluded_from_msrp": [
+  "7 unpriced Geely notices: New Cityray Comfort/Premium/Sport, New Starray Comfort/Premium/Sport, Monjaro iHEV Luxury (Coming Soon; not mapped to EM-i)",
+  "Jetour X70 Plus Facelift launch report (11 Nov, no price)",
+  "Jetour T2 i-DM 4WD launch chat (list already 2,300,000; UNCHANGED)",
+  "JAC IMG_8259 (filename 2-11-2026, chat 'same prices', JS8 MY26 promotion -95,000, RF8 launching): delta/lead only",
+  "Chevrolet Optra +20,000 chat-only",
+  "IMG_8270 contextual commentary",
+  "commentary deltas (Geely, Citroen C4/C5, BAIC) are corroboration only, never added to printed prices"
+ ],
+ "warranties_printed_not_ingested": {
+  "geely_auto_mobility": "6 years/200,000 km",
+  "jetour": "vehicle 6y/150,000 km; powertrain 10y/1,000,000 km",
+  "citroen": "5 years/150,000 km",
+  "nissan": "5 years/150,000 km",
+  "baic": "7 years/200,000 km"
+ },
+ "ledger_sha256": "3fe724ada1175eb805a31617eae346866f686bae1b335ea198555a3be3474cf2"
+}

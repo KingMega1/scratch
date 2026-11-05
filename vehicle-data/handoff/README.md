@@ -75,3 +75,8 @@ Review sheet `1TUlGhEYzrOQrYdgMgyVhHwdw_ABGZSk9OhohYnvbZVg` (CarIndex P2 Data Co
 - Media batch (support 0b25eab): 12 accepted (EX2/EX5 HQ heroes + 6 galleries, Tucson +3 galleries, BAIC logo), 7 held, 1 rejected.
 - PR #11 implemented at source: PH-1 `registry/price_holds.csv` (Passat stale 2023 price held); PY-1 model-name-as-year parse fix (Peugeot 2008 now MY2027).
 - CEO-MEDIA-2026-11-04: EX2/EX5 configurator renders (gallery) and LHD-verified Tucson cabin accepted; revision 03089cc2febb.
+
+## 2026-11-05 — 4 Nov CEO price intake (52 observations)
+- 15 ACCEPT (Nissan, Drive copy visually verified), 31 UNCHANGED (Jetour/Citroen/BAIC/Patrol equal to accepted), 6 HOLD (Geely Auto Mobility x5, Jetour T2 Matte 1,930,000 vs accepted 1,970,000).
+- Ledger `review/ceo_confirmed_prices_20261104.csv`; protected intake `registry/ceo_confirmed_accepted_20261104.csv`; manifest `review/ceo_acceptance_20261104.json`.
+- Handoffs `p5-release-20261104b.json` (P5 test pin on 'ceo1102-' to widen) and `p1-release-20261105.json`.

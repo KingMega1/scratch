@@ -849,7 +849,9 @@ def main():
                  market_snapshots=[os.path.relpath(x, ROOT) for x in snaps],
                  models=models)
     if intake_meta:
-        canon["accepted_intake"] = {k: intake_meta[-1][k] for k in ("release_id", "base_commit", "ledger_sha256")}
+        # serving contract id stays pinned to the first accepted intake release; later intakes are listed and change the revision
+        canon["accepted_intake"] = {k: intake_meta[0][k] for k in ("release_id", "base_commit", "ledger_sha256")}
+        canon["accepted_intakes"] = [{k: m[k] for k in ("release_id", "base_commit", "ledger_sha256", "as_of")} for m in intake_meta]
     json.dump(canon, open(os.path.join(ROOT, "views", "canonical_u11.json"), "w"), indent=1, ensure_ascii=False, sort_keys=True)
     write(os.path.join(ROOT, "review", "u11_coverage.csv"), list(cov[0].keys()), cov)
     serving(canon)

@@ -8,7 +8,7 @@ class ConfirmedIntake(unittest.TestCase):
  def setUpClass(cls):
   cls.c=obj('views/canonical_u11.json');cls.by={m['p1_id']:m for m in cls.c['models']}
   cls.old=json.loads(subprocess.check_output(['git','show',BASE+':vehicle-data/views/canonical_u11.json'],cwd=ROOT))
-  cls.ledger=rows('review/ceo_confirmed_prices_20261102.csv');cls.p=[r for r in rows('registry/u11_prices.csv') if r.get('ledger_row_id')]
+  cls.ledger=rows('review/ceo_confirmed_prices_20261102.csv');cls.p=[r for r in rows('registry/u11_prices.csv') if r.get('ledger_row_id','').startswith('CEO1102-')]
  def test_all_rows_accounted(self):
   options=rows('registry/price_options_20261102.csv')
   self.assertEqual(len(self.p),89);self.assertEqual(len(options),7)
@@ -20,7 +20,7 @@ class ConfirmedIntake(unittest.TestCase):
    self.assertEqual(r['source_sha256'],ledger[r['ledger_row_id']]['source_sha256'])
  def test_no_accepted_evidence_lost(self):
   # every accepted value at the pre-intake base is still present (prices may only be superseded by confirmed intake rows)
-  affected={r['p1_id'] for r in self.ledger}
+  affected={r['p1_id'] for r in self.ledger}|{r['p1_id'] for f in ROOT.glob('registry/ceo_confirmed_accepted_*.csv') for r in csv.DictReader(f.open())}  # later CEO intakes supersede by design
   def kept(o,n):
    if o in (None,[],{},'',False):return True
    if isinstance(o,dict):return isinstance(n,dict) and all(kept(v,n.get(k)) for k,v in o.items())
@@ -76,7 +76,7 @@ class ConfirmedIntake(unittest.TestCase):
  def test_rebuild_reproduces_intake(self):
   r=subprocess.run([sys.executable,str(ROOT/'scripts/canonical.py')],capture_output=True)
   self.assertEqual(r.returncode,0,r.stderr)
-  acc={x['ledger_row_id'] for x in rows('registry/u11_prices.csv') if x.get('ledger_row_id') and x['status']=='ACCEPT'}
+  acc={x['ledger_row_id'] for x in rows('registry/u11_prices.csv') if x.get('ledger_row_id','').startswith('CEO1102-') and x['status']=='ACCEPT'}
   self.assertEqual(acc,{x['ledger_row_id'] for x in rows('registry/ceo_confirmed_accepted_20261102.csv')})
   self.assertEqual(len(acc),89)
  def test_altered_intake_refused_before_writes(self):

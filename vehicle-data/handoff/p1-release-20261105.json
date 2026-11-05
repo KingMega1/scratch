@@ -1,0 +1,27 @@
+{
+ "schema": "carindex.p2.p1-release-handoff/v1",
+ "task_id": "AT-39/AT-51",
+ "date": "2026-11-05",
+ "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+ "revision": "ad4cc5e906b4",
+ "release_file": "vehicle-data/views/catalogue-serving.release.json",
+ "release_sha256": "e6d2711d70a786c52cacfd8aa87d0a4fa60d3529434a732431cacd94e41ceb0b",
+ "canonical_sha256": "4db567bd0fe5d73c22d0bcdc0efe58a562b327503165c849a83290149a41ebbe",
+ "p1_currently_pinned_p2_input": "5a373d7 (serving 2b796199)",
+ "consume": "rebuild the P1 candidate from this release (build_u12.mjs with P2 dir at the commit recorded in this handoff)",
+ "changes_since_5a373d7": [
+  "Passat: accepted price held (none served)",
+  "Peugeot 2008: MY2027 from 1,499,990 (PY-1 parse fix)",
+  "Nissan 4 Nov list: Sunny from 820,000; Magnite 860,000; Juke 1,189,999; Qashqai 1,650,000; X-Trail 2,500,000 (CEO_CONFIRMED, price_id ceo1104-*, printed_date 2026-11, no effective day)",
+  "media: Geely EX2/EX5 HQ heroes + galleries, Tucson galleries, BAIC logo (P1 uses no media)"
+ ],
+ "unchanged": "Jetour/Citroen/BAIC 4 Nov rows equal the accepted 2 Nov rows; Nissan Patrol equal to accepted",
+ "held": [
+  "Geely Emgrand/Coolray Auto Mobility 4 Nov list (5 rows)",
+  "Jetour T2 Matte 1,930,000 (accepted 1,970,000 kept)"
+ ],
+ "p1_open_items": [
+  "P1-MAP-01 build_u12 label-match defect: patch vehicle-data/handoff/patches/p1-build_u12-p2-price-canonical-20261103.patch (stale S0 rows set from-price on 58 models in U12-CEO3)",
+  "CEO-confirmed rows now carry price_id prefixes ceo1102-* and ceo1104-*; build_u12 confirmed-cohort branch requires confirmation_status/authority/price_id/source_sha256 per trim (all present)"
+ ]
+}
