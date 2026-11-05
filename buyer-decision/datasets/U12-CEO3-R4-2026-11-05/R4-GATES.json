@@ -3,69 +3,37 @@
  "p2_revision": "ad4cc5e906b4",
  "p2_accepted_in_p1": 269,
  "rendered_model_lists": 784,
- "failures": {
-  "price": 0,
-  "model_year": 1,
-  "trims": 3,
-  "official": 2,
-  "holds": 0,
-  "labels": 0
- },
- "detail": {
-  "price": [],
-  "model_year": [
-   {
-    "id": "chevrolet/captiva",
-    "p1": [
-     2026
-    ],
-    "p2": null
-   }
-  ],
-  "trims": [
-   {
-    "id": "chevrolet/captiva",
-    "note": "P2 price_from without trims; P1 not a single from-only version",
-    "p1": [
-     "LV3 (7 Seats)=1400000",
-     "Premier 7 Seats=1400000"
-    ]
-   },
+ "info": {
+  "display_merged": [
    {
     "id": "mercedes/e-class",
-    "p1_only": [],
-    "p2_only": [
+    "not_listed_separately": [
      "e 200 saloon / exclusive=5870000"
     ]
    },
    {
     "id": "renault/austral",
-    "p1_only": [],
-    "p2_only": [
+    "not_listed_separately": [
      "evolution facelift=1550000",
      "iconic facelift=1790000",
      "techno facelift=1690000"
     ]
    }
-  ],
-  "official": [
-   {
-    "id": "chevrolet/captiva",
-    "version": "LV3 (7 Seats)",
-    "min": 1400000,
-    "p1_official": false,
-    "expected": true,
-    "tier": "A"
-   },
-   {
-    "id": "chevrolet/captiva",
-    "version": "Premier 7 Seats",
-    "min": 1400000,
-    "p1_official": false,
-    "expected": true,
-    "tier": "A"
-   }
-  ],
+  ]
+ },
+ "failures": {
+  "price": 0,
+  "model_year": 0,
+  "trims": 0,
+  "official": 0,
+  "holds": 0,
+  "labels": 0
+ },
+ "detail": {
+  "price": [],
+  "model_year": [],
+  "trims": [],
+  "official": [],
   "holds": [],
   "labels": []
  }

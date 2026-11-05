@@ -4,8 +4,8 @@
  "universe_version": "U12-CEO3-R4-2026-11-05",
  "kind": "CANDIDATE recommendation view — test link only; U11 stays the production binding until acceptance",
  "file": "recommendation_view.json",
- "sha256": "774ce71b340ab63b65c064421ba9468fc50de62a373deee40a4eaca8d9c46ae0",
- "content_sha256": "91b4f81c492fc48998504935d39915351aac5fc4ed184a262d44fa5e07e37736",
+ "sha256": "3e9b7d8d0619635b4bd6b5a252d6dd75763ae1ad9101fc6ea4da0c4db93a66a0",
+ "content_sha256": "0d34e538944e02cf2244505902c095e77d3b2df552fc980bfb43ba292a6ecddb",
  "identities": 424,
  "models_in_universe": 423,
  "base": {
@@ -2978,9 +2978,11 @@
     "tier": "A",
     "as_of": "2026-10-13",
     "superseded": [
-     "LV3 (7seats)=1300000 MY2026 @2026-09-10"
+     "LV3 (7seats)=1300000 MY2026 @2026-09-10",
+     "LV3 (7 Seats)=1400000 MY2026 @2026-09-10",
+     "Premier 7 Seats=1400000 MY2026 @2026-09-10"
     ],
-    "from_only_version": false
+    "from_only_version": true
    },
    {
     "id": "bmw/7-series",

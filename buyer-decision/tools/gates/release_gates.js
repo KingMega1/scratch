@@ -11,7 +11,7 @@ const acc = {};
 for (const e of [...S.entries, ...(S.market_additions || [])]) { const p = e.accepted && e.accepted.price; if (p && p.price_from > 0) acc[e.p1_id || e.identity] = p; }
 const norm = s => String(s || '').trim().toLowerCase().replace(/\s+/g, ' ');
 const F = { price: [], model_year: [], trims: [], official: [], holds: [], labels: [] };
-let checked = 0;
+let checked = 0; const INFO = { display_merged: [] };
 for (const [id, p] of Object.entries(acc)) {
   const m = by[id]; if (!m) continue; checked++;
   const cur = E.currentTrims(m), from = cur.length ? Math.min(...cur.map(t => t.min)) : null;
@@ -20,8 +20,12 @@ for (const [id, p] of Object.entries(acc)) {
   if (cur.some(t => (t.year ?? null) !== y1) || y1 !== y2) F.model_year.push({ id, p1: [...new Set(cur.map(t => t.year))], p2: y2 });
   const pt = (p.trims || []).filter(t => t.price_egp > 0 && (t.model_year ?? null) === y2);
   if (pt.length) {
-    const a = cur.map(t => `${norm(t.label)}=${t.min}`).sort(), b = [...new Set(pt.map(t => `${norm(t.label)}=${t.price_egp}`))].sort();
+    // parity on the data rows of the current model year; the engine's same-price de-duplication on screen is reported as info
+    const rows = m.trims.filter(t => t.min > 0 && (t.year ?? null) === y1);
+    const a = [...new Set(rows.map(t => `${norm(t.label)}=${t.min}`))].sort(), b = [...new Set(pt.map(t => `${norm(t.label)}=${t.price_egp}`))].sort();
     if (JSON.stringify(a) !== JSON.stringify(b)) F.trims.push({ id, p1_only: a.filter(x => !b.includes(x)), p2_only: b.filter(x => !a.includes(x)) });
+    const shown = new Set(cur.map(t => `${norm(t.label)}=${t.min}`)), merged = a.filter(x => !shown.has(x));
+    if (merged.length) INFO.display_merged.push({ id, not_listed_separately: merged });
   } else if (!(cur.length === 1 && cur[0].price_from_only !== undefined ? true : cur.length === 1 && cur[0].min === p.price_from)) F.trims.push({ id, note: 'P2 price_from without trims; P1 not a single from-only version', p1: cur.map(t => t.label + '=' + t.min) });
   const never = OVR.never_official_brands[m.brand_id];
   for (const t of cur) {
@@ -56,5 +60,5 @@ for (const lang of ['en', 'ar']) {
     if (li.length !== cur.length) F.labels.push({ lang, id: m.id, issue: 'version count', li: li.length, cur: cur.length });
   }
 }
-const out = { dataset: ds.universe_version, p2_revision: S.revision, p2_accepted_in_p1: checked, rendered_model_lists: rendered, failures: Object.fromEntries(Object.entries(F).map(([k, v]) => [k, v.length])), detail: F };
+const out = { dataset: ds.universe_version, p2_revision: S.revision, p2_accepted_in_p1: checked, rendered_model_lists: rendered, info: INFO, failures: Object.fromEntries(Object.entries(F).map(([k, v]) => [k, v.length])), detail: F };
 console.log(JSON.stringify(out, null, 1)); process.exit(Object.values(F).some(v => v.length) ? 1 : 0);

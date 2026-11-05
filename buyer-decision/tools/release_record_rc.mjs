@@ -18,9 +18,9 @@ const T1 = JSON.parse(fs.readFileSync(path.join(ROOT, 'release/P1-RELEASE-T1.jso
 const changed = Object.values(T1.files).filter(f => f.path.startsWith('buyer-decision/app/') || f.path.startsWith('buyer-decision/transport/'))
   .map(f => f.path.replace('buyer-decision/', '')).filter(f => fs.existsSync(path.join(ROOT, f)) && at(f).sha256 !== T1.files[Object.keys(T1.files).find(k => T1.files[k].path === 'buyer-decision/' + f)].sha256);
 const rec = {
-  record: `P1-RELEASE-${RC}`, status: 'CANDIDATE — not released', created: new Date().toISOString().slice(0, 10), owner: 'P1', task: 'P1-READINESS-02',
+  record: `P1-RELEASE-${RC}`, status: process.env.RELEASE_STATUS || 'CANDIDATE — not released', ...(process.env.RELEASE_ACCEPTANCE ? { acceptance: JSON.parse(process.env.RELEASE_ACCEPTANCE) } : {}), created: new Date().toISOString().slice(0, 10), owner: 'P1', task: 'P1-READINESS-02',
   repo: 'KingMega1/scratch', branch: 'claude/carindex-buyer-decision-slice-applo4', source_commit: git('rev-parse', sc),
-  production_binding_unchanged: 'P1-RELEASE-T1 (engine E6-2026-09-28, U11-2026-09-26) stays bound until this candidate is accepted',
+  production_binding_unchanged: process.env.RELEASE_STATUS === 'ACCEPTED' ? 'P1 made no production change. P5 binds this release after its integration checks (see p5_handoff); until then production stays on P1-RELEASE-T1.' : 'P1-RELEASE-T1 (engine E6-2026-09-28, U11-2026-09-26) stays bound until this candidate is accepted',
   release_gates_open: process.env.RELEASE_GATES_OPEN ? JSON.parse(process.env.RELEASE_GATES_OPEN) : [
     `Release acceptance of engine E6.1 + dataset ${RC}`,
   ],
@@ -40,7 +40,7 @@ const rec = {
     browser_app: at('app/app.js'), redaction: at('app/redact.js'), tracking: at('app/track.js'),
     transport: at('transport/reco.js'), schema: at('transport/ci.reco.v1.schema.json'), p5_handoff: at(`transport/P5-HANDOFF-${RC}.md`),
     dataset_manifest: at(`${DS}/manifest.json`), dataset_view: at(`${DS}/recommendation_view.json`),
-    ...Object.fromEntries([['eligibility_manifest', 'ELIGIBILITY-MANIFEST.csv'], ['coverage_report', 'COVERAGE-REPORT.md'], ['regression_report', 'REGRESSION_REPORT.md'], ['p2_handoff', 'P2-HANDOFF-missing-facts.csv']]
+    ...Object.fromEntries([['eligibility_manifest', 'ELIGIBILITY-MANIFEST.csv'], ['coverage_report', 'COVERAGE-REPORT.md'], ['regression_report', 'REGRESSION_REPORT.md'], ['release_gates', 'R4-GATES.json'], ['p2_price_agreement', 'P2-PRICE-AGREEMENT.json'], ['p2_handoff', 'P2-HANDOFF-missing-facts.csv']]
       .filter(([, f]) => fs.existsSync(path.join(ROOT, DS, f))).map(([k, f]) => [k, at(`${DS}/${f}`)])),
   },
   semantic_changes: 'Ranking: NONE. Parser understanding fixes (ranges, +10% stated as %, brand-only phrasings, running costs, Arabic fuel priority, plug-in check) and transport T1.2 (editBrief, budget guard): see transport/P5-HANDOFF-U12-CEO2.md. Eligibility data policy per CEO 2026-10-21 (market prices for unpriced cars, no size hold, coupes/convertibles/vans included; see dataset manifest changes.policy). Engine E6.1 (vs T1): a held market car reports unknown_size / scope instead of not_on_sale. Transport T1.1: no compare table for a single-car result, matching the released app.',

@@ -141,12 +141,14 @@ for (const r of recs) {
       model_from_only: !acc.length, superseded: previous.map(t => ({ label: t.label, year: t.year, price: t.min })) });
   }
   if (HOLDS[m.id] && !acc.some(t => t.price_egp > 0)) { log.p1_price_holds.push({ id: m.id, withheld: m.trims.map(t => `${t.label}=${t.min}`), reason: HOLDS[m.id] }); m.trims = []; }
-  // P2 accepted only a model-level starting price (no version rows): carried versions priced below it are contradicted by it
+  // P2 accepted only a model-level starting price (no version rows): carried versions priced below it (any carried version when
+  // the price is Tier A) are contradicted by it
   // and dropped; when nothing priced remains, the accepted starting price becomes one 'Unspecified trim' version flagged
   // price_from_only (official only when P2's tier is A). Never invents a version name or a model year.
   const pfm = a.accepted && a.accepted.price;
   if (P2_PRICE_CANONICAL && pfm && pfm.price_from > 0 && !acc.some(t => t.price_egp > 0)) {
-    const below = m.trims.filter(t => t.min > 0 && t.min < pfm.price_from);
+    // Tier A (official) model-level price: it replaces every carried version (CEO decision A, 2026-11-05: Chevrolet Captiva)
+    const below = m.trims.filter(t => t.min > 0 && (pfm.tier === 'A' || t.min < pfm.price_from));
     if (below.length) m.trims = m.trims.filter(t => !below.includes(t));
     const added = !m.trims.some(t => t.min > 0);
     if (added) { const single = (m.powertrains || []).length === 1 ? m.powertrains[0] : null;
