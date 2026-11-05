@@ -14,8 +14,8 @@ class Intake20261104(unittest.TestCase):
 
     def test_all_52_dispositioned(self):
         self.assertEqual(len(self.led), 52)
-        self.assertEqual(collections.Counter(r["disposition"] for r in self.led), {"ACCEPT": 15, "UNCHANGED": 31, "HOLD": 6})
-        self.assertEqual({r["ledger_row_id"] for r in self.acc}, {r["row_id"] for r in self.led if r["disposition"] == "ACCEPT"})
+        self.assertEqual(collections.Counter(r["disposition"] for r in self.led), {"ACCEPT": 20, "UNCHANGED": 31, "HOLD": 1})
+        self.assertEqual({r["ledger_row_id"] for r in self.acc}, {r["row_id"] for r in self.led if r["disposition"] == "ACCEPT" and r["p1_id"].startswith("nissan/")})
 
     def test_unchanged_equal_accepted(self):
         for r in self.led:
@@ -27,7 +27,11 @@ class Intake20261104(unittest.TestCase):
         self.assertEqual((p("nissan/sunny")["price_from"], p("nissan/x-trail")["price_from"]), (820000, 2500000))
         self.assertEqual({t["label"]: t["price_egp"] for t in p("jetour/t2")["trims"]}, {"Luxury": 1900000, "Matte Color": 1970000})  # held 1,930,000 not applied
         self.assertEqual({t["label"]: t["price_egp"] for t in p("jetour/t1")["trims"]}, {"Luxury": 1730000, "Matte Color": 1760000})  # matte total kept separate
-        self.assertEqual(p("geely/emgrand")["price_from"], 839000)  # Geely Auto Mobility rows held
+        # CEO 2026-11-05: Auto Mobility CKD and Abou Ghaly lists complement each other (both served, neither superseded)
+        for k, n in (("geely/emgrand", 4), ("geely/cool-ray", 6)):
+            iss = {t["issuer"].split(" (")[0] for t in p(k)["trims"]}
+            self.assertEqual((len(p(k)["trims"]), iss), (n, {"Abou Ghaly Motors", "Auto Mobility"}))
+        self.assertEqual(p("geely/emgrand")["price_from"], 839000)
         self.assertIsNone(p("volkswagen/passat"))
         self.assertEqual((p("peugeot/2008")["price_from"], p("peugeot/2008")["model_year"]), (1499990, 2027))
         self.assertEqual(self.rel["release_id"], "P2-CEO-CONFIRMED-20261102-R1")

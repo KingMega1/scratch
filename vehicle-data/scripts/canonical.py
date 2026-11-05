@@ -397,6 +397,11 @@ def tier_a(market, stated=()):
     return rows
 
 
+def price_channels():
+    p = os.path.join(ROOT, "config", "price_channels.json")
+    return json.load(open(p))["channels"] if os.path.exists(p) else {}
+
+
 def supersede(a_rows, b_rows):
     docs = collections.defaultdict(list)  # PS-3
     for r in a_rows:
@@ -406,7 +411,9 @@ def supersede(a_rows, b_rows):
     for r in a_rows:
         if r["status"] != "ACCEPT" or r["tier"] != "A" or r["p1_id"] not in docs:
             continue
+        chan = set(price_channels().get(r["p1_id"], []))  # PS-3c: complementary distributor channels never supersede each other
         newer = [d for d in docs[r["p1_id"]] if d["issuer"] != r["issuer"] and d["effective_date"] > (r["effective_date"] or "")
+                 and not (r["issuer"] in chan and d["issuer"] in chan)
                  and (not str(r["model_year"]) or str(d["model_year"]) == str(r["model_year"]))]
         if not newer:
             continue

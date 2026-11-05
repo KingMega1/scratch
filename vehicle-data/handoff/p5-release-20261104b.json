@@ -4,11 +4,11 @@
  "date": "2026-11-04",
  "sequence": "b",
  "release_id": "P2-CEO-CONFIRMED-20261102-R1",
- "revision": "ad4cc5e906b4",
+ "revision": "f9a747f195b4",
  "release_file": "vehicle-data/views/catalogue-serving.release.json",
- "release_sha256": "e6d2711d70a786c52cacfd8aa87d0a4fa60d3529434a732431cacd94e41ceb0b",
+ "release_sha256": "13b47ee36a53e672f3ef8b89336d533689067a7bc8ab9662bd7846d6e5b42ad3",
  "canonical_file": "vehicle-data/views/canonical_u11.json",
- "canonical_sha256": "4db567bd0fe5d73c22d0bcdc0efe58a562b327503165c849a83290149a41ebbe",
+ "canonical_sha256": "efde678d3f63aad677a51e5ac0413d6ef073c820e2c6d25aa298b230fa23134f",
  "counts_283": {
   "models": 283,
   "id_accepted": 283,
@@ -49,7 +49,7 @@
   "media/models/geely-ex5/04.webp",
   "media/models/hyundai-tucson/06.webp"
  ],
- "changes": "consolidated media acceptance (12 accepted, 7 held, 1 rejected) and PR #11 corrections (Passat price held; Peugeot 2008 MY2027 from 1,499,990); see review/media_price_acceptance_20261104.json; CEO-MEDIA-2026-11-04: EX2/EX5 configurator renders and LHD-verified Tucson cabin added as galleries (15 accepted, 4 held, 1 rejected); 4 Nov CEO intake: 52 observations -> 15 ACCEPT (Nissan Sunny/Magnite/Juke/Qashqai/X-Trail, MY2027, printed Nov 2026), 31 UNCHANGED, 6 HOLD; see review/ceo_acceptance_20261104.json",
+ "changes": "consolidated media acceptance (12 accepted, 7 held, 1 rejected) and PR #11 corrections (Passat price held; Peugeot 2008 MY2027 from 1,499,990); see review/media_price_acceptance_20261104.json; CEO-MEDIA-2026-11-04: EX2/EX5 configurator renders and LHD-verified Tucson cabin added as galleries (15 accepted, 4 held, 1 rejected); 4 Nov CEO intake: 52 observations -> 15 ACCEPT (Nissan Sunny/Magnite/Juke/Qashqai/X-Trail, MY2027, printed Nov 2026), 31 UNCHANGED, 6 HOLD; see review/ceo_acceptance_20261104.json; Geely Auto Mobility CKD rows added alongside Abou Ghaly (complementary)",
  "verified": "P5 local CI on d602dac with this release + media: typecheck, verify:p1, unit 72/72, build, smoke 236 passed / 6 skipped",
  "deploy": "not performed; no production deployment",
  "p5_blocker": "web/tests/unit/catalogue-coverage.test.mjs:189 asserts every CEO-confirmed price_id starts with 'ceo1102-'; 4 Nov rows are 'ceo1104-'. Change to /^ceo\\d{4}-/ (P5-owned). Otherwise P5 local CI on d602dac: typecheck PASS, unit 71/72 (that test only), build PASS, smoke 236 passed / 6 skipped"

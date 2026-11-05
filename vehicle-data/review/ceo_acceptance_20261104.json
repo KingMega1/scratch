@@ -6,9 +6,9 @@
  "intake": "Control Tower AT-39 page, section 'Next P2 approval cycle — CEO-supplied November price intake — 4 November 2026' (https://app.notion.com/p/3ec6811407bc81e4ba5edf713b70b481)",
  "priced_observations": 52,
  "dispositions": {
-  "ACCEPT": 15,
+  "ACCEPT": 20,
   "UNCHANGED": 31,
-  "HOLD": 6
+  "HOLD": 1
  },
  "accepted_retail_rows": 15,
  "by_source": {
@@ -32,7 +32,8 @@
   },
   "geely": {
    "rows": 5,
-   "HOLD": 5
+   "ACCEPT": 5,
+   "accepted_via": "registry/price_evidence_manual.csv (complementary channel, config/price_channels.json)"
   }
  },
  "source_files": [
@@ -67,5 +68,6 @@
   "nissan": "5 years/150,000 km",
   "baic": "7 years/200,000 km"
  },
- "ledger_sha256": "3fe724ada1175eb805a31617eae346866f686bae1b335ea198555a3be3474cf2"
+ "ledger_sha256": "efda76c75f03692ad0fdadac4f3df64c30de2f732fd8d248a7cd87f06dab7660",
+ "ceo_decision_20261105": "Geely Auto Mobility and Abou Ghaly lists complement each other"
 }

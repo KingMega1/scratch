@@ -25202,6 +25202,17 @@
             },
             {
               "model_year": 2027,
+              "label": "Comfort (Auto Mobility CKD)",
+              "price_egp": 999000,
+              "tier": "A",
+              "effective_date": "2026-11-04",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-11-04",
+              "issuer": "Auto Mobility (Geely distributor, CKD) price list (CEO-supplied)",
+              "evidence_url": "https://app.notion.com/p/3ec6811407bc81e4ba5edf713b70b481"
+            },
+            {
+              "model_year": 2027,
               "label": "Premium GK",
               "price_egp": 1075000,
               "tier": "A",
@@ -25213,6 +25224,17 @@
             },
             {
               "model_year": 2027,
+              "label": "Sport (Auto Mobility CKD)",
+              "price_egp": 1119000,
+              "tier": "A",
+              "effective_date": "2026-11-04",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-11-04",
+              "issuer": "Auto Mobility (Geely distributor, CKD) price list (CEO-supplied)",
+              "evidence_url": "https://app.notion.com/p/3ec6811407bc81e4ba5edf713b70b481"
+            },
+            {
+              "model_year": 2027,
               "label": "Sport GF Plus",
               "price_egp": 1199000,
               "tier": "A",
@@ -25221,6 +25243,17 @@
               "as_of": "2026-10-18",
               "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
               "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view"
+            },
+            {
+              "model_year": 2027,
+              "label": "Sport + (Auto Mobility CKD)",
+              "price_egp": 1199000,
+              "tier": "A",
+              "effective_date": "2026-11-04",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-11-04",
+              "issuer": "Auto Mobility (Geely distributor, CKD) price list (CEO-supplied)",
+              "evidence_url": "https://app.notion.com/p/3ec6811407bc81e4ba5edf713b70b481"
             }
           ]
         },
@@ -62956,7 +62989,7 @@
       "retained_in_p2": true
     }
   ],
-  "revision": "ad4cc5e906b4",
+  "revision": "f9a747f195b4",
   "market_additions": [
     {
       "p1_id": null,
@@ -72282,6 +72315,18 @@
             },
             {
               "model_year": 2027,
+              "label": "Comfort (Auto Mobility CKD)",
+              "price_egp": 879000,
+              "tier": "A",
+              "effective_date": "2026-11-04",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-11-04",
+              "issuer": "Auto Mobility (Geely distributor, CKD) price list (CEO-supplied)",
+              "evidence_url": "https://app.notion.com/p/3ec6811407bc81e4ba5edf713b70b481",
+              "powertrain": "Petrol"
+            },
+            {
+              "model_year": 2027,
               "label": "Luxury GF",
               "price_egp": 939000,
               "tier": "A",
@@ -72290,6 +72335,18 @@
               "as_of": "2026-10-18",
               "issuer": "Abou Ghaly Motors (Geely distributor) price list (CEO-supplied)",
               "evidence_url": "https://drive.google.com/file/d/1jPSMgokz0VMuJJEveLFzJufxaUw6R0b7/view",
+              "powertrain": "Petrol"
+            },
+            {
+              "model_year": 2027,
+              "label": "Luxury (Auto Mobility CKD)",
+              "price_egp": 979000,
+              "tier": "A",
+              "effective_date": "2026-11-04",
+              "date_basis": "SOURCE_STATED",
+              "as_of": "2026-11-04",
+              "issuer": "Auto Mobility (Geely distributor, CKD) price list (CEO-supplied)",
+              "evidence_url": "https://app.notion.com/p/3ec6811407bc81e4ba5edf713b70b481",
               "powertrain": "Petrol"
             }
           ],
