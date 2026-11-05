@@ -3,25 +3,25 @@
  "task_id": "AT-39/AT-51",
  "date": "2026-11-05",
  "release_id": "P2-CEO-CONFIRMED-20261102-R1",
- "revision": "f9a747f195b4",
+ "revision": "7bd2d1fb1966",
  "release_file": "vehicle-data/views/catalogue-serving.release.json",
- "release_sha256": "13b47ee36a53e672f3ef8b89336d533689067a7bc8ab9662bd7846d6e5b42ad3",
- "canonical_sha256": "efde678d3f63aad677a51e5ac0413d6ef073c820e2c6d25aa298b230fa23134f",
+ "release_sha256": "48a58939da4073d20e98a7e12eb70d2a76f01476ff360f43adfc93b249511266",
+ "canonical_sha256": "b00515e09c780063d6a59a97afea49feb8997cfb11d19ec060d14b5a3cf44e38",
  "p1_currently_pinned_p2_input": "5a373d7 (serving 2b796199)",
- "consume": "rebuild the P1 candidate from this release (build_u12.mjs with P2 dir at the commit recorded in this handoff)",
+ "consume": "rebuild the P1 candidate from P2 commit 956a9a70096119075c52e18f4a8e8f7dd2fa1544 (vehicle-data/views/catalogue-serving.release.json sha256 48a58939da4073d20e98a7e12eb70d2a76f01476ff360f43adfc93b249511266); do not follow the moving branch",
  "changes_since_5a373d7": [
   "Passat: accepted price held (none served)",
   "Peugeot 2008: MY2027 from 1,499,990 (PY-1 parse fix)",
   "Nissan 4 Nov list: Sunny from 820,000; Magnite 860,000; Juke 1,189,999; Qashqai 1,650,000; X-Trail 2,500,000 (CEO_CONFIRMED, price_id ceo1104-*, printed_date 2026-11, no effective day)",
   "media: Geely EX2/EX5 HQ heroes + galleries, Tucson galleries, BAIC logo (P1 uses no media)",
-  "Geely Emgrand/Coolray: Auto Mobility CKD list (4 Nov) served alongside Abou Ghaly list (CEO 2026-11-05: complementary channels); from-prices unchanged 839,000 / 975,000"
+  "Geely Emgrand/Coolray: Auto Mobility CKD list (4 Nov, verified against Drive original) served alongside the Abou Ghaly list (CEO 2026-11-05: complementary); from-prices 839,000 / 975,000",
+  "Jetour T2 Matte Color 1,930,000 (ceo1104-016, Kasrawy-branded original) replaces 1,970,000 (ceo1102-060); T2 from-price unchanged 1,900,000"
  ],
  "unchanged": "Jetour/Citroen/BAIC 4 Nov rows equal the accepted 2 Nov rows; Nissan Patrol equal to accepted",
- "held": [
-  "Jetour T2 Matte 1,930,000 (accepted 1,970,000 kept)"
- ],
+ "held": [],
  "p1_open_items": [
   "P1-MAP-01 build_u12 label-match defect: patch vehicle-data/handoff/patches/p1-build_u12-p2-price-canonical-20261103.patch (stale S0 rows set from-price on 58 models in U12-CEO3)",
   "CEO-confirmed rows now carry price_id prefixes ceo1102-* and ceo1104-*; build_u12 confirmed-cohort branch requires confirmation_status/authority/price_id/source_sha256 per trim (all present)"
- ]
+ ],
+ "frozen_serving_commit": "956a9a70096119075c52e18f4a8e8f7dd2fa1544"
 }
