@@ -25,7 +25,6 @@ function href(locale: Locale, q: CarQuery, patch: Partial<CarQuery>) {
   if (m.min != null) sp.set('min', String(m.min));
   if (m.max != null) sp.set('max', String(m.max));
   if (m.pt) sp.set('pt', m.pt);
-  if (m.official) sp.set('official', '1');
   if (m.sort && m.sort !== 'popular') sp.set('sort', m.sort);
   if (m.page && m.page > 1) sp.set('page', String(m.page));
   const s = sp.toString();
@@ -42,7 +41,7 @@ export default async function Cars({ params, searchParams }: P) {
   const brand = q.brand ? vehicles().brands().find(b => b.id === q.brand) : null;
   const all = vehicles().all().length;
   const bandOn = (b: { min?: number; max?: number }) => q.min === b.min && q.max === b.max;
-  const hasFilters = q.body || q.brand || q.min != null || q.max != null || q.pt || q.official;
+  const hasFilters = q.body || q.brand || q.min != null || q.max != null || q.pt;
   const fuels = PTS.filter(p => p !== 'ice' && vehicles().all().some(x => x.powertrains.includes(p)));
 
   return (
@@ -63,7 +62,6 @@ export default async function Cars({ params, searchParams }: P) {
           {fuels.map(p => (
             <Link key={p} className="chip" href={href(locale, q, { pt: p })} aria-current={q.pt === p ? 'true' : undefined}>{t.pt[p]}</Link>
           ))}
-          <Link className="chip" href={href(locale, q, { official: !q.official })} aria-current={q.official ? 'true' : undefined}>{c.officialOnly}</Link>
         </div>
         <div className="filter-row">
           <span className="label">{t.compare.rows.body}</span>
@@ -74,7 +72,7 @@ export default async function Cars({ params, searchParams }: P) {
         </div>
         <div className="filter-row">
           <span className="label">{c.sort}</span>
-          {([['popular', c.sortPopular], ['price_asc', c.sortPriceAsc], ['price_desc', c.sortPriceDesc]] as const).map(([k, label]) => (
+          {([['popular', c.sortPopular], ['newest', c.sortNewest], ['price_asc', c.sortPriceAsc], ['price_desc', c.sortPriceDesc]] as const).map(([k, label]) => (
             <Link key={k} className="chip" href={href(locale, q, { sort: k })} aria-current={q.sort === k ? 'true' : undefined}>{label}</Link>
           ))}
           {hasFilters ? <Link className="link" href={`/${locale}/cars`}>{c.clear}</Link> : null}

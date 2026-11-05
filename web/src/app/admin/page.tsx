@@ -1,5 +1,5 @@
 import { vehicles } from '@/server/vehicles/read-model';
-import { release, BOUND } from '@/server/p1/release';
+import { release, selectedBinding } from '@/server/p1/release';
 import manifest from '@data/registry/sync-manifest.json';
 import { notFound } from 'next/navigation';
 
@@ -8,7 +8,7 @@ export default function Admin() {
   if (!process.env.ADMIN_BASIC_AUTH_USER || !process.env.ADMIN_BASIC_AUTH_PASS) notFound();
   const m = vehicles().meta();
   const r = release();
-  const p1 = { bound: BOUND, ok: r.ok, checks: r.checks, error: r.ok ? null : r.error };
+  const p1 = { bound: selectedBinding(), ok: r.ok, checks: r.checks, error: r.ok ? null : r.error };
   return (
     <div className="wrap section">
       <h1>Internal status</h1>

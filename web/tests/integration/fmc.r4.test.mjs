@@ -3,24 +3,23 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
 import { createRequire } from 'node:module';
-const require=createRequire(import.meta.url), root='../../p1-candidate/U12-CEO3-R3/buyer-decision/';
+const require=createRequire(import.meta.url), root='../../p1-accepted/U12-CEO3-R4/buyer-decision/';
 const T=require(root+'transport/reco.js');
-const rec=JSON.parse(fs.readFileSync(new URL(root+'release/P1-RELEASE-U12-CEO3-R3.json',import.meta.url)));
-const ds=T.loadAcceptedDataset(new URL(root+ 'datasets/U12-CEO3-R3-2026-11-04',import.meta.url).pathname);
+const rec=JSON.parse(fs.readFileSync(new URL(root+'release/P1-RELEASE-U12-CEO3-R4.json',import.meta.url)));
+const ds=T.loadAcceptedDataset(new URL(root+ 'datasets/U12-CEO3-R4-2026-11-05',import.meta.url).pathname);
 const base=process.env.FMC_BASE_URL||'http://localhost:3210';
 async function api(body){const res=await fetch(base+'/api/v1/recommendation',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(body)});const j=await res.json();assert.equal(res.status,200,JSON.stringify(j));return j;}
 const direct=(b,l)=>T.execute(T.normalize(b,ds),ds,{locale:l});
 const ids=r=>[r.hero,...r.alternatives].filter(Boolean).map(c=>c.id);
-test('candidate status and P1/P2 exact provenance',async()=>{
+test('R4 accepted status and P1/P2 exact provenance',async()=>{
  const j=await api({op:'status',locale:'en'}); assert.equal(j.status.record,rec.record); assert.equal(j.status.dataset_sha256,rec.dataset.content_sha256);
- const h=await (await fetch(base+'/api/health')).json();assert.equal(h.recommendation.release_commit,'3faad56347e686ca0969a6d1613c0d1aca6c7749');
+ const h=await (await fetch(base+'/api/health')).json();assert.equal(h.recommendation.release,'P1-RELEASE-U12-CEO3-R4');assert.equal(h.recommendation.release_commit,'22c5fe3a68803a4c4afe41b42774b065e7c6b0e1');assert.equal(rec.status,'ACCEPTED');
  const p2=JSON.parse(fs.readFileSync(new URL('../../data/registry/catalogue-serving.release.json',import.meta.url)));
- assert.equal(rec.p2_input.commit,'dfbcccc4857428beaa1cb7ec68865cc1846f896a');
+ assert.equal(rec.p2_input.commit,'3b4b5ef0eedf3eeed1ca91fb597bc0394e3050f1');
  assert.ok(p2);
- // P5 serves either R3's exact P2 input (dfbcccc) or P2 635b897 (revision 03089cc2febb, release sha 8429ddba…), which adds
- // only three gallery photos (EX2 04, EX5 04, Tucson 06); no price, identity or spec change. Nothing else is accepted.
+ // R4 was accepted on P2 3b4b5ef; P5 must serve exactly that serving release (sha256 e6d2711d…), nothing else.
  const served=createHash('sha256').update(fs.readFileSync(new URL('../../data/registry/catalogue-serving.release.json',import.meta.url))).digest('hex');
- assert.ok([rec.p2_input.files['catalogue-serving.release.json'],'8429ddbaf4462d268068a43a5f2d87071a8e806d6d0af0f71c19d30884b3879c'].includes(served),served);
+ assert.equal(served,rec.p2_input.files['catalogue-serving.release.json']);assert.equal(served,'e6d2711d70a786c52cacfd8aa87d0a4fa60d3529434a732431cacd94e41ceb0b');
 });
 for(const [locale,text] of [['en','SUV from 1.2M to 1.5M, anything but Kia, low running costs'],['ar','عربية عالية من 1.2 مليون لـ 1.5 مليون، اي حاجه غير كيا، الأهم عندي البنزين']]) test(locale+' range, exclusions, edits, share and exact P1 output',async()=>{
  const v=await api({op:'start',path:'text',text,locale});

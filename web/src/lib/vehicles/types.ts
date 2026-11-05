@@ -20,6 +20,9 @@ export interface OfficialPrice {
   values: number[];          // CONFLICT: every disagreeing value, never averaged
   agreedBySources: number;   // count of sources giving the figure
   sources: SourceRef[];
+  /* false = P2-accepted but not an official list price (P2 Tier B/C, or a never-official brand): labelled
+     "Market price, not official" — the same rule P1 R4 applies (official == Tier A). Absent = official. */
+  isOfficial?: boolean;
 }
 
 export interface PublicTrim {
@@ -62,7 +65,11 @@ export interface PublicCar {
     value: number | null; min: number | null; max: number | null;
     sortValue: number | null; // for ordering/filtering only; never displayed as a price
     modelYear: number | null;
+    isOfficial?: boolean;     // see OfficialPrice.isOfficial
   };
+  /* Verified Egypt-market launch date (P2 accepted.egypt_launch_date, YYYY-MM or YYYY-MM-DD). Null until P2 serves one;
+     used only to order "Newest". Price refresh dates never stand in for it. */
+  launchDate?: string | null;
   trims: PublicTrim[];       // latest priced model-year cohort
   otherCohorts: { modelYear: number | null; trims: PublicTrim[] }[];
   modelPrice?: OfficialPrice | null; // P2-accepted model-level starting price when no per-version prices are accepted

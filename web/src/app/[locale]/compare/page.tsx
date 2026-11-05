@@ -37,7 +37,7 @@ export default async function Compare({ params, searchParams }: P) {
   const rows: [string, (car: PublicCar) => React.ReactNode][] = [
     [c.rows.from, x => <PriceFrom car={x} locale={locale} />],
     [c.rows.to, x => top(x) ? <OfficialFigure o={top(x)!.official} locale={locale} /> : noPrice],
-    [c.rows.state, x => <PriceState state={x.priceFrom.state} locale={locale} />],
+    [c.rows.state, x => <PriceState state={x.priceFrom.state} official={x.priceFrom.isOfficial !== false} locale={locale} />],
     [c.rows.versions, x => x.trims.length ? <span className="tnum">{x.trims.length}</span> : dash],
     [c.rows.pt, x => x.powertrains.length ? x.powertrains.map(p => t.pt[p]).join(' / ') : dash],
     [c.rows.hp, x => spec(x, 'horsepower')],

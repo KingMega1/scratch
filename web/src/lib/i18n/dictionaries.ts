@@ -29,7 +29,7 @@ const ar = {
     proof: (n: string, o: string) => `${n} موديل معروض · ${o} منهم بأسعار رسمية`,
     whyH: 'ليه كار إندكسد', whySub: 'تلات حاجات كل صفحة في الموقع لازم تلتزم بيها.',
     why: [
-      ['السعر واضح', 'السعر قدامك على طول، ومصدره وتاريخه في التفاصيل.'],
+      ['اعرف إيه اللي يناسبك', 'نساعدك تقارن العربيات حسب استخدامك وأولوياتك، ونوضح لك الفرق اللي يهمك قبل ما تختار.'],
       ['بنشرح السبب', 'مش بس اسم عربية. بنقولك ليه ممكن تناسبك، وإيه اللي هتتنازل عنه.'],
       ['مستقلين', 'مش وكيل ولا معرض. مفيش ترتيب مدفوع ولا ظهور مموّل، ونفس المعيار على كل الماركات.'],
     ] as [string, string][],
@@ -62,7 +62,7 @@ const ar = {
     evidence: (src: string, date: string, ver: string) => `مصدر الأسعار: ${src}. آخر تحديث: ${date}. نسخة البيانات: ${ver}.`,
     officialSrc: 'الموقع الرسمي للوكيل', listingSrc: 'مواقع الإعلانات', mixedSrc: 'الموقع الرسمي ومواقع الإعلانات',
   },
-  state: { checked: 'سعر رسمي', near: 'سعر رسمي · نطاق', conflict: 'المصادر مختلفة', unknown: 'السعر غير متاح بعد', stale: 'آخر تأكيد' },
+  state: { checked: 'سعر رسمي', market: 'سعر سوق، مش رسمي', near: 'سعر رسمي · نطاق', conflict: 'المصادر مختلفة', unknown: 'السعر غير متاح بعد', stale: 'آخر تأكيد' },
   v2: {
     market: 'سعر السوق', marketNote: 'سعر السوق سلسلة منفصلة عن السعر الرسمي، ومش بندمجهم.', sources: 'المصادر', lowestQuoted: 'أقل رقم متداول',
     conflictNote: 'المصادر مختلفة على السعر. مش هنختار رقم ولا هناخد متوسط.', values: 'الأرقام',
@@ -77,9 +77,9 @@ const ar = {
   body: { suv: 'SUV', sedan: 'سيدان', hatch: 'هاتشباك', mpv: 'ميني فان', any: 'كل الأنواع' } as Record<string, string>,
   pt: { petrol: 'بنزين', diesel: 'ديزل', ice: 'بنزين أو ديزل', hybrid: 'هجين', phev: 'هجين قابل للشحن', reev: 'كهرباء بمدى ممتد', ev: 'كهرباء' } as Record<string, string>,
   cars: {
-    h1: (_n: string) => 'تصفّح العربيات', filters: 'فلترة', price: 'السعر', all: 'الكل', officialOnly: 'أسعار رسمية بس',
+    h1: (_n: string) => 'تصفّح العربيات', filters: 'فلترة', price: 'السعر', all: 'الكل',
     results: (n: string) => `${n} نتيجة`, empty: 'مفيش عربيات بالفلتر ده. جرّب توسّع السعر أو تشيل فلتر.',
-    sort: 'الترتيب', sortPopular: 'الأكتر تسجيلًا', sortPriceAsc: 'السعر: من الأقل', sortPriceDesc: 'السعر: من الأعلى',
+    sort: 'الترتيب', sortPopular: 'الأكتر تسجيلًا', sortNewest: 'الأحدث', sortPriceAsc: 'السعر: من الأقل', sortPriceDesc: 'السعر: من الأعلى',
     brand: 'الماركة', clear: 'امسح الفلاتر', apply: 'طبّق', pt: 'نوع الوقود',
   },
   bands: [
@@ -179,7 +179,7 @@ const en: Dict = {
     proof: (n: string, o: string) => `${n} models on sale · ${o} with official prices`,
     whyH: 'Why CarIndexed', whySub: 'Three things every page on this site has to agree with.',
     why: [
-      ['Clear prices', 'The price comes first. Its source and date are one tap away.'],
+      ['Find what fits you', 'Compare cars based on how you drive and what matters to you. See the trade-offs before you choose.'],
       ['We explain why', 'Not just a car name. Why it could fit you, and what you’d be giving up.'],
       ['Independent', 'Not a dealer or a showroom. No paid rankings, no sponsored placement, the same standard for every brand.'],
     ],
@@ -212,7 +212,7 @@ const en: Dict = {
     evidence: (src: string, date: string, ver: string) => `Price source: ${src}. Last updated: ${date}. Data version: ${ver}.`,
     officialSrc: 'distributor’s official site', listingSrc: 'listing sites', mixedSrc: 'distributor’s official site and listing sites',
   },
-  state: { checked: 'Official price', near: 'Official · range', conflict: 'Sources disagree', unknown: 'Price not available yet', stale: 'Last checked' },
+  state: { checked: 'Official price', market: 'Market price, not official', near: 'Official · range', conflict: 'Sources disagree', unknown: 'Price not available yet', stale: 'Last checked' },
   v2: {
     market: 'Market price', marketNote: 'Market price is a separate series from the official price; the two are never merged.', sources: 'Sources', lowestQuoted: 'Lowest figure quoted',
     conflictNote: 'Sources disagree on this price. We don’t pick one or average them.', values: 'Figures',
@@ -227,9 +227,9 @@ const en: Dict = {
   body: { suv: 'SUV', sedan: 'Sedan', hatch: 'Hatchback', mpv: 'Minivan', any: 'All types' },
   pt: { petrol: 'Petrol', diesel: 'Diesel', ice: 'Petrol or diesel', hybrid: 'Hybrid', phev: 'Plug-in Hybrid', reev: 'Range-extended electric', ev: 'Electric' } as Record<string, string>,
   cars: {
-    h1: (_n: string) => 'Browse cars', filters: 'Filters', price: 'Price', all: 'All', officialOnly: 'Official prices only',
+    h1: (_n: string) => 'Browse cars', filters: 'Filters', price: 'Price', all: 'All',
     results: (n: string) => `${n} results`, empty: 'No cars match these filters. Widen the price range or remove a filter.',
-    sort: 'Sort', sortPopular: 'Most registered', sortPriceAsc: 'Price: low to high', sortPriceDesc: 'Price: high to low',
+    sort: 'Sort', sortPopular: 'Most registered', sortNewest: 'Newest', sortPriceAsc: 'Price: low to high', sortPriceDesc: 'Price: high to low',
     brand: 'Brand', clear: 'Clear filters', apply: 'Apply', pt: 'Fuel type',
   },
   bands: [

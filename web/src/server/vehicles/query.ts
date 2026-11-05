@@ -2,7 +2,7 @@ import 'server-only';
 import type { Powertrain, PublicCar } from '@/lib/vehicles/types';
 import { brandSlug, vehicles } from './read-model';
 
-export interface CarQuery { body?: string; brand?: string; min?: number; max?: number; pt?: Powertrain; official?: boolean; sort?: 'popular' | 'price_asc' | 'price_desc'; page?: number }
+export interface CarQuery { body?: string; brand?: string; min?: number; max?: number; pt?: Powertrain; sort?: 'popular' | 'price_asc' | 'price_desc' | 'newest'; page?: number }
 export const PAGE_SIZE = 24;
 export const PTS: Powertrain[] = ['petrol', 'diesel', 'hybrid', 'phev', 'reev', 'ev', 'ice'];
 /* Legacy ?pt=ice links keep working: they match every combustion model. */
@@ -18,10 +18,22 @@ export function parseCarQuery(sp: Record<string, string | string[] | undefined>)
     brand: brand && /^[a-z0-9-]{1,40}$/.test(brand) ? brand : undefined,
     min: int(one('min')), max: int(one('max')),
     pt: PTS.includes(pt) ? pt : undefined,
-    official: one('official') === '1',
-    sort: sort === 'price_asc' || sort === 'price_desc' ? sort : 'popular',
+    // ?official=1 (the removed "Official prices only" chip) is ignored, so old links still open the full list.
+    sort: sort === 'price_asc' || sort === 'price_desc' || sort === 'newest' ? sort : 'popular',
     page: Math.max(1, Math.min(100, int(one('page')) || 1)),
   };
+}
+
+/* Newest (CEO 5 Nov): verified Egypt-market launch date first (newest first), then the confirmed (P2-accepted) model year,
+   then cars with neither. Ties fall back to the default order, so the sequence is stable across pages. Sorting runs on
+   the filtered list before pagination. Price refresh / observation dates are never used. */
+const launchKey = (c: PublicCar) => (c.launchDate ? c.launchDate.slice(0, 7) : null);
+function newest(a: PublicCar, b: PublicCar): number {
+  const ra = launchKey(a) ? 0 : a.priceFrom.modelYear != null ? 1 : 2, rb = launchKey(b) ? 0 : b.priceFrom.modelYear != null ? 1 : 2;
+  if (ra !== rb) return ra - rb;
+  if (ra === 0) return launchKey(b)!.localeCompare(launchKey(a)!);
+  if (ra === 1) return b.priceFrom.modelYear! - a.priceFrom.modelYear!;
+  return 0;
 }
 
 /* Price filters use the lowest figure the sources give (priceFrom.sortValue). Unknown prices are excluded from price filters. */
@@ -29,14 +41,15 @@ export function queryCars(q: CarQuery): { items: PublicCar[]; total: number; pag
   let list = vehicles().all().filter(c => {
     const p = c.priceFrom.sortValue;
     return (!q.body || c.body === q.body) && (!q.brand || brandSlug(c.brand.en) === q.brand) && (!q.pt || ptMatch(c, q.pt)) &&
-      (!q.official || c.priceFrom.state === 'checked') &&
       (q.min == null || (p != null && p >= q.min)) && (q.max == null || (p != null && p <= q.max));
   });
   const reg = (c: PublicCar) => c.registrations?.inWindow ?? -1;
   const p = (c: PublicCar) => c.priceFrom.sortValue ?? Number.MAX_SAFE_INTEGER;
+  const popular = (a: PublicCar, b: PublicCar) => reg(b) - reg(a) || a.id.localeCompare(b.id);
   list = [...list].sort(q.sort === 'price_asc' ? (a, b) => p(a) - p(b) || a.id.localeCompare(b.id)
     : q.sort === 'price_desc' ? (a, b) => (b.priceFrom.sortValue ?? -1) - (a.priceFrom.sortValue ?? -1) || a.id.localeCompare(b.id)
-    : (a, b) => reg(b) - reg(a) || a.id.localeCompare(b.id));
+    : q.sort === 'newest' ? (a, b) => newest(a, b) || popular(a, b)
+    : popular);
   const pages = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
   const page = Math.min(q.page || 1, pages);
   return { items: list.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE), total: list.length, pages };

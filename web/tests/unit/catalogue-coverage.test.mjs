@@ -41,6 +41,8 @@ function runtime(path, dependencies){
  new Function('require','module','exports',code)(id=>{
    if(id==='server-only')return {};
    if(id in dependencies)return dependencies[id];
+   // the vendored, hash-checked P1 R4 never-official brand list (read-model official/market label rule)
+   if(id==='../../../p1-accepted/U12-CEO3-R4/buyer-decision/tools/ceo_price_overrides.json')return JSON.parse(readFileSync('p1-accepted/U12-CEO3-R4/buyer-decision/tools/ceo_price_overrides.json','utf8'));
    throw Error('Unexpected runtime import '+id);
  },module,module.exports);
  return module.exports;
@@ -90,8 +92,18 @@ test('actual filters/pagination do not lose models or make unknown prices numeri
  assert.equal(Q.queryCars({}).total,TOTAL);assert.equal(Q.queryCars({}).pages,PAGES);
  const ids=new Set();for(let page=1;page<=PAGES;page++)for(const c of Q.queryCars({page}).items)ids.add(c.id);
  assert.equal(ids.size,TOTAL);
- for(const q of [{min:1},{max:50000000},{official:true}])for(let page=1;page<=PAGES;page++)
+ for(const q of [{min:1},{max:50000000}])for(let page=1;page<=PAGES;page++)
  for(const c of Q.queryCars({...q,page}).items)assert.notEqual(c.priceFrom.sortValue,null);
+ // "Official prices only" was removed (CEO 5 Nov): the parsed query no longer carries it, old ?official=1 links list everything
+ assert.equal('official' in Q.parseCarQuery({official:'1'}),false);
+ // Newest: same filtered set, nothing lost or repeated across pages, model year desc then unknown last, ties in default order
+ const pop=[],nw=[];for(let page=1;page<=PAGES;page++){pop.push(...Q.queryCars({page}).items.map(c=>c.id));nw.push(...Q.queryCars({sort:'newest',page}).items)}
+ assert.equal(new Set(nw.map(c=>c.id)).size,TOTAL);assert.deepEqual(nw.map(c=>c.id).sort(),[...pop].sort());
+ const rk=c=>c.launchDate?0:c.priceFrom.modelYear!=null?1:2;
+ for(let i=1;i<nw.length;i++){const a=nw[i-1],b=nw[i];assert.ok(rk(a)<=rk(b));
+  if(rk(a)===1&&rk(b)===1)assert.ok(a.priceFrom.modelYear>=b.priceFrom.modelYear);
+  if(rk(a)===rk(b)&&(rk(a)!==1||a.priceFrom.modelYear===b.priceFrom.modelYear))assert.ok(pop.indexOf(a.id)<pop.indexOf(b.id),`${a.id} ${b.id}`);}
+ const ev=Q.queryCars({pt:'ev',sort:'newest'});assert.ok(ev.items.every(c=>c.powertrains.includes('ev')));
  assert.equal(Q.queryCars({brand:'nissan'}).total,[...release.entries,...ADD].filter(e=>e.brand==='Nissan').length);
  assert.ok(Q.queryCars({pt:'phev'}).items.every(c=>c.powertrains.includes('phev')));
 });
@@ -186,7 +198,13 @@ test('November CEO intake reaches browse prices with exact provenance and distin
    assert.equal(t.confirmation_status,'CEO_CONFIRMED');
    assert.ok(t.confirmation_authority);
    assert.match(t.source_sha256,/^[a-f0-9]{64}$/);
-   assert.ok(t.price_id.startsWith('ceo1102-'));
+   // Accepted CEO intakes are dated (ceo1102-*, ceo1104-*, ...). Provenance: the ID date, ledger row and as-of date must agree,
+   // and the intake cannot postdate the serving release.
+   const m=/^ceo(\d{2})(\d{2})-\d{3}$/.exec(t.price_id);
+   assert.ok(m,t.price_id);
+   assert.ok(String(t.ledger_row_id).startsWith(`CEO${m[1]}${m[2]}-`),`${t.price_id} ledger ${t.ledger_row_id}`);
+   assert.equal(t.as_of,`${release.generated_as_of.slice(0,4)}-${m[1]}-${m[2]}`,t.price_id);
+   assert.ok(t.as_of<=release.generated_as_of,t.price_id);
   }
  }
  assert.ok(retail>=80);

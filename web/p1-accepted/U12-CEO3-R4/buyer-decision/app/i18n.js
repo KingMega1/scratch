@@ -209,7 +209,8 @@
         longer_warranty: p => `Longer warranty: ${p.a} vs ${p.h} years`, shorter_warranty: p => `Shorter warranty: ${p.a} vs ${p.h} years`,
         hybrid: () => 'Offers a hybrid', ev: () => 'Offers an electric version',
       },
-      n_versions: n => `${n} version(s) within your budget`,
+      n_versions: (n, c) => `${n} ${c === 1 ? 'version' : 'versions'} within your budget`,
+      my: y => `MY${y}`, my_prices: y => `${y} model-year prices`, market_price: 'Market price, not official',
       role: { equal: 'Equally good fit', challenger: 'Worth comparing', yours: 'You mentioned it', runner_up: 'Also a strong fit', powertrain: 'A different powertrain', cheaper: 'Costs less' },
       alts_h: 'Also worth considering', details: 'Full details', compare: 'Compare side by side', compare_hide: 'Hide comparison',
 
@@ -463,6 +464,7 @@
         hybrid: () => 'فيها هايبرد', ev: () => 'فيها فئة كهربا',
       },
       n_versions: n => `${n} فئة في ميزانيتك`,
+      my: y => `موديل ${y}`, my_prices: y => `أسعار موديل ${y}`, market_price: 'سعر سوق، مش رسمي',
       role: { equal: 'مناسبة بنفس الدرجة', challenger: 'تستاهل المقارنة', yours: 'إنت ذكرتها', runner_up: 'مناسبة جدًا برضه', powertrain: 'نوع موتور مختلف', cheaper: 'أرخص' },
       alts_h: 'تستاهل تبص عليها برضه', details: 'كل التفاصيل', compare: 'قارن جنب بعض', compare_hide: 'اخفي المقارنة',
 

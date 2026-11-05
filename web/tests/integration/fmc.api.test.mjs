@@ -1,4 +1,4 @@
-/* Targeted FMC / P1 integration tests (AT-43, P1-RELEASE-T1). Runs against a live server:
+/* Targeted FMC / P1 integration tests (AT-43; P1-RELEASE-T1 or the accepted U12-CEO3-R4, whichever the server binds). Runs against a live server:
      FMC_BASE_URL=http://localhost:3100 [FMC_SERVER_LOG=/path/to/server.log] node --test tests/integration/fmc.api.test.mjs
    Proves: release/version binding, P5 output == P1 transport output (no drop / substitute / rerank / recopy),
    normalize-before-execute, EN/AR engine copy incl. U+2019, outside-24 handling, privacy guards, share round trip. */
@@ -10,14 +10,24 @@ import { createRequire } from 'node:module';
 const BASE = process.env.FMC_BASE_URL || 'http://localhost:3100';
 const HEADERS = { 'content-type': 'application/json', ...(process.env.VERCEL_AUTOMATION_BYPASS_SECRET ? { 'x-vercel-protection-bypass': process.env.VERCEL_AUTOMATION_BYPASS_SECRET } : {}) };
 const require = createRequire(import.meta.url);
-const T = require('../../p1-release/buyer-decision/transport/reco.js');
-const record = JSON.parse(fs.readFileSync(new URL('../../p1-release/buyer-decision/release/P1-RELEASE-T1.json', import.meta.url)));
-const schema = JSON.parse(fs.readFileSync(new URL('../../p1-release/buyer-decision/transport/ci.reco.v1.schema.json', import.meta.url)));
+// The server binds P1-RELEASE-T1 (production builds) or the accepted P1-RELEASE-U12-CEO3-R4 (preview builds). The test reads
+// which one from /api/health and compares the website against that exact vendored release.
+const H0 = await (await fetch(`${BASE}/api/health`, { headers: HEADERS })).json();
+const BOUND_RECORD = H0.recommendation.release;
+const R4 = BOUND_RECORD === 'P1-RELEASE-U12-CEO3-R4';
+assert.ok(R4 || BOUND_RECORD === 'P1-RELEASE-T1', `unexpected binding ${BOUND_RECORD}`);
+const ROOT = R4 ? '../../p1-accepted/U12-CEO3-R4/' : '../../p1-release/';
+const T = require(`${ROOT}buyer-decision/transport/reco.js`);
+const record = JSON.parse(fs.readFileSync(new URL(`${ROOT}buyer-decision/release/${BOUND_RECORD}.json`, import.meta.url)));
+const schema = JSON.parse(fs.readFileSync(new URL(`${ROOT}buyer-decision/transport/ci.reco.v1.schema.json`, import.meta.url)));
+const EXPECT = R4 ? { universe: 'U12-CEO3-R4-2026-11-05', p3: 'R4-ACCEPTED-2026-11-05', commit: record.source_commit }
+                  : { universe: 'U11-2026-09-26', p3: '1791369522-eecc', commit: record.transport_commit };
 const corpus = JSON.parse(fs.readFileSync(new URL('../fixtures/p1-release/corpus.json', import.meta.url)));
 const snapshot = JSON.parse(fs.readFileSync(new URL('../../data/registry/universe.snapshot.json', import.meta.url)));
-const ds = T.loadLaunchSnapshot();
+const ds = R4 ? T.loadAcceptedDataset(new URL(`${ROOT}${record.dataset.path}`, import.meta.url).pathname) : T.loadLaunchSnapshot();
 const serving = JSON.parse(fs.readFileSync(new URL('../../data/registry/catalogue-serving.release.json', import.meta.url)));
-const SITE = new Map(serving.entries.map(m => [m.p1_id, m.site_slug]));
+// P2 market additions (R4 recommends them) are keyed by identity, not p1_id.
+const SITE = new Map([...serving.entries.map(m => [m.p1_id, m.site_slug]), ...(serving.market_additions ?? []).map(m => [m.identity, m.site_slug])]);
 
 // The API keeps its per-client rate limit (120/min); the test waits out 429s instead of disabling it.
 async function api(body, expect = 200) {
@@ -38,18 +48,18 @@ function requiredKeys(obj, def, where) {
   if (def.additionalProperties === false) for (const k of Object.keys(obj)) assert.ok(k in def.properties, `${where}: extra key ${k}`);
 }
 
-test('status: bound to P1-RELEASE-T1, engine/transport/universe/dataset, P3 V7', async () => {
+test(`status: bound to ${BOUND_RECORD}, engine/transport/universe/dataset, P3`, async () => {
   const j = await api({ op: 'status', locale: 'en' });
   assert.equal(j.status.status, 'ready');
-  assert.equal(j.status.record, 'P1-RELEASE-T1');
+  assert.equal(j.status.record, BOUND_RECORD);
   assert.equal(j.status.engine_version, record.engine_version);
   assert.equal(j.status.transport_version, record.transport_version);
-  assert.equal(j.status.universe_version, 'U11-2026-09-26');
+  assert.equal(j.status.universe_version, EXPECT.universe);
   assert.equal(j.status.dataset_sha256, record.dataset.content_sha256);
-  assert.equal(j.status.p3_artifact, '1791369522-eecc');
+  assert.equal(j.status.p3_artifact, EXPECT.p3);
   const h = await (await fetch(`${BASE}/api/health`, { headers: HEADERS })).json();
   assert.equal(h.recommendation.status, 'ready');
-  assert.equal(h.recommendation.transport_commit, record.transport_commit);
+  assert.equal(h.recommendation.transport_commit, EXPECT.commit);
   assert.equal(h.recommendation.integrity, true);
 });
 
@@ -168,7 +178,7 @@ test('FMC page renders the bound tool (no 503 gate) in EN and AR', async () => {
   for (const l of ['en', 'ar']) {
     const html = await (await fetch(`${BASE}/${l}/find-my-car`, { headers: HEADERS })).text();
     assert.ok(html.includes('data-fmc-status="ready"'), `${l}: ready`);
-    assert.ok(html.includes('data-release="P1-RELEASE-T1"') && html.includes('data-transport-version="T1-2026-10-07"'));
+    assert.ok(html.includes(`data-release="${BOUND_RECORD}"`) && html.includes(`data-transport-version="${record.transport_version}"`));
   }
 });
 

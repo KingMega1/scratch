@@ -1,11 +1,11 @@
 {
  "schema": "ci.dataset.v1",
- "dataset_id": "U12-CEO3-R3-2026-11-04/recommendation_view",
- "universe_version": "U12-CEO3-R3-2026-11-04",
+ "dataset_id": "U12-CEO3-R4-2026-11-05/recommendation_view",
+ "universe_version": "U12-CEO3-R4-2026-11-05",
  "kind": "CANDIDATE recommendation view — test link only; U11 stays the production binding until acceptance",
  "file": "recommendation_view.json",
- "sha256": "432c0839714c52a855f5469a99fce3dbeee73fc228920cc5234e98c2565e6baa",
- "content_sha256": "baac72716b4655ad3fb2c8c7ff80f6d14817097faee3df064b3ffea05b116038",
+ "sha256": "3e9b7d8d0619635b4bd6b5a252d6dd75763ae1ad9101fc6ea4da0c4db93a66a0",
+ "content_sha256": "0d34e538944e02cf2244505902c095e77d3b2df552fc980bfb43ba292a6ecddb",
  "identities": 424,
  "models_in_universe": 423,
  "base": {
@@ -13,15 +13,15 @@
   "content_sha256": "5348da5721f049d3befb1e6c8159ecdf0bfd8ed273916da95ee158ba804934e2"
  },
  "p2_input": {
-  "commit": "dfbcccc4857428beaa1cb7ec68865cc1846f896a",
+  "commit": "3b4b5ef0eedf3eeed1ca91fb597bc0394e3050f1",
   "release_id": "P2-CEO-CONFIRMED-20261102-R1",
   "files": {
-   "catalogue-serving.release.json": "c4bd33ba1b89ff319a6fdc99de44c03d9499f2949e32a821cf25d7293988b363",
+   "catalogue-serving.release.json": "e6d2711d70a786c52cacfd8aa87d0a4fa60d3529434a732431cacd94e41ceb0b",
    "market_universe.json": "b0d8a15fcf39a8b497aab68119ff778f18031824a8d0e84c9a77ad7bf76731c0",
    "registration_models.csv": "e6f43df6596f3fe38f4b13f9afb7d24663379fc96db31cfb5a588f17a94571af",
    "u11_models.csv": "36c45232e490a924975060b0fe08c14b3eeb546577da81676b624ee8bbcdf36a",
    "arabic_names.csv": "91a7d71b7165da6a9b87544b2a0eb6dc1d1aaa4253ce063fce283e8a6429c188",
-   "u11_prices.csv": "cb5541256682ba256e33cc077793eb466dba54236cfa6cc3b439f7bf7a43ba52"
+   "u11_prices.csv": "fc82c02ede67e4862c24d080cc8f18466fd1cadd07cb3fd00e09c0b86d765b8e"
   }
  },
  "registry": {
@@ -616,6 +616,201 @@
       "label": "Ultra",
       "year": 2026,
       "price": 3990000
+     }
+    ]
+   },
+   {
+    "id": "nissan/juke",
+    "release_id": "P2-CEO-CONFIRMED-20261104-R1",
+    "accepted_price_ids": [
+     "ceo1104-008",
+     "ceo1104-009",
+     "ceo1104-010"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Acenta",
+      "year": 2027,
+      "price": 1159999
+     },
+     {
+      "label": "Tekna",
+      "year": 2027,
+      "price": 1259999
+     },
+     {
+      "label": "Tekna N-design",
+      "year": 2027,
+      "price": 1299999
+     }
+    ]
+   },
+   {
+    "id": "nissan/magnite",
+    "release_id": "P2-CEO-CONFIRMED-20261104-R1",
+    "accepted_price_ids": [
+     "ceo1104-004",
+     "ceo1104-005",
+     "ceo1104-006",
+     "ceo1104-007"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Visia",
+      "year": 2027,
+      "price": 788000
+     },
+     {
+      "label": "Acenta",
+      "year": 2027,
+      "price": 848000
+     },
+     {
+      "label": "Tekna+",
+      "year": 2027,
+      "price": 868000
+     }
+    ]
+   },
+   {
+    "id": "nissan/qashqai",
+    "release_id": "P2-CEO-CONFIRMED-20261104-R1",
+    "accepted_price_ids": [
+     "ceo1104-011",
+     "ceo1104-012",
+     "ceo1104-013",
+     "ceo1104-014"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "N-Connecta",
+      "year": 2027,
+      "price": 1555000
+     },
+     {
+      "label": "N-Connecta+",
+      "year": 2027,
+      "price": 1757000
+     },
+     {
+      "label": "N-connecta+ 2T",
+      "year": 2027,
+      "price": 1777000
+     },
+     {
+      "label": "TEKNA",
+      "year": 2027,
+      "price": 1868000
+     },
+     {
+      "label": "Tekna 2T",
+      "year": 2027,
+      "price": 1888000
+     },
+     {
+      "label": "N-Design e-PWR",
+      "year": 2027,
+      "price": 1999000
+     },
+     {
+      "label": "e-Power",
+      "year": 2027,
+      "price": 2000000
+     },
+     {
+      "label": "TEKNA+ 4WD",
+      "year": 2027,
+      "price": 2068000
+     }
+    ]
+   },
+   {
+    "id": "nissan/sunny",
+    "release_id": "P2-CEO-CONFIRMED-20261104-R1",
+    "accepted_price_ids": [
+     "ceo1104-001",
+     "ceo1104-002",
+     "ceo1104-003"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Manual/Baseline",
+      "year": 2027,
+      "price": 665000
+     },
+     {
+      "label": "A/T Base",
+      "year": 2027,
+      "price": 765000
+     },
+     {
+      "label": "Baseline AT",
+      "year": 2027,
+      "price": 765000
+     },
+     {
+      "label": "Baseline",
+      "year": 2027,
+      "price": 765000
+     },
+     {
+      "label": "plus",
+      "year": 2027,
+      "price": 799900
+     },
+     {
+      "label": "AT Mid",
+      "year": 2027,
+      "price": 799999
+     },
+     {
+      "label": "Midline",
+      "year": 2027,
+      "price": 800000
+     },
+     {
+      "label": "AT Super salon",
+      "year": 2027,
+      "price": 835000
+     },
+     {
+      "label": "Super Saloon",
+      "year": 2027,
+      "price": 835000
+     }
+    ]
+   },
+   {
+    "id": "nissan/x-trail",
+    "release_id": "P2-CEO-CONFIRMED-20261104-R1",
+    "accepted_price_ids": [
+     "ceo1104-015"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Acenta Plus",
+      "year": 2026,
+      "price": 2000000
+     },
+     {
+      "label": "N-Trek",
+      "year": 2026,
+      "price": 2080000
+     },
+     {
+      "label": "Tekna",
+      "year": 2026,
+      "price": 2300000
+     },
+     {
+      "label": "Tekna e-4ORCE",
+      "year": 2026,
+      "price": 2300000
      }
     ]
    },
@@ -2173,28 +2368,15 @@
     ]
    },
    {
-    "id": "nissan/juke",
-    "kept": [
-     "Juke Acenta=1159999"
-    ],
-    "superseded": [
-     "Acenta=1159999 MY2027 @2026-09-10",
-     "Tekna=1259999 MY2027 @2026-09-10",
-     "Tekna N-design=1299999 MY2027 @2026-09-10"
-    ]
-   },
-   {
     "id": "nissan/magnite",
     "kept": [
-     "Magnite 1.0T Visia CVT=819999 MY2026",
-     "Magnite 1.0T Acenta CVT=859999 MY2026",
-     "Magnite 1.0T Tekna CVT=879999 MY2026",
-     "Magnite 1.0T Tekna+ CVT=899999 MY2026"
+     "Visia=860000 MY2027",
+     "Accenta=910000 MY2027",
+     "Tekna=940000 MY2027",
+     "Tekna +=960000 MY2027"
     ],
     "superseded": [
-     "Visia=788000 MY2027 @2026-09-10",
-     "Acenta=848000 MY2027 @2026-09-10",
-     "Tekna+=868000 MY2027 @2026-09-10"
+     "Acenta=848000 MY2027 @2026-09-10"
     ]
    },
    {
@@ -2223,18 +2405,14 @@
    {
     "id": "nissan/qashqai",
     "kept": [
-     "Qashqai N-connecta=1555000",
-     "Qashqai Tekna=1888000",
-     "Qashqai N-Design e-PWR=1999000",
-     "Qashqai Tekna Plus 4WD=2068000"
+     "N-connecta=1650000 MY2027",
+     "N-connecta+ 2T=1850000 MY2027",
+     "Tekna 2T=1950000 MY2027",
+     "N-Design e-PWR=2100000 MY2027"
     ],
     "superseded": [
-     "N-Connecta=1555000 MY2027 @2026-09-25",
      "N-Connecta+=1757000 MY2027 @2026-09-25",
-     "N-connecta+ 2T=1777000 MY2027 @2026-09-25",
      "TEKNA=1868000 MY2027 @2026-09-10",
-     "Tekna 2T=1888000 MY2027 @2026-09-25",
-     "N-Design e-PWR=1999000 MY2027 @2026-09-25",
      "e-Power=2000000 MY2027 @2026-09-10",
      "TEKNA+ 4WD=2068000 MY2027 @2026-09-25"
     ]
@@ -2251,27 +2429,23 @@
    {
     "id": "nissan/sunny",
     "kept": [
-     "SUNNY Base AT=765000",
-     "SUNNY Mid=799999",
-     "SUNNY Super Saloon=835000"
+     "AT Base=820000 MY2027",
+     "AT Mid=858000 MY2027",
+     "AT Super salon=898000 MY2027"
     ],
     "superseded": [
      "Manual/Baseline=665000 MY2027 @2026-09-10",
-     "A/T Base=765000 MY2027 @2026-09-10",
      "Baseline AT=765000 MY2027 @2026-09-10",
      "Baseline=765000 MY2027 @2026-09-10",
      "plus=799900 MY2027 @2026-09-10",
-     "AT Mid=799999 MY2027 @2026-09-10",
      "Midline=800000 MY2027 @2026-09-10",
-     "AT Super salon=835000 MY2027 @2026-09-10",
      "Super Saloon=835000 MY2027 @2026-09-10"
     ]
    },
    {
     "id": "nissan/x-trail",
     "kept": [
-     "Acenta Premium=1999990",
-     "Tekna=2299990"
+     "Tekna=2500000 MY2027"
     ],
     "superseded": [
      "Acenta Plus=2000000 MY2026 @2026-09-10",
@@ -2804,9 +2978,11 @@
     "tier": "A",
     "as_of": "2026-10-13",
     "superseded": [
-     "LV3 (7seats)=1300000 MY2026 @2026-09-10"
+     "LV3 (7seats)=1300000 MY2026 @2026-09-10",
+     "LV3 (7 Seats)=1400000 MY2026 @2026-09-10",
+     "Premier 7 Seats=1400000 MY2026 @2026-09-10"
     ],
-    "from_only_version": false
+    "from_only_version": true
    },
    {
     "id": "bmw/7-series",
@@ -3023,14 +3199,6 @@
     "superseded": []
    },
    {
-    "id": "nissan/juke",
-    "effective": "2026-07-16",
-    "versions": [
-     "Juke Acenta=1159999"
-    ],
-    "superseded": []
-   },
-   {
     "id": "nissan/patrol",
     "effective": "2025-07-17",
     "versions": [
@@ -3046,40 +3214,10 @@
     "superseded": []
    },
    {
-    "id": "nissan/qashqai",
-    "effective": "2026-05-19",
-    "versions": [
-     "Qashqai N-connecta=1555000",
-     "Qashqai Tekna=1888000",
-     "Qashqai N-Design e-PWR=1999000",
-     "Qashqai Tekna Plus 4WD=2068000"
-    ],
-    "superseded": []
-   },
-   {
     "id": "nissan/sentra",
     "effective": "2026-04-10",
     "versions": [
      "Premium=1050000"
-    ],
-    "superseded": []
-   },
-   {
-    "id": "nissan/sunny",
-    "effective": "2026-04-10",
-    "versions": [
-     "SUNNY Base AT=765000",
-     "SUNNY Mid=799999",
-     "SUNNY Super Saloon=835000"
-    ],
-    "superseded": []
-   },
-   {
-    "id": "nissan/x-trail",
-    "effective": "2025-10-08",
-    "versions": [
-     "Acenta Premium=1999990",
-     "Tekna=2299990"
     ],
     "superseded": []
    },
@@ -3244,8 +3382,8 @@
    "mg/cyberster=سايبرستر"
   ],
   "splits_moved": [],
-  "prices_updated": 140,
-  "versions_added": 282,
+  "prices_updated": 152,
+  "versions_added": 271,
   "seats_changed": 150,
   "awd": [
    "arcfox/alpha-s5:undefined->true",

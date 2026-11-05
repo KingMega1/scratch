@@ -51,8 +51,10 @@ export function CarMedia({ car, locale, eager = false, sizes = '(max-width: 720p
   );
 }
 
-export function PriceState({ state, locale }: { state: PS; locale: Locale }) {
-  return <span className={`state state-${state}`}>{dict(locale).state[state]}</span>;
+/* 'checked' + isOfficial === false: a P2-accepted price that is not an official list price (Tier B/C) -> market label. */
+export function PriceState({ state, locale, official = true }: { state: PS; locale: Locale; official?: boolean }) {
+  if (state === 'checked' && !official) return <span className="state state-market" data-price-kind="market">{dict(locale).state.market}</span>;
+  return <span className={`state state-${state}`} data-price-kind={state === 'checked' ? 'official' : undefined}>{dict(locale).state[state]}</span>;
 }
 
 /* Bracket (F2) only around a single official figure with a named, dated source. Ranges and conflicts never get one. */
@@ -62,7 +64,7 @@ export function Figure({ value, checked, locale }: { value: number; checked: boo
 }
 
 export function OfficialFigure({ o, locale }: { o: OfficialPrice; locale: Locale }) {
-  if (o.state === 'checked' && o.value != null) return <Figure value={o.value} checked locale={locale} />;
+  if (o.state === 'checked' && o.value != null) return <Figure value={o.value} checked={o.isOfficial !== false} locale={locale} />;
   if (o.state === 'near' && o.min != null) return <span className="price tnum">{price(o.min, locale)}{o.max != null && o.max !== o.min ? ` – ${price(o.max, locale)}` : ''}</span>;
   if (o.state === 'conflict' && o.values.length) return <span className="price tnum">{o.values.map(v => price(v, locale)).join(' / ')}</span>;
   return <span className="state state-unknown">{dict(locale).state.unknown}</span>;
@@ -70,7 +72,7 @@ export function OfficialFigure({ o, locale }: { o: OfficialPrice; locale: Locale
 
 export function PriceFrom({ car, locale }: { car: PublicCar; locale: Locale }) {
   const t = dict(locale), f = car.priceFrom;
-  if (f.state === 'checked' && f.value != null) return <><span className="small">{t.car.from}</span><Figure value={f.value} checked locale={locale} /></>;
+  if (f.state === 'checked' && f.value != null) return <><span className="small">{t.car.from}</span><Figure value={f.value} checked={f.isOfficial !== false} locale={locale} /></>;
   if (f.state === 'near' && f.min != null) return <><span className="small">{t.car.from}</span><span className="price tnum">{price(f.min, locale)}{f.max != null && f.max !== f.min ? ` – ${price(f.max, locale)}` : ''}</span></>;
   if (f.state === 'conflict') return <><PriceState state="conflict" locale={locale} />{f.min != null ? <span className="small tnum">{t.v2.lowestQuoted}: {price(f.min, locale)}</span> : null}</>;
   return <span className="price-na">{t.state.unknown}</span>;

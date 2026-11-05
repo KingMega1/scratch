@@ -40,7 +40,7 @@ jobs:
           mkdir -p ci-evidence
           cp -a test-results/screens ci-evidence/screens
           cp test-results/smoke-preview.json ci-evidence/smoke-preview.json
-      - name: Targeted FMC / P1 integration (P1-RELEASE-T1) against the built app
+      - name: Targeted FMC / P1 integration (preview build binds P1-RELEASE-U12-CEO3-R4) against the built app
         run: |
           mkdir -p test-results
           npx next start -p 3200 > test-results/fmc-server.log 2>&1 &
@@ -52,17 +52,24 @@ jobs:
         run: CI_ENV=production SMOKE_PRODUCTION=1 SMOKE_PORT=3278 npm run test:smoke -- --grep production-only
       # Keep the security gate mandatory, but collect non-deployed integration evidence first.
       - run: npm run audit:deps
-      - name: Build authorized CEO3-R3 nonproduction candidate (default binding stays T1)
-        run: CI_ENV=preview P1_CANDIDATE=U12-CEO3-R3 npm run build
-      - name: CEO3-R3 exact transport API and rendered bilingual buyer edits
+      - name: T1 FMC integration against the production-mode build (production binding stays P1-RELEASE-T1)
+        env:
+          CI_ENV: production
+        run: |
+          npx next start -H 127.0.0.1 -p 3220 > test-results/fmc-t1-server.log 2>&1 &
+          for i in $(seq 1 60); do curl -sf http://127.0.0.1:3220/api/health >/dev/null && break; sleep 1; done
+          FMC_BASE_URL=http://127.0.0.1:3220 npm run test:fmc
+          kill %1 || true
+      - name: Rebuild preview (binds accepted P1 R4 + P2 3b4b5ef)
+        run: CI_ENV=preview npm run build
+      - name: R4 exact transport API and rendered bilingual buyer edits
         env:
           CI_ENV: preview
-          P1_CANDIDATE: U12-CEO3-R3
         run: |
-          npx next start -H 127.0.0.1 -p 3210 > test-results/ceo3-server.log 2>&1 &
+          npx next start -H 127.0.0.1 -p 3210 > test-results/r4-server.log 2>&1 &
           for i in $(seq 1 60); do curl -sf http://127.0.0.1:3210/api/health >/dev/null && break; sleep 1; done
-          FMC_BASE_URL=http://127.0.0.1:3210 node --test --test-concurrency=1 tests/integration/fmc.ceo3.test.mjs
-          npx playwright test -c playwright.ceo3.config.ts
+          FMC_BASE_URL=http://127.0.0.1:3210 node --test --test-concurrency=1 tests/integration/fmc.r4.test.mjs
+          npx playwright test -c playwright.r4.config.ts
       - uses: actions/upload-artifact@v4
         if: always()
         with:

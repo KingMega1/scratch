@@ -37,7 +37,7 @@ function TrimTable({ trims, locale }: { trims: PublicTrim[]; locale: Locale }) {
           <td><bdi>{tr.label}</bdi></td>
           <td className="t-num"><OfficialFigure o={tr.official} locale={locale} /></td>
           <td>
-            <PriceState state={tr.official.state} locale={locale} />
+            <PriceState state={tr.official.state} official={tr.official.isOfficial !== false} locale={locale} />
             {tr.official.sources.length ? (
               <ul className="src-list">{tr.official.sources.map((s, i) => (
                 <li key={i}>{s.url ? <a href={s.url} rel="nofollow noopener noreferrer" target="_blank">{s.name}</a> : s.name} · {date(s.observedAt, locale)}{s.effectiveDate ? ` (${date(s.effectiveDate, locale)})` : ''}</li>
@@ -105,7 +105,7 @@ export default async function CarDetail({ params }: P) {
       <section className="cd-hero" aria-labelledby="car-h">
         <div className="cd-media"><CarMedia car={car} locale={locale} eager sizes="(max-width: 900px) 100vw, 640px" /></div>
         <div className="cd-info">
-          {car.priceFrom.state !== 'conflict' ? <PriceState state={car.priceFrom.state} locale={locale} /> : null}
+          {car.priceFrom.state !== 'conflict' ? <PriceState state={car.priceFrom.state} official={car.priceFrom.isOfficial !== false} locale={locale} /> : null}
           <h1 id="car-h" className="h-page" style={{ margin: 0 }}><CarName car={car} locale={locale} /></h1>
           <p className="small" style={{ margin: 0 }}>{[car.powertrains.map(p => t.pt[p]).join(' / '), car.trims.length ? c.versions(car.trims.length) : null, car.priceFrom.modelYear ? `${v2.modelYear} ${car.priceFrom.modelYear}` : null].filter(Boolean).join(' · ')}</p>
           <div className="cd-price"><PriceFrom car={car} locale={locale} /></div>

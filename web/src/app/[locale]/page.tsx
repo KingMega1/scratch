@@ -8,9 +8,16 @@ import { showDrafts } from '@/lib/deploy-env';
 import { vehicles } from '@/server/vehicles/read-model';
 import { content } from '@/server/cms/provider';
 import { CarCard, CarName, carNameText, photoSrcSet } from '@/components/car';
-import { BrandMark, sortBrands } from '@/components/brand';
+import { BrandMark, hasLogo, sortBrands } from '@/components/brand';
 
 type P = { params: Promise<{ locale: string }> };
+
+/* Evidence (P2 3b4b5ef, revision ad4cc5e906b4):
+   mg-rx9     first registered Aug 2026 (72 in the Sep 2025–Aug 2026 window); Tier A, Al Mansour / MG Egypt list (15 Oct 2026)
+   byd-ti-7   first registered May 2026 (476);  Tier A MY2027, BYD Egypt / Mandream list (22 Oct 2026)
+   geely-ex2  first registered Apr 2026 (328);  Tier A MY2027, Abou Ghaly Motors list (18 Oct 2026)
+   Each has an accepted HQ exact-model, current-generation hero photo (P2 media acceptance). */
+const FEATURED_LAUNCHES = ['mg-rx9', 'byd-ti-7', 'geely-ex2'] as const;
 
 export async function generateMetadata({ params }: P): Promise<Metadata> {
   const { locale } = await params;
@@ -29,8 +36,11 @@ export default async function Home({ params }: P) {
   // "Car prices" shows cars that actually have a price (most registered first); unknown prices are not featured.
   const marketNow = [...cars].filter(c => c.priceFrom.state !== 'unknown').sort((a, b) => reg(b) - reg(a)).slice(0, 4);
   const brands = sortBrands(V.brands(), locale);
-  // First fold uses verified exact-model photos only (data/registry/media-verified.json).
-  const heroCars = ['nissan-patrol', 'nissan-qashqai', 'nissan-magnite'].map(id => V.get(id)).filter((c): c is NonNullable<typeof c> => !!c?.image);
+  // First fold: recent Egypt-market launches (CEO 5 Nov), each with accepted P2 evidence — first Egypt registration in the
+  // current window with real volume, an official (Tier A) MY2027/current list price and an accepted exact-model photo.
+  // Upcoming models without a confirmed launch are never featured. Newest first registration first.
+  const heroCars = FEATURED_LAUNCHES.map(id => V.get(id))
+    .filter((c): c is NonNullable<typeof c> => !!c?.image && c.priceFrom.state === 'checked' && c.priceFrom.isOfficial !== false);
   const items = (await content().list({ includeDrafts: showDrafts() })).slice(0, 3);
 
   return (
@@ -85,8 +95,8 @@ export default async function Home({ params }: P) {
             {brands.map(b => (
               <li key={b.id}>
                 <Link className="body-tile" href={`/${locale}/market/catalog?brand=${b.id}`} data-brand-id={b.id}>
-                  <BrandMark id={b.id} label={b.en} />
-                  <b>{locale === 'ar' ? b.ar ?? <bdi>{b.en}</bdi> : b.en}</b>
+                  <span className="bt-logo" aria-hidden={hasLogo(b.id) ? undefined : 'true'} data-logo={hasLogo(b.id) ? 'yes' : 'none'}><BrandMark id={b.id} label={b.en} /></span>
+                  <b className="bt-name">{locale === 'ar' ? b.ar ?? <bdi>{b.en}</bdi> : b.en}</b>
                   <span className="n tnum">{t.market.models(b.count)}</span>
                 </Link>
               </li>

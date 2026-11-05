@@ -315,6 +315,7 @@ table.t th.t-num { text-align: end; }
 /* v2 evidence states (tokens: checked / near / conflict / unknown) */
 .state-checked { background: var(--tint-checked); color: var(--ci-color-checked); }
 .state-near { background: var(--ci-color-fog); color: var(--ci-color-ink); }
+.state-market { background: var(--ci-color-fog); color: var(--ci-color-ink); } /* same neutral treatment as listing prices */
 .state-conflict { background: var(--ci-color-white); }
 .gap-list { margin: 0; padding-inline-start: 18px; }
 .gap-list li { margin-block-end: 4px; }
@@ -500,7 +501,17 @@ table.t th.t-num { text-align: end; }
 .cat-brand-page .h-page { margin: 0; }
 .cat-brand-page .brand-mark { width: 48px; height: 48px; }
 .pager { display: flex; gap: 12px; align-items: center; justify-content: center; margin-block-start: 20px; }
-.brand-strip .body-tile { min-height: 116px; align-content: center; }
+/* Homepage Browse by Brand (CEO 5 Nov): every card the same size at every breakpoint; fixed rows so the logo slot, name and
+   count line up whether or not a logo exists; names clamp to two lines (long EN/AR names stay inside the card). */
+.brand-strip .body-tile { width: 132px; height: 148px; min-height: 0; box-sizing: border-box; padding: 14px 10px 12px; display: grid;
+  grid-template-rows: 40px 2.7em 18px; align-content: start; justify-items: center; gap: 8px; }
+.brand-strip .bt-logo { display: flex; align-items: center; justify-content: center; width: 80px; height: 40px; }
+.brand-strip .bt-logo .brand-mark { width: 32px; height: 32px; }
+.brand-strip .bt-logo .brand-mark-img { width: auto; max-width: 80px; height: 36px; }
+.brand-strip .bt-name { font-size: 14px; font-weight: 700; line-height: 1.35; text-align: center; overflow-wrap: anywhere; overflow: hidden;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; align-self: center; }
+.brand-strip .body-tile .n { font-size: 13px; line-height: 18px; }
+.brand-strip .body-tile:hover, .brand-strip .body-tile:focus-visible { border-color: var(--ci-color-ink); }
 .mc.has-photo { padding-block-start: 0; overflow: hidden; }
 .mc-photo { display: block; width: calc(100% + 32px); margin-inline: -16px; aspect-ratio: 16 / 9; object-fit: cover; background: var(--ci-color-fog); margin-block-end: 6px; }
 

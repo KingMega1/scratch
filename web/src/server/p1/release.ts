@@ -25,29 +25,30 @@ export const BOUND = {
   p3_artifact: '1791369522-eecc',
 } as const;
 
-/* CEO-authorized NONPRODUCTION preview candidate, pinned to P1 record commit 3faad56 (P1-RELEASE-U12-CEO3-R3, status
-   CANDIDATE — not released). Never follows a moving P1 branch. Supersedes CEO3 (47e33e1). Engine E6.1, transport T1.2; dataset
-   U12-CEO3-R3 on P2 dfbcccc (serving sha256 c4bd33ba…; P5 now serves 635b897 / 03089cc2febb, which differs only by three
-   gallery photos). Activation requires P1 RELEASE plus a
-   reviewed change of BOUND; until then it runs only behind the gate below. */
-export const PREVIEW_CANDIDATE = {
-  record: 'P1-RELEASE-U12-CEO3-R3',
-  record_commit: '3faad56347e686ca0969a6d1613c0d1aca6c7749',
-  record_sha256: '67db11f52a3f542dc897bb13d3122b9ecba9108faae3026b0ae3fc53faac9618',
-  transport_commit: 'ee295eb33d7f952a17d6723dcea7c3094b74c2f1',
+/* P1-RELEASE-U12-CEO3-R4 — ACCEPTED by the CEO (release authority) 2026-11-05, record commit 22c5fe3 (source 777fabc).
+   Built on P2 3b4b5ef (release P2-CEO-CONFIRMED-20261102-R1, revision ad4cc5e906b4, serving sha256 e6d2711d…), which is
+   exactly the serving release P5 serves alongside it. Default binding on the protected PREVIEW (CEO 5 Nov: "Bind R4 22c5fe3
+   and P2 3b4b5ef in the protected preview"). Production builds keep P1-RELEASE-T1 until a production GO; that switch is a
+   reviewed change of PREVIEW_ONLY below. Never follows a moving P1 branch. */
+export const ACCEPTED_R4 = {
+  record: 'P1-RELEASE-U12-CEO3-R4',
+  record_commit: '22c5fe3a68803a4c4afe41b42774b065e7c6b0e1',
+  record_sha256: '8de4ea34ab7b66ffd71b25ff42366d8193c30875a94781323d5edf1e0a08bc2f',
+  transport_commit: '777fabc35f7d8c3e726fa77423d2883272cf2fb6',
   engine_version: 'E6.1-2026-10-14', transport_version: 'T1.2-2026-11-03',
-  schema: 'ci.reco.v1', universe_version: 'U12-CEO3-R3-2026-11-04',
-  dataset_id: 'U12-CEO3-R3-2026-11-04/recommendation_view',
-  dataset_content_sha256: 'baac72716b4655ad3fb2c8c7ff80f6d14817097faee3df064b3ffea05b116038',
-  p3_artifact: 'CANDIDATE_COPY_NOT_ACCEPTED',
+  schema: 'ci.reco.v1', universe_version: 'U12-CEO3-R4-2026-11-05',
+  dataset_id: 'U12-CEO3-R4-2026-11-05/recommendation_view',
+  dataset_content_sha256: '0d34e538944e02cf2244505902c095e77d3b2df552fc980bfb43ba292a6ecddb',
+  p2_commit: '3b4b5ef0eedf3eeed1ca91fb597bc0394e3050f1', p2_serving_sha256: 'e6d2711d70a786c52cacfd8aa87d0a4fa60d3529434a732431cacd94e41ceb0b',
+  p3_artifact: 'R4-ACCEPTED-2026-11-05',
 } as const;
-export const PREVIEW_CANDIDATE_ID = 'U12-CEO3-R3';
-export const PREVIEW_CANDIDATE_ROOT = 'p1-candidate/U12-CEO3-R3';
-export function candidateEnabled() {
-  return process.env.P1_CANDIDATE === PREVIEW_CANDIDATE_ID && process.env.CI_ENV === 'preview' &&
-    process.env.VERCEL_ENV !== 'production';
+export const ACCEPTED_R4_ROOT = 'p1-accepted/U12-CEO3-R4';
+const PREVIEW_ONLY = true;
+// R4 is served when the build is a preview (CI_ENV=preview) and Vercel is not serving production.
+export function r4Enabled() {
+  return !PREVIEW_ONLY || (process.env.CI_ENV === 'preview' && process.env.VERCEL_ENV !== 'production');
 }
-export const selectedBinding = () => candidateEnabled() ? PREVIEW_CANDIDATE : BOUND;
+export const selectedBinding = () => r4Enabled() ? ACCEPTED_R4 : BOUND;
 
 const RUNTIME_FILES = ['engine', 'parser', 'copy_i18n', 'presentation_extracted', 'redaction', 'transport', 'schema', 'p5_contract', 'dataset_manifest', 'dataset_view'];
 
@@ -71,7 +72,7 @@ export type ReleaseState =
   | { ok: true; T: Transport; ds: Dataset; checks: string[] }
   | { ok: false; error: string; checks: string[] };
 
-export const releaseRoot = () => path.join(process.cwd(), candidateEnabled() ? PREVIEW_CANDIDATE_ROOT : 'p1-release');
+export const releaseRoot = () => path.join(process.cwd(), r4Enabled() ? ACCEPTED_R4_ROOT : 'p1-release');
 const sha = (b: Buffer) => createHash('sha256').update(b).digest('hex');
 declare const __non_webpack_require__: NodeRequire | undefined;
 // Load the vendored CommonJS at runtime from disk (not bundled), so the bytes executed are the bytes hash-checked.
@@ -79,17 +80,18 @@ const nodeRequire: NodeRequire = typeof __non_webpack_require__ === 'function' ?
 
 export function verifyRelease(root = releaseRoot(), req: NodeRequire = nodeRequire): ReleaseState {
   const binding = selectedBinding();
-  const candidate = candidateEnabled();
+  const candidate = binding === ACCEPTED_R4;
   const checks: string[] = [];
   const fail = (error: string): ReleaseState => ({ ok: false, error, checks });
   try {
-    if (process.env.P1_CANDIDATE && !candidate) return fail('candidate forbidden outside explicit nonproduction preview');
     const recBytes = readFileSync(path.join(root, `buyer-decision/release/${binding.record}.json`));
     if (sha(recBytes) !== binding.record_sha256) return fail('release record hash mismatch');
     const rec = JSON.parse(recBytes.toString('utf8'));
     if (rec.record !== binding.record || (rec.transport_commit ?? rec.source_commit) !== binding.transport_commit || rec.engine_version !== binding.engine_version ||
         rec.transport_version !== binding.transport_version || rec.universe_version !== binding.universe_version || rec.schema !== binding.schema ||
         rec.dataset?.content_sha256 !== binding.dataset_content_sha256 || (!candidate && rec.semantic_changes !== 'NONE')) return fail('release record does not match the bound release');
+    if (candidate && (rec.status !== 'ACCEPTED' || rec.p2_input?.commit !== ACCEPTED_R4.p2_commit ||
+        rec.p2_input?.files?.['catalogue-serving.release.json'] !== ACCEPTED_R4.p2_serving_sha256)) return fail('R4 record is not the accepted release on the bound P2 input');
     checks.push(`record ${rec.record} sha256 ok`);
     for (const k of RUNTIME_FILES) {
       const f = rec.files[candidate && k === 'p5_contract' ? 'p5_handoff' : k];

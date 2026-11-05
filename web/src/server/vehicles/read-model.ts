@@ -5,6 +5,7 @@ import serving from '@data/registry/catalogue-serving.release.json';
 import media from '@data/registry/media-verified.json';
 import arabicNames from '@data/registry/arabic-names.p2.json';
 import type { P2Content, P2Fact, AssetFlag, BrandSummary, OfficialPrice, PriceChange, PriceState, Powertrain, PublicCar, PublicImage, PublicTrim, RegistryMeta, SpecValue } from '@/lib/vehicles/types';
+import ceoOverrides from '../../../p1-accepted/U12-CEO3-R4/buyer-decision/tools/ceo_price_overrides.json';
 
 /* Serving read model.
    Canonical: KingMega1/scratch vehicle-data/views/p1_suv_2m.json (carindex.p1.buyer_view/v2) at the commit pinned in
@@ -121,28 +122,36 @@ const PRICE_GAPS = new Set(['NO_VERIFIED_PRICE', 'NO_ACCEPTED_PRICE', 'NO_OFFICI
 function issuerNames(issuer: string, brand: string): string[] {
   return issuer.split('+').map(x => x.trim()).filter(Boolean).map(x => (/_eg_web$/i.test(x) ? `${brand} Egypt` : srcName(x)));
 }
-function p2Official(price: number, issuer: string, evidence: string, asOf: string, eff: string | null, basis: string, brand: string): OfficialPrice {
+/* Official vs market label, the rule the accepted P1 R4 release gate enforces (tools/gates/release_gates.js): a P2 price is
+   official only when it is Tier A (official Egypt OEM/importer list) and the brand is not on the CEO never-official list. */
+const NEVER_OFFICIAL = new Set(Object.keys((ceoOverrides as { never_official_brands?: Record<string, string> }).never_official_brands ?? {}));
+const isOfficialTier = (tier: unknown, brand: string) => tier === 'A' && !NEVER_OFFICIAL.has(brandId(brand));
+function p2Official(price: number, issuer: string, evidence: string, asOf: string, eff: string | null, basis: string, brand: string, tier: unknown): OfficialPrice {
   // Private document links (e.g. a distributor list on Google Drive) are evidence for P2, not a page customers can open: name the issuer, no link.
   const urls = (evidence || '').split('|').map(u => u.trim()).filter(u => /^https?:\/\//.test(u) && !/drive\.google\.com/.test(u));
   const names = issuerNames(issuer, brand);
   const raw = issuer.split('+').map(x => x.trim().toLowerCase().replace(/_eg_web$/, '').replace(/[^a-z0-9]/g, ''));
   const sources = names.map((name, i) => ({ name, url: urls.find(u => raw[i] && u.toLowerCase().replace(/[^a-z0-9]/g, '').includes(raw[i])) ?? urls[0] ?? null,
     observedAt: asOf, effectiveDate: basis === 'SOURCE_STATED' ? eff : null }));
-  return { state: 'checked', value: price, min: null, max: null, values: [], agreedBySources: names.length, sources };
+  return { state: 'checked', value: price, min: null, max: null, values: [], agreedBySources: names.length, sources, isOfficial: isOfficialTier(tier, brand) };
 }
 export function p2Price(e: Raw): { priceFrom: PublicCar['priceFrom']; trims: PublicTrim[]; otherCohorts: PublicCar['otherCohorts']; modelPrice: PublicCar['modelPrice']; asOf: string } | null {
   const p = e?.accepted?.price;
   if (!p || typeof p.price_from !== 'number' || p.price_from <= 0) return null;
   const toTrim = (t: Raw): PublicTrim => ({ key: `${t.model_year ?? ''}-${t.label}`, label: String(t.label), modelYear: t.model_year ?? null,
-    official: p2Official(t.price_egp, t.issuer, t.evidence_url, t.as_of, t.effective_date ?? null, t.date_basis, e.brand), market: null });
+    official: p2Official(t.price_egp, t.issuer, t.evidence_url, t.as_of, t.effective_date ?? null, t.date_basis, e.brand, t.tier ?? p.tier), market: null });
   const all: PublicTrim[] = (p.trims ?? []).filter((t: Raw) => typeof t.price_egp === 'number').map(toTrim);
   const years = [...new Set(all.map(t => t.modelYear))].sort((a, b) => (b ?? 0) - (a ?? 0));
   const latest = p.model_year ?? years[0] ?? null;
+  // The starting figure carries the label of the version(s) at that price in the latest cohort (else the model-level tier).
+  const atFrom = all.filter(t => t.modelYear === latest && t.official.value === p.price_from);
+  const fromOfficial = atFrom.length ? atFrom.some(t => t.official.isOfficial) : isOfficialTier(p.tier, e.brand);
   return {
-    priceFrom: { state: 'checked', value: p.price_from, min: null, max: null, sortValue: p.price_from, modelYear: p.model_year ?? null },
+    priceFrom: { state: 'checked', value: p.price_from, min: null, max: null, sortValue: p.price_from, modelYear: p.model_year ?? null,
+      isOfficial: fromOfficial },
     trims: all.filter(t => t.modelYear === latest).sort(trimSort),
     otherCohorts: years.filter(y => y !== latest).map(y => ({ modelYear: y, trims: all.filter(t => t.modelYear === y).sort(trimSort) })),
-    modelPrice: all.length ? null : p2Official(p.price_from, p.issuer, p.evidence_url, p.as_of, p.effective_date ?? null, p.date_basis, e.brand),
+    modelPrice: all.length ? null : p2Official(p.price_from, p.issuer, p.evidence_url, p.as_of, p.effective_date ?? null, p.date_basis, e.brand, p.tier),
     asOf: p.as_of,
   };
 }
@@ -269,6 +278,10 @@ const additions: Raw[] = (((serving as Raw).market_additions ?? []) as Raw[]).ma
   missing_evidence: x.missing_evidence ?? [], accepted: x.accepted ?? {}, identity: x.identity, parent: x.parent ?? null,
 }));
 export const servingRows: Raw[] = [...(serving.entries as Raw[]), ...additions];
+const verifiedLaunchDate = (e: Raw): string | null => {
+  const d = e?.accepted?.egypt_launch_date;
+  return typeof d === 'string' && /^\d{4}-(0[1-9]|1[0-2])(-\d{2})?$/.test(d) ? d : null;
+};
 
 class JsonSnapshotReadModel implements VehicleReadModel {
   private cars: PublicCar[];
@@ -315,6 +328,7 @@ class JsonSnapshotReadModel implements VehicleReadModel {
           yoy:null, yoyCaveat:null, monthsMissing:[], monthly:[],
         } : null;
       }
+      car.launchDate = verifiedLaunchDate(e);
       return car;
     });
     this.byId = new Map(this.cars.map(c => [c.id, c]));
