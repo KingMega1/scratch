@@ -42,6 +42,9 @@ test('EN/AR negation and comparative brand have equivalent applied inputs',()=>{
 });
 // Transpile server TS for executable tests without changing application code.
 function load(file, imports={}) {const mod={exports:{}};const code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,esModuleInterop:true}}).outputText;vm.runInNewContext(code,{module:mod,exports:mod.exports,require:n=>imports[n]??require(n),console,process,Buffer},{filename:file});return mod.exports;}
+// These cases cover the production binding (P1-RELEASE-T1). CI runs with CI_ENV=preview, which binds R4 (own suite:
+// p1-r4-binding.test.mjs), so pin production here.
+process.env.CI_ENV='production';
 const R=load('src/server/p1/release.ts',{'server-only':{}});
 const C=load('src/lib/recommendation/contract.ts');
 const os=require('node:os'), path=require('node:path');
