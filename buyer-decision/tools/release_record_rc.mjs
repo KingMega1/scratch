@@ -21,14 +21,14 @@ const rec = {
   record: `P1-RELEASE-${RC}`, status: 'CANDIDATE — not released', created: new Date().toISOString().slice(0, 10), owner: 'P1', task: 'P1-READINESS-02',
   repo: 'KingMega1/scratch', branch: 'claude/carindex-buyer-decision-slice-applo4', source_commit: git('rev-parse', sc),
   production_binding_unchanged: 'P1-RELEASE-T1 (engine E6-2026-09-28, U11-2026-09-26) stays bound until this candidate is accepted',
-  release_gates_open: [
+  release_gates_open: process.env.RELEASE_GATES_OPEN ? JSON.parse(process.env.RELEASE_GATES_OPEN) : [
     `Release acceptance of engine E6.1 + dataset ${RC}`,
   ],
   copy_gate: 'CLOSED: no DRAFT markers in app/i18n.js. conflict_h CEO-approved 2026-10-21; conflict.unknown_price / sl_out.unknown_price final wording; conflict.unknown_size, conflict.scope, sl_out.unknown_size, sl_out.scope unreachable (no car carries held) under the 2026-10-21 CEO decisions.',
-  p2_compatible_revisions: [
+  p2_compatible_revisions: RC === 'U12-CEO3-R3' ? [
     { revision: 'ac757adcfffb', serving_sha256: 'c4bd33ba1b89ff319a6fdc99de44c03d9499f2949e32a821cf25d7293988b363', role: 'dataset built from' },
     { revision: '03089cc2febb', serving_sha256: '8429ddbaf4462d268068a43a5f2d87071a8e806d6d0af0f71c19d30884b3879c', role: 'accepted; delta vs ac757adcfffb = revision + accepted.gallery (geely/ex2, geely/ex5, hyundai/tucson) only; dataset unchanged; price agreement 0/269' },
-  ],
+  ] : undefined,
   test_build: { repo: 'KingMega1/carindex-buyer-test', commit: process.env.TEST_BUILD_COMMIT || null, url: 'https://kingmega1.github.io/carindex-buyer-test/u12c2/app/index.html', tracking: 'none' },
   engine_version: T.ENGINE_VERSION, transport_version: T.TRANSPORT_VERSION, schema: T.SCHEMA,
   universe_version: man.universe_version,
