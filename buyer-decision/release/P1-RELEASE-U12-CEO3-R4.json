@@ -1,17 +1,41 @@
 {
  "record": "P1-RELEASE-U12-CEO3-R4",
- "status": "CANDIDATE — not released",
+ "status": "ACCEPTED",
+ "acceptance": {
+  "by": "CEO (release authority)",
+  "date": "2026-11-05",
+  "basis": "All P1 gates pass on final hashes; Captiva decision A",
+  "p2": {
+   "commit": "3b4b5ef0eedf3eeed1ca91fb597bc0394e3050f1",
+   "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+   "revision": "ad4cc5e906b4",
+   "serving_sha256": "e6d2711d70a786c52cacfd8aa87d0a4fa60d3529434a732431cacd94e41ceb0b"
+  },
+  "gates": {
+   "price_parity": "0/269",
+   "model_year": "PASS",
+   "versions": "PASS",
+   "stale_holds": "PASS",
+   "official_market_labels": "PASS (784 EN+AR lists)",
+   "regression": "1142/1142 U11 strict, 1208/1208 R4",
+   "browser_vs_transport": "1405/1405 R4, 1335/1335 U11",
+   "transport": "1517/1517",
+   "buyer_scenarios": "691/691",
+   "ceo_failures": "135/135",
+   "named_cars": "49/49",
+   "eligibility": "1447/1447",
+   "u12_data": "198/198"
+  },
+  "production_deployment": "none by P1"
+ },
  "created": "2026-11-05",
  "owner": "P1",
  "task": "P1-READINESS-02",
  "repo": "KingMega1/scratch",
  "branch": "claude/carindex-buyer-decision-slice-applo4",
- "source_commit": "ec5c38a1d14bd9dd754634298ab122fdddd38e46",
- "production_binding_unchanged": "P1-RELEASE-T1 (engine E6-2026-09-28, U11-2026-09-26) stays bound until this candidate is accepted",
- "release_gates_open": [
-  "chevrolet/captiva: P2 Tier A model-level price 1,400,000 (no MY, no versions); P1 serves 2 carried market versions MY2026 official:false. Product decision required (see transport/P5-HANDOFF-U12-CEO3-R4.md section 3)",
-  "Release acceptance of engine E6.1 + dataset U12-CEO3-R4"
- ],
+ "source_commit": "777fabc35f7d8c3e726fa77423d2883272cf2fb6",
+ "production_binding_unchanged": "P1 made no production change. P5 binds this release after its integration checks (see p5_handoff); until then production stays on P1-RELEASE-T1.",
+ "release_gates_open": [],
  "copy_gate": "CLOSED: no DRAFT markers in app/i18n.js. conflict_h CEO-approved 2026-10-21; conflict.unknown_price / sl_out.unknown_price final wording; conflict.unknown_size, conflict.scope, sl_out.unknown_size, sl_out.scope unreachable (no car carries held) under the 2026-10-21 CEO decisions.",
  "test_build": {
   "repo": "KingMega1/carindex-buyer-test",
@@ -26,8 +50,8 @@
  "dataset": {
   "id": "U12-CEO3-R4-2026-11-05/recommendation_view",
   "path": "buyer-decision/datasets/U12-CEO3-R4-2026-11-05",
-  "file_sha256": "774ce71b340ab63b65c064421ba9468fc50de62a373deee40a4eaca8d9c46ae0",
-  "content_sha256": "91b4f81c492fc48998504935d39915351aac5fc4ed184a262d44fa5e07e37736",
+  "file_sha256": "3e9b7d8d0619635b4bd6b5a252d6dd75763ae1ad9101fc6ea4da0c4db93a66a0",
+  "content_sha256": "0d34e538944e02cf2244505902c095e77d3b2df552fc980bfb43ba292a6ecddb",
   "identities": 424,
   "models_in_universe": 423
  },
@@ -111,23 +135,33 @@
   },
   "p5_handoff": {
    "path": "buyer-decision/transport/P5-HANDOFF-U12-CEO3-R4.md",
-   "sha256": "06dfb11c53a858be5af2d30cb8d41e5f24b300301055af48c96ac42f7fc89c17",
-   "bytes": 4042
+   "sha256": "dfd4df11c2032e76144a04cbf41a7772d9320ac557adc3f8aa8824a11db63b54",
+   "bytes": 4014
   },
   "dataset_manifest": {
    "path": "buyer-decision/datasets/U12-CEO3-R4-2026-11-05/manifest.json",
-   "sha256": "956b953add3915deab767a8f23f22a7b0a5f2a876d98558bec0f355cb0851b85",
-   "bytes": 81578
+   "sha256": "85da6cfd2e446f1865914afa63431c5f4436a516d925ba7156259e6858bd3974",
+   "bytes": 81677
   },
   "dataset_view": {
    "path": "buyer-decision/datasets/U12-CEO3-R4-2026-11-05/recommendation_view.json",
-   "sha256": "774ce71b340ab63b65c064421ba9468fc50de62a373deee40a4eaca8d9c46ae0",
-   "bytes": 347285
+   "sha256": "3e9b7d8d0619635b4bd6b5a252d6dd75763ae1ad9101fc6ea4da0c4db93a66a0",
+   "bytes": 347190
   },
   "regression_report": {
    "path": "buyer-decision/datasets/U12-CEO3-R4-2026-11-05/REGRESSION_REPORT.md",
-   "sha256": "54c3140a52c09a3951ee770020ac2da29ad0690bc02c6ea3804d72a58c737731",
-   "bytes": 48506
+   "sha256": "0f24bd0bf00027ff639660b0372be1927b9315e110a4e207bf3e1f773c423892",
+   "bytes": 48470
+  },
+  "release_gates": {
+   "path": "buyer-decision/datasets/U12-CEO3-R4-2026-11-05/R4-GATES.json",
+   "sha256": "4d67c0371d960dfc14bdfc1b289025c4fdcecea7217efd45ee4cdaa836747679",
+   "bytes": 689
+  },
+  "p2_price_agreement": {
+   "path": "buyer-decision/datasets/U12-CEO3-R4-2026-11-05/P2-PRICE-AGREEMENT.json",
+   "sha256": "b897a8a841c287947bc48e01bfa07eca99d917a655cb5db9e462e937a27c1771",
+   "bytes": 2454
   }
  },
  "semantic_changes": "Ranking: NONE. Parser understanding fixes (ranges, +10% stated as %, brand-only phrasings, running costs, Arabic fuel priority, plug-in check) and transport T1.2 (editBrief, budget guard): see transport/P5-HANDOFF-U12-CEO2.md. Eligibility data policy per CEO 2026-10-21 (market prices for unpriced cars, no size hold, coupes/convertibles/vans included; see dataset manifest changes.policy). Engine E6.1 (vs T1): a held market car reports unknown_size / scope instead of not_on_sale. Transport T1.1: no compare table for a single-car result, matching the released app.",
