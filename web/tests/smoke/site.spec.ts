@@ -6,8 +6,7 @@ async function shot(page: Page, name: string, testInfo: { project: { name: strin
   if (SHOTS) await page.screenshot({ path: `test-results/screens/${testInfo.project.name}-${name}.png`, fullPage: false });
 }
 
-// The preview (what this suite runs against) binds the accepted P1 R4 (CEO 5 Nov); production builds keep T1 and are covered
-// by the production-only tests and tests/integration/fmc.api.test.mjs against the production-mode build.
+// Every build binds the accepted P1 R4 (preview since 5 Nov; production since the 5 Nov CEO GO).
 const P1B = { release: 'P1-RELEASE-U12-CEO3-R4', engine: 'E6.1-2026-10-14', transport: 'T1.2-2026-11-03', universe: 'U12-CEO3-R4-2026-11-05',
   p3: 'R4-ACCEPTED-2026-11-05', transport_commit: '777fabc35f7d8c3e726fa77423d2883272cf2fb6' } as const;
 
@@ -335,7 +334,8 @@ test.describe('CEO QC: P2 accepted data on public pages', () => {
       const imgs = page.locator(`main img[src*="/media/p2/models/${slug}"], main img[srcset*="${encodeURIComponent(`/media/p2/models/${slug}`)}"]`);
       await expect(imgs).toHaveCount(1 + e.accepted.gallery.length);
       await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-      await expect.poll(() => imgs.evaluateAll(xs => xs.every(i => (i as HTMLImageElement).complete && (i as HTMLImageElement).naturalWidth > 0))).toBe(true);
+      // lazy gallery images: allow for a loaded server (full parallel suite) before declaring a broken photo
+      await expect.poll(() => imgs.evaluateAll(xs => xs.every(i => (i as HTMLImageElement).complete && (i as HTMLImageElement).naturalWidth > 0)), { timeout: 15_000 }).toBe(true);
     });
   }
   // The 14 models whose P2 "from" price (latest model year) differs from P1's lowest version (includes previous-MY

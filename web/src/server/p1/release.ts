@@ -8,7 +8,7 @@ import path from 'node:path';
    On first use: verify the release record itself, then every file's sha256/bytes against it, then the transport's
    ENGINE/TRANSPORT versions, then the dataset's universe and content hash. Any failure => FMC is refused (no fallback). */
 
-// What P5 deliberately binds. Changing any of these is a new integration decision, not a config change.
+// P1-RELEASE-T1: the production binding until 5 Nov 2026. Kept vendored and tested (explicit binding argument only).
 export const BOUND = {
   record: 'P1-RELEASE-T1',
   record_commit: '090edb4680a8a228d8b1fe8043b4700dfca248ee',
@@ -27,9 +27,9 @@ export const BOUND = {
 
 /* P1-RELEASE-U12-CEO3-R4 — ACCEPTED by the CEO (release authority) 2026-11-05, record commit 22c5fe3 (source 777fabc).
    Built on P2 3b4b5ef (release P2-CEO-CONFIRMED-20261102-R1, revision ad4cc5e906b4, serving sha256 e6d2711d…), which is
-   exactly the serving release P5 serves alongside it. Default binding on the protected PREVIEW (CEO 5 Nov: "Bind R4 22c5fe3
-   and P2 3b4b5ef in the protected preview"). Production builds keep P1-RELEASE-T1 until a production GO; that switch is a
-   reviewed change of PREVIEW_ONLY below. Never follows a moving P1 branch. */
+   exactly the serving release P5 serves alongside it. Bound in every environment, production included (CEO GO 5 Nov:
+   release to carindexed.com on R4 22c5fe3 + P2 3b4b5ef). P1-RELEASE-T1 stays vendored and tested but is not selectable at
+   runtime; rollback is the previous Vercel production deployment. Never follows a moving P1 branch. */
 export const ACCEPTED_R4 = {
   record: 'P1-RELEASE-U12-CEO3-R4',
   record_commit: '22c5fe3a68803a4c4afe41b42774b065e7c6b0e1',
@@ -43,12 +43,9 @@ export const ACCEPTED_R4 = {
   p3_artifact: 'R4-ACCEPTED-2026-11-05',
 } as const;
 export const ACCEPTED_R4_ROOT = 'p1-accepted/U12-CEO3-R4';
-const PREVIEW_ONLY = true;
-// R4 is served when the build is a preview (CI_ENV=preview) and Vercel is not serving production.
-export function r4Enabled() {
-  return !PREVIEW_ONLY || (process.env.CI_ENV === 'preview' && process.env.VERCEL_ENV !== 'production');
-}
-export const selectedBinding = () => r4Enabled() ? ACCEPTED_R4 : BOUND;
+export type Binding = typeof BOUND | typeof ACCEPTED_R4;
+export const r4Enabled = () => true;
+export const selectedBinding = (): Binding => ACCEPTED_R4;
 
 const RUNTIME_FILES = ['engine', 'parser', 'copy_i18n', 'presentation_extracted', 'redaction', 'transport', 'schema', 'p5_contract', 'dataset_manifest', 'dataset_view'];
 
@@ -78,8 +75,8 @@ declare const __non_webpack_require__: NodeRequire | undefined;
 // Load the vendored CommonJS at runtime from disk (not bundled), so the bytes executed are the bytes hash-checked.
 const nodeRequire: NodeRequire = typeof __non_webpack_require__ === 'function' ? __non_webpack_require__ : eval('require');
 
-export function verifyRelease(root = releaseRoot(), req: NodeRequire = nodeRequire): ReleaseState {
-  const binding = selectedBinding();
+// `binding` is explicit only in tests (T1 tamper suite); the runtime always verifies the selected binding.
+export function verifyRelease(root = releaseRoot(), req: NodeRequire = nodeRequire, binding: Binding = selectedBinding()): ReleaseState {
   const candidate = binding === ACCEPTED_R4;
   const checks: string[] = [];
   const fail = (error: string): ReleaseState => ({ ok: false, error, checks });

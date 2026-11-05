@@ -1,13 +1,14 @@
 # P5 release queue (P1 + P2 bound together)
 
-Bound on the protected preview (CEO 5 Nov 2026):
+Bound in preview and production (CEO GO 5 Nov 2026, carindexed.com):
 
 | | Release | Commit | Pin |
 |---|---|---|---|
 | P1 | P1-RELEASE-U12-CEO3-R4 (ACCEPTED 2026-11-05) | 22c5fe3a68803a4c4afe41b42774b065e7c6b0e1 | record sha256 8de4ea34…, dataset U12-CEO3-R4-2026-11-05 content sha256 0d34e538… |
 | P2 | P2-CEO-CONFIRMED-20261102-R1, revision ad4cc5e906b4 | 3b4b5ef0eedf3eeed1ca91fb597bc0394e3050f1 | catalogue-serving.release.json sha256 e6d2711d70a786c52cacfd8aa87d0a4fa60d3529434a732431cacd94e41ceb0b (= R4 p2_input) |
 
-Production builds keep P1-RELEASE-T1 until a production GO (`src/server/p1/release.ts`, `PREVIEW_ONLY`).
+Previous production (rollback target): deployment dpl_ASHYNjuYrunxVL1NeP1Ejb32cZ2B, P5 commit 5356b9e, P1-RELEASE-T1 + P2 635b897 (revision 03089cc2febb).
+BMW X1 confirmed price / eligibility: arrives through P2 and P1; applied only with the matching accepted release pair (separate from this release).
 
 ## Queued: R5 on P2 956a9a7
 

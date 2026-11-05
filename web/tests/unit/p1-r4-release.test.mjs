@@ -17,8 +17,7 @@ test('R4 accepted release matches all required release bytes and versions; P5 se
  assert.equal(T.TRANSPORT_VERSION,'T1.2-2026-11-03');assert.equal(T.ENGINE_VERSION,rec.engine_version);assert.equal(ds.sha256,rec.dataset.content_sha256);
  assert.equal(rec.p2_input.commit,'3b4b5ef0eedf3eeed1ca91fb597bc0394e3050f1');
  const source=fs.readFileSync('src/server/p1/release.ts','utf8');
- assert.match(source,/record: 'P1-RELEASE-T1'/);
- assert.match(source,/process.env.CI_ENV === 'preview'/); assert.match(source,/process.env.VERCEL_ENV !== 'production'/);
+ assert.match(source,/record: 'P1-RELEASE-U12-CEO3-R4'/); assert.match(source,/selectedBinding = \(\): Binding => ACCEPTED_R4/);
 });
 for(const suite of ['ceo_failures','buyer_scenarios','named_cars']) test('R4 independent '+suite,()=>{
  const r=spawnSync(process.execPath,[path.join(root,'buyer-decision/tests/'+suite+'.test.js'),path.join(root,rec.dataset.path)],{encoding:'utf8'});

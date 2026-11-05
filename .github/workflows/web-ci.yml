@@ -40,7 +40,7 @@ jobs:
           mkdir -p ci-evidence
           cp -a test-results/screens ci-evidence/screens
           cp test-results/smoke-preview.json ci-evidence/smoke-preview.json
-      - name: Targeted FMC / P1 integration (preview build binds P1-RELEASE-U12-CEO3-R4) against the built app
+      - name: Targeted FMC / P1 integration (binds P1-RELEASE-U12-CEO3-R4) against the built app
         run: |
           mkdir -p test-results
           npx next start -p 3200 > test-results/fmc-server.log 2>&1 &
@@ -52,7 +52,7 @@ jobs:
         run: CI_ENV=production SMOKE_PRODUCTION=1 SMOKE_PORT=3278 npm run test:smoke -- --grep production-only
       # Keep the security gate mandatory, but collect non-deployed integration evidence first.
       - run: npm run audit:deps
-      - name: T1 FMC integration against the production-mode build (production binding stays P1-RELEASE-T1)
+      - name: FMC integration against the production-mode build (production binds P1-RELEASE-U12-CEO3-R4)
         env:
           CI_ENV: production
         run: |
