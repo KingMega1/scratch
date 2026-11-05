@@ -6,11 +6,10 @@
  "intake": "Control Tower AT-39 page, section 'Next P2 approval cycle — CEO-supplied November price intake — 4 November 2026' (https://app.notion.com/p/3ec6811407bc81e4ba5edf713b70b481)",
  "priced_observations": 52,
  "dispositions": {
-  "ACCEPT": 20,
-  "UNCHANGED": 31,
-  "HOLD": 1
+  "ACCEPT": 21,
+  "UNCHANGED": 31
  },
- "accepted_retail_rows": 15,
+ "accepted_retail_rows": 16,
  "by_source": {
   "nissan": {
    "rows": 22,
@@ -19,8 +18,8 @@
   },
   "jetour": {
    "rows": 12,
-   "UNCHANGED": 11,
-   "HOLD": 1
+   "ACCEPT": 1,
+   "UNCHANGED": 11
   },
   "citroen": {
    "rows": 6,
@@ -48,9 +47,20 @@
    "name": "IMG_8189.PNG (accepted 2 Nov Jetour source)",
    "sha256": "e6adff9a4f122d57979fa26ba92aec08ccdefb4bd07c0f2474b1c1798ade616c",
    "verification": "re-read to reconcile: T2 Matte Color 1,970,000; Dashing Comfort/Luxury"
+  },
+  {
+   "file_id": "1BrmyTzeOmMTAo0ufkZxz5D87jMbB7tet",
+   "name": "IMG_8271.png",
+   "sha256": "e716e7838b74fd9eab8f0b4af8f96c69e3dc8246bf30f0e4cbb3508716ef5392",
+   "verification": "HASH_PASS (matches intake); VISUAL_PRICE_REVIEW_PASS 5/5; Geely + Auto Mobility branded, validity from 4 Nov 2026"
+  },
+  {
+   "file_id": "1jg9dqpka-6q1PXqN9CyRKFCiEP19FwLH",
+   "name": "cbb9b30e-d034-4fbf-b2d9-b75d67d173fd.jpeg (Kasrawy Jetour 1/11/2026)",
+   "sha256": "2188fc454663e0fcf9b1b69c6dbb5af382a2299e1cac27b7d6e5d45bafc013a3",
+   "verification": "HASH_PASS (matches intake); VISUAL_PRICE_REVIEW_PASS 12/12; T2 Matte Color 1,930,000"
   }
  ],
- "not_available_to_p2": "Geely IMG_8271, Jetour/Citroen/BAIC branded originals are ChatGPT-library files only; Jetour/Citroen/BAIC rows reconcile to already accepted 2 Nov rows, Geely held",
  "unchanged_policy": "UNCHANGED rows are corroboration only (ledger); served data unchanged",
  "excluded_from_msrp": [
   "7 unpriced Geely notices: New Cityray Comfort/Premium/Sport, New Starray Comfort/Premium/Sport, Monjaro iHEV Luxury (Coming Soon; not mapped to EM-i)",
@@ -68,6 +78,10 @@
   "nissan": "5 years/150,000 km",
   "baic": "7 years/200,000 km"
  },
- "ledger_sha256": "efda76c75f03692ad0fdadac4f3df64c30de2f732fd8d248a7cd87f06dab7660",
- "ceo_decision_20261105": "Geely Auto Mobility and Abou Ghaly lists complement each other"
+ "ledger_sha256": "a3c1a18e1224ae50ee2c1583fe805e040ba7e0efbd640e8d0fd906232b6d3720",
+ "ceo_decision_20261105": "Geely Auto Mobility and Abou Ghaly lists complement each other",
+ "holds_resolved_20261105": {
+  "geely_5": "ACCEPT (original verified; complementary channel per CEO)",
+  "jetour_t2_matte": "ACCEPT 1,930,000; supersedes ceo1102-060 via PI-2"
+ }
 }

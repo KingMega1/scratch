@@ -77,8 +77,10 @@ class ConfirmedIntake(unittest.TestCase):
   r=subprocess.run([sys.executable,str(ROOT/'scripts/canonical.py')],capture_output=True)
   self.assertEqual(r.returncode,0,r.stderr)
   acc={x['ledger_row_id'] for x in rows('registry/u11_prices.csv') if x.get('ledger_row_id','').startswith('CEO1102-') and x['status']=='ACCEPT'}
-  self.assertEqual(acc,{x['ledger_row_id'] for x in rows('registry/ceo_confirmed_accepted_20261102.csv')})
-  self.assertEqual(len(acc),89)
+  later={x['ledger_row_id'] for x in rows('registry/u11_prices.csv') if x.get('ledger_row_id','').startswith('CEO1102-') and x['status']=='SUPERSEDED_BY_LATER_INTAKE'}
+  self.assertEqual(later,{'CEO1102-060'})  # PI-2: Jetour T2 Matte replaced by the Kasrawy-branded original (ceo1104-016)
+  self.assertEqual(acc|later,{x['ledger_row_id'] for x in rows('registry/ceo_confirmed_accepted_20261102.csv')})
+  self.assertEqual(len(acc|later),89)
  def test_altered_intake_refused_before_writes(self):
   import shutil,tempfile
   sys.path.insert(0,str(ROOT/'scripts'));import canonical as c

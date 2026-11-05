@@ -705,6 +705,12 @@ def counts(models):
 
 def main():
     intake, intake_meta = protected_intake()  # validated before ANY write; a rebuild can never drop accepted CEO intake
+    later = {}  # PI-2: files load in date order; a later intake row replaces an earlier one for the same model/year/trim (history kept)
+    for r in intake:
+        k = (r["p1_id"], str(r["model_year"]), r["trim_key"], r["trim_label"].strip().lower())  # exact label too: keys alone can collide
+        if k in later:
+            later[k]["status"], later[k]["reason"] = "SUPERSEDED_BY_LATER_INTAKE", later[k]["reason"] + "; PI-2 superseded by " + r["price_id"]
+        later[k] = r
     ap = argparse.ArgumentParser()
     ap.add_argument("--snap", default=None)
     ap.add_argument("--as-of", default=None)
@@ -765,7 +771,7 @@ def main():
     models, cov = [], []
     for m in [r for r in ids if in_catalogue(r)]:
         pr = per.get(m["p1_id"], [])
-        irs = [r for r in intake if r["p1_id"] == m["p1_id"]]
+        irs = [r for r in intake if r["p1_id"] == m["p1_id"] and r["status"] == "ACCEPT"]
         pv = intake_view(irs) if irs else price_view(pr)
         fx = fby.get(m["p1_id"], [])
         acc = [x for x in fx if x["status"] == "ACCEPT"]

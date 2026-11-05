@@ -14,8 +14,8 @@ class Intake20261104(unittest.TestCase):
 
     def test_all_52_dispositioned(self):
         self.assertEqual(len(self.led), 52)
-        self.assertEqual(collections.Counter(r["disposition"] for r in self.led), {"ACCEPT": 20, "UNCHANGED": 31, "HOLD": 1})
-        self.assertEqual({r["ledger_row_id"] for r in self.acc}, {r["row_id"] for r in self.led if r["disposition"] == "ACCEPT" and r["p1_id"].startswith("nissan/")})
+        self.assertEqual(collections.Counter(r["disposition"] for r in self.led), {"ACCEPT": 21, "UNCHANGED": 31})
+        self.assertEqual({r["ledger_row_id"] for r in self.acc}, {r["row_id"] for r in self.led if r["disposition"] == "ACCEPT" and not r["p1_id"].startswith("geely/")})
 
     def test_unchanged_equal_accepted(self):
         for r in self.led:
@@ -25,7 +25,7 @@ class Intake20261104(unittest.TestCase):
     def test_served_values(self):
         p = lambda k: self.by[k]["accepted"]["price"]
         self.assertEqual((p("nissan/sunny")["price_from"], p("nissan/x-trail")["price_from"]), (820000, 2500000))
-        self.assertEqual({t["label"]: t["price_egp"] for t in p("jetour/t2")["trims"]}, {"Luxury": 1900000, "Matte Color": 1970000})  # held 1,930,000 not applied
+        self.assertEqual({t["label"]: t["price_egp"] for t in p("jetour/t2")["trims"]}, {"Luxury": 1900000, "Matte Color": 1930000})  # Kasrawy-branded original supersedes the repost's 1,970,000
         self.assertEqual({t["label"]: t["price_egp"] for t in p("jetour/t1")["trims"]}, {"Luxury": 1730000, "Matte Color": 1760000})  # matte total kept separate
         # CEO 2026-11-05: Auto Mobility CKD and Abou Ghaly lists complement each other (both served, neither superseded)
         for k, n in (("geely/emgrand", 4), ("geely/cool-ray", 6)):
@@ -37,6 +37,12 @@ class Intake20261104(unittest.TestCase):
         self.assertEqual(self.rel["release_id"], "P2-CEO-CONFIRMED-20261102-R1")
         for k in ("nissan/sunny", "nissan/magnite", "nissan/juke", "nissan/qashqai", "nissan/x-trail"):
             self.assertFalse(p(k).get("effective_date"))  # month-only list: no effective day inferred
+
+    def test_later_intake_keeps_distinct_trims(self):
+        mag = {t["label"] for t in self.by["nissan/magnite"]["accepted"]["price"]["trims"]}
+        self.assertEqual(mag, {"Visia", "Accenta", "Tekna", "Tekna +"})
+        keys = collections.Counter((r["p1_id"], r["model_year"], r["trim_key"]) for r in self.acc)
+        self.assertEqual(max(keys.values()), 1)
 
     def test_no_unpriced_or_delta_rows(self):
         self.assertTrue(all(int(r["price_egp"]) > 0 for r in self.led))
