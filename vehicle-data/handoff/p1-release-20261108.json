@@ -1,0 +1,61 @@
+{
+ "schema": "carindex.p2.p1-release-handoff/v1",
+ "task_id": "AT-39/AT-51",
+ "date": "2026-11-08",
+ "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+ "frozen_serving_commit": "bdc00e4f547aa9406de8f7bcfd791058ae3071fe",
+ "revision": "9ce2a7d62878",
+ "release_file": "vehicle-data/views/catalogue-serving.release.json",
+ "release_sha256": "d282da21ef303190d421c6a7feb16ba6de5cde03900aed5144e78ee347fd5922",
+ "canonical_sha256": "f11b684c14f84e85fc5c2c700ea784d704e41e99acefa46bbdd3366bdd499271",
+ "counts_283": {
+  "models": 283,
+  "id_accepted": 283,
+  "price_accepted": 215,
+  "price_tier_a": 133,
+  "price_source_dated": 132,
+  "market_status_official": 37,
+  "specs_accepted": 200,
+  "warranty_accepted": 110,
+  "brochure_accepted": 83,
+  "hero_accepted": 84,
+  "hero_accepted_hq": 80,
+  "hero_limited_archive": 123,
+  "gallery_models": 72,
+  "logo_accepted": 254,
+  "fully_enriched": 39
+ },
+ "p5_production_binding": "P1 R4 + P2 3b4b5ef (serving e6d2711d..., revision ad4cc5e906b4) per P5 f386e95; 956a9a7 was never bound",
+ "consume": "rebuild the P1 candidate (R5) from P2 commit bdc00e4f547aa9406de8f7bcfd791058ae3071fe only (serving sha256 d282da21ef303190d421c6a7feb16ba6de5cde03900aed5144e78ee347fd5922); do not follow the moving branch",
+ "changes_since_3b4b5ef": [
+  "Geely Emgrand/Coolray Auto Mobility CKD rows alongside Abou Ghaly (cd23be3)",
+  "Jetour T2 Matte Color 1,930,000 replaces 1,970,000 (956a9a7)",
+  "Magnite trims intact (Tekna + key fix, 956a9a7)",
+  "toyota/corolla (MY2027 from 1,280,000; 'Smart with Sunroof' no longer on list)",
+  "toyota/camry 6,700,000 (new)",
+  "toyota/fortuner MY2027 3,700,000",
+  "toyota/bz4x from 2,200,000 (Sport FWD new; Premier AWD official)",
+  "toyota/rav4 MY2027 5,700,000",
+  "toyota/land-cruiser-prado from 7,640,000 (new)",
+  "toyota/land-cruiser from 9,500,000 (new)",
+  "lexus/rz 3,200,000 (new)",
+  "lexus/lx600 from 17,300,000 (new)",
+  "hyundai/tucson from 1,850,000",
+  "hyundai/venue from 899,000",
+  "hyundai/elantra from 1,060,000",
+  "hyundai/ioniq-9 from 3,000,000",
+  "haval/jolion from 1,040,000",
+  "haval/h6 from 1,390,000",
+  "haval/h7 1,795,000",
+  "haval/v7 from 1,915,000"
+ ],
+ "held": [
+  "Lexus RX x2, LX700h x2",
+  "Chery MY27 Arrizo 5 x3, Tiggo 7 Pro x2, Tiggo 8 x3 (+10,000; undated sheet)",
+  "Changan CS55 Plus MY27 Elite/Premium, CS75 Plus Premium/Flagship"
+ ],
+ "p1_open_items": [
+  "P1-MAP-01 build_u12 label-match patch still pending (vehicle-data/handoff/patches/)",
+  "Tiggo 8 Pro and EQ7 served as MSRP although both GB Auto sheets label them 'Promotion' (decision needed)"
+ ]
+}

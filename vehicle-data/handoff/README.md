@@ -82,3 +82,8 @@ Review sheet `1TUlGhEYzrOQrYdgMgyVhHwdw_ABGZSk9OhohYnvbZVg` (CarIndex P2 Data Co
 - Handoffs `p5-release-20261104b.json` (P5 test pin on 'ceo1102-' to widen) and `p1-release-20261105.json`.
 - 2026-11-05 (b): CEO decision — Geely Auto Mobility and Abou Ghaly lists complement each other; 5 Auto Mobility rows accepted (config/price_channels.json, PS-3c). Intake now 20 ACCEPT / 31 UNCHANGED / 1 HOLD; revision f9a747f195b4.
 - 2026-11-05 (c): six holds resolved from Drive originals (Geely 5 ACCEPT; Jetour T2 Matte 1,930,000 supersedes 1,970,000). Intake 21 ACCEPT / 31 UNCHANGED / 0 HOLD. Frozen serving commit 956a9a7, revision 7bd2d1fb1966, sha256 48a58939…1266.
+
+## 2026-11-08 — 8 Nov intake (prices, registration charts, photo queue)
+- Prices 113: 43 ACCEPT / 54 UNCHANGED / 16 HOLD; 4 Chery promotions separate; 3 Coolray corroborations. Ledger `review/ceo_confirmed_prices_20261108.csv`, manifest `review/ceo_acceptance_20261108.json`.
+- Registrations: `review/registration_charts_202610.csv` (5 charts, context only; canonical counts unchanged). Photos: `review/media_queue_disposition_20261108.csv` (0 accepted).
+- Frozen serving commit bdc00e4, revision 9ce2a7d62878. Handoffs `p1-release-20261108.json`, `p5-release-20261108.json` (adopt P1+P5 together).

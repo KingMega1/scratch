@@ -1,0 +1,33 @@
+{
+ "schema": "carindex.p2.p5-release-handoff/v1",
+ "task_id": "AT-39/AT-51",
+ "date": "2026-11-08",
+ "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+ "frozen_serving_commit": "bdc00e4f547aa9406de8f7bcfd791058ae3071fe",
+ "revision": "9ce2a7d62878",
+ "release_file": "vehicle-data/views/catalogue-serving.release.json",
+ "release_sha256": "d282da21ef303190d421c6a7feb16ba6de5cde03900aed5144e78ee347fd5922",
+ "canonical_sha256": "f11b684c14f84e85fc5c2c700ea784d704e41e99acefa46bbdd3366bdd499271",
+ "counts_283": {
+  "models": 283,
+  "id_accepted": 283,
+  "price_accepted": 215,
+  "price_tier_a": 133,
+  "price_source_dated": 132,
+  "market_status_official": 37,
+  "specs_accepted": 200,
+  "warranty_accepted": 110,
+  "brochure_accepted": 83,
+  "hero_accepted": 84,
+  "hero_accepted_hq": 80,
+  "hero_limited_archive": 123,
+  "gallery_models": 72,
+  "logo_accepted": 254,
+  "fully_enriched": 39
+ },
+ "sequence": "a",
+ "adopt_rule": "adopt only together with the matching P1 rebuild from this commit; adopting P2 alone breaks FMC/car-page parity (verified: smoke parity test lists Tucson, Corolla, bZ4X, H6 mismatches against P1 R4)",
+ "local_ci_on_970b7cc": "typecheck PASS; build PASS; unit 75/78 (fails: ceo1102- price_id prefix pin; R4 serving-bytes pin e6d2711d; R4 parity count 269); smoke 276 passed / 1 failed (R4 parity) / 7 skipped",
+ "media_files_to_copy": [],
+ "changes": "price-only release: 17 models re-served; no media change"
+}
