@@ -7,18 +7,17 @@
  "intake": "Control Tower AT-39, '8 November — ChatGPT Work transcription returned' (https://app.notion.com/p/3ec6811407bc81e4ba5edf713b70b481)",
  "priced_observations": 113,
  "dispositions": {
-  "ACCEPT": 43,
-  "UNCHANGED": 54,
-  "HOLD": 16
+  "ACCEPT": 59,
+  "UNCHANGED": 54
  },
  "by_source": {
   "changan": {
    "UNCHANGED": 4,
-   "HOLD": 4
+   "ACCEPT": 4
   },
   "chery": {
    "UNCHANGED": 31,
-   "HOLD": 8
+   "ACCEPT": 8
   },
   "haval": {
    "ACCEPT": 8
@@ -28,15 +27,14 @@
    "UNCHANGED": 17
   },
   "lexus": {
-   "ACCEPT": 3,
-   "HOLD": 4
+   "ACCEPT": 7
   },
   "toyota": {
    "ACCEPT": 16,
    "UNCHANGED": 2
   }
  },
- "accepted_retail_rows": 43,
+ "accepted_retail_rows": 66,
  "promotions_kept_separate": 4,
  "corroborations": 3,
  "source_files": [
@@ -83,13 +81,15 @@
    "verification": "HASH_PASS; Sayarat Elyoum Changan card, undated; CS75 Plus Premium blurred (1,550,000 or 1,650,000)"
   }
  ],
- "holds": {
-  "lexus_rx_2": "no RX identity in accepted registry",
-  "lexus_lx700h_2": "only lexus/lx600 identity; LX700h hybrid mapping unresolved",
-  "chery_8": "undated/clipped/watermarked: Arrizo 5 MY27 x3, Tiggo 7 Pro MY27 x2, Tiggo 8 MY27 x3 (+10,000 each vs accepted)",
-  "changan_4": "undated media card: CS55 Plus MY27 Elite/Premium, CS75 Plus Premium (figure blurred)/Flagship"
- },
+ "holds": {},
  "exception_promotions": "Tiggo 8 Pro MY25/MY26 (1,365,000/1,465,000/1,375,000/1,475,000) and EQ7 (1,599,000) are labelled 'Promotion' on both the 22 Oct and 8 Nov GB Auto Chery sheets but are served as MSRP since 22 Oct; not changed here (accepted data), needs decision",
  "unchanged_policy": "UNCHANGED = same model, trim, model year and price as the served accepted row; no new row unless the model's current list was accepted (then included as a cohort member)",
- "ledger_sha256": "b3f5454fbfea68ba207089166a0a9993c68511b2d6311d05eb571ee45530c581"
+ "ledger_sha256": "f0432a93a9ef8fbd2b09734fc3cd89ba309a25da4150d550a01cf974d7facec8",
+ "ceo_decisions_20261108": {
+  "lexus": "LX is the model; LX600 and LX700h (hybrid) are versions under the existing LX identity (stable id lexus/lx600); RX created as model-level identity lexus/rx",
+  "chery": "accept the GB Auto Chery sheet although undated/clipped/watermarked",
+  "changan": "date 3 Nov 2026 (Ghabbour updated lists); CS75 Plus Premium read as 1,550,000 (blurred)",
+  "promotions": "keep Tiggo 8 Pro / EQ7 as currently served"
+ },
+ "price_id_policy": "ceo1108-001..043 published in bdc00e4 unchanged; 044..066 added after CEO decisions"
 }

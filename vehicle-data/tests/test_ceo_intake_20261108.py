@@ -17,7 +17,7 @@ class Intake20261108(unittest.TestCase):
     def test_113_dispositioned(self):
         core = [r for r in self.led if r["kind"] == "retail"]
         self.assertEqual(len(core), 113)
-        self.assertEqual(collections.Counter(r["disposition"] for r in core), {"ACCEPT": 43, "UNCHANGED": 54, "HOLD": 16})
+        self.assertEqual(collections.Counter(r["disposition"] for r in core), {"ACCEPT": 59, "UNCHANGED": 54})
         self.assertTrue({r["ledger_row_id"] for r in self.acc} >= {r["row_id"] for r in core if r["disposition"] == "ACCEPT"})
         self.assertFalse({r["ledger_row_id"] for r in self.acc} & {r["row_id"] for r in core if r["disposition"] == "HOLD"})
 
@@ -26,16 +26,20 @@ class Intake20261108(unittest.TestCase):
         self.assertEqual((kinds["promotion"], kinds["corroboration"]), (4, 3))
         self.assertFalse([r for r in self.acc if r["p1_id"] in ("chery/tiggo-8-pro", "geely/cool-ray")])
 
-    def test_held_sources_not_served(self):
-        self.assertEqual(self.p("chery/tiggo-7-pro")["price_from"], 1115000)   # undated Chery change held
-        self.assertEqual(self.p("changan/cs75-plus")["price_from"], 1520000)   # media card change held
-        self.assertNotIn("lexus/rx", self.by)
+    def test_ceo_decisions_20261108(self):
+        self.assertEqual(self.p("chery/tiggo-7-pro")["price_from"], 1125000)   # watermarked Chery sheet accepted
+        self.assertEqual(self.p("changan/cs75-plus")["price_from"], 1550000)   # Changan dated 3 Nov per CEO
+        self.assertEqual({t["label"] for t in self.p("lexus/rx")["trims"]}, {"RX350 AWD F-Sport", "RX350h AWD - Hybrid"})
+        self.assertEqual(len(self.p("lexus/lx600")["trims"]), 4)  # LX model: LX600 x2 + LX700h hybrid x2
+        old = {r["price_id"]: r["price_egp"] for r in csv.DictReader(__import__("io").StringIO(__import__("subprocess").check_output(
+            ["git", "show", "bdc00e4:vehicle-data/registry/ceo_confirmed_accepted_20261108.csv"], cwd=ROOT, text=True)))}
+        now = {r["price_id"]: r["price_egp"] for r in self.acc}
+        self.assertEqual({k: now[k] for k in old}, old)  # published ids stable
 
     def test_accepted_values_served(self):
         self.assertEqual((self.p("toyota/corolla")["price_from"], self.p("toyota/corolla")["model_year"]), (1280000, 2027))
         self.assertEqual(self.p("hyundai/tucson")["price_from"], 1850000)
         self.assertEqual(self.p("haval/v7")["price_from"], 1915000)
-        self.assertEqual({t["label"] for t in self.p("lexus/lx600")["trims"]}, {"LX600 AWD 7 Seats", "LX600 AWD 4 Seats"})
         self.assertEqual(self.rel["release_id"], "P2-CEO-CONFIRMED-20261102-R1")
 
     def test_prior_decisions_preserved(self):

@@ -4541,6 +4541,28 @@
    "audit_keys": [],
    "note": "CEO-authorized 2026-11-02 intake; variant-specific identity; not added to U11 recommendations.",
    "market_status_basis": "CEO-confirmed Egypt price intake; not an official website availability claim"
+  },
+  {
+   "id": "lexus/rx",
+   "decision": "ADDITION",
+   "brand": "Lexus",
+   "model": "RX",
+   "body": "suv",
+   "powertrains": [
+    "petrol",
+    "hybrid"
+   ],
+   "u11_id": "",
+   "urls": [],
+   "match": [],
+   "evidence": [
+    "Lexus Egypt price list effective 3 Nov 2026 lists RX350 AWD F-Sport and RX350h AWD Hybrid MY2027 (drive:1err1v4m8juUN6ZBHMk3adg1rkNl03-K1, Sayarat Elyoum reprint)",
+    "CEO approved model-level identity 2026-11-08"
+   ],
+   "audit_keys": [
+    "lexus/rx350"
+   ],
+   "note": "Model-level identity; RX350 (petrol) and RX350h (hybrid) are versions."
   }
  ],
  "aliases": []
