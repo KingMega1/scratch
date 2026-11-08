@@ -3,11 +3,11 @@
  "task_id": "AT-39/AT-51",
  "date": "2026-11-08",
  "release_id": "P2-CEO-CONFIRMED-20261102-R1",
- "frozen_serving_commit": "bdc00e4f547aa9406de8f7bcfd791058ae3071fe",
- "revision": "9ce2a7d62878",
+ "frozen_serving_commit": "723748dfd32a7b88ef56b3bc55893fdd19ed7a0c",
+ "revision": "cddfe91b3287",
  "release_file": "vehicle-data/views/catalogue-serving.release.json",
- "release_sha256": "d282da21ef303190d421c6a7feb16ba6de5cde03900aed5144e78ee347fd5922",
- "canonical_sha256": "f11b684c14f84e85fc5c2c700ea784d704e41e99acefa46bbdd3366bdd499271",
+ "release_sha256": "02139f4146067089942fcdcc945e4008ad567a12095f84a3f0fc993c1c4f3a81",
+ "canonical_sha256": "eb3a044ec3f6c5dcd9a8f2190ebf446e63ff6200f77b9bf1945913d916d0cb00",
  "counts_283": {
   "models": 283,
   "id_accepted": 283,
@@ -26,7 +26,7 @@
   "fully_enriched": 39
  },
  "p5_production_binding": "P1 R4 + P2 3b4b5ef (serving e6d2711d..., revision ad4cc5e906b4) per P5 f386e95; 956a9a7 was never bound",
- "consume": "rebuild the P1 candidate (R5) from P2 commit bdc00e4f547aa9406de8f7bcfd791058ae3071fe only (serving sha256 d282da21ef303190d421c6a7feb16ba6de5cde03900aed5144e78ee347fd5922); do not follow the moving branch",
+ "consume": "rebuild the P1 candidate (R5) from P2 commit 723748dfd32a7b88ef56b3bc55893fdd19ed7a0c only (serving sha256 02139f4146067089942fcdcc945e4008ad567a12095f84a3f0fc993c1c4f3a81); do not follow the moving branch",
  "changes_since_3b4b5ef": [
   "Geely Emgrand/Coolray Auto Mobility CKD rows alongside Abou Ghaly (cd23be3)",
   "Jetour T2 Matte Color 1,930,000 replaces 1,970,000 (956a9a7)",
@@ -47,13 +47,13 @@
   "haval/jolion from 1,040,000",
   "haval/h6 from 1,390,000",
   "haval/h7 1,795,000",
-  "haval/v7 from 1,915,000"
+  "haval/v7 from 1,915,000",
+  "lexus/rx NEW identity m_000427: RX350h AWD Hybrid 9,100,000; RX350 AWD F-Sport 10,400,000",
+  "lexus/lx600 = LX model: LX700h hybrid 15,600,000 / 17,250,000 added to LX600 17,300,000 / 18,900,000 (display name 'LX' requested)",
+  "chery/arrizo-5, tiggo-7-pro, tiggo-8 MY2027 +10,000 (CEO accepted watermarked sheet)",
+  "changan/cs55-plus MY2027 1,170,000 / 1,300,000; changan/cs75-plus 1,550,000 / 1,700,000 (date 3 Nov per CEO)"
  ],
- "held": [
-  "Lexus RX x2, LX700h x2",
-  "Chery MY27 Arrizo 5 x3, Tiggo 7 Pro x2, Tiggo 8 x3 (+10,000; undated sheet)",
-  "Changan CS55 Plus MY27 Elite/Premium, CS75 Plus Premium/Flagship"
- ],
+ "held": [],
  "p1_open_items": [
   "P1-MAP-01 build_u12 label-match patch still pending (vehicle-data/handoff/patches/)",
   "Tiggo 8 Pro and EQ7 served as MSRP although both GB Auto sheets label them 'Promotion' (decision needed)"

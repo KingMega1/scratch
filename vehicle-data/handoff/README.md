@@ -87,3 +87,4 @@ Review sheet `1TUlGhEYzrOQrYdgMgyVhHwdw_ABGZSk9OhohYnvbZVg` (CarIndex P2 Data Co
 - Prices 113: 43 ACCEPT / 54 UNCHANGED / 16 HOLD; 4 Chery promotions separate; 3 Coolray corroborations. Ledger `review/ceo_confirmed_prices_20261108.csv`, manifest `review/ceo_acceptance_20261108.json`.
 - Registrations: `review/registration_charts_202610.csv` (5 charts, context only; canonical counts unchanged). Photos: `review/media_queue_disposition_20261108.csv` (0 accepted).
 - Frozen serving commit bdc00e4, revision 9ce2a7d62878. Handoffs `p1-release-20261108.json`, `p5-release-20261108.json` (adopt P1+P5 together).
+- 2026-11-08 (b): CEO decisions applied (Lexus LX/RX, Chery, Changan): 59 ACCEPT / 54 UNCHANGED / 0 HOLD. Frozen serving commit 723748d, revision cddfe91b3287. Missing-data workbook `review/p2_missing_data_20261108.xlsx`.
