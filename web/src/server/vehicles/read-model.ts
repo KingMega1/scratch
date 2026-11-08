@@ -282,6 +282,19 @@ const additions: Raw[] = (((serving as Raw).market_additions ?? []) as Raw[]).ma
   missing_evidence: x.missing_evidence ?? [], accepted: x.accepted ?? {}, identity: x.identity, parent: x.parent ?? null,
 }));
 export const servingRows: Raw[] = [...(serving.entries as Raw[]), ...additions];
+/* Same rule as the accepted P1 R5 builder: a version stored as petrol whose own P2 label says HEV/PHEV/Hybrid is typed
+   from the label (e.g. Haval V7, Lexus LX700h, Kia Carnival HEV). Keeps the car page powertrain in line with Find My Car.
+   Petrol is dropped only when every listed version is hybrid-labelled. P2 data is not changed. */
+const HYBRID_LABEL = /\b(PHEV|HEV|hybrid)\b/i;
+function typeFromVersionLabels(car: PublicCar, e: Raw): void {
+  const labels = ((e?.accepted?.price?.trims ?? []) as Raw[]).map(t => String(t?.label ?? ''));
+  const typed = labels.map(l => (/\bPHEV\b/i.test(l) ? 'phev' : HYBRID_LABEL.test(l) ? 'hybrid' : null));
+  const hits = typed.filter((t): t is 'phev' | 'hybrid' => t !== null);
+  if (!hits.length) return;
+  const keep = hits.length === labels.length ? car.powertrains.filter(p => p !== 'petrol' && p !== 'ice') : car.powertrains;
+  car.powertrains = [...new Set<Powertrain>([...keep, ...hits])];
+}
+
 const verifiedLaunchDate = (e: Raw): string | null => {
   const d = e?.accepted?.egypt_launch_date;
   return typeof d === 'string' && /^\d{4}-(0[1-9]|1[0-2])(-\d{2})?$/.test(d) ? d : null;
@@ -334,6 +347,7 @@ class JsonSnapshotReadModel implements VehicleReadModel {
           yoy:null, yoyCaveat:null, monthsMissing:[], monthly:[],
         } : null;
       }
+      typeFromVersionLabels(car, e as Raw);
       car.launchDate = verifiedLaunchDate(e);
       return car;
     });

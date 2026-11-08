@@ -153,6 +153,24 @@ test.describe('boundaries', () => {
     await expect(page.locator('.src-list a[href*="drive.google.com"]')).toHaveCount(0);
     await expect(page.locator('.src-list').first()).toContainText('GB Auto');
   });
+  // P5-Run 8 Nov defect: V7 versions are HEV/PHEV but the page said "Petrol" (P1 R5 types them from the version label).
+  test('Haval V7 powertrain follows its HEV/PHEV version labels, not petrol', async ({ page }) => {
+    await page.goto('/en/cars/haval-v7');
+    const meta = page.locator('main p.small').filter({ hasText: 'versions' }).first();
+    await expect(meta).toContainText('Hybrid / Plug-in Hybrid');
+    await expect(meta).not.toContainText('Petrol');
+  });
+  test('Lexus LX keeps petrol and adds hybrid (LX600 + LX700h)', async ({ page }) => {
+    await page.goto('/en/cars/lexus-lx600');
+    await expect(page.locator('main p.small').filter({ hasText: 'versions' }).first()).toContainText('Petrol / Hybrid');
+  });
+  test('/cars/lexus-lx redirects to the LX page in both locales', async ({ request }) => {
+    for (const l of ['en', 'ar']) {
+      const res = await request.get(`/${l}/cars/lexus-lx`, { maxRedirects: 0 });
+      expect(res.status()).toBe(308);
+      expect(res.headers()['location']).toBe(`/${l}/cars/lexus-lx600`);
+    }
+  });
   test('car detail Take is a data-bound slot', async ({ page }) => {
     await page.goto('/en/cars/hyundai-tucson');
     await expect(page.locator('[data-slot="carindex-take"]')).toHaveAttribute('data-bound', 'false');

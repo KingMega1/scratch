@@ -39,6 +39,10 @@ const config: NextConfig = {
     '/[locale]/find-my-car': ['./p1-release/**/*', './p1-accepted/U12-CEO3-R5/**/*'],
     '/admin': ['./p1-release/**/*', './p1-accepted/U12-CEO3-R5/**/*'],
   },
+  // The LX is named "LX" (CEO decision, P1 R5) but its page keeps the identity slug lexus-lx600.
+  async redirects() {
+    return [{ source: '/:locale(en|ar)/cars/lexus-lx', destination: '/:locale/cars/lexus-lx600', permanent: true }];
+  },
   async headers() {
     return [
       { source: '/:path*', headers: securityHeaders },
