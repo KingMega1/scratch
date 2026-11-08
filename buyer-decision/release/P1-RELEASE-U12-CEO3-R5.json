@@ -1,17 +1,42 @@
 {
  "record": "P1-RELEASE-U12-CEO3-R5",
- "status": "CANDIDATE — not released",
+ "status": "ACCEPTED",
+ "acceptance": {
+  "by": "CEO (release authority)",
+  "date": "2026-11-08",
+  "basis": "All P1 gates pass on final hashes",
+  "p2": {
+   "commit": "723748dfd32a7b88ef56b3bc55893fdd19ed7a0c",
+   "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+   "revision": "cddfe91b3287",
+   "serving_sha256": "02139f4146067089942fcdcc945e4008ad567a12095f84a3f0fc993c1c4f3a81"
+  },
+  "gates": {
+   "price_parity": "0/275",
+   "model_year": "PASS",
+   "versions": "PASS",
+   "stale_holds": "PASS",
+   "official_market_labels": "PASS (792 EN+AR lists)",
+   "regression": "1142/1142 U11 strict, 1220/1220 R5",
+   "browser_vs_transport": "1405/1405 R5, 1335/1335 U11",
+   "transport": "1517/1517",
+   "buyer_scenarios": "691/691",
+   "ceo_failures": "135/135",
+   "named_cars": "49/49",
+   "eligibility": "1451/1451",
+   "u12_data": "195/195",
+   "ceo_intake": "PASS"
+  },
+  "production_deployment": "none by P1"
+ },
  "created": "2026-11-08",
  "owner": "P1",
  "task": "P1-READINESS-02",
  "repo": "KingMega1/scratch",
  "branch": "claude/carindex-buyer-decision-slice-applo4",
- "source_commit": "769fc30cda0671835eed2705c266125b99452f7f",
- "production_binding_unchanged": "P1-RELEASE-T1 (engine E6-2026-09-28, U11-2026-09-26) stays bound until this candidate is accepted",
- "release_gates_open": [
-  "Release acceptance of engine E6.1 + dataset U12-CEO3-R5",
-  "P5 rebinding of P1 R5 + P2 723748d in one change"
- ],
+ "source_commit": "ba2120d16b69a54524d9cb4176e8fd4fd763c8c0",
+ "production_binding_unchanged": "P1 made no production change. P5 binds this release after its integration checks (see p5_handoff); until then production stays on P1-RELEASE-T1.",
+ "release_gates_open": [],
  "copy_gate": "CLOSED: no DRAFT markers in app/i18n.js. conflict_h CEO-approved 2026-10-21; conflict.unknown_price / sl_out.unknown_price final wording; conflict.unknown_size, conflict.scope, sl_out.unknown_size, sl_out.scope unreachable (no car carries held) under the 2026-10-21 CEO decisions.",
  "test_build": {
   "repo": "KingMega1/carindex-buyer-test",
@@ -111,8 +136,8 @@
   },
   "p5_handoff": {
    "path": "buyer-decision/transport/P5-HANDOFF-U12-CEO3-R5.md",
-   "sha256": "976d35431132164112f036babbe88f33394577e068a235f8dd1be5ec65039b2f",
-   "bytes": 4776
+   "sha256": "f419ca1e3e43b1a998b736d31078dd1fc53b024346262c186346e6c8b43a90ea",
+   "bytes": 4888
   },
   "dataset_manifest": {
    "path": "buyer-decision/datasets/U12-CEO3-R5-2026-11-08/manifest.json",
