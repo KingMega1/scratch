@@ -1,7 +1,7 @@
 # P1 → P5 consumption contract and release gate — U12-CEO3-R5
 
 Owner: P1. Record: `buyer-decision/release/P1-RELEASE-U12-CEO3-R5.json`. Supersedes `P5-HANDOFF-U12-CEO3-R4.md`; every contract rule there is unchanged except as listed below.
-**Status: CANDIDATE. Do not bind in production.** P1 made no production deployment.
+**Status: ACCEPTED by the release authority (CEO), 2026-11-08.** All P1 gates pass (§3). P5 binds it on preview first; production only on a separate release GO. P1 made no production deployment.
 
 ## 1. Bind together (one change)
 
