@@ -1,0 +1,95 @@
+{
+ "task_id": "AT-39/AT-51",
+ "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+ "state": "DONE",
+ "base_commit": "0bce9f6d5df5702bf78a84c4cd3d715c9a88b580",
+ "baseline_serving": "956a9a70096119075c52e18f4a8e8f7dd2fa1544 (revision 7bd2d1fb1966)",
+ "intake": "Control Tower AT-39, '8 November — ChatGPT Work transcription returned' (https://app.notion.com/p/3ec6811407bc81e4ba5edf713b70b481)",
+ "priced_observations": 113,
+ "dispositions": {
+  "ACCEPT": 43,
+  "UNCHANGED": 54,
+  "HOLD": 16
+ },
+ "by_source": {
+  "changan": {
+   "UNCHANGED": 4,
+   "HOLD": 4
+  },
+  "chery": {
+   "UNCHANGED": 31,
+   "HOLD": 8
+  },
+  "haval": {
+   "ACCEPT": 8
+  },
+  "hyundai": {
+   "ACCEPT": 16,
+   "UNCHANGED": 17
+  },
+  "lexus": {
+   "ACCEPT": 3,
+   "HOLD": 4
+  },
+  "toyota": {
+   "ACCEPT": 16,
+   "UNCHANGED": 2
+  }
+ },
+ "accepted_retail_rows": 43,
+ "promotions_kept_separate": 4,
+ "corroborations": 3,
+ "source_files": [
+  {
+   "name": "IMG_8305.JPG",
+   "drive": "1UfYmSfxaxF1BIbNjHKA63hZ77vP-sN0r",
+   "sha256": "a915497513803c0132571e820950520606e5f054fbfeab6ab175a28aa4b675bd",
+   "verification": "HASH_PASS; Toyota Egypt branded, effective 3 Nov 2026; 18/18 figures match"
+  },
+  {
+   "name": "IMG_8306.JPG",
+   "drive": "1err1v4m8juUN6ZBHMk3adg1rkNl03-K1",
+   "sha256": "072df047dcd4594f93f46649ce0a129a7ceb976ad03d385fc5bd64b274c0f17d",
+   "verification": "HASH_PASS; Sayarat Elyoum reprint of the complete Lexus Egypt list effective 3 Nov 2026; 7/7 match"
+  },
+  {
+   "name": "IMG_8299.PNG",
+   "drive": "15QX9nq_QFJTwdYBWb0L4r5qaF_Fd36jt",
+   "sha256": "891f6899b58283273207c650f9f62a5ea0ab7b7b094744afc053cba3691b1827",
+   "verification": "HASH_PASS; GB Auto Hyundai official list effective 5 Nov 2026; 33/33 match"
+  },
+  {
+   "name": "IMG_8319.JPG",
+   "drive": "1OI-9flCCaLZtafZrpsrofkwW0n9_U6PH",
+   "sha256": "91ad575bcece98938a8d7669faa232f1a2933b09efcfe5e1a8ad329fed6f7cdf",
+   "verification": "HASH_PASS; GB Auto Chery table, undated, Auto Live watermark, clipped below Tiggo 9; figures match"
+  },
+  {
+   "name": "IMG_8340.JPG",
+   "drive": "17ujD2yJr6fUiGlpE6N5xp3Opgja_1int",
+   "sha256": "429fff7b7f3497b39650560feaf1c9824741733924c5d6b65bda66c199c112fa",
+   "verification": "HASH_PASS; GB Auto 'HAVAL Price List 6th of Nov. 2026', Auto Live watermark; 8/8 match"
+  },
+  {
+   "name": "IMG_8310.JPG",
+   "drive": "1ykBu6V28WJmH1yoQZ9xDPR8zY8Y599xV",
+   "sha256": "9b0cf390ba8e23acecd8f03d36f3ad7a6bce617c3afbdf7076496d5a746b52c3",
+   "verification": "HASH_PASS; Alam Elsyarat Coolray card 5 Nov 2026; corroboration only"
+  },
+  {
+   "name": "IMG_8311.PNG",
+   "drive": "1-GsxgCcJlNg_Um1QsnZJfDQHHtsBKD7v",
+   "sha256": "b5a3bf72962741db4f26c125981fbedd14b8dbfbc6b681272e287437ed7e6042",
+   "verification": "HASH_PASS; Sayarat Elyoum Changan card, undated; CS75 Plus Premium blurred (1,550,000 or 1,650,000)"
+  }
+ ],
+ "holds": {
+  "lexus_rx_2": "no RX identity in accepted registry",
+  "lexus_lx700h_2": "only lexus/lx600 identity; LX700h hybrid mapping unresolved",
+  "chery_8": "undated/clipped/watermarked: Arrizo 5 MY27 x3, Tiggo 7 Pro MY27 x2, Tiggo 8 MY27 x3 (+10,000 each vs accepted)",
+  "changan_4": "undated media card: CS55 Plus MY27 Elite/Premium, CS75 Plus Premium (figure blurred)/Flagship"
+ },
+ "exception_promotions": "Tiggo 8 Pro MY25/MY26 (1,365,000/1,465,000/1,375,000/1,475,000) and EQ7 (1,599,000) are labelled 'Promotion' on both the 22 Oct and 8 Nov GB Auto Chery sheets but are served as MSRP since 22 Oct; not changed here (accepted data), needs decision",
+ "unchanged_policy": "UNCHANGED = same model, trim, model year and price as the served accepted row; no new row unless the model's current list was accepted (then included as a cohort member)",
+ "ledger_sha256": "b3f5454fbfea68ba207089166a0a9993c68511b2d6311d05eb571ee45530c581"
+}
