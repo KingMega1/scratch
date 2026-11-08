@@ -1,19 +1,19 @@
 # P5 release queue (P1 + P2 bound together)
 
-Bound on this branch (preview), 8 Nov 2026 — P1 R5 and P2 723748d moved together in one change:
+Bound in preview and production, 8 Nov 2026 — P1 R5 and P2 723748d moved together in one change:
 
 | | Release | Commit | Pin |
 |---|---|---|---|
 | P1 | P1-RELEASE-U12-CEO3-R5 (ACCEPTED 2026-11-08, CEO) | a3fe98fab4cda8137d29507035fa405910338fc8 (source ba2120d) | record sha256 e4f19c1c…, dataset U12-CEO3-R5-2026-11-08 content sha256 b136d0e6… |
 | P2 | P2-CEO-CONFIRMED-20261102-R1, revision cddfe91b3287 | 723748dfd32a7b88ef56b3bc55893fdd19ed7a0c | catalogue-serving.release.json sha256 02139f4146067089942fcdcc945e4008ad567a12095f84a3f0fc993c1c4f3a81 (= R5 p2_input) |
 
-Production (carindexed.com) is unchanged: deployment dpl_H37sXYezyAjZKCSUq2z77zgqdmi3, P5 f386e95, P1 R4 22c5fe3 + P2 3b4b5ef.
-A production deploy of this pair needs a separate production GO. Rollback target after such a deploy: dpl_H37sXYezyAjZKCSUq2z77zgqdmi3.
+Production (carindexed.com): CEO GO 8 Nov. Deployment dpl_67aT5u9dUcSoksQH8tZTqGPoQcgX, P5 7c5a67e, P1 R5 a3fe98f + P2 723748d.
+Rollback target: dpl_H37sXYezyAjZKCSUq2z77zgqdmi3 (P5 f386e95, P1 R4 22c5fe3 + P2 3b4b5ef).
 Car pages show the CEO display name from the vendored P1 decisions (lexus/lx600 -> "LX"), matching Find My Car.
 
 ### Previous binding (R4)
 
-Bound in preview and production (CEO GO 5 Nov 2026, carindexed.com):
+Production 5–8 Nov 2026 (CEO GO 5 Nov):
 
 | | Release | Commit | Pin |
 |---|---|---|---|
