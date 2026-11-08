@@ -1,0 +1,768 @@
+{
+ "schema": "carindex.p2.p5-release-handoff/v1",
+ "task_id": "AT-39/AT-51",
+ "date": "2026-11-08",
+ "sequence": "c",
+ "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+ "frozen_serving_commit": "a7514317198856c066d1810af5d3c5764108ffbd",
+ "revision": "76f912a75beb",
+ "release_file": "vehicle-data/views/catalogue-serving.release.json",
+ "release_sha256": "e16d904d1912fa04ac01b74a0822c8349a00b585c300a6ed2c8ff2d41d8876f9",
+ "canonical_sha256": "6882de94a492425aa0b3237b2398bb4109b01e5b02b6ebbf642ff6be11719176",
+ "counts_283": {
+  "models": 283,
+  "id_accepted": 283,
+  "price_accepted": 215,
+  "price_tier_a": 133,
+  "price_source_dated": 132,
+  "market_status_official": 37,
+  "specs_accepted": 200,
+  "warranty_accepted": 110,
+  "brochure_accepted": 83,
+  "hero_accepted": 84,
+  "hero_accepted_hq": 80,
+  "hero_limited_archive": 123,
+  "gallery_models": 72,
+  "logo_accepted": 254,
+  "fully_enriched": 39
+ },
+ "supersedes": {
+  "commit": "723748dfd32a7b88ef56b3bc55893fdd19ed7a0c",
+  "revision": "cddfe91b3287",
+  "release_sha256": "02139f4146067089942fcdcc945e4008ad567a12095f84a3f0fc993c1c4f3a81"
+ },
+ "request": "P1 -> P2 request: version powertrains contradicted by their own labels (8 Nov 2026)",
+ "scope": "powertrain only; no price, identity, spec or media value changed. 23 models change: 18 model powertrain sets (13 entries, 5 market additions) + version-level only on haval/h7, mg/hs, xpeng/m03, xpeng/p7, lexus/rx",
+ "fields": {
+  "version": "accepted.price.trims[].powertrain in {petrol,hybrid,phev,reev,ev}; trims[].plug_in true/false (null = source does not state it); trims[].powertrain_source {wording,url,sha256,rule:\"VP-1\"}. Versions without a VP-1 row keep their previous value.",
+  "model": "entries: accepted.powertrains + accepted.powertrains_correction (rule \"VP-2\"); RC1 top-level powertrains stays verbatim (P5 contract). market_additions: top-level powertrains updated and mirrored in accepted.powertrains. A plug-in version adds both \"hybrid\" and \"phev\" to the model set; \"reev\" is kept as its own value."
+ },
+ "decisions": {
+  "accept": 36,
+  "hold": 5
+ },
+ "model_powertrain_changes": [
+  {
+   "p1_id": "byd/atto-8",
+   "group": "entries",
+   "was": [
+    "ev"
+   ],
+   "now": [
+    "hybrid",
+    "phev"
+   ]
+  },
+  {
+   "p1_id": "byd/m9",
+   "group": "entries",
+   "was": [
+    "hybrid"
+   ],
+   "now": [
+    "hybrid",
+    "phev"
+   ]
+  },
+  {
+   "p1_id": "byd/sealion-6",
+   "group": "entries",
+   "was": [
+    "ev",
+    "hybrid"
+   ],
+   "now": [
+    "hybrid",
+    "phev"
+   ]
+  },
+  {
+   "p1_id": "deepal/g318",
+   "group": "entries",
+   "was": [
+    "hybrid"
+   ],
+   "now": [
+    "reev"
+   ]
+  },
+  {
+   "p1_id": "deepal/s-05",
+   "group": "entries",
+   "was": [
+    "ev",
+    "hybrid"
+   ],
+   "now": [
+    "reev",
+    "ev"
+   ]
+  },
+  {
+   "p1_id": "deepal/s-07",
+   "group": "entries",
+   "was": [
+    "ev",
+    "hybrid"
+   ],
+   "now": [
+    "reev",
+    "ev"
+   ]
+  },
+  {
+   "p1_id": "forthing/s7",
+   "group": "entries",
+   "was": [
+    "ev",
+    "hybrid"
+   ],
+   "now": [
+    "reev",
+    "ev"
+   ]
+  },
+  {
+   "p1_id": "forthing/t5",
+   "group": "entries",
+   "was": [
+    "ev",
+    "hybrid",
+    "petrol"
+   ],
+   "now": [
+    "reev",
+    "ev"
+   ]
+  },
+  {
+   "p1_id": "haval/v7",
+   "group": "market_additions",
+   "was": [
+    "petrol"
+   ],
+   "now": [
+    "hybrid",
+    "phev"
+   ]
+  },
+  {
+   "p1_id": "hyundai/santa-fe",
+   "group": "entries",
+   "was": [
+    "hybrid",
+    "petrol"
+   ],
+   "now": [
+    "hybrid"
+   ]
+  },
+  {
+   "p1_id": "kia/carnival",
+   "group": "market_additions",
+   "was": [
+    "petrol"
+   ],
+   "now": [
+    "hybrid"
+   ]
+  },
+  {
+   "p1_id": "lexus/lx600",
+   "group": "entries",
+   "was": [
+    "petrol"
+   ],
+   "now": [
+    "petrol",
+    "hybrid"
+   ]
+  },
+  {
+   "p1_id": "soueast/s-06",
+   "group": "entries",
+   "was": [
+    "hybrid",
+    "petrol"
+   ],
+   "now": [
+    "petrol",
+    "hybrid",
+    "phev"
+   ]
+  },
+  {
+   "p1_id": "soueast/s-08-dm",
+   "group": "entries",
+   "was": [
+    "hybrid",
+    "petrol"
+   ],
+   "now": [
+    "hybrid",
+    "phev"
+   ]
+  },
+  {
+   "p1_id": "xpeng/g7",
+   "group": "entries",
+   "was": [
+    "ev"
+   ],
+   "now": [
+    "reev"
+   ]
+  },
+  {
+   "p1_id": "xpeng/gx",
+   "group": "market_additions",
+   "was": [
+    "ev"
+   ],
+   "now": [
+    "reev"
+   ]
+  },
+  {
+   "p1_id": "xpeng/p7-plus",
+   "group": "market_additions",
+   "was": [
+    "ev"
+   ],
+   "now": [
+    "reev",
+    "ev"
+   ]
+  },
+  {
+   "p1_id": "xpeng/x9",
+   "group": "entries",
+   "was": [
+    "ev"
+   ],
+   "now": [
+    "reev"
+   ]
+  }
+ ],
+ "version_rows": [
+  {
+   "p1_id": "haval/v7",
+   "version": "1.5T 2DHT HEV FWD Ultra",
+   "model_year": 2027,
+   "decision": "ACCEPT",
+   "powertrain": "hybrid",
+   "plug_in": false,
+   "source_wording": "V7 1.5T 2DHT HEV FWD ULTRA",
+   "source_sha256": "429fff7b7f3497b39650560feaf1c9824741733924c5d6b65bda66c199c112fa",
+   "note": "GB Auto Haval list 6 Nov 2026 (IMG_8340.JPG) names HEV"
+  },
+  {
+   "p1_id": "haval/v7",
+   "version": "1.5T 4DHT PHEV Hi4 Ultra",
+   "model_year": 2027,
+   "decision": "ACCEPT",
+   "powertrain": "phev",
+   "plug_in": true,
+   "source_wording": "V7 1.5T 4DHT PHEV Hi4 ULTRA; footnote \"Hybrid and Plug-In hybrid systems\"",
+   "source_sha256": "429fff7b7f3497b39650560feaf1c9824741733924c5d6b65bda66c199c112fa",
+   "note": "GB Auto Haval list 6 Nov 2026 names PHEV"
+  },
+  {
+   "p1_id": "kia/carnival",
+   "version": "HEV 8-Seats Topline",
+   "model_year": 2026,
+   "decision": "ACCEPT",
+   "powertrain": "hybrid",
+   "plug_in": false,
+   "source_wording": "HYBRID - 8-SEATS Kia Carnival 2026 Topline",
+   "source_sha256": "5b62a14342852a700751c8e1c23e525dca12d2083cb32416c546745af5faa824",
+   "note": "EIT Kia Egypt list effective 13 Oct 2026; only Carnival version listed"
+  },
+  {
+   "p1_id": "lexus/lx600",
+   "version": "LX700h AWD 7 Seats - Hybrid",
+   "model_year": 2027,
+   "decision": "ACCEPT",
+   "powertrain": "hybrid",
+   "plug_in": false,
+   "source_wording": "LX700h AWD 7 Seats - Hybrid",
+   "source_sha256": "072df047dcd4594f93f46649ce0a129a7ceb976ad03d385fc5bd64b274c0f17d",
+   "note": "Lexus Egypt list effective 3 Nov 2026 (IMG_8306.JPG)"
+  },
+  {
+   "p1_id": "lexus/lx600",
+   "version": "LX700h AWD 4 Seats - Hybrid",
+   "model_year": 2027,
+   "decision": "ACCEPT",
+   "powertrain": "hybrid",
+   "plug_in": false,
+   "source_wording": "LX700h AWD 4 Seats - Hybrid",
+   "source_sha256": "072df047dcd4594f93f46649ce0a129a7ceb976ad03d385fc5bd64b274c0f17d",
+   "note": "Lexus Egypt list effective 3 Nov 2026 (IMG_8306.JPG)"
+  },
+  {
+   "p1_id": "hyundai/staria",
+   "version": "HEV Premium Lounge 7 Seats",
+   "model_year": null,
+   "decision": "HOLD",
+   "powertrain": null,
+   "plug_in": null,
+   "source_wording": null,
+   "source_sha256": null,
+   "note": "No P2-accepted Staria version or price: only single-site ContactCars rows (REWORK PB-2). P2 serves no Staria trims; the label P1 shows comes from P1 U11 S0 data, not from P2."
+  },
+  {
+   "p1_id": "lexus/rx",
+   "version": "RX350h AWD - Hybrid",
+   "model_year": 2027,
+   "decision": "ACCEPT",
+   "powertrain": "hybrid",
+   "plug_in": false,
+   "source_wording": "RX350h AWD - Hybrid",
+   "source_sha256": "072df047dcd4594f93f46649ce0a129a7ceb976ad03d385fc5bd64b274c0f17d",
+   "note": "Lexus Egypt list effective 3 Nov 2026"
+  },
+  {
+   "p1_id": "deepal/s-05",
+   "version": "SUV REEV",
+   "model_year": 2027,
+   "decision": "ACCEPT",
+   "powertrain": "reev",
+   "plug_in": null,
+   "source_wording": "DEEPAL S05 SUV (REEV)",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+   "note": "GB Auto Deepal list; REEV"
+  },
+  {
+   "p1_id": "deepal/s-05",
+   "version": "SUV BEV",
+   "model_year": 2027,
+   "decision": "ACCEPT",
+   "powertrain": "ev",
+   "plug_in": false,
+   "source_wording": "DEEPAL S05 SUV (BEV)",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+   "note": "GB Auto Deepal list; BEV"
+  },
+  {
+   "p1_id": "deepal/s-07",
+   "version": "SUV REEV",
+   "model_year": 2026,
+   "decision": "ACCEPT",
+   "powertrain": "reev",
+   "plug_in": null,
+   "source_wording": "DEEPAL S07 SUV (REEV)",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+   "note": "GB Auto Deepal list; REEV"
+  },
+  {
+   "p1_id": "deepal/s-07",
+   "version": "SUV BEV",
+   "model_year": 2026,
+   "decision": "ACCEPT",
+   "powertrain": "ev",
+   "plug_in": false,
+   "source_wording": "DEEPAL S07 SUV (BEV)",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+   "note": "GB Auto Deepal list; BEV"
+  },
+  {
+   "p1_id": "deepal/g318",
+   "version": "Premium REEV",
+   "model_year": 2027,
+   "decision": "ACCEPT",
+   "powertrain": "reev",
+   "plug_in": null,
+   "source_wording": "DEEPAL G318 SUV PREMIUM (REEV)",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+   "note": "GB Auto Deepal list; model set was hybrid"
+  },
+  {
+   "p1_id": "deepal/g318",
+   "version": "Adventure REEV",
+   "model_year": 2027,
+   "decision": "ACCEPT",
+   "powertrain": "reev",
+   "plug_in": null,
+   "source_wording": "DEEPAL G318 SUV ADVENTURE (REEV)",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+   "note": "GB Auto Deepal list; model set was hybrid"
+  },
+  {
+   "p1_id": "forthing/s7",
+   "version": "EV Exclusive",
+   "model_year": 2027,
+   "decision": "ACCEPT",
+   "powertrain": "ev",
+   "plug_in": false,
+   "source_wording": "S7 EV Exclusive 2027",
+   "source_sha256": "1801e34e23e324621ec688b0958c3278c74feba7b724f53710d25cda9553ca2b",
+   "note": "AYM Forthing list Oct 2026"
+  },
+  {
+   "p1_id": "forthing/s7",
+   "version": "REEV Exclusive",
+   "model_year": 2027,
+   "decision": "ACCEPT",
+   "powertrain": "reev",
+   "plug_in": null,
+   "source_wording": "S7 REEV Exclusive 2027",
+   "source_sha256": "1801e34e23e324621ec688b0958c3278c74feba7b724f53710d25cda9553ca2b",
+   "note": "AYM Forthing list Oct 2026"
+  },
+  {
+   "p1_id": "forthing/t5",
+   "version": "EV Exclusive",
+   "model_year": 2027,
+   "decision": "ACCEPT",
+   "powertrain": "ev",
+   "plug_in": false,
+   "source_wording": "T5 EV Exclusive 2027",
+   "source_sha256": "1801e34e23e324621ec688b0958c3278c74feba7b724f53710d25cda9553ca2b",
+   "note": "AYM Forthing list Oct 2026"
+  },
+  {
+   "p1_id": "forthing/t5",
+   "version": "REEV Exclusive",
+   "model_year": 2027,
+   "decision": "ACCEPT",
+   "powertrain": "reev",
+   "plug_in": null,
+   "source_wording": "T5 REEV Exclusive 2027",
+   "source_sha256": "1801e34e23e324621ec688b0958c3278c74feba7b724f53710d25cda9553ca2b",
+   "note": "AYM Forthing list Oct 2026"
+  },
+  {
+   "p1_id": "xpeng/g7",
+   "version": "RWD Flagship Super REEV",
+   "model_year": null,
+   "decision": "ACCEPT",
+   "powertrain": "reev",
+   "plug_in": null,
+   "source_wording": "G7 SUPER REEV CATEGORY: G7-RWD Flagship",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+   "note": "Raya Auto XPENG list Oct 2026"
+  },
+  {
+   "p1_id": "xpeng/x9",
+   "version": "Flagship Super REEV",
+   "model_year": null,
+   "decision": "ACCEPT",
+   "powertrain": "reev",
+   "plug_in": null,
+   "source_wording": "X9 SUPER REEV CATEGORY: X9 Flagship",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+   "note": "Raya Auto XPENG list Oct 2026"
+  },
+  {
+   "p1_id": "xpeng/gx",
+   "version": "Flagship Super REEV",
+   "model_year": null,
+   "decision": "ACCEPT",
+   "powertrain": "reev",
+   "plug_in": null,
+   "source_wording": "GX SUPER REEV CATEGORY: GX Flagship",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+   "note": "Raya Auto XPENG list Oct 2026; was served ev"
+  },
+  {
+   "p1_id": "xpeng/p7-plus",
+   "version": "RWD Flagship EV",
+   "model_year": null,
+   "decision": "ACCEPT",
+   "powertrain": "ev",
+   "plug_in": false,
+   "source_wording": "P7+ EV CATEGORY: P7+ RWD Flagship",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+   "note": "Raya Auto XPENG list Oct 2026"
+  },
+  {
+   "p1_id": "xpeng/p7-plus",
+   "version": "REEV-RWD Flagship Super REEV",
+   "model_year": null,
+   "decision": "ACCEPT",
+   "powertrain": "reev",
+   "plug_in": null,
+   "source_wording": "P7+ SUPER REEV CATEGORY: P7+ REEV-RWD Flagship",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+   "note": "Raya Auto XPENG list Oct 2026; was served ev"
+  },
+  {
+   "p1_id": "byd/atto-8",
+   "version": "DMi Ultra",
+   "model_year": 2027,
+   "decision": "ACCEPT",
+   "powertrain": "phev",
+   "plug_in": true,
+   "source_wording": "BYD list 22 Oct 2026 \"DMi Ultra\"; accepted powertrain_class PHEV (ContactCars+Hatla2ee, SP-2)",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+   "note": "DM-i plug-in per accepted SP-2 spec fact; price list label alone does not say plug-in"
+  },
+  {
+   "p1_id": "byd/m9",
+   "version": "DMi Ultra",
+   "model_year": 2027,
+   "decision": "ACCEPT",
+   "powertrain": "phev",
+   "plug_in": true,
+   "source_wording": "BYD list 22 Oct 2026 \"DMi Ultra\"; accepted powertrain_class PHEV (ContactCars+Hatla2ee, SP-2)",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+   "note": "DM-i plug-in per accepted SP-2 spec fact; price list label alone does not say plug-in"
+  },
+  {
+   "p1_id": "byd/m9",
+   "version": "DMi Luxury",
+   "model_year": 2027,
+   "decision": "ACCEPT",
+   "powertrain": "phev",
+   "plug_in": true,
+   "source_wording": "BYD list 22 Oct 2026 \"DMi Luxury\"; accepted powertrain_class PHEV (ContactCars+Hatla2ee, SP-2)",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+   "note": "DM-i plug-in per accepted SP-2 spec fact; price list label alone does not say plug-in"
+  },
+  {
+   "p1_id": "byd/sealion-6",
+   "version": "DMi Ultra",
+   "model_year": 2027,
+   "decision": "ACCEPT",
+   "powertrain": "phev",
+   "plug_in": true,
+   "source_wording": "BYD list 22 Oct 2026 \"DMi Ultra\"; accepted powertrain_class PHEV (ContactCars+Hatla2ee, SP-2)",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+   "note": "DM-i plug-in per accepted SP-2 spec fact; price list label alone does not say plug-in"
+  },
+  {
+   "p1_id": "byd/sealion-6",
+   "version": "DMi Luxury",
+   "model_year": 2027,
+   "decision": "ACCEPT",
+   "powertrain": "phev",
+   "plug_in": true,
+   "source_wording": "BYD list 22 Oct 2026 \"DMi Luxury\"; accepted powertrain_class PHEV (ContactCars+Hatla2ee, SP-2)",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+   "note": "DM-i plug-in per accepted SP-2 spec fact; price list label alone does not say plug-in"
+  },
+  {
+   "p1_id": "byd/sealion-5",
+   "version": "DMi Ultra",
+   "model_year": 2027,
+   "decision": "HOLD",
+   "powertrain": "hybrid",
+   "plug_in": null,
+   "source_wording": "BYD list \"Sealion 5 DMi\"",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+   "note": "Plug-in flag HOLD: accepted powertrain_class is \"Hybrid\" (not PHEV); brochure on byd-egypt.com not reachable from this environment. Served powertrain left as is."
+  },
+  {
+   "p1_id": "byd/sealion-5",
+   "version": "DMi Luxury",
+   "model_year": 2027,
+   "decision": "HOLD",
+   "powertrain": "hybrid",
+   "plug_in": null,
+   "source_wording": "BYD list \"Sealion 5 DMi\"",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+   "note": "Plug-in flag HOLD: accepted powertrain_class is \"Hybrid\" (not PHEV); brochure on byd-egypt.com not reachable from this environment. Served powertrain left as is."
+  },
+  {
+   "p1_id": "byd/ti-7",
+   "version": "DMi Ultra FWD",
+   "model_year": 2027,
+   "decision": "HOLD",
+   "powertrain": null,
+   "plug_in": null,
+   "source_wording": "BYD list \"Ti 7 DMi\"",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+   "note": "HOLD: list says \"DMi\" only; no accepted powertrain_class; brochure not reachable. Model set stays hybrid (RC1)."
+  },
+  {
+   "p1_id": "byd/ti-7",
+   "version": "DMi Luxury AWD",
+   "model_year": 2027,
+   "decision": "HOLD",
+   "powertrain": null,
+   "plug_in": null,
+   "source_wording": "BYD list \"Ti 7 DMi\"",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+   "note": "HOLD: list says \"DMi\" only; no accepted powertrain_class; brochure not reachable. Model set stays hybrid (RC1)."
+  },
+  {
+   "p1_id": "mg/hs",
+   "version": "HS HEV",
+   "model_year": null,
+   "decision": "ACCEPT",
+   "powertrain": "hybrid",
+   "plug_in": false,
+   "source_wording": "MG HS HEV",
+   "source_sha256": "14d119ed316e70dfc652c14e29a5d07f824ceeaf9acf6992203e09bc225bb131",
+   "note": "Mansour MG retail list 15.10.2026"
+  },
+  {
+   "p1_id": "hyundai/santa-fe",
+   "version": "1.6T Executive HEV RWD",
+   "model_year": 2025,
+   "decision": "ACCEPT",
+   "powertrain": "hybrid",
+   "plug_in": false,
+   "source_wording": "SANTA FE MX5 1.6T EXECUTIVE HEV RWD",
+   "source_sha256": "45e574f64406098920a99d8e16b7545920474262af0d03bc954ce3724d9b1ddf",
+   "note": "GB Auto Hyundai list effective 15 Oct 2026; only HEV versions listed"
+  },
+  {
+   "p1_id": "hyundai/santa-fe",
+   "version": "1.6T Calligraphy HEV AWD",
+   "model_year": 2025,
+   "decision": "ACCEPT",
+   "powertrain": "hybrid",
+   "plug_in": false,
+   "source_wording": "SANTA FE MX5 1.6T CALLIGRAPHY HEV AWD",
+   "source_sha256": "45e574f64406098920a99d8e16b7545920474262af0d03bc954ce3724d9b1ddf",
+   "note": "GB Auto Hyundai list effective 15 Oct 2026; only HEV versions listed"
+  },
+  {
+   "p1_id": "soueast/s-06",
+   "version": "Highline 1.5L Turbo",
+   "model_year": 2027,
+   "decision": "ACCEPT",
+   "powertrain": "petrol",
+   "plug_in": false,
+   "source_wording": "GASOLINE-POWERED VEHICLES: S06 Highline 1.5L Turbo",
+   "source_sha256": "2adfa42e9105ed3cbc6bfd1056dce18dd69ce0f30e44f780d505116c2a0e0562",
+   "note": "Soueast list 18 Oct 2026"
+  },
+  {
+   "p1_id": "soueast/s-06",
+   "version": "Premium 1.6L Turbo",
+   "model_year": 2027,
+   "decision": "ACCEPT",
+   "powertrain": "petrol",
+   "plug_in": false,
+   "source_wording": "GASOLINE-POWERED VEHICLES: S06 Premium 1.6L Turbo",
+   "source_sha256": "2adfa42e9105ed3cbc6bfd1056dce18dd69ce0f30e44f780d505116c2a0e0562",
+   "note": "Soueast list 18 Oct 2026"
+  },
+  {
+   "p1_id": "soueast/s-06",
+   "version": "DM Intelligent 1.5L Turbo PHEV",
+   "model_year": 2027,
+   "decision": "ACCEPT",
+   "powertrain": "phev",
+   "plug_in": true,
+   "source_wording": "PLUG-IN HYBRID VEHICLES (PHEV): S06DM Intelligent",
+   "source_sha256": "2adfa42e9105ed3cbc6bfd1056dce18dd69ce0f30e44f780d505116c2a0e0562",
+   "note": "Soueast list 18 Oct 2026; was served Petrol"
+  },
+  {
+   "p1_id": "soueast/s-08-dm",
+   "version": "DM Intelligent 1.5L Turbo PHEV",
+   "model_year": 2027,
+   "decision": "ACCEPT",
+   "powertrain": "phev",
+   "plug_in": true,
+   "source_wording": "PLUG-IN HYBRID VEHICLES (PHEV): S08DM Intelligent",
+   "source_sha256": "2adfa42e9105ed3cbc6bfd1056dce18dd69ce0f30e44f780d505116c2a0e0562",
+   "note": "Soueast list 18 Oct 2026"
+  },
+  {
+   "p1_id": "haval/h7",
+   "version": "1.5T 2DHT HEV Ultra Black Edition",
+   "model_year": 2027,
+   "decision": "ACCEPT",
+   "powertrain": "hybrid",
+   "plug_in": false,
+   "source_wording": "H7 1.5T 2DHT HEV ULTRA \"BLACK EDITION\"",
+   "source_sha256": "429fff7b7f3497b39650560feaf1c9824741733924c5d6b65bda66c199c112fa",
+   "note": "GB Auto Haval list 6 Nov 2026"
+  },
+  {
+   "p1_id": "xpeng/m03",
+   "version": "M03+ FWD EV",
+   "model_year": null,
+   "decision": "ACCEPT",
+   "powertrain": "ev",
+   "plug_in": false,
+   "source_wording": "M03+ EV CATEGORY: M03+ FWD",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+   "note": "Raya Auto XPENG list Oct 2026"
+  },
+  {
+   "p1_id": "xpeng/p7",
+   "version": "AWD Performance EV",
+   "model_year": null,
+   "decision": "ACCEPT",
+   "powertrain": "ev",
+   "plug_in": false,
+   "source_wording": "THE NEXT P7 EV CATEGORY: Next P7 AWD Performance",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+   "note": "Raya Auto XPENG list Oct 2026"
+  }
+ ],
+ "held": [
+  {
+   "p1_id": "hyundai/staria",
+   "version": "HEV Premium Lounge 7 Seats",
+   "model_year": null,
+   "decision": "HOLD",
+   "powertrain": null,
+   "plug_in": null,
+   "source_wording": null,
+   "source_sha256": null,
+   "note": "No P2-accepted Staria version or price: only single-site ContactCars rows (REWORK PB-2). P2 serves no Staria trims; the label P1 shows comes from P1 U11 S0 data, not from P2."
+  },
+  {
+   "p1_id": "byd/sealion-5",
+   "version": "DMi Ultra",
+   "model_year": 2027,
+   "decision": "HOLD",
+   "powertrain": "hybrid",
+   "plug_in": null,
+   "source_wording": "BYD list \"Sealion 5 DMi\"",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+   "note": "Plug-in flag HOLD: accepted powertrain_class is \"Hybrid\" (not PHEV); brochure on byd-egypt.com not reachable from this environment. Served powertrain left as is."
+  },
+  {
+   "p1_id": "byd/sealion-5",
+   "version": "DMi Luxury",
+   "model_year": 2027,
+   "decision": "HOLD",
+   "powertrain": "hybrid",
+   "plug_in": null,
+   "source_wording": "BYD list \"Sealion 5 DMi\"",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+   "note": "Plug-in flag HOLD: accepted powertrain_class is \"Hybrid\" (not PHEV); brochure on byd-egypt.com not reachable from this environment. Served powertrain left as is."
+  },
+  {
+   "p1_id": "byd/ti-7",
+   "version": "DMi Ultra FWD",
+   "model_year": 2027,
+   "decision": "HOLD",
+   "powertrain": null,
+   "plug_in": null,
+   "source_wording": "BYD list \"Ti 7 DMi\"",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+   "note": "HOLD: list says \"DMi\" only; no accepted powertrain_class; brochure not reachable. Model set stays hybrid (RC1)."
+  },
+  {
+   "p1_id": "byd/ti-7",
+   "version": "DMi Luxury AWD",
+   "model_year": 2027,
+   "decision": "HOLD",
+   "powertrain": null,
+   "plug_in": null,
+   "source_wording": "BYD list \"Ti 7 DMi\"",
+   "source_sha256": "repo:evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+   "note": "HOLD: list says \"DMi\" only; no accepted powertrain_class; brochure not reachable. Model set stays hybrid (RC1)."
+  }
+ ],
+ "not_reviewed": [
+  "dfsk/e5, dfsk/e5-plus, dongfeng/007, voyah/free: \"REEV\" versions served with no powertrain (missing, not contradicted); source lists not reviewed in this pass"
+ ],
+ "tests": "P2 52/52 (adds tests/test_version_powertrains_20261108.py); serving build reproducible byte-for-byte",
+ "adopt_rule": "P1 and P5 rebind together to this commit; do not move only one side",
+ "media_files_to_copy": [],
+ "p5_actions": [
+  "copy the serving release verbatim (route in handoff/README.md); no media files change",
+  "keep preferring accepted.powertrains (since 20261020); treat \"phev\" as additive to \"hybrid\" in filters"
+ ]
+}
