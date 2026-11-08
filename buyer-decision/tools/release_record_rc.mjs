@@ -40,7 +40,7 @@ const rec = {
     browser_app: at('app/app.js'), redaction: at('app/redact.js'), tracking: at('app/track.js'),
     transport: at('transport/reco.js'), schema: at('transport/ci.reco.v1.schema.json'), p5_handoff: at(`transport/P5-HANDOFF-${RC}.md`),
     dataset_manifest: at(`${DS}/manifest.json`), dataset_view: at(`${DS}/recommendation_view.json`),
-    ...Object.fromEntries([['eligibility_manifest', 'ELIGIBILITY-MANIFEST.csv'], ['coverage_report', 'COVERAGE-REPORT.md'], ['regression_report', 'REGRESSION_REPORT.md'], ['release_gates', 'R4-GATES.json'], ['p2_price_agreement', 'P2-PRICE-AGREEMENT.json'], ['p2_handoff', 'P2-HANDOFF-missing-facts.csv']]
+    ...Object.fromEntries([['eligibility_manifest', 'ELIGIBILITY-MANIFEST.csv'], ['coverage_report', 'COVERAGE-REPORT.md'], ['regression_report', 'REGRESSION_REPORT.md'], ['release_gates', 'R4-GATES.json'], ['release_gates_r5', 'R5-GATES.json'], ['p2_price_agreement', 'P2-PRICE-AGREEMENT.json'], ['p2_handoff', 'P2-HANDOFF-missing-facts.csv']]
       .filter(([, f]) => fs.existsSync(path.join(ROOT, DS, f))).map(([k, f]) => [k, at(`${DS}/${f}`)])),
   },
   semantic_changes: 'Ranking: NONE. Parser understanding fixes (ranges, +10% stated as %, brand-only phrasings, running costs, Arabic fuel priority, plug-in check) and transport T1.2 (editBrief, budget guard): see transport/P5-HANDOFF-U12-CEO2.md. Eligibility data policy per CEO 2026-10-21 (market prices for unpriced cars, no size hold, coupes/convertibles/vans included; see dataset manifest changes.policy). Engine E6.1 (vs T1): a held market car reports unknown_size / scope instead of not_on_sale. Transport T1.1: no compare table for a single-car result, matching the released app.',

@@ -57,10 +57,12 @@ const IDN = Object.fromEntries(MU.identities.map(x => [x.id, x]));
 const SEG = new Set(['SUV-B', 'SUV-C', 'SUV-D', 'SUV-E', 'Luxury SUV-2', 'Luxury SUV-3', 'Luxury SUV-4', 'Luxury SUV-5', 'Car-A', 'Car-B', 'Car-C', 'Car-D',
   'Luxury Car-2', 'Luxury Car-3', 'Luxury Car-4', 'Luxury Car-5', 'Car HB-A', 'Car HB-B', 'Car HB-C', 'Luxury HB', 'MPV-B', 'MPV-C', 'Luxury MPV']);
 const BODY = { suv: 'suv', sedan: 'sedan', hatchback: 'hatch', hatch: 'hatch', mpv: 'mpv' };
+const LABEL_PT = process.env.CI_LABEL_PT !== '0';
+const labelPt = l => /\b(PHEV|REEV|EREV|DM-?i|EM-?i|Hi4)\b/i.test(l || '') ? 'phev' : /\b(HEV|hybrid)\b/i.test(l || '') || /\b[A-Z]{2}\d{3}h\b/.test(l || '') ? 'hybrid' : /\b(BEV|EV)\b/.test(l || '') ? 'ev' : null;
 const PT = p => (p === 'phev' || p === 'reev' ? { pt: 'hybrid', plugin: true } : p ? { pt: p, plugin: false } : { pt: null, plugin: false });
 const nl = s => String(s || '').toLowerCase().replace(/\b(a\/t|m\/t|cvt|dct|at|mt)\b/g, ' ').replace(/\d\.\d\s*l?\b/g, ' ').replace(/[^a-z0-9]/g, '');
 const brandOf = {}; U11.models.forEach(m => { if (!brandOf[m.brand_id]) brandOf[m.brand_id] = m; });
-const log = { ceo_facts: [], confirmed_cohorts: [], market_prices: [], off_sale: [], powertrains: [], official_lists: [], arabic_names: [], unknown_price: [], identities: 0, splits_moved: [], p2_price_canonical: [], p2_price_from: [], p1_price_holds: [], prices_updated: 0, versions_added: 0, seats: 0, awd: [], in_universe: [], held_no_size_class: [], excluded: {} };
+const log = { label_powertrains: [], ceo_facts: [], confirmed_cohorts: [], market_prices: [], off_sale: [], powertrains: [], official_lists: [], arabic_names: [], unknown_price: [], identities: 0, splits_moved: [], p2_price_canonical: [], p2_price_from: [], p1_price_holds: [], prices_updated: 0, versions_added: 0, seats: 0, awd: [], in_universe: [], held_no_size_class: [], excluded: {} };
 const out = (id, reason) => { (log.excluded[reason] = log.excluded[reason] || []).push(id); };
 
 // ---- identities ----
@@ -229,8 +231,15 @@ for (const m of models) {
 }
 models.forEach(m => { delete m.official_list; delete m.off_sale; delete m.market_seen; delete m.accepted_seen; delete m.confirmed_cohort;
   if (OVR.never_official_brands[m.brand_id]) m.trims.forEach(t => { t.official = false; });
+  const dn = (FACTS.display_name || {})[m.id]; if (dn) { m.model = dn.model; log.ceo_facts.push(`${m.id}: display name ${dn.model}`); }
   const f = FACTS.powertrain[m.id];
-  if (f) { const p = PT(f.pt); m.powertrains = [p.pt]; m.trims.forEach(t => { if (!t.pt) { t.pt = p.pt; t.plugin = p.plugin; } }); log.ceo_facts.push(`${m.id}: ${f.pt}`); } }); // build-time only
+  if (f) { const p = PT(f.pt); m.powertrains = [p.pt]; m.trims.forEach(t => { if (!t.pt) { t.pt = p.pt; t.plugin = p.plugin; } }); log.ceo_facts.push(`${m.id}: ${f.pt}`); } // build-time only
+  // a version whose own P2 label names its powertrain (HEV, PHEV, REEV, DM-i, Hi4, BEV/EV) is never served as petrol or unknown:
+  // a 'no hybrid' / 'no EV' / 'petrol only' buyer must not get it. Only versions stored as petrol/diesel change; a blank
+  // powertrain stays unknown (the engine already never counts an unknown version as fitting an exclusion). Reversible: CI_LABEL_PT=0
+  if (LABEL_PT) { let hit = false;
+    m.trims.forEach(t => { const L = labelPt(t.label); if (L && (t.pt === 'petrol' || t.pt === 'diesel')) { const p = PT(L); t.pt = p.pt; t.plugin = p.plugin; hit = true; } });
+    if (hit) { const set = [...new Set([...(m.powertrains || []), ...m.trims.map(t => t.pt)].filter(Boolean))]; m.powertrains = set; log.label_powertrains.push(`${m.id}: ${JSON.stringify(set)}`); } } });
 const U = { meta: { ...U11.meta, version: VERSION, built: VERSION.slice(-10), models_in_universe: models.filter(m => m.u).length, models_priced_in_universe: models.filter(m => m.u && m.trims.length).length }, models: models.filter(m => m.body).sort((x, y) => x.id.localeCompare(y.id)) }; // identities without a body stay in the manifest only
 const body = JSON.stringify(U), sha = s => crypto.createHash('sha256').update(s).digest('hex');
 const dir = path.join(ROOT, 'datasets', VERSION); fs.mkdirSync(dir, { recursive: true });
@@ -243,7 +252,7 @@ const manifest = {
   base: { dataset_id: base.id, content_sha256: base.sha256 },
   p2_input: { commit: p2commit, release_id: P2.release_id, files: Object.fromEntries(['catalogue-serving.release.json', 'market_universe.json', 'registration_models.csv', 'u11_models.csv', 'arabic_names.csv', 'u11_prices.csv'].filter(f => fs.existsSync(path.join(p2dir, f))).map(f => [f, sha(rd(f))])) },
   registry: { snapshot_id: null, registration_months: U.meta.registration_months, last12_window: U.meta.last12_window, note: 'registrations: sale evidence and size class source only; their absence never excludes' },
-  changes: { confirmed_cohorts: log.confirmed_cohorts, p2_price_canonical: log.p2_price_canonical, p2_price_from: log.p2_price_from, p1_price_holds: log.p1_price_holds, policy: { market_prices: MARKET_PRICES, no_size_hold: NO_SIZE_HOLD, coupes_convertibles: COUPES, vans: VANS, decided: 'CEO 2026-10-21', price_overrides: OVR }, market_prices: log.market_prices, off_sale: log.off_sale, powertrains: log.powertrains, official_lists: log.official_lists, arabic_names_added: log.arabic_names, splits_moved: log.splits_moved, prices_updated: log.prices_updated, versions_added: log.versions_added, seats_changed: log.seats, awd: log.awd,
+  changes: { label_powertrains: log.label_powertrains, confirmed_cohorts: log.confirmed_cohorts, p2_price_canonical: log.p2_price_canonical, p2_price_from: log.p2_price_from, p1_price_holds: log.p1_price_holds, policy: { market_prices: MARKET_PRICES, no_size_hold: NO_SIZE_HOLD, coupes_convertibles: COUPES, vans: VANS, decided: 'CEO 2026-10-21', price_overrides: OVR }, market_prices: log.market_prices, off_sale: log.off_sale, powertrains: log.powertrains, official_lists: log.official_lists, arabic_names_added: log.arabic_names, splits_moved: log.splits_moved, prices_updated: log.prices_updated, versions_added: log.versions_added, seats_changed: log.seats, awd: log.awd,
     unknown_price: log.unknown_price, held_no_size_class: log.held_no_size_class, excluded: log.excluded },
 };
 fs.writeFileSync(path.join(dir, 'manifest.json'), JSON.stringify(manifest, null, 1) + '\n');

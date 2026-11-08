@@ -1,0 +1,4183 @@
+{
+ "schema": "ci.dataset.v1",
+ "dataset_id": "U12-CEO3-R5-2026-11-08/recommendation_view",
+ "universe_version": "U12-CEO3-R5-2026-11-08",
+ "kind": "CANDIDATE recommendation view — test link only; U11 stays the production binding until acceptance",
+ "file": "recommendation_view.json",
+ "sha256": "649bc8e5c0eaa61c3038fd53b9142ab8b29c5a246fe4eae2f9b0a3a98f721865",
+ "content_sha256": "b136d0e66fd9dda89c31c0ac5c46116d090a68f0756baa2e99e08f8da2b0046a",
+ "identities": 425,
+ "models_in_universe": 424,
+ "base": {
+  "dataset_id": "U11-2026-09-26/recommendation_view",
+  "content_sha256": "5348da5721f049d3befb1e6c8159ecdf0bfd8ed273916da95ee158ba804934e2"
+ },
+ "p2_input": {
+  "commit": "723748dfd32a7b88ef56b3bc55893fdd19ed7a0c",
+  "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+  "files": {
+   "catalogue-serving.release.json": "02139f4146067089942fcdcc945e4008ad567a12095f84a3f0fc993c1c4f3a81",
+   "market_universe.json": "733bc13bfffec4033e38381c736ec74c6b42bd65f9a91d35408edf459324439d",
+   "registration_models.csv": "e6f43df6596f3fe38f4b13f9afb7d24663379fc96db31cfb5a588f17a94571af",
+   "u11_models.csv": "97130c17516a5e1edbbe38f94048d9ff4397121011198ab90ff721ec15a20f98",
+   "arabic_names.csv": "91a7d71b7165da6a9b87544b2a0eb6dc1d1aaa4253ce063fce283e8a6429c188",
+   "u11_prices.csv": "62972049af7785f95bbcf903caa66a80647815d0d082f87a82804afce8279bd7"
+  }
+ },
+ "registry": {
+  "snapshot_id": null,
+  "registration_months": [
+   "2021-02",
+   "2026-08"
+  ],
+  "last12_window": [
+   "2025-09",
+   "2026-08"
+  ],
+  "note": "registrations: sale evidence and size class source only; their absence never excludes"
+ },
+ "changes": {
+  "label_powertrains": [
+   "lexus/lx600: [\"petrol\",\"hybrid\"]",
+   "kia/carnival: [\"petrol\",\"hybrid\"]",
+   "haval/v7: [\"hybrid\"]",
+   "hyundai/staria: [\"petrol\",\"hybrid\"]"
+  ],
+  "confirmed_cohorts": [
+   {
+    "id": "baic/bj30",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-006",
+     "ceo1102-007"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Pro",
+      "year": 2026,
+      "price": 1574900
+     },
+     {
+      "label": "ULTRA",
+      "year": 2026,
+      "price": 1674900
+     },
+     {
+      "label": "Ultra - Hybrid",
+      "year": 2026,
+      "price": 1675000
+     },
+     {
+      "label": "Off-Road",
+      "year": 2026,
+      "price": 1774900
+     },
+     {
+      "label": "Off road - Hybrid",
+      "year": 2026,
+      "price": 1775000
+     }
+    ]
+   },
+   {
+    "id": "baic/u5-plus",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-001",
+     "ceo1102-003",
+     "ceo1102-004",
+     "ceo1102-002"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Manual",
+      "year": 2026,
+      "price": 695000
+     },
+     {
+      "label": "Comfort",
+      "year": 2026,
+      "price": 850000
+     },
+     {
+      "label": "Top Line",
+      "year": 2026,
+      "price": 975000
+     }
+    ]
+   },
+   {
+    "id": "changan/cs55-plus",
+    "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+    "accepted_price_ids": [
+     "ceo1108-064",
+     "ceo1108-062",
+     "ceo1108-063"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Elite",
+      "year": 2027,
+      "price": 1130000
+     },
+     {
+      "label": "Premium",
+      "year": 2027,
+      "price": 1260000
+     }
+    ]
+   },
+   {
+    "id": "changan/cs75-plus",
+    "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+    "accepted_price_ids": [
+     "ceo1108-065",
+     "ceo1108-066"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "PREMIUM",
+      "year": 2026,
+      "price": 1480000
+     },
+     {
+      "label": "FLAGSHIP",
+      "year": 2026,
+      "price": 1630000
+     }
+    ]
+   },
+   {
+    "id": "chery/arrizo-5",
+    "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+    "accepted_price_ids": [
+     "ceo1108-048",
+     "ceo1108-049",
+     "ceo1108-050",
+     "ceo1108-051",
+     "ceo1108-052",
+     "ceo1108-053"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "1.5 MT Basic",
+      "year": 2027,
+      "price": 680000
+     },
+     {
+      "label": "1.5 CVT Basic",
+      "year": 2027,
+      "price": 725000
+     },
+     {
+      "label": "1.5 CVT Comfort",
+      "year": 2027,
+      "price": 765000
+     }
+    ]
+   },
+   {
+    "id": "chery/tiggo-7-pro",
+    "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+    "accepted_price_ids": [
+     "ceo1108-054",
+     "ceo1108-055"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "CKD Comfort",
+      "year": 2027,
+      "price": 1075000
+     },
+     {
+      "label": "CKD Luxury",
+      "year": 2027,
+      "price": 1175000
+     }
+    ]
+   },
+   {
+    "id": "chery/tiggo-8",
+    "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+    "accepted_price_ids": [
+     "ceo1108-056",
+     "ceo1108-057",
+     "ceo1108-058",
+     "ceo1108-059",
+     "ceo1108-060",
+     "ceo1108-061"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "COMFORT 7 Seat",
+      "year": 2027,
+      "price": 1170000
+     },
+     {
+      "label": "LUXURY 5 Seat",
+      "year": 2027,
+      "price": 1230000
+     },
+     {
+      "label": "LUXURY 7 Seat",
+      "year": 2027,
+      "price": 1270000
+     }
+    ]
+   },
+   {
+    "id": "chevrolet/optra",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-074",
+     "ceo1102-075"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "LS",
+      "year": 2027,
+      "price": 765000
+     },
+     {
+      "label": "LT",
+      "year": 2027,
+      "price": 790000
+     }
+    ]
+   },
+   {
+    "id": "citroen/c3-aircross",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-068"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Plus",
+      "year": 2027,
+      "price": 1080000
+     }
+    ]
+   },
+   {
+    "id": "citroen/c4",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-071"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Shine Two Tone",
+      "year": 2027,
+      "price": 1525000
+     }
+    ]
+   },
+   {
+    "id": "citroen/c4-x",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-069",
+     "ceo1102-070"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Feel",
+      "year": 2026,
+      "price": 1199000
+     },
+     {
+      "label": "Feel",
+      "year": 2026,
+      "price": 1290000
+     },
+     {
+      "label": "Shine",
+      "year": 2026,
+      "price": 1349000
+     },
+     {
+      "label": "Shine",
+      "year": 2026,
+      "price": 1420000
+     }
+    ]
+   },
+   {
+    "id": "haval/h6",
+    "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+    "accepted_price_ids": [
+     "ceo1108-039",
+     "ceo1108-040"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Platinum",
+      "year": 2026,
+      "price": 1300000
+     },
+     {
+      "label": "ULTRA",
+      "year": 2026,
+      "price": 1490000
+     }
+    ]
+   },
+   {
+    "id": "haval/h7",
+    "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+    "accepted_price_ids": [
+     "ceo1108-041"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Ultra Black",
+      "year": 2027,
+      "price": 1725000
+     }
+    ]
+   },
+   {
+    "id": "haval/jolion",
+    "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+    "accepted_price_ids": [
+     "ceo1108-036",
+     "ceo1108-037",
+     "ceo1108-038"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Standard",
+      "year": 2027,
+      "price": 985000
+     },
+     {
+      "label": "Deluxe",
+      "year": 2027,
+      "price": 1035000
+     },
+     {
+      "label": "Unspecified trim",
+      "year": 2027,
+      "price": 1035000
+     },
+     {
+      "label": "High Deluxe",
+      "year": 2027,
+      "price": 1135000
+     }
+    ]
+   },
+   {
+    "id": "hyundai/elantra",
+    "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+    "accepted_price_ids": [
+     "ceo1108-029",
+     "ceo1108-030",
+     "ceo1108-031",
+     "ceo1108-032"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "1.6 AT BASELINE",
+      "year": 2027,
+      "price": 1020000
+     },
+     {
+      "label": "Baseline",
+      "year": 2027,
+      "price": 1020000
+     },
+     {
+      "label": "Unspecified trim",
+      "year": 2027,
+      "price": 1020000
+     },
+     {
+      "label": "Smart (=Baseline)",
+      "year": 2027,
+      "price": 1020000
+     },
+     {
+      "label": "1.6 AT MODERN",
+      "year": 2027,
+      "price": 1120000
+     },
+     {
+      "label": "Modern",
+      "year": 2027,
+      "price": 1120000
+     },
+     {
+      "label": "1.6 AT MODERN Sunroof",
+      "year": 2027,
+      "price": 1135000
+     },
+     {
+      "label": "Modern + Sunroof",
+      "year": 2027,
+      "price": 1135000
+     },
+     {
+      "label": "1.6 AT TOPLINE",
+      "year": 2027,
+      "price": 1235000
+     },
+     {
+      "label": "Topline",
+      "year": 2027,
+      "price": 1235000
+     }
+    ]
+   },
+   {
+    "id": "hyundai/ioniq-9",
+    "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+    "accepted_price_ids": [
+     "ceo1108-033",
+     "ceo1108-034",
+     "ceo1108-035"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Connect",
+      "year": 2026,
+      "price": 2900000
+     },
+     {
+      "label": "Extreme",
+      "year": 2026,
+      "price": 3250000
+     },
+     {
+      "label": "Caligraphy",
+      "year": 2026,
+      "price": 3550000
+     }
+    ]
+   },
+   {
+    "id": "hyundai/tucson",
+    "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+    "accepted_price_ids": [
+     "ceo1108-020",
+     "ceo1108-021",
+     "ceo1108-022",
+     "ceo1108-023",
+     "ceo1108-024",
+     "ceo1108-025",
+     "ceo1108-026"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "SHADOW",
+      "year": 2027,
+      "price": 1775000
+     },
+     {
+      "label": "BLAZE",
+      "year": 2027,
+      "price": 1925000
+     },
+     {
+      "label": "Redine",
+      "year": 2027,
+      "price": 2025000
+     },
+     {
+      "label": "REDLINE N-Line",
+      "year": 2027,
+      "price": 2125000
+     },
+     {
+      "label": "Redine (N Pack)",
+      "year": 2027,
+      "price": 2100000
+     },
+     {
+      "label": "NIGHT",
+      "year": 2027,
+      "price": 2175000
+     },
+     {
+      "label": "BLACK DIAMOND",
+      "year": 2027,
+      "price": 2275000
+     },
+     {
+      "label": "NLINE",
+      "year": 2027,
+      "price": 2375000
+     },
+     {
+      "label": "NLINE (AWD)",
+      "year": 2027,
+      "price": 2400000
+     }
+    ]
+   },
+   {
+    "id": "jetour/dashing",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-054",
+     "ceo1102-055"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Luxury 1.5 L",
+      "year": 2027,
+      "price": 1330000
+     },
+     {
+      "label": "Luxury 1.6 L",
+      "year": 2027,
+      "price": 1480000
+     }
+    ]
+   },
+   {
+    "id": "jetour/t1",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-057",
+     "ceo1102-058"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Luxury",
+      "year": 2027,
+      "price": 1730000
+     },
+     {
+      "label": "Matt Color",
+      "year": 2027,
+      "price": 1760000
+     },
+     {
+      "label": "Matt Colour",
+      "year": 2027,
+      "price": 1760000
+     }
+    ]
+   },
+   {
+    "id": "jetour/t2",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-059",
+     "ceo1104-016"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Luxury",
+      "year": 2027,
+      "price": 1900000
+     },
+     {
+      "label": "Matt Color",
+      "year": 2027,
+      "price": 1930000
+     },
+     {
+      "label": "Matt Colour",
+      "year": 2027,
+      "price": 1930000
+     },
+     {
+      "label": "i-DM",
+      "year": 2027,
+      "price": 2150000
+     },
+     {
+      "label": "Luxury (i-DM)",
+      "year": 2027,
+      "price": 2150000
+     }
+    ]
+   },
+   {
+    "id": "jetour/x70",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-051",
+     "ceo1102-052"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Comfort - Facelift",
+      "year": 2027,
+      "price": 1095000
+     },
+     {
+      "label": "Luxury - facelift",
+      "year": 2027,
+      "price": 1240000
+     }
+    ]
+   },
+   {
+    "id": "jetour/x70-plus-ckd",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-053"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Luxury",
+      "year": 2027,
+      "price": 1275000
+     }
+    ]
+   },
+   {
+    "id": "jetour/x90-plus",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-056"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Luxury FL",
+      "year": 2027,
+      "price": 1560000
+     }
+    ]
+   },
+   {
+    "id": "kgm/torres",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-063",
+     "ceo1102-064",
+     "ceo1102-065",
+     "ceo1102-066",
+     "ceo1102-067"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Automtic /comfort",
+      "year": 2026,
+      "price": 1585000
+     },
+     {
+      "label": "Comfort",
+      "year": 2026,
+      "price": 1585000
+     },
+     {
+      "label": "Advance",
+      "year": 2026,
+      "price": 1720000
+     },
+     {
+      "label": "Automtic /advanced",
+      "year": 2026,
+      "price": 1720002
+     },
+     {
+      "label": "Premium",
+      "year": 2026,
+      "price": 1850000
+     },
+     {
+      "label": "Luxury",
+      "year": 2026,
+      "price": 1980000
+     },
+     {
+      "label": "Automtic /adventure plus 4*4",
+      "year": 2026,
+      "price": 1999000
+     },
+     {
+      "label": "Black Edition",
+      "year": 2026,
+      "price": 1999000
+     }
+    ]
+   },
+   {
+    "id": "kia/ev3",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-076",
+     "ceo1102-077",
+     "ceo1102-078"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Air",
+      "year": 2026,
+      "price": 1400000
+     },
+     {
+      "label": "Earth",
+      "year": 2026,
+      "price": 1800000
+     },
+     {
+      "label": "GT Line",
+      "year": 2026,
+      "price": 2050000
+     }
+    ]
+   },
+   {
+    "id": "kia/ev5",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-079",
+     "ceo1102-080",
+     "ceo1102-081"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Air",
+      "year": 2025,
+      "price": 2050000
+     },
+     {
+      "label": "Earth",
+      "year": 2025,
+      "price": 2300000
+     },
+     {
+      "label": "GT Line",
+      "year": 2025,
+      "price": 2550000
+     }
+    ]
+   },
+   {
+    "id": "kia/ev6",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-082",
+     "ceo1102-083",
+     "ceo1102-084"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Base (single trim)",
+      "year": 2026,
+      "price": 3000000
+     },
+     {
+      "label": "GT",
+      "year": 2026,
+      "price": 3000000
+     }
+    ]
+   },
+   {
+    "id": "kia/ev9",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-085",
+     "ceo1102-086",
+     "ceo1102-087"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "GT Line 7 Seats",
+      "year": 2025,
+      "price": 3700000
+     },
+     {
+      "label": "GT Line 6 Seats Swivelling",
+      "year": 2025,
+      "price": 3750000
+     },
+     {
+      "label": "GT Line 6 Seats Relaxing",
+      "year": 2025,
+      "price": 3800000
+     }
+    ]
+   },
+   {
+    "id": "kia/k4",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-088",
+     "ceo1102-089",
+     "ceo1102-090"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Highline",
+      "year": 2026,
+      "price": 1499900
+     },
+     {
+      "label": "Highline",
+      "year": 2026,
+      "price": 1500000
+     },
+     {
+      "label": "GT-line",
+      "year": 2026,
+      "price": 1699900
+     },
+     {
+      "label": "GT Line",
+      "year": 2026,
+      "price": 1700000
+     },
+     {
+      "label": "GT-line Black Edition",
+      "year": 2026,
+      "price": 1849900
+     },
+     {
+      "label": "GT Line Black Edition",
+      "year": 2026,
+      "price": 1850000
+     }
+    ]
+   },
+   {
+    "id": "kia/sportage",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-092",
+     "ceo1102-093",
+     "ceo1102-094",
+     "ceo1102-095",
+     "ceo1102-096"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "LX",
+      "year": 2027,
+      "price": 1824900
+     },
+     {
+      "label": "EX",
+      "year": 2027,
+      "price": 1924900
+     },
+     {
+      "label": "Highline",
+      "year": 2027,
+      "price": 2074900
+     },
+     {
+      "label": "Premium",
+      "year": 2027,
+      "price": 2299900
+     },
+     {
+      "label": "GT Line",
+      "year": 2027,
+      "price": 2399900
+     }
+    ]
+   },
+   {
+    "id": "lexus/lx600",
+    "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+    "accepted_price_ids": [
+     "ceo1108-046",
+     "ceo1108-047",
+     "ceo1108-018",
+     "ceo1108-019"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Unspecified trim",
+      "year": 2025,
+      "price": 12000000
+     }
+    ]
+   },
+   {
+    "id": "lexus/rz",
+    "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+    "accepted_price_ids": [
+     "ceo1108-017"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "RZ350e",
+      "year": 2026,
+      "price": 3500000
+     },
+     {
+      "label": "RZ550e",
+      "year": 2026,
+      "price": 3850000
+     }
+    ]
+   },
+   {
+    "id": "lynk-co/06",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-008",
+     "ceo1102-009",
+     "ceo1102-010"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Core Plus",
+      "year": 2025,
+      "price": 1350000
+     },
+     {
+      "label": "Hyper Pro",
+      "year": 2025,
+      "price": 1450000
+     },
+     {
+      "label": "Hyper Halo",
+      "year": 2025,
+      "price": 1550000
+     }
+    ]
+   },
+   {
+    "id": "lynk-co/08",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-014",
+     "ceo1102-015"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Core",
+      "year": 2026,
+      "price": 2290000
+     },
+     {
+      "label": "More",
+      "year": 2026,
+      "price": 2490000
+     }
+    ]
+   },
+   {
+    "id": "lynk-co/900",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-016"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Ultra",
+      "year": 2026,
+      "price": 3990000
+     }
+    ]
+   },
+   {
+    "id": "nissan/juke",
+    "release_id": "P2-CEO-CONFIRMED-20261104-R1",
+    "accepted_price_ids": [
+     "ceo1104-008",
+     "ceo1104-009",
+     "ceo1104-010"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Acenta",
+      "year": 2027,
+      "price": 1159999
+     },
+     {
+      "label": "Tekna",
+      "year": 2027,
+      "price": 1259999
+     },
+     {
+      "label": "Tekna N-design",
+      "year": 2027,
+      "price": 1299999
+     }
+    ]
+   },
+   {
+    "id": "nissan/magnite",
+    "release_id": "P2-CEO-CONFIRMED-20261104-R1",
+    "accepted_price_ids": [
+     "ceo1104-004",
+     "ceo1104-005",
+     "ceo1104-006",
+     "ceo1104-007"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Visia",
+      "year": 2027,
+      "price": 788000
+     },
+     {
+      "label": "Acenta",
+      "year": 2027,
+      "price": 848000
+     },
+     {
+      "label": "Tekna+",
+      "year": 2027,
+      "price": 868000
+     }
+    ]
+   },
+   {
+    "id": "nissan/qashqai",
+    "release_id": "P2-CEO-CONFIRMED-20261104-R1",
+    "accepted_price_ids": [
+     "ceo1104-011",
+     "ceo1104-012",
+     "ceo1104-013",
+     "ceo1104-014"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "N-Connecta",
+      "year": 2027,
+      "price": 1555000
+     },
+     {
+      "label": "N-Connecta+",
+      "year": 2027,
+      "price": 1757000
+     },
+     {
+      "label": "N-connecta+ 2T",
+      "year": 2027,
+      "price": 1777000
+     },
+     {
+      "label": "TEKNA",
+      "year": 2027,
+      "price": 1868000
+     },
+     {
+      "label": "Tekna 2T",
+      "year": 2027,
+      "price": 1888000
+     },
+     {
+      "label": "N-Design e-PWR",
+      "year": 2027,
+      "price": 1999000
+     },
+     {
+      "label": "e-Power",
+      "year": 2027,
+      "price": 2000000
+     },
+     {
+      "label": "TEKNA+ 4WD",
+      "year": 2027,
+      "price": 2068000
+     }
+    ]
+   },
+   {
+    "id": "nissan/sunny",
+    "release_id": "P2-CEO-CONFIRMED-20261104-R1",
+    "accepted_price_ids": [
+     "ceo1104-001",
+     "ceo1104-002",
+     "ceo1104-003"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Manual/Baseline",
+      "year": 2027,
+      "price": 665000
+     },
+     {
+      "label": "A/T Base",
+      "year": 2027,
+      "price": 765000
+     },
+     {
+      "label": "Baseline AT",
+      "year": 2027,
+      "price": 765000
+     },
+     {
+      "label": "Baseline",
+      "year": 2027,
+      "price": 765000
+     },
+     {
+      "label": "plus",
+      "year": 2027,
+      "price": 799900
+     },
+     {
+      "label": "AT Mid",
+      "year": 2027,
+      "price": 799999
+     },
+     {
+      "label": "Midline",
+      "year": 2027,
+      "price": 800000
+     },
+     {
+      "label": "AT Super salon",
+      "year": 2027,
+      "price": 835000
+     },
+     {
+      "label": "Super Saloon",
+      "year": 2027,
+      "price": 835000
+     }
+    ]
+   },
+   {
+    "id": "nissan/x-trail",
+    "release_id": "P2-CEO-CONFIRMED-20261104-R1",
+    "accepted_price_ids": [
+     "ceo1104-015"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Acenta Plus",
+      "year": 2026,
+      "price": 2000000
+     },
+     {
+      "label": "N-Trek",
+      "year": 2026,
+      "price": 2080000
+     },
+     {
+      "label": "Tekna",
+      "year": 2026,
+      "price": 2300000
+     },
+     {
+      "label": "Tekna e-4ORCE",
+      "year": 2026,
+      "price": 2300000
+     }
+    ]
+   },
+   {
+    "id": "opel/corsa",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-046"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Sport Topline Plus",
+      "year": 2026,
+      "price": 1250000
+     }
+    ]
+   },
+   {
+    "id": "opel/frontera",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-048"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Luxury",
+      "year": 2027,
+      "price": 1190000
+     }
+    ]
+   },
+   {
+    "id": "opel/grandland",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-049",
+     "ceo1102-050"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Highline Plus",
+      "year": 2026,
+      "price": 1849990
+     },
+     {
+      "label": "Topline",
+      "year": 2026,
+      "price": 1949990
+     },
+     {
+      "label": "Topline Plus",
+      "year": 2026,
+      "price": 2099990
+     }
+    ]
+   },
+   {
+    "id": "opel/mokka",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-047"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Black Edition",
+      "year": 2026,
+      "price": 1550000
+     }
+    ]
+   },
+   {
+    "id": "toyota/bz4x",
+    "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+    "accepted_price_ids": [
+     "ceo1108-007",
+     "ceo1108-008"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Sport",
+      "year": 2026,
+      "price": 2199999
+     },
+     {
+      "label": "Sport FWD",
+      "year": 2026,
+      "price": 2200000
+     },
+     {
+      "label": "Premier AWD",
+      "year": 2026,
+      "price": 2380000
+     },
+     {
+      "label": "Premier",
+      "year": 2026,
+      "price": 2380000
+     }
+    ]
+   },
+   {
+    "id": "toyota/corolla",
+    "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+    "accepted_price_ids": [
+     "ceo1108-001",
+     "ceo1108-002",
+     "ceo1108-003",
+     "ceo1108-004"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Active",
+      "year": 2026,
+      "price": 1280000
+     },
+     {
+      "label": "Comfort",
+      "year": 2026,
+      "price": 1380000
+     },
+     {
+      "label": "Smart",
+      "year": 2026,
+      "price": 1480000
+     },
+     {
+      "label": "Smart with Sunroof",
+      "year": 2026,
+      "price": 1580000
+     },
+     {
+      "label": "Elegance",
+      "year": 2026,
+      "price": 1630000
+     },
+     {
+      "label": "Hybrid",
+      "year": 2026,
+      "price": 2000000
+     }
+    ]
+   },
+   {
+    "id": "toyota/fortuner",
+    "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+    "accepted_price_ids": [
+     "ceo1108-006"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Sport 4.0 4WD",
+      "year": 2026,
+      "price": 3700000
+     },
+     {
+      "label": "Sport",
+      "year": 2026,
+      "price": 3700000
+     }
+    ]
+   },
+   {
+    "id": "volvo/es90",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-021"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Ultra",
+      "year": 2026,
+      "price": 3950000
+     }
+    ]
+   },
+   {
+    "id": "volvo/ex30",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-018",
+     "ceo1102-019",
+     "ceo1102-020"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Plus Single Motor",
+      "year": 2026,
+      "price": 1699000
+     },
+     {
+      "label": "Single PLUS Extended Range",
+      "year": 2026,
+      "price": 1790000
+     },
+     {
+      "label": "Ultra Single Motor",
+      "year": 2026,
+      "price": 1799000
+     },
+     {
+      "label": "Single Ultra Extended Range",
+      "year": 2026,
+      "price": 1890000
+     },
+     {
+      "label": "Ultra Twin Motor",
+      "year": 2026,
+      "price": 1950000
+     },
+     {
+      "label": "Twin Plus Performance",
+      "year": 2026,
+      "price": 1990000
+     }
+    ]
+   },
+   {
+    "id": "volvo/ex90",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-022"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Twin Motor",
+      "year": 2027,
+      "price": 4900000
+     },
+     {
+      "label": "Unspecified (1 Trim Available)",
+      "year": 2027,
+      "price": 4900000
+     }
+    ]
+   },
+   {
+    "id": "volvo/xc-40",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-023",
+     "ceo1102-024",
+     "ceo1102-025"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Essential",
+      "year": 2026,
+      "price": 2550000
+     },
+     {
+      "label": "Ultra Dark",
+      "year": 2026,
+      "price": 2890000
+     },
+     {
+      "label": "Black Edition",
+      "year": 2026,
+      "price": 3050000
+     }
+    ]
+   },
+   {
+    "id": "volvo/xc60",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-026",
+     "ceo1102-027",
+     "ceo1102-028"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Essential",
+      "year": 2026,
+      "price": 3490000
+     },
+     {
+      "label": "Ultimate Dark",
+      "year": 2026,
+      "price": 3790000
+     },
+     {
+      "label": "Black Edition",
+      "year": 2026,
+      "price": 3990000
+     }
+    ]
+   },
+   {
+    "id": "volvo/xc90",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-029"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Ultimate",
+      "year": 2026,
+      "price": 4950000
+     },
+     {
+      "label": "Ultra Bright",
+      "year": 2026,
+      "price": 5250000
+     }
+    ]
+   },
+   {
+    "id": "citroen/c5-aircross",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-072",
+     "ceo1102-073"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Advanced",
+      "year": 2027,
+      "price": 1695000
+     },
+     {
+      "label": "Ultimate",
+      "year": 2027,
+      "price": 1935000
+     }
+    ]
+   },
+   {
+    "id": "baic/x55e",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-005"
+    ],
+    "model_from_only": false,
+    "superseded": []
+   },
+   {
+    "id": "jetour/t2-i-dm",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-061",
+     "ceo1102-062"
+    ],
+    "model_from_only": false,
+    "superseded": []
+   },
+   {
+    "id": "toyota/land-cruiser",
+    "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+    "accepted_price_ids": [
+     "ceo1108-014",
+     "ceo1108-015",
+     "ceo1108-016"
+    ],
+    "model_from_only": false,
+    "superseded": []
+   },
+   {
+    "id": "bmw/7-series",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [],
+    "model_from_only": true,
+    "superseded": [
+     {
+      "label": "Pure Excellence LWB",
+      "year": 2025,
+      "price": 11200000
+     },
+     {
+      "label": "xDrive M Sport",
+      "year": 2025,
+      "price": 13400000
+     }
+    ]
+   },
+   {
+    "id": "haval/v7",
+    "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+    "accepted_price_ids": [
+     "ceo1108-042",
+     "ceo1108-043"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "ULTRA (HEV)",
+      "year": 2027,
+      "price": 1825000
+     },
+     {
+      "label": "ULTRA (PHEV)",
+      "year": 2027,
+      "price": 2100000
+     }
+    ]
+   },
+   {
+    "id": "hyundai/venue",
+    "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+    "accepted_price_ids": [
+     "ceo1108-027",
+     "ceo1108-028"
+    ],
+    "model_from_only": false,
+    "superseded": []
+   },
+   {
+    "id": "lynk-co/02",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-013"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Halo",
+      "year": 2026,
+      "price": 1650000
+     }
+    ]
+   },
+   {
+    "id": "lynk-co/03",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-011",
+     "ceo1102-012"
+    ],
+    "model_from_only": false,
+    "superseded": [
+     {
+      "label": "Plus",
+      "year": 2026,
+      "price": 1350000
+     },
+     {
+      "label": "Pro",
+      "year": 2026,
+      "price": 1490000
+     }
+    ]
+   },
+   {
+    "id": "toyota/camry",
+    "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+    "accepted_price_ids": [
+     "ceo1108-005"
+    ],
+    "model_from_only": false,
+    "superseded": []
+   },
+   {
+    "id": "toyota/rav4",
+    "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+    "accepted_price_ids": [
+     "ceo1108-009"
+    ],
+    "model_from_only": false,
+    "superseded": []
+   },
+   {
+    "id": "toyota/land-cruiser-prado",
+    "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+    "accepted_price_ids": [
+     "ceo1108-010",
+     "ceo1108-012",
+     "ceo1108-011",
+     "ceo1108-013"
+    ],
+    "model_from_only": false,
+    "superseded": []
+   },
+   {
+    "id": "kia/pv5",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-091"
+    ],
+    "model_from_only": false,
+    "superseded": []
+   },
+   {
+    "id": "deepal/s09",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-043",
+     "ceo1102-044"
+    ],
+    "model_from_only": false,
+    "superseded": []
+   },
+   {
+    "id": "jaecoo/j5",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-030",
+     "ceo1102-031"
+    ],
+    "model_from_only": false,
+    "superseded": []
+   },
+   {
+    "id": "jaecoo/j7",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-032",
+     "ceo1102-033"
+    ],
+    "model_from_only": false,
+    "superseded": []
+   },
+   {
+    "id": "jaecoo/j7-phev",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-034"
+    ],
+    "model_from_only": false,
+    "superseded": []
+   },
+   {
+    "id": "jaecoo/j8-phev",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-035"
+    ],
+    "model_from_only": false,
+    "superseded": []
+   },
+   {
+    "id": "jac/rf8-phev",
+    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+    "accepted_price_ids": [
+     "ceo1102-045"
+    ],
+    "model_from_only": false,
+    "superseded": []
+   },
+   {
+    "id": "lexus/rx",
+    "release_id": "P2-CEO-CONFIRMED-20261108-R1",
+    "accepted_price_ids": [
+     "ceo1108-045",
+     "ceo1108-044"
+    ],
+    "model_from_only": false,
+    "superseded": []
+   }
+  ],
+  "p2_price_canonical": [
+   {
+    "id": "alfa-romeo/giulia",
+    "kept": [
+     "Veloce=3149000 MY2025"
+    ],
+    "superseded": [
+     "AT / sprint=2749000 MY2025 @2026-09-10",
+     "Sprint=2749000 MY2025 @2026-09-10"
+    ]
+   },
+   {
+    "id": "alfa-romeo/tonale",
+    "kept": [
+     "Sprint=2625000 MY2025",
+     "A/T / TI=2625000 MY2025",
+     "Veloce=2825000 MY2025"
+    ],
+    "superseded": [
+     "Other Trims=2060000 MY2025 @2026-09-10"
+    ]
+   },
+   {
+    "id": "audi/a6",
+    "kept": [
+     "S-Line Plus=5249000 MY2026"
+    ],
+    "superseded": [
+     "Advanced=4748998 MY2026 @2026-09-10",
+     "S Line=5248999 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "audi/q3",
+    "kept": [
+     "S-Line=2999000 MY2026"
+    ],
+    "superseded": [
+     "Advanced=2799000 MY2026 @2026-09-10",
+     "Sport back=2999000 MY2026 @2026-09-10",
+     "Sport back B/L=3249000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "avatr/07",
+    "kept": [
+     "RWD Luxury=2290000 MY2027",
+     "AWD Premium=2690000 MY2027",
+     "AWD Premium Vision=2790000 MY2027"
+    ],
+    "superseded": [
+     "Luxury=2290000 MY2027 @2026-09-10",
+     "Premium=2690000 MY2027 @2026-09-10",
+     "AT / Premium Vision=2790000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "avatr/11",
+    "kept": [
+     "Luxury=2990000 MY2026"
+    ],
+    "superseded": [
+     "RWD 5 Seats=2930000 MY2026 @2026-09-10",
+     "AWD 5 seats=3230000 MY2026 @2026-09-10",
+     "Performance=3300000 MY2026 @2026-09-10",
+     "AWD 4 seats=3430000 MY2026 @2026-09-10",
+     "Premium=3530000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "avatr/12",
+    "kept": [
+     "Luxury=3050000 MY2026",
+     "GT=3580000 MY2026"
+    ],
+    "superseded": [
+     "Other Trims=2460000 MY2026 @2026-09-10",
+     "Luxury AWD 5 seats=2990000 MY2026 @2026-09-10",
+     "GT AWD 5 seats=3480000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "baic/bj30",
+    "kept": [
+     "Pro=1625000 MY2026",
+     "Ultra - Hybrid=1725000 MY2027"
+    ],
+    "superseded": [
+     "ULTRA=1674900 MY2026 @2026-09-25",
+     "Off-Road=1774900 MY2026 @2026-09-25",
+     "Off road - Hybrid=1775000 MY2026 @2026-09-25"
+    ]
+   },
+   {
+    "id": "baw/m7",
+    "kept": [
+     "1.6 M/T=990000 MY2027"
+    ],
+    "superseded": [
+     "Manual=990000 MY2027 @2026-09-10",
+     "1.6 M/T=990000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "bmw/5-series",
+    "kept": [
+     "2.0 A/T Luxury=5750000 MY2025",
+     "Executive=3990000 MY2027"
+    ],
+    "superseded": [
+     "Luxury Bronze=5750000 MY2025 @2026-09-10",
+     "M Sport=5750000 MY2025 @2026-09-10"
+    ]
+   },
+   {
+    "id": "bmw/i7",
+    "kept": [
+     "xDrive60=11000000 MY2026"
+    ],
+    "superseded": [
+     "xDrive60 Pure Excellence=10560000 MY2025 @2026-09-10"
+    ]
+   },
+   {
+    "id": "bmw/ix1",
+    "kept": [
+     "A/T / Elc=3650000 MY2025"
+    ],
+    "superseded": [
+     "xDrive20 - xLine=3450000 MY2025 @2026-09-10"
+    ]
+   },
+   {
+    "id": "bmw/ix3",
+    "kept": [
+     "A/T / 50 xDrive=4900000 MY2027"
+    ],
+    "superseded": [
+     "30 xDrive=5250000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "bmw/x1",
+    "kept": [
+     "1.5 A/T sDrive18i M Sport=3350000 MY2025"
+    ],
+    "superseded": [
+     "sDrive18i xLine=2950000 MY2025 @2026-09-10"
+    ]
+   },
+   {
+    "id": "bmw/x6",
+    "kept": [
+     "3.0 A/T X6 xDrive40i - M Sport=7700000 MY2025"
+    ],
+    "superseded": [
+     "xDrive40i - M Sport=7700000 MY2025 @2026-09-10",
+     "M60i=9250000 MY2025 @2026-09-10"
+    ]
+   },
+   {
+    "id": "byd/atto-8",
+    "kept": [
+     "DMi Ultra=2899900 MY2027"
+    ],
+    "superseded": [
+     "Ultra=2849900 MY2026 @2026-09-10",
+     "Design=2850000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "byd/f3",
+    "kept": [
+     "Manual=650000 MY2025",
+     "Automtic=730000 MY2025"
+    ],
+    "superseded": [
+     "Automatic=730000 MY2025 @2026-09-10"
+    ]
+   },
+   {
+    "id": "byd/m9",
+    "kept": [
+     "DMi Ultra=3299900 MY2027",
+     "DMi Luxury=3849900 MY2027"
+    ],
+    "superseded": [
+     "Ultra=3299900 MY2027 @2026-09-10",
+     "Luxury=3849900 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "byd/sealion-5",
+    "kept": [
+     "DMi Ultra=1479900 MY2027",
+     "DMi Luxury=1729900 MY2027"
+    ],
+    "superseded": [
+     "Ultra=1400000 MY2026 @2026-09-10",
+     "Luxury=1650000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "byd/sealion-6",
+    "kept": [
+     "DMi Ultra=1949900 MY2027",
+     "DMi Luxury=2149900 MY2027"
+    ],
+    "superseded": [
+     "EV Luxury=1799000 MY2027 @2026-09-25"
+    ]
+   },
+   {
+    "id": "byd/ti-7",
+    "kept": [
+     "DMi Ultra FWD=2424900 MY2027",
+     "DMi Luxury AWD=2874900 MY2027"
+    ],
+    "superseded": [
+     "Ultra=2350000 MY2027 @2026-09-10",
+     "Luxury=2800000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "cadillac/vistiq",
+    "kept": [
+     "Luxury AWD=6490900 MY2026"
+    ],
+    "superseded": [
+     "Luxury=6490900 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "chery/arrizo-8",
+    "kept": [
+     "1.6T 7DCT Luxury=1320000 MY2026",
+     "1.6T 7DCT Flagship=1400000 MY2026"
+    ],
+    "superseded": [
+     "Luxury=1300000 MY2026 @2026-09-10",
+     "Flagship=1380000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "chery/eq7",
+    "kept": [
+     "Luxury=1599000 MY2026"
+    ],
+    "superseded": [
+     "(1 class)=1599000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "chery/tiggo-4-pro",
+    "kept": [
+     "1.5 CVT Comfort=889000 MY2026",
+     "1.5 CVT Luxury=929000 MY2026",
+     "1.5T CVT Luxury Turbo=989000 MY2026",
+     "1.5 CVT Comfort=915000 MY2027",
+     "1.5 CVT Luxury=955000 MY2027",
+     "1.5T CVT Luxury Turbo=1015000 MY2027"
+    ],
+    "superseded": [
+     "LUXURY TURBO=999000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "chery/tiggo-7",
+    "kept": [
+     "FL 1.5T 6DCT Comfort=1000000 MY2026",
+     "FL 1.5T 6DCT Luxury=1070000 MY2026",
+     "FL 1.5T 6DCT Comfort=1010000 MY2027",
+     "FL 1.5T 6DCT Luxury=1080000 MY2027"
+    ],
+    "superseded": [
+     "COMFORT=1010000 MY2027 @2026-09-10",
+     "LUXURY=1080000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "chery/tiggo-7-pro",
+    "kept": [
+     "1.5T CVT Comfort=1125000 MY2027",
+     "1.5T CVT Luxury=1225000 MY2027"
+    ],
+    "superseded": [
+     "CKD Comfort=1075000 MY2027 @2026-09-10",
+     "CKD Luxury=1175000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "chery/tiggo-8",
+    "kept": [
+     "1.5T 6DCT Comfort 7 Seat=1155000 MY2026",
+     "1.5T 6DCT Luxury 5 Seat=1215000 MY2026",
+     "1.5T 6DCT Luxury 7 Seat=1255000 MY2026",
+     "1.5T 6DCT Comfort 7 Seat=1210000 MY2027",
+     "1.5T 6DCT Luxury 5 Seat=1270000 MY2027",
+     "1.5T 6DCT Luxury 7 Seat=1310000 MY2027"
+    ],
+    "superseded": [
+     "COMFORT 7 Seat=1170000 MY2027 @2026-09-10",
+     "LUXURY 5 Seat=1230000 MY2027 @2026-09-10",
+     "LUXURY 7 Seat=1270000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "chery/tiggo-8-pro",
+    "kept": [
+     "1.6T 6DCT Luxury=1365000 MY2025",
+     "1.6T 6DCT Flagship=1465000 MY2025",
+     "1.6T 6DCT Luxury=1375000 MY2026",
+     "1.6T 6DCT Flagship=1475000 MY2026"
+    ],
+    "superseded": [
+     "Luxury=1375000 MY2026 @2026-09-10",
+     "Flagship=1475000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "chery/tiggo-8-pro-max",
+    "kept": [
+     "1.6T 6DCT Luxury 7 Seat=1590000 MY2026",
+     "1.6T 6DCT Flagship 7 Seat=1690000 MY2026",
+     "1.6T 6DCT Luxury 7 Seat=1640000 MY2027",
+     "1.6T 6DCT Flagship 7 Seat=1740000 MY2027"
+    ],
+    "superseded": [
+     "Luxury=1620000 MY2027 @2026-09-25",
+     "1.6T 6DCT Luxury=1620000 MY2027 @2026-09-25",
+     "Flagship=1720000 MY2027 @2026-09-25",
+     "1.6T 6DCT Flagship=1720000 MY2027 @2026-09-25"
+    ]
+   },
+   {
+    "id": "chery/tiggo-9",
+    "kept": [
+     "1.5T DHT Luxury 7 Seat=2120000 MY2026"
+    ],
+    "superseded": [
+     "PHEV 1.5T DHT LUXURY=2100000 MY2026 @2026-09-10",
+     "(1 class)=2100000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "chevrolet/captiva-ev",
+    "kept": [
+     "Premier=1399000 MY2026"
+    ],
+    "superseded": [
+     "Premier=1499000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "citroen/c4",
+    "kept": [
+     "FL Shine=1540000 MY2027"
+    ],
+    "superseded": [
+     "Shine Two Tone=1525000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "citroen/c4-x",
+    "kept": [
+     "SKD Feel=1290000 MY2026",
+     "SKD Shine=1420000 MY2026"
+    ],
+    "superseded": [
+     "Feel=1199000 MY2026 @2026-09-10",
+     "Feel=1290000 MY2026 @2026-09-10",
+     "Shine=1349000 MY2026 @2026-09-10",
+     "Shine=1420000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "cupra/formentor",
+    "kept": [
+     "V1 1.5L 150HP=2080000 MY2027",
+     "VZ 2.0L 265HP=2670000 MY2027"
+    ],
+    "superseded": [
+     "V1 1.5L=2049000 MY2026 @2026-08-22",
+     "VZ 2.0L=2589000 MY2026 @2026-08-22"
+    ]
+   },
+   {
+    "id": "cupra/leon",
+    "kept": [
+     "V1 1.4L 150HP=1880000 MY2027"
+    ],
+    "superseded": [
+     "V1=1849000 MY2026 @2026-08-22"
+    ]
+   },
+   {
+    "id": "cupra/terramar",
+    "kept": [
+     "Impulse 1.4L 150HP (with HUD)=2360000 MY2027",
+     "Control 1.4L 150HP (with HUD)=2460000 MY2027"
+    ],
+    "superseded": [
+     "Impulse=2299000 MY2026 @2026-08-22",
+     "Control=2399000 MY2026 @2026-08-22"
+    ]
+   },
+   {
+    "id": "deepal/g318",
+    "kept": [
+     "Premium REEV=2135000 MY2027",
+     "Adventure REEV=2285000 MY2027"
+    ],
+    "superseded": [
+     "Premium=2050000 MY2026 @2026-09-10",
+     "ADVENTURE=2200000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "deepal/s-05",
+    "kept": [
+     "SUV REEV=1660000 MY2027",
+     "SUV BEV=1810000 MY2027"
+    ],
+    "superseded": [
+     "REEV=1599000 MY2026 @2026-09-25",
+     "BEV=1750000 MY2026 @2026-09-25"
+    ]
+   },
+   {
+    "id": "deepal/s-07",
+    "kept": [
+     "SUV REEV=1975000 MY2026",
+     "SUV BEV=2065000 MY2026"
+    ],
+    "superseded": [
+     "REEV=1925000 MY2026 @2026-09-10",
+     "BEV=2015000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "dfsk/600",
+    "kept": [
+     "1.5 A/T=1388900 MY2026"
+    ],
+    "superseded": [
+     "1.5T A/T (Info panel figure)=1294900 MY2026 @2026-09-10",
+     "Standard=1388900 MY2026 @2026-09-10",
+     "1.5T A/T=1388900 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "dfsk/e5",
+    "kept": [
+     "REEV=1294900 MY2027"
+    ],
+    "superseded": [
+     "Automatic=1294900 MY2027 @2026-09-10",
+     "Standard=1294900 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "dfsk/e5-plus",
+    "kept": [
+     "REEV=1494900 MY2027"
+    ],
+    "superseded": [
+     "Automatic=1494900 MY2027 @2026-09-10",
+     "Standard=1494900 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "exeed/rx",
+    "kept": [
+     "Flagship=2450000 MY2027"
+    ],
+    "superseded": [
+     "Automatic=2050000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "forthing/s7",
+    "kept": [
+     "EV Exclusive=1320000 MY2027",
+     "REEV Exclusive=1400000 MY2027"
+    ],
+    "superseded": [
+     "EV=1290000 MY2027 @2026-09-10",
+     "REEV=1370000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "forthing/t5",
+    "kept": [
+     "EV Exclusive=1410000 MY2027",
+     "REEV Exclusive=1420000 MY2027"
+    ],
+    "superseded": [
+     "EVO=1190000 MY2027 @2026-09-10",
+     "EV=1380000 MY2027 @2026-09-10",
+     "REEV=1390000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "forthing/t5-evo",
+    "kept": [
+     "Exclusive=1220000 MY2027"
+    ],
+    "superseded": [
+     "Unspecified trim=1190000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "forthing/v9",
+    "kept": [
+     "Exclusive=2650000 MY2027"
+    ],
+    "superseded": [
+     "PHEV=2600000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "gac/empow",
+    "kept": [
+     "Elegance=1095000 MY2027",
+     "Premium=1214000 MY2027",
+     "S-Style=1320000 MY2027"
+    ],
+    "superseded": [
+     "GS=1075000 MY2027 @2026-09-10",
+     "GB=1189000 MY2027 @2026-09-10",
+     "GE S-Style=1295000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "gac/gs4",
+    "kept": [
+     "Automtic / GS=1185000 MY2025",
+     "Automtic / GB=1265000 MY2025"
+    ],
+    "superseded": [
+     "GS=1185000 MY2025 @2026-09-10",
+     "GB=1265000 MY2025 @2026-09-10",
+     "GE=1355000 MY2025 @2026-09-10"
+    ]
+   },
+   {
+    "id": "geely/city-ray",
+    "kept": [
+     "Comfort GL=1249000 MY2027",
+     "Premium GK=1329000 MY2027",
+     "Sport GF Plus=1399000 MY2027"
+    ],
+    "superseded": [
+     "Comfort=1299000 MY2026 @2026-09-10",
+     "Premium=1379000 MY2026 @2026-09-10",
+     "Sport=1469000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "geely/cool-ray",
+    "kept": [
+     "Comfort GL=975000 MY2027",
+     "Comfort (Auto Mobility CKD)=999000 MY2027",
+     "Premium GK=1075000 MY2027",
+     "Sport (Auto Mobility CKD)=1119000 MY2027",
+     "Sport GF Plus=1199000 MY2027",
+     "Sport + (Auto Mobility CKD)=1199000 MY2027"
+    ],
+    "superseded": [
+     "Comfort - Local simplified (AUTO MOBILITY)=975000 MY2026 @2026-09-10",
+     "Premium - Local simplified (AUTO MOBILITY)=1075000 MY2026 @2026-09-10",
+     "GL (Abou Ghaly)=1099000 MY2026 @2026-09-10",
+     "Comfort (Abou Ghaly)=1099000 MY2026 @2026-09-10",
+     "Premium (Abou Ghaly)=1199000 MY2026 @2026-09-10",
+     "Sport - Local simplified (AUTO MOBILITY)=1199000 MY2026 @2026-09-10",
+     "Sport (Abou Ghaly)=1299000 MY2026 @2026-09-10",
+     "sport (Abou Ghaly) [dup listing]=1299000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "geely/ex5",
+    "kept": [
+     "Pro=1419900 MY2027",
+     "Max=1499900 MY2027",
+     "Max Plus=1569900 MY2027"
+    ],
+    "superseded": [
+     "Pro Max=1569900 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "geely/gx3-pro",
+    "kept": [
+     "1.5 A/T Premium=850000 MY2025"
+    ],
+    "superseded": [
+     "Premium (Abou Ghaly)=790000 MY2025 @2026-09-10",
+     "Premium (AUTO MOBILITY)=790000 MY2025 @2026-09-10"
+    ]
+   },
+   {
+    "id": "geely/monjaro",
+    "kept": [
+     "Pro=1699900 MY2027",
+     "Max=1790900 MY2027",
+     "Ultra AWD=1949900 MY2027",
+     "Ultra Plus AWD=1999900 MY2027"
+    ],
+    "superseded": [
+     "Ultra=1949900 MY2027 @2026-09-10",
+     "Ultra Brown=1999900 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "haval/h6",
+    "kept": [
+     "1.5T 7DCT Platinum=1390000 MY2026",
+     "1.5T 7DCT Ultra=1580000 MY2026"
+    ],
+    "superseded": [
+     "Platinum=1300000 MY2026 @2026-09-10",
+     "ULTRA=1490000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "haval/h7",
+    "kept": [
+     "1.5T 2DHT HEV Ultra Black Edition=1795000 MY2027"
+    ],
+    "superseded": [
+     "Ultra Black=1725000 MY2027 @2026-09-25"
+    ]
+   },
+   {
+    "id": "haval/jolion",
+    "kept": [
+     "1.5T 7DCT Standard=1040000 MY2027",
+     "1.5T 7DCT Deluxe=1095000 MY2027",
+     "1.5T 7DCT High Deluxe=1195000 MY2027"
+    ],
+    "superseded": [
+     "Standard=985000 MY2027 @2026-09-10",
+     "Deluxe=1035000 MY2027 @2026-09-10",
+     "Unspecified trim=1035000 MY2027 @2026-09-10",
+     "High Deluxe=1135000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "hongqi/e-hs9",
+    "kept": [
+     "Executive=3199000 MY2026"
+    ],
+    "superseded": [
+     "Luxury=3199000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "hyundai/accent-rb",
+    "kept": [
+     "A/T / DAB ABS=800000 MY2026"
+    ],
+    "superseded": [
+     "GL=729900 MY2026 @2026-09-10",
+     "SR=759900 MY2026 @2026-09-10",
+     "Highline=839000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "hyundai/elantra",
+    "kept": [
+     "Baseline=1060000 MY2027",
+     "Modern=1160000 MY2027",
+     "Modern Sunroof=1175000 MY2027",
+     "Topline=1275000 MY2027"
+    ],
+    "superseded": [
+     "Baseline=1020000 MY2027 @2026-09-10",
+     "Unspecified trim=1020000 MY2027 @2026-09-10",
+     "Smart (=Baseline)=1020000 MY2027 @2026-09-10",
+     "Modern=1120000 MY2027 @2026-09-10",
+     "Modern + Sunroof=1135000 MY2027 @2026-09-10",
+     "Topline=1235000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "hyundai/i30",
+    "kept": [
+     "Hatchback Blaze=1150000 MY2026",
+     "Fastback Blaze=1200000 MY2026",
+     "Wagon Blaze=1200000 MY2026",
+     "Hatchback Redline=1350000 MY2026",
+     "Fastback Redline=1400000 MY2026",
+     "Wagon Redline=1400000 MY2026",
+     "Hatchback Nline=1450000 MY2026",
+     "Fastback Nline=1500000 MY2026"
+    ],
+    "superseded": [
+     "HB BLAZE=1150000 MY2026 @2026-09-10",
+     "Blaze Hatchback=1150000 MY2026 @2026-09-10",
+     "FB BLAZE=1200000 MY2026 @2026-09-10",
+     "SW BLAZE=1200000 MY2026 @2026-09-10",
+     "Blaze Fastback=1200000 MY2026 @2026-09-10",
+     "HB REDLINE=1350000 MY2026 @2026-09-10",
+     "Redline Hatchback=1350000 MY2026 @2026-09-10",
+     "SW REDLINE=1400000 MY2026 @2026-09-10",
+     "FB REDLINE=1400000 MY2026 @2026-09-10",
+     "Redline Fastback=1400000 MY2026 @2026-09-10",
+     "HB NLINE=1450000 MY2026 @2026-09-10",
+     "N Line Hatchback=1450000 MY2026 @2026-09-10",
+     "FB NLINE=1500000 MY2026 @2026-09-10",
+     "N Line Fastback=1500000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "hyundai/ioniq-5",
+    "kept": [
+     "FL NE Connect Plus RWD=2200000 MY2025",
+     "FL NE Extreme LR RWD=2300000 MY2025",
+     "FL NE Extreme LR AWD=2800000 MY2025",
+     "N Boost (AWD)=3300000 MY2025"
+    ],
+    "superseded": [
+     "Connect Plus LR RR=2200000 MY2025 @2026-09-10",
+     "Extreme LR RR=2600000 MY2025 @2026-09-10",
+     "Extreme LR AWD=2800000 MY2025 @2026-09-10",
+     "N BOOST 84=3300000 MY2025 @2026-09-10"
+    ]
+   },
+   {
+    "id": "hyundai/ioniq-6",
+    "kept": [
+     "CE Connect Plus RWD=2150000 MY2025",
+     "CE Extreme LR RWD=2400000 MY2025",
+     "CE Extreme LR AWD=2600000 MY2025"
+    ],
+    "superseded": [
+     "Connect Plus Long Range RWD=2100000 MY2025 @2026-09-10",
+     "EXTREME LONG RANGE RWD=2350000 MY2025 @2026-09-10",
+     "EXTREME LONG RANGE AWD=2550000 MY2025 @2026-09-10"
+    ]
+   },
+   {
+    "id": "hyundai/ioniq-9",
+    "kept": [
+     "Connect 110kWh AWD=3000000 MY2026",
+     "Extreme 110kWh AWD=3300000 MY2026",
+     "Calligraphy 110kWh=3600000 MY2026"
+    ],
+    "superseded": [
+     "Connect=2900000 MY2026 @2026-09-10",
+     "Extreme=3250000 MY2026 @2026-09-10",
+     "Caligraphy=3550000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "hyundai/santa-fe",
+    "kept": [
+     "1.6T Executive HEV RWD=2995000 MY2025",
+     "1.6T Calligraphy HEV AWD=3495000 MY2025"
+    ],
+    "superseded": [
+     "HEV Executive RWD=2995000 MY2025 @2026-09-10",
+     "HEV Calligraphy AWD=3495000 MY2025 @2026-09-10"
+    ]
+   },
+   {
+    "id": "hyundai/tucson",
+    "kept": [
+     "Shadow=1850000 MY2027",
+     "Blaze=2000000 MY2027",
+     "Redline=2100000 MY2027",
+     "Redline (N Pack)=2175000 MY2027",
+     "Night=2250000 MY2027",
+     "Black Diamond=2350000 MY2027",
+     "Nline (AWD)=2450000 MY2027"
+    ],
+    "superseded": [
+     "Redine=2025000 MY2027 @2026-09-25",
+     "REDLINE N-Line=2125000 MY2027 @2026-09-10",
+     "Redine (N Pack)=2100000 MY2027 @2026-09-25",
+     "NLINE=2375000 MY2027 @2026-09-25"
+    ]
+   },
+   {
+    "id": "im/im-5",
+    "kept": [
+     "75 KW RWD=1900000 MY2026",
+     "100KW RWD=2250000 MY2026",
+     "100KW AWD=2450000 MY2026"
+    ],
+    "superseded": [
+     "Ultra Efficiency=1900000 MY2026 @2026-09-10",
+     "Ultra Range=2250000 MY2026 @2026-09-10",
+     "Ultra Performance=2450000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "jeep/grand-cherokee",
+    "kept": [
+     "3.6 A/T Limited L 4x4=5600000 MY2025"
+    ],
+    "superseded": [
+     "3.6 A/T Limited L 4x4 (Info panel figure)=5400000 MY2025 @2026-09-10",
+     "Standard=5600000 MY2025 @2026-09-10"
+    ]
+   },
+   {
+    "id": "jetour/dashing",
+    "kept": [
+     "Comfort=1330000",
+     "Luxury=1480000"
+    ],
+    "superseded": [
+     "Luxury 1.6 L=1480000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "jetour/t1",
+    "kept": [
+     "Luxury=1730000",
+     "Matte Color=1760000"
+    ],
+    "superseded": [
+     "Matt Color=1760000 MY2027 @2026-09-25",
+     "Matt Colour=1760000 MY2027 @2026-09-25"
+    ]
+   },
+   {
+    "id": "jetour/t2",
+    "kept": [
+     "Luxury=1900000",
+     "Matte Color=1930000"
+    ],
+    "superseded": [
+     "Matt Color=1930000 MY2027 @2026-09-25",
+     "Matt Colour=1930000 MY2027 @2026-09-25",
+     "i-DM=2150000 MY2027 @2026-09-25",
+     "Luxury (i-DM)=2150000 MY2027 @2026-09-25"
+    ]
+   },
+   {
+    "id": "jetour/x70",
+    "kept": [
+     "FL Comfort=1095000",
+     "FL Luxury=1240000"
+    ],
+    "superseded": [
+     "Comfort - Facelift=1095000 MY2027 @2026-09-10",
+     "Luxury - facelift=1240000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "jetour/x70-plus-ckd",
+    "kept": [
+     "FL Luxury=1275000"
+    ],
+    "superseded": [
+     "Luxury=1275000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "jetour/x90-plus",
+    "kept": [
+     "FL Luxury=1560000"
+    ],
+    "superseded": [
+     "Luxury FL=1560000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "kaiyi/e5",
+    "kept": [
+     "A/T / Premium=888000 MY2027"
+    ],
+    "superseded": [
+     "Flagship=899900 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "kaiyi/x7",
+    "kept": [
+     "A/T / Highline=1285000 MY2026"
+    ],
+    "superseded": [
+     "Flagship=1399900 MY2026 @2026-09-10",
+     "Flagship (PHEV)=1600000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "kgm/torres",
+    "kept": [
+     "Comfort=1650000 MY2027",
+     "Advanced=1790000 MY2027",
+     "Premium=1925000 MY2027",
+     "Luxury=2075000 MY2027",
+     "Black Edition=2075000 MY2027"
+    ],
+    "superseded": [
+     "Automtic /comfort=1585000 MY2026 @2026-09-25",
+     "Advance=1720000 MY2026 @2026-09-25",
+     "Automtic /advanced=1720002 MY2026 @2026-09-25",
+     "Automtic /adventure plus 4*4=1999000 MY2026 @2026-09-25"
+    ]
+   },
+   {
+    "id": "kia/ev6",
+    "kept": [
+     "Earth=2350000 MY2026",
+     "GT-line=2600000 MY2026",
+     "GT=3050000 MY2026"
+    ],
+    "superseded": [
+     "Base (single trim)=3000000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "kia/ev9",
+    "kept": [
+     "GT-line 7-Seats=3750000 MY2025",
+     "GT-line 6-Seats Swiveling=3800000 MY2025",
+     "GT-line 6-Seats Relaxing=3850000 MY2025"
+    ],
+    "superseded": [
+     "GT Line 6 Seats Swivelling=3750000 MY2025 @2026-09-10"
+    ]
+   },
+   {
+    "id": "kia/k4",
+    "kept": [
+     "Highline=1549900 MY2027",
+     "GT-line=1749900 MY2027",
+     "GT-line Black Edition=1899900 MY2027"
+    ],
+    "superseded": [
+     "Highline=1500000 MY2026 @2026-09-10",
+     "GT Line=1700000 MY2026 @2026-09-10",
+     "GT Line Black Edition=1850000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "kia/sorento",
+    "kept": [
+     "HEV 7-Seats Topline=3549900 MY2026"
+    ],
+    "superseded": [
+     "Base (single trim)=3500000 MY2026 @2026-09-10",
+     "HEV Topline 7 Seats=3500000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "lexus/lx600",
+    "kept": [
+     "LX700h AWD 7 Seats - Hybrid=15600000 MY2027",
+     "LX700h AWD 4 Seats - Hybrid=17250000 MY2027",
+     "LX600 AWD 7 Seats=17300000 MY2027",
+     "LX600 AWD 4 Seats=18900000 MY2027"
+    ],
+    "superseded": [
+     "Unspecified trim=12000000 MY2025 @2026-09-10"
+    ]
+   },
+   {
+    "id": "lexus/rz",
+    "kept": [
+     "RZ550e AWD F-Sport=3200000 MY2026"
+    ],
+    "superseded": [
+     "RZ350e=3500000 MY2026 @2026-09-10",
+     "RZ550e=3850000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "lynk-co/08",
+    "kept": [
+     "Pro=2325000 MY2027",
+     "Halo=2525000 MY2027"
+    ],
+    "superseded": [
+     "Core=2290000 MY2026 @2026-09-10",
+     "More=2490000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "mazda/3",
+    "kept": [
+     "Highline 1.5L Skyactiv AT Sedan=1589000 MY2026",
+     "Highline 1.5L Skyactiv AT Hatchback=1599000 MY2026",
+     "Highline 1.5L Skyactiv AT Sedan=1609000 MY2027",
+     "Highline 1.5L Skyactiv AT Hatchback=1619000 MY2027"
+    ],
+    "superseded": [
+     "Highline / Sedan=1589000 MY2026 @2026-09-10",
+     "Highline / HB=1599000 MY2026 @2026-09-10",
+     "Highline Hatchback=1599000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "mazda/cx-3",
+    "kept": [
+     "Highline 1.5L Skyactiv AT=1335000 MY2026",
+     "Highline 1.5L Skyactiv AT=1355000 MY2027"
+    ],
+    "superseded": [
+     "Highline=1299000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "mercedes/a-class",
+    "kept": [
+     "Progressive=2390000 MY2026"
+    ],
+    "superseded": [
+     "A 200 Saloon=2390000 MY2026 @2026-01-13"
+    ]
+   },
+   {
+    "id": "mercedes/b-class",
+    "kept": [
+     "Progressive=2350000 MY2026"
+    ],
+    "superseded": [
+     "B 200 Sports=2350000 MY2026 @2026-01-13"
+    ]
+   },
+   {
+    "id": "mercedes/c-class",
+    "kept": [
+     "C 180 Saloon / Avantgarde=3350000",
+     "C 180 Saloon / Sport=3905000",
+     "C 200 Saloon / Sport=4390000"
+    ],
+    "superseded": [
+     "C 180 Avantgarde=3100000 MY2026 @2026-01-13",
+     "C 180 Sport=3650000 MY2026 @2026-01-13",
+     "C 200 Sport=4100000 MY2026 @2026-01-13",
+     "C 43=5800000 MY2026 @2026-01-13"
+    ]
+   },
+   {
+    "id": "mercedes/cla",
+    "kept": [
+     "CLA 180 / Progressive=2890000",
+     "CLA 200 / Sport=3390000"
+    ],
+    "superseded": [
+     "CLA 200 Coupé=2930000 MY2026 @2026-01-13"
+    ]
+   },
+   {
+    "id": "mercedes/e-class",
+    "kept": [
+     "E 200 Saloon / Premium=4420000",
+     "E 200 Saloon / Avantgarde=5260000",
+     "E 200 Saloon / Sport=5870000",
+     "E 200 Saloon / Exclusive=5870000"
+    ],
+    "superseded": [
+     "E 200=4920000 MY2026 @2026-01-13",
+     "E 200 Exclusive=5600000 MY2026 @2026-01-13",
+     "E 200 Sport=5600000 MY2026 @2026-01-13"
+    ]
+   },
+   {
+    "id": "mercedes/eqa",
+    "kept": [
+     "EQA 250+ / Progressive=3400000"
+    ],
+    "superseded": [
+     "EQA 250+=3300000 MY2026 @2026-01-13"
+    ]
+   },
+   {
+    "id": "mercedes/gla",
+    "kept": [
+     "GLA 200 / Progressive=3140000"
+    ],
+    "superseded": [
+     "GLA 200=2990000 MY2026 @2026-01-13"
+    ]
+   },
+   {
+    "id": "mercedes/glc",
+    "kept": [
+     "GLC 200 4M SUV / Avantgarde=4370000",
+     "GLC 200 4M Coupé / Avantgarde=4670000",
+     "GLC 200 4M SUV / Sport=4980000",
+     "GLC 200 4M Coupé / Sport=5460000"
+    ],
+    "superseded": [
+     "GLC 200=4930000 MY2026 @2026-01-13"
+    ]
+   },
+   {
+    "id": "mercedes/gle",
+    "kept": [
+     "GLE 450 4M SUV / AMG=7200000",
+     "Mercedes-AMG GLE 53 4M+ / AMG=8220000"
+    ],
+    "superseded": [
+     "GLE 450 4MATIC=7090000 MY2025 @2026-01-13",
+     "GLE 53 4MATIC+=8100000 MY2025 @2026-01-13"
+    ]
+   },
+   {
+    "id": "mercedes/gls",
+    "kept": [
+     "GLS 580 4M SUV / AMG=9930000"
+    ],
+    "superseded": [
+     "GLS 580 4MATIC=9930000 MY2025 @2026-01-13"
+    ]
+   },
+   {
+    "id": "mg/7",
+    "kept": [
+     "Trophy=1750000"
+    ],
+    "superseded": [
+     "Luxury=1625000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "mg/g50-plus",
+    "kept": [
+     "G50 Plus=1325000"
+    ],
+    "superseded": [
+     "(1 class)=1300000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "mg/gt",
+    "kept": [
+     "Luxury=1175000"
+    ],
+    "superseded": [
+     "Comfort=1110000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "mg/hs",
+    "kept": [
+     "HS AS33 LUX=1550000",
+     "HS HEV=1650000"
+    ],
+    "superseded": [
+     "Plus Luxury=1525000 MY2027 @2026-09-10",
+     "HEV=1625000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "mg/one",
+    "kept": [
+     "Luxury=1425000"
+    ],
+    "superseded": [
+     "(1 class)=1400000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "mg/rx9",
+    "kept": [
+     "RX9=1959990"
+    ],
+    "superseded": [
+     "Luxury=1899000 MY2027 @2026-09-10",
+     "(1 class)=1900000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "mg/zs",
+    "kept": [
+     "ZS Plus=1165000"
+    ],
+    "superseded": [
+     "Comfort=1075000 MY2027 @2026-09-10",
+     "Plus=1150000 MY2027 @2026-09-10",
+     "Facelift (1 class)=1150000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "mitsubishi/eclipse-cross",
+    "kept": [
+     "Inspire HL=1550000 MY2026",
+     "Instyle TL=1610000 MY2026",
+     "Infinity PL AWD=1690000 MY2026"
+    ],
+    "superseded": [
+     "Insport BL=1400000 MY2026 @2026-09-25",
+     "Insport PLUS - ML PLUS=1500000 MY2026 @2026-09-25",
+     "Inspire Highline=1550000 MY2026 @2026-09-25",
+     "Instyle Top Line=1610000 MY2026 @2026-09-25",
+     "Infinity Premium Line AWD=1690000 MY2026 @2026-09-25"
+    ]
+   },
+   {
+    "id": "nissan/magnite",
+    "kept": [
+     "Visia=860000 MY2027",
+     "Accenta=910000 MY2027",
+     "Tekna=940000 MY2027",
+     "Tekna +=960000 MY2027"
+    ],
+    "superseded": [
+     "Acenta=848000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "nissan/patrol",
+    "kept": [
+     "3.8L V6 XE=8990000",
+     "3.8L V6 SE T2=9600000",
+     "3.8L V6 SE TITANIUM=10750000",
+     "3.5L V6TT LE T1=11050000",
+     "3.8L V6 SE PLATINUM CITY=11750000",
+     "3.5L V6TT LE T2=11900000",
+     "3.5L V6TT LE TITANIUM=13000000",
+     "3.5L V6TT LE PLATINUM CITY=14000000"
+    ],
+    "superseded": [
+     "XE=8990000 MY2026 @2026-09-10",
+     "SE=9600000 MY2026 @2026-09-10",
+     "SE Titanium=10750000 MY2026 @2026-09-10",
+     "LE1=11050000 MY2026 @2026-09-10",
+     "SE Platinum City=11750000 MY2026 @2026-09-10",
+     "LE2=11900000 MY2026 @2026-09-10",
+     "LE Titanium=13000000 MY2026 @2026-09-10",
+     "LE Platinum City=14000000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "nissan/qashqai",
+    "kept": [
+     "N-connecta=1650000 MY2027",
+     "N-connecta+ 2T=1850000 MY2027",
+     "Tekna 2T=1950000 MY2027",
+     "N-Design e-PWR=2100000 MY2027"
+    ],
+    "superseded": [
+     "N-Connecta+=1757000 MY2027 @2026-09-25",
+     "TEKNA=1868000 MY2027 @2026-09-10",
+     "e-Power=2000000 MY2027 @2026-09-10",
+     "TEKNA+ 4WD=2068000 MY2027 @2026-09-25"
+    ]
+   },
+   {
+    "id": "nissan/sentra",
+    "kept": [
+     "Premium=1050000"
+    ],
+    "superseded": [
+     "Full Option=1050000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "nissan/sunny",
+    "kept": [
+     "AT Base=820000 MY2027",
+     "AT Mid=858000 MY2027",
+     "AT Super salon=898000 MY2027"
+    ],
+    "superseded": [
+     "Manual/Baseline=665000 MY2027 @2026-09-10",
+     "Baseline AT=765000 MY2027 @2026-09-10",
+     "Baseline=765000 MY2027 @2026-09-10",
+     "plus=799900 MY2027 @2026-09-10",
+     "Midline=800000 MY2027 @2026-09-10",
+     "Super Saloon=835000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "nissan/x-trail",
+    "kept": [
+     "Tekna=2500000 MY2027"
+    ],
+    "superseded": [
+     "Acenta Plus=2000000 MY2026 @2026-09-10",
+     "N-Trek=2080000 MY2026 @2026-09-10",
+     "Tekna e-4ORCE=2300000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "opel/corsa",
+    "kept": [
+     "Topline +=1300000 MY2027"
+    ],
+    "superseded": [
+     "Sport Topline Plus=1250000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "opel/frontera",
+    "kept": [
+     "GS Line 7 Seater=1280000 MY2027"
+    ],
+    "superseded": [
+     "Luxury=1190000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "opel/grandland",
+    "kept": [
+     "Topline=2025000 MY2027",
+     "Topline +=2175000 MY2027"
+    ],
+    "superseded": [
+     "Highline Plus=1849990 MY2026 @2026-09-25",
+     "Topline Plus=2099990 MY2026 @2026-09-25"
+    ]
+   },
+   {
+    "id": "opel/mokka",
+    "kept": [
+     "GS Line=1600000 MY2027"
+    ],
+    "superseded": [
+     "Black Edition=1550000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "renault/austral",
+    "kept": [
+     "Evolution Facelift=1550000 MY2026",
+     "Evolution=1550000 MY2026",
+     "Techno Facelift=1690000 MY2026",
+     "Techno=1690000 MY2026",
+     "Iconic Facelift=1790000 MY2026",
+     "Iconic=1790000 MY2026",
+     "Espirit Alpine=1890000 MY2026",
+     "Esprit Alpine=1890000 MY2026"
+    ],
+    "superseded": [
+     "Esprit Alpine / B/E=1770000 MY2026 @2026-09-25"
+    ]
+   },
+   {
+    "id": "renault/duster",
+    "kept": [
+     "A/T / H1=1195000 MY2026",
+     "A/T / H2=1295000 MY2026",
+     "A/T / H3=1395000 MY2026"
+    ],
+    "superseded": [
+     "Authentic=1195000 MY2026 @2026-09-10",
+     "Evolution=1295000 MY2026 @2026-09-10",
+     "Techno=1395000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "renault/megane",
+    "kept": [
+     "1.6 Dynamic=1220000 MY2026",
+     "1.6 Signature=1330000 MY2026"
+    ],
+    "superseded": [
+     "Dynamic=1220000 MY2026 @2026-09-10",
+     "Signature=1330000 MY2026 @2026-09-10",
+     "1.3 Turbo Signature=1450000 MY2026 @2026-09-10",
+     "Signature Turbo=1450000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "skoda/karoq",
+    "kept": [
+     "A/T / Suite=1950000 MY2026"
+    ],
+    "superseded": [
+     "Selection Suite=1950000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "skoda/kodiaq",
+    "kept": [
+     "Selection Loft=2625000 MY2027",
+     "Selection Suite=3000000 MY2027",
+     "Sportline=3150000 MY2027"
+    ],
+    "superseded": [
+     "Loft=2600000 MY2026 @2026-09-10",
+     "Suite=2950000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "skoda/octavia",
+    "kept": [
+     "Selection Loft=1825000 MY2027",
+     "Selection Lounge=2050000 MY2027",
+     "Selection Suite=2250000 MY2027"
+    ],
+    "superseded": [
+     "Loft=1800000 MY2026 @2026-09-10",
+     "Lounge=2000000 MY2026 @2026-09-10",
+     "Suite=2150000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "skoda/superb",
+    "kept": [
+     "Selection Suite=2350000 MY2027",
+     "L&K=2600000 MY2027"
+    ],
+    "superseded": [
+     "Selection=2350000 MY2026 @2026-09-10",
+     "L&K 2.0=3000000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "soueast/s-05",
+    "kept": [
+     "Highline 1.5L Turbo=1090000 MY2027"
+    ],
+    "superseded": [
+     "Highline=1070000 MY2027 @2026-09-10",
+     "(1 class)=1070000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "soueast/s-06",
+    "kept": [
+     "Highline 1.5L Turbo=1370000 MY2027",
+     "Premium 1.6L Turbo=1510000 MY2027",
+     "DM Intelligent 1.5L Turbo PHEV=1689000 MY2027"
+    ],
+    "superseded": [
+     "Highline=1350000 MY2027 @2026-09-25",
+     "Premium=1485000 MY2027 @2026-09-25",
+     "Intelligent (DM-i)=1649000 MY2027 @2026-09-25",
+     "DM=1650000 MY2027 @2026-09-25"
+    ]
+   },
+   {
+    "id": "soueast/s-07",
+    "kept": [
+     "Highline 1.5L Turbo=1415000 MY2027",
+     "Premium 1.6L Turbo=1555000 MY2027"
+    ],
+    "superseded": [
+     "Highline=1390000 MY2027 @2026-09-10",
+     "Premium=1530000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "soueast/s-08-dm",
+    "kept": [
+     "DM Intelligent 1.5L Turbo PHEV=1849000 MY2027"
+    ],
+    "superseded": [
+     "Intelligent=1800000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "soueast/s-09",
+    "kept": [
+     "Flagship 1.6L Turbo=1620000 MY2027"
+    ],
+    "superseded": [
+     "Premium=1600000 MY2027 @2026-09-25"
+    ]
+   },
+   {
+    "id": "suzuki/alto",
+    "kept": [
+     "1.0L Manual (Standard / 1000 M/T)=535000 MY2027"
+    ],
+    "superseded": [
+     "Standard=535000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "suzuki/baleno",
+    "kept": [
+     "AMT GLX=1090000 MY2026"
+    ],
+    "superseded": [
+     "Unspecified=1090000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "toyota/bz4x",
+    "kept": [
+     "Sport - FWD=2200000 MY2026",
+     "Premier - AWD=2380000 MY2026"
+    ],
+    "superseded": [
+     "Sport=2199999 MY2026 @2026-09-10",
+     "Premier=2380000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "toyota/corolla",
+    "kept": [
+     "Active=1280000 MY2027",
+     "Comfort=1380000 MY2027",
+     "Smart=1480000 MY2027",
+     "Elegance=1630000 MY2027"
+    ],
+    "superseded": [
+     "Smart with Sunroof=1580000 MY2026 @2026-09-10",
+     "Hybrid=2000000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "toyota/fortuner",
+    "kept": [
+     "Sport=3700000 MY2027"
+    ],
+    "superseded": [
+     "Sport 4.0 4WD=3700000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "toyota/urban-cruiser",
+    "kept": [
+     "Active=1430000 MY2026",
+     "Comfort=1530000 MY2026"
+    ],
+    "superseded": [
+     "Active=1430000 MY2026 @2026-09-10",
+     "Comfort=1530000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "volkswagen/tayron",
+    "kept": [
+     "R-Line=2890000 MY2026",
+     "R-Line=2890000 MY2026"
+    ],
+    "superseded": [
+     "Automtic=2890000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "volvo/ex30",
+    "kept": [
+     "Plus=1790000",
+     "Ultra=1890000",
+     "Ultra Performance=1990000"
+    ],
+    "superseded": [
+     "Plus Single Motor=1699000 MY2026 @2026-09-10",
+     "Single PLUS Extended Range=1790000 MY2026 @2026-09-10",
+     "Ultra Single Motor=1799000 MY2026 @2026-09-10",
+     "Single Ultra Extended Range=1890000 MY2026 @2026-09-10",
+     "Ultra Twin Motor=1950000 MY2026 @2026-09-10",
+     "Twin Plus Performance=1990000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "volvo/ex90",
+    "kept": [
+     "Plus=4950000"
+    ],
+    "superseded": [
+     "Twin Motor=4900000 MY2027 @2026-09-10",
+     "Unspecified (1 Trim Available)=4900000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "volvo/xc90",
+    "kept": [
+     "Ultra Bright=4990000"
+    ],
+    "superseded": [
+     "Ultimate=4950000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "voyah/dream",
+    "kept": [
+     "Signature=4900000 MY2026"
+    ],
+    "superseded": [
+     "Premium=4900000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "voyah/free",
+    "kept": [
+     "REEV=2650000 MY2026"
+    ],
+    "superseded": [
+     "Luxury=2650000 MY2026 @2026-09-10",
+     "Signature=2650000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "xpeng/g6",
+    "kept": [
+     "RWD Flagship EV=2220000"
+    ],
+    "superseded": [
+     "STANDARD RANGE=2190000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "xpeng/g7",
+    "kept": [
+     "RWD Flagship Super REEV=2299900"
+    ],
+    "superseded": [
+     "Unspecified trim=2249900 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "xpeng/g9",
+    "kept": [
+     "RWD Premium EV=2790000",
+     "RWD Flagship EV=2890000",
+     "AWD Performance EV=3150000"
+    ],
+    "superseded": [
+     "Long Range=2740000 MY2026 @2026-09-10",
+     "Long Range + Nappa=2890000 MY2026 @2026-09-10",
+     "Performance=3150000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "xpeng/m03",
+    "kept": [
+     "M03+ FWD EV=1400000"
+    ],
+    "superseded": [
+     "Premium=1350000 MY2026 @2026-09-10",
+     "Premium Plus=1400000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "xpeng/p7",
+    "kept": [
+     "AWD Performance EV=2899900"
+    ],
+    "superseded": [
+     "AT/ Flagship=2150000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "xpeng/x9",
+    "kept": [
+     "Flagship Super REEV=3649000"
+    ],
+    "superseded": [
+     "Flagship=3599000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "zeekr/x",
+    "kept": [
+     "Premium=1699000 MY2025",
+     "Flagship=1849000 MY2025"
+    ],
+    "superseded": [
+     "Long Range=1699000 MY2025 @2026-09-10",
+     "Performance=1849000 MY2025 @2026-09-10"
+    ]
+   },
+   {
+    "id": "bmw/3-series",
+    "kept": [
+     "1.6 A/T M Sport=3350000 MY2024"
+    ],
+    "superseded": [
+     "LCI Advantage=2900000 MY2024 @2026-09-10",
+     "Luxury line=3100000 MY2024 @2026-09-10",
+     "LCI M Sport=4100000 MY2024 @2026-09-10",
+     "M340i xDrive=5500000 MY2024 @2026-09-10"
+    ]
+   },
+   {
+    "id": "byd/dolphin-surf",
+    "kept": [
+     "EV=949900 MY2027"
+    ],
+    "superseded": [
+     "Automatic=949900 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "smart/1",
+    "kept": [
+     "Brabus=2140000"
+    ],
+    "superseded": [
+     "Pure+=1490000 MY2025 @2026-09-10",
+     "Pro+=1840000 MY2025 @2026-09-10",
+     "Premium=1990000 MY2025 @2026-09-10"
+    ]
+   },
+   {
+    "id": "mhero/1",
+    "kept": [
+     "Signature=6500000 MY2026"
+    ],
+    "superseded": [
+     "Premium=6500000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "chery/tiggo-7-pro-max",
+    "kept": [
+     "1.5T DCT Comfort=1300000 MY2026",
+     "1.5T DCT Luxury=1400000 MY2026",
+     "1.5T DCT Comfort=1340000 MY2027",
+     "1.5T DCT Luxury=1440000 MY2027"
+    ],
+    "superseded": [
+     "COMFORT=1320000 MY2027 @2026-09-10",
+     "LUXURY=1420000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "geely/emgrand",
+    "kept": [
+     "Comfort GS=839000 MY2027",
+     "Comfort (Auto Mobility CKD)=879000 MY2027",
+     "Luxury GF=939000 MY2027",
+     "Luxury (Auto Mobility CKD)=979000 MY2027"
+    ],
+    "superseded": [
+     "Comfort (Abou Ghaly)=839000 MY2026 @2026-09-10",
+     "Comfort - Local simplified (AUTO MOBILITY)=839000 MY2026 @2026-09-10",
+     "Luxury - Local simplified (AUTO MOBILITY)=939000 MY2026 @2026-09-10",
+     "Luxury (Abou Ghaly)=939000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "haval/v7",
+    "kept": [
+     "1.5T 2DHT HEV FWD Ultra=1915000 MY2027",
+     "1.5T 4DHT PHEV Hi4 Ultra=2190000 MY2027"
+    ],
+    "superseded": [
+     "ULTRA (HEV)=1825000 MY2027 @2026-09-10",
+     "ULTRA (PHEV)=2100000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "jac/js4",
+    "kept": [
+     "Ultimate=1039000 MY2026"
+    ],
+    "superseded": [
+     "Ultimat=1039900 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "mini/cooper",
+    "kept": [
+     "1.5 A/T C 5 Drs - Classic=2275000 MY2025"
+    ],
+    "superseded": [
+     "C - Classic=2250000 MY2027 @2026-09-10",
+     "C- JCW=2450000 MY2027 @2026-09-10",
+     "S - JWC=2975000 MY2027 @2026-09-10",
+     "JCW Convertible=3000000 MY2027 @2026-09-10"
+    ]
+   },
+   {
+    "id": "mitsubishi/outlander-sport",
+    "kept": [
+     "A/T / Midline=1275000 MY2026",
+     "Spark High Line=1375000 MY2026",
+     "Premium Line=1475000 MY2026"
+    ],
+    "superseded": [
+     "High Line=1375000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "xpeng/gx",
+    "kept": [
+     "Flagship Super REEV=3750000"
+    ],
+    "superseded": [
+     "Unspecified trim=3750000 MY2026 @2026-09-10"
+    ]
+   },
+   {
+    "id": "zeekr/001",
+    "kept": [
+     "Long Range=2549000 MY2025",
+     "Performance=2849000 MY2025",
+     "Flagship=3049000 MY2025"
+    ],
+    "superseded": [
+     "Privilege AWD=2849000 MY2025 @2026-09-10",
+     "Performance AWD=3049000 MY2025 @2026-09-10"
+    ]
+   },
+   {
+    "id": "zeekr/7x",
+    "kept": [
+     "RWD Long Range=2499000 MY2026",
+     "AWD Performance=2799000 MY2026"
+    ],
+    "superseded": [
+     "Standard=2099900 MY2026 @2026-09-10",
+     "Long Range=2499000 MY2026 @2026-09-10",
+     "Performance=2799000 MY2026 @2026-09-10"
+    ]
+   }
+  ],
+  "p2_price_from": [
+   {
+    "id": "chevrolet/captiva",
+    "price_from": 1400000,
+    "tier": "A",
+    "as_of": "2026-10-13",
+    "superseded": [
+     "LV3 (7seats)=1300000 MY2026 @2026-09-10",
+     "LV3 (7 Seats)=1400000 MY2026 @2026-09-10",
+     "Premier 7 Seats=1400000 MY2026 @2026-09-10"
+    ],
+    "from_only_version": true
+   },
+   {
+    "id": "bmw/7-series",
+    "price_from": 11900000,
+    "tier": "C",
+    "as_of": "2026-11-02",
+    "superseded": [],
+    "from_only_version": true
+   }
+  ],
+  "p1_price_holds": [
+   {
+    "id": "gac/gs3-emzoom",
+    "withheld": [
+     "GS=994000",
+     "GB=1109000",
+     "GL=1189000",
+     "RS Style=1295000"
+    ],
+    "reason": "Superseded by the CEO-shared Jameel GAC list of 21 Oct 2026: the car is listed as EMZOOM (gac/emzoom, from EGP 1,014,000). The GS3 Emzoom entry only carried the older lower Emzoom prices (994,000 / 1,109,000 / 1,189,000 / 1,295,000)."
+   }
+  ],
+  "policy": {
+   "market_prices": true,
+   "no_size_hold": true,
+   "coupes_convertibles": true,
+   "vans": true,
+   "decided": "CEO 2026-10-21",
+   "price_overrides": {
+    "decided": "CEO 2026-10-21 (P1 session review of U12-RC5 PRICE-REVIEW.md)",
+    "remove_market_price": {
+     "land-rover/range-rover-evoque": "EGP 1,450,000 far too low (CEO); new-car price to be sourced by P2",
+     "toyota/land-cruiser": "rows are Prado versions filed under Land Cruiser; Land Cruiser family identities (Prado, LC300, ...) to be clarified by P2",
+     "toyota/camry": "wrong price; Toyota Egypt does not sell Camry in EGP (CEO)",
+     "volkswagen/passat": "CEO 2026-11-04: no accepted current price; never restore the stale EGP 1,600,000 (MY2023, May 2023) market row"
+    },
+    "never_official_brands": {
+     "denza": "no official Denza prices in Egypt yet (CEO); any Denza price is a market price"
+    }
+   }
+  },
+  "market_prices": [
+   "kaiyi/x7-phev: PHEV=1600000; A/T / Flagship (PHEV)=1649900",
+   "toyota/corolla-hybrid: Hybrid=2000000",
+   "bmw/2-series-gran-coupe: A/T /  M SPORT=2750000",
+   "bmw/4-series: A/T / M SPORT=4950000; A/T / Convertible=5200000",
+   "bmw/i4: eDrive40 M Sport=5100000",
+   "bmw/m4: Competition M xDrive=10700000",
+   "mercedes/maybach-eqs-680: A/T / 4M SUV=11800000; A/T / Night Series=13200000",
+   "mercedes/eqs: A/T / 500 4M SUV=8850000",
+   "mercedes/eqe: A/T / SUV=5500000",
+   "porsche/911: A/T / Carrera=10422300; manual‏=11323900; A/T /  Carrera Cabriolet=11421900; manual‏ / Cabriolet=12460700; A/T / Carrera GTS=13984600; A/T / Carrera 4 GTS=14641200; A/T / Carrera GTS Cabriolet=15116500; A/T / Carrera 4 GTS Cabriolet=15782900",
+   "porsche/718: A/T / Cayman=4944100; A/T / Boxster=5189100; A/T / Cayman Style Edition=5404700; A/T / Boxster Style Edition=5649700; A/T / Cayman S=6526800; A/T / Boxster S=6806100; A/T /  Cayman GTS 4.0=7658700; A/T / Boxster GTS 4.0=7933100; A/T / Cayman GT4 RS=13058500; A/T / Spyder RS=13058500",
+   "lotus/emeya: Emeya=5900000; Emeya S=6800000; Emeya R=7900000",
+   "baic/beijing-x7: A/T / Highline=1429900; A/T / Top Line=1504900; A/T / Premium=1579900",
+   "chevrolet/spark-euv: ACTIV=1099000",
+   "dongfeng/huge: Hybrid=1495000; Hybrid Special Color=1545000",
+   "fiat/e-ulysse: Lounge=2790000",
+   "forthing/friday: EV=1380000; REEV=1390000",
+   "hyundai/staria: HEV Premium Lounge 7 Seats=3650000",
+   "rehigh/rh8: Nobel Version RWD=2450000; Luxury Version AWD=2750000",
+   "xpeng/mona-m03: FWD Premium=1350000; FWD Premium Plus=1400000"
+  ],
+  "off_sale": [
+   "geely/emgrand-7"
+  ],
+  "powertrains": [
+   "byd/sealion-6: [\"ev\",\"hybrid\"] -> [\"hybrid\"]",
+   "geely/ex5: [\"ev\",\"hybrid\"] -> [\"ev\"]",
+   "jetour/t2: [\"hybrid\",\"petrol\"] -> [\"petrol\"]",
+   "kaiyi/x7: [\"hybrid\",\"petrol\"] -> [\"petrol\"]",
+   "mercedes/glc: [\"ev\",\"petrol\"] -> [\"petrol\"]",
+   "toyota/corolla: [\"hybrid\",\"petrol\"] -> [\"petrol\"]"
+  ],
+  "official_lists": [
+   {
+    "id": "mercedes/c-class",
+    "effective": "2026-09-24",
+    "versions": [
+     "C 180 Saloon / Avantgarde=3350000",
+     "C 180 Saloon / Sport=3905000",
+     "C 200 Saloon / Sport=4390000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mercedes/cla",
+    "effective": "2026-09-24",
+    "versions": [
+     "CLA 180 / Progressive=2890000",
+     "CLA 200 / Sport=3390000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mercedes/e-class",
+    "effective": "2026-09-24",
+    "versions": [
+     "E 200 Saloon / Premium=4420000",
+     "E 200 Saloon / Avantgarde=5260000",
+     "E 200 Saloon / Sport=5870000",
+     "E 200 Saloon / Exclusive=5870000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mercedes/eqa",
+    "effective": "2026-09-24",
+    "versions": [
+     "EQA 250+ / Progressive=3400000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mercedes/gla",
+    "effective": "2026-09-24",
+    "versions": [
+     "GLA 200 / Progressive=3140000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mercedes/glc",
+    "effective": "2026-09-24",
+    "versions": [
+     "GLC 200 4M SUV / Avantgarde=4370000",
+     "GLC 200 4M Coupé / Avantgarde=4670000",
+     "GLC 200 4M SUV / Sport=4980000",
+     "GLC 200 4M Coupé / Sport=5460000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mercedes/gle",
+    "effective": "2026-09-24",
+    "versions": [
+     "GLE 450 4M SUV / AMG=7200000",
+     "Mercedes-AMG GLE 53 4M+ / AMG=8220000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mercedes/gls",
+    "effective": "2026-09-24",
+    "versions": [
+     "GLS 580 4M SUV / AMG=9930000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mg/5",
+    "effective": "2026-10-15",
+    "versions": [
+     "Comfort=889990",
+     "Luxury=989990"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mg/7",
+    "effective": "2026-10-15",
+    "versions": [
+     "Trophy=1750000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mg/g50-plus",
+    "effective": "2026-10-15",
+    "versions": [
+     "G50 Plus=1325000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mg/gt",
+    "effective": "2026-10-15",
+    "versions": [
+     "Luxury=1175000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mg/hs",
+    "effective": "2026-10-15",
+    "versions": [
+     "HS AS33 LUX=1550000",
+     "HS HEV=1650000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mg/one",
+    "effective": "2026-10-15",
+    "versions": [
+     "Luxury=1425000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mg/rx9",
+    "effective": "2026-10-15",
+    "versions": [
+     "RX9=1959990"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mg/zs",
+    "effective": "2026-10-15",
+    "versions": [
+     "ZS Plus=1165000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "nissan/patrol",
+    "effective": "2025-07-17",
+    "versions": [
+     "3.8L V6 XE=8990000",
+     "3.8L V6 SE T2=9600000",
+     "3.8L V6 SE TITANIUM=10750000",
+     "3.5L V6TT LE T1=11050000",
+     "3.8L V6 SE PLATINUM CITY=11750000",
+     "3.5L V6TT LE T2=11900000",
+     "3.5L V6TT LE TITANIUM=13000000",
+     "3.5L V6TT LE PLATINUM CITY=14000000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "nissan/sentra",
+    "effective": "2026-04-10",
+    "versions": [
+     "Premium=1050000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mercedes/glc-eq",
+    "effective": "2026-09-24",
+    "versions": [
+     "GLC 400 4M Electric / Sport=4900000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mg/rx5",
+    "effective": "2026-10-15",
+    "versions": [
+     "RX5+ Luxury=1475000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mercedes/cle",
+    "effective": "2026-09-24",
+    "versions": [
+     "CLE 200 Sport Coupé / Sport=4650000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mercedes/sl",
+    "effective": "2026-09-24",
+    "versions": [
+     "Mercedes-AMG SL 43 / AMG=9800000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mercedes/amg-gt",
+    "effective": "2026-09-24",
+    "versions": [
+     "Mercedes-AMG GT 43 Coupé / AMG=9300000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mercedes/g-class",
+    "effective": "2026-09-24",
+    "versions": [
+     "G 500 AMG / Night Edition=13390000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mercedes/g-580-eq",
+    "effective": "2026-09-24",
+    "versions": [
+     "G 580 Electric / Night Edition=11200000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mercedes/v-class",
+    "effective": "2026-09-24",
+    "versions": [
+     "V 300 Long / Avantgarde=6825000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "smart/1",
+    "effective": "2026-10-01",
+    "versions": [
+     "Brabus=2140000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "smart/3",
+    "effective": "2026-10-01",
+    "versions": [
+     "Pro+=1990000",
+     "Premium=2190000",
+     "Brabus=2390000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "smart/5",
+    "effective": "2026-10-01",
+    "versions": [
+     "Pro+=2300000",
+     "Premium=2650000",
+     "Brabus=2850000"
+    ],
+    "superseded": []
+   },
+   {
+    "id": "mg/cyberster",
+    "effective": "2026-10-15",
+    "versions": [
+     "Cyberster=2850000"
+    ],
+    "superseded": []
+   }
+  ],
+  "arabic_names_added": [
+   "alfa-romeo/giulia=جوليا",
+   "alfa-romeo/stelvio=ستلفيو",
+   "alfa-romeo/tonale=تونالي",
+   "arcfox/alpha-s5=ألفا إس 5",
+   "arcfox/alpha-t5=ألفا تي 5",
+   "arcfox/t1=تي 1",
+   "audi/a3=إيه 3",
+   "audi/a5=إيه 5",
+   "audi/a6=إيه 6",
+   "audi/a8=إيه 8",
+   "audi/q2=كيو 2",
+   "audi/q3=كيو 3",
+   "audi/q4-e-tron=كيو 4 إي ترون",
+   "audi/q5=كيو 5",
+   "audi/q7=كيو 7",
+   "audi/q8=كيو 8",
+   "baic/bj30=بي جيه 30",
+   "baic/u5-plus=يو 5 بلس",
+   "baic/x3=إكس 3",
+   "baic/x35=إكس 35",
+   "baic/x55=إكس 55",
+   "baic/x7=إكس 7",
+   "bestune/b70=بي 70",
+   "bestune/b70s=بي 70 إس",
+   "bestune/t55=تي 55",
+   "bmw/5-series=الفئة الخامسة",
+   "bmw/i7=آي 7",
+   "bmw/ix=آي إكس",
+   "bmw/ix1=آي إكس 1",
+   "bmw/ix2=آي إكس 2",
+   "bmw/ix3=آي إكس 3",
+   "bmw/x2=إكس 2",
+   "bmw/x6=إكس 6",
+   "bmw/x7=إكس 7",
+   "changan/cs35-plus=سي إس 35 بلس",
+   "changan/cs55=سي إس 55",
+   "changan/cs55-plus=سي إس 55 بلس",
+   "changan/eado=إيدو",
+   "changan/eado-plus=إيدو بلس",
+   "changan/uni-t=يوني تي",
+   "changan/uni-v=يوني في",
+   "geely/ex5=إي إكس 5",
+   "hyundai/ioniq-9=أيونيك 9",
+   "mitsubishi/attrage=أتراج",
+   "mitsubishi/mirage=ميراج",
+   "mercedes/glc-eq=جي إل سي الكهربائية",
+   "mg/rx5=آر إكس 5 بلس",
+   "mercedes/cle=سي إل إي",
+   "mercedes/g-class=الفئة جي",
+   "mercedes/g-580-eq=جي 580 الكهربائية",
+   "mercedes/v-class=الفئة في",
+   "chery/tiggo-7-pro-max=تيجو 7 برو ماكس",
+   "geely/ex5-em-i=إي إكس 5 إي إم آي",
+   "haval/h6-hev=إتش 6 هايبرد",
+   "haval/v7=في 7",
+   "hyundai/venue=فينيو",
+   "mg/cyberster=سايبرستر"
+  ],
+  "splits_moved": [],
+  "prices_updated": 158,
+  "versions_added": 291,
+  "seats_changed": 150,
+  "awd": [
+   "arcfox/alpha-s5:undefined->true",
+   "arcfox/t1:undefined->false",
+   "audi/a3:undefined->false",
+   "audi/a5:undefined->false",
+   "audi/q3:undefined->false",
+   "avatr/07:undefined->true",
+   "avatr/11:undefined->true",
+   "avatr/12:undefined->true",
+   "baic/u5-plus:undefined->false",
+   "baw/m7:undefined->false",
+   "bmw/ix2:undefined->false",
+   "bmw/ix3:undefined->true",
+   "bmw/x1:undefined->false",
+   "bmw/x2:undefined->false",
+   "bmw/x5:undefined->true",
+   "bmw/x6:undefined->true",
+   "byd/m9:undefined->false",
+   "byd/ti-7:undefined->true",
+   "cadillac/vistiq:undefined->true",
+   "changan/cs55-plus:undefined->false",
+   "changan/cs75-plus:undefined->false",
+   "changan/eado:undefined->false",
+   "changan/eado-plus:undefined->false",
+   "changan/uni-v:undefined->false",
+   "chery/arrizo-5:undefined->false",
+   "chery/arrizo-6-gt:undefined->false",
+   "chery/arrizo-8:undefined->false",
+   "chery/tiggo-4-pro:undefined->false",
+   "chery/tiggo-7:undefined->false",
+   "chery/tiggo-7-pro:undefined->false",
+   "chery/tiggo-8:undefined->false",
+   "chevrolet/captiva-ev:undefined->false",
+   "citroen/c3-aircross:undefined->false",
+   "cupra/formentor:undefined->false",
+   "cupra/leon:undefined->false",
+   "cupra/terramar:undefined->false",
+   "deepal/g318:undefined->true",
+   "dfsk/600:undefined->false",
+   "dongfeng/007:undefined->false",
+   "dongfeng/008:undefined->false",
+   "dongfeng/box:undefined->false",
+   "dongfeng/mage:undefined->false",
+   "exeed/es:undefined->false",
+   "exeed/et:undefined->true",
+   "exeed/lx:undefined->false",
+   "fiat/500x:undefined->false",
+   "fiat/tipo:undefined->false",
+   "forthing/s7:undefined->false",
+   "forthing/t5-evo:undefined->false",
+   "forthing/u-tour:undefined->false",
+   "forthing/v9:undefined->false",
+   "gac/empow:undefined->false",
+   "gac/gs4-max:undefined->false",
+   "geely/city-ray:undefined->false",
+   "geely/ex2:undefined->false",
+   "geely/ex5:undefined->false",
+   "geely/monjaro:undefined->true",
+   "geely/starray:undefined->false",
+   "genesis/gv60:undefined->true",
+   "genesis/gv70:undefined->true",
+   "haval/jolion:undefined->false",
+   "hongqi/e-hs9:undefined->true",
+   "hongqi/ousado:undefined->false",
+   "hyundai/ioniq-5:undefined->true",
+   "hyundai/ioniq-6:false->true",
+   "hyundai/ioniq-9:undefined->true",
+   "jac/js6:undefined->false",
+   "jac/js8-pro:undefined->false",
+   "jetour/dashing:undefined->false",
+   "jetour/t2:true->false",
+   "jetour/x70:undefined->false",
+   "jetour/x70-plus-ckd:undefined->false",
+   "jetour/x90-plus:undefined->false",
+   "kaiyi/e5:undefined->false",
+   "kgm/actyon:undefined->false",
+   "kia/ev3:undefined->false",
+   "kia/ev5:false->true",
+   "kia/ev9:undefined->true",
+   "kia/k4:undefined->false",
+   "kia/sorento:undefined->false",
+   "li-auto/l6:undefined->true",
+   "li-auto/l7:undefined->true",
+   "li-auto/l9:undefined->true",
+   "mazda/cx-3:undefined->false",
+   "mercedes/a-class:undefined->false",
+   "mercedes/b-class:undefined->false",
+   "mercedes/cla:undefined->false",
+   "mercedes/e-class:undefined->false",
+   "mercedes/eqa:undefined->false",
+   "mercedes/gla:undefined->false",
+   "mercedes/gls:undefined->true",
+   "mitsubishi/attrage:undefined->false",
+   "mitsubishi/destinator:undefined->false",
+   "mitsubishi/mirage:undefined->false",
+   "mitsubishi/xpander:undefined->false",
+   "nissan/patrol:false->true",
+   "nissan/x-trail:false->true",
+   "opel/frontera:undefined->false",
+   "peugeot/2008:undefined->false",
+   "peugeot/408:undefined->false",
+   "proton/saga:undefined->false",
+   "renault/duster:undefined->false",
+   "renault/kardian:undefined->false",
+   "rox/01:undefined->true",
+   "rox/adamas:undefined->true",
+   "seat/arona:undefined->false",
+   "seat/ibiza:undefined->false",
+   "seat/leon:undefined->false",
+   "skoda/karoq:undefined->false",
+   "skoda/kodiaq:undefined->false",
+   "skoda/octavia:undefined->false",
+   "skoda/superb:undefined->false",
+   "soueast/s-05:undefined->false",
+   "soueast/s-07:undefined->false",
+   "suzuki/alto:undefined->false",
+   "suzuki/baleno:undefined->false",
+   "suzuki/jimny:undefined->true",
+   "suzuki/s-presso:undefined->false",
+   "suzuki/swift:undefined->false",
+   "toyota/urban-cruiser:undefined->false",
+   "volkswagen/tayron:undefined->false",
+   "volvo/es90:undefined->false",
+   "volvo/ex30:undefined->true",
+   "volvo/ex90:undefined->true",
+   "volvo/xc60:undefined->true",
+   "volvo/xc90:undefined->true",
+   "voyah/dream:undefined->true",
+   "voyah/free:undefined->true",
+   "xpeng/g6:undefined->false",
+   "xpeng/g7:undefined->false",
+   "xpeng/g9:undefined->true",
+   "zeekr/x:undefined->true",
+   "mg/rx5:undefined->false",
+   "bmw/3-series:undefined->false",
+   "kia/carnival:undefined->false",
+   "bmw/x3:undefined->true",
+   "byd/dolphin-surf:undefined->false",
+   "byd/atto-2:undefined->false",
+   "bmw/1-series:undefined->false",
+   "bmw/4-series:undefined->false",
+   "mercedes/s-class:undefined->true",
+   "mercedes/maybach-s-580:undefined->true",
+   "mercedes/amg-gt:undefined->true",
+   "smart/5:undefined->false",
+   "im/ls9:undefined->true",
+   "mhero/1:undefined->true",
+   "arcfox/kaola-s:undefined->false",
+   "audi/rs-e-tron-gt:undefined->true",
+   "cadillac/lyriq:undefined->true",
+   "cadillac/optiq:undefined->true",
+   "chery/tiggo-7-pro-max:undefined->false",
+   "chevrolet/spark-euv:undefined->false",
+   "dongfeng/shine:undefined->false",
+   "geely/emgrand:undefined->false",
+   "haval/v7:undefined->true",
+   "hyundai/venue:undefined->false",
+   "icaur/v27:undefined->true",
+   "kaiyi/x3-pro:undefined->false",
+   "mg/cyberster:undefined->false",
+   "mini/cooper:undefined->false",
+   "mitsubishi/outlander-sport:undefined->false",
+   "zeekr/7x:undefined->true",
+   "jaecoo/j5:undefined->false",
+   "jaecoo/j7:undefined->false",
+   "jaecoo/j7-phev:undefined->false",
+   "jaecoo/j8-phev:undefined->true"
+  ],
+  "unknown_price": [
+   "byd/song-l",
+   "byd/tang-l",
+   "land-rover/range-rover",
+   "land-rover/range-rover-vogue",
+   "land-rover/range-rover-sport",
+   "land-rover/range-rover-evoque",
+   "land-rover/velar",
+   "land-rover/defender",
+   "jaguar/f-pace",
+   "nissan/n7",
+   "nissan/armada",
+   "byd/seal",
+   "bmw/i3-sedan",
+   "bmw/m8",
+   "bmw/z4",
+   "rolls-royce/spectre",
+   "maserati/ghibli",
+   "dongfeng/l7",
+   "gac/gs3-emzoom",
+   "gmc/hummer-ev",
+   "volkswagen/id-era-9x",
+   "ford/mustang",
+   "dodge/charger",
+   "changan/cs35",
+   "venucia/v-online",
+   "denza/b3",
+   "denza/b5",
+   "denza/b8"
+  ],
+  "held_no_size_class": [],
+  "excluded": {
+   "p2_discontinued": [
+    "geely/emgrand-7"
+   ]
+  }
+ }
+}

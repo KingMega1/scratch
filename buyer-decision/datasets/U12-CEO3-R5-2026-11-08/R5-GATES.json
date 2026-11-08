@@ -1,0 +1,46 @@
+{
+ "dataset": "U12-CEO3-R5-2026-11-08",
+ "p2_revision": "cddfe91b3287",
+ "p2_accepted_in_p1": 275,
+ "rendered_model_lists": 792,
+ "info": {
+  "display_merged": [
+   {
+    "id": "geely/cool-ray",
+    "not_listed_separately": [
+     "sport + (auto mobility ckd)=1199000"
+    ]
+   },
+   {
+    "id": "mercedes/e-class",
+    "not_listed_separately": [
+     "e 200 saloon / exclusive=5870000"
+    ]
+   },
+   {
+    "id": "renault/austral",
+    "not_listed_separately": [
+     "evolution facelift=1550000",
+     "iconic facelift=1790000",
+     "techno facelift=1690000"
+    ]
+   }
+  ]
+ },
+ "failures": {
+  "price": 0,
+  "model_year": 0,
+  "trims": 0,
+  "official": 0,
+  "holds": 0,
+  "labels": 0
+ },
+ "detail": {
+  "price": [],
+  "model_year": [],
+  "trims": [],
+  "official": [],
+  "holds": [],
+  "labels": []
+ }
+}

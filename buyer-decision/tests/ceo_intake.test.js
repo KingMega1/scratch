@@ -11,7 +11,7 @@ for(const e of P.entries.concat(P.market_additions)){
  if(!p.trims.length){assert.equal(m.price_from_evidence.price_from,p.price_from);assert.equal(m.trims.length,1);const t0=m.trims[0];
   assert.equal(t0.price_from_only,true);assert.equal(t0.min,p.price_from);assert.equal(t0.label,'Unspecified trim');assert.equal(t0.year,p.model_year??null);assert.equal(t0.official,p.tier==='A');from++;}
  else assert.equal(m.trims.length,p.trims.length);
- for(const t of p.trims){const d=m.trims.find(x=>x.p2_price_id===t.price_id);assert.ok(d,t.price_id);
+ for(const t of p.trims){assert.match(t.price_id,/^ceo\d{4}-/,'CEO-confirmed price_id prefix: '+t.price_id);const d=m.trims.find(x=>x.p2_price_id===t.price_id);assert.ok(d,t.price_id);
   assert.equal(d.min,t.price_egp);assert.equal(d.year,t.model_year??null);assert.equal(d.date,t.effective_date??null);
   assert.equal(d.source_sha256,t.source_sha256);assert.equal(d.confirmation_status,'CEO_CONFIRMED');trims++;
  }
