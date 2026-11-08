@@ -106,7 +106,8 @@ class Canonical(unittest.TestCase):
             fix = x["accepted"].get("powertrains_correction")
             if fix:
                 self.assertEqual(fix["rc1"], x["powertrains"])  # RC1 field untouched
-                self.assertTrue(set(fix["to"]) < set(fix["rc1"]))
+                if fix.get("rule") != "VP-2":  # VP-2 (AT-39) follows accepted version powertrains and may add a family
+                    self.assertTrue(set(fix["to"]) < set(fix["rc1"]))
 
     def test_serving_release_keeps_p5_contract(self):
         r, rc1 = self.release, self.rc1

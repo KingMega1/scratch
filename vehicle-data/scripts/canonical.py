@@ -796,6 +796,7 @@ def main():
         if pv and len(pts) == 1 and not irs:  # per-version powertrain: the model has one accepted powertrain (splits separate the others)
             pv = dict(pv, trims=[dict(t, powertrain=next(iter(pts))) for t in pv.get("trims", [])], powertrain_basis=
                       "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)")
+        pv = apply_version_powertrains(m["p1_id"], pv)
         def asset(x):  # IM-1: P5 serves local files only; src is set once the verified bytes are materialized
             d = {k: x[k] for k in ("asset_id", "sha256", "width", "height", "quality_class", "url", "page", "rights_basis", "status")}
             d["src"] = SERVE_PREFIX + x["local_path"].split("media/", 1)[1] if x.get("local_path") and os.path.exists(os.path.join(ROOT, x["local_path"])) else None
@@ -871,6 +872,60 @@ def main():
     print(json.dumps(canon["counts"]))
 
 
+VP_FILE = os.path.join(ROOT, "registry", "version_powertrains_20261108.csv")
+
+
+def version_powertrains():
+    """VP-1 (AT-39, 8 Nov 2026): version-level powertrain read from the accepted price list's own wording
+    (registry/version_powertrains_20261108.csv). ACCEPT rows set powertrain/plug_in on the served version; HOLD rows change
+    nothing. Never inferred from photos."""
+    out = {}
+    for r in read(VP_FILE) if os.path.exists(VP_FILE) else []:
+        out.setdefault(r["p1_id"], []).append(r)
+    return out
+
+
+def apply_version_powertrains(p1_id, pv):
+    rows = [r for r in version_powertrains().get(p1_id, []) if r["status"] == "ACCEPT"]
+    if not pv or not rows:
+        return pv
+    key = {(str(r["model_year"] or ""), r["trim_label"]): r for r in rows}
+    trims, hit = [], set()
+    for t in pv.get("trims", []):
+        r = key.get((str(t.get("model_year") or ""), t["label"]))
+        if r:
+            hit.add((str(r["model_year"] or ""), r["trim_label"]))
+            t = dict(t, powertrain=r["powertrain"], plug_in={"true": True, "false": False}.get(r["plug_in"]),
+                     powertrain_source=dict(wording=r["source_wording"], url=r["source_url"], sha256=r["source_sha256"], rule="VP-1"))
+        trims.append(t)
+    missing = set(key) - hit
+    if missing:
+        raise SystemExit(f"VP-1 rows do not match a served version of {p1_id}: {sorted(missing)}. Build refused.")
+    return dict(pv, trims=trims)
+
+
+def model_powertrains(p1_id, pv, current):
+    """VP-2: model powertrain set for a model with VP-1 rows = the families of its accepted version powertrains ('phev' adds
+    'hybrid' and 'phev'), plus the current set when any served version still has no VP-1 powertrain (e.g. LX600)."""
+    rows = [r for r in version_powertrains().get(p1_id, []) if r["status"] == "ACCEPT"]
+    if not rows or not pv:
+        return None
+    trims = pv.get("trims", [])
+    vp = [t for t in trims if (t.get("powertrain_source") or {}).get("rule") == "VP-1"]
+    out = set()
+    for t in vp:
+        out |= {"hybrid", "phev"} if t["powertrain"] == "phev" else {t["powertrain"]}
+    if len(vp) < len(trims):
+        out |= set(current or [])
+    order = ["petrol", "diesel", "hybrid", "phev", "reev", "ev"]
+    return sorted(out, key=lambda x: (order.index(x) if x in order else 99, x))
+
+
+def vp_or_current(vp, current):
+    """Keep the current list (and its order) unless VP-2 changes the set."""
+    return vp if vp is not None and set(vp) != set(current or []) else current
+
+
 PT_FAMILY = {"ev": "ev", "bev": "ev", "electric": "ev", "phev": "hybrid", "hev": "hybrid", "hybrid": "hybrid", "reev": "reev"}
 ADDITION_PARENT = {"geely/ex5-em-i": "geely/ex5"}  # additions carved out of an RC1 entry (no SPLIT record)
 PT_EVIDENCE = {"ev": {"electric", "ev", "bev"}, "hybrid": {"phev", "hev", "hybrid", "plug-in hybrid"}, "reev": {"reev"}}
@@ -926,6 +981,13 @@ def serving(canon):
         if fix:
             e["accepted"]["powertrains"] = fix["to"]
             e["accepted"]["powertrains_correction"] = fix
+        vp = model_powertrains(e["p1_id"], c["price"], (fix or {}).get("to") or e.get("powertrains"))
+        if vp is not None and set(vp) != set((fix or {}).get("to") or e.get("powertrains") or []):
+            e["accepted"]["powertrains"] = vp
+            e["accepted"]["powertrains_correction"] = dict(rc1=e.get("powertrains"), to=vp, rule="VP-2",
+                                                           basis="AT-39 version powertrains from accepted price lists "
+                                                                 "(registry/version_powertrains_20261108.csv)",
+                                                           **({"split_parent": fix} if fix else {}))
         entries.append(e)
     rid = (canon.get("accepted_intake") or {}).get("release_id")  # serving version stays pinned to the accepted intake release
     rel = dict(rc1, release_id=rid or f"P2-CATALOGUE-U11-{canon['generated_as_of']}-RC2", state="VERIFYING",
@@ -939,7 +1001,9 @@ def serving(canon):
                entries=entries,
                market_additions=[dict(p1_id=None, p2_model_id=c["model_id"], identity=c["p1_id"], site_slug=c["site_slug"], brand=c["brand"],
                                       model=c["model"], universe=c["universe"], parent=mu.get(c["p1_id"], {}).get("parent"),
-                                      body=mu.get(c["p1_id"], {}).get("body"), powertrains=mu.get(c["p1_id"], {}).get("powertrains", []),
+                                      body=mu.get(c["p1_id"], {}).get("body"),
+                                      powertrains=vp_or_current(model_powertrains(c["p1_id"], c["price"], mu.get(c["p1_id"], {}).get("powertrains", [])),
+                                                                mu.get(c["p1_id"], {}).get("powertrains", [])),
                                       evidence=mu.get(c["p1_id"], {}).get("evidence", []),
                                       accepted=dict(market_status=c["market_status"], size_class=c["size_class"], price=c["price"], specs=c["specs"],
                                                     warranty=c["warranty"], brochures=c["brochures"], logo=pub(c["logo"], []),
@@ -947,6 +1011,13 @@ def serving(canon):
                                                     conflicts=c["conflicts"]),
                                       missing_evidence=c["gaps"])
                                  for c in canon["models"] if c["universe"] != "U11_283"])
+    for a in rel["market_additions"]:  # VP-2 on P2 additions: top-level set is P2-owned; accepted mirrors it for P5's single read path
+        was = mu.get(a["identity"], {}).get("powertrains", [])
+        if a["powertrains"] != was:
+            a["accepted"]["powertrains"] = a["powertrains"]
+            a["accepted"]["powertrains_correction"] = dict(market_universe=was, to=a["powertrains"], rule="VP-2",
+                                                           basis="AT-39 version powertrains from accepted price lists "
+                                                                 "(registry/version_powertrains_20261108.csv)")
     json.dump(rel, open(os.path.join(ROOT, "views", "catalogue-serving.release.json"), "w"), indent=2, ensure_ascii=False)
 
 

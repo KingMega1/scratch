@@ -29,8 +29,11 @@ class ConfirmedIntake(unittest.TestCase):
   # owner corrections (PR #11): registry/price_holds.csv rows and PY-1 rows whose old model_year was a model name (e.g. 2008)
   held={r['p1_id'] for r in rows('registry/price_holds.csv')}
   def bad_year(p):return any(t.get('model_year') and not 2015<=t['model_year']<=2035 for t in (p or {}).get('trims',[]))
+  vp={x['p1_id']:{(str(r['model_year']),r['trim_label']) for r in rows('registry/version_powertrains_20261108.csv') if r['status']=='ACCEPT' and r['p1_id']==x['p1_id']} for x in rows('registry/version_powertrains_20261108.csv')}
   for old in self.old['models']:
    now=self.by[old['p1_id']]
+   if old['p1_id'] in vp and old.get('price'):  # VP-1 (AT-39): powertrain of listed versions corrected from the price list's own wording
+    old=dict(old,price=dict(old['price'],trims=[{x:y for x,y in t.items() if not(x=='powertrain' and (str(t.get('model_year') or ''),t['label']) in vp[old['p1_id']])} for t in old['price']['trims']]))
    if old['p1_id'] in held or bad_year(old.get('price')):affected=affected|{old['p1_id']}
    for k,v in old.items():
     if k in ('gaps','rework_price_rows') or (k=='price' and old['p1_id'] in affected):continue  # counters are not evidence

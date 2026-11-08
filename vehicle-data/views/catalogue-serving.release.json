@@ -6571,7 +6571,14 @@
               "as_of": "2026-10-22",
               "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
               "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
-              "powertrain": "PHEV"
+              "powertrain": "phev",
+              "plug_in": true,
+              "powertrain_source": {
+                "wording": "BYD list 22 Oct 2026 \"DMi Ultra\"; accepted powertrain_class PHEV (ContactCars+Hatla2ee, SP-2)",
+                "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+                "sha256": "repo:evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+                "rule": "VP-1"
+              }
             }
           ],
           "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
@@ -6845,7 +6852,22 @@
         "conflicts": [
           "PB-2 CONFLICT: ContactCars=2849000",
           "PB-2 CONFLICT: Hatla2ee=2849900"
-        ]
+        ],
+        "powertrains": [
+          "hybrid",
+          "phev"
+        ],
+        "powertrains_correction": {
+          "rc1": [
+            "ev"
+          ],
+          "to": [
+            "hybrid",
+            "phev"
+          ],
+          "rule": "VP-2",
+          "basis": "AT-39 version powertrains from accepted price lists (registry/version_powertrains_20261108.csv)"
+        }
       }
     },
     {
@@ -7016,7 +7038,14 @@
               "as_of": "2026-10-22",
               "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
               "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
-              "powertrain": "PHEV"
+              "powertrain": "phev",
+              "plug_in": true,
+              "powertrain_source": {
+                "wording": "BYD list 22 Oct 2026 \"DMi Ultra\"; accepted powertrain_class PHEV (ContactCars+Hatla2ee, SP-2)",
+                "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+                "sha256": "repo:evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+                "rule": "VP-1"
+              }
             },
             {
               "model_year": 2027,
@@ -7028,7 +7057,14 @@
               "as_of": "2026-10-22",
               "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
               "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
-              "powertrain": "PHEV"
+              "powertrain": "phev",
+              "plug_in": true,
+              "powertrain_source": {
+                "wording": "BYD list 22 Oct 2026 \"DMi Luxury\"; accepted powertrain_class PHEV (ContactCars+Hatla2ee, SP-2)",
+                "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+                "sha256": "repo:evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+                "rule": "VP-1"
+              }
             }
           ],
           "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
@@ -7296,7 +7332,22 @@
           "PB-2 CONFLICT: ContactCars=3850000",
           "PB-2 CONFLICT: Hatla2ee=3299900",
           "PB-2 CONFLICT: Hatla2ee=3849900"
-        ]
+        ],
+        "powertrains": [
+          "hybrid",
+          "phev"
+        ],
+        "powertrains_correction": {
+          "rc1": [
+            "hybrid"
+          ],
+          "to": [
+            "hybrid",
+            "phev"
+          ],
+          "rule": "VP-2",
+          "basis": "AT-39 version powertrains from accepted price lists (registry/version_powertrains_20261108.csv)"
+        }
       }
     },
     {
@@ -7668,7 +7719,14 @@
               "as_of": "2026-10-22",
               "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
               "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
-              "powertrain": "PHEV"
+              "powertrain": "phev",
+              "plug_in": true,
+              "powertrain_source": {
+                "wording": "BYD list 22 Oct 2026 \"DMi Ultra\"; accepted powertrain_class PHEV (ContactCars+Hatla2ee, SP-2)",
+                "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+                "sha256": "repo:evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+                "rule": "VP-1"
+              }
             },
             {
               "model_year": 2027,
@@ -7680,7 +7738,14 @@
               "as_of": "2026-10-22",
               "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
               "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
-              "powertrain": "PHEV"
+              "powertrain": "phev",
+              "plug_in": true,
+              "powertrain_source": {
+                "wording": "BYD list 22 Oct 2026 \"DMi Luxury\"; accepted powertrain_class PHEV (ContactCars+Hatla2ee, SP-2)",
+                "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+                "sha256": "repo:evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+                "rule": "VP-1"
+              }
             }
           ],
           "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
@@ -8052,7 +8117,8 @@
         "gallery": [],
         "conflicts": [],
         "powertrains": [
-          "hybrid"
+          "hybrid",
+          "phev"
         ],
         "powertrains_correction": {
           "rc1": [
@@ -8060,12 +8126,24 @@
             "hybrid"
           ],
           "to": [
-            "hybrid"
+            "hybrid",
+            "phev"
           ],
-          "split_children": [
-            "byd/sealion-6-ev"
-          ],
-          "basis": "accepted P2 trims/powertrain_class: phev"
+          "rule": "VP-2",
+          "basis": "AT-39 version powertrains from accepted price lists (registry/version_powertrains_20261108.csv)",
+          "split_parent": {
+            "rc1": [
+              "ev",
+              "hybrid"
+            ],
+            "to": [
+              "hybrid"
+            ],
+            "split_children": [
+              "byd/sealion-6-ev"
+            ],
+            "basis": "accepted P2 trims/powertrain_class: phev"
+          }
         }
       }
     },
@@ -19256,7 +19334,14 @@
               "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
               "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
-              "powertrain": "REEV"
+              "powertrain": "reev",
+              "plug_in": null,
+              "powertrain_source": {
+                "wording": "DEEPAL G318 SUV PREMIUM (REEV)",
+                "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+                "sha256": "repo:evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+                "rule": "VP-1"
+              }
             },
             {
               "model_year": 2027,
@@ -19268,7 +19353,14 @@
               "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
               "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
-              "powertrain": "REEV"
+              "powertrain": "reev",
+              "plug_in": null,
+              "powertrain_source": {
+                "wording": "DEEPAL G318 SUV ADVENTURE (REEV)",
+                "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+                "sha256": "repo:evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+                "rule": "VP-1"
+              }
             }
           ],
           "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
@@ -19655,7 +19747,20 @@
             "credit": "Deepal Egypt"
           }
         ],
-        "conflicts": []
+        "conflicts": [],
+        "powertrains": [
+          "reev"
+        ],
+        "powertrains_correction": {
+          "rc1": [
+            "hybrid"
+          ],
+          "to": [
+            "reev"
+          ],
+          "rule": "VP-2",
+          "basis": "AT-39 version powertrains from accepted price lists (registry/version_powertrains_20261108.csv)"
+        }
       }
     },
     {
@@ -19717,7 +19822,14 @@
               "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
               "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
-              "powertrain": "Electric"
+              "powertrain": "reev",
+              "plug_in": null,
+              "powertrain_source": {
+                "wording": "DEEPAL S05 SUV (REEV)",
+                "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+                "sha256": "repo:evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+                "rule": "VP-1"
+              }
             },
             {
               "model_year": 2027,
@@ -19729,7 +19841,14 @@
               "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
               "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
-              "powertrain": "Electric"
+              "powertrain": "ev",
+              "plug_in": false,
+              "powertrain_source": {
+                "wording": "DEEPAL S05 SUV (BEV)",
+                "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+                "sha256": "repo:evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+                "rule": "VP-1"
+              }
             }
           ],
           "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
@@ -19908,7 +20027,23 @@
         },
         "hero_image_limited": null,
         "gallery": [],
-        "conflicts": []
+        "conflicts": [],
+        "powertrains": [
+          "reev",
+          "ev"
+        ],
+        "powertrains_correction": {
+          "rc1": [
+            "ev",
+            "hybrid"
+          ],
+          "to": [
+            "reev",
+            "ev"
+          ],
+          "rule": "VP-2",
+          "basis": "AT-39 version powertrains from accepted price lists (registry/version_powertrains_20261108.csv)"
+        }
       }
     },
     {
@@ -19971,7 +20106,14 @@
               "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
               "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
-              "powertrain": "Electric"
+              "powertrain": "reev",
+              "plug_in": null,
+              "powertrain_source": {
+                "wording": "DEEPAL S07 SUV (REEV)",
+                "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+                "sha256": "repo:evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+                "rule": "VP-1"
+              }
             },
             {
               "model_year": 2026,
@@ -19983,7 +20125,14 @@
               "as_of": "2026-10-22",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
               "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
-              "powertrain": "Electric"
+              "powertrain": "ev",
+              "plug_in": false,
+              "powertrain_source": {
+                "wording": "DEEPAL S07 SUV (BEV)",
+                "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+                "sha256": "repo:evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+                "rule": "VP-1"
+              }
             }
           ],
           "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
@@ -20153,7 +20302,23 @@
           "PB-2 CONFLICT: EgyCar=2000000",
           "PB-2 CONFLICT: Hatla2ee=1925000",
           "PB-2 CONFLICT: Hatla2ee=2015000"
-        ]
+        ],
+        "powertrains": [
+          "reev",
+          "ev"
+        ],
+        "powertrains_correction": {
+          "rc1": [
+            "ev",
+            "hybrid"
+          ],
+          "to": [
+            "reev",
+            "ev"
+          ],
+          "rule": "VP-2",
+          "basis": "AT-39 version powertrains from accepted price lists (registry/version_powertrains_20261108.csv)"
+        }
       }
     },
     {
@@ -23297,7 +23462,14 @@
               "as_of": "2026-10-21",
               "issuer": "AYM (Forthing distributor) price list (CEO-supplied)",
               "evidence_url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
-              "powertrain": "Electric"
+              "powertrain": "ev",
+              "plug_in": false,
+              "powertrain_source": {
+                "wording": "S7 EV Exclusive 2027",
+                "url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
+                "sha256": "1801e34e23e324621ec688b0958c3278c74feba7b724f53710d25cda9553ca2b",
+                "rule": "VP-1"
+              }
             },
             {
               "model_year": 2027,
@@ -23309,7 +23481,14 @@
               "as_of": "2026-10-21",
               "issuer": "AYM (Forthing distributor) price list (CEO-supplied)",
               "evidence_url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
-              "powertrain": "Electric"
+              "powertrain": "reev",
+              "plug_in": null,
+              "powertrain_source": {
+                "wording": "S7 REEV Exclusive 2027",
+                "url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
+                "sha256": "1801e34e23e324621ec688b0958c3278c74feba7b724f53710d25cda9553ca2b",
+                "rule": "VP-1"
+              }
             }
           ],
           "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
@@ -23467,7 +23646,23 @@
           "PB-2 CONFLICT: ContactCars=1370000",
           "PB-2 CONFLICT: Hatla2ee=1320000",
           "PB-2 CONFLICT: Hatla2ee=1400000"
-        ]
+        ],
+        "powertrains": [
+          "reev",
+          "ev"
+        ],
+        "powertrains_correction": {
+          "rc1": [
+            "ev",
+            "hybrid"
+          ],
+          "to": [
+            "reev",
+            "ev"
+          ],
+          "rule": "VP-2",
+          "basis": "AT-39 version powertrains from accepted price lists (registry/version_powertrains_20261108.csv)"
+        }
       }
     },
     {
@@ -23533,7 +23728,15 @@
               "date_basis": "OBSERVED",
               "as_of": "2026-10-21",
               "issuer": "AYM (Forthing distributor) price list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view"
+              "evidence_url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
+              "powertrain": "ev",
+              "plug_in": false,
+              "powertrain_source": {
+                "wording": "T5 EV Exclusive 2027",
+                "url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
+                "sha256": "1801e34e23e324621ec688b0958c3278c74feba7b724f53710d25cda9553ca2b",
+                "rule": "VP-1"
+              }
             },
             {
               "model_year": 2027,
@@ -23544,7 +23747,15 @@
               "date_basis": "OBSERVED",
               "as_of": "2026-10-21",
               "issuer": "AYM (Forthing distributor) price list (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view"
+              "evidence_url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
+              "powertrain": "reev",
+              "plug_in": null,
+              "powertrain_source": {
+                "wording": "T5 REEV Exclusive 2027",
+                "url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
+                "sha256": "1801e34e23e324621ec688b0958c3278c74feba7b724f53710d25cda9553ca2b",
+                "rule": "VP-1"
+              }
             }
           ]
         },
@@ -23563,7 +23774,24 @@
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
-        "conflicts": []
+        "conflicts": [],
+        "powertrains": [
+          "reev",
+          "ev"
+        ],
+        "powertrains_correction": {
+          "rc1": [
+            "ev",
+            "hybrid",
+            "petrol"
+          ],
+          "to": [
+            "reev",
+            "ev"
+          ],
+          "rule": "VP-2",
+          "basis": "AT-39 version powertrains from accepted price lists (registry/version_powertrains_20261108.csv)"
+        }
       }
     },
     {
@@ -27736,7 +27964,15 @@
               "confirmation_status": "CEO_CONFIRMED",
               "confirmation_authority": "CEO instruction (Control Tower AT-39 intake 2026-11-08)",
               "ledger_row_id": "CEO1108-103",
-              "printed_date": "2026-11-06"
+              "printed_date": "2026-11-06",
+              "powertrain": "hybrid",
+              "plug_in": false,
+              "powertrain_source": {
+                "wording": "H7 1.5T 2DHT HEV ULTRA \"BLACK EDITION\"",
+                "url": "https://drive.google.com/file/d/17ujD2yJr6fUiGlpE6N5xp3Opgja_1int/view",
+                "sha256": "429fff7b7f3497b39650560feaf1c9824741733924c5d6b65bda66c199c112fa",
+                "rule": "VP-1"
+              }
             }
           ],
           "printed_date": "2026-11-06",
@@ -30517,7 +30753,14 @@
               "as_of": "2026-10-15",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
               "evidence_url": "https://drive.google.com/file/d/1mvAbzBvYGYKLtVlxEf3T0sIHgOpo3iLH/view?usp=drivesdk",
-              "powertrain": "Hybrid"
+              "powertrain": "hybrid",
+              "plug_in": false,
+              "powertrain_source": {
+                "wording": "SANTA FE MX5 1.6T EXECUTIVE HEV RWD",
+                "url": "https://drive.google.com/file/d/1mvAbzBvYGYKLtVlxEf3T0sIHgOpo3iLH/view?usp=drivesdk",
+                "sha256": "45e574f64406098920a99d8e16b7545920474262af0d03bc954ce3724d9b1ddf",
+                "rule": "VP-1"
+              }
             },
             {
               "model_year": 2025,
@@ -30529,7 +30772,14 @@
               "as_of": "2026-10-15",
               "issuer": "GB Auto official distributor list (CEO-supplied)",
               "evidence_url": "https://drive.google.com/file/d/1mvAbzBvYGYKLtVlxEf3T0sIHgOpo3iLH/view?usp=drivesdk",
-              "powertrain": "Hybrid"
+              "powertrain": "hybrid",
+              "plug_in": false,
+              "powertrain_source": {
+                "wording": "SANTA FE MX5 1.6T CALLIGRAPHY HEV AWD",
+                "url": "https://drive.google.com/file/d/1mvAbzBvYGYKLtVlxEf3T0sIHgOpo3iLH/view?usp=drivesdk",
+                "sha256": "45e574f64406098920a99d8e16b7545920474262af0d03bc954ce3724d9b1ddf",
+                "rule": "VP-1"
+              }
             }
           ],
           "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
@@ -30672,7 +30922,21 @@
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
-        "conflicts": []
+        "conflicts": [],
+        "powertrains": [
+          "hybrid"
+        ],
+        "powertrains_correction": {
+          "rc1": [
+            "hybrid",
+            "petrol"
+          ],
+          "to": [
+            "hybrid"
+          ],
+          "rule": "VP-2",
+          "basis": "AT-39 version powertrains from accepted price lists (registry/version_powertrains_20261108.csv)"
+        }
       }
     },
     {
@@ -38803,7 +39067,15 @@
               "source_sha256": "072df047dcd4594f93f46649ce0a129a7ceb976ad03d385fc5bd64b274c0f17d",
               "confirmation_status": "CEO_CONFIRMED",
               "confirmation_authority": "CEO instruction (Control Tower AT-39 intake 2026-11-08; CEO decisions 2026-11-08 on Lexus identities, Chery and Changan)",
-              "ledger_row_id": "CEO1108-024"
+              "ledger_row_id": "CEO1108-024",
+              "powertrain": "hybrid",
+              "plug_in": false,
+              "powertrain_source": {
+                "wording": "LX700h AWD 7 Seats - Hybrid",
+                "url": "https://drive.google.com/file/d/1err1v4m8juUN6ZBHMk3adg1rkNl03-K1/view",
+                "sha256": "072df047dcd4594f93f46649ce0a129a7ceb976ad03d385fc5bd64b274c0f17d",
+                "rule": "VP-1"
+              }
             },
             {
               "model_year": 2027,
@@ -38821,7 +39093,15 @@
               "source_sha256": "072df047dcd4594f93f46649ce0a129a7ceb976ad03d385fc5bd64b274c0f17d",
               "confirmation_status": "CEO_CONFIRMED",
               "confirmation_authority": "CEO instruction (Control Tower AT-39 intake 2026-11-08; CEO decisions 2026-11-08 on Lexus identities, Chery and Changan)",
-              "ledger_row_id": "CEO1108-025"
+              "ledger_row_id": "CEO1108-025",
+              "powertrain": "hybrid",
+              "plug_in": false,
+              "powertrain_source": {
+                "wording": "LX700h AWD 4 Seats - Hybrid",
+                "url": "https://drive.google.com/file/d/1err1v4m8juUN6ZBHMk3adg1rkNl03-K1/view",
+                "sha256": "072df047dcd4594f93f46649ce0a129a7ceb976ad03d385fc5bd64b274c0f17d",
+                "rule": "VP-1"
+              }
             },
             {
               "model_year": 2027,
@@ -38895,7 +39175,22 @@
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
-        "conflicts": []
+        "conflicts": [],
+        "powertrains": [
+          "petrol",
+          "hybrid"
+        ],
+        "powertrains_correction": {
+          "rc1": [
+            "petrol"
+          ],
+          "to": [
+            "petrol",
+            "hybrid"
+          ],
+          "rule": "VP-2",
+          "basis": "AT-39 version powertrains from accepted price lists (registry/version_powertrains_20261108.csv)"
+        }
       }
     },
     {
@@ -43742,7 +44037,15 @@
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-15",
               "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
-              "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view"
+              "evidence_url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+              "powertrain": "hybrid",
+              "plug_in": false,
+              "powertrain_source": {
+                "wording": "MG HS HEV",
+                "url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+                "sha256": "14d119ed316e70dfc652c14e29a5d07f824ceeaf9acf6992203e09bc225bb131",
+                "rule": "VP-1"
+              }
             }
           ]
         },
@@ -55808,7 +56111,14 @@
               "as_of": "2026-10-18",
               "issuer": "Soueast Egypt price list, issuer logo not shown (CEO-supplied)",
               "evidence_url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
-              "powertrain": "Petrol"
+              "powertrain": "petrol",
+              "plug_in": false,
+              "powertrain_source": {
+                "wording": "GASOLINE-POWERED VEHICLES: S06 Highline 1.5L Turbo",
+                "url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
+                "sha256": "2adfa42e9105ed3cbc6bfd1056dce18dd69ce0f30e44f780d505116c2a0e0562",
+                "rule": "VP-1"
+              }
             },
             {
               "model_year": 2027,
@@ -55820,7 +56130,14 @@
               "as_of": "2026-10-18",
               "issuer": "Soueast Egypt price list, issuer logo not shown (CEO-supplied)",
               "evidence_url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
-              "powertrain": "Petrol"
+              "powertrain": "petrol",
+              "plug_in": false,
+              "powertrain_source": {
+                "wording": "GASOLINE-POWERED VEHICLES: S06 Premium 1.6L Turbo",
+                "url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
+                "sha256": "2adfa42e9105ed3cbc6bfd1056dce18dd69ce0f30e44f780d505116c2a0e0562",
+                "rule": "VP-1"
+              }
             },
             {
               "model_year": 2027,
@@ -55832,7 +56149,14 @@
               "as_of": "2026-10-18",
               "issuer": "Soueast Egypt price list, issuer logo not shown (CEO-supplied)",
               "evidence_url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
-              "powertrain": "Petrol"
+              "powertrain": "phev",
+              "plug_in": true,
+              "powertrain_source": {
+                "wording": "PLUG-IN HYBRID VEHICLES (PHEV): S06DM Intelligent",
+                "url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
+                "sha256": "2adfa42e9105ed3cbc6bfd1056dce18dd69ce0f30e44f780d505116c2a0e0562",
+                "rule": "VP-1"
+              }
             }
           ],
           "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
@@ -56117,7 +56441,25 @@
           "PB-2 CONFLICT: ContactCars=1485000",
           "PB-2 CONFLICT: EgyCar=1370000;Hatla2ee=1370000",
           "PB-2 CONFLICT: EgyCar=1510000;Hatla2ee=1510000"
-        ]
+        ],
+        "powertrains": [
+          "petrol",
+          "hybrid",
+          "phev"
+        ],
+        "powertrains_correction": {
+          "rc1": [
+            "hybrid",
+            "petrol"
+          ],
+          "to": [
+            "petrol",
+            "hybrid",
+            "phev"
+          ],
+          "rule": "VP-2",
+          "basis": "AT-39 version powertrains from accepted price lists (registry/version_powertrains_20261108.csv)"
+        }
       }
     },
     {
@@ -56468,7 +56810,15 @@
               "date_basis": "SOURCE_STATED",
               "as_of": "2026-10-18",
               "issuer": "Soueast Egypt price list, issuer logo not shown (CEO-supplied)",
-              "evidence_url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view"
+              "evidence_url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
+              "powertrain": "phev",
+              "plug_in": true,
+              "powertrain_source": {
+                "wording": "PLUG-IN HYBRID VEHICLES (PHEV): S08DM Intelligent",
+                "url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
+                "sha256": "2adfa42e9105ed3cbc6bfd1056dce18dd69ce0f30e44f780d505116c2a0e0562",
+                "rule": "VP-1"
+              }
             }
           ]
         },
@@ -56494,7 +56844,23 @@
             "relation": "duplicate listing",
             "basis": "soueast/s08 is a duplicate listing of this car (plug-in hybrid DM-i); no petrol S08 found in the Soueast 18 Oct 2026 list or market pages."
           }
-        ]
+        ],
+        "powertrains": [
+          "hybrid",
+          "phev"
+        ],
+        "powertrains_correction": {
+          "rc1": [
+            "hybrid",
+            "petrol"
+          ],
+          "to": [
+            "hybrid",
+            "phev"
+          ],
+          "rule": "VP-2",
+          "basis": "AT-39 version powertrains from accepted price lists (registry/version_powertrains_20261108.csv)"
+        }
       }
     },
     {
@@ -62489,7 +62855,15 @@
               "date_basis": "OBSERVED",
               "as_of": "2026-10-22",
               "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
-              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg"
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+              "powertrain": "reev",
+              "plug_in": null,
+              "powertrain_source": {
+                "wording": "G7 SUPER REEV CATEGORY: G7-RWD Flagship",
+                "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+                "sha256": "repo:evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+                "rule": "VP-1"
+              }
             }
           ]
         },
@@ -62630,7 +63004,20 @@
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
-        "conflicts": []
+        "conflicts": [],
+        "powertrains": [
+          "reev"
+        ],
+        "powertrains_correction": {
+          "rc1": [
+            "ev"
+          ],
+          "to": [
+            "reev"
+          ],
+          "rule": "VP-2",
+          "basis": "AT-39 version powertrains from accepted price lists (registry/version_powertrains_20261108.csv)"
+        }
       }
     },
     {
@@ -62905,7 +63292,15 @@
               "date_basis": "OBSERVED",
               "as_of": "2026-10-22",
               "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
-              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg"
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+              "powertrain": "ev",
+              "plug_in": false,
+              "powertrain_source": {
+                "wording": "M03+ EV CATEGORY: M03+ FWD",
+                "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+                "sha256": "repo:evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+                "rule": "VP-1"
+              }
             }
           ]
         },
@@ -63001,7 +63396,15 @@
               "date_basis": "OBSERVED",
               "as_of": "2026-10-22",
               "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
-              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg"
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+              "powertrain": "ev",
+              "plug_in": false,
+              "powertrain_source": {
+                "wording": "THE NEXT P7 EV CATEGORY: Next P7 AWD Performance",
+                "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+                "sha256": "repo:evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+                "rule": "VP-1"
+              }
             }
           ]
         },
@@ -63106,7 +63509,15 @@
               "date_basis": "OBSERVED",
               "as_of": "2026-10-22",
               "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
-              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg"
+              "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+              "powertrain": "reev",
+              "plug_in": null,
+              "powertrain_source": {
+                "wording": "X9 SUPER REEV CATEGORY: X9 Flagship",
+                "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+                "sha256": "repo:evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+                "rule": "VP-1"
+              }
             }
           ]
         },
@@ -63139,7 +63550,20 @@
         "hero_image": null,
         "hero_image_limited": null,
         "gallery": [],
-        "conflicts": []
+        "conflicts": [],
+        "powertrains": [
+          "reev"
+        ],
+        "powertrains_correction": {
+          "rc1": [
+            "ev"
+          ],
+          "to": [
+            "reev"
+          ],
+          "rule": "VP-2",
+          "basis": "AT-39 version powertrains from accepted price lists (registry/version_powertrains_20261108.csv)"
+        }
       }
     },
     {
@@ -63450,7 +63874,7 @@
       "retained_in_p2": true
     }
   ],
-  "revision": "cddfe91b3287",
+  "revision": "76f912a75beb",
   "market_additions": [
     {
       "p1_id": null,
@@ -65321,7 +65745,7 @@
       "parent": null,
       "body": "mpv",
       "powertrains": [
-        "petrol"
+        "hybrid"
       ],
       "evidence": [
         "Registrations last 12m 287 / last 6m 137 (Kia|Carnival; ICE:287)",
@@ -65356,7 +65780,14 @@
               "as_of": "2026-10-13",
               "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
               "evidence_url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
-              "powertrain": "Hybrid"
+              "powertrain": "hybrid",
+              "plug_in": false,
+              "powertrain_source": {
+                "wording": "HYBRID - 8-SEATS Kia Carnival 2026 Topline",
+                "url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+                "sha256": "5b62a14342852a700751c8e1c23e525dca12d2083cb32416c546745af5faa824",
+                "rule": "VP-1"
+              }
             }
           ],
           "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
@@ -65509,7 +65940,20 @@
         "conflicts": [
           "PB-2 CONFLICT: EgyCar=3850000",
           "PB-2 CONFLICT: Hatla2ee=3849900"
-        ]
+        ],
+        "powertrains": [
+          "hybrid"
+        ],
+        "powertrains_correction": {
+          "market_universe": [
+            "petrol"
+          ],
+          "to": [
+            "hybrid"
+          ],
+          "rule": "VP-2",
+          "basis": "AT-39 version powertrains from accepted price lists (registry/version_powertrains_20261108.csv)"
+        }
       },
       "missing_evidence": [
         "NO_OFFICIAL_BROCHURE",
@@ -73818,7 +74262,8 @@
       "parent": null,
       "body": "suv",
       "powertrains": [
-        "petrol"
+        "hybrid",
+        "phev"
       ],
       "evidence": [
         "Market new-car pages with priced model years 2027 (3 page(s); snapshots/UA_2026-10-14_38545206122)",
@@ -73859,7 +74304,15 @@
               "confirmation_status": "CEO_CONFIRMED",
               "confirmation_authority": "CEO instruction (Control Tower AT-39 intake 2026-11-08)",
               "ledger_row_id": "CEO1108-104",
-              "printed_date": "2026-11-06"
+              "printed_date": "2026-11-06",
+              "powertrain": "hybrid",
+              "plug_in": false,
+              "powertrain_source": {
+                "wording": "V7 1.5T 2DHT HEV FWD ULTRA",
+                "url": "https://drive.google.com/file/d/17ujD2yJr6fUiGlpE6N5xp3Opgja_1int/view",
+                "sha256": "429fff7b7f3497b39650560feaf1c9824741733924c5d6b65bda66c199c112fa",
+                "rule": "VP-1"
+              }
             },
             {
               "model_year": 2027,
@@ -73878,7 +74331,15 @@
               "confirmation_status": "CEO_CONFIRMED",
               "confirmation_authority": "CEO instruction (Control Tower AT-39 intake 2026-11-08)",
               "ledger_row_id": "CEO1108-105",
-              "printed_date": "2026-11-06"
+              "printed_date": "2026-11-06",
+              "powertrain": "phev",
+              "plug_in": true,
+              "powertrain_source": {
+                "wording": "V7 1.5T 4DHT PHEV Hi4 ULTRA; footnote \"Hybrid and Plug-In hybrid systems\"",
+                "url": "https://drive.google.com/file/d/17ujD2yJr6fUiGlpE6N5xp3Opgja_1int/view",
+                "sha256": "429fff7b7f3497b39650560feaf1c9824741733924c5d6b65bda66c199c112fa",
+                "rule": "VP-1"
+              }
             }
           ],
           "printed_date": "2026-11-06",
@@ -74070,7 +74531,22 @@
         },
         "hero_image": null,
         "gallery": [],
-        "conflicts": []
+        "conflicts": [],
+        "powertrains": [
+          "hybrid",
+          "phev"
+        ],
+        "powertrains_correction": {
+          "market_universe": [
+            "petrol"
+          ],
+          "to": [
+            "hybrid",
+            "phev"
+          ],
+          "rule": "VP-2",
+          "basis": "AT-39 version powertrains from accepted price lists (registry/version_powertrains_20261108.csv)"
+        }
       },
       "missing_evidence": [
         "NO_OFFICIAL_BROCHURE",
@@ -76668,7 +77144,7 @@
       "parent": null,
       "body": "suv",
       "powertrains": [
-        "ev"
+        "reev"
       ],
       "evidence": [
         "Market new-car pages with priced model years 2026 (1 page(s); snapshots/UA_2026-10-14_38545206122)",
@@ -76697,7 +77173,14 @@
               "as_of": "2026-10-22",
               "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
               "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
-              "powertrain": "ev"
+              "powertrain": "reev",
+              "plug_in": null,
+              "powertrain_source": {
+                "wording": "GX SUPER REEV CATEGORY: GX Flagship",
+                "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+                "sha256": "repo:evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+                "rule": "VP-1"
+              }
             }
           ],
           "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
@@ -76730,7 +77213,20 @@
         },
         "hero_image": null,
         "gallery": [],
-        "conflicts": []
+        "conflicts": [],
+        "powertrains": [
+          "reev"
+        ],
+        "powertrains_correction": {
+          "market_universe": [
+            "ev"
+          ],
+          "to": [
+            "reev"
+          ],
+          "rule": "VP-2",
+          "basis": "AT-39 version powertrains from accepted price lists (registry/version_powertrains_20261108.csv)"
+        }
       },
       "missing_evidence": [
         "NO_ACCEPTED_SPECS",
@@ -76817,6 +77313,7 @@
       "parent": null,
       "body": "sedan",
       "powertrains": [
+        "reev",
         "ev"
       ],
       "evidence": [
@@ -76850,7 +77347,14 @@
               "as_of": "2026-10-22",
               "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
               "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
-              "powertrain": "ev"
+              "powertrain": "ev",
+              "plug_in": false,
+              "powertrain_source": {
+                "wording": "P7+ EV CATEGORY: P7+ RWD Flagship",
+                "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+                "sha256": "repo:evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+                "rule": "VP-1"
+              }
             },
             {
               "model_year": null,
@@ -76862,7 +77366,14 @@
               "as_of": "2026-10-22",
               "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
               "evidence_url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
-              "powertrain": "ev"
+              "powertrain": "reev",
+              "plug_in": null,
+              "powertrain_source": {
+                "wording": "P7+ SUPER REEV CATEGORY: P7+ REEV-RWD Flagship",
+                "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+                "sha256": "repo:evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+                "rule": "VP-1"
+              }
             }
           ],
           "powertrain_basis": "model has a single accepted powertrain (specs powertrain_class or P2 identity decision)"
@@ -76903,7 +77414,22 @@
         },
         "hero_image": null,
         "gallery": [],
-        "conflicts": []
+        "conflicts": [],
+        "powertrains": [
+          "reev",
+          "ev"
+        ],
+        "powertrains_correction": {
+          "market_universe": [
+            "ev"
+          ],
+          "to": [
+            "reev",
+            "ev"
+          ],
+          "rule": "VP-2",
+          "basis": "AT-39 version powertrains from accepted price lists (registry/version_powertrains_20261108.csv)"
+        }
       },
       "missing_evidence": [
         "NO_ACCEPTED_SPECS",
@@ -79485,7 +80011,15 @@
               "source_sha256": "072df047dcd4594f93f46649ce0a129a7ceb976ad03d385fc5bd64b274c0f17d",
               "confirmation_status": "CEO_CONFIRMED",
               "confirmation_authority": "CEO instruction (Control Tower AT-39 intake 2026-11-08; CEO decisions 2026-11-08 on Lexus identities, Chery and Changan)",
-              "ledger_row_id": "CEO1108-021"
+              "ledger_row_id": "CEO1108-021",
+              "powertrain": "hybrid",
+              "plug_in": false,
+              "powertrain_source": {
+                "wording": "RX350h AWD - Hybrid",
+                "url": "https://drive.google.com/file/d/1err1v4m8juUN6ZBHMk3adg1rkNl03-K1/view",
+                "sha256": "072df047dcd4594f93f46649ce0a129a7ceb976ad03d385fc5bd64b274c0f17d",
+                "rule": "VP-1"
+              }
             },
             {
               "model_year": 2027,

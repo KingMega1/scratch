@@ -6286,7 +6286,14 @@
       "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
       "label": "DMi Ultra",
       "model_year": 2027,
-      "powertrain": "PHEV",
+      "plug_in": true,
+      "powertrain": "phev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "repo:evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+       "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+       "wording": "BYD list 22 Oct 2026 \"DMi Ultra\"; accepted powertrain_class PHEV (ContactCars+Hatla2ee, SP-2)"
+      },
       "price_egp": 2899900,
       "tier": "A"
      }
@@ -6727,7 +6734,14 @@
       "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
       "label": "DMi Ultra",
       "model_year": 2027,
-      "powertrain": "PHEV",
+      "plug_in": true,
+      "powertrain": "phev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "repo:evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+       "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+       "wording": "BYD list 22 Oct 2026 \"DMi Ultra\"; accepted powertrain_class PHEV (ContactCars+Hatla2ee, SP-2)"
+      },
       "price_egp": 3299900,
       "tier": "A"
      },
@@ -6739,7 +6753,14 @@
       "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
       "label": "DMi Luxury",
       "model_year": 2027,
-      "powertrain": "PHEV",
+      "plug_in": true,
+      "powertrain": "phev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "repo:evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+       "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+       "wording": "BYD list 22 Oct 2026 \"DMi Luxury\"; accepted powertrain_class PHEV (ContactCars+Hatla2ee, SP-2)"
+      },
       "price_egp": 3849900,
       "tier": "A"
      }
@@ -7359,7 +7380,14 @@
       "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
       "label": "DMi Ultra",
       "model_year": 2027,
-      "powertrain": "PHEV",
+      "plug_in": true,
+      "powertrain": "phev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "repo:evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+       "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+       "wording": "BYD list 22 Oct 2026 \"DMi Ultra\"; accepted powertrain_class PHEV (ContactCars+Hatla2ee, SP-2)"
+      },
       "price_egp": 1949900,
       "tier": "A"
      },
@@ -7371,7 +7399,14 @@
       "issuer": "BYD Egypt / Mandream (Mansour) price list (CEO-supplied)",
       "label": "DMi Luxury",
       "model_year": 2027,
-      "powertrain": "PHEV",
+      "plug_in": true,
+      "powertrain": "phev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "repo:evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+       "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/byd-mandream-2026-10-22.jpg",
+       "wording": "BYD list 22 Oct 2026 \"DMi Luxury\"; accepted powertrain_class PHEV (ContactCars+Hatla2ee, SP-2)"
+      },
       "price_egp": 2149900,
       "tier": "A"
      }
@@ -18691,7 +18726,14 @@
       "issuer": "GB Auto official distributor list (CEO-supplied)",
       "label": "Premium REEV",
       "model_year": 2027,
-      "powertrain": "REEV",
+      "plug_in": null,
+      "powertrain": "reev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "repo:evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+       "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+       "wording": "DEEPAL G318 SUV PREMIUM (REEV)"
+      },
       "price_egp": 2135000,
       "tier": "A"
      },
@@ -18703,7 +18745,14 @@
       "issuer": "GB Auto official distributor list (CEO-supplied)",
       "label": "Adventure REEV",
       "model_year": 2027,
-      "powertrain": "REEV",
+      "plug_in": null,
+      "powertrain": "reev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "repo:evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+       "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+       "wording": "DEEPAL G318 SUV ADVENTURE (REEV)"
+      },
       "price_egp": 2285000,
       "tier": "A"
      }
@@ -19105,7 +19154,14 @@
       "issuer": "GB Auto official distributor list (CEO-supplied)",
       "label": "SUV REEV",
       "model_year": 2027,
-      "powertrain": "Electric",
+      "plug_in": null,
+      "powertrain": "reev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "repo:evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+       "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+       "wording": "DEEPAL S05 SUV (REEV)"
+      },
       "price_egp": 1660000,
       "tier": "A"
      },
@@ -19117,7 +19173,14 @@
       "issuer": "GB Auto official distributor list (CEO-supplied)",
       "label": "SUV BEV",
       "model_year": 2027,
-      "powertrain": "Electric",
+      "plug_in": false,
+      "powertrain": "ev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "repo:evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+       "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+       "wording": "DEEPAL S05 SUV (BEV)"
+      },
       "price_egp": 1810000,
       "tier": "A"
      }
@@ -19330,7 +19393,14 @@
       "issuer": "GB Auto official distributor list (CEO-supplied)",
       "label": "SUV REEV",
       "model_year": 2026,
-      "powertrain": "Electric",
+      "plug_in": null,
+      "powertrain": "reev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "repo:evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+       "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+       "wording": "DEEPAL S07 SUV (REEV)"
+      },
       "price_egp": 1975000,
       "tier": "A"
      },
@@ -19342,7 +19412,14 @@
       "issuer": "GB Auto official distributor list (CEO-supplied)",
       "label": "SUV BEV",
       "model_year": 2026,
-      "powertrain": "Electric",
+      "plug_in": false,
+      "powertrain": "ev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "repo:evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+       "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/deepal-gbauto-undated.jpg",
+       "wording": "DEEPAL S07 SUV (BEV)"
+      },
       "price_egp": 2065000,
       "tier": "A"
      }
@@ -22544,7 +22621,14 @@
       "issuer": "AYM (Forthing distributor) price list (CEO-supplied)",
       "label": "EV Exclusive",
       "model_year": 2027,
-      "powertrain": "Electric",
+      "plug_in": false,
+      "powertrain": "ev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "1801e34e23e324621ec688b0958c3278c74feba7b724f53710d25cda9553ca2b",
+       "url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
+       "wording": "S7 EV Exclusive 2027"
+      },
       "price_egp": 1320000,
       "tier": "A"
      },
@@ -22556,7 +22640,14 @@
       "issuer": "AYM (Forthing distributor) price list (CEO-supplied)",
       "label": "REEV Exclusive",
       "model_year": 2027,
-      "powertrain": "Electric",
+      "plug_in": null,
+      "powertrain": "reev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "1801e34e23e324621ec688b0958c3278c74feba7b724f53710d25cda9553ca2b",
+       "url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
+       "wording": "S7 REEV Exclusive 2027"
+      },
       "price_egp": 1400000,
       "tier": "A"
      }
@@ -22747,6 +22838,14 @@
       "issuer": "AYM (Forthing distributor) price list (CEO-supplied)",
       "label": "EV Exclusive",
       "model_year": 2027,
+      "plug_in": false,
+      "powertrain": "ev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "1801e34e23e324621ec688b0958c3278c74feba7b724f53710d25cda9553ca2b",
+       "url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
+       "wording": "T5 EV Exclusive 2027"
+      },
       "price_egp": 1410000,
       "tier": "A"
      },
@@ -22758,6 +22857,14 @@
       "issuer": "AYM (Forthing distributor) price list (CEO-supplied)",
       "label": "REEV Exclusive",
       "model_year": 2027,
+      "plug_in": null,
+      "powertrain": "reev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "1801e34e23e324621ec688b0958c3278c74feba7b724f53710d25cda9553ca2b",
+       "url": "https://drive.google.com/file/d/1Eek_s7zevaLkGDz_QAVvoPnYZHW4qUas/view",
+       "wording": "T5 REEV Exclusive 2027"
+      },
       "price_egp": 1420000,
       "tier": "A"
      }
@@ -26928,6 +27035,14 @@
       "label": "1.5T 2DHT HEV Ultra Black Edition",
       "ledger_row_id": "CEO1108-103",
       "model_year": 2027,
+      "plug_in": false,
+      "powertrain": "hybrid",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "429fff7b7f3497b39650560feaf1c9824741733924c5d6b65bda66c199c112fa",
+       "url": "https://drive.google.com/file/d/17ujD2yJr6fUiGlpE6N5xp3Opgja_1int/view",
+       "wording": "H7 1.5T 2DHT HEV ULTRA \"BLACK EDITION\""
+      },
       "price_egp": 1795000,
       "price_id": "ceo1108-041",
       "printed_date": "2026-11-06",
@@ -29510,7 +29625,14 @@
       "issuer": "GB Auto official distributor list (CEO-supplied)",
       "label": "1.6T Executive HEV RWD",
       "model_year": 2025,
-      "powertrain": "Hybrid",
+      "plug_in": false,
+      "powertrain": "hybrid",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "45e574f64406098920a99d8e16b7545920474262af0d03bc954ce3724d9b1ddf",
+       "url": "https://drive.google.com/file/d/1mvAbzBvYGYKLtVlxEf3T0sIHgOpo3iLH/view?usp=drivesdk",
+       "wording": "SANTA FE MX5 1.6T EXECUTIVE HEV RWD"
+      },
       "price_egp": 2995000,
       "tier": "A"
      },
@@ -29522,7 +29644,14 @@
       "issuer": "GB Auto official distributor list (CEO-supplied)",
       "label": "1.6T Calligraphy HEV AWD",
       "model_year": 2025,
-      "powertrain": "Hybrid",
+      "plug_in": false,
+      "powertrain": "hybrid",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "45e574f64406098920a99d8e16b7545920474262af0d03bc954ce3724d9b1ddf",
+       "url": "https://drive.google.com/file/d/1mvAbzBvYGYKLtVlxEf3T0sIHgOpo3iLH/view?usp=drivesdk",
+       "wording": "SANTA FE MX5 1.6T CALLIGRAPHY HEV AWD"
+      },
       "price_egp": 3495000,
       "tier": "A"
      }
@@ -37394,6 +37523,14 @@
       "label": "LX700h AWD 7 Seats - Hybrid",
       "ledger_row_id": "CEO1108-024",
       "model_year": 2027,
+      "plug_in": false,
+      "powertrain": "hybrid",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "072df047dcd4594f93f46649ce0a129a7ceb976ad03d385fc5bd64b274c0f17d",
+       "url": "https://drive.google.com/file/d/1err1v4m8juUN6ZBHMk3adg1rkNl03-K1/view",
+       "wording": "LX700h AWD 7 Seats - Hybrid"
+      },
       "price_egp": 15600000,
       "price_id": "ceo1108-046",
       "source_carrier": "media reprint (Sayarat Elyoum) of the complete, dated Lexus Egypt list",
@@ -37412,6 +37549,14 @@
       "label": "LX700h AWD 4 Seats - Hybrid",
       "ledger_row_id": "CEO1108-025",
       "model_year": 2027,
+      "plug_in": false,
+      "powertrain": "hybrid",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "072df047dcd4594f93f46649ce0a129a7ceb976ad03d385fc5bd64b274c0f17d",
+       "url": "https://drive.google.com/file/d/1err1v4m8juUN6ZBHMk3adg1rkNl03-K1/view",
+       "wording": "LX700h AWD 4 Seats - Hybrid"
+      },
       "price_egp": 17250000,
       "price_id": "ceo1108-047",
       "source_carrier": "media reprint (Sayarat Elyoum) of the complete, dated Lexus Egypt list",
@@ -42115,6 +42260,14 @@
       "issuer": "Al Mansour / MG Egypt (CEO-supplied list)",
       "label": "HS HEV",
       "model_year": null,
+      "plug_in": false,
+      "powertrain": "hybrid",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "14d119ed316e70dfc652c14e29a5d07f824ceeaf9acf6992203e09bc225bb131",
+       "url": "https://drive.google.com/file/d/1_dDrnnkdgWrMVcZ7zkGujDW9tELTigQ7/view",
+       "wording": "MG HS HEV"
+      },
       "price_egp": 1650000,
       "tier": "A"
      }
@@ -53768,7 +53921,14 @@
       "issuer": "Soueast Egypt price list, issuer logo not shown (CEO-supplied)",
       "label": "Highline 1.5L Turbo",
       "model_year": 2027,
-      "powertrain": "Petrol",
+      "plug_in": false,
+      "powertrain": "petrol",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "2adfa42e9105ed3cbc6bfd1056dce18dd69ce0f30e44f780d505116c2a0e0562",
+       "url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
+       "wording": "GASOLINE-POWERED VEHICLES: S06 Highline 1.5L Turbo"
+      },
       "price_egp": 1370000,
       "tier": "A"
      },
@@ -53780,7 +53940,14 @@
       "issuer": "Soueast Egypt price list, issuer logo not shown (CEO-supplied)",
       "label": "Premium 1.6L Turbo",
       "model_year": 2027,
-      "powertrain": "Petrol",
+      "plug_in": false,
+      "powertrain": "petrol",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "2adfa42e9105ed3cbc6bfd1056dce18dd69ce0f30e44f780d505116c2a0e0562",
+       "url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
+       "wording": "GASOLINE-POWERED VEHICLES: S06 Premium 1.6L Turbo"
+      },
       "price_egp": 1510000,
       "tier": "A"
      },
@@ -53792,7 +53959,14 @@
       "issuer": "Soueast Egypt price list, issuer logo not shown (CEO-supplied)",
       "label": "DM Intelligent 1.5L Turbo PHEV",
       "model_year": 2027,
-      "powertrain": "Petrol",
+      "plug_in": true,
+      "powertrain": "phev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "2adfa42e9105ed3cbc6bfd1056dce18dd69ce0f30e44f780d505116c2a0e0562",
+       "url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
+       "wording": "PLUG-IN HYBRID VEHICLES (PHEV): S06DM Intelligent"
+      },
       "price_egp": 1689000,
       "tier": "A"
      }
@@ -54352,6 +54526,14 @@
       "issuer": "Soueast Egypt price list, issuer logo not shown (CEO-supplied)",
       "label": "DM Intelligent 1.5L Turbo PHEV",
       "model_year": 2027,
+      "plug_in": true,
+      "powertrain": "phev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "2adfa42e9105ed3cbc6bfd1056dce18dd69ce0f30e44f780d505116c2a0e0562",
+       "url": "https://drive.google.com/file/d/1J0jxomzyG9QwYyfRg0bCBQ9acAVkjMIe/view",
+       "wording": "PLUG-IN HYBRID VEHICLES (PHEV): S08DM Intelligent"
+      },
       "price_egp": 1849000,
       "tier": "A"
      }
@@ -60159,6 +60341,14 @@
       "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
       "label": "RWD Flagship Super REEV",
       "model_year": null,
+      "plug_in": null,
+      "powertrain": "reev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "repo:evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+       "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+       "wording": "G7 SUPER REEV CATEGORY: G7-RWD Flagship"
+      },
       "price_egp": 2299900,
       "tier": "A"
      }
@@ -60561,6 +60751,14 @@
       "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
       "label": "M03+ FWD EV",
       "model_year": null,
+      "plug_in": false,
+      "powertrain": "ev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "repo:evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+       "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+       "wording": "M03+ EV CATEGORY: M03+ FWD"
+      },
       "price_egp": 1400000,
       "tier": "A"
      }
@@ -60650,6 +60848,14 @@
       "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
       "label": "AWD Performance EV",
       "model_year": null,
+      "plug_in": false,
+      "powertrain": "ev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "repo:evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+       "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+       "wording": "THE NEXT P7 EV CATEGORY: Next P7 AWD Performance"
+      },
       "price_egp": 2899900,
       "tier": "A"
      }
@@ -60732,6 +60938,14 @@
       "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
       "label": "Flagship Super REEV",
       "model_year": null,
+      "plug_in": null,
+      "powertrain": "reev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "repo:evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+       "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+       "wording": "X9 SUPER REEV CATEGORY: X9 Flagship"
+      },
       "price_egp": 3649000,
       "tier": "A"
      }
@@ -62895,7 +63109,14 @@
       "issuer": "EIT (Kia Egypt distributor) price list (CEO-supplied)",
       "label": "HEV 8-Seats Topline",
       "model_year": 2026,
-      "powertrain": "Hybrid",
+      "plug_in": false,
+      "powertrain": "hybrid",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "5b62a14342852a700751c8e1c23e525dca12d2083cb32416c546745af5faa824",
+       "url": "https://drive.google.com/file/d/19SG1g5bp33mAjGuGacUu-oRR9d-MD806/view",
+       "wording": "HYBRID - 8-SEATS Kia Carnival 2026 Topline"
+      },
       "price_egp": 3849900,
       "tier": "A"
      }
@@ -71024,6 +71245,14 @@
       "label": "1.5T 2DHT HEV FWD Ultra",
       "ledger_row_id": "CEO1108-104",
       "model_year": 2027,
+      "plug_in": false,
+      "powertrain": "hybrid",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "429fff7b7f3497b39650560feaf1c9824741733924c5d6b65bda66c199c112fa",
+       "url": "https://drive.google.com/file/d/17ujD2yJr6fUiGlpE6N5xp3Opgja_1int/view",
+       "wording": "V7 1.5T 2DHT HEV FWD ULTRA"
+      },
       "price_egp": 1915000,
       "price_id": "ceo1108-042",
       "printed_date": "2026-11-06",
@@ -71043,6 +71272,14 @@
       "label": "1.5T 4DHT PHEV Hi4 Ultra",
       "ledger_row_id": "CEO1108-105",
       "model_year": 2027,
+      "plug_in": true,
+      "powertrain": "phev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "429fff7b7f3497b39650560feaf1c9824741733924c5d6b65bda66c199c112fa",
+       "url": "https://drive.google.com/file/d/17ujD2yJr6fUiGlpE6N5xp3Opgja_1int/view",
+       "wording": "V7 1.5T 4DHT PHEV Hi4 ULTRA; footnote \"Hybrid and Plug-In hybrid systems\""
+      },
       "price_egp": 2190000,
       "price_id": "ceo1108-043",
       "printed_date": "2026-11-06",
@@ -73775,7 +74012,14 @@
       "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
       "label": "Flagship Super REEV",
       "model_year": null,
-      "powertrain": "ev",
+      "plug_in": null,
+      "powertrain": "reev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "repo:evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+       "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+       "wording": "GX SUPER REEV CATEGORY: GX Flagship"
+      },
       "price_egp": 3750000,
       "tier": "A"
      }
@@ -73931,7 +74175,14 @@
       "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
       "label": "RWD Flagship EV",
       "model_year": null,
+      "plug_in": false,
       "powertrain": "ev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "repo:evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+       "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+       "wording": "P7+ EV CATEGORY: P7+ RWD Flagship"
+      },
       "price_egp": 2199900,
       "tier": "A"
      },
@@ -73943,7 +74194,14 @@
       "issuer": "Raya Auto (XPENG Egypt distributor) price list (CEO-supplied)",
       "label": "REEV-RWD Flagship Super REEV",
       "model_year": null,
-      "powertrain": "ev",
+      "plug_in": null,
+      "powertrain": "reev",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "repo:evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+       "url": "https://github.com/KingMega1/scratch/blob/claude/carindex-buyer-vehicle-data-97yinp/vehicle-data/evidence/ceo-2026-10-22/xpeng-raya-2026-10.jpg",
+       "wording": "P7+ SUPER REEV CATEGORY: P7+ REEV-RWD Flagship"
+      },
       "price_egp": 2249900,
       "tier": "A"
      }
@@ -76468,6 +76726,14 @@
       "label": "RX350h AWD - Hybrid",
       "ledger_row_id": "CEO1108-021",
       "model_year": 2027,
+      "plug_in": false,
+      "powertrain": "hybrid",
+      "powertrain_source": {
+       "rule": "VP-1",
+       "sha256": "072df047dcd4594f93f46649ce0a129a7ceb976ad03d385fc5bd64b274c0f17d",
+       "url": "https://drive.google.com/file/d/1err1v4m8juUN6ZBHMk3adg1rkNl03-K1/view",
+       "wording": "RX350h AWD - Hybrid"
+      },
       "price_egp": 9100000,
       "price_id": "ceo1108-045",
       "source_carrier": "media reprint (Sayarat Elyoum) of the complete, dated Lexus Egypt list",
