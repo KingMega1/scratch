@@ -5,7 +5,8 @@ import serving from '@data/registry/catalogue-serving.release.json';
 import media from '@data/registry/media-verified.json';
 import arabicNames from '@data/registry/arabic-names.p2.json';
 import type { P2Content, P2Fact, AssetFlag, BrandSummary, OfficialPrice, PriceChange, PriceState, Powertrain, PublicCar, PublicImage, PublicTrim, RegistryMeta, SpecValue } from '@/lib/vehicles/types';
-import ceoOverrides from '../../../p1-accepted/U12-CEO3-R4/buyer-decision/tools/ceo_price_overrides.json';
+import ceoOverrides from '../../../p1-accepted/U12-CEO3-R5/buyer-decision/tools/ceo_price_overrides.json';
+import ceoFacts from '../../../p1-accepted/U12-CEO3-R5/buyer-decision/tools/ceo_fact_decisions.json';
 
 /* Serving read model.
    Canonical: KingMega1/scratch vehicle-data/views/p1_suv_2m.json (carindex.p1.buyer_view/v2) at the commit pinned in
@@ -122,8 +123,11 @@ const PRICE_GAPS = new Set(['NO_VERIFIED_PRICE', 'NO_ACCEPTED_PRICE', 'NO_OFFICI
 function issuerNames(issuer: string, brand: string): string[] {
   return issuer.split('+').map(x => x.trim()).filter(Boolean).map(x => (/_eg_web$/i.test(x) ? `${brand} Egypt` : srcName(x)));
 }
-/* Official vs market label, the rule the accepted P1 R4 release gate enforces (tools/gates/release_gates.js): a P2 price is
+/* Official vs market label, the rule the accepted P1 R5 release gate enforces (tools/gates/release_gates.js): a P2 price is
    official only when it is Tier A (official Egypt OEM/importer list) and the brand is not on the CEO never-official list. */
+// Model display names decided by the CEO in the vendored P1 release (e.g. lexus/lx600 -> "LX"), so car pages and Find My Car
+// name the model the same way. The identity, slug and P2 data are unchanged.
+const DISPLAY_NAME = new Map(Object.entries((ceoFacts as { display_name?: Record<string, { model: string }> }).display_name ?? {}).map(([id, v]) => [id, v.model]));
 const NEVER_OFFICIAL = new Set(Object.keys((ceoOverrides as { never_official_brands?: Record<string, string> }).never_official_brands ?? {}));
 const isOfficialTier = (tier: unknown, brand: string) => tier === 'A' && !NEVER_OFFICIAL.has(brandId(brand));
 function p2Official(price: number, issuer: string, evidence: string, asOf: string, eff: string | null, basis: string, brand: string, tier: unknown): OfficialPrice {
@@ -297,6 +301,8 @@ class JsonSnapshotReadModel implements VehicleReadModel {
       });
       car.brand.ar = e.ar.brand;
       car.model.ar = e.ar.model ?? (e.p1_id ? P2_AR_MODEL[e.p1_id] ?? null : null);
+      const dn = e.p1_id ? DISPLAY_NAME.get(e.p1_id) : undefined;
+      if (dn) car.model.en = dn;
       car.body = e.body;
       car.p1Id = e.p1_id;
       car.evidenceState = e.evidence_state;

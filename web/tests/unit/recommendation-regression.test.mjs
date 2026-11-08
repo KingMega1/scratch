@@ -42,8 +42,8 @@ test('EN/AR negation and comparative brand have equivalent applied inputs',()=>{
 });
 // Transpile server TS for executable tests without changing application code.
 function load(file, imports={}) {const mod={exports:{}};const code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,esModuleInterop:true}}).outputText;vm.runInNewContext(code,{module:mod,exports:mod.exports,require:n=>imports[n]??require(n),console,process,Buffer},{filename:file});return mod.exports;}
-// The T1 release-integrity cases pass the T1 binding explicitly (the runtime binds the accepted R4 everywhere since the
-// 5 Nov production GO; R4 has its own suite, p1-r4-binding / p1-r4-release). The result guard runs against R4.
+// The T1 release-integrity cases pass the T1 binding explicitly (the runtime binds the accepted R5 everywhere since the
+// 8 Nov R5 binding; R5 has its own suite, p1-r4-binding / p1-r4-release). The result guard runs against R5.
 const R=load('src/server/p1/release.ts',{'server-only':{}});
 const C=load('src/lib/recommendation/contract.ts');
 const os=require('node:os'), path=require('node:path');
@@ -71,7 +71,7 @@ test('API envelope: only known ops, bounded inputs; no free-text field outside s
 });
 const F=load('src/server/recommendation/fmc.ts',{'server-only':{},'../p1/release':R,'../vehicles/read-model':{vehicles:()=>({get:()=>null})},'../http/guard':{log:()=>{}}});
 test('result guard refuses version mismatch, stale binding, leaked share keys and leaked buyer text',()=>{
-  const rel=R.verifyRelease(path.resolve('p1-accepted/U12-CEO3-R4'),require);assert.equal(rel.ok,true,rel.error);const T=rel.T,ds=rel.ds;
+  const rel=R.verifyRelease(path.resolve('p1-accepted/U12-CEO3-R5'),require);assert.equal(rel.ok,true,rel.error);const T=rel.T,ds=rel.ds;
   const b=T.normalize({text:'my number is 01012345678',budget:2000000,budgetMode:'around',body:['suv']},ds);
   const good=T.execute(b,ds,{locale:'en'});
   F.guardResult(good,b,'en'); // passes

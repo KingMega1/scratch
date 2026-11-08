@@ -1,10 +1,16 @@
 {
- "dataset": "U12-CEO3-R4-2026-11-05",
- "p2_revision": "ad4cc5e906b4",
- "p2_accepted_in_p1": 269,
- "rendered_model_lists": 784,
+ "dataset": "U12-CEO3-R5-2026-11-08",
+ "p2_revision": "cddfe91b3287",
+ "p2_accepted_in_p1": 275,
+ "rendered_model_lists": 792,
  "info": {
   "display_merged": [
+   {
+    "id": "geely/cool-ray",
+    "not_listed_separately": [
+     "sport + (auto mobility ckd)=1199000"
+    ]
+   },
    {
     "id": "mercedes/e-class",
     "not_listed_separately": [

@@ -6,7 +6,7 @@ for(const locale of ['en','ar']) test(locale+' displayed result follows replacem
  const v=await call({op:'start',path:'text',text:locale==='en'?'SUV from 1.2M to 1.5M, anything but Kia, low running costs':'عربية عالية من 1.2 مليون لـ 1.5 مليون، اي حاجه غير كيا، الأهم عندي البنزين'});
  const r=await call({op:'execute',brief:v.brief});
  await page.goto('/'+locale+'/find-my-car?r='+r.result.share.r);
- await expect(page.locator('.fmc-result')).toHaveAttribute('data-universe-version','U12-CEO3-R4-2026-11-05');
+ await expect(page.locator('.fmc-result')).toHaveAttribute('data-universe-version','U12-CEO3-R5-2026-11-08');
  await expect(page.locator('.fmc-result')).toHaveAttribute('data-result-id',r.result.result_id);
  await page.getByRole('button',{name:copy.r_edit,exact:true}).click();
  await expect(page.locator('.fmc-edit')).toBeVisible();

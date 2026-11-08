@@ -35,9 +35,9 @@ const config: NextConfig = {
   images: { formats: ['image/avif', 'image/webp'], localPatterns: [{ pathname: '/media/**' }, { pathname: '/brand/**' }], minimumCacheTTL: 86400 },
   // P1 release (P1-RELEASE-T1) is loaded from disk at runtime and hash-verified; ship the vendored files with the functions that use it.
   outputFileTracingIncludes: {
-    '/api/v1/recommendation': ['./p1-release/**/*', './p1-accepted/U12-CEO3-R4/**/*'],
-    '/[locale]/find-my-car': ['./p1-release/**/*', './p1-accepted/U12-CEO3-R4/**/*'],
-    '/admin': ['./p1-release/**/*', './p1-accepted/U12-CEO3-R4/**/*'],
+    '/api/v1/recommendation': ['./p1-release/**/*', './p1-accepted/U12-CEO3-R5/**/*'],
+    '/[locale]/find-my-car': ['./p1-release/**/*', './p1-accepted/U12-CEO3-R5/**/*'],
+    '/admin': ['./p1-release/**/*', './p1-accepted/U12-CEO3-R5/**/*'],
   },
   async headers() {
     return [

@@ -6,9 +6,9 @@ async function shot(page: Page, name: string, testInfo: { project: { name: strin
   if (SHOTS) await page.screenshot({ path: `test-results/screens/${testInfo.project.name}-${name}.png`, fullPage: false });
 }
 
-// Every build binds the accepted P1 R4 (preview since 5 Nov; production since the 5 Nov CEO GO).
-const P1B = { release: 'P1-RELEASE-U12-CEO3-R4', engine: 'E6.1-2026-10-14', transport: 'T1.2-2026-11-03', universe: 'U12-CEO3-R4-2026-11-05',
-  p3: 'R4-ACCEPTED-2026-11-05', transport_commit: '777fabc35f7d8c3e726fa77423d2883272cf2fb6' } as const;
+// Every build binds the accepted P1 R5 + P2 723748d (8 Nov). Live production stays on the R4 deployment until a production GO.
+const P1B = { release: 'P1-RELEASE-U12-CEO3-R5', engine: 'E6.1-2026-10-14', transport: 'T1.2-2026-11-03', universe: 'U12-CEO3-R5-2026-11-08',
+  p3: 'R5-ACCEPTED-2026-11-08', transport_commit: 'ba2120d16b69a54524d9cb4176e8fd4fd763c8c0' } as const;
 
 test.describe('locale + direction', () => {
   test('no preview banner; one discreet Beta badge beside the logo (CEO 4 Nov) on Arabic and English pages', async ({ page }) => {
@@ -455,7 +455,7 @@ test.describe('CEO 5 Nov website fixes', () => {
     await page.goto('/en/cars?official=1'); // removed filter: old links show the full list
     await expect(page.locator('.filters a.link', { hasText: 'Clear filters' })).toHaveCount(0);
   });
-  test('price labels follow the P2 tier (same rule as P1 R4): Tier A official, Tier B/C market', async ({ page }) => {
+  test('price labels follow the P2 tier (same rule as P1 R5): Tier A official, Tier B/C market', async ({ page }) => {
     await page.goto('/en/cars/hyundai-tucson'); // Tier A
     await expect(page.locator('tr[data-official-state="checked"] [data-price-kind="official"]').first()).toHaveText('Official price');
     await page.goto('/en/cars/bmw-x1'); // Tier B (price sites)
@@ -537,7 +537,7 @@ test.describe('production-only boundaries (local build, no deploy)',()=>{
   });
 });
 
-/* Find My Car journeys over the bound P1 transport (preview: P1-RELEASE-U12-CEO3-R4). Copy assertions use P1 engine-owned strings verbatim. */
+/* Find My Car journeys over the bound P1 transport (preview: P1-RELEASE-U12-CEO3-R5). Copy assertions use P1 engine-owned strings verbatim. */
 const FMC = {
   en: { text: 'Family SUV around EGP 2 million, hybrid preferred', summary: 'Here’s what we understood', confirm: 'Yes, show my cars', based: 'Based on your brief' },
   ar: { text: 'عايز عربية عالية في حدود 2.2 مليون.', summary: 'ده اللي فهمناه', confirm: 'أيوه، وريني العربيات', based: 'على أساس طلبك' },

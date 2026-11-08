@@ -1,10 +1,10 @@
 {
- "dataset": "U12-CEO3-R4-2026-11-05",
+ "dataset": "U12-CEO3-R5-2026-11-08",
  "release_id": "P2-CEO-CONFIRMED-20261102-R1",
- "p2_accepted_models_in_p1": 269,
+ "p2_accepted_models_in_p1": 275,
  "disagree": 0,
  "disagreements": [],
- "priced_in_p1_without_p2_acceptance": 123,
+ "priced_in_p1_without_p2_acceptance": 121,
  "unaccepted": [
   "arcfox/alpha-s5",
   "arcfox/alpha-t5",
@@ -81,8 +81,6 @@
   "kaiyi/x7-phev",
   "kia/carens",
   "kia/k3",
-  "lexus/lx600",
-  "lexus/rz",
   "lotus/emeya",
   "maserati/grecale",
   "mercedes/eqb",

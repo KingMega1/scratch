@@ -1,4 +1,4 @@
-/* Targeted FMC / P1 integration tests (AT-43; P1-RELEASE-T1 or the accepted U12-CEO3-R4, whichever the server binds). Runs against a live server:
+/* Targeted FMC / P1 integration tests (AT-43; P1-RELEASE-T1 or the accepted U12-CEO3-R5, whichever the server binds). Runs against a live server:
      FMC_BASE_URL=http://localhost:3100 [FMC_SERVER_LOG=/path/to/server.log] node --test tests/integration/fmc.api.test.mjs
    Proves: release/version binding, P5 output == P1 transport output (no drop / substitute / rerank / recopy),
    normalize-before-execute, EN/AR engine copy incl. U+2019, outside-24 handling, privacy guards, share round trip. */
@@ -10,23 +10,23 @@ import { createRequire } from 'node:module';
 const BASE = process.env.FMC_BASE_URL || 'http://localhost:3100';
 const HEADERS = { 'content-type': 'application/json', ...(process.env.VERCEL_AUTOMATION_BYPASS_SECRET ? { 'x-vercel-protection-bypass': process.env.VERCEL_AUTOMATION_BYPASS_SECRET } : {}) };
 const require = createRequire(import.meta.url);
-// The server binds P1-RELEASE-T1 (production builds) or the accepted P1-RELEASE-U12-CEO3-R4 (preview builds). The test reads
+// The server binds P1-RELEASE-T1 (production builds) or the accepted P1-RELEASE-U12-CEO3-R5 (preview builds). The test reads
 // which one from /api/health and compares the website against that exact vendored release.
 const H0 = await (await fetch(`${BASE}/api/health`, { headers: HEADERS })).json();
 const BOUND_RECORD = H0.recommendation.release;
-const R4 = BOUND_RECORD === 'P1-RELEASE-U12-CEO3-R4';
-assert.ok(R4 || BOUND_RECORD === 'P1-RELEASE-T1', `unexpected binding ${BOUND_RECORD}`);
-const ROOT = R4 ? '../../p1-accepted/U12-CEO3-R4/' : '../../p1-release/';
+const R5 = BOUND_RECORD === 'P1-RELEASE-U12-CEO3-R5';
+assert.ok(R5 || BOUND_RECORD === 'P1-RELEASE-T1', `unexpected binding ${BOUND_RECORD}`);
+const ROOT = R5 ? '../../p1-accepted/U12-CEO3-R5/' : '../../p1-release/';
 const T = require(`${ROOT}buyer-decision/transport/reco.js`);
 const record = JSON.parse(fs.readFileSync(new URL(`${ROOT}buyer-decision/release/${BOUND_RECORD}.json`, import.meta.url)));
 const schema = JSON.parse(fs.readFileSync(new URL(`${ROOT}buyer-decision/transport/ci.reco.v1.schema.json`, import.meta.url)));
-const EXPECT = R4 ? { universe: 'U12-CEO3-R4-2026-11-05', p3: 'R4-ACCEPTED-2026-11-05', commit: record.source_commit }
+const EXPECT = R5 ? { universe: 'U12-CEO3-R5-2026-11-08', p3: 'R5-ACCEPTED-2026-11-08', commit: record.source_commit }
                   : { universe: 'U11-2026-09-26', p3: '1791369522-eecc', commit: record.transport_commit };
 const corpus = JSON.parse(fs.readFileSync(new URL('../fixtures/p1-release/corpus.json', import.meta.url)));
 const snapshot = JSON.parse(fs.readFileSync(new URL('../../data/registry/universe.snapshot.json', import.meta.url)));
-const ds = R4 ? T.loadAcceptedDataset(new URL(`${ROOT}${record.dataset.path}`, import.meta.url).pathname) : T.loadLaunchSnapshot();
+const ds = R5 ? T.loadAcceptedDataset(new URL(`${ROOT}${record.dataset.path}`, import.meta.url).pathname) : T.loadLaunchSnapshot();
 const serving = JSON.parse(fs.readFileSync(new URL('../../data/registry/catalogue-serving.release.json', import.meta.url)));
-// P2 market additions (R4 recommends them) are keyed by identity, not p1_id.
+// P2 market additions (R5 recommends them) are keyed by identity, not p1_id.
 const SITE = new Map([...serving.entries.map(m => [m.p1_id, m.site_slug]), ...(serving.market_additions ?? []).map(m => [m.identity, m.site_slug])]);
 
 // The API keeps its per-client rate limit (120/min); the test waits out 429s instead of disabling it.

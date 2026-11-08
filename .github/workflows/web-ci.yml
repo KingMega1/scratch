@@ -40,7 +40,7 @@ jobs:
           mkdir -p ci-evidence
           cp -a test-results/screens ci-evidence/screens
           cp test-results/smoke-preview.json ci-evidence/smoke-preview.json
-      - name: Targeted FMC / P1 integration (binds P1-RELEASE-U12-CEO3-R4) against the built app
+      - name: Targeted FMC / P1 integration (binds P1-RELEASE-U12-CEO3-R5) against the built app
         run: |
           mkdir -p test-results
           npx next start -p 3200 > test-results/fmc-server.log 2>&1 &
@@ -52,7 +52,7 @@ jobs:
         run: CI_ENV=production SMOKE_PRODUCTION=1 SMOKE_PORT=3278 npm run test:smoke -- --grep production-only
       # Keep the security gate mandatory, but collect non-deployed integration evidence first.
       - run: npm run audit:deps
-      - name: FMC integration against the production-mode build (production binds P1-RELEASE-U12-CEO3-R4)
+      - name: FMC integration against the production-mode build (production binds P1-RELEASE-U12-CEO3-R5)
         env:
           CI_ENV: production
         run: |
@@ -60,15 +60,19 @@ jobs:
           for i in $(seq 1 60); do curl -sf http://127.0.0.1:3220/api/health >/dev/null && break; sleep 1; done
           FMC_BASE_URL=http://127.0.0.1:3220 npm run test:fmc
           kill %1 || true
-      - name: Rebuild preview (binds accepted P1 R4 + P2 3b4b5ef)
+      - name: Rebuild preview (binds accepted P1 R5 + P2 723748d)
         run: CI_ENV=preview npm run build
-      - name: R4 exact transport API and rendered bilingual buyer edits
+      - name: R5 exact transport API and rendered bilingual buyer edits
         env:
           CI_ENV: preview
         run: |
           npx next start -H 127.0.0.1 -p 3210 > test-results/r4-server.log 2>&1 &
           for i in $(seq 1 60); do curl -sf http://127.0.0.1:3210/api/health >/dev/null && break; sleep 1; done
           FMC_BASE_URL=http://127.0.0.1:3210 node --test --test-concurrency=1 tests/integration/fmc.r4.test.mjs
+          # fresh server for the browser journeys: the API's per-client limit (120/min) is shared with the suite above
+          pkill -f "next start -H 127.0.0.1 -p 3210" || true; sleep 2
+          npx next start -H 127.0.0.1 -p 3210 > test-results/r4-browser-server.log 2>&1 &
+          for i in $(seq 1 60); do curl -sf http://127.0.0.1:3210/api/health >/dev/null && break; sleep 1; done
           npx playwright test -c playwright.r4.config.ts
       - uses: actions/upload-artifact@v4
         if: always()

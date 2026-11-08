@@ -1,39 +1,40 @@
 {
- "record": "P1-RELEASE-U12-CEO3-R4",
+ "record": "P1-RELEASE-U12-CEO3-R5",
  "status": "ACCEPTED",
  "acceptance": {
   "by": "CEO (release authority)",
-  "date": "2026-11-05",
-  "basis": "All P1 gates pass on final hashes; Captiva decision A",
+  "date": "2026-11-08",
+  "basis": "All P1 gates pass on final hashes",
   "p2": {
-   "commit": "3b4b5ef0eedf3eeed1ca91fb597bc0394e3050f1",
+   "commit": "723748dfd32a7b88ef56b3bc55893fdd19ed7a0c",
    "release_id": "P2-CEO-CONFIRMED-20261102-R1",
-   "revision": "ad4cc5e906b4",
-   "serving_sha256": "e6d2711d70a786c52cacfd8aa87d0a4fa60d3529434a732431cacd94e41ceb0b"
+   "revision": "cddfe91b3287",
+   "serving_sha256": "02139f4146067089942fcdcc945e4008ad567a12095f84a3f0fc993c1c4f3a81"
   },
   "gates": {
-   "price_parity": "0/269",
+   "price_parity": "0/275",
    "model_year": "PASS",
    "versions": "PASS",
    "stale_holds": "PASS",
-   "official_market_labels": "PASS (784 EN+AR lists)",
-   "regression": "1142/1142 U11 strict, 1208/1208 R4",
-   "browser_vs_transport": "1405/1405 R4, 1335/1335 U11",
+   "official_market_labels": "PASS (792 EN+AR lists)",
+   "regression": "1142/1142 U11 strict, 1220/1220 R5",
+   "browser_vs_transport": "1405/1405 R5, 1335/1335 U11",
    "transport": "1517/1517",
    "buyer_scenarios": "691/691",
    "ceo_failures": "135/135",
    "named_cars": "49/49",
-   "eligibility": "1447/1447",
-   "u12_data": "198/198"
+   "eligibility": "1451/1451",
+   "u12_data": "195/195",
+   "ceo_intake": "PASS"
   },
   "production_deployment": "none by P1"
  },
- "created": "2026-11-05",
+ "created": "2026-11-08",
  "owner": "P1",
  "task": "P1-READINESS-02",
  "repo": "KingMega1/scratch",
  "branch": "claude/carindex-buyer-decision-slice-applo4",
- "source_commit": "777fabc35f7d8c3e726fa77423d2883272cf2fb6",
+ "source_commit": "ba2120d16b69a54524d9cb4176e8fd4fd763c8c0",
  "production_binding_unchanged": "P1 made no production change. P5 binds this release after its integration checks (see p5_handoff); until then production stays on P1-RELEASE-T1.",
  "release_gates_open": [],
  "copy_gate": "CLOSED: no DRAFT markers in app/i18n.js. conflict_h CEO-approved 2026-10-21; conflict.unknown_price / sl_out.unknown_price final wording; conflict.unknown_size, conflict.scope, sl_out.unknown_size, sl_out.scope unreachable (no car carries held) under the 2026-10-21 CEO decisions.",
@@ -46,25 +47,25 @@
  "engine_version": "E6.1-2026-10-14",
  "transport_version": "T1.2-2026-11-03",
  "schema": "ci.reco.v1",
- "universe_version": "U12-CEO3-R4-2026-11-05",
+ "universe_version": "U12-CEO3-R5-2026-11-08",
  "dataset": {
-  "id": "U12-CEO3-R4-2026-11-05/recommendation_view",
-  "path": "buyer-decision/datasets/U12-CEO3-R4-2026-11-05",
-  "file_sha256": "3e9b7d8d0619635b4bd6b5a252d6dd75763ae1ad9101fc6ea4da0c4db93a66a0",
-  "content_sha256": "0d34e538944e02cf2244505902c095e77d3b2df552fc980bfb43ba292a6ecddb",
-  "identities": 424,
-  "models_in_universe": 423
+  "id": "U12-CEO3-R5-2026-11-08/recommendation_view",
+  "path": "buyer-decision/datasets/U12-CEO3-R5-2026-11-08",
+  "file_sha256": "649bc8e5c0eaa61c3038fd53b9142ab8b29c5a246fe4eae2f9b0a3a98f721865",
+  "content_sha256": "b136d0e66fd9dda89c31c0ac5c46116d090a68f0756baa2e99e08f8da2b0046a",
+  "identities": 425,
+  "models_in_universe": 424
  },
  "p2_input": {
-  "commit": "3b4b5ef0eedf3eeed1ca91fb597bc0394e3050f1",
+  "commit": "723748dfd32a7b88ef56b3bc55893fdd19ed7a0c",
   "release_id": "P2-CEO-CONFIRMED-20261102-R1",
   "files": {
-   "catalogue-serving.release.json": "e6d2711d70a786c52cacfd8aa87d0a4fa60d3529434a732431cacd94e41ceb0b",
-   "market_universe.json": "b0d8a15fcf39a8b497aab68119ff778f18031824a8d0e84c9a77ad7bf76731c0",
+   "catalogue-serving.release.json": "02139f4146067089942fcdcc945e4008ad567a12095f84a3f0fc993c1c4f3a81",
+   "market_universe.json": "733bc13bfffec4033e38381c736ec74c6b42bd65f9a91d35408edf459324439d",
    "registration_models.csv": "e6f43df6596f3fe38f4b13f9afb7d24663379fc96db31cfb5a588f17a94571af",
-   "u11_models.csv": "36c45232e490a924975060b0fe08c14b3eeb546577da81676b624ee8bbcdf36a",
+   "u11_models.csv": "97130c17516a5e1edbbe38f94048d9ff4397121011198ab90ff721ec15a20f98",
    "arabic_names.csv": "91a7d71b7165da6a9b87544b2a0eb6dc1d1aaa4253ce063fce283e8a6429c188",
-   "u11_prices.csv": "fc82c02ede67e4862c24d080cc8f18466fd1cadd07cb3fd00e09c0b86d765b8e"
+   "u11_prices.csv": "62972049af7785f95bbcf903caa66a80647815d0d082f87a82804afce8279bd7"
   }
  },
  "registry": {
@@ -134,48 +135,48 @@
    "bytes": 8663
   },
   "p5_handoff": {
-   "path": "buyer-decision/transport/P5-HANDOFF-U12-CEO3-R4.md",
-   "sha256": "dfd4df11c2032e76144a04cbf41a7772d9320ac557adc3f8aa8824a11db63b54",
-   "bytes": 4014
+   "path": "buyer-decision/transport/P5-HANDOFF-U12-CEO3-R5.md",
+   "sha256": "f419ca1e3e43b1a998b736d31078dd1fc53b024346262c186346e6c8b43a90ea",
+   "bytes": 4888
   },
   "dataset_manifest": {
-   "path": "buyer-decision/datasets/U12-CEO3-R4-2026-11-05/manifest.json",
-   "sha256": "85da6cfd2e446f1865914afa63431c5f4436a516d925ba7156259e6858bd3974",
-   "bytes": 81677
+   "path": "buyer-decision/datasets/U12-CEO3-R5-2026-11-08/manifest.json",
+   "sha256": "53c921d59c9625c97740d41cddb257c9edfa6dc7cd23bc2236809dc9ef72215c",
+   "bytes": 92972
   },
   "dataset_view": {
-   "path": "buyer-decision/datasets/U12-CEO3-R4-2026-11-05/recommendation_view.json",
-   "sha256": "3e9b7d8d0619635b4bd6b5a252d6dd75763ae1ad9101fc6ea4da0c4db93a66a0",
-   "bytes": 347190
+   "path": "buyer-decision/datasets/U12-CEO3-R5-2026-11-08/recommendation_view.json",
+   "sha256": "649bc8e5c0eaa61c3038fd53b9142ab8b29c5a246fe4eae2f9b0a3a98f721865",
+   "bytes": 365064
   },
   "regression_report": {
-   "path": "buyer-decision/datasets/U12-CEO3-R4-2026-11-05/REGRESSION_REPORT.md",
-   "sha256": "0f24bd0bf00027ff639660b0372be1927b9315e110a4e207bf3e1f773c423892",
-   "bytes": 48470
+   "path": "buyer-decision/datasets/U12-CEO3-R5-2026-11-08/REGRESSION_REPORT.md",
+   "sha256": "23d302bc5b5df92cc9410722330b8bc91018a817b77d541e779abbc541a9720c",
+   "bytes": 48076
   },
-  "release_gates": {
-   "path": "buyer-decision/datasets/U12-CEO3-R4-2026-11-05/R4-GATES.json",
-   "sha256": "4d67c0371d960dfc14bdfc1b289025c4fdcecea7217efd45ee4cdaa836747679",
-   "bytes": 689
+  "release_gates_r5": {
+   "path": "buyer-decision/datasets/U12-CEO3-R5-2026-11-08/R5-GATES.json",
+   "sha256": "14dc91ed16a6318c114c28e974cb18c6c5ebe65c113c9f41d14762956222731f",
+   "bytes": 808
   },
   "p2_price_agreement": {
-   "path": "buyer-decision/datasets/U12-CEO3-R4-2026-11-05/P2-PRICE-AGREEMENT.json",
-   "sha256": "b897a8a841c287947bc48e01bfa07eca99d917a655cb5db9e462e937a27c1771",
-   "bytes": 2454
+   "path": "buyer-decision/datasets/U12-CEO3-R5-2026-11-08/P2-PRICE-AGREEMENT.json",
+   "sha256": "06c52e976b6777721e0101e5b41ad7da69abd0281b56fa2f86f1ac7819952bb0",
+   "bytes": 2423
   }
  },
  "semantic_changes": "Ranking: NONE. Parser understanding fixes (ranges, +10% stated as %, brand-only phrasings, running costs, Arabic fuel priority, plug-in check) and transport T1.2 (editBrief, budget guard): see transport/P5-HANDOFF-U12-CEO2.md. Eligibility data policy per CEO 2026-10-21 (market prices for unpriced cars, no size hold, coupes/convertibles/vans included; see dataset manifest changes.policy). Engine E6.1 (vs T1): a held market car reports unknown_size / scope instead of not_on_sale. Transport T1.1: no compare table for a single-car result, matching the released app.",
  "evidence": {
-  "ref": "buyer-decision/datasets/U12-CEO3-R4-2026-11-05/REGRESSION_REPORT.md",
+  "ref": "buyer-decision/datasets/U12-CEO3-R5-2026-11-08/REGRESSION_REPORT.md",
   "commands": [
    "node tools/build_present.mjs --check",
    "node tests/regression/run.js --strict",
-   "CI_DATASET=datasets/U12-CEO3-R4-2026-11-05/recommendation_view.json node tests/regression/run.js",
+   "CI_DATASET=datasets/U12-CEO3-R5-2026-11-08/recommendation_view.json node tests/regression/run.js",
    "node tests/eligibility.test.js datasets/{U11-2026-09-26,U12C-2026-10-14,U12C2-2026-10-14,U12C2-RC1-2026-10-14,U12C2-RC2-2026-10-14,U12-RC3-2026-10-15,U12-RC6-2026-10-21,U12-CEO-2026-11-03,U12-CEO2-2026-11-03}",
-   "node tests/ceo_failures.test.js datasets/U12-CEO3-R4-2026-11-05",
-   "node tests/buyer_scenarios.test.js datasets/U12-CEO3-R4-2026-11-05",
-   "node tests/u12_data.test.js datasets/U12-CEO3-R4-2026-11-05",
-   "node tests/transport/browser_equivalence.mjs <build of datasets/U12-CEO3-R4-2026-11-05> datasets/U12-CEO3-R4-2026-11-05",
+   "node tests/ceo_failures.test.js datasets/U12-CEO3-R5-2026-11-08",
+   "node tests/buyer_scenarios.test.js datasets/U12-CEO3-R5-2026-11-08",
+   "node tests/u12_data.test.js datasets/U12-CEO3-R5-2026-11-08",
+   "node tests/transport/browser_equivalence.mjs <build of datasets/U12-CEO3-R5-2026-11-08> datasets/U12-CEO3-R5-2026-11-08",
    "node tests/named_cars.test.js",
    "node tests/transport/transport.test.js",
    "node tests/{contracts,engine,integrity,redact}.test.js",

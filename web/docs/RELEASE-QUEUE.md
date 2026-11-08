@@ -1,5 +1,18 @@
 # P5 release queue (P1 + P2 bound together)
 
+Bound on this branch (preview), 8 Nov 2026 — P1 R5 and P2 723748d moved together in one change:
+
+| | Release | Commit | Pin |
+|---|---|---|---|
+| P1 | P1-RELEASE-U12-CEO3-R5 (ACCEPTED 2026-11-08, CEO) | a3fe98fab4cda8137d29507035fa405910338fc8 (source ba2120d) | record sha256 e4f19c1c…, dataset U12-CEO3-R5-2026-11-08 content sha256 b136d0e6… |
+| P2 | P2-CEO-CONFIRMED-20261102-R1, revision cddfe91b3287 | 723748dfd32a7b88ef56b3bc55893fdd19ed7a0c | catalogue-serving.release.json sha256 02139f4146067089942fcdcc945e4008ad567a12095f84a3f0fc993c1c4f3a81 (= R5 p2_input) |
+
+Production (carindexed.com) is unchanged: deployment dpl_H37sXYezyAjZKCSUq2z77zgqdmi3, P5 f386e95, P1 R4 22c5fe3 + P2 3b4b5ef.
+A production deploy of this pair needs a separate production GO. Rollback target after such a deploy: dpl_H37sXYezyAjZKCSUq2z77zgqdmi3.
+Car pages show the CEO display name from the vendored P1 decisions (lexus/lx600 -> "LX"), matching Find My Car.
+
+### Previous binding (R4)
+
 Bound in preview and production (CEO GO 5 Nov 2026, carindexed.com):
 
 | | Release | Commit | Pin |
@@ -10,7 +23,7 @@ Bound in preview and production (CEO GO 5 Nov 2026, carindexed.com):
 Previous production (rollback target): deployment dpl_ASHYNjuYrunxVL1NeP1Ejb32cZ2B, P5 commit 5356b9e, P1-RELEASE-T1 + P2 635b897 (revision 03089cc2febb).
 BMW X1 confirmed price / eligibility: arrives through P2 and P1; applied only with the matching accepted release pair (separate from this release).
 
-## Queued: R5 on P2 956a9a7
+## Superseded queue entry: R5 on P2 956a9a7 (never bound; R5 was built on 723748d)
 
 | | Value |
 |---|---|

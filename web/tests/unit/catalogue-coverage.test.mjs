@@ -41,8 +41,9 @@ function runtime(path, dependencies){
  new Function('require','module','exports',code)(id=>{
    if(id==='server-only')return {};
    if(id in dependencies)return dependencies[id];
-   // the vendored, hash-checked P1 R4 never-official brand list (read-model official/market label rule)
-   if(id==='../../../p1-accepted/U12-CEO3-R4/buyer-decision/tools/ceo_price_overrides.json')return JSON.parse(readFileSync('p1-accepted/U12-CEO3-R4/buyer-decision/tools/ceo_price_overrides.json','utf8'));
+   // the vendored, hash-checked P1 R5 never-official brand list (read-model official/market label rule)
+   if(id==='../../../p1-accepted/U12-CEO3-R5/buyer-decision/tools/ceo_fact_decisions.json')return JSON.parse(readFileSync('p1-accepted/U12-CEO3-R5/buyer-decision/tools/ceo_fact_decisions.json','utf8'));
+   if(id==='../../../p1-accepted/U12-CEO3-R5/buyer-decision/tools/ceo_price_overrides.json')return JSON.parse(readFileSync('p1-accepted/U12-CEO3-R5/buyer-decision/tools/ceo_price_overrides.json','utf8'));
    throw Error('Unexpected runtime import '+id);
  },module,module.exports);
  return module.exports;
@@ -198,17 +199,22 @@ test('November CEO intake reaches browse prices with exact provenance and distin
    assert.equal(t.confirmation_status,'CEO_CONFIRMED');
    assert.ok(t.confirmation_authority);
    assert.match(t.source_sha256,/^[a-f0-9]{64}$/);
-   // Accepted CEO intakes are dated (ceo1102-*, ceo1104-*, ...). Provenance: the ID date, ledger row and as-of date must agree,
-   // and the intake cannot postdate the serving release.
+   // Accepted CEO intakes are dated (ceo1102-*, ceo1104-*, ceo1108-*, ...). Provenance: the ledger row carries the ID's intake
+   // date, and neither the intake nor the price's as-of date can postdate the serving release. The as-of date may differ from
+   // the intake date: a list can be older (8 Nov intake, 3 Nov Changan list) or verified later (ceo1104-016, checked 5 Nov).
    const m=/^ceo(\d{2})(\d{2})-\d{3}$/.exec(t.price_id);
    assert.ok(m,t.price_id);
    assert.ok(String(t.ledger_row_id).startsWith(`CEO${m[1]}${m[2]}-`),`${t.price_id} ledger ${t.ledger_row_id}`);
-   assert.equal(t.as_of,`${release.generated_as_of.slice(0,4)}-${m[1]}-${m[2]}`,t.price_id);
+   const intake=`${release.generated_as_of.slice(0,4)}-${m[1]}-${m[2]}`;
+   assert.match(t.as_of,/^\d{4}-\d{2}-\d{2}$/,t.price_id);
+   assert.ok(intake<=release.generated_as_of,t.price_id);
    assert.ok(t.as_of<=release.generated_as_of,t.price_id);
   }
  }
  assert.ok(retail>=80);
  for(const slug of ['jaecoo-j5','jaecoo-j7','jaecoo-j7-phev','jaecoo-j8-phev','jac-rf8-phev'])assert.ok(V.vehicles().get(slug),slug);
+ // CEO display name from the vendored P1 R5 decisions: same name on the car page as in Find My Car
+ assert.equal(V.vehicles().get('lexus-lx600').model.en,'LX');assert.equal(V.vehicles().get('lexus-rx').model.en,'RX');
  const phev=V.vehicles().get('jaecoo-j7-phev');
  const range=phev.p2.specs.find(s=>s.key==='ev_range_km');
  assert.equal(range.facts[0].value,'100');
