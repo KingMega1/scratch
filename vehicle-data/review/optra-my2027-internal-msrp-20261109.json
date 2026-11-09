@@ -1,0 +1,25 @@
+{
+  "state": "PENDING_P2_VERIFICATION",
+  "model": "chevrolet/optra",
+  "model_id": "m_000093",
+  "source": "CEO-supplied crop of internal MSRP list; forwarded 9 Nov 2026; issuer and effective date not visible",
+  "effective_date": null,
+  "trim_mapping_status": "PROVISIONAL; confirm against distributor crosswalk",
+  "rows": [
+    {
+      "code": "CHE-310-LV01",
+      "model_year": 2027,
+      "proposed_trim": "LS",
+      "prior_egp": 784900,
+      "msrp_egp": 804900
+    },
+    {
+      "code": "CHE-310C-LV2",
+      "model_year": 2027,
+      "proposed_trim": "LT",
+      "prior_egp": 809900,
+      "msrp_egp": 829900
+    }
+  ],
+  "acceptance": "Verify full issuer list or authorized P2 provenance and trim mapping; supersede matching accepted rows only if accepted. Independent of MY2026 AT-51 torque recovery."
+}
