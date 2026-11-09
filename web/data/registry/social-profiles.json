@@ -1,9 +1,16 @@
 {
-  "note": "Organization sameAs (CEO 9 Nov). Only entries with verified=true reach the JSON-LD: live HTTP 200 and the CarIndexed profile shown on the page. Evidence comes from the web-sameas-verify workflow (GitHub-hosted runner).",
+  "note": "Organization sameAs (CEO 9 Nov). Only entries with verified=true reach the JSON-LD: live HTTP 200 and the CarIndexed profile shown on the page. Evidence: web-sameas-verify run 42643443378 (GitHub-hosted runner, 2026-11-09).",
   "candidates": [
-    { "url": "https://www.instagram.com/carindexed", "verified": false, "evidence": null },
-    { "url": "https://www.youtube.com/@carindexed", "verified": false, "evidence": null },
-    { "url": "https://www.threads.com/@carindexed", "verified": false, "evidence": null }
+    { "url": "https://www.youtube.com/@carindexed", "verified": true,
+      "evidence": { "checked_at": "2026-11-09T15:19:20Z", "run": "https://github.com/KingMega1/scratch/actions/runs/42643443378", "status": 200, "final_url": "https://www.youtube.com/@carindexed", "title": "CarIndexed - YouTube", "og_title": "CarIndexed", "og_url": "https://www.youtube.com/channel/UC9_O78EQwSSUE-lqbP5CLnA" } },
+    { "url": "https://www.instagram.com/carindexed", "verified": false,
+      "evidence": { "checked_at": "2026-11-09T15:19:20Z", "run": "https://github.com/KingMega1/scratch/actions/runs/42643443378", "status": 429, "final_url": "https://www.instagram.com/accounts/login/?next=…", "reason": "login wall / rate limit; profile not visible" } },
+    { "url": "https://www.threads.com/@carindexed", "verified": false,
+      "evidence": { "checked_at": "2026-11-09T15:19:21Z", "run": "https://github.com/KingMega1/scratch/actions/runs/42643443378", "status": 200, "title": "Threads", "reason": "generic page; profile name not present in the served page" } }
   ],
-  "omitted_unverified": ["X", "Facebook", "TikTok", "LinkedIn"]
+  "omitted_unverified": {
+    "x.com/carindexed": "403 bot challenge", "facebook.com/carindexed": "400 login redirect", "tiktok.com/@carindexed": "200 generic page, no profile name",
+    "linkedin.com/company/carindexed": "403 bot challenge", "instagram.com/carindex.eg": "429 login wall", "x.com/CarIndexeg": "403 bot challenge",
+    "facebook.com/1311474358708212": "400 login redirect"
+  }
 }
