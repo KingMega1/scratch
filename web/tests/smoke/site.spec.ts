@@ -556,7 +556,8 @@ test.describe('production-only boundaries (local build, no deploy)',()=>{
   test('production loads GTM-5WVQ2M7S once, with noscript fallback, and CSP allows it',async({request})=>{
     for(const l of ['ar','en']){
       const res=await request.get(`/${l}`);const html=await res.text();
-      expect(html.match(/googletagmanager\.com\/gtm\.js\?id=GTM-5WVQ2M7S/g)?.length).toBe(1);
+      // count real <script> tags; the React flight payload repeats the markup as text
+      expect(html.match(/<script[^>]*src="https:\/\/www\.googletagmanager\.com\/gtm\.js\?id=GTM-5WVQ2M7S"/g)?.length).toBe(1);
       expect(html).toContain('googletagmanager.com/ns.html?id=GTM-5WVQ2M7S');
       const csp=res.headers()['content-security-policy'];
       expect(csp).toMatch(/script-src [^;]*https:\/\/www\.googletagmanager\.com/);
