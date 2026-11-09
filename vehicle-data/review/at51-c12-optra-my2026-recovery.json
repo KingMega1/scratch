@@ -1,0 +1,55 @@
+{
+  "package_id": "AT-51-C12-RECOVERY",
+  "state": "READY_FOR_P2_REVIEW",
+  "baseline": {
+    "commit": "a7514317198856c066d1810af5d3c5764108ffbd",
+    "serving_blob": "425fd9b7c8ba1ca632217edc1fc74a5c497de738",
+    "revision": "76f912a75beb"
+  },
+  "source": {
+    "issuer": "Chevrolet Egypt",
+    "tier": "A",
+    "url": "https://www.chevroletarabia.com/content/dam/chevrolet/middle-east/egypt/english/index/cars/2026-optra/the-all-new-optra-2026-brochure.pdf",
+    "drive_url": "https://drive.google.com/file/d/1PHuvMghoQJxENkUo16FwqDA2Lijz-3Iq/view",
+    "sha256": "e5f77f5fe2cc131517fce3ba7186e6c434824853d5289a6e8aba82a94be30837",
+    "page": 7
+  },
+  "rows": [
+    {
+      "canonical_id": "chevrolet/optra",
+      "p2_model_id": "m_000093",
+      "model_year": 2026,
+      "trim": "LS",
+      "field": "torque_nm",
+      "current_value": null,
+      "proposed_value": 140,
+      "unit": "Nm",
+      "rpm_range": [
+        3400,
+        4400
+      ]
+    },
+    {
+      "canonical_id": "chevrolet/optra",
+      "p2_model_id": "m_000093",
+      "model_year": 2026,
+      "trim": "LT",
+      "field": "torque_nm",
+      "current_value": null,
+      "proposed_value": 140,
+      "unit": "Nm",
+      "rpm_range": [
+        3400,
+        4400
+      ]
+    }
+  ],
+  "scope": "OEM brochure page 7 shows LS/LT and a shared powertrain table. Current serving price rows are MY2027; no inheritance to MY2027 or price changes. P2 to accept as MY2026 trim evidence only.",
+  "receipt": {
+    "attempted": 2,
+    "accepted": 0,
+    "blocked": 0,
+    "pending_p2": 2,
+    "token_usage": "UNAVAILABLE"
+  }
+}
