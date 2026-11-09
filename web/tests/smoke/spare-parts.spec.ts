@@ -1,4 +1,4 @@
-import { test, expect } from './fixtures';
+import { test, expect, getNoFollow } from './fixtures';
 import { readFileSync } from 'node:fs';
 
 /* /spare-parts (CEO 9 Nov) and the GTM dataLayer contract. Parts data is a SAMPLE: no figures, no part numbers. */
@@ -8,7 +8,7 @@ const CSP = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.g
 
 test.describe('spare parts', () => {
   test('/spare-parts defaults to Arabic RTL; /en/spare-parts is English LTR; both noindex while the data is a sample', async ({ page, request }) => {
-    const r = await request.get('/spare-parts', { maxRedirects: 0 });
+    const r = await getNoFollow(request, '/spare-parts');
     expect(r.status()).toBe(307);
     expect(r.headers()['location']).toMatch(/\/ar\/spare-parts$/);
     for (const [l, dir, h1] of [['ar', 'rtl', 'القطعة الصح لعربيتك، قبل ما تدفع.'], ['en', 'ltr', 'The right part for your car, before you pay.']]) {

@@ -24,3 +24,17 @@ export const test = base.extend({
     if (LOCAL) await page.unrouteAll({ behavior: 'ignoreErrors' });
   },
 });
+
+/* GET without following redirects, past Vercel's preview-protection hop: with the bypass headers set, Vercel's first answer
+   is its own 307 back to the SAME path (it sets the bypass cookie). Only that self-redirect is skipped (the request context
+   now holds the cookie); the application's redirect is then returned unchanged, status and Location intact. */
+export async function getNoFollow(request: import('@playwright/test').APIRequestContext, path: string) {
+  let res = await request.get(path, { maxRedirects: 0 });
+  for (let i = 0; i < 2 && [302, 307].includes(res.status()); i++) {
+    const loc = res.headers()['location'] || '';
+    const samePath = new URL(loc, 'http://x').pathname === new URL(path, 'http://x').pathname && !!res.headers()['set-cookie'];
+    if (!samePath) break;
+    res = await request.get(path, { maxRedirects: 0 });
+  }
+  return res;
+}

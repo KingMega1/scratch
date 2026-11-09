@@ -1,4 +1,4 @@
-import { test, expect, type Page } from './fixtures';
+import { test, expect, getNoFollow, type Page } from './fixtures';
 import { readFileSync } from 'node:fs';
 
 const SHOTS = process.env.SMOKE_SCREENSHOTS === '1';
@@ -166,7 +166,7 @@ test.describe('boundaries', () => {
   });
   test('/cars/lexus-lx redirects to the LX page in both locales', async ({ request }) => {
     for (const l of ['en', 'ar']) {
-      const res = await request.get(`/${l}/cars/lexus-lx`, { maxRedirects: 0 });
+      const res = await getNoFollow(request, `/${l}/cars/lexus-lx`);
       expect(res.status()).toBe(308);
       expect(res.headers()['location']).toBe(`/${l}/cars/lexus-lx600`);
     }
