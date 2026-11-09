@@ -14,6 +14,7 @@ const NAV = [
   ['cars', '/cars'],
   ['compare', '/compare'],
   ['market', '/market'],
+  ['parts', '/spare-parts'],
   ['search', '/search'],
 ] as const;
 

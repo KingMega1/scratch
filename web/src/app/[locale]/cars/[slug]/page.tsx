@@ -99,7 +99,7 @@ export default async function CarDetail({ params }: P) {
   );
   return (
     <div className="wrap section" style={{ paddingBlockStart: 24 }} data-model-id={car.id}>
-      <TrackOnMount event="car_view" props={{ model_id: car.id }} />
+      <TrackOnMount event="car_view" props={{ model_id: car.id }} top={{ car_slug: car.id }} />
       <nav className="breadcrumb" aria-label="breadcrumb"><Link href={L('/cars')}>{t.nav.cars}</Link></nav>
 
       <section className="cd-hero" aria-labelledby="car-h">

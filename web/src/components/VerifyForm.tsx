@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import type { Locale } from '@/lib/i18n/config';
 import { dict } from '@/lib/i18n/dictionaries';
 import { track } from '@/lib/analytics/client';
+import { pushGtm } from '@/lib/analytics/gtm';
 
 /* Mobile-first verification UI. Values are posted to the BFF only; never logged or sent to analytics. */
 export default function VerifyForm({ locale, enabled, compact = false }: { locale: Locale; enabled: boolean; compact?: boolean }) {
@@ -18,6 +19,7 @@ export default function VerifyForm({ locale, enabled, compact = false }: { local
     const res = await fetch('/api/v1/identity/otp/start', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ channel: 'sms', destination: fd.get('phone') }) }).catch(() => null);
     setBusy(false);
     setMsg(res && res.ok ? null : a.gated);
+    if (res && res.ok) pushGtm({ event: 'lead' }); // lead captured (no field values)
   }
   // P3 AT-42 item 4: where sign-in is off, a compact note instead of a full disabled form (same copy, same tracking).
   if (compact && !enabled) return <p className="gated small" role="note" data-identity-gated="true">{a.gated}</p>;

@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState, type MouseEvent } from 'react
 import Link from 'next/link';
 import { setAnalyticsContext, track } from '@/lib/analytics/client';
 import { dict } from '@/lib/i18n/dictionaries';
+import { budgetBand, pushGtm } from '@/lib/analytics/gtm';
 import VerifyForm from '@/components/VerifyForm';
 
 /* Find My Car client. Every human-facing string inside the tool is P1 engine-owned copy delivered by the server
@@ -56,6 +57,7 @@ export default function FindMyCar({ locale, site, shareToken, identityEnabled = 
       if (next.view === 'result') {
         const r = next.result;
         setAnalyticsContext({ engine_version: r.engine_version, universe_version: r.universe_version, result_id: r.result_id });
+        pushGtm({ event: 'find_my_car_complete', budget_band: budgetBand(r.budget?.amount ?? (next as any).brief?.budget), result_count: r.hero ? 1 + (r.alternatives || []).length : 0 });
         track('fmc_result_view', { mode: r.mode, confidence_level: r.confidence?.level ?? null, hero_id: r.hero?.id ?? null, alt_ids: (r.alternatives || []).map((a: any) => a.id), result_id: r.result_id, outside_site: Object.values(next.website).filter(v => v === null).length });
         if (opts.push !== false && r.share?.r) history.replaceState(history.state, '', `?r=${r.share.r}`);
       }

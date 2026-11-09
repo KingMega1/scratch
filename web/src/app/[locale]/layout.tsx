@@ -7,6 +7,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageView from '@/components/PageView';
 import { GtmHead, GtmNoScript } from '@/components/GoogleTagManager';
+import OrgJsonLd from '@/components/OrgJsonLd';
 import { LOCALES, dirOf, isLocale } from '@/lib/i18n/config';
 import { dict } from '@/lib/i18n/dictionaries';
 import { SITE_URL } from '@/lib/seo';
@@ -41,6 +42,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
         <link rel="preload" href={locale === 'ar' ? '/fonts/NotoKufiArabic-Variable.subset.woff2' : '/fonts/Archivo-Variable.subset.woff2'} as="font" type="font/woff2" crossOrigin="anonymous" />
         {trackEndpoint ? <meta name="ci-track-endpoint" content={trackEndpoint} /> : null}
         {env === 'production' ? <GtmHead /> : null}
+        <OrgJsonLd />
       </head>
       <body>
         {env === 'production' ? <GtmNoScript /> : null}

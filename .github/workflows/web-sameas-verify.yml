@@ -1,0 +1,20 @@
+name: web-sameas-verify
+# Evidence for Organization JSON-LD sameAs: fetch each candidate profile from a GitHub-hosted runner (open internet)
+# and log status + identifying metadata. Read-only; no secrets. Trigger: push a change to web/ops/sameas-verify.request.
+on:
+  push:
+    paths: ['web/ops/sameas-verify.request']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Fetch candidates
+        run: node web/ops/verify-sameas.mjs $(grep -v '^#' web/ops/sameas-verify.request)

@@ -25,7 +25,8 @@ export function setAnalyticsContext(c: Record<string, unknown>) {
   window.__ciCtx = { ...(window.__ciCtx || {}), ...c };
 }
 
-export function track(event: WebEvent, props: Props = {}) {
+/* `top`: flat keys GTM reads at the top level of the push (e.g. car_slug on car_view). Ids only, never free text. */
+export function track(event: WebEvent, props: Props = {}, top: Record<string, string | number> = {}) {
   if (typeof window === 'undefined') return;
   const required = WEB_EVENTS[event] as readonly string[];
   if (!required) return;
@@ -39,8 +40,10 @@ export function track(event: WebEvent, props: Props = {}) {
   const route = routeKey(location.pathname);
   let referrer_origin: string | null = null;
   try { referrer_origin = document.referrer ? new URL(document.referrer).origin : null; } catch { referrer_origin = null; }
+  const flat: Record<string, string | number> = {};
+  for (const [k, v] of Object.entries(top)) if (!FORBIDDEN_KEYS.test(k) && /^[a-z_]{1,32}$/.test(k)) flat[k] = v;
   const e = {
-    event, schema: SCHEMA_VERSION, event_id: uuid(), ts: new Date().toISOString(),
+    event, ...flat, schema: SCHEMA_VERSION, event_id: uuid(), ts: new Date().toISOString(),
     session_id: session, anon_id: anon, client_seq: ++seq, source_app: 'web',
     engine_version: (ctx.engine_version as string) ?? null, universe_version: (ctx.universe_version as string) ?? null,
     result_id: (ctx.result_id as string) ?? null,

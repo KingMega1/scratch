@@ -1,0 +1,9 @@
+{
+  "note": "Organization sameAs (CEO 9 Nov). Only entries with verified=true reach the JSON-LD: live HTTP 200 and the CarIndexed profile shown on the page. Evidence comes from the web-sameas-verify workflow (GitHub-hosted runner).",
+  "candidates": [
+    { "url": "https://www.instagram.com/carindexed", "verified": false, "evidence": null },
+    { "url": "https://www.youtube.com/@carindexed", "verified": false, "evidence": null },
+    { "url": "https://www.threads.com/@carindexed", "verified": false, "evidence": null }
+  ],
+  "omitted_unverified": ["X", "Facebook", "TikTok", "LinkedIn"]
+}
