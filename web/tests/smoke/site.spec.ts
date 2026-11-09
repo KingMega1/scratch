@@ -171,6 +171,10 @@ test.describe('boundaries', () => {
       expect(res.headers()['location']).toBe(`/${l}/cars/lexus-lx600`);
     }
   });
+  test('preview and test builds do not load Google Tag Manager', async ({ request }) => {
+    test.skip(process.env.SMOKE_PRODUCTION === '1');
+    for (const l of ['ar', 'en']) expect(await (await request.get(`/${l}`)).text()).not.toContain('googletagmanager.com/gtm.js');
+  });
   test('car detail Take is a data-bound slot', async ({ page }) => {
     await page.goto('/en/cars/hyundai-tucson');
     await expect(page.locator('[data-slot="carindex-take"]')).toHaveAttribute('data-bound', 'false');
@@ -548,6 +552,16 @@ test.describe('production-only boundaries (local build, no deploy)',()=>{
     await page.goto('/en?env=qa');await page.waitForTimeout(100);
     expect(await page.evaluate(()=>localStorage.getItem('ci_events'))).toBeNull();
     await expect(page.locator('html')).toHaveAttribute('data-env','prod');
+  });
+  test('production loads GTM-5WVQ2M7S once, with noscript fallback, and CSP allows it',async({request})=>{
+    for(const l of ['ar','en']){
+      const res=await request.get(`/${l}`);const html=await res.text();
+      expect(html.match(/googletagmanager\.com\/gtm\.js\?id=GTM-5WVQ2M7S/g)?.length).toBe(1);
+      expect(html).toContain('googletagmanager.com/ns.html?id=GTM-5WVQ2M7S');
+      const csp=res.headers()['content-security-policy'];
+      expect(csp).toMatch(/script-src [^;]*https:\/\/www\.googletagmanager\.com/);
+      expect(csp).toMatch(/connect-src [^;]*google-analytics\.com/);
+    }
   });
   test('production indexes launch pages but keeps FMC and account noindex',async({request})=>{
     const html=await(await request.get('/en')).text();expect(html).not.toMatch(/<meta name="robots" content="noindex/);

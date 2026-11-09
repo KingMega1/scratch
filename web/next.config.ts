@@ -4,13 +4,17 @@ const isDev = process.env.NODE_ENV !== 'production';
 
 // S1 CSP baseline. Scripts: self + Next inline bootstrap (unsafe-inline until nonce rollout in S3).
 // Images: self only (verified model photos are served from /media/models; see data/registry/media-verified.json).
+// Google Tag Manager + GA4 hosts (Google's documented CSP for GTM); GTM itself loads on production only.
+const GTM_SCRIPT = 'https://www.googletagmanager.com';
+const GA_HOSTS = 'https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com';
 const csp = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''}`,
+  `script-src 'self' 'unsafe-inline' ${GTM_SCRIPT}${isDev ? " 'unsafe-eval'" : ''}`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data:",
+  `img-src 'self' data: ${GA_HOSTS}`,
   "font-src 'self'",
-  "connect-src 'self'",
+  `connect-src 'self' ${GA_HOSTS}`,
+  `frame-src ${GTM_SCRIPT}`,
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",

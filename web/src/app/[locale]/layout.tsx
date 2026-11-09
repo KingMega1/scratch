@@ -6,6 +6,7 @@ import '@/styles/site.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageView from '@/components/PageView';
+import { GtmHead, GtmNoScript } from '@/components/GoogleTagManager';
 import { LOCALES, dirOf, isLocale } from '@/lib/i18n/config';
 import { dict } from '@/lib/i18n/dictionaries';
 import { SITE_URL } from '@/lib/seo';
@@ -39,8 +40,10 @@ export default async function LocaleLayout({ children, params }: { children: Rea
         <link rel="preload" href={locale === 'ar' ? '/fonts/IBMPlexSansArabic-Regular.subset.woff2' : '/fonts/IBMPlexSans-Variable.subset.woff2'} as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href={locale === 'ar' ? '/fonts/NotoKufiArabic-Variable.subset.woff2' : '/fonts/Archivo-Variable.subset.woff2'} as="font" type="font/woff2" crossOrigin="anonymous" />
         {trackEndpoint ? <meta name="ci-track-endpoint" content={trackEndpoint} /> : null}
+        {env === 'production' ? <GtmHead /> : null}
       </head>
       <body>
+        {env === 'production' ? <GtmNoScript /> : null}
         <a className="skip" href="#main">{t.skip}</a>
         <Header locale={locale} />
         <main id="main" tabIndex={-1}>{children}</main>
