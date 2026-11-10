@@ -24,13 +24,13 @@
       "market_status_official": 37,
       "specs_accepted": 200,
       "warranty_accepted": 110,
-      "brochure_accepted": 83,
+      "brochure_accepted": 84,
       "hero_accepted": 84,
       "hero_accepted_hq": 80,
       "hero_limited_archive": 123,
       "gallery_models": 72,
       "logo_accepted": 254,
-      "fully_enriched": 39
+      "fully_enriched": 40
     }
   },
   "relation": "Website on-sale set equals pinned U11 on-sale set (283). 'accepted' carries only P2-ACCEPTED values; absent means UNKNOWN. P1 recommendation semantics unchanged.",
@@ -17299,7 +17299,6 @@
       "price_status": "ACCEPTED",
       "conflicts": [],
       "missing_evidence": [
-        "NO_OFFICIAL_BROCHURE",
         "GENERATION_UNKNOWN"
       ],
       "accepted": {
@@ -17477,6 +17476,22 @@
               "source": "https://www.contactcars.com/en/new-cars/chevrolet-optra/0bb413b28ae1 | https://www.contactcars.com/en/new-cars/chevrolet-optra/37f5a62f95d0 | https://www.contactcars.com/en/new-cars/chevrolet-optra/a7d1b776939f | https://www.contactcars.com/en/new-cars/chevrolet-optra/b58682035ea5"
             }
           ],
+          "torque_nm": [
+            {
+              "value": "140",
+              "unit": "Nm",
+              "applicability": "MY2026 LS (3400-4400 rpm)",
+              "issuer": "Chevrolet Egypt",
+              "source": "drive:1PHuvMghoQJxENkUo16FwqDA2Lijz-3Iq#page=7&sha256=e5f77f5fe2cc131517fce3ba7186e6c434824853d5289a6e8aba82a94be30837"
+            },
+            {
+              "value": "140",
+              "unit": "Nm",
+              "applicability": "MY2026 LT (3400-4400 rpm)",
+              "issuer": "Chevrolet Egypt",
+              "source": "drive:1PHuvMghoQJxENkUo16FwqDA2Lijz-3Iq#page=7&sha256=e5f77f5fe2cc131517fce3ba7186e6c434824853d5289a6e8aba82a94be30837"
+            }
+          ],
           "transmission": [
             {
               "value": "CVT",
@@ -17528,7 +17543,16 @@
             "source": "https://www.chevroletarabia.com/eg-ar/cars/optra"
           }
         ],
-        "brochures": [],
+        "brochures": [
+          {
+            "drive_id": "1PHuvMghoQJxENkUo16FwqDA2Lijz-3Iq",
+            "title": "Chevrolet Egypt - All-New Optra MY2026 OEM brochure.pdf",
+            "issuer": "Chevrolet Egypt",
+            "scope": "MY2026 LS/LT",
+            "url": "https://drive.google.com/file/d/1PHuvMghoQJxENkUo16FwqDA2Lijz-3Iq/view",
+            "sha256": "e5f77f5fe2cc131517fce3ba7186e6c434824853d5289a6e8aba82a94be30837"
+          }
+        ],
         "logo": {
           "src": "/media/p2/brands/chevrolet.png",
           "credit": "Logo: Wikimedia Commons (Public domain)",
@@ -63874,7 +63898,7 @@
       "retained_in_p2": true
     }
   ],
-  "revision": "76f912a75beb",
+  "revision": "765bc533ee0a",
   "market_additions": [
     {
       "p1_id": null,

@@ -1,0 +1,26 @@
+{
+  "package_id": "AT-51-C12-RECOVERY",
+  "decision": "P2_ACCEPTED",
+  "decided_at": "2026-11-10",
+  "staging_commit": "511136ca3681b9fbd66fbcccb7925e7d57aeca78",
+  "staging_file": "vehicle-data/review/at51-c12-optra-my2026-recovery.json",
+  "baseline": {"commit": "a7514317198856c066d1810af5d3c5764108ffbd", "head_compared": "b0672eeef74a6faa7cac897e85f412be5ad6fb15", "serving_blob": "425fd9b7c8ba1ca632217edc1fc74a5c497de738", "revision": "76f912a75beb"},
+  "source_check": {
+    "drive_id": "1PHuvMghoQJxENkUo16FwqDA2Lijz-3Iq",
+    "bytes": 2887032,
+    "sha256_recomputed": "e5f77f5fe2cc131517fce3ba7186e6c434824853d5289a6e8aba82a94be30837",
+    "sha256_match_staging": true,
+    "page": 7,
+    "page_text": "Maximum Torque (N.m/RPM) 140 @ 3400~4400; single merged cell under LS and LT",
+    "model_year_basis": "brochure cover 'OPTRA 2026'"
+  },
+  "rows": [
+    {"canonical_id": "chevrolet/optra", "p2_model_id": "m_000093", "model_year": 2026, "trim": "LS", "field": "torque_nm", "old_value": null, "accepted_value": 140, "unit": "Nm", "rpm_range": [3400, 4400],
+     "disposition": "ACCEPTED", "feedback": "Matches OEM brochure p.7 (140 @ 3400~4400, LS/LT shared cell); SHA256 matches; no torque fact existed for m_000093. Served as applicability 'MY2026 LS (3400-4400 rpm)'. Not applied to MY2027 price rows."},
+    {"canonical_id": "chevrolet/optra", "p2_model_id": "m_000093", "model_year": 2026, "trim": "LT", "field": "torque_nm", "old_value": null, "accepted_value": 140, "unit": "Nm", "rpm_range": [3400, 4400],
+     "disposition": "ACCEPTED", "feedback": "Matches OEM brochure p.7 (140 @ 3400~4400, LS/LT shared cell); SHA256 matches; no torque fact existed for m_000093. Served as applicability 'MY2026 LT (3400-4400 rpm)'. Not applied to MY2027 price rows."}
+  ],
+  "also_registered": "registry/brochures.csv: the same OEM brochure as ACCEPT (scope MY2026 LS/LT), required by the accepted-fact source rule; clears NO_OFFICIAL_BROCHURE for m_000093.",
+  "not_changed": "MY2027 prices (LS 784,900 / LT 809,900), engine_cc, dimensions, fuel tank conflicts, MY2027 MSRP intake e2fda1bd.",
+  "receipt": {"attempted": 2, "accepted": 2, "blocked": 0, "pending_p2": 0}
+}

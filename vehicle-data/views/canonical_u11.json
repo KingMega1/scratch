@@ -25,8 +25,8 @@
   }
  ],
  "counts": {
-  "brochure_accepted": 83,
-  "fully_enriched": 39,
+  "brochure_accepted": 84,
+  "fully_enriched": 40,
   "gallery_models": 72,
   "hero_accepted": 84,
   "hero_accepted_hq": 80,
@@ -42,8 +42,8 @@
   "warranty_accepted": 110
  },
  "counts_market_universe": {
-  "brochure_accepted": 89,
-  "fully_enriched": 39,
+  "brochure_accepted": 90,
+  "fully_enriched": 40,
   "gallery_models": 75,
   "hero_accepted": 87,
   "hero_accepted_hq": 83,
@@ -16607,7 +16607,16 @@
   },
   {
    "brand": "Chevrolet",
-   "brochures": [],
+   "brochures": [
+    {
+     "drive_id": "1PHuvMghoQJxENkUo16FwqDA2Lijz-3Iq",
+     "issuer": "Chevrolet Egypt",
+     "scope": "MY2026 LS/LT",
+     "sha256": "e5f77f5fe2cc131517fce3ba7186e6c434824853d5289a6e8aba82a94be30837",
+     "title": "Chevrolet Egypt - All-New Optra MY2026 OEM brochure.pdf",
+     "url": "https://drive.google.com/file/d/1PHuvMghoQJxENkUo16FwqDA2Lijz-3Iq/view"
+    }
+   ],
    "conflicts": [],
    "gallery": [
     {
@@ -16690,7 +16699,6 @@
     }
    ],
    "gaps": [
-    "NO_OFFICIAL_BROCHURE",
     "GENERATION_UNKNOWN"
    ],
    "generation": null,
@@ -16938,6 +16946,22 @@
       "source": "https://www.contactcars.com/en/new-cars/chevrolet-optra/0bb413b28ae1 | https://www.contactcars.com/en/new-cars/chevrolet-optra/37f5a62f95d0 | https://www.contactcars.com/en/new-cars/chevrolet-optra/a7d1b776939f | https://www.contactcars.com/en/new-cars/chevrolet-optra/b58682035ea5",
       "unit": "",
       "value": "5"
+     }
+    ],
+    "torque_nm": [
+     {
+      "applicability": "MY2026 LS (3400-4400 rpm)",
+      "issuer": "Chevrolet Egypt",
+      "source": "drive:1PHuvMghoQJxENkUo16FwqDA2Lijz-3Iq#page=7&sha256=e5f77f5fe2cc131517fce3ba7186e6c434824853d5289a6e8aba82a94be30837",
+      "unit": "Nm",
+      "value": "140"
+     },
+     {
+      "applicability": "MY2026 LT (3400-4400 rpm)",
+      "issuer": "Chevrolet Egypt",
+      "source": "drive:1PHuvMghoQJxENkUo16FwqDA2Lijz-3Iq#page=7&sha256=e5f77f5fe2cc131517fce3ba7186e6c434824853d5289a6e8aba82a94be30837",
+      "unit": "Nm",
+      "value": "140"
      }
     ],
     "transmission": [
