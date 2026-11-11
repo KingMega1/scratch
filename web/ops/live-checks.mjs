@@ -27,6 +27,19 @@ for (const l of ['ar', 'en']) {
     ok('optimised image 200', i.status === 200, `${i.status} ${i.headers.get('content-type')} cache-control=${i.headers.get('cache-control')} age=${i.headers.get('age')} x-vercel-cache=${i.headers.get('x-vercel-cache')}`);
     const src = decodeURIComponent(m[1]); const s = await get(B + src); ok('source media 200', s.status === 200, `${src} ${s.status} cache-control=${s.headers.get('cache-control')} last-modified=${s.headers.get('last-modified')}`);
   } else ok('optimised image found', false, 'no /_next/image on /en'); }
+// Image freshness: files replaced in place on 4 Nov 2026 08:16 UTC. Live source bytes must equal the repo file, and the
+// optimised copy must not be older than the replacement (an older cache entry would be a stale photo).
+{ const { createHash } = await import('node:crypto'); const { readFileSync } = await import('node:fs');
+  const replacedAt = Date.parse('2026-11-04T08:16:53Z');
+  for (const f of ['p2/models/soueast-s06.webp', 'p2/models/soueast-s-07.webp', 'p2/models/soueast-s-05.webp', 'p2/models/toyota-corolla/01.webp', 'p2/models/seat-leon/02.webp']) {
+    const sha = b => createHash('sha256').update(b).digest('hex').slice(0, 12);
+    const repo = sha(readFileSync(`web/public/media/${f}`));
+    const s = await get(`${B}/media/${f}`); const live = sha(Buffer.from(await s.arrayBuffer()));
+    ok(`source fresh ${f}`, s.status === 200 && live === repo, `live ${live} repo ${repo}`);
+    const i = await get(`${B}/_next/image?url=${encodeURIComponent('/media/' + f)}&w=640&q=75`, { headers: { accept: 'image/avif,image/webp,*/*' } });
+    const age = Number(i.headers.get('age') || 0); const cachedAt = Date.now() - age * 1000;
+    ok(`optimised fresh ${f}`, i.status === 200 && cachedAt >= replacedAt, `${i.status} age=${age}s x-vercel-cache=${i.headers.get('x-vercel-cache')}`);
+  } }
 // Health binding
 { const r = await get(`${B}/api/health`); const j = await r.json(); ok('health', r.status === 200 && j.env === 'production' && j.recommendation?.integrity === true, JSON.stringify({ env: j.env, release: j.recommendation?.release, status: j.recommendation?.status })); }
 console.log(`\n${fail ? fail + ' FAILED' : 'ALL PASS'}`); process.exit(fail ? 1 : 0);
