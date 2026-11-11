@@ -680,6 +680,17 @@ test.describe('buyer journey end to end', () => {
       const rv = ev.find(e => e.event === 'fmc_result_view')!;
       expect(rv.result_id).toMatch(/^cr1_/); expect(rv.engine_version).toBe(P1B.engine);
       expect(JSON.stringify(ev)).not.toContain(FMC[l].text);
+      // find_my_car_complete (GA4 key event): exactly one push, coarse params only, same shape in AR and EN
+      const done = ev.filter(e => e.event === 'find_my_car_complete') as unknown as Record<string, unknown>[];
+      expect(done).toHaveLength(1);
+      expect(Object.keys(done[0]).sort()).toEqual(['budget_band', 'event', 'result_count']);
+      expect(done[0].budget_band).toMatch(/^(lt_1m|1m_1_5m|1_5m_2_5m|2_5m_4m|gte_4m)$/);
+      expect(done[0].result_count).toBe(await page.locator('.fmc-result [data-model-id]').count());
+      // adjusting the budget re-renders results but must not fire the completion event again
+      await page.locator('.fmc-budget-inline .icon-btn').last().click();
+      await expect(page.locator('.fmc-result')).toBeVisible({ timeout: 20_000 });
+      const after = await page.evaluate(() => (window as unknown as { dataLayer: { event: string }[] }).dataLayer.filter(e => e.event === 'find_my_car_complete').length);
+      expect(after).toBe(1);
       expect(JSON.stringify(ev)).not.toMatch(/"(text|free_text|notes|q)"\s*:/);
       // Car Detail hop from a result that includes a car with a page on the site
       let token = '', target = '';
