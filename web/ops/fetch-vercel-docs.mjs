@@ -1,7 +1,7 @@
 // Evidence fetch (P0 11 Nov 2026): print the sentences of Vercel's plan/limits docs that answer the incident questions.
 // Read-only; run on a GitHub-hosted runner (the agent sandbox cannot reach vercel.com).
 const pages = process.argv.slice(2);
-const KEYS = /paus|resume|unpause|upgrad|\$\s?\d|per month|\/mo|per seat|per member|included|fast origin transfer|fast data transfer|function invocation|active cpu|isr (read|write)|edge request|image (optimi|transform)|spend management|hard limit|commercial|30.day|billing cycle|exceed/i;
+const KEYS = /DEPLOYMENT_PAUSED|temporarily paused|paus|resume|unpause|upgrad|\$\s?\d|per month|\/mo|per seat|per member|included|fast origin transfer|fast data transfer|function invocation|active cpu|isr (read|write)|edge request|image (optimi|transform)|spend management|hard limit|commercial|30.day|billing cycle|exceed/i;
 for (const url of pages) {
   let text = '';
   try {
