@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-11",
+  "intake_scout": {
+    "expected_row": "INTAKE-2026-11-11",
+    "state": "BLOCKED_INTERNAL",
+    "reason": "No matching row found by exact Agent Tasks & Handoffs SQL or targeted Notion search"
+  },
+  "baseline": "62f6cbb7d701f84992ff0e3304ff5d85be7a9fa1",
+  "candidates": [
+    {
+      "id": "DRIVE-1JKqCM9SBsc1ss8OjqpERWG7e1engjdQR",
+      "canonical_id": "avatr/07",
+      "model_id": "m_000041",
+      "source_tier": "A",
+      "issuer": "AVATR Egypt",
+      "source_date": null,
+      "received": "2026-11-11",
+      "source": "https://drive.google.com/file/d/1JKqCM9SBsc1ss8OjqpERWG7e1engjdQR/view",
+      "sha256": "6a2848b2d64e45ccc8ac509adb1a4b2a49ed2e0f3dafa52e514f79300d9da6bf",
+      "bytes": 35809186,
+      "pages": 11,
+      "decision": "ACCEPTED_AS_SOURCE_DOCUMENT",
+      "checks": "Original PDF downloaded and SHA256 computed. AVATREGYPT.COM branding p11, Egypt trim table p10. Not too large for authorized PDFKit extraction. No publisher date or model year inferred from filename.",
+      "data_candidates": [
+        {
+          "trim": "Premium AWD / Premium Vision AWD",
+          "field": "height_mm",
+          "current": 1620,
+          "value": 1610,
+          "unit": "mm",
+          "page": 10,
+          "decision": "PENDING_CANONICAL_P2_REVIEW",
+          "reason": "Exact OEM trim evidence supports correction; existing accepted model-year applicability is unstated."
+        },
+        {
+          "trim": "Luxury RWD",
+          "field": "height_mm",
+          "current": 1620,
+          "value": 1620,
+          "unit": "mm",
+          "page": 10,
+          "decision": "UNCHANGED"
+        }
+      ],
+      "rejected_claims": [
+        {
+          "claim": "Model year 2026 inferred from filename",
+          "decision": "REJECTED",
+          "reason": "Filename is not a printed model-year statement"
+        },
+        {
+          "claim": "Brochure establishes updated price",
+          "decision": "REJECTED",
+          "reason": "No price list in inspected brochure"
+        }
+      ]
+    }
+  ],
+  "telemetry": "UNAVAILABLE"
+}
