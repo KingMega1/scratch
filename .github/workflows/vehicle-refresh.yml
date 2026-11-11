@@ -41,6 +41,10 @@ jobs:
           if [ -z "$MODE" ]; then MODE=$(awk 'NR==1{print $1}' vehicle-data/refresh.request); fi
           case "$MODE" in full|prices|triage|u11|media|sheets|materialize|u11specs|logos|probe|handoff|audit|auditspecs|arnames|*+*) ;; *) MODE=full ;; esac
           vehicle-data/scripts/refresh.sh "$MODE"
+      - name: Fail closed on accepted U11 evidence regression
+        run: |
+          python3 -m unittest discover -s vehicle-data/tests -p test_acceptance_regression_guard.py
+          python3 vehicle-data/scripts/acceptance_regression_guard.py --baseline-ref "origin/${GITHUB_REF_NAME}"
       - name: Upload raw pages (90-day artifact; evidence + parsed files are committed)
         if: always()
         uses: actions/upload-artifact@v4
@@ -61,6 +65,7 @@ jobs:
           git rebase -X theirs "origin/${GITHUB_REF_NAME}"
           if [ -f vehicle-data/scripts/canonical.py ] && [ -d vehicle-data/inputs/u11 ]; then
             python3 vehicle-data/scripts/canonical.py
+            python3 vehicle-data/scripts/acceptance_regression_guard.py --baseline-ref "origin/${GITHUB_REF_NAME}"
             git add vehicle-data/views vehicle-data/registry vehicle-data/review
             git commit -m "vehicle-data canonical rebuild after refresh [automated]" || echo "canonical unchanged"
           fi
