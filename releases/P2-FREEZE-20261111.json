@@ -1,0 +1,47 @@
+{
+  "schema": "carindex.p2.freeze/v1",
+  "id": "P2-FREEZE-20261111",
+  "status": "FROZEN_P1_P5_INPUT",
+  "frozen_on": "2026-11-11",
+  "timezone": "Africa/Cairo",
+  "authority": "CEO instruction in Execution Room 11 Nov 2026; prior freeze GO recorded 10 Nov evening",
+  "repository": "KingMega1/scratch",
+  "branch": "claude/carindex-buyer-vehicle-data-97yinp",
+  "data_commit": "62f6cbb7d701f84992ff0e3304ff5d85be7a9fa1",
+  "serving": {
+    "path": "vehicle-data/views/catalogue-serving.release.json",
+    "revision": "765bc533ee0a",
+    "sha256": "ddb02dbc8241233e02405288669fb089bc32cc19270c4c86787718cbac477b98"
+  },
+  "canonical": {
+    "path": "vehicle-data/views/canonical_u11.json",
+    "sha256": "c1999c3799325f5eae36c7ce1aca8ed09602d14959fe2fa17c212c3d8f8aa27b"
+  },
+  "included_acceptance": [
+    "a7514317198856c066d1810af5d3c5764108ffbd powertrain changes",
+    "62f6cbb7d701f84992ff0e3304ff5d85be7a9fa1 MY2026 Optra LS/LT torque"
+  ],
+  "tests": {
+    "owner_report": {
+      "passed": 54,
+      "source": "data_commit message and P2 owner Control Tower receipt"
+    },
+    "independent": {
+      "blob_hashes_verified": 49,
+      "optra_regression": "2/2 PASS",
+      "version_powertrains_regression": "5/5 PASS",
+      "serving_and_canonical_sha256": "PASS",
+      "full_suite": "Initial isolated run hit four setup errors from missing history/review/script prerequisites. Full 54-test suite not independently reproduced; seven directly applicable tests passed."
+    },
+    "ci_runs_at_data_commit": []
+  },
+  "scope": {
+    "p1": "Nightly rebuild as candidate only",
+    "p5": "Deploy only on CEO GO",
+    "my2027_optra_prices": "Unqualified. Issuer, effective date and trim mapping evidence pending; not included."
+  },
+  "telemetry": {
+    "tokens": "UNAVAILABLE",
+    "provider_usage_receipt": "UNAVAILABLE"
+  }
+}
