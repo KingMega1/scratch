@@ -54,7 +54,334 @@
           "reason": "No price list in inspected brochure"
         }
       ]
+    },
+    {
+      "id": "DRIVE-12cYf2yV_ntZPH2NLK6gkGM2FYW7xygzT",
+      "drive_file_id": "12cYf2yV_ntZPH2NLK6gkGM2FYW7xygzT",
+      "title": "3750E964-7D6A-4F89-B292-3142D39EDB62.JPG",
+      "source_url": "https://drive.google.com/file/d/12cYf2yV_ntZPH2NLK6gkGM2FYW7xygzT/view?usp=drivesdk",
+      "received": "2026-11-11",
+      "modified_time": "2026-11-11T12:44:26.679Z",
+      "bytes": 345983,
+      "sha256": "ed218b8fad5697a04d9801fabde5f4dee28e92eb7ee3d0cce4d19ab3e8f6e761",
+      "revision": "UNAVAILABLE: connector metadata omitted version/headRevisionId",
+      "source": "بتوع عربيات social screenshot embedding Jetour price card",
+      "source_date": null,
+      "embedded_source_date": "2026-11-01",
+      "source_tier": "C_UNQUALIFIED",
+      "decision": "HOLD",
+      "blocker": "Derivative price card differs from distributor-branded original: T2 Matte Color and X70 Plus FL label",
+      "model_mapping": [
+        {
+          "model_id": "m_000168",
+          "canonical_id": "jetour/x70",
+          "label": "X70 FL",
+          "trims": [
+            "Comfort",
+            "Luxury"
+          ],
+          "model_year": null,
+          "mapping_status": "HOLD_EXACT_TRIM_MY_AND_FL_APPLICABILITY"
+        },
+        {
+          "model_id": "m_000169",
+          "canonical_id": "jetour/x70-plus-ckd",
+          "label": "X70 Plus CKD",
+          "trims": [
+            "Luxury"
+          ],
+          "model_year": null,
+          "mapping_status": "HOLD_EXACT_TRIM_MY_AND_FL_APPLICABILITY"
+        },
+        {
+          "model_id": "m_000167",
+          "canonical_id": "jetour/dashing",
+          "label": "Dashing",
+          "trims": [
+            "1.5L Luxury",
+            "1.6L Luxury"
+          ],
+          "model_year": null,
+          "mapping_status": "HOLD_EXACT_TRIM_MY_AND_FL_APPLICABILITY"
+        },
+        {
+          "model_id": "m_000170",
+          "canonical_id": "jetour/x90-plus",
+          "label": "X90 Plus FL",
+          "trims": [
+            "Luxury"
+          ],
+          "model_year": null,
+          "mapping_status": "HOLD_EXACT_TRIM_MY_AND_FL_APPLICABILITY"
+        },
+        {
+          "model_id": "m_000009",
+          "canonical_id": "jetour/t1",
+          "label": "T1",
+          "trims": [
+            "Luxury",
+            "Matte Color"
+          ],
+          "model_year": null,
+          "mapping_status": "HOLD_EXACT_TRIM_MY_AND_FL_APPLICABILITY"
+        },
+        {
+          "model_id": "m_000004",
+          "canonical_id": "jetour/t2",
+          "label": "T2",
+          "trims": [
+            "Luxury",
+            "Matte Color"
+          ],
+          "model_year": null,
+          "mapping_status": "HOLD_EXACT_TRIM_MY_AND_FL_APPLICABILITY"
+        },
+        {
+          "model_id": "m_000290",
+          "canonical_id": "jetour/t2-i-dm",
+          "label": "T2 i-DM",
+          "trims": [
+            "2WD",
+            "4WD"
+          ],
+          "model_year": null,
+          "mapping_status": "HOLD_EXACT_TRIM_MY_AND_FL_APPLICABILITY"
+        }
+      ],
+      "price_status": "PRICE UNCONFIRMED",
+      "publish_price": null,
+      "page": "image 1; T2 Matte Color / X70 Plus FL sections"
+    },
+    {
+      "id": "DRIVE-1tovkpoAPJsqD8_P9dy2V8z5AVODZR_xG",
+      "drive_file_id": "1tovkpoAPJsqD8_P9dy2V8z5AVODZR_xG",
+      "title": "24330307-ADB6-42C7-B0FC-22FEB03F05E9.PNG",
+      "source_url": "https://drive.google.com/file/d/1tovkpoAPJsqD8_P9dy2V8z5AVODZR_xG/view?usp=drivesdk",
+      "received": "2026-11-11",
+      "modified_time": "2026-11-11T11:48:21.141Z",
+      "bytes": 1888138,
+      "sha256": "3eab5ae018d4271a9ff840c6f01151d5a706e75535cb45c7b384c40fcb83d7e7",
+      "revision": "UNAVAILABLE: connector metadata omitted version/headRevisionId",
+      "source": "Yasser Shaaban social screenshot",
+      "source_date": null,
+      "source_tier": "C_UNQUALIFIED",
+      "decision": "HOLD",
+      "blocker": "Original publication date and independent OEM/distributor specification confirmation absent",
+      "model_mapping": [
+        {
+          "model_id": "m_000169",
+          "canonical_id": "jetour/x70-plus-ckd",
+          "label": "X70 Plus CKD",
+          "trims": [
+            "Luxury"
+          ],
+          "model_year": null,
+          "mapping_status": "HOLD_EXACT_TRIM_MY_AND_FL_APPLICABILITY"
+        },
+        {
+          "model_id": "m_000290",
+          "canonical_id": "jetour/t2-i-dm",
+          "label": "T2 i-DM",
+          "trims": [
+            "2WD",
+            "4WD"
+          ],
+          "model_year": null,
+          "mapping_status": "HOLD_EXACT_TRIM_MY_AND_FL_APPLICABILITY"
+        }
+      ],
+      "page": "image 1; launch paragraph and embedded card",
+      "claims": [
+        "T2 i-DM 4WD power/torque/range",
+        "X70 Plus facelift CKD launch"
+      ],
+      "independence": "Reuses same card/artwork; cannot count as independent agreeing price evidence"
+    },
+    {
+      "id": "DRIVE-1SwgxGFffSNcxYnzGi_4Y8hxzZRqYvYl7",
+      "drive_file_id": "1SwgxGFffSNcxYnzGi_4Y8hxzZRqYvYl7",
+      "title": "C68818A0-C4F1-4039-901F-9F8AE88E2F3D.JPG",
+      "source_url": "https://drive.google.com/file/d/1SwgxGFffSNcxYnzGi_4Y8hxzZRqYvYl7/view?usp=drivesdk",
+      "received": "2026-11-11",
+      "modified_time": "2026-11-11T11:48:18.763Z",
+      "bytes": 112325,
+      "sha256": "8418733ae0c469f24981082d9511f01193726ba6f97127900f606c83378698e1",
+      "revision": "UNAVAILABLE: connector metadata omitted version/headRevisionId",
+      "source": "Jetour / Kasrawy branded teaser",
+      "source_date": null,
+      "source_tier": "UNQUALIFIED_DISTRIBUTOR_BRANDED_USER_SUPPLIED",
+      "decision": "HOLD",
+      "blocker": "Exact model/trim/MY and OEM-supplied or rights-cleared asset provenance not established",
+      "model_mapping": [
+        {
+          "model_id": "m_000169",
+          "canonical_id": "jetour/x70-plus-ckd",
+          "label": "X70 Plus CKD",
+          "trims": [
+            "Luxury"
+          ],
+          "model_year": null,
+          "mapping_status": "HOLD_EXACT_TRIM_MY_AND_FL_APPLICABILITY"
+        }
+      ],
+      "page": "image 1",
+      "image_publication": "NOT_CLEARED"
+    },
+    {
+      "id": "DRIVE-1qglt_7yJRwCvQD5h_TK3oo1H5NA56ZuO",
+      "drive_file_id": "1qglt_7yJRwCvQD5h_TK3oo1H5NA56ZuO",
+      "title": "D45F141C-9943-4126-B91A-1A74810D45F0.JPG",
+      "source_url": "https://drive.google.com/file/d/1qglt_7yJRwCvQD5h_TK3oo1H5NA56ZuO/view?usp=drivesdk",
+      "received": "2026-11-11",
+      "modified_time": "2026-11-11T11:48:18.595Z",
+      "bytes": 204249,
+      "sha256": "e70d37e5d9ff935cc24f34373388e5be787b5b2dc60c5db699f4777f2706ff6c",
+      "revision": "UNAVAILABLE: connector metadata omitted version/headRevisionId",
+      "source": "Jetour / Kasrawy Group branded price list",
+      "source_date": "2026-11-01",
+      "source_tier": "A_CANDIDATE_DISTRIBUTOR_BRANDED_NOT_AUTHENTICATED",
+      "decision": "HOLD",
+      "blocker": "Exact canonical trim/MY/applicability and conflicting derivative require owner verification",
+      "model_mapping": [
+        {
+          "model_id": "m_000168",
+          "canonical_id": "jetour/x70",
+          "label": "X70 FL",
+          "trims": [
+            "Comfort",
+            "Luxury"
+          ],
+          "model_year": null,
+          "mapping_status": "HOLD_EXACT_TRIM_MY_AND_FL_APPLICABILITY"
+        },
+        {
+          "model_id": "m_000169",
+          "canonical_id": "jetour/x70-plus-ckd",
+          "label": "X70 Plus CKD",
+          "trims": [
+            "Luxury"
+          ],
+          "model_year": null,
+          "mapping_status": "HOLD_EXACT_TRIM_MY_AND_FL_APPLICABILITY"
+        },
+        {
+          "model_id": "m_000167",
+          "canonical_id": "jetour/dashing",
+          "label": "Dashing",
+          "trims": [
+            "1.5L Luxury",
+            "1.6L Luxury"
+          ],
+          "model_year": null,
+          "mapping_status": "HOLD_EXACT_TRIM_MY_AND_FL_APPLICABILITY"
+        },
+        {
+          "model_id": "m_000170",
+          "canonical_id": "jetour/x90-plus",
+          "label": "X90 Plus FL",
+          "trims": [
+            "Luxury"
+          ],
+          "model_year": null,
+          "mapping_status": "HOLD_EXACT_TRIM_MY_AND_FL_APPLICABILITY"
+        },
+        {
+          "model_id": "m_000009",
+          "canonical_id": "jetour/t1",
+          "label": "T1",
+          "trims": [
+            "Luxury",
+            "Matte Color"
+          ],
+          "model_year": null,
+          "mapping_status": "HOLD_EXACT_TRIM_MY_AND_FL_APPLICABILITY"
+        },
+        {
+          "model_id": "m_000004",
+          "canonical_id": "jetour/t2",
+          "label": "T2",
+          "trims": [
+            "Luxury",
+            "Matte Color"
+          ],
+          "model_year": null,
+          "mapping_status": "HOLD_EXACT_TRIM_MY_AND_FL_APPLICABILITY"
+        },
+        {
+          "model_id": "m_000290",
+          "canonical_id": "jetour/t2-i-dm",
+          "label": "T2 i-DM",
+          "trims": [
+            "2WD",
+            "4WD"
+          ],
+          "model_year": null,
+          "mapping_status": "HOLD_EXACT_TRIM_MY_AND_FL_APPLICABILITY"
+        }
+      ],
+      "page": "image 1; full dated price table and warranty footer",
+      "source_document": "Readable reference retained; branding does not automatically promote facts",
+      "conflicts": [
+        {
+          "model_id": "m_000004",
+          "trim": "Matte Color",
+          "field": "price_egp",
+          "decision": "PRICE UNCONFIRMED",
+          "value": null,
+          "reason": "Derivative screenshot differs from branded full card"
+        }
+      ],
+      "embedded_claims_not_promoted": [
+        "all prices",
+        "10-year/1,000,000 km powertrain warranty",
+        "6-year/150,000 km vehicle warranty"
+      ]
+    },
+    {
+      "id": "DRIVE-1v9ym7HptdYLafgA8CDR5NeKQXQE1R4eK",
+      "drive_file_id": "1v9ym7HptdYLafgA8CDR5NeKQXQE1R4eK",
+      "title": "9BA2BBBA-EAC1-429F-A7FA-93A0089A4132.JPG",
+      "source_url": "https://drive.google.com/file/d/1v9ym7HptdYLafgA8CDR5NeKQXQE1R4eK/view?usp=drivesdk",
+      "received": "2026-11-11",
+      "modified_time": "2026-11-11T11:48:18.528Z",
+      "bytes": 221954,
+      "sha256": "7a29f962fd50b5e722c6c7337e66cc51276d4a0a7a1b8abfe2e963a25ed45211",
+      "revision": "UNAVAILABLE: connector metadata omitted version/headRevisionId",
+      "source": "Jetour T2 i-DM promotional photograph",
+      "source_date": null,
+      "source_tier": "UNQUALIFIED_USER_SUPPLIED",
+      "decision": "HOLD",
+      "blocker": "OEM supply or rights clearance not evidenced",
+      "model_mapping": [
+        {
+          "model_id": "m_000290",
+          "canonical_id": "jetour/t2-i-dm",
+          "label": "T2 i-DM",
+          "trims": [
+            "2WD",
+            "4WD"
+          ],
+          "model_year": null,
+          "mapping_status": "HOLD_EXACT_TRIM_MY_AND_FL_APPLICABILITY"
+        }
+      ],
+      "page": "image 1",
+      "image_publication": "NOT_CLEARED"
     }
   ],
-  "telemetry": "UNAVAILABLE"
+  "telemetry": "UNAVAILABLE",
+  "observed_at": "2026-11-11T15:15:00+02:00",
+  "reconciliation": {
+    "prior_ledger_commit": "49d1e8a9721137051d1ad690da6128d0722d22b4",
+    "new_files": 5,
+    "unchanged_avatr": {
+      "id": "1JKqCM9SBsc1ss8OjqpERWG7e1engjdQR",
+      "modified_time": "2026-11-11T08:59:24.410Z",
+      "bytes": 35809186,
+      "prior_sha256": "6a2848b2d64e45ccc8ac509adb1a4b2a49ed2e0f3dafa52e514f79300d9da6bf",
+      "basis": "same ID/modified timestamp/size; reused earlier original-byte inspection, not rehashed this run"
+    },
+    "folder_listing_limit": 100,
+    "historical_coverage": "Older pre-existing files not represented as new acceptances; listing capped at 100. Targeted modifiedTime search unexpectedly returned no results; direct folder listing supplied five newer files."
+  }
 }
