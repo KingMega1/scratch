@@ -43,8 +43,8 @@ export default async function FindMyCarPage({ params, searchParams }: P) {
           <h2 id="fmc-blocked-h" style={{ margin: 0 }}>{f.blockedH}</h2>
           <p className="sub" style={{ margin: 0 }}>{f.blockedBody}</p>
           <div className="chips">
-            <Link className="btn btn-primary" href={`/${locale}/cars`}>{f.ctaCars}</Link>
-            <Link className="btn btn-ghost" href={`/${locale}/compare`}>{f.ctaCompare}</Link>
+            <Link prefetch={false} className="btn btn-primary" href={`/${locale}/cars`}>{f.ctaCars}</Link>
+            <Link prefetch={false} className="btn btn-ghost" href={`/${locale}/compare`}>{f.ctaCompare}</Link>
           </div>
         </section>
       )}

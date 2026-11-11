@@ -100,7 +100,7 @@ export default async function CarDetail({ params }: P) {
   return (
     <div className="wrap section" style={{ paddingBlockStart: 24 }} data-model-id={car.id}>
       <TrackOnMount event="car_view" props={{ model_id: car.id }} />
-      <nav className="breadcrumb" aria-label="breadcrumb"><Link href={L('/cars')}>{t.nav.cars}</Link></nav>
+      <nav className="breadcrumb" aria-label="breadcrumb"><Link prefetch={false} href={L('/cars')}>{t.nav.cars}</Link></nav>
 
       <section className="cd-hero" aria-labelledby="car-h">
         <div className="cd-media"><CarMedia car={car} locale={locale} eager sizes="(max-width: 900px) 100vw, 640px" /></div>
@@ -112,8 +112,8 @@ export default async function CarDetail({ params }: P) {
           {car.priceFrom.state === 'conflict' ? <p className="small" style={{ margin: 0 }}>{v2.conflictNote}</p> : null}
           {car.lastObserved ? <div className="small">{t.state.stale}: {date(car.lastObserved, locale)}</div> : null}
           <div className="cd-ctas">
-            <Link className="btn btn-primary" href={L(`/find-my-car?model=${encodeURIComponent(car.p1Id ?? car.id)}`)}>{c.fits}</Link>
-            <Link className="btn btn-ghost" href={L(`/compare?ids=${encodeURIComponent(car.id)}`)}>{c.compare}</Link>
+            <Link prefetch={false} className="btn btn-primary" href={L(`/find-my-car?model=${encodeURIComponent(car.p1Id ?? car.id)}`)}>{c.fits}</Link>
+            <Link prefetch={false} className="btn btn-ghost" href={L(`/compare?ids=${encodeURIComponent(car.id)}`)}>{c.compare}</Link>
           </div>
         </div>
       </section>
@@ -210,14 +210,14 @@ export default async function CarDetail({ params }: P) {
         <section className="cd-section" aria-labelledby="alt-h">
           <h2 id="alt-h" className="h-section">{c.altH}</h2>
           <div className="grid grid-3">{alts.map(a => <CarCard key={a.id} car={a} locale={locale} />)}</div>
-          <p style={{ marginBlockStart: 16 }}><Link className="btn btn-ghost" href={L(`/compare?ids=${[car.id, ...alts.slice(0, 2).map(a => a.id)].join(',')}`)}>{c.compare}</Link></p>
+          <p style={{ marginBlockStart: 16 }}><Link prefetch={false} className="btn btn-ghost" href={L(`/compare?ids=${[car.id, ...alts.slice(0, 2).map(a => a.id)].join(',')}`)}>{c.compare}</Link></p>
         </section>
       ) : null}
 
       <section className="cd-section card" style={{ background: 'var(--ci-color-fog)' }} aria-labelledby="fmc-h">
         <h2 id="fmc-h" className="h-section">{c.fmcH}</h2>
         <p className="sub">{c.fmcBody}</p>
-        <Link className="btn btn-primary" href={L(`/find-my-car?model=${encodeURIComponent(car.p1Id ?? car.id)}`)}>{t.nav.fmc}</Link>
+        <Link prefetch={false} className="btn btn-primary" href={L(`/find-my-car?model=${encodeURIComponent(car.p1Id ?? car.id)}`)}>{t.nav.fmc}</Link>
       </section>
 
       <section className="cd-section">
@@ -225,7 +225,7 @@ export default async function CarDetail({ params }: P) {
           <summary>{c.evidenceH}</summary>
           <p className="small">{locale === 'ar' ? 'نسخة البيانات' : 'Data version'}: <bdi>{meta.registry_version}</bdi> · <bdi>{meta.snapshot_id}</bdi></p>
           <p className="small">{v2.marketNote} {v2.regsNote}</p>
-          <p className="small"><Link className="link" href={L('/methodology')}>{t.footer.methodology}</Link></p>
+          <p className="small"><Link prefetch={false} className="link" href={L('/methodology')}>{t.footer.methodology}</Link></p>
         </details>
       </section>
 
@@ -233,7 +233,7 @@ export default async function CarDetail({ params }: P) {
         <section className="cd-section" aria-labelledby="rel-h">
           <h2 id="rel-h" className="h-section">{c.relatedH}</h2>
           <div className="grid grid-3">{related.map(x => (
-            <Link key={x.slug} className="news-card" href={L(`/news/${x.slug}`)}><span className="tag">{t.news.types[x.type]}</span><h3>{x.title[locale]}</h3><p>{x.summary[locale]}</p></Link>
+            <Link prefetch={false} key={x.slug} className="news-card" href={L(`/news/${x.slug}`)}><span className="tag">{t.news.types[x.type]}</span><h3>{x.title[locale]}</h3><p>{x.summary[locale]}</p></Link>
           ))}</div>
         </section>
       ) : null}

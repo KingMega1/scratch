@@ -51,31 +51,31 @@ export default async function Cars({ params, searchParams }: P) {
       <div className="filters" role="group" aria-label={c.filters}>
         <div className="filter-row">
           <span className="label">{c.price}</span>
-          <Link className="chip" href={href(locale, q, { min: undefined, max: undefined })} aria-current={q.min == null && q.max == null ? 'true' : undefined}>{c.all}</Link>
+          <Link prefetch={false} className="chip" href={href(locale, q, { min: undefined, max: undefined })} aria-current={q.min == null && q.max == null ? 'true' : undefined}>{c.all}</Link>
           {t.bands.map(b => (
-            <Link key={b.key} className="chip" href={href(locale, q, { min: b.min, max: b.max })} aria-current={bandOn(b) ? 'true' : undefined}>{b.label}</Link>
+            <Link prefetch={false} key={b.key} className="chip" href={href(locale, q, { min: b.min, max: b.max })} aria-current={bandOn(b) ? 'true' : undefined}>{b.label}</Link>
           ))}
         </div>
         <div className="filter-row">
           <span className="label">{c.pt}</span>
-          <Link className="chip" href={href(locale, q, { pt: undefined })} aria-current={!q.pt ? 'true' : undefined}>{c.all}</Link>
+          <Link prefetch={false} className="chip" href={href(locale, q, { pt: undefined })} aria-current={!q.pt ? 'true' : undefined}>{c.all}</Link>
           {fuels.map(p => (
-            <Link key={p} className="chip" href={href(locale, q, { pt: p })} aria-current={q.pt === p ? 'true' : undefined}>{t.pt[p]}</Link>
+            <Link prefetch={false} key={p} className="chip" href={href(locale, q, { pt: p })} aria-current={q.pt === p ? 'true' : undefined}>{t.pt[p]}</Link>
           ))}
         </div>
         <div className="filter-row">
           <span className="label">{t.compare.rows.body}</span>
-          <Link className="chip" href={href(locale, q, { body: undefined })} aria-current={!q.body ? 'true' : undefined}>{c.all}</Link>
+          <Link prefetch={false} className="chip" href={href(locale, q, { body: undefined })} aria-current={!q.body ? 'true' : undefined}>{c.all}</Link>
           {(['suv', 'sedan', 'hatch', 'mpv'] as const).map(b => (
-            <Link key={b} className="chip" href={href(locale, q, { body: b })} aria-current={q.body === b ? 'true' : undefined}>{t.body[b]}</Link>
+            <Link prefetch={false} key={b} className="chip" href={href(locale, q, { body: b })} aria-current={q.body === b ? 'true' : undefined}>{t.body[b]}</Link>
           ))}
         </div>
         <div className="filter-row">
           <span className="label">{c.sort}</span>
           {([['popular', c.sortPopular], ['newest', c.sortNewest], ['price_asc', c.sortPriceAsc], ['price_desc', c.sortPriceDesc]] as const).map(([k, label]) => (
-            <Link key={k} className="chip" href={href(locale, q, { sort: k })} aria-current={q.sort === k ? 'true' : undefined}>{label}</Link>
+            <Link prefetch={false} key={k} className="chip" href={href(locale, q, { sort: k })} aria-current={q.sort === k ? 'true' : undefined}>{label}</Link>
           ))}
-          {hasFilters ? <Link className="link" href={`/${locale}/cars`}>{c.clear}</Link> : null}
+          {hasFilters ? <Link prefetch={false} className="link" href={`/${locale}/cars`}>{c.clear}</Link> : null}
         </div>
       </div>
       <p className="small" aria-live="polite">{c.results(num(total))}</p>
@@ -84,9 +84,9 @@ export default async function Cars({ params, searchParams }: P) {
       ) : <div className="notice">{c.empty}</div>}
       {pages > 1 ? (
         <nav className="pager" aria-label="pagination">
-          {q.page! > 1 ? <Link className="btn btn-ghost btn-sm" href={href(locale, q, { page: q.page! - 1 })} rel="prev">{locale === 'ar' ? 'السابق' : 'Previous'}</Link> : null}
+          {q.page! > 1 ? <Link prefetch={false} className="btn btn-ghost btn-sm" href={href(locale, q, { page: q.page! - 1 })} rel="prev">{locale === 'ar' ? 'السابق' : 'Previous'}</Link> : null}
           <span className="small tnum" style={{ alignSelf: 'center' }}>{q.page} / {pages}</span>
-          {q.page! < pages ? <Link className="btn btn-ghost btn-sm" href={href(locale, q, { page: q.page! + 1 })} rel="next">{locale === 'ar' ? 'التالي' : 'Next'}</Link> : null}
+          {q.page! < pages ? <Link prefetch={false} className="btn btn-ghost btn-sm" href={href(locale, q, { page: q.page! + 1 })} rel="next">{locale === 'ar' ? 'التالي' : 'Next'}</Link> : null}
         </nav>
       ) : null}
     </div>

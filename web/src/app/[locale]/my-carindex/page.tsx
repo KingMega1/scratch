@@ -30,7 +30,7 @@ export default async function MyCarIndex({ params, searchParams }: P) {
       <h1 className="h-page">{a.h1}</h1>
       <div className="acct" style={{ marginBlockStart: 16 }}>
         <nav className="acct-nav" aria-label={a.h1}>
-          {TABS.map(x => <Link key={x} href={`/${locale}/my-carindex?tab=${x}`} aria-current={tab === x ? 'page' : undefined}>{a.nav[x]}</Link>)}
+          {TABS.map(x => <Link prefetch={false} key={x} href={`/${locale}/my-carindex?tab=${x}`} aria-current={tab === x ? 'page' : undefined}>{a.nav[x]}</Link>)}
         </nav>
         <div style={{ display: 'grid', gap: 24, alignContent: 'start' }}>
           <section className="card" aria-labelledby="v-h">

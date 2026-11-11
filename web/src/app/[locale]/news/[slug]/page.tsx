@@ -24,7 +24,7 @@ export default async function Article({ params }: P) {
   const n = dict(locale).news;
   return (
     <article className="wrap section prose" style={{ paddingBlockStart: 32 }}>
-      <nav className="breadcrumb"><Link href={`/${locale}/news`}>{n.h1}</Link></nav>
+      <nav className="breadcrumb"><Link prefetch={false} href={`/${locale}/news`}>{n.h1}</Link></nav>
       <div className="chips" style={{ marginBlockEnd: 12 }}>
         <span className="tag">{n.types[item.type]}</span>
         {item.status === 'draft' ? <span className="tag tag-draft">{n.draft}</span> : null}

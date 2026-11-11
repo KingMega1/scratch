@@ -258,7 +258,7 @@ function Result({ copy, site, locale, v, identityEnabled, onRestart, onEdit, onA
   const cars: any[] = r.hero ? [r.hero, ...r.alternatives] : [];
   const onSite = cars.map(c => W[c.id]).filter((x): x is string => !!x);
   const siteLink = (id: string) => W[id]
-    ? <Link className="link" href={`/${locale}/cars/${W[id]}`} data-fmc-site-link={id}>{site.carPage}</Link>
+    ? <Link prefetch={false} className="link" href={`/${locale}/cars/${W[id]}`} data-fmc-site-link={id}>{site.carPage}</Link>
     : <span className="small" data-fmc-not-on-site={id}>{site.notOnSite}</span>;
   // P1 markup carries data-detail / data-fix / data-relax buttons; wire them here (released app.js behaviour).
   const delegate = (e: MouseEvent) => {
@@ -322,7 +322,7 @@ function Result({ copy, site, locale, v, identityEnabled, onRestart, onEdit, onA
         </section> : null}
       </> : null}
 
-      {onSite.length >= 2 ? <p><Link className="btn btn-ghost" href={`/${locale}/compare?ids=${onSite.slice(0, 3).join(',')}`}>{site.compareOnSite}</Link></p> : null}
+      {onSite.length >= 2 ? <p><Link prefetch={false} className="btn btn-ghost" href={`/${locale}/compare?ids=${onSite.slice(0, 3).join(',')}`}>{site.compareOnSite}</Link></p> : null}
       {r.less ? <section className="note-card"><h3>{r.less.heading}</h3><H as="p" html={r.less.html} /><button className="link-btn" type="button" data-detail={r.less.id}>{copy.details}</button> {siteLink(r.less.id)}</section> : null}
       {r.checks.length ? <section className="note-card"><h3>{copy.check_h}</h3><ul className="checks">{r.checks.map((c: any) => <H key={c.key} as="li" html={c.html} />)}</ul></section> : null}
       {/* Final step: the account invitation (moved from the My CarIndex shell). Same form, same identity_gate_view tracking. */}

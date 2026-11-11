@@ -28,12 +28,12 @@ export default async function News({ params, searchParams }: P) {
       <h1 className="h-page">{n.h1}</h1>
       <p className="lede">{n.lede}</p>
       <nav className="chips" style={{ marginBlockEnd: 20 }} aria-label={n.h1}>
-        <Link className="chip" href={`/${locale}/news`} aria-current={!type ? 'true' : undefined}>{n.all}</Link>
-        {TYPES.map(x => <Link key={x} className="chip" href={`/${locale}/news?type=${x}`} aria-current={type === x ? 'true' : undefined}>{n.types[x]}</Link>)}
+        <Link prefetch={false} className="chip" href={`/${locale}/news`} aria-current={!type ? 'true' : undefined}>{n.all}</Link>
+        {TYPES.map(x => <Link prefetch={false} key={x} className="chip" href={`/${locale}/news?type=${x}`} aria-current={type === x ? 'true' : undefined}>{n.types[x]}</Link>)}
       </nav>
       {items.length ? (
         <div className="grid grid-3">{items.map(c => (
-          <Link key={c.slug} className="news-card" href={`/${locale}/news/${c.slug}`}>
+          <Link prefetch={false} key={c.slug} className="news-card" href={`/${locale}/news/${c.slug}`}>
             <span className="tag">{n.types[c.type]}</span>
             {c.status === 'draft' ? <span className="tag tag-draft">{n.draft}</span> : null}
             <h2>{c.title[locale]}</h2><p>{c.summary[locale]}</p>

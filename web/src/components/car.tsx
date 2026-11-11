@@ -82,7 +82,7 @@ export function CarCard({ car, locale, eager = false }: { car: PublicCar; locale
   const t = dict(locale);
   const meta = [car.body ? t.body[car.body] : null, car.powertrains.map(p => t.pt[p]).join(' / ')].filter(Boolean).join(' · ');
   return (
-    <Link className="cc" href={carHref(locale, car.id)} data-model-id={car.id}>
+    <Link prefetch={false} className="cc" href={carHref(locale, car.id)} data-model-id={car.id}>
       <div className="cc-media"><CarMedia car={car} locale={locale} eager={eager} /></div>
       <div className="cc-body">
         <span className="cc-name"><CarName car={car} locale={locale} /></span>

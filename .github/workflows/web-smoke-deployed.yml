@@ -60,7 +60,10 @@ jobs:
           SMOKE_BASE_URL: ${{ steps.target.outputs.url }}
           VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
           SMOKE_SCREENSHOTS: '1'
-        run: mkdir -p test-results/screens && npx playwright test
+        # Deployment check only (P0 11 Nov 2026: each full run pulled ~25k requests / ~0.2 GB of origin pages from a cold
+        # Vercel deployment). Desktop project; the crawl-every-page groups (all catalogue detail pages, per-page axe sweep)
+        # run in web-ci against a local server, which costs nothing on Vercel.
+        run: mkdir -p test-results/screens && npx playwright test --project=desktop --grep-invert "complete catalogue and every detail page|no WCAG A/AA violations"
       - uses: actions/upload-artifact@v4
         if: always()
         with:

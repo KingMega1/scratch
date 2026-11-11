@@ -35,7 +35,7 @@ function ModelCard({ car, locale, withBrand }: { car: PublicCar; locale: Locale;
   const specs = [car.body ? t.body[car.body] : null, car.powertrains.map(p => t.pt[p]).join(' / ') || null].filter(Boolean).join(' · ');
   return (
     <li>
-      <Link className={`mc${car.image ? ' has-photo' : ''}`} href={`/${locale}/cars/${car.id}`} data-model-id={car.id} data-price-state={car.priceFrom.state}>
+      <Link prefetch={false} className={`mc${car.image ? ' has-photo' : ''}`} href={`/${locale}/cars/${car.id}`} data-model-id={car.id} data-price-state={car.priceFrom.state}>
         {car.image ? <img className="mc-photo" src={car.image.src} srcSet={photoSrcSet(car.image.src)} sizes="(max-width: 639px) calc(100vw - 32px), (max-width: 1023px) 46vw, 340px" alt="" loading="lazy" decoding="async" data-verified-photo="true" /> : null}
         <span className="mc-name">
           {withBrand ? <span className="mc-brand">{locale === 'ar' && !car.brand.ar ? <bdi>{brand}</bdi> : brand}</span> : null}
@@ -100,8 +100,8 @@ export default async function Catalog({ params, searchParams }: P) {
   return (
     <div className="wrap section catalog" style={{ paddingBlockStart: 32 }} data-catalog-mode={mode}>
       <nav className="breadcrumb" aria-label={c.back}>
-        <Link href={`/${locale}/market`}>{c.back}</Link>
-        {mode !== 'brands' ? <> · <Link href={`/${locale}/market/catalog`}>{c.h1}</Link></> : null}
+        <Link prefetch={false} href={`/${locale}/market`}>{c.back}</Link>
+        {mode !== 'brands' ? <> · <Link prefetch={false} href={`/${locale}/market/catalog`}>{c.h1}</Link></> : null}
       </nav>
       {mode === 'brand' && brand ? (
         <header className="cat-brand-head cat-brand-page">
@@ -121,24 +121,24 @@ export default async function Catalog({ params, searchParams }: P) {
         <summary>{c.filtersH}</summary>
         <div className="filter-row" role="group" aria-label={c.fuel}>
           <span className="label">{c.fuel}</span>
-          <Link className="chip" href={href({ fuel: null })} aria-current={!fuel ? 'true' : undefined}>{c.allFuels}</Link>
-          {present.map(f => <Link key={f} className="chip" href={href({ fuel: f })} aria-current={fuel === f ? 'true' : undefined} data-fuel={f}>{t.pt[f]}</Link>)}
+          <Link prefetch={false} className="chip" href={href({ fuel: null })} aria-current={!fuel ? 'true' : undefined}>{c.allFuels}</Link>
+          {present.map(f => <Link prefetch={false} key={f} className="chip" href={href({ fuel: f })} aria-current={fuel === f ? 'true' : undefined} data-fuel={f}>{t.pt[f]}</Link>)}
         </div>
         <div className="filter-row" role="group" aria-label={t.compare.rows.body}>
           <span className="label">{t.compare.rows.body}</span>
-          <Link className="chip" href={href({ body: null })} aria-current={!body ? 'true' : undefined}>{c.allFuels}</Link>
-          {BODIES.filter(b => all.some(x => x.body === b)).map(b => <Link key={b} className="chip" href={href({ body: b })} aria-current={body === b ? 'true' : undefined} data-body={b}>{t.body[b]}</Link>)}
+          <Link prefetch={false} className="chip" href={href({ body: null })} aria-current={!body ? 'true' : undefined}>{c.allFuels}</Link>
+          {BODIES.filter(b => all.some(x => x.body === b)).map(b => <Link prefetch={false} key={b} className="chip" href={href({ body: b })} aria-current={body === b ? 'true' : undefined} data-body={b}>{t.body[b]}</Link>)}
         </div>
         <div className="filter-row" role="group" aria-label={c.price}>
           <span className="label">{c.price}</span>
-          <Link className="chip" href={href({ min: null, max: null })} aria-current={min == null && max == null ? 'true' : undefined}>{c.allFuels}</Link>
-          {t.bands.map(b => <Link key={b.key} className="chip" href={href({ min: b.min ?? null, max: b.max ?? null })} aria-current={bandOn(b) ? 'true' : undefined}>{b.label}</Link>)}
+          <Link prefetch={false} className="chip" href={href({ min: null, max: null })} aria-current={min == null && max == null ? 'true' : undefined}>{c.allFuels}</Link>
+          {t.bands.map(b => <Link prefetch={false} key={b.key} className="chip" href={href({ min: b.min ?? null, max: b.max ?? null })} aria-current={bandOn(b) ? 'true' : undefined}>{b.label}</Link>)}
         </div>
         {mode !== 'brands' ? (
           <div className="filter-row" role="group" aria-label={c.sort}>
             <span className="label">{c.sort}</span>
             {(['name', 'price_asc', 'price_desc'] as const).map(s => (
-              <Link key={s} className="chip" href={href({ sort: s === 'name' ? null : s })} aria-current={sort === s ? 'true' : undefined} data-sort={s}>
+              <Link prefetch={false} key={s} className="chip" href={href({ sort: s === 'name' ? null : s })} aria-current={sort === s ? 'true' : undefined} data-sort={s}>
                 {s === 'name' ? c.sortName : s === 'price_asc' ? c.sortPriceAsc : c.sortPriceDesc}
               </Link>
             ))}
@@ -157,9 +157,9 @@ export default async function Catalog({ params, searchParams }: P) {
           {shown.length ? <ul className="mc-grid">{shown.map(x => <ModelCard key={x.id} car={x} locale={locale} withBrand={mode !== 'brand'} />)}</ul> : <p className="notice">{c.empty}</p>}
           {mode === 'results' && pages > 1 ? (
             <nav className="pager" aria-label={c.pages}>
-              {page > 1 ? <Link className="btn btn-ghost" href={href({ page: page - 1 })} rel="prev">{c.prev}</Link> : null}
+              {page > 1 ? <Link prefetch={false} className="btn btn-ghost" href={href({ page: page - 1 })} rel="prev">{c.prev}</Link> : null}
               <span className="small tnum">{c.pageOf(num(page), num(pages))}</span>
-              {page < pages ? <Link className="btn btn-ghost" href={href({ page: page + 1 })} rel="next">{c.next}</Link> : null}
+              {page < pages ? <Link prefetch={false} className="btn btn-ghost" href={href({ page: page + 1 })} rel="next">{c.next}</Link> : null}
             </nav>
           ) : null}
         </section>

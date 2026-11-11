@@ -9,7 +9,7 @@ export default function NotFound() {
       <h1 className="h-page">{ar[0]} · <span lang="en">{en[0]}</span></h1>
       <p>{ar[1]}</p>
       <p lang="en" dir="ltr">{en[1]}</p>
-      <p className="chips"><Link className="btn btn-primary" href="/ar">الرئيسية</Link><Link className="btn btn-ghost" href="/en">Home</Link></p>
+      <p className="chips"><Link prefetch={false} className="btn btn-primary" href="/ar">الرئيسية</Link><Link prefetch={false} className="btn btn-ghost" href="/en">Home</Link></p>
     </div>
   );
 }

@@ -33,10 +33,11 @@ const securityHeaders = [
 const config: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
-  // ~10 KB of CSS: inline it in <head> so first paint is not blocked on a stylesheet round trip (Lighthouse render-blocking).
-  experimental: { inlineCss: true },
+  // CSS is NOT inlined (P0 11 Nov 2026): inlining copied the whole ~46 KB stylesheet into every HTML response, i.e. every
+  // origin render and every ISR read. As one hashed /_next/static file it is cached immutably by the CDN instead.
   // Same-origin optimizer for /media and /brand photos only (no remote hosts). AVIF/WebP negotiated per browser.
-  images: { formats: ['image/avif', 'image/webp'], localPatterns: [{ pathname: '/media/**' }, { pathname: '/brand/**' }], minimumCacheTTL: 86400 },
+  // AVIF (smallest bytes; browsers that support it only ask for AVIF) then WebP; optimised images cached 7 days, not 1.
+  images: { formats: ['image/avif', 'image/webp'], localPatterns: [{ pathname: '/media/**' }, { pathname: '/brand/**' }], minimumCacheTTL: 604800 },
   // P1 release (P1-RELEASE-T1) is loaded from disk at runtime and hash-verified; ship the vendored files with the functions that use it.
   outputFileTracingIncludes: {
     '/api/v1/recommendation': ['./p1-release/**/*', './p1-accepted/U12-CEO3-R5/**/*'],

@@ -43,7 +43,7 @@ export default async function Market({ params }: P) {
           <input id="mq" name="q" type="search" placeholder={t.catalog.searchPh} maxLength={60} />
           <button className="btn btn-primary" type="submit">{t.search.submit}</button>
         </form>
-        <p style={{ marginBlockStart: 20 }}><Link className="btn btn-dark" href={L('/market/catalog')} data-cta="catalog">{m.catalogCta}</Link></p>
+        <p style={{ marginBlockStart: 20 }}><Link prefetch={false} className="btn btn-dark" href={L('/market/catalog')} data-cta="catalog">{m.catalogCta}</Link></p>
       </div>
 
       <section id="brands" className="section" style={{ paddingBlockStart: 16 }} aria-labelledby="b-h">
@@ -58,7 +58,7 @@ export default async function Market({ params }: P) {
           <h2 id="p-h" className="h-section">{m.bandsH}</h2>
           <div className="grid grid-4" style={{ marginBlockStart: 16 }}>
             {t.bands.map(b => (
-              <Link key={b.key} className="band" href={L(`/cars?${new URLSearchParams({ ...(b.min != null ? { min: String(b.min) } : {}), ...(b.max != null ? { max: String(b.max) } : {}) })}`)}>
+              <Link prefetch={false} key={b.key} className="band" href={L(`/cars?${new URLSearchParams({ ...(b.min != null ? { min: String(b.min) } : {}), ...(b.max != null ? { max: String(b.max) } : {}) })}`)}>
                 <span className="n tnum">{num(inBand(b))}</span><span>{b.label}</span>
               </Link>
             ))}
@@ -66,7 +66,7 @@ export default async function Market({ params }: P) {
           <h2 id="body" className="h-section" style={{ marginBlockStart: 40 }}>{m.bodyH}</h2>
           <div className="chips" style={{ marginBlockStart: 12 }}>
             {(['suv', 'sedan', 'hatch', 'mpv'] as const).filter(k => cars.some(c => c.body === k)).map(k => (
-              <Link key={k} className="body-tile" href={L(`/cars?body=${k}`)} data-body={k}><BodyIcon body={k} className="" /><b>{t.body[k]}</b><span className="n tnum">{m.models(cars.filter(c => c.body === k).length)}</span></Link>
+              <Link prefetch={false} key={k} className="body-tile" href={L(`/cars?body=${k}`)} data-body={k}><BodyIcon body={k} className="" /><b>{t.body[k]}</b><span className="n tnum">{m.models(cars.filter(c => c.body === k).length)}</span></Link>
             ))}
           </div>
         </div>
@@ -81,7 +81,7 @@ export default async function Market({ params }: P) {
               <tbody>{changes.map(({ car, x }, i) => (
                 <tr key={i}>
                   <td className="tnum">{date(x.effectiveDate, locale)}</td>
-                  <td><Link href={L(`/cars/${car.id}`)}><CarName car={car} locale={locale} /></Link> · <bdi>{x.trim}</bdi></td>
+                  <td><Link prefetch={false} href={L(`/cars/${car.id}`)}><CarName car={car} locale={locale} /></Link> · <bdi>{x.trim}</bdi></td>
                   <td className="t-num tnum">{price(x.from, locale)}</td><td className="t-num tnum">{price(x.to, locale)}</td>
                   <td className="small">{x.source} · {x.kind === 'stated' ? v2.stated : v2.observed}</td>
                 </tr>
@@ -107,14 +107,14 @@ export default async function Market({ params }: P) {
             <h2 id="pop-h" className="h-section">{m.popularH}</h2>
             <p className="sub">{window ? v2.regsWindow(monthLabel(window[0], locale), monthLabel(window[1], locale)) : ''}. {v2.regsNote}</p>
             <ol className="rank-list">{popular.map(c => (
-              <li key={c.id}><Link href={L(`/cars/${c.id}`)}><CarName car={c} locale={locale} /></Link><span className="small tnum">{num(c.registrations!.inWindow!)} {m.regs}</span></li>
+              <li key={c.id}><Link prefetch={false} href={L(`/cars/${c.id}`)}><CarName car={c} locale={locale} /></Link><span className="small tnum">{num(c.registrations!.inWindow!)} {m.regs}</span></li>
             ))}</ol>
           </div>
           <div>
             <h2 className="h-section">{m.gainingH}</h2>
             <p className="sub">{v2.yoy}</p>
             <ol className="rank-list">{gaining.map(c => (
-              <li key={c.id}><Link href={L(`/cars/${c.id}`)}><CarName car={c} locale={locale} /></Link><span className="small tnum">+{(c.registrations!.yoy! * 100).toFixed(1)}%</span></li>
+              <li key={c.id}><Link prefetch={false} href={L(`/cars/${c.id}`)}><CarName car={c} locale={locale} /></Link><span className="small tnum">+{(c.registrations!.yoy! * 100).toFixed(1)}%</span></li>
             ))}</ol>
           </div>
         </div>

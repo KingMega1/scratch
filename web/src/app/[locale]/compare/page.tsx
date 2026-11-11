@@ -78,8 +78,8 @@ export default async function Compare({ params, searchParams }: P) {
             <thead><tr><td />{cars.map(x => (
               <th key={x.id} scope="col" className="cmp-car">
                 <CarMedia car={x} locale={locale} />
-                <Link href={`/${locale}/cars/${x.id}`}><CarName car={x} locale={locale} /></Link>
-                <div><Link className="small" href={`/${locale}/compare?ids=${ids.filter(i => i !== x.id).join(',')}`}>{c.remove}</Link></div>
+                <Link prefetch={false} href={`/${locale}/cars/${x.id}`}><CarName car={x} locale={locale} /></Link>
+                <div><Link prefetch={false} className="small" href={`/${locale}/compare?ids=${ids.filter(i => i !== x.id).join(',')}`}>{c.remove}</Link></div>
               </th>))}</tr></thead>
             <tbody>{shown.map(([label, f]) => (
               <tr key={label}><th scope="row">{label}</th>{cars.map(x => <td key={x.id}>{f(x)}</td>)}</tr>
@@ -94,7 +94,7 @@ export default async function Compare({ params, searchParams }: P) {
         </details>
       ) : null}
       {cars.length >= 2 ? (
-        <div className="notice" style={{ marginBlockStart: 20 }}>{c.noWinner} <Link className="link" href={`/${locale}/find-my-car`}>{t.nav.fmc}</Link></div>
+        <div className="notice" style={{ marginBlockStart: 20 }}>{c.noWinner} <Link prefetch={false} className="link" href={`/${locale}/find-my-car`}>{t.nav.fmc}</Link></div>
       ) : null}
     </div>
   );

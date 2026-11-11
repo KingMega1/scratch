@@ -49,4 +49,6 @@ export async function middleware(req: NextRequest) {
   return NextResponse.redirect(url, 307);
 }
 
-export const config = { matcher: ['/((?!_next/static|_next/image).*)'] };
+/* Run only where locale routing or /admin protection applies: never for static files (photos, fonts, logos), the API or
+   Next internals, which would otherwise each cost a middleware invocation (P0 11 Nov 2026). */
+export const config = { matcher: ['/((?!_next/static|_next/image|api/|media/|fonts/|brand/|favicon|robots\\.txt|sitemap\\.xml|.*\\.(?:svg|png|jpe?g|webp|avif|ico|ttf|woff2?|txt|xml|json)$).*)'] };

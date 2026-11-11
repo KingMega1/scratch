@@ -36,14 +36,14 @@ export default async function Search({ params, searchParams }: P) {
       {q ? <SearchTracker q={q} results={res.total} /> : null}
       <div className="chips" style={{ marginBlock: 16 }} aria-label={s.examples}>
         <span className="small" style={{ alignSelf: 'center' }}>{s.examples}:</span>
-        {EXAMPLES[locale].map(e => <Link key={e} className="chip" href={`/${locale}/search?q=${encodeURIComponent(e)}`}><bdi>{e}</bdi></Link>)}
+        {EXAMPLES[locale].map(e => <Link prefetch={false} key={e} className="chip" href={`/${locale}/search?q=${encodeURIComponent(e)}`}><bdi>{e}</bdi></Link>)}
       </div>
       <div aria-live="polite">
         {!q ? <p className="small">{s.empty}</p> : res.total === 0 ? <div className="notice">{s.none(q)}</div> : order.map(g => res.groups[g]?.length ? (
           <section key={g} className="result-group" aria-labelledby={`g-${g}`}>
             <h2 id={`g-${g}`}>{s.groups[g]}</h2>
             {res.groups[g]!.map(h => (
-              <Link key={h.href} className="result-row" href={h.href} data-group={g}>
+              <Link prefetch={false} key={h.href} className="result-row" href={h.href} data-group={g}>
                 <span className="name">{locale === 'ar' && /[a-z]/i.test(h.title) ? <bdi>{h.title}</bdi> : h.title}</span>
                 <span className="small tnum">{h.meta ?? '→'}</span>
               </Link>

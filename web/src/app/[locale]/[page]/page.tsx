@@ -33,7 +33,7 @@ export default async function StaticPage({ params }: P) {
       {page === 'methodology' ? (
         <>
           <p className="small tnum">{locale === 'ar' ? 'نسخة البيانات' : 'Data version'}: <bdi>{meta.registry_version}</bdi> · {locale === 'ar' ? 'لقطة' : 'Snapshot'}: <bdi>{meta.snapshot_id}</bdi></p>
-          <p><Link className="link" href={`/${locale}/market/catalog`}>{dict(locale).market.catalogCta}</Link></p>
+          <p><Link prefetch={false} className="link" href={`/${locale}/market/catalog`}>{dict(locale).market.catalogCta}</Link></p>
         </>
       ) : null}
     </article>

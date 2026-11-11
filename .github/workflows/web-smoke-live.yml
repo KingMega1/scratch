@@ -53,7 +53,8 @@ jobs:
         env:
           SMOKE_BASE_URL: https://carindexed.com
           SMOKE_SCREENSHOTS: '1'
-        run: mkdir -p test-results/screens && npx playwright test --grep-invert "events collector"
+        # Desktop only, no crawl-every-page groups (they run in web-ci locally); see web-smoke-deployed.yml.
+        run: mkdir -p test-results/screens && npx playwright test --project=desktop --grep-invert "events collector|complete catalogue and every detail page|no WCAG A/AA violations"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
