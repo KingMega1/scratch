@@ -1,0 +1,72 @@
+{
+ "record": "P1-RELEASE-U12-CEO3-R5",
+ "record_commit": "a3fe98fab4cda8137d29507035fa405910338fc8",
+ "record_sha256": "e4f19c1c252b5efbdf514d5a09ca66c5c496c315ef93799625d18319f38e48b5",
+ "status": "ACCEPTED",
+ "acceptance": {
+  "by": "CEO (release authority)",
+  "date": "2026-11-08",
+  "basis": "All P1 gates pass on final hashes",
+  "p2": {
+   "commit": "723748dfd32a7b88ef56b3bc55893fdd19ed7a0c",
+   "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+   "revision": "cddfe91b3287",
+   "serving_sha256": "02139f4146067089942fcdcc945e4008ad567a12095f84a3f0fc993c1c4f3a81"
+  },
+  "gates": {
+   "price_parity": "0/275",
+   "model_year": "PASS",
+   "versions": "PASS",
+   "stale_holds": "PASS",
+   "official_market_labels": "PASS (792 EN+AR lists)",
+   "regression": "1142/1142 U11 strict, 1220/1220 R5",
+   "browser_vs_transport": "1405/1405 R5, 1335/1335 U11",
+   "transport": "1517/1517",
+   "buyer_scenarios": "691/691",
+   "ceo_failures": "135/135",
+   "named_cars": "49/49",
+   "eligibility": "1451/1451",
+   "u12_data": "195/195",
+   "ceo_intake": "PASS"
+  },
+  "production_deployment": "none by P1"
+ },
+ "p2_input": {
+  "commit": "723748dfd32a7b88ef56b3bc55893fdd19ed7a0c",
+  "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+  "files": {
+   "catalogue-serving.release.json": "02139f4146067089942fcdcc945e4008ad567a12095f84a3f0fc993c1c4f3a81",
+   "market_universe.json": "733bc13bfffec4033e38381c736ec74c6b42bd65f9a91d35408edf459324439d",
+   "registration_models.csv": "e6f43df6596f3fe38f4b13f9afb7d24663379fc96db31cfb5a588f17a94571af",
+   "u11_models.csv": "97130c17516a5e1edbbe38f94048d9ff4397121011198ab90ff721ec15a20f98",
+   "arabic_names.csv": "91a7d71b7165da6a9b87544b2a0eb6dc1d1aaa4253ce063fce283e8a6429c188",
+   "u11_prices.csv": "62972049af7785f95bbcf903caa66a80647815d0d082f87a82804afce8279bd7"
+  }
+ },
+ "files": [
+  "buyer-decision/app/engine.js",
+  "buyer-decision/app/brief.js",
+  "buyer-decision/app/i18n.js",
+  "buyer-decision/app/present.js",
+  "buyer-decision/app/app.js",
+  "buyer-decision/app/redact.js",
+  "buyer-decision/app/track.js",
+  "buyer-decision/transport/reco.js",
+  "buyer-decision/transport/ci.reco.v1.schema.json",
+  "buyer-decision/transport/P5-HANDOFF-U12-CEO3-R5.md",
+  "buyer-decision/datasets/U12-CEO3-R5-2026-11-08/manifest.json",
+  "buyer-decision/datasets/U12-CEO3-R5-2026-11-08/recommendation_view.json",
+  "buyer-decision/datasets/U12-CEO3-R5-2026-11-08/REGRESSION_REPORT.md",
+  "buyer-decision/datasets/U12-CEO3-R5-2026-11-08/R5-GATES.json",
+  "buyer-decision/datasets/U12-CEO3-R5-2026-11-08/P2-PRICE-AGREEMENT.json",
+  "buyer-decision/release/P1-RELEASE-U12-CEO3-R5.json"
+ ],
+ "test_fixtures": {
+  "buyer-decision/tests/ceo_failures.test.js": "907b7bfe626b3c1cf8acca8b9d7a089a53022fdd081c59e8a0aa882737367a36",
+  "buyer-decision/tests/buyer_scenarios.test.js": "81d727a58935822bef19f4bf6d41a79f311c451889059ef1f8e486c1250592a6",
+  "buyer-decision/tests/named_cars.test.js": "50721e5a688dacdef10f278ee217180846701ef8efcf42f5c00b065c56ebdd2f",
+  "buyer-decision/tools/ceo_fact_decisions.json": "5df64b7528f5f8e3088dc9291ce34466d54e3043f7493ff1d1f6654dab821c36",
+  "buyer-decision/tools/ceo_price_overrides.json": "c83e4ed95595deb64cad144f1e23408c0fc33035644c483360d843c0a7bfc0ae"
+ },
+ "test_fixtures_note": "P1 owner-side acceptance suites and fixtures from the same record commit; dry-run only, not runtime files"
+}

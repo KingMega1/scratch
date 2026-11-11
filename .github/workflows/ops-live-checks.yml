@@ -1,0 +1,18 @@
+name: ops-live-checks
+# Read-only post-release checks for carindexed.com: HTTPS, AR/EN, security headers, indexing, image caching (~15 GETs).
+on:
+  push:
+    paths: ['web/ops/live-checks.request']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node web/ops/live-checks.mjs

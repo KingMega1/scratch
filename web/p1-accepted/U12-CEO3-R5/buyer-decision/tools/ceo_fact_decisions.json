@@ -1,0 +1,42 @@
+{
+ "decided": "CEO 2026-11-03 (P1 session), checked where the CEO asked against Egypt-market sources",
+ "powertrain": {
+  "geely/emgrand": {
+   "pt": "petrol",
+   "basis": "CEO"
+  },
+  "geely/monjaro": {
+   "pt": "phev",
+   "basis": "CEO: Monjaro EM-i, hybrid; Egypt launch Aug 2026 is the EM-i plug-in hybrid (1.5T + motor)"
+  },
+  "haval/jolion-pro": {
+   "pt": "petrol",
+   "basis": "CEO asked to check: Egypt version 1.5T 148 hp, 7DCT, petrol (single High Deluxe trim)"
+  },
+  "mitsubishi/outlander-sport": {
+   "pt": "petrol",
+   "basis": "CEO"
+  },
+  "jeep/grand-cherokee-l": {
+   "pt": "petrol",
+   "basis": "CEO"
+  },
+  "jac/js2": {
+   "pt": "petrol",
+   "basis": "CEO asked to check: Egypt version 1.5L petrol, CVT; no electric version sold in Egypt"
+  },
+  "maserati/grecale": {
+   "pt": "petrol",
+   "basis": "CEO: petrol, asked to check: Modena 2.0T mild hybrid (drives on petrol; not a full hybrid)"
+  }
+ },
+ "pending": {
+  "icaur/v27": "CEO said electric; Egypt-market sources (GB Auto) describe a range-extender (1.5T petrol generator). Not applied until the CEO confirms."
+ },
+ "display_name": {
+  "lexus/lx600": {
+   "model": "LX",
+   "basis": "CEO 2026-11-08 via P2 handoff 723748d: the identity carries LX600 and LX700h versions; id unchanged"
+  }
+ }
+}

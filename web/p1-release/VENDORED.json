@@ -1,0 +1,17 @@
+{
+ "record": "P1-RELEASE-T1",
+ "record_commit": "090edb4680a8a228d8b1fe8043b4700dfca248ee",
+ "record_sha256": "012e5c4bd0fed5582bae54688daf9c39a125f3823d50f8dacc49b25ba5f9a209",
+ "files": [
+  "buyer-decision/app/engine.js",
+  "buyer-decision/app/brief.js",
+  "buyer-decision/app/i18n.js",
+  "buyer-decision/app/present.js",
+  "buyer-decision/app/redact.js",
+  "buyer-decision/transport/reco.js",
+  "buyer-decision/transport/ci.reco.v1.schema.json",
+  "buyer-decision/transport/P5-INTEGRATION.md",
+  "buyer-decision/datasets/U11-2026-09-26/manifest.json",
+  "buyer-decision/datasets/U11-2026-09-26/recommendation_view.json"
+ ]
+}

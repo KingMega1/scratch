@@ -1,0 +1,67 @@
+name: web-smoke-live
+# Live (public) production checks for carindexed.com after a production release. Read-mostly: the only writes are the
+# Find My Car API calls a visitor makes; the synthetic analytics-collector test is excluded so no fake events are posted.
+# Trigger: push a change to web/ops/smoke-live.request (first line: expected P1 release record), or manual dispatch.
+on:
+  push:
+    paths: ['web/ops/smoke-live.request']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  live:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: web
+    env:
+      BASE: https://carindexed.com
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Live binding (production env, expected P1/P2 pair, new first fold)
+        run: |
+          EXPECT="$(head -n1 ops/smoke-live.request 2>/dev/null | tr -d '[:space:]')"; EXPECT="${EXPECT:-P1-RELEASE-U12-CEO3-R4}"
+          curl -sf "$BASE/api/health" > /tmp/health.json
+          node -e '
+            const h=require("/tmp/health.json"), want=process.argv[1];
+            console.log(JSON.stringify({env:h.env, release:h.recommendation.release, commit:h.recommendation.release_commit, universe:h.recommendation.universe_version, dataset:h.recommendation.dataset_sha256, integrity:h.recommendation.integrity}));
+            if (h.env!=="production" || h.recommendation.release!==want || h.recommendation.integrity!==true || h.recommendation.status!=="ready") process.exit(1);' "$EXPECT"
+          curl -sf "$BASE/en" | grep -o 'data-hero-car="[^"]*"' | tr '\n' ' '; echo
+          test "$(curl -sf "$BASE/en" | grep -o 'data-hero-car="[^"]*"' | tr -d '\n')" = 'data-hero-car="mg-rx9"data-hero-car="byd-ti-7"data-hero-car="geely-ex2"'
+      - name: FMC / P1 integration (live)
+        env:
+          FMC_BASE_URL: https://carindexed.com
+        run: npm run test:fmc
+      - name: Let the per-client FMC rate-limit bucket refill (limit stays on)
+        run: sleep 60
+      - name: Production-only guards (live)
+        env:
+          SMOKE_BASE_URL: https://carindexed.com
+          SMOKE_PRODUCTION: '1'
+        run: npx playwright test --grep production-only && mkdir -p live-evidence && cp test-results/smoke.json live-evidence/production-only.json
+      - name: Smoke (live, AR/EN, desktop + mobile)
+        env:
+          SMOKE_BASE_URL: https://carindexed.com
+          SMOKE_SCREENSHOTS: '1'
+          # Live is production: skips the preview-only "no GTM" check (production loads GTM by design since d0a4ed3).
+          SMOKE_PRODUCTION: '1'
+        # Desktop only, no crawl-every-page groups (they run in web-ci locally); see web-smoke-deployed.yml.
+        run: mkdir -p test-results/screens && npx playwright test --project=desktop --grep-invert "events collector|complete catalogue and every detail page|no WCAG A/AA violations"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: smoke-live-evidence
+          path: |
+            web/test-results/
+            web/live-evidence/
+          retention-days: 30

@@ -1,0 +1,699 @@
+import { test, expect, getNoFollow, type Page } from './fixtures';
+import { readFileSync } from 'node:fs';
+
+const SHOTS = process.env.SMOKE_SCREENSHOTS === '1';
+async function shot(page: Page, name: string, testInfo: { project: { name: string } }) {
+  if (SHOTS) await page.screenshot({ path: `test-results/screens/${testInfo.project.name}-${name}.png`, fullPage: false });
+}
+
+// Every build binds the accepted P1 R5 + P2 723748d (8 Nov). Live production stays on the R4 deployment until a production GO.
+const P1B = { release: 'P1-RELEASE-U12-CEO3-R5', engine: 'E6.1-2026-10-14', transport: 'T1.2-2026-11-03', universe: 'U12-CEO3-R5-2026-11-08',
+  p3: 'R5-ACCEPTED-2026-11-08', transport_commit: 'ba2120d16b69a54524d9cb4176e8fd4fd763c8c0' } as const;
+
+test.describe('locale + direction', () => {
+  test('no preview banner; one discreet Beta badge beside the logo (CEO 4 Nov) on Arabic and English pages', async ({ page }) => {
+    for (const locale of ['ar', 'en'] as const) {
+      await page.goto(`/${locale}`);
+      await expect(page.locator('header [data-beta-badge]')).toHaveCount(1);
+      await expect(page.locator('header [data-beta-badge]')).toHaveText(locale === 'ar' ? 'تجريبي' : 'Beta');
+      await expect(page.locator('.preview-bar')).toHaveCount(0);
+      await expect(page.locator('body')).not.toContainText('Preview — not the live site');
+      await expect(page.locator('body')).not.toContainText('نسخة تجريبية — مش الموقع النهائي');
+    }
+  });
+  test('root redirects to Arabic', async ({ page }) => {
+    const res = await page.goto('/');
+    expect(page.url()).toMatch(/\/ar$/);
+    expect(res?.status()).toBe(200);
+  });
+  for (const [l, dir] of [['ar', 'rtl'], ['en', 'ltr']] as const) {
+    test(`/${l} server-renders lang=${l} dir=${dir}`, async ({ request }) => {
+      const html = await (await request.get(`/${l}`)).text();
+      expect(html).toContain(`<html lang="${l}" dir="${dir}"`); // in the first byte of HTML: no LTR->RTL flash
+      expect(html).toMatch(/<link rel="alternate" hrefLang="en"|hreflang="en"/i);
+      expect(html).toMatch(new RegExp(`<link rel="canonical" href="[^"]*/${l}"`));
+    });
+  }
+  test('language switch keeps the entity', async ({ page }) => {
+    await page.goto('/ar/cars/kia-sportage');
+    await page.locator('a.lang').click();
+    await expect(page).toHaveURL(/\/en\/cars\/kia-sportage$/);
+    await expect(page.locator('html')).toHaveAttribute('dir', 'ltr');
+  });
+});
+
+test.describe('pages', () => {
+  const PAGES: [string, RegExp][] = [
+    ['/ar', /قبل ما تشتري/], ['/en', /Before making a car decision/i], ['/en/cars', /Browse/i], ['/ar/cars', /تصفّح/],
+    ['/en/market', /Car Prices/], ['/ar/market', /أسعار السيارات/], ['/en/cars/kia-sportage', /Kia Sportage/], ['/ar/cars/kia-sportage', /كيا/],
+    ['/en/compare?ids=kia-sportage,hyundai-tucson', /Compare/], ['/en/search?q=sportage', /Kia Sportage/],
+    ['/en/my-carindex', /My CarIndex/], ['/en/news', /News/], ['/en/find-my-car', /Find My Car/], ['/en/methodology', /Methodology/],
+    ['/en/market/catalog', /All cars and prices/i], ['/ar/market/catalog', /كل العربيات وأسعارها/],
+  ];
+  for (const [path, re] of PAGES) {
+    test(`renders ${path}`, async ({ page }, info) => {
+      const errors: string[] = [];
+      page.on('pageerror', e => errors.push(String(e)));
+      const res = await page.goto(path);
+      expect(res?.status()).toBe(200);
+      await expect(page.locator('h1').first()).toBeVisible();
+      await expect(page.locator('body')).toContainText(re);
+      expect(errors).toEqual([]);
+      await shot(page, path.replace(/[/?=,&]+/g, '_'), info);
+    });
+  }
+});
+
+test.describe('navigation + brand', () => {
+  test('primary nav and footer links', async ({ page, isMobile }) => {
+    await page.goto('/en');
+    if (isMobile) {
+      await page.locator('.gh-menu-btn').click();
+      await expect(page.locator('#gh-drawer')).toBeVisible();
+    }
+    const scope = isMobile ? page.locator('#gh-drawer nav') : page.locator('.gh-nav');
+    for (const label of ['Find My Car', 'Cars', 'Compare', 'Car Prices']) await expect(scope.getByRole('link', { name: label, exact: true })).toBeVisible();
+    // secondary content leaves primary navigation but stays reachable from the footer
+    for (const label of ['News & Guides', 'Market', 'Methodology']) await expect(scope.getByRole('link', { name: label, exact: true })).toHaveCount(0);
+    for (const label of ['News', 'Guides']) await expect(page.locator('footer').getByRole('link', { name: label, exact: true })).toBeAttached();
+    for (const label of ['Methodology', 'Independence', 'About', 'Contact', 'Privacy', 'Terms']) await expect(page.locator('footer').getByRole('link', { name: label, exact: true })).toBeAttached();
+    await expect(page.locator('a[href*="dashboard" i], a[href*="invit" i]')).toHaveCount(0);
+  });
+  test('logo goes home', async ({ page }) => {
+    await page.goto('/en/market');
+    await page.locator('.gh-logo').click();
+    await expect(page).toHaveURL(/\/en$/);
+  });
+  test('Brand V2 fonts load (self-hosted, no Google Fonts)', async ({ page }) => {
+    const external: string[] = [];
+    page.on('request', r => { if (/fonts\.(googleapis|gstatic)\.com/.test(r.url())) external.push(r.url()); });
+    await page.goto('/ar');
+    await page.evaluate(() => document.fonts.ready);
+    const loaded = await page.evaluate(() => [...document.fonts].filter(f => f.status === 'loaded').map(f => f.family.replace(/"/g, '')));
+    expect(loaded).toEqual(expect.arrayContaining(['Noto Kufi Arabic', 'IBM Plex Sans Arabic']));
+    expect(external).toEqual([]);
+    await page.goto('/en');
+    await page.evaluate(() => document.fonts.ready);
+    const en = await page.evaluate(() => [...document.fonts].filter(f => f.status === 'loaded').map(f => f.family.replace(/"/g, '')));
+    expect(en).toEqual(expect.arrayContaining(['Archivo', 'IBM Plex Sans']));
+    const tokens = await page.evaluate(() => getComputedStyle(document.documentElement).getPropertyValue('--ci-color-yellow').trim());
+    expect(tokens.toUpperCase()).toBe('#FFD12A');
+  });
+  test('no horizontal overflow', async ({ page }) => {
+    const vw = page.viewportSize()!.width;
+    for (const p of ['ar','en'].flatMap(l => ['', '/cars', '/cars/kia-sportage', '/compare?ids=kia-sportage,hyundai-tucson', '/market', '/market/catalog', '/search?q=sportage', '/find-my-car', '/my-carindex', '/news'].map(p => `/${l}${p}`))) {
+      await page.goto(p);
+      const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+      expect(overflow, p).toBeLessThanOrEqual(1);
+      // a too-wide element can also make a phone widen its layout viewport (page zooms out) instead of scrolling
+      expect(await page.evaluate(() => window.innerWidth), p).toBeLessThanOrEqual(vw);
+    }
+  });
+});
+
+test.describe('boundaries', () => {
+  test('admin is not public', async ({ request }) => {
+    expect((await request.get('/admin')).status()).toBe(404);
+  });
+  test('Find My Car is bound to the P1 release (no 503 gate)', async ({ page, request }) => {
+    await page.goto('/en/find-my-car');
+    const shell = page.locator('[data-fmc-status="ready"]');
+    await expect(shell).toBeVisible();
+    await expect(shell).toHaveAttribute('data-release', P1B.release);
+    await expect(shell).toHaveAttribute('data-engine-version', P1B.engine);
+    await expect(shell).toHaveAttribute('data-transport-version', P1B.transport);
+    await expect(shell).toHaveAttribute('data-universe-version', P1B.universe);
+    const r = await request.post('/api/v1/recommendation', { data: { op: 'execute', locale: 'en', brief: { budget: 2000000, budgetMode: 'around', body: ['suv'] } } });
+    expect(r.status()).toBe(200);
+    const j = await r.json();
+    expect(j.result.schema).toBe('ci.reco.v1');
+    expect(j.result.engine_version).toBe(P1B.engine);
+    expect(j.result.result_id).toMatch(/^cr1_[0-9a-f]{32}$/);
+  });
+  test('recommendation API validates input', async ({ request }) => {
+    expect((await request.post('/api/v1/recommendation', { data: { entry: 'x' } })).status()).toBe(400);
+    expect((await request.post('/api/v1/recommendation', { data: { op: 'shared', locale: 'en', r: '!!' } })).status()).toBe(400);
+  });
+  test('compare shows no winner marks', async ({ page }) => {
+    await page.goto('/en/compare?ids=kia-sportage,hyundai-tucson');
+    await expect(page.locator('.win, [data-winner]')).toHaveCount(0);
+    // price wording only on price rows; other unknowns use the neutral label; car columns are equal width
+    const rows = page.locator('table.cmp tbody tr').filter({ hasNot: page.locator('th', { hasText: /^(From|Top version|Price state)$/ }) });
+    await expect(rows.filter({ hasText: 'Price not available yet' })).toHaveCount(0);
+    const w = await page.locator('table.cmp thead th.cmp-car').evaluateAll(els => els.map(e => Math.round(e.getBoundingClientRect().width)));
+    expect(Math.max(...w) - Math.min(...w)).toBeLessThanOrEqual(2);
+  });
+  // The old U11 listing conflict for Tucson is resolved upstream by a P2-accepted official distributor list (Tier A);
+  // the conflict rendering itself is covered by the unit fixture (no accepted price -> conflict, no figure).
+  test('Tucson shows the accepted official list price per version, no conflict, no bracket, no private source link', async ({ page }) => {
+    await page.goto('/en/cars/hyundai-tucson');
+    await expect(page.locator('.cd-info .state-conflict')).toHaveCount(0);
+    await expect(page.locator('tr[data-official-state="checked"]')).not.toHaveCount(0);
+    await expect(page.locator('tr[data-official-state="conflict"]')).toHaveCount(0);
+    await expect(page.locator('.src-list a[href*="drive.google.com"]')).toHaveCount(0);
+    await expect(page.locator('.src-list').first()).toContainText('GB Auto');
+  });
+  // P5-Run 8 Nov defect: V7 versions are HEV/PHEV but the page said "Petrol" (P1 R5 types them from the version label).
+  test('Haval V7 powertrain follows its HEV/PHEV version labels, not petrol', async ({ page }) => {
+    await page.goto('/en/cars/haval-v7');
+    const meta = page.locator('main p.small').filter({ hasText: 'versions' }).first();
+    await expect(meta).toContainText('Hybrid / Plug-in Hybrid');
+    await expect(meta).not.toContainText('Petrol');
+  });
+  test('Lexus LX keeps petrol and adds hybrid (LX600 + LX700h)', async ({ page }) => {
+    await page.goto('/en/cars/lexus-lx600');
+    await expect(page.locator('main p.small').filter({ hasText: 'versions' }).first()).toContainText('Petrol / Hybrid');
+  });
+  test('/cars/lexus-lx redirects to the LX page in both locales', async ({ request }) => {
+    for (const l of ['en', 'ar']) {
+      const res = await getNoFollow(request, `/${l}/cars/lexus-lx`);
+      expect(res.status()).toBe(308);
+      expect(res.headers()['location']).toBe(`/${l}/cars/lexus-lx600`);
+    }
+  });
+  test('preview and test builds do not load Google Tag Manager', async ({ request }) => {
+    test.skip(process.env.SMOKE_PRODUCTION === '1');
+    for (const l of ['ar', 'en']) expect(await (await request.get(`/${l}`)).text()).not.toContain('googletagmanager.com/gtm.js');
+  });
+  test('car detail Take is a data-bound slot', async ({ page }) => {
+    await page.goto('/en/cars/hyundai-tucson');
+    await expect(page.locator('[data-slot="carindex-take"]')).toHaveAttribute('data-bound', 'false');
+  });
+  test('security headers', async ({ request }) => {
+    const h = (await request.get('/en')).headers();
+    expect(h['content-security-policy']).toContain("frame-ancestors 'none'");
+    expect(h['x-content-type-options']).toBe('nosniff');
+  });
+  test('health exposes versions, not secrets', async ({ request }) => {
+    const j = await (await request.get('/api/health')).json();
+    expect(j.registry.registry_version).toBeTruthy();
+    expect(j.registry.source.repo).toBe('KingMega1/scratch');
+    expect(j.registry.source.path).toBe('vehicle-data/views/p1_suv_2m.json');
+    expect(j.registry.source.commit).toMatch(/^[0-9a-f]{40}$/);
+    expect(j.registry.source.sha256).toMatch(/^[0-9a-f]{64}$/);
+    expect(j.registry.snapshot_id).toContain(j.registry.registry_version);
+    expect(j.registry.synced_at).toBeTruthy();
+    expect(j.recommendation.status).toBe('ready');
+    expect(j.recommendation.integrity).toBe(true);
+    expect(j.recommendation.release).toBe(P1B.release);
+    expect(j.recommendation.transport_commit).toBe(P1B.transport_commit);
+    expect(j.recommendation.universe_version).toBe(P1B.universe);
+    expect(j.recommendation.p3_artifact).toBe(P1B.p3);
+    expect(JSON.stringify(j)).not.toMatch(/key|secret|password|token/i);
+  });
+});
+
+/* Independent audit (P5-AUDIT-01) regression guards. */
+const AXE = readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
+// Launch pages with P2-accepted heroes/galleries (handoff c) and a model-level price: WCAG A/AA, no horizontal overflow, the accepted photo shown.
+test.describe('launch car pages (P2 accepted media)', () => {
+  for (const path of ['ar','en'].flatMap(l => ['geely-ex5-em-i','gac-gs4-max','suzuki-baleno','byd-ti-7','deepal-g318','chery-arrizo-5'].map(s => `/${l}/cars/${s}`))) {
+    test(`accessible, no overflow, accepted photo: ${path}`, async ({ page }) => {
+      await page.goto(path);
+      const slug = path.split('/').pop()!;
+      await expect(page.locator(`.cd-media img[data-verified-photo][src^="/media/p2/models/${slug}"]`)).toHaveCount(1);
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1)).toBe(true);
+      await page.addScriptTag({ content: AXE });
+      const v = await page.evaluate(async () => (await (window as unknown as { axe: { run: (d: Document, o: object) => Promise<{ violations: { id: string; nodes: { target: string[] }[] }[] }> } }).axe
+        .run(document, { runOnly: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'] })).violations.map(x => `${x.id}: ${x.nodes.map(n => n.target.join(' ')).slice(0, 3).join(' | ')}`));
+      expect(v, path).toEqual([]);
+    });
+  }
+  test('P2-accepted Arabic model names: Arabic title for word names, Latin model codes kept; both searchable', async ({ page }) => {
+    await page.goto('/ar/cars/alfa-romeo-giulia');
+    await expect(page.locator('h1')).toContainText('جوليا');
+    await page.goto('/ar/cars/audi-q5');
+    await expect(page.locator('h1')).toContainText('Q5');
+    for (const [q, slug] of [['جوليا', 'alfa-romeo-giulia'], ['كيو 5', 'audi-q5']]) {
+      await page.goto(`/ar/search?q=${encodeURIComponent(q)}`);
+      await expect(page.locator(`a[href="/ar/cars/${slug}"]`).first()).toBeVisible();
+    }
+  });
+  test('visual QA regressions: Latin-only names read in order on Arabic pages; model counts pluralised; no internal source notes', async ({ page }) => {
+    await page.goto('/ar/cars/arcfox-t1');
+    await expect(page.locator('h1 bdi').first()).toHaveText('Arcfox T1'); // one LTR run, not "T1 Arcfox"
+    await page.goto('/en/market');
+    await expect(page.locator('body')).not.toContainText(/\b1 models\b/);
+    await page.goto('/en/cars/haval-h6');
+    await expect(page.locator('section[aria-labelledby="prices-h"]')).not.toContainText(/CEO|supplied/i);
+  });
+  test('CarIndexed V2.1 identity: header/footer/favicon assets and no legacy name in P5-owned visible text', async ({ page }) => {
+    for (const l of ['en', 'ar']) {
+      await page.goto(`/${l}`);
+      await expect(page.locator('header img[src="/brand/carindexed-logo-ink.svg"][alt="CarIndexed"]')).toHaveCount(1);
+      await expect(page.locator('footer img[src="/brand/carindexed-logo-white-yellow.svg"][alt="CarIndexed"]')).toHaveCount(1);
+      await expect(page.locator('link[rel="icon"][href*="/brand/carindexed-favicon.svg"]')).toHaveCount(1);
+      for (const path of ['', '/cars', '/cars/kia-sportage', '/compare?ids=kia-sportage,hyundai-tucson', '/market']) {
+        await page.goto(`/${l}${path}`);
+        const text = await page.locator('body').innerText();
+        expect(text, `${l}${path}`).not.toMatch(/CarIndex(?!ed)|كار إندكس(?!د)/);
+      }
+    }
+    expect((await page.request.get('/brand/carindexed-logo-ink.svg')).status()).toBe(200);
+    expect((await page.request.get('/brand/carindex-logo-ink.svg')).status()).toBe(404);
+  });
+  test('accepted P3 layout corrections: hero CTA above the fold; empty Take after prices/specs; all-unknown compare rows listed once', async ({ page }) => {
+    for (const l of ['en', 'ar']) {
+      await page.goto(`/${l}`);
+      const vh = page.viewportSize()!.height;
+      const cta = await page.locator('.hero-v2 .ctas').boundingBox();
+      expect(cta!.y + cta!.height, l).toBeLessThanOrEqual(vh);
+      for (const img of await page.locator('.hero-cars img').all()) { const b = await img.boundingBox(); expect(b!.width / b!.height).toBeGreaterThan(1.5); } // whole cars, not portrait crops
+    }
+    await page.goto('/en/cars/hyundai-tucson');
+    const order = await page.evaluate(() => ['prices-h', 'specs-h', 'take-h'].map(id => document.getElementById(id)!.compareDocumentPosition(document.getElementById('take-h')!)));
+    if (await page.locator('[data-slot="carindex-take"][data-bound="false"]').count()) expect(order.slice(0, 2).every(p => (p & 4) === 4 /* DOCUMENT_POSITION_FOLLOWING */)).toBe(true);
+    await page.goto('/en/compare?ids=kia-sportage,hyundai-tucson');
+    const missing = page.locator('details[data-cmp-missing]');
+    const rowsUnknownForAll = await page.locator('table.cmp tbody tr').evaluateAll(trs => trs.filter(tr => { const tds = [...tr.querySelectorAll('td')]; return tds.length > 0 && tds.every(td => td.querySelector('.state-unknown') && td.textContent!.trim() === td.querySelector('.state-unknown')!.textContent!.trim()); }).length);
+    expect(rowsUnknownForAll).toBe(0);
+    if (await missing.count()) await expect(missing.locator('li').first()).toBeAttached();
+  });
+  test('model-level accepted price is shown in the price table, not as unconfirmed', async ({ page }) => {
+    // fixture from the served P2 release: an accepted price without per-version rows (none -> nothing to check)
+    const rel = JSON.parse(readFileSync('data/registry/catalogue-serving.release.json', 'utf8'));
+    const m = [...rel.entries, ...(rel.market_additions ?? [])].find((e: { accepted?: { price?: { trims: unknown[] } } }) => e.accepted?.price && !e.accepted.price.trims.length);
+    test.skip(!m, 'no model-level-only accepted price in this release');
+    await page.goto(`/en/cars/${m.site_slug}`);
+    await expect(page.locator('tr[data-trim="model-level"][data-official-state="checked"]')).toHaveCount(1);
+    await expect(page.locator('section[aria-labelledby="prices-h"] .slot-empty')).toHaveCount(0);
+  });
+});
+test.describe('accessibility (axe, WCAG 2.1 A/AA)', () => {
+  for (const path of ['ar','en'].flatMap(l => ['', '/cars', '/cars/kia-sportage', '/compare?ids=kia-sportage,hyundai-tucson', '/market', '/market/catalog', '/search?q=sportage', '/find-my-car', '/my-carindex', '/news', '/news/official-vs-listing-prices', '/methodology'].map(p => `/${l}${p}`))) {
+    test(`no WCAG A/AA violations: ${path}`, async ({ page }) => {
+      await page.goto(path);
+      await page.addScriptTag({ content: AXE });
+      const v = await page.evaluate(async () => (await (window as unknown as { axe: { run: (d: Document, o: object) => Promise<{ violations: { id: string; nodes: { target: string[] }[] }[] }> } }).axe
+        .run(document, { runOnly: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'] })).violations.map(x => `${x.id}: ${x.nodes.map(n => n.target.join(' ')).slice(0, 3).join(' | ')}`));
+      expect(v, path).toEqual([]);
+    });
+  }
+});
+
+test.describe('seo', () => {
+  test('hreflang is absolute and reciprocal; canonical is self', async ({ request }) => {
+    for (const [l, other] of [['ar', 'en'], ['en', 'ar']]) {
+      const html = await (await request.get(`/${l}/cars/kia-sportage`)).text();
+      expect(html).toMatch(new RegExp(`<link rel="canonical" href="https?://[^"]+/${l}/cars/kia-sportage"`));
+      expect(html).toMatch(new RegExp(`<link rel="alternate" hrefLang="${other}" href="https?://[^"]+/${other}/cars/kia-sportage"`));
+      expect(html).toMatch(/<link rel="alternate" hrefLang="x-default" href="https?:\/\/[^"]+\/ar\/cars\/kia-sportage"/);
+    }
+  });
+  test('sitemap lists both locales and no noindex pages', async ({ request }) => {
+    const xml = await (await request.get('/sitemap.xml')).text();
+    expect(xml).toMatch(/<loc>[^<]+\/ar\/cars\/kia-sportage<\/loc>/);
+    expect(xml).toMatch(/<loc>[^<]+\/en\/cars\/kia-sportage<\/loc>/);
+    expect(xml).not.toMatch(/<loc>[^<]+\/(find-my-car|search|my-carindex|privacy|terms)<\/loc>/);
+  });
+  test('Find My Car is noindex', async ({ request }) => {
+    expect(await (await request.get('/en/find-my-car')).text()).toMatch(/<meta name="robots" content="noindex/);
+  });
+});
+
+test.describe('api boundaries', () => {
+  test('events collector rejects unknown events and accepts a valid EV3 envelope', async ({ request }) => {
+    const base = { schema: 'EV3', event_id: 'e1', ts: new Date().toISOString(), session_id: 's', anon_id: 'a', source_app: 'web', universe_version: null, engine_version: null, locale: 'en', route: 'home', journey_stage: 'awareness' };
+    expect((await request.post('/api/v1/events', { data: { ...base, event: 'not_an_event', props: {} } })).status()).toBe(400);
+    expect((await request.post('/api/v1/events', { data: { ...base, event: 'page_view', props: { route: '/en', 'user 01012345678': 'x', nested: { email: 'a@b.co' } } } })).status()).toBe(202);
+  });
+  test('car API rejects malformed ids', async ({ request }) => {
+    expect((await request.get('/api/v1/cars/..%2f..%2fetc/passwd')).status()).toBeGreaterThanOrEqual(400);
+    expect((await request.get('/api/v1/cars/KIA-Sportage')).status()).toBe(400);
+  });
+  test('admin is 404 on every path variant when unconfigured', async ({ request }) => {
+    for (const p of ['/admin', '/admin/', '/ar/../admin', '/admin.json']) expect((await request.get(p)).status(), p).toBe(404);
+  });
+});
+
+test.describe('Arabic compare search', () => {
+  for (const join of ['و','ولا']) test(`compare action for Arabic ${join}`,async({request})=>{
+    const j=await(await request.get(`/api/v1/search?q=${encodeURIComponent(`كيا سبورتاج ${join} هيونداي توسان`)}&locale=ar`)).json();
+    expect(JSON.stringify(j)).toContain('/ar/compare?ids=');
+  });
+});
+
+test.describe('CEO QC: P2 accepted data on public pages', () => {
+  test('Passat has no accepted price: no EGP figure anywhere on its page (EN/AR)', async ({ page }) => {
+    for (const l of ['en', 'ar']) {
+      await page.goto(`/${l}/cars/volkswagen-passat`);
+      const t = await page.locator('main').innerText();
+      expect(t, l).not.toMatch(/EGP\s?[\d,]{5,}|[\d,٬]{7,}\s?(ج\.م|جنيه)/);
+    }
+  });
+  test('Peugeot 2008 shows the corrected MY2027 official prices', async ({ page }) => {
+    await page.goto('/en/cars/peugeot-2008');
+    const m = page.locator('main');
+    await expect(m).toContainText('Model year 2027');
+    await expect(m).toContainText('EGP 1,499,990');
+    await expect(m).toContainText('EGP 1,649,990');
+  });
+  for (const [l, slug] of [['en', 'geely-ex2'], ['ar', 'geely-ex2'], ['en', 'geely-ex5'], ['ar', 'geely-ex5']]) {
+    test(`accepted ${slug} hero + every P2 gallery photo load (${l})`, async ({ page }) => {
+      const rel = JSON.parse(readFileSync('data/registry/catalogue-serving.release.json', 'utf8'));
+      const e = rel.entries.find((x: { site_slug?: string }) => x.site_slug === slug);
+      await page.goto(`/${l}/cars/${slug}`);
+      const imgs = page.locator(`main img[src*="/media/p2/models/${slug}"], main img[srcset*="${encodeURIComponent(`/media/p2/models/${slug}`)}"]`);
+      await expect(imgs).toHaveCount(1 + e.accepted.gallery.length);
+      await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+      // lazy gallery images: allow for a loaded server (full parallel suite) before declaring a broken photo
+      await expect.poll(() => imgs.evaluateAll(xs => xs.every(i => (i as HTMLImageElement).complete && (i as HTMLImageElement).naturalWidth > 0)), { timeout: 15_000 }).toBe(true);
+    });
+  }
+  // The 14 models whose P2 "from" price (latest model year) differs from P1's lowest version (includes previous-MY
+  // versions): the car page must show P2's accepted from-price and its model year, EN and AR.
+  test('starting price follows P2 accepted latest model year for the 14 model-year cases (EN/AR)', async ({ page }) => {
+    const rel = JSON.parse(readFileSync('data/registry/catalogue-serving.release.json', 'utf8'));
+    const all = [...rel.entries, ...(rel.market_additions ?? [])];
+    const ids = ['audi/a5', 'audi/q8', 'baic/bj30', 'baic/u5-plus', 'chery/arrizo-5', 'chery/arrizo-6-gt', 'chery/tiggo-4-pro', 'chery/tiggo-7',
+      'chery/tiggo-8', 'chery/tiggo-8-pro', 'chery/tiggo-8-pro-max', 'chery/tiggo-7-pro-max', 'mazda/3', 'mazda/cx-3'];
+    for (const id of ids) {
+      const e = all.find((x: { p1_id?: string; identity?: string }) => (x.p1_id ?? x.identity) === id);
+      const p = e.accepted.price;
+      for (const l of ['en', 'ar']) {
+        await page.goto(`/${l}/cars/${e.site_slug}`);
+        const t = await page.locator('main').innerText();
+        expect(t.includes(p.price_from.toLocaleString('en-US')) || t.includes(p.price_from.toLocaleString('ar-EG')), `${l} ${id} from ${p.price_from}`).toBe(true);
+        expect(l === 'en' ? t.includes(`Model year ${p.model_year}`) : t.includes(String(p.model_year)) || t.includes(p.model_year.toLocaleString('ar-EG', { useGrouping: false })), `${l} ${id} MY ${p.model_year}`).toBe(true);
+      }
+    }
+  });
+  test('BAIC accepted logo renders (home EN/AR, catalogue)', async ({ page }) => {
+    for (const u of ['/en', '/ar', '/en/market/catalog']) {
+      await page.goto(u);
+      const logo = page.locator('img[data-brand-logo="baic"][src="/media/p2/brands/baic.png"]').first();
+      await logo.scrollIntoViewIfNeeded();
+      await expect.poll(() => logo.evaluate(i => (i as HTMLImageElement).complete && (i as HTMLImageElement).naturalWidth > 0), { message: u }).toBe(true);
+    }
+  });
+  test('Find My Car result: P2-accepted same-origin photos only; P1 off-site figures dropped (EN/AR)', async ({ page, request }) => {
+    const corpus = JSON.parse(readFileSync('tests/fixtures/p1-release/corpus.json', 'utf8'));
+    const j = await (await request.post('/api/v1/recommendation', { data: { op: 'execute', locale: 'en', brief: corpus[24].brief } })).json();
+    expect(j.view).toBe('result');
+    for (const v of Object.values(j.photos as Record<string, { src: string } | null>)) if (v) expect(v.src).toMatch(/^\/media\/p2\//);
+    const withPhoto = Object.entries(j.photos).filter(([, v]) => v).map(([k]) => k);
+    expect(withPhoto.length).toBeGreaterThan(0);
+    for (const l of ['en', 'ar']) {
+      await page.goto(`/${l}/find-my-car?r=${j.result.share.r}`);
+      await expect(page.locator('[data-fmc-photo]')).toHaveCount(withPhoto.length, { timeout: 30000 });
+      await expect(page.locator('.fmc-result figure')).toHaveCount(0);
+      expect(await page.evaluate(() => [...document.images].filter(i => !i.src.startsWith(location.origin)).length)).toBe(0);
+    }
+  });
+});
+
+test.describe('CEO 5 Nov website fixes', () => {
+  for (const l of ['en', 'ar']) {
+    test(`first fold features the three recent launches and each tile opens its car page (${l})`, async ({ page }) => {
+      await page.goto(`/${l}`);
+      const tiles = page.locator('[data-hero-car]');
+      await expect(tiles).toHaveCount(3);
+      expect(await tiles.evaluateAll(as => as.map(a => a.getAttribute('data-hero-car')))).toEqual(['mg-rx9', 'byd-ti-7', 'geely-ex2']);
+      await expect(page.locator('[data-hero-car^="nissan-"]')).toHaveCount(0);
+      for (const id of ['mg-rx9', 'byd-ti-7', 'geely-ex2']) {
+        await page.goto(`/${l}`);
+        const img = page.locator(`[data-hero-car="${id}"] img`);
+        await expect.poll(() => img.evaluate(i => (i as HTMLImageElement).complete && (i as HTMLImageElement).naturalWidth > 0)).toBe(true);
+        await page.locator(`[data-hero-car="${id}"]`).click();
+        await expect(page).toHaveURL(new RegExp(`/${l}/cars/${id}$`));
+      }
+    });
+    test(`Why CarIndexed leads with buyer guidance, no price-clarity point (${l})`, async ({ page }) => {
+      await page.goto(`/${l}`);
+      const first = page.locator('#why-h ~ .grid .card').first();
+      await expect(first.locator('h3')).toHaveText(l === 'en' ? 'Find what fits you' : 'اعرف إيه اللي يناسبك');
+      await expect(first.locator('p')).toHaveText(l === 'en' ? 'Compare cars based on how you drive and what matters to you. See the trade-offs before you choose.'
+        : 'نساعدك تقارن العربيات حسب استخدامك وأولوياتك، ونوضح لك الفرق اللي يهمك قبل ما تختار.');
+      await expect(page.locator('#why-h ~ .grid')).not.toContainText(l === 'en' ? 'Clear prices' : 'السعر واضح');
+    });
+    test(`brand cards: one size, aligned logo slot / name / count with and without logos; whole card clickable (${l})`, async ({ page }) => {
+      await page.goto(`/${l}`);
+      const g = await page.locator('.brand-strip .body-tile').evaluateAll(ts => ts.map(t => {
+        const r = t.getBoundingClientRect(), q = (s: string) => t.querySelector(s)!.getBoundingClientRect(), nm = t.querySelector('.bt-name') as HTMLElement;
+        return { w: Math.round(r.width), h: Math.round(r.height), logo: (t.querySelector('.bt-logo') as HTMLElement).dataset.logo, lt: Math.round(q('.bt-logo').top - r.top),
+          lh: Math.round(q('.bt-logo').height), nt: Math.round(q('.bt-name').top - r.top), ct: Math.round(q('.n').top - r.top), clip: nm.scrollHeight > nm.clientHeight + 1, out: q('.n').bottom > r.bottom + 0.5 };
+      }));
+      expect(g.length).toBeGreaterThan(40);
+      expect(g.some(x => x.logo === 'none') && g.some(x => x.logo === 'yes')).toBe(true);
+      for (const k of ['w', 'h', 'lt', 'lh', 'nt', 'ct'] as const) expect(new Set(g.map(x => x[k])).size, k).toBe(1);
+      expect(g.filter(x => x.clip || x.out)).toEqual([]);
+      const card = page.locator('.brand-strip .body-tile').filter({ has: page.locator('.bt-logo[data-logo="none"]') }).first();
+      const id = await card.getAttribute('data-brand-id');
+      await card.scrollIntoViewIfNeeded();
+      const box = (await card.boundingBox())!;
+      await page.mouse.click(box.x + box.width / 2, box.y + 12); // click the empty logo slot: still the card's link
+      await expect(page).toHaveURL(new RegExp(`/${l}/market/catalog\\?brand=${id}$`));
+    });
+  }
+  test('Browse Cars: no "Official prices only"; Newest sorts the filtered set by model year before pagination, stable, EN/AR', async ({ page }) => {
+    const rel = JSON.parse(readFileSync('data/registry/catalogue-serving.release.json', 'utf8'));
+    const MY = new Map<string, number | null>([...rel.entries, ...(rel.market_additions ?? [])].map((e: { site_slug: string; accepted?: { price?: { model_year?: number } } }) => [e.site_slug, e.accepted?.price?.model_year ?? null]));
+    for (const l of ['en', 'ar']) {
+      await page.goto(`/${l}/cars`);
+      await expect(page.locator('.filters')).not.toContainText(l === 'en' ? 'Official prices only' : 'أسعار رسمية بس');
+      await expect(page.locator('.filters a.chip', { hasText: l === 'en' ? 'Newest' : 'الأحدث' })).toHaveCount(1);
+    }
+    const collect = async (qs: string) => {
+      const ids: string[] = [];
+      for (let n = 1; n < 30; n++) {
+        await page.goto(`/en/cars?${qs}${n > 1 ? `&page=${n}` : ''}`);
+        const got = await page.locator('.grid-4 a.cc[data-model-id]').evaluateAll(as => as.map(a => a.getAttribute('data-model-id')!));
+        ids.push(...got);
+        if (!(await page.locator('.pager a[rel="next"]').count())) break;
+      }
+      return ids;
+    };
+    const filters = 'body=suv';
+    const newest = await collect(`${filters}&sort=newest`), popular = await collect(filters);
+    expect(newest.length).toBeGreaterThan(24); // spans more than one page
+    expect(new Set(newest).size).toBe(newest.length); // no duplicates across pages
+    expect([...newest].sort()).toEqual([...popular].sort()); // same filtered set
+    const rank = (id: string) => (MY.get(id) != null ? -MY.get(id)! : 1); // model year desc, then cars with none
+    for (let i = 1; i < newest.length; i++) expect(rank(newest[i - 1]) <= rank(newest[i]), `${newest[i - 1]} before ${newest[i]}`).toBe(true);
+    // ties keep the default (most registered) order
+    const pos = new Map(popular.map((id, i) => [id, i]));
+    for (let i = 1; i < newest.length; i++) if (rank(newest[i - 1]) === rank(newest[i])) expect(pos.get(newest[i - 1])! < pos.get(newest[i])!).toBe(true);
+    expect(await collect(`${filters}&sort=newest`)).toEqual(newest); // stable between requests
+    await page.goto('/en/cars?official=1'); // removed filter: old links show the full list
+    await expect(page.locator('.filters a.link', { hasText: 'Clear filters' })).toHaveCount(0);
+  });
+  test('price labels follow the P2 tier (same rule as P1 R5): Tier A official, Tier B/C market', async ({ page }) => {
+    await page.goto('/en/cars/hyundai-tucson'); // Tier A
+    await expect(page.locator('tr[data-official-state="checked"] [data-price-kind="official"]').first()).toHaveText('Official price');
+    await page.goto('/en/cars/bmw-x1'); // Tier B (price sites)
+    await expect(page.locator('tr[data-official-state] [data-price-kind="official"]')).toHaveCount(0);
+    await expect(page.locator('tr[data-official-state] [data-price-kind="market"]').first()).toHaveText('Market price, not official');
+    await page.goto('/ar/cars/kia-sportage'); // Tier C (CEO-confirmed)
+    await expect(page.locator('tr[data-official-state] [data-price-kind="market"]').first()).toHaveText('سعر سوق، مش رسمي');
+  });
+});
+
+test.describe('Find My Car -> car page parity (price, version, model year) on the bound P1 release', () => {
+  test('every official version a recommendation shows is on the car page with the same label, price and model year (EN all briefs, AR sample)', async ({ page, request, isMobile }) => {
+    test.skip(isMobile, 'data parity is viewport-independent; desktop only keeps the API under its rate limit');
+    test.setTimeout(600_000);
+    const corpus = JSON.parse(readFileSync('tests/fixtures/p1-release/corpus.json', 'utf8'));
+    const exec = async (brief: unknown, locale: string) => {
+      for (;;) {
+        const r = await request.post('/api/v1/recommendation', { data: { op: 'execute', locale, brief } });
+        if (r.status() === 429) { await page.waitForTimeout(1000 * Number(r.headers()['retry-after'] || 10)); continue; }
+        expect(r.status()).toBe(200); return r.json();
+      }
+    };
+    const norm = (x: string) => x.replace(/\s+/g, ' ').trim().toLowerCase();
+    const digits = (x: string) => x.replace(/[٠-٩]/g, d => String('٠١٢٣٤٥٦٧٨٩'.indexOf(d))).replace(/[^\d]/g, '');
+    const seen = new Set<string>(); let officialChecked = 0, marketOnly = 0; const bad: string[] = [];
+    for (const [i, c] of corpus.entries()) for (const locale of i % 4 === 0 ? ['en', 'ar'] : ['en']) {
+      const j = await exec(c.brief, locale);
+      if (j.view !== 'result') continue;
+      const cars = [j.result.hero, ...(j.result.alternatives || [])].filter(Boolean);
+      for (const car of cars) {
+        const slug = j.website[car.id]; if (!slug) { bad.push(`${car.id}: no car page`); continue; }
+        const k = `${locale}/${car.id}`; if (seen.has(k)) continue; seen.add(k);
+        await page.goto(`/${locale}/cars/${slug}`);
+        const rows = await page.locator('#prices-h ~ * table tbody tr[data-official-state], table.t tbody tr[data-official-state]').evaluateAll(trs =>
+          trs.map(tr => ({ state: tr.getAttribute('data-official-state'), kind: tr.querySelector('[data-price-kind]')?.getAttribute('data-price-kind') ?? null, label: (tr.querySelector('td bdi')?.textContent || ''), price: (tr.querySelectorAll('td')[1]?.textContent || '') })));
+        const main = await page.locator('main').innerText();
+        const official = (car.versions || []).filter((v: { official?: boolean }) => v.official === true);
+        // P1 market versions: the car page never calls that figure official (it is labelled a market price, or not shown
+        // when P2 has no accepted price, e.g. Passat).
+        for (const v of (car.versions || []).filter((x: { official?: boolean }) => x.official !== true)) {
+          marketOnly++;
+          const same = rows.filter(r => digits(r.price) === String(v.min));
+          if (same.some(r => r.kind === 'official')) bad.push(`${k}: ${v.label} ${v.min} is market in P1 but labelled official on the car page`);
+        }
+        for (const v of official) {
+          officialChecked++;
+          const hit = rows.find(r => r.state === 'checked' && r.kind === 'official' && digits(r.price) === String(v.min) &&
+            (v.label === 'Unspecified trim' || norm(r.label) === norm(v.label) || rows.length === 1));
+          if (!hit) bad.push(`${k}: ${v.label} ${v.min} not on page [${rows.map(r => `${r.label}=${digits(r.price)}`).join('; ')}]`);
+          const myLabel = locale === 'ar' ? 'موديل' : 'Model year';
+          if (v.year && !main.includes(`${myLabel} ${v.year}`) && !main.includes(`${myLabel} ${Number(v.year).toLocaleString('ar-EG', { useGrouping: false })}`)) bad.push(`${k}: model year ${v.year} not on page`);
+        }
+      }
+    }
+    console.log(`parity: ${officialChecked} official versions checked, ${marketOnly} market versions checked, ${seen.size} car pages`);
+    expect(officialChecked).toBeGreaterThan(50);
+    expect(bad).toEqual([]);
+  });
+});
+
+test.describe('production-only boundaries (local build, no deploy)',()=>{
+  test.skip(process.env.SMOKE_PRODUCTION !== '1');
+  test('drafts cannot leak through home, news, article, search or car detail',async({request})=>{
+    for(const l of ['ar','en']) {
+      for(const p of [`/${l}`,`/${l}/news`,`/${l}/cars/kia-sportage`,`/${l}/search?q=official`]) {
+        const html=await(await request.get(p)).text();expect(html).not.toContain('official-vs-listing-prices');
+      }
+      expect((await request.get(`/${l}/news/official-vs-listing-prices`)).status()).toBe(404);
+    }
+  });
+  test('production browser has no QA browsing buffer; env query cannot enable it',async({page})=>{
+    await page.goto('/en?env=qa');await page.waitForTimeout(100);
+    expect(await page.evaluate(()=>localStorage.getItem('ci_events'))).toBeNull();
+    await expect(page.locator('html')).toHaveAttribute('data-env','prod');
+  });
+  test('production loads GTM-5WVQ2M7S once, with noscript fallback, and CSP allows it',async({request})=>{
+    for(const l of ['ar','en']){
+      const res=await request.get(`/${l}`);const html=await res.text();
+      // count real <script> tags; the React flight payload repeats the markup as text
+      expect(html.match(/<script[^>]*src="https:\/\/www\.googletagmanager\.com\/gtm\.js\?id=GTM-5WVQ2M7S"/g)?.length).toBe(1);
+      expect(html).toContain('googletagmanager.com/ns.html?id=GTM-5WVQ2M7S');
+      const csp=res.headers()['content-security-policy'];
+      expect(csp).toMatch(/script-src [^;]*https:\/\/www\.googletagmanager\.com/);
+      expect(csp).toMatch(/connect-src [^;]*google-analytics\.com/);
+    }
+  });
+  test('production indexes launch pages but keeps FMC and account noindex',async({request})=>{
+    const html=await(await request.get('/en')).text();expect(html).not.toMatch(/<meta name="robots" content="noindex/);
+    for(const p of ['/ar/find-my-car','/en/my-carindex']) expect(await(await request.get(p)).text()).toMatch(/<meta name="robots" content="noindex/);
+  });
+});
+
+/* Find My Car journeys over the bound P1 transport (preview: P1-RELEASE-U12-CEO3-R5). Copy assertions use P1 engine-owned strings verbatim. */
+const FMC = {
+  en: { text: 'Family SUV around EGP 2 million, hybrid preferred', summary: 'Here’s what we understood', confirm: 'Yes, show my cars', based: 'Based on your brief' },
+  ar: { text: 'عايز عربية عالية في حدود 2.2 مليون.', summary: 'ده اللي فهمناه', confirm: 'أيوه، وريني العربيات', based: 'على أساس طلبك' },
+} as const;
+async function answerUntilSummary(page: Page) {
+  for (let i = 0; i < 12; i++) {
+    const view = await page.locator('.fmc').getAttribute('data-fmc-view');
+    if (view === 'summary') return;
+    const q = page.locator('.fmc-question');
+    await expect(q).toBeVisible();
+    const step = await q.locator('.label-mono').first().textContent();
+    const skip = q.locator('.fmc-actions .link-btn');
+    if (await skip.count()) await skip.click();
+    else if (await q.locator('.budget-card').count()) await q.locator('.fmc-actions .btn-primary').click();
+    else await q.locator('.opt').first().click();
+    // advance when the view leaves the question screen or the step label changes
+    // one atomic DOM read: never wait on an element the next render may have removed
+    await expect.poll(() => page.evaluate(prev => {
+      const root = document.querySelector('.fmc');
+      if (!root || root.getAttribute('data-fmc-view') !== 'q') return 'moved';
+      return document.querySelector('.fmc-question .label-mono')?.textContent !== prev ? 'moved' : 'same';
+    }, step), { timeout: 20_000 }).toBe('moved');
+  }
+}
+test.describe('find my car (P1 transport)', () => {
+  test.setTimeout(90_000);
+  for (const l of ['en', 'ar'] as const) {
+    test(`${l}: free text -> questions -> summary -> result, engine copy intact`, async ({ page }, testInfo) => {
+      const errors: string[] = []; page.on('pageerror', e => errors.push(String(e)));
+      await page.goto(`/${l}/find-my-car`);
+      await page.locator('#fmc-brief').fill(FMC[l].text);
+      await page.locator('[data-fmc="go"]').click();
+      await answerUntilSummary(page);
+      await expect(page.locator('#fmc-s-h')).toHaveText(FMC[l].summary);
+      await shot(page, `fmc-${l}-summary`, testInfo);
+      await page.locator('[data-fmc="confirm"]').click();
+      const res = page.locator('.fmc-result');
+      await expect(res).toBeVisible({ timeout: 20_000 });
+      await expect(res).toHaveAttribute('data-engine-version', P1B.engine);
+      await expect(res).toHaveAttribute('data-universe-version', P1B.universe);
+      await expect(page.locator('#fmc-r-h')).toHaveText(FMC[l].based);
+      await expect(page.locator('.fmc')).toHaveAttribute('dir', l === 'ar' ? 'rtl' : 'ltr');
+      expect(page.url()).toMatch(/\?r=[A-Za-z0-9_-]+$/);
+      expect(decodeURIComponent(page.url())).not.toContain(FMC[l].text);
+      const ids = await page.locator('[data-model-id]').evaluateAll(els => els.map(e => e.getAttribute('data-model-id')));
+      expect(ids.length).toBeGreaterThan(0);
+      await shot(page, `fmc-${l}-result`, testInfo);
+      const w = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+      expect(w).toBeLessThanOrEqual(1);
+      expect(errors).toEqual([]);
+    });
+    test(`${l}: shared result link reproduces the result; guided path starts with a question`, async ({ page, request }) => {
+      const j = await (await request.post('/api/v1/recommendation', { data: { op: 'execute', locale: l, brief: { budget: 1500000, budgetMode: 'around', body: ['suv'], seats: 7 } } })).json();
+      await page.goto(`/${l}/find-my-car?r=${j.result.share.r}`);
+      await expect(page.locator('.fmc-result')).toHaveAttribute('data-result-id', j.result.result_id, { timeout: 20_000 });
+      await page.goto(`/${l}/find-my-car`);
+      await page.locator('[data-fmc="guided"]').click();
+      await expect(page.locator('.fmc-question')).toBeVisible();
+    });
+  }
+  test('recommendations beyond the old slice retain cards and now have catalogue links', async ({ page, request }) => {
+    const brief = { budget: 1200000, budgetMode: 'around', body: ['sedan'] };
+    const j = await (await request.post('/api/v1/recommendation', { data: { op: 'execute', locale: 'en', brief } })).json();
+    const entries = Object.entries(j.website as Record<string,string|null>);
+    expect(entries.length).toBeGreaterThan(0);
+    for(const [,slug] of entries) expect(slug).toBeTruthy();
+    await page.goto(`/en/find-my-car?r=${j.result.share.r}`);
+    await expect(page.locator('.fmc-result')).toBeVisible({ timeout: 20_000 });
+    for(const [id,slug] of entries.filter(([id])=>[j.result.hero?.id,...j.result.alternatives.map((a:{id:string})=>a.id)].includes(id))){
+      const link=page.locator(`[data-fmc-site-link="${id}"]`).first();
+      await expect(link).toBeVisible();
+      await expect(link).toHaveAttribute("href",`/en/cars/${slug}`);
+    }
+    const shown = await page.locator('.fmc-result [data-model-id]').evaluateAll(els => els.map(e => e.getAttribute('data-model-id')));
+    expect(shown).toEqual([j.result.hero.id, ...j.result.alternatives.map((a: { id: string }) => a.id)]);
+  });
+  test('result view has no WCAG A/AA violations', async ({ page, request }) => {
+    const j = await (await request.post('/api/v1/recommendation', { data: { op: 'execute', locale: 'ar', brief: { budget: 2000000, budgetMode: 'around', body: ['suv'] } } })).json();
+    await page.goto(`/ar/find-my-car?r=${j.result.share.r}`);
+    await expect(page.locator('.fmc-result')).toBeVisible({ timeout: 20_000 });
+    await page.addScriptTag({ content: AXE });
+    const v = await page.evaluate(async () => (await (window as unknown as { axe: { run: (d: Document, o: object) => Promise<{ violations: { id: string; nodes: { target: string[] }[] }[] }> } }).axe
+      .run(document, { runOnly: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'] })).violations.map(x => `${x.id}: ${x.nodes.map(n => n.target.join(' ')).slice(0, 3).join(' | ')}`));
+    expect(v).toEqual([]);
+  });
+});
+
+/* Full buyer journey (AT-43 recovery): Homepage -> Find My Car -> brief -> recommendation -> WHY -> alternatives
+   -> Car Detail -> share link; EV3 analytics events carry ids/keys only, never the buyer's words. */
+test.describe('buyer journey end to end', () => {
+  test.setTimeout(90_000);
+  for (const l of ['en', 'ar'] as const) {
+    test(`${l}: homepage -> FMC -> result -> car detail, analytics clean`, async ({ page, request }) => {
+      await page.goto(`/${l}`);
+      await page.locator('a[data-cta="hero_fmc"]').click();
+      await expect(page).toHaveURL(new RegExp(`/${l}/find-my-car`));
+      await page.locator('#fmc-brief').fill(FMC[l].text);
+      await page.locator('[data-fmc="go"]').click();
+      await answerUntilSummary(page);
+      await page.locator('[data-fmc="confirm"]').click();
+      const res = page.locator('.fmc-result');
+      await expect(res).toBeVisible({ timeout: 20_000 });
+      await expect(res.locator('.fmc-detail h3, .fmc-card').first()).toBeVisible(); // WHY block or equal cards
+      const ev = await page.evaluate(() => (window as unknown as { dataLayer: { event: string; props: Record<string, unknown>; result_id: string | null; engine_version: string | null }[] }).dataLayer);
+      const names = ev.map(e => e.event);
+      for (const n of ['fmc_view', 'fmc_start', 'fmc_q_answer', 'fmc_summary_confirm', 'fmc_result_view']) expect(names, n).toContain(n);
+      const rv = ev.find(e => e.event === 'fmc_result_view')!;
+      expect(rv.result_id).toMatch(/^cr1_/); expect(rv.engine_version).toBe(P1B.engine);
+      expect(JSON.stringify(ev)).not.toContain(FMC[l].text);
+      expect(JSON.stringify(ev)).not.toMatch(/"(text|free_text|notes|q)"\s*:/);
+      // Car Detail hop from a result that includes a car with a page on the site
+      let token = '', target = '';
+      for (const brief of [{ budget: 2000000, budgetMode: 'around', body: ['suv'], chinese: 'exclude' }, { budget: 2500000, budgetMode: 'max', body: ['suv'] }, { budget: 1800000, budgetMode: 'around', body: ['suv'], priorities: ['popular'] }]) {
+        const j = await (await request.post('/api/v1/recommendation', { data: { op: 'execute', locale: l, brief } })).json();
+        const hit = Object.entries(j.website as Record<string, string | null>).find(([, v]) => v);
+        if (hit) { token = j.result.share.r; target = hit[1] as string; break; }
+      }
+      expect(target, 'a result with an on-site car').not.toBe('');
+      await page.goto(`/${l}/find-my-car?r=${token}`);
+      await expect(page.locator('.fmc-result')).toBeVisible({ timeout: 20_000 });
+      await page.locator(`a[href="/${l}/cars/${target}"]`).first().click();
+      await expect(page).toHaveURL(new RegExp(`/${l}/cars/${target}$`));
+      await expect(page.locator('h1')).toBeVisible();
+    });
+  }
+});

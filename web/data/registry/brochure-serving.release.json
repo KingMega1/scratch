@@ -1,0 +1,127 @@
+{
+  "schema": "carindex.p2.brochure-serving/v1",
+  "release_id": "P2-BROCHURES-2026-10-12-RC1",
+  "canonical_acceptance": "P2_ACCEPT_PENDING",
+  "entries": [
+    {
+      "p1_id": "nissan/magnite",
+      "url": "https://www-europe.nissan-cdn.net/content/dam/Nissan/nissan_middle_east/brochures/LIB/NISSAN_EGYPT_MAGNITE-EN.pdf",
+      "source_page": "https://en.nissan.com.eg/vehicles/new/magnite.html",
+      "issuer": "Nissan Motor Egypt",
+      "sha256": "e9b7998714279d68fd4f4b2cc64994a244dfedaa4a0199c68ee9846b1feceb20",
+      "bytes": 4222184,
+      "pages": 12,
+      "observed_at": "2026-10-12",
+      "effective_date": null,
+      "document_year": null,
+      "qa": {
+        "pdf_magic": "PASS",
+        "text_extraction": "PASS",
+        "exact_model": "PASS_DOCUMENT_REVIEW",
+        "egypt_source": "PASS_OFFICIAL_PARENT_AND_REGIONAL_PATH",
+        "trim_applicability": "VERIFY_BEFORE_FACT_PROMOTION"
+      },
+      "status": "SOURCE_VERIFIED_DOCUMENT;FACT_PROMOTION_PENDING"
+    },
+    {
+      "p1_id": "nissan/sunny",
+      "url": "https://www-europe.nissan-cdn.net/content/dam/Nissan/eg/brochures/Sunny.pdf",
+      "source_page": "https://en.nissan.com.eg/vehicles/new/sunny.html",
+      "issuer": "Nissan Motor Egypt",
+      "sha256": "69f75f7ac9f575c0272a4255ce88cf5104c47015e036555776771af337ae7aa1",
+      "bytes": 5149678,
+      "pages": 8,
+      "observed_at": "2026-10-12",
+      "effective_date": null,
+      "document_year": 2027,
+      "qa": {
+        "pdf_magic": "PASS",
+        "text_extraction": "PASS",
+        "exact_model": "PASS_DOCUMENT_REVIEW",
+        "egypt_source": "PASS_OFFICIAL_PARENT_AND_REGIONAL_PATH",
+        "trim_applicability": "VERIFY_BEFORE_FACT_PROMOTION"
+      },
+      "status": "SOURCE_VERIFIED_DOCUMENT;FACT_PROMOTION_PENDING"
+    },
+    {
+      "p1_id": "nissan/sentra",
+      "url": "https://www-europe.nissan-cdn.net/content/dam/Nissan/eg/brochures/SENTRA.pdf",
+      "source_page": "https://en.nissan.com.eg/vehicles/new/sentra.html",
+      "issuer": "Nissan Motor Egypt",
+      "sha256": "5f98dfa149d998f0f3a332a9a253612b2f32a43d04b12f6d3c0a4060c9e7300a",
+      "bytes": 735325,
+      "pages": 5,
+      "observed_at": "2026-10-12",
+      "effective_date": null,
+      "document_year": 2025,
+      "qa": {
+        "pdf_magic": "PASS",
+        "text_extraction": "PASS",
+        "exact_model": "PASS_DOCUMENT_REVIEW",
+        "egypt_source": "PASS_OFFICIAL_PARENT_AND_REGIONAL_PATH",
+        "trim_applicability": "VERIFY_BEFORE_FACT_PROMOTION"
+      },
+      "status": "SOURCE_VERIFIED_DOCUMENT;FACT_PROMOTION_PENDING"
+    },
+    {
+      "p1_id": "nissan/qashqai",
+      "url": "https://www-europe.nissan-cdn.net/content/dam/Nissan/eg/brochures/NEW-NISSAN-QASHQAI-EGP.pdf",
+      "source_page": "https://en.nissan.com.eg/vehicles/new/qashqai.html",
+      "issuer": "Nissan Motor Egypt",
+      "sha256": "e01572ade7a73ede7ba20244bcd802c2304a3b1d0e22548eecfc375a587a672c",
+      "bytes": 3820957,
+      "pages": 14,
+      "observed_at": "2026-10-12",
+      "effective_date": null,
+      "document_year": null,
+      "qa": {
+        "pdf_magic": "PASS",
+        "text_extraction": "PASS",
+        "exact_model": "PASS_DOCUMENT_REVIEW",
+        "egypt_source": "PASS_OFFICIAL_PARENT_AND_REGIONAL_PATH",
+        "trim_applicability": "VERIFY_BEFORE_FACT_PROMOTION"
+      },
+      "status": "SOURCE_VERIFIED_DOCUMENT;FACT_PROMOTION_PENDING"
+    },
+    {
+      "p1_id": "nissan/x-trail",
+      "url": "https://www-europe.nissan-cdn.net/content/dam/Nissan/eg/brochures/ALL-NEW-NISSAN-X-TRAIL-EGP.pdf",
+      "source_page": "https://en.nissan.com.eg/vehicles/new/x-trail.html",
+      "issuer": "Nissan Motor Egypt",
+      "sha256": "1a23236fdad6831d6a6c2c933c693f4af6bcbc0a8982cdfab7aa24e8965c1832",
+      "bytes": 5681427,
+      "pages": 16,
+      "observed_at": "2026-10-12",
+      "effective_date": null,
+      "document_year": null,
+      "qa": {
+        "pdf_magic": "PASS",
+        "text_extraction": "PASS",
+        "exact_model": "PASS_DOCUMENT_REVIEW",
+        "egypt_source": "PASS_OFFICIAL_PARENT_AND_REGIONAL_PATH",
+        "trim_applicability": "VERIFY_BEFORE_FACT_PROMOTION"
+      },
+      "status": "SOURCE_VERIFIED_DOCUMENT;FACT_PROMOTION_PENDING"
+    },
+    {
+      "p1_id": "nissan/patrol",
+      "url": "https://www-europe.nissan-cdn.net/content/dam/Nissan/eg/brochures/ALL-NEW-NISSAN-PATROL-EGP.pdf",
+      "source_page": "https://en.nissan.com.eg/vehicles/new/allnewpatrol.html",
+      "issuer": "Nissan Motor Egypt",
+      "sha256": "e25cdf806e07b52e0c22a52433053799c5a36e9e9ae83a9efca12f42677f41e8",
+      "bytes": 10648055,
+      "pages": 43,
+      "observed_at": "2026-10-12",
+      "effective_date": null,
+      "document_year": 2025,
+      "qa": {
+        "pdf_magic": "PASS",
+        "text_extraction": "PASS",
+        "exact_model": "PASS_DOCUMENT_REVIEW",
+        "egypt_source": "PASS_OFFICIAL_PARENT_AND_REGIONAL_PATH",
+        "trim_applicability": "VERIFY_BEFORE_FACT_PROMOTION"
+      },
+      "status": "SOURCE_VERIFIED_DOCUMENT;FACT_PROMOTION_PENDING"
+    }
+  ]
+}

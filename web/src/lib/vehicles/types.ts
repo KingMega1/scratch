@@ -1,0 +1,102 @@
+/* Public (customer-facing) vehicle shape, adapted from the canonical carindex.p1.buyer_view/v2.
+   Only this shape reaches the browser. Internal machinery (confidence grades, row refs, QA queues) stays server-side;
+   customer-facing evidence (source name, date, link) is kept because every figure must carry it. */
+
+/* 'ice' = combustion where the source does not say petrol or diesel (never shown as petrol by assumption). */
+export type Powertrain = 'petrol' | 'diesel' | 'ice' | 'hybrid' | 'phev' | 'reev' | 'ev';
+
+/* Brand V2 evidence states. 'checked' = official figure with a named, dated source (bracket allowed). */
+export type PriceState = 'checked' | 'near' | 'conflict' | 'unknown';
+
+export type AssetFlag = 'TEMP_UNVERIFIED' | 'PHOTO_NEEDS_ENRICHMENT' | 'EXACT_CAR_UNCONFIRMED' | 'WATERMARK_CROPPED';
+
+export interface SourceRef { name: string; url: string | null; observedAt: string; effectiveDate: string | null }
+
+export interface OfficialPrice {
+  state: PriceState;
+  value: number | null;      // single figure (AGREED / SINGLE_SOURCE)
+  min: number | null;        // NEAR_AGREEMENT range, or lowest conflicting value
+  max: number | null;
+  values: number[];          // CONFLICT: every disagreeing value, never averaged
+  agreedBySources: number;   // count of sources giving the figure
+  sources: SourceRef[];
+  /* false = P2-accepted but not an official list price (P2 Tier B/C, or a never-official brand): labelled
+     "Market price, not official" — the same rule P1 R4 applies (official == Tier A). Absent = official. */
+  isOfficial?: boolean;
+}
+
+export interface PublicTrim {
+  key: string;
+  label: string;
+  modelYear: number | null;
+  official: OfficialPrice;
+  market: { value: number; source: string; observedAt: string } | null; // separate series, never merged
+}
+
+export interface PriceChange { modelYear: number | null; trim: string; from: number; to: number; effectiveDate: string; source: string; url: string | null; kind: 'stated' | 'observed' }
+
+export interface SpecValue { values: { value: string; sources: string[] }[]; multiple: boolean }
+
+export interface PublicImage { src: string; credit: string | null; sourcePage: string | null; flags: AssetFlag[] }
+
+export type GapCode = 'SINGLE_SOURCE_MODEL' | 'FROM_PRICE_IN_CONFLICT' | 'REGISTRATION_UNLINKED' | 'PRICE_RULE_NOT_MET' | 'NO_OFFICIAL_PRICE' | 'UNRESOLVED_TRIMS_IN_PRICED_COHORT' | string;
+
+/* P2-accepted customer content (catalogue serving release `accepted`). Values are shown as accepted; never inferred. */
+export interface P2Fact { value: string; unit: string; scope: string | null; issuer: string; sourceUrl: string | null }
+export interface P2GalleryImage { src: string; width: number | null; height: number | null; credit: string | null; page: string | null }
+export interface P2Brochure { title: string; url: string; issuer: string; scope: string | null }
+export interface P2Content {
+  specs: { key: string; facts: P2Fact[] }[];       // known customer spec keys only, release order
+  warranty: { kind: 'vehicle' | 'battery'; fact: P2Fact }[];
+  gallery: P2GalleryImage[];
+  brochures: P2Brochure[];                          // publicly reachable official links only
+}
+
+export interface PublicCar {
+  p1Id?: string;
+  body?: string | null;
+  evidenceState?: string;
+  id: string;                // URL slug from the view (identity PROVISIONAL upstream: D3/D4)
+  brand: { en: string; ar: string | null };
+  model: { en: string; ar: string | null };
+  inSlice: boolean;
+  priceFrom: {
+    state: PriceState;       // checked | near (range) | conflict | unknown
+    value: number | null; min: number | null; max: number | null;
+    sortValue: number | null; // for ordering/filtering only; never displayed as a price
+    modelYear: number | null;
+    isOfficial?: boolean;     // see OfficialPrice.isOfficial
+  };
+  /* Verified Egypt-market launch date (P2 accepted.egypt_launch_date, YYYY-MM or YYYY-MM-DD). Null until P2 serves one;
+     used only to order "Newest". Price refresh dates never stand in for it. */
+  launchDate?: string | null;
+  trims: PublicTrim[];       // latest priced model-year cohort
+  otherCohorts: { modelYear: number | null; trims: PublicTrim[] }[];
+  modelPrice?: OfficialPrice | null; // P2-accepted model-level starting price when no per-version prices are accepted
+  changes: PriceChange[];
+  specs: Record<string, SpecValue>;
+  powertrains: Powertrain[]; // from registrations actually recorded
+  registrations: {
+    inWindow: number | null; rank: number | null; ranked: number | null; share: number | null;
+    yoy: number | null; yoyCaveat: string | null; firstSeen: string | null;
+    window: [string, string] | null; monthsMissing: string[];
+    monthly: { month: string; count: number }[];
+  } | null;
+  gaps: GapCode[];
+  conflicts: number;
+  lastObserved: string | null;
+  p2: P2Content | null;
+  image: PublicImage | null;
+}
+
+export interface RegistryMeta {
+  schema: string;
+  registry_version: string;
+  snapshot_id: string;
+  generated_as_of: string;
+  models_total: number;
+  models_in_slice: number;
+  source: { repo: string; branch: string; commit: string; root: string; path: string; sha256: string };
+}
+
+export interface BrandSummary { id: string; en: string; ar: string | null; count: number; registrations: number }

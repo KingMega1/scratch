@@ -1,0 +1,186 @@
+{
+ "record": "P1-RELEASE-U12-CEO3-R5",
+ "status": "ACCEPTED",
+ "acceptance": {
+  "by": "CEO (release authority)",
+  "date": "2026-11-08",
+  "basis": "All P1 gates pass on final hashes",
+  "p2": {
+   "commit": "723748dfd32a7b88ef56b3bc55893fdd19ed7a0c",
+   "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+   "revision": "cddfe91b3287",
+   "serving_sha256": "02139f4146067089942fcdcc945e4008ad567a12095f84a3f0fc993c1c4f3a81"
+  },
+  "gates": {
+   "price_parity": "0/275",
+   "model_year": "PASS",
+   "versions": "PASS",
+   "stale_holds": "PASS",
+   "official_market_labels": "PASS (792 EN+AR lists)",
+   "regression": "1142/1142 U11 strict, 1220/1220 R5",
+   "browser_vs_transport": "1405/1405 R5, 1335/1335 U11",
+   "transport": "1517/1517",
+   "buyer_scenarios": "691/691",
+   "ceo_failures": "135/135",
+   "named_cars": "49/49",
+   "eligibility": "1451/1451",
+   "u12_data": "195/195",
+   "ceo_intake": "PASS"
+  },
+  "production_deployment": "none by P1"
+ },
+ "created": "2026-11-08",
+ "owner": "P1",
+ "task": "P1-READINESS-02",
+ "repo": "KingMega1/scratch",
+ "branch": "claude/carindex-buyer-decision-slice-applo4",
+ "source_commit": "ba2120d16b69a54524d9cb4176e8fd4fd763c8c0",
+ "production_binding_unchanged": "P1 made no production change. P5 binds this release after its integration checks (see p5_handoff); until then production stays on P1-RELEASE-T1.",
+ "release_gates_open": [],
+ "copy_gate": "CLOSED: no DRAFT markers in app/i18n.js. conflict_h CEO-approved 2026-10-21; conflict.unknown_price / sl_out.unknown_price final wording; conflict.unknown_size, conflict.scope, sl_out.unknown_size, sl_out.scope unreachable (no car carries held) under the 2026-10-21 CEO decisions.",
+ "test_build": {
+  "repo": "KingMega1/carindex-buyer-test",
+  "commit": null,
+  "url": "https://kingmega1.github.io/carindex-buyer-test/u12c2/app/index.html",
+  "tracking": "none"
+ },
+ "engine_version": "E6.1-2026-10-14",
+ "transport_version": "T1.2-2026-11-03",
+ "schema": "ci.reco.v1",
+ "universe_version": "U12-CEO3-R5-2026-11-08",
+ "dataset": {
+  "id": "U12-CEO3-R5-2026-11-08/recommendation_view",
+  "path": "buyer-decision/datasets/U12-CEO3-R5-2026-11-08",
+  "file_sha256": "649bc8e5c0eaa61c3038fd53b9142ab8b29c5a246fe4eae2f9b0a3a98f721865",
+  "content_sha256": "b136d0e66fd9dda89c31c0ac5c46116d090a68f0756baa2e99e08f8da2b0046a",
+  "identities": 425,
+  "models_in_universe": 424
+ },
+ "p2_input": {
+  "commit": "723748dfd32a7b88ef56b3bc55893fdd19ed7a0c",
+  "release_id": "P2-CEO-CONFIRMED-20261102-R1",
+  "files": {
+   "catalogue-serving.release.json": "02139f4146067089942fcdcc945e4008ad567a12095f84a3f0fc993c1c4f3a81",
+   "market_universe.json": "733bc13bfffec4033e38381c736ec74c6b42bd65f9a91d35408edf459324439d",
+   "registration_models.csv": "e6f43df6596f3fe38f4b13f9afb7d24663379fc96db31cfb5a588f17a94571af",
+   "u11_models.csv": "97130c17516a5e1edbbe38f94048d9ff4397121011198ab90ff721ec15a20f98",
+   "arabic_names.csv": "91a7d71b7165da6a9b87544b2a0eb6dc1d1aaa4253ce063fce283e8a6429c188",
+   "u11_prices.csv": "62972049af7785f95bbcf903caa66a80647815d0d082f87a82804afce8279bd7"
+  }
+ },
+ "registry": {
+  "snapshot_id": null,
+  "registration_months": [
+   "2021-02",
+   "2026-08"
+  ],
+  "last12_window": [
+   "2025-09",
+   "2026-08"
+  ],
+  "note": "registrations: sale evidence and size class source only; their absence never excludes"
+ },
+ "files_changed_vs_T1": [
+  "app/engine.js",
+  "app/brief.js",
+  "app/i18n.js",
+  "app/present.js",
+  "app/app.js",
+  "transport/reco.js"
+ ],
+ "files": {
+  "engine": {
+   "path": "buyer-decision/app/engine.js",
+   "sha256": "78180dc7e4127c8722fdad01732a16f9a202d8e158c120e88aa1f1195efb75ed",
+   "bytes": 35396
+  },
+  "parser": {
+   "path": "buyer-decision/app/brief.js",
+   "sha256": "30389d717a7e5e47efad2113f957de830397b5bb6b713038030928ee5e95fc17",
+   "bytes": 30700
+  },
+  "copy_i18n": {
+   "path": "buyer-decision/app/i18n.js",
+   "sha256": "48471fce1bcfeab136059e87fbce81795098fe3b1245f08b97cd8f5507543042",
+   "bytes": 62572
+  },
+  "presentation_extracted": {
+   "path": "buyer-decision/app/present.js",
+   "sha256": "c0ac5e18957508287847f5f0a7e023484622b865bcaf14562c82ed3eb15e8b60",
+   "bytes": 27379
+  },
+  "browser_app": {
+   "path": "buyer-decision/app/app.js",
+   "sha256": "dd6b7eb808ff27d18c330a88d35f616f65cc702a49fc64595f90bc07e1d0eb10",
+   "bytes": 57980
+  },
+  "redaction": {
+   "path": "buyer-decision/app/redact.js",
+   "sha256": "2e26a612310e5931048fde96546f9b92c4ce7f7df4568707e04a3c0b5f084aa9",
+   "bytes": 1599
+  },
+  "tracking": {
+   "path": "buyer-decision/app/track.js",
+   "sha256": "1cce794d9c5ae1bc51bda332d5192691cb4f3f045c2c325de19e149a85a9f727",
+   "bytes": 6616
+  },
+  "transport": {
+   "path": "buyer-decision/transport/reco.js",
+   "sha256": "606d65b78390dcaffef80e2a6e5e481f2e9d5e7fe5279df1cf80bdc48841f8e3",
+   "bytes": 13339
+  },
+  "schema": {
+   "path": "buyer-decision/transport/ci.reco.v1.schema.json",
+   "sha256": "fb13b0a4fa96778f117b1c446ccfbbba14c805d6caf0a95f8a11fcea73e5bb38",
+   "bytes": 8663
+  },
+  "p5_handoff": {
+   "path": "buyer-decision/transport/P5-HANDOFF-U12-CEO3-R5.md",
+   "sha256": "f419ca1e3e43b1a998b736d31078dd1fc53b024346262c186346e6c8b43a90ea",
+   "bytes": 4888
+  },
+  "dataset_manifest": {
+   "path": "buyer-decision/datasets/U12-CEO3-R5-2026-11-08/manifest.json",
+   "sha256": "53c921d59c9625c97740d41cddb257c9edfa6dc7cd23bc2236809dc9ef72215c",
+   "bytes": 92972
+  },
+  "dataset_view": {
+   "path": "buyer-decision/datasets/U12-CEO3-R5-2026-11-08/recommendation_view.json",
+   "sha256": "649bc8e5c0eaa61c3038fd53b9142ab8b29c5a246fe4eae2f9b0a3a98f721865",
+   "bytes": 365064
+  },
+  "regression_report": {
+   "path": "buyer-decision/datasets/U12-CEO3-R5-2026-11-08/REGRESSION_REPORT.md",
+   "sha256": "23d302bc5b5df92cc9410722330b8bc91018a817b77d541e779abbc541a9720c",
+   "bytes": 48076
+  },
+  "release_gates_r5": {
+   "path": "buyer-decision/datasets/U12-CEO3-R5-2026-11-08/R5-GATES.json",
+   "sha256": "14dc91ed16a6318c114c28e974cb18c6c5ebe65c113c9f41d14762956222731f",
+   "bytes": 808
+  },
+  "p2_price_agreement": {
+   "path": "buyer-decision/datasets/U12-CEO3-R5-2026-11-08/P2-PRICE-AGREEMENT.json",
+   "sha256": "06c52e976b6777721e0101e5b41ad7da69abd0281b56fa2f86f1ac7819952bb0",
+   "bytes": 2423
+  }
+ },
+ "semantic_changes": "Ranking: NONE. Parser understanding fixes (ranges, +10% stated as %, brand-only phrasings, running costs, Arabic fuel priority, plug-in check) and transport T1.2 (editBrief, budget guard): see transport/P5-HANDOFF-U12-CEO2.md. Eligibility data policy per CEO 2026-10-21 (market prices for unpriced cars, no size hold, coupes/convertibles/vans included; see dataset manifest changes.policy). Engine E6.1 (vs T1): a held market car reports unknown_size / scope instead of not_on_sale. Transport T1.1: no compare table for a single-car result, matching the released app.",
+ "evidence": {
+  "ref": "buyer-decision/datasets/U12-CEO3-R5-2026-11-08/REGRESSION_REPORT.md",
+  "commands": [
+   "node tools/build_present.mjs --check",
+   "node tests/regression/run.js --strict",
+   "CI_DATASET=datasets/U12-CEO3-R5-2026-11-08/recommendation_view.json node tests/regression/run.js",
+   "node tests/eligibility.test.js datasets/{U11-2026-09-26,U12C-2026-10-14,U12C2-2026-10-14,U12C2-RC1-2026-10-14,U12C2-RC2-2026-10-14,U12-RC3-2026-10-15,U12-RC6-2026-10-21,U12-CEO-2026-11-03,U12-CEO2-2026-11-03}",
+   "node tests/ceo_failures.test.js datasets/U12-CEO3-R5-2026-11-08",
+   "node tests/buyer_scenarios.test.js datasets/U12-CEO3-R5-2026-11-08",
+   "node tests/u12_data.test.js datasets/U12-CEO3-R5-2026-11-08",
+   "node tests/transport/browser_equivalence.mjs <build of datasets/U12-CEO3-R5-2026-11-08> datasets/U12-CEO3-R5-2026-11-08",
+   "node tests/named_cars.test.js",
+   "node tests/transport/transport.test.js",
+   "node tests/{contracts,engine,integrity,redact}.test.js",
+   "node tests/e2e.mjs"
+  ]
+ }
+}
