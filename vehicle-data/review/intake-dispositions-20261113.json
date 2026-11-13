@@ -1,0 +1,690 @@
+{
+  "schema": "carindex.p2.intake-review/v1",
+  "date": "2026-11-13",
+  "timezone": "Africa/Cairo",
+  "scout": {
+    "row": "INTAKE-2026-11-13",
+    "url": "https://app.notion.com/p/4176811407bc81b5aae4f0abec5cbfcc",
+    "lookup": "exact schema-backed Task query matched; handoff fetched"
+  },
+  "baseline": {
+    "schema": "carindex.p2.freeze/v1",
+    "id": "P2-FREEZE-20261111",
+    "status": "FROZEN_P1_P5_INPUT",
+    "frozen_on": "2026-11-11",
+    "timezone": "Africa/Cairo",
+    "authority": "CEO instruction in Execution Room 11 Nov 2026; prior freeze GO recorded 10 Nov evening",
+    "repository": "KingMega1/scratch",
+    "branch": "claude/carindex-buyer-vehicle-data-97yinp",
+    "data_commit": "62f6cbb7d701f84992ff0e3304ff5d85be7a9fa1",
+    "serving": {
+      "path": "vehicle-data/views/catalogue-serving.release.json",
+      "revision": "765bc533ee0a",
+      "sha256": "ddb02dbc8241233e02405288669fb089bc32cc19270c4c86787718cbac477b98"
+    },
+    "canonical": {
+      "path": "vehicle-data/views/canonical_u11.json",
+      "sha256": "c1999c3799325f5eae36c7ce1aca8ed09602d14959fe2fa17c212c3d8f8aa27b"
+    },
+    "included_acceptance": [
+      "a7514317198856c066d1810af5d3c5764108ffbd powertrain changes",
+      "62f6cbb7d701f84992ff0e3304ff5d85be7a9fa1 MY2026 Optra LS/LT torque"
+    ],
+    "tests": {
+      "owner_report": {
+        "passed": 54,
+        "source": "data_commit message and P2 owner Control Tower receipt"
+      },
+      "independent": {
+        "blob_hashes_verified": 49,
+        "optra_regression": "2/2 PASS",
+        "version_powertrains_regression": "5/5 PASS",
+        "serving_and_canonical_sha256": "PASS",
+        "full_suite": "Initial isolated run hit four setup errors from missing history/review/script prerequisites. Full 54-test suite not independently reproduced; seven directly applicable tests passed."
+      },
+      "ci_runs_at_data_commit": []
+    },
+    "scope": {
+      "p1": "Nightly rebuild as candidate only",
+      "p5": "Deploy only on CEO GO",
+      "my2027_optra_prices": "Unqualified. Issuer, effective date and trim mapping evidence pending; not included."
+    },
+    "telemetry": {
+      "tokens": "UNAVAILABLE",
+      "provider_usage_receipt": "UNAVAILABLE"
+    },
+    "canonical_branch_head": "21048f0a1b7122a26aa92d9debcdbf71b10c8434"
+  },
+  "inventory": {
+    "new_file_ids": 10,
+    "new_originals_hashed": 10,
+    "unique_hashes": 8,
+    "duplicate_files": 2,
+    "held_unique_files": 8,
+    "canonical_rows_accepted": 0,
+    "scout_count_discrepancy": "Scout states 9 files and 2 not separately opened; actual current direct inventory has 10 newer IDs. All 10 downloaded and read, including both probable duplicates.",
+    "previous_ledger": "vehicle-data/review/intake-dispositions-20261112.json",
+    "unchanged_previous_files": [
+      {
+        "id": "14AevOA_Z0NaM0A9Df2QFlqKT156caFeM",
+        "same_metadata": true,
+        "prior_hash": "a4557ef99a69a36532a3944c7589e13b3dc736bcf53010826daee88416eb77a0"
+      },
+      {
+        "id": "1ahyknkgjF2OrzZflrWfMod0Nt-PDKYIv",
+        "same_metadata": true,
+        "prior_hash": "08451f86e8a14b6d755d29b988b61280c27ced9ed507fc4f64cab36fac707886"
+      },
+      {
+        "id": "1Sfkqj-1Mm--AkwjlcrxIXWIDz-HTIk1C",
+        "same_metadata": true,
+        "prior_hash": "b4e0711904ffaf59ce5123698b898be586f33b16a963d8797b3ce5736309daa3"
+      },
+      {
+        "id": "1YR5lRfK4eQa-owjS4HmPRIfVfhjkyZiu",
+        "same_metadata": true,
+        "prior_hash": "d5006151fe9b96471a6f089327d6cd12bdef5c2aab835676f382439b4e6d63a2"
+      },
+      {
+        "id": "1KMXL_bxQf7JzSmoaxa3Pp_JCwdWp3NHL",
+        "same_metadata": true,
+        "prior_hash": "30544fa9ba5ddda1123a9caaeb75281c288cdb65bc080eb2485a13f35c069634"
+      },
+      {
+        "id": "1MIfme6bShRbVpMSc32HxavVtmo1fi0ZB",
+        "same_metadata": true,
+        "prior_hash": "e99ad54d14fe25c14e3f49dff566b7e0448b63db0a1e9392152b2277611b35c5"
+      },
+      {
+        "id": "1uNQHEgb76TtgoaL7iUqgQFiATUmtKEXn",
+        "same_metadata": true,
+        "prior_hash": "793d64c4935076347db5d5fc3449d82381f5dc7e4ef72a5f100f2f80b94eaeeb"
+      },
+      {
+        "id": "12L5d_jFHGmslS-ZEGhKaMYvMAkbxuXfE",
+        "same_metadata": true,
+        "prior_hash": "02a0e55b0057e1bb33bf67aae6e9f9e7a95abc3fd273a495fa6f36e399e8cc79"
+      },
+      {
+        "id": "14TJcmf61kaS0s8vo-_XByC9ijqJmO_sX",
+        "same_metadata": true,
+        "prior_hash": "edbae8dc85c39d5fc86cf4e11ab74dce2f938432ee4abe28c629c92bd5de4879"
+      },
+      {
+        "id": "17o6qhyy1Xxiuimw--wTD4w8Fi9EVuekP",
+        "same_metadata": true,
+        "prior_hash": "285c839bdb6a37995cad59f064014257cd3f7512a7c2e5e90fd0e2497e047426"
+      },
+      {
+        "id": "16UELxggYyghQM-ckRYxgKZZKBHcv5vBU",
+        "same_metadata": true,
+        "prior_hash": "99d5815e2eb4068052ef08ed2c61c65fa7e673b77f4bc751bb91abfa3afbc02a"
+      },
+      {
+        "id": "1OjScM3eXEVbhcXY3kPfA-4mCqeAI30pi",
+        "same_metadata": true,
+        "prior_hash": "28d6c1378c94cedd493223a455f7dc19febe15459e62bded03192bf2e159514f"
+      },
+      {
+        "id": "130ve8MP3el0tWK9vibaauMdNbianraFj",
+        "same_metadata": true,
+        "prior_hash": "7b22d113b262a6b21bd3e7a8393c012d4d3f8813012073774d9b9418c5802ac9"
+      },
+      {
+        "id": "1ih_DuOU4D6gzsmp236mz3VIEjMwsTOnU",
+        "same_metadata": true,
+        "prior_hash": "5f98dfa149d998f0f3a332a9a253612b2f32a43d04b12f6d3c0a4060c9e7300a"
+      },
+      {
+        "id": "1sttKk9bSSzeM6riDxnM08yiNH9fr4um4",
+        "same_metadata": true,
+        "prior_hash": "69f75f7ac9f575c0272a4255ce88cf5104c47015e036555776771af337ae7aa1"
+      }
+    ],
+    "coverage": "Newest 100 direct folder entries; 10 new IDs after previous checkpoint. Revision IDs unavailable. Unchanged prior originals not re-downloaded; prior SHA256 reused without claiming fresh rehash."
+  },
+  "files": [
+    {
+      "drive_file_id": "1dW7ltKzsPGB4dbKjNUXRfl-xx-2mwXAG",
+      "original_drive_link": "https://drive.google.com/file/d/1dW7ltKzsPGB4dbKjNUXRfl-xx-2mwXAG/view?usp=drivesdk",
+      "title": "Screenshot 2026-11-12 at 23.01.26.png",
+      "modified_time": "2026-11-12T21:01:52.837Z",
+      "i": 0,
+      "id": "1dW7ltKzsPGB4dbKjNUXRfl-xx-2mwXAG",
+      "bytes": 2188217,
+      "sha256": "1a6cb4fa865e271d78c38800b804cf81c91f56247d19dff065cbc25e891d54a6",
+      "source_date": null,
+      "page": 1,
+      "decision": "HOLD",
+      "source": "Mostafa El-Desouky Facebook screenshot",
+      "tier": "C_MEDIA_UNDATED",
+      "model_id": "m_000265",
+      "canonical_id": "volkswagen/golf",
+      "trim": null,
+      "model_year": null,
+      "blocker": "Original calendar publication date, issuer price list and new trim/MY mapping absent; specs single-source",
+      "observed_price": 1890000,
+      "observed_spec_claims": {
+        "engine_l": 1.4,
+        "power_hp": 150,
+        "torque_nm": 250,
+        "transmission": "Aisin 8-speed automatic"
+      },
+      "revision": "UNAVAILABLE",
+      "image_publication": "NOT_AUTHORIZED: provenance/rights not established; internal evidence only"
+    },
+    {
+      "drive_file_id": "1ZjTjP7N5h7-X0EEG-V9H3Fi64vbSoYP-",
+      "original_drive_link": "https://drive.google.com/file/d/1ZjTjP7N5h7-X0EEG-V9H3Fi64vbSoYP-/view?usp=drivesdk",
+      "title": "Screenshot 2026-11-12 at 23.00.36.png",
+      "modified_time": "2026-11-12T21:01:07.392Z",
+      "i": 1,
+      "id": "1ZjTjP7N5h7-X0EEG-V9H3Fi64vbSoYP-",
+      "bytes": 2741152,
+      "sha256": "350486b6b737971d56135e352d357ed235ea93929f30fa7200241fbb357ddc4f",
+      "source_date": null,
+      "page": 1,
+      "decision": "HOLD",
+      "source": "Batoo3 Arabiyat Facebook screenshot",
+      "tier": "C_MEDIA_UNDATED",
+      "model_id": "m_000265",
+      "canonical_id": "volkswagen/golf",
+      "trim": "one unnamed trim",
+      "model_year": null,
+      "blocker": "Second agreeing amount but individual publication date/independence not established; exact MY/trim missing",
+      "observed_price": 1890000,
+      "revision": "UNAVAILABLE",
+      "image_publication": "NOT_AUTHORIZED: provenance/rights not established; internal evidence only"
+    },
+    {
+      "drive_file_id": "14C0UFnfo6RWfmzSVUHFlwbXNdM2gqO1L",
+      "original_drive_link": "https://drive.google.com/file/d/14C0UFnfo6RWfmzSVUHFlwbXNdM2gqO1L/view?usp=drivesdk",
+      "title": "820CBC76-D88F-4170-9B78-28B405A79DF8.PNG",
+      "modified_time": "2026-11-12T20:51:15.370Z",
+      "i": 2,
+      "id": "14C0UFnfo6RWfmzSVUHFlwbXNdM2gqO1L",
+      "bytes": 1275555,
+      "sha256": "0b02db98b8fa942d02fd2e42079ce90a47b939270632fc9e767f6d1595080c74",
+      "source_date": null,
+      "page": 1,
+      "decision": "HOLD",
+      "source": "Batoo3 Arabiyat screenshot of AYM/Forthing list",
+      "tier": "C_REPOST_OF_DISTRIBUTOR_BRANDED_LIST",
+      "model_id": null,
+      "canonical_id": "forthing/*",
+      "trim": "Exclusive",
+      "model_year": 2027,
+      "blocker": "Repost is same embedded list, not independent issuer evidence; generalized all-model increase/maintenance withdrawal unsupported",
+      "embedded_source_date": "2026-11",
+      "revision": "UNAVAILABLE",
+      "image_publication": "NOT_AUTHORIZED: provenance/rights not established; internal evidence only"
+    },
+    {
+      "drive_file_id": "1NM39XM2eyXV88VQbLPzIcIi2vhvYjkYK",
+      "original_drive_link": "https://drive.google.com/file/d/1NM39XM2eyXV88VQbLPzIcIi2vhvYjkYK/view?usp=drivesdk",
+      "title": "214CF945-E6F6-42A6-9383-2B9DE45AA188.JPG",
+      "modified_time": "2026-11-12T20:51:14.154Z",
+      "i": 3,
+      "id": "1NM39XM2eyXV88VQbLPzIcIi2vhvYjkYK",
+      "bytes": 227722,
+      "sha256": "589e63cafb16c4aad6e92a489669ab23633cbd9cc25b7d5228c7156068edee69",
+      "source_date": null,
+      "page": 1,
+      "decision": "HOLD",
+      "source": "ContactCars Forthing graphic",
+      "tier": "C_MEDIA_UNDATED",
+      "model_id": null,
+      "canonical_id": "forthing/*",
+      "trim": "Exclusive",
+      "model_year": 2027,
+      "blocker": "Individual publication date/effective date absent; old-to-new values differ from Scout site baseline",
+      "old_new_visuals": "Crossed-out amounts are old prices, not second simultaneous prices. New amounts agree with AYM card.",
+      "revision": "UNAVAILABLE",
+      "image_publication": "NOT_AUTHORIZED: provenance/rights not established; internal evidence only"
+    },
+    {
+      "drive_file_id": "1fEssP0Ihh8sSXFbqe9-qPClUKDYX2sCH",
+      "original_drive_link": "https://drive.google.com/file/d/1fEssP0Ihh8sSXFbqe9-qPClUKDYX2sCH/view?usp=drivesdk",
+      "title": "F27D335E-5AF8-4208-9067-8579569F1CCB.JPG",
+      "modified_time": "2026-11-12T20:51:14.059Z",
+      "i": 4,
+      "id": "1fEssP0Ihh8sSXFbqe9-qPClUKDYX2sCH",
+      "bytes": 428614,
+      "sha256": "da71c7512877ceb847d7047000a39132aa1d1c10a0f11d8534951fe4c53490ed",
+      "source_date": "2026-11",
+      "page": 1,
+      "decision": "HOLD",
+      "source": "AYM/Forthing branded November 2026 list, user-supplied copy",
+      "tier": "A_CANDIDATE_DISTRIBUTOR_BRANDED_UNAUTHENTICATED",
+      "model_id": null,
+      "canonical_id": "forthing/*",
+      "trim": "Exclusive",
+      "model_year": 2027,
+      "blocker": "Issuer-original provenance and exact accepted trim/powertrain comparison unresolved",
+      "document_reference": "Readable source reference retained; not blanket fact acceptance",
+      "revision": "UNAVAILABLE",
+      "image_publication": "NOT_AUTHORIZED: provenance/rights not established; internal evidence only"
+    },
+    {
+      "drive_file_id": "1nOCMF3IAO2-vp0c3_jqrS7qLx-iCzQhG",
+      "original_drive_link": "https://drive.google.com/file/d/1nOCMF3IAO2-vp0c3_jqrS7qLx-iCzQhG/view?usp=drivesdk",
+      "title": "84E06655-DD49-4C4D-9843-10A5EF1F3DE1.JPG",
+      "modified_time": "2026-11-12T20:51:14.020Z",
+      "i": 5,
+      "id": "1nOCMF3IAO2-vp0c3_jqrS7qLx-iCzQhG",
+      "bytes": 110641,
+      "sha256": "d5babe8b92021b70d441827d7492f95c6d8a7ffd1bff8b4f797ad375872e0aac",
+      "source_date": null,
+      "page": 1,
+      "decision": "HOLD",
+      "source": "dossbanzin.com Adamas graphic",
+      "tier": "C_MEDIA_UNDATED",
+      "model_id": "m_000238",
+      "canonical_id": "rox/adamas",
+      "trim": "first/second trim; seat aliases not printed",
+      "model_year": null,
+      "blocker": "Date and seat-to-trim alias absent; no issuer original",
+      "revision": "UNAVAILABLE",
+      "image_publication": "NOT_AUTHORIZED: provenance/rights not established; internal evidence only"
+    },
+    {
+      "drive_file_id": "1HRd2xq4ghqK0plzjpgI_LXt2SqM4KEiR",
+      "original_drive_link": "https://drive.google.com/file/d/1HRd2xq4ghqK0plzjpgI_LXt2SqM4KEiR/view?usp=drivesdk",
+      "title": "3C53CB35-71D3-4CA2-B46D-AF394D068E83.JPG",
+      "modified_time": "2026-11-12T20:51:13.721Z",
+      "i": 6,
+      "id": "1HRd2xq4ghqK0plzjpgI_LXt2SqM4KEiR",
+      "bytes": 198704,
+      "sha256": "6691350d375b6816320012a09e41154d8912ba4542cbae16b0e80bd119b864a8",
+      "source_date": null,
+      "page": 1,
+      "decision": "HOLD",
+      "source": "ContactCars ROX graphic",
+      "tier": "C_MEDIA_UNDATED",
+      "model_id": null,
+      "canonical_id": "rox/01;rox/adamas",
+      "trim": "6 / 7 seats",
+      "model_year": 2027,
+      "blocker": "Date/effective date and canonical MY applicability not verified",
+      "revision": "UNAVAILABLE",
+      "image_publication": "NOT_AUTHORIZED: provenance/rights not established; internal evidence only"
+    },
+    {
+      "drive_file_id": "1cBHvb92dYp4P3Xh4yAmv8VvyR9xNgZjv",
+      "original_drive_link": "https://drive.google.com/file/d/1cBHvb92dYp4P3Xh4yAmv8VvyR9xNgZjv/view?usp=drivesdk",
+      "title": "008B0CEC-F9D9-4CDE-A133-2DEA2D45F1D0.JPG",
+      "modified_time": "2026-11-12T20:51:13.704Z",
+      "i": 7,
+      "id": "1cBHvb92dYp4P3Xh4yAmv8VvyR9xNgZjv",
+      "bytes": 130095,
+      "sha256": "b3db0c6d17badd9affcb4f6f385169a7560607061787cda13d06ab33c6155238",
+      "source_date": null,
+      "page": 1,
+      "decision": "HOLD",
+      "source": "dossbanzin.com ROX 01 graphic",
+      "tier": "C_MEDIA_UNDATED",
+      "model_id": "m_000237",
+      "canonical_id": "rox/01",
+      "trim": "first/second trim; seat aliases not printed",
+      "model_year": null,
+      "blocker": "Date and seat-to-trim alias absent; no issuer original",
+      "revision": "UNAVAILABLE",
+      "image_publication": "NOT_AUTHORIZED: provenance/rights not established; internal evidence only"
+    },
+    {
+      "drive_file_id": "1S6IOH5vWO-jAV4mBRnvf4K9nl6_unrkS",
+      "original_drive_link": "https://drive.google.com/file/d/1S6IOH5vWO-jAV4mBRnvf4K9nl6_unrkS/view?usp=drivesdk",
+      "title": "9AEF6763-6594-479F-95E0-3A2B7B02F9B5.JPG",
+      "modified_time": "2026-11-12T15:15:36.204Z",
+      "i": 8,
+      "id": "1S6IOH5vWO-jAV4mBRnvf4K9nl6_unrkS",
+      "bytes": 110641,
+      "sha256": "d5babe8b92021b70d441827d7492f95c6d8a7ffd1bff8b4f797ad375872e0aac",
+      "source_date": null,
+      "page": 1,
+      "decision": "DUPLICATE",
+      "source": "dossbanzin.com Adamas graphic duplicate",
+      "tier": "C_MEDIA_UNDATED",
+      "model_id": "m_000238",
+      "canonical_id": "rox/adamas",
+      "trim": null,
+      "model_year": null,
+      "duplicate_of": "1nOCMF3IAO2-vp0c3_jqrS7qLx-iCzQhG",
+      "blocker": "Same SHA256 as another newly inspected file; no independent evidence gained",
+      "revision": "UNAVAILABLE",
+      "image_publication": "NOT_AUTHORIZED: provenance/rights not established; internal evidence only"
+    },
+    {
+      "drive_file_id": "1OCP3GXv4WSSld_p0RvFI4Ig5hEu0QIqt",
+      "original_drive_link": "https://drive.google.com/file/d/1OCP3GXv4WSSld_p0RvFI4Ig5hEu0QIqt/view?usp=drivesdk",
+      "title": "F9AEB8FA-21B4-42C2-9D5B-6DC7EBCD5F94.JPG",
+      "modified_time": "2026-11-12T15:15:35.957Z",
+      "i": 9,
+      "id": "1OCP3GXv4WSSld_p0RvFI4Ig5hEu0QIqt",
+      "bytes": 130095,
+      "sha256": "b3db0c6d17badd9affcb4f6f385169a7560607061787cda13d06ab33c6155238",
+      "source_date": null,
+      "page": 1,
+      "decision": "DUPLICATE",
+      "source": "dossbanzin.com ROX 01 graphic duplicate",
+      "tier": "C_MEDIA_UNDATED",
+      "model_id": "m_000237",
+      "canonical_id": "rox/01",
+      "trim": null,
+      "model_year": null,
+      "duplicate_of": "1cBHvb92dYp4P3Xh4yAmv8VvyR9xNgZjv",
+      "blocker": "Same SHA256 as another newly inspected file; no independent evidence gained",
+      "revision": "UNAVAILABLE",
+      "image_publication": "NOT_AUTHORIZED: provenance/rights not established; internal evidence only"
+    }
+  ],
+  "data_candidate_dispositions": {
+    "D1": [
+      {
+        "model": "T5 EVO",
+        "canonical_id": "forthing/t5-evo",
+        "model_id": "m_000123",
+        "price": 1250000,
+        "trim": "Exclusive",
+        "model_year": 2027,
+        "source_date": "2026-11",
+        "source_date_precision": "month; day/effective date not printed",
+        "page": 1,
+        "source_file": "1fEssP0Ihh8sSXFbqe9-qPClUKDYX2sCH",
+        "source_sha256": "da71c7512877ceb847d7047000a39132aa1d1c10a0f11d8534951fe4c53490ed",
+        "decision": "HOLD",
+        "blocker": "Issuer original authentication and accepted exact trim/MY comparison not completed",
+        "qualified_price": null
+      },
+      {
+        "model": "T5 EV",
+        "canonical_id": null,
+        "model_id": null,
+        "price": 1440000,
+        "mapping_blocker": "T5 EV vs Friday/current electric registry identity unresolved",
+        "trim": "Exclusive",
+        "model_year": 2027,
+        "source_date": "2026-11",
+        "source_date_precision": "month; day/effective date not printed",
+        "page": 1,
+        "source_file": "1fEssP0Ihh8sSXFbqe9-qPClUKDYX2sCH",
+        "source_sha256": "da71c7512877ceb847d7047000a39132aa1d1c10a0f11d8534951fe4c53490ed",
+        "decision": "HOLD",
+        "blocker": "T5 EV vs Friday/current electric registry identity unresolved",
+        "qualified_price": null
+      },
+      {
+        "model": "T5 REEV",
+        "canonical_id": null,
+        "model_id": null,
+        "price": 1450000,
+        "mapping_blocker": "Do not collapse REEV into T5/EVO or Friday EV without exact accepted identity",
+        "trim": "Exclusive",
+        "model_year": 2027,
+        "source_date": "2026-11",
+        "source_date_precision": "month; day/effective date not printed",
+        "page": 1,
+        "source_file": "1fEssP0Ihh8sSXFbqe9-qPClUKDYX2sCH",
+        "source_sha256": "da71c7512877ceb847d7047000a39132aa1d1c10a0f11d8534951fe4c53490ed",
+        "decision": "HOLD",
+        "blocker": "Do not collapse REEV into T5/EVO or Friday EV without exact accepted identity",
+        "qualified_price": null
+      },
+      {
+        "model": "S7 EV",
+        "canonical_id": "forthing/s7",
+        "model_id": "m_000121",
+        "price": 1350000,
+        "trim": "Exclusive",
+        "model_year": 2027,
+        "source_date": "2026-11",
+        "source_date_precision": "month; day/effective date not printed",
+        "page": 1,
+        "source_file": "1fEssP0Ihh8sSXFbqe9-qPClUKDYX2sCH",
+        "source_sha256": "da71c7512877ceb847d7047000a39132aa1d1c10a0f11d8534951fe4c53490ed",
+        "decision": "HOLD",
+        "blocker": "Issuer original authentication and accepted exact trim/MY comparison not completed",
+        "qualified_price": null
+      },
+      {
+        "model": "S7 REEV",
+        "canonical_id": "forthing/s7",
+        "model_id": "m_000121",
+        "price": 1430000,
+        "trim": "Exclusive",
+        "model_year": 2027,
+        "source_date": "2026-11",
+        "source_date_precision": "month; day/effective date not printed",
+        "page": 1,
+        "source_file": "1fEssP0Ihh8sSXFbqe9-qPClUKDYX2sCH",
+        "source_sha256": "da71c7512877ceb847d7047000a39132aa1d1c10a0f11d8534951fe4c53490ed",
+        "decision": "HOLD",
+        "blocker": "Issuer original authentication and accepted exact trim/MY comparison not completed",
+        "qualified_price": null
+      },
+      {
+        "model": "U-TOUR",
+        "canonical_id": "forthing/u-tour",
+        "model_id": "m_000124",
+        "price": 1620000,
+        "trim": "Exclusive",
+        "model_year": 2027,
+        "source_date": "2026-11",
+        "source_date_precision": "month; day/effective date not printed",
+        "page": 1,
+        "source_file": "1fEssP0Ihh8sSXFbqe9-qPClUKDYX2sCH",
+        "source_sha256": "da71c7512877ceb847d7047000a39132aa1d1c10a0f11d8534951fe4c53490ed",
+        "decision": "HOLD",
+        "blocker": "Issuer original authentication and accepted exact trim/MY comparison not completed",
+        "qualified_price": null
+      },
+      {
+        "model": "V9",
+        "canonical_id": "forthing/v9",
+        "model_id": "m_000125",
+        "price": 2680000,
+        "trim": "Exclusive",
+        "model_year": 2027,
+        "source_date": "2026-11",
+        "source_date_precision": "month; day/effective date not printed",
+        "page": 1,
+        "source_file": "1fEssP0Ihh8sSXFbqe9-qPClUKDYX2sCH",
+        "source_sha256": "da71c7512877ceb847d7047000a39132aa1d1c10a0f11d8534951fe4c53490ed",
+        "decision": "HOLD",
+        "blocker": "Issuer original authentication and accepted exact trim/MY comparison not completed",
+        "qualified_price": null
+      }
+    ],
+    "D2": [
+      {
+        "canonical_id": "rox/01",
+        "model_id": "m_000237",
+        "trim": "7 seats",
+        "price": 3690000,
+        "model_year": 2027,
+        "model_year_basis": "Printed on ContactCars graphic; not supplied by second graphic",
+        "source_date": null,
+        "source_files": [
+          "1HRd2xq4ghqK0plzjpgI_LXt2SqM4KEiR",
+          "1cBHvb92dYp4P3Xh4yAmv8VvyR9xNgZjv"
+        ],
+        "decision": "HOLD",
+        "blocker": "Agreeing media graphics are individually undated; no original dated distributor list, verified effective date or exact MY stock applicability",
+        "qualified_price": null
+      },
+      {
+        "canonical_id": "rox/01",
+        "model_id": "m_000237",
+        "trim": "6 seats",
+        "price": 3790000,
+        "model_year": 2027,
+        "model_year_basis": "Printed on ContactCars graphic; not supplied by second graphic",
+        "source_date": null,
+        "source_files": [
+          "1HRd2xq4ghqK0plzjpgI_LXt2SqM4KEiR",
+          "1cBHvb92dYp4P3Xh4yAmv8VvyR9xNgZjv"
+        ],
+        "decision": "HOLD",
+        "blocker": "Agreeing media graphics are individually undated; no original dated distributor list, verified effective date or exact MY stock applicability",
+        "qualified_price": null
+      }
+    ],
+    "D3": [
+      {
+        "canonical_id": "rox/adamas",
+        "model_id": "m_000238",
+        "trim": "7 seats",
+        "price": 4200000,
+        "model_year": 2027,
+        "model_year_basis": "Printed on ContactCars graphic; not supplied by second graphic",
+        "source_date": null,
+        "source_files": [
+          "1HRd2xq4ghqK0plzjpgI_LXt2SqM4KEiR",
+          "1nOCMF3IAO2-vp0c3_jqrS7qLx-iCzQhG"
+        ],
+        "decision": "HOLD",
+        "blocker": "Agreeing media graphics are individually undated; no original dated distributor list, verified effective date or exact MY stock applicability",
+        "qualified_price": null
+      },
+      {
+        "canonical_id": "rox/adamas",
+        "model_id": "m_000238",
+        "trim": "6 seats",
+        "price": 4300000,
+        "model_year": 2027,
+        "model_year_basis": "Printed on ContactCars graphic; not supplied by second graphic",
+        "source_date": null,
+        "source_files": [
+          "1HRd2xq4ghqK0plzjpgI_LXt2SqM4KEiR",
+          "1nOCMF3IAO2-vp0c3_jqrS7qLx-iCzQhG"
+        ],
+        "decision": "HOLD",
+        "blocker": "Agreeing media graphics are individually undated; no original dated distributor list, verified effective date or exact MY stock applicability",
+        "qualified_price": null
+      }
+    ],
+    "D4": {
+      "canonical_id": "volkswagen/golf",
+      "model_id": "m_000265",
+      "trim": null,
+      "model_year": null,
+      "source_date": null,
+      "source_files": [
+        "1dW7ltKzsPGB4dbKjNUXRfl-xx-2mwXAG",
+        "1ZjTjP7N5h7-X0EEG-V9H3Fi64vbSoYP-"
+      ],
+      "decision": "HOLD",
+      "qualified_price": null,
+      "blocker": "Two agreeing social amounts but dates, issuer and exact new trim/MY missing. Reviewer engine claim is 1.4 TSI, not Scout's 1.5; no specs promoted"
+    }
+  },
+  "scout_corrections": [
+    {
+      "claim": "Probable duplicate files",
+      "result": "CONFIRMED by exact byte SHA256, two pairs"
+    },
+    {
+      "claim": "ROX black graphics are ContactCars",
+      "result": "CORRECTED: visible source is dossbanzin.com; separate from blue ContactCars graphic"
+    },
+    {
+      "claim": "Golf engine 1.5 petrol",
+      "result": "REJECTED_TRANSCRIPTION: reviewer screenshot says 1.4 TSI; underlying actual vehicle specification remains unverified"
+    },
+    {
+      "claim": "Forthing current-price conflicts in graphic",
+      "result": "RESOLVED_VISUALLY: crossed-out amounts are old. New current amounts agree with AYM card for displayed trims."
+    },
+    {
+      "claim": "All Forthing models +30000; maintenance withdrawn",
+      "result": "REJECT_GENERALIZATION: cannot derive from list alone; U-Tour same as Scout baseline and graphic older values differ."
+    }
+  ],
+  "carryovers": [
+    {
+      "id": "INTAKE-2026-11-11/D1",
+      "model": "jetour/t2-i-dm",
+      "decision": "HOLD",
+      "reason": "Exact Egypt trim/MY acceptance still pending; frozen registry does have separate ID m_000290, so do not invent a new slug"
+    },
+    {
+      "id": "INTAKE-2026-11-11/D2",
+      "model": "jetour/t2-i-dm",
+      "decision": "HOLD",
+      "reason": "New single undated social claim does not satisfy OEM or two independently dated agreeing media sources"
+    },
+    {
+      "id": "INTAKE-2026-11-11/D3",
+      "model": "jetour/x70-plus-ckd",
+      "decision": "SUPERSEDED_AS_CANDIDATE_ONLY",
+      "reason": "Today's D1 supersedes the previous unchanged-price lead; no canonical change"
+    },
+    {
+      "id": "INTAKE-2026-11-11/D4",
+      "model": "jetour/dashing",
+      "decision": "HOLD",
+      "reason": "Engine-based trim aliases require reconciliation to accepted November list before label promotion"
+    },
+    {
+      "id": "INTAKE-2026-11-11/D5",
+      "model": "avatr/07",
+      "decision": "HOLD",
+      "reason": "Earlier source-document acceptance retained. AWD height candidate, REEV framing and brochure battery C-rate inconsistency require field-level canonical comparison; no blanket promotion"
+    },
+    {
+      "id": "MY2027-OPTRA",
+      "decision": "HOLD",
+      "reason": "Issuer, effective date and code-to-trim mapping remain unqualified"
+    }
+  ],
+  "jetour_carryover": {
+    "decision": "HOLD",
+    "reason": "Headline-only additional launch source is not evidence of price/effective date. Original article not independently retrieved in this run."
+  },
+  "news": {
+    "scout_rows": "2031–2041",
+    "decision": "NO_CANONICAL_PROMOTION",
+    "reason": "Urban Cruiser assembly and Jetour production-target headlines are content leads; source bodies not provided, no vehicle fact accepted. No press names for public copy."
+  },
+  "worker": {
+    "id": "6aea3cef04e88191be46412d5db5b305",
+    "enabled": false,
+    "intentional_stop": true,
+    "reason": "B1 four-slot limit; four unresolved owner outcomes",
+    "last_actual_run_id": "d8682174-57a4-8324-ace3-f656faecdfde",
+    "last_completed": "2026-11-11T16:04:26.106357Z",
+    "event": "BLOCKER",
+    "off_over_24h": true,
+    "batches_today": 0,
+    "slots_today": 0,
+    "prior_batch": {
+      "id": "20261111-B1",
+      "slots_reported_run": 4,
+      "accepted": 0,
+      "held": 0,
+      "dropped": 0,
+      "pending": 4
+    },
+    "owner_hold_streak": 1,
+    "no_second_batch": true
+  },
+  "tests": {
+    "fresh": "10 original SHA256s computed; all 10 images visually inspected; two duplicate pairs confirmed.",
+    "canonical": "NOT_RUN_NO_PROMOTION"
+  },
+  "telemetry": {
+    "model": "UNAVAILABLE",
+    "input": "UNAVAILABLE",
+    "output": "UNAVAILABLE",
+    "cache": "UNAVAILABLE",
+    "total": "UNAVAILABLE",
+    "duration": "Current intake measured duration UNAVAILABLE; last C17 scheduler duration 65.637441s",
+    "cost": "UNAVAILABLE"
+  },
+  "scope": {
+    "source_document_acceptance_is_not_fact_promotion": true,
+    "p1": "Nightly candidate only",
+    "p5": "CEO GO only",
+    "optra_my2027": "UNQUALIFIED until issuer/effective date/trim mapping evidenced"
+  }
+}
