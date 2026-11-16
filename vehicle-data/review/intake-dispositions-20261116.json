@@ -1,0 +1,106 @@
+{
+  "schema": "carindex.p2.intake-review/v1",
+  "date": "2026-11-16",
+  "timezone": "Africa/Cairo",
+  "observed_at_utc": "2026-11-16 13:26:40 UTC",
+  "scout": {
+    "row": "INTAKE-2026-11-16",
+    "url": "https://app.notion.com/p/41a6811407bc81b5a9aed0aedf4e4c42",
+    "lookup": "Exact schema-backed Task query, then fetched original handoff",
+    "data_candidates": 0,
+    "new_sheet_rows": 12,
+    "news_only": 12,
+    "content_leads": 3,
+    "decision": "NO_NEW_DATA_CANDIDATES",
+    "limits": "Headline-only content leads; no article bodies or vehicle facts promoted",
+    "quality_note": "Scout reports duplicate Motor1 turbine row and missing relevance text in col E; observation not independently verified and no scraper change made"
+  },
+  "inventory": {
+    "count": 100,
+    "prior_count": 100,
+    "new_or_changed": [],
+    "unchanged": true,
+    "baseline_snapshot_commit": "7d7e38bf5d33995e07bf8befdf2ff1df8d75daf2",
+    "previous_receipt_commit": "5589b3d68d662fa9e2d439f29ef29dd3118b9fc6",
+    "comparison": "ID + modifiedTime + byte size match all 100 visible entries",
+    "revision_ids": "UNAVAILABLE",
+    "hash_handling": "No new bytes; retain previous original SHA256 references without claiming fresh rehash",
+    "coverage": "Newest 100 direct folder entries, not exhaustive historical folder proof"
+  },
+  "carry_forward": {
+    "prior_day_receipt": "7d7e38bf5d33995e07bf8befdf2ff1df8d75daf2",
+    "field_level_evidence_ledger": "6316fa63170d8ba17b0e199727276110e64ff00e vehicle-data/review/intake-dispositions-20261113.json",
+    "held_price_rows": 12,
+    "decision": "UNCHANGED_HOLD",
+    "reason": "No new source evidence to resolve recorded issuer/date/trim-MY mapping gaps",
+    "scope": "Forthing 7 rows, ROX 4 rows, Golf 1 row. Earlier Jetour/AVATR/Dashing holds retained. MY2027 Optra unqualified until issuer/effective date/code-to-trim evidenced.",
+    "not_new_attempts": true
+  },
+  "worker": {
+    "id": "6aea3cef04e88191be46412d5db5b305",
+    "enabled": false,
+    "stop_intentional": true,
+    "reason": "B1 maximum four slots with unresolved owner decisions",
+    "event_type": "BLOCKER",
+    "last_run_id": "d8682174-57a4-8324-ace3-f656faecdfde",
+    "last_actual_completed_at": "2026-11-11T16:04:26.106357Z",
+    "off_over_24h": true,
+    "slots_today": 0,
+    "batches_today": 0,
+    "b1": {
+      "id": "20261111-B1",
+      "slots_reported_run": 4,
+      "accepted": 0,
+      "owner_held": 0,
+      "dropped": 0,
+      "pending": 4
+    },
+    "owner_hold_streak": 1,
+    "individual_c15_c16_run_ids": "UNAVAILABLE",
+    "no_second_batch": true,
+    "no_gate_override": true
+  },
+  "nightly_handoff": {
+    "id": "1eaee7b5-3934-8329-8a68-d4f6028593f8",
+    "started_at": "2026-11-15T22:29:57.713766Z",
+    "completed_at": "2026-11-15T22:30:21.109589Z",
+    "duration_seconds": 23.395823,
+    "outcome": "QUEUED_NO_VERIFIED_OWNER_EXECUTOR_OR_DISPATCH",
+    "is_owner_acceptance": false
+  },
+  "frozen": {
+    "data_commit": "62f6cbb7d701f84992ff0e3304ff5d85be7a9fa1",
+    "serving_revision": "765bc533ee0a",
+    "serving_sha256": "ddb02dbc8241233e02405288669fb089bc32cc19270c4c86787718cbac477b98",
+    "canonical_branch": "claude/carindex-buyer-vehicle-data-97yinp",
+    "freshly_checked_branch_head": "21048f0a1b7122a26aa92d9debcdbf71b10c8434",
+    "freeze_receipt_commit": "21048f0a1b7122a26aa92d9debcdbf71b10c8434",
+    "freeze_receipt_path": "releases/P2-FREEZE-20261111.json",
+    "new_snapshot": false
+  },
+  "telemetry": {
+    "model": "UNAVAILABLE",
+    "input": "UNAVAILABLE",
+    "output": "UNAVAILABLE",
+    "cache": "UNAVAILABLE",
+    "total": "UNAVAILABLE",
+    "cost": "UNAVAILABLE",
+    "duration": "Current intake runtime UNAVAILABLE; last worker scheduler 65.637441s; latest nightly handoff 23.395823s",
+    "aggregate": "UNAVAILABLE"
+  },
+  "tests": {
+    "fresh": "100-entry metadata reconciliation; schema-backed queries; fresh canonical branch head and actual scheduler receipts.",
+    "canonical_suite": "NOT_RUN_NO_PROMOTION",
+    "serving_hash": "Pinned prior freeze receipt, not freshly rehashed",
+    "historical": "Owner 54/54; prior independent 7 applicable PASS, full suite not independently reproduced"
+  },
+  "scope": {
+    "p1": "Nightly candidate only",
+    "p5": "CEO GO only",
+    "canonical_rows_promoted": 0,
+    "new_freeze_issued": false,
+    "qualified_conflicting_price": "PRICE UNCONFIRMED; no number",
+    "images": "OEM supply/rights clearance required",
+    "press_names": "Internal evidence provenance only"
+  }
+}
