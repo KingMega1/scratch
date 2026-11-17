@@ -683,7 +683,8 @@ test.describe('buyer journey end to end', () => {
       // find_my_car_complete (GA4 key event): exactly one push, coarse params only, same shape in AR and EN
       const done = ev.filter(e => e.event === 'find_my_car_complete') as unknown as Record<string, unknown>[];
       expect(done).toHaveLength(1);
-      expect(Object.keys(done[0]).sort()).toEqual(['budget_band', 'event', 'result_count']);
+      // GTM adds gtm.* bookkeeping keys (e.g. gtm.uniqueEventId) to every dataLayer object: ignore them, keep the rest exact
+      expect(Object.keys(done[0]).filter(k => !k.startsWith('gtm.')).sort()).toEqual(['budget_band', 'event', 'result_count']);
       expect(done[0].budget_band).toMatch(/^(lt_1m|1m_1_5m|1_5m_2_5m|2_5m_4m|gte_4m)$/);
       expect(done[0].result_count).toBe(await page.locator('.fmc-result [data-model-id]').count());
       // adjusting the budget re-renders results but must not fire the completion event again
