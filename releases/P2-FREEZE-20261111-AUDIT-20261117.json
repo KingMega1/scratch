@@ -1,0 +1,104 @@
+{
+  "schema": "carindex.p2.freeze-audit-supplement/v1",
+  "id": "P2-FREEZE-20261111-AUDIT-20261117",
+  "date": "2026-11-17",
+  "timezone": "Africa/Cairo",
+  "status": "STAGED_METADATA_CORRECTION_FOR_P2_OWNER",
+  "not_new_data_acceptance": true,
+  "base_receipt_commit": "21048f0a1b7122a26aa92d9debcdbf71b10c8434",
+  "base_receipt_path": "releases/P2-FREEZE-20261111.json",
+  "data_commit": "62f6cbb7d701f84992ff0e3304ff5d85be7a9fa1",
+  "serving": {
+    "path": "vehicle-data/views/catalogue-serving.release.json",
+    "revision": "765bc533ee0a",
+    "sha256": "ddb02dbc8241233e02405288669fb089bc32cc19270c4c86787718cbac477b98",
+    "bytes": 3220358,
+    "self_state": "VERIFYING",
+    "acceptance": "P2_ACCEPTED_FIELDS_ONLY",
+    "source": "Independent audit report, not a fresh serving-file read in this run"
+  },
+  "independent_audit": {
+    "date": "2026-11-17",
+    "url": "https://docs.google.com/document/d/1HnkHlLzEz-dP3XySolK_kSjLW04kSWzYIn6kT55rQ8g",
+    "document_id": "1HnkHlLzEz-dP3XySolK_kSjLW04kSWzYIn6kT55rQ8g",
+    "document_revision": "AHj4eMQRbrZQ_QLoLdyzB0TXSyQqpqPkh8SP99RiXjqoy4mpFuKMcMgGDtSGS6cq6Rl2uQNHNV6lQ2LIwqEPF8_xytvLrETcWXV5OlLnmiA",
+    "role": "Read-only independent auditor; exact author/model not exposed",
+    "test_command": "python3 -m pytest vehicle-data/tests -v",
+    "tested_commit": "62f6cbb7d701f84992ff0e3304ff5d85be7a9fa1",
+    "environment": {
+      "python": "3.13.18",
+      "pytest": "9.1.1",
+      "checkout": "Full non-shallow clone"
+    },
+    "result": {
+      "passed": 54,
+      "failed": 0,
+      "errors": 0,
+      "duration_seconds": 7.2,
+      "clean_worktree": true
+    },
+    "hash_results": {
+      "serving_sha256": "ddb02dbc8241233e02405288669fb089bc32cc19270c4c86787718cbac477b98",
+      "canonical_sha256": "c1999c3799325f5eae36c7ce1aca8ed09602d14959fe2fa17c212c3d8f8aa27b",
+      "status": "AUDITOR_REPORT_MATCH"
+    },
+    "live_pages": {
+      "checked": 10,
+      "price_matches": 10,
+      "production_revision": "UNVERIFIED"
+    },
+    "scope_limit": "Audit compared prices to repository-derived CSVs, did not open original Drive price-list images; price consistency is not source-transcription accuracy"
+  },
+  "attestation_distinctions": {
+    "original_executor": "Earlier receipt independently ran seven directly applicable tests; retain that historical event",
+    "new_auditor": "Audit independently reproduced all 54; not rerun by current intake executor",
+    "blob_hashes_49": "Original receipt claim not independently reproduced by audit; 49-blob list absent, currently UNVERIFIED by audit/current executor",
+    "ci": "No CI runs evidenced at data commit",
+    "production_serving_revision": "UNVERIFIED; live price parity is not deployed revision proof"
+  },
+  "findings_for_owner": [
+    {
+      "id": "AUDIT-37-MY",
+      "decision": "HOLD",
+      "issue": "37 priced entries have null model_year; do not infer years",
+      "source_section": 5
+    },
+    {
+      "id": "AUDIT-CAPTIVA",
+      "decision": "HOLD",
+      "issue": "Captiva source points to Chevrolet Optra/nav page; no trim rows; need model-specific source",
+      "source_section": 5
+    },
+    {
+      "id": "AUDIT-STALE15",
+      "decision": "HOLD",
+      "issue": "15 non-tier-A prices have pre-2026 effective dates; stale-display policy unresolved",
+      "source_section": 5
+    },
+    {
+      "id": "AUDIT-UNMAPPED23",
+      "decision": "HOLD",
+      "issue": "23 accepted evidence rows not mapped by label; exact list needed before changes",
+      "source_section": 4
+    },
+    {
+      "id": "AUDIT-TRANSCRIPTION10",
+      "decision": "UNWORKED",
+      "issue": "Ten original price-list images versus evidence CSV transcription checks remain",
+      "source_section": 9
+    },
+    {
+      "id": "AUDIT-CI",
+      "decision": "UNWORKED",
+      "issue": "Data-branch pytest CI follow-up requires implementation and actual run receipt",
+      "source_section": 9
+    }
+  ],
+  "scope": {
+    "canonical_registry_changed": false,
+    "freeze_original_overwritten": false,
+    "p1": "Candidate nightly only",
+    "p5": "CEO GO only",
+    "new_release_or_production_authority": false
+  }
+}
