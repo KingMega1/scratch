@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useRef, useState, type MouseEvent } from 'react';
 import Link from 'next/link';
 import { setAnalyticsContext, track } from '@/lib/analytics/client';
+import { pushFindMyCarComplete } from '@/lib/analytics/fmc-complete';
 import { dict } from '@/lib/i18n/dictionaries';
 import VerifyForm from '@/components/VerifyForm';
 
@@ -44,6 +45,7 @@ export default function FindMyCar({ locale, site, shareToken, identityEnabled = 
   const [err, setErr] = useState<string | null>(null);
   const top = useRef<HTMLDivElement>(null);
   const last = useRef<(() => void) | null>(null);
+  const completeSent = useRef(false); // find_my_car_complete fires once per flow (reset on restart); shared-link views never count
 
   const run = useCallback(async (body: Record<string, unknown>, opts: { push?: boolean; matching?: boolean } = {}) => {
     const retry = () => run(body, opts);
@@ -57,6 +59,7 @@ export default function FindMyCar({ locale, site, shareToken, identityEnabled = 
         const r = next.result;
         setAnalyticsContext({ engine_version: r.engine_version, universe_version: r.universe_version, result_id: r.result_id });
         track('fmc_result_view', { mode: r.mode, confidence_level: r.confidence?.level ?? null, hero_id: r.hero?.id ?? null, alt_ids: (r.alternatives || []).map((a: any) => a.id), result_id: r.result_id, outside_site: Object.values(next.website).filter(v => v === null).length });
+        if (!completeSent.current && body.op !== 'shared') { completeSent.current = true; pushFindMyCarComplete(window, r.budget?.amount, (r.hero ? 1 : 0) + (r.alternatives?.length ?? 0)); }
         if (opts.push !== false && r.share?.r) history.replaceState(history.state, '', `?r=${r.share.r}`);
       }
       requestAnimationFrame(() => top.current?.focus());
@@ -73,7 +76,7 @@ export default function FindMyCar({ locale, site, shareToken, identityEnabled = 
   useEffect(() => { if (copy && shareToken) run({ op: 'shared', r: shareToken }, { push: false }); /* eslint-disable-next-line react-hooks/exhaustive-deps */ }, [copy, shareToken]);
 
   const back = () => { const s = [...stack]; const prev = s.pop(); if (prev) { setStack(s); setView(prev); } };
-  const restart = () => { setStack([]); setView({ view: 'welcome' }); history.replaceState(history.state, '', location.pathname); };
+  const restart = () => { completeSent.current = false; setStack([]); setView({ view: 'welcome' }); history.replaceState(history.state, '', location.pathname); };
 
   if (!copy) {
     return err ? <ErrorPanel site={site} onRetry={() => location.reload()} /> : <div className="state-panel" aria-busy="true"><div className="skeleton" style={{ width: '60%' }} /><div className="skeleton" /></div>;
