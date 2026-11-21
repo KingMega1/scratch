@@ -1,0 +1,206 @@
+{
+  "schema": "carindex.p2.intake-review/v1",
+  "date": "2026-11-21",
+  "timezone": "Africa/Cairo",
+  "observed_at_utc": "2026-11-21T13:08:18Z",
+  "scout": {
+    "row": "INTAKE-2026-11-21",
+    "url": "https://app.notion.com/p/41f6811407bc818fb890d8bd865ac7bf",
+    "lookup": "Current schema-backed exact Task query then targeted search and original full-row read. No existing daily status matched.",
+    "new_drive_files": 0,
+    "new_sheet_rows": 24,
+    "unique_headlines": 10,
+    "duplicate_occurrences": 14,
+    "news_only": 24,
+    "data_candidates": 0,
+    "content_leads": 3,
+    "decision": "NO_NEW_DATA_CANDIDATES",
+    "limits": "Headlines only; no article-body facts/press images promoted."
+  },
+  "inventory": {
+    "count": 100,
+    "prior_count": 100,
+    "new_or_changed": [],
+    "unchanged": true,
+    "baseline_snapshot_commit": "2147c74243299f180bc6fb5dcbe5e75b1cd119d3",
+    "baseline_snapshot_path": "vehicle-data/review/intake-dispositions-20261119.json",
+    "comparison": "All100 visible IDs/modifiedTime/bytes match pinned19Nov snapshot; no additions or displaced items. No original file reopened.",
+    "revision_ids": "UNAVAILABLE",
+    "hash_handling": "Previous original-byte SHA256 references retained; metadata equality is not a fresh byte rehash. No new or changed candidate required an original-byte read.",
+    "coverage": "Newest 100 direct folder entries; not exhaustive historical coverage",
+    "folder_url": "https://drive.google.com/drive/folders/1qrIrfSU51zdEsmeXSPThIS620dEUBwHU",
+    "previous_receipt_commit": "360e6d846bb2bdde4bf660bcc3778d642f24506c"
+  },
+  "carry_forward": {
+    "receipt_commit": "2147c74243299f180bc6fb5dcbe5e75b1cd119d3",
+    "path": "vehicle-data/review/intake-dispositions-20261119.json",
+    "soueast_price_candidates": 9,
+    "soueast_decision": "UNCHANGED_HOLD",
+    "soueast_details": "Eight same-price source-date refreshes and one new Highline Plus trim. Exact model/trim/MY/page/hash/baseline IDs and dispositions preserved in immutable prior receipt; not new attempts or scheduler slots.",
+    "soueast_original_sha256": "ac11c69b8316a1bc59ab17515eced97728c8d17f6f50720e199efac83c88f200",
+    "source_document_acceptance_only": true,
+    "footnotes": "Separate footer HOLDs unchanged; embedded thumbnails REJECT for public use, rights not established.",
+    "earlier_price_rows_held": 12,
+    "earlier_field_ledger": "6316fa63170d8ba17b0e199727276110e64ff00e vehicle-data/review/intake-dispositions-20261113.json",
+    "other_holds": "Jetour/AVATR/Dashing and Groove unchanged. MY2027 Optra prices unqualified until issuer/effective date/trim mapping evidenced.",
+    "not_new_attempts": true
+  },
+  "candidates_today": [],
+  "worker": {
+    "id": "6aea3cef04e88191be46412d5db5b305",
+    "enabled": false,
+    "stop_intentional": true,
+    "reason": "B1 maximum four slots with unresolved owner decisions",
+    "event_type": "BLOCKER",
+    "last_run_id": "d8682174-57a4-8324-ace3-f656faecdfde",
+    "last_actual_completed_at": "2026-11-11T16:04:26.106357Z",
+    "off_over_24h": true,
+    "slots_today": 0,
+    "batches_today": 0,
+    "b1": {
+      "id": "20261111-B1",
+      "slots_reported_run": 4,
+      "accepted": 0,
+      "owner_held": 0,
+      "dropped": 0,
+      "pending": 4
+    },
+    "owner_hold_streak": 1,
+    "individual_c15_c16_run_ids": "UNAVAILABLE",
+    "no_second_batch": true,
+    "no_gate_override": true,
+    "off_hours_at_observation": 237.064415
+  },
+  "nightly_handoff": {
+    "automation_id": "6aea48caebac8191a561fb1a953b732d",
+    "enabled": false,
+    "updated_at": "2026-11-19T22:35:37.910695+00:00",
+    "id": "162e3a18-745c-832d-98ac-121ab2730c9f",
+    "recorded_status": "completed",
+    "started_at": "2026-11-19T22:34:12.952984Z",
+    "completed_at": "2026-11-19T22:34:32.986504Z",
+    "duration_seconds": 20.03352,
+    "outcome": "QUEUED_NO_VERIFIED_OWNER_EXECUTOR_OR_DISPATCH",
+    "is_owner_acceptance": false,
+    "stop_intentional": "UNAVAILABLE — current disabled state verified, no reason or authorizing stop receipt in recorded result; do not infer from updated_at",
+    "blocker": "Disabled state unchanged; no newer actual run or stop reason. No restart."
+  },
+  "frozen": {
+    "data_commit": "62f6cbb7d701f84992ff0e3304ff5d85be7a9fa1",
+    "serving_revision": "765bc533ee0a",
+    "serving_sha256": "ddb02dbc8241233e02405288669fb089bc32cc19270c4c86787718cbac477b98",
+    "canonical_branch": "claude/carindex-buyer-vehicle-data-97yinp",
+    "freshly_checked_branch_head": "21048f0a1b7122a26aa92d9debcdbf71b10c8434",
+    "freeze_receipt_commit": "21048f0a1b7122a26aa92d9debcdbf71b10c8434",
+    "freeze_receipt_path": "releases/P2-FREEZE-20261111.json",
+    "new_snapshot": false
+  },
+  "telemetry": {
+    "model": "UNAVAILABLE",
+    "input": "UNAVAILABLE",
+    "output": "UNAVAILABLE",
+    "cache": "UNAVAILABLE",
+    "total": "UNAVAILABLE",
+    "cost": "UNAVAILABLE",
+    "duration": "Last worker scheduler65.637441s; latest nightly20.033520s from actual timestamps. Current intake measured runtime UNAVAILABLE.",
+    "aggregate": "UNAVAILABLE",
+    "source": "Current automation peeks and matching actual run/result IDs; no estimates."
+  },
+  "tests": {
+    "fresh": "Current schema/exact/targeted query; full Scout/Tower reads; 100-file metadata reconciliation; canonical head and actual scheduler receipts; independently read 24 original-sheet rows and verified14 URL-duplicate occurrences. No canonical build/suite today.",
+    "historical": "17 Nov independent auditor report54/54 at exact data commit,7.2s; not rerun by this executor. Earlier seven independent executor checks remain historical.",
+    "serving_file_state": "VERIFYING per audit",
+    "blob49": "UNVERIFIED",
+    "production_revision": "UNVERIFIED"
+  },
+  "audit_update": {
+    "source": "https://docs.google.com/document/d/1HnkHlLzEz-dP3XySolK_kSjLW04kSWzYIn6kT55rQ8g/edit",
+    "source_date": "2026-11-17",
+    "source_revision": "AHj4eMQRbrZQ_QLoLdyzB0TXSyQqpqPkh8SP99RiXjqoy4mpFuKMcMgGDtSGS6cq6Rl2uQNHNV6lQ2LIwqEPF8_xytvLrETcWXV5OlLnmiA",
+    "tier": "INTERNAL_INDEPENDENT_AUDIT_NOT_VEHICLE_SOURCE",
+    "decision": "ACCEPTED_AS_AUDIT_REPORT_NOT_NEW_DATA",
+    "supplement_commit": "83bc85cf3b9ef50eff0245b8740cf4ffba19d1e9",
+    "path": "releases/P2-FREEZE-20261111-AUDIT-20261117.json",
+    "status": "STAGED_ON_SUPPORT_BRANCH_FOR_OWNER",
+    "findings": [
+      {
+        "id": "AUDIT-37-MY",
+        "decision": "HOLD",
+        "issue": "37 priced entries have null model_year; do not infer years",
+        "source_section": 5
+      },
+      {
+        "id": "AUDIT-CAPTIVA",
+        "decision": "HOLD",
+        "issue": "Captiva source points to Chevrolet Optra/nav page; no trim rows; need model-specific source",
+        "source_section": 5
+      },
+      {
+        "id": "AUDIT-STALE15",
+        "decision": "HOLD",
+        "issue": "15 non-tier-A prices have pre-2026 effective dates; stale-display policy unresolved",
+        "source_section": 5
+      },
+      {
+        "id": "AUDIT-UNMAPPED23",
+        "decision": "HOLD",
+        "issue": "23 accepted evidence rows not mapped by label; exact list needed before changes",
+        "source_section": 4
+      },
+      {
+        "id": "AUDIT-TRANSCRIPTION10",
+        "decision": "UNWORKED",
+        "issue": "Ten original price-list images versus evidence CSV transcription checks remain",
+        "source_section": 9
+      },
+      {
+        "id": "AUDIT-CI",
+        "decision": "UNWORKED",
+        "issue": "Data-branch pytest CI follow-up requires implementation and actual run receipt",
+        "source_section": 9
+      }
+    ]
+  },
+  "scope": {
+    "p1": "Nightly candidate only; no acceptance authority",
+    "p5": "Deploy only CEO GO; no acceptance authority",
+    "canonical_rows_promoted": 0,
+    "new_freeze_issued": false,
+    "qualified_conflicting_price": "PRICE UNCONFIRMED; no number",
+    "images": "OEM/rights-cleared only",
+    "press_names": "Internal evidence provenance only"
+  },
+  "stop_gate": "Current instruction three consecutive owner HOLD/DROPPED; verified streak 1. Tower later Ops-recorded review rule differs. Pending not counted. Preserve stop; no second batch or override.",
+  "sources": {
+    "worker": "https://chatgpt.com/c/6aea3d93-9d24-83e9-ab43-67dc92fe7d5e",
+    "nightly": "https://chatgpt.com/c/6aeae64d-1a74-83e8-bc98-cd7f4f56d73f",
+    "owner_dispositions": "https://app.notion.com/p/3ec6811407bc81e4ba5edf713b70b481",
+    "audit_index": "https://app.notion.com/p/41b6811407bc8168b33fdd3adff6fdcd",
+    "scout": "https://app.notion.com/p/41f6811407bc818fb890d8bd865ac7bf",
+    "sheet": "https://docs.google.com/spreadsheets/d/1swTksdY6SzMb-510gzr2XclM7I4e92zFHgApKwdrLDI/edit"
+  },
+  "blockers": [
+    "Worker intentionally OFF >237h; last actual heartbeat11Nov18:04:26.106357Cairo; C14–C17 four pending owner decisions. No verified owner executor/dispatch.",
+    "Nightly-review digest remains OFF; stop reason/intent UNAVAILABLE. Last actual handoff20Nov00:34Cairo, no new review.",
+    "NEW verified ingestion defect:24rows/10unique URLs/14duplicates; Ducati13copies,14blank relevance fields; root cause unknown, owner repair needed.",
+    "Soueast9row proposals and audit supplement remain staged/HOLD. No new accepted canonical snapshot; baseline unchanged."
+  ],
+  "daily_status_can_complete": true,
+  "data_quality": {
+    "source": "https://docs.google.com/spreadsheets/d/1swTksdY6SzMb-510gzr2XclM7I4e92zFHgApKwdrLDI/edit",
+    "range": "Sheet1!A2129:G2152",
+    "row_count": 24,
+    "unique_urls": 10,
+    "duplicate_occurrences": 14,
+    "ducati_rows": "2140–2152",
+    "ducati_count": 13,
+    "blank_relevance_rows": 14,
+    "verified_arabic_examples": [
+      2129,
+      2130,
+      2131
+    ],
+    "finding": "Identical article URLs repeated; duplicate rows blank relevance; Arabic Chevrolet/Nissan/Egypt Summit headlines incorrectly marked no relevance signal. Data symptoms verified, root cause UNAVAILABLE; no n8n inspection or fix.",
+    "decision": "BLOCKER — ingestion dedupe/relevance quality requires responsible owner repair; no vehicle-data acceptance"
+  }
+}
