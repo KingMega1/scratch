@@ -31,7 +31,13 @@ export default async function Article({ params }: P) {
       </div>
       <h1 className="h-page">{item.title[locale]}</h1>
       <p className="lede">{item.summary[locale]}</p>
+      {item.images?.[0] ? <img src={item.images[0].src} alt={item.images[0].alt[locale]} width={1080} height={1350} style={{ width: '100%', maxWidth: 480, height: 'auto', borderRadius: 12, marginBlockEnd: 16 }} decoding="async" /> : null}
       {item.body[locale].map((p, i) => <p key={i}>{p}</p>)}
+      {item.images && item.images.length > 1 ? (
+        <div style={{ display: 'grid', gap: 12, gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', marginBlockStart: 20 }}>
+          {item.images.slice(1).map(im => <img key={im.src} src={im.src} alt={im.alt[locale]} width={1080} height={1350} loading="lazy" decoding="async" style={{ width: '100%', height: 'auto', borderRadius: 12 }} />)}
+        </div>
+      ) : null}
     </article>
   );
 }

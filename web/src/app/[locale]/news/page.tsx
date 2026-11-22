@@ -34,6 +34,7 @@ export default async function News({ params, searchParams }: P) {
       {items.length ? (
         <div className="grid grid-3">{items.map(c => (
           <Link prefetch={false} key={c.slug} className="news-card" href={`/${locale}/news/${c.slug}`}>
+            {c.images?.[0] ? <img src={c.images[0].src} alt={c.images[0].alt[locale]} width={1080} height={1350} loading="lazy" decoding="async" style={{ width: '100%', height: 'auto', borderRadius: 10 }} /> : null}
             <span className="tag">{n.types[c.type]}</span>
             {c.status === 'draft' ? <span className="tag tag-draft">{n.draft}</span> : null}
             <h2>{c.title[locale]}</h2><p>{c.summary[locale]}</p>
