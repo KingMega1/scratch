@@ -1,0 +1,1936 @@
+{
+  "schema": "carindex.p2.daily-intake/v1",
+  "date": "2026-11-26",
+  "timezone": "Africa/Cairo",
+  "observed_at_utc": "2026-11-26T13:15:40Z",
+  "scout": {
+    "row": "INTAKE-2026-11-26",
+    "url": "https://app.notion.com/p/4246811407bc818f8f90e5e38f6c2db0",
+    "lookup": "Fresh collection schema then exact Task query; targeted search and full Scout page read. Daily status absent in exact/targeted lookup.",
+    "missing": false,
+    "new_drive_files_reported": 8,
+    "new_sheet_rows_reported": 18,
+    "sheet_rows": "2210–2227",
+    "scope": "Scout counts are Scout-reported. Current executor independently inspected 8 filed originals plus 6 files added after Scout cutoff."
+  },
+  "inventory": {
+    "requested_folder": "1qrIrfSU51zdEsmeXSPThIS620dEUBwHU",
+    "requested_folder_current_list_count": 0,
+    "requested_folder_trashed": "Scout reports trashed 2026-11-25T17:41Z; metadata API did not expose trashed. Empty current listing independently verified.",
+    "replacement_folder": "1km1N5E3fV_C_amFxpBJUNW2KuEY0qIZF",
+    "replacement_folder_current_list_count": 6,
+    "scout_filed_originals": 8,
+    "new_or_changed_inspected": 14,
+    "comparison": "All 14 IDs absent from preceding 25 Nov 100-entry snapshot; all originals freshly bytehashed and image/spec-page read. No revision IDs exposed. Prior 100-entry visibility cannot be equated to deletion or unchanged content after relocation. No original moved/restored/deleted.",
+    "prior_receipt_commit": "e46dd04d2f82f9a32435826d701692c26cefe3f3",
+    "prior_receipt_path": "vehicle-data/review/intake-dispositions-20261125.json",
+    "previous_snapshot": [
+      {
+        "id": "1V5NREX7bm0Qb5LIsImqSduuJh7fa4Dvi",
+        "title": "Screenshot 2026-11-24 at 21.19.17.png",
+        "modified_time": "2026-11-24T19:19:39.024Z",
+        "bytes": 1546698,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "1ZkkmDf66YrPdqEAIOUFOCxsvKOqf5J5w",
+        "title": "Screenshot 2026-11-24 at 20.22.43.png",
+        "modified_time": "2026-11-24T18:23:18.045Z",
+        "bytes": 133258,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "1B0cq828OKZzgNRMKHWYAKym5m1Ii2mXP",
+        "title": "8F628038-8134-49D9-A9BF-9EBB70E8647F.JPG",
+        "modified_time": "2026-11-23T15:33:19.630Z",
+        "bytes": 574958,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1PlE9jgbHoUwVkBhLktKfkTkW6jcubwVK",
+        "title": "E792DFB4-93E0-47D9-9F3B-2972C7B95A1F.JPG",
+        "modified_time": "2026-11-23T15:33:19.590Z",
+        "bytes": 130009,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1KhWFRWID4scIoooYjEcCk5wJIomarPNr",
+        "title": "PHOTO-2026-11-21-19-20-42.jpg",
+        "modified_time": "2026-11-21T21:27:04.833Z",
+        "bytes": 175593,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1Ok9-SyMVQR1tAwX9YytlW3vSXmc6DEpp",
+        "title": "L03 Brochure.pdf",
+        "modified_time": "2026-11-21T21:26:36.036Z",
+        "bytes": 39159463,
+        "mime_type": "application/pdf"
+      },
+      {
+        "id": "1EXsdvbaiE8vMm1jF0ex0fTIV46zQc1ZJ",
+        "title": "Soueast_Price_List_2026-11-18.jpg",
+        "modified_time": "2026-11-18T18:14:08.120Z",
+        "bytes": 263366,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1dW7ltKzsPGB4dbKjNUXRfl-xx-2mwXAG",
+        "title": "Screenshot 2026-11-12 at 23.01.26.png",
+        "modified_time": "2026-11-12T21:01:52.837Z",
+        "bytes": 2188217,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "1ZjTjP7N5h7-X0EEG-V9H3Fi64vbSoYP-",
+        "title": "Screenshot 2026-11-12 at 23.00.36.png",
+        "modified_time": "2026-11-12T21:01:07.392Z",
+        "bytes": 2741152,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "14C0UFnfo6RWfmzSVUHFlwbXNdM2gqO1L",
+        "title": "820CBC76-D88F-4170-9B78-28B405A79DF8.PNG",
+        "modified_time": "2026-11-12T20:51:15.370Z",
+        "bytes": 1275555,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "1NM39XM2eyXV88VQbLPzIcIi2vhvYjkYK",
+        "title": "214CF945-E6F6-42A6-9383-2B9DE45AA188.JPG",
+        "modified_time": "2026-11-12T20:51:14.154Z",
+        "bytes": 227722,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1fEssP0Ihh8sSXFbqe9-qPClUKDYX2sCH",
+        "title": "F27D335E-5AF8-4208-9067-8579569F1CCB.JPG",
+        "modified_time": "2026-11-12T20:51:14.059Z",
+        "bytes": 428614,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1nOCMF3IAO2-vp0c3_jqrS7qLx-iCzQhG",
+        "title": "84E06655-DD49-4C4D-9843-10A5EF1F3DE1.JPG",
+        "modified_time": "2026-11-12T20:51:14.020Z",
+        "bytes": 110641,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1HRd2xq4ghqK0plzjpgI_LXt2SqM4KEiR",
+        "title": "3C53CB35-71D3-4CA2-B46D-AF394D068E83.JPG",
+        "modified_time": "2026-11-12T20:51:13.721Z",
+        "bytes": 198704,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1cBHvb92dYp4P3Xh4yAmv8VvyR9xNgZjv",
+        "title": "008B0CEC-F9D9-4CDE-A133-2DEA2D45F1D0.JPG",
+        "modified_time": "2026-11-12T20:51:13.704Z",
+        "bytes": 130095,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1S6IOH5vWO-jAV4mBRnvf4K9nl6_unrkS",
+        "title": "9AEF6763-6594-479F-95E0-3A2B7B02F9B5.JPG",
+        "modified_time": "2026-11-12T15:15:36.204Z",
+        "bytes": 110641,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1OCP3GXv4WSSld_p0RvFI4Ig5hEu0QIqt",
+        "title": "F9AEB8FA-21B4-42C2-9D5B-6DC7EBCD5F94.JPG",
+        "modified_time": "2026-11-12T15:15:35.957Z",
+        "bytes": 130095,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "14AevOA_Z0NaM0A9Df2QFlqKT156caFeM",
+        "title": "883A5128-B59B-4060-9591-AFA5C6F04736.PNG",
+        "modified_time": "2026-11-11T21:47:31.705Z",
+        "bytes": 4900595,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "1ahyknkgjF2OrzZflrWfMod0Nt-PDKYIv",
+        "title": "65F99C6A-6F90-4493-8DB9-6392C8F4F110.JPG",
+        "modified_time": "2026-11-11T21:47:28.306Z",
+        "bytes": 345197,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1Sfkqj-1Mm--AkwjlcrxIXWIDz-HTIk1C",
+        "title": "4669AC29-46CF-49B5-89AC-F45C88046EFD.JPG",
+        "modified_time": "2026-11-11T21:47:28.259Z",
+        "bytes": 350731,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1YR5lRfK4eQa-owjS4HmPRIfVfhjkyZiu",
+        "title": "804C0BB5-4DBC-4E8C-A875-1CDD200E9433.JPG",
+        "modified_time": "2026-11-11T21:47:28.211Z",
+        "bytes": 471943,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1KMXL_bxQf7JzSmoaxa3Pp_JCwdWp3NHL",
+        "title": "74CB4B4C-815A-43B9-BF4A-E78B0FE932A1.JPG",
+        "modified_time": "2026-11-11T21:47:25.828Z",
+        "bytes": 1120606,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1MIfme6bShRbVpMSc32HxavVtmo1fi0ZB",
+        "title": "AF0368F6-2E3A-4F79-B1C0-FA70A929005C.JPG",
+        "modified_time": "2026-11-11T21:47:24.857Z",
+        "bytes": 385247,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1uNQHEgb76TtgoaL7iUqgQFiATUmtKEXn",
+        "title": "AB231096-9E84-4EF3-9D60-8190B614E1A5.JPG",
+        "modified_time": "2026-11-11T21:47:24.773Z",
+        "bytes": 285621,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "12L5d_jFHGmslS-ZEGhKaMYvMAkbxuXfE",
+        "title": "0523E1AB-9CA2-4ED8-85D0-46C358467986.JPG",
+        "modified_time": "2026-11-11T21:47:24.427Z",
+        "bytes": 58217,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "14TJcmf61kaS0s8vo-_XByC9ijqJmO_sX",
+        "title": "351339F7-1B0C-418D-993D-A0656FA50B6B.JPG",
+        "modified_time": "2026-11-11T21:47:24.374Z",
+        "bytes": 82332,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "17o6qhyy1Xxiuimw--wTD4w8Fi9EVuekP",
+        "title": "D44C2215-A9DF-4F49-9766-9B5A4C368DA3.JPG",
+        "modified_time": "2026-11-11T21:47:24.350Z",
+        "bytes": 70352,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "16UELxggYyghQM-ckRYxgKZZKBHcv5vBU",
+        "title": "72335557-9C6A-45B2-8356-8B673C537898.JPG",
+        "modified_time": "2026-11-11T21:47:24.267Z",
+        "bytes": 61988,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1OjScM3eXEVbhcXY3kPfA-4mCqeAI30pi",
+        "title": "3D5CBBBA-2F70-4D06-91B1-6852C5B89BFD.JPG",
+        "modified_time": "2026-11-11T21:47:24.078Z",
+        "bytes": 100114,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "130ve8MP3el0tWK9vibaauMdNbianraFj",
+        "title": "9E34B1F1-EDE6-4390-8E93-9B02732C1C98.JPG",
+        "modified_time": "2026-11-11T21:47:24.062Z",
+        "bytes": 93034,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1ih_DuOU4D6gzsmp236mz3VIEjMwsTOnU",
+        "title": "SENTRA.pdf",
+        "modified_time": "2026-11-11T20:43:02.562Z",
+        "bytes": 735325,
+        "mime_type": "application/pdf"
+      },
+      {
+        "id": "1sttKk9bSSzeM6riDxnM08yiNH9fr4um4",
+        "title": "Sunny.pdf",
+        "modified_time": "2026-11-11T20:42:37.118Z",
+        "bytes": 5149678,
+        "mime_type": "application/pdf"
+      },
+      {
+        "id": "12cYf2yV_ntZPH2NLK6gkGM2FYW7xygzT",
+        "title": "3750E964-7D6A-4F89-B292-3142D39EDB62.JPG",
+        "modified_time": "2026-11-11T12:44:26.679Z",
+        "bytes": 345983,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1tovkpoAPJsqD8_P9dy2V8z5AVODZR_xG",
+        "title": "24330307-ADB6-42C7-B0FC-22FEB03F05E9.PNG",
+        "modified_time": "2026-11-11T11:48:21.141Z",
+        "bytes": 1888138,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "1SwgxGFffSNcxYnzGi_4Y8hxzZRqYvYl7",
+        "title": "C68818A0-C4F1-4039-901F-9F8AE88E2F3D.JPG",
+        "modified_time": "2026-11-11T11:48:18.763Z",
+        "bytes": 112325,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1qglt_7yJRwCvQD5h_TK3oo1H5NA56ZuO",
+        "title": "D45F141C-9943-4126-B91A-1A74810D45F0.JPG",
+        "modified_time": "2026-11-11T11:48:18.595Z",
+        "bytes": 204249,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1v9ym7HptdYLafgA8CDR5NeKQXQE1R4eK",
+        "title": "9BA2BBBA-EAC1-429F-A7FA-93A0089A4132.JPG",
+        "modified_time": "2026-11-11T11:48:18.528Z",
+        "bytes": 221954,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1JKqCM9SBsc1ss8OjqpERWG7e1engjdQR",
+        "title": "AVATR-07-2026.pdf",
+        "modified_time": "2026-11-11T08:59:24.410Z",
+        "bytes": 35809186,
+        "mime_type": "application/pdf"
+      },
+      {
+        "id": "1PHuvMghoQJxENkUo16FwqDA2Lijz-3Iq",
+        "title": "Chevrolet Egypt - All-New Optra MY2026 OEM brochure.pdf",
+        "modified_time": "2026-11-09T10:04:27.530Z",
+        "bytes": 2887032,
+        "mime_type": "application/pdf"
+      },
+      {
+        "id": "1eocoEOsnwOQlvIXXQ5ZdCJ9MVBXh6W-2",
+        "title": "p2_missing_data_20261108.xlsx",
+        "modified_time": "2026-11-08T20:48:25.663Z",
+        "bytes": 59479,
+        "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      },
+      {
+        "id": "11BWa8il3rhkgT-R8aUahqJexfnRL75u3",
+        "title": "IMG_8336.PNG",
+        "modified_time": "2026-11-08T12:03:58.800Z",
+        "bytes": 1088266,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "1-GsxgCcJlNg_Um1QsnZJfDQHHtsBKD7v",
+        "title": "IMG_8311.PNG",
+        "modified_time": "2026-11-08T12:03:36.514Z",
+        "bytes": 873619,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "1gEFXfwi6hAawtGdpS7HxviTqQrwWmX4y",
+        "title": "IMG_8309.PNG",
+        "modified_time": "2026-11-08T12:03:31.698Z",
+        "bytes": 1768677,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "1VrFbb90Rx_4fNAJAwwec6rwXmkXJv3kE",
+        "title": "IMG_8325.PNG",
+        "modified_time": "2026-11-08T12:03:00.649Z",
+        "bytes": 654646,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "1TrCJKyYOVJQx0Utv9UccQMLNmyP_U3LN",
+        "title": "IMG_8295.JPG",
+        "modified_time": "2026-11-08T12:02:21.650Z",
+        "bytes": 182969,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "17ujD2yJr6fUiGlpE6N5xp3Opgja_1int",
+        "title": "IMG_8340.JPG",
+        "modified_time": "2026-11-08T12:02:16.495Z",
+        "bytes": 284559,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1ykBu6V28WJmH1yoQZ9xDPR8zY8Y599xV",
+        "title": "IMG_8310.JPG",
+        "modified_time": "2026-11-08T12:02:12.220Z",
+        "bytes": 313600,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1R7HAwYIt3VfnOQiA0y188ExTZ_ziLJvS",
+        "title": "IMG_8324.PNG",
+        "modified_time": "2026-11-08T12:02:07.455Z",
+        "bytes": 1641216,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "1K3GQKPI7ZX2bRzHE1I9wPVtOXzI28edd",
+        "title": "IMG_8296.PNG",
+        "modified_time": "2026-11-08T12:02:00.591Z",
+        "bytes": 1902170,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "1UfYmSfxaxF1BIbNjHKA63hZ77vP-sN0r",
+        "title": "IMG_8305.JPG",
+        "modified_time": "2026-11-08T12:01:53.475Z",
+        "bytes": 145850,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1err1v4m8juUN6ZBHMk3adg1rkNl03-K1",
+        "title": "IMG_8306.JPG",
+        "modified_time": "2026-11-08T12:01:50.366Z",
+        "bytes": 116429,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1Oyz7TDMT7ihoIkepBqsGFOHwlJjQRhzF",
+        "title": "IMG_8322.JPG",
+        "modified_time": "2026-11-08T12:01:47.320Z",
+        "bytes": 71735,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1OI-9flCCaLZtafZrpsrofkwW0n9_U6PH",
+        "title": "IMG_8319.JPG",
+        "modified_time": "2026-11-08T12:01:44.362Z",
+        "bytes": 164971,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "15QX9nq_QFJTwdYBWb0L4r5qaF_Fd36jt",
+        "title": "IMG_8299.PNG",
+        "modified_time": "2026-11-08T12:01:35.890Z",
+        "bytes": 502189,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "10wmo51C3glOpu3ZE7aK4ZNRF29eLC0Bc",
+        "title": "IMG_8294.PNG",
+        "modified_time": "2026-11-08T01:52:28.000Z",
+        "bytes": 277138,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "1lmhyfeDWzGpI6rXJ_y4R_SQuHJQ5tjXx",
+        "title": "IMG_8295.JPG",
+        "modified_time": "2026-11-08T01:52:28.000Z",
+        "bytes": 182969,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1bnkFavd2txcGiE1ZpEaVN6YQ2JAYcMZk",
+        "title": "IMG_8296.PNG",
+        "modified_time": "2026-11-08T01:52:28.000Z",
+        "bytes": 280643,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "1RumVE4Cw90el5hAG-eIEA9_mow-WpvH-",
+        "title": "IMG_8299.PNG",
+        "modified_time": "2026-11-08T01:52:28.000Z",
+        "bytes": 121502,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "1uXXwtpvPLBx2OzoCYQHYoVZ-0-b2Ns8D",
+        "title": "IMG_8305.JPG",
+        "modified_time": "2026-11-08T01:52:28.000Z",
+        "bytes": 145850,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1j4Mdm6AVINALwvhRirVbaUBwxmHafWpI",
+        "title": "IMG_8306.JPG",
+        "modified_time": "2026-11-08T01:52:28.000Z",
+        "bytes": 116429,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "13ajtHBCRUA5UA4ngvZq9ebwyWroQJG8A",
+        "title": "IMG_8308.PNG",
+        "modified_time": "2026-11-08T01:52:28.000Z",
+        "bytes": 169699,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "1TRF3uSKCuEYXwkkboz-nZwG_TtjJNan-",
+        "title": "IMG_8309.PNG",
+        "modified_time": "2026-11-08T01:52:28.000Z",
+        "bytes": 398128,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "16M3_Mgp9HgT9qeGr51p2fqp8HPzM0xuu",
+        "title": "IMG_8310.JPG",
+        "modified_time": "2026-11-08T01:52:28.000Z",
+        "bytes": 313600,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "119d7QniRWiqOjL9iRjN_v72B-mB3DKlI",
+        "title": "IMG_8311.PNG",
+        "modified_time": "2026-11-08T01:52:28.000Z",
+        "bytes": 241814,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "146UrTqMtqT96AFv-e8piHe0jack_L56R",
+        "title": "IMG_8317.PNG",
+        "modified_time": "2026-11-08T01:52:28.000Z",
+        "bytes": 145305,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "1fdd_HFO1ZOi_rVrl7Hg1ngd-wuFcT_eL",
+        "title": "IMG_8318.PNG",
+        "modified_time": "2026-11-08T01:52:28.000Z",
+        "bytes": 177861,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "18WCbXkBq1YVzzZS0I_V6ttyfwGQnwaUx",
+        "title": "IMG_8319.JPG",
+        "modified_time": "2026-11-08T01:52:28.000Z",
+        "bytes": 164971,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1goNhySIFeIx9bCemMbkRBOHfrFfCJSTB",
+        "title": "IMG_8322.JPG",
+        "modified_time": "2026-11-08T01:52:28.000Z",
+        "bytes": 71735,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1YR77x2-ctUI6PHakrUMr5XMLXGAp4Hdv",
+        "title": "IMG_8324.PNG",
+        "modified_time": "2026-11-08T01:52:28.000Z",
+        "bytes": 205073,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "1mN4SlwcRN_bSVyyU9CmuHqhJObsEY-m2",
+        "title": "IMG_8325.PNG",
+        "modified_time": "2026-11-08T01:52:28.000Z",
+        "bytes": 202385,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "14tf49ipt48fbVvyDi5M0mEZWk6MYwnrG",
+        "title": "IMG_8336.PNG",
+        "modified_time": "2026-11-08T01:52:28.000Z",
+        "bytes": 169621,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "1Ebheoav0YHrZLPZZj4iyvMYM565o1bR2",
+        "title": "IMG_8340.JPG",
+        "modified_time": "2026-11-08T01:52:28.000Z",
+        "bytes": 284559,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1BrmyTzeOmMTAo0ufkZxz5D87jMbB7tet",
+        "title": "IMG_8271.png",
+        "modified_time": "2026-11-05T07:34:09.306Z",
+        "bytes": 626757,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "1jg9dqpka-6q1PXqN9CyRKFCiEP19FwLH",
+        "title": "cbb9b30e-d034-4fbf-b2d9-b75d67d173fd.jpeg",
+        "modified_time": "2026-11-05T07:34:06.456Z",
+        "bytes": 119262,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1gIIJOLW2NJJ5I5Im20cQZUBxzboanK1t",
+        "title": "PHOTO-2026-11-04-09-00-02.jpg",
+        "modified_time": "2026-11-04T08:53:23.859Z",
+        "bytes": 108523,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1UXJRRcH_L4WHXzKJYJJyuygN4p-wgZVy",
+        "title": "01FD49BA-8D11-4BC9-86AA-3E3575C78542.PNG",
+        "modified_time": "2026-11-02T13:50:57.407Z",
+        "bytes": 707842,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "1zZy62p2JOx0MsqSI06OOX0Qr-qkSDFBV",
+        "title": "A46F4CDB-023A-411F-B8EC-5CDAC27130DA.JPG",
+        "modified_time": "2026-11-02T13:50:56.952Z",
+        "bytes": 124198,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "15YLLuCifm-HMZ_jfupwewMDuAK7fnuzJ",
+        "title": "IMG_8038 Copy.JPG",
+        "modified_time": "2026-11-02T13:09:13.413Z",
+        "bytes": 476911,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1PPe4Fo4pbdXRxokTHVfL6J6naUIIp-pH",
+        "title": "IMG_7970.JPG",
+        "modified_time": "2026-11-02T13:09:13.046Z",
+        "bytes": 202470,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1f3Sa_cDuNVxPAfxByqIHszcvIiN-dFoE",
+        "title": "4575bf82-7c70-440e-86d0-89ebd484313c.jpg",
+        "modified_time": "2026-11-02T13:09:12.262Z",
+        "bytes": 98504,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1VCcshNW6XMGBzUCx8l01nD5B8RMfMa4q",
+        "title": "b503ecc0-5ac1-4bbd-8d7b-ebb75760ac31.jpg",
+        "modified_time": "2026-11-02T13:09:11.725Z",
+        "bytes": 118897,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1v5-THjGlI9viPvBxQqOBJpwjhiWm6zuG",
+        "title": "02264f1f-06a4-46ac-977a-f3e18258cd84.jpg",
+        "modified_time": "2026-11-02T13:09:11.256Z",
+        "bytes": 219305,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "15AzAmESpWl-XJVhSUISCazsaBvvgKMUF",
+        "title": "23799324-21b9-43fa-b200-ba2a84a523e6.jpg",
+        "modified_time": "2026-11-02T13:09:10.651Z",
+        "bytes": 104848,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1KE36NbkKebn-Ii_bbXrtrspbAbnSyF8g",
+        "title": "IMG_7946 Copy.JPG",
+        "modified_time": "2026-11-02T13:09:10.147Z",
+        "bytes": 379288,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1dbMeQ2I9FtEtWw2wHFVHvpb7Edd2Vji6",
+        "title": "IMG_7925 Copy.JPG",
+        "modified_time": "2026-11-02T13:09:09.335Z",
+        "bytes": 199152,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1mtYzuXTxmycgu4MggZVwS-56nI92qKsv",
+        "title": "IMG_7924 Copy.JPG",
+        "modified_time": "2026-11-02T13:09:08.417Z",
+        "bytes": 308142,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1lIOXZpjKqm62X5T0W1VPGwEcBndJSPy-",
+        "title": "3803DC5D-DF91-4BF5-9655-DC2A5314C552.JPG",
+        "modified_time": "2026-11-01T18:23:19.364Z",
+        "bytes": 327241,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1Vu04ITPJnTc1X78xWGA-ghwYmoMnpOd1",
+        "title": "9E3C70D6-E492-458A-9D78-D393150F440B.JPG",
+        "modified_time": "2026-11-01T18:23:19.140Z",
+        "bytes": 295944,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1-e_e3Eh9rX2pY6caIglHKb8fdmem2ZSg",
+        "title": "IMG_8213.jpeg",
+        "modified_time": "2026-11-01T18:10:57.680Z",
+        "bytes": 295944,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "13X1R7GR5tBehUK8vSt_d4n3hPJZYoe8h",
+        "title": "IMG_8214.JPG",
+        "modified_time": "2026-11-01T18:10:57.406Z",
+        "bytes": 327241,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1WGIKN2hrkfE89dXAugDLJLrHbb5zXq-L",
+        "title": "IMG_7903 Copy.JPG",
+        "modified_time": "2026-11-01T18:02:48.841Z",
+        "bytes": 288604,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1Kh6gbcK7yMZ2-KUFw8g-Gw5lZlSaWt59",
+        "title": "IMG_7926 Copy.JPG",
+        "modified_time": "2026-11-01T18:02:48.487Z",
+        "bytes": 342179,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1G18XcBN4b70RtIkBhsO88c1jc9ghcPKJ",
+        "title": "IMG_7923.PNG",
+        "modified_time": "2026-11-01T18:02:48.018Z",
+        "bytes": 476255,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "1CVntdJa6Fu3WdPt798_pi1Ubqn_F5b9O",
+        "title": "IMG_7951.JPG",
+        "modified_time": "2026-11-01T18:01:36.808Z",
+        "bytes": 293266,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1fSxQdmpF4pWCKk2-uL_NSU_1gFBexVoi",
+        "title": "IMG_7959 Copy.JPG",
+        "modified_time": "2026-11-01T18:01:36.558Z",
+        "bytes": 706809,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1mdfjovBEwRIRZwckSMxWWB5Bycabwwxf",
+        "title": "IMG_8021.JPG",
+        "modified_time": "2026-11-01T18:01:36.267Z",
+        "bytes": 465442,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1VxJugp0IZ8CKLdKKi8IMRo6NrEvuS7hJ",
+        "title": "IMG_7929.JPG",
+        "modified_time": "2026-11-01T18:01:36.089Z",
+        "bytes": 434824,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1qyc-TXOdVkrBa_skwnAFcavvzkkJcvYp",
+        "title": "IMG_7952.PNG",
+        "modified_time": "2026-11-01T18:01:35.997Z",
+        "bytes": 622699,
+        "mime_type": "image/png"
+      },
+      {
+        "id": "1MeYgFFxzYAF7ntTCR34SmOnLWAJxedYZ",
+        "title": "IMG_7953 Copy.JPG",
+        "modified_time": "2026-11-01T18:01:35.703Z",
+        "bytes": 282832,
+        "mime_type": "image/jpeg"
+      },
+      {
+        "id": "1YZ5WkQyYyAhmMu8rysFR_9GeLa3l1FRV",
+        "title": "IMG_7964 Copy.JPG",
+        "modified_time": "2026-11-01T18:01:35.651Z",
+        "bytes": 333736,
+        "mime_type": "image/jpeg"
+      }
+    ],
+    "current_source_metadata": [
+      {
+        "file_id": "1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6",
+        "title": "PHOTO-2026-11-25-15-44-53.jpg",
+        "modified_time": "2026-11-25T14:42:43.044Z",
+        "bytes": 84357,
+        "sha256": "a5dd6d4ecda25e3491ea4afc1242ff42431ae447c8248cd92f378675192f8c61",
+        "parent_ids": [
+          "1l9nwUuLwNZthYnTQ1W23iE0GFOHUHhOw"
+        ]
+      },
+      {
+        "file_id": "1m_lebinbkChQB6MbiQ4EtpMCORxMZSa6",
+        "title": "MG 5- Final.pdf",
+        "modified_time": "2026-11-25T15:39:42.295Z",
+        "bytes": 1154106,
+        "sha256": "7429cd1c7c61aaab56bea7159f022459811474d68fe9483ba9dbe9daecd85705",
+        "parent_ids": [
+          "1JpSC5A8Xzm_rXigpWP1VoQUwn2ItVSHl"
+        ]
+      },
+      {
+        "file_id": "18C0HzwVdfvaNUeUQeo0lYJuuVy8oGvc-",
+        "title": "MG ZS- Final.pdf",
+        "modified_time": "2026-11-25T15:40:06.563Z",
+        "bytes": 1438305,
+        "sha256": "1fe1caa0028fac79b747f8143fb905fb2c024a704f9bee4579bc9856decb8b2b",
+        "parent_ids": [
+          "1jkd3N9-06Z87WUVhZUw5Waw59fmYR40P"
+        ]
+      },
+      {
+        "file_id": "1ldiHfxF3f_UMmu6NzvbmXVHCER2Zdsrx",
+        "title": "Screenshot 2026-11-25 at 16.42.52.png",
+        "modified_time": "2026-11-25T14:44:37.736Z",
+        "bytes": 780063,
+        "sha256": "aaa54efee5cebb3ff7f29ef52695a854871295cb30ae25ff45950f2d51c731f0",
+        "parent_ids": [
+          "1l9nwUuLwNZthYnTQ1W23iE0GFOHUHhOw"
+        ]
+      },
+      {
+        "file_id": "1buH6Nh3siWyI6sCqhk3UxMy26TOUbkps",
+        "title": "Screenshot 2026-11-25 at 16.46.06.png",
+        "modified_time": "2026-11-25T14:46:36.210Z",
+        "bytes": 1348776,
+        "sha256": "6d251506164c9cd788a6fd2346b4468139d42523f2e74d0c5864b7ea3f46cf32",
+        "parent_ids": [
+          "1M9DS9ADfRM2gZSivCiKE5l8ctAMnpZOH"
+        ]
+      },
+      {
+        "file_id": "14d-BZCJU4YBkgAmkf-A5eEZZnq3gG_uE",
+        "title": "9EA7FC74-709B-418F-B5B7-81BB30F42510.JPG",
+        "modified_time": "2026-11-25T17:09:19.922Z",
+        "bytes": 374265,
+        "sha256": "63c5e8530b897e4c7ebdb65a4a56dd9b8cf906e448070eb12ade58d8856cbd08",
+        "parent_ids": [
+          "1zh2NrKe5ThKNWdgkoN0N6NtjoZwV3WGA"
+        ]
+      },
+      {
+        "file_id": "19krKX47jWQHfhlMsRjArOnh_NX_9Ctfa",
+        "title": "Screenshot 2026-11-25 at 19.06.20.png",
+        "modified_time": "2026-11-25T17:07:09.157Z",
+        "bytes": 2387671,
+        "sha256": "360f919db06383b3e283ba44e18305f69018bbf8491edd8bc8c65a9dfcaa4612",
+        "parent_ids": [
+          "1mKp3Zxct11hJCQdJ0YmMDdMSzis0IYFn"
+        ]
+      },
+      {
+        "file_id": "1r6zO8LiKh62v56Tg9rR9Wy6WKUyiEkD8",
+        "title": "Screenshot 2026-11-25 at 19.04.53.png",
+        "modified_time": "2026-11-25T17:06:07.422Z",
+        "bytes": 3222261,
+        "sha256": "188470a5be5f2864f3e5179574ed35fc418d709268f3299fc00cb33d16c93c14",
+        "parent_ids": [
+          "1mKp3Zxct11hJCQdJ0YmMDdMSzis0IYFn"
+        ]
+      },
+      {
+        "file_id": "1SwspMQF2rovlPsKOGfSaCrhNyIohJZwI",
+        "title": "226D7536-6C7A-420E-9CC9-CCF26A4E85A1.JPG",
+        "modified_time": "2026-11-26T08:50:44.677Z",
+        "bytes": 494592,
+        "sha256": "9b4647ba9e2a1b28562be8cbebd6537072faa2eb872f62aad167418d290310d0",
+        "parent_ids": [
+          "1km1N5E3fV_C_amFxpBJUNW2KuEY0qIZF"
+        ]
+      },
+      {
+        "file_id": "1ySvZBRJeYPlAYf_9w950kjmcBf-pQFYN",
+        "title": "CB2EC127-D723-413A-A839-5310543D104A.JPG",
+        "modified_time": "2026-11-26T08:50:44.128Z",
+        "bytes": 698528,
+        "sha256": "48b6338fd617943f881786acc477f1b9650465f8248e8c4f853210be54a017cf",
+        "parent_ids": [
+          "1km1N5E3fV_C_amFxpBJUNW2KuEY0qIZF"
+        ]
+      },
+      {
+        "file_id": "1f70qrdkEE0WGDeE-PCFe_esVAZd6pZGd",
+        "title": "A0FF609A-B15F-4AF5-8989-3A9E505F01FE.JPG",
+        "modified_time": "2026-11-26T08:50:44.122Z",
+        "bytes": 716467,
+        "sha256": "2ddb9b40e99c14d9f84d7d5d376539dc807805e0cb512df47d585a5bd1df92a0",
+        "parent_ids": [
+          "1km1N5E3fV_C_amFxpBJUNW2KuEY0qIZF"
+        ]
+      },
+      {
+        "file_id": "1k360KcwB4L9V25Taurm7U5l7fDoXTnH1",
+        "title": "CDDD3F07-4BE4-4F6A-9C0A-94F810811B78.JPG",
+        "modified_time": "2026-11-26T08:50:43.999Z",
+        "bytes": 585884,
+        "sha256": "958ef7839fde30b0ba0b430d1b8ccb5c7413cb3c611efe72e19adec857afd92c",
+        "parent_ids": [
+          "1km1N5E3fV_C_amFxpBJUNW2KuEY0qIZF"
+        ]
+      },
+      {
+        "file_id": "1gs-HeAolwuaripPfGjUpRpA-bbzrHdMx",
+        "title": "325EC35E-6474-4965-93C5-B37483B503D6.JPG",
+        "modified_time": "2026-11-26T08:50:43.671Z",
+        "bytes": 286702,
+        "sha256": "4536c815892f23d131e0fc3cea3019097ae1259f66ac9d5ac82d74fef2dd8c82",
+        "parent_ids": [
+          "1km1N5E3fV_C_amFxpBJUNW2KuEY0qIZF"
+        ]
+      },
+      {
+        "file_id": "1OT2pr_BZYhLdHcpQm-S_HKgWUOgCHJ30",
+        "title": "581025D8-5F30-45A9-893D-F6BA18842434.JPG",
+        "modified_time": "2026-11-26T08:50:43.602Z",
+        "bytes": 266596,
+        "sha256": "5693ac8168d487e9c0da525bb50302c19b1d788887ba7b5f1c9cacb4284b5c76",
+        "parent_ids": [
+          "1km1N5E3fV_C_amFxpBJUNW2KuEY0qIZF"
+        ]
+      }
+    ],
+    "revision_ids": "UNAVAILABLE",
+    "continuity_status": "BLOCKER — source folder routing changed; archived inventory reconciliation not established"
+  },
+  "source_documents": [
+    {
+      "file_id": "1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6",
+      "title": "PHOTO-2026-11-25-15-44-53.jpg",
+      "original_drive_link": "https://drive.google.com/file/d/1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6/view",
+      "created_time": "2026-11-25T14:42:43.044Z",
+      "modified_time": "2026-11-25T14:42:43.044Z",
+      "parent_ids": [
+        "1l9nwUuLwNZthYnTQ1W23iE0GFOHUHhOw"
+      ],
+      "revision_id": "UNAVAILABLE",
+      "sha256": "a5dd6d4ecda25e3491ea4afc1242ff42431ae447c8248cd92f378675192f8c61",
+      "bytes": 84357,
+      "page": 1,
+      "original_bytes_inspected": true,
+      "canonical_model": "MG multiple — see candidate rows",
+      "trim": "see candidate rows",
+      "model_year": "UNAVAILABLE — not inferred from upload or capture date",
+      "source_date": "2026-11-25 printed list date; effective-date scope requires review",
+      "tier": "A-looking Mansour/MG distributor document; direct issuance not authenticated",
+      "decision": "HOLD",
+      "exact_hold": "Dated Mansour/MG list is readable, but direct issuer confirmation, supersession and exact generation/trim mapping pending. Six changed-price observations are not accepted prices; PRICE UNCONFIRMED where unresolved.",
+      "image_use": "HOLD — OEM origin or rights clearance and exact variant binding required; no publishing"
+    },
+    {
+      "file_id": "1m_lebinbkChQB6MbiQ4EtpMCORxMZSa6",
+      "title": "MG 5- Final.pdf",
+      "original_drive_link": "https://drive.google.com/file/d/1m_lebinbkChQB6MbiQ4EtpMCORxMZSa6/view",
+      "created_time": "2026-11-25T15:39:42.295Z",
+      "modified_time": "2026-11-25T15:39:42.295Z",
+      "parent_ids": [
+        "1JpSC5A8Xzm_rXigpWP1VoQUwn2ItVSHl"
+      ],
+      "revision_id": "UNAVAILABLE",
+      "sha256": "7429cd1c7c61aaab56bea7159f022459811474d68fe9483ba9dbe9daecd85705",
+      "bytes": 1154106,
+      "page": [
+        1,
+        4
+      ],
+      "original_bytes_inspected": true,
+      "canonical_model": "mg/5",
+      "trim": "Comfort; Luxury",
+      "model_year": "UNAVAILABLE — not inferred from upload or capture date",
+      "source_date": "UNAVAILABLE — upload/capture date is not issue/effective date",
+      "tier": "A-looking MG brochure; direct issuance/date/Egypt-generation binding not authenticated",
+      "decision": "HOLD",
+      "exact_hold": "Brochure facts transcribed from p4 only; original issuance/date and new-generation-to-canonical trim binding unresolved. No blanket embedded-fact acceptance.",
+      "image_use": "HOLD — OEM origin or rights clearance and exact variant binding required; no publishing"
+    },
+    {
+      "file_id": "18C0HzwVdfvaNUeUQeo0lYJuuVy8oGvc-",
+      "title": "MG ZS- Final.pdf",
+      "original_drive_link": "https://drive.google.com/file/d/18C0HzwVdfvaNUeUQeo0lYJuuVy8oGvc-/view",
+      "created_time": "2026-11-25T15:40:06.563Z",
+      "modified_time": "2026-11-25T15:40:06.563Z",
+      "parent_ids": [
+        "1jkd3N9-06Z87WUVhZUw5Waw59fmYR40P"
+      ],
+      "revision_id": "UNAVAILABLE",
+      "sha256": "1fe1caa0028fac79b747f8143fb905fb2c024a704f9bee4579bc9856decb8b2b",
+      "bytes": 1438305,
+      "page": [
+        1,
+        4
+      ],
+      "original_bytes_inspected": true,
+      "canonical_model": "mg/zs",
+      "trim": "Comfort; Luxury; Luxury Turbo",
+      "model_year": "UNAVAILABLE — not inferred from upload or capture date",
+      "source_date": "UNAVAILABLE — upload/capture date is not issue/effective date",
+      "tier": "A-looking MG brochure; direct issuance/date/Egypt-generation binding not authenticated",
+      "decision": "HOLD",
+      "exact_hold": "Brochure facts transcribed from p4 only; original issuance/date and new-generation-to-canonical trim binding unresolved. No blanket embedded-fact acceptance.",
+      "image_use": "HOLD — OEM origin or rights clearance and exact variant binding required; no publishing"
+    },
+    {
+      "file_id": "1ldiHfxF3f_UMmu6NzvbmXVHCER2Zdsrx",
+      "title": "Screenshot 2026-11-25 at 16.42.52.png",
+      "original_drive_link": "https://drive.google.com/file/d/1ldiHfxF3f_UMmu6NzvbmXVHCER2Zdsrx/view",
+      "created_time": "2026-11-25T14:44:37.736Z",
+      "modified_time": "2026-11-25T14:44:37.736Z",
+      "parent_ids": [
+        "1l9nwUuLwNZthYnTQ1W23iE0GFOHUHhOw"
+      ],
+      "revision_id": "UNAVAILABLE",
+      "sha256": "aaa54efee5cebb3ff7f29ef52695a854871295cb30ae25ff45950f2d51c731f0",
+      "bytes": 780063,
+      "page": 1,
+      "original_bytes_inspected": true,
+      "canonical_model": "MG multiple — see candidate rows",
+      "trim": "see candidate rows",
+      "model_year": "UNAVAILABLE — not inferred from upload or capture date",
+      "source_date": "2026-11-25 printed list date; effective-date scope requires review",
+      "tier": "C private chat carrier; not independent corroboration",
+      "decision": "HOLD",
+      "exact_hold": "Private repost of the same list is dependent evidence, not a second independent source; do not publish chat content.",
+      "image_use": "HOLD — OEM origin or rights clearance and exact variant binding required; no publishing"
+    },
+    {
+      "file_id": "1buH6Nh3siWyI6sCqhk3UxMy26TOUbkps",
+      "title": "Screenshot 2026-11-25 at 16.46.06.png",
+      "original_drive_link": "https://drive.google.com/file/d/1buH6Nh3siWyI6sCqhk3UxMy26TOUbkps/view",
+      "created_time": "2026-11-25T14:46:36.210Z",
+      "modified_time": "2026-11-25T14:46:36.210Z",
+      "parent_ids": [
+        "1M9DS9ADfRM2gZSivCiKE5l8ctAMnpZOH"
+      ],
+      "revision_id": "UNAVAILABLE",
+      "sha256": "6d251506164c9cd788a6fd2346b4468139d42523f2e74d0c5864b7ea3f46cf32",
+      "bytes": 1348776,
+      "page": 1,
+      "original_bytes_inspected": true,
+      "canonical_model": "mg/5; mg/zs",
+      "trim": "see candidate rows",
+      "model_year": "UNAVAILABLE — not inferred from upload or capture date",
+      "source_date": "UNAVAILABLE — upload/capture date is not issue/effective date",
+      "tier": "Official-account creative visible inside third-party repost; original account issuance/date UNAVAILABLE",
+      "decision": "HOLD",
+      "exact_hold": "Screenshot of official creative supports a discovery lead, not a dated original release or trim/MY/price/spec acceptance.",
+      "image_use": "HOLD — OEM origin or rights clearance and exact variant binding required; no publishing"
+    },
+    {
+      "file_id": "14d-BZCJU4YBkgAmkf-A5eEZZnq3gG_uE",
+      "title": "9EA7FC74-709B-418F-B5B7-81BB30F42510.JPG",
+      "original_drive_link": "https://drive.google.com/file/d/14d-BZCJU4YBkgAmkf-A5eEZZnq3gG_uE/view",
+      "created_time": "2026-11-25T17:09:19.922Z",
+      "modified_time": "2026-11-25T17:09:19.922Z",
+      "parent_ids": [
+        "1zh2NrKe5ThKNWdgkoN0N6NtjoZwV3WGA"
+      ],
+      "revision_id": "UNAVAILABLE",
+      "sha256": "63c5e8530b897e4c7ebdb65a4a56dd9b8cf906e448070eb12ade58d8856cbd08",
+      "bytes": 374265,
+      "page": 1,
+      "original_bytes_inspected": true,
+      "canonical_model": "chevrolet/groove (proposed identity; absent canonical registry)",
+      "trim": "LS/LT/RS source claim; image-specific mapping UNAVAILABLE",
+      "model_year": "UNAVAILABLE — not inferred from upload or capture date",
+      "source_date": "UNAVAILABLE — upload/capture date is not issue/effective date",
+      "tier": "C single publisher graphic",
+      "decision": "HOLD",
+      "exact_hold": "Single publisher infographic is a derivative of presentation claims; not two independent agreeing dated sources; no public use of watermarked image.",
+      "image_use": "HOLD — OEM origin or rights clearance and exact variant binding required; no publishing"
+    },
+    {
+      "file_id": "19krKX47jWQHfhlMsRjArOnh_NX_9Ctfa",
+      "title": "Screenshot 2026-11-25 at 19.06.20.png",
+      "original_drive_link": "https://drive.google.com/file/d/19krKX47jWQHfhlMsRjArOnh_NX_9Ctfa/view",
+      "created_time": "2026-11-25T17:07:09.157Z",
+      "modified_time": "2026-11-25T17:07:09.157Z",
+      "parent_ids": [
+        "1mKp3Zxct11hJCQdJ0YmMDdMSzis0IYFn"
+      ],
+      "revision_id": "UNAVAILABLE",
+      "sha256": "360f919db06383b3e283ba44e18305f69018bbf8491edd8bc8c65a9dfcaa4612",
+      "bytes": 2387671,
+      "page": 1,
+      "original_bytes_inspected": true,
+      "canonical_model": "chevrolet/groove (proposed identity; absent canonical registry)",
+      "trim": "LS/LT/RS source claim; image-specific mapping UNAVAILABLE",
+      "model_year": "UNAVAILABLE — not inferred from upload or capture date",
+      "source_date": "UNAVAILABLE — upload/capture date is not issue/effective date",
+      "tier": "C individual social post",
+      "decision": "HOLD",
+      "exact_hold": "Social screenshot is not an issuer release; relative date, exact MY/trim, local-production scope and rights unqualified.",
+      "image_use": "HOLD — OEM origin or rights clearance and exact variant binding required; no publishing"
+    },
+    {
+      "file_id": "1r6zO8LiKh62v56Tg9rR9Wy6WKUyiEkD8",
+      "title": "Screenshot 2026-11-25 at 19.04.53.png",
+      "original_drive_link": "https://drive.google.com/file/d/1r6zO8LiKh62v56Tg9rR9Wy6WKUyiEkD8/view",
+      "created_time": "2026-11-25T17:06:07.422Z",
+      "modified_time": "2026-11-25T17:06:07.422Z",
+      "parent_ids": [
+        "1mKp3Zxct11hJCQdJ0YmMDdMSzis0IYFn"
+      ],
+      "revision_id": "UNAVAILABLE",
+      "sha256": "188470a5be5f2864f3e5179574ed35fc418d709268f3299fc00cb33d16c93c14",
+      "bytes": 3222261,
+      "page": 1,
+      "original_bytes_inspected": true,
+      "canonical_model": "chevrolet/groove (proposed identity; absent canonical registry)",
+      "trim": "LS/LT/RS source claim; image-specific mapping UNAVAILABLE",
+      "model_year": "UNAVAILABLE — not inferred from upload or capture date",
+      "source_date": "UNAVAILABLE — upload/capture date is not issue/effective date",
+      "tier": "C individual social post",
+      "decision": "HOLD",
+      "exact_hold": "Social screenshot is not an issuer release; relative date, exact MY/trim, local-production scope and rights unqualified.",
+      "image_use": "HOLD — OEM origin or rights clearance and exact variant binding required; no publishing"
+    },
+    {
+      "file_id": "1SwspMQF2rovlPsKOGfSaCrhNyIohJZwI",
+      "title": "226D7536-6C7A-420E-9CC9-CCF26A4E85A1.JPG",
+      "original_drive_link": "https://drive.google.com/file/d/1SwspMQF2rovlPsKOGfSaCrhNyIohJZwI/view",
+      "created_time": "2026-11-26T08:50:44.677Z",
+      "modified_time": "2026-11-26T08:50:44.677Z",
+      "parent_ids": [
+        "1km1N5E3fV_C_amFxpBJUNW2KuEY0qIZF"
+      ],
+      "revision_id": "UNAVAILABLE",
+      "sha256": "9b4647ba9e2a1b28562be8cbebd6537072faa2eb872f62aad167418d290310d0",
+      "bytes": 494592,
+      "page": 1,
+      "original_bytes_inspected": true,
+      "canonical_model": "chevrolet/groove (proposed identity; absent canonical registry)",
+      "trim": "LS/LT/RS source claim; image-specific mapping UNAVAILABLE",
+      "model_year": "UNAVAILABLE — not inferred from upload or capture date",
+      "source_date": "UNAVAILABLE — upload/capture date is not issue/effective date",
+      "tier": "Photograph; Chevrolet/GM presentation branding visible for slides; original issuer/date/rights UNAVAILABLE",
+      "decision": "HOLD",
+      "exact_hold": "Vehicle/event photo does not establish exact trim/MY/date or image rights.",
+      "image_use": "HOLD — OEM origin or rights clearance and exact variant binding required; no publishing"
+    },
+    {
+      "file_id": "1ySvZBRJeYPlAYf_9w950kjmcBf-pQFYN",
+      "title": "CB2EC127-D723-413A-A839-5310543D104A.JPG",
+      "original_drive_link": "https://drive.google.com/file/d/1ySvZBRJeYPlAYf_9w950kjmcBf-pQFYN/view",
+      "created_time": "2026-11-26T08:50:44.128Z",
+      "modified_time": "2026-11-26T08:50:44.128Z",
+      "parent_ids": [
+        "1km1N5E3fV_C_amFxpBJUNW2KuEY0qIZF"
+      ],
+      "revision_id": "UNAVAILABLE",
+      "sha256": "48b6338fd617943f881786acc477f1b9650465f8248e8c4f853210be54a017cf",
+      "bytes": 698528,
+      "page": 1,
+      "original_bytes_inspected": true,
+      "canonical_model": "chevrolet/groove (proposed identity; absent canonical registry)",
+      "trim": "LS/LT/RS source claim; image-specific mapping UNAVAILABLE",
+      "model_year": "UNAVAILABLE — not inferred from upload or capture date",
+      "source_date": "UNAVAILABLE — upload/capture date is not issue/effective date",
+      "tier": "Photograph; Chevrolet/GM presentation branding visible for slides; original issuer/date/rights UNAVAILABLE",
+      "decision": "HOLD",
+      "exact_hold": "Vehicle/event photo does not establish exact trim/MY/date or image rights.",
+      "image_use": "HOLD — OEM origin or rights clearance and exact variant binding required; no publishing"
+    },
+    {
+      "file_id": "1f70qrdkEE0WGDeE-PCFe_esVAZd6pZGd",
+      "title": "A0FF609A-B15F-4AF5-8989-3A9E505F01FE.JPG",
+      "original_drive_link": "https://drive.google.com/file/d/1f70qrdkEE0WGDeE-PCFe_esVAZd6pZGd/view",
+      "created_time": "2026-11-26T08:50:44.122Z",
+      "modified_time": "2026-11-26T08:50:44.122Z",
+      "parent_ids": [
+        "1km1N5E3fV_C_amFxpBJUNW2KuEY0qIZF"
+      ],
+      "revision_id": "UNAVAILABLE",
+      "sha256": "2ddb9b40e99c14d9f84d7d5d376539dc807805e0cb512df47d585a5bd1df92a0",
+      "bytes": 716467,
+      "page": 1,
+      "original_bytes_inspected": true,
+      "canonical_model": "chevrolet/groove (proposed identity; absent canonical registry)",
+      "trim": "LS/LT/RS source claim; image-specific mapping UNAVAILABLE",
+      "model_year": "UNAVAILABLE — not inferred from upload or capture date",
+      "source_date": "UNAVAILABLE — upload/capture date is not issue/effective date",
+      "tier": "Photograph; Chevrolet/GM presentation branding visible for slides; original issuer/date/rights UNAVAILABLE",
+      "decision": "HOLD",
+      "exact_hold": "Vehicle/event photo does not establish exact trim/MY/date or image rights.",
+      "image_use": "HOLD — OEM origin or rights clearance and exact variant binding required; no publishing"
+    },
+    {
+      "file_id": "1k360KcwB4L9V25Taurm7U5l7fDoXTnH1",
+      "title": "CDDD3F07-4BE4-4F6A-9C0A-94F810811B78.JPG",
+      "original_drive_link": "https://drive.google.com/file/d/1k360KcwB4L9V25Taurm7U5l7fDoXTnH1/view",
+      "created_time": "2026-11-26T08:50:43.999Z",
+      "modified_time": "2026-11-26T08:50:43.999Z",
+      "parent_ids": [
+        "1km1N5E3fV_C_amFxpBJUNW2KuEY0qIZF"
+      ],
+      "revision_id": "UNAVAILABLE",
+      "sha256": "958ef7839fde30b0ba0b430d1b8ccb5c7413cb3c611efe72e19adec857afd92c",
+      "bytes": 585884,
+      "page": 1,
+      "original_bytes_inspected": true,
+      "canonical_model": "chevrolet/groove (proposed identity; absent canonical registry)",
+      "trim": "LS/LT/RS source claim; image-specific mapping UNAVAILABLE",
+      "model_year": "UNAVAILABLE — not inferred from upload or capture date",
+      "source_date": "UNAVAILABLE — upload/capture date is not issue/effective date",
+      "tier": "Photograph; Chevrolet/GM presentation branding visible for slides; original issuer/date/rights UNAVAILABLE",
+      "decision": "HOLD",
+      "exact_hold": "Vehicle/event photo does not establish exact trim/MY/date or image rights.",
+      "image_use": "HOLD — OEM origin or rights clearance and exact variant binding required; no publishing"
+    },
+    {
+      "file_id": "1gs-HeAolwuaripPfGjUpRpA-bbzrHdMx",
+      "title": "325EC35E-6474-4965-93C5-B37483B503D6.JPG",
+      "original_drive_link": "https://drive.google.com/file/d/1gs-HeAolwuaripPfGjUpRpA-bbzrHdMx/view",
+      "created_time": "2026-11-26T08:50:43.671Z",
+      "modified_time": "2026-11-26T08:50:43.671Z",
+      "parent_ids": [
+        "1km1N5E3fV_C_amFxpBJUNW2KuEY0qIZF"
+      ],
+      "revision_id": "UNAVAILABLE",
+      "sha256": "4536c815892f23d131e0fc3cea3019097ae1259f66ac9d5ac82d74fef2dd8c82",
+      "bytes": 286702,
+      "page": 1,
+      "original_bytes_inspected": true,
+      "canonical_model": "chevrolet/groove (proposed identity; absent canonical registry)",
+      "trim": "LS/LT/RS source claim; image-specific mapping UNAVAILABLE",
+      "model_year": "UNAVAILABLE — not inferred from upload or capture date",
+      "source_date": "UNAVAILABLE — upload/capture date is not issue/effective date",
+      "tier": "Photograph; Chevrolet/GM presentation branding visible for slides; original issuer/date/rights UNAVAILABLE",
+      "decision": "HOLD",
+      "exact_hold": "Readable launch slide supports staged LS/LT/RS specifications; original event date, issuer-document provenance, MY and canonical identity binding unqualified. Two photographs of the same deck are one dependent source.",
+      "image_use": "HOLD — OEM origin or rights clearance and exact variant binding required; no publishing"
+    },
+    {
+      "file_id": "1OT2pr_BZYhLdHcpQm-S_HKgWUOgCHJ30",
+      "title": "581025D8-5F30-45A9-893D-F6BA18842434.JPG",
+      "original_drive_link": "https://drive.google.com/file/d/1OT2pr_BZYhLdHcpQm-S_HKgWUOgCHJ30/view",
+      "created_time": "2026-11-26T08:50:43.602Z",
+      "modified_time": "2026-11-26T08:50:43.602Z",
+      "parent_ids": [
+        "1km1N5E3fV_C_amFxpBJUNW2KuEY0qIZF"
+      ],
+      "revision_id": "UNAVAILABLE",
+      "sha256": "5693ac8168d487e9c0da525bb50302c19b1d788887ba7b5f1c9cacb4284b5c76",
+      "bytes": 266596,
+      "page": 1,
+      "original_bytes_inspected": true,
+      "canonical_model": "chevrolet/groove (proposed identity; absent canonical registry)",
+      "trim": "LS/LT/RS source claim; image-specific mapping UNAVAILABLE",
+      "model_year": "UNAVAILABLE — not inferred from upload or capture date",
+      "source_date": "UNAVAILABLE — upload/capture date is not issue/effective date",
+      "tier": "Photograph; Chevrolet/GM presentation branding visible for slides; original issuer/date/rights UNAVAILABLE",
+      "decision": "HOLD",
+      "exact_hold": "Readable launch slide supports staged LS/LT/RS specifications; original event date, issuer-document provenance, MY and canonical identity binding unqualified. Two photographs of the same deck are one dependent source.",
+      "image_use": "HOLD — OEM origin or rights clearance and exact variant binding required; no publishing"
+    }
+  ],
+  "candidates_today": [
+    {
+      "canonical_model": "mg/5",
+      "model_id": "m_000204",
+      "trim": "Comfort",
+      "model_year": "UNAVAILABLE — list does not state MY",
+      "field": "price",
+      "comparison": "CHANGED",
+      "baseline_price_id": "5f11191f8a2a",
+      "source_file_id": "1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6",
+      "original_drive_link": "https://drive.google.com/file/d/1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6/view",
+      "sha256": "a5dd6d4ecda25e3491ea4afc1242ff42431ae447c8248cd92f378675192f8c61",
+      "page": 1,
+      "source": "Mansour/MG Retail Price List",
+      "source_date": "2026-11-25 printed",
+      "effective_date": "UNAVAILABLE — review printed-date scope",
+      "tier": "A-looking Mansour/MG distributor document; direct issuance not authenticated",
+      "decision": "HOLD",
+      "price_status": "PRICE UNCONFIRMED",
+      "price_egp": null,
+      "exact_hold": "Dated new list differs from prior cohort or introduces new trim. Authenticate issuer and supersession, bind exact generation/trim; no numeric current price until conflict/mapping resolved."
+    },
+    {
+      "canonical_model": "mg/5",
+      "model_id": "m_000204",
+      "trim": "Luxury",
+      "model_year": "UNAVAILABLE — list does not state MY",
+      "field": "price",
+      "comparison": "CHANGED",
+      "baseline_price_id": "f7ba5357f210",
+      "source_file_id": "1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6",
+      "original_drive_link": "https://drive.google.com/file/d/1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6/view",
+      "sha256": "a5dd6d4ecda25e3491ea4afc1242ff42431ae447c8248cd92f378675192f8c61",
+      "page": 1,
+      "source": "Mansour/MG Retail Price List",
+      "source_date": "2026-11-25 printed",
+      "effective_date": "UNAVAILABLE — review printed-date scope",
+      "tier": "A-looking Mansour/MG distributor document; direct issuance not authenticated",
+      "decision": "HOLD",
+      "price_status": "PRICE UNCONFIRMED",
+      "price_egp": null,
+      "exact_hold": "Dated new list differs from prior cohort or introduces new trim. Authenticate issuer and supersession, bind exact generation/trim; no numeric current price until conflict/mapping resolved."
+    },
+    {
+      "canonical_model": "mg/zs",
+      "model_id": "m_000211",
+      "trim": "COM → Comfort proposed",
+      "model_year": "UNAVAILABLE — list does not state MY",
+      "field": "price",
+      "comparison": "NEW_TRIM",
+      "baseline_price_id": "",
+      "source_file_id": "1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6",
+      "original_drive_link": "https://drive.google.com/file/d/1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6/view",
+      "sha256": "a5dd6d4ecda25e3491ea4afc1242ff42431ae447c8248cd92f378675192f8c61",
+      "page": 1,
+      "source": "Mansour/MG Retail Price List",
+      "source_date": "2026-11-25 printed",
+      "effective_date": "UNAVAILABLE — review printed-date scope",
+      "tier": "A-looking Mansour/MG distributor document; direct issuance not authenticated",
+      "decision": "HOLD",
+      "price_status": "PRICE UNCONFIRMED",
+      "price_egp": null,
+      "exact_hold": "Dated new list differs from prior cohort or introduces new trim. Authenticate issuer and supersession, bind exact generation/trim; no numeric current price until conflict/mapping resolved."
+    },
+    {
+      "canonical_model": "mg/zs",
+      "model_id": "m_000211",
+      "trim": "LUX → Luxury proposed",
+      "model_year": "UNAVAILABLE — list does not state MY",
+      "field": "price",
+      "comparison": "NEW_TRIM",
+      "baseline_price_id": "",
+      "source_file_id": "1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6",
+      "original_drive_link": "https://drive.google.com/file/d/1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6/view",
+      "sha256": "a5dd6d4ecda25e3491ea4afc1242ff42431ae447c8248cd92f378675192f8c61",
+      "page": 1,
+      "source": "Mansour/MG Retail Price List",
+      "source_date": "2026-11-25 printed",
+      "effective_date": "UNAVAILABLE — review printed-date scope",
+      "tier": "A-looking Mansour/MG distributor document; direct issuance not authenticated",
+      "decision": "HOLD",
+      "price_status": "PRICE UNCONFIRMED",
+      "price_egp": null,
+      "exact_hold": "Dated new list differs from prior cohort or introduces new trim. Authenticate issuer and supersession, bind exact generation/trim; no numeric current price until conflict/mapping resolved."
+    },
+    {
+      "canonical_model": "mg/zs",
+      "model_id": "m_000211",
+      "trim": "Turbo → Luxury Turbo UNVERIFIED",
+      "model_year": "UNAVAILABLE — list does not state MY",
+      "field": "price",
+      "comparison": "NEW_TRIM",
+      "baseline_price_id": "",
+      "source_file_id": "1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6",
+      "original_drive_link": "https://drive.google.com/file/d/1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6/view",
+      "sha256": "a5dd6d4ecda25e3491ea4afc1242ff42431ae447c8248cd92f378675192f8c61",
+      "page": 1,
+      "source": "Mansour/MG Retail Price List",
+      "source_date": "2026-11-25 printed",
+      "effective_date": "UNAVAILABLE — review printed-date scope",
+      "tier": "A-looking Mansour/MG distributor document; direct issuance not authenticated",
+      "decision": "HOLD",
+      "price_status": "PRICE UNCONFIRMED",
+      "price_egp": null,
+      "exact_hold": "Dated new list differs from prior cohort or introduces new trim. Authenticate issuer and supersession, bind exact generation/trim; no numeric current price until conflict/mapping resolved."
+    },
+    {
+      "canonical_model": "mg/gt",
+      "model_id": "m_000208",
+      "trim": "Luxury",
+      "model_year": "UNAVAILABLE — list does not state MY",
+      "field": "price",
+      "comparison": "UNCHANGED",
+      "baseline_price_id": "6084bc10e680",
+      "source_file_id": "1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6",
+      "original_drive_link": "https://drive.google.com/file/d/1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6/view",
+      "sha256": "a5dd6d4ecda25e3491ea4afc1242ff42431ae447c8248cd92f378675192f8c61",
+      "page": 1,
+      "source": "Mansour/MG Retail Price List",
+      "source_date": "2026-11-25 printed",
+      "effective_date": "UNAVAILABLE — review printed-date scope",
+      "tier": "A-looking Mansour/MG distributor document; direct issuance not authenticated",
+      "decision": "HOLD",
+      "price_status": "NO_NEW_ACCEPTANCE — accepted baseline retained",
+      "price_egp": null,
+      "exact_hold": "Matches the frozen accepted Tier A baseline; retain existing acceptance, do not count this source as a new fact acceptance. New copy issuance/date still unverified."
+    },
+    {
+      "canonical_model": "mg/g50-plus",
+      "model_id": "m_000207",
+      "trim": "G50 Plus",
+      "model_year": "UNAVAILABLE — list does not state MY",
+      "field": "price",
+      "comparison": "UNCHANGED",
+      "baseline_price_id": "0db91a184f74",
+      "source_file_id": "1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6",
+      "original_drive_link": "https://drive.google.com/file/d/1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6/view",
+      "sha256": "a5dd6d4ecda25e3491ea4afc1242ff42431ae447c8248cd92f378675192f8c61",
+      "page": 1,
+      "source": "Mansour/MG Retail Price List",
+      "source_date": "2026-11-25 printed",
+      "effective_date": "UNAVAILABLE — review printed-date scope",
+      "tier": "A-looking Mansour/MG distributor document; direct issuance not authenticated",
+      "decision": "HOLD",
+      "price_status": "NO_NEW_ACCEPTANCE — accepted baseline retained",
+      "price_egp": null,
+      "exact_hold": "Matches the frozen accepted Tier A baseline; retain existing acceptance, do not count this source as a new fact acceptance. New copy issuance/date still unverified."
+    },
+    {
+      "canonical_model": "mg/one",
+      "model_id": "m_000209",
+      "trim": "Luxury",
+      "model_year": "UNAVAILABLE — list does not state MY",
+      "field": "price",
+      "comparison": "UNCHANGED",
+      "baseline_price_id": "fc67012c19f4",
+      "source_file_id": "1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6",
+      "original_drive_link": "https://drive.google.com/file/d/1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6/view",
+      "sha256": "a5dd6d4ecda25e3491ea4afc1242ff42431ae447c8248cd92f378675192f8c61",
+      "page": 1,
+      "source": "Mansour/MG Retail Price List",
+      "source_date": "2026-11-25 printed",
+      "effective_date": "UNAVAILABLE — review printed-date scope",
+      "tier": "A-looking Mansour/MG distributor document; direct issuance not authenticated",
+      "decision": "HOLD",
+      "price_status": "NO_NEW_ACCEPTANCE — accepted baseline retained",
+      "price_egp": null,
+      "exact_hold": "Matches the frozen accepted Tier A baseline; retain existing acceptance, do not count this source as a new fact acceptance. New copy issuance/date still unverified."
+    },
+    {
+      "canonical_model": "mg/rx5",
+      "model_id": "m_000292",
+      "trim": "RX5+ Luxury",
+      "model_year": "UNAVAILABLE — list does not state MY",
+      "field": "price",
+      "comparison": "CHANGED",
+      "baseline_price_id": "2f660c344c77",
+      "source_file_id": "1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6",
+      "original_drive_link": "https://drive.google.com/file/d/1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6/view",
+      "sha256": "a5dd6d4ecda25e3491ea4afc1242ff42431ae447c8248cd92f378675192f8c61",
+      "page": 1,
+      "source": "Mansour/MG Retail Price List",
+      "source_date": "2026-11-25 printed",
+      "effective_date": "UNAVAILABLE — review printed-date scope",
+      "tier": "A-looking Mansour/MG distributor document; direct issuance not authenticated",
+      "decision": "HOLD",
+      "price_status": "PRICE UNCONFIRMED",
+      "price_egp": null,
+      "exact_hold": "Dated new list differs from prior cohort or introduces new trim. Authenticate issuer and supersession, bind exact generation/trim; no numeric current price until conflict/mapping resolved."
+    },
+    {
+      "canonical_model": "mg/hs",
+      "model_id": "m_000020",
+      "trim": "HS HEV",
+      "model_year": "UNAVAILABLE — list does not state MY",
+      "field": "price",
+      "comparison": "CHANGED",
+      "baseline_price_id": "81431f9f64aa",
+      "source_file_id": "1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6",
+      "original_drive_link": "https://drive.google.com/file/d/1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6/view",
+      "sha256": "a5dd6d4ecda25e3491ea4afc1242ff42431ae447c8248cd92f378675192f8c61",
+      "page": 1,
+      "source": "Mansour/MG Retail Price List",
+      "source_date": "2026-11-25 printed",
+      "effective_date": "UNAVAILABLE — review printed-date scope",
+      "tier": "A-looking Mansour/MG distributor document; direct issuance not authenticated",
+      "decision": "HOLD",
+      "price_status": "PRICE UNCONFIRMED",
+      "price_egp": null,
+      "exact_hold": "Dated new list differs from prior cohort or introduces new trim. Authenticate issuer and supersession, bind exact generation/trim; no numeric current price until conflict/mapping resolved."
+    },
+    {
+      "canonical_model": "mg/7",
+      "model_id": "m_000206",
+      "trim": "Trophy",
+      "model_year": "UNAVAILABLE — list does not state MY",
+      "field": "price",
+      "comparison": "CHANGED",
+      "baseline_price_id": "51ad88e22f6d",
+      "source_file_id": "1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6",
+      "original_drive_link": "https://drive.google.com/file/d/1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6/view",
+      "sha256": "a5dd6d4ecda25e3491ea4afc1242ff42431ae447c8248cd92f378675192f8c61",
+      "page": 1,
+      "source": "Mansour/MG Retail Price List",
+      "source_date": "2026-11-25 printed",
+      "effective_date": "UNAVAILABLE — review printed-date scope",
+      "tier": "A-looking Mansour/MG distributor document; direct issuance not authenticated",
+      "decision": "HOLD",
+      "price_status": "PRICE UNCONFIRMED",
+      "price_egp": null,
+      "exact_hold": "Dated new list differs from prior cohort or introduces new trim. Authenticate issuer and supersession, bind exact generation/trim; no numeric current price until conflict/mapping resolved."
+    },
+    {
+      "canonical_model": "mg/rx9",
+      "model_id": "m_000210",
+      "trim": "RX9 PHEV — cannot silently map to RX9 row",
+      "model_year": "UNAVAILABLE — list does not state MY",
+      "field": "price",
+      "comparison": "CHANGED_IDENTITY_REVIEW",
+      "baseline_price_id": "ab8efe92faec",
+      "source_file_id": "1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6",
+      "original_drive_link": "https://drive.google.com/file/d/1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6/view",
+      "sha256": "a5dd6d4ecda25e3491ea4afc1242ff42431ae447c8248cd92f378675192f8c61",
+      "page": 1,
+      "source": "Mansour/MG Retail Price List",
+      "source_date": "2026-11-25 printed",
+      "effective_date": "UNAVAILABLE — review printed-date scope",
+      "tier": "A-looking Mansour/MG distributor document; direct issuance not authenticated",
+      "decision": "HOLD",
+      "price_status": "PRICE UNCONFIRMED",
+      "price_egp": null,
+      "exact_hold": "New list explicitly says PHEV while frozen accepted row is RX9; establish powertrain/variant/MY binding and dated issuer supersession before replacement."
+    },
+    {
+      "canonical_model": "mg/cyberster",
+      "model_id": "m_000392",
+      "trim": "Cyberster",
+      "model_year": "UNAVAILABLE — list does not state MY",
+      "field": "price",
+      "comparison": "UNCHANGED",
+      "baseline_price_id": "97489d63b0f0",
+      "source_file_id": "1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6",
+      "original_drive_link": "https://drive.google.com/file/d/1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6/view",
+      "sha256": "a5dd6d4ecda25e3491ea4afc1242ff42431ae447c8248cd92f378675192f8c61",
+      "page": 1,
+      "source": "Mansour/MG Retail Price List",
+      "source_date": "2026-11-25 printed",
+      "effective_date": "UNAVAILABLE — review printed-date scope",
+      "tier": "A-looking Mansour/MG distributor document; direct issuance not authenticated",
+      "decision": "HOLD",
+      "price_status": "NO_NEW_ACCEPTANCE — accepted baseline retained",
+      "price_egp": null,
+      "exact_hold": "Matches the frozen accepted Tier A baseline; retain existing acceptance, do not count this source as a new fact acceptance. New copy issuance/date still unverified."
+    },
+    {
+      "canonical_model": "mg/5",
+      "model_id": "m_000204",
+      "trim": "Comfort; Luxury",
+      "fields": {
+        "engine_l": 1.5,
+        "power_hp": 110,
+        "torque_nm": 140,
+        "transmission": "CVT",
+        "length_width_height_mm": [
+          4607,
+          1818,
+          1490
+        ],
+        "wheelbase_mm": 2680,
+        "boot_l": 406,
+        "airbags": {
+          "Comfort": 4,
+          "Luxury": 6
+        },
+        "warranty": "6 years / 150000 km whichever first"
+      },
+      "exact_hold": "All-new brochure must be generation-bound; do not overwrite older MG5 specs by name alone. MY/date absent. Trim-specific airbag counts read from front/side/curtain rows, not generic p3 six-airbag graphic.",
+      "source_file_id": "1m_lebinbkChQB6MbiQ4EtpMCORxMZSa6",
+      "source": "MG 5- Final.pdf",
+      "source_date": "UNAVAILABLE — upload/capture date is not issue/effective date",
+      "tier": "A-looking MG brochure; direct issuance/date/Egypt-generation binding not authenticated",
+      "original_drive_link": "https://drive.google.com/file/d/1m_lebinbkChQB6MbiQ4EtpMCORxMZSa6/view",
+      "sha256": "7429cd1c7c61aaab56bea7159f022459811474d68fe9483ba9dbe9daecd85705",
+      "page": 4,
+      "model_year": "UNAVAILABLE",
+      "decision": "HOLD",
+      "field_status": "TRANSCRIBED_SOURCE_CLAIMS_ONLY"
+    },
+    {
+      "canonical_model": "mg/zs",
+      "model_id": "m_000211",
+      "trim": "Comfort; Luxury; Luxury Turbo",
+      "fields": {
+        "engine_l": {
+          "Comfort": 1.5,
+          "Luxury": 1.5,
+          "Luxury Turbo": "1.5 turbo"
+        },
+        "power_hp": {
+          "Comfort": 110,
+          "Luxury": 110,
+          "Luxury Turbo": 170
+        },
+        "torque_nm": {
+          "Comfort": 140,
+          "Luxury": 140,
+          "Luxury Turbo": 275
+        },
+        "transmission": "CVT",
+        "length_width_height_mm": [
+          4430,
+          1818,
+          1635
+        ],
+        "wheelbase_mm": 2610,
+        "boot_l": 443,
+        "airbags": {
+          "Comfort": 2,
+          "Luxury": 4,
+          "Luxury Turbo": 6
+        },
+        "adas": "Luxury Turbo only",
+        "warranty": "6 years / 150000 km whichever first"
+      },
+      "exact_hold": "New-generation canonical binding and MY/date unresolved. List Turbo and brochure Luxury Turbo are not automatically identical; old ZS Plus cannot be matched by equal price.",
+      "source_file_id": "18C0HzwVdfvaNUeUQeo0lYJuuVy8oGvc-",
+      "source": "MG ZS- Final.pdf",
+      "source_date": "UNAVAILABLE — upload/capture date is not issue/effective date",
+      "tier": "A-looking MG brochure; direct issuance/date/Egypt-generation binding not authenticated",
+      "original_drive_link": "https://drive.google.com/file/d/18C0HzwVdfvaNUeUQeo0lYJuuVy8oGvc-/view",
+      "sha256": "1fe1caa0028fac79b747f8143fb905fb2c024a704f9bee4579bc9856decb8b2b",
+      "page": 4,
+      "model_year": "UNAVAILABLE",
+      "decision": "HOLD",
+      "field_status": "TRANSCRIBED_SOURCE_CLAIMS_ONLY"
+    },
+    {
+      "canonical_model": "chevrolet/groove",
+      "model_id": "UNAVAILABLE — absent frozen registry; proposed new identity",
+      "trim": "LS",
+      "model_year": "UNAVAILABLE in inspected originals; Scout/media MY2027 claim remains unqualified",
+      "source_file_ids": [
+        "1gs-HeAolwuaripPfGjUpRpA-bbzrHdMx",
+        "1OT2pr_BZYhLdHcpQm-S_HKgWUOgCHJ30"
+      ],
+      "evidence": [
+        {
+          "original_drive_link": "https://drive.google.com/file/d/1gs-HeAolwuaripPfGjUpRpA-bbzrHdMx/view",
+          "sha256": "4536c815892f23d131e0fc3cea3019097ae1259f66ac9d5ac82d74fef2dd8c82",
+          "page": 1,
+          "source_date": "UNAVAILABLE — upload/capture date is not issue/effective date",
+          "tier": "Photograph; Chevrolet/GM presentation branding visible for slides; original issuer/date/rights UNAVAILABLE"
+        },
+        {
+          "original_drive_link": "https://drive.google.com/file/d/1OT2pr_BZYhLdHcpQm-S_HKgWUOgCHJ30/view",
+          "sha256": "5693ac8168d487e9c0da525bb50302c19b1d788887ba7b5f1c9cacb4284b5c76",
+          "page": 1,
+          "source_date": "UNAVAILABLE — upload/capture date is not issue/effective date",
+          "tier": "Photograph; Chevrolet/GM presentation branding visible for slides; original issuer/date/rights UNAVAILABLE"
+        }
+      ],
+      "source": "Chevrolet/GM-branded launch trim-walk slides photographed; same deck, not independent sources",
+      "fields": {
+        "engine": "1.5L naturally aspirated",
+        "power_hp": 98,
+        "torque_nm": 143,
+        "transmission": "CVT with 8 simulated shifts",
+        "airbags": 2,
+        "screen_inches": 10.25
+      },
+      "decision": "HOLD",
+      "exact_hold": "Slide content is readable, but source event date/issuer chain, MY, Egypt launch-status/effective availability, new canonical identity and trim binding require dated OEM/distributor evidence or two independent agreeing individually dated media sources. Same-deck graphic/photos do not qualify as independent corroboration.",
+      "price_status": "PRICE UNCONFIRMED",
+      "price_egp": null,
+      "image_use": "HOLD — original rights/issuer clearance absent"
+    },
+    {
+      "canonical_model": "chevrolet/groove",
+      "model_id": "UNAVAILABLE — absent frozen registry; proposed new identity",
+      "trim": "LT",
+      "model_year": "UNAVAILABLE in inspected originals; Scout/media MY2027 claim remains unqualified",
+      "source_file_ids": [
+        "1gs-HeAolwuaripPfGjUpRpA-bbzrHdMx",
+        "1OT2pr_BZYhLdHcpQm-S_HKgWUOgCHJ30"
+      ],
+      "evidence": [
+        {
+          "original_drive_link": "https://drive.google.com/file/d/1gs-HeAolwuaripPfGjUpRpA-bbzrHdMx/view",
+          "sha256": "4536c815892f23d131e0fc3cea3019097ae1259f66ac9d5ac82d74fef2dd8c82",
+          "page": 1,
+          "source_date": "UNAVAILABLE — upload/capture date is not issue/effective date",
+          "tier": "Photograph; Chevrolet/GM presentation branding visible for slides; original issuer/date/rights UNAVAILABLE"
+        },
+        {
+          "original_drive_link": "https://drive.google.com/file/d/1OT2pr_BZYhLdHcpQm-S_HKgWUOgCHJ30/view",
+          "sha256": "5693ac8168d487e9c0da525bb50302c19b1d788887ba7b5f1c9cacb4284b5c76",
+          "page": 1,
+          "source_date": "UNAVAILABLE — upload/capture date is not issue/effective date",
+          "tier": "Photograph; Chevrolet/GM presentation branding visible for slides; original issuer/date/rights UNAVAILABLE"
+        }
+      ],
+      "source": "Chevrolet/GM-branded launch trim-walk slides photographed; same deck, not independent sources",
+      "fields": {
+        "engine": "1.5L turbo",
+        "power_hp": 149,
+        "torque_nm": 255,
+        "inheritance": "LS+ as slide states; field-level validation pending",
+        "wheels_inches": 17
+      },
+      "decision": "HOLD",
+      "exact_hold": "Slide content is readable, but source event date/issuer chain, MY, Egypt launch-status/effective availability, new canonical identity and trim binding require dated OEM/distributor evidence or two independent agreeing individually dated media sources. Same-deck graphic/photos do not qualify as independent corroboration.",
+      "price_status": "PRICE UNCONFIRMED",
+      "price_egp": null,
+      "image_use": "HOLD — original rights/issuer clearance absent"
+    },
+    {
+      "canonical_model": "chevrolet/groove",
+      "model_id": "UNAVAILABLE — absent frozen registry; proposed new identity",
+      "trim": "RS",
+      "model_year": "UNAVAILABLE in inspected originals; Scout/media MY2027 claim remains unqualified",
+      "source_file_ids": [
+        "1gs-HeAolwuaripPfGjUpRpA-bbzrHdMx",
+        "1OT2pr_BZYhLdHcpQm-S_HKgWUOgCHJ30"
+      ],
+      "evidence": [
+        {
+          "original_drive_link": "https://drive.google.com/file/d/1gs-HeAolwuaripPfGjUpRpA-bbzrHdMx/view",
+          "sha256": "4536c815892f23d131e0fc3cea3019097ae1259f66ac9d5ac82d74fef2dd8c82",
+          "page": 1,
+          "source_date": "UNAVAILABLE — upload/capture date is not issue/effective date",
+          "tier": "Photograph; Chevrolet/GM presentation branding visible for slides; original issuer/date/rights UNAVAILABLE"
+        },
+        {
+          "original_drive_link": "https://drive.google.com/file/d/1OT2pr_BZYhLdHcpQm-S_HKgWUOgCHJ30/view",
+          "sha256": "5693ac8168d487e9c0da525bb50302c19b1d788887ba7b5f1c9cacb4284b5c76",
+          "page": 1,
+          "source_date": "UNAVAILABLE — upload/capture date is not issue/effective date",
+          "tier": "Photograph; Chevrolet/GM presentation branding visible for slides; original issuer/date/rights UNAVAILABLE"
+        }
+      ],
+      "source": "Chevrolet/GM-branded launch trim-walk slides photographed; same deck, not independent sources",
+      "fields": {
+        "inheritance": "LT+ as slide states; field-level validation pending",
+        "airbags": 4,
+        "sunroof": true,
+        "adas": [
+          "LDW",
+          "LDP",
+          "ELK",
+          "AEB",
+          "FCA"
+        ],
+        "intelligent_driving": [
+          "ACC",
+          "LCA",
+          "TJA"
+        ]
+      },
+      "decision": "HOLD",
+      "exact_hold": "Slide content is readable, but source event date/issuer chain, MY, Egypt launch-status/effective availability, new canonical identity and trim binding require dated OEM/distributor evidence or two independent agreeing individually dated media sources. Same-deck graphic/photos do not qualify as independent corroboration.",
+      "price_status": "PRICE UNCONFIRMED",
+      "price_egp": null,
+      "image_use": "HOLD — original rights/issuer clearance absent"
+    }
+  ],
+  "candidate_summary": {
+    "source_files": 14,
+    "source_file_holds": 14,
+    "source_files_accepted": 0,
+    "source_files_rejected": 0,
+    "candidate_groups": 18,
+    "candidate_groups_held": 18,
+    "actual_p2_acceptances": 0,
+    "public_changes": 0,
+    "counts_note": "13 MG price rows + 2 brochure spec groups + 3 Groove trim groups. These intake HOLDs are not owner dispositions or scheduler runs. Four unchanged MG baseline rows remain previously accepted, not newly accepted."
+  },
+  "additional_dispositions": [
+    {
+      "canonical_model": "mg/hs",
+      "model_id": "m_000020",
+      "trim": "HS AS33 LUX",
+      "model_year": "UNAVAILABLE",
+      "field": "listing_status",
+      "decision": "HOLD",
+      "source_file_id": "1qtLC_IhNhp2w6zTOAHEZ40d2hEaSDGG6",
+      "page": 1,
+      "exact_hold": "Omission from a list does not establish discontinuation; keep existing state."
+    },
+    {
+      "canonical_model": "mg/4; mg/6",
+      "field": "listing_status",
+      "decision": "HOLD",
+      "exact_hold": "Omission does not establish discontinued status."
+    },
+    {
+      "canonical_model": "mg/5; mg/zs",
+      "field": "16 December launch claim from 25 Nov ledger",
+      "decision": "HOLD",
+      "exact_hold": "New all-new brochures/repost do not establish the earlier 16 December date/year claim; keep that field separate."
+    }
+  ],
+  "carry_forward": {
+    "source_receipt": "e46dd04d2f82f9a32435826d701692c26cefe3f3",
+    "source_path": "vehicle-data/review/intake-dispositions-20261125.json",
+    "xpeng": "2Novemberpriceimages and priorL03photo/brochure,30specfieldsHOLD unchanged;11acceptedbaselineprices unchanged;none newlyaccepted",
+    "soueast": "9rows stagedpendingcanonicalintegration/build/tests despitepipelineGO",
+    "older_holds": "12Forthing/ROX/Golfrows,Jetour/AVATR/Dashing/Groove andAudiQ3headline restrictions retained;OptraMY2027unqualified",
+    "optra_my2027": "Prices remain unqualified pending issuer, effective date, exact trim mapping. No MY2026 torque acceptance extrapolation."
+  },
+  "worker": {
+    "id": "6aea3cef04e88191be46412d5db5b305",
+    "enabled": false,
+    "stop_intentional": true,
+    "reason": "B1 maximum four slots with unresolved owner decisions",
+    "event_type": "BLOCKER",
+    "last_run_id": "d8682174-57a4-8324-ace3-f656faecdfde",
+    "last_actual_completed_at": "2026-11-11T16:04:26.106357Z",
+    "off_over_24h": true,
+    "slots_today": 0,
+    "batches_today": 0,
+    "b1": {
+      "id": "20261111-B1",
+      "slots_reported_run": 4,
+      "accepted": 0,
+      "owner_held": 0,
+      "dropped": 0,
+      "pending": 4
+    },
+    "owner_hold_streak": 1,
+    "individual_c15_c16_run_ids": "UNAVAILABLE",
+    "no_second_batch": true,
+    "no_gate_override": true,
+    "off_hours_at_observation": 357.1871927777778,
+    "source": "Current worker peek, matching scheduler last_run/latest_result"
+  },
+  "nightly_handoff": {
+    "id": "6aea48caebac8191a561fb1a953b732d",
+    "enabled": false,
+    "stop_intentional": "UNAVAILABLE",
+    "last_actual_run_id": "162e3a18-745c-832d-98ac-121ab2730c9f",
+    "last_actual_completed_at": "2026-11-19T22:34:32.986504Z",
+    "status": "QUEUED; no verified owner executor/dispatch; not acceptance",
+    "source": "Current automation peek"
+  },
+  "frozen": {
+    "data_commit": "62f6cbb7d701f84992ff0e3304ff5d85be7a9fa1",
+    "serving_revision": "765bc533ee0a",
+    "serving_sha256": "ddb02dbc8241233e02405288669fb089bc32cc19270c4c86787718cbac477b98",
+    "canonical_branch": "claude/carindex-buyer-vehicle-data-97yinp",
+    "freshly_checked_branch_head": "21048f0a1b7122a26aa92d9debcdbf71b10c8434",
+    "freeze_receipt_commit": "21048f0a1b7122a26aa92d9debcdbf71b10c8434",
+    "freeze_receipt_path": "releases/P2-FREEZE-20261111.json",
+    "new_snapshot": false,
+    "index": "https://app.notion.com/p/4156811407bc818d81d1f988aa9e36f5",
+    "receipt_freshly_read": true
+  },
+  "telemetry": {
+    "model": "UNAVAILABLE",
+    "input": "UNAVAILABLE",
+    "output": "UNAVAILABLE",
+    "cache": "UNAVAILABLE",
+    "total": "UNAVAILABLE",
+    "cost": "UNAVAILABLE",
+    "duration": "Last worker scheduler65.637441s; latest nightly20.033520s from actual timestamps. Current intake measured runtime UNAVAILABLE.",
+    "aggregate": "UNAVAILABLE",
+    "source": "Current automation peeks and matching actual run/result IDs; no estimates."
+  },
+  "owner_decisions": {
+    "source": "https://app.notion.com/p/3ec6811407bc81e4ba5edf713b70b481",
+    "date": "2026-11-23",
+    "recorder": "Ops Controller from owner replies",
+    "retarget": {
+      "decision": "Use62f6cbb as FROZEN P1/P5 INPUT from next chain run",
+      "data_commit": "62f6cbb7d701f84992ff0e3304ff5d85be7a9fa1",
+      "serving_revision": "765bc533ee0a",
+      "status": "OWNER_DIRECTION_RECORDED_NOT_PRODUCTION_BINDING",
+      "required": "P1R6build cites exact P2data; P5GO exactcommit/preview/rollback before live; no P1/P5authority here"
+    },
+    "soueast": {
+      "decision": "GO for pipeline: P2freeze,P1rebuild,P5rebind/preview",
+      "production_go": false,
+      "canonical_acceptance_receipt": "UNAVAILABLE — canonical branch still21048f0a; no new accepted data/test/freeze receipt",
+      "status": "SOURCE/PIPELINE_AUTHORIZATION_RECORDED; NINE ROWS STILL STAGED_PENDING_CANONICAL_INTEGRATION_AND_TESTS",
+      "worker_restart_authorized": false,
+      "c14_c17_dispositions_resolved": false
+    },
+    "releases": {
+      "owner_confirmed": [
+        "PR15/24a7e7b/dpl_6pXd4DJeeLdt6xemtfcW3iRkmhZ9",
+        "PR16/7bf112f/dpl_H34Vp795C4v79WeTVU3KvY3c25zd"
+      ],
+      "scope": "Owner-confirmed22Novdeployments recorded byOps; P5must write actual receipts/CI/liveacceptance/rollback; not verified bythisexecutor and no deployment performed",
+      "p5_run_receipts": "UNAVAILABLE in current Tower owner note; do not infer missing GO after explicit owner confirmation"
+    },
+    "update24": "Morningchainnowfollows62f6cbbtarget;P1R6/P5bindingstillmissing. TowerreportsP5receiptsfor24a7e7b/7bf112fnowwritten,closing23Novmissingreceiptclaim. TowerreportswebCI RED CMSdraftstest;P5Builddiagnosis/ownerkeep-or-rollbackdecisionopen;notindependentlyrerunhere.",
+    "update25": "Tower25Nov no newstagechange;62f6cbbtarget/SoueastpipelineGO still requireP1R6/P2integration/P5preview;redP5CI unresolved. No newC14–C17disposition.",
+    "update26": "Current Tower: 62f6cbb index FROZEN P1/P5 INPUT already; old heading is stale. P1 R6 absent, P1 paused by CEO22 Nov, P5 exact pair binding/preview GO absent. P5 CI45043402293 failure and watchdog45199147287 smoke117pass1fail are Tower-reported, not fresh executor tests. Live7bf112f R5 +723748d does not prove pair binding. Soueast pipeline GO remains unexecuted. C14–C17 dispositions still unresolved; no worker restart."
+  },
+  "tests": {
+    "fresh": "Original-byte SHA256 for 14 files; 12 images fully read; MG PDFs p1 and p4 visually read, text across all pages. Schema/exact/targeted status and Scout query; folder metadata/listings and current worker/run receipts; exact canonical head, registry models/prices, freeze receipt and test_canonical.py read. Ledger structural checks. No canonical code/data edit or build/test suite run.",
+    "historical": "Freeze receipt: owner54 tests, independent49blobhashes and7targeted regressions; full54 not independently reproduced. 17Nov audit54/54 is historical owner/auditor evidence, not fresh executor tests.",
+    "required_before_any_promotion": "Canonical deterministic rebuild; identity uniqueness/stable IDs; exact Egypt source/trim/MY and accepted brochure fact binding; accepted A/B price provenance and no conflicts; serving contract/hash/media-rights checks; applicable regressions and explicit P2 owner acceptance receipt. No promotion performed."
+  },
+  "audit_update": {
+    "source": "https://docs.google.com/document/d/1HnkHlLzEz-dP3XySolK_kSjLW04kSWzYIn6kT55rQ8g/edit",
+    "source_date": "2026-11-17",
+    "source_revision": "AHj4eMQRbrZQ_QLoLdyzB0TXSyQqpqPkh8SP99RiXjqoy4mpFuKMcMgGDtSGS6cq6Rl2uQNHNV6lQ2LIwqEPF8_xytvLrETcWXV5OlLnmiA",
+    "tier": "INTERNAL_INDEPENDENT_AUDIT_NOT_VEHICLE_SOURCE",
+    "decision": "ACCEPTED_AS_AUDIT_REPORT_NOT_NEW_DATA",
+    "supplement_commit": "83bc85cf3b9ef50eff0245b8740cf4ffba19d1e9",
+    "path": "releases/P2-FREEZE-20261111-AUDIT-20261117.json",
+    "status": "STAGED_ON_SUPPORT_BRANCH_FOR_OWNER",
+    "findings": [
+      {
+        "id": "AUDIT-37-MY",
+        "decision": "HOLD",
+        "issue": "37 priced entries have null model_year; do not infer years",
+        "source_section": 5
+      },
+      {
+        "id": "AUDIT-CAPTIVA",
+        "decision": "HOLD",
+        "issue": "Captiva source points to Chevrolet Optra/nav page; no trim rows; need model-specific source",
+        "source_section": 5
+      },
+      {
+        "id": "AUDIT-STALE15",
+        "decision": "HOLD",
+        "issue": "15 non-tier-A prices have pre-2026 effective dates; stale-display policy unresolved",
+        "source_section": 5
+      },
+      {
+        "id": "AUDIT-UNMAPPED23",
+        "decision": "HOLD",
+        "issue": "23 accepted evidence rows not mapped by label; exact list needed before changes",
+        "source_section": 4
+      },
+      {
+        "id": "AUDIT-TRANSCRIPTION10",
+        "decision": "UNWORKED",
+        "issue": "Ten original price-list images versus evidence CSV transcription checks remain",
+        "source_section": 9
+      },
+      {
+        "id": "AUDIT-CI",
+        "decision": "UNWORKED",
+        "issue": "Data-branch pytest CI follow-up requires implementation and actual run receipt",
+        "source_section": 9
+      }
+    ]
+  },
+  "data_quality": {
+    "source": "https://docs.google.com/spreadsheets/d/1swTksdY6SzMb-510gzr2XclM7I4e92zFHgApKwdrLDI/edit",
+    "range": "2196–2210perScout",
+    "rows": 15,
+    "no_signal_reported": 14,
+    "blank_tag_reported": 1,
+    "verification": "Scoutreportonlytoday;noindependentread orfixreceipt.",
+    "scout_report": "18sheetrows,6Groove leads; MG25Nov launch/list missing from sheet. Duplicate2219–2220 and2222/2224; Groove tagger no signal despite launch. Not treated as owner or scheduler receipts."
+  },
+  "scope": {
+    "p1": "Nightly candidate only; no acceptance authority",
+    "p5": "Deploy only CEO GO; no acceptance authority",
+    "canonical_rows_promoted": 0,
+    "new_freeze_issued": false,
+    "qualified_conflicting_price": "PRICE UNCONFIRMED; no number",
+    "images": "OEM/rights-cleared only",
+    "press_names": "Internal evidence provenance only"
+  },
+  "stop_gate": "Current instruction three consecutive owner HOLD/DROPPED; verified streak 1. Tower later Ops-recorded review rule differs. Pending not counted. Preserve stop; no second batch or override.",
+  "sources": {
+    "worker": "https://chatgpt.com/c/6aea3d93-9d24-83e9-ab43-67dc92fe7d5e",
+    "nightly": "https://chatgpt.com/c/6aeae64d-1a74-83e8-bc98-cd7f4f56d73f",
+    "owner_dispositions": "https://app.notion.com/p/3ec6811407bc81e4ba5edf713b70b481",
+    "audit_index": "https://app.notion.com/p/41b6811407bc8168b33fdd3adff6fdcd",
+    "scout": "https://app.notion.com/p/4246811407bc818f8f90e5e38f6c2db0",
+    "sheet": "https://docs.google.com/spreadsheets/d/1swTksdY6SzMb-510gzr2XclM7I4e92zFHgApKwdrLDI/edit",
+    "web": [
+      {
+        "source": "Masrawy Autos",
+        "date": "2026-11-21 21:42",
+        "tier": "C individually; B only if independence/agreement qualified per field",
+        "url": "https://www.masrawy.com/autos/autos_news/details/2026/11/21/3082332/",
+        "scope": "Premium price and REEV Egypt launch reported; MY absent. Read body; contains spec differences."
+      },
+      {
+        "source": "Ahl Masr",
+        "date": "2026-11-21 23:23",
+        "tier": "C individually; B only if independence/agreement qualified per field",
+        "url": "https://ahlmasrnews.com/news/auto/13506237",
+        "scope": "L03-RWD Premium REEV same price; MY absent. Read body. Independent authorship versus shared issuer PR not established."
+      },
+      {
+        "source": "XPENG official Egypt route",
+        "date": "UNAVAILABLE",
+        "tier": "A OEM search index only, live page returned no readable lines",
+        "url": "https://www.xpeng.com/eg/l03",
+        "scope": "Index mixes BEV/EREV configurations and differing cargo/audio/charging claims; not treated as exact Egypt Premium config."
+      }
+    ],
+    "canonical_registry": "https://github.com/KingMega1/scratch/tree/21048f0a1b7122a26aa92d9debcdbf71b10c8434/vehicle-data/registry",
+    "freeze_receipt": "https://github.com/KingMega1/scratch/blob/21048f0a1b7122a26aa92d9debcdbf71b10c8434/releases/P2-FREEZE-20261111.json"
+  },
+  "blockers": [
+    "AT-51 worker OFF >24h intentionally at four-slot B1 cap; four unresolved owner dispositions prohibit second batch.",
+    "Nightly handoff OFF >24h; stop intention UNAVAILABLE; queued handoff lacks verified executor/dispatch.",
+    "Automotive Updates routing changed: original folder lists zero; replacement has six; filed originals elsewhere. Archive reconciliation needed; no invented deletion/unchanged assertion.",
+    "MG dated list/brochure source issuance and generation/trim/MY supersession unresolved; no conflicting-price number promoted.",
+    "Groove slide claims lack dated issuer chain/MY/canonical identity and photo rights; dependent photos/graphic are not independent media.",
+    "Soueast integration/test/acceptance/freeze pipeline incomplete; P1 R6/P5 pair binding and P5 red CI remain owner/Tower blockers."
+  ],
+  "daily_status_can_complete": true
+}
