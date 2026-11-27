@@ -1,0 +1,927 @@
+{
+  "schema": "carindex.p2.daily-intake/v1",
+  "date": "2026-11-27",
+  "timezone": "Africa/Cairo",
+  "observed_at_utc": "2026-11-27T13:14:49Z",
+  "scout": {
+    "row": "INTAKE-2026-11-27",
+    "url": "https://app.notion.com/p/4256811407bc81e5865be57e7014caf5",
+    "task_id": "AT-125",
+    "lookup": "Fresh schema-backed exact query then targeted search and full row read; status exact query/targeted search found no existing27Nov row",
+    "missing": false,
+    "reported_new_files": 6,
+    "reported_data_candidates": 3,
+    "reported_sheet_rows": 11,
+    "sheet_rows": "2228–2238",
+    "reconciliation": "Scout window begins26Nov05:35Z. All six originals already inspected in26Nov afternoon receipt1357e6b; zero new/changed originals for this executor today. No double counting.",
+    "web_fetch_limits": "Scout reports10unanswered permission-blocked fetches; this is Scout-specific, not a claimed failure of this executor. Headlines remain unverified leads."
+  },
+  "inventory": {
+    "requested_folder": "1qrIrfSU51zdEsmeXSPThIS620dEUBwHU",
+    "requested_current_count": 0,
+    "replacement_folder": "1km1N5E3fV_C_amFxpBJUNW2KuEY0qIZF",
+    "replacement_current_count": 6,
+    "pagination": "Both current list_folder_page calls returned no next token",
+    "new_or_changed": 0,
+    "unchanged_replacement_files": 6,
+    "comparison": "Six IDs/modified times/sizes match prior ledger. Six freshly downloaded original byte SHA256 match prior exactly; all six visually reread. Prior8filed sources carried by reference, not freshly rehashed today.",
+    "prior_receipt_commit": "1357e6bb5515b3146293840363a3cb230a144138",
+    "prior_receipt_path": "vehicle-data/review/intake-dispositions-20261126.json",
+    "revision_ids": "UNAVAILABLE",
+    "old_inventory_continuity": "Original folder still empty; previous Scout trash assertion remains attributed. No original moved/restored/deleted; no deletion or whole-archive unchanged claim."
+  },
+  "source_documents": [
+    {
+      "file_id": "1SwspMQF2rovlPsKOGfSaCrhNyIohJZwI",
+      "title": "226D7536-6C7A-420E-9CC9-CCF26A4E85A1.JPG",
+      "original_drive_link": "https://drive.google.com/file/d/1SwspMQF2rovlPsKOGfSaCrhNyIohJZwI/view",
+      "created_time": "2026-11-26T08:50:44.677Z",
+      "modified_time": "2026-11-26T08:50:44.677Z",
+      "parent_ids": [
+        "1km1N5E3fV_C_amFxpBJUNW2KuEY0qIZF"
+      ],
+      "revision_id": "UNAVAILABLE",
+      "sha256": "9b4647ba9e2a1b28562be8cbebd6537072faa2eb872f62aad167418d290310d0",
+      "bytes": 494592,
+      "page": 1,
+      "original_bytes_inspected": true,
+      "canonical_model": "chevrolet/groove (proposed identity; absent canonical registry)",
+      "trim": "LS/LT/RS source claim; image-specific mapping UNAVAILABLE",
+      "model_year": "UNAVAILABLE — not inferred from upload or capture date",
+      "source_date": "UNAVAILABLE — no source issue/effective/event date printed; 26Nov upload date not substituted",
+      "tier": "Event photograph, source/rights unverified",
+      "decision": "HOLD",
+      "exact_hold": "Exact vehicle trim/MY and photo creator/usage rights unverified; no public asset acceptance.",
+      "image_use": "HOLD — OEM origin or rights clearance and exact variant binding required; no publishing",
+      "comparison_to_previous": "UNCHANGED — same ID/modified_time/byte size and freshly downloaded SHA256 matches 26Nov",
+      "fresh_sha256": "9b4647ba9e2a1b28562be8cbebd6537072faa2eb872f62aad167418d290310d0",
+      "hash_match": true,
+      "fresh_visual_read": true
+    },
+    {
+      "file_id": "1ySvZBRJeYPlAYf_9w950kjmcBf-pQFYN",
+      "title": "CB2EC127-D723-413A-A839-5310543D104A.JPG",
+      "original_drive_link": "https://drive.google.com/file/d/1ySvZBRJeYPlAYf_9w950kjmcBf-pQFYN/view",
+      "created_time": "2026-11-26T08:50:44.128Z",
+      "modified_time": "2026-11-26T08:50:44.128Z",
+      "parent_ids": [
+        "1km1N5E3fV_C_amFxpBJUNW2KuEY0qIZF"
+      ],
+      "revision_id": "UNAVAILABLE",
+      "sha256": "48b6338fd617943f881786acc477f1b9650465f8248e8c4f853210be54a017cf",
+      "bytes": 698528,
+      "page": 1,
+      "original_bytes_inspected": true,
+      "canonical_model": "chevrolet/groove (proposed identity; absent canonical registry)",
+      "trim": "LS/LT/RS source claim; image-specific mapping UNAVAILABLE",
+      "model_year": "UNAVAILABLE — not inferred from upload or capture date",
+      "source_date": "UNAVAILABLE — no source issue/effective/event date printed; 26Nov upload date not substituted",
+      "tier": "Event photograph, source/rights unverified",
+      "decision": "HOLD",
+      "exact_hold": "Exact vehicle trim/MY and photo creator/usage rights unverified; no public asset acceptance.",
+      "image_use": "HOLD — OEM origin or rights clearance and exact variant binding required; no publishing",
+      "comparison_to_previous": "UNCHANGED — same ID/modified_time/byte size and freshly downloaded SHA256 matches 26Nov",
+      "fresh_sha256": "48b6338fd617943f881786acc477f1b9650465f8248e8c4f853210be54a017cf",
+      "hash_match": true,
+      "fresh_visual_read": true
+    },
+    {
+      "file_id": "1f70qrdkEE0WGDeE-PCFe_esVAZd6pZGd",
+      "title": "A0FF609A-B15F-4AF5-8989-3A9E505F01FE.JPG",
+      "original_drive_link": "https://drive.google.com/file/d/1f70qrdkEE0WGDeE-PCFe_esVAZd6pZGd/view",
+      "created_time": "2026-11-26T08:50:44.122Z",
+      "modified_time": "2026-11-26T08:50:44.122Z",
+      "parent_ids": [
+        "1km1N5E3fV_C_amFxpBJUNW2KuEY0qIZF"
+      ],
+      "revision_id": "UNAVAILABLE",
+      "sha256": "2ddb9b40e99c14d9f84d7d5d376539dc807805e0cb512df47d585a5bd1df92a0",
+      "bytes": 716467,
+      "page": 1,
+      "original_bytes_inspected": true,
+      "canonical_model": "chevrolet/groove (proposed identity; absent canonical registry)",
+      "trim": "LS/LT/RS source claim; image-specific mapping UNAVAILABLE",
+      "model_year": "UNAVAILABLE — not inferred from upload or capture date",
+      "source_date": "UNAVAILABLE — no source issue/effective/event date printed; 26Nov upload date not substituted",
+      "tier": "Event photograph, source/rights unverified",
+      "decision": "HOLD",
+      "exact_hold": "Exact vehicle trim/MY and photo creator/usage rights unverified; no public asset acceptance.",
+      "image_use": "HOLD — OEM origin or rights clearance and exact variant binding required; no publishing",
+      "comparison_to_previous": "UNCHANGED — same ID/modified_time/byte size and freshly downloaded SHA256 matches 26Nov",
+      "fresh_sha256": "2ddb9b40e99c14d9f84d7d5d376539dc807805e0cb512df47d585a5bd1df92a0",
+      "hash_match": true,
+      "fresh_visual_read": true
+    },
+    {
+      "file_id": "1k360KcwB4L9V25Taurm7U5l7fDoXTnH1",
+      "title": "CDDD3F07-4BE4-4F6A-9C0A-94F810811B78.JPG",
+      "original_drive_link": "https://drive.google.com/file/d/1k360KcwB4L9V25Taurm7U5l7fDoXTnH1/view",
+      "created_time": "2026-11-26T08:50:43.999Z",
+      "modified_time": "2026-11-26T08:50:43.999Z",
+      "parent_ids": [
+        "1km1N5E3fV_C_amFxpBJUNW2KuEY0qIZF"
+      ],
+      "revision_id": "UNAVAILABLE",
+      "sha256": "958ef7839fde30b0ba0b430d1b8ccb5c7413cb3c611efe72e19adec857afd92c",
+      "bytes": 585884,
+      "page": 1,
+      "original_bytes_inspected": true,
+      "canonical_model": "chevrolet/groove (proposed identity; absent canonical registry)",
+      "trim": "LS/LT/RS source claim; image-specific mapping UNAVAILABLE",
+      "model_year": "UNAVAILABLE — not inferred from upload or capture date",
+      "source_date": "UNAVAILABLE — no source issue/effective/event date printed; 26Nov upload date not substituted",
+      "tier": "Event photograph, source/rights unverified",
+      "decision": "HOLD",
+      "exact_hold": "Exact vehicle trim/MY and photo creator/usage rights unverified; no public asset acceptance.",
+      "image_use": "HOLD — OEM origin or rights clearance and exact variant binding required; no publishing",
+      "comparison_to_previous": "UNCHANGED — same ID/modified_time/byte size and freshly downloaded SHA256 matches 26Nov",
+      "fresh_sha256": "958ef7839fde30b0ba0b430d1b8ccb5c7413cb3c611efe72e19adec857afd92c",
+      "hash_match": true,
+      "fresh_visual_read": true
+    },
+    {
+      "file_id": "1gs-HeAolwuaripPfGjUpRpA-bbzrHdMx",
+      "title": "325EC35E-6474-4965-93C5-B37483B503D6.JPG",
+      "original_drive_link": "https://drive.google.com/file/d/1gs-HeAolwuaripPfGjUpRpA-bbzrHdMx/view",
+      "created_time": "2026-11-26T08:50:43.671Z",
+      "modified_time": "2026-11-26T08:50:43.671Z",
+      "parent_ids": [
+        "1km1N5E3fV_C_amFxpBJUNW2KuEY0qIZF"
+      ],
+      "revision_id": "UNAVAILABLE",
+      "sha256": "4536c815892f23d131e0fc3cea3019097ae1259f66ac9d5ac82d74fef2dd8c82",
+      "bytes": 286702,
+      "page": 1,
+      "original_bytes_inspected": true,
+      "canonical_model": "chevrolet/groove (proposed identity; absent canonical registry)",
+      "trim": "LS/LT/RS source claim; image-specific mapping UNAVAILABLE",
+      "model_year": "UNAVAILABLE — not inferred from upload or capture date",
+      "source_date": "UNAVAILABLE — no source issue/effective/event date printed; 26Nov upload date not substituted",
+      "tier": "Chevrolet/GM-branded stage deck, primary-looking but issuer/event-date chain unverified; S1 and S2 dependent same-deck evidence",
+      "decision": "HOLD",
+      "exact_hold": "No dated issuer chain, canonical Groove identity, MY or owner field acceptance. LT seat material conflict is explicit: detailed S1 leatherette versus summary S2 leather. Deck photographs are not independent sources.",
+      "image_use": "HOLD — OEM origin or rights clearance and exact variant binding required; no publishing",
+      "comparison_to_previous": "UNCHANGED — same ID/modified_time/byte size and freshly downloaded SHA256 matches 26Nov",
+      "fresh_sha256": "4536c815892f23d131e0fc3cea3019097ae1259f66ac9d5ac82d74fef2dd8c82",
+      "hash_match": true,
+      "fresh_visual_read": true
+    },
+    {
+      "file_id": "1OT2pr_BZYhLdHcpQm-S_HKgWUOgCHJ30",
+      "title": "581025D8-5F30-45A9-893D-F6BA18842434.JPG",
+      "original_drive_link": "https://drive.google.com/file/d/1OT2pr_BZYhLdHcpQm-S_HKgWUOgCHJ30/view",
+      "created_time": "2026-11-26T08:50:43.602Z",
+      "modified_time": "2026-11-26T08:50:43.602Z",
+      "parent_ids": [
+        "1km1N5E3fV_C_amFxpBJUNW2KuEY0qIZF"
+      ],
+      "revision_id": "UNAVAILABLE",
+      "sha256": "5693ac8168d487e9c0da525bb50302c19b1d788887ba7b5f1c9cacb4284b5c76",
+      "bytes": 266596,
+      "page": 1,
+      "original_bytes_inspected": true,
+      "canonical_model": "chevrolet/groove (proposed identity; absent canonical registry)",
+      "trim": "LS/LT/RS source claim; image-specific mapping UNAVAILABLE",
+      "model_year": "UNAVAILABLE — not inferred from upload or capture date",
+      "source_date": "UNAVAILABLE — no source issue/effective/event date printed; 26Nov upload date not substituted",
+      "tier": "Chevrolet/GM-branded stage deck, primary-looking but issuer/event-date chain unverified; S1 and S2 dependent same-deck evidence",
+      "decision": "HOLD",
+      "exact_hold": "No dated issuer chain, canonical Groove identity, MY or owner field acceptance. LT seat material conflict is explicit: detailed S1 leatherette versus summary S2 leather. Deck photographs are not independent sources.",
+      "image_use": "HOLD — OEM origin or rights clearance and exact variant binding required; no publishing",
+      "comparison_to_previous": "UNCHANGED — same ID/modified_time/byte size and freshly downloaded SHA256 matches 26Nov",
+      "fresh_sha256": "5693ac8168d487e9c0da525bb50302c19b1d788887ba7b5f1c9cacb4284b5c76",
+      "hash_match": true,
+      "fresh_visual_read": true
+    }
+  ],
+  "candidates_today": [
+    {
+      "canonical_model": "chevrolet/groove",
+      "model_id": "UNAVAILABLE — absent frozen registry; proposed new identity, no invented ID",
+      "trim": "LS",
+      "model_year": "UNAVAILABLE — not printed on originals",
+      "generation": "UNAVAILABLE",
+      "source": "Detailed and summary Chevrolet/GM-branded Trim Walk slides; issuer inferred from branding, original dated issuance unverified",
+      "source_date": "UNAVAILABLE",
+      "tier": "Primary-looking presentation source pending provenance; two dependent photos, not Tier B independent corroboration",
+      "evidence": [
+        {
+          "file_id": "1gs-HeAolwuaripPfGjUpRpA-bbzrHdMx",
+          "original_drive_link": "https://drive.google.com/file/d/1gs-HeAolwuaripPfGjUpRpA-bbzrHdMx/view",
+          "page": 1,
+          "sha256": "4536c815892f23d131e0fc3cea3019097ae1259f66ac9d5ac82d74fef2dd8c82",
+          "source_date": "UNAVAILABLE — no source issue/effective/event date printed; 26Nov upload date not substituted",
+          "tier": "Chevrolet/GM-branded stage deck, primary-looking but issuer/event-date chain unverified; S1 and S2 dependent same-deck evidence"
+        },
+        {
+          "file_id": "1OT2pr_BZYhLdHcpQm-S_HKgWUOgCHJ30",
+          "original_drive_link": "https://drive.google.com/file/d/1OT2pr_BZYhLdHcpQm-S_HKgWUOgCHJ30/view",
+          "page": 1,
+          "sha256": "5693ac8168d487e9c0da525bb50302c19b1d788887ba7b5f1c9cacb4284b5c76",
+          "source_date": "UNAVAILABLE — no source issue/effective/event date printed; 26Nov upload date not substituted",
+          "tier": "Chevrolet/GM-branded stage deck, primary-looking but issuer/event-date chain unverified; S1 and S2 dependent same-deck evidence"
+        }
+      ],
+      "decision": "HOLD",
+      "exact_hold": "Exact Egypt canonical identity/trim/MY and dated issuer chain unqualified; no owner field-level acceptance. Same-deck photos/derivative graphic cannot provide independent corroboration. LT seat material separately conflicting.",
+      "price_status": "PRICE UNCONFIRMED",
+      "price_egp": null,
+      "fields": [
+        {
+          "field": "engine",
+          "source_claim": "1.5L 4-cylinder naturally aspirated",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "power",
+          "source_claim": "98 hp @5800 rpm",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "torque",
+          "source_claim": "143 Nm @3400–4400 rpm",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "transmission",
+          "source_claim": "CVT with 8 simulated shifts",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "exterior_trim",
+          "source_claim": "Black and carbon fiber",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "wheels",
+          "source_claim": "16-inch alloy",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "headlights",
+          "source_claim": "Halogen projection",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "drl",
+          "source_claim": "LED",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "screen",
+          "source_claim": "10.25-inch infotainment",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "phone",
+          "source_claim": "Apple CarPlay and Android Auto",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "speakers",
+          "source_claim": 4,
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "cluster",
+          "source_claim": "3.5-inch",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "driver_seat",
+          "source_claim": "4-way manual",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "seat_material",
+          "source_claim": "Gray fabric",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "rear_seat",
+          "source_claim": "Folding",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "air_conditioning",
+          "source_claim": "Manual",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "parking",
+          "source_claim": "Rear sensors",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "cruise_control",
+          "source_claim": true,
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "airbags",
+          "source_claim": "2 front",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "safety",
+          "source_claim": [
+            "ABS",
+            "EBD",
+            "ESC",
+            "TC",
+            "HBA",
+            "HHC"
+          ],
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "tpms",
+          "source_claim": "Indirect",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        }
+      ],
+      "warranty": "UNAVAILABLE in these slides; do not inherit press warranty",
+      "image_use": "HOLD — photographer/rights/exact variant unqualified"
+    },
+    {
+      "canonical_model": "chevrolet/groove",
+      "model_id": "UNAVAILABLE — absent frozen registry; proposed new identity, no invented ID",
+      "trim": "LT",
+      "model_year": "UNAVAILABLE — not printed on originals",
+      "generation": "UNAVAILABLE",
+      "source": "Detailed and summary Chevrolet/GM-branded Trim Walk slides; issuer inferred from branding, original dated issuance unverified",
+      "source_date": "UNAVAILABLE",
+      "tier": "Primary-looking presentation source pending provenance; two dependent photos, not Tier B independent corroboration",
+      "evidence": [
+        {
+          "file_id": "1gs-HeAolwuaripPfGjUpRpA-bbzrHdMx",
+          "original_drive_link": "https://drive.google.com/file/d/1gs-HeAolwuaripPfGjUpRpA-bbzrHdMx/view",
+          "page": 1,
+          "sha256": "4536c815892f23d131e0fc3cea3019097ae1259f66ac9d5ac82d74fef2dd8c82",
+          "source_date": "UNAVAILABLE — no source issue/effective/event date printed; 26Nov upload date not substituted",
+          "tier": "Chevrolet/GM-branded stage deck, primary-looking but issuer/event-date chain unverified; S1 and S2 dependent same-deck evidence"
+        },
+        {
+          "file_id": "1OT2pr_BZYhLdHcpQm-S_HKgWUOgCHJ30",
+          "original_drive_link": "https://drive.google.com/file/d/1OT2pr_BZYhLdHcpQm-S_HKgWUOgCHJ30/view",
+          "page": 1,
+          "sha256": "5693ac8168d487e9c0da525bb50302c19b1d788887ba7b5f1c9cacb4284b5c76",
+          "source_date": "UNAVAILABLE — no source issue/effective/event date printed; 26Nov upload date not substituted",
+          "tier": "Chevrolet/GM-branded stage deck, primary-looking but issuer/event-date chain unverified; S1 and S2 dependent same-deck evidence"
+        }
+      ],
+      "decision": "HOLD",
+      "exact_hold": "Exact Egypt canonical identity/trim/MY and dated issuer chain unqualified; no owner field-level acceptance. Same-deck photos/derivative graphic cannot provide independent corroboration. LT seat material separately conflicting.",
+      "price_status": "PRICE UNCONFIRMED",
+      "price_egp": null,
+      "fields": [
+        {
+          "field": "inheritance",
+          "source_claim": "LS trim + as printed; not independently applied as accepted inherited facts",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "engine",
+          "source_claim": "1.5L 4-cylinder turbocharged",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "power",
+          "source_claim": "149 hp @5200 rpm",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "torque",
+          "source_claim": "255 Nm @1600–3600 rpm",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "exhaust",
+          "source_claim": "Dual",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "wheels",
+          "source_claim": "17-inch two-tone alloy",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "lights",
+          "source_claim": "LED headlights and taillights",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "indicators",
+          "source_claim": "Sequential",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "fog_lights",
+          "source_claim": "Front and rear",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "rear_glass",
+          "source_claim": "Privacy",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "exterior_chrome",
+          "source_claim": "Window trim, door handles and roof rails",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "mirrors",
+          "source_claim": "Power folding / heated",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "seat_material",
+          "source_claim": {
+            "S1": "Leatherette",
+            "S2": "Two-tone leather seats",
+            "resolved_value": null,
+            "status": "CONFLICT — HOLD"
+          },
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Detailed S1 leatherette conflicts with summary S2 leather; issuer brochure needed, no chosen value."
+        },
+        {
+          "field": "interior",
+          "source_claim": "Two-tone gray x black",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "cluster",
+          "source_claim": "7-inch digital",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "key",
+          "source_claim": "Keyless entry and engine start/stop",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "air_conditioning",
+          "source_claim": "Electronic controls",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "parking_brake",
+          "source_claim": "Electronic with auto hold",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "rear_camera",
+          "source_claim": "Dynamic lines",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "tpms",
+          "source_claim": "Direct",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        }
+      ],
+      "warranty": "UNAVAILABLE in these slides; do not inherit press warranty",
+      "image_use": "HOLD — photographer/rights/exact variant unqualified"
+    },
+    {
+      "canonical_model": "chevrolet/groove",
+      "model_id": "UNAVAILABLE — absent frozen registry; proposed new identity, no invented ID",
+      "trim": "RS",
+      "model_year": "UNAVAILABLE — not printed on originals",
+      "generation": "UNAVAILABLE",
+      "source": "Detailed and summary Chevrolet/GM-branded Trim Walk slides; issuer inferred from branding, original dated issuance unverified",
+      "source_date": "UNAVAILABLE",
+      "tier": "Primary-looking presentation source pending provenance; two dependent photos, not Tier B independent corroboration",
+      "evidence": [
+        {
+          "file_id": "1gs-HeAolwuaripPfGjUpRpA-bbzrHdMx",
+          "original_drive_link": "https://drive.google.com/file/d/1gs-HeAolwuaripPfGjUpRpA-bbzrHdMx/view",
+          "page": 1,
+          "sha256": "4536c815892f23d131e0fc3cea3019097ae1259f66ac9d5ac82d74fef2dd8c82",
+          "source_date": "UNAVAILABLE — no source issue/effective/event date printed; 26Nov upload date not substituted",
+          "tier": "Chevrolet/GM-branded stage deck, primary-looking but issuer/event-date chain unverified; S1 and S2 dependent same-deck evidence"
+        },
+        {
+          "file_id": "1OT2pr_BZYhLdHcpQm-S_HKgWUOgCHJ30",
+          "original_drive_link": "https://drive.google.com/file/d/1OT2pr_BZYhLdHcpQm-S_HKgWUOgCHJ30/view",
+          "page": 1,
+          "sha256": "5693ac8168d487e9c0da525bb50302c19b1d788887ba7b5f1c9cacb4284b5c76",
+          "source_date": "UNAVAILABLE — no source issue/effective/event date printed; 26Nov upload date not substituted",
+          "tier": "Chevrolet/GM-branded stage deck, primary-looking but issuer/event-date chain unverified; S1 and S2 dependent same-deck evidence"
+        }
+      ],
+      "decision": "HOLD",
+      "exact_hold": "Exact Egypt canonical identity/trim/MY and dated issuer chain unqualified; no owner field-level acceptance. Same-deck photos/derivative graphic cannot provide independent corroboration. LT seat material separately conflicting.",
+      "price_status": "PRICE UNCONFIRMED",
+      "price_egp": null,
+      "fields": [
+        {
+          "field": "inheritance",
+          "source_claim": "LT trim + as printed; not independently applied as accepted inherited facts",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "sunroof",
+          "source_claim": true,
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "paint",
+          "source_claim": "Two-tone black roof",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "spoiler",
+          "source_claim": "Black roof spoiler",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "exterior_trim",
+          "source_claim": "RS with red inserts",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "interior",
+          "source_claim": "Sporty black with red stitching",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "seats",
+          "source_claim": "Sport leather bucket with red stitching",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "driver_seat",
+          "source_claim": "6-way power adjustable",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "rear_seats",
+          "source_claim": "60/40 folding and reclining",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "speakers",
+          "source_claim": 6,
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "airbags",
+          "source_claim": "4 front + side",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "adas",
+          "source_claim": [
+            "LDW",
+            "LDP",
+            "ELK",
+            "AEB",
+            "FCA"
+          ],
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "intelligent_driving",
+          "source_claim": [
+            "ACC",
+            "LCA",
+            "TJA"
+          ],
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        },
+        {
+          "field": "marketing_claim",
+          "source_claim": "First-ever Chevrolet RS in Egypt — unverified marketing claim",
+          "decision": "HOLD",
+          "source_pages": "S1 p1; S2 p1 only where explicitly shown",
+          "exact_hold": "Source claim transcribed, not canonically accepted. Dated issuer/exact trim/MY binding and owner acceptance unresolved."
+        }
+      ],
+      "warranty": "UNAVAILABLE in these slides; do not inherit press warranty",
+      "image_use": "HOLD — photographer/rights/exact variant unqualified"
+    }
+  ],
+  "candidate_summary": {
+    "new_or_changed_originals": 0,
+    "originals_rehashed_reread": 6,
+    "source_document_holds": 6,
+    "groove_trim_groups_held": 3,
+    "field_claim_holds": 55,
+    "new_p2_fact_acceptances": 0,
+    "new_p2_snapshots": 0,
+    "new_assets_accepted": 0,
+    "new_dropped_intake_candidates": 0,
+    "lt_material_conflict": "S1 leatherette /S2 leather; no chosen material. Same deck not independent corroboration."
+  },
+  "owner_disposition_reconciliation": {
+    "source": "https://app.notion.com/p/4206811407bc81ca839bce2e2f03caf7",
+    "task": "AT-100",
+    "date": "2026-11-22",
+    "authority": "CEO, recorded by Ops Controller; full page read 27Nov",
+    "correction": "Prior daily four-pending-owner-decisions and streak1 assertions are superseded by this existing owner row. No need to ask CEO to make these same decisions again.",
+    "slots": [
+      {
+        "slot": "C14",
+        "targets": "toyota/corolla; hyundai/tucson",
+        "owner_decision": "CONDITIONAL ACCEPT Corolla if package matches Corolla-Brochure-2026.pdf Drive1Ignl_AjhIYOV1KDrbW3HtqzjyG6wHHIL; otherwise REQUEUE, not HOLD",
+        "applied_state": "PENDING_CONDITION",
+        "reason": "Actual C14 receipt says0staged commits/0READY and exact trim/MY comparison incomplete. Matching package condition not established. Tucson was an original target but not dispositioned in AT-100. No fact acceptance inferred.",
+        "source": "Control Tower original C14 execution receipt and AT-100"
+      },
+      {
+        "slot": "C15",
+        "targets": "skoda/kodiaq; volkswagen/tiguan",
+        "owner_decision": "DROPPED",
+        "applied_state": "DROPPED",
+        "reason": "No original OEM hero files"
+      },
+      {
+        "slot": "C16",
+        "targets": "mg/5; suzuki/swift",
+        "owner_decision": "ACCEPT MG5; HOLD Swift half",
+        "applied_state": "MIXED",
+        "subtargets": [
+          {
+            "target": "mg/5",
+            "status": "ACCEPTED_OWNER_ELIGIBILITY",
+            "reason": "MG Egypt on-sale /15Oct Mansour TierA evidence. Frozen model m_000204 already on_sale true; no new canonical snapshot or 25Nov facts accepted."
+          },
+          {
+            "target": "suzuki/swift",
+            "status": "HOLD",
+            "reason": "No official list; no price/registration fact accepted. Frozen historical on_sale not overwritten."
+          }
+        ]
+      },
+      {
+        "slot": "C17",
+        "targets": "byd/song-l; changan/cs55",
+        "owner_decision": "DROPPED",
+        "applied_state": "DROPPED",
+        "reason": "No accepted price list"
+      }
+    ],
+    "slot_counts": {
+      "fully_accepted": 0,
+      "fully_held": 0,
+      "dropped": 2,
+      "mixed_accepted_held": 1,
+      "pending_condition": 1,
+      "total": 4
+    },
+    "subtarget_counts": {
+      "explicit_owner_accepted": 1,
+      "explicit_owner_held": 1,
+      "dropped_slots": 2,
+      "pending_conditional_slots": 1
+    },
+    "hold_drop_streak": "UNAVAILABLE as one scalar: mixed C16 ACCEPT/HOLD and conditional C14 prevent treating all four as pending or all terminal HOLD/DROPPED. No verified three-consecutive all-held/dropped slot streak asserted. Preserve stop; do not reset to historical1.",
+    "restart_instruction": "Owner requested restart/next LaneA batch on22Nov. Not executed here because C14 condition/Tucson outcome unresolved under current no-second-batch-while-any-unresolved rule. No override or additional scheduler slots."
+  },
+  "worker": {
+    "id": "6aea3cef04e88191be46412d5db5b305",
+    "enabled": false,
+    "event_type": "BLOCKER",
+    "last_actual_run": {
+      "id": "d8682174-57a4-8324-ace3-f656faecdfde",
+      "recorded_status": "completed",
+      "scheduled_for": "2026-11-11T16:00:00Z",
+      "started_at": "2026-11-11T16:03:20.468916Z",
+      "completed_at": "2026-11-11T16:04:26.106357Z",
+      "chat_ref": {
+        "type": "chatgpt",
+        "id": "6aea3d93-9d24-83e9-ab43-67dc92fe7d5e"
+      }
+    },
+    "last_actual_heartbeat": "2026-11-11T16:04:26.106357Z",
+    "off_over_24h": true,
+    "off_hours_at_observation": 381.1730261111111,
+    "stop_intentional": true,
+    "stop_basis": "Original deliberate four-slot B1 cap;22Nov restart instruction exists but condition/outcome reconciliation incomplete. No new scheduler run/restart performed.",
+    "batches_today": 0,
+    "slots_today": 0,
+    "b1": {
+      "id": "20261111-B1",
+      "slots_reported_run": 4,
+      "actual_scheduler_ids": {
+        "C14": "6cc65260-e084-832b-b68d-c99a703565a4",
+        "C15": "UNAVAILABLE",
+        "C16": "UNAVAILABLE",
+        "C17": "d8682174-57a4-8324-ace3-f656faecdfde"
+      },
+      "owner_slot_counts": {
+        "fully_accepted": 0,
+        "fully_held": 0,
+        "dropped": 2,
+        "mixed_accepted_held": 1,
+        "pending_condition": 1,
+        "total": 4
+      },
+      "old_worker_result_counts": "4pending in11Nov latest_result is historical and superseded by AT-100 owner dispositions"
+    },
+    "hold_drop_streak": "UNAVAILABLE as one scalar: mixed C16 ACCEPT/HOLD and conditional C14 prevent treating all four as pending or all terminal HOLD/DROPPED. No verified three-consecutive all-held/dropped slot streak asserted. Preserve stop; do not reset to historical1.",
+    "second_batch_started": false,
+    "gate_override": false,
+    "source": "Current automation peek plus AT-100 and Control Tower original run receipts"
+  },
+  "nightly_handoff": {
+    "id": "6aea48caebac8191a561fb1a953b732d",
+    "enabled": false,
+    "last_actual_run": {
+      "id": "162e3a18-745c-832d-98ac-121ab2730c9f",
+      "recorded_status": "completed",
+      "scheduled_for": "2026-11-19T22:30:00Z",
+      "started_at": "2026-11-19T22:34:12.952984Z",
+      "completed_at": "2026-11-19T22:34:32.986504Z",
+      "chat_ref": {
+        "type": "chatgpt",
+        "id": "6aeae64d-1a74-83e8-bc98-cd7f4f56d73f"
+      }
+    },
+    "stop_intentional": "UNAVAILABLE",
+    "off_over_24h": true,
+    "dispatch": "Last QUEUED handoff is not acceptance; original missing-owner-decisions statement superseded by AT-100. No verified dispatch execution today."
+  },
+  "frozen": {
+    "data_commit": "62f6cbb7d701f84992ff0e3304ff5d85be7a9fa1",
+    "serving_revision": "765bc533ee0a",
+    "serving_sha256": "ddb02dbc8241233e02405288669fb089bc32cc19270c4c86787718cbac477b98",
+    "canonical_branch": "claude/carindex-buyer-vehicle-data-97yinp",
+    "freshly_checked_branch_head": "21048f0a1b7122a26aa92d9debcdbf71b10c8434",
+    "freeze_receipt_commit": "21048f0a1b7122a26aa92d9debcdbf71b10c8434",
+    "freeze_receipt_path": "releases/P2-FREEZE-20261111.json",
+    "new_snapshot": false,
+    "index": "https://app.notion.com/p/4156811407bc818d81d1f988aa9e36f5",
+    "receipt_freshly_read": true
+  },
+  "telemetry": {
+    "model": "UNAVAILABLE",
+    "input": "UNAVAILABLE",
+    "output": "UNAVAILABLE",
+    "cache": "UNAVAILABLE",
+    "total": "UNAVAILABLE",
+    "cost": "UNAVAILABLE",
+    "duration": {
+      "worker_scheduler_seconds": 65.637441,
+      "nightly_scheduler_seconds": 20.03352,
+      "current_measured_intake_runtime": "UNAVAILABLE"
+    },
+    "source": "Fresh automation matching last_run/latest_result timestamps. No token/cost estimates or adoption of another agent configured model.",
+    "aggregate_usage": "UNAVAILABLE"
+  },
+  "tests": {
+    "fresh": "Current schema/exact/targeted queries; full Scout/Tower/AT-100/watchdog; both folder listings;6downloaded originalbyte hashes and6visual rereads;exactcanonicalbranchhead/models/freeze receipt; ledger invariant checks. No canonicalbuild/testsuite, source acceptance or promotion.",
+    "historical": "Freeze receipt: owner54 tests, independent49blobhashes and7targeted regressions; full54 not independently reproduced. 17Nov audit54/54 is historical owner/auditor evidence, not fresh executor tests.",
+    "required_before_new_promotion": "Canonical deterministic rebuild; identity uniqueness/stable IDs; exact Egypt source/trim/MY and accepted brochure fact binding; accepted A/B price provenance and no conflicts; serving contract/hash/media-rights checks; applicable regressions and explicit P2 owner acceptance receipt. No promotion performed.",
+    "production_revision_binding": "UNVERIFIED"
+  },
+  "carry_forward": {
+    "receipt_commit": "1357e6bb5515b3146293840363a3cb230a144138",
+    "path": "vehicle-data/review/intake-dispositions-20261126.json",
+    "scope": "All MG25Nov and earlier field-level HOLDs unchanged; prior source hashes retained by reference. AT-100 MG5 eligibility acceptance does not accept the25Nov new-generation prices/specs. Soueast9staged proposals still need canonicalintegration/tests/freeze despitepipelineGO. XPENG/L03 andolderholds retained.",
+    "optra_my2027": "Prices unqualified pending issuer/effective date/trim mapping; MY2026 torque does not qualify MY2027price."
+  },
+  "chain_status": {
+    "owner_source": "https://app.notion.com/p/3ec6811407bc81e4ba5edf713b70b481",
+    "current27nov": "Tower reports no stage change. P1 R6 absent /CEO pause22Nov preserved. P5 live7bf112f R5+723748d, no62f6cbbpair binding or exact newproductionGO. web-ci45043402293 andsmoke45199147287failed perTower/watchdog, not rerun here. Existingfreeze indexretarget settled; rootvercelmissingblocker stale.",
+    "accepted_owner_dispositions_applied": "C15/C17 DROP andC16 MG5ACCEPT/SwiftHOLD recorded inthisledger and dailyTowerwrite. C14 acceptancecondition still pending; no newdataacceptance."
+  },
+  "data_quality": {
+    "source": "Scout27Nov, not independent sheet reread",
+    "sheet": "11 NEWS-ONLY rows2228–2238;allRejected-PreFilter includingGroove/recalls; no automotive facts accepted fromheadlines. MGitems carryover; no ingestionrepairreceipt verified."
+  },
+  "sources": {
+    "scout": "https://app.notion.com/p/4256811407bc81e5865be57e7014caf5",
+    "owner_dispositions": "https://app.notion.com/p/4206811407bc81ca839bce2e2f03caf7",
+    "tower": "https://app.notion.com/p/3ec6811407bc81e4ba5edf713b70b481",
+    "watchdog": "https://app.notion.com/p/4256811407bc8199997ae813fae2cb89",
+    "worker": "https://chatgpt.com/c/6aea3d93-9d24-83e9-ab43-67dc92fe7d5e",
+    "nightly": "https://chatgpt.com/c/6aeae64d-1a74-83e8-bc98-cd7f4f56d73f",
+    "prior_ledger": "https://github.com/KingMega1/scratch/blob/1357e6bb5515b3146293840363a3cb230a144138/vehicle-data/review/intake-dispositions-20261126.json",
+    "freeze": "https://github.com/KingMega1/scratch/blob/21048f0a1b7122a26aa92d9debcdbf71b10c8434/releases/P2-FREEZE-20261111.json"
+  },
+  "blockers": [
+    "WorkerOFF >24h; intentionalcap stop persists.22Novownerdispositions existed but were missed byprior reports;not fourpendingownerdecisions. C14 packagecondition/Tucsonoutcome unresolved; noB2.",
+    "Groove exactdatedissuerchain/MY/canonicalidentity/image rights unqualified; LTseatmaterial conflicting; no currentprice number.",
+    "Oldfolderempty/replacement6 unchanged; archivecontinuity unresolved,not newfilefailure.",
+    "Soueastcanonicalpipeline/P1R6pause/P5binding/redCI unresolved percurrentTower."
+  ],
+  "scope": {
+    "p1": "Nightly candidate only; noP1acceptance authority",
+    "p5": "CEO GO only; noP5acceptance/deploy performed",
+    "public_copy": "No changes; press outlets internal provenance only",
+    "images": "OEM orrights-cleared only; noassetspublished",
+    "freeze": "No newaccepted data snapshot; existingfreeze/index retained"
+  },
+  "daily_status_can_complete": true
+}
